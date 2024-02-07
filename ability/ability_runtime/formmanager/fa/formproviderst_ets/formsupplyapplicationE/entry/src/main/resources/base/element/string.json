@@ -11,6 +11,14 @@
     {
       "name": "description_serviceability",
       "value": "hap sample empty service"
+    },
+    {
+      "name": "form_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "form_label",
+      "value": "form_label"
     }
   ]
 }
