@@ -13,18 +13,13 @@
  * limitations under the License.
  */
 import napiStringTest from './NativeApiStringTest';
-import napiObjectTest from './NativeApiObjectTest';
-import napiArrayBufferTest from './NativeApiArrayBufferTest';
 import napiBufferTest from './NativeApiBufferTest';
-import napiLifecycleTest from './NativeApiLifecycleTest';
 import napiSendableTest from './NativeApiSendableTest';
-
+import napiApiTest from './NapiTest';
 
 export default function testsuite() {
   napiStringTest();
-  napiArrayBufferTest();
   napiBufferTest();
-  napiObjectTest();
-  napiLifecycleTest();
   napiSendableTest();
+  napiApiTest();
 }
