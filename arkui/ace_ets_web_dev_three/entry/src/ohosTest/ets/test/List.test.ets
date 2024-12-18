@@ -15,9 +15,13 @@
 import webJsunit from './WebJsunit.test';
 import webTwoJsunit from './WebTwoJsunit.test';
 import bindSelectionMenu from './bindSelectionMenu.test'
+import NestedScrollMode from './NestedScrollMode.test'
+import blurMode from './blurMode.test'
 
 export default function testsuite() {
   webJsunit();
   webTwoJsunit();
-  bindSelectionMenu()
+  bindSelectionMenu();
+  NestedScrollMode();
+  blurMode();
 }
