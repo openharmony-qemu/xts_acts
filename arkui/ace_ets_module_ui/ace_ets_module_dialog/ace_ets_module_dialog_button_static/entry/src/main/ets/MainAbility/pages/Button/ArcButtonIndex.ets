@@ -41,7 +41,7 @@ import {
   ArcButtonPosition,
   ArcButtonStyleMode
 } from '@ohos.arkui.advanced.ArcButton';
-import { State, Local } from '@ohos.arkui.stateManagement';
+import { State, Local, AppStorage } from '@ohos.arkui.stateManagement';
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
 import { ColorMetrics, LocalizedMargin, ColorSpace } from '@kit.ArkUI';
 import hilog from '@ohos.hilog';
@@ -55,14 +55,14 @@ struct ArcButtonIndex {
       Text('ArcButtonBuild')
         .fontSize(28)
       ArcButton({ options: new ArcButtonOptions
-      ({
-        label: 'ButtonTop',
-        status: ArcButtonStatus.NORMAL,
-        position: ArcButtonPosition.TOP_EDGE,
-        styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,
-        fontSize: new LengthMetrics(15, LengthUnit.FP),
-        shadowEnabled: true
-      })
+        ({
+          label: 'ButtonTop',
+          status: ArcButtonStatus.NORMAL,
+          position: ArcButtonPosition.TOP_EDGE,
+          styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,
+          fontSize: new LengthMetrics(15, LengthUnit.FP),
+          shadowEnabled: true
+        })
       })
     }
   }
@@ -93,9 +93,11 @@ struct ArcButtonIndex {
       } as LocalizedMargin,
       onTouch: (event: TouchEvent) => {
         console.info('ArcButton onTouch event: ' + JSON.stringify(event));
+        AppStorage.setOrCreate('arcButtonOnTouchCalled', true);
       },
       onClick: (event: ClickEvent) => {
         console.info('ArcButton onClick event: ' + JSON.stringify(event));
+        AppStorage.setOrCreate('arcButtonOnClickCalled', true);
       }
     })
   }
@@ -106,10 +108,21 @@ struct ArcButtonIndex {
         .fontSize(36)
         .width('300')
         .height('100')
-
+      
       ArcButton({ options: this.allPropertiesOptions })
         .key('arcButtonAllProperties')
         .id('arcButtonAllProperties')
+
+      ArcButton({
+        options: new ArcButtonOptions({
+          label: 'BottomEdge' as ResourceStr,
+          position: ArcButtonPosition.BOTTOM_EDGE,
+          styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,
+          status: ArcButtonStatus.NORMAL
+        })
+      })
+        .key('arcButtonBottomEdge')
+        .id('arcButtonBottomEdge')
 
     }.width('100%')
     .height('100%')
