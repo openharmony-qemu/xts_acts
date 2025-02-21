@@ -14,9 +14,15 @@
  */
 
 import ProgressLinearStyleTest from "./progress/progressLinearStyleTest.test"
+import textImmutablfFontWeight from "./text/textImmutablfFontWeight.test"
+import TextAreaLetterSpacing from "./textArea/TextAreaLetterSpacing.test"
+import TextInputLetterSpacing from "./textInput/TextInputLetterSpacing.test"
 
 
 export default function testsuite() {
 
    ProgressLinearStyleTest();
+   textImmutablfFontWeight();
+   TextAreaLetterSpacing();
+   TextInputLetterSpacing();
 }
