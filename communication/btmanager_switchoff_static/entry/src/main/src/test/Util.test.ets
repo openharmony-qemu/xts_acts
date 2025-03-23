@@ -94,4 +94,34 @@ let tag: string = 'bt003UtilsTag'; //日志标识字符串,作为tag标识当前
         hilog.info(domain, tag, 'getState get error:' + state);
     }
   }
+
+    static async openBluetooth() : Promise<void> {
+      let state: access.BluetoothState = access.getState();
+      hilog.info(domain, tag, 'getState result:' + state);
+      switch(state) {
+        case access.BluetoothState.STATE_OFF:
+          access.enableBluetooth();
+          await Utils.clickRequestPermission("开启");
+          await Utils.msSleep(3000);
+          let state1: access.BluetoothState = access.getState();
+          hilog.info(domain, tag, 'enableBluetooth after getState result:' + state1);
+          break;
+        case access.BluetoothState.STATE_TURNING_ON:
+          hilog.info(domain, tag, 'bt is turning on');
+          await Utils.msSleep(3000);
+          break;
+        case access.BluetoothState.STATE_ON:
+          hilog.info(domain, tag, 'bt is turn on');
+          break;
+        case access.BluetoothState.STATE_TURNING_OFF:
+          access.enableBluetooth();
+          await Utils.clickRequestPermission("开启");
+          await Utils.msSleep(3000);
+          let state2: access.BluetoothState = access.getState();
+          hilog.info(domain, tag, 'enableBluetooth after getState result:' + state2);
+          break;
+        default:
+          hilog.info(domain, tag, 'getState get error:' + state);
+      }
+    }
 }

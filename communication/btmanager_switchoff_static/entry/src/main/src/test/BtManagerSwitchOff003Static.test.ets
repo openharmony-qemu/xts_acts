@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, Hypium } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -59,6 +59,12 @@ export default function btManagerError003Test() {
             gattServerDevice = ble.createGattServer();
             await Utils.closeBluetooth();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
+        })
+
+        afterAll(() => {
+            hilog.info(domain, tag, '%{public}s', 'afterAll start');
+            await Utils.openBluetooth();
+            hilog.info(domain, tag, '%{public}s', 'afterAll end');
         })
 
         /*
