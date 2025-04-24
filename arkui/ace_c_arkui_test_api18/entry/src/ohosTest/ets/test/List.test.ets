@@ -15,8 +15,10 @@
 
 import datePickerTest from "./datepicker/DatePickerMode.test"
 import buttonTypeTest from './button/ButtonTypeTest.test'
+import datePickerEnableHapticFeedbackTest from "./datepicker/datePickerEnableHapticFeedback.test"
 
 export default function testsuite() {
   datePickerTest();
   buttonTypeTest();
+  datePickerEnableHapticFeedbackTest();
 }
