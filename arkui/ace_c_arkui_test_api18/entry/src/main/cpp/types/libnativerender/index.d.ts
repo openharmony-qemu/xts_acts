@@ -18,3 +18,12 @@ export const testDatePickerMode: (a: string) => void;
 export const datePickerEnableHapticFeedback: (a: string) => void;
 
 export const textPickerEnableHapticFeedback: (a: string) => void;
+
+
+export const VisibleAreaEventOptionsTest_a: () => string[];
+
+export const VisibleAreaEventOptionsTest_b: () => string[];
+
+export const VisibleAreaEventOptionsTest_c: () => string[];
+
+export const VisibleAreaEventOptionsTest_d: () => string[];
