@@ -71,6 +71,7 @@ group("multimedia") {
       "image/image_ets_standard/imageDecodeOptionsYuvRaw:image_decode_options_yuv_raw_hap",
       "image/image_ets_standard/imageExifGetModify:image_exif_get_modify_hap",
       "image/image_ets_standard/imageFormatTranscoding:image_formattranscoding_hap",
+      "image/image_ets_standard/imageGetMimeType:image_get_mime_type_hap",
       "image/image_ets_standard/imageNdk:image_ndk_hap",
       "image/image_ets_standard/imagePackToFileGif:image_pack_to_file_gif_hap",
       "image/image_ets_standard/imagePackerExif:image_packer_exif_hap",
