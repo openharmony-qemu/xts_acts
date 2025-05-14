@@ -89,10 +89,13 @@ struct ArcSliderExample {
     styleOptions: this.styleOptions,
     digitalCrownSensitivity:CrownSensitivity.LOW,
     onTouch: (event: TouchEvent) => {
+      AppStorage.setOrCreate('arcSliderOnTouchCalled', true);
     },
     onChange: (progress: number) => {
+      AppStorage.setOrCreate('arcSliderOnChangeProgress', progress);
     },
     onEnlarge: (isEnlarged: boolean) => {
+      AppStorage.setOrCreate('arcSliderOnEnlargeValue', isEnlarged);
     }
   };
   arcSliderOptions: ArcSliderOptions = new ArcSliderOptions(this.arcSliderOptionsConstructorOptions);
@@ -120,8 +123,11 @@ struct ArcSliderExample {
   build() {
     Column() {
       ArcSlider({ options: this.arcSliderOptions })
+        .key('arcSliderAllOptions')
+        .id('arcSliderAllOptions')
       ArcSlider({ options: this.leftArcSliderOptions })
         .key('arcSliderLeft')
+        .id('arcSliderLeft')
     }
     .width('100%')
   }

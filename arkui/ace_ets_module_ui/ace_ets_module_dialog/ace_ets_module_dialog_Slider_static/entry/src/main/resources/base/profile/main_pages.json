@@ -3,6 +3,7 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/slider/trackColorMetrics",
     "MainAbility/pages/slider/sliderIndex",
-    "MainAbility/pages/slider/sliderCustomContentOptionsIndex"
+    "MainAbility/pages/slider/sliderCustomContentOptionsIndex",
+    "MainAbility/pages/ArcSlider/ArcSliderIndex"
   ]
 }
