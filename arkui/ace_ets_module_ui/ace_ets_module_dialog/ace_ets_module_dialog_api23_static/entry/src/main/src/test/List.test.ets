@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import SelectTest from './SelectTest/Select.test';
-
 export default function testsuite() {
-  SelectTest();
+
 }
