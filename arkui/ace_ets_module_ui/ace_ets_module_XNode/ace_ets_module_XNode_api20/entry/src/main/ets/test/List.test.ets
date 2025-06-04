@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
-import BuilderNodeOneTest from './LocalStorage/BuilderNodeOneTest.test';
-import BuilderNodeTwoTest from './LocalStorage/BuilderNodeTwoTest.test';
-import BuilderNodeThreeTest from './LocalStorage/BuilderNodeThreeTest.test';
+import BuilderNodeOneTest from './LocalStorageTest/BuilderNodeOneTest.test';
+import BuilderNodeTwoTest from './LocalStorageTest/BuilderNodeTwoTest.test';
+import BuilderNodeThreeTest from './LocalStorageTest/BuilderNodeThreeTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
