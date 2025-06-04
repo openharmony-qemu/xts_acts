@@ -1,7 +1,9 @@
 {
-    "src": [
-        "MainAbility/pages/index/index",
-        "MainAbility/pages/Context/IsAvailableTest",
-        "MainAbility/pages/Context/IsDisposedTest"
-    ]
+  "src": [
+  "MainAbility/pages/index/index",
+  "MainAbility/pages/Context/IsAvailableTest",
+  "MainAbility/pages/LocalStorage/BuilderNodeOneTest",
+  "MainAbility/pages/LocalStorage/BuilderNodeTwoTest",
+  "MainAbility/pages/LocalStorage/BuilderNodeThreeTest"
+  ]
 }
