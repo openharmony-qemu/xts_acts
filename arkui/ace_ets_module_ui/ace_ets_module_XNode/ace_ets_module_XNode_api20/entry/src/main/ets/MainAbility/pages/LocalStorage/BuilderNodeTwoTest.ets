@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { NodeController, BuilderNode, FrameNode, UIContext } from "@kit.ArkUI";
+import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
 
 class Params {
-  text: string = ""
+  text: string = ''
 
   constructor(text: string) {
     this.text = text;
@@ -59,15 +59,15 @@ localStorage.setOrCreate('PropB', 'PropB');
 @Component
 struct BuilderNodeTest1 {
   private controller: TextNodeController = new TextNodeController();
-  @LocalStorageLink('PropB') PropA: string = 'Hello World';
+  @LocalStorageLink('PropB') propA: string = 'Hello World';
 
   build() {
     Row() {
       Column() {
-        Text(this.PropA).id('partA_text')
+        Text(this.propA).id('partA_text')
         Button('ccc').id('btn_ccc')
           .onClick(() => {
-            this.PropA = 'sss'
+            this.propA = 'sss'
           }).width(80)
         NodeContainer(this.controller)
       }
@@ -80,13 +80,13 @@ struct BuilderNodeTest1 {
 
 @Component
 struct Test {
-  @LocalStorageLink('PropA') PropA: string = 'Localstorage';
+  @LocalStorageLink('PropA') propB: string = 'Localstorage';
 
   build() {
     Column() {
       Row() {
         Text('Test Provider: ')
-        Text(this.PropA).id('component_text')
+        Text(this.propB).id('component_text')
       }
     }
   }
