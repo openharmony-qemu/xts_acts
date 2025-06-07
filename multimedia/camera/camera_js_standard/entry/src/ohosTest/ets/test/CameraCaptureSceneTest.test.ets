@@ -331,9 +331,6 @@ let setPhotoOutputCb = async (photoOutput: cameraObj.PhotoOutput, ) => {
         console.error('byteBuffer is null');
         return;
       }
-
-      // buffer处理结束后需要释放该资源，如果未正确释放资源会导致后续拍照获取不到buffer
-      imageObj.release(); 
     });
   });
 }
@@ -383,7 +380,7 @@ export default function cameraCaptureSceneTest() {
       // 启动会话
       await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
       // 设置回调
-      setPhotoOutputCb(photoOutput)
+      await setPhotoOutputCb(photoOutput)
       // 设置闪光灯模式
       setAutoFlashMode(cameraSession)
       // 设置变焦模式
@@ -392,7 +389,7 @@ export default function cameraCaptureSceneTest() {
       setAutoZoomRatio(cameraSession)
       // 拍照触发回调，获取图片对象imageObj
       photoOutput.capture(captureSetting);
-      await sleep(3000)
+      await sleep(10000)
       console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100, imageObj: " + imageObj);
       expect(imageObj != undefined).assertTrue()
       imageObj.release()
@@ -455,7 +452,7 @@ export default function cameraCaptureSceneTest() {
 
         // 拍照触发回调，获取图片对象imageObj
         photoOutput.capture(captureSetting);
-        await sleep(3000)
+        await sleep(10000)
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200, imageObj: " + imageObj);
         expect(imageObj != undefined).assertTrue()
         imageObj.release()
@@ -531,7 +528,7 @@ export default function cameraCaptureSceneTest() {
 
       // 拍照触发回调，获取图片对象imageObj
       photoOutput.capture(captureSetting);
-      await sleep(3000)
+      await sleep(10000)
       console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300, imageObj: " + imageObj);
       expect(imageObj != undefined).assertTrue()
       imageObj.release()
