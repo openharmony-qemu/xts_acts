@@ -16,6 +16,8 @@
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
+import events_emitter from '@ohos.events.emitter';
+import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -72,7 +74,9 @@ export default function webSetAppCustomUserAgent() {
     */
     it('testSetAppCustomUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgent', 10);
-      Utils.registerEvent('testSetAppCustomUserAgent', true, 2025052801, done);
+      Utils.registerBaseEvent('testSetAppCustomUserAgent', true, 2025052801, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetAppCustomUserAgentButton', 10, '');
     })
     /*
@@ -85,7 +89,9 @@ export default function webSetAppCustomUserAgent() {
     */
     it('testSetAppCustomUserAgentNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgentNull', 10);
-      Utils.registerEvent('testSetAppCustomUserAgentNull', '401', 2025052802, done);
+      Utils.registerBaseEvent('testSetAppCustomUserAgentNull', '401', 2025052802, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetAppCustomUserAgentButton', 10, '');
     })
     /*
@@ -98,7 +104,9 @@ export default function webSetAppCustomUserAgent() {
     */
     it('testSetAppCustomUserAgentUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetAppCustomUserAgentUndefined', 10);
-      Utils.registerEvent('testSetAppCustomUserAgentUndefined', '401', 2025052803, done);
+      Utils.registerBaseEvent('testSetAppCustomUserAgentUndefined', '401', 2025052803, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetAppCustomUserAgentButton', 10, '');
     })
 

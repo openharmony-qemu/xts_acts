@@ -16,6 +16,8 @@
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
+import events_emitter from '@ohos.events.emitter';
+import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -72,7 +74,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHostsOverRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsOverRange', 10);
-      Utils.registerEvent('testSetUserAgentForHostsOverRange', false, 2025052804, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', false, 2025052804, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
     /*
@@ -85,7 +89,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHosts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHosts', 10);
-      Utils.registerEvent('testSetUserAgentForHosts', true, 2025052805, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', true, 2025052805, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
     /*
@@ -98,7 +104,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHostsFirstParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsFirstParamNull', 10);
-      Utils.registerEvent('testSetUserAgentForHostsFirstParamNull', '401', 2025052806, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamNull', '401', 2025052806, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
     /*
@@ -111,7 +119,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHostsFirstParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsFirstParamUndefined', 10);
-      Utils.registerEvent('testSetUserAgentForHostsFirstParamUndefined', '401', 2025052807, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamUndefined', '401', 2025052807, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
     /*
@@ -124,7 +134,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHostsSecondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsSecondParamNull', 10);
-      Utils.registerEvent('testSetUserAgentForHostsSecondParamNull', '401', 2025052808, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamNull', '401', 2025052808, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
     /*
@@ -137,7 +149,9 @@ export default function webSetUserAgentForHosts() {
     */
     it('testSetUserAgentForHostsSecondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsSecondParamUndefined', 10);
-      Utils.registerEvent('testSetUserAgentForHostsSecondParamUndefined', '401', 2025052809, done);
+      Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamUndefined', '401', 2025052809, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
 
