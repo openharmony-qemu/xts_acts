@@ -16,6 +16,8 @@
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
+import events_emitter from '@ohos.events.emitter';
+import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -72,7 +74,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowed", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortAllowed", true, 2025060901, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowed", true, 2025060901, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -86,7 +90,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortAllowedTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedTwo", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortAllowedTwo", "17100023", 2025060902, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedTwo", "17100023", 2025060902, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -100,7 +106,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortAllowedThree', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortAllowedThree", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortAllowedThree", true, 2025060903, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortAllowedThree", true, 2025060903, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -115,7 +123,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedOne", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNotAllowedOne", "17100023", 2025060904, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedOne", "17100023", 2025060904, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -130,7 +140,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedTwo", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNotAllowedTwo", "17100023", 2025060905, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedTwo", "17100023", 2025060905, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -144,7 +156,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNotAllowedThree', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNotAllowedThree", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNotAllowedThree", "17100023", 2025060906, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNotAllowedThree", "17100023", 2025060906, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -158,7 +172,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNegativeNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNegativeNumber", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNegativeNumber", "17100023", 2025060907, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNegativeNumber", "17100023", 2025060907, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -172,7 +188,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortEmpty", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortEmpty", true, 2025060908, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortEmpty", true, 2025060908, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -186,7 +204,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNull", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNull", true, 2025060909, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNull", true, 2025060909, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -201,7 +221,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortUndefined", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortUndefined", true, 2025060910, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortUndefined", true, 2025060910, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -215,7 +237,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessEnableDebugPortNaN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessEnableDebugPortNaN", 609)
-      Utils.registerEvent("testSetWebDebugAccessEnableDebugPortNaN", "17100023", 2025060911, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessEnableDebugPortNaN", "17100023", 2025060911, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -230,7 +254,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessNotEnableDebugPortAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortAllowed", 609)
-      Utils.registerEvent("testSetWebDebugAccessNotEnableDebugPortAllowed", true, 2025060912, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortAllowed", true, 2025060912, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -244,7 +270,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessNotEnableDebugPortNotAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessNotEnableDebugPortNotAllowed", 609)
-      Utils.registerEvent("testSetWebDebugAccessNotEnableDebugPortNotAllowed", "17100023", 2025060913, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessNotEnableDebugPortNotAllowed", "17100023", 2025060913, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
@@ -258,7 +286,9 @@ export default function SetWebDebugAccess() {
     */
     it('testSetWebDebugAccessErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitSetWebDebugAccessErrorCode401", 609)
-      Utils.registerEvent("testSetWebDebugAccessErrorCode401", "401", 2025060914, done);
+      Utils.registerBaseEvent("testSetWebDebugAccessErrorCode401", "401", 2025060914, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('setWebDebuggingAccess', 10, '');
     })
 
