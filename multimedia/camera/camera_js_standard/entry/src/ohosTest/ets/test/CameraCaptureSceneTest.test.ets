@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import cameraObj from '@ohos.multimedia.camera';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
@@ -19,7 +20,6 @@ import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { surfaceIds } from '../testability/pages/Index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
-import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import common from '@ohos.app.ability.common';
 import image from '@ohos.multimedia.image';
 
@@ -27,21 +27,19 @@ const TAG = "cameraCaptureSceneTest: ";
 
 let context: common.UIAbilityContext;
 let imageObj: image.Image;
-// 拍照设置相关
+
 let captureLocation: cameraObj.Location = {
   latitude: 0,
   longitude: 0,
   altitude: 0,
 }
-
 let captureSetting: cameraObj.PhotoCaptureSetting = {
-  quality: cameraObj.QualityLevel.QUALITY_LEVEL_HIGH, // 设置图片质量高
-  rotation: cameraObj.ImageRotation.ROTATION_0, // 设置图片旋转角度0
+  quality: cameraObj.QualityLevel.QUALITY_LEVEL_HIGH,
+  rotation: cameraObj.ImageRotation.ROTATION_0, 
   location: captureLocation,
   mirror: false
 }
 
-// 输出流相关
 let cameraManager: cameraObj.CameraManager;
 let cameraDevicesArray: Array<cameraObj.CameraDevice>;
 let cameraSession: cameraObj.PhotoSession; 
@@ -57,7 +55,6 @@ let sleep = (ms: number = 66): Promise<string> => {
   })
 }
 
-// 权限相关
 let permission = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
   'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
   'ohos.permission.CAMERA',
@@ -90,7 +87,6 @@ let isEmpty = (data: ESObject) => {
   return false;
 }
 
-// 创建input参数为cameraDevice的下标
 let createInput = async (index: number) => {
   cameraInput = cameraManager.createCameraInput(cameraDevicesArray[index]);
   if (!isEmpty(cameraInput)) {
@@ -98,7 +94,6 @@ let createInput = async (index: number) => {
   }
 }
 
-// 创建Output参数为cameraDevice的下标、相机模式
 let createOutput = (index: number, mode: number) => {
     let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[index], mode);
     previewOutput = cameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
@@ -113,13 +108,11 @@ let createOutput = (index: number, mode: number) => {
     console.log(TAG + `createPhotoOutput ok: ${JSON.stringify(photoOutput)}`)
 }
 
-// 创建Session对象参数为相机模式
 let createPhotoSession = (mode: number) => {
   cameraSession = cameraManager.createSession(mode);
   cameraSession.beginConfig();
 }
 
-// 释放相机资源
 let stopCameraSession = async () => {;
   cameraSession.beginConfig();
   if (!isEmpty(cameraInput)) {
@@ -137,7 +130,6 @@ let stopCameraSession = async () => {;
   await cameraSession.release();
 }
 
-// 添加相机流参数为cameraDevice的下标、相机模式
 let addCommit = async (i: number, mode: number) => {
   await createInput(i);
   createOutput(i, mode);
@@ -152,7 +144,6 @@ let addCommit = async (i: number, mode: number) => {
   }
 }
 
-// 获取相机列表
 let getCameraDevices = () => {
   cameraManager = cameraObj.getCameraManager(context);
   sleep(1000);
@@ -164,15 +155,10 @@ let getCameraDevices = () => {
 }
 
 let startCameraSession = async (index: number, mode: number) => {
-    // 创建相机
     getCameraDevices()
-    // 创建会话
     createPhotoSession(mode)
-    //配置会话
     await addCommit(index, mode)
-    // 提交会话配置
     await cameraSession.commitConfig();
-    // 启动会话
     await cameraSession.start().then(() => {
         console.info('Promise returned to indicate the session start success.');
     });
@@ -184,7 +170,6 @@ interface OutPutFormatArray {
   videoProfiles: cameraObj.CameraFormat[];
 }
 
-// 获取当前设备支持的输出格式
 let getOutPutFormatArray = (idx: number, mode: number) => {
 
   let fornatData: OutPutFormatArray = {
@@ -230,9 +215,7 @@ let getOutPutFormatArray = (idx: number, mode: number) => {
   return fornatData
 }
 
-// 设置闪光灯模式
 let setAutoFlashMode = (session: cameraObj.PhotoSession) => {
-  // 判断设备是否支持闪光灯
   let flashStatus: boolean = false;
   try {
     flashStatus = session.hasFlash();
@@ -242,7 +225,6 @@ let setAutoFlashMode = (session: cameraObj.PhotoSession) => {
   }
   console.info('Returned with the flash light support status:' + flashStatus);
   if (flashStatus) {
-    // 判断是否支持自动闪光灯模式
     let flashModeStatus: boolean = false;
     try {
       let status: boolean = session.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_AUTO);
@@ -252,7 +234,6 @@ let setAutoFlashMode = (session: cameraObj.PhotoSession) => {
       console.error('Failed to check whether the flash mode is supported. errorCode = ' + err.code);
     }
     if(flashModeStatus) {
-      // 设置自动闪光灯
       try {
         session.setFlashMode(cameraObj.FlashMode.FLASH_MODE_AUTO);
       } catch (error) {
@@ -263,9 +244,7 @@ let setAutoFlashMode = (session: cameraObj.PhotoSession) => {
   }
 }
 
-// 设置变焦模式
 let setAutoFocusMode = (session: cameraObj.PhotoSession) => {
-  // 判断是否支持连续自动变焦模式
   let focusModeStatus: boolean = false;
   try {
     let status: boolean = session.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
@@ -276,7 +255,6 @@ let setAutoFocusMode = (session: cameraObj.PhotoSession) => {
   }
 
   if (focusModeStatus) {
-    // 设置连续自动变焦模式
     try {
       session.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
     } catch (error) {
@@ -286,9 +264,7 @@ let setAutoFocusMode = (session: cameraObj.PhotoSession) => {
   }
 }
 
-// 设置焦距比
 let setAutoZoomRatio = (session: cameraObj.PhotoSession) => {
-  // 获取相机支持的可变焦距比范围
   let zoomRatioRange: Array<number> = [];
   try {
     zoomRatioRange = session.getZoomRatioRange();
@@ -299,7 +275,7 @@ let setAutoZoomRatio = (session: cameraObj.PhotoSession) => {
   if (zoomRatioRange.length <= 0) {
     return;
   }
-  // 设置可变焦距比
+
   try {
     session.setZoomRatio(zoomRatioRange[0]);
   } catch (error) {
@@ -309,7 +285,6 @@ let setAutoZoomRatio = (session: cameraObj.PhotoSession) => {
 }
 
 let setPhotoOutputCb = async (photoOutput: cameraObj.PhotoOutput, ) => {
-  //设置回调之后，调用photoOutput的capture方法，就会将拍照的buffer回传到回调中
   photoOutput.on('photoAvailable', (errCode: BusinessError, photo: cameraObj.Photo): void => {
     console.info('getPhoto start');
     console.info(`err: ${JSON.stringify(errCode)}`);
@@ -377,23 +352,16 @@ export default function cameraCaptureSceneTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100', Level.LEVEL2, async (done: Function) => {
       console.info(TAG + " --------------Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100--------------");
-      // 启动会话
       await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
-      // 设置回调
       await setPhotoOutputCb(photoOutput)
-      // 设置闪光灯模式
       setAutoFlashMode(cameraSession)
-      // 设置变焦模式
       setAutoFocusMode(cameraSession)
-      // 设置焦距比
       setAutoZoomRatio(cameraSession)
-      // 拍照触发回调，获取图片对象imageObj
       photoOutput.capture(captureSetting);
       await sleep(10000)
       console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100, imageObj: " + imageObj);
       expect(imageObj != undefined).assertTrue()
       imageObj.release()
-      // 释放会话
       await stopCameraSession()
       console.info(TAG + " --------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100--------------");
       done()
@@ -409,19 +377,14 @@ export default function cameraCaptureSceneTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200--------------");
-      // 获取所有支持的格式
       let formatData = getOutPutFormatArray(0, cameraObj.SceneMode.NORMAL_PHOTO)
       console.info("formatData: " + JSON.stringify(formatData))
-      // 遍历所有支持的格式
       for (let i = 0; i < formatData.photoProfiles.length; i++) {
         let currentFormat = formatData.photoProfiles[i]
         console.info("currentFormat: " + JSON.stringify(currentFormat))
-        // 创建相机
         getCameraDevices()
-        // 创建输入流
         await createInput(0);
         let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
-        // 创建指定格式的输出流
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
           if ( cameraOutputCap.photoProfiles[i].format == currentFormat) {
             photoOutput = cameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
@@ -434,9 +397,7 @@ export default function cameraCaptureSceneTest() {
             break
           }
         }
-        // 设置回调
         setPhotoOutputCb(photoOutput)
-        // 创建会话
         createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO)
         if (cameraInput) {
           cameraSession.addInput(cameraInput);
@@ -450,13 +411,11 @@ export default function cameraCaptureSceneTest() {
         await cameraSession.commitConfig();
         await cameraSession.start()
 
-        // 拍照触发回调，获取图片对象imageObj
         photoOutput.capture(captureSetting);
         await sleep(10000)
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200, imageObj: " + imageObj);
         expect(imageObj != undefined).assertTrue()
         imageObj.release()
-        // 释放会话
         await stopCameraSession()
       }
       console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200--------------");
@@ -476,12 +435,9 @@ export default function cameraCaptureSceneTest() {
 
       let currentFormat = cameraObj.CameraFormat.CAMERA_FORMAT_HEIC
       console.info("currentFormat: " + JSON.stringify(currentFormat))
-      // 创建相机
       getCameraDevices()
-      // 创建输入流
       await createInput(0);
       let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
-      // 创建指定格式的输出流
       let photoProfile: cameraObj.Profile = {
         format: currentFormat,
         size: cameraOutputCap.photoProfiles[0].size
@@ -495,9 +451,7 @@ export default function cameraCaptureSceneTest() {
       previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceIds);
       console.log(`createPreviewOutput ok: ${JSON.stringify(previewOutput)}, ${JSON.stringify(previewProfile)}`)
 
-      // 设置回调
       await setPhotoOutputCb(photoOutput)
-      // 创建会话
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO)
       if (cameraInput) {
         cameraSession.addInput(cameraInput);
@@ -526,13 +480,11 @@ export default function cameraCaptureSceneTest() {
       await cameraSession.commitConfig();
       await cameraSession.start()
 
-      // 拍照触发回调，获取图片对象imageObj
       photoOutput.capture(captureSetting);
       await sleep(10000)
       console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300, imageObj: " + imageObj);
       expect(imageObj != undefined).assertTrue()
       imageObj.release()
-      // 释放会话
       await stopCameraSession()
 
       console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300--------------");
