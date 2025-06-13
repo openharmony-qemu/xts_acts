@@ -344,7 +344,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
-     * @tc.name      : test sub multimedia camera photoOutput capture
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
      * @tc.desc      : test sub multimedia camera photoOutput capture
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -369,7 +369,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
-     * @tc.name      : test sub multimedia camera photoOutput capture on all format
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
      * @tc.desc      : test sub multimedia camera photoOutput capture on all format
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -424,7 +424,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
-     * @tc.name      : test sub multimedia camera photoOutput capture on format CAMERA_FORMAT_HEIC
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
      * @tc.desc      : test sub multimedia camera photoOutput capture on format CAMERA_FORMAT_HEIC
      * @tc.size      : MEDIUM
      * @tc.type      : Function
