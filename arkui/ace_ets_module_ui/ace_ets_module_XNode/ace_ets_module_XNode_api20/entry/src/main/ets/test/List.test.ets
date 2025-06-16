@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
+import IsDisposedTest from './ContextTest/IsDisposedTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
+  IsDisposedTest();
 }

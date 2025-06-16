@@ -1,6 +1,7 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-        "MainAbility/pages/Context/IsAvailableTest"
+        "MainAbility/pages/Context/IsAvailableTest",
+        "MainAbility/pages/Context/IsDisposedTest"
     ]
 }
