@@ -919,7 +919,7 @@ function testGetDisallowedNearLinkProtocols() {
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
-  it('test_get_disallowed_near_link_0004', Level.LEVEL2, async (done: Function) => {
+  it('test_get_disallowed_near_link_protocols_0004', Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
        let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
