@@ -1429,6 +1429,36 @@ static napi_value CreateFromData(napi_env env, napi_callback_info info) {
     return result;
 }
 
+static napi_value CreateFromDataWithUserBuffer(napi_env env, napi_callback_info info) {
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    void *data = nullptr;
+    size_t dataSize = 0;
+    napi_status status = napi_get_buffer_info(env, argValue[NUM_0], &data, &dataSize);
+    if (status != napi_ok) {
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "Creat ImageSource with user buffer, size: %{public}zu", dataSize);
+    OH_ImageSourceNative *res = nullptr;
+    Image_ErrorCode error = OH_ImageSourceNative_CreateFromDataWithUserBuffer (reinterpret_cast<uint8_t *>(data),
+                                                                               dataSize, &res);
+    if (error != IMAGE_SUCCESS) {
+        napi_throw_error(env, nullptr, "Failed to CreateFromDataWithUserBuffer create external object,");
+        return result;
+    }
+    status = napi_create_external(env, reinterpret_cast<void *>(res), nullptr, nullptr, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to CreateFromDataWithUserBuffer create external object");
+        return result;
+    }
+    return result;
+}
+
 static napi_value CreatePixelMap(napi_env env, napi_callback_info info) {
 
     napi_value result = nullptr;
@@ -3143,6 +3173,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"CreateFromUri", nullptr, CreateFromUri, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateFromFd", nullptr, CreateFromFd, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateFromData", nullptr, CreateFromData, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateFromDataWithUserBuffer", nullptr, CreateFromDataWithUserBuffer, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
         {"CreatePixelMap", nullptr, CreatePixelMap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AssertImageSize", nullptr, AssertImageSize, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreatePixelMapList", nullptr, CreatePixelMapList, nullptr, nullptr, nullptr, napi_default, nullptr},
