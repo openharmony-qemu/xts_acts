@@ -13,3 +13,7 @@
  * limitations under the License.
  */
 export const buttonGetTypeTest: (a: string) => void;
+
+export const dragEventGetDisplayId: (a: string) => void;
+
+export const dragEventGetDragSource: (a: string) => void;
