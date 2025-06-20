@@ -40,3 +40,5 @@ export const normalAVScreenCaptureStrategyForPrivacyMaskModeScreen: () => number
 export const normalAVScreenCaptureStrategyForPrivacyMaskModeDisplay: () => number;
 export const normalAVScreenCaptureStrategyForPrivacyMaskModeTestStop: () => number;
 export const multiAVScreenCaptureCreate: () => number;
+export const normalAVScreenCaptureStrategyForBFramesEncodingFalse: () => number;
+export const normalAVScreenCaptureStrategyForBFramesEncodingTrue: () => number;
