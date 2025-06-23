@@ -216,6 +216,8 @@ export default function KvStoreEtsTestStatic() {
           done();
         } else {
           hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 kvmanager is null");
+          expect(null).assertFail();
+          done();
         }
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 fail on exception: " + e);
