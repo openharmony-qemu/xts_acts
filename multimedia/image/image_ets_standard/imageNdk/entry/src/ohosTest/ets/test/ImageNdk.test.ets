@@ -1879,7 +1879,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
-     * @tc.name      : createImageSourceWithUserBuffer
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
      * @tc.desc      : 1.get testPng.buffer
      *                 2.createImageSourceWithUserBuffer
      * @tc.size      : MediumTest
