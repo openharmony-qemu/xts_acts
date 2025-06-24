@@ -2230,32 +2230,6 @@ IMG_NAPI_RELEASE_PTR(g_ctx.imageSource, OH_ImageSourceNative_Release(g_ctx.image
     return result;
 }
 
-static napi_value CreateFromDataWithUserBuffer(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    napi_value argValue[NUM_1] = {0};
-    size_t argCount = NUM_1;
-    napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
-        LOGE("napi get value failed");
-        return result;
-    }
-    void *data = nullptr;
-    size_t dataSize = 0;
-    napi_status status = napi_get_buffer_info(env, argValue[NUM_0], &data, &dataSize);
-    if (status != napi_ok) {
-        return result;
-    }
-    Image_ErrorCode error = CreateFromDataWithUserBuffer(reinterpret_cast<uint8_t *>(data),
-        dataSize, &g_ctx.imageSource);
-    if (error != IMAGE_SUCCESS) {
-        napi_throw_error(env, nullptr, "Failed to CreateFromDataWithUserBuffer");
-        return result;
-    }
-    g_ctx.isImageSourceUpdated = true;
-    return result;
-}
-
 static napi_value GetImageSourceDynamicRange(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -2935,8 +2909,6 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr},
         {"CreateImageSourceFromFd", nullptr, CreateFromFd, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateImageSourceFromData", nullptr, CreateFromData, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CreateImageSourceFromDataWithUserBuffer", nullptr, CreateFromDataWithUserBuffer, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
         {"GetImageSourceDynamicRange", nullptr, GetImageSourceDynamicRange, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"GetHdrComposedPixelmapErrorCode", nullptr, GetHdrComposedPixelmapErrorCode, nullptr, nullptr, nullptr,
