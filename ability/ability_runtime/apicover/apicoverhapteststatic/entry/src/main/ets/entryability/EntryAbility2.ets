@@ -15,15 +15,17 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/Index', (err: BusinessError<void>): void => {
+    windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
-      if (err.code) {
+      if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility windowStage' + windowStage);
+    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage)
   }
 
   onWindowStageDestroy() {
@@ -33,9 +35,11 @@ class EntryAbility extends UIAbility {
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility context' + this.context);
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility context' + this.launchWant);
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility context' + this.lastRequestWant);
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility context' + this.callee);
+    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context)
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility launchWant' + this.launchWant);
+    AppStorage.setOrCreate<Want>('launchWant', this.launchWant)
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility lastRequestWant' + this.lastRequestWant);
+    AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant)
   }
 
   onDestroy() {
