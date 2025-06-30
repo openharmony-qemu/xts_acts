@@ -423,7 +423,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
-     * @tc.name      : test media photo access helper request image data from capture with errorCode 14000011
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0200
      * @tc.desc      : test media photo access helper request image data from capture with errorCode 14000011
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -459,7 +459,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
-     * @tc.name      : test media photo access helper request image data from capture with errorCode 401
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0300
      * @tc.desc      : test media photo access helper request image data from capture with errorCode 401
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -495,7 +495,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100
      * @tc.desc      : test deliveryMode = HIGH_QUALITY_MODE
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -516,7 +516,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0400
      * @tc.desc      : test deliveryMode = FAST_MODE
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -537,7 +537,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0500
      * @tc.desc      : test deliveryMode = BALANCE_MODE
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -558,7 +558,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0600
      * @tc.desc      : test deliveryMode = -1
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -579,7 +579,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0700
      * @tc.desc      : test requestOptions = undefined
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -597,7 +597,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0800
      * @tc.desc      : test handler = undefined
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -617,7 +617,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
-     * @tc.name      : test media photo access helper request image data from capture
+     * @tc.name      : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900
      * @tc.desc      : test the requestID return from request image data
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -656,7 +656,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
-     * @tc.name      : test camera photoOutput capture on format heic
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
      * @tc.desc      : test camera photoOutput capture on format heic
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -688,7 +688,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
-     * @tc.name      : test all format supported of photo output
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
      * @tc.desc      : test all format supported of photo output
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -752,7 +752,7 @@ export default function cameraCaptureSceneTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
-     * @tc.name      : test  photo output format CAMERA_FORMAT_HEIC
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
      * @tc.desc      : test  photo output format CAMERA_FORMAT_HEIC
      * @tc.size      : MEDIUM
      * @tc.type      : Function
