@@ -1233,5 +1233,202 @@ export default function DataObjectErrTest() {
       } 
       console.info(TAG + '************ DataObjectErrTest49 end ************')
     })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5000
+     * @tc.name DataObjectErrTest50
+     * @tc.desc Test DataObject on progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest50 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        console.info(TAG + 'On progressChanged success');
+      } catch (err) {
+        console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest50 end ************')
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5100
+     * @tc.name DataObjectErrTest51
+     * @tc.desc Test DataObject on progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest51 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on(undefined, progressCallback1);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect(err.code).assertEqual('401');
+      } 
+      console.info(TAG + '************ DataObjectErrTest51 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5200
+     * @tc.name DataObjectErrTest52
+     * @tc.desc Test DataObject on progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest52 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect(err.code).assertEqual('401');
+      } 
+      console.info(TAG + '************ DataObjectErrTest52 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5300
+     * @tc.name DataObjectErrTest53
+     * @tc.desc Test DataObject on progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest53 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.on('progressChanged', progressCallback1);
+        console.info(TAG + 'On progressChanged twice success');
+      } catch (err) {
+        console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest53 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5400
+     * @tc.name DataObjectErrTest54
+     * @tc.desc Test DataObject on progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest54 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.on('progressChanged', progressCallback2);
+        console.info(TAG + 'On progressChanged twice success');
+      } catch (err) {
+        console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest54 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5500
+     * @tc.name DataObjectErrTest55
+     * @tc.desc Test DataObject off progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest55 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.off('progressChanged', progressCallback1);
+        console.info(TAG + 'Off progressChanged success');
+      } catch (err) {
+        console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest55 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5600
+     * @tc.name DataObjectErrTest56
+     * @tc.desc Test DataObject off progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest56 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.off(undefined, progressCallback1);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect(err.code).assertEqual('401');
+      } 
+      console.info(TAG + '************ DataObjectErrTest56 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5700
+     * @tc.name DataObjectErrTest57
+     * @tc.desc Test DataObject off progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest57 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.on('progressChanged', progressCallback2);
+        g_object.off('progressChanged', undefined);
+        console.info(TAG + 'Off progressChanged success');
+      } catch (err) {
+        console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest57 end ************');
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5800
+     * @tc.name DataObjectErrTest58
+     * @tc.desc Test DataObject off progressChanged
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('DataObjectErrTest58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest58 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      try {
+        g_object.on('progressChanged', progressCallback1);
+        g_object.on('progressChanged', progressCallback2);
+        g_object.off('progressChanged');
+        console.info(TAG + 'Off progressChanged success');
+      } catch (err) {
+        console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + '************ DataObjectErrTest58 end ************');
+    })
   })
 }
