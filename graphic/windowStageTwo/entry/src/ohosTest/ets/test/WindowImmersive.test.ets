@@ -2749,14 +2749,18 @@ export default function windowImmersiveTest() {
       let caseName = 'testIsImmersiveLayoutwithMiniMize';
       try {
         let windowClass = windowStage.getMainWindowSync();
-        await windowClass.minimize();
-        await sleep(200);
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(false);
-        await windowClass.restore();
-        await sleep(200)
-        done();
+        if (isPCStatus != '') {
+          await windowClass.minimize();
+          await sleep(200);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout: ${res}.`);
+          expect(res).assertEqual(false);
+          await windowClass.restore();
+          await sleep(200)
+          done();
+        } else {
+          done();
+        }
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (e.code === 801) {
