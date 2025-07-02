@@ -105,6 +105,12 @@ let statusCallback1: distributedDataObject.StatusObserver = (sessionId: string, 
 let statusCallback2: distributedDataObject.StatusObserver = (sessionId: string, networkId: string, status: string) => {
 }
 
+let progressCallback1: distributedDataObject.ProgressObserver = (sessionId: string, progress:number) => {
+}
+
+let progressCallback2: distributedDataObject.ProgressObserver = (sessionId: string, progress:number) => {
+}
+
 export default function DataObjectErrTest() {
   describe('DataObjectErrTest', () => {
     let currentDeviceIsTv = false;
