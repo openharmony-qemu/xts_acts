@@ -19,6 +19,9 @@ group("arkts_static") {
     deps = [
       "buffer_standard_test_static:ActsBufferStaticTest",
       "com_container_standard_static:ActsContainerStaticTest",
+      "com_uri_standard_static:ActsUriStaticTest",
+      "com_url_standard_static:ActsUrlStaticTest",
+      "global_standard_static:ActsGlobalStaticTest",
     ]
   }
 }
