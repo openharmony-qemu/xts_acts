@@ -18,6 +18,7 @@ group("SubScribeAndPublishTestStatic") {
   if (is_standard_system) {
     deps = [
       "actsSubScriberOrderedTestStatic:ActsSubscriberOrderStaticTest",
+      "actsSubScriberUnorderTestStatic:ActsSubscriberUnorderStaticTest",
       "actsEmitterTestStatic:ActsEmitterStaticTest",
     ]
   }
