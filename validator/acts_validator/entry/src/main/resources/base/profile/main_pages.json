@@ -136,6 +136,7 @@
     "pages/ArkUI/AccessibilityRoleTypeTest",
     "pages/ArkUI/StylusPen",
     "pages/ArkUI/KeyEvent",
+    "pages/ArkUI/CapiKeyEvent",
     "pages/ArkUI/AccessibilityFocusDrawLevel",
 	"entryembeddeduiextability/pages/EntryEmbeddedUIExtAbilityPage",
     "pages/ArkUI/AccessibilityNextFocusIdPage",
