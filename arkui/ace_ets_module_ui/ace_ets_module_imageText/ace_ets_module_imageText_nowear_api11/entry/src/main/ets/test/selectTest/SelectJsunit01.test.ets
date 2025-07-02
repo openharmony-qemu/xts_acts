@@ -43,8 +43,15 @@ export default function SelectJsunit01() {
       done();
     });
 
+    /**
+    * @tc.number    SelectJsunit_0100
+    * @tc.name      SelectJsunit_0100
+    * @tc.desc      set SelectJsunit_0100
+    * @tc.level:    Level 0
+    * @tc.type :
+    * @tc.size :
+    */
    it('SelectJsunit_0100', Level.LEVEL0, async (done: Function) => {
-      //@tc.name SelectJsunit_0100
       // Illegal modification of properties of component select
       console.info('[SelectJsunit_0400] START');
       globalThis.value.message.notify({name:'optionValue',value:'-20'})
