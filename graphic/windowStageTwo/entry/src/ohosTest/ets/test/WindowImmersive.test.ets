@@ -19,6 +19,43 @@ import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
+import { StartOptions } from '@kit.AbilityKit';
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest') as ohosWindow.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility(caseName: string) {
+  let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowImmersiveTest() {
   describe('windowImmersive_test', () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -2562,7 +2599,11 @@ export default function windowImmersiveTest() {
       try {
         let res = windowClass.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(true);
+        if (isPCStatus == '' || isAutoWindow =='false'){
+          expect(res).assertEqual(true);
+        } else{
+          expect(res).assertEqual(false);
+        }
         await windowClass.destroyWindow();
         done();
       } catch (exception) {
@@ -2747,22 +2788,21 @@ export default function windowImmersiveTest() {
      */
     it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithMiniMize';
+      // 1、拉起另一个Abllity主窗
+      let windowStageStart = await startAbility(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
       try {
-        let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '') {
-          await windowClass.minimize();
-          await sleep(200);
-          let res = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout: ${res}.`);
-          expect(res).assertEqual(false);
-          await windowClass.restore();
-          await sleep(200)
-          done();
-        } else {
-          done();
-        }
+        await windowClass.minimize();
+        await sleep(200);
+        let res = windowClass.isImmersiveLayout();
+        console.log(`${caseName} isImmersiveLayout: ${res}.`);
+        expect(res).assertEqual(false);
+        await terminateAbility(caseName);
+        await sleep(200)
+        done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility(caseName);
         if (e.code === 801) {
           done();
         } else {
