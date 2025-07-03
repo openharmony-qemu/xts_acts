@@ -172,14 +172,14 @@ int32_t LppAudioStreamer::SetParameter(const SampleInfo &sampleInfo)
         OH_AVFormat_SetBuffer(format, "codec_config", sampleInfo.audioCodecConfig, sampleInfo.audioCodecSize);
     }
     const int STREAM_USAGE_ASYNC = 10;
-    OH_AVFormat_SetIntValue(format, "STREAM_USAGE", 10);
+    OH_AVFormat_SetIntValue(format, "STREAM_USAGE", STREAM_USAGE_ASYNC);
     OH_AVFormat_SetIntValue(format, "SAMPLE_RATE", sampleInfo.audioSampleRate);
     AVCODEC_SAMPLE_LOGI("audioSampleRate  %{public}d", sampleInfo.audioSampleRate);
     const int RENDERER_FLAG_ASYNC = 5;
-    OH_AVFormat_SetIntValue(format, "RENDERER_FLAG", 5);
+    OH_AVFormat_SetIntValue(format, "RENDERER_FLAG", RENDERER_FLAG_ASYNC);
 //     ENCODING_PCM = 0,
     const int ENCODING_PCM = 0;
-    OH_AVFormat_SetIntValue(format, "ENCODING", 0);
+    OH_AVFormat_SetIntValue(format, "ENCODING", ENCODING_PCM);
 //     SAMPLE_S16LE = 1,
     OH_AVFormat_SetIntValue(format, "SAMPLE_FORMAT", SAMPLE_S16LE);
 //     CHANNEL_6 = 6,

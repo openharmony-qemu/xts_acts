@@ -19,7 +19,6 @@
 #ifndef AVCODECSAMPLE_MASTER_LPP_VIDEO_STREAMER_H
 #define AVCODECSAMPLE_MASTER_LPP_VIDEO_STREAMER_H
 
-// #include "multimedia/player_framework/native_avbuffer_info.h"
 #include "sample_callback.h"
 #include "dfx/error/av_codec_sample_error.h"
 #include "av_codec_sample_log.h"

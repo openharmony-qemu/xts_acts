@@ -22,7 +22,6 @@
 #include <multimedia/player_framework/lowpower_avsink_base.h>
 #include <multimedia/player_framework/lowpower_video_sink_base.h>
 #include <multimedia/player_framework/lowpower_audio_sink_base.h>
-// #include "multimedia/player_framework/native_avbuffer_info.h"
 #include "sample_callback.h"
 #include "dfx/error/av_codec_sample_error.h"
 #include "av_codec_sample_log.h"

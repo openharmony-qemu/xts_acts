@@ -62,12 +62,13 @@ int32_t Muxer::Config(SampleInfo &sampleInfo)
     if (ret != AV_ERR_OK) {
         AVCODEC_SAMPLE_LOGE("AddTrack failed");
         OH_AVFormat_Destroy(formatVideo);
-        OH_AVMuxer_SetRotation(muxer_, 90);
+        int retRotation = 90;
+        OH_AVMuxer_SetRotation(muxer_, retRotation);
         return AVCODEC_SAMPLE_ERR_ERROR;
     }
     OH_AVFormat_Destroy(formatVideo);
     // 由于相机只有1920×1080的profile，没有1080×1920的profile，所以得往文件里封装一个90度的角度信息，后续播放才会是竖屏显示。
-    OH_AVMuxer_SetRotation(muxer_, 90);
+    OH_AVMuxer_SetRotation(muxer_, retRotation);
     return AVCODEC_SAMPLE_ERR_OK;
 }
 

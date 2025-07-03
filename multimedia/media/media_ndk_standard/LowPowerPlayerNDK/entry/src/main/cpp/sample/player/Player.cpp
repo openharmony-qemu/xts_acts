@@ -156,7 +156,8 @@ int32_t Player::CreateLppVideoStreamer()
 //     video/avc
     lppVideoStreamer_->Create(sampleInfo_.videoCodecMime.c_str());
     lppVideoContext_ = new LppUserData;
-    lppVideoContext_->num = 100012;
+    int64_t durationNum = 100012;
+    lppVideoContext_->num = durationNum;
     int32_t ret = lppVideoStreamer_->SetCallback(lppVideoContext_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetCallback ret:::%{public}d", ret);
     ret = lppVideoStreamer_->SetErrorCallback(lppVideoContext_);
@@ -727,7 +728,8 @@ int32_t Player::Seek(int64_t seekTime, int32_t mode, bool acc)
 {
     auto start = std::chrono::high_resolution_clock::now();
     CHECK_AND_RETURN_RET_LOG(!Intercept(), AVCODEC_SAMPLE_ERR_ERROR, "Intercept nullptr.");
-    if (sampleInfo_.duration < seekTime * 1000) {
+    int64_t durationTime = 1000;
+    if (sampleInfo_.duration < seekTime * durationTime) {
         AVCODEC_SAMPLE_LOGI("Seek over duration %{public}ld", sampleInfo_.duration);
         return 0;
     }
@@ -788,7 +790,8 @@ int64_t Player::ReadToAudioTargetPts(int64_t targetPts)
 int32_t Player::Seek(int64_t seekTime, int32_t mode)
 {
     CHECK_AND_RETURN_RET_LOG(!Intercept(), AVCODEC_SAMPLE_ERR_ERROR, "Intercept nullptr.");
-    if (sampleInfo_.duration < seekTime * 1000) {
+    int64_t durationTime = 1000;
+    if (sampleInfo_.duration < seekTime * durationTime) {
         AVCODEC_SAMPLE_LOGI("Seek over duration %{public}ld", sampleInfo_.duration);
         return 0;
     }
@@ -819,7 +822,6 @@ void Player::SeekInner(int64_t seekTime, int32_t mode)
     }
     // 等待返回
     std::unique_lock<std::mutex> lock(lppVideoContext_->seekMutex_);
-//     lppVideoContext_->seekCond_.wait_for(lock, 10000s, [this]() { return lppVideoContext_->seekReturn_; });
 
     lppVideoContext_->seekReturn_ = false;
     lock.unlock();

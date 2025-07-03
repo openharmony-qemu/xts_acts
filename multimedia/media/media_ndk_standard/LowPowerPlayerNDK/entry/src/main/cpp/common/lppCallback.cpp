@@ -31,13 +31,7 @@ void LppCallback::OnDataNeeded(OH_LowPowerAudioSink *decoder, OH_AVSamplesBuffer
 {
     LppUserData *lppUserData = static_cast<LppUserData *>(userData);
     std::unique_lock<std::mutex> lock(lppUserData->inputMutex);
-    if (lppUserData->framePacket_ == nullptr)
-    {
-    }
     lppUserData->framePacket_ = framePacket;
-    if (lppUserData->framePacket_ == nullptr)
-    {
-    }
     lppUserData->count++;
     lppUserData->returnFrame = true;
     lppUserData->inputCond.notify_all();
@@ -46,7 +40,6 @@ void LppCallback::OnDataNeeded(OH_LowPowerAudioSink *decoder, OH_AVSamplesBuffer
 
 void LppCallback::OnPositionUpdated(OH_LowPowerAudioSink *decoder, int64_t currentPosition, void *userData)
 {
-    AVCODEC_SAMPLE_LOGI("currentPosition %{public}ld",currentPosition);
     LppUserData *lppUserData = static_cast<LppUserData *>(userData);
     std::unique_lock<std::mutex> lock(lppUserData->inputMutex);
     lppUserData->position = currentPosition;
@@ -73,6 +66,7 @@ void LppCallback::OnDeviceChanged(OH_LowPowerAudioSink *decoder,
     
 void LppCallback::OnEos(OH_LowPowerAudioSink *decoder, void * userData)
 {
+    AVCODEC_SAMPLE_LOGI("OH_LowPowerAudioSink OnEos ");
 }
 
 void LppCallback::OnDataNeededVideo(OH_LowPowerVideoSink *streamer, OH_AVSamplesBuffer *framePacket,
@@ -81,13 +75,7 @@ void LppCallback::OnDataNeededVideo(OH_LowPowerVideoSink *streamer, OH_AVSamples
     AVCODEC_SAMPLE_LOGI("OH_LowPowerVideoSink OnDataNeeded");
     LppUserData *lppUserData = static_cast<LppUserData *>(userData);
     std::unique_lock<std::mutex> lock(lppUserData->inputMutex);
-    if (lppUserData->framePacket_ == nullptr)
-    {
-    }
     lppUserData->framePacket_ = framePacket;
-    if (lppUserData->framePacket_ == nullptr)
-    {
-    }
     lppUserData->count++;
     lppUserData->returnFrame = true;
     lppUserData->inputCond.notify_all();
@@ -135,10 +123,12 @@ void LppCallback::OH_LowPowerVideoSink_OnStreamChanged(OH_LowPowerVideoSink *str
     
 void LppCallback::OnRenderStarted(OH_LowPowerVideoSink *streamer, void *userData)
 {
+    AVCODEC_SAMPLE_LOGI("OH_LowPowerVideoSink OnRenderStarted ");
 }
     
 void LppCallback::OnEos(OH_LowPowerVideoSink *streamer, void *userData)
 {
+    AVCODEC_SAMPLE_LOGI("OH_LowPowerVideoSink OnEos ");
 }
 
 
