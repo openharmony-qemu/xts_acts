@@ -1245,7 +1245,7 @@ static napi_value multiAVScreenCaptureCreate(napi_env env, napi_callback_info in
     return res;
 }
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-static napi_value esAVScreenCaptureErrorESTest(napi_env env, napi_callback_info info) 
+static napi_value videoSourceAVScreenCaptureErrorTest(napi_env env, napi_callback_info info) 
 {
     FILE *audioFile = nullptr;
     OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
@@ -1296,10 +1296,11 @@ static napi_value normalAreaTest(napi_env env, napi_callback_info info)
     SetConfig(config_);
 
     OH_Rect* area = new OH_Rect;
+    int32_t areawh = 5;
     area->x = 0;
     area->y = 0;
-    area->width = 5;
-    area->height = 5;
+    area->width = areawh;
+    area->height = areawh;
     OH_AVSCREEN_CAPTURE_ErrCode result0 = OH_AVScreenCapture_SetCaptureArea(screenCaptureNormal, -1, area);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_SetCaptureArea result0 = %{public}d", result0);
     if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
@@ -1356,7 +1357,8 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
     }
     
     OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
-    result0 = OH_AVScreenCapture_StrategyForPrivacyMaskMode(strategy, 2);
+    int32_t maskmode = 2;
+    result0 = OH_AVScreenCapture_StrategyForPrivacyMaskMode(strategy, maskmode);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_StrategyForPrivacyMaskMode result0 = %{public}d", result0);
     if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         napi_throw_error((env), nullptr, "error : expect result0 is 3");
@@ -1518,7 +1520,7 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"multiAVScreenCaptureCreate", nullptr, multiAVScreenCaptureCreate,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"esAVScreenCaptureErrorESTest", nullptr, esAVScreenCaptureErrorESTest,
+        {"videoSourceAVScreenCaptureErrorTest", nullptr, videoSourceAVScreenCaptureErrorTest,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAreaTest", nullptr, normalAreaTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalStrategyTest", nullptr, normalStrategyTest, nullptr, nullptr, nullptr, napi_default, nullptr},

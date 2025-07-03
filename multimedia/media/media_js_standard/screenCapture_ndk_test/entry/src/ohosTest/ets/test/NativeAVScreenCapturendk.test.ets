@@ -557,15 +557,15 @@ export default function nativeAVScreenCaptureNdkTest() {
     /**
      * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
      * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-     * @tc.desc         esAVScreenCaptureErrorESTest 1
+     * @tc.desc         videoSourceAVScreenCaptureErrorTest 1
      * @tc.size         MediumTest
      * @tc.type         Function
      * @tc.level        Level 0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400', Level.LEVEL0,async (done: Function) => {
-      console.info(Tag + "esAVScreenCaptureErrorESTest-------------before click:");
-      let result: number = myScreenCaptureNdk.esAVScreenCaptureErrorESTest();
-      console.info(Tag + "esAVScreenCaptureErrorESTest-------------res:" + result);
+      console.info(Tag + "videoSourceAVScreenCaptureErrorTest-------------before click:");
+      let result: number = myScreenCaptureNdk.videoSourceAVScreenCaptureErrorTest();
+      console.info(Tag + "videoSourceAVScreenCaptureErrorTest-------------res:" + result);
       expect(result).assertEqual(2);
       done();
     });
