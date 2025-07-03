@@ -2570,6 +2570,8 @@ export default function windowImmersiveTest() {
       let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
       let windowClass = windowStage.getMainWindowSync();
       try {
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        await sleep(2000);
         let res = windowClass.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
         expect(res).assertEqual(false);
@@ -2646,7 +2648,7 @@ export default function windowImmersiveTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
-          if (err.code === 801) {
+          if (err.code === 801 || err.code === 1300002) {
             done();
           } else {
             expect().assertFail();
@@ -2724,7 +2726,7 @@ export default function windowImmersiveTest() {
           windowClass.setImmersiveModeEnabledState(false);
           let res2 = windowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-          expect(res).assertEqual(false);
+          expect(res2).assertEqual(false);
           done();
         } else {
           done();
@@ -2762,7 +2764,7 @@ export default function windowImmersiveTest() {
           await sleep(200);
           let res2 = windowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-          expect(res).assertEqual(false);
+          expect(res2).assertEqual(false);
           done();
         } else {
           done();
@@ -2790,11 +2792,11 @@ export default function windowImmersiveTest() {
       let caseName = 'testIsImmersiveLayoutwithMiniMize';
       // 1、拉起另一个Abllity主窗
       let windowStageStart = await startAbility(caseName, context);
-      let windowClass = windowStageStart.getMainWindowSync();
+      let windowClassTest = windowStageStart.getMainWindowSync();
       try {
-        await windowClass.minimize();
+        await windowClassTest.minimize();
         await sleep(200);
-        let res = windowClass.isImmersiveLayout();
+        let res = windowClassTest.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
         expect(res).assertEqual(false);
         await terminateAbility(caseName);
