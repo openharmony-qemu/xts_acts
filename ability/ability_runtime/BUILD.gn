@@ -127,6 +127,7 @@ group("ability_runtime") {
       "want:want",
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
+      "ActsAbility2TestStatic:ActsAbility2StaticTest",
     ]
   }
 }
