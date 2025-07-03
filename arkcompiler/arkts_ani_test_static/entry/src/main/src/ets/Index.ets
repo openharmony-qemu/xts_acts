@@ -318,14 +318,8 @@ export class Foo {
   native test_Variable_GetValue_Byte(): boolean;
   native test_Variable_GetValue_Short(): boolean;
   native test_Variable_GetValue_Float(): boolean;
-  native test_Module_FindNamespace(): boolean;
-  native test_Module_FindClass(): boolean;
-  native test_Module_FindEnum(): boolean;
   native test_Module_FindFunction(): boolean;
   native test_Module_FindVariable(): boolean;
-  native test_Namespace_FindNamespace(): boolean;
-  native test_Namespace_FindClass(): boolean;
-  native test_Namespace_FindEnum(): boolean;
   native test_Namespace_FindFunction(): boolean;
   native test_Enum_GetEnumItemByName(): boolean;
   native test_Enum_GetEnumItemByIndex(): boolean;
