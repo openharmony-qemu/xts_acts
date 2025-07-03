@@ -813,7 +813,7 @@ void Player::SeekInner(int64_t seekTime, int32_t mode)
     // 给视频设置回调和TargetPts
     if (lppVideoStreamer_ != nullptr) {
         int ret = lppVideoStreamer_->SetTargetStartFrame(targetPts, LppCallback::OnTargetArrived, WAIT_OUT_TIME,
-                                               lppVideoContext_);
+                                                         lppVideoContext_);
         AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetTargetStartFrame ret:::%{public}d", ret);
         lppVideoStreamer_->Resume();
     }

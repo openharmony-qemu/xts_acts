@@ -43,7 +43,7 @@ export default class OhLppPlayerNDKTestBase {
   VIDEO_REGISTER_CALLBACK_EVENT = 'Video_Register';
   VIDEO_SET_PARAMETER_EVENT = 'Video_SetParameter';
   VIDEO_GET_PARAMETER_EVENT = 'Video_GetParameter';
-  VIDEO_SET_SURFACE_EVENT = 'Video_Surface';
+  VIDEO_SURFACE_EVENT = 'Video_Surface';
   VIDEO_PREPARE_EVENT = 'Video_Prepare';
   VIDEO_PREPARE_ERROR_EVENT = 'Video_Prepare_Error';
   VIDEO_SET_SYNC_AUDIO_EVENT = 'Video_SetSync_Audio';
@@ -136,7 +136,6 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.CREATELPP_SET_EVENT:
           this.result = lpPlayer.createLppSetNative();
           expect(this.result).assertEqual(SUCC);
@@ -155,7 +154,6 @@ export default class OhLppPlayerNDKTestBase {
           expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.AUDIO_CREATE_BYMIME_EVENT:
           this.result = lpPlayer.createLppAudioNative();
@@ -241,13 +239,11 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.AUDIO_CB_SET_EOS_LISTENER_EVENT:
           // this.result = lpPlayer.testAudioCbSetEosListener();
           // expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.VIDEO_CONFIGURE_EVENT:
           this.result = lpPlayer.videoConfigureNative();
@@ -255,13 +251,11 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
-        case this.VIDEO_SET_SURFACE_EVENT:
+        case this.VIDEO_SURFACE_EVENT:
           this.result = lpPlayer.videoSetSurfaceNative();
           expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.AUDIO_CONFIGURE_EVENT:
           this.result = lpPlayer.audioStreamerConfigure();
@@ -311,7 +305,6 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.VIDEO_PREPARE_EVENT:
           this.result = lpPlayer.videoPrepareNative();
           expect(this.result).assertEqual(SUCC);
@@ -329,7 +322,6 @@ export default class OhLppPlayerNDKTestBase {
           expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.AUDIO_PREPARE_ERROR_EVENT:
           this.result = lpPlayer.audioPrepareNative();
@@ -357,13 +349,11 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.VIDEO_SET_SYNC_AUDIO_EVENT:
           // this.result = lpPlayer.testVideoSetSyncAudioStreamer();
           // expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.VIDEO_START_DECODER_EVENT:
           this.result = lpPlayer.startDecoderNative();
@@ -384,14 +374,12 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.VIDEO_RENDER_FIRSTFRAME_ERROR_EVENT:
           this.result = lpPlayer.renderFirstFrameNative();
           // expect(this.result).assertEqual(SUCC);
           expect(this.result).assertEqual(config["errorCode"]);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.VIDEO_AUDIO_START_RENDER_EVENT:
           this.result = lpPlayer.startRenderNative();
@@ -400,7 +388,6 @@ export default class OhLppPlayerNDKTestBase {
           expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.VIDEO_START_RENDER_EVENT:
           this.result = lpPlayer.startRenderNative();
@@ -414,7 +401,6 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.AUDIO_START_EVENT:
           this.result = lpPlayer.startAudioNative();
           expect(this.result).assertEqual(SUCC);
@@ -426,7 +412,6 @@ export default class OhLppPlayerNDKTestBase {
           expect(this.result).assertEqual(config["errorCode"]);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.SET_SPEED_EVENT:
           this.result = lpPlayer.speedNative(config["speed"]);
@@ -441,7 +426,6 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.VIDEO_SET_SPEED_EVENT:
           this.result = lpPlayer.setVideoSpeedNative(config["speed"]);
           expect(this.result).assertEqual(SUCC);
@@ -453,7 +437,6 @@ export default class OhLppPlayerNDKTestBase {
           expect(this.result).assertEqual(config["errorCode"]);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.AUDIO_SET_SPEED_ERROR_EVENT:
           this.result = lpPlayer.setAudioSpeedNative(config["speed"]);
@@ -574,13 +557,11 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.AUDIO_STOP_ERROR_EVENT:
           this.result = lpPlayer.audioStopNative();
           expect(this.result).assertEqual(config["errorCode"]);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.RESET_EVENT:
           this.result = lpPlayer.resetNative();
@@ -594,13 +575,11 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.AUDIO_RESET_EVENT:
           this.result = lpPlayer.audioResetNative();
           expect(this.result).assertEqual(SUCC);
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         case this.DESTROY_EVENT:
           this.result = lpPlayer.releaseNative();
@@ -614,7 +593,6 @@ export default class OhLppPlayerNDKTestBase {
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
 
-
         case this.AUDIO_DESTROY_EVENT:
           this.result = lpPlayer.audioResetNative();
           expect(this.result).assertEqual(SUCC);
@@ -625,7 +603,6 @@ export default class OhLppPlayerNDKTestBase {
           await this.msleepAsync(2000)
           this.toNextStep(config, fdPath, steps, errorCode, done);
           break;
-
 
         default:
           break;

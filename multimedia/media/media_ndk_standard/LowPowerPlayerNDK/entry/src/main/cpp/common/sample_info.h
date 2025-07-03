@@ -67,7 +67,6 @@ struct SampleInfo {
     size_t audioCodecSize = 0;
     bool isInit = false;
 
-    
     int32_t isHDRVivid = 0;
     int32_t hevcProfile = HEVC_PROFILE_MAIN;
     OH_ColorPrimary primary = COLOR_PRIMARY_BT2020;
@@ -149,7 +148,6 @@ public:
     std::condition_variable seekCond_;
     bool seekReturn_ = false;
     int64_t position = 0;
-
 };
 
 #endif // AVCODEC_SAMPLE_INFO_H
