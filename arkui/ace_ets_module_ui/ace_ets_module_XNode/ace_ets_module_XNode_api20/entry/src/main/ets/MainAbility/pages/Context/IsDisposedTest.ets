@@ -54,7 +54,6 @@ class MyNodeController extends NodeController {
       this.frameNode = new FrameNode(uiContext);
       this.rootNode.appendChild(this.frameNode);
 
-
       let listNode = typeNode.createNode(uiContext, 'List');
       listNode.initialize({ space: 3 }).borderWidth(2).borderColor(Color.Black);
       this.rootNode.appendChild(listNode);
@@ -132,8 +131,8 @@ struct Index {
           this.frameNodeAfterValue = this.myNodeController.frameNodeAfterValue
           this.renderNodeBeforeValue = this.myNodeController.renderNodeBeforeValue
           this.renderNodeAfterValue = this.myNodeController.renderNodeAfterValue
-          this.ndeAdapterAfterValue = this.myNodeController.ndeAdapterAfterValue
-          this.ndeAdapterAfterValue = this.myNodeController.ndeAdapterAfterValue
+          this.nodeAdapterBeforeValue = this.myNodeController.nodeAdapterBeforeValue
+          this.ndeAdapterAfterValue = this.myNodeController.nodeAdapterAfterValue
 
           this.promptAction?.closeCustomDialog(this.contentNode);
           console.log(`jerry before ComponentContent dispose: isDisposed=`, this.contentNode?.isDisposed());
@@ -141,7 +140,6 @@ struct Index {
           this.contentNode?.dispose();
           console.log(`jerry after ComponentContent dispose: isDisposed=`, this.contentNode?.isDisposed());
           this.componentContentAfterValue = this.contentNode?.isDisposed() + '';
-
         })
         .width('100%')
         .height('5%')
@@ -152,7 +150,7 @@ struct Index {
       Text(`${this.frameNodeAfterValue}`).height('2%').id('FrameNodeAfterValue')
       Text(`${this.renderNodeBeforeValue}`).height('2%').id('RenderNodeBeforeValue')
       Text(`${this.renderNodeAfterValue}`).height('2%').id('RenderNodeAfterValue')
-      Text(`${this.ndeAdapterAfterValue}`).height('2%').id('NodeAdapterBeforeValue')
+      Text(`${this.nodeAdapterBeforeValue}`).height('2%').id('NodeAdapterBeforeValue')
       Text(`${this.ndeAdapterAfterValue}`).height('2%').id('NodeAdapterAfterValue')
       Text(`${this.componentContentBeforeValue}`).height('2%').id('ComponentContentBeforeValue')
       Text(`${this.componentContentAfterValue}`).height('2%').id('ComponentContentAfterValue')
