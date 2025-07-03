@@ -131,12 +131,8 @@ napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
             static auto text1 = nodeAPI->createNode(ARKUI_NODE_TEXT);
             ArkUI_AttributeItem TEXT_Item1 = {.string = "CapsLock: OFF"};
             nodeAPI->setAttribute(text1, NODE_TEXT_CONTENT, &TEXT_Item1);
-            static auto text2 = nodeAPI->createNode(ARKUI_NODE_TEXT);
-            ArkUI_AttributeItem TEXT_Item2 = {.string = "ScrollLock: OFF"};
-            nodeAPI->setAttribute(text2, NODE_TEXT_CONTENT, &TEXT_Item2);
             nodeAPI->addChild(keyevent, text);
             nodeAPI->addChild(keyevent, text1);
-            nodeAPI->addChild(keyevent, text2);
 
             // 注册监听事件
             nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
@@ -176,11 +172,6 @@ napi_value Manager::CreateNativeNode(napi_env env, napi_callback_info info) {
                         std::string capsLockText = "CapsLock: " + capsLockState;
                         ArkUI_AttributeItem updatedTEXT_Item1 = {.string = capsLockText.c_str()};
                         nodeAPI->setAttribute(text1, NODE_TEXT_CONTENT, &updatedTEXT_Item1);
-
-                        std::string scrollLockState = isScrollLockOnState ? "ON" : "OFF";
-                        std::string scrollLockText = "ScrollLock: " + scrollLockState;
-                        ArkUI_AttributeItem updatedTEXT_Item2 = {.string = scrollLockText.c_str()};
-                        nodeAPI->setAttribute(text2, NODE_TEXT_CONTENT, &updatedTEXT_Item2);
                         break;
                     }
                     }
