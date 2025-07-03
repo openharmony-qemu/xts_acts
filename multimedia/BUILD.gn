@@ -122,6 +122,7 @@ group("multimedia") {
       "media/media_ndk_standard/AVImageGeneratorNDK:OhAVImageGeneratorNDK",
       "media/media_ndk_standard/AVMetadataExtractorNDK:OhAVMetadataExtractorNDK",
       "media/media_ndk_standard/AVPlayerNDK:OhAVPlayerNDK",
+      "media/media_ndk_standard/LowPowerPlayerNDK:LowPower_Player_hap",
       "photoAccess/photoAccess:photoAccess_js_hap",
       "photoAccess/photoAccessSendable:photoAccess_sendable_hap",
       "photoAccess/pickerView:TextPickerTest",
