@@ -62,12 +62,12 @@ let availableWebSocketAddress: string ;
 export default function WebSocketTest() {
   describe('webSocketTest', () => {
     beforeAll(async (done: Function)=>{
-      console.log("beforeAll开始执行了~~~~~~~~~")
+      console.log("beforeAll start")
       availableWebSocketAddress = await getWebsite();
       activeUrl = availableWebSocketAddress;
       console.log("current url is "+ availableWebSocketAddress)
       done()
-      console.log("beforeAll执行结束~~~~~~~~~")
+      console.log("beforeAll end")
     })
 
   
