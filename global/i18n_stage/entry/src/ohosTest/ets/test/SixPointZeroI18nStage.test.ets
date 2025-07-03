@@ -139,6 +139,34 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /* *
+    * @tc.number    : SUB_GLOBAL_Intl_testDaylightSavingTime_0500
+    * @tc.name      : testi18n_getMilliseconds_0500
+    * @tc.desc      : nextTransition with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('testi18n_getMilliseconds_0500', Level.LEVEL2, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+      let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition();
+      let sj = zoneOffsetTransition.getMilliseconds();
+      let tmzid = timeZone.getID();
+      let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh', {
+        timeZone: tmzid,
+        dateStyle: 'long',
+        timeStyle: 'long',
+        hour12: false
+      });
+      let dateFormat = dateTimeFormat.format(new Date(sj));
+      let sj2 = zoneOffsetTransition.getOffsetAfter();
+      let sj3 = zoneOffsetTransition.getOffsetBefore();
+      expect(dateFormat).assertEqual('1970/1/1 GMT+8 08:00:00');
+      expect(sj2).assertEqual(0);
+      expect(sj3).assertEqual(0);
+    })
+
+    /* *
     * @tc.number    : SUB_GLOBAL_Intl_testgetUnicodeWrappedFilePath_0100
     * @tc.name      : test_getUnicodeWrappedFilePath_0100
     * @tc.desc      : Locale with en
