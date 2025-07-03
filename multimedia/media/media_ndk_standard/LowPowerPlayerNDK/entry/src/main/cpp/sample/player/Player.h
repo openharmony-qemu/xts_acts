@@ -93,6 +93,7 @@ public:
     int32_t StartRender();
     int32_t StartAudio();
     void Release();
+    void ReleaseDone();
     void StartRelease();
     int64_t GetDurationTime();
     int64_t GetProgressTime();

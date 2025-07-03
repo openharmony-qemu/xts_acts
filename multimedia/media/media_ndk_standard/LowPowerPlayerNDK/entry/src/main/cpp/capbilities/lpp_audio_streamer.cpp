@@ -71,7 +71,7 @@ int32_t LppAudioStreamer::SetInterruptListener(LppUserData *lppUserData)
     int32_t ret = AV_ERR_OK;
     AVCODEC_SAMPLE_LOGI("====== lppAudioStreamer_ SetInterruptListener ======");
     ret = OH_LowPowerAudioSinkCallback_SetInterruptListener(lppAudioStreamerCallback_, LppCallback::OnInterrupted,
-                                                        lppUserData);
+                                                            lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set callback failed, ret::: %{public}d", ret);
     AVCODEC_SAMPLE_LOGI("OnInterrupted ret:::%{public}d ", ret);
     return ret;
@@ -82,7 +82,7 @@ int32_t LppAudioStreamer::SetEosCallback(LppUserData *lppUserData)
     int32_t ret = AV_ERR_OK;
     AVCODEC_SAMPLE_LOGI("====== lppAudioStreamer_ SetEosCallback ======");
     ret = OH_LowPowerAudioSinkCallback_SetEosListener(lppAudioStreamerCallback_, LppCallback::OnEos,
-                                                        lppUserData);
+                                                      lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set callback failed, ret::: %{public}d", ret);
     AVCODEC_SAMPLE_LOGI("OnEos ret:::%{public}d ", ret);
     return ret;
@@ -93,7 +93,7 @@ int32_t LppAudioStreamer::SetOnDeviceChanged(LppUserData *lppUserData)
     int32_t ret = AV_ERR_OK;
     AVCODEC_SAMPLE_LOGI("====== lppAudioStreamer_ SetOnDeviceChanged ======");
     ret = OH_LowPowerAudioSinkCallback_SetDeviceChangeListener(lppAudioStreamerCallback_, LppCallback::OnDeviceChanged,
-                                                        lppUserData);
+                                                               lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set callback failed, ret::: %{public}d", ret);
     AVCODEC_SAMPLE_LOGI("OnDeviceChanged ret:::%{public}d ", ret);
     return ret;
@@ -106,46 +106,26 @@ int32_t LppAudioStreamer::Configure(const SampleInfo &sampleInfo)
     if (sampleInfo.audioCodecConfig != nullptr) {
         OH_AVFormat_SetBuffer(format, "codec_config", sampleInfo.audioCodecConfig, sampleInfo.audioCodecSize);
     }
-//         OH_AudioStreamBuilder_SetLatencyMode(builder_, AUDIOSTREAM_LATENCY_MODE_NORMAL);
-//         // 设置音频采样率
-//         OH_AudioStreamBuilder_SetSamplingRate(builder_, sampleInfo_.audioSampleRate);
-//         // 设置音频声道
-//         OH_AudioStreamBuilder_SetChannelCount(builder_, sampleInfo_.audioChannelCount);
-//         // 设置音频采样格式
-//         OH_AudioStreamBuilder_SetSampleFormat(builder_, AUDIOSTREAM_SAMPLE_S16LE);
-//         // 设置音频流的编码类型
-//         OH_AudioStreamBuilder_SetEncodingType(builder_, AUDIOSTREAM_ENCODING_TYPE_RAW);
-//         // 设置输出音频流的工作场景
-//         OH_AudioStreamBuilder_SetRendererInfo(builder_, AUDIOSTREAM_USAGE_MUSIC);
-    
-//     Format format;
-//     (void)format.PutIntValue(PlayerKeys::STREAM_USAGE, streamUsage);
-//     (void)format.PutIntValue(PlayerKeys::CONTENT_TYPE, 0);
-//     (void)format.PutIntValue(PlayerKeys::RENDERER_FLAG, 0);
-//     音频送显
-//     OH_AVFormat_SetIntValue(format, "CONTENT_TYPE", 0);
-    //         STREAM_USAGE_MOVIE = 10,
-    OH_AVFormat_SetIntValue(format, "STREAM_USAGE", 10);
+    const int STREAM_USAGE_ASYNC = 10;
+    OH_AVFormat_SetIntValue(format, "STREAM_USAGE", STREAM_USAGE_ASYNC);
     OH_AVFormat_SetIntValue(format, "SAMPLE_RATE", sampleInfo.audioSampleRate);
     AVCODEC_SAMPLE_LOGI("audioSampleRate  %{public}d", sampleInfo.audioSampleRate);
-    OH_AVFormat_SetIntValue(format, "RENDERER_FLAG", 5);
+    const int RENDERER_FLAG_ASYNC = 5;
+    OH_AVFormat_SetIntValue(format, "RENDERER_FLAG", RENDERER_FLAG_ASYNC);
 //     ENCODING_PCM = 0,
-    OH_AVFormat_SetIntValue(format, "ENCODING", 0);
+    const int ENCODING_PCM = 0;
+    OH_AVFormat_SetIntValue(format, "ENCODING", ENCODING_PCM);
 //     SAMPLE_S16LE = 1,
     OH_AVFormat_SetIntValue(format, "SAMPLE_FORMAT", SAMPLE_S16LE);
 //     CHANNEL_6 = 6,
     OH_AVFormat_SetIntValue(format, "CHANNEL", sampleInfo.audioChannelCount);
     
 //     音频解码
-//     const char *OH_MD_KEY_AUDIO_SAMPLE_FORMAT = "audio_sample_format";
     OH_AVFormat_SetIntValue(format, "audio_sample_format", SAMPLE_S16LE);
-//     OH_AVFormat_SetIntValue(format, "audio_sample_format", sampleInfo.audioSampleForamt);
-//     const char *OH_MD_KEY_AUD_CHANNEL_COUNT = "channel_count";
+
     OH_AVFormat_SetIntValue(format, "channel_count", sampleInfo.audioChannelCount);
     AVCODEC_SAMPLE_LOGI("audioChannelCount  %{public}d", sampleInfo.audioChannelCount);
-//     const char *OH_MD_KEY_AUD_SAMPLE_RATE = "sample_rate";
     OH_AVFormat_SetIntValue(format, "sample_rate", sampleInfo.audioSampleRate);
-//     const char *OH_MD_KEY_CHANNEL_LAYOUT = "channel_layout";
     OH_AVFormat_SetLongValue(format, "channel_layout", sampleInfo.audioChannelLayout);
     int ret = OH_LowPowerAudioSink_Configure(lppAudioStreamer_, format);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Configure failed, ret::: %{public}d", ret);
@@ -191,30 +171,14 @@ int32_t LppAudioStreamer::SetParameter(const SampleInfo &sampleInfo)
     if (sampleInfo.audioCodecConfig != nullptr) {
         OH_AVFormat_SetBuffer(format, "codec_config", sampleInfo.audioCodecConfig, sampleInfo.audioCodecSize);
     }
-//         OH_AudioStreamBuilder_SetLatencyMode(builder_, AUDIOSTREAM_LATENCY_MODE_NORMAL);
-//         // 设置音频采样率
-//         OH_AudioStreamBuilder_SetSamplingRate(builder_, sampleInfo_.audioSampleRate);
-//         // 设置音频声道
-//         OH_AudioStreamBuilder_SetChannelCount(builder_, sampleInfo_.audioChannelCount);
-//         // 设置音频采样格式
-//         OH_AudioStreamBuilder_SetSampleFormat(builder_, AUDIOSTREAM_SAMPLE_S16LE);
-//         // 设置音频流的编码类型
-//         OH_AudioStreamBuilder_SetEncodingType(builder_, AUDIOSTREAM_ENCODING_TYPE_RAW);
-//         // 设置输出音频流的工作场景
-//         OH_AudioStreamBuilder_SetRendererInfo(builder_, AUDIOSTREAM_USAGE_MUSIC);
-    
-//     Format format;
-//     (void)format.PutIntValue(PlayerKeys::STREAM_USAGE, streamUsage);
-//     (void)format.PutIntValue(PlayerKeys::CONTENT_TYPE, 0);
-//     (void)format.PutIntValue(PlayerKeys::RENDERER_FLAG, 0);
-//     音频送显
-//     OH_AVFormat_SetIntValue(format, "CONTENT_TYPE", 0);
-    //         STREAM_USAGE_MOVIE = 10,
+    const int STREAM_USAGE_ASYNC = 10;
     OH_AVFormat_SetIntValue(format, "STREAM_USAGE", 10);
     OH_AVFormat_SetIntValue(format, "SAMPLE_RATE", sampleInfo.audioSampleRate);
     AVCODEC_SAMPLE_LOGI("audioSampleRate  %{public}d", sampleInfo.audioSampleRate);
+    const int RENDERER_FLAG_ASYNC = 5;
     OH_AVFormat_SetIntValue(format, "RENDERER_FLAG", 5);
 //     ENCODING_PCM = 0,
+    const int ENCODING_PCM = 0;
     OH_AVFormat_SetIntValue(format, "ENCODING", 0);
 //     SAMPLE_S16LE = 1,
     OH_AVFormat_SetIntValue(format, "SAMPLE_FORMAT", SAMPLE_S16LE);
@@ -222,15 +186,10 @@ int32_t LppAudioStreamer::SetParameter(const SampleInfo &sampleInfo)
     OH_AVFormat_SetIntValue(format, "CHANNEL", sampleInfo.audioChannelCount);
     
 //     音频解码
-//     const char *OH_MD_KEY_AUDIO_SAMPLE_FORMAT = "audio_sample_format";
     OH_AVFormat_SetIntValue(format, "audio_sample_format", SAMPLE_S16LE);
-//     OH_AVFormat_SetIntValue(format, "audio_sample_format", sampleInfo.audioSampleForamt);
-//     const char *OH_MD_KEY_AUD_CHANNEL_COUNT = "channel_count";
     OH_AVFormat_SetIntValue(format, "channel_count", sampleInfo.audioChannelCount);
     AVCODEC_SAMPLE_LOGI("audioChannelCount  %{public}d", sampleInfo.audioChannelCount);
-//     const char *OH_MD_KEY_AUD_SAMPLE_RATE = "sample_rate";
     OH_AVFormat_SetIntValue(format, "sample_rate", sampleInfo.audioSampleRate);
-//     const char *OH_MD_KEY_CHANNEL_LAYOUT = "channel_layout";
     OH_AVFormat_SetLongValue(format, "channel_layout", sampleInfo.audioChannelLayout);
     AVCODEC_SAMPLE_LOGI("====== lppAudioStreamer_ SetParameter ======");
     OH_LowPowerAudioSink_SetParameter(lppAudioStreamer_, format);

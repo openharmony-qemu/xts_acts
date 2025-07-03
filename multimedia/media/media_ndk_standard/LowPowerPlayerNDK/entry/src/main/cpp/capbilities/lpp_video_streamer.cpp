@@ -23,7 +23,6 @@
 #include "multimedia/player_framework/lowpower_video_sink.h"
 #include "multimedia/player_framework/lowpower_video_sink_base.h"
 #include <js_native_api_types.h>
-// #include <multimedia/player_framework/native_lpp_video_streamer.h>
 
 #undef LOG_TAG
 #define LOG_TAG "LppVideoStreamer"
@@ -40,7 +39,7 @@ int32_t LppVideoStreamer::Create(const std::string &codecMime)
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ Create ======");
     lppVideoStreamer_ = OH_LowPowerVideoSink_CreateByMime(codecMime.c_str());
     CHECK_AND_RETURN_RET_LOG(lppVideoStreamer_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Create failed");
-   return AVCODEC_SAMPLE_ERR_OK;
+    return AVCODEC_SAMPLE_ERR_OK;
 }
 
 int32_t LppVideoStreamer::SetCallback(LppUserData *lppUserData)
@@ -76,7 +75,7 @@ int32_t LppVideoStreamer::SetRenderStartCallback(LppUserData *lppUserData)
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetRenderStartCallback ======");
     int32_t ret = AV_ERR_OK;
     ret = OH_LowPowerVideoSinkCallback_SetRenderStartListener(lppVideoStreamerCallback_, LppCallback::OnRenderStarted,
-                                                        lppUserData);
+                                                              lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set callback failed, ret::: %{public}d", ret);
 
     AVCODEC_SAMPLE_LOGI("OnRenderStarted ret:::%{public}d ", ret);
@@ -88,7 +87,7 @@ int32_t LppVideoStreamer::SetEosCallback(LppUserData *lppUserData)
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetEosCallback ======");
     int32_t ret = AV_ERR_OK;
     ret = OH_LowPowerVideoSinkCallback_SetEosListener(lppVideoStreamerCallback_, LppCallback::OnEos,
-                                                        lppUserData);
+                                                      lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set callback failed, ret::: %{public}d", ret);
 
     AVCODEC_SAMPLE_LOGI("OnEos ret:::%{public}d ", ret);
@@ -125,17 +124,14 @@ int32_t LppVideoStreamer::returnFrames(LppUserData *lppUserData)
 
 int32_t LppVideoStreamer::SetParameter(const SampleInfo &sampleInfo)
 {
-
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetParameter ======");
     OH_AVFormat *format = OH_AVFormat_Create();
     CHECK_AND_RETURN_RET_LOG(format != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "AVFormat create failed");
-
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoWidth);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, sampleInfo.videoHeight);
     OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, sampleInfo.frameRate);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, sampleInfo.pixelFormat);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_ROTATION, sampleInfo.rotation);
-
     AVCODEC_SAMPLE_LOGI("====== VideoDecoder config ======");
     AVCODEC_SAMPLE_LOGI("%{public}d*%{public}d, %{public}.1ffps", sampleInfo.videoWidth, sampleInfo.videoHeight,
                         sampleInfo.frameRate);
@@ -149,7 +145,6 @@ int32_t LppVideoStreamer::Prepare()
 {
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ Prepare ======");
     int ret = OH_LowPowerVideoSink_Prepare(lppVideoStreamer_);
-//    int ret = OH_LowPowerVideoSink_Prepare(nullptr);
     return ret;
 }
 
@@ -177,9 +172,9 @@ int32_t LppVideoStreamer::Stop()
 int32_t LppVideoStreamer::Reset()
 {
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ Reset ======");
-     AVCODEC_SAMPLE_LOGI("reset in4");
+    AVCODEC_SAMPLE_LOGI("reset in4");
     int ret = OH_LowPowerVideoSink_Reset(lppVideoStreamer_);
-     AVCODEC_SAMPLE_LOGI("reset in5");
+    AVCODEC_SAMPLE_LOGI("reset in5");
     return ret;
 }
 
@@ -211,7 +206,7 @@ int32_t LppVideoStreamer::StartDecode(bool flag)
 int32_t LppVideoStreamer::StartRender()
 {
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ StartRender ======");
-   int ret =  OH_LowPowerVideoSink_StartRenderer(lppVideoStreamer_);
+    int ret =  OH_LowPowerVideoSink_StartRenderer(lppVideoStreamer_);
     return ret;
 }
 
@@ -224,7 +219,6 @@ int32_t LppVideoStreamer::Pause()
 
 int32_t LppVideoStreamer::SetVideoSurface(const SampleInfo &sampleInfo)
 {
-//     sampleInfo.window = NativeXComponentSample::PluginManager::GetInstance()->pluginWindow_;
     int ret = 1;
     if (sampleInfo.window != nullptr) {
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetVideoSurface ======");
@@ -240,11 +234,13 @@ int32_t LppVideoStreamer::SetSyncAudioStreamer(OH_LowPowerAudioSink *audioStream
     return ret;
 }
 
-int32_t LppVideoStreamer::SetTargetStartFrame(const int64_t framePts, OH_LowPowerVideoSink_OnTargetArrived onTargetArrived,
-                                              const int64_t timeoutMs, LppUserData *lppUserData)
+int32_t LppVideoStreamer::SetTargetStartFrame(const int64_t framePts,
+    OH_LowPowerVideoSink_OnTargetArrived onTargetArrived,
+    const int64_t timeoutMs, LppUserData *lppUserData)
 {
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetTargetStartFrame ======");
-    int ret = OH_LowPowerVideoSink_SetTargetStartFrame(lppVideoStreamer_, framePts, onTargetArrived, timeoutMs, lppUserData);
+    int ret = OH_LowPowerVideoSink_SetTargetStartFrame(lppVideoStreamer_,
+        framePts, onTargetArrived, timeoutMs, lppUserData);
     return ret;
 }
 
@@ -257,7 +253,6 @@ int32_t LppVideoStreamer::SetPlaybackSpeed(const float speed)
 
 int32_t LppVideoStreamer::Release()
 {
-//    Stop();
     CallbackDestroy();
     Destroy();
     return AVCODEC_SAMPLE_ERR_OK;
@@ -269,8 +264,3 @@ int32_t LppVideoStreamer::RenderFirstFrame()
     int ret = OH_LowPowerVideoSink_RenderFirstFrame(lppVideoStreamer_);
     return ret;
 }
-
-// int32_t LppVideoStreamer::StartDecode(bool flag)
-// {
-//     OH_LowPowerVideoSink_StartDecode(lppVideoStreamer_, flag);
-// }

@@ -59,8 +59,7 @@ int32_t Muxer::Config(SampleInfo &sampleInfo)
     }
     
     int32_t ret = OH_AVMuxer_AddTrack(muxer_, &videoTrackId_, formatVideo);
-//     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "AddTrack failed");
-    if(ret != AV_ERR_OK) {
+    if (ret != AV_ERR_OK) {
         AVCODEC_SAMPLE_LOGE("AddTrack failed");
         OH_AVFormat_Destroy(formatVideo);
         OH_AVMuxer_SetRotation(muxer_, 90);

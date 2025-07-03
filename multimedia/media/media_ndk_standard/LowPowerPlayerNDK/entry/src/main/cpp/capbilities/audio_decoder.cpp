@@ -58,7 +58,7 @@ int32_t AudioDecoder::Configure(const SampleInfo &sampleInfo)
 
     int ret = OH_AudioCodec_Configure(decoder_, format);
     AVCODEC_SAMPLE_LOGI("====== AudioDecoder config ======");
-    if(ret != AV_ERR_OK) {
+    if (ret != AV_ERR_OK) {
         AVCODEC_SAMPLE_LOGE("Config failed, ret::: %{public}d", ret);
         OH_AVFormat_Destroy(format);
         format = nullptr;

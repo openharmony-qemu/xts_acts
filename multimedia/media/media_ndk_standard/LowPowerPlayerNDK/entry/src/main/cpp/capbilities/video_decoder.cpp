@@ -66,7 +66,7 @@ int32_t VideoDecoder::Configure(const SampleInfo &sampleInfo)
     AVCODEC_SAMPLE_LOGI("====== VideoDecoder config ======");
 
     int ret = OH_VideoDecoder_Configure(decoder_, format);
-    if(ret != AV_ERR_OK) {
+    if (ret != AV_ERR_OK) {
         AVCODEC_SAMPLE_LOGE("Config failed, ret::: %{public}d", ret);
         OH_AVFormat_Destroy(format);
         format = nullptr;

@@ -298,8 +298,6 @@ napi_value PlayerNative::Configure(napi_env env, napi_callback_info info)
 
 napi_value PlayerNative::Seek(napi_env env, napi_callback_info info)
 {
-
-
     int32_t seekTime = 0;
     int32_t mode = 0;
     bool acc = false;
@@ -309,8 +307,6 @@ napi_value PlayerNative::Seek(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, seekArgs[0], &seekTime);
     napi_get_value_int32(env, seekArgs[1], &mode);
     napi_get_value_bool(env, seekArgs[0], &acc);
-
-
     AVCODEC_SAMPLE_LOGI("Seek in");
     int32_t ret = Player::GetInstance().Seek(seekTime, mode, acc);
     AVCODEC_SAMPLE_LOGI("Seek out");
@@ -325,8 +321,6 @@ napi_value PlayerNative::SeekAcc(napi_env env, napi_callback_info info)
     napi_value seekArgs[1] = {nullptr}; // napi_value类型数组，用于存储接收的ArkTS侧参数
     napi_get_cb_info(env, info, &seekArgc, seekArgs, nullptr, nullptr); // 从info中获取参数信息到参数数组args[]
     napi_get_value_int32(env, seekArgs[0], &seekTime);
-
-
     AVCODEC_SAMPLE_LOGI("SeekAcc in");
     int32_t ret = Player::GetInstance().Seek(seekTime, 1);
     AVCODEC_SAMPLE_LOGI("SeekAcc out");
@@ -526,17 +520,24 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor classProp[] = {
         {"InitFdNative", nullptr, PlayerNative::InitFd, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"createLppSetNative", nullptr, PlayerNative::CreateLppSet, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"syncAudioNative", nullptr, PlayerNative::SyncAudio, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"createLppAudioNative", nullptr, PlayerNative::CreateLppAudioStreamer, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"createLppVideoNative", nullptr, PlayerNative::CreateLppVideoStreamer, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"audioStreamerConfigure", nullptr, PlayerNative::AudioStreamerConfigure, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createLppSetNative", nullptr, PlayerNative::CreateLppSet, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"syncAudioNative", nullptr, PlayerNative::SyncAudio, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"createLppAudioNative", nullptr, PlayerNative::CreateLppAudioStreamer, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"createLppVideoNative", nullptr, PlayerNative::CreateLppVideoStreamer, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"audioStreamerConfigure", nullptr, PlayerNative::AudioStreamerConfigure, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"audioSetParameterNative", nullptr, PlayerNative::AudioStreamerSetParameter, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"audioPrepareNative", nullptr, PlayerNative::AudioStreamerPrepare, nullptr, nullptr, nullptr, napi_default,
          nullptr},
-        {"videoConfigureNative", nullptr, PlayerNative::VideoStreamerConfigure, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"videoSetSurfaceNative", nullptr, PlayerNative::VideoStreamerSetSurface, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"videoConfigureNative", nullptr, PlayerNative::VideoStreamerConfigure, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"videoSetSurfaceNative", nullptr, PlayerNative::VideoStreamerSetSurface, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"videoPrepareNative", nullptr, PlayerNative::VideoStreamerPrepare, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"flushNative", nullptr, PlayerNative::Flush, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -556,8 +557,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"audioResumeNative", nullptr, PlayerNative::AudioResume, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"videoResumeNative", nullptr, PlayerNative::VideoResume, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"speedNative", nullptr, PlayerNative::Speed, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setAudioSpeedNative", nullptr, PlayerNative::SetAudioSpeed, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setVideoSpeedNative", nullptr, PlayerNative::SetVideoSpeed, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setAudioSpeedNative", nullptr, PlayerNative::SetAudioSpeed, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"setVideoSpeedNative", nullptr, PlayerNative::SetVideoSpeed, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
         {"configureNative", nullptr, PlayerNative::Configure, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"seekNative", nullptr, PlayerNative::Seek, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"seekAccNative", nullptr, PlayerNative::SeekAcc, nullptr, nullptr, nullptr, napi_default, nullptr},

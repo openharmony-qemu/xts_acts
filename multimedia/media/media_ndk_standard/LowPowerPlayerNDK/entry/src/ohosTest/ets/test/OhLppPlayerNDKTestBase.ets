@@ -43,7 +43,7 @@ export default class OhLppPlayerNDKTestBase {
   VIDEO_REGISTER_CALLBACK_EVENT = 'Video_Register';
   VIDEO_SET_PARAMETER_EVENT = 'Video_SetParameter';
   VIDEO_GET_PARAMETER_EVENT = 'Video_GetParameter';
-  VIDEO_SET_SURFACE_EVENT = 'Video_SetSurface';
+  VIDEO_SET_SURFACE_EVENT = 'Video_Surface';
   VIDEO_PREPARE_EVENT = 'Video_Prepare';
   VIDEO_PREPARE_ERROR_EVENT = 'Video_Prepare_Error';
   VIDEO_SET_SYNC_AUDIO_EVENT = 'Video_SetSync_Audio';

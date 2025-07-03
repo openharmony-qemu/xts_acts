@@ -73,7 +73,6 @@ int32_t Demuxer::GetTrackInfo(std::shared_ptr<OH_AVFormat> sourceFormat, SampleI
     int32_t trackCount = 0;
     OH_AVFormat_GetIntValue(sourceFormat.get(), OH_MD_KEY_TRACK_COUNT, &trackCount);
     OH_AVFormat_GetLongValue(sourceFormat.get(), OH_MD_KEY_DURATION, &info.duration);
-//     AVCODEC_SAMPLE_LOGI("Seek over duration fem %{public}ld",info.duration);
     for (int32_t index = 0; index < trackCount; index++) {
         int trackType = -1;
         auto trackFormat =
@@ -93,12 +92,8 @@ int32_t Demuxer::GetTrackInfo(std::shared_ptr<OH_AVFormat> sourceFormat, SampleI
             info.videoCodecMime = videoCodecMime;
             OH_AVFormat_GetIntValue(trackFormat.get(), OH_MD_KEY_PROFILE, &info.hevcProfile);
             videoTrackId_ = index;
-
-            AVCODEC_SAMPLE_LOGI("====== Demuxer Video config ======");
-            AVCODEC_SAMPLE_LOGI("Mime: %{public}s", videoCodecMime);
             AVCODEC_SAMPLE_LOGI("%{public}d*%{public}d, %{public}.1ffps, %{public}" PRId64 "kbps", info.videoWidth,
                                 info.videoHeight, info.frameRate, info.bitrate / 1024);
-            AVCODEC_SAMPLE_LOGI("====== Demuxer Video config ======");
         } else if (trackType == MEDIA_TYPE_AUD) {
             OH_AVDemuxer_SelectTrackByID(demuxer_, index);
             OH_AVFormat_GetIntValue(trackFormat.get(), OH_MD_KEY_AUDIO_SAMPLE_FORMAT, &info.audioSampleForamt);
@@ -108,26 +103,21 @@ int32_t Demuxer::GetTrackInfo(std::shared_ptr<OH_AVFormat> sourceFormat, SampleI
             uint8_t *addr = nullptr;
             OH_AVFormat_GetBuffer(trackFormat.get(), "codec_config", &addr, &info.audioCodecSize);
             
-            if (addr != nullptr) {
-                if (info.audioCodecConfig != nullptr) {
-                    delete[] info.audioCodecConfig;
-                }
+            if (addr != nullptr && info.audioCodecConfig != nullptr) {
+                delete[] info.audioCodecConfig;
+            } else if (addr != nullptr) {
                 info.audioCodecConfig = new uint8_t[info.audioCodecSize];
-                memcpy((void *)info.audioCodecConfig, (void *)addr, info.audioCodecSize);
+                std::memcpy(info.audioCodecConfig, addr, info.audioCodecSize);
             }
-            
             char *audioCodecMime;
             OH_AVFormat_GetStringValue(trackFormat.get(),
                 OH_MD_KEY_CODEC_MIME, const_cast<char const **>(&audioCodecMime));
             info.audioCodecMime = audioCodecMime;
             audioTrackId_ = index;
-
-            AVCODEC_SAMPLE_LOGI("====== Demuxer Audio config ======");
             AVCODEC_SAMPLE_LOGI("Mime: %{public}s", audioCodecMime);
             AVCODEC_SAMPLE_LOGI("audioMime:%{public}s sampleForamt:%{public}d "
                 "sampleRate:%{public}d channelCount:%{public}d channelLayout:%{public}d", info.audioCodecMime.c_str(),
                 info.audioSampleForamt, info.audioSampleRate, info.audioChannelCount, info.audioChannelLayout);
-            AVCODEC_SAMPLE_LOGI("====== Demuxer Audio config ======");
         }
     }
 

@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2020-2020. All rights reserved.
+ */
+/*
+ * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include "Player.h"
 #include "av_codec_sample_log.h"
 #include "dfx/error/av_codec_sample_error.h"
@@ -23,6 +41,7 @@ constexpr double LIP_SYNC_BALANCE_VALUE = 2;                       // the balanc
 constexpr int32_t MAX_BUFFER_SIZE = 2 * 1024 * 1024;
 constexpr int64_t WAIT_OUT_TIME = 50000; // 等待时间MS
 constexpr int32_t VIDEO_FRAME_COUNT = 5; // 视频聚包帧数
+const int BUFFER_INFO_TYPE = 11; // 假设11表示某种缓冲区类型
 enum AVSinkState {
     IDLE,
     INIT,
@@ -62,12 +81,9 @@ int32_t Player::CreateLppSet()
 
 int32_t Player::SyncAudio()
 {
-   
     int retSync = lppVideoStreamer_->SetSyncAudioStreamer(lppAudioStreamer_->lppAudioStreamer_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetSyncAudioStreamer retSync:::%{public}d", retSync);
-
     isReleased_ = false;
-
     isStarted_ = true;
     if (lppVideoContext_) {
         AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start");
@@ -96,7 +112,6 @@ int32_t Player::CreateLppAudioStreamer()
     lppAudioStreamer_->Create(sampleInfo_.audioCodecMime);
     lppContext_ = new LppUserData;
     lppAudioStreamer_->SetCallback(lppContext_);
-//    int32_t ret = lppAudioStreamer_->SetErrorCallback(lppContext_);
     AVCODEC_SAMPLE_LOGW("Create OUT");
     return AVCODEC_SAMPLE_ERR_OK;
 }
@@ -144,15 +159,8 @@ int32_t Player::CreateLppVideoStreamer()
     lppVideoContext_->num = 100012;
     int32_t ret = lppVideoStreamer_->SetCallback(lppVideoContext_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetCallback ret:::%{public}d", ret);
-     ret = lppVideoStreamer_->SetErrorCallback(lppVideoContext_);
+    ret = lppVideoStreamer_->SetErrorCallback(lppVideoContext_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetErrorCallback ret:::%{public}d", ret);
-//    OH_AVFormat *format = OH_AVFormat_Create();
-//    ret = lppVideoStreamer_->Configure(sampleInfo_);
-//    AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ Configure ret:::%{public}d", ret);
-//    AVCODEC_SAMPLE_LOGW("surface IN");
-//    ret = lppVideoStreamer_->SetVideoSurface(sampleInfo_);
-//    AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetVideoSurface ret:::%{public}d", ret);
-//    AVCODEC_SAMPLE_LOGW("surface out");
     AVCODEC_SAMPLE_LOGW("Create OUT");
     return AVCODEC_SAMPLE_ERR_OK;
 }
@@ -226,8 +234,7 @@ int32_t Player::CreatePrepare()
     int32_t ret = demuxer_->Create(sampleInfo_);
 
     CreateLppAudioStreamer();
-    AudioStreamerSetParameter();
-//    AudioStreamerConfigure();
+    AudioStreamerConfigure();
 
     CreateLppVideoStreamer();
     VideoStreamerConfigure();
@@ -278,7 +285,6 @@ int32_t Player::Start()
         AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start");
         ret = lppVideoStreamer_->StartDecode(true);
         AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start1");
-//         usleep(500);
         ret = lppVideoStreamer_->StartRender();
         AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start2");
         isStarted_ = true;
@@ -346,41 +352,10 @@ int32_t Player::StartAudio()
 int32_t Player::Start1()
 {
     StartDecoder();
-    usleep(500000);
+    usleep(WAIT_OUT_TIME);
     RenderFirstFrame();
     StartRender();
     StartAudio();
-//     int32_t ret;
-//     CHECK_AND_RETURN_RET_LOG(!isStarted_, AVCODEC_SAMPLE_ERR_ERROR, "Already started.");
-//     CHECK_AND_RETURN_RET_LOG(!Intercept(), AVCODEC_SAMPLE_ERR_ERROR, "Intercept nullptr.");
-//     AVCODEC_SAMPLE_LOGW("aStart IN");
-//     isStarted_ = true;
-//     if(lppContext_){
-//         AVCODEC_SAMPLE_LOGE("Create thread Start");
-//         if (LppDataNeededThread_ == nullptr){
-//             LppDataNeededThread_ = std::make_unique<std::thread>(&Player::LppDataNeededThread1, this);
-//         }
-    //       
-//         AVCODEC_SAMPLE_LOGE("Create thread END1");
-//         ret = lppAudioStreamer_->Start();
-//         AVCODEC_SAMPLE_LOGE("Create thread END1");
-//         AVCODEC_SAMPLE_LOGE("Create thread END");
-//     }
-    //    
-//     if(lppVideoContext_){
-//         AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start");
-//         if (lppVideoDataNeededThread_ == nullptr){
-//             lppVideoDataNeededThread_ = std::make_unique<std::thread>(&Player::LppVideoDataNeededThread, this);
-//         }
-    //        
-//         ret = lppVideoStreamer_->StartDecode(true);
-// //         usleep(500);
-//         ret = lppVideoStreamer_->StartRender();
-//         AVCODEC_SAMPLE_LOGE("Create lppVideo thread END");
-//     }
-    //    
-//     AVCODEC_SAMPLE_LOGW("aStart OUT");
-//     doneCond_.notify_all();
     return AVCODEC_SAMPLE_ERR_OK;
 }
 
@@ -781,7 +756,6 @@ int32_t Player::Seek(int64_t seekTime, int32_t mode, bool acc)
 
     AVCODEC_SAMPLE_LOGW("Seek out");
     lock.unlock();
-//     sleep(1);
     AVCODEC_SAMPLE_LOGW("Seek out1");
     Flush();
     AVCODEC_SAMPLE_LOGW("Seek out2");
@@ -797,7 +771,7 @@ int64_t Player::ReadToAudioTargetPts(int64_t targetPts)
 {
 
     OH_AVBuffer *avbuffer = OH_AVBuffer_Create(MAX_BUFFER_SIZE);
-    CodecBufferInfo bufferInfo(11, avbuffer);
+    CodecBufferInfo bufferInfo(BUFFER_INFO_TYPE, avbuffer);
     while (true) {
         demuxer_->ReadSample(demuxer_->GetAudioTrackId(), reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer),
                              bufferInfo.attr);
@@ -825,7 +799,6 @@ int32_t Player::Seek(int64_t seekTime, int32_t mode)
 
 void Player::SeekInner(int64_t seekTime, int32_t mode)
 {
-//     eosCond_.notify_all();
     AVCODEC_SAMPLE_LOGI("============== Seek ACC IN ===============");
     int64_t targetPts = seekTime * 1000;
     AVCODEC_SAMPLE_LOGI("SetTargetStartFrame %{public}ld", targetPts);
@@ -862,7 +835,6 @@ void Player::StartRelease()
     CHECK_AND_RETURN_LOG(!Intercept(), "Intercept nullptr.");
     AVCODEC_SAMPLE_LOGI("StartRelease");
     std::unique_lock<std::mutex> lock(doneMutex);
-//     doneCond_.wait(lock, [this]() { return isAudioDone.load() && isVideoDone.load();});
     if (audioRenderer_) {
         OH_AudioRenderer_Stop(audioRenderer_);
     }
@@ -893,7 +865,6 @@ int64_t Player::GetProgressTime()
 
 void Player::ReleaseThread()
 {
-    // TODO
     if (lppContext_) {
         std::unique_lock<std::mutex> eosFlagMutexLock(lppContext_->eosFlagMutex);
         lppContext_->eosFlag_ = false;
@@ -915,8 +886,6 @@ void Player::ReleaseThread()
         lppVideoContext_->inputCond.notify_all();
         lockVideo.unlock();
     }
-
-
     if (LppDataNeededThread_ && LppDataNeededThread_->joinable()) {
         LppDataNeededThread_->join();
         LppDataNeededThread_.reset();
@@ -956,46 +925,45 @@ void Player::Release()
         videoDecoder_->Release();
         videoDecoder_.reset();
     }
-    if (videoDecContext_ != nullptr) {
-        delete videoDecContext_;
-        videoDecContext_ = nullptr;
-    }
     if (audioDecoder_ != nullptr) {
         audioDecoder_->Release();
         audioDecoder_.reset();
-    }
-    if (audioDecContext_ != nullptr) {
-        delete audioDecContext_;
-        audioDecContext_ = nullptr;
     }
     if (lppAudioStreamer_ != nullptr) {
         lppAudioStreamer_->Release();
         lppAudioStreamer_.reset();
     }
-    if (lppContext_ != nullptr) {
-        delete lppContext_;
-        lppContext_ = nullptr;
-    }
     if (lppVideoStreamer_ != nullptr) {
         lppVideoStreamer_->Release();
         lppVideoStreamer_.reset();
     }
-    if (lppVideoContext_ != nullptr) {
-        delete lppVideoContext_;
-        lppVideoContext_ = nullptr;
-    }
-
-
+    ReleaseDone();
     if (builder_ != nullptr) {
         OH_AudioStreamBuilder_Destroy(builder_);
         builder_ = nullptr;
     }
     doneCond_.notify_all();
-    // 触发回调,执行多个用例会空指针
-//    if (sampleInfo_.playDoneCallback != nullptr) {
-//        sampleInfo_.playDoneCallback(sampleInfo_.playDoneCallbackData);
-//    }
     AVCODEC_SAMPLE_LOGI("Succeed");
+}
+
+void Player::ReleaseDone()
+{
+    if (videoDecContext_ != nullptr) {
+        delete videoDecContext_;
+        videoDecContext_ = nullptr;
+    }
+    if (audioDecContext_ != nullptr) {
+        delete audioDecContext_;
+        audioDecContext_ = nullptr;
+    }
+    if (lppContext_ != nullptr) {
+        delete lppContext_;
+        lppContext_ = nullptr;
+    }
+    if (lppVideoContext_ != nullptr) {
+        delete lppVideoContext_;
+        lppVideoContext_ = nullptr;
+    }
 }
 
 void Player::LppDataNeededThread1()
@@ -1005,27 +973,22 @@ void Player::LppDataNeededThread1()
     OH_AVBuffer *avbuffer = OH_AVBuffer_Create(total_size);
     while (true) {
         CHECK_AND_BREAK_LOG(isStarted_, "Decoder input thread out");
-
         // 到达EOS帧后不再送数据，直到Seek
         std::unique_lock<std::mutex> eosLock(lppContext_->eosMutex);
         lppContext_->eosCond_.wait_for(eosLock, 150000s, [this]() { return !lppContext_->eosFlag_; });
         eosLock.unlock();
-
         // 等待数据回调到达
         std::unique_lock<std::mutex> lock(lppContext_->inputMutex);
         lppContext_->inputCond.wait_for(lock, 150000s, [this]() { return lppContext_->returnFrame; });
         lppContext_->returnFrame = false;
-
         CHECK_AND_BREAK_LOG(isStarted_, "VD Decoder output thread out");
-
-
         lppContext_->count = 1;
         // 聚包数量
         int count = 10;
         while (count > 0) {
             CHECK_AND_BREAK_LOG(!lppContext_->eosFlag_, "AUDIO is EOS");
             count--;
-            CodecBufferInfo bufferInfo(11, avbuffer);
+            CodecBufferInfo bufferInfo(BUFFER_INFO_TYPE, avbuffer);
             demuxer_->ReadSample(demuxer_->GetAudioTrackId(), reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer),
                                  bufferInfo.attr);
             AVCODEC_SAMPLE_LOGI("size %{public}d", bufferInfo.attr.size);
@@ -1047,9 +1010,8 @@ void Player::LppDataNeededThread1()
             OH_AVSamplesBuffer_AppendOneBuffer(lppContext_->framePacket_,
                                                reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer));
         }
-        if (count == 10) {
-            continue;
-        }
+        usleep(BALANCE_VALUE);
+        usleep(BALANCE_VALUE);
         int ret = lppAudioStreamer_->returnFrames(lppContext_);
         AVCODEC_SAMPLE_LOGW("lppAudioStreamer_ returnFrames ret:::%{public}d", ret);
         // 一次回调处理完再下一次
@@ -1066,31 +1028,21 @@ void Player::LppVideoDataNeededThread()
     AVCODEC_SAMPLE_LOGI("====== AVBUFFER1234 CREATE1 ======");
     OH_AVBuffer *avbuffer = OH_AVBuffer_Create(total_size);
     while (true) {
-//         AVCODEC_SAMPLE_LOGI("Succeed_1121_video");
         CHECK_AND_BREAK_LOG(isStarted_, "Decoder input thread out");
-
         std::unique_lock<std::mutex> eosLock(lppVideoContext_->eosMutex);
         lppVideoContext_->eosCond_.wait_for(eosLock, 150000s, [this]() { return !lppVideoContext_->eosFlag_; });
-
         std::unique_lock<std::mutex> lock(lppVideoContext_->inputMutex);
         lppVideoContext_->inputCond.wait_for(lock, 150000s, [this]() { return lppVideoContext_->returnFrame; });
         CHECK_AND_BREAK_LOG(isStarted_, "VD Decoder output thread out");
         lppVideoContext_->returnFrame = false;
-//         AVCODEC_SAMPLE_LOGI("Succeed_111");
         CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
-
-
         lppVideoContext_->count = VIDEO_FRAME_COUNT;
         AVCODEC_SAMPLE_LOGI("LppVideoDataNeededThread count %{public}d", lppVideoContext_->count);
         while (lppVideoContext_->count > 0) {
             CHECK_AND_BREAK_LOG(!lppVideoContext_->eosFlag_, "VIDEO is EOS");
-            CodecBufferInfo bufferInfo(11, avbuffer);
-
+            CodecBufferInfo bufferInfo(BUFFER_INFO_TYPE, avbuffer);
             demuxer_->ReadSample(demuxer_->GetVideoTrackId(), reinterpret_cast<OH_AVBuffer *>(bufferInfo.buffer),
                                  bufferInfo.attr);
-//                  AVCODEC_SAMPLE_LOGI("lppVideoContext_->count %{public}d",lppVideoContext_->count);
-
-//                 AVCODEC_SAMPLE_LOGI("size %{public}d",bufferInfo.attr.size);
             AVCODEC_SAMPLE_LOGI("LppVideoDataNeededThread ptsacc %{public}ld", bufferInfo.attr.pts);
             int32_t remain = OH_AVSamplesBuffer_GetRemainedCapacity(lppVideoContext_->framePacket_);
             if ((bufferInfo.attr.flags & AVCODEC_BUFFER_FLAGS_EOS)) {
@@ -1112,13 +1064,7 @@ void Player::LppVideoDataNeededThread()
             continue;
         }
         int ret = lppVideoStreamer_->returnFrames(lppVideoContext_);
-//        AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ returnFrames ret:::%{public}d", ret);
         AVCODEC_SAMPLE_LOGI("LppVideoDataNeededThread returnFrames end");
-//         if(eosFlag){
-//             break;
-//         }
-//         AVCODEC_SAMPLE_LOGI("Succeed_121");
-//         delete lppVideoContext_->framePacket_;
         lock.unlock();
     }
     AVCODEC_SAMPLE_LOGI("====== AVBUFFER1234 DESTROY1 ======");

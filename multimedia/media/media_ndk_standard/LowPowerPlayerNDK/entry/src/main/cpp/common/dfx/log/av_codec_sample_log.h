@@ -35,7 +35,7 @@
     if (1) {                                                   \
         thread_local uint64_t currentTimes = 0;                \
         if (currentTimes++ % ((uint64_t)(frequency)) != 0) {   \
-            break;                                             \
+            return;                                             \
         }                                                      \
     }
 
