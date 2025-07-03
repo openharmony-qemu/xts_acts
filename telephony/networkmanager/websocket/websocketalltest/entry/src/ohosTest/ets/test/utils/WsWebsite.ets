@@ -13,7 +13,7 @@ class OutValue {
   message: string = ""
 }
 
-let CURRENT_URL: string = 'wss://whale.tooly.top/ws';
+let current_url: string = 'wss://whale.tooly.top/ws';
 let URLARRAY:Array<string> =
   ['wss://whale.tooly.top/ws','wss://echo.websocket.events','wss://ws.ifelse.io/','ws://echo.websocket.org'];
 let caseName: string = 'Search URL ';
@@ -28,11 +28,11 @@ let  testWsAbility:() => void = async ()=>{
       const status: number = (value as OutValue).status;
       if(status == 101){
         isNetSuccess = 1;
-        CURRENT_URL = URLARRAY[websiteIndex]
+        current_url = URLARRAY[websiteIndex]
       }
     });
     ws.connect(URLARRAY[websiteIndex], (err: BusinessError, value: boolean) => {
-      console.info(`${caseName} :connect 回调开始执行 url is  ${URLARRAY[websiteIndex]}`)
+      console.info(`${caseName} :connect start execute url is  ${URLARRAY[websiteIndex]}`)
       if (err) {
         console.info(`${caseName} : ${URLARRAY[websiteIndex]} test connect fail ${JSON.stringify(err)}`);
       } else {
@@ -41,22 +41,22 @@ let  testWsAbility:() => void = async ()=>{
     })
     await sleep(2000);
   }catch (err){
-    console.error('网络探测执行失败,err in'+JSON.stringify(err));
+    console.error('network search failed,err in'+JSON.stringify(err));
   }
 }
 
 let  getWebsite:() => Promise<string> = async (): Promise<string> =>{
   try {
-    while(isNetSuccess == 0 && websiteIndex < URLARRAY.length ){
+    while(isNetSuccess == 0 && websiteIndex < URLARRAY.length - 1){
       ws = webSocket.createWebSocket();
       websiteIndex+=1;
       await testWsAbility();
     }
-    console.log(caseName+" return url is"+CURRENT_URL)
-    return CURRENT_URL;
+    console.log(caseName+" return url is"+current_url)
+    return current_url;
   }catch (err){
     console.error(caseName+' getWebsite failed,err in'+JSON.stringify(err));
-    return CURRENT_URL;
+    return current_url;
   }
 }
 
