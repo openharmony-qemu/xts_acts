@@ -968,9 +968,9 @@ void Player::ReleaseDone()
 
 void Player::LppDataNeededThread1()
 {
-    int32_t total_size = 4467270;
+    int32_t totalSize = 4467270;
     AVCODEC_SAMPLE_LOGI("====== AVBUFFER1234 CREATE ======");
-    OH_AVBuffer *avbuffer = OH_AVBuffer_Create(total_size);
+    OH_AVBuffer *avbuffer = OH_AVBuffer_Create(totalSize);
     while (true) {
         CHECK_AND_BREAK_LOG(isStarted_, "Decoder input thread out");
         // 到达EOS帧后不再送数据，直到Seek
@@ -1024,9 +1024,9 @@ void Player::LppDataNeededThread1()
 void Player::LppVideoDataNeededThread()
 {
     bool eosFlag = 0;
-    int32_t total_size = 4467270;
+    int32_t totalSize = 4467270;
     AVCODEC_SAMPLE_LOGI("====== AVBUFFER1234 CREATE1 ======");
-    OH_AVBuffer *avbuffer = OH_AVBuffer_Create(total_size);
+    OH_AVBuffer *avbuffer = OH_AVBuffer_Create(totalSize);
     while (true) {
         CHECK_AND_BREAK_LOG(isStarted_, "Decoder input thread out");
         std::unique_lock<std::mutex> eosLock(lppVideoContext_->eosMutex);
