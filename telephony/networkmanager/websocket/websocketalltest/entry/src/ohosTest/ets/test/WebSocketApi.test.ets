@@ -95,11 +95,11 @@ export default function WebSocketApiTest() {
   describe('webSocketApiTest', () => {
   
     beforeAll(async (done: Function)=>{
-      console.log("beforeAll开始执行了~~~~~~~~~")
+      console.log("beforeAll start");
       availableWebSocketAddress = await getWebsite();
       console.log("current url is "+ availableWebSocketAddress)
       done()
-      console.log("beforeAll执行结束~~~~~~~~~")
+      console.log("beforeAll end ")
     })
 
   
