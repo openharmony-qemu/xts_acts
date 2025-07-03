@@ -1,7 +1,12 @@
 {
-  "deviceTypes": [],
-  "syscap": {
-    "name": "nativefence",
-    "version": "1.0.0"
-  }
+    "devices": {
+        "general": [],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Startup.SystemInfo"
+                ]
+            }
+        ]
+    }
 }
