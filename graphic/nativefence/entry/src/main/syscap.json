@@ -1,3 +1,7 @@
 {
-    "devices": {}
+  "deviceTypes": [],
+  "syscap": {
+    "name": "nativefence",
+    "version": "1.0.0"
+  }
 }
