@@ -1341,9 +1341,9 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
     OH_AVScreenCaptureConfig config_;
     SetConfig(config_);
 
-    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVScreenCapture_CaptureStrategy* strategyNull = nullptr;
     OH_AVSCREEN_CAPTURE_ErrCode result0 = AV_SCREEN_CAPTURE_ERR_OK;
-    result0 = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureStrategyForPrivacyMaskMode, nullptr);
+    result0 = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureStrategyForPrivacyMaskMode, strategyNull);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_SetCaptureStrategy result0 = %{public}d", result0);
     if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         napi_throw_error((env), nullptr, "error : expect strategy is not nullptr");
@@ -1355,6 +1355,7 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
         napi_throw_error((env), nullptr, "error : expect result0 is 3");
     }
     
+    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
     result0 = OH_AVScreenCapture_StrategyForPrivacyMaskMode(strategy, 2);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_StrategyForPrivacyMaskMode result0 = %{public}d", result0);
     if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
