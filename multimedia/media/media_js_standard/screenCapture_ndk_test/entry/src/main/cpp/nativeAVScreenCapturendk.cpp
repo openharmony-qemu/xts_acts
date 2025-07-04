@@ -1245,7 +1245,7 @@ static napi_value multiAVScreenCaptureCreate(napi_env env, napi_callback_info in
     return res;
 }
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-static napi_value normalAVScreenCaptureErrorTest(napi_env env, napi_callback_info info) 
+static napi_value normalAVScreenCaptureErrorTest(napi_env env, napi_callback_info info)
 {
     FILE *audioFile = nullptr;
     OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
