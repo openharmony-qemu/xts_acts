@@ -32,7 +32,7 @@ export default function systemManagerTest() {
     testSetAutoUnlockAfterReboot();
     testGetAutoUnlockAfterReboot();
     testSetInstallLocalEnterpriseAppEnabled();
-    testIsInstallLocalEnterpriseAppEnabled();
+    testGetInstallLocalEnterpriseAppEnabled();
   })
 }
 
@@ -1101,12 +1101,12 @@ function testSetInstallLocalEnterpriseAppEnabled() {
     try {
       let value: boolean = true;
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
-      let result: boolean = systemManager.isInstallLocalEnterpriseAppEnabled(SELFWANT);
+      let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(result === value).assertTrue();
 
       value = false;
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
-      result = systemManager.isInstallLocalEnterpriseAppEnabled(SELFWANT);
+      result = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(result === value).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
@@ -1117,18 +1117,18 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   });
 }
 
-function testIsInstallLocalEnterpriseAppEnabled() {
+function testGetInstallLocalEnterpriseAppEnabled() {
    /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0001
    * @tc.name      : test_is_install_local_enterprise_app_enable_0001
-   * @tc.desc      : test systemManager isInstallLocalEnterpriseAppEnabled without admin
+   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled without admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_is_install_local_enterprise_app_enable_0001", Level.LEVEL2, async (done: Function) => {
     try {
-      let isDisallow: boolean = await systemManager.isInstallLocalEnterpriseAppEnabled(SELFWANT);
+      let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
     } catch (error) {
       expect(error.code == 9200001).assertTrue();
     }
@@ -1138,7 +1138,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0002
    * @tc.name      : test_is_install_local_enterprise_app_enable_0002
-   * @tc.desc      : test systemManager isInstallLocalEnterpriseAppEnabled without invalid admin
+   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled without invalid admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -1146,7 +1146,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   it("test_is_install_local_enterprise_app_enable_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let isDisallow: boolean = await systemManager.isInstallLocalEnterpriseAppEnabled(INVALID_WANT);
+      let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(INVALID_WANT);
     } catch (error) {
       expect(error.code == 401).assertTrue();
     } finally {
@@ -1158,7 +1158,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0003
    * @tc.name      : test_is_install_local_enterprise_app_enable_0003
-   * @tc.desc      : test systemManager isInstallLocalEnterpriseAppEnabled with normal admin
+   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled with normal admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -1166,7 +1166,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   it("test_is_install_local_enterprise_app_enable_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let isDisallow: boolean = await systemManager.isInstallLocalEnterpriseAppEnabled(SELFWANT);
+      let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
     } finally {
@@ -1178,7 +1178,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_INSTALL_LOCAL_ENTERPRISE_APP_ENABLED_JS_0004
    * @tc.name      : test_is_install_local_enterprise_app_enable_0004
-   * @tc.desc      : test systemManager isInstallLocalEnterpriseAppEnabled success
+   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled success
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -1186,7 +1186,7 @@ function testIsInstallLocalEnterpriseAppEnabled() {
   it("test_is_install_local_enterprise_app_enable_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let isDisallow: boolean = await systemManager.isInstallLocalEnterpriseAppEnabled(SELFWANT);
+      let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(isDisallow).assertFalse();
     } catch (error) {
       expect(false).assertTrue();
