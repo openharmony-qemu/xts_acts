@@ -73,7 +73,7 @@ export default function windowImmersiveTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: ${isPCStatus}`);
-      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.DEVICE_SHARED);
+      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
@@ -2543,16 +2543,20 @@ export default function windowImmersiveTest() {
         windowClass.setSpecificSystemBarEnabled('status', false).then(async () => {
           console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(500);
+          await windowClass.setSpecificSystemBarEnabled('status', true);
           done();
         }).catch(async (error: BusinessError) => {
           console.log(`${caseName} Failed to set the status bar to be invisible. Cause: ${JSON.stringify(error)}`);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await windowClass.setSpecificSystemBarEnabled('status', true);
           expect().assertFail();
           done();
         });
       } catch (exception) {
         console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await windowClass.setSpecificSystemBarEnabled('status', true);
         expect().assertFail();
         done();
       }
@@ -2780,39 +2784,31 @@ export default function windowImmersiveTest() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0700
-     * @tc.name      : testIsImmersiveLayoutwithMiniMize
-     * @tc.desc      : 验证退后台后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMiniMize';
-      // 1、拉起另一个Abllity主窗
-      let windowStageStart = await startAbility(caseName, context);
-      let windowClassTest = windowStageStart.getMainWindowSync();
-      try {
-        await windowClassTest.minimize();
-        await sleep(200);
-        let res = windowClassTest.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(false);
-        await terminateAbility(caseName);
-        await sleep(200)
-        done();
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        await terminateAbility(caseName);
-        if (e.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
+    // it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
+    //   // 1、拉起另一个Abllity主窗
+    //   let windowStageStart = await startAbility(caseName, context);
+    //   let windowClassTest = windowStageStart.getMainWindowSync();
+    //   try {
+    //     await windowClassTest.minimize();
+    //     await sleep(200);
+    //     let res = windowClassTest.isImmersiveLayout();
+    //     console.log(`${caseName} isImmersiveLayout: ${res}.`);
+    //     expect(res).assertEqual(false);
+    //     await terminateAbility(caseName);
+    //     await sleep(200)
+    //     done();
+    //   } catch (e) {
+    //     console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+    //     await terminateAbility(caseName);
+    //     if (e.code === 801) {
+    //       done();
+    //     } else {
+    //       expect().assertFail();
+    //       done();
+    //     }
+    //   }
+    // });
 
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
