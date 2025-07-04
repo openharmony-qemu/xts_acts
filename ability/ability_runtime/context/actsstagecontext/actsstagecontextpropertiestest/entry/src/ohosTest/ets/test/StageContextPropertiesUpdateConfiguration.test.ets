@@ -34,7 +34,7 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
       let environmentCallback: EnvironmentCallback = {
         onConfigurationUpdated(config){
           console.info(`=============envCallback onConfigurationUpdated success: ${JSON.stringify(config)}`);
-          resultTag = 0
+          resultTag = 0;
         },
         onMemoryLevel(level) {
           console.log(`onMemoryLevel level: ${level}`);
