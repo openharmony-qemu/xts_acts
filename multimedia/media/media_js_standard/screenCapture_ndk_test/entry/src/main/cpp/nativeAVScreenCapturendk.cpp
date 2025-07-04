@@ -1245,7 +1245,7 @@ static napi_value multiAVScreenCaptureCreate(napi_env env, napi_callback_info in
     return res;
 }
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-static napi_value videoSourceAVScreenCaptureErrorTest(napi_env env, napi_callback_info info) 
+static napi_value normalAVScreenCaptureErrorTest(napi_env env, napi_callback_info info) 
 {
     FILE *audioFile = nullptr;
     OH_AVScreenCapture *screenCapture = OH_AVScreenCapture_Create();
@@ -1370,7 +1370,7 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
 
     result0 = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureStrategyForPrivacyMaskMode, strategy);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_SetCaptureStrategy result0 = %{public}d", result0);
-    if (result0 != AV_SCREEN_CAPTURE_ERR_UNSUPPORT) {
+    if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         napi_throw_error((env), nullptr, "error : expect strategy is not support");
     }
     
@@ -1520,7 +1520,7 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"multiAVScreenCaptureCreate", nullptr, multiAVScreenCaptureCreate,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"videoSourceAVScreenCaptureErrorTest", nullptr, videoSourceAVScreenCaptureErrorTest,
+        {"normalAVScreenCaptureErrorTest", nullptr, normalAVScreenCaptureErrorTest,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAreaTest", nullptr, normalAreaTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalStrategyTest", nullptr, normalStrategyTest, nullptr, nullptr, nullptr, napi_default, nullptr},
