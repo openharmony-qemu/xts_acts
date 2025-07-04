@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Graphic.Graphic2D.NativeFence"
+                    "SystemCapability.Graphic.Graphic2D.NativeWindow"
                 ]
             }
         ]
