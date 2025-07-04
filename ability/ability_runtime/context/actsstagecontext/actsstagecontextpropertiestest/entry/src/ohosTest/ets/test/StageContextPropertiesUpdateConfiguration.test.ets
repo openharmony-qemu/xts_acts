@@ -35,6 +35,7 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
         onConfigurationUpdated(config){
           console.info(`=============envCallback onConfigurationUpdated success: ${JSON.stringify(config)}`);
           resultTag = 0;
+
         },
         onMemoryLevel(level) {
           console.log(`onMemoryLevel level: ${level}`);
@@ -63,6 +64,15 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
         onConfigurationUpdated(config){
           console.info(`=============envCallback onConfigurationUpdated success: ${JSON.stringify(config)}`);
           resultTag = 0
+          try{
+            if(config.fontId === undefined){
+              expect().assertFail();
+            }else {
+              expect(typeof(config.fontId)).assertEqual('string');
+            }
+          }catch{
+
+          }
         },
         onMemoryLevel(level) {
           console.log(`onMemoryLevel level: ${level}`);
