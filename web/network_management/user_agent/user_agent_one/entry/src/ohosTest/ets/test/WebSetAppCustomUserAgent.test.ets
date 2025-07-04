@@ -45,8 +45,8 @@ export default function webSetAppCustomUserAgent() {
         console.error("push webSetAppCustomUserAgent page error: " + err);
       }
       let driver = Driver.create();
-      await driver.waitForComponent(ON.id("setAppCustomUserAgentWComponent"),10000);
-      console.log("waitForComponent setAppCustomUserAgentWComponent==>");
+      await driver.waitForComponent(ON.id("WebSetAppCustomUserAgentButton"),10000);
+      console.log("waitForComponent WebSetAppCustomUserAgentButton==>");
       done()
     });
 

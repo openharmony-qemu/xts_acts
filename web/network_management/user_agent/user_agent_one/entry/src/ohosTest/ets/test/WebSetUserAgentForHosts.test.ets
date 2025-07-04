@@ -45,8 +45,8 @@ export default function webSetUserAgentForHosts() {
         console.error("push webSetUserAgentForHosts page error: " + err);
       }
       let driver = Driver.create();
-      await driver.waitForComponent(ON.id("setUserAgentForHostsWComponent"),10000);
-      console.log("waitForComponent setUserAgentForHostsWComponent==>");
+      await driver.waitForComponent(ON.id("WebSetUserAgentForHostsButton"),10000);
+      console.log("waitForComponent WebSetUserAgentForHostsButton==>");
       done()
     });
 
