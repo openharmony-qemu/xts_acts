@@ -26,7 +26,7 @@ struct webSetUserAgentForHosts {
   responseWeb: WebResourceResponse = new WebResourceResponse();
   @State emitKey: string = '';
   @State message: Array<string> = [];
-  @State isJumpBaidu: number = -1;
+  @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State webData: string = `
     <!DOCTYPE html>
@@ -46,14 +46,14 @@ struct webSetUserAgentForHosts {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 19,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(19)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -74,7 +74,9 @@ struct webSetUserAgentForHosts {
           .key('WebSetUserAgentForHostsButton')
           .onClick(async () => {
             await waitForExist(()=>this.isReceive, this.emitKey, 0);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
             console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitSetUserAgentForHostsOverRange': {
                 try {
@@ -82,9 +84,9 @@ struct webSetUserAgentForHosts {
                   console.log('userAgent===>' + userAgent);
                   let customUserAgent = userAgent + ' setUserAgentForHosts';
                   webView.WebviewController.setUserAgentForHosts(customUserAgent, ['test123.test.com']);
-                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl(URL);
-                  await waitForExist(()=>this.isJumpBaidu, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -101,8 +103,6 @@ struct webSetUserAgentForHosts {
                     Utils.emitEvent(true, 2025052804)
                   }
                 }
-                this.isReceive = -1;
-                this.isJumpBaidu = -1;
                 break;
               }
               case 'emitSetUserAgentForHosts': {
@@ -111,9 +111,9 @@ struct webSetUserAgentForHosts {
                   console.log('userAgent===>' + userAgent);
                   let customUserAgent = userAgent + ' setUserAgentForHosts';
                   webView.WebviewController.setUserAgentForHosts(customUserAgent, [URL2]);
-                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl(URL);
-                  await waitForExist(()=>this.isJumpBaidu, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -130,8 +130,6 @@ struct webSetUserAgentForHosts {
                     Utils.emitEvent(true, 2025052805)
                   }
                 }
-                this.isReceive = -1;
-                this.isJumpBaidu = -1;
                 break;
               }
               case 'emitSetUserAgentForHostsFirstParamNull': {
@@ -145,7 +143,6 @@ struct webSetUserAgentForHosts {
                     Utils.emitEvent(String(error.code), 2025052806);
                   }
                 }
-                this.isReceive = -1;
                 break;
               }
               case 'emitSetUserAgentForHostsFirstParamUndefined': {
@@ -159,7 +156,6 @@ struct webSetUserAgentForHosts {
                     Utils.emitEvent(String(error.code), 2025052807);
                   }
                 }
-                this.isReceive = -1;
                 break;
               }
               case 'emitSetUserAgentForHostsSecondParamNull': {
@@ -176,7 +172,6 @@ struct webSetUserAgentForHosts {
                     Utils.emitEvent(String(error.code), 2025052808);
                   }
                 }
-                this.isReceive = -1;
                 break;
               }
               case 'emitSetUserAgentForHostsSecondParamUndefined': {
@@ -199,15 +194,13 @@ struct webSetUserAgentForHosts {
          })
       }
       Web({ src: $rawfile('userAgent.html'), controller: this.controller })
+        .key('setUserAgentForHostsWComponent')
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd((event) => {
           if (event) {
             console.log('setUserAgentForHosts onPageEnd url:' + event.url);
-            let url = event.url;
-            if (url.includes(URL2)) {
-              this.isJumpBaidu = 0;
-            }
+            this.isPageEnd = 0;
            }
         })
         .onInterceptRequest((event) => {

@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
+import { Driver, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -43,6 +44,9 @@ export default function webSetAppCustomUserAgent() {
       } catch (err) {
         console.error("push webSetAppCustomUserAgent page error: " + err);
       }
+      let driver = Driver.create();
+      await driver.waitForComponent(ON.id("setAppCustomUserAgentWComponent"),10000);
+      console.log("waitForComponent setAppCustomUserAgentWComponent==>");
       done()
     });
 
@@ -52,15 +56,12 @@ export default function webSetAppCustomUserAgent() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webSetAppCustomUserAgent beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("webSetAppCustomUserAgent afterEach start");
-      await Utils.sleep(2000);
-      console.info("webSetAppCustomUserAgent afterEach end");
       done();
     })
 
@@ -73,7 +74,7 @@ export default function webSetAppCustomUserAgent() {
     * @tc.level      : Level 0
     */
     it('testSetAppCustomUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetAppCustomUserAgent', 10);
+      Utils.emitEvent('emitSetAppCustomUserAgent', 18);
       Utils.registerBaseEvent('testSetAppCustomUserAgent', true, 2025052801, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -88,7 +89,7 @@ export default function webSetAppCustomUserAgent() {
     * @tc.level      : Level 0
     */
     it('testSetAppCustomUserAgentNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetAppCustomUserAgentNull', 10);
+      Utils.emitEvent('emitSetAppCustomUserAgentNull', 18);
       Utils.registerBaseEvent('testSetAppCustomUserAgentNull', '401', 2025052802, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -103,7 +104,7 @@ export default function webSetAppCustomUserAgent() {
     * @tc.level      : Level 0
     */
     it('testSetAppCustomUserAgentUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetAppCustomUserAgentUndefined', 10);
+      Utils.emitEvent('emitSetAppCustomUserAgentUndefined', 18);
       Utils.registerBaseEvent('testSetAppCustomUserAgentUndefined', '401', 2025052803, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });

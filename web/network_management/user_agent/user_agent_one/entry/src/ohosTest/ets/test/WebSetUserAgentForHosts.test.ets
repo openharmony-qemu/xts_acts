@@ -18,6 +18,7 @@ import router from '@ohos.router';
 import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
+import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -43,6 +44,9 @@ export default function webSetUserAgentForHosts() {
       } catch (err) {
         console.error("push webSetUserAgentForHosts page error: " + err);
       }
+      let driver = Driver.create();
+      await driver.waitForComponent(ON.id("setUserAgentForHostsWComponent"),10000);
+      console.log("waitForComponent setUserAgentForHostsWComponent==>");
       done()
     });
 
@@ -73,7 +77,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHostsOverRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHostsOverRange', 10);
+      Utils.emitEvent('emitSetUserAgentForHostsOverRange', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', false, 2025052804, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -88,7 +92,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHosts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHosts', 10);
+      Utils.emitEvent('emitSetUserAgentForHosts', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', true, 2025052805, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -103,7 +107,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHostsFirstParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHostsFirstParamNull', 10);
+      Utils.emitEvent('emitSetUserAgentForHostsFirstParamNull', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamNull', '401', 2025052806, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -118,7 +122,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHostsFirstParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHostsFirstParamUndefined', 10);
+      Utils.emitEvent('emitSetUserAgentForHostsFirstParamUndefined', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamUndefined', '401', 2025052807, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -133,7 +137,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHostsSecondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHostsSecondParamNull', 10);
+      Utils.emitEvent('emitSetUserAgentForHostsSecondParamNull', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamNull', '401', 2025052808, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
@@ -148,7 +152,7 @@ export default function webSetUserAgentForHosts() {
     * @tc.level      : Level 0
     */
     it('testSetUserAgentForHostsSecondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitSetUserAgentForHostsSecondParamUndefined', 10);
+      Utils.emitEvent('emitSetUserAgentForHostsSecondParamUndefined', 19);
       Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamUndefined', '401', 2025052809, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });

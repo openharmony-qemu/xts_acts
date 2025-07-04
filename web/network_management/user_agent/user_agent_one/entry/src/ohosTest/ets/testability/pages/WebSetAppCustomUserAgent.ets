@@ -26,17 +26,18 @@ struct webSetAppCustomUserAgent {
   @State message: Array<string> = [];
   @State isJumpUserAgentTwo: number = -1;
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 18,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(18)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -57,7 +58,9 @@ struct webSetAppCustomUserAgent {
           .key('WebSetAppCustomUserAgentButton')
           .onClick(async () => {
             await waitForExist(()=>this.isReceive, this.emitKey, 0);
+            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
             console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitSetAppCustomUserAgent': {
                 try {
@@ -65,9 +68,9 @@ struct webSetAppCustomUserAgent {
                   console.log('userAgent===>' + userAgent);
                   let customUserAgent = userAgent + ' setAppCustomUserAgent';
                   webView.WebviewController.setAppCustomUserAgent(customUserAgent);
-                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('userAgentTwo.html'))
-                  await waitForExist(()=>this.isJumpUserAgentTwo, this.emitKey, 0);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   this.controller.runJavaScript('getUserAgent()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -118,15 +121,13 @@ struct webSetAppCustomUserAgent {
          })
       }
       Web({ src: $rawfile('userAgent.html'), controller: this.controller })
+        .key('setAppCustomUserAgentWComponent')
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd((event) => {
           if (event) {
+            this.isPageEnd = 0;
             console.log('setAppCustomUserAgent onPageEnd url:' + event.url);
-            let url = event.url;
-            if (url.includes('userAgentTwo.html')) {
-              this.isJumpUserAgentTwo = 0;
-            }
            }
         })
         .width('100%')
