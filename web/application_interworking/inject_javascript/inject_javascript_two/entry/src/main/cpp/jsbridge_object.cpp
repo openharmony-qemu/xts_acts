@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ void JSBridgeObject::Init() { weak_ptr_ = shared_from_this(); }
 std::weak_ptr<JSBridgeObject> *JSBridgeObject::GetWeakPtr() { return &weak_ptr_; }
 
 void JSBridgeObject::StaticRunJavaScriptCallback(const char *webTag, const ArkWeb_JavaScriptBridgeData *data,
-                                                 void *userData) {
+                                                 void *userData)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
                  "JSBridgeObject StaticRunJavaScriptCallback webTag:%{public}s", webTag);
     if (!userData) {
@@ -43,38 +44,49 @@ void JSBridgeObject::StaticRunJavaScriptCallback(const char *webTag, const ArkWe
     }
 }
 
-void JSBridgeObject::RunJavaScriptCallback(const char *result) {
+void JSBridgeObject::RunJavaScriptCallback(const char *result)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
                  "JSBridgeObject OH_NativeArkWeb_RunJavaScript result:%{public}s", result);
 }
 
-void JSBridgeObject::ProxyMethod1(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize) {
+void JSBridgeObject::ProxyMethod1(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "JSBridgeObject ProxyMethod1 argc:%{public}d",
                  arraySize);
     for (int i = 0; i < arraySize; i++) {
         std::string result((char *)dataArray[i].buffer, dataArray[i].size);
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb","JSBridgeObject ProxyMethod1 argv[%{public}d]:%{public}s, size:%{public}d", i, result.c_str(),dataArray[i].size);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+            "JSBridgeObject ProxyMethod1 argv[%{public}d]:%{public}s, size:%{public}d",
+            i, result.c_str(),dataArray[i].size);
     }
 }
 
-void JSBridgeObject::ProxyMethod2(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize) {
+void JSBridgeObject::ProxyMethod2(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "JSBridgeObject ProxyMethod2 argc:%{public}d",
                  arraySize);
     for (int i = 0; i < arraySize; i++) {
         std::string result((char *)dataArray[i].buffer, dataArray[i].size);
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb","JSBridgeObject ProxyMethod2 argv[%{public}d]:%{public}s, size:%{public}d", i, result.c_str(),dataArray[i].size);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+            "ArkWeb","JSBridgeObject ProxyMethod2 argv[%{public}d]:%{public}s, size:%{public}d",
+            i, result.c_str(),dataArray[i].size);
     }
 }
 
-void JSBridgeObject::ProxyMethod(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize) {
+void JSBridgeObject::ProxyMethod(const ArkWeb_JavaScriptBridgeData *dataArray, int32_t arraySize)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "JSBridgeObject ProxyMethod argc:%{public}d",
                  arraySize);
     for (int i = 0; i < arraySize; i++) {
         std::string result((char *)dataArray[i].buffer, dataArray[i].size);
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb","JSBridgeObject ProxyMethod argv[%{public}d]:%{public}s, size:%{public}d", i, result.c_str(),dataArray[i].size);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
+            "JSBridgeObject ProxyMethod argv[%{public}d]:%{public}s, size:%{public}d",
+            i, result.c_str(),dataArray[i].size);
     }
 }
 
-void JSBridgeObject::SaySomething(const char *say) {
+void JSBridgeObject::SaySomething(const char *say)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "JSBridgeObject SaySomething argc:%{public}s", say);
 }

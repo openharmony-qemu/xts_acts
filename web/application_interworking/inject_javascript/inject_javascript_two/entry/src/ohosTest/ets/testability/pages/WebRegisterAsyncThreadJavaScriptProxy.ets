@@ -58,7 +58,6 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
   aboutToAppear() {
     console.info('start run testcase!!!')
     web_webview.WebviewController.setWebDebuggingAccess(true);
-    //初始化web ndk
     testNapi.nativeWebInitTwo(this.webTag);
   }
 
