@@ -1370,7 +1370,7 @@ static napi_value normalStrategyTest(napi_env env, napi_callback_info info)
 
     result0 = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureStrategyForPrivacyMaskMode, strategy);
     OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_SetCaptureStrategy result0 = %{public}d", result0);
-    if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+    if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_STATE) {
         napi_throw_error((env), nullptr, "error : expect strategy is not support");
     }
     
