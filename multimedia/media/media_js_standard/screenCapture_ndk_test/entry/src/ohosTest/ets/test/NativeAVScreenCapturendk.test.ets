@@ -599,6 +599,7 @@ export default function nativeAVScreenCaptureNdkTest() {
       let result: number = myScreenCaptureNdk.normalStrategyTest();
       console.info(Tag + "normalStrategyTest-------------res:" + result);
       expect(result).assertEqual(3);
+      await Utils.btnTextScreenCapture();
       done();
     });
 
