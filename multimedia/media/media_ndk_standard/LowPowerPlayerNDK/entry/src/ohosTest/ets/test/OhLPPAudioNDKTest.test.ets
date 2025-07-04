@@ -71,15 +71,15 @@ export default function OhLPPAudioNDKTest() {
     })
 
     /**
-     * @tc.number     : testOhLppAudio_mp4_errorevent_0100
-     * @tc.name       : testOhLppAudio_mp4_errorevent_0100
+     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0100
+     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0100
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppAudio_mp4_errorevent_0100', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppAudio_mp4_errorevent_0100 test start `);
+    it('TESTOHLPPAUDIO_MP4_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0100 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -112,19 +112,19 @@ export default function OhLPPAudioNDKTest() {
         fdPath: "H264_AAC.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppAudio_mp4_errorevent_0100 test end `);
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0100 test end `);
     });
 
     /**
-     * @tc.number     : testOhLppAudio_mp4_errorevent_0102
-     * @tc.name       : testOhLppAudio_mp4_errorevent_0102
+     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0102
+     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0102
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppAudio_mp4_errorevent_0102', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppAudio_mp4_errorevent_0102 test start `);
+    it('TESTOHLPPAUDIO_MP4_ERROREVENT_0102', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0102 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -158,19 +158,19 @@ export default function OhLPPAudioNDKTest() {
         fdPath: "h264_1280x720_30.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppAudio_mp4_errorevent_0102 test end `);
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0102 test end `);
     });
 
     /**
-     * @tc.number     : testOhLppAudio_mp4_errorevent_0103
-     * @tc.name       : testOhLppAudio_mp4_errorevent_0103
+     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0103
+     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0103
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppAudio_mp4_errorevent_0103', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppAudio_mp4_errorevent_0103 test start `);
+    it('TESTOHLPPAUDIO_MP4_ERROREVENT_0103', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0103 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -212,7 +212,7 @@ export default function OhLPPAudioNDKTest() {
         fdPath: "h264_1280x720_30.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppAudio_mp4_errorevent_0103 test end `);
+      console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0103 test end `);
     });
 
   })

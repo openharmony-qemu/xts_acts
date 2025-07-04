@@ -259,7 +259,6 @@ int32_t LppAudioStreamer::CallbackDestroy()
 
 int32_t LppAudioStreamer::Release()
 {
-//    Stop();
     CallbackDestroy();
     Destroy();
     return AVCODEC_SAMPLE_ERR_OK;

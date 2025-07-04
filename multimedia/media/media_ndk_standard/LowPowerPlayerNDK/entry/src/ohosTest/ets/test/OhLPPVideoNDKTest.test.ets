@@ -45,15 +45,15 @@ export default function OhLPPVideoNDKTest() {
     })
 
     /**
-     * @tc.number     : testOhLppVideo_mp4_errorevent_0100
-     * @tc.name       : testOhLppVideo_mp4_errorevent_0100
+     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0100
+     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0100
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppVideo_mp4_errorevent_0100', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppVideo_mp4_errorevent_0100 test start `);
+    it('TESTOHLPPVIDEO_MP4_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0100 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -68,12 +68,6 @@ export default function OhLPPVideoNDKTest() {
         lppBase.VIDEO_START_RENDER_EVENT,
         //set speed
         lppBase.VIDEO_SET_SPEED_EVENT,
-        // //set volume--
-        // lppBase.AUDIO_SET_VOLUME_DOWN_EVENT,
-        // lppBase.AUDIO_SET_VOLUME_DOWN_EVENT,
-        // //set volume++
-        // lppBase.AUDIO_SET_VOLUME_UP_EVENT,
-        // lppBase.AUDIO_SET_VOLUME_UP_EVENT,
         lppBase.WAIT_LPP_PLAYER_EVENT,
         //video stop
         lppBase.VIDEO_STOP_EVENT,
@@ -90,19 +84,19 @@ export default function OhLPPVideoNDKTest() {
         fdPath: "H264_AAC.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppVideo_mp4_errorevent_0100 test end `);
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0100 test end `);
     });
 
     /**
-     * @tc.number     : testOhLppVideo_mp4_errorevent_0102
-     * @tc.name       : testOhLppVideo_mp4_errorevent_0102
+     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0102
+     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0102
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppVideo_mp4_errorevent_0102', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppVideo_mp4_errorevent_0102 test start `);
+    it('TESTOHLPPVIDEO_MP4_ERROREVENT_0102', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0102 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -140,19 +134,19 @@ export default function OhLPPVideoNDKTest() {
         fdPath: "h264_1280x720_30.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppVideo_mp4_errorevent_0102 test end `);
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0102 test end `);
     });
 
     /**
-     * @tc.number     : testOhLppVideo_mp4_errorevent_0103
-     * @tc.name       : testOhLppVideo_mp4_errorevent_0103
+     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0103
+     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0103
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLppVideo_mp4_errorevent_0103', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLppVideo_mp4_errorevent_0103 test start `);
+    it('TESTOHLPPVIDEO_MP4_ERROREVENT_0103', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0103 test start `);
 
       let mySteps: string[] = new Array(
         //set filename
@@ -169,12 +163,6 @@ export default function OhLPPVideoNDKTest() {
         lppBase.WAIT_LPP_PLAYER_EVENT,
         //Error first frame
         lppBase.VIDEO_RENDER_FIRSTFRAME_ERROR_EVENT,
-        // //set volume--
-        // lppBase.AUDIO_SET_VOLUME_DOWN_EVENT,
-        // lppBase.AUDIO_SET_VOLUME_DOWN_EVENT,
-        // //set volume++
-        // lppBase.AUDIO_SET_VOLUME_UP_EVENT,
-        // lppBase.AUDIO_SET_VOLUME_UP_EVENT,
         //pause
         lppBase.VIDEO_PAUSE_EVENT,
         //Error first frame
@@ -206,7 +194,7 @@ export default function OhLPPVideoNDKTest() {
         fdPath: "mpeg1video_720x480_30.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
-      console.info(`testOhLppVideo_mp4_errorevent_0103 test end `);
+      console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0103 test end `);
     });
   })
 }

@@ -56,9 +56,6 @@ const mySteps_Audio_Error_Test: string[] = [
 
   lppBase.WAIT_LPP_PLAYER_EVENT,
   lppBase.VIDEO_SET_SPEED_EVENT,
-  //pause
-  // lppBase.VIDEO_PAUSE_EVENT,
-  // lppBase.AUDIO_PAUSE_ERROR_EVENT,
   //stop
   lppBase.VIDEO_STOP_EVENT,
   lppBase.AUDIO_STOP_ERROR_EVENT,
@@ -95,15 +92,15 @@ export default function OhLPPMp4NDKTest() {
     })
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0100
-     * @tc.name       : testOhLpp_mp4_errorevent_0100
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0100
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0100
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0100', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0100 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0100 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -112,19 +109,19 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "1hevc_720x480_60.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0100 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0100 test end `);
     });
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0101
-     * @tc.name       : testOhLpp_mp4_errorevent_0101
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0101
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0101
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0101', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0101 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0101', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0101 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -133,19 +130,19 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "1mpeg4_720x480_30.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0101 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0101 test end `);
     });
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0102
-     * @tc.name       : testOhLpp_mp4_errorevent_0102
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0102
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0102
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0102', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0102 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0102', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0102 test start `);
       let mySteps =  [...mySteps_Audio_Error_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -154,19 +151,19 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "H264_NONE.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0102 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0102 test end `);
     });
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0103
-     * @tc.name       : testOhLpp_mp4_errorevent_0103
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0103
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0103
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0103', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0103 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0103', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0103 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -175,20 +172,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "h263_aac.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0103 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0103 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0104
-     * @tc.name       : testOhLpp_mp4_errorevent_0104
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0104
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0104
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0104', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0104 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0104', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0104 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -197,20 +194,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "h263_mp3.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0104 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0104 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0105
-     * @tc.name       : testOhLpp_mp4_errorevent_0105
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0105
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0105
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0105', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0105 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0105', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0105 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -219,20 +216,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "h264_1280x720_30.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0105 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0105 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0106
-     * @tc.name       : testOhLpp_mp4_errorevent_0106
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0106
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0106
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0106', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0106 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0106', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0106 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -241,20 +238,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "H264_AAC.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0106 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0106 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0108
-     * @tc.name       : testOhLpp_mp4_errorevent_0108
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0108
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0108
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0108', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0108 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0108', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0108 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -263,20 +260,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "h264_aac_320x320_30r.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0108 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0108 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0109
-     * @tc.name       : testOhLpp_mp4_errorevent_0109
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0109
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0109
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0109', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0109 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0109', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0109 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -285,20 +282,20 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "H264_AAC_Matedata.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0109 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0109 test end `);
     });
 
 
     /**
-     * @tc.number     : testOhLpp_mp4_errorevent_0110
-     * @tc.name       : testOhLpp_mp4_errorevent_0110
+     * @tc.number     : TESTOHLPP_MP4_ERROREVENT_0110
+     * @tc.name       : TESTOHLPP_MP4_ERROREVENT_0110
      * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it('testOhLpp_mp4_errorevent_0110', Level.LEVEL0, async (done: Function) => {
-      console.info(`testOhLpp_mp4_errorevent_0110 test start `);
+    it('TESTOHLPP_MP4_ERROREVENT_0110', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0110 test start `);
       let mySteps =  [...mySteps_Test];
       let config: ESObject = {
         sucCode: 0,
@@ -307,7 +304,7 @@ export default function OhLPPMp4NDKTest() {
         fdPath: "H264_MP3.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);
-      console.info(`testOhLpp_mp4_errorevent_0110 test end `);
+      console.info(`TESTOHLPP_MP4_ERROREVENT_0110 test end `);
     });
 
   })
