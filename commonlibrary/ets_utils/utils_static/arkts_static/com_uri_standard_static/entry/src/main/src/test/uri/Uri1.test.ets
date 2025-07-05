@@ -2829,7 +2829,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme001', 0, (): void => {
+    it('testUriUriSetScheme001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
       uriObj.scheme = "https:"
       expect(uriObj.toString()).assertEqual('https://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -2843,7 +2843,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme002', 0, (): void => {
+    it('testUriUriSetScheme002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
       uriObj.scheme = "3https:"
       expect(uriObj.toString()).assertEqual('ht2tp://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -2857,7 +2857,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme003', 0, (): void => {
+    it('testUriUriSetScheme003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
       uriObj.scheme = "asffdsa"
       expect(uriObj.toString()).assertEqual('asffdsa://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -2871,7 +2871,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme004', 0, (): void => {
+    it('testUriUriSetScheme004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
       uriObj.scheme = "%asffdsa"
       expect(uriObj.toString()).assertEqual('ht2tp://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -2885,7 +2885,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme005', 0, (): void => {
+    it('testUriUriSetScheme005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.1hw.1com:77/path/path23?query#qwer");
       uriObj.scheme = ""
       expect(uriObj.toString()).assertEqual('http://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -2899,7 +2899,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetScheme006', 0, (): void => {
+    it('testUriUriSetScheme006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.1hw.1com:77?query#qwer");
       uriObj.scheme = "testuri006"
       expect(uriObj.scheme).assertEqual('testuri006');
@@ -2913,7 +2913,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetUserInfo001', 0, (): void => {
+    it('testUriUriSetUserInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.hw.com:77/path/path23?query#qwer");
       uriObj.userInfo = "testuri007"
       expect(uriObj.userInfo).assertEqual('testuri007');
@@ -2928,7 +2928,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetUserInfo002', 0, (): void => {
+    it('testUriUriSetUserInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://www.test.com:77/path/path23?query#qwer");
       uriObj.userInfo = "testuri008"
       expect(uriObj.userInfo).assertEqual('testuri008');
@@ -2943,7 +2943,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetUserInfo003', 0, (): void => {
+    it('testUriUriSetUserInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.userInfo = "sji<+s大"
       expect(uriObj.userInfo).assertEqual('sji<+s大');
@@ -2958,7 +2958,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetUserInfo004', 0, (): void => {
+    it('testUriUriSetUserInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.userInfo = "sji<+s大"
       expect(uriObj.userInfo).assertEqual(null);
@@ -2973,7 +2973,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetUserInfo005', 0, (): void => {
+    it('testUriUriSetUserInfo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.userInfo = ""
       expect(uriObj.userInfo).assertEqual(null);
@@ -2988,7 +2988,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath001', 0, (): void => {
+    it('testUriUriSetPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.path = ""
       expect(uriObj.path).assertEqual(null);
@@ -3003,7 +3003,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath002', 0, (): void => {
+    it('testUriUriSetPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.path = "pathtest/pp"
       expect(uriObj.path).assertEqual('pathtest/pp');
@@ -3018,7 +3018,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath003', 0, (): void => {
+    it('testUriUriSetPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.path = "pathtest/p大p"
       expect(uriObj.path).assertEqual('pathtest/p大p');
@@ -3033,7 +3033,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath004', 0, (): void => {
+    it('testUriUriSetPath004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
       uriObj.path = "/testuri015/p大p/"
       expect(uriObj.path).assertEqual('/testuri015/p大p/');
@@ -3048,7 +3048,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath005', 0, (): void => {
+    it('testUriUriSetPath005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
       uriObj.path = "/testuri016/p大p/"
       expect(uriObj.ssp).assertEqual('//userinfo@www.test.com:77/testuri016/p大p/?query');
@@ -3063,7 +3063,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetPath006', 0, (): void => {
+    it('testUriUriSetPath006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.path = "/testuri017/p大p/"
       expect(uriObj.path).assertEqual('/testuri017/p大p/');
@@ -3078,7 +3078,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetQuery001', 0, (): void => {
+    it('testUriUriSetQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.query = "/testuri018/p大p/=sasf"
       expect(uriObj.query).assertEqual('/testuri018/p大p/=sasf');
@@ -3094,7 +3094,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetQuery002', 0, (): void => {
+    it('testUriUriSetQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.query = "key=value&key1=value1"
       expect(uriObj.query).assertEqual('key=value&key1=value1');
@@ -3110,7 +3110,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetQuery003', 0, (): void => {
+    it('testUriUriSetQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.query = '';
       expect(uriObj.query).assertEqual(null);
@@ -3125,7 +3125,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetQuery004', 0, (): void => {
+    it('testUriUriSetQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.query = 'kkey=sal';
       expect(uriObj.query).assertEqual("kkey=sal");
@@ -3142,7 +3142,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetQuery005', 0, (): void => {
+    it('testUriUriSetQuery005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.query = 'kkey=sal&jj=oi';
       expect(uriObj.query).assertEqual("kkey=sal&jj=oi");
@@ -3159,7 +3159,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetFragment001', 0, (): void => {
+    it('testUriUriSetFragment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.fragment = 'kkey=sal&jj=oi';
       expect(uriObj.fragment).assertEqual("kkey=sal&jj=oi");
@@ -3176,7 +3176,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetFragment002', 0, (): void => {
+    it('testUriUriSetFragment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.fragment = '';
       expect(uriObj.fragment).assertEqual(null);
@@ -3191,7 +3191,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetFragment003', 0, (): void => {
+    it('testUriUriSetFragment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.fragment = '#jia片段';
       expect(uriObj.fragment).assertEqual("#jia片段");
@@ -3207,7 +3207,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetFragment004', 0, (): void => {
+    it('testUriUriSetFragment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query");
       uriObj.fragment = '#jia片段f';
       expect(uriObj.fragment).assertEqual("#jia片段f");
@@ -3223,7 +3223,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetFragment005', 0, (): void => {
+    it('testUriUriSetFragment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query");
       uriObj.fragment = 'jia片段f';
       expect(uriObj.fragment).assertEqual("jia片段f");
@@ -3239,7 +3239,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetAuthority001', 0, (): void => {
+    it('testUriUriSetAuthority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.authority = 'www.test11.cn:88';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3256,7 +3256,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetAuthority002', 0, (): void => {
+    it('testUriUriSetAuthority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.authority = 'uusc@www.testuc.com:741';
       expect(uriObj.userInfo).assertEqual("uusc");
@@ -3274,7 +3274,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetAuthority003', 0, (): void => {
+    it('testUriUriSetAuthority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.authority = '';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3293,7 +3293,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetAuthority004', 0, (): void => {
+    it('testUriUriSetAuthority004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.authority = 'usc@';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3312,7 +3312,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetSsp001', 0, (): void => {
+    it('testUriUriSetSsp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.ssp = 'usc@asjf:99/path1/ss?key=1';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3332,7 +3332,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetSsp002', 0, (): void => {
+    it('testUriUriSetSsp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.ssp = '/usc@asjf:99/path1/ss?key=1';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3351,7 +3351,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetSsp003', 0, (): void => {
+    it('testUriUriSetSsp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.ssp = '//usc@www.test321.cn:996?key=1';
       expect(uriObj.userInfo).assertEqual("usc");
@@ -3370,7 +3370,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetSsp004', 0, (): void => {
+    it('testUriUriSetSsp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asdasf");
       uriObj.ssp = '//www.test321.cn';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3389,7 +3389,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedUserInfo001', 0, (): void => {
+    it('testUriUriSetEncodedUserInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.hw.com:77/path/path23?query#qwer");
       uriObj.encodedUserInfo = "testuri007"
       expect(uriObj.encodedUserInfo).assertEqual('testuri007');
@@ -3404,7 +3404,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedUserInfo002', 0, (): void => {
+    it('testUriUriSetEncodedUserInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://www.test.com:77/path/path23?query#qwer");
       uriObj.encodedUserInfo = "testuri008"
       expect(uriObj.encodedUserInfo).assertEqual('testuri008');
@@ -3419,7 +3419,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedUserInfo003', 0, (): void => {
+    it('testUriUriSetEncodedUserInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedUserInfo = "sji<+s大"
       expect(uriObj.encodedUserInfo).assertEqual('userinfo');
@@ -3434,7 +3434,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedUserInfo004', 0, (): void => {
+    it('testUriUriSetEncodedUserInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedUserInfo = "sji<+s大"
       expect(uriObj.encodedUserInfo).assertEqual(null);
@@ -3449,7 +3449,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedUserInfo005', 0, (): void => {
+    it('testUriUriSetEncodedUserInfo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedUserInfo = ""
       expect(uriObj.userInfo).assertEqual(null);
@@ -3464,7 +3464,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedPath001', 0, (): void => {
+    it('testUriUriSetEncodedPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedPath = ""
       expect(uriObj.encodedPath).assertEqual(null);
@@ -3479,7 +3479,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedPath002', 0, (): void => {
+    it('testUriUriSetEncodedPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedPath = "pathtest/pp"
       expect(uriObj.encodedPath).assertEqual('pathtest/pp');
@@ -3494,7 +3494,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedPath003', 0, (): void => {
+    it('testUriUriSetEncodedPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
       uriObj.encodedPath = "pathtest/p%E5%A4%A7p"
       expect(uriObj.encodedPath).assertEqual('pathtest/p%E5%A4%A7p');
@@ -3509,7 +3509,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedPath004', 0, (): void => {
+    it('testUriUriSetEncodedPath004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
       uriObj.encodedPath = "/testuri015/p大p/"
       expect(uriObj.encodedPath).assertEqual('/testuri015/p大p/');
@@ -3524,7 +3524,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedPath005', 0, (): void => {
+    it('testUriUriSetEncodedPath005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77");
       uriObj.encodedPath = "testuri016/p%E5%A4%A7/"
       expect(uriObj.encodedPath).assertEqual('testuri016/p%E5%A4%A7/');
@@ -3539,7 +3539,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedQuery001', 0, (): void => {
+    it('testUriUriSetEncodedQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedQuery = "/testuri018/p大p/=sasf"
       expect(uriObj.encodedQuery).assertEqual('/testuri018/p大p/=sasf');
@@ -3555,7 +3555,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedQuery002', 0, (): void => {
+    it('testUriUriSetEncodedQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedQuery = "key=value&key1=value1"
       expect(uriObj.encodedQuery).assertEqual('key=value&key1=value1');
@@ -3570,7 +3570,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedQuery003', 0, (): void => {
+    it('testUriUriSetEncodedQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedQuery = '';
       expect(uriObj.encodedQuery).assertEqual(null);
@@ -3585,7 +3585,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedQuery004', 0, (): void => {
+    it('testUriUriSetEncodedQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedQuery = 'kkey=sal';
       expect(uriObj.encodedQuery).assertEqual("kkey=sal");
@@ -3601,7 +3601,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedQuery005', 0, (): void => {
+    it('testUriUriSetEncodedQuery005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedQuery = 'kkey=sal&jj=oi';
       expect(uriObj.encodedQuery).assertEqual("kkey=sal&jj=oi");
@@ -3617,7 +3617,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedFragment001', 0, (): void => {
+    it('testUriUriSetEncodedFragment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedFragment = 'kkey=sal&jj=oi';
       expect(uriObj.encodedFragment).assertEqual("kkey=sal&jj=oi");
@@ -3633,7 +3633,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedFragment002', 0, (): void => {
+    it('testUriUriSetEncodedFragment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedFragment = '';
       expect(uriObj.encodedFragment).assertEqual(null);
@@ -3648,7 +3648,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedFragment003', 0, (): void => {
+    it('testUriUriSetEncodedFragment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
       uriObj.encodedFragment = '#jia片段';
       expect(uriObj.encodedFragment).assertEqual("qwer");
@@ -3663,7 +3663,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedFragment004', 0, (): void => {
+    it('testUriUriSetEncodedFragment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query");
       uriObj.encodedFragment = 'jia片段f';
       expect(uriObj.encodedFragment).assertEqual("jia片段f");
@@ -3678,7 +3678,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedFragment005', 0, (): void => {
+    it('testUriUriSetEncodedFragment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query");
       uriObj.encodedFragment = 'jia片段f';
       expect(uriObj.encodedFragment).assertEqual("jia片段f");
@@ -3693,7 +3693,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedAuthority001', 0, (): void => {
+    it('testUriUriSetEncodedAuthority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedAuthority = 'www.test11.cn:88';
       expect(uriObj.encodedUserInfo).assertEqual(null);
@@ -3710,7 +3710,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedAuthority002', 0, (): void => {
+    it('testUriUriSetEncodedAuthority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedAuthority = 'uusc@www.testuc.com:741';
       expect(uriObj.encodedUserInfo).assertEqual("uusc");
@@ -3728,7 +3728,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedAuthority003', 0, (): void => {
+    it('testUriUriSetEncodedAuthority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedAuthority = '';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3747,7 +3747,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedAuthority004', 0, (): void => {
+    it('testUriUriSetEncodedAuthority004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedAuthority = 'usc@';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3766,7 +3766,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedSsp001', 0, (): void => {
+    it('testUriUriSetEncodedSsp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedSSP = 'usc@asjf:99/path1/ss?key=1';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3786,7 +3786,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedSsp002', 0, (): void => {
+    it('testUriUriSetEncodedSsp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedSSP = '/usc@asjf:99/path1/ss?key=1';
       expect(uriObj.userInfo).assertEqual(null);
@@ -3805,7 +3805,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedSsp003', 0, (): void => {
+    it('testUriUriSetEncodedSsp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
       uriObj.encodedSSP = '//usc@www.test321.cn:996?key=1';
       expect(uriObj.userInfo).assertEqual("usc");
@@ -3824,7 +3824,7 @@ export default function uriTest1() {
      * @tc.type: Function
      * @tc.level: Level 2
      */
-    it('testUriUriSetEncodedSsp004', 0, (): void => {
+    it('testUriUriSetEncodedSsp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asdasf");
       uriObj.encodedSSP = '//www.test321.cn';
       expect(uriObj.userInfo).assertEqual(null);
