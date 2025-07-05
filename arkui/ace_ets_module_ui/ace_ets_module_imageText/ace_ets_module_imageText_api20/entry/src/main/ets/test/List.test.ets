@@ -39,6 +39,9 @@ import TextAreaAutoCapitalizationModeTest from './TextAreaTest/TextAreaAutoCapit
 import TextAreaAutoCapitalizationModeModifierTest from './TextAreaTest/TextAreaAutoCapitalizationModeModifier.test';
 import TextInputAutoCapitalizationModeTest from './TextInputTest/TextInputAutoCapitalizationMode.test';
 import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInputAutoCapitalizationModeModifier.test';
+import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
+import ModifierTextVerticalAlignTest from './TextTest/TextVerticalAlignModifier.test';
+import RichEditorEnableAutoSpacingTest from './RichEditorTest/RichEditorEnableAutoSpacing.test';
 
 
 export default function testsuite() {
@@ -68,4 +71,7 @@ export default function testsuite() {
   TextAreaAutoCapitalizationModeModifierTest();
   TextInputAutoCapitalizationModeTest();
   TextInputAutoCapitalizationModeModifierTest();
+  TextVerticalAlignTest();
+  ModifierTextVerticalAlignTest();
+  RichEditorEnableAutoSpacingTest();
 }
