@@ -208,7 +208,7 @@ export default function OhLPPAudioNDKTest() {
       let config: ESObject = {
         sucCode: 0,
         speed: 2,
-        errorCode: 6,
+        errorCode: 2,
         fdPath: "h264_1280x720_30.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
