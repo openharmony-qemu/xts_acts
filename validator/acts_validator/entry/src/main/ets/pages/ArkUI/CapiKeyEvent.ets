@@ -25,7 +25,7 @@ let params = LocalStorage.getShared();
 struct CapiKeyEvent {
   @State FillColor: string = '#FF000000';
   @State name: string = 'CapiKeyEvent';
-  @State StepTips: string = '设备支持CAPI键盘灯状态获取\n 操作步骤：使用键盘点击CapsLock、NumLock键' + '\n' + '预期结果：1、指示灯随CapsLock,NumLock按键亮起，页面上接口回调显示CapsLock：ON,NumLock: ON'+ '\n' +'1、指示灯随CapsLock,NumLock按键关闭，页面上接口回调显示CapsLock：OFF,NumLock: OFF';
+  @State StepTips: string = '设备支持CAPI键盘灯状态获取\n 操作步骤：连接键盘，使用键盘点击CapsLock、NumLock键' + '\n' + '预期结果：键盘指示灯亮起，页面显示CapsLock：ON,NumLock: ON'+ '\n' +'键盘指示灯关闭，页面显示CapsLock：OFF,NumLock: OFF';
   @State Vue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
