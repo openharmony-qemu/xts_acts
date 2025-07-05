@@ -990,7 +990,7 @@ export default function AVMetadata() {
      * @tc.type      : Function Test
      * @tc.level     : Level0
         */
-    it('SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_CALLBACK_FUNCTION_0100', Level.LEVEL0, (done: Function) => {
       console.info(TAG + "0100 is success");
       let avMetadataExtractor: media.AVMetadataExtractor;
     
@@ -1003,7 +1003,7 @@ export default function AVMetadata() {
         avMetadataExtractor = extractor;
         console.info(TAG, 'Succeeded in creating AVMetadataExtractor');
         avMetadataExtractor.fdSrc = AVFileDescriptor;
-        await avMetadataExtractor.fetchMetadata((err, metadata) => {
+        avMetadataExtractor.fetchMetadata((err, metadata) => {
           if (err) {
             console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
             done();
@@ -1011,7 +1011,7 @@ export default function AVMetadata() {
           }
           console.info(TAG, `fetchMetadata callback success video album :${metadata.album}`);
           expect(metadata.album).assertEqual("media");
-          await avMetadataExtractor.release();
+          avMetadataExtractor.release();
           done();
         });
       });
