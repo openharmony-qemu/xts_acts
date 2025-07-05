@@ -925,7 +925,7 @@ export default function AVMetadata() {
       console.info(TAG + "0100 is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
       avMetadataExtractor.fdSrc = AVFileDescriptor;
-      avMetadataExtractor.fetchMetadata((err, metadata) => {
+      await avMetadataExtractor.fetchMetadata((err, metadata) => {
         if (err) {
           console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
           return;
@@ -948,7 +948,7 @@ export default function AVMetadata() {
       console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200  is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
       avMetadataExtractor.fdSrc = AVFileDescriptor;
-      avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
+      await avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
         if (err) {
           console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
           return;
@@ -1003,7 +1003,7 @@ export default function AVMetadata() {
         avMetadataExtractor = extractor;
         console.info(TAG, 'Succeeded in creating AVMetadataExtractor');
         avMetadataExtractor.fdSrc = AVFileDescriptor;
-        avMetadataExtractor.fetchMetadata((err, metadata) => {
+        await avMetadataExtractor.fetchMetadata((err, metadata) => {
           if (err) {
             console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
             done();
@@ -1011,7 +1011,7 @@ export default function AVMetadata() {
           }
           console.info(TAG, `fetchMetadata callback success video album :${metadata.album}`);
           expect(metadata.album).assertEqual("media");
-          avMetadataExtractor.release();
+          await avMetadataExtractor.release();
           done();
         });
       });
@@ -1038,7 +1038,7 @@ export default function AVMetadata() {
         height : 300
       };
       // 获取缩略图
-      avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+      await avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
         pixelMapLoc = pixelMap;
         console.info(TAG, `fetchFrameByTime success`);
       }).catch((error: BusinessError) => {
@@ -1046,7 +1046,7 @@ export default function AVMetadata() {
       });
       await mediaTestBase.msleepAsync(SLEEP_TIME);
       expect(pixelMapLoc).assertUndefined();
-      avMetadataExtractor.release();
+      await avMetadataExtractor.release();
       done();
     });
 
@@ -1074,7 +1074,7 @@ export default function AVMetadata() {
         height : 300
       };
       // 获取缩略图
-      avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+      await avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
         pixelMapLoc = pixelMap;
         console.info(TAG, `fetchFrameByTime success`);
       }).catch((error: BusinessError) => {
@@ -1082,7 +1082,7 @@ export default function AVMetadata() {
       });
       await mediaTestBase.msleepAsync(SLEEP_TIME);
       expect(pixelMapLoc).assertUndefined();
-      avMetadataExtractor.release();
+      await avMetadataExtractor.release();
       done();
     });
 
@@ -1106,7 +1106,7 @@ export default function AVMetadata() {
         height : 300
       };
       // 获取缩略图
-      avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+      await avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
         expect(pixelMap).not().assertUndefined();
         console.info(TAG, `fetchFrameByTime success`);
       }).catch((error: BusinessError) => {
@@ -1114,7 +1114,7 @@ export default function AVMetadata() {
         expect().assertFail();
       });
       await mediaTestBase.msleepAsync(SLEEP_TIME);
-      avMetadataExtractor.release();
+      await avMetadataExtractor.release();
       done();
     });
   })
