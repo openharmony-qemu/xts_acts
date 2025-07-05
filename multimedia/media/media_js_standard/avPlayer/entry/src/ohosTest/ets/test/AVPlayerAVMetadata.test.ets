@@ -1117,5 +1117,52 @@ export default function AVMetadata() {
       avMetadataExtractor.release();
       done();
     });
+
+    /* *
+     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
+     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
+     * @tc.desc      : By fetchMetadata to get tracks info test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function Test
+     * @tc.level     : Level0
+        */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      let metadata = await avMetadataExtractor.fetchMetadata();
+      if (metadata.tracks != undefined) {
+        if (metadata.trackCount != undefined) {
+          const trackCount = parseInt(metadata.trackCount);
+          const array_size = metadata.tracks.length;
+          expect(trackCount).assertEqual(array_size);
+        }
+        for (let i = 0; i < metadata.tracks.length; i++) {
+          const element = metadata.tracks[i];
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_VID) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_CODEC_MIME] as string;
+            expect(value).not().assertUndefined();
+          }
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_AUD) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_CODEC_MIME] as string;
+            expect(value).not().assertUndefined();
+          }
+        }
+      } else {
+        console.error('get avmetadata tracks failed');
+        expect().assertFail();
+      }
+      expect(media.MediaType.MEDIA_TYPE_UNSUPPORTED).assertEqual(-1);
+      expect(media.MediaType.MEDIA_TYPE_AUD).assertEqual(0);
+      expect(media.MediaType.MEDIA_TYPE_VID).assertEqual(1);
+      expect(media.MediaType.MEDIA_TYPE_SUBTITLE).assertEqual(2);
+      expect(media.MediaType.MEDIA_TYPE_ATTACHMENT).assertEqual(3);
+      expect(media.MediaType.MEDIA_TYPE_DATA).assertEqual(4);
+      expect(media.MediaType.MEDIA_TYPE_TIMED_METADATA).assertEqual(5);
+      expect(media.MediaType.MEDIA_TYPE_AUXILIARY).assertEqual(6);
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.release();
+      done();
+    });
   })
 }
