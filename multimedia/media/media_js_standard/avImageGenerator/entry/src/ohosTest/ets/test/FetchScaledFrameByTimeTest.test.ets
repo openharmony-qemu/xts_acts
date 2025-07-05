@@ -438,7 +438,7 @@ export default function FetchScaledFrameByTimeTest() {
                 width: 111,
                 height: 111
             }
-            let isSupport = myavcapability.AVCapabilityIsVideoSizeSupported(2336,1080);
+            let isSupport = myavcapability.AVCapabilityIsVideoSizeSupported(2336, 1080);
             if (isSupport = -1) {
                 console.info(`${testNum} AVCapabilityIsVideoSizeSupported Failed`);
                 done();

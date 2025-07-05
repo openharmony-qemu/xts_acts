@@ -31,8 +31,8 @@
 #define PARAM_1 1
 #define PARAM_2 2
 #define PARAM_30 30
-const bool isEncoder = true;
-const bool isDecoder = false;
+const bool IS_ENCODER = true;
+const bool IS_DECODER = false;
 #define LOG_DOMAIN 0x3200
 #define LOG_TAG "AVPlayer_xts"
 
@@ -41,7 +41,8 @@ static napi_value AVCapabilityIsVideoSizeSupported(napi_env env, napi_callback_i
     napi_value result = nullptr;
     int backParam = FAIL;
     OH_AVCapability *capability = nullptr;
-    int32_t width = PARAM_1280, height = PARAM_720;
+    int32_t width = PARAM_1280;
+    int32_t height = PARAM_720;
     
     size_t argc = PARAM_2;
     napi_value args[PARAM_2] = {nullptr};
@@ -50,7 +51,7 @@ static napi_value AVCapabilityIsVideoSizeSupported(napi_env env, napi_callback_i
     napi_get_value_int32(env, args[PARAM_1], &height);
     
     bool checkParam = -1;
-    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, isDecoder, HARDWARE);
+    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, IS_DECODER, HARDWARE);
     OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
     if (capability != nullptr) {
         OH_LOG_INFO(LOG_APP, "OH_AVCapability_IsVideoSizeSupported width=%{public}d", width);
