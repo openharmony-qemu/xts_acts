@@ -27,6 +27,7 @@ group("arkts_static") {
       "stream_standard_test_static:ActsStreamStaticTest",
       "global_standard_static:ActsGlobalStaticTest",
       "xml_standard_static:ActsXmlStaticTest",
+      "decima_standard_static:ActsDecimaStaticTest",
     ]
   }
 }
