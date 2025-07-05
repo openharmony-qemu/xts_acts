@@ -25,6 +25,7 @@ struct SetWebDebugAccess {
   controller: webView.WebviewController = new webView.WebviewController();
   @State emitKey: string = '';
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -55,10 +56,10 @@ struct SetWebDebugAccess {
         Button('SetWebDebugAccess click')
           .key('setWebDebuggingAccess')
           .onClick(async () => {
-            console.info('1key==>' + this.emitKey)
-            await waitForExist(()=>this.isReceive, 'setWebDebuggingAccess', 1, 1000)
-            console.info('2key==>' + this.emitKey)
-            this.isReceive = 0
+            await waitForExist(()=>this.isReceive, 'setWebDebuggingAccessIsReceive', 1, 1000)
+            await waitForExist(()=>this.isPageEnd, 'setWebDebuggingAccessIsPageEnd', 1, 1000)
+            console.info('key==>' + this.emitKey)
+            this.isReceive = -1
             switch (this.emitKey) {
               case 'emitSetWebDebugAccessEnableDebugPortAllowed': {
                 try {
@@ -232,6 +233,7 @@ struct SetWebDebugAccess {
         })
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

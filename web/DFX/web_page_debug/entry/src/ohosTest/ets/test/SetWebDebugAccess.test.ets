@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
+import { Driver, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -43,6 +44,9 @@ export default function SetWebDebugAccess() {
       } catch (err) {
         console.error("push SetWebDebugAccess page error: " + err);
       }
+      let driver = Driver.create();
+      await driver.waitForComponent(ON.id("setWebDebuggingAccess"),10000);
+      console.log("waitForComponent setWebDebuggingAccess==>");
       done()
     });
 
