@@ -75,6 +75,7 @@ async function createX509Cert1(): Promise<cert.X509Cert> {
     return x509Cert;
   } catch (error: BusinessError) {
     console.error('createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
+    throw error as Error;
   }
 }
 
@@ -112,6 +113,7 @@ async function createX509Cert2(): Promise<cert.X509Cert> {
     return x509Cert;
   } catch (error: BusinessError) {
     console.error('createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
+    throw error as Error;
   }
 }
 
