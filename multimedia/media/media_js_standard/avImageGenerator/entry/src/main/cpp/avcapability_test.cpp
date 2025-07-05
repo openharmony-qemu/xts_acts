@@ -86,7 +86,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "libavcapability",
+    .nm_modname = "avcapability",
     .nm_priv = ((void *)0),
     .reserved = {0},
 };
