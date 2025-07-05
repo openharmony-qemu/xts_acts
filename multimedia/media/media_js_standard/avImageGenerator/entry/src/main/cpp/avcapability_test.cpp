@@ -20,6 +20,7 @@
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avsource.h>
+#include "hilog/log.h"
 
 #define FAIL (-1)
 #define SUCCESS 0
