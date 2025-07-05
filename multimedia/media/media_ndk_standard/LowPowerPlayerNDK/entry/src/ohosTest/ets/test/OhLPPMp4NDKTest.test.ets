@@ -147,7 +147,7 @@ export default function OhLPPMp4NDKTest() {
       let config: ESObject = {
         sucCode: 0,
         speed: 2,
-        errorCode: 6,
+        errorCode: 2,
         fdPath: "H264_NONE.mp4"
       }
       await lppBase.toNextStep(config, "", mySteps, errorCode, done);

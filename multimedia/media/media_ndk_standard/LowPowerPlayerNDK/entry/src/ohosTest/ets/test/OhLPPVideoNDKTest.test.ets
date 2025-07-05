@@ -190,8 +190,8 @@ export default function OhLPPVideoNDKTest() {
       let config: ESObject = {
         sucCode: 0,
         speed: 2,
-        errorCode: 6,
-        fdPath: "mpeg1video_720x480_30.mp4"
+        errorCode: 2,
+        fdPath: "H264_AAC_Matedata.mp4"
       }
       await lppBase.toNextStep(config, "",  mySteps, errorCode, done);
       console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0103 test end `);
