@@ -160,7 +160,6 @@ struct CapiKeyEvent {
               .enabled(!this.yesEnable)
               .opacity(!this.yesEnable ? 1 : 0.4)
               .onClick(async () => {
-                this.Vue = true
               })
           }
 
