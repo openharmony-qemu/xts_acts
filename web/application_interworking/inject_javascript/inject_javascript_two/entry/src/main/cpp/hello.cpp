@@ -20,7 +20,7 @@
 #include "common/native_common.h"
 #include "web/native_interface_arkweb.h"
 #include "web/arkweb_interface.h"
-#include "jsbridge_object.h"
+#include "jsbridgeObject.h"
 #include <thread>
 
 
@@ -31,14 +31,15 @@ std::shared_ptr<JSBridgeObject> jsbridge_object_ptr = nullptr;
 
 std::chrono::time_point<std::chrono::high_resolution_clock> start;
 
-int funcOnePid = -1;
-int funcTwoPid = -1;
+int g_funcOnePid = -1;
+int g_funcTwoPid = -1;
 
 std::thread::id g_thisId = std::this_thread::get_id();
 std::size_t g_hashValueCur = std::hash<std::thread::id>()(g_thisId);
 int g_mPid = static_cast<int>(g_hashValueCur);
 
-char *GetStringValue(napi_env env, napi_value value) {
+char *GetStringValue(napi_env env, napi_value value)
+{
     size_t size = 0;
     napi_get_value_string_utf8(env, value, nullptr, 0, &size);
     char *paramValue = new (std::nothrow) char[size + 1];
@@ -181,32 +182,40 @@ ArkWeb_JavaScriptValuePtr ArkWebProxyMethodOne(const char *webTag, const ArkWeb_
     size_t arraySize, void *userData)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-            "ArkWebProxyMethodOne webTag:%{public}s userData:%{public}s",
-            webTag, (char *)userData);
+        "ArkWebProxyMethodOne webTag:%{public}s userData:%{public}s",
+        webTag,
+        (char *)userData);
     std::size_t hashValue = std::hash<std::thread::id>()(std::this_thread::get_id());
-    funcOnePid = static_cast<int>(hashValue);
+    g_funcOnePid = static_cast<int>(hashValue);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-            "ArkWebProxyMethodOne PID:%{public}d, Fid:%{public}d",
-            g_mPid, funcOnePid);
+        "ArkWebProxyMethodOne PID:%{public}d, Fid:%{public}d",
+        g_mPid,
+        g_funcOnePid);
     jsbridge_object_ptr->ProxyMethod(dataArray, arraySize);
     std::string str = std::string((char *)userData);
-    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_STRING, (void *)str.c_str(), str.length() + 1);
+    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_STRING,
+        (void *)str.c_str(),
+        str.length() + 1);
 }
 
 ArkWeb_JavaScriptValuePtr ArkWebProxyMethodTwo(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray,
     size_t arraySize, void *userData)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-            "ArkWebProxyMethodTwo webTag:%{public}s userData:%{public}s",
-             webTag, (char *)userData);
+        "ArkWebProxyMethodTwo webTag:%{public}s userData:%{public}s",
+        webTag,
+        (char *)userData);
     std::size_t hashValue = std::hash<std::thread::id>()(std::this_thread::get_id());
-    funcTwoPid = static_cast<int>(hashValue);
+    g_funcTwoPid = static_cast<int>(hashValue);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-            "ArkWebProxyMethodTwo PID:%{public}d, Fid:%{public}d",
-             g_mPid, funcTwoPid);
+        "ArkWebProxyMethodTwo PID:%{public}d, Fid:%{public}d",
+        g_mPid,
+        g_funcTwoPid);
     jsbridge_object_ptr->ProxyMethod(dataArray, arraySize);
     bool boolValue = true;
-    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_BOOL, (void *)(&boolValue), 1);
+    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_BOOL,
+        (void *)(&boolValue),
+        1);
 }
 
 ArkWeb_JavaScriptValuePtr ArkWebProxyMethodThree(const char *webTag, const ArkWeb_JavaScriptBridgeData *dataArray,
@@ -214,9 +223,12 @@ ArkWeb_JavaScriptValuePtr ArkWebProxyMethodThree(const char *webTag, const ArkWe
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
         "ArkWebProxyMethodThree webTag:%{public}s userData:%{public}s",
-         webTag, (char *)userData);
+        webTag,
+        (char *)userData);
     jsbridge_object_ptr->ProxyMethod(dataArray, arraySize);
-    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_NONE, (void *)nullptr, 1);
+    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_NONE,
+        (void *)nullptr,
+        1);
 }
 
 ArkWeb_ProxyObjectWithResult GetProxyObjectWithResult(napi_env env, napi_value args[])
@@ -242,7 +254,7 @@ ArkWeb_ProxyObjectWithResult GetProxyObjectWithResult(napi_env env, napi_value a
 
 static napi_value NativeWebInitTwo(napi_env env, napi_callback_info info)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInitTwo start");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "NativeWebInitTwo start");
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -253,7 +265,8 @@ static napi_value NativeWebInitTwo(napi_env env, napi_callback_info info)
     size_t webTagLength = 0;
     napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-         "ndk NativeWebInitTwo webTag:%{public}s", webTagValue);
+        "NativeWebInitTwo webTag:%{public}s",
+        webTagValue);
 
     jsbridge_object_ptr = std::make_shared<JSBridgeObject>(webTagValue);
     if (jsbridge_object_ptr) {
@@ -261,10 +274,10 @@ static napi_value NativeWebInitTwo(napi_env env, napi_callback_info info)
     }
 
     controller = reinterpret_cast<ArkWeb_ControllerAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_CONTROLLER));
-    javaScriptValueApi = reinterpret_cast<ArkWeb_JavaScriptValueAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_JAVASCRIPT_VALUE));
+    javaScriptValueApi =
+        reinterpret_cast<ArkWeb_JavaScriptValueAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_JAVASCRIPT_VALUE));
     if (javaScriptValueApi) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb",
-                "get ArkWeb_JavaScriptValueAPI success");
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ArkWeb_JavaScriptValueAPI success");
     }
 
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInitTwo end");
@@ -282,11 +295,13 @@ static napi_value RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback
 
     char *webTagValue = GetStringValue(env, args[0]);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister",
-            "ndk RegisterAsyncThreadJavaScriptProxy webTag:%{public}s", webTagValue);
+        "RegisterAsyncThreadJavaScriptProxy webTag:%{public}s",
+        webTagValue);
 
     char *permission = GetStringValue(env, args[1]);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister",
-            "ndk RegisterAsyncThreadJavaScriptProxy permission:%{public}s", permission);
+        "RegisterAsyncThreadJavaScriptProxy permissionStr:%{public}s",
+        permission);
 
     if (strcmp(permission, "null") == 0) {
         permission = nullptr;
@@ -298,7 +313,7 @@ static napi_value RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback
     ArkWeb_ProxyObjectWithResult proxyObjectWithResult = GetProxyObjectWithResult(env, args);
     OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy(webTagValue, &proxyObjectWithResult, permission);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister",
-            "RegisterAsyncThreadJavaScriptProxy success");
+        "RegisterAsyncThreadJavaScriptProxy success");
 
     controller->refresh(webTagValue);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister", "ArkWeb_ControllerAPI refresh");
@@ -313,10 +328,10 @@ static napi_value GetPidResult(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetPidResult g_mPid:%{public}d", g_mPid);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetPidResult funcOnePid:%{public}d", funcOnePid);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetPidResult funcTwoPid:%{public}d", funcTwoPid);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetPidResult funcOnePid:%{public}d", g_funcOnePid);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetPidResult funcTwoPid:%{public}d", g_funcTwoPid);
     int32_t testResult = 0;
-    if (g_mPid != funcOnePid && g_mPid != funcTwoPid && funcOnePid == funcTwoPid) {
+    if (g_mPid != g_funcOnePid && g_mPid != g_funcTwoPid && g_funcOnePid == g_funcTwoPid) {
         testResult = 1;
     }
     napi_create_int32(env, testResult, &result);
@@ -335,7 +350,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"unregisterJavaScriptProxy", nullptr, UnregisterJavaScriptProxy, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"nativeWebInitTwo", nullptr, NativeWebInitTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"registerAsyncThreadJavaScriptProxy", nullptr, RegisterAsyncThreadJavaScriptProxy, nullptr, nullptr, nullptr,
-                 napi_default, nullptr},
+            napi_default,
+            nullptr},
         {"getPidResult", nullptr, GetPidResult, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

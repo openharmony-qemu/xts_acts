@@ -17,7 +17,7 @@
 
 class JSBridgeObject : public std::enable_shared_from_this<JSBridgeObject> {
 public:
-    JSBridgeObject(const char* webTag);
+    explicit JSBridgeObject(const char* webTag);
     ~JSBridgeObject() = default;
     void Init();
     std::weak_ptr<JSBridgeObject>* GetWeakPtr();

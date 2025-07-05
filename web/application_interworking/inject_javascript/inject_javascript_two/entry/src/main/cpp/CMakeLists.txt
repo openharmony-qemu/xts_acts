@@ -4,7 +4,7 @@ project(NDKjsb)
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
-add_library(entry SHARED hello.cpp jsbridge_object.cpp)
+add_library(entry SHARED hello.cpp jsbridgeObject.cpp)
 #target_link_libraries(entry PUBLIC libace_napi.z.so)
 find_library(
     # Sets the name of the path variable.

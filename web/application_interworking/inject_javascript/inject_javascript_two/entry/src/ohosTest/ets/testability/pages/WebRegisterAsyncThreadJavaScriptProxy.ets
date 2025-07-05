@@ -68,9 +68,8 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
         Column() {
           Button('RegisterAsyncThreadJavaScriptProxy Test').key('RegisterAsyncThreadJavaScriptProxy')
             .onClick(async () => {
-              console.info('1key==>' + this.emitKey)
               await waitForExist(()=>this.isReceive, 'RegisterAsyncThreadJavaScriptProxy', 1, 1000)
-              console.info('2key==>' + this.emitKey)
+              console.info('key==>' + this.emitKey)
               this.isReceive = 0
               switch (this.emitKey) {
                 case 'emitRegisterAsyncThreadJavaScriptProxy001': {
