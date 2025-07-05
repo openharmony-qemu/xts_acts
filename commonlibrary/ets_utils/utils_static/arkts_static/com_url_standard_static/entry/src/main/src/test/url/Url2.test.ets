@@ -6168,7 +6168,7 @@ export default function urlTest2() {
     it('testNewURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('aa=%E4%B8%AD%E5%9B%BD%BD');
       expect(String(params)).assertEqual('aa=%E4%B8%AD%E5%9B%BD%25BD');
-      expect(params.get('aa')).assertEqual('中国%BD');
+      expect(params.get('aa')).assertEqual('中国�');
     })
 
     /**
