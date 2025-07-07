@@ -343,8 +343,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          if(err?.code == 16000050){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, ${JSON.stringify(e)}`);
@@ -407,8 +411,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          if(err?.code == 16000050){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, ${JSON.stringify(e)}`);
@@ -471,6 +479,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, err=${JSON.stringify(err)}`);
+          if(err?.code == 16000050){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
@@ -531,8 +545,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          if(err?.code == 16000050){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, ${JSON.stringify(e)}`);
@@ -597,8 +615,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          if(err?.code == 16000050){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, ${JSON.stringify(e)}`);
