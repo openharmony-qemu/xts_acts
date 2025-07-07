@@ -14,7 +14,9 @@
  */
 import webViewSdkSchemeHandler from './webViewSdkSchemeHandler.test';
 import webViewSdkSchemeHandler2 from './webViewSdkSchemeHandler2.test';
+import webViewSdkSchemeHandlerThree from './webViewSdkSchemeHandlerThree.test';
 export default function testsuite() {
   webViewSdkSchemeHandler()
   webViewSdkSchemeHandler2()
+  webViewSdkSchemeHandlerThree()
 }
