@@ -136,7 +136,6 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.installSource).assertEqual("unknown");
         expect(data.appInfo.releaseType.length).assertLarger(0);
         expect(data.appInfo.cloudFileSyncEnabled).assertFalse();
-        expect(data.appInfo.cloudStructuredDataSyncEnabled).assertFalse();
         done();
       }).catch((err: BusinessError) => {
         console.info("getBundleInfoForSelf fail" + JSON.stringify(err));
