@@ -45,9 +45,9 @@ export default function ConnectionPublicNopTest() {
             hilog.info(domain, tag, '%{public}s', caseName +' getDefaultNet success ');
             ExpectFail();
           }
-        });
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
+        });
       }catch (err:BusinessError) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);

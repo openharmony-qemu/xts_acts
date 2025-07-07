@@ -17,5 +17,6 @@ group("noCard") {
     "data:ActsTelephonyDataNoCardTest",
     "observertest:ActsTelephonyObserverNoCardTest",
     "simtest:ActsTelephonySimNoCardTest",
+"ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest"
   ]
 }
