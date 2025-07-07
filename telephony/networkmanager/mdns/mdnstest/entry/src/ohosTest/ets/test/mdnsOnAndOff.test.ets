@@ -19,7 +19,7 @@ import mdns from '@ohos.net.mdns';
 let context = AppStorage.get('context') as Context;
 let address: string = "202.101.172.35";
 let getName:()=>string=()=>{
-  return "test"+ (Math.random()*1000).toFixed(0)+(Math.random()*5000).toFixed(0)+(Math.random()*8000).toFixed(0)
+  return "test"+ (Math.random()*1000).toFixed(0)+(Math.random()*5000).toFixed(0)+(Math.random()*800).toFixed(0)
 }
 let localServiceInfoTypeTcp:()=> mdns.LocalServiceInfo =()=> {
   let localServiceInfoType : mdns.LocalServiceInfo;
@@ -50,7 +50,19 @@ let ExpectFail: () => void = () => {
 };
 let serviceTypeTcp= "_print._tcp";
 let serviceTypeUdp= "_print._udp";
-
+let removeTheService = (localServiceInfo: mdns.LocalServiceInfo) => {
+  try {
+    mdns.removeLocalService(context, localServiceInfo, (error, data: mdns.LocalServiceInfo) => {
+      if (error) {
+        console.log(` function removeTheService removeLocalService fail ${JSON.stringify(error)}`);
+      } else {
+        console.log(` function removeTheService removeLocalService success data is :${JSON.stringify(data)} `);
+      }
+    })
+  } catch (err) {
+    console.info(`removeLocalService catch  err is `+JSON.stringify(err));
+  }
+}
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -81,9 +93,9 @@ export default function NetworkManagerMdnsTest() {
      * @tc.desc  : Subscribing to the Notification of Enabling the mDNS Service Listening Function
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.level : level 0
      */
-    it('testTelephonyNetManagerStartSearchingMDNS0100', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3 , async (done: Function) => {
+    it('testTelephonyNetManagerStartSearchingMDNS0100', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL0 , async (done: Function) => {
       let caseName = 'testTelephonyNetManagerStartSearchingMDNS0100';
       console.info(`${caseName} test start `);
       try {
@@ -92,20 +104,9 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("discoveryStart", ()=>{
           console.log(`${caseName} on discoveryStart : startSearching `);
           ExpectTrue(true);
-          discoveryService.off("discoveryStart");
-          discoveryService.stopSearchingMDNS();
-          mdns.removeLocalService(context , localServiceInfo, (err, data: mdns.LocalServiceInfo) => {
-            if (err) {
-              console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-              ExpectFail();
-              console.info(`${caseName}---End`);
-              done();
-            } else {
-              console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-              done();
-              console.info(`${caseName}---End`);
-            }
-          });
+          removeTheService(localServiceInfo);
+          done();
+          console.info(`${caseName}---End`);
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
           if (err) {
@@ -127,9 +128,54 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.number:SUB_Telephony_NetManager_startSearchingMDNS_0100
+     * @tc.name  : testTelephonyNetManagerStartSearchingMDNS0200
+     * @tc.desc  : Disable the function of listening on the MDNS service.
+     * @tc.size  : SMALLTEST
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyNetManagerStartSearchingMDNS0200', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3 , async (done: Function) => {
+      let caseName = 'testTelephonyNetManagerStartSearchingMDNS0200';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: ()=>void = ()=>{
+          console.log(`${caseName}  on or off discoveryStart  `);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+        let localServiceInfo = localServiceInfoTypeTcp();
+        let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
+        discoveryService.on("discoveryStart", callback);
+        discoveryService.off("discoveryStart", callback);
+        mdns.addLocalService(context , localServiceInfo, async (err, data) => {
+          if (err) {
+            console.log(`${caseName} addLocalService fail ${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} addLocalService success, LocalServiceInfo is `+JSON.stringify(data));
+            discoveryService.startSearchingMDNS();
+            await sleep(1000);
+            done();
+            console.info(`${caseName}---End`);
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+
+    /**
      * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0100
      * @tc.name  : testTelephonyNetManagerStopSearchingMDNS0100
-     * @tc.desc Function test
+     * @tc.desc Subscribe to the notification of stopping listening on the MDNS service.
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
      * @tc.level : level 3
@@ -143,19 +189,8 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("discoveryStop", ()=>{
           console.log(`${caseName} on discoveryStop : stopSearchingMDNS`);
           ExpectTrue(true);
-          mdns.removeLocalService(context , localServiceInfo, (err, data) => {
-            if (err) {
-              console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-              ExpectFail();
-              console.info(`${caseName}---End`);
-              done();
-            } else {
-              console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-              discoveryService.off("discoveryStop");
-              console.info(`${caseName}---End`);
-              done();
-            }
-          });
+          removeTheService(localServiceInfo);
+          done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
           if (err) {
@@ -178,9 +213,54 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0100
+     * @tc.name  : testTelephonyNetManagerStopSearchingMDNS0200
+     * @tc.desc This interface is used to unsubscribe from the notification of stopping listening on the MDNS service.
+     * @tc.size  : SMALLTEST
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyNetManagerStopSearchingMDNS0200', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
+      let caseName = 'testTelephonyNetManagerStopSearchingMDNS0200';
+      console.info(`${caseName} test start `);
+      try {
+        let localServiceInfo = localServiceInfoTypeTcp();
+        let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
+        let callback: ()=>void = ()=>{
+          console.log(`${caseName}  on or off discoveryStop  `);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+        discoveryService.on("discoveryStop", callback);
+        discoveryService.off("discoveryStop", callback);
+        mdns.addLocalService(context , localServiceInfo, async (err, data) => {
+          if (err) {
+            console.log(`${caseName} addLocalService fail ${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} addLocalService success `);
+            discoveryService.startSearchingMDNS();
+            discoveryService.stopSearchingMDNS();
+            await sleep(500);
+            done();
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+
+    /**
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0100
      * @tc.name testTelephonyNetManagerOnServiceFound0100
-     * @tc.desc Function test
+     * @tc.desc Subscribe to notifications of MDNS service discovery.
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
      * @tc.level : level 3
@@ -195,18 +275,9 @@ export default function NetworkManagerMdnsTest() {
           console.log(`${caseName} on serviceFound , data is ${JSON.stringify(data)}`);
           ExpectTrue(true);
           discoveryService.stopSearchingMDNS();
-          mdns.removeLocalService(context , localServiceInfo, (err, data) => {
-            if (err) {
-              console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-              ExpectFail();
-              console.info(`${caseName}---End`);
-              done();
-            } else {
-              console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-              done();
-              console.info(`${caseName}---End`);
-            }
-          });
+          removeTheService(localServiceInfo);
+          console.info(`${caseName}---End`);
+          done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
           if (err) {
@@ -232,7 +303,7 @@ export default function NetworkManagerMdnsTest() {
     /**
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0200
      * @tc.name testTelephonyNetManagerOnServiceFound0200
-     * @tc.desc Function test
+     * @tc.desc Subscribe to notifications of MDNS service discovery.
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
      * @tc.level : level 3
@@ -282,10 +353,56 @@ export default function NetworkManagerMdnsTest() {
       }
     });
 
+
+    /**
+     * @tc.number SUB_Telephony_NetManager_on_serviceFound_0100
+     * @tc.name testTelephonyNetManagerOnServiceFound0300
+     * @tc.desc Unsubscribe from notifications about MDNS service discovery.
+     * @tc.size  : SMALLTEST
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyNetManagerOnServiceFound0300', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
+      let caseName = 'testTelephonyNetManagerOnServiceFound0300';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: ()=>void = ()=>{
+          console.log(`${caseName}  on or off serviceFound  `);
+          ExpectFail();
+          removeTheService(localServiceInfo);
+          console.info(`${caseName}---End`);
+          done();
+        }
+        let localServiceInfo = localServiceInfoTypeTcp();
+        let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
+        discoveryService.on("serviceFound", callback);
+        discoveryService.off("serviceFound", callback);
+        mdns.addLocalService(context , localServiceInfo, async (err, data) => {
+          if (err) {
+            console.log(`${caseName} addLocalService fail ${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} addLocalService success `);
+            discoveryService.startSearchingMDNS();
+            await sleep(500);
+            removeTheService(localServiceInfo);
+            done();
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0100
      * @tc.name testTelephonyNetManagerOnServiceLost0100
-     * @tc.desc Function test
+     * @tc.desc Subscribe to the notification that the MDNS service is removed.
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
      * @tc.level : level 3
@@ -309,14 +426,10 @@ export default function NetworkManagerMdnsTest() {
           } else {
             console.log(`${caseName} addLocalService success `);
             discoveryService.startSearchingMDNS();
-            mdns.removeLocalService(context , localServiceInfo, (err, data) => {
-              if (err) {
-                console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-                ExpectFail();
-              } else {
-                console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-              }
-            });
+            removeTheService(localServiceInfo);
+            discoveryService.stopSearchingMDNS();
+            done();
+            console.info(`${caseName}---End`);
           }
         });
       }catch (err) {
@@ -330,7 +443,7 @@ export default function NetworkManagerMdnsTest() {
     /**
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0200
      * @tc.name testTelephonyNetManagerOnServiceLost0200
-     * @tc.desc Function test
+     * @tc.desc Subscribe to the notification that the MDNS service is removed.
      * @tc.size  : SMALLTEST
      * @tc.type  : Function
      * @tc.level : level 3
@@ -354,18 +467,55 @@ export default function NetworkManagerMdnsTest() {
           } else {
             console.log(`${caseName} addLocalService success `);
             discoveryService.startSearchingMDNS();
-            mdns.removeLocalService(context , localServiceInfo, async (err, data) => {
-              if (err) {
-                console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-                ExpectFail();
-                done();
-              } else {
-                console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-                await sleep(1000);
-                ExpectTrue(true);
-                done();
-              }
-            });
+            removeTheService(localServiceInfo);
+            await sleep(500);
+            ExpectTrue(true);
+            done();
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Telephony_NetManager_on_serviceLost_0200
+     * @tc.name testTelephonyNetManagerOnServiceLost0300
+     * @tc.desc This interface is used to unsubscribe from the notification that the MDNS service is removed.
+     * @tc.size  : SMALLTEST
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testTelephonyNetManagerOnServiceLost0300', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
+      let caseName = 'testTelephonyNetManagerOnServiceLost0300';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: ()=>void = ()=>{
+          console.log(`${caseName}  on or off serviceLost  `);
+          ExpectFail();
+          removeTheService(localServiceInfo);
+          console.info(`${caseName}---End`);
+          done();
+        }
+        let localServiceInfo = localServiceInfoTypeTcp();
+        let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
+        discoveryService.on("serviceLost", callback);
+        discoveryService.off("serviceLost", callback);
+        mdns.addLocalService(context , localServiceInfo, async (err, data) => {
+          if (err) {
+            console.log(`${caseName} addLocalService fail ${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.log(`${caseName} addLocalService success `);
+            discoveryService.startSearchingMDNS();
+            removeTheService(localServiceInfo);
+            await sleep(500);
+            ExpectTrue(true);
+            done();
           }
         });
       }catch (err) {
@@ -400,6 +550,5 @@ export default function NetworkManagerMdnsTest() {
         done();
       }
     });
-
   });
 }
