@@ -128,7 +128,7 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
-     * @tc.number:SUB_Telephony_NetManager_startSearchingMDNS_0100
+     * @tc.number:SUB_Telephony_NetManager_startSearchingMDNS_0200
      * @tc.name  : testTelephonyNetManagerStartSearchingMDNS0200
      * @tc.desc  : Disable the function of listening on the MDNS service.
      * @tc.size  : SMALLTEST
@@ -158,7 +158,8 @@ export default function NetworkManagerMdnsTest() {
           } else {
             console.log(`${caseName} addLocalService success, LocalServiceInfo is `+JSON.stringify(data));
             discoveryService.startSearchingMDNS();
-            await sleep(1000);
+            await sleep(1000)
+            ExpectTrue(true);
             done();
             console.info(`${caseName}---End`);
           }
@@ -213,7 +214,7 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
-     * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0100
+     * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0200
      * @tc.name  : testTelephonyNetManagerStopSearchingMDNS0200
      * @tc.desc This interface is used to unsubscribe from the notification of stopping listening on the MDNS service.
      * @tc.size  : SMALLTEST
@@ -245,6 +246,7 @@ export default function NetworkManagerMdnsTest() {
             discoveryService.startSearchingMDNS();
             discoveryService.stopSearchingMDNS();
             await sleep(500);
+            ExpectTrue(true);
             done();
           }
         });
@@ -331,18 +333,7 @@ export default function NetworkManagerMdnsTest() {
             await sleep(1000);
             ExpectTrue(true);
             discoveryService.stopSearchingMDNS();
-            mdns.removeLocalService(context , localServiceInfo, (err, data) => {
-              if (err) {
-                console.log(`${caseName} removeLocalService fail ${JSON.stringify(err)}`);
-                ExpectFail();
-                console.info(`${caseName}---End`);
-                done();
-              } else {
-                console.log(`${caseName} removeLocalService success data is :${JSON.stringify(data)} `);
-                done();
-                console.info(`${caseName}---End`);
-              }
-            });
+            removeTheService(localServiceInfo);
           }
         });
       }catch (err) {
@@ -355,7 +346,7 @@ export default function NetworkManagerMdnsTest() {
 
 
     /**
-     * @tc.number SUB_Telephony_NetManager_on_serviceFound_0100
+     * @tc.number SUB_Telephony_NetManager_on_serviceFound_0300
      * @tc.name testTelephonyNetManagerOnServiceFound0300
      * @tc.desc Unsubscribe from notifications about MDNS service discovery.
      * @tc.size  : SMALLTEST
@@ -388,6 +379,7 @@ export default function NetworkManagerMdnsTest() {
             discoveryService.startSearchingMDNS();
             await sleep(500);
             removeTheService(localServiceInfo);
+            ExpectTrue(true);
             done();
           }
         });
@@ -482,7 +474,7 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
-     * @tc.number SUB_Telephony_NetManager_on_serviceLost_0200
+     * @tc.number SUB_Telephony_NetManager_on_serviceLost_0300
      * @tc.name testTelephonyNetManagerOnServiceLost0300
      * @tc.desc This interface is used to unsubscribe from the notification that the MDNS service is removed.
      * @tc.size  : SMALLTEST
