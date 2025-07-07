@@ -132,6 +132,35 @@ export default function windowImmersiveTest() {
       await windowClass.recover();
     })
     /**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
+     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
+     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        await sleep(2000);
+        let res = windowClass.isImmersiveLayout();
+        console.log(`${caseName} isImmersiveLayout: ${res}.`);
+        expect(res).assertEqual(false);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (exception.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
      * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0100
      * @tc.name      : testOnavoidAreaChangeInLandScape
      * @tc.desc      : Obtain the area that the window content avoids
@@ -2559,35 +2588,6 @@ export default function windowImmersiveTest() {
         await windowClass.setSpecificSystemBarEnabled('status', true);
         expect().assertFail();
         done();
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
-     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
-     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        await sleep(2000);
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(false);
-        done();
-      } catch (exception) {
-        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-        if (exception.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
       }
     });
 
