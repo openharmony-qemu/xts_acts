@@ -63,7 +63,7 @@ struct webViewSdkSchemeHandlerThree {
                   this.isReceive = -1;
                   this.controller.clearWebSchemeHandler();
                   switch (this.emitKey) {
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse001': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse001': {
                       try {
                         let netErrorCode = 666;
                         this.schemeHandler.onRequestStart((
@@ -76,7 +76,9 @@ struct webViewSdkSchemeHandlerThree {
                           response.setHeaderByName('header1', 'value1', false);
                           response.setNetErrorCode(WebNetErrorList.ERR_IO_PENDING);
                           resourceHandler.didReceiveResponse(response);
+                          console.log(this.emitKey + 'didFail start');
                           resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
+                          console.log(this.emitKey + 'didFail end');
                           netErrorCode = response.getNetErrorCode();
                           console.log(this.emitKey + ' getNetErrorCode==>' + netErrorCode);
                           return true
@@ -93,7 +95,7 @@ struct webViewSdkSchemeHandlerThree {
                       break;
                     }
 
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse002': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse002': {
                       try {
                         let netErrorCode = 666;
                         this.schemeHandler.onRequestStart((
@@ -106,7 +108,9 @@ struct webViewSdkSchemeHandlerThree {
                           response.setHeaderByName('header1', 'value1', false);
                           response.setNetErrorCode(WebNetErrorList.ERR_IO_PENDING);
                           resourceHandler.didReceiveResponse(response);
+                          console.log(this.emitKey + 'didFail start');
                           resourceHandler.didFail(WebNetErrorList.ERR_FAILED, false);
+                          console.log(this.emitKey + 'didFail end');
                           netErrorCode = response.getNetErrorCode();
                           console.log(this.emitKey + ' getNetErrorCode==>' + netErrorCode);
                           return true
@@ -122,12 +126,14 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse003': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse003': {
                       try {
                         let netErrorCode = 666;
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+                          console.log(this.emitKey + 'didFail start');
                           resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
+                          console.log(this.emitKey + 'didFail end');
                           let response = new webview.WebSchemeHandlerResponse();
                           netErrorCode = response.getNetErrorCode();
                           console.log(this.emitKey + ' getNetErrorCode==>' + netErrorCode);
@@ -144,12 +150,14 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse004': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse004': {
                       try {
                         let netErrorCode = 666;
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+                          console.log(this.emitKey + 'didFail start');
                           resourceHandler.didFail(WebNetErrorList.ERR_FAILED, false);
+                          console.log(this.emitKey + 'didFail end');
                           let response = new webview.WebSchemeHandlerResponse();
                           netErrorCode = response.getNetErrorCode();
                           console.log(this.emitKey + ' getNetErrorCode==>' + netErrorCode);
@@ -166,13 +174,15 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse005': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse005': {
                       try {
                         let errorCode = 666;
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                           try {
-                            resourceHandler.didFinish()
+                            console.log(this.emitKey + 'didFail start');
+                            resourceHandler.didFinish();
+                            console.log(this.emitKey + 'didFail end');
                             resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
                           } catch (error) {
                             errorCode = error.code;
@@ -191,16 +201,18 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
-                    case 'testSchemeHandlerDidFailCompleteIfNoResponse006': {
+                    case 'emitSchemeHandlerDidFailCompleteIfNoResponse006': {
                       try {
                         let errorCode = 666;
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                           try {
-                            resourceHandler.didFinish()
+                            console.log(this.emitKey + 'didFail start');
+                            resourceHandler.didFinish();
+                            console.log(this.emitKey + 'didFail end');
                             resourceHandler.didFail(WebNetErrorList.ERR_FAILED, false);
                           } catch (error) {
-                            errorCode = error.code
+                            errorCode = error.code;
                             console.log(this.emitKey + 'error code' + error.code);
                           }
                           return true
