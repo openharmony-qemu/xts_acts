@@ -18,6 +18,7 @@ group("webLifeCycle") {
       "component_life_cycle:ActsWebComponentLifeCycleTest",
       "component_life_cycle_static:ActsWebComponentLifeCycleStaticTest",
       "declarative_creation:ActsWebDeclarativeCreationTest",
+      "declarative_creation_static:ActsWebDeclarativeCreationStaticTest",
       "rendering_process_sharing:ActsWebRenderingProcessSharingTest",
     ]
   }
