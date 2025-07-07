@@ -1488,16 +1488,16 @@ export default function streamTest() {
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    // it('testStreamWritableCbError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-    //   let writableStream = new MyWritableCbError001();
-    //   writableStream.on('error', () => {
-    //   })
-    //   let num: int = 0;
-    //   while (writableStream.write('t')) {
-    //     num++;
-    //   }
-    //   expect(number).assertEqual(0);
-    // });
+    it('testStreamWritableCbError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let writableStream = new MyWritableCbError001();
+      writableStream.on('error', () => {
+      })
+      let num: int = 0;
+      while (writableStream.write('t')) {
+        num++;
+      }
+      expect(number).assertEqual(0);
+    });
 
     // Check the StreamWritableCbTwice.
     /**
