@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsBmsGetLauncherAbilityInfo2Test.hap"
+                "ActsBmsGetLauncherAbilityInfo2StaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
