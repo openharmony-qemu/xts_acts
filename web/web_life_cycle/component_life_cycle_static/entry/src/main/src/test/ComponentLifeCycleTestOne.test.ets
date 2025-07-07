@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { expect, beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
@@ -21,6 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -75,11 +76,80 @@ export default function componentLifeCycleTestOne() {
     it('onActiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonActive", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("onActive", "index", 8, done); //依赖用例执行顺序，在onInactive之后执行则为"index"
+      Utils.registerEvent("onActive", "index", 8, done); //Depend on execution order, executed after onInactive, result is "index"
+      inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /*
+    * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2000
+    * @tc.name testOnActiveInitErrStatic
+    * @tc.desc test interface of onActive with not been associated with specific Web Components
+    */
+    it('testOnActiveInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitOnActiveInitErr", 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testOnActiveInitErr', '17100001', 638, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
+      Utils.registerBaseEvent('testOnActiveInitErr', 'Init error. The WebviewController must be associated with a Web component', 639, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
+      inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /*
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2100
+     * @tc.name testOnInactiveInitErrStatic
+     * @tc.desc test interface of onInactive with not been associated with specific Web Components
+     */
+    it('testOnInactiveInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitOnInactiveInitErr", 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testOnInactiveInitErr', '17100001', 640, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
+      Utils.registerBaseEvent('testOnInactiveInitErr', 'Init error. The WebviewController must be associated with a Web component', 641, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
+      inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /*
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2200
+     * @tc.name testGetWebIdInitErrStatic
+     * @tc.desc test interface of getWebId with not been associated with specific Web Components
+     */
+    it('testGetWebIdInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitGetWebIdInitErr", 10)
+      await Utils.msSleep(2000);
+      Utils.registerBaseEvent('testGetWebIdInitErr', '17100001', 642, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
+      Utils.registerBaseEvent('testGetWebIdInitErr', 'Init error. The WebviewController must be associated with a Web component', 643, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          console.info(`Begin to assert [` + backData?.data?.['ACTION'] + `] Equal [` + expected + `]`);
+          expect(backData?.data?.['ACTION']).assertEqual(expected);
+        });
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
 
-      // 最后一个用例运行完，切换页面为下一个测试套做准备
+      // When finish last case,switch to new page for next suite
       Utils.emitEvent("emitonSwitchNextPage", 10)
       await Utils.msSleep(2000);
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
