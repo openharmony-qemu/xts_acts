@@ -2541,6 +2541,57 @@ export default function globalStageTest() {
       })
     })
 
+     /**
+     * @tc.number   : getStringByName_stage_test_static_0200
+     * @tc.name     : getStringByName_stage_test_static_0200
+     * @tc.desc     : errcode 9001006 in callback mode
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('getStringByName_stage_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res.getStringByName('test_stringLoopA', (err: BusinessError<void> | null) => {
+        console.log('getStringByName_stage_test_static_0200 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001006);
+        done();
+      })
+    })
+
+
+    /**
+     * @tc.number   : getStringByName_stage_test_static_0300
+     * @tc.name     : getStringByName_stage_test_static_0300
+     * @tc.desc     : errcode 9001003 in promise mode
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('getStringByName_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res.getStringByName('').then(() => {
+      }).catch((err: BusinessError): void => {
+        console.log('getStringByName_stage_test_static_0300 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001003);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   : getStringByName_stage_test_static_0400
+     * @tc.name     : getStringByName_stage_test_static_0400
+     * @tc.desc     : errcode 9001006 in promise mode
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('getStringByName_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res.getStringByName('test_stringLoopA').then(() => {
+      }).catch((err: BusinessError): void => {
+        console.log('getStringByName_stage_test_static_0400 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001006);
+        done();
+      })
+    })
+
     /**
      * @tc.number   : getStringArrayByName_stage_test_static_0100
      * @tc.name     : getStringArrayByName_stage_test_static_0100
@@ -3905,7 +3956,21 @@ export default function globalStageTest() {
         done();
       })
     })
-
+    
+    /**
+     * @tc.number    : getMediaBase64ByNameSync_stagetest_static_0100
+     * @tc.name      : getMediaBase64ByNameSync_stagetest_static_0100
+     * @tc.desc      : getMediaBase64ByNameSync getMediaBase64ByNameSync with resource name
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getMediaBase64ByNameSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value: string = res.getMediaBase64ByNameSync('background');
+      console.log('getMediaBase64ByNameSync_stagetest_0100 1' + value);
+      expect(value !== null).assertTrue();
+      done();
+    })
     console.log('*************end globalStageTest*************');
   })
 }
