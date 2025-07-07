@@ -42,8 +42,8 @@ export default function webJsunitTwo() {
         console.error("push webTwo page error: " + err);
       }
       let driver = Driver.create();
-      await driver.waitForComponent(ON.id("webTwoComponent"),10000);
-      console.log("waitForComponent webTwoComponent==>");
+      await driver.waitForComponent(ON.id("webTwoButton"),10000);
+      console.log("waitForComponent webTwoButton==>");
       done()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
