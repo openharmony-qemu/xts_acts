@@ -33,6 +33,7 @@ group("graphic") {
       "graphicDisplaySync:ActsGraphicDisplaySyncTest",
       "graphicDrawingFont:ActsGraphicDrawingFontTest",
       "graphicEGL:ActsGraphicEglTest",
+      "graphicGL4:ActsGraphicGl4Test",
       "graphicGLES3:ActsGraphicGles3Test",
       "graphicGLES3v2:ActsGraphicGles3v2Test",
       "graphicGlesExtension:ActsGraphicGlesExtensionTest",

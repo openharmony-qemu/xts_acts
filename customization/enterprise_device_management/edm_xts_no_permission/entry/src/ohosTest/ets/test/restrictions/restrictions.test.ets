@@ -32,8 +32,13 @@ const LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT = "snapshotSkip";
 const LABEL_RESET_FACTORY = "resetFactory";
 const LABEL_TETHERING = "tethering";
 const LABEL_NEAR_LINK = "nearLink";
+const LABEL_DISTRIBUTED_TRANSMISSION = "distributedTransmissionOutgoing";
 const LABEL_MTP_CLIENT = "mtpClient";
 const LABEL_MTP_SERVER = "mtpServer";
+const LABEL_SET_APN = "setApn";
+const LABEL_SET_ETHERNET_IP = "setEthernetIp";
+const LABEL_USB_STORAGE_DEVICE_WRITE = "usbStorageDeviceWrite";
+const LABEL_POWER_LONG_PRESS = "powerLongPress";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -44,6 +49,8 @@ export default function restrictionsTest() {
     testAddDisallowedListForAccountPolicy();
     testRemoveDisallowedListForAccountPolicy();
     testGetDisallowedListForAccountPolicy();
+    testSetUserRestrictionPolicy();
+    testGetUserRestrictedPolicy();
   })
 }
 
@@ -135,6 +142,48 @@ function testSetDisallowedForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0300
+   * @tc.name      : test_set_disallowed_policy_for_account_0300
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0400
+   * @tc.name      : test_set_disallowed_policy_for_account_0400
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedForAccountPolicy() {
@@ -171,6 +220,48 @@ function testGetDisallowedForAccountPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_MTP_CLIENT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0300
+   * @tc.name      : test_get_disallowed_policy_for_account_0300
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0400
+   * @tc.name      : test_get_disallowed_policy_for_account_0400
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
@@ -243,6 +334,98 @@ function testGetDisallowedListForAccountPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetUserRestrictionPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0100
+   * @tc.name      : test_set_user_restriction_0100
+   * @tc.desc      : test restrictions setUserRestriction with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_user_restriction_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setUserRestriction(SELFWANT, LABEL_SET_APN, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0200
+   * @tc.name      : test_set_user_restriction_0200
+   * @tc.desc      : test restrictions setUserRestriction with setting item 'setEthernetIp' with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_user_restriction_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setUserRestriction(SELFWANT, LABEL_SET_ETHERNET_IP, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_user_restriction_0200 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0300
+   * @tc.name      : test_set_user_restriction_0300
+   * @tc.desc      : test restrictions setUserRestriction with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_user_restriction_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setUserRestriction(SELFWANT, LABEL_POWER_LONG_PRESS, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_0300 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUserRestrictedPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0100
+   * @tc.name      : test_get_user_restricted_0100
+   * @tc.desc      : test restrictions getUserRestricted with setting item 'setEthernetIp' with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_user_restricted_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getUserRestricted(SELFWANT, LABEL_SET_ETHERNET_IP);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

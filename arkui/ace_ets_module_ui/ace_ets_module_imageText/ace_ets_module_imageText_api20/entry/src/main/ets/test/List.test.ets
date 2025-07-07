@@ -21,6 +21,24 @@ import ResourceNormalTest from './TextTest/ResourceNormal.test';
 import ResourceModifierTest from './TextTest/ResourceModifier.test';
 import TextStrokeTest from './TextTest/TextStrokeTest.test';
 import StyledStringStrokeTest from './TextTest/StyledStringStrokeTest.test';
+import TextInputEnableAutoFillAnimationTest from './TextInputTest/TextInputEnableAutoFillAnimation.test';
+import TextShaderStyleTest from './TextTest/TextShaderStyle.test';
+import TextStyleSuperscriptTest from './StyledStringTest/TextStyleSuperscript.test';
+import TextEnableAutoSpacingTest from './TextTest/TextEnableAutoSpacing.test';
+import SearchEnableAutoSpacingTest from './SearchTest/SearchEnableAutoSpacing.test';
+import TextAreaEnableAutoSpacingTest from './TextAreaTest/TextAreaEnableAutoSpacing.test';
+import TextInputEnableAutoSpacingTest from './TextInputTest/TextInputEnableAutoSpacing.test';
+import ImageOnErrorTest from './ImageErrorTest/ImageOnError.test';
+import TextAreaMinLinesTest from './TextAreaTest/TextAreaMinLines.test';
+import RichEditorUndoStyleTest from './RichEditorTest/RichEditorUndoStyle.test';
+import TextLineSpacingTest from './TextTest/TextLineSpacing.test';
+import TextAreaLineSpacingTest from './TextAreaTest/TextAreaLineSpacing.test';
+import SearchAutoCapitalizationModeTest from './SearchTest/SearchAutoCapitalizationMode.test';
+import SearchAutoCapitalizationModeModifierTest from './SearchTest/SearchAutoCapitalizationModeModifier.test';
+import TextAreaAutoCapitalizationModeTest from './TextAreaTest/TextAreaAutoCapitalizationMode.test';
+import TextAreaAutoCapitalizationModeModifierTest from './TextAreaTest/TextAreaAutoCapitalizationModeModifier.test';
+import TextInputAutoCapitalizationModeTest from './TextInputTest/TextInputAutoCapitalizationMode.test';
+import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInputAutoCapitalizationModeModifier.test';
 
 
 export default function testsuite() {
@@ -32,4 +50,22 @@ export default function testsuite() {
   ResourceModifierTest();
   TextStrokeTest();
   StyledStringStrokeTest();
+  TextInputEnableAutoFillAnimationTest();
+  TextShaderStyleTest();
+  TextStyleSuperscriptTest();
+  TextEnableAutoSpacingTest();
+  SearchEnableAutoSpacingTest();
+  TextAreaEnableAutoSpacingTest();
+  TextInputEnableAutoSpacingTest();
+  ImageOnErrorTest();
+  TextAreaMinLinesTest();
+  RichEditorUndoStyleTest();
+  TextLineSpacingTest();
+  TextAreaLineSpacingTest();
+  SearchAutoCapitalizationModeTest();
+  SearchAutoCapitalizationModeModifierTest();
+  TextAreaAutoCapitalizationModeTest();
+  TextAreaAutoCapitalizationModeModifierTest();
+  TextInputAutoCapitalizationModeTest();
+  TextInputAutoCapitalizationModeModifierTest();
 }
