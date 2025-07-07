@@ -12,6 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#ifndef JSBRIDGEOBJECT_H
+#define JSBRIDGEOBJECT_H
+
 #include "web/arkweb_type.h"
 #include <string>
 
@@ -33,3 +36,5 @@ private:
     std::string webTag_;
     std::weak_ptr<JSBridgeObject> weak_ptr_;
 };
+
+#endif

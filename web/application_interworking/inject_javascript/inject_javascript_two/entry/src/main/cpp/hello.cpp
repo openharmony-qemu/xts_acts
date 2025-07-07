@@ -280,7 +280,7 @@ static napi_value NativeWebInitTwo(napi_env env, napi_callback_info info)
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ArkWeb_JavaScriptValueAPI success");
     }
 
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "ndk NativeWebInitTwo end");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "NativeWebInitTwo end");
 
     napi_value output;
     NAPI_CALL(env, napi_create_string_utf8(env, "RunSuccess", NAPI_AUTO_LENGTH, &output));
@@ -317,11 +317,9 @@ static napi_value RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback
 
     controller->refresh(webTagValue);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister", "ArkWeb_ControllerAPI refresh");
-
     napi_value output;
     NAPI_CALL(env, napi_create_string_utf8(env, "RunSuccess", NAPI_AUTO_LENGTH, &output));
     return output;
-
 }
 
 static napi_value GetPidResult(napi_env env, napi_callback_info info)
