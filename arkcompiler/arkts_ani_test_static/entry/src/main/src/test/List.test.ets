@@ -17,6 +17,10 @@ import moduleSupportTest from "./ActsModuleSupport.test";
 import nameSpaceSupportTest from "./ActsNameSpaceSupport.test";
 import enumOperationsTest from "./ActsEnumOperations.test";
 import tupleOperationsTest from "./ActsTupleOperations.test";
+import vmOpsTest from "./ActsVmOps.test"
+import exceptionTest from "./ActsException.test"
+import promiseTest from "./ActsPromise.test"
+import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
 export default function testsuite() {
     versionInfoTest();
@@ -37,4 +41,8 @@ export default function testsuite() {
     nameSpaceSupportTest();
     enumOperationsTest();
     tupleOperationsTest();
+    vmOpsTest();
+    promiseTest();
+    exceptionTest();
+    weakGlobalReferencesTest();
 }
