@@ -245,6 +245,7 @@ export default function openLinkStaticTest() {
           done();
         }).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link successful`);
+          done();
         }).catch((error: BusinessError): void => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link err: ` + error.code + error.message);
           expect().assertFail();
@@ -280,6 +281,7 @@ export default function openLinkStaticTest() {
         }).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link successful`);
           expect().assertFail();
+          done();
         }).catch((error: BusinessError): void => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link err: ` + error.code + error.message);
           expect(error.code).assertEqual(componentNotExistErrNo);
@@ -314,6 +316,7 @@ export default function openLinkStaticTest() {
           done();
         }).then(() => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link successful`);
+          done();
         }).catch((error: BusinessError): void => {
           hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open link err: ` + error.code + error.message);
           expect().assertFail();

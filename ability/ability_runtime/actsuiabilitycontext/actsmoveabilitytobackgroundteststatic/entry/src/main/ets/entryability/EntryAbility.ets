@@ -41,5 +41,6 @@ class EntryAbility extends UIAbility {
 
   onBackground() {
     hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
+    AppStorage.setOrCreate<string>('onBackground', 'SUCCESS');
   }
 }
