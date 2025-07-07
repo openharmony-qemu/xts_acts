@@ -1512,21 +1512,22 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3500
-     * @tc.name      : test_updateFloatingBall_SIMPLE_NORMAL
-     * @tc.desc      : test_updateFloatingBall_SIMPLE_NORMAL
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number : SUB_BASIC_WMS_FLOATING_BALL_3500
+     * @tc.name : test_updateFloatingBall_STATIC_NORMAL
+     * @tc.desc : test_updateFloatingBall_STATIC_NORMAL
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level3
      */
-    it('test_updateFloatingBall_SIMPLE_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let CaseName:string = 'test_updateFloatingBall_SIMPLE_NORMAL';
+    it('test_updateFloatingBall_STATIC_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_updateFloatingBall_STATIC_NORMAL';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
       };
       let startParams: floatingBall.FloatingBallParams = {
-        template: floatingBall.FloatingBallTemplate.SIMPLE,
-        title: 'title'
+        template: floatingBall.FloatingBallTemplate.STATIC,
+        title: 'title',
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1541,15 +1542,16 @@ export default function abilityTest() {
             await floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError) => {
-            console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
-            expect(false).assertTrue();
+          }).catch(async (err: BusinessError) => {
+            console.error(CaseName+ ` Failed to update floating ball. Cause: {err.code}, message:${err.message}`);
+            await floatingBallController.stopFloatingBall();
+            expect(err.code).assertEqual(1300028)
             done();
           });
         }).catch(async (err: BusinessError) => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           await floatingBallController.stopFloatingBall();
-          expect(err.code).assertEqual(1300028)
+          expect(false).assertTrue();
           done()
         });
       } catch(e) {
@@ -1569,9 +1571,9 @@ export default function abilityTest() {
      * @tc.desc      : test_updateFloatingBall_NORMAL_EMPHATIC
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level0
      */
-    it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL_EMPHATIC';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -1593,15 +1595,17 @@ export default function abilityTest() {
             await floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
-            expect(false).assertTrue();
+            await floatingBallController.stopFloatingBall();
+            expect(err.code).assertEqual(1300027)
+
             done();
           });
         }).catch(async (err: BusinessError) => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           await floatingBallController.stopFloatingBall();
-          expect(err.code).assertEqual(1300027)
+          expect(false).assertTrue();
           done()
         });
       } catch(e) {
@@ -1649,9 +1653,10 @@ export default function abilityTest() {
             await floatingBallController.stopFloatingBall();
             expect(true).assertTrue();
             done();
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
-            expect(false).assertTrue();
+            await floatingBallController.stopFloatingBall();
+            expect(err.code).assertEqual(1300028);
             done();
           });
         }).catch(async (err: BusinessError) => {
@@ -2034,9 +2039,9 @@ export default function abilityTest() {
      * @tc.desc      : test_on_stateChange_start_stop
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level0
      */
-    it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_start_stop';
       let FloatBallstate:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
@@ -2356,9 +2361,9 @@ export default function abilityTest() {
      * @tc.desc      : test_getFloatingBallWindowInfo_1300025
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level0
      */
-    it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_getFloatingBallWindowInfo_1300025';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -2686,9 +2691,9 @@ export default function abilityTest() {
      * @tc.desc      : test_restoreMainWindow_mainWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level0
      */
-    it('test_restoreMainWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_restoreMainWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_mainWindow';
       let driver:Driver = Driver.create();
       let config: floatingBall.FloatingBallConfiguration = {
