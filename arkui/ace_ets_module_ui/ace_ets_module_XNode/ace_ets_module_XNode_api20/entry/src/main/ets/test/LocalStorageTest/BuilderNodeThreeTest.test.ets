@@ -72,7 +72,7 @@ export default function BuilderNodeThreeTest() {
       console.info("[BuilderNodeThreeTest_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[BuilderNodeThreeTest_0100] content obj2 is: " + JSON.stringify(obj2.$attrs.content));
       expect(obj1.$attrs.content).assertEqual('sss');
-      expect(obj2.$attrs.content).assertEqual('NO Localstorage');
+      expect(obj2.$attrs.content).assertEqual('PropA');
       console.info('[BuilderNodeThreeTest_0100] END');
       done();
     });
