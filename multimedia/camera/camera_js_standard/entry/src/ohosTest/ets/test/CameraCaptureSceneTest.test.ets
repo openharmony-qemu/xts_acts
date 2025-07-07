@@ -522,18 +522,20 @@ export default function cameraCaptureSceneTest() {
 
         let mediaLibRequestBuffer = async (photoAsset: photoAccessHelper.PhotoAsset) => {
             let requestOptions: photoAccessHelper.RequestOptions = {
-            deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+                deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
             }
             const handler = new MediaDataHandler();
             try {
-            console.info('context: ' + JSON.stringify(context));
-            console.info('photoAsset: ' + photoAsset);
-            console.info('requestOptions: ' + JSON.stringify(requestOptions));
-            console.info('handler: ' + handler);
-            await photoAccessHelper.MediaAssetManager.requestImageData(context, photoAsset, requestOptions, handler);
-            console.info('requestImageData successfully');
+                console.info('context: ' + JSON.stringify(context));
+                console.info('photoAsset: ' + photoAsset);
+                console.info('requestOptions: ' + JSON.stringify(requestOptions));
+                console.info('handler: ' + handler);
+                await photoAccessHelper.MediaAssetManager.requestImageData(context, photoAsset, requestOptions, handler);
+                console.info('requestImageData successfully');
+                expect(true).assertTrue()
             } catch (err) {
-            console.info('mediaLibRequestBuffer failed to save photoAsset: ' + err.code)
+                console.info('mediaLibRequestBuffer failed to save photoAsset: ' + err.code)
+                expect().assertFail()
             }
         }
 
@@ -555,8 +557,8 @@ export default function cameraCaptureSceneTest() {
             // 创建CameraManager对象
             let cameraManager: cameraObj.CameraManager = cameraObj.getCameraManager(baseContext);
             if (!cameraManager) {
-            console.error('camera.getCameraManager error');
-            return;
+                console.error('camera.getCameraManager error');
+                return;
             }
             // 监听相机状态变化
             cameraManager.on('cameraStatus', (err: BusinessError, cameraStatusInfo: cameraObj.CameraStatusInfo) => {
@@ -571,32 +573,32 @@ export default function cameraCaptureSceneTest() {
             // 获取相机列表
             let cameraArray: Array<cameraObj.CameraDevice> = cameraManager.getSupportedCameras();
             if (cameraArray.length <= 0) {
-            console.error('cameraManager.getSupportedCameras error');
-            return;
+                console.error('cameraManager.getSupportedCameras error');
+                return;
             }
 
             for (let index = 0; index < cameraArray.length; index++) {
-            console.info('cameraId : ' + cameraArray[index].cameraId); // 获取相机ID
-            console.info('cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置
-            console.info('cameraType : ' + cameraArray[index].cameraType); // 获取相机类型
-            console.info('connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型
+                console.info('cameraId : ' + cameraArray[index].cameraId); // 获取相机ID
+                console.info('cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置
+                console.info('cameraType : ' + cameraArray[index].cameraType); // 获取相机类型
+                console.info('connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型
             }
 
             // 创建相机输入流
             try {
             cameraInput = cameraManager.createCameraInput(cameraArray[0]);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to createCameraInput errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to createCameraInput errorCode = ' + err.code);
             }
             if (cameraInput === undefined) {
-            return;
+                return;
             }
 
             // 监听cameraInput错误信息
             let cameraDevice: cameraObj.CameraDevice = cameraArray[0];
             cameraInput.on('error', cameraDevice, (error: BusinessError) => {
-            console.error(`Camera input error code: ${error.code}`);
+                console.error(`Camera input error code: ${error.code}`);
             })
 
             // 打开相机
@@ -606,37 +608,37 @@ export default function cameraCaptureSceneTest() {
             let sceneModes: Array<cameraObj.SceneMode> = cameraManager.getSupportedSceneModes(cameraArray[0]);
             let isSupportPhotoMode: boolean = sceneModes.indexOf(cameraObj.SceneMode.NORMAL_PHOTO) >= 0;
             if (!isSupportPhotoMode) {
-            console.error('photo mode not support');
-            return;
+                console.error('photo mode not support');
+                return;
             }
             // 获取相机设备支持的输出流能力
             let cameraOutputCap: cameraObj.CameraOutputCapability =
             cameraManager.getSupportedOutputCapability(cameraArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
             if (!cameraOutputCap) {
-            console.error('cameraManager.getSupportedOutputCapability error');
-            return;
+                console.error('cameraManager.getSupportedOutputCapability error');
+                return;
             }
             console.info('outputCapability: ' + JSON.stringify(cameraOutputCap));
 
             let previewProfilesArray: Array<cameraObj.Profile> = cameraOutputCap.previewProfiles;
             if (!previewProfilesArray) {
-            console.error('createOutput previewProfilesArray == null || undefined');
+                console.error('createOutput previewProfilesArray == null || undefined');
             }
 
             let photoProfilesArray: Array<cameraObj.Profile> = cameraOutputCap.photoProfiles;
             if (!photoProfilesArray) {
-            console.error('createOutput photoProfilesArray == null || undefined');
+                console.error('createOutput photoProfilesArray == null || undefined');
             }
 
-            // 创建预览输出流,其中参数 surfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface
+            // 创建预览输出流
             try {
-            previewOutput = cameraManager.createPreviewOutput(previewProfilesArray[0], surfaceId);
+                previewOutput = cameraManager.createPreviewOutput(previewProfilesArray[0], surfaceId);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error(`Failed to create the PreviewOutput instance. error code: ${err.code}`);
+                let err = error as BusinessError;
+                console.error(`Failed to create the PreviewOutput instance. error code: ${err.code}`);
             }
             if (previewOutput === undefined) {
-            return;
+                return;
             }
 
             // 监听预览输出错误信息
@@ -646,10 +648,10 @@ export default function cameraCaptureSceneTest() {
 
             // 创建拍照输出流
             try {
-            photoOutput = cameraManager.createPhotoOutput(photoProfilesArray[0]);
+                photoOutput = cameraManager.createPhotoOutput(photoProfilesArray[0]);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to createPhotoOutput errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to createPhotoOutput errorCode = ' + err.code);
             }
             if (photoOutput === undefined) {
             return;
@@ -660,13 +662,13 @@ export default function cameraCaptureSceneTest() {
 
             //创建会话
             try {
-            photoSession = cameraManager.createSession(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
+                photoSession = cameraManager.createSession(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to create the session instance. errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to create the session instance. errorCode = ' + err.code);
             }
             if (photoSession === undefined) {
-            return;
+                return;
             }
             // 监听session错误信息
             photoSession.on('error', (error: BusinessError) => {
@@ -675,34 +677,34 @@ export default function cameraCaptureSceneTest() {
 
             // 开始配置会话
             try {
-            photoSession.beginConfig();
+                photoSession.beginConfig();
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to beginConfig. errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to beginConfig. errorCode = ' + err.code);
             }
 
             // 向会话中添加相机输入流
             try {
-            photoSession.addInput(cameraInput);
+                photoSession.addInput(cameraInput);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to addInput. errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to addInput. errorCode = ' + err.code);
             }
 
             // 向会话中添加预览输出流
             try {
-            photoSession.addOutput(previewOutput);
+                photoSession.addOutput(previewOutput);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to addOutput(previewOutput). errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to addOutput(previewOutput). errorCode = ' + err.code);
             }
 
             // 向会话中添加拍照输出流
             try {
-            photoSession.addOutput(photoOutput);
+                photoSession.addOutput(photoOutput);
             } catch (error) {
-            let err = error as BusinessError;
-            console.error('Failed to addOutput(photoOutput). errorCode = ' + err.code);
+                let err = error as BusinessError;
+                console.error('Failed to addOutput(photoOutput). errorCode = ' + err.code);
             }
 
             // 提交会话配置
@@ -710,7 +712,7 @@ export default function cameraCaptureSceneTest() {
 
             // 启动会话
             await photoSession.start().then(() => {
-            console.info('Promise returned to indicate the session start success.');
+                console.info('Promise returned to indicate the session start success.');
             });
 
             let photoCaptureSetting: cameraObj.PhotoCaptureSetting = {
