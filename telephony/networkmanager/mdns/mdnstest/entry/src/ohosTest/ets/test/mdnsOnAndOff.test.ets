@@ -363,7 +363,6 @@ export default function NetworkManagerMdnsTest() {
         let callback: ()=>void = ()=>{
           console.log(`${caseName}  on or off serviceFound  `);
           ExpectFail();
-          removeTheService(localServiceInfo);
           console.info(`${caseName}---End`);
           done();
         }
@@ -450,7 +449,6 @@ export default function NetworkManagerMdnsTest() {
         discoveryService.on("serviceLost", (data: mdns.LocalServiceInfo)=>{
           console.log(`${caseName} on serviceLost , data is ${JSON.stringify(data)}`);
           ExpectFail();
-          removeTheService(localServiceInfo);
           done();
         });
         mdns.addLocalService(context , localServiceInfo, async (err, data) => {
@@ -490,7 +488,6 @@ export default function NetworkManagerMdnsTest() {
         let callback: ()=>void = ()=>{
           console.log(`${caseName}  on or off serviceLost  `);
           ExpectFail();
-          removeTheService(localServiceInfo);
           console.info(`${caseName}---End`);
           done();
         }
