@@ -41,7 +41,7 @@ export default function localUnitTest() {
      * @tc.desc      : assertContain
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.level     : 0
      */
     it('assertContain', 0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
