@@ -1890,6 +1890,928 @@ export default function abilityTest() {
         }
       }
     })
-    
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4200
+     * @tc.name      : test_stopFloatingBall_1300024
+     * @tc.desc      : not start FloatingBall
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_stopFloatingBall_1300024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_stopFloatingBall_1300024';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+            floatingBallController.stopFloatingBall().then(() => {
+              console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+            }).catch((err: BusinessError) => {
+              console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.code).assertEqual(1300024);
+              done();
+            });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4300
+     * @tc.name      : test_startFloatingBall_after_stop
+     * @tc.desc      : test_startFloatingBall_after_stop
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_startFloatingBall_after_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_startFloatingBall_after_stop';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.startFloatingBall(startParams).then(async () => {
+          console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+          floatingBallController.stopFloatingBall().then(async () => {
+            console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
+            await sleep(300);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+                expect(true).assertTrue();
+                done()
+              }).catch((err: BusinessError) => {
+                console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done()
+              });
+            }).catch((err: BusinessError) => {
+              console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done()
+          });
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+          done()
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4400
+     * @tc.name      : test_on_stateChange_1300022
+     * @tc.desc      : Repeated on_stateChange
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_stateChange_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_stateChange_1300022';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onStateChange = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ ' Floating ball stateChange: ' + state);
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.startFloatingBall(startParams).then(async () => {
+          console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+          floatingBallController.on('stateChange',onStateChange);
+          floatingBallController.on('stateChange',onStateChange);
+          expect(false).assertTrue();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          floatingBallController.off('stateChange',onStateChange);
+          expect(err.code).assertEqual(1300022);
+          done()
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4500
+     * @tc.name      : test_on_stateChange_start_stop
+     * @tc.desc      : test_on_stateChange_start_stop
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_stateChange_start_stop';
+      let FloatBallstate:number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onStateChange = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ ' Floating ball stateChange: ' + state);
+        FloatBallstate = state;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.on('stateChange',onStateChange);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(200);
+        expect(FloatBallstate).assertEqual(floatingBall.FloatingBallState.STARTED);
+        await floatingBallController.stopFloatingBall();
+        await sleep(200);
+        expect(FloatBallstate).assertEqual(floatingBall.FloatingBallState.STOPPED);
+        floatingBallController.off('stateChange');
+        done();
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4600
+     * @tc.name      : test_on_stateChange_two_callback
+     * @tc.desc      : 注册两个监听，收到两次回调
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_stateChange_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_stateChange_two_callback';
+      let time:number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ 'callback1 Floating ball stateChange: ' + state);
+        time++;
+        console.info(CaseName+ 'callback1 time: ' + time);
+      };
+      let callback2 = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ ' callback2 Floating ball stateChange: ' + state);
+        time++;
+        console.info(CaseName+ 'callback2 time: ' + time);
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.on('stateChange',callback1);
+        floatingBallController.on('stateChange',callback2);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(200);
+        console.info(CaseName+ ' time1: ' + time);
+        expect(time).assertEqual(2);
+        floatingBallController.off('stateChange');
+        await floatingBallController.stopFloatingBall();
+        await sleep(200);
+        console.info(CaseName+ ' time2: ' + time);
+        expect(time).assertEqual(2);
+        done();
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4700
+     * @tc.name      : test_on_stateChange_off_callback1
+     * @tc.desc      : 取消callback1,收到callback2回调
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_stateChange_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_stateChange_off_callback1';
+      let time:number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ 'callback1 Floating ball stateChange: ' + state);
+        time++;
+        console.info(CaseName+ 'callback1 time: ' + time);
+      };
+      let callback2 = (state: floatingBall.FloatingBallState) => {
+        console.info(CaseName+ ' callback2 Floating ball stateChange: ' + state);
+        time++;
+        console.info(CaseName+ 'callback2 time: ' + time);
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.on('stateChange',callback1);
+        floatingBallController.on('stateChange',callback2);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(200);
+        console.info(CaseName+ ' time1: ' + time);
+        expect(time).assertEqual(2);
+        floatingBallController.off('stateChange',callback1);
+        await floatingBallController.stopFloatingBall();
+        await sleep(200);
+        console.info(CaseName+ ' time2: ' + time);
+        expect(time).assertEqual(3);
+        floatingBallController.off('stateChange');
+        done();
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4800
+     * @tc.name      : test_on_click_1300022
+     * @tc.desc      : Repeated on_click
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_click_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_click_1300022';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onClick = () => {
+        console.info(CaseName+ 'Floating ball onClick');
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.startFloatingBall(startParams).then(async () => {
+          console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+          floatingBallController.on('click',onClick);
+          floatingBallController.on('click',onClick);
+          expect(false).assertTrue();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          floatingBallController.off('stateChange',onClick);
+          expect(err.code).assertEqual(1300022);
+          done()
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4900
+     * @tc.name      : test_on_click_two_callback
+     * @tc.desc      : 注册两个监听，收到两次回调
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_click_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_click_two_callback';
+      let time:number = 0;
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = () => {
+        console.info(CaseName+ 'callback1 Floating ball onClick..');
+        time++;
+        console.info(CaseName+ 'callback1 time: ' + time);
+      };
+      let callback2 = () => {
+        console.info(CaseName+ 'callback2 Floating ball onClick..');
+        time++;
+        console.info(CaseName+ 'callback2 time: ' + time);
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(200);
+        floatingBallController.on('click',callback1);
+        floatingBallController.on('click',callback2);
+        //点击
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(300);
+        console.info(CaseName+ ' time1: ' + time);
+        expect(time).assertEqual(2);
+        floatingBallController.off('click');
+        //点击
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(300);
+        console.info(CaseName+ ' time2: ' + time);
+        expect(time).assertEqual(2);
+
+        await floatingBallController.stopFloatingBall();
+        await sleep(200);
+        done();
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5000
+     * @tc.name      : test_on_click_off_callback1
+     * @tc.desc      : 取消callback1
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_on_click_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_on_click_off_callback1';
+      let time:number = 0;
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = () => {
+        console.info(CaseName+ 'callback1 Floating ball onClick..');
+        time++;
+        console.info(CaseName+ 'callback1 time: ' + time);
+      };
+      let callback2 = () => {
+        console.info(CaseName+ 'callback2 Floating ball onClick..');
+        time++;
+        console.info(CaseName+ 'callback2 time: ' + time);
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        await sleep(200);
+        floatingBallController.on('click',callback1);
+        floatingBallController.on('click',callback2);
+        //点击
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(300);
+        console.info(CaseName+ ' time1: ' + time);
+        expect(time).assertEqual(2);
+        floatingBallController.off('click',callback1);
+        //点击
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(300);
+        console.info(CaseName+ ' time2: ' + time);
+        expect(time).assertEqual(3);
+        floatingBallController.off('click');
+        await floatingBallController.stopFloatingBall();
+        await sleep(200);
+        done();
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5100
+     * @tc.name      : test_getFloatingBallWindowInfo_1300025
+     * @tc.desc      : test_getFloatingBallWindowInfo_1300025
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_getFloatingBallWindowInfo_1300025';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
+          console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300025)
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5200
+     * @tc.name      : test_getFloatingBallWindowInfo
+     * @tc.desc      : test_getFloatingBallWindowInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('test_getFloatingBallWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let CaseName:string = 'test_getFloatingBallWindowInfo';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
+          console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
+          floatingBallController.stopFloatingBall();
+          expect(data!=null).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5300
+     * @tc.name      : test_restoreMainWindow_1300019
+     * @tc.desc      : test_restoreMainWindow_1300019
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('test_restoreMainWindow_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_1300019';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        try{
+          floatingBallController.restoreMainWindow(null).then(() => {
+            console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+            expect(false).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }catch (e) {
+          console.error( CaseName+  `Failed restoreMainWindow. Cause:${e.code}, message:${e.message}`);
+          await floatingBallController.stopFloatingBall();
+          expect(e.code).assertEqual(1300019);
+          done();
+
+        }
+
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5400
+     * @tc.name      : test_restoreMainWindow_1300025
+     * @tc.desc      : test_restoreMainWindow_1300025
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_1300025';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+      let floatingBallController = await floatingBall.create(config);
+        floatingBallController.restoreMainWindow(want).then(() => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300025);
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5500
+     * @tc.name      : test_restoreMainWindow_load_not_exist_ability
+     * @tc.desc      : test_restoreMainWindow_load_not_exist_ability
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_load_not_exist_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_load_not_exist_ability';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let driver:Driver = Driver.create();
+      let want: Want = {
+        bundleName: 'xxx.xxx.xxx',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(200);
+
+        floatingBallController.restoreMainWindow(want).then(() => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          expect(err.code).assertEqual(1300026);
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5600
+     * @tc.name      : test_restoreMainWindow_not_click
+     * @tc.desc      : test_restoreMainWindow_not_click
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_not_click', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_not_click';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let floatingBallController:floatingBall.FloatingBallController;
+      try {
+        floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        floatingBallController.restoreMainWindow(want).then(() => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          expect(err.code).assertEqual(1300026);
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5700
+     * @tc.name      : test_restoreMainWindow_click_after_5_seconds
+     * @tc.desc      : test_restoreMainWindow_click_after_5_seconds
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_click_after_5_seconds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_click_after_5_seconds';
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(6000);
+        floatingBallController.restoreMainWindow(want).then(() => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          expect(err.code).assertEqual(1300026);
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5800
+     * @tc.name      : test_restoreMainWindow_mainWindow
+     * @tc.desc      : test_restoreMainWindow_mainWindow
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_mainWindow';
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let floatingBallController:floatingBall.FloatingBallController;
+      try {
+        floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(200);
+
+        floatingBallController.restoreMainWindow(want).then(async () => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          await floatingBallController.stopFloatingBall();
+          expect(true).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5900
+     * @tc.name      : test_restoreMainWindow_ability
+     * @tc.desc      : test_restoreMainWindow_ability
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_ability';
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'StartAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(200);
+
+        floatingBallController.restoreMainWindow(want).then(async () => {
+          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          await floatingBallController.stopFloatingBall();
+          expect(true).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }
+        else{
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   })
 }
