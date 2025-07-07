@@ -19,5 +19,6 @@ group("window") {
     "windowProperties:ActsWindowPropertiesTest",
     "windowStartAbility:ActsWindowStartAbilityTest",
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
+    "FloatBallTes:ActsFloatBallTest",
   ]
 }
