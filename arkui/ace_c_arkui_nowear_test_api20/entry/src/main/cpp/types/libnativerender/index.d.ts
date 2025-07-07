@@ -14,6 +14,12 @@
  */
 export const buttonGetTypeTest: (a: string) => void;
 
+export const FocusWrapModeTest001: (a: string) => void;
+
+export const FocusWrapModeTest002: (a: string) => void;
+
+export const FocusWrapModeTest003: (a: string) => void;
+
 export const dragEventGetDisplayId: (a: string) => void;
 
 export const dragEventGetDragSource: (a: string) => void;
