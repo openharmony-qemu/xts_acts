@@ -241,10 +241,9 @@ int32_t Player::CreatePrepare()
     VideoStreamerConfigure();
     VideoStreamerSetSurface();
     
+    int retSync = lppVideoStreamer_->SetSyncAudioStreamer(lppAudioStreamer_->lppAudioStreamer_);
     VideoStreamerPrepare();
     AudioStreamerPrepare();
-
-    int retSync = lppVideoStreamer_->SetSyncAudioStreamer(lppAudioStreamer_->lppAudioStreamer_);
 
     isReleased_ = false;
 
