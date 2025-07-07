@@ -14,8 +14,10 @@
  */
 
 import mdnsTest from './mdns.test';
+import NetworkManagerMdnsTest from './mdnsOnAndOff.test';
 
 export default function testsuite() {
+NetworkManagerMdnsTest();
   mdnsTest();
 }
 
