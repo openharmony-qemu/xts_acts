@@ -23,8 +23,14 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11:ActsAceEtsModuleLayout04Api11Test",
       "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11:ActsAceEtsModuleLayout05Api11Test",
       "ace_ets_module_layout_api11/ace_ets_module_layout_06_api11:ActsAceEtsModuleLayout06Api11Test",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_01_api11_static:ActsAceEtsModuleLayoutApi11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_02_api11_static:ActsAceEtsModuleLayout02Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_03_api11_static:ActsAceEtsModuleLayout03Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11_static:ActsAceEtsModuleLayout04Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11_static:ActsAceEtsModuleLayout05Api11StaticTest",
       "ace_ets_module_layout_api12:ActsAceEtsModuleLayoutApi12Test",
       "ace_ets_module_layout_api14:ActsAceEtsModuleLayoutApi14Test",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
     ]
   } else {
     deps = [
@@ -34,10 +40,18 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11:ActsAceEtsModuleLayout04Api11Test",
       "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11:ActsAceEtsModuleLayout05Api11Test",
       "ace_ets_module_layout_api11/ace_ets_module_layout_06_api11:ActsAceEtsModuleLayout06Api11Test",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_01_api11_static:ActsAceEtsModuleLayoutApi11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_02_api11_static:ActsAceEtsModuleLayout02Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_03_api11_static:ActsAceEtsModuleLayout03Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11_static:ActsAceEtsModuleLayout04Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11_static:ActsAceEtsModuleLayout05Api11StaticTest",
       "ace_ets_module_layout_api12:ActsAceEtsModuleLayoutApi12Test",
       "ace_ets_module_layout_api14:ActsAceEtsModuleLayoutApi14Test",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
       "ace_ets_module_layout_nowear_api11:ActsAceEtsModuleLayoutNowearApi11Test",
       "ace_ets_module_layout_nowear_api12:ActsAceEtsModuleLayoutNowearApi12Test",
+      "ace_ets_module_layout_nowear_api11_static:ActsAceEtsModuleLayoutNowearApi11StaticTest",
+      "ace_ets_module_layout_nowear_api12_static:ActsAceEtsModuleLayoutNowearApi12StaticTest",
     ]
   }
 }
