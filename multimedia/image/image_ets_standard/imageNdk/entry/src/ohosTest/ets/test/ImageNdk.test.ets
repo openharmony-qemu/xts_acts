@@ -202,6 +202,22 @@ export default function imageNdkTest() {
       }
     }
 
+    const NDK_CreateFromDataWithUserBuffer = async (TAG: string, filename: string, done: Function) => {
+      hilog.info(0x0000, 'scaleTest', '%{public}s', `ndkTest： ` + JSON.stringify(ndkTest))
+      await getBuffer(filename);
+      const imageSourceApi: image.ImageSource = ndkTest.CreateFromDataWithUserBuffer(buffer);
+      if (typeof imageSourceApi === "object") {
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG + `create image source success:${imageSourceApi}`)
+        expect(true).assertTrue();
+        ndkTest.SourceRelease(imageSourceApi);
+        done();
+      } else {
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG + `create image source failed:${imageSourceApi}`)
+        expect(false).assertTrue();
+        done();
+      }
+    }
+
     const NDK_CreatePixelMapByUri = async (TAG: string, index: number, rotate: number, x: number, y: number,
                                            Regionwidth: number, RegionHeight: number, width: number, height: number,
                                            desiredPixelFormat: number, filename: string, done: Function) => {
@@ -8717,6 +8733,26 @@ export default function imageNdkTest() {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800'
       try {
         await NDK_CreateFromData(testTag, "SVG.svg", done);
+      } catch (error) {
+        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
+     * @tc.desc      : 1.get testPng.buffer
+     *                 2.createImageSourceWithUserBuffer
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100'
+      try {
+        await NDK_CreateFromDataWithUserBuffer(testTag, "test5.jpg", done);
       } catch (error) {
         hilog.info(0x0000, testTag, `Test exception  ` + error);
         expect().assertFail();

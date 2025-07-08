@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll,afterAll,it, expect , TestType, Size, Level} from '@ohos/hypium';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -76,6 +76,10 @@ export default function windowEventTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+    })
+    afterAll(async () => {
+      
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
     })
 
     /**
