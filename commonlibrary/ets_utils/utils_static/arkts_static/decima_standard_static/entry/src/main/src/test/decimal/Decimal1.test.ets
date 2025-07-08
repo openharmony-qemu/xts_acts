@@ -2517,9 +2517,8 @@ export default function Decimal1Test() {
       const TAG = "testDecimal000f1";
       try {
         let a: Decimal = new Decimal("Nah").sqrt();
-        console.info(TAG + " test Decimal sqrt is " + a.toString());
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
+      } catch (err:BusinessError) {
+        expect(err.code).assertEqual(401);
       }
     });
     /**
@@ -3016,7 +3015,7 @@ export default function Decimal1Test() {
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_2700
-     * @tc.name       : testDecimal0026
+     * @tc.name       : testDecimal0027
      * @tc.desc       : Test the function of the interface Decimal.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4246,7 +4245,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9100
-     * @tc.name       : testComparedTo0091
+     * @tc.name       : testDecimal0091
      * @tc.desc       : Test the function of the interface Decimal.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4306,7 +4305,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9400
-     * @tc.name       : testComparedTo0004
+     * @tc.name       : testDecimal0094
      * @tc.desc       : Testing the decimal comparedTo with new Decimal(0).
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4348,7 +4347,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9600
-     * @tc.name       : testComparedTo0006
+     * @tc.name       : testDecimal0096
      * @tc.desc       : Testing the decimal comparedTo "-0".
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4369,7 +4368,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9700
-     * @tc.name       : testComparedTo0007
+     * @tc.name       : testDecimal0097
      * @tc.desc       : Testing the decimal comparedTo new Decimal(-0).
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4390,7 +4389,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9800
-     * @tc.name       : testComparedTo0008
+     * @tc.name       : testDecimal0098
      * @tc.desc       : Testing the decimal comparedTo Infinity.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4410,7 +4409,7 @@ export default function Decimal1Test() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_9900
-     * @tc.name       : testComparedTo0009
+     * @tc.name       : testDecimal0099
      * @tc.desc       : Testing the decimal comparedTo Infinity.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -4429,7 +4428,7 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_1000
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_10000
      * @tc.name       : testDecimal0100
      * @tc.desc       : Test the function of the interface Decimal.
      * @tc.size       : MediumTest
@@ -4947,7 +4946,7 @@ export default function Decimal1Test() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2400
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_2500
      * @tc.name       : testSin0025
      * @tc.desc       : Testing the decimal sin with new Decimal(Infinity).
      * @tc.size       : MediumTest
