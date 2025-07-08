@@ -2498,7 +2498,7 @@ export default function abilityTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.floatballtest',
+        bundleName: 'com.example.myapplication',
         abilityName: 'TestAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
@@ -2597,7 +2597,7 @@ export default function abilityTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.floatballtest',
+        bundleName: 'com.example.myapplication',
         abilityName: 'TestAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
@@ -2645,7 +2645,7 @@ export default function abilityTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.floatballtest',
+        bundleName: 'com.example.myapplication',
         abilityName: 'TestAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
@@ -2700,7 +2700,7 @@ export default function abilityTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.floatballtest',
+        bundleName: 'com.example.myapplication',
         abilityName: 'TestAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
@@ -2756,7 +2756,7 @@ export default function abilityTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.floatballtest',
+        bundleName: 'com.example.myapplication',
         abilityName: 'StartAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
