@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll,afterAll,it, expect , TestType, Size, Level} from '@ohos/hypium';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -77,6 +77,10 @@ export default function windowEventTest() {
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
     })
+    afterAll(async () => {
+      
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+    })
 
     /**
      * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
@@ -101,8 +105,7 @@ export default function windowEventTest() {
         await subWindowClass.moveWindowTo(200, 0);
         await subWindowClass.showWindow();
         await sleep(1000);
-        let windowProperties = subWindowClass.getWindowProperties();
-        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+        
         const callback = () => {
           timer++;
           console.log(`${caseName} timer: ${timer}`);
@@ -110,7 +113,9 @@ export default function windowEventTest() {
         subWindowClass.on('touchOutside', callback);
         await mainWindow.setPreferredOrientation(window.Orientation.LANDSCAPE);
 
-        await sleep(1000);
+        await sleep(3000);
+        let windowProperties = subWindowClass.getWindowProperties();
+        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
         let driver: Driver = Driver.create();
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
@@ -176,7 +181,7 @@ export default function windowEventTest() {
           console.log(`${caseName} timer: ${timer}`);
           expect(timer).assertEqual(1);
           await sleep(300);
-          subWindowClass.off('touchOutside');
+          mainWindow.off('touchOutside');
 
           await subWindowClass.destroyWindow();
           done();

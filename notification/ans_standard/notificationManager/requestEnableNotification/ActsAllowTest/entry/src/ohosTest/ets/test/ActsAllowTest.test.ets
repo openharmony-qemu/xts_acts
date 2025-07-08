@@ -89,13 +89,14 @@ export default function ActsAllowTest() {
      * @tc.name      : function requestEnableNotification(context): Promise<void>
      * @tc.desc      : requestEnableNotification allow button is clicked
      */
-    it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100', Level.LEVEL0,
+    it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_0100', Level.LEVEL2,
       async (done: () => void) => {
         let fn = async (resolve: () => void, reject: (arg1: Error) => void): Promise<void> => {
           let succeed = succeedGenerator(TAG, resolve, done);
           let exit = exitGenerator(TAG, reject);
           notificationManager.requestEnableNotification(ctx).then(() => {
             succeed(`requestEnableNotification succeeded`);
+            done()
           }).catch((err: Error) => {
             exit(`requestEnableNotification err: JSON.stringify(err)`);
           });
@@ -107,6 +108,7 @@ export default function ActsAllowTest() {
           if (button !== null) {
             await sleep(1500);
             await button.click();
+            await sleep(500);
             done()
           } else {
             exit('null button');
@@ -123,13 +125,14 @@ export default function ActsAllowTest() {
     * @tc.name      : 【openNotificationSettings】非系统应用调用openNotificationSettings接口拉起设置页面
     * @tc.desc      : 非系统应用调用openNotificationSettings接口拉起设置页面
     */
-    it('Sub_Notification_Ans_OpenNotification_Settings_0004', Level.LEVEL0,
+    it('Sub_Notification_Ans_OpenNotification_Settings_0004', Level.LEVEL2,
       async (done: () => void) => {
         let fn = async (resolve: () => void, reject: (arg1: Error) => void): Promise<void> => {
           let succeed = succeedGenerator(TAG, resolve, done);
           let exit = exitGenerator(TAG, reject);
           notificationManager.openNotificationSettings(ctx).then(() => {
             succeed(`openNotificationSettings succeeded`);
+            done()
           }).catch((err: BusinessError) => {
             exit(`openNotificationSettings err: JSON.stringify(err)`);
             if (err.code == 801) {
@@ -167,7 +170,7 @@ export default function ActsAllowTest() {
     * @tc.type      : Function test
     * @tc.level     : Level 0
     */
-    it('Sub_Notification_Ans_Publish_updateOnly_0003', Level.LEVEL0, (done: Function) => {
+    it('Sub_Notification_Ans_Publish_updateOnly_0003', Level.LEVEL2, async (done: Function) => {
       // 通知Request对象
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 2025012101,
@@ -187,6 +190,7 @@ export default function ActsAllowTest() {
         creatorUserId: 123,
         hashCode: '123'
       };
+      await sleep(500);
       notificationManager.publish(notificationRequest).then(() => {
         console.info(TAG + "publish update success");
         expect(false).assertTrue()
@@ -216,7 +220,7 @@ export default function ActsAllowTest() {
     * @tc.type      : Function test
     * @tc.level     : Level 2
     */
-    it('Sub_Notification_Ces_Subscriber_Subscribe_08086', Level.LEVEL0, async (done: () => void) => {
+    it('Sub_Notification_Ces_Subscriber_Subscribe_08086', Level.LEVEL2, async (done: () => void) => {
 
       // 创建订阅者
       try {
