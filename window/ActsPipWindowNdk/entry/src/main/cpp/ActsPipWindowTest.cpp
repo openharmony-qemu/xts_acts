@@ -1537,6 +1537,110 @@ static napi_value TestUnregisterAllLifeCycleListeners(napi_env env, napi_callbac
     return result;
 }
 
+static napi_value TestSetPipInitialSurfaceRect(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRect mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRect ret=%{public}d", ret);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 1000, 1000);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRect res=%{public}d", res);
+    if (ret != 0 || res != 0) {
+        napi_create_int32(env, ret == 0? res: ret, &result);
+        return result;
+    }
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value TestSetPipInitialSurfaceRectwithInvalidWidth(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRectwithInvalidWidth mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRectwithInvalidWidth ret=%{public}d", ret);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 0, 1000);
+    OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRectwithInvalidWidth res=%{public}d", res);
+    if (ret != 0) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value TestUnsetPipInitialSurfaceRect(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect mainWindowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    OH_PictureInPicture_SetPipMainWindowId(pipConfig, mainWindowId);
+    OH_PictureInPicture_SetPipTemplateType(pipConfig, pipTemplateType);
+    OH_PictureInPicture_SetPipRect(pipConfig, NINE, SIXTEEN);
+    OH_PictureInPicture_SetPipControlGroup(pipConfig, controlGroup, 1);
+    OH_PictureInPicture_SetPipNapiEnv(pipConfig, env);
+    uint32_t controllerId = 0;
+    int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect ret=%{public}d", ret);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 1000, 1000);
+    int32_t res1 = OH_PictureInPicture_UnsetPipInitialSurfaceRect(controllerId);
+    OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect res=%{public}d", res);
+    OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect res1=%{public}d", res1);
+    if (res1 != 0) {
+        napi_create_int32(env, res1, &result);
+        return result;
+    }
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 static napi_value pipWindowInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1607,6 +1711,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testUnregisterLifeCycleListener", nullptr, TestUnregisterLifeCycleListener,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testUnregisterAllLifeCycleListeners", nullptr, TestUnregisterAllLifeCycleListeners,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetPipInitialSurfaceRect", nullptr, TestSetPipInitialSurfaceRect,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetPipInitialSurfaceRectwithInvalidWidth", nullptr, TestSetPipInitialSurfaceRectwithInvalidWidth,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testUnsetPipInitialSurfaceRect", nullptr, TestUnsetPipInitialSurfaceRect,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
