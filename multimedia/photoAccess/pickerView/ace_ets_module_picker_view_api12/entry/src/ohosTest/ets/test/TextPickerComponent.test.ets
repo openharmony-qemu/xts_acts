@@ -95,7 +95,13 @@ async function clickResultButton(driver: Driver) {
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn = await driver.findComponent(ON.id('albumButton'));
-  await btn.click();
+  if (btn === null) {
+    console.info("clickAlbumButton findComponent btn fail");
+    expect(false).assertTrue();
+  } else {
+    console.info("clickAlbumButton findComponent btn success");
+    await btn.click();
+  }
   console.info('testPicker btn click finish');
   await CommonFunc.sleep(1000);
   let albumItem = await driver.findComponent((ON.id('AlbumListItem')));
@@ -158,15 +164,19 @@ export default function TextPicker() {
 
     beforeAll(async (done: Function) => {
       let maxButton = await driver.findComponent(ON.id("EnhanceMaximizeBtn"));
+      let isExecuteTestCase: boolean = false;
       await CommonFunc.sleep(1000);
       if(maxButton !== null){
         await maxButton.click();
+        isExecuteTestCase = true;
       }
       await CommonFunc.sleep(1000);
-      try {
-        driver.triggerCombineKeys(17, 18);
-      } catch (error) {
-        console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+      if (!isExecuteTestCase) {
+        try {
+          driver.triggerCombineKeys(17, 18);
+        } catch (error) {
+          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+        }
       }
       done();
     });
@@ -877,7 +887,13 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
 
       let changeNumButton: Component = await driver.findComponent(ON.id('changeNumButton'));
-      await changeNumButton.click();
+      if (changeNumButton === null) {
+        console.info("testPicker15 findComponent changeNumButton fail");
+        expect(false).assertTrue();
+      } else {
+        console.info("testPicker15 findComponent changeNumButton success");
+        await changeNumButton.click();
+      }
       let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("testPicker15 findComponent checkbox fail");
