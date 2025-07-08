@@ -44,7 +44,7 @@ export default function windowImmersiveTest() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       let windowClass = windowStage.getMainWindowSync();
         await windowClass.setWindowLayoutFullScreen(false);
-        await windowClass.setWindowSystemBarEnable(['status']);
+        // await windowClass.setWindowSystemBarEnable(['status']);
         let type = window.AvoidAreaType.TYPE_SYSTEM;
         avoidArea1 = windowClass.getWindowAvoidArea(type);
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
