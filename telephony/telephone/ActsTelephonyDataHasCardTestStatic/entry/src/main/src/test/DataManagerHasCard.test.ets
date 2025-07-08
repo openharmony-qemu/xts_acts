@@ -67,12 +67,12 @@ export default function dataManagerTest() {
                 data.isCellularDataEnabled().then((isEnable: boolean )=>{
                     data.getCellularDataState((err: BusinessError<void>|null , data: data.DataConnectState| undefined) => {
                         if (err?.code != 0) {
-                            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                           
                             ExpectFail();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         } else {
-                            hilog.info(domain, tag, '%{public}s', caseName+ 'get getCellularDataState success');
+                            
                             ExpectTrue(true);
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -147,7 +147,6 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled((err: BusinessError<void>|null, data: boolean| undefined) => {
                     if (err?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                         ExpectFail();
                         done();
                     } else {
@@ -177,7 +176,7 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled((err: BusinessError<void>|null, data: boolean| undefined) => {
                     if (err?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    
                         ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
@@ -241,12 +240,12 @@ export default function dataManagerTest() {
             try {
                 data.isCellularDataEnabled((err: BusinessError<void>|null, data: boolean| undefined ) => {
                     if (err?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        
                         ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +': data ->'+ data);
+                       
                         ExpectTrue(true);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
