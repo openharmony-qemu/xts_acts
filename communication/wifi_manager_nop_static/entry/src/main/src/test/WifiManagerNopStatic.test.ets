@@ -231,5 +231,88 @@ export default function wifiManagerTest() {
             }
             done();
         })
+        /*
+         * @tc.number: getLinkedInfoPromise201Test
+         * @tc.name: getLinkedInfoPromise201Test
+         * @tc.desc: Test getLinkedInfoPromise201Test API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("getLinkedInfoPromise201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await wifiManager.getLinkedInfo().then((data: wifiManager.WifiLinkedInfo) => {});
+                expect().assertFail();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(true).assertEqual(err.code == 201);
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: getLinkedInfoCallback201Test
+         * @tc.name: getLinkedInfoCallback201Test
+         * @tc.desc: Test getLinkedInfoCallback201Test API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("getLinkedInfoCallback201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
+                try {
+                    if (err != null) {
+                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                        hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err?.code + ",errMessage:" + err?.message);
+                        if (err?.code == 801) {
+                            hilog.info(domain, tag, 'api is not support');
+                            expect(true).assertEqual(err?.code == 801);
+                            done();
+                        } else {
+                            expect(true).assertEqual(err?.code == 201);
+                            done();
+                        }
+                    } else {
+                        expect().assertFail();
+                        done();
+                    }
+                } catch (err :BusinessError) {
+                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                    done();
+                }
+            })
+            done();
+        })
+
+        /*
+         * @tc.number: getLinkedInfoSync201Test
+         * @tc.name: getLinkedInfoSync201Test
+         * @tc.desc: Test getLinkedInfoSync201Test API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("getLinkedInfoSync201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let infoSync: wifiManager.WifiLinkedInfo = wifiManager.getLinkedInfoSync();
+                expect().assertFail();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getLinkedInfoSync get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(true).assertEqual(err.code == 201);
+                }
+            }
+            done();
+        })
     })
 }
