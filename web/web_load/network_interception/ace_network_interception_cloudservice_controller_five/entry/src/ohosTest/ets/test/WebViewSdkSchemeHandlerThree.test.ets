@@ -44,7 +44,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       let driver = Driver.create();
       await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerThreeButton"),10000);
       console.log("waitForComponent webViewSdkSchemeHandlerThreeButton==>");
-        done()
+      done();
     });
 
     beforeEach(async (done: Function) => {
