@@ -297,30 +297,30 @@ export default function HiAppEventPamTest() {
      * @tc.type Function
      * @tc.level Level3
      */
-    it('testHiAppEventSetPam031', TestType.FUNCTION  Size.MEDIUMTEST  Level.LEVEL0, async (doneFunction) = {
+    it('testHiAppEventSetPam031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam031 start');
-      let config1 hiAppEvent.ConfigOption = {
-        disable true,
+      let config1：hiAppEvent.ConfigOption = {
+        disable：true,
       };
       hiAppEvent.configure(config1);
       try {
-        let eventParams Recordstring, hiAppEvent.ParamType = {
-          test_param true,
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "test_param": true,
         };
-        hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() = {
+        hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() => {
           console.log('testHiAppEventSetPam031 Event parameters set successfully.');
-        }).catch((error BusinessError) = {
-          console.error('testHiAppEventSetPam031 Error', error.message, 'testHiAppEventSetPam031 Code', error.code);
+        }).catch((error: BusinessError) => {
+          console.error('testHiAppEventSetPam031 Error:', error.message, 'testHiAppEventSetPam031 Code:', error.code);
           expect(error.code == 11100001).assertTrue()
           done()
         });
       } catch (err) {
-        console.error(`testHiAppEventSetPam03  error code ${err.code}, error msg ${err.message}`);
+        console.error(`testHiAppEventSetPam031 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
       }
-      let config2 hiAppEvent.ConfigOption = {
-        disable false,
+      let config2：hiAppEvent.ConfigOption = {
+        disable：false,
       };
       hiAppEvent.configure(config2);
     })
