@@ -10,6 +10,7 @@
     "pages/ArkUI/RotationGestureTest",
     "pages/ArkUI/SwipeGestureTest",
     "pages/ArkUI/TapGesture",
+    "pages/ArkUI/DraggingSizeChangeEffect",
     "pages/ArkUI/TouchMoveTest",
     "pages/ArkUI/bindSheetTest",
     "pages/ArkUI/CanvasLineWidth",
@@ -142,7 +143,8 @@
     "pages/ArkUI/AccessibilityDefaultFocusPage",
     "pages/ArkUI/AccessibilityScrollTriggerablePage",
 	"pages/ArkUI/EmbeddedComponentInstanceTest",
-    "pages/ArkUI/OnAccessibilityActionIntercept"
+    "pages/ArkUI/OnAccessibilityActionIntercept",
+    "pages/ArkUI/AccessBilityHoverTransparent"
   ]
 }
 
