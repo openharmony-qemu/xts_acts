@@ -1047,7 +1047,7 @@ export default function FastBufferBaseTest1() {
       let buf2 = fastbuffer.from("asdfghj");
       try {
         let buf = fastbuffer.concat([buf1, buf2], 20);
-        let str = buf.toString();
+        let str = buf.toString('utf-8', 0, 14);
         expect(str).assertEqual("qwertyuasdfghj");
         expect(buf.length).assertEqual(20);
       } catch (err) {
@@ -1194,7 +1194,7 @@ export default function FastBufferBaseTest1() {
       TAG = "testFill0005";
       try {
         let buf = fastbuffer.alloc(6).fill("$*$", 0, 3);
-        let str = buf.toString();
+        let str = buf.toString('utf-8', 0, 3);
         expect(str).assertEqual("$*$");
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1275,7 +1275,7 @@ export default function FastBufferBaseTest1() {
       let buf = fastbuffer.alloc(10);
       try {
         let offset = buf.write('abcd', 0);
-        let str = buf.toString();
+        let str = buf.toString('utf-8', 0, 4);
         expect(str).assertEqual("abcd");
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1315,7 +1315,7 @@ export default function FastBufferBaseTest1() {
       try {
         let offset = buf.write('abcdefgh', 0, 4);
         expect(offset).assertEqual(4);
-        let str = buf.toString();
+        let str = buf.toString('utf-8', 0, 4);
         expect(str).assertEqual("abcd");
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1336,7 +1336,7 @@ export default function FastBufferBaseTest1() {
       try {
         let offset = buf.write('abcdefgh', 0, 4, 'utf8');
         expect(offset).assertEqual(4);
-        let str = buf.toString();
+        let str = buf.toString('utf-8', 0, 4);
         expect(str).assertEqual("abcd");
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
