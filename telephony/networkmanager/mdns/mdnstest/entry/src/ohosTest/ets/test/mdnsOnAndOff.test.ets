@@ -17,7 +17,7 @@ import { describe, expect, it, beforeAll, Size, Level, TestType, beforeEach, aft
 import mdns from '@ohos.net.mdns';
 
 let context = AppStorage.get('context') as Context;
-let address: string = "202.101.172.35";
+let radomAddress: string = "202.101.172.35";
 let getName:()=>string=()=>{
   return "test"+ (Math.random()*1000).toFixed(0)+(Math.random()*5000).toFixed(0)+(Math.random()*800).toFixed(0)
 }
@@ -28,7 +28,7 @@ let localServiceInfoTypeTcp:()=> mdns.LocalServiceInfo =()=> {
     serviceName: getName(),
     port: 8081,
     host: {
-      address: address,
+      address: radomAddress,
     },
     serviceAttribute: []
   }
