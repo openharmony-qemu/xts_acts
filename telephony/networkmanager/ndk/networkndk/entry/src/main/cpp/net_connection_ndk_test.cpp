@@ -19,8 +19,8 @@
 #include <network/netmanager/net_connection_type.h>
 #include <string>
 #include <cstdint>
-#include "network/netstack/net_http/net_http.h"
-#include "network/netstack/net_http/net_http_type.h"
+#include <network/netstack/net_http.h>
+#include <network/netstack/net_http_type.h>
 #include <chrono>
 #include <thread>
 
