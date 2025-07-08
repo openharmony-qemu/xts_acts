@@ -48,7 +48,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1300
-     * @tc.name check X509CRL match for parameter updateDateTime match
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1300
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -78,7 +78,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1400
-     * @tc.name check X509CRL match for parameter updateDateTime mismatching
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1400
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -108,7 +108,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1500
-     * @tc.name check X509CRL match for parameter updateDateTime empty
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1500
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -138,7 +138,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1600
-     * @tc.name check X509CRL match for parameter maxCRL > CRLNumber
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1600
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -168,7 +168,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1700
-     * @tc.name check X509CRL match for parameter maxCRL < CRLNumber
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1700
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -198,7 +198,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1800
-     * @tc.name check X509CRL match for parameter maxCRL invalid
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1800
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -228,7 +228,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1900
-     * @tc.name check X509CRL match for parameter minCRL < CRLNumber
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1900
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -258,7 +258,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_2000
-     * @tc.name check X509CRL match for parameter minCRL > CRLNumber
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_2000
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -288,7 +288,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_2100
-     * @tc.name check X509CRL match for parameter minCRL invalid
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_2100
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -318,7 +318,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_2200
-     * @tc.name check X509CRL match for parameter minCRL>maxCRL
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_2200
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1

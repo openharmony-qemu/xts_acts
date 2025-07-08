@@ -32,7 +32,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100
-     * @tc.name check createTrustAnchorsWithKeyStore with all correct param
+     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -59,7 +59,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200
-     * @tc.name check createTrustAnchorsWithKeyStore with keystore incorrect
+     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -90,7 +90,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300
-     * @tc.name check createTrustAnchorsWithKeyStore with keystore empty
+     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -119,7 +119,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400
-     * @tc.name check createTrustAnchorsWithKeyStore with pwd incorrect
+     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -150,7 +150,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500
-     * @tc.name check createTrustAnchorsWithKeyStore with pwd empty
+     * @tc.name SUB_Security_Cert_Framework_CreateTrustAnchor_Func_0500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1

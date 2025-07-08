@@ -67,7 +67,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0100
-     * @tc.name check createX500DistinguishedName with param nameStr normal
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -97,7 +97,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0200
-     * @tc.name check createX500DistinguishedName with param nameStr abnormal
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -128,7 +128,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0300
-     * @tc.name check createX500DistinguishedName with param nameStr empty
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -155,7 +155,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0400
-     * @tc.name check createX500DistinguishedName with param nameDer normal
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -185,7 +185,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0500
-     * @tc.name check createX500DistinguishedName with param nameDer abnormal
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -216,7 +216,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0600
-     * @tc.name check createX500DistinguishedName with param nameDer empty
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -244,7 +244,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0700
-     * @tc.name check X500DistinguishedName.getName() result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -274,7 +274,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0800
-     * @tc.name check X500DistinguishedName.getName() result transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -314,7 +314,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_0900
-     * @tc.name check X500DistinguishedName.getName(type) result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_0900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -347,7 +347,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1000
-     * @tc.name check X500DistinguishedName.getName(type)result,param type abnormal
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -378,7 +378,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1100
-     * @tc.name check X500DistinguishedName.getName(type)result,param type empty
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -414,7 +414,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1200
-     * @tc.name check X500DistinguishedName.getEncoded() result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -445,7 +445,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1300
-     * @tc.name check X500DistinguishedName.getEncoded() result transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -485,7 +485,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1400
-     * @tc.name check X509Cert.getIssuerX500DistinguishedName result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -507,7 +507,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1500
-     * @tc.name check X509Cert.getIssuerX500DistinguishedName result(getName() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -540,7 +540,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1600
-     * @tc.name check X509Cert.getIssuerX500DistinguishedName result (getName(type) value)
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -561,7 +561,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1700
-     * @tc.name check X509Cert.getIssuerX500DistinguishedName result(getEncoded() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -594,7 +594,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1800
-     * @tc.name check X509Cert.getSubjectX500DistinguishedName result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -616,7 +616,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_1900
-     * @tc.name check X509Cert.getSubjectX500DistinguishedName result(getName() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_1900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -649,7 +649,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2000
-     * @tc.name check X509Cert.getSubjectX500DistinguishedName result (getName(type) value)
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -671,7 +671,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2100
-     * @tc.name check X509Cert.getSubjectX500DistinguishedName result(getEncoded() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -704,7 +704,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2200
-     * @tc.name check X509CRL.getIssuerX500DistinguishedName result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -725,7 +725,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2300
-     * @tc.name check X509CRL.getIssuerX500DistinguishedName result(getName() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -757,7 +757,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2400
-     * @tc.name check X509CRL.getIssuerX500DistinguishedName result (getName(type) value)
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -778,7 +778,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2500
-     * @tc.name check X509CRL.getIssuerX500DistinguishedName result(getEncoded() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -811,7 +811,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2600
-     * @tc.name check X509CRLEntry.getCertIssuerX500DistinguishedName result
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -832,7 +832,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2700
-     * @tc.name check X509CRLEntry.getCertIssuerX500DistinguishedName result(getName() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -864,7 +864,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2800
-     * @tc.name check X509CRLEntry.getCertIssuerX500DistinguishedName result (getName(type) value)
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -885,7 +885,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertName_Func_2900
-     * @tc.name check X509CRLEntry.getCertIssuerX500DistinguishedName result(getEncoded() value) transferred to createX500DistinguishedName
+     * @tc.name SUB_Security_Cert_Framework_CertName_Func_2900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -918,7 +918,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0100
-     * @tc.name check X509Cert.toString result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -940,7 +940,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0200
-     * @tc.name check X509CRL.toString result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -962,7 +962,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0300
-     * @tc.name check X509CRLEntry.toString result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -984,7 +984,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0400
-     * @tc.name check X509CertChain.toString result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1006,7 +1006,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0500
-     * @tc.name check X509Cert.hashCode result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1029,7 +1029,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0600
-     * @tc.name check X509CRL.hashCode result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1052,7 +1052,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0700
-     * @tc.name check X509CRLEntry.hashCode result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1075,7 +1075,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0800
-     * @tc.name check X509CertChain.hashCode result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1098,7 +1098,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_0900
-     * @tc.name check X509Cert.getExtensionsObject result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_0900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1122,7 +1122,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_1000
-     * @tc.name check X509CRL.getExtensionsObject result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_1000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1145,7 +1145,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_X509_Func_1100
-     * @tc.name check X509CRLEntry.getExtensionsObject result
+     * @tc.name SUB_Security_Cert_Framework_X509_Func_1100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1

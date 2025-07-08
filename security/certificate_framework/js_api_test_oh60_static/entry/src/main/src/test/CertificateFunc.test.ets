@@ -43,7 +43,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0101
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_TBS Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0101
      * @tc.desc Create Der Cert with Promise Style
      */
     it("Security_CertificateFramework_CertTest_Func_0101",
@@ -65,7 +65,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0200
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_PUBLIC_KEY Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0201
      * @tc.desc Create Der Cert with Callback Style
      */
     it("Security_CertificateFramework_CertTest_Func_0201",
@@ -103,7 +103,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0300
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_TBS Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0301
      * @tc.desc Create Der Cert with Promise Style
      */
     it("Security_CertificateFramework_CertTest_Func_0301",
@@ -141,7 +141,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0400
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_PUBLIC_KEY Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0401
      * @tc.desc Create Der Cert with Callback Style
      */
     it("Security_CertificateFramework_CertTest_Func_0401",
@@ -163,7 +163,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8700
-     * @tc.name parse cert chain, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8701
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -199,7 +199,7 @@ export default function CertFrameworkFuncIDLTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_Enum_Func_0501
-     * @tc.name X509 Cert Enum Type Test
+     * @tc.name Security_CertificateFramework_Enum_Func_0501
      * @tc.desc X509 Cert Enum Type Test
      */
     it("Security_CertificateFramework_Enum_Func_0501", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,

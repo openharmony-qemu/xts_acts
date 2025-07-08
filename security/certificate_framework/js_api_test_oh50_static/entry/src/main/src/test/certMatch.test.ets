@@ -55,7 +55,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4400
-     * @tc.name check X509Cert.match for parameter subjectAlternativeNames match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -143,7 +143,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4500
-     * @tc.name check X509Cert.match for parameter subjectAlternativeNames mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4500
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -170,7 +170,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4600
-     * @tc.name check X509Cert.match for parameter subjectAlternativeNames, cert has no subjectAlternativeNames
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4600
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -198,7 +198,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4700
-     * @tc.name check X509Cert.match for parameter subjectAlternativeNames empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -220,7 +220,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4800
-     * @tc.name check X509Cert.match for parameter matchAllSubjectAltNames true, and subjectAlternativeNames match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4800
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -309,7 +309,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_4900
-     * @tc.name check X509Cert.match for parameter matchAllSubjectAltNames true, and subjectAlternativeNames mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_4900
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -378,7 +378,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5000
-     * @tc.name check X509Cert.match for parameter matchAllSubjectAltNames false, and subjectAlternativeNames match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5000
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -412,7 +412,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5100
-     * @tc.name check X509Cert.match for parameter authorityKeyIdentifier match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -439,7 +439,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5200
-     * @tc.name check X509Cert.match for parameter authorityKeyIdentifier mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -466,7 +466,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5300
-     * @tc.name check X509Cert.match for parameter authorityKeyIdentifier, cert has no authorityKeyIdentifier
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -493,7 +493,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5400
-     * @tc.name check X509Cert.match for parameter authorityKeyIdentifier empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -515,7 +515,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5500
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = 0, cert has no BaseConstraints extension
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5500
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -537,7 +537,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5600
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = 0, and CA:true
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5600
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -559,7 +559,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5700
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = 0
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -581,7 +581,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5800
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = 1,  cert PathLenConstraint>1
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5800
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -603,7 +603,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_5900
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = 1,  cert PathLenConstraint<1
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_5900
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -625,7 +625,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6000
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = -2, cert match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6000
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -647,7 +647,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6100
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = -2, cert mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -669,7 +669,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6200
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint = -2, cert ha no BaseConstraints extension
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -691,7 +691,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6300
-     * @tc.name check X509Cert.match for parameter minPathLenConstraint invalid
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -713,7 +713,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6400
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage match Signature cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -735,7 +735,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6500
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage mismatch Signature cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6500
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -759,7 +759,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6600
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage match Encipherment cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6600
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -781,7 +781,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6700
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage mismatch Encipherment cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -805,7 +805,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6800
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage match Signature&Encipherment cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6800
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -827,7 +827,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_6900
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage mismatch Signature&Encipherment cert
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_6900
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -851,7 +851,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7000
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage, cert has no extendedKeyUsage
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7000
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -873,7 +873,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7100
-     * @tc.name check X509Cert.match for parameter extendedKeyUsage empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -895,7 +895,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7200
-     * @tc.name check X509Cert.match for parameter nameConstraints match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -917,7 +917,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7300
-     * @tc.name check X509Cert.match for parameter nameConstraints mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -939,7 +939,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7400
-     * @tc.name check X509Cert.match for parameter nameConstraints, cert has no nameConstraints
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -962,7 +962,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7500
-     * @tc.name check X509Cert.match for parameter nameConstraints empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7500
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -984,7 +984,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7600
-     * @tc.name check X509Cert.match for parameter certPolicy match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7600
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1006,7 +1006,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7700
-     * @tc.name check X509Cert.match for parameter certPolicy mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1028,7 +1028,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7800
-     * @tc.name check X509Cert.match for parameter certPolicy, cert has no certPolicy
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7800
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1050,7 +1050,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_7900
-     * @tc.name check X509Cert.match for parameter certPolicy empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_7900
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -1072,7 +1072,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8000
-     * @tc.name check X509Cert.match for parameter privateKeyValid match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8000
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1094,7 +1094,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8100
-     * @tc.name check X509Cert.match for parameter privateKeyValid mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1116,7 +1116,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8200
-     * @tc.name check X509Cert.match for parameter privateKeyValid, cet has no privateKeyValid
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1138,7 +1138,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8300
-     * @tc.name check X509Cert.match for parameter privateKeyValid empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -1160,7 +1160,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8400
-     * @tc.name check X509Cert.match for parameter subjectKeyIdentifier match
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1183,7 +1183,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8500
-     * @tc.name check X509Cert.match for parameter subjectKeyIdentifier mismatch
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8500
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1206,7 +1206,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8600
-     * @tc.name check X509Cert.match for parameter subjectKeyIdentifier, cert has no subjectKeyIdentifier
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8600
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1229,7 +1229,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Cert_Match_Func_8700
-     * @tc.name check X509Cert.match for parameter subjectKeyIdentifier empty
+     * @tc.name SUB_Security_Cert_Framework_Cert_Match_Func_8700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level2

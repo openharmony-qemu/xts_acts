@@ -123,7 +123,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0100
-     * @tc.name check buildX509CertChain with all correct param
+     * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level0
@@ -173,7 +173,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
 
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0200
-    //  * @tc.name check buildX509CertChain with certMatchParameters.validDate has expired.
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0200
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -217,7 +217,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0300
-    //  * @tc.name check buildX509CertChain with certMatchParameters empty
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0300
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -262,7 +262,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0400
-    //  * @tc.name check buildX509CertChain with maxlength=0
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0400
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -309,7 +309,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0500
-    //  * @tc.name check buildX509CertChain with maxlength=1
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0500
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -356,7 +356,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0600
-    //  * @tc.name check buildX509CertChain with maxlength>cert
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0600
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -404,7 +404,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0700
-    //  * @tc.name check buildX509CertChain with maxlength<=cert
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0700
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -451,7 +451,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0800
-    //  * @tc.name check buildX509CertChain with maxlength invalid
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0800
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -498,7 +498,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_0900
-    //  * @tc.name check buildX509CertChain without maxlength
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_0900
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -544,7 +544,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1000
-    //  * @tc.name check buildX509CertChain with abnormal param trustAnchors.CACert
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1000
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -589,7 +589,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1100
-    //  * @tc.name check buildX509CertChain with abnormal param trustAnchors.nameConstraints
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1100
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -635,7 +635,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1200
-    //  * @tc.name check buildX509CertChain with validateParameters.date has expired.
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1200
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -681,7 +681,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1300
-    //  * @tc.name check buildX509CertChain with validateParameters.date empty
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1300
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -725,7 +725,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1400
-    //  * @tc.name check buildX509CertChain with validateParameters.trustAnchors empty
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1400
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -764,7 +764,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1500
-    //  * @tc.name check buildX509CertChain with validateParameters.certCRLs empty
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1500
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -807,7 +807,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1600
-    //  * @tc.name check Subject with Chinese
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1600
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -839,7 +839,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
     //
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1700
-    //  * @tc.name check Subject with Chinese
+    * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1700
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -871,7 +871,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1800
-     * @tc.name check Subject with Chinese
+     * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -907,7 +907,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertChainExt_Func_1900
-     * @tc.name check Subject with Chinese
+     * @tc.name SUB_Security_Cert_Framework_CertChainExt_Func_1900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1

@@ -28,7 +28,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0100
-     * @tc.name The X509 certificate list can be created for encryption and decryption.
+     * @tc.name Security_crypto_framework_X509Cert_0100
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_crypto_framework_X509Cert_0100",
@@ -46,7 +46,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0200
-     * @tc.name The X509 certificate list can be created for encryption and decryption.
+     * @tc.name Security_crypto_framework_X509Cert_0200
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_X509Cert_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -63,7 +63,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0300
-     * @tc.name verify RSA algorithm for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_0300
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_X509Cert_0300",
@@ -79,7 +79,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0400
-     * @tc.name verify ECC algorithm for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_0400
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_crypto_framework_X509Cert_0400",
@@ -95,7 +95,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0500
-     * @tc.name verify RSA algorithm for X509 certificate with invalid pubKey
+     * @tc.name Security_crypto_framework_X509Cert_0500
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_X509Cert_0500",
@@ -117,7 +117,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0600
-     * @tc.name verify RSA algorithm for X509 certificate with not matched pubKey
+     * @tc.name Security_crypto_framework_X509Cert_0600
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_X509Cert_0600",
@@ -133,7 +133,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0700
-     * @tc.name check getEncoded interface
+     * @tc.name Security_crypto_framework_X509Cert_0700
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_crypto_framework_X509Cert_0700",
@@ -149,7 +149,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0800
-     * @tc.name check getPublicKey interface
+     * @tc.name Security_crypto_framework_X509Cert_0800
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_crypto_framework_X509Cert_0800",
@@ -165,7 +165,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_0900
-     * @tc.name check validity of the date for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_0900
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER,date format:20220922145628+0800(YmdHMSz)
      * @tc.desc Use the Promise Style of Interface;
      * @tc.desc period of validity:2022/8/19/12:49:06 - 2032/8/16/12:49:06
@@ -182,7 +182,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1000
-     * @tc.name check validity of the date for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1000
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER,date format:20330830000000+0800(YmdHMSz)
      * @tc.desc period of validity:2022/8/19/12:49:06 - 2032/8/16/12:49:06
      */
@@ -199,7 +199,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1100
-     * @tc.name check validity of the date for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1100
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER,date format: NULL or Exception parameters
      * @tc.desc period of validity:2022/8/19/12:49:06 - 2032/8/16/12:49:06
      */
@@ -222,7 +222,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1200
-     * @tc.name getVersion for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1200
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -238,7 +238,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1300
-     * @tc.name getSerialNumber for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1300
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -254,7 +254,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1400
-     * @tc.name getIssuerName for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1400
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -270,7 +270,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1500
-     * @tc.name getSubjectName for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1500
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -286,7 +286,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1600
-     * @tc.name getNotBeforeTime for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1600
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -302,7 +302,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1700
-     * @tc.name getNotAfterTime for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1700
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -318,7 +318,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1800
-     * @tc.name getSignature for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1800
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -334,7 +334,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_1900
-     * @tc.name getSignatureAlgName for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_1900
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -350,7 +350,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2000
-     * @tc.name getSignatureAlgOid for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2000
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -366,7 +366,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2100
-     * @tc.name getSignatureAlgParams for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2100
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -382,7 +382,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2400
-     * @tc.name getKeyUsage for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2400
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -398,7 +398,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2500
-     * @tc.name getExtKeyUsage for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2500
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -414,7 +414,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2600
-     * @tc.name getBasicConstraints for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2600
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Callback Style of Interface
      */
@@ -430,7 +430,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2700
-     * @tc.name getSubjectAltNames for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2700
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -446,7 +446,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_X509Cert_2800
-     * @tc.name getIssuerAltNames for X509 certificate
+     * @tc.name Security_crypto_framework_X509Cert_2800
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      * @tc.desc Use the Promise Style of Interface
      */
@@ -462,7 +462,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_CertChainValidator_0100
-     * @tc.name check validate interface for CertChainValidator
+     * @tc.name Security_crypto_framework_CertChainValidator_0100
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_CertChainValidator_0100",
@@ -479,7 +479,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_CertChainValidator_0200
-     * @tc.name check validate interface for CertChainValidator with invalid param
+     * @tc.name Security_crypto_framework_CertChainValidator_0200
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_CertChainValidator_0200",
@@ -496,7 +496,7 @@ export default function CertificateJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_CertChainValidator_0300
-     * @tc.name check validate interface for CertChainValidator with invalid Certs
+     * @tc.name Security_crypto_framework_CertChainValidator_0300
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_crypto_framework_CertChainValidator_0300",
