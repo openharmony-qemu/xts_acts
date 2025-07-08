@@ -120,7 +120,7 @@ export default function LinkedBlockingQueuetest() {
   describe("LinkedBlockingQueue", (): void => {
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueNoParameterTest_0100
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueNoParameterTest_0100
+     * @tc.name      : linkedBlockingQueueNoParameterTest001
      * @tc.desc      : Test LinkedBlockingQueue constructor with capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -137,7 +137,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueIsEmptyTest_0101
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueIsEmptyTest_0101
+     * @tc.name      : linkedBlockingQueueIsEmptyTest
      * @tc.desc      : Test isEmpty() on newly created empty queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -151,7 +151,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueIsNoEmptyTest_0102
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueIsNoEmptyTest_0102
+     * @tc.name      : linkedBlockingQueueIsNoEmptyTest
      * @tc.desc      : Test isEmpty() on queue with capacity but no elements.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -165,7 +165,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueAddIsOrEmptyTest_0103
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueAddIsOrEmptyTest_0103
+     * @tc.name      : linkedBlockingQueueAddIsOrEmptyTest
      * @tc.desc      : Test isEmpty() after adding element to queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -180,7 +180,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemoveIsOrEmptyTest_0104
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemoveIsOrEmptyTest_0104
+     * @tc.name      : linkedBlockingQueueRemoveIsOrEmptyTest
      * @tc.desc      : Test isEmpty() after polling from queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -195,7 +195,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueuePushIsOrEmptyTest_0105
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueuePushIsOrEmptyTest_0105
+     * @tc.name      : linkedBlockingQueuePushIsOrEmptyTest
      * @tc.desc      : Test isEmpty() after pushing multiple elements.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -212,7 +212,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueuePopIsOrEmptyTest_0106
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueuePopIsOrEmptyTest_0106
+     * @tc.name      : linkedBlockingQueuePopIsOrEmptyTest
      * @tc.desc      : Test isEmpty() after popping element from queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -229,7 +229,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeFullQueueTest_0107
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeFullQueueTest_0107
+     * @tc.name      : linkedBlockingQueueGetSizeFullQueueTest
      * @tc.desc      : Test size() on full queue with 10 elements.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -246,7 +246,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueueAddTest_0108
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueueAddTest_0108
+     * @tc.name      : linkedBlockingQueueGetSizeNullQueueAddTest
      * @tc.desc      : Test remainingCapacity() on newly created queue with capacity 10.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -261,7 +261,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueueRemoveTest_0109
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueueRemoveTest_0109
+     * @tc.name      : linkedBlockingQueueGetSizeNullQueueRemoveTest
      * @tc.desc      : Verify the size of empty queue after poll operation should be 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -277,7 +277,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueuePushTest_0110
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueuePushTest_0110
+     * @tc.name      : linkedBlockingQueueGetSizeNullQueuePushTest
      * @tc.desc      : Verify the size of queue after pushing one element should be 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -292,7 +292,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueuePopTest_0111
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeNullQueuePopTest_0111
+     * @tc.name      : linkedBlockingQueueGetSizeNullQueuePopTest
      * @tc.desc      : Verify the size of queue after pushing 10 elements and popping one should be 9.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -310,7 +310,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeQueuePopAddTest_0112
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetSizeQueuePopAddTest_0112
+     * @tc.name      : linkedBlockingQueueGetSizeQueuePopAddTest
      * @tc.desc      : Verify that when a value is pushed into a queue with a capacity of 1, the size of the queue is 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -325,7 +325,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityFullQueuePopTest_0113
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityFullQueuePopTest_0113
+     * @tc.name      : linkedBlockingQueueRemainingCapacityFullQueuePopTest
      * @tc.desc      : Verify that the remaining capacity of a newly created queue with a capacity of 10 is 10.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -340,7 +340,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0115
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0115
+     * @tc.name      : linkedBlockingQueueRemainingCapacityNullQueuePopTest
      * @tc.desc      : Verify that the remaining capacity of a queue with a capacity of 50 is 50 and its size is 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -357,7 +357,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0116
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0116
+     * @tc.name      : linkedBlockingQueueRemainingCapacityNullQueuePopTest
      * @tc.desc      : Verify that the remaining capacity and capacity of a queue with a capacity of 1 are both 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -374,7 +374,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0117
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0117
+     * @tc.name      : linkedBlockingQueueRemainingCapacityNullQueuePopTest
      * @tc.desc      : Verify that the remaining capacity of a queue with a capacity.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -393,7 +393,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0118
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0118
+     * @tc.name      : linkedBlockingQueueRemainingCapacityNullQueuePopTest
      * @tc.desc      : Verify that for a queue with an initial capacity.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -414,7 +414,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0121
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0121
+     * @tc.name      : linkedBlockingQueueGetCapacityTest002
      * @tc.desc      : Verify the capacity behavior of a queue initialized with 5 during poll and add operations.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -434,7 +434,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0122
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0122
+     * @tc.name      : linkedBlockingQueueGetCapacityTest003
      * @tc.desc      : Verify the capacity behavior of a queue initialized with 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -454,7 +454,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0123
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0123
+     * @tc.name      : linkedBlockingQueueGetCapacityTest004
      * @tc.desc      : Verify the capacity behavior of a queue initialized with 3 during poll and add operations.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -474,7 +474,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0124
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0124
+     * @tc.name      : linkedBlockingQueueGetCapacityTest005
      * @tc.desc      : Verify capacity remains 1 after push/pop operations on queue with initial capacity 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -494,7 +494,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0125
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0125
+     * @tc.name      : linkedBlockingQueueGetCapacityTest006
      * @tc.desc      : Verify capacity remains 1 after poll/add operations on queue with initial capacity 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -514,7 +514,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.name      : linkedBlockingQueueGetCapacityTest007
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after push/pop operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -533,8 +533,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0239
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0239
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.name      : linkedBlockingQueueGetCapacityTest008
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after add/poll operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -555,8 +555,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0240
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0240
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.name      : linkedBlockingQueueGetCapacityTest009
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after push/pop operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -577,8 +577,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0241
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0241
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.name      : linkedBlockingQueueGetCapacityTest010
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after poll/add operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -600,7 +600,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0127
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0127
+     * @tc.name      : linkedBlockingQueueTest001
      * @tc.desc      : Verify getFirst() returns correct first element after pushing 10 elements.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -617,7 +617,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0128
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0128
+     * @tc.name      : linkedBlockingQueueTest002
      * @tc.desc      : Verify getFirst() returns empty string when adding empty string to queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -632,7 +632,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0129
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0129
+     * @tc.name      : linkedBlockingQueueTest003
      * @tc.desc      : Verify getFirst() returns null when adding null to queue with mixed int|null type.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -647,7 +647,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0130
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0130
+     * @tc.name      : linkedBlockingQueueTest004
      * @tc.desc      : Verify getFirst() returns undefined when adding undefined to queue with mixed int|undefined type.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -662,7 +662,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0131
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0131
+     * @tc.name      : linkedBlockingQueueTest005
      * @tc.desc      : Verify getFirst() returns null when called on empty queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -676,7 +676,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0132
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0132
+     * @tc.name      : linkedBlockingQueueTest006
      * @tc.desc      : Verify getFirst() returns 0 after pushing single element to capacity-1 queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -691,7 +691,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0133
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0133
+     * @tc.name      : linkedBlockingQueueTest007
      * @tc.desc      : Verify getFirst() returns correct element after pop operation on full queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -709,7 +709,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0134
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0134
+     * @tc.name      : linkedBlockingQueueTest008
      * @tc.desc      : Verify poll() reduces size to 9 after removing one element from full queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -727,7 +727,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0135
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0135
+     * @tc.name      : linkedBlockingQueueTest009
      * @tc.desc      : Verify poll() returns null when called on empty queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -741,7 +741,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0136
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0136
+     * @tc.name      : linkedBlockingQueueTest010
      * @tc.desc      : Verify poll() returns empty string when removing the only element (empty string) from queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -756,7 +756,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0137
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0137
+     * @tc.name      : linkedBlockingQueueTest011
      * @tc.desc      : Verify poll() returns null when removing the only element (null) from queue with mixed int|null type.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -771,7 +771,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0138
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0138
+     * @tc.name      : linkedBlockingQueueTest012
      * @tc.desc      : Verify poll() returns undefined when removing the only element (undefined) from queue with mixed int|undefined type.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -786,7 +786,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
+     * @tc.name      : linkedBlockingQueueTest013
      * @tc.desc      : Add an element to a LinkedBlockingQueue with a capacity of 1, then perform a poll operation.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -801,7 +801,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
+     * @tc.name      : linkedBlockingQueueTest014
      * @tc.desc      : Verify queue size becomes 0 after add-poll sequence on capacity-1 queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -817,7 +817,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0140
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0140
+     * @tc.name      : linkedBlockingQueueTest015
      * @tc.desc      : Verify queue size becomes 0 after push-pop sequence on under-capacity queue (capacity-1).
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -833,7 +833,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0141
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0141
+     * @tc.name      : linkedBlockingQueueTest016
      * @tc.desc      : Verify add() returns false when attempting to exceed queue capacity (full queue scenario).
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -850,7 +850,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0142
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0142
+     * @tc.name      : linkedBlockingQueueTest017
      * @tc.desc      : Verify queue reaches full capacity (size=10) after adding mixed int|string elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -868,7 +868,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0143
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0143
+     * @tc.name      : linkedBlockingQueueTest018
      * @tc.desc      : Verify queue accepts null element and reaches full capacity (size=10) with mixed int|null elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -886,7 +886,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0144
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0144
+     * @tc.name      : linkedBlockingQueueTest019
      * @tc.desc      : Verify queue accepts undefined element and reaches full capacity (size=10) with mixed int|undefined elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -903,8 +903,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0144
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0144
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0145
+     * @tc.name      : linkedBlockingQueueTest020
      * @tc.desc      : Verify standard integer element addition makes queue reach full capacity (size=10)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -922,7 +922,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0146
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0146
+     * @tc.name      : linkedBlockingQueueTest021
      * @tc.desc      : Verify string element addition makes queue reach full capacity with mixed int|string elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -940,7 +940,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0147
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0147
+     * @tc.name      : linkedBlockingQueueTest022
      * @tc.desc      : Verify bigint element addition makes queue reach full capacity with mixed int|bigint elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -959,7 +959,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0148
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0148
+     * @tc.name      : linkedBlockingQueueTest023
      * @tc.desc      : Verify boolean element addition makes queue reach full capacity (size=10) with mixed int|boolean elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -977,7 +977,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0149
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0149
+     * @tc.name      : linkedBlockingQueueTest024
      * @tc.desc      : Verify custom class instance can be added and retrieved from generic queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -992,7 +992,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0150
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0150
+     * @tc.name      : linkedBlockingQueueTest025
      * @tc.desc      : Verify array element addition maintains correct queue size (size=1) with array<int> element
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1011,7 +1011,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0151
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0151
+     * @tc.name      : linkedBlockingQueueTest026
      * @tc.desc      : Verify complex object addition makes queue reach full capacity (size=10) with mixed property objects
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1038,7 +1038,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0152
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0152
+     * @tc.name      : linkedBlockingQueueTest027
      * @tc.desc      : Verify single element addition in default-sized queue updates size correctly (size=1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1053,7 +1053,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0153
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0153
+     * @tc.name      : linkedBlockingQueueTest028
      * @tc.desc      : Verify fixed-capacity queue (capacity=2) reaches full size with push+add operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1069,7 +1069,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0154
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0154
+     * @tc.name      : linkedBlockingQueueTest029
      * @tc.desc      : Verify element removal reduces queue size correctly (size=8) after initial 9 elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1087,7 +1087,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0154
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0154
+     * @tc.name      : linkedBlockingQueueTest030
      * @tc.desc      : Create a task to operate on a LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1108,7 +1108,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0155
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0155
+     * @tc.name      : linkedBlockingQueueTest031
      * @tc.desc      : Verify string element removal results in empty queue (size=0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1124,7 +1124,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0156
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0156
+     * @tc.name      : linkedBlockingQueueTest032
      * @tc.desc      : Verify null element removal results in empty queue (size=0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1140,7 +1140,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0157
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0157
+     * @tc.name      : linkedBlockingQueueTest033
      * @tc.desc      : Verify undefined element removal results in empty queue (size=0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1156,7 +1156,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0158
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0158
+     * @tc.name      : linkedBlockingQueueTest034
      * @tc.desc      : Verify single element queue becomes empty after pop operation (size=0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1172,7 +1172,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0159
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0159
+     * @tc.name      : linkedBlockingQueueTest035
      * @tc.desc      : Verify under-capacity operation maintains correct size (capacity=2, size=0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1188,7 +1188,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0160
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0160
+     * @tc.name      : linkedBlockingQueueTest036
      * @tc.desc      : Verify under-capacity operation maintains correct size
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1206,7 +1206,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0161
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0161
+     * @tc.name      : linkedBlockingQueueTest037
      * @tc.desc      : Verify under-capacity operation maintains correct size
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1226,7 +1226,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0162
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0162
+     * @tc.name      : linkedBlockingQueueTest038
      * @tc.desc      : Verify under-capacity operation maintains correct size
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1246,7 +1246,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0163
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0163
+     * @tc.name      : linkedBlockingQueueNoParameterTest001
      * @tc.desc      : Test LinkedBlockingQueue constructor with capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1261,7 +1261,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
+     * @tc.name      : linkedBlockingQueueNoParameterTest002
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1275,8 +1275,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00164
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00164
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
+     * @tc.name      : linkedBlockingQueueNoParameterTest003
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1290,8 +1290,8 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
+     * @tc.name      : linkedBlockingQueueNoParameterTest004
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1306,7 +1306,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0165
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0165
+     * @tc.name      : linkedBlockingQueueNoParameterTest005
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1322,7 +1322,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0166
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0166
+     * @tc.name      : linkedBlockingQueueNoParameterTest006
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty array iterable.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1338,7 +1338,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0167
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0167
+     * @tc.name      : linkedBlockingQueueNoParameterTest007
      * @tc.desc      : Test isEmpty() with empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1354,7 +1354,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0168
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0168
+     * @tc.name      : linkedBlockingQueueNoParameterTest008
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty Set iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1370,7 +1370,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0169
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0169
+     * @tc.name      : linkedBlockingQueueNoParameterTest009
      * @tc.desc      : Test LinkedBlockingQueue constructor with single-element array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1386,7 +1386,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0170
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0170
+     * @tc.name      : linkedBlockingQueueNoParameterTest010
      * @tc.desc      : Test LinkedBlockingQueue constructor with single-element array iterable
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1402,7 +1402,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0171
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0171
+     * @tc.name      : linkedBlockingQueueNoParameterTest011
      * @tc.desc      : Test LinkedBlockingQueue constructor with single-element array iterable
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1419,7 +1419,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0172
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0172
+     * @tc.name      : linkedBlockingQueueNoParameterTest012
      * @tc.desc      : Test LinkedBlockingQueue constructor with single-element array iterable
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1436,7 +1436,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0173
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0173
+     * @tc.name      : linkedBlockingQueueNoParameterTest013
      * @tc.desc      : Test LinkedBlockingQueue constructor with single-element array iterable
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1453,7 +1453,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0174
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0174
+     * @tc.name      : linkedBlockingQueueNoParameterTest014
      * @tc.desc      : Test getFirst() with single-element LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1470,7 +1470,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0175
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0175
+     * @tc.name      : linkedBlockingQueueNoParameterTest015
      * @tc.desc      : Test poll() removes element from single-element LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1488,7 +1488,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0176
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0176
+     * @tc.name      : linkedBlockingQueueNoParameterTest016
      * @tc.desc      : Test LinkedBlockingQueue constructor with 1000-element array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1507,7 +1507,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0177
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0177
+     * @tc.name      : linkedBlockingQueueNoParameterTest017
      * @tc.desc      : Test LinkedBlockingQueue constructor with 1000-element array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1526,7 +1526,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0178
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0178
+     * @tc.name      : linkedBlockingQueueNoParameterTest018
      * @tc.desc      : Test LinkedBlockingQueue constructor with array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1541,7 +1541,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0179
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0179
+     * @tc.name      : linkedBlockingQueueNoParameterTest019
      * @tc.desc      : Test LinkedBlockingQueue constructor with array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1556,7 +1556,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0180
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0180
+     * @tc.name      : linkedBlockingQueueNoParameterUndefinedTest018
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty undefined array.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1571,7 +1571,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0181
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0181
+     * @tc.name      : linkedBlockingQueueNoParameterUndefinedTest019
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty undefined array and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1586,7 +1586,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0182
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0182
+     * @tc.name      : linkedBlockingQueueNoParameterTest020
      * @tc.desc      : Test LinkedBlockingQueue constructor with array containing null values.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1603,7 +1603,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0183
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0183
+     * @tc.name      : linkedBlockingQueueNoParameterTest021
      * @tc.desc      : Test LinkedBlockingQueue capacity with array containing null values.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1620,7 +1620,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0184
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0184
+     * @tc.name      : linkedBlockingQueueNoParameterUndefinedTest020
      * @tc.desc      : Test LinkedBlockingQueue constructor with array containing undefined values.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1637,7 +1637,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0185
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0185
+     * @tc.name      : linkedBlockingQueueNoParameterUndefinedTest021
      * @tc.desc      : Test LinkedBlockingQueue capacity with array containing undefined values.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1654,7 +1654,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
+     * @tc.name      : linkedBlockingQueueNoParameterTest022
      * @tc.desc      : Verify LinkedBlockingQueue size with array of undefined ints.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1670,7 +1670,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
+     * @tc.name      : linkedBlockingQueueNoParameterTest023
      * @tc.desc      : Verify LinkedBlockingQueue capacity with array of undefined ints.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1686,7 +1686,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0186
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0186
+     * @tc.name      : linkedBlockingQueueNoParameterTest024
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty Map values iterable.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1702,7 +1702,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0187
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0187
+     * @tc.name      : linkedBlockingQueueNoParameterTest025
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty Map values iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1718,7 +1718,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0188
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0188
+     * @tc.name      : linkedBlockingQueueNoParameterTest026
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty nested array iterable and capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1734,7 +1734,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0189
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0189
+     * @tc.name      : linkedBlockingQueueNoParameterTest027
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty nested array iterable.
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1750,7 +1750,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0190
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0190
+     * @tc.name      : setCapacityWithTest001
      * @tc.desc      : A queue with a capacity of-1
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1772,7 +1772,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0191
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0191
+     * @tc.name      : setCapacityWithTest002
      * @tc.desc      : A queue with a capacity of0
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1794,7 +1794,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0192
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0192
+     * @tc.name      : setCapacityWithTest003
      * @tc.desc      : A queue with a capacity of1
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1821,7 +1821,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0193
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0193
+     * @tc.name      : setCapacityWithTest004
      * @tc.desc      : A queue with a capacity of Integer.MAX_VALUE
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1845,7 +1845,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0194
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setCapacityWithTest_0194
+     * @tc.name      : setCapacityWithTest005
      * @tc.desc      : A queue with a capacity of Integer.MAX_VALUE+1
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1869,7 +1869,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0195
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0195
+     * @tc.name      : propertyWithTest001
      * @tc.desc      : Test the actual size of the empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1888,7 +1888,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0196
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0196
+     * @tc.name      : propertyWithTest002
      * @tc.desc      : Test the actual size of the non-empty queue (add/remove operation)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1910,7 +1910,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0197
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0197
+     * @tc.name      : propertyWithTest003
      * @tc.desc      : Test the actual size of the non-empty queue (push/pop operation)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1937,7 +1937,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0198
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0198
+     * @tc.name      : propertyWithTest004
      * @tc.desc      : Test the actual size of the non-empty queue (add/poll operation)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1964,7 +1964,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0199
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0199
+     * @tc.name      : propertyWithTest005
      * @tc.desc      : Test the actual size of the queue with a capacity of 1
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1984,7 +1984,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0200
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0200
+     * @tc.name      : pushWithTest001
      * @tc.desc      : Test the blocking behavior of push when the queue is full
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2010,7 +2010,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0201
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0201
+     * @tc.name      : pushWithTest002
      * @tc.desc      : Test the insertion of empty strings, null, and undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2037,7 +2037,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0202
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0202
+     * @tc.name      : pushWithTest003
      * @tc.desc      : To test the insertion of data of the String type
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2058,7 +2058,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0203
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0203
+     * @tc.name      : pushWithTest004
      * @tc.desc      : To test the insertion of data of the BigInt type
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2080,7 +2080,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0204
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0204
+     * @tc.name      : pushWithTest005
      * @tc.desc      : Test the insertion of Boolean data
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2101,7 +2101,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0205
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0205
+     * @tc.name      : pushWithTest006
      * @tc.desc      : Test the insertion of a custom class instance
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2124,7 +2124,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0206
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0206
+     * @tc.name      : pushWithTest007
      * @tc.desc      : To test the insertion of array type data
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2145,7 +2145,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0207
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0207
+     * @tc.name      : pushWithTest008
      * @tc.desc      : To test the insertion of data of the object type
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2173,7 +2173,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0208
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0208
+     * @tc.name      : pushWithTest009
      * @tc.desc      : Test the actual size of the empty queue after the element is added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2193,7 +2193,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0209
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0209
+     * @tc.name      : pushWithTest010
      * @tc.desc      : Test the actual size of a queue with a capacity of 1 after the element is added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2213,7 +2213,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0210
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0210
+     * @tc.name      : pushWithTest011
      * @tc.desc      : Test the actual size of the queue with capacity-1 after the element is added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2236,7 +2236,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0211
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0211
+     * @tc.name      : pushWithTest012
      * @tc.desc      : Test the actual size of a queue with a capacity of 10 after one element is added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2256,7 +2256,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0212
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0212
+     * @tc.name      : pushWithTest013
      * @tc.desc      : Test the actual size of a queue with capacity of 10 after capacity-1 elements are added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2279,7 +2279,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0213
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0213
+     * @tc.name      : pushWithTest014
      * @tc.desc      : Test the actual size of a queue with capacity of 10 after capacity elements are added
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2302,7 +2302,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0214
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0214
+     * @tc.name: linkedBLockingQueuePerformanceTest001
      * @tc.desc: 10 concurrent operations simultaneously add elements to the container.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2323,7 +2323,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0215
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0215
+     * @tc.name: linkedBLockingQueuePerformanceTest002
      * @tc.desc: Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2350,7 +2350,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0216
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0216
+     * @tc.name: linkedBLockingQueuePerformanceTest003
      * @tc.desc: Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2377,7 +2377,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueTest_0217
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueTest_0217
+     * @tc.name: linkedBLockingQueuePerformanceTest004
      * @tc.desc: Push 100 data, poll 100 data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2399,7 +2399,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0218
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0218
+     * @tc.name: linkedBLockingQueuePerformanceTest005
      * @tc.desc: add 100 pieces of data, pop 100 pieces of data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2421,7 +2421,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0219
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0219
+     * @tc.name: linkedBLockingQueueAsyncTest001
      * @tc.desc: The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2446,7 +2446,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0220
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0220
+     * @tc.name: linkedBLockingQueueAsyncTest002
      * @tc.desc: Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2471,7 +2471,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0221
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0221
+     * @tc.name: linkedBLockingQueueAsyncTest003
      * @tc.desc: Multi-threaded operation. Thread A inserts data, and thread B takes out data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2491,7 +2491,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0222
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0222
+     * @tc.name: linkedBLockingQueueAsyncTest004
      * @tc.desc: Threads add elements simultaneously to verify the thread safety of the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2511,7 +2511,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0223
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0223
+     * @tc.name: linkedBLockingQueueAsyncTest005
      * @tc.desc:Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2536,7 +2536,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0225
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0225
+     * @tc.name: linkedBLockingQueueAsyncTest007
      * @tc.desc: 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2563,7 +2563,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0226
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0226
+     * @tc.name: linkedBLockingQueueAsyncTest008
      * @tc.desc: 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2590,7 +2590,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0227
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0227
+     * @tc.name: linkedBLockingQueueAsyncTest009
      * @tc.desc: Start multiple threads, each thread initializing the queue with a different iterable
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2616,7 +2616,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0228
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0228
+     * @tc.name: linkedBlockingQueueGetEndTest001
      * @tc.desc: Query to obtain the tail element without changing the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2635,7 +2635,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0229
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0229
+     * @tc.name: linkedBlockingQueueGetEndTest002
      * @tc.desc: Elements are "" special characters..
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2652,7 +2652,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0230
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0230
+     * @tc.name: linkedBlockingQueueGetEndTest003
      * @tc.desc: Elements are null special characters.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2669,7 +2669,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0231
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0231
+     * @tc.name: linkedBlockingQueueGetEndTest004
      * @tc.desc: Elements are undefined special characters.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2686,7 +2686,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0232
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0232
+     * @tc.name: linkedBlockingQueueGetEndTest005
      * @tc.desc: empty queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2702,7 +2702,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0233
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0233
+     * @tc.name: linkedBlockingQueueGetEndTest006
      * @tc.desc: Queue with capacity 1,Query to obtain the tail element without changing the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2719,7 +2719,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0234
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0234
+     * @tc.name: linkedBlockingQueueGetEndTest007
      * @tc.desc: Queue with capacity -1,Query to obtain the tail element without changing the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2736,7 +2736,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0235
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0235
+     * @tc.name: linkedBlockingQueueGetEndTest008
      * @tc.desc: Queue with capacity -1,Query to obtain the tail element without changing the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2751,7 +2751,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0236
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0236
+     * @tc.name: linkedBlockingQueueGetEndTest009
      * @tc.desc: Queue with capacity 10,Add one element and obtain the actualSize assertion.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2766,7 +2766,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0237
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0237
+     * @tc.name: linkedBlockingQueueGetEndTest010
      * @tc.desc: Queue with capacity 10 ,Add capacity-1 elements and obtain the actualSize assertion.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2783,7 +2783,7 @@ export default function LinkedBlockingQueuetest() {
 
     /**9
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0238
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0238
+     * @tc.name: linkedBlockingQueueGetEndTest011
      * @tc.desc: Queue with capacity 10 ,Add capacity elements and obtain the actualSize assertion.
      * @tc.size: MediumTest
      * @tc.type: Function
