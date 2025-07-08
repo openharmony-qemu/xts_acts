@@ -1886,4 +1886,916 @@ export default function LinkedBlockingQueuetest() {
       done();
     });
 
-  
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0196
+     * @tc.name      : propertyWithTest002
+     * @tc.desc      : Test the actual size of the non-empty queue (add/remove operation)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("propertyWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(100);
+        for (let i:int = 0; i < 100; i++) {
+          queue.add(i);
+        }
+        let actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('100');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0197
+     * @tc.name      : propertyWithTest003
+     * @tc.desc      : Test the actual size of the non-empty queue (push/pop operation)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("propertyWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(100);
+        for (let i:int = 0; i < 100; i++) {
+          queue.push(i);
+        }
+        let actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('100');
+        for (let i:int = 0; i < 50; i++) {
+          queue.pop();
+        }
+        actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('50');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0198
+     * @tc.name      : propertyWithTest004
+     * @tc.desc      : Test the actual size of the non-empty queue (add/poll operation)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("propertyWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(100);
+        for (let i:int = 0; i < 100; i++) {
+          queue.add(i);
+        }
+        let actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('100');
+        for (let i:int = 0; i < 50; i++) {
+          queue.poll();
+        }
+        actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('50');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_spropertyWithTest_0199
+     * @tc.name      : propertyWithTest005
+     * @tc.desc      : Test the actual size of the queue with a capacity of 1
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("propertyWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(1);
+        queue.add(1);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0200
+     * @tc.name      : pushWithTest001
+     * @tc.desc      : Test the blocking behavior of push when the queue is full
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(2);
+        queue.push(1);
+        queue.push(2);
+        setTimeout(() => {
+          queue.poll();
+        }, 1000);
+        console.log("Attempting to push to a full queue...");
+        queue.push(3);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('2');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0201
+     * @tc.name      : pushWithTest002
+     * @tc.desc      : Test the insertion of empty strings, null, and undefined
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<int | undefined | null | string>(4);
+        queue.push("");
+        queue.push(null);
+        queue.push(undefined);
+        queue.push(42);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('4');
+        expect(queue.poll()).assertEqual("");
+        expect(JSON.stringify(queue.poll())).assertEqual('null');
+        expect(queue.poll()).assertUndefined();
+        expect(String(queue.poll())).assertEqual('42');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0202
+     * @tc.name      : pushWithTest003
+     * @tc.desc      : To test the insertion of data of the String type
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<string>(1);
+        queue.push("Hello, World!");
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+        expect(queue.poll()).assertEqual("Hello, World!");
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0203
+     * @tc.name      : pushWithTest004
+     * @tc.desc      : To test the insertion of data of the BigInt type
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<BigInt>(1);
+        const bigIntValue = BigInt(9007199254740991);
+        queue.push(bigIntValue);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+        expect(String(queue.poll())).assertEqual(String(bigIntValue));
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0204
+     * @tc.name      : pushWithTest005
+     * @tc.desc      : Test the insertion of Boolean data
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<boolean>(1);
+        queue.push(true);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+        expect(queue.poll()).assertTrue();
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0205
+     * @tc.name      : pushWithTest006
+     * @tc.desc      : Test the insertion of a custom class instance
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<CustomClass1>(1);
+        const customInstance = new CustomClass1("TestInstance");
+        queue.push(customInstance);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+        const polledValue = queue.poll();
+        expect(polledValue!.name).assertEqual("TestInstance");
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0206
+     * @tc.name      : pushWithTest007
+     * @tc.desc      : To test the insertion of array type data
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<int[]>(1);
+        queue.push([1, 2, 3]);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+        expect(JSON.stringify(queue.poll())).assertEqual(JSON.stringify([1, 2, 3]));
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0207
+     * @tc.name      : pushWithTest008
+     * @tc.desc      : To test the insertion of data of the object type
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<object>(1);
+
+        interface objectValueType {
+          key: string;
+        }
+
+        const objectValue: objectValueType = {
+          key: "value"
+        };
+        queue.push(objectValue);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0208
+     * @tc.name      : pushWithTest009
+     * @tc.desc      : Test the actual size of the empty queue after the element is added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(5);
+        queue.push(42);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0209
+     * @tc.name      : pushWithTest010
+     * @tc.desc      : Test the actual size of a queue with a capacity of 1 after the element is added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(1);
+        queue.push(42);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0210
+     * @tc.name      : pushWithTest011
+     * @tc.desc      : Test the actual size of the queue with capacity-1 after the element is added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const capacity = 5;
+        const queue = new containers.LinkedBlockingQueue<number>(capacity);
+        for (let i:int = 0; i < capacity - 1; i++) {
+          queue.push(i);
+        }
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual(String(capacity - 1));
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0211
+     * @tc.name      : pushWithTest012
+     * @tc.desc      : Test the actual size of a queue with a capacity of 10 after one element is added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const queue = new containers.LinkedBlockingQueue<number>(10);
+        queue.push(42);
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual('1');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0212
+     * @tc.name      : pushWithTest013
+     * @tc.desc      : Test the actual size of a queue with capacity of 10 after capacity-1 elements are added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const capacity = 10;
+        const queue = new containers.LinkedBlockingQueue<number>(capacity);
+        for (let i:int = 0; i < capacity - 1; i++) {
+          queue.push(i);
+        }
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual(String(capacity - 1));
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0213
+     * @tc.name      : pushWithTest014
+     * @tc.desc      : Test the actual size of a queue with capacity of 10 after capacity elements are added
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("pushWithTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const capacity = 10;
+        const queue = new containers.LinkedBlockingQueue<number>(capacity);
+        for (let i:int = 0; i < capacity; i++) {
+          queue.push(i);
+        }
+        const actualSize = queue.size;
+        expect(String(actualSize)).assertEqual(String(capacity));
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0214
+     * @tc.name: linkedBLockingQueuePerformanceTest001
+     * @tc.desc: 10 concurrent operations simultaneously add elements to the container.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueuePerformanceTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const threadCount = loopTenTimes;
+      const taskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(threadCount);
+      for (let i: int = 0; i < threadCount; i++) {
+        taskGroup.addTask(createAddTask(queueInt, i));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(threadCount));
+      expect(queueInt.isEmpty()).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0215
+     * @tc.name: linkedBLockingQueuePerformanceTest002
+     * @tc.desc: Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueuePerformanceTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = 100;
+      const numbers: Array<int> = new Array<int>(100);
+      for (let i:int = 0; i < totalCount; i++) {
+        numbers.push(i);
+      }
+      const threadCount = 10;
+      const taskGroup = new taskpool.TaskGroup();
+      let iter = numbers.values();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount, iter);
+      for (let i: int = 0; i < threadCount; i++) {
+        taskGroup.addTask(createPopTask(queueInt));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount - threadCount));
+      expect(queueInt.isEmpty()).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0216
+     * @tc.name: linkedBLockingQueuePerformanceTest003
+     * @tc.desc: Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueuePerformanceTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = 100;
+      const numbers: Array<int> = new Array<int>(100);
+      for (let i:int = 0; i < totalCount; i++) {
+        numbers.push(i);
+      }
+      const threadCount = 10;
+      const taskGroup = new taskpool.TaskGroup();
+      let iter = numbers.values();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount, iter);
+      for (let i: int = 0; i < threadCount; i++) {
+        taskGroup.addTask(createPollTask(queueInt));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount - threadCount));
+      expect(queueInt.isEmpty()).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueTest_0217
+     * @tc.name: linkedBLockingQueuePerformanceTest004
+     * @tc.desc: Push 100 data, poll 100 data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueuePerformanceTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = 100;
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.push(i);
+      }
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.poll();
+      }
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueuePerformanceTest_0218
+     * @tc.name: linkedBLockingQueuePerformanceTest005
+     * @tc.desc: add 100 pieces of data, pop 100 pieces of data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueuePerformanceTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = 100;
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.add(i);
+      }
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.pop();
+      }
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0219
+     * @tc.name: linkedBLockingQueueAsyncTest001
+     * @tc.desc: The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = thousandTimes;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.add(i);
+      }
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+      for (let i: int = 0; i < 10; i++) {
+        taskGroup.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0220
+     * @tc.name: linkedBLockingQueueAsyncTest002
+     * @tc.desc: Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = thousandTimes;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      for (let i: int = 0; i < totalCount; i++) {
+        queueInt.push(i);
+      }
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+      for (let i: int = 0; i < 10; i++) {
+        taskGroup.addTask(createPopTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0221
+     * @tc.name: linkedBLockingQueueAsyncTest003
+     * @tc.desc: Multi-threaded operation. Thread A inserts data, and thread B takes out data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = 100;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      taskGroup.addTask(createPushTaskStart(queueInt, totalCount));
+      taskGroup.addTask(createPopTaskStart(queueInt, totalCount));
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0222
+     * @tc.name: linkedBLockingQueueAsyncTest004
+     * @tc.desc: Threads add elements simultaneously to verify the thread safety of the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(100);
+      for (let i:int = 0; i < loopTenTimes; i++) {
+        taskGroup.addTask(createPushTaskStartLoopTen(queueInt, i));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(loopTenTimes * 10));
+      expect(queueInt.isEmpty()).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0223
+     * @tc.name: linkedBLockingQueueAsyncTest005
+     * @tc.desc:Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = thousandTimes;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+      for (let i:int = 0; i < totalCount; i++) {
+        queueInt.add(i);
+      }
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+      for (let i:int = 0; i < 10; i++) {
+        taskGroup.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      expect(queueInt.isEmpty()).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0225
+     * @tc.name: linkedBLockingQueueAsyncTest007
+     * @tc.desc: 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = thousandTimes;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const taskGroupPoll: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+
+      for (let i:int = 0; i < loopTenTimes; i++) {
+        taskGroup.addTask(createAddTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(loopTenTimes * hundredTimes));
+      for (let i:int = 0; i < loopTenTimes; i++) {
+        taskGroupPoll.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroupPoll);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0226
+     * @tc.name: linkedBLockingQueueAsyncTest008
+     * @tc.desc: 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const totalCount: int = thousandTimes;
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const taskPopGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(totalCount);
+
+      for (let i:int = 0; i < loopTenTimes; i++) {
+        taskGroup.addTask(createPushTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(loopTenTimes * hundredTimes));
+      for (let i:int= 0; i < loopTenTimes; i++) {
+        taskPopGroup.addTask(createPopTaskHundred(queueInt, i * hundredTimes));
+      }
+      await taskpool.execute(taskPopGroup);
+      expect(JSON.stringify(queueInt.size)).assertEqual('0');
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_linkedBLockingQueueAsyncTest_0227
+     * @tc.name: linkedBLockingQueueAsyncTest009
+     * @tc.desc: Start multiple threads, each thread initializing the queue with a different iterable
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBLockingQueueAsyncTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const iterArrays: Array<IterableIterator<int>> = new Array<IterableIterator<int>>();
+      const set: Set<int> = new Set<int>();
+      const arrays: Array<Set<int>> = new Array<Set<int>>();
+      for (let i:int = 0; i < 10; i++) {
+        set.add(i);
+        arrays.push(set);
+      }
+      for (let i:int = 0; i < arrays.length; i++) {
+        let iter = arrays[i].values();
+        taskGroup.addTask(createLinkedBlockingQueueFromIterTask(iter));
+      }
+      const linkedBlockingQueues = await taskpool.execute(taskGroup);
+      expect(JSON.stringify(linkedBlockingQueues.length)).assertEqual('10');
+      done();
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0228
+     * @tc.name: linkedBlockingQueueGetEndTest001
+     * @tc.desc: Query to obtain the tail element without changing the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
+        for (let i:int = 0; i < 10; i++) {
+            queueIntPop1.push(i);
+        }
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('9');
+        expect(JSON.stringify(res1)).assertEqual('10');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0229
+     * @tc.name: linkedBlockingQueueGetEndTest002
+     * @tc.desc: Elements are "" special characters..
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int| string> = new containers.LinkedBlockingQueue<int | string>(10);
+        queueIntPop1.add("");
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(res).assertEqual("");
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0230
+     * @tc.name: linkedBlockingQueueGetEndTest003
+     * @tc.desc: Elements are null special characters.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int | null> = new containers.LinkedBlockingQueue<int | null>(10);
+        queueIntPop1.add(null);
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('null');
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0231
+     * @tc.name: linkedBlockingQueueGetEndTest004
+     * @tc.desc: Elements are undefined special characters.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int | undefined> = new containers.LinkedBlockingQueue<int | undefined>(10);
+        queueIntPop1.add(undefined);
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('undefined');
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0232
+     * @tc.name: linkedBlockingQueueGetEndTest005
+     * @tc.desc: empty queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int | undefined> = new containers.LinkedBlockingQueue<int | undefined>(10);
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('undefined');
+        expect(JSON.stringify(res1)).assertEqual('0');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0233
+     * @tc.name: linkedBlockingQueueGetEndTest006
+     * @tc.desc: Queue with capacity 1,Query to obtain the tail element without changing the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
+        queueIntPop1.add(1);
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('1');
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0234
+     * @tc.name: linkedBlockingQueueGetEndTest007
+     * @tc.desc: Queue with capacity -1,Query to obtain the tail element without changing the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
+        queueIntPop1.add(1);
+        let res = queueIntPop1.getEnd();
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res)).assertEqual('1');
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0235
+     * @tc.name: linkedBlockingQueueGetEndTest008
+     * @tc.desc: Queue with capacity -1,Query to obtain the tail element without changing the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
+        queueIntPop1.add(1);
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0236
+     * @tc.name: linkedBlockingQueueGetEndTest009
+     * @tc.desc: Queue with capacity 10,Add one element and obtain the actualSize assertion.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
+        queueIntPop1.add(1);
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res1)).assertEqual('1');
+    })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0237
+     * @tc.name: linkedBlockingQueueGetEndTest010
+     * @tc.desc: Queue with capacity 10 ,Add capacity-1 elements and obtain the actualSize assertion.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */0
+    it("linkedBlockingQueueGetEndTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
+        for (let i:int = 0; i < 9; i++) {
+            queueIntPop1.add(i);
+        }
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res1)).assertEqual('9');
+    })
+
+    /**9
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_LinkedBlockingQueueGetEndTest_0238
+     * @tc.name: linkedBlockingQueueGetEndTest011
+     * @tc.desc: Queue with capacity 10 ,Add capacity elements and obtain the actualSize assertion.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("linkedBlockingQueueGetEndTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+        let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
+        for (let i:int = 0; i < 10; i++) {i
+            queueIntPop1.add(i);
+        }
+        let res1 = queueIntPop1.size;
+        expect(JSON.stringify(res1)).assertEqual('10');
+    })
+  })
+}
