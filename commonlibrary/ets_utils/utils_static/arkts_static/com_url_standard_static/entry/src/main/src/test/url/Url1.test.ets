@@ -1169,8 +1169,6 @@ export default function urlTest1() {
     it('testHasKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0005";
       try {
-
-
         const testKeyPresence = (url: string, keys: KeyTestCase[]) => {
           let searchParamsObject = new Url.URLParams(url);
           for (let i = 0; i < keys.length; i++) {
