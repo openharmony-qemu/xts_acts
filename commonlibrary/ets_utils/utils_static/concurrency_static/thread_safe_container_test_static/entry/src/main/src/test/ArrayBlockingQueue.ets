@@ -1951,3 +1951,801 @@ export default function ArrayBlockingQueuetest() {
         } catch (error) {
           expect(error instanceof Error).assertTrue();
         }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_201
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest002
+     * @tc.desc      : The test uses an empty array to initialize the queue (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptyArray = new Array<Int>();
+          const queue = new containers.ArrayBlockingQueue<int>(1, emptyArray);
+          expect(queue.isEmpty()).assertTrue();
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest003
+     * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const oneElementArray = new Array<Int>(42);
+          const queue = new containers.ArrayBlockingQueue<int>(0, oneElementArray);
+          expect(queue.isEmpty()).assertFalse();
+          expect(String(queue.size)).assertEqual('1');
+          expect(String(queue.getFirst())).assertEqual('42');
+          expect(String(queue.poll())).assertEqual('42');
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_203
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest004
+     * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const oneElementArray = new Array<Int>(42);
+          const queue = new containers.ArrayBlockingQueue<int>(1, oneElementArray);
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.getFirst())).assertEqual('undefined');
+          expect(String(queue.poll()).toString()).assertEqual('undefined');
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_204
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest005
+     * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const oneElementSet = new Array<Int>(42);
+          const queue = new containers.ArrayBlockingQueue<int>(0, oneElementSet);
+          expect(queue.isEmpty()).assertFalse();
+          expect(String(queue.size)).assertEqual('1');
+          expect(String(queue.getFirst())).assertEqual('42');
+          expect(String(queue.poll())).assertEqual('42');
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_205
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest006
+     * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const oneElementSet = new Array<Int>(42);
+          const queue = new containers.ArrayBlockingQueue<int>(1, oneElementSet);
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.getFirst())).assertEqual('undefined');
+          expect(String(queue.poll()).toString()).assertEqual('undefined');
+          expect(String(queue.isEmpty())).assertEqual('true');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_206
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest007
+     * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(0, thousandElementsArray);
+          expect(String(queue.size)).assertEqual('1000');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_207
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest008
+     * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(1, thousandElementsArray);
+          expect(String(queue.size)).assertEqual('1');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_208
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest009
+     * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1000)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(1000, thousandElementsArray);
+          expect(String(queue.capacity)).assertEqual('1000');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_209
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest010
+     * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptySet = new Set<int>();
+          const i = emptySet.values();
+          const queue: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(0, i);
+          expect(queue.isEmpty()).assertTrue();
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_210
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest011
+     * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptySet = new Set<int>();
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(1, emptySet.values());
+          expect(queue.isEmpty()).assertTrue();
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_211
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest012
+     * @tc.desc      : The test uses null as the iterable object to initialize the queue (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptySet = new Set<int | null>();
+          const queue: containers.ArrayBlockingQueue<int | null> =
+            new containers.ArrayBlockingQueue<int | null>(0, emptySet);
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_212
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest013
+     * @tc.desc      : The test uses undefined as the iterable object to initialize the queue (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const map = new Set<int | undefined>()
+          const queue: containers.ArrayBlockingQueue<int | undefined> =
+            new containers.ArrayBlockingQueue<int | undefined>(1, map.values());
+          expect(String(queue.size)).assertEqual('0'); // 队列大小应为 0
+          expect(String(queue.capacity)).assertEqual('1'); // 队列容量应为 1
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_213
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest014
+     * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 0)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
+          const queue: containers.ArrayBlockingQueue<int | null | undefined> =
+            new containers.ArrayBlockingQueue<int | null | undefined>(0, arrayWithNulls);
+          expect(String(queue.size)).assertEqual('4');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_214
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTes015
+     * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 1)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
+          const queue: containers.ArrayBlockingQueue<int | null | undefined> =
+            new containers.ArrayBlockingQueue<int | null | undefined>(1, arrayWithNulls);
+          expect(String(queue.size)).assertEqual('1');
+          expect(String(queue.capacity)).assertEqual('1');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_215
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest016
+     * @tc.desc      : Tests initializing the queue using an iterable object with Int.MAX_VALUE elements
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const arr = new Map<int, int>();
+          let maxCapacity = Int.MAX_VALUE
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(maxCapacity, arr.values());
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual(String(maxCapacity));
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_216
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest017
+     * @tc.desc      : To test the use of Map to initialize the queue
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const map = new Map<int, int>();
+          map.set(1, 100);
+          map.set(2, 200);
+          map.set(3, 300);
+          const queue: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3, map.values());
+          expect(String(queue.size)).assertEqual('3');
+          expect(String(queue.capacity)).assertEqual('3');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_217
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest018
+     * @tc.desc      : To test initializing queues using nested arrays
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const nestedArray = new Map<int, int[]>();
+          nestedArray.set(1, [1, 2]);
+          nestedArray.set(2, [3, 4]);
+          nestedArray.set(3, [5, 6]);
+          const queue: containers.ArrayBlockingQueue<int> =
+            new containers.ArrayBlockingQueue<int>(3, nestedArray.keys());
+          expect(String(queue.size)).assertEqual('3');
+          expect(String(queue.capacity)).assertEqual('3');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_218
+     * @tc.name: containers.ArrayBlockingQueuePerformanceTest001
+     * @tc.desc: 10 concurrent operations simultaneously add elements to the container.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueuePerformanceTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const threadCount = 10;
+        const taskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(threadCount);
+        for (let i: int = 0; i < threadCount; i++) {
+          taskGroup.addTask(createAddTask(queueInt, i));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(threadCount));
+        expect(queueInt.isEmpty()).assertFalse();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_219
+     * @tc.name: containers.ArrayBlockingQueuePerformanceTest002
+     * @tc.desc: Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueuePerformanceTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = 100;
+        const numbers: Array<int> = new Array<int>(10);
+        for (let i = 0; i < totalCount; i++) {
+          numbers.push(i);
+        }
+        const threadCount = 10;
+        const taskGroup = new taskpool.TaskGroup();
+        let iter = numbers.values();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount, iter);
+        for (let i: int = 0; i < threadCount; i++) {
+          taskGroup.addTask(createPopTask(queueInt));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount - threadCount));
+        expect(queueInt.isEmpty()).assertFalse();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_220
+     * @tc.name: containers.ArrayBlockingQueuePerformanceTest003
+     * @tc.desc: Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueuePerformanceTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = 100;
+        const numbers: Array<int> = new Array<int>(100);
+        for (let i = 0; i < totalCount; i++) {
+          numbers.push(i);
+        }
+        const threadCount = 10;
+        const taskGroup = new taskpool.TaskGroup();
+        let iter = numbers.values();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount, iter);
+        for (let i: int = 0; i < threadCount; i++) {
+          taskGroup.addTask(createPollTask(queueInt));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount - threadCount));
+        expect(queueInt.isEmpty()).assertFalse();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_221
+     * @tc.name: containers.ArrayBlockingQueuePerformanceTest004
+     * @tc.desc: Push 100 data, poll 100 data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueuePerformanceTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = 100;
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.push(i);
+        }
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.poll();
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_222
+     * @tc.name: containers.ArrayBlockingQueuePerformanceTest005
+     * @tc.desc: add 100 pieces of data, pop 100 pieces of data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueuePerformanceTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = 100;
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.add(i);
+        }
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.pop();
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_223
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest001
+     * @tc.desc: The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.add(i);
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+        for (let i: int = 0; i < 10; i++) {
+          taskGroup.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_224
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest002
+     * @tc.desc: Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i: int = 0; i < totalCount; i++) {
+          queueInt.push(i);
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+        for (let i: int = 0; i < 10; i++) {
+          taskGroup.addTask(createPopTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_225
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest003
+     * @tc.desc: Multi-threaded operation. Thread A inserts data, and thread B takes out data.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = 100;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        taskGroup.addTask(createPushTaskStart(queueInt, totalCount));
+        taskGroup.addTask(createPopTaskStart(queueInt, totalCount));
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_226
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest004
+     * @tc.desc: Threads add elements simultaneously to verify the thread safety of the queue.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(100);
+        for (let i = 0; i < 10; i++) {
+          taskGroup.addTask(createPushTaskStartLoopTen(queueInt, i));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('100');
+        expect(queueInt.isEmpty()).assertFalse();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_227
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest005
+     * @tc.desc: Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i = 0; i < totalCount; i++) {
+          queueInt.add(i);
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+        for (let i = 0; i < 10; i++) {
+          taskGroup.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_228
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest006
+     * @tc.desc: 10 threads at the same time: loop 1000 times, after add getFirst, isEmpty, get size, push, pop, remove, remainingCapacity combined call
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+        for (let i = 0; i < totalCount; i++) {
+          queueInt.add(i);
+        }
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
+        for (let i = 0; i < 10; i++) {
+          taskGroup.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.remainingCapacity())).assertEqual(JSON.stringify(totalCount));
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        expect(JSON.stringify(queueInt.getFirst()).toString()).assertEqual('undefined');
+        expect(queueInt.isEmpty()).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_229
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest007
+     * @tc.desc: 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        const taskGroupPoll: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+
+        for (let i = 0; i < loopTenTimes; i++) {
+          taskGroup.addTask(createAddTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(loopTenTimes * hundredTimes));
+        for (let i = 0; i < loopTenTimes; i++) {
+          taskGroupPoll.addTask(createPollTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroupPoll);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        done();
+      })
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_230
+     * @tc.name: containers.ArrayBlockingQueueAsyncTest008
+     * @tc.desc: 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    it("ArrayBlockingQueueAsyncTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const totalCount: int = thousandTimes;
+        const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        const taskPopGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
+
+        for (let i = 0; i < loopTenTimes; i++) {
+          taskGroup.addTask(createPushTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(loopTenTimes * hundredTimes));
+        for (let i = 0; i < loopTenTimes; i++) {
+          taskPopGroup.addTask(createPopTaskHundred(queueInt, i * hundredTimes));
+        }
+        await taskpool.execute(taskPopGroup);
+        expect(JSON.stringify(queueInt.size)).assertEqual('0');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest001
+     * @tc.desc      : empty queue
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptyArray = new Array<Int>();
+          const queue = new containers.ArrayBlockingQueue<Int>(0, emptyArray);
+          expect(queue.isEmpty()).assertFalse();
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest020
+     * @tc.desc      : empty queue
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const emptyArray = new Array<Int>();
+          const queue = new containers.ArrayBlockingQueue<Int>(0, emptyArray);
+          expect(queue.isEmpty()).assertFalse();
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('0');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_234
+     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest021
+     * @tc.desc      : Blocks until the queue has an element to take out
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("ArrayBlockingQueueConstructorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const queue = new containers.ArrayBlockingQueue<number>(10);
+        let popCompleted = false;
+        let popResult: number = 0;
+        const popTask = new taskpool.Task((): number => {
+          popResult = queue.pop();
+          popCompleted = true;
+        });
+        const pushTask = new taskpool.Task(() => {
+          setTimeout(() => {
+            queue.push(42);
+          }, 5);
+        });
+        let p1 = taskpool.execute(popTask);
+        let p2 = taskpool.execute(pushTask);
+        await Promise.all([
+          p1, p2
+        ]);
+        expect(popCompleted).assertTrue();
+        expect(String(popResult)).assertEqual('42');
+        expect(String(queue.size)).assertEqual('0');
+        done();
+      });
+  });
+}
