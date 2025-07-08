@@ -15,10 +15,15 @@
 
 import mdnsTest from './mdns.test';
 import NetworkManagerMdnsTest from './mdnsOnAndOff.test';
+import EmptyTest from './Empty.test';
 
 export default function testsuite() {
-NetworkManagerMdnsTest();
-  mdnsTest();
+    if(canIUse("SystemCapability.Communication.NetManager.MDNS")){
+        NetworkManagerMdnsTest();
+        mdnsTest();
+    }else{
+        EmptyTest();
+    }
 }
 
 
