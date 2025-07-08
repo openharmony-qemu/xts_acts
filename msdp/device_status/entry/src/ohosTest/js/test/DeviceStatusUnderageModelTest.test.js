@@ -45,6 +45,13 @@ export default function DeviceStatusUnderageModelTest() {
       console.info('msdp UnderageModel test afterEach called')
     })
 
+    const userStatusCallback = (data) => {
+      userStatus.UserClassification.ageGroup;
+      userStatus.UserClassification.confidence;
+      sleep(1000);
+      console.info('callback success, ageGroup:' + data.ageGroup + ', confidence: ' + data.confidence);
+    }
+
     /*
      * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0100
      * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0100
@@ -80,7 +87,7 @@ export default function DeviceStatusUnderageModelTest() {
       console.info('UserAgeGroup.OTHERS is: ' + userStatus.UserAgeGroup.OTHERS);
       console.info('UserAgeGroup.CHILD is: ' + userStatus.UserAgeGroup.CHILD);
       try {
-        userStatus.on('userAgeGroupDetected', (data) => {});
+        userStatus.on('userAgeGroupDetected', userStatusCallback);
         console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0200 success`);
         done();
       } catch (error) {
