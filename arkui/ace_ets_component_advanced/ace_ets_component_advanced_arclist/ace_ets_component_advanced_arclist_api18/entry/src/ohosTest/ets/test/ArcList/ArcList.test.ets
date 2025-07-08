@@ -81,7 +81,7 @@ export default function ArcListDemo() {
 		
     /* *
     * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0100
-    * @tc.name  : testArkListComponent.
+    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0100
     * @tc.desc  : Test default value for testing the arclist component.
     * @tc.level : Level 1
     * @tc.size  : MediumTest
@@ -122,7 +122,7 @@ export default function ArcListDemo() {
 
     /* *
     * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0200
-    * @tc.name  : testArkListComponent.
+    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0200
     * @tc.desc  : Test default value for testing the arclist component.
     * @tc.level : Level 1
     * @tc.size  : MediumTest
@@ -162,7 +162,7 @@ export default function ArcListDemo() {
 
     /* *
     * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0300
-    * @tc.name  : testArkListComponent.
+    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0300
     * @tc.desc  : Test default value for testing the arclist component.
     * @tc.level : Level 1
     * @tc.size  : MediumTest
@@ -203,7 +203,7 @@ export default function ArcListDemo() {
 	
     /* *
     * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0400
-    * @tc.name  : testArkListComponent.
+    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0400
     * @tc.desc  : Test default value for testing the arclist component.
     * @tc.level : Level 1
     * @tc.size  : MediumTest
