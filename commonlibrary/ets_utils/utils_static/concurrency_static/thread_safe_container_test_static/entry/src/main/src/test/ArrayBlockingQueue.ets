@@ -209,7 +209,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Negative_Test_static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Negative_Test_static_0106_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         const queue = new containers.ArrayBlockingQueue<number>(-1);
         throw new Error('Negative capacity error');
@@ -226,7 +226,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Zero_Test_static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Zero_Test_static_0107_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(queue.capacity).assertEqual(0);
       try {
@@ -245,7 +245,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Single_Element_Test_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Single_Element_Test_static_0108_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       expect(String(queue.capacity)).assertEqual('1');
       try {
@@ -264,7 +264,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Max_Value_Test_static_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Max_Value_Test_static_0109_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE);
       expect(queue.capacity).assertEqual(Int.MAX_VALUE);
       try {
@@ -283,7 +283,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Overflow_Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Overflow_Test_static_0110_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'propertyCapacityOverflow';
       try {
         const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE + 1);
@@ -396,13 +396,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHCLASSTEST_0117
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHCLASSTEST_0117
+     * @tc.name      : Array_Blocking_Queue_Push_Class_Test_static_006
      * @tc.desc      : Verify pushing and popping class instances
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushClassTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_Push_Class_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<TestClass>(1);
       const obj = new TestClass();
       queue.push(obj);
@@ -411,13 +411,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0118
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0118
+     * @tc.name      : Array_Blocking_Queue_Push_Empty_Test_static_007
      * @tc.desc      : Verify pushing single element to empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushEmptyTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_Push_Empty_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(10);
       queue.push(1);
       expect(String(queue.size)).assertEqual('1');
@@ -425,13 +425,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0119
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0119
+     * @tc.name      : Array_Blocking_Queue_Push_Only_One_Test_static_008
      * @tc.desc      : Verify pushing single element to queue with capacity 1
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushOnlyOneTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_Push_Only_One_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(1);
       queue.push("single");
       expect(String(queue.size)).assertEqual('1');
@@ -439,13 +439,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHTENTEST_0120
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHTENTEST_0120
+     * @tc.name      : Array_Blocking_Queue_Push_Ten_Test_static_009
      * @tc.desc      : Verify pushing multiple elements to fill queue capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushTenTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_Push_Ten_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.push(1);
@@ -464,7 +464,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushSpecialValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_SpecialValues_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<string | null | undefined> =
         new containers.ArrayBlockingQueue<string | null | undefined>(4);
       let initialCapacity = queue.capacity;
@@ -502,13 +502,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHNUMBER_0122
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHNUMBER_0122
+     * @tc.name      : property_Push_Number_static
      * @tc.desc      : Verify pushing and popping number values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Number_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -521,13 +521,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSTRING_0123
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSTRING_0123
+     * @tc.name      : property_Push_String_static
      * @tc.desc      : Verify pushing and popping string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_String_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<string> = new containers.ArrayBlockingQueue<string>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -543,13 +543,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBIGINT_0124
-     * @tc.name      :SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBIGINT_0124
+     * @tc.name      : property_Push_Bigint_static
      * @tc.desc      : Verify pushing and popping bigint values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushBigint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Bigint_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<bigint> = new containers.ArrayBlockingQueue<bigint>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -565,13 +565,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBOOLEAN_0125
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBOOLEAN_0125
+     * @tc.name      : property_Push_Boolean_static
      * @tc.desc      : Verify pushing and popping boolean values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Boolean_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<boolean> = new containers.ArrayBlockingQueue<boolean>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -587,13 +587,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHARRAY_0126
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHARRAY_0126
+     * @tc.name      : property_Push_Array_static
      * @tc.desc      : Verify pushing and popping array values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Array_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -609,13 +609,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHCLASS_0127
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHCLASS_0127
+     * @tc.name      : property_Push_Class_static
      * @tc.desc      : Verify pushing and popping class instances
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Class_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -631,13 +631,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHOBJECT_0128
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHOBJECT_0128
+     * @tc.name      : property_Push_Object_static
      * @tc.desc      : Verify pushing and popping object values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyPushObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Push_Object_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<QueueItem> = new containers.ArrayBlockingQueue<QueueItem>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -655,26 +655,26 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0129
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0129
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_001
      * @tc.desc      : Verify initial size of empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       expect(String(queue.size)).assertEqual('0');
     });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0130
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0130
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_002
      * @tc.desc      : Verify size after pushing single element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       queue.push(1);
       expect(String(queue.size)).assertEqual('1');
@@ -682,13 +682,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0131
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0131
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_003
      * @tc.desc      : Verify size after pushing multiple elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -699,13 +699,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0132
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0132
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_004
      * @tc.desc      : Verify size after pushing single element to empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(10);
       queue.push(1);
       expect(String(queue.size)).assertEqual('1');
@@ -713,13 +713,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0133
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0133
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_005
      * @tc.desc      : Verify size after pushing multiple elements to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -730,13 +730,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0134
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0134
+     * @tc.name      : Array_Blocking_Queue_With_Push_Test_static_006
      * @tc.desc      : Verify size after filling queue to capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPushTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Push_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity; i++) {
@@ -747,13 +747,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0135
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0135
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_001
      * @tc.desc      : Verify popping element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity; i++) {
@@ -766,13 +766,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0136
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0136
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_002
      * @tc.desc      : Verify popping element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity; i++) {
@@ -786,13 +786,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0137
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0137
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_003
      * @tc.desc      : Verify popping special values (empty string, null)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<string | null>(capacity);
       queue.push("");
@@ -805,13 +805,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0138
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0138
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_004
      * @tc.desc      : Verify popping string values including "undefined"
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<string | undefined>(capacity);
       queue.push("");
@@ -822,13 +822,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0139
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0139
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_005
      * @tc.desc      : Verify popping single element from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       queue.push(100);
       expect(String(queue.pop())).assertEqual('100');
@@ -837,13 +837,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0140
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0140
+     * @tc.name      : Array_Blocking_Queue_With_Pop_Test_static_006
      * @tc.desc      : Verify popping all elements from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPopTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Pop_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -862,13 +862,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0141
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0141
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_001
      * @tc.desc      : Verify add operation when queue is full
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(10);
       for (let i = 0; i < capacity; i++) {
@@ -880,13 +880,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0142
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0142
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_002
      * @tc.desc      : Verify adding special string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 5;
       const queue = new containers.ArrayBlockingQueue<string>(5);
       expect(String(queue.add(""))).assertEqual('true');
@@ -898,13 +898,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0143
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0143
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_003
      * @tc.desc      : Verify adding single element to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(1);
       expect(String(queue.add('hello'))).assertEqual('true');
       expect(String(queue.size)).assertEqual('1');
@@ -912,13 +912,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0144
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0144
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_004
      * @tc.desc      : Verify adding bigint value to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<bigint>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -929,13 +929,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0145
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0145
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_005
      * @tc.desc      : Verify adding boolean value to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<boolean>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -945,13 +945,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0146
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0146
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_006
      * @tc.desc      : Verify adding array to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number[]>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -963,13 +963,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0147
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0147
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_007
      * @tc.desc      : Verify adding and popping array from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -984,13 +984,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0148
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0148
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_008
      * @tc.desc      : Verify adding and popping Date object from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
@@ -1006,13 +1006,13 @@ export default function ArrayBlockingQueuetest() {
 
         /**
          * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
-         * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
+         * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0009
          * @tc.desc      : Verify adding object with key-value pair to queue
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("ArrayBlockingQueueWithAddTest0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+        it("Array_Blocking_Queue_With_Add_Test_static_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
 
           let queue: containers.ArrayBlockingQueue<QueueItem2> = new containers.ArrayBlockingQueue<QueueItem2>(1);
           let initialCapacity = queue.capacity;
@@ -1027,13 +1027,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0150
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0150
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0010
      * @tc.desc      : Verify adding element to zero capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(queue.add(1)).assertTrue();
       expect(queue.size).assertEqual(1);
@@ -1041,13 +1041,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0151
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0151
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0011
      * @tc.desc      : Verify adding elements to full queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       expect(queue.add(1)).assertTrue();
       expect(String(queue.size)).assertEqual('1');
@@ -1057,13 +1057,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0152
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0152
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0012
      * @tc.desc      : Verify adding multiple elements to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 5;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -1074,13 +1074,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0153
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0153
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0013
      * @tc.desc      : Verify adding elements to fill queue capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithAddTest0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Add_Test_static_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(queue.add(1)).assertTrue();
@@ -1095,13 +1095,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0154
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0154
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0001
      * @tc.desc      : Verify polling from empty zero capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(String(queue.poll())).assertEqual('0');
       expect(String(queue.size)).assertEqual('0');
@@ -1109,13 +1109,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0155
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0155
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0002
      * @tc.desc      : Verify polling from single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       queue.add(100);
       expect(String(queue.poll())).assertEqual('100');
@@ -1125,13 +1125,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0156
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0156
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0003
      * @tc.desc      : Verify polling special string values from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
       queue.add("");
       queue.add(null);
@@ -1146,13 +1146,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0157
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0157
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0004
      * @tc.desc      : Verify polling and adding elements dynamically
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 5;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -1165,13 +1165,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0158
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0158
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0005
      * @tc.desc      : Verify polling all elements from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity; i++) {
@@ -1193,13 +1193,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0159
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0159
+     * @tc.name      : Array_Blocking_Queue_With_Poll_Test_static_0006
      * @tc.desc      : Verify polling elements in FIFO order
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithPollTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Poll_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(3);
       queue.add("first");
       queue.add("second");
@@ -1212,13 +1212,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_016
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_016
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0001
      * @tc.desc      : Verify getting first element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(3);
       queue.add(10);
       queue.add(20);
@@ -1230,13 +1230,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0161
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0161
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0002
      * @tc.desc      : Verify getting first element with special string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
       queue.add("");
       queue.add(null);
@@ -1248,13 +1248,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0162
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0162
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0003
      * @tc.desc      : Verify getting first element from empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(String(queue.getFirst())).assertEqual('null');
       expect(String(queue.size)).assertEqual('0');
@@ -1262,13 +1262,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0163
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0163
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0004
      * @tc.desc      : Verify getting first element from single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(1);
       queue.add("1");
       expect(String(queue.getFirst())).assertEqual("1");
@@ -1277,13 +1277,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0164
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0164
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0005
      * @tc.desc      : Verify getting first element after adding elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 5;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -1298,13 +1298,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0165
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0165
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0006
      * @tc.desc      : Verify getting first boolean element from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<boolean>(1);
       queue.add(true);
       expect(queue.getFirst()).assertTrue();
@@ -1314,13 +1314,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0166
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0166
+     * @tc.name      : Array_Blocking_Queue_With_GetFirst_Test_static_0007
      * @tc.desc      : Verify getting first element after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithGetFirstTest0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.add(111);
@@ -1336,13 +1336,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0167
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0167
+     * @tc.name      : Array_Blocking_Queue_With_Capacity_Test_static_0001
      * @tc.desc      : Verify zero capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithCapacityTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 0;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(String(queue.capacity)).assertEqual('0');
@@ -1352,13 +1352,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0168
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0168
+     * @tc.name      : Array_Blocking_Queue_With_Capacity_Test_static_0002
      * @tc.desc      : Verify negative capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithCapacityTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = -1;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(String(queue.capacity)).assertEqual('-1');
@@ -1366,13 +1366,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0169
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0169
+     * @tc.name      : Array_Blocking_Queue_With_Capacity_Test_static_0003
      * @tc.desc      : Verify single capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithCapacityTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 1;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.add(123);
@@ -1384,13 +1384,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0170
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0170
+     * @tc.name      : Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001
      * @tc.desc      : Verify remaining capacity of full queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithRemainingCapacityTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 3;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1404,13 +1404,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BBASE_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0171
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BBASE_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0171
+     * @tc.name      : Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002
      * @tc.desc      : Verify remaining capacity after adding elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithRemainingCapacityTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 5;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1421,13 +1421,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0172
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0172
+     * @tc.name      : Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003
      * @tc.desc      : Verify remaining capacity changes after operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithRemainingCapacityTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const queue = new containers.ArrayBlockingQueue<boolean>(1);
         expect(String(queue.remainingCapacity())).assertEqual('1');
@@ -1439,13 +1439,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0173
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0173
+     * @tc.name      : Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004
      * @tc.desc      : Verify remaining capacity when nearly full
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueWithRemainingCapacityTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 4;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1459,13 +1459,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0174
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0174
+     * @tc.name      : ArrayBlockingQueueRemainingCapacityTen_Test_static_005
      * @tc.desc      : Verify remaining capacity changes in large queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueRemainingCapacityTenTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueRemainingCapacityTen_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 10;
         const queue = new containers.ArrayBlockingQueue<string>(capacity);
@@ -1481,13 +1481,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0175
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0175
+     * @tc.name      : ArrayBlockingQueueRemainingCapacityDynamic_Test_static_006
      * @tc.desc      : Verify dynamic remaining capacity changes
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueRemainingCapacityDynamicTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueRemainingCapacityDynamic_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 5;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1508,13 +1508,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0176
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0176
+     * @tc.name      : ArrayBlockingQueueGetSizeDynamic_Test_static_001
      * @tc.desc      : Verify size after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamicTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 3;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.push(1);
@@ -1527,13 +1527,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0177
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0177
+     * @tc.name      : ArrayBlockingQueueGetSizeDynamic_Test_static_002
      * @tc.desc      : Verify size changes with add and poll operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamicTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(0);
       expect(String(queue.size)).assertEqual('0');
 
@@ -1545,13 +1545,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0178
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0178
+     * @tc.name      : ArrayBlockingQueueGetSizeDynamic_Test_static_003
      * @tc.desc      : Verify size changes with push and pop operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamicTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(0);
       expect(String(queue.size)).assertEqual('0');
 
@@ -1563,13 +1563,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0179
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0179
+     * @tc.name      : ArrayBlockingQueueGetSizeOne_Test_static_004
      * @tc.desc      : Verify size changes in single capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeOneTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetSizeOne_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<boolean>(1);
       expect(String(queue.size)).assertEqual('0');
       queue.push(true);
@@ -1580,13 +1580,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0180
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0180
+     * @tc.name      : ArrayBlockingQueueIsEmptyTrue_Test_static_001
      * @tc.desc      : Verify isEmpty on empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyTrueTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyTrue_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(String(queue.isEmpty())).assertEqual('true');
       expect(String(queue.size)).assertEqual('0');
@@ -1594,13 +1594,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0181
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0181
+     * @tc.name      : ArrayBlockingQueueIsEmptyFalse_Test_static_002
      * @tc.desc      : Verify isEmpty on non-empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyFalseTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyFalse_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(2);
       queue.push("data");
       expect(String(queue.isEmpty())).assertEqual('false');
@@ -1609,13 +1609,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0182
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0182
+     * @tc.name      : ArrayBlockingQueueIsEmptyChange_Test_static_003
      * @tc.desc      : Verify isEmpty changes after operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyChangeTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyChange_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<boolean>(0);
       expect(String(queue.isEmpty())).assertEqual('true');
 
@@ -1628,13 +1628,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0183
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0183
+     * @tc.name      : ArrayBlockingQueueIsEmptyBoundary_Test_static_004
      * @tc.desc      : Verify isEmpty on single capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyBoundaryTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyBoundary_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       expect(String(queue.isEmpty())).assertEqual('true');
       queue.push(1);
@@ -1645,13 +1645,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0184
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0184
+     * @tc.name      : ArrayBlockingQueueIsEmptyMixed_Test_static_005
      * @tc.desc      : Verify isEmpty with mixed operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyMixedTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyMixed_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(3);
       queue.push("a");
       queue.pop();
@@ -1664,13 +1664,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0185
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0185
+     * @tc.name      : ArrayBlockingQueueIsEmptyConcurrent_Test_static_006
      * @tc.desc      : Verify isEmpty with concurrent operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyConcurrentTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueIsEmptyConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(10);
       queue.push(1);
       queue.pop();
@@ -1682,13 +1682,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0186
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0186
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_001
      * @tc.desc      : Verify getEnd on filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity; i++) {
@@ -1700,13 +1700,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0187
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0187
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_002
      * @tc.desc      : Verify getEnd with special values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 5;
       const queue = new containers.ArrayBlockingQueue<string | null | undefined>(capacity);
       queue.add("");
@@ -1732,13 +1732,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0188
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0188
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_003
      * @tc.desc      : Verify getEnd on empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(String(queue.getEnd()).toString()).assertEqual('undefined');
@@ -1747,13 +1747,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0189
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0189
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_004
      * @tc.desc      : Verify getEnd on single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 1;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.add(100)
@@ -1763,13 +1763,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0190
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0190
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_005
      * @tc.desc      : Verify getEnd on single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 1;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       queue.add(100)
@@ -1779,13 +1779,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0191
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0191
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_006
      * @tc.desc      : Verify getEnd after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       for (let i = 0; i < capacity - 1; i++) {
@@ -1797,13 +1797,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0192
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0192
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_007
      * @tc.desc      : Verify getEnd after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
 
@@ -1824,13 +1824,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0193
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0193
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_008
      * @tc.desc      : Verify getEnd with string value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 1;
       const queue = new containers.ArrayBlockingQueue<string>(capacity);
       queue.add('hahah')
@@ -1840,13 +1840,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0194
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0194
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_009
      * @tc.desc      : Verify getEnd with multiple string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(5);
       queue.add('hahah')
       queue.add('xixixi')
@@ -1856,13 +1856,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0195
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0195
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_0010
      * @tc.desc      : Verify getEnd with duplicate string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(5);
       queue.add('hahah')
       queue.add('hahah')
@@ -1872,13 +1872,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0196
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0196
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_011
      * @tc.desc      : Verify getEnd with MAX_SAFE_INTEGER value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(5);
       queue.add(Number.MAX_SAFE_INTEGER);
       expect(String(queue.getEnd())).assertEqual(String(Number.MAX_SAFE_INTEGER));
@@ -1887,13 +1887,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0197
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0197
+     * @tc.name      : ArrayBlockingQueueGetEndConcurrent_Test_static_012
      * @tc.desc      : Verify getEnd with MIN_SAFE_INTEGER value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrentTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(5);
       queue.add(Number.MIN_SAFE_INTEGER);
       expect(String(queue.getEnd())).assertEqual(String(Number.MIN_SAFE_INTEGER));
@@ -1902,13 +1902,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0198
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0198
+     * @tc.name      : ArrayBlockingQueueConstructorConcurrent_Test_static_001
      * @tc.desc      : Verify constructor with empty array and zero capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorConcurrentTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const queue = new containers.ArrayBlockingQueue<number>(0, new Array<number>());
         expect(queue.isEmpty()).assertTrue();
@@ -1918,13 +1918,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0199
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0199
+     * @tc.name      : ArrayBlockingQueueConstructorConcurrent_Test_static_002
      * @tc.desc      : Verify constructor with empty array and single capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorConcurrentTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const queue = new containers.ArrayBlockingQueue<number>(1, new Array<number>());
         expect(queue.isEmpty()).assertTrue();
@@ -1934,13 +1934,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_200
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_200
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_001
      * @tc.desc      : The test uses an empty array to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
@@ -1956,13 +1956,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_201
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_201
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_002
      * @tc.desc      : The test uses an empty array to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
@@ -1978,13 +1978,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_003
      * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const oneElementArray = new Array<Int>(42);
@@ -2003,13 +2003,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_203
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_203
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_004
      * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const oneElementArray = new Array<Int>(42);
@@ -2028,13 +2028,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_204
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_204
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_005
      * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const oneElementSet = new Array<Int>(42);
@@ -2053,13 +2053,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_205
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_205
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_006
      * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const oneElementSet = new Array<Int>(42);
@@ -2077,13 +2077,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_206
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_206
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_007
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const queue: containers.ArrayBlockingQueue<int> =
@@ -2098,13 +2098,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_207
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_207
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_008
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const queue: containers.ArrayBlockingQueue<int> =
@@ -2119,13 +2119,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_208
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_208
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_009
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1000)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const queue: containers.ArrayBlockingQueue<int> =
@@ -2139,13 +2139,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_209
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_209
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_010
      * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptySet = new Set<int>();
@@ -2162,13 +2162,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_210
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_210
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_011
      * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptySet = new Set<int>();
@@ -2185,13 +2185,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_211
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_211
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_012
      * @tc.desc      : The test uses null as the iterable object to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptySet = new Set<int | null>();
@@ -2207,13 +2207,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_212
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_212
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_013
      * @tc.desc      : The test uses undefined as the iterable object to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const map = new Set<int | undefined>()
@@ -2229,13 +2229,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_213
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_213
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_014
      * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
@@ -2251,13 +2251,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_214
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_214
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_015
      * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
@@ -2273,13 +2273,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_215
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_215
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_016
      * @tc.desc      : Tests initializing the queue using an iterable object with Int.MAX_VALUE elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const arr = new Map<int, int>();
@@ -2296,13 +2296,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_216
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_216
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_017
      * @tc.desc      : To test the use of Map to initialize the queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const map = new Map<int, int>();
@@ -2320,13 +2320,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_217
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_217
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_018
      * @tc.desc      : To test initializing queues using nested arrays
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const nestedArray = new Map<int, int[]>();
@@ -2345,13 +2345,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_218
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_218
+     * @tc.name: ArrayBlockingQueuePerformance_Test_static_001
      * @tc.desc: 10 concurrent operations simultaneously add elements to the container.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueuePerformanceTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueuePerformance_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const threadCount = 10;
         const taskGroup = new taskpool.TaskGroup();
@@ -2367,13 +2367,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_219
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_219
+     * @tc.name: ArrayBlockingQueuePerformance_Test_static_002
      * @tc.desc: Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueuePerformanceTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueuePerformance_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = 100;
         const numbers: Array<int> = new Array<int>(10);
@@ -2395,13 +2395,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_220
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_220
+     * @tc.name: ArrayBlockingQueuePerformance_Test_static_003
      * @tc.desc: Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueuePerformanceTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueuePerformance_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = 100;
         const numbers: Array<int> = new Array<int>(100);
@@ -2423,13 +2423,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_221
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_221
+     * @tc.name: ArrayBlockingQueuePerformance_Test_static_004
      * @tc.desc: Push 100 data, poll 100 data.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueuePerformanceTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueuePerformance_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = 100;
         let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
@@ -2446,13 +2446,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_222
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_222
+     * @tc.name: ArrayBlockingQueuePerformance_Test_static_005
      * @tc.desc: add 100 pieces of data, pop 100 pieces of data.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueuePerformanceTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueuePerformance_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = 100;
         let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
@@ -2469,13 +2469,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_223
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_223
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_001
      * @tc.desc: The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2495,13 +2495,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_224
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_224
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_002
      * @tc.desc: Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2521,13 +2521,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_225
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_225
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_003
      * @tc.desc: Multi-threaded operation. Thread A inserts data, and thread B takes out data.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = 100;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2542,13 +2542,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_226
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_226
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_004
      * @tc.desc: Threads add elements simultaneously to verify the thread safety of the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(100);
@@ -2563,13 +2563,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_227
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_227
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_005
      * @tc.desc: Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2589,13 +2589,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_228
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_228
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_006
      * @tc.desc: 10 threads at the same time: loop 1000 times, after add getFirst, isEmpty, get size, push, pop, remove, remainingCapacity combined call
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2617,13 +2617,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_229
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_229
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_007
      * @tc.desc: 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2645,13 +2645,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_230
-     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_230
+     * @tc.name: ArrayBlockingQueueAsync_Test_static_008
      * @tc.desc: 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("ArrayBlockingQueueAsyncTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueAsync_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const totalCount: int = thousandTimes;
         const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2673,13 +2673,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_001
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
@@ -2695,13 +2695,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_002
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
@@ -2717,13 +2717,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_234
-     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_234
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_003
      * @tc.desc      : Blocks until the queue has an element to take out
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const queue = new containers.ArrayBlockingQueue<number>(10);
         let popCompleted = false;
