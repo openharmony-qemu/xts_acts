@@ -1,0 +1,496 @@
+    class MySequence1 implements rpc.Parcelable {
+      picture_: image.Picture;
+
+      constructor(conPicture: image.Picture) {
+        this.picture_ = conPicture;
+      }
+
+      marshalling(messageSequence: rpc.MessageSequence) {
+        this.picture_.marshalling(messageSequence);
+        return true;
+      }
+
+      unmarshalling(messageSequence: rpc.MessageSequence): boolean {
+        let picture: image.Picture = image.createPictureFromParcel(messageSequence)
+        expect(picture !== undefined).assertTrue();
+        this.picture_ = picture;
+        return true;
+      }
+    }
+
+    const testCreatePictureFromParcel = async (
+      done: Function,
+      logger: Logger,
+      picture: image.Picture
+    ) => {
+      // marshalling
+      let parcelable: MySequence1 = new MySequence1(picture);
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      data.writeParcelable(parcelable);
+      // createPictureFromParcel
+      let ret: MySequence1 = new MySequence1(picture);
+      data.readParcelable(ret);
+      await sleep(500);
+      done();
+    }
+
+
+-----
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_CREATE_PICTURE_FROM_PARCEL_0100
+     * @tc.name      : test createPictureFromParcel
+     * @tc.desc      : 1.create picture object by decode image source
+     *                 2.test marshalling and create Picture From Parcel
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PICTURE_CREATE_PICTURE_FROM_PARCEL_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_CREATE_PICTURE_FROM_PARCEL_0100");
+      let picture = await createPictureImageSourcePic("testExif.jpg", "fd");
+      testCreatePictureFromParcel(done, logger, picture);
+    });
+    -----
+    
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PROPERTY_KEY_NULL_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PROPERTY_KEY_NULL_0100
+     * @tc.desc      : 
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PROPERTY_KEY_NULL_0100', Level.LEVEL0, async (done: Function) => {
+      const tag: string = "SUB_MULTIMEDIA_IMAGE_PROPERTY_KEY_NULL_0100"
+      let options: image.ImagePropertyOptions = { index: 0, defaultValue: '9999' }
+      let fileName = 'FragmentMap.dat'
+      let imageSourceApi = await getImageSource(fileName, "uri")
+      imageSourceApi.getImageProperty(null, options).then((data: string) => {
+        console.info(tag + ' Succeeded in getting the value of the specified attribute key of the image.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.error(tag + ' Failed to get the value of the specified attribute key of the image.');
+        expect(error.code == 62980137).assertTrue();
+        done();
+      })
+      done();
+    })
+    -----
+            /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
+         * @tc.name      : createIncrementalSource
+         * @tc.desc      : 1.create imagesource
+         *                 2.return not null
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100', Level.LEVEL0, async (done: Function) => {
+            try {
+                const incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+                globalimageSource = incSouce;
+                expect(incSouce != undefined).assertTrue();
+                done();
+            } catch (error) {
+                console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100 failed ' + error);
+            }
+        });
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
+         * @tc.name      : createIncrementalSource
+         * @tc.desc      : 1.create imagesource
+         *                 2.return not null
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100', Level.LEVEL0, async (done: Function) => {
+            try {
+                const incSouce = image.CreateIncrementalSource(null);
+                globalimageSource = incSouce;
+                expect(incSouce != undefined).assertTrue();
+                done();
+            } catch (error) {
+                console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100 failed ' + error);
+            }
+        });
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
+         * @tc.name      : getImageInfo(callback)
+         * @tc.desc      : 1.call createImageSource(uri)
+         *                 2.call getImageInfo(callback)
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100', Level.LEVEL0, async (done: Function) => {
+            await getFd('test.jpg');
+            const imageSource = image.createImageSource(fdNumber);
+            imageSource.getImageInfo((err: BusinessError, imageinfo: image.ImageInfo) => {
+                if (err) {
+                    console.error('Failed to get the image information.code is ${err.code},message is ${err.message}');
+                    expect().assertFail();
+                } else {
+                    console.info('succeeded get the image information.');
+                    expect(imageinfo !== undefined).assertTrue();
+                }
+            })
+            done();
+        })
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
+         * @tc.name      : createImageSource(uri)-not exist uri
+         * @tc.desc      : 1.call createImageSource(uri)
+         *                 2.set not exist uri
+         *                 3.return null
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100', Level.LEVEL0, async (done: Function) => {
+            try {
+                const imageSourceApi = image.createImageSource('error.jpg');
+                globalimageSource = imageSourceApi;
+                expect(imageSourceApi == undefined).assertTrue();
+                console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100 success');
+                done();
+            } catch (error) {
+                console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100 error: ' + error);
+                expect().assertFail();
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
+         * @tc.desc      : 1.test image createImageReceiver(size, ImageFormat, capability)
+         * @tc.size      : MediumTest
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100', Level.LEVEL0, async (done: Function) => {
+            let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100";
+            const receiver = image.createImageReceiver({ width: 640, height: 480 }, 4, 8);
+            if (receiver !== undefined) {
+                console.log(`${logger} true.`);
+                expect(true).assertTrue();
+            } else {
+                console.log(`${logger} failed.`);
+                expect(false).assertTrue();
+            }
+            done();
+        });
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
+         * @tc.desc      : 1.test image createImageReceiver(size, ImageFormat, capability)
+         *                 2. use const format
+         * @tc.size      : MediumTest
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200', Level.LEVEL0, async (done: Function) => {
+            let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200";
+            const receiver = image.createImageReceiver({ width: 640, height: 480 }, image.ImageFormat.JPEG, 8);
+            if (receiver !== undefined) {
+                console.log(`${logger} true.`);
+                expect(true).assertTrue();
+            } else {
+                console.log(`${logger} failed.`);
+                expect(false).assertTrue();
+            }
+            done();
+        });
+        /**
+        * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_0100
+        * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATOR_0100
+        * @tc.desc      : 1.test image createImageCreator(size, ImageFormat, capability)
+        *                 2. use const format
+        * @tc.size      : MediumTest
+        * @tc.type      : Functional
+        * @tc.level     : Level 0
+        */
+        it('SUB_MULTIMEDIA_IMAGE_CREATOR_0100', Level.LEVEL0, async (done: Function) => {
+            let logger = "SUB_MULTIMEDIA_IMAGE_CREATOR_0100";
+            const creator = image.createImageCreator({width: 640, height: 480 }, image.ImageFormat.JPEG, 8);
+            if (creator !== undefined) {
+                console.log(`${logger} true.`);
+                expect(true).assertTrue();
+            } else {
+                console.log(`${logger} failed.`);
+                expect(false).assertTrue();
+            }
+            done();
+        });
+        /**
+        * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
+        * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
+        * @tc.desc      : 1.test image createImageCreator(size, ImageFormat, capability)
+        *                 2. use const format
+        * @tc.size      : MediumTest
+        * @tc.type      : Functional
+        * @tc.level     : Level 0
+        */
+        it('SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100', Level.LEVEL0, async (done: Function) => {
+        let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100";
+        await getFd('test.jpg');
+        const imageSourceApi = image.createImageSource(fdNumber);
+        let pixelMap: image.PixelMap;
+        pixelMap = await imageSourceApi.createPixelMap();
+        let picture: image.Picture = image.createPicture(pixelMap);
+        if (picture !== undefined) {
+            console.log(`${logger} true.`);
+            expect(true).assertTrue();
+        } else {
+            console.log(`${logger} failed.`);
+            expect(false).assertTrue();
+        }
+        done();
+        });
+-----
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
+     * @tc.name      : packing ImageSource - promise - format error
+     * @tc.desc      : 1.create ImageSource
+     *                 2.call packing
+     *                 3.call return array
+     *                 4.callbackcall return undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900", Level.LEVEL0, async (done: Function) => {
+      try {
+        let fdNumber: ESObject = await getFd("test.png");
+        const imageSourceApi: ESObject = image.createImageSource(fdNumber);
+        if (imageSourceApi == undefined) {
+          console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 create image source failed");
+          expect(false).assertTrue();
+          done();
+        } else {
+          const imagePackerApi = image.createImagePacker();
+          if (imagePackerApi == undefined) {
+            console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 create image packer failed");
+            expect(false).assertTrue();
+            done();
+          } else {
+            let packOpts: ESObject = {
+              format: "error", quality: 50
+            };
+            imagePackerApi.packing(imageSourceApi, packOpts)
+              .then((data) => {
+                console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 failed");
+                expect(data == undefined).assertTrue();
+                done();
+              })
+              .catch((error: BusinessError) => {
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 error: " + error);
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 success");
+                expect(true).assertTrue();
+                done();
+              });
+            await imageSourceApi?.release();
+            done();
+          }
+          await imagePackerApi?.release();
+          done();
+        }
+      } catch (error) {
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
+     * @tc.name      : packing ImageSource - promise - quality error
+     * @tc.desc      : 1.create ImageSource
+     *                 2.call packing
+     *                 3.call return array
+     *                 4.callbackcall return undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000", Level.LEVEL0, async (done: Function) => {
+      try {
+        let fdNumber: ESObject = await getFd("test.png");
+        const imageSourceApi: ESObject = image.createImageSource(fdNumber);
+        if (imageSourceApi == undefined) {
+          console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 create image source failed");
+          expect(false).assertTrue();
+          done();
+        } else {
+          const imagePackerApi = image.createImagePacker();
+          if (imagePackerApi == undefined) {
+            console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 create image packer failed");
+            expect(false).assertTrue();
+            done();
+          } else {
+            let packOpts: ESObject = {
+              format: "image/jpeg", quality: -1
+            };
+            imagePackerApi.packing(imageSourceApi, packOpts)
+              .then((data) => {
+                console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 failed");
+                expect(data == undefined).assertTrue();
+                done();
+              })
+              .catch((error: BusinessError) => {
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 error: " + error);
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 success");
+                expect(true).assertTrue();
+                done();
+              });
+            await imageSourceApi?.release();
+            done();
+          }
+          await imagePackerApi?.release();
+          done();
+        }
+      } catch (error) {
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
+     * @tc.name      : packing ImageSource - promise - quality too large
+     * @tc.desc      : 1.create ImageSource
+     *                 2.call packing
+     *                 3.call return array
+     *                 4.callbackcall return undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100", Level.LEVEL0, async (done: Function) => {
+      try {
+        let fdNumber: ESObject = await getFd("test.png");
+        const imageSourceApi: ESObject = image.createImageSource(fdNumber);
+        if (imageSourceApi == undefined) {
+          console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 create image source failed");
+          expect(false).assertTrue();
+          done();
+        } else {
+          const imagePackerApi = image.createImagePacker();
+          if (imagePackerApi == undefined) {
+            console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 create image packer failed");
+            expect(false).assertTrue();
+            done();
+          } else {
+            let packOpts: ESObject = {
+              format: "image/jpeg", quality: 101
+            };
+            imagePackerApi.packing(imageSourceApi, packOpts)
+              .then((data) => {
+                console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 failed");
+                expect(data == undefined).assertTrue();
+                done();
+              })
+              .catch((error: BusinessError) => {
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 error: " + error);
+                console.log("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 success");
+                expect(true).assertTrue();
+                done();
+              });
+            await imageSourceApi?.release();
+            done();
+          }
+          await imagePackerApi?.release();
+          done();
+        }
+      } catch (error) {
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
+     * @tc.name      : packing ImageSource - callback - format error
+     * @tc.desc      : 1.create ImageSource
+     *                 2.call packing
+     *                 3.return array
+     *                 4.callbackcall return undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
+      try {
+        let fdNumber: ESObject = await getFd("test.png");
+        const imageSourceApi = image.createImageSource(fdNumber);
+        if (imageSourceApi == undefined) {
+          console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200 create image source failed");
+          expect(false).assertTrue();
+          done();
+        } else {
+          const imagePackerApi: ESObject = image.createImagePacker();
+          if (imagePackerApi == undefined) {
+            console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200 create image packer failed");
+            expect(false).assertTrue();
+            done();
+          } else {
+            let packOpts: packOpts = {
+              format: "error", quality: 0
+            };
+            imagePackerApi.packing(imageSourceApi, packOpts, (err: BusinessError, data: ESObject) => {
+              console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200 success");
+              expect(data == undefined).assertTrue();
+              done();
+            });
+            await imageSourceApi?.release();
+            done();
+          }
+          await imagePackerApi?.release();
+          done();
+        }
+      } catch (error) {
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500 error: " + error);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+-----
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0600
+     * @tc.name      : packToData ImageSource - promise - quality -1
+     * @tc.desc      : 1.create ImageSource
+     *                 2.call packToData
+     *                 3.call return array
+     *                 4.call return undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0600", Level.LEVEL0, async (done: Function) => {
+      let packOpts: packOpts = {
+        format: "image/txt", 
+        quality: -1
+      };
+      packToDataimgSourcePromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0600", packOpts);
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1100
+     * @tc.name      : SUB_IMAGE_packToData_PixelMap_007 - Promise - RGB888 quality -1
+     * @tc.desc      : 1.create PixelMap
+     *                 2.create ImagePacker
+     *                 3.call packToData
+     * @tc.size      : MEDIUM
+     * @tc.type      : Functional
+     * @tc.level     : level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1100", Level.LEVEL0, async (done: Function) => {
+      let packOpts: packOpts = {
+        format: "image/jpeg",
+        quality: -1
+      };
+      packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1100", 5, packOpts);
+    });
