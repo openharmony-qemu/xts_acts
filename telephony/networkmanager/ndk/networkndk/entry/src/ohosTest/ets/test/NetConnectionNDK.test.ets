@@ -1125,30 +1125,30 @@ export default function NetConnectionNDKTest() {
 
     /**
      * @tc.number : SUB_NETWORK_CallHttpClientApi_0100
-     * @tc.name   ：testOHNetStackCallHttpClientApi_0100
-     * @tc.desc   ：CallHttpClientApi
+     * @tc.name   : testOHNetCallHttpClientApi_0100
+     * @tc.desc   : CallHttpClientApi
      * @tc.size   : MediumTest
      * @tc.type   : Function
      * @tc.level  : Level 1
      */
-    it('testOHNetStackCallHttpClientApi_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testOHNetCallHttpClientApi_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let result : number = ncAPI.CallHttpClientApi();
       expect(result).assertEqual(0);
-      console.info(`testOHNetStackCallHttpClientApi_0100 ${result}`);
+      console.info(`testOHNetCallHttpClientApi_0100 ${result}`);
       done();
     });
 
     /**
      * @tc.number : SUB_NETWORK_OHHttpGetHeaderValue_0100
-     * @tc.name   ：testOHNetStackHttpGetHeaderValue_0100
-     * @tc.desc   ：GetHttpHeaderValue
+     * @tc.name   : testOHStackHttpGetHeaderValue_0100
+     * @tc.desc   : GetHttpHeaderValue
      * @tc.size   : MediumTest
      * @tc.type   : Function
      * @tc.level  : Level 1
      */
-    it('testOHNetStackHttpGetHeaderValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testOHStackHttpGetHeaderValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let result : number = ncAPI.OHHttpGetHeaderValue();
-      console.info(`testOHNetStackHttpGetHeaderValue_0100 ${result}`);
+      console.info(`testOHStackHttpGetHeaderValue_0100 ${result}`);
       expect(result).assertEqual(0);
       done();
     });
