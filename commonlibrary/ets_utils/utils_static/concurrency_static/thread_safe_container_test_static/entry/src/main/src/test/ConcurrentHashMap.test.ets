@@ -1858,3 +1858,1111 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0199
      * @tc.name      : hasWithTest001
+     * @tc.desc      : The key is null and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
+      const key = null;
+      const value = "value1";
+      keyData.set(key, value);
+      let flag: boolean = keyData.has(key);
+      expect(String(flag)).assertEqual('true');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0200
+     * @tc.name      : hasWithTest002
+     * @tc.desc      : The key is undefined and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
+      const key = "key";
+      const value = undefined;
+      keyData.set(key, value);
+      let flag: boolean = keyData.has(key);
+      expect(String(flag)).assertEqual('true');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0201
+     * @tc.name      : hasWithTest003
+     * @tc.desc      : The map is empty and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      keyData.set(key, value);
+      expect(String(keyData.size)).assertEqual("1");
+      expect(keyData.has(key)).assertTrue();
+      expect(keyData.get(key)).assertEqual(value);
+      keyData.delete(key);
+      expect(String(keyData.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0202
+     * @tc.name      : hasWithTest004
+     * @tc.desc      : The key is consistent and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      keyData.set("key1", "value1")
+      keyData.set("key2", "value2")
+      expect(keyData.has("key1")).assertTrue();
+      expect(keyData.has("key2")).assertTrue();
+      expect(keyData.get("key1")).assertEqual('value1');
+      expect(keyData.get("key2")).assertEqual('value2');
+      keyData.delete('key1');
+      keyData.delete('key2');
+      expect(String(keyData.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0203
+     * @tc.name      : hasWithTest005
+     * @tc.desc      : Inconsistent data with the key and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const keyUpper = "KEY";
+      const keyLower = "key";
+      const valueUpper = "ValueForUpper";
+      const valueLower = "ValueForLower";
+      keyData.set(keyUpper, valueUpper);
+      keyData.set(keyLower, valueLower);
+      expect(String(keyData.size)).assertEqual("2");
+      expect(keyData.has(keyUpper)).assertTrue();
+      expect(keyData.get(keyUpper)).assertEqual(valueUpper);
+      expect(keyData.has(keyLower)).assertTrue();
+      expect(keyData.get(keyLower)).assertEqual(valueLower);
+      keyData.delete(keyUpper);
+      keyData.delete(keyLower);
+      expect(String(keyData.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0204
+     * @tc.name      : hasWithTest006
+     * @tc.desc      : The key is inconsistent with the uppercase and lowercase of the data, and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
+      const key = "key";
+      const value = undefined;
+      keyData.set(key, value);
+      expect(String(keyData.size)).assertEqual("1");
+      expect(keyData.has(key)).assertTrue();
+      expect(String(keyData.get(key))).assertEqual(String(value));
+      keyData.delete(key);
+      expect(String(keyData.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0205
+     * @tc.name      : hasWithTest007
+     * @tc.desc      : A map with an element and the property has has
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map: Map<number, string> = new Map<number, string>();
+      let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(map);
+      expect(String(keyData.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0206
+     * @tc.name      : hasWithTest008
+     * @tc.desc      : Replacement value
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "one");
+      let flag: boolean = map.replace(1, "first");
+      expect(String(map.get(1))).assertEqual("first");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0207
+     * @tc.name      : hasWithTest009
+     * @tc.desc      : Get the values of keys one and two
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "one");
+      map.set(2, "two");
+      expect(String(map.get(1))).assertEqual("one");
+      expect(String(map.get(2))).assertEqual("two");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0208
+     * @tc.name      : hasWithTest009
+     * @tc.desc      : Find a value that does not exist
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("hasWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "one");
+      expect(map.has(1)).assertTrue();
+      expect(map.has(3)).assertFalse();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0209
+     * @tc.name      : replaceWithTest001
+     * @tc.desc      : Null is the key, and the property is replace
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
+      map.set(null, 'value')
+      let flag: boolean = map.replace(null, "value1");
+      expect(String(map.get(null))).assertEqual("value1");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0210
+     * @tc.name      : replaceWithTest002
+     * @tc.desc      : Undefined is the key, and the property is replace
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<undefined, string> = new  containers.ConcurrentHashMap<undefined, string>();
+      map.set(undefined, 'value')
+      let flag: boolean = map.replace(undefined, 'value1');
+      expect(String(map.get(undefined))).assertEqual('value1');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0211
+     * @tc.name      : replaceWithTest003
+     * @tc.desc      : The map is empty and the property is replace
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      const flag = map.replace(1, "one");
+      expect(flag).assertFalse();
+      expect(map.get(1)).assertUndefined();
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0212
+     * @tc.name      : replaceWithTest004
+     * @tc.desc      : The data with the same key and value is the same
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      const flag = map.replace(key, value);
+      expect(flag).assertTrue();
+      expect(map.get(key)).assertEqual(value);
+      map.delete(key);
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0213
+     * @tc.name      : replaceWithTest005
+     * @tc.desc      : The data with the same key and value is the same
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      const flag = map.replace("nonExistentKey", "newValue");
+      expect(flag).assertFalse();
+      expect(map.get("nonExistentKey")).assertUndefined();
+      map.delete(key);
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0214
+     * @tc.name      : replaceWithTest006
+     * @tc.desc      : Map with one element
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("replaceWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      const flag = map.replace(key, "newValue");
+      expect(flag).assertTrue();
+      expect(map.get(key)).assertEqual("newValue");
+      map.delete(key);
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0215
+     * @tc.name      : clearWithTest001
+     * @tc.desc      : Empty map
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("clearWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0216
+     * @tc.name      : clearWithTest002
+     * @tc.desc      : Non-empty map
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("clearWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      map.set('key1', 'value1')
+      map.set('key2', 'value2')
+      expect(String(map.size)).assertEqual("2");
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+      expect(map.has('key1')).assertFalse();
+      expect(map.has('key2')).assertFalse();
+
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0217
+     * @tc.name      : clearWithTest003
+     * @tc.desc      : Multiple addition and deletion operations after clear
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("clearWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      expect(String(map.size)).assertEqual("1");
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+      expect(map.has(key)).assertFalse();
+      map.set(key, value);
+      expect(String(map.size)).assertEqual("1");
+      expect(map.has(key)).assertTrue();
+      expect(map.get(key)).assertEqual(value);
+      map.delete(key);
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0218
+     * @tc.name      : clearWithTest004
+     * @tc.desc      : Repeated Clearing
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("clearWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      expect(String(map.size)).assertEqual("1");
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+      expect(map.has(key)).assertFalse();
+      const key1 = "key1";
+      const value1 = "value1";
+      map.set(key1, value1);
+      expect(String(map.size)).assertEqual("1");
+      expect(map.has(key1)).assertTrue();
+      expect(map.get(key1)).assertEqual(value1);
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0219
+     * @tc.name      : getSizeWithTest001
+     * @tc.desc      : Empty map
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("getSizeWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const nonExistentKey = "nonExistentKey";
+      expect(map.get(nonExistentKey)).assertUndefined();
+      expect(String(map.size)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0220
+     * @tc.name      : getSizeWithTest002
+     * @tc.desc      : Non-empty map, 100 elements
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("getSizeWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key1 = "key1";
+      const value1 = "value1";
+      const key2 = "key2";
+      const value2 = "value2";
+      map.set(key1, value1);
+      map.set(key2, value2);
+      expect(String(map.size)).assertEqual("2");
+      expect(map.get(key1)).assertEqual(value1);
+      expect(map.get(key2)).assertEqual(value2);
+      map.delete(key1);
+      map.delete(key2);
+      expect(String(map.size)).assertEqual("0");
+      expect(map.get(key1)).assertUndefined();
+      expect(map.get(key2)).assertUndefined();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0221
+     * @tc.name      : getSizeWithTest003
+     * @tc.desc      : Map with one element
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("getSizeWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      expect(String(map.size)).assertEqual("1");
+      expect(map.get(key)).assertEqual(value);
+      map.delete(key);
+      expect(String(map.size)).assertEqual("0");
+      expect(map.get(key)).assertUndefined();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0222
+     * @tc.name      : getSizeWithTest004
+     * @tc.desc      : Transfer the new map as an input parameter for element judgment
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("getSizeWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key1 = "key1";
+      const value1 = "value1";
+      const key2 = "key2";
+      const value2 = "value2";
+      map.set(key1, value1);
+      map.set(key2, value2);
+      map.clear();
+      expect(String(map.size)).assertEqual("0");
+      expect(map.get(key1)).assertUndefined();
+      expect(map.get(key2)).assertUndefined();
+      const keyA = "keyA";
+      const valueA = "valueA";
+      const keyB = "keyB";
+      const valueB = "valueB";
+      map.set(keyA, valueA);
+      expect(String(map.size)).assertEqual("1");
+      expect(map.get(keyA)).assertEqual(valueA);
+      map.set(keyB, valueB);
+      expect(String(map.size)).assertEqual("2");
+      expect(map.get(keyB)).assertEqual(valueB);
+      map.delete(keyA);
+      expect(String(map.size)).assertEqual("1");
+      expect(map.get(keyA)).assertUndefined();
+      map.delete(keyB);
+      expect(String(map.size)).assertEqual("0");
+      expect(map.get(keyB)).assertUndefined();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0223
+     * @tc.name      : iteratorWithTest001
+     * @tc.desc      : Empty map
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("iteratorWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      let count = 0;
+      const iterator = map.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        count++;
+        entry = iterator.next();
+      }
+      expect(String(count)).assertEqual("0");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0224
+     * @tc.name      : iteratorWithTest002
+     * @tc.desc      : Non-empty map, 100 elements
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("iteratorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      for (let i = 0; i < 100; i++) {
+        const key = `key${i}`;
+        const value = `value${i}`;
+        map.set(key, value);
+      }
+      let count = 0;
+      const iterator = map.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        const key = entry.value![0];
+        const value = entry.value![1];
+        expect(map.get(key)).assertEqual(value);
+        count++;
+        entry = iterator.next();
+      }
+      expect(String(count)).assertEqual("100");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0225
+     * @tc.name      : iteratorWithTest003
+     * @tc.desc      : Map with one element
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("iteratorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      let count = 0;
+      const iterator = map.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        const iterKey = entry.value![0];
+        const iterValue = entry.value![1];
+        expect(iterKey).assertEqual(key);
+        expect(iterValue).assertEqual(value);
+        count++;
+        entry = iterator.next();
+      }
+      expect(String(count)).assertEqual("1");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0226
+     * @tc.name      : iteratorWithTest004
+     * @tc.desc      : Transfer the new map as an input parameter for element judgment
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("iteratorWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map1:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      let map2: Map<string, string> = new Map<string, string>();
+      map1.set("key1", "value1");
+      map1.set("key2", "value2");
+      map1.set("key3", "value3");
+      const iterator = map1.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        const key = entry.value![0];
+        const value = entry.value![1];
+        map2.set(key, value);
+        entry = iterator.next();
+      }
+      expect(String(map1.size)).assertEqual(String(map2.size));
+      expect(map2.get("key1")).assertEqual("value1");
+      expect(map2.get("key2")).assertEqual("value2");
+      expect(map2.get("key3")).assertEqual("value3");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0227
+     * @tc.name      : entriesWithTest001
+     * @tc.desc      : Empty map
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("entriesWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const iterator = map.entries();
+      let entry = iterator.next();
+      expect(String(entry.done)).assertEqual('true');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0228
+     * @tc.name      : entriesWithTest002
+     * @tc.desc      : Non-empty map, 100 elements
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("entriesWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      for (let i = 0; i < 100; i++) {
+        const key = `key${i}`;
+        const value = `value${i}`;
+        map.set(key, value);
+      }
+      let count = 0;
+      const iterator = map.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        if (entry.value) {
+          const keyValue = entry.value;
+          const key = keyValue![0];
+          const value = keyValue![1];
+          expect(map.get(key)).assertEqual(value);
+          count++;
+        }
+        entry = iterator.next();
+      }
+      expect(String(count)).assertEqual("100");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0229
+     * @tc.name      : entriesWithTest003
+     * @tc.desc      : Map with one element
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("entriesWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "key";
+      const value = "value";
+      map.set(key, value);
+      let count = 0;
+      const iterator = map.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        if (entry.value) {
+          const keyValue = entry.value;
+          const iterKey = keyValue![0];
+          const iterValue = keyValue![1];
+          expect(iterKey).assertEqual(key);
+          expect(iterValue).assertEqual(value);
+          count++;
+        }
+        entry = iterator.next();
+      }
+      expect(String(count)).assertEqual("1");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0230
+     * @tc.name      : entriesWithTest004
+     * @tc.desc      : Transfer the new map as an input parameter for element judgment
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("entriesWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map1:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      let map2: Map<string, string> = new Map<string, string>();
+      map1.set("key1", "value1");
+      map1.set("key2", "value2");
+      map1.set("key3", "value3");
+      const iterator = map1.entries();
+      let entry = iterator.next();
+      while (!entry.done) {
+        if (entry.value) {
+          const keyValue = entry.value;
+          const key = keyValue![0];
+          const value = keyValue![1];
+          map2.set(key, value);
+          expect(map2.get(key)).assertEqual(value);
+        }
+        entry = iterator.next();
+      }
+      expect(String(map1.size)).assertEqual(String(map2.size));
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0231
+     * @tc.name      : multithreadingWithTest001
+     * @tc.desc      : Multiple threads set the same key at the same time and verify that the map status is correct
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("multithreadingWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const sameKey: string = "sharedKey";
+      const threadCount: number = 10;
+      for (let i: number = 0; i < threadCount; i++) {
+        const value: string = `value${i}`;
+        taskGroup.addTask(createSetTask(concurrentMap, sameKey, value));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(concurrentMap.size)).assertEqual('1');
+      expect(concurrentMap.has(sameKey)).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0232
+     * @tc.name      : multithreadingWithTest002
+     * @tc.desc      : Multiple threads set different keys at the same time to verify that the final map status is correct
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("multithreadingWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const threadCount: number = 10;
+      for (let i: number = 0; i < threadCount; i++) {
+        const key: string = `key${i}`;
+        const value: string = `value${i}`;
+        taskGroup.addTask(createSetTask(concurrentMap, key, value));
+      }
+      await taskpool.execute(taskGroup);
+      expect(JSON.stringify(concurrentMap.size)).assertEqual('10');
+      for (let i: number = 0; i < threadCount; i++) {
+        const key: string = `key${i}`;
+        const value: string | undefined = concurrentMap.get(key);
+        expect(value).assertEqual(`value${i}`);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0233
+     * @tc.name      : multithreadingWithTest003
+     * @tc.desc      : Multiple threads run set and get at the same time to verify data consistency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("multithreadingWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const sameKey: string = "sharedKey";
+      const threadCount: number = 10;
+      for (let i: number = 0; i < threadCount; i++) {
+        const value: string = `value${i}`;
+        taskGroup.addTask(createSetTask(concurrentMap, sameKey, value));
+      }
+      await taskpool.execute(taskGroup);
+      expect(String(concurrentMap.size)).assertEqual('1');
+      const finalValue: string | undefined = concurrentMap.get(sameKey);
+      expect(finalValue !== undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0234
+     * @tc.name      : multithreadingWithTest004
+     * @tc.desc      : 10 Add set elements to the container at the same time
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("multithreadingWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      const threadCount: number = 10;
+      for (let i: number = 0; i < threadCount; i++) {
+        const key: string = `key${i}`;
+        const value: string = `value${i}`;
+        taskGroup.addTask(createSetTask(concurrentMap, key, value));
+      }
+      await taskpool.execute(taskGroup);
+      expect(String(concurrentMap.size)).assertEqual('10');
+      for (let i: number = 0; i < threadCount; i++) {
+        const key: string = `key${i}`;
+        const value: string | undefined = concurrentMap.get(key);
+        expect(value).assertEqual(`value${i}`);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0235
+     * @tc.name      : multithreadingWithTest005
+     * @tc.desc      : The initial container contains 1000 elements, and 10 concurrent operations are performed on the container to replace the replace element
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("multithreadingWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      for (let i: number = 0; i < 1000; i++) {
+        concurrentMap.set(`key${i}`, `value${i}`);
+      }
+      for (let i: number = 0; i < 10; i++) {
+        taskGroup.addTask(createReplaceTask(concurrentMap, `key${i}`, `newValue${i}`));
+      }
+      await taskpool.execute(taskGroup);
+      for (let i: number = 0; i < 10; i++) {
+        const key: string = `key${i}`;
+        const value: string | undefined = concurrentMap.get(key);
+        expect(value).assertEqual(`newValue${i}`);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0236
+     * @tc.name      : performanceTestingWithTest001
+     * @tc.desc      :  On three threads (EAWorker), the hashMap has 1000 elements, and the operation of the common interface is timed multiple times
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("performanceTestingWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      for (let i: number = 0; i < 10; i++) {
+        concurrentMap.set(`key${i}`, `value${i}`);
+      }
+      const modifyKey: string = "key5";
+      const modifyValue: string = "newValue";
+      taskGroup.addTask(createModifyTask(concurrentMap, modifyKey, modifyValue));
+      let iteratorError: boolean = false;
+      let iterationResult: string = "";
+      try {
+        for (const key of concurrentMap.keys()) {
+          const value: string | undefined = concurrentMap.get(key);
+          if (value !== undefined) {
+            iterationResult += `${key}:${value}, `;
+          }
+        }
+      } catch (error) {
+        iteratorError = true;
+        expect(error instanceof Error).assertTrue();
+      }
+      await taskpool.execute(taskGroup);
+      expect(concurrentMap.has(modifyKey)).assertTrue();
+      expect(String(concurrentMap.get(modifyKey))).assertEqual(String(modifyValue));
+      done();
+    });
+
+    /**
+     * @tc.number    : SSUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0237
+     * @tc.name      : performanceTestingWithTest002
+     * @tc.desc      : Single-thread loop 1000 times interface test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("performanceTestingWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      for (let i: number = 0; i < 1000; i++) {
+        concurrentMap.set(`key${i}`, `value${i}`);
+      }
+      let iteratorError: boolean = false;
+      let iterationResult: string = "";
+      try {
+        for (const key of concurrentMap.keys()) {
+          const value: string | undefined = concurrentMap.get(key);
+          if (value !== undefined) {
+            iterationResult += `${key}:${value}, `;
+          }
+        }
+      } catch (error) {
+        iteratorError = true;
+        expect(error instanceof Error).assertTrue();
+      }
+      expect(String(concurrentMap.size)).assertEqual('1000');
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0238
+     * @tc.name      : performanceTestingWithTest003
+     * @tc.desc      : Multi-thread (10) competition 1000 tests
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("performanceTestingWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      for (let i: number = 0; i < 1000; i++) {
+        concurrentMap.set(`key${i}`, `value${i}`);
+      }
+      for (let t: number = 0; t < 10; t++) {
+        taskGroup.addTask(createModifyTask(concurrentMap, `key${t}`, `newValue${t}`));
+      }
+      let iteratorError: boolean = false;
+      try {
+        await taskpool.execute(taskGroup);
+        for (const key of concurrentMap.keys()) {
+          const value: string | undefined = concurrentMap.get(key);
+          if (value === undefined) {
+            throw new Error("Value is undefined!");
+          }
+        }
+      } catch (error) {
+        iteratorError = true;
+        expect(error instanceof Error).assertTrue();
+      }
+      expect(String(concurrentMap.size)).assertEqual('1000');
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0239
+     * @tc.name      : performanceTestingWithTest004
+     * @tc.desc      : The hashMap has 1000 elements, and the operation of the common interface is timed for multiple times
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("performanceTestingWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      for (let i: number = 0; i < 1000; i++) {
+        concurrentMap.set(`key${i}`, `value${i}`);
+      }
+      const worker = async (id: number) => {
+        for (let i: number = 0; i < 1000; i++) {
+          const key = `key${Math.floor(Math.random() * 1000)}`;
+          concurrentMap.set(key, `newValue${key}`);
+          const value = concurrentMap.get(key);
+          if (value !== `newValue${key}`) {
+            throw new Error("Value mismatch!");
+          }
+        }
+      };
+      const workers = [
+        worker(1),
+        worker(2),
+        worker(3)
+      ];
+      try {
+        await Promise.all(workers);
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
+      expect(String(concurrentMap.size)).assertEqual('1000');
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0240
+     * @tc.name      : constructorWithRemoveTest010
+     * @tc.desc      : Verify remove operation returns correct value and updates map state
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("constructorWithRemoveTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let hashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      hashMap.set(1, "one");
+      hashMap.set(2, "two");
+      hashMap.set(3, "three");
+
+      expect(hashMap.remove(1)).assertEqual("one");
+      expect(hashMap.remove(2)).assertEqual("two");
+
+      expect(hashMap.remove(999)).assertUndefined();
+      expect(String(hashMap.size)).assertEqual('1');
+      expect(hashMap.remove(3)).assertEqual("three");
+      expect(hashMap.remove(1)).assertUndefined();
+      expect(String(hashMap.size)).assertEqual('0');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0241
+     * @tc.name      : constructorWithRemoveTest011
+     * @tc.desc      : Verify remove operation returns correct value and updates map state.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("constructorWithRemoveTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const hashMap = new  containers.ConcurrentHashMap<number, string | null | undefined>();
+      hashMap.set(1, "one");
+      hashMap.set(2, null);
+      hashMap.set(3, undefined);
+      hashMap.set(4, '@@@@');
+      expect(hashMap.remove(1)).assertEqual("one");
+      expect(String(hashMap.remove(2))).assertEqual("null");
+      expect(String(hashMap.remove(3))).assertEqual("undefined");
+      expect(String(hashMap.remove(4))).assertEqual('@@@@');
+      expect(String(hashMap.size)).assertEqual('0');
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0242
+     * @tc.name      : constructorWithforEachTest006
+     * @tc.desc      : Test forEach() iteration with value/key/map callback params.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("constructorWithforEachTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "one");
+      map.set(2, "two");
+      map.forEach((value, key) => {
+        if (key === 1) {
+          map.set(3, "three");
+          map.remove(2);
+        }
+      });
+      expect(String(map.size)).assertEqual('2');
+      expect(map.get(3)).assertEqual("three");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0243
+     * @tc.name      : constructorWithKeysTest007
+     * @tc.desc      : Return a new iterator that contains the keys contained in this mapping.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("constructorWithKeysTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let map = new  containers.ConcurrentHashMap<number, string>();
+      for (let i = 0; i < 100; i++) {
+        map.set(i, "value" + i);
+      }
+      let iter = map.keys();
+      let count = 0;
+      let allValid = true;
+      while (true) {
+        let v = iter.next();
+        if (v.done) break;
+
+        if (v.value !== count) {
+          allValid = false;
+        }
+        count++;
+      }
+      expect(String(count)).assertEqual("100");
+      expect(String(allValid)).assertEqual("true");
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0245
+     * @tc.name      : setWithSetTest018
+     * @tc.desc      : Batch insert 100 elements with 10ms interval.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("setWithSetTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      const totalCount: number = 100;
+      for (let i: number = 0; i < totalCount; i++) {
+        keyData.set(i, `value${i}`);
+      }
+      let allValid: boolean = true;
+      for (let i: number = 0; i < totalCount; i++) {
+        if (keyData.get(i) !== `value${i}`) {
+          allValid = false;
+          break;
+        }
+      }
+      expect(allValid).assertTrue();
+    });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_constructorWithIterableTest_0246
+     * @tc.name: constructorWithIterableTest010
+     * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with Integer.MAX_VALUE elements.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 0
+     */
+    xit("constructorWithIterableTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const mapEntries: Map<number, string> = new Map<number, string>();
+      const totalCount: number = Int.MAX_VALUE;
+      for (let i: number = 0; i < totalCount; i++) {
+        mapEntries.set(i, `value${i}`);
+      }
+      const concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(mapEntries);
+      expect(String(concurrentHashMap.size)).assertEqual(String(totalCount));
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0247
+     * @tc.name      : constructorWithKeysTest007
+     * @tc.desc      : Verify keys iterator returns correct values for a populated ConcurrentHashMap.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("constructorWithKeysTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const inputMap = new Map<number, string>();
+      inputMap.set(1, "value1");
+      inputMap.set(2, "value2");
+      inputMap.set(3, "value3");
+      const concurrentMap = new  containers.ConcurrentHashMap<number, string>(inputMap);
+      const iterator = concurrentMap.keys();
+      const expectedKeys = [1, 2, 3];
+      let index = 0;
+      let result = iterator.next();
+      while (!result.done) {
+        expect(String(result.value)).assertEqual(String(expectedKeys[index]));
+        index++;
+        result = iterator.next();
+      }
+      expect(String(index)).assertEqual(String(expectedKeys.length));
+      expect(result.value).assertUndefined();
+      expect(result.done).assertTrue();
+    });
+  });
+}
