@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON, MouseButton } from '@ohos.UiTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerPart2() {
@@ -40,6 +41,8 @@ export default function webViewControllerPart2() {
       } catch (err) {
         console.error("push WebOnNativeEmbedMouseEvent page error: " + err);
       }
+      let driver: Driver = Driver.create();
+      await driver.waitForComponent(ON.id("WebOnNativeEmbedMouseButton"),10000);
       done()
     });
 
