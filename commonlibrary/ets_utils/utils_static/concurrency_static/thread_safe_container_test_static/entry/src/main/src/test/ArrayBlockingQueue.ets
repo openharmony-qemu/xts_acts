@@ -118,13 +118,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ACTUALCAPACITYTEST_0100
-     * @tc.name      : actualCapacityTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ACTUALCAPACITYTEST_0100
      * @tc.desc      : Verify queue capacity initialization
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("actualCapacityTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("actua_lCapacity_Test_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const initialCapacity = 10;
       const queue = new containers.ArrayBlockingQueue<number>(initialCapacity);
       expect(String(queue.capacity)).assertEqual(String(initialCapacity));
@@ -132,7 +132,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INVALIDCAPACITYTEST_0101
-     * @tc.name      : invalidCapacityTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INVALIDCAPACITYTEST_0101
      * @tc.desc      : Verify queue with negative capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -146,13 +146,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INVALIDCAPACITYTEST_0102
-     * @tc.name      : invalidCapacityTest1
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INVALIDCAPACITYTEST_0102
      * @tc.desc      : Verify queue with zero capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("invalidCapacityTest1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("invalid_Capacity_Test_static_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = 0;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(String(queue.capacity)).assertEqual('0');
@@ -160,26 +160,26 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_MAXINTTEST_0103
-     * @tc.name      : maxIntTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_MAXINTTEST_0103
      * @tc.desc      : Verify queue with maximum integer capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("maxIntTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("max_Int_Test_static_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<int>(Int.MAX_VALUE);
       expect(queue.capacity).assertEqual(Int.MAX_VALUE);
     });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_OVERFLOWJAVAINTTEST_0104
-     * @tc.name      : overflowJavaIntTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_OVERFLOWJAVAINTTEST_0104
      * @tc.desc      : Verify queue creation with overflow capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("overflowJavaIntTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("overflow_JavaInt_Test_static_0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         new containers.ArrayBlockingQueue<int>(Int.MAX_VALUE + 1);
         expect(false).assertEqual(true);
@@ -190,26 +190,26 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYINITIALIZATIONTEST_0105
-     * @tc.name      : propertyInitializationTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYINITIALIZATIONTEST_0105
      * @tc.desc      : Verify queue property initialization
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("propertyInitializationTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("property_Initialization_Test_static_0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(10);
       expect(String(queue.capacity)).assertEqual('10');
     });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYNEGATIVE_0106
-     * @tc.name      : propertyCapacityNegative
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYNEGATIVE_0106
      * @tc.desc      : Verify queue with negative capacity throws error
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyCapacityNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Negative_Test_static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         const queue = new containers.ArrayBlockingQueue<number>(-1);
         throw new Error('Negative capacity error');
@@ -220,13 +220,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYZERO_0107
-     * @tc.name      : propertyCapacityZero
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYZERO_0107
      * @tc.desc      : Verify queue behavior with zero capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyCapacityZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Zero_Test_static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(0);
       expect(queue.capacity).assertEqual(0);
       try {
@@ -239,13 +239,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTY_CAPACITYSINGLEELEMENT_0108
-     * @tc.name      : propertyCapacitySingleElement
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTY_CAPACITYSINGLEELEMENT_0108
      * @tc.desc      : Verify queue with single element capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyCapacitySingleElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Single_Element_Test_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       expect(String(queue.capacity)).assertEqual('1');
       try {
@@ -258,13 +258,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYMAXVALUE_0109
-     * @tc.name      : propertyCapacityMaxValue
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYMAXVALUE_0109
      * @tc.desc      : Verify queue with maximum integer capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyCapacityMaxValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Max_Value_Test_static_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE);
       expect(queue.capacity).assertEqual(Int.MAX_VALUE);
       try {
@@ -277,13 +277,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYOVERFLOW_0110
-     * @tc.name      : propertyCapacityOverflow
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYOVERFLOW_0110
      * @tc.desc      : Verify queue creation with overflow capacity throws error
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('propertyCapacityOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('property_Capacity_Overflow_Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'propertyCapacityOverflow';
       try {
         const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE + 1);
@@ -296,26 +296,26 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_EMPTYQUEUETEST_0111
-     * @tc.name      : emptyQueueTest
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_EMPTYQUEUETEST_0111
      * @tc.desc      : Verify empty queue size
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("emptyQueueTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("empty_Queue_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(10);
       expect(String(queue.size)).assertEqual('0');
     });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHFILLTEST_0112
-     * @tc.name      : containers.ArrayBlockingQueuePushFillTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHFILLTEST_0112
      * @tc.desc      : Verify blocking behavior when pushing to full queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushFillTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<number>(1);
       queue.push(1);
 
@@ -334,13 +334,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHMANYTEST_0113
-     * @tc.name      : containers.ArrayBlockingQueuePushManyTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHMANYTEST_0113
      * @tc.desc      : Verify pushing multiple values including null and undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushManyTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_PushMany_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
       queue.push("");
       queue.push(null);
@@ -353,13 +353,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHSTRINGTEST_0114
-     * @tc.name      : containers.ArrayBlockingQueuePushStringTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHSTRINGTEST_0114
      * @tc.desc      : Verify pushing and popping string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueuePushStringTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("Array_Blocking_Queue_PushString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const queue = new containers.ArrayBlockingQueue<string>(3);
       queue.push("hello");
       expect(queue.pop()).assertEqual("hello");
@@ -367,7 +367,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBIGINTTEST_0115
-     * @tc.name      : containers.ArrayBlockingQueuePushBigIntTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBIGINTTEST_0115
      * @tc.desc      : Verify pushing and popping bigint values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -382,7 +382,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBOOLEANTEST_0116
-     * @tc.name      : containers.ArrayBlockingQueuePushBooleanTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBOOLEANTEST_0116
      * @tc.desc      : Verify pushing and popping boolean values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -396,7 +396,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHCLASSTEST_0117
-     * @tc.name      : containers.ArrayBlockingQueuePushClassTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHCLASSTEST_0117
      * @tc.desc      : Verify pushing and popping class instances
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -411,7 +411,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0118
-     * @tc.name      : containers.ArrayBlockingQueuePushEmptyTest007
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0118
      * @tc.desc      : Verify pushing single element to empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -425,7 +425,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0119
-     * @tc.name      : containers.ArrayBlockingQueuePushOnlyOneTest008
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0119
      * @tc.desc      : Verify pushing single element to queue with capacity 1
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -439,7 +439,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHTENTEST_0120
-     * @tc.name      : containers.ArrayBlockingQueuePushTenTest009
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHTENTEST_0120
      * @tc.desc      : Verify pushing multiple elements to fill queue capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -458,7 +458,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSPECIALVALUES_0121
-     * @tc.name      : propertyPushSpecialValues
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSPECIALVALUES_0121
      * @tc.desc      : Verify pushing and popping special values (empty string, null, undefined)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -502,7 +502,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHNUMBER_0122
-     * @tc.name      : propertyPushNumber
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHNUMBER_0122
      * @tc.desc      : Verify pushing and popping number values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -521,7 +521,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSTRING_0123
-     * @tc.name      : propertyPushString
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSTRING_0123
      * @tc.desc      : Verify pushing and popping string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -543,7 +543,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBIGINT_0124
-     * @tc.name      : propertyPushBigint
+     * @tc.name      :SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBIGINT_0124
      * @tc.desc      : Verify pushing and popping bigint values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -565,7 +565,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBOOLEAN_0125
-     * @tc.name      : propertyPushBoolean
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBOOLEAN_0125
      * @tc.desc      : Verify pushing and popping boolean values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -587,7 +587,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHARRAY_0126
-     * @tc.name      : propertyPushArray
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHARRAY_0126
      * @tc.desc      : Verify pushing and popping array values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -609,7 +609,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHCLASS_0127
-     * @tc.name      : propertyPushClass
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHCLASS_0127
      * @tc.desc      : Verify pushing and popping class instances
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -631,7 +631,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHOBJECT_0128
-     * @tc.name      : propertyPushObject
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHOBJECT_0128
      * @tc.desc      : Verify pushing and popping object values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -655,7 +655,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0129
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0129
      * @tc.desc      : Verify initial size of empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -668,7 +668,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0130
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0130
      * @tc.desc      : Verify size after pushing single element
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -682,7 +682,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0131
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0131
      * @tc.desc      : Verify size after pushing multiple elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -699,7 +699,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0132
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0132
      * @tc.desc      : Verify size after pushing single element to empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -713,7 +713,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0133
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0133
      * @tc.desc      : Verify size after pushing multiple elements to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -730,7 +730,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0134
-     * @tc.name      : containers.ArrayBlockingQueueWithPushTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0134
      * @tc.desc      : Verify size after filling queue to capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -747,7 +747,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0135
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0135
      * @tc.desc      : Verify popping element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -766,7 +766,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0136
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0136
      * @tc.desc      : Verify popping element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -786,7 +786,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0137
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0137
      * @tc.desc      : Verify popping special values (empty string, null)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -805,7 +805,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0138
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0138
      * @tc.desc      : Verify popping string values including "undefined"
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -822,7 +822,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0139
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0139
      * @tc.desc      : Verify popping single element from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -837,7 +837,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0140
-     * @tc.name      : containers.ArrayBlockingQueueWithPopTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0140
      * @tc.desc      : Verify popping all elements from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -862,7 +862,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0141
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0141
      * @tc.desc      : Verify add operation when queue is full
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -880,7 +880,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0142
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0142
      * @tc.desc      : Verify adding special string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -898,7 +898,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0143
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0143
      * @tc.desc      : Verify adding single element to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -912,7 +912,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0144
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0144
      * @tc.desc      : Verify adding bigint value to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -929,7 +929,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0145
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0145
      * @tc.desc      : Verify adding boolean value to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -945,7 +945,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0146
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0146
      * @tc.desc      : Verify adding array to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -963,7 +963,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0147
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest007
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0147
      * @tc.desc      : Verify adding and popping array from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -984,7 +984,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0148
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest008
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0148
      * @tc.desc      : Verify adding and popping Date object from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1006,7 +1006,7 @@ export default function ArrayBlockingQueuetest() {
 
         /**
          * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
-         * @tc.name      : containers.ArrayBlockingQueueWithAddTest0009
+         * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
          * @tc.desc      : Verify adding object with key-value pair to queue
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1027,7 +1027,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0150
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest0010
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0150
      * @tc.desc      : Verify adding element to zero capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1041,7 +1041,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0151
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest0011
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0151
      * @tc.desc      : Verify adding elements to full queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1057,7 +1057,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0152
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest0012
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0152
      * @tc.desc      : Verify adding multiple elements to queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1074,7 +1074,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0153
-     * @tc.name      : containers.ArrayBlockingQueueWithAddTest0013
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0153
      * @tc.desc      : Verify adding elements to fill queue capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1095,7 +1095,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0154
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0154
      * @tc.desc      : Verify polling from empty zero capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1109,7 +1109,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0155
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0155
      * @tc.desc      : Verify polling from single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1125,7 +1125,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0156
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0156
      * @tc.desc      : Verify polling special string values from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1146,7 +1146,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0157
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0157
      * @tc.desc      : Verify polling and adding elements dynamically
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1165,7 +1165,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0158
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0158
      * @tc.desc      : Verify polling all elements from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1193,7 +1193,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0159
-     * @tc.name      : containers.ArrayBlockingQueueWithPollTest0006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0159
      * @tc.desc      : Verify polling elements in FIFO order
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1212,7 +1212,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_016
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_016
      * @tc.desc      : Verify getting first element from filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1230,7 +1230,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0161
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0161
      * @tc.desc      : Verify getting first element with special string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1248,7 +1248,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0162
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0162
      * @tc.desc      : Verify getting first element from empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1262,7 +1262,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0163
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0163
      * @tc.desc      : Verify getting first element from single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1277,7 +1277,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0164
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0164
      * @tc.desc      : Verify getting first element after adding elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1298,7 +1298,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0165
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0165
      * @tc.desc      : Verify getting first boolean element from queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1314,7 +1314,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0166
-     * @tc.name      : containers.ArrayBlockingQueueWithGetFirstTest0007
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0166
      * @tc.desc      : Verify getting first element after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1336,7 +1336,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0167
-     * @tc.name      : containers.ArrayBlockingQueueWithCapacityTest0001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0167
      * @tc.desc      : Verify zero capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1352,7 +1352,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0168
-     * @tc.name      : containers.ArrayBlockingQueueWithCapacityTest0002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0168
      * @tc.desc      : Verify negative capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1366,7 +1366,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0169
-     * @tc.name      : containers.ArrayBlockingQueueWithCapacityTest0003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0169
      * @tc.desc      : Verify single capacity queue behavior
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1384,7 +1384,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0170
-     * @tc.name      : containers.ArrayBlockingQueueWithRemainingCapacityTest0001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0170
      * @tc.desc      : Verify remaining capacity of full queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1404,7 +1404,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BBASE_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0171
-     * @tc.name      : containers.ArrayBlockingQueueWithRemainingCapacityTest0002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BBASE_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0171
      * @tc.desc      : Verify remaining capacity after adding elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1421,7 +1421,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0172
-     * @tc.name      : containers.ArrayBlockingQueueWithRemainingCapacityTest0003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0172
      * @tc.desc      : Verify remaining capacity changes after operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1439,7 +1439,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0173
-     * @tc.name      : containers.ArrayBlockingQueueWithRemainingCapacityTest0004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0173
      * @tc.desc      : Verify remaining capacity when nearly full
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1459,7 +1459,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0174
-     * @tc.name      : containers.ArrayBlockingQueueRemainingCapacityTenTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0174
      * @tc.desc      : Verify remaining capacity changes in large queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1481,7 +1481,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0175
-     * @tc.name      : containers.ArrayBlockingQueueRemainingCapacityDynamicTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueREMAININGCAPACITYTENTEST_0175
      * @tc.desc      : Verify dynamic remaining capacity changes
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1508,7 +1508,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0176
-     * @tc.name      : containers.ArrayBlockingQueueGetSizeDynamicTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0176
      * @tc.desc      : Verify size after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1527,7 +1527,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0177
-     * @tc.name      : containers.ArrayBlockingQueueGetSizeDynamicTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0177
      * @tc.desc      : Verify size changes with add and poll operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1545,7 +1545,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0178
-     * @tc.name      : containers.ArrayBlockingQueueGetSizeDynamicTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0178
      * @tc.desc      : Verify size changes with push and pop operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1563,7 +1563,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0179
-     * @tc.name      : containers.ArrayBlockingQueueGetSizeOneTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0179
      * @tc.desc      : Verify size changes in single capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1580,7 +1580,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0180
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyTrueTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0180
      * @tc.desc      : Verify isEmpty on empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1594,7 +1594,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0181
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyFalseTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0181
      * @tc.desc      : Verify isEmpty on non-empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1609,7 +1609,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0182
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyChangeTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0182
      * @tc.desc      : Verify isEmpty changes after operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1628,7 +1628,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0183
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyBoundaryTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0183
      * @tc.desc      : Verify isEmpty on single capacity queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1645,7 +1645,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0184
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyMixedTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0184
      * @tc.desc      : Verify isEmpty with mixed operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1664,7 +1664,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0185
-     * @tc.name      : containers.ArrayBlockingQueueIsEmptyConcurrentTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0185
      * @tc.desc      : Verify isEmpty with concurrent operations
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1682,7 +1682,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0186
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0186
      * @tc.desc      : Verify getEnd on filled queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1700,7 +1700,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0187
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0187
      * @tc.desc      : Verify getEnd with special values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1732,7 +1732,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0188
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest003
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0188
      * @tc.desc      : Verify getEnd on empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1747,7 +1747,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0189
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest004
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0189
      * @tc.desc      : Verify getEnd on single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1763,7 +1763,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0190
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest005
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0190
      * @tc.desc      : Verify getEnd on single element queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1779,7 +1779,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0191
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest006
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0191
      * @tc.desc      : Verify getEnd after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1797,7 +1797,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0192
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest007
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0192
      * @tc.desc      : Verify getEnd after filling queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1824,7 +1824,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0193
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest008
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0193
      * @tc.desc      : Verify getEnd with string value
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1840,7 +1840,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0194
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest009
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0194
      * @tc.desc      : Verify getEnd with multiple string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1856,7 +1856,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0195
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest010
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0195
      * @tc.desc      : Verify getEnd with duplicate string values
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1872,7 +1872,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0196
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest011
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0196
      * @tc.desc      : Verify getEnd with MAX_SAFE_INTEGER value
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1887,7 +1887,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0197
-     * @tc.name      : containers.ArrayBlockingQueueGetEndConcurrentTest012
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0197
      * @tc.desc      : Verify getEnd with MIN_SAFE_INTEGER value
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1902,7 +1902,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0198
-     * @tc.name      : containers.ArrayBlockingQueueConstructorConcurrentTest001
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0198
      * @tc.desc      : Verify constructor with empty array and zero capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1918,7 +1918,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0199
-     * @tc.name      : containers.ArrayBlockingQueueConstructorConcurrentTest002
+     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0199
      * @tc.desc      : Verify constructor with empty array and single capacity
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1934,7 +1934,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_200
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest001
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_200
      * @tc.desc      : The test uses an empty array to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1956,7 +1956,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_201
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest002
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_201
      * @tc.desc      : The test uses an empty array to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1978,7 +1978,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest003
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
      * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2003,7 +2003,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_203
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest004
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_203
      * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2028,7 +2028,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_204
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest005
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_204
      * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2053,7 +2053,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_205
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest006
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_205
      * @tc.desc      : The test initializes the queue with a collection containing one element (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2077,7 +2077,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_206
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest007
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_206
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2098,7 +2098,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_207
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest008
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_207
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2119,7 +2119,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_208
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest009
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_208
      * @tc.desc      : The test uses an array with 1000 elements to initialize the queue (capacity = 1000)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2139,7 +2139,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_209
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest010
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_209
      * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2162,7 +2162,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_210
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest011
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_210
      * @tc.desc      : The test uses an empty set to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2185,7 +2185,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_211
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest012
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_211
      * @tc.desc      : The test uses null as the iterable object to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2207,7 +2207,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_212
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest013
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_212
      * @tc.desc      : The test uses undefined as the iterable object to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2229,7 +2229,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_213
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest014
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_213
      * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2251,7 +2251,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_214
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTes015
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_214
      * @tc.desc      : The test uses an array containing null/undefined to initialize the queue (capacity = 1)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2273,7 +2273,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_215
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest016
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_215
      * @tc.desc      : Tests initializing the queue using an iterable object with Int.MAX_VALUE elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2296,7 +2296,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_216
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest017
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_216
      * @tc.desc      : To test the use of Map to initialize the queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2320,7 +2320,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_217
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest018
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_217
      * @tc.desc      : To test initializing queues using nested arrays
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2345,7 +2345,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_218
-     * @tc.name: containers.ArrayBlockingQueuePerformanceTest001
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_218
      * @tc.desc: 10 concurrent operations simultaneously add elements to the container.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2367,7 +2367,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_219
-     * @tc.name: containers.ArrayBlockingQueuePerformanceTest002
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_219
      * @tc.desc: Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2395,7 +2395,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_220
-     * @tc.name: containers.ArrayBlockingQueuePerformanceTest003
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_220
      * @tc.desc: Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2423,7 +2423,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_221
-     * @tc.name: containers.ArrayBlockingQueuePerformanceTest004
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_221
      * @tc.desc: Push 100 data, poll 100 data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2446,7 +2446,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_222
-     * @tc.name: containers.ArrayBlockingQueuePerformanceTest005
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueuePerformanceTest_222
      * @tc.desc: add 100 pieces of data, pop 100 pieces of data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2469,7 +2469,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_223
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest001
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_223
      * @tc.desc: The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2495,7 +2495,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_224
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest002
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_224
      * @tc.desc: Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2521,7 +2521,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_225
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest003
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_225
      * @tc.desc: Multi-threaded operation. Thread A inserts data, and thread B takes out data.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2542,7 +2542,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_226
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest004
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_226
      * @tc.desc: Threads add elements simultaneously to verify the thread safety of the queue.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2563,7 +2563,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_227
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest005
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_227
      * @tc.desc: Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2589,7 +2589,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_228
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest006
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_228
      * @tc.desc: 10 threads at the same time: loop 1000 times, after add getFirst, isEmpty, get size, push, pop, remove, remainingCapacity combined call
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2617,7 +2617,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_229
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest007
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_229
      * @tc.desc: 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2645,7 +2645,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_230
-     * @tc.name: containers.ArrayBlockingQueueAsyncTest008
+     * @tc.name: SUB_COMMONLIBRARY_ETSUTILS_containers.ArrayBlockingQueueAsyncTest_230
      * @tc.desc: 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -2673,7 +2673,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest001
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2695,7 +2695,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest020
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2717,7 +2717,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_234
-     * @tc.name      : containers.ArrayBlockingQueueConstructorWithTest021
+     * @tc.name      : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_234
      * @tc.desc      : Blocks until the queue has an element to take out
      * @tc.size      : MediumTest
      * @tc.type      : Function
