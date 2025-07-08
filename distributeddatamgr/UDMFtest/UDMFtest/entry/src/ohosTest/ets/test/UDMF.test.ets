@@ -3931,7 +3931,7 @@ export default function UDMFApiTest() {
 
      /**
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9360
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370
      * @tc.desc      : Test UDMF creating a unifieddata with a text record.
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -3957,7 +3957,7 @@ export default function UDMFApiTest() {
       let record = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
       unifiedData.addRecord(record);
       await unifiedDataChannel.insertData(options, unifiedData).then(async (data) => {
-      console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9330 " + data);
+      console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370 " + data);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.MENU,
           key:data,
@@ -3982,14 +3982,14 @@ export default function UDMFApiTest() {
           }
           await unifiedDataChannel.deleteData(options1);
         }).catch((err: BusinessError) => {
-          console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9360 " + err.code + err.message);
+          console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370 " + err.code + err.message);
           expect().assertFail();
         })
       }).catch((err: BusinessError) => {
-        console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9360 " + err.code + err.message);
+        console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370 " + err.code + err.message);
         expect().assertFail();
       });
-      console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9360 end");
+      console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9370 end");
       done();
     })
 
