@@ -125,41 +125,41 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_001
-     * @tc.name: concurrentSetConstructorTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__001
+     * @tc.name: concurrent_Set_Constructor_Test_static_001
      * @tc.desc: Initialize a ConcurrentSet using a parameterless initializer.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_002
-     * @tc.name: concurrentSetConstructorTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__002
+     * @tc.name: concurrent_Set_Constructor_Test_static_002
      * @tc.desc: Initialize the concurrentSet with an empty set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(set);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_003
-     * @tc.name: concurrentSetConstructorTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__003
+     * @tc.name: concurrent_Set_Constructor_Test_static_003
      * @tc.desc: Initialize a concurrentSet with a set that contains a single element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       set.add(0);
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(set);
@@ -167,14 +167,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_004
-     * @tc.name: concurrentSetConstructorTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__004
+     * @tc.name: concurrent_Set_Constructor_Test_static_004
      * @tc.desc: Initialize a concurrentSet with a set containing one thousand elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = 1000;
       for (let i: int = 0; i < totalCount; i++) {
@@ -185,28 +185,28 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_005
-     * @tc.name: concurrentSetConstructorTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__005
+     * @tc.name: concurrent_Set_Constructor_Test_static_005
      * @tc.desc: Initialize a ConcurrentSet with an empty array.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<number> = new Array<number>();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(arrayTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_006
-     * @tc.name: concurrentSetConstructorTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__006
+     * @tc.name: concurrent_Set_Constructor_Test_static_006
      * @tc.desc: Initialize a ConcurrentSet with an array containing a single element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<number> = new Array<number>();
       arrayTest.push(0);
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(arrayTest);
@@ -214,14 +214,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_007
-     * @tc.name: concurrentSetConstructorTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__007
+     * @tc.name: concurrent_Set_Constructor_Test_static_007
      * @tc.desc: Initialize the concurrentSet with an empty tuple.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let str = new Array<[number, number]>();
       let arrayLike = str as ArrayLike<[number, number]>;
       let concurrentSet = new containers.ConcurrentSet<[number, number]>(arrayLike);
@@ -229,14 +229,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_008
-     * @tc.name: concurrentSetConstructorTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__008
+     * @tc.name: concurrent_Set_Constructor_Test_static_008
      * @tc.desc: Initialize a ConcurrentSet with a tuple containing a single element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = new Array<[number, number]>(1);
       str[0] = [0, 1];
       const arrayLike = str as ArrayLike<[number, number]>;
@@ -245,14 +245,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_009
-     * @tc.name: concurrentSetConstructorTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__009
+     * @tc.name: concurrent_Set_Constructor_Test_static_009
      * @tc.desc: Initialize a concurrentSet using two tuple.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = new Array<[number, number, number]>();
       str[0] = [0, 1, 2];
       str[1] = [3, 4, 5];
@@ -262,42 +262,42 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_010
-     * @tc.name: concurrentSetConstructorTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__010
+     * @tc.name: concurrent_Set_Constructor_Test_static_010
      * @tc.desc: Initialize the `concurrentSet` with an empty string.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const stringTest: string = '';
       const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(stringTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_011
-     * @tc.name: concurrentSetConstructorTest011
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__011
+     * @tc.name: concurrent_Set_Constructor_Test_static_011
      * @tc.desc: Initialize a ConcurrentSet with a non-empty string.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const stringTest: string = 'abc';
       const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(stringTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('3');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_012
-     * @tc.name: concurrentSetConstructorTest012
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__012
+     * @tc.name: concurrent_Set_Constructor_Test_static_012
      * @tc.desc: Initialize a concurrentSet using an array-like object with keys and values.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrKeys: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const arrValues: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
       const array = Array<[number, string]>(10);
@@ -311,14 +311,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_013
-     * @tc.name: concurrentSetConstructorTest013
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__013
+     * @tc.name: concurrent_Set_Constructor_Test_static_013
      * @tc.desc: Initialize the concurrentSet with an empty iteration of the keys of a set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const iter = set.keys();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
@@ -326,14 +326,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_014
-     * @tc.name: concurrentSetConstructorTest014
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__014
+     * @tc.name: concurrent_Set_Constructor_Test_static_014
      * @tc.desc: Initialize a concurrentSet with an empty iteration of the values from a set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const iter = set.values();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
@@ -341,14 +341,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_015
-     * @tc.name: concurrentSetConstructorTest015
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__015
+     * @tc.name: concurrent_Set_Constructor_Test_static_015
      * @tc.desc: Initialize a concurrentSet with an empty iteration of entries from a set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const iter = set.entries();
       const concurrentSet: containers.ConcurrentSet<[Double, Double]> = new containers.ConcurrentSet<[Double, Double]>(iter);
@@ -356,14 +356,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_016
-     * @tc.name: concurrentSetConstructorTest016
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__016
+     * @tc.name: concurrent_Set_Constructor_Test_static_016
      * @tc.desc: Initialize a ConcurrentSet with an empty iteration of the values of an Array.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<number> = new Array<number>();
       const iter = array.values();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
@@ -371,14 +371,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_017
-     * @tc.name: concurrentSetConstructorTest017
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__017
+     * @tc.name: concurrent_Set_Constructor_Test_static_017
      * @tc.desc: Initialize a concurrentSet by iterating over the values of a set that contains only one element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       set.add(0);
       const iter = set.values();
@@ -390,14 +390,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_018
-     * @tc.name: concurrentSetConstructorTest018
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__018
+     * @tc.name: concurrent_Set_Constructor_Test_static_018
      * @tc.desc: Initialize a concurrentSet by iterating over the keys of a set that contains only one element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       set.add(0);
       const iter = set.keys();
@@ -409,14 +409,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_019
-     * @tc.name: concurrentSetConstructorTest019
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__019
+     * @tc.name: concurrent_Set_Constructor_Test_static_019
      * @tc.desc: Initialize a concurrentSet by iterating over the values of a array that contains only one element.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<number> = new Array<number>();
       array.push(0);
       const iter = array.values();
@@ -428,14 +428,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_020
-     * @tc.name: concurrentSetConstructorTest020
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__020
+     * @tc.name: concurrent_Set_Constructor_Test_static_020
      * @tc.desc: Initialize a concurrentSet by iterating over the keys of a set containing one thousand elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let set: Set<number> = new Set<number>();
       const totalCount: number = 1000;
       for (let i: int = 0; i < totalCount; i++) {
@@ -447,14 +447,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_021
-     * @tc.name: concurrentSetConstructorTest021
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__021
+     * @tc.name: concurrent_Set_Constructor_Test_static_021
      * @tc.desc: Initialize a concurrentSet by iterating over the values of a set containing one thousand elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = 1000;
       for (let i: int = 0; i < totalCount; i++) {
@@ -466,14 +466,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_022
-     * @tc.name: concurrentSetConstructorTest022
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__022
+     * @tc.name: concurrent_Set_Constructor_Test_static_022
      * @tc.desc: Initialize a concurrentSet by iterating over the values of a array containing one thousand elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<number> = new Array<number>();
       const totalCount: number = 1000;
       for (let i: int = 0; i < totalCount; i++) {
@@ -485,14 +485,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_023
-     * @tc.name: concurrentSetConstructorTest023
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__023
+     * @tc.name: concurrent_Set_Constructor_Test_static_023
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with 10 null elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<null> = new Array<null>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -504,14 +504,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_024
-     * @tc.name: concurrentSetConstructorTest024
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__024
+     * @tc.name: concurrent_Set_Constructor_Test_static_024
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of a Set that contains 10 elements all being null.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<null> = new Set<null>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -523,14 +523,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_025
-     * @tc.name: concurrentSetConstructorTest025
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__025
+     * @tc.name: concurrent_Set_Constructor_Test_static_025
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a Set that contains 10 elements all being null.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<null> = new Set<null>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -542,14 +542,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_026
-     * @tc.name: concurrentSetConstructorTest026
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__026
+     * @tc.name: concurrent_Set_Constructor_Test_static_026
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a Set that contains 11 elements with values of either null or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<null | number> = new Set<null | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -564,14 +564,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_027
-     * @tc.name: concurrentSetConstructorTest027
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__027
+     * @tc.name: concurrent_Set_Constructor_Test_static_027
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of a Set that contains 11 elements with values of either null or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<null | number> = new Set<null | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -586,14 +586,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_028
-     * @tc.name: concurrentSetConstructorTest028
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__028
+     * @tc.name: concurrent_Set_Constructor_Test_static_028
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a Array that contains 11 elements with values of either null or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<null | number> = new Array<null | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -608,8 +608,8 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_029
-     * @tc.name: concurrentSetConstructorTest029
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__029
+     * @tc.name: concurrent_Set_Constructor_Test_static_029
      * @tc.desc: Initialize a concurrentSet by iterating over the values of an array that has 10 elements all with the value of undefined.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -627,14 +627,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_030
-     * @tc.name: concurrentSetConstructorTest030
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__030
+     * @tc.name: concurrent_Set_Constructor_Test_static_030
      * @tc.desc: Initialize a concurrentSet by iterating over the keys of an set that has 10 elements all with the value of undefined.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<undefined> = new Set<undefined>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -646,14 +646,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_031
-     * @tc.name: concurrentSetConstructorTest031
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__031
+     * @tc.name: concurrent_Set_Constructor_Test_static_031
      * @tc.desc: Initialize a concurrentSet by iterating over the values of an set that has one elements with the value of undefined.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<undefined> = new Set<undefined>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -665,14 +665,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_032
-     * @tc.name: concurrentSetConstructorTest032
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__032
+     * @tc.name: concurrent_Set_Constructor_Test_static_032
      * @tc.desc: Initialize a concurrentSet using the values iterator of a Set that contains 11 elements, where the element values are either undefined or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<undefined | number> = new Set<undefined | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -687,14 +687,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_033
-     * @tc.name: concurrentSetConstructorTest033
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__033
+     * @tc.name: concurrent_Set_Constructor_Test_static_033
      * @tc.desc: Initialize a concurrentSet using the values iterator of a Set that contains 11 elements, where the element values are either undefined or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<undefined | number> = new Set<undefined | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -709,14 +709,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_034
-     * @tc.name: concurrentSetConstructorTest034
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__034
+     * @tc.name: concurrent_Set_Constructor_Test_static_034
      * @tc.desc: Initialize a concurrentSet using the values iterator of a Array that contains 20 elements, where the element values are either undefined or numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<undefined | number> = new Array<undefined | number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -731,14 +731,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_035
-     * @tc.name: concurrentSetConstructorTest035
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__035
+     * @tc.name: concurrent_Set_Constructor_Test_static_035
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with Integer.MAX_VALUE elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrentSetConstructorTest035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("concurrent_Set_Constructor_Test_static_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<number> = new Array<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {
@@ -750,14 +750,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_036
-     * @tc.name: concurrentSetConstructorTest036
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__036
+     * @tc.name: concurrent_Set_Constructor_Test_static_036
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an set with Integer.MAX_VALUE elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrentSetConstructorTest036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("concurrent_Set_Constructor_Test_static_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {
@@ -769,14 +769,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_037
-     * @tc.name: concurrentSetConstructorTest037
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__037
+     * @tc.name: concurrent_Set_Constructor_Test_static_037
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of an set with Integer.MAX_VALUE elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrentSetConstructorTest037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("concurrent_Set_Constructor_Test_static_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {
@@ -788,14 +788,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_038
-     * @tc.name: concurrentSetConstructorTest038
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__038
+     * @tc.name: concurrent_Set_Constructor_Test_static_038
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of a Map.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: Map<string, number> = new Map<string, number>();
       map.set('zero', 0);
       map.set('one', 1);
@@ -818,14 +818,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_039
-     * @tc.name: concurrentSetConstructorTest039
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__039
+     * @tc.name: concurrent_Set_Constructor_Test_static_039
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a Map.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: Map<string, number> = new Map<string, number>();
       map.set('zero', 0);
       map.set('one', 1);
@@ -848,14 +848,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_040
-     * @tc.name: concurrentSetConstructorTest040
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__040
+     * @tc.name: concurrent_Set_Constructor_Test_static_040
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of a concurrentHashMap.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: containers.ConcurrentHashMap<string, number> = new containers.ConcurrentHashMap<string, number>();
       map.set('zero', 0);
       map.set('one', 1);
@@ -878,14 +878,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_041
-     * @tc.name: concurrentSetConstructorTest041
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__041
+     * @tc.name: concurrent_Set_Constructor_Test_static_041
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a concurrentHashMap.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: containers.ConcurrentHashMap<string, number> = new containers.ConcurrentHashMap<string, number>();
       map.set('zero', 0);
       map.set('one', 1);
@@ -910,28 +910,28 @@ export default function ConcurrentSetTest() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_043
-     * @tc.name: concurrentSetConstructorTest043
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__043
+     * @tc.name: concurrent_Set_Constructor_Test_static_043
      * @tc.desc: Initialize a concurrentSet with a nested array containing 0 elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(arrayTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_044
-     * @tc.name: concurrentSetConstructorTest044
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__044
+     * @tc.name: concurrent_Set_Constructor_Test_static_044
      * @tc.desc: Initialize a concurrentSet with a nested array containing one elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       arrayTest.push(new Array<Array<number>>(new Array<number>(0)));
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(arrayTest);
@@ -939,14 +939,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_045
-     * @tc.name: concurrentSetConstructorTest045
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__045
+     * @tc.name: concurrent_Set_Constructor_Test_static_045
      * @tc.desc: Initialize a concurrentSet with a nested array containing 1000 elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const totalCount: number = 1000;
       for (let index = 0; index < totalCount; index++) {
@@ -957,14 +957,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_046
-     * @tc.name: concurrentSetConstructorTest046
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__046
+     * @tc.name: concurrent_Set_Constructor_Test_static_046
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a nested array with 0 elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const iter = arrayTest.values();
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(iter);
@@ -972,14 +972,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_047
-     * @tc.name: concurrentSetConstructorTest047
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__047
+     * @tc.name: concurrent_Set_Constructor_Test_static_047
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a nested array with 1 elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       arrayTest.push(new Array<Array<number>>(new Array<number>(0)));
       const iter = arrayTest.values();
@@ -988,14 +988,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetConstructorTest_048
-     * @tc.name: concurrentSetConstructorTest048
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__048
+     * @tc.name: concurrent_Set_Constructor_Test_static_048
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of a nested array with 1000 elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetConstructorTest048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const totalCount: number = 1000;
       for (let index = 0; index < totalCount; index++) {
@@ -1007,14 +1007,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_049
-     * @tc.name: concurrentSetAddTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__049
+     * @tc.name: concurrent_Set_Add_Test_static_001
      * @tc.desc: Add a null element to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
       concurrentSet.add(null);
       concurrentSet.add(null);
@@ -1022,14 +1022,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_050
-     * @tc.name: concurrentSetAddTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__050
+     * @tc.name: concurrent_Set_Add_Test_static_002
      * @tc.desc: Add a undefined element to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
       concurrentSet.add(undefined);
       concurrentSet.add(undefined);
@@ -1037,14 +1037,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_051
-     * @tc.name: concurrentSetAddTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__051
+     * @tc.name: concurrent_Set_Add_Test_static_003
      * @tc.desc: Add a object element to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<object> = new containers.ConcurrentSet<object>();
       const obj = new Object();
       concurrentSet.add(obj);
@@ -1053,14 +1053,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_052
-     * @tc.name: concurrentSetAddTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__052
+     * @tc.name: concurrent_Set_Add_Test_static_004
      * @tc.desc: Add elements of mixed types to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number | undefined | object | null> = new containers.ConcurrentSet<number | undefined | object | null>();
       const obj = new Object();
       concurrentSet.add(obj);
@@ -1075,14 +1075,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_053
-     * @tc.name: concurrentSetAddTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__053
+     * @tc.name: concurrent_Set_Add_Test_static_005
      * @tc.desc: Add elements of the numeric type to the concurrentSet
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(42);
       concurrentSet.add(3.14);
@@ -1091,14 +1091,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_054
-     * @tc.name: concurrentSetAddTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__054
+     * @tc.name: concurrent_Set_Add_Test_static_006
      * @tc.desc: Add elements of ordinary numeric types and boxed numeric types to the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       concurrentSet.add(42);
       concurrentSet.add(3.14);
@@ -1109,14 +1109,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_055
-     * @tc.name: concurrentSetAddTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__055
+     * @tc.name: concurrent_Set_Add_Test_static_007
      * @tc.desc: Add elements of ordinary string type and boxed string type to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<String> = new containers.ConcurrentSet<String>();
       concurrentSet.add("hello");
       concurrentSet.add("world");
@@ -1126,14 +1126,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_056
-     * @tc.name: concurrentSetAddTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__056
+     * @tc.name: concurrent_Set_Add_Test_static_008
      * @tc.desc: Add elements of the BigInt type to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<BigInt> = new containers.ConcurrentSet<BigInt>();
       concurrentSet.add(BigInt(123));
       concurrentSet.add(BigInt('567'));
@@ -1142,14 +1142,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_057
-     * @tc.name: concurrentSetAddTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__057
+     * @tc.name: concurrent_Set_Add_Test_static_009
      * @tc.desc: Add elements of the Boolean type to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Boolean> = new containers.ConcurrentSet<Boolean>();
       concurrentSet.add(new Boolean(true));
       concurrentSet.add(false);
@@ -1157,14 +1157,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_058
-     * @tc.name: concurrentSetAddTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__058
+     * @tc.name: concurrent_Set_Add_Test_static_010
      * @tc.desc: Add a class element to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Person> = new containers.ConcurrentSet<Person>();
       concurrentSet.add(new Person('aimi', 15));
       concurrentSet.add(new Person('kimi', 13));
@@ -1172,14 +1172,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_059
-     * @tc.name: concurrentSetAddTest011
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__059
+     * @tc.name: concurrent_Set_Add_Test_static_011
      * @tc.desc: Add a array element to the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Array<number>> = new containers.ConcurrentSet<Array<number>>();
       concurrentSet.add(new Array<number>(15, 16));
       concurrentSet.add(new Array<number>(20, 21));
@@ -1187,14 +1187,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_060
-     * @tc.name: concurrentSetAddTest012
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__060
+     * @tc.name: concurrent_Set_Add_Test_static_012
      * @tc.desc: Add multiple elements of type Object to the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Object> = new containers.ConcurrentSet<Object>();
       concurrentSet.add(new Object());
       concurrentSet.add(new Object());
@@ -1202,14 +1202,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_061
-     * @tc.name: concurrentSetAddTest013
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__061
+     * @tc.name: concurrent_Set_Add_Test_static_013
      * @tc.desc: Add multiple types of elements to the concurrentSet, and some elements are added repeatedly.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number | null | undefined | Person> = new containers.ConcurrentSet<number | null | undefined | Person>();
       concurrentSet.add(1);
       concurrentSet.add(2);
@@ -1231,14 +1231,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_062
-     * @tc.name: concurrentSetAddTest014
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__062
+     * @tc.name: concurrent_Set_Add_Test_static_014
      * @tc.desc: After clearing all elements of a non-empty set, add elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -1255,14 +1255,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_063
-     * @tc.name: concurrentSetAddTest015
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__063
+     * @tc.name: concurrent_Set_Add_Test_static_015
      * @tc.desc: A non-empty set deletes all elements and then adds elements after deletion.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
@@ -1281,14 +1281,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAddTest_064
-     * @tc.name: concurrentSetAddTest016
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__064
+     * @tc.name: concurrent_Set_Add_Test_static_016
      * @tc.desc: Insert 100 pieces of data every 10 milliseconds and repeat this operation 100 times.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAddTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Add_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       let insertCount: Number = 0;
       let intervalId: Number;
@@ -1309,14 +1309,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_065
-     * @tc.name: concurrentSetDeleteTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__065
+     * @tc.name: concurrent_Set_Delete_Test_static_001
      * @tc.desc: Remove null from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
       concurrentSet.add(null);
       concurrentSet.add(null);
@@ -1328,14 +1328,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_066
-     * @tc.name: concurrentSetDeleteTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__066
+     * @tc.name: concurrent_Set_Delete_Test_static_002
      * @tc.desc: Remove undefined from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
       concurrentSet.add(undefined);
       concurrentSet.add(undefined);
@@ -1347,14 +1347,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_067
-     * @tc.name: concurrentSetDeleteTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__067
+     * @tc.name: concurrent_Set_Delete_Test_static_003
      * @tc.desc: Remove object from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Object> = new containers.ConcurrentSet<Object>();
       const obj: Object = new Object();
       const object2: Object = new Object();
@@ -1368,14 +1368,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_068
-     * @tc.name: concurrentSetDeleteTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__068
+     * @tc.name: concurrent_Set_Delete_Test_static_004
      * @tc.desc: Remove BigInt from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<BigInt> = new containers.ConcurrentSet<BigInt>();
       const bigInt: BigInt = BigInt(123);
       const bigInt2: BigInt = 456n;
@@ -1389,14 +1389,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_069
-     * @tc.name: concurrentSetDeleteTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__069
+     * @tc.name: concurrent_Set_Delete_Test_static_005
      * @tc.desc: Remove string from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<String> = new containers.ConcurrentSet<String>();
       const string: String = new String("123");
       const string2: String = "456";
@@ -1410,14 +1410,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_070
-     * @tc.name: concurrentSetDeleteTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__070
+     * @tc.name: concurrent_Set_Delete_Test_static_006
      * @tc.desc: Remove boolean from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Boolean> = new containers.ConcurrentSet<Boolean>();
       const boolean1: Boolean = new Boolean(false);
       const boolean2: Boolean = new Boolean(true);
@@ -1431,14 +1431,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_071
-     * @tc.name: concurrentSetDeleteTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__071
+     * @tc.name: concurrent_Set_Delete_Test_static_007
      * @tc.desc: Remove class from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Person> = new containers.ConcurrentSet<Person>();
       const person: Person = new Person('kimi', 13);
       const person2: Person = new Person('kimi', 13);
@@ -1452,14 +1452,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_072
-     * @tc.name: concurrentSetDeleteTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__072
+     * @tc.name: concurrent_Set_Delete_Test_static_008
      * @tc.desc: Remove array from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Array<number>> = new containers.ConcurrentSet<Array<number>>();
       const array: Array<number> = new Array<number>();
       array.push(0);
@@ -1475,14 +1475,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_073
-     * @tc.name: concurrentSetDeleteTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__073
+     * @tc.name: concurrent_Set_Delete_Test_static_009
      * @tc.desc: Remove number from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       const num: Number = new Number(10);
       const number2: Number = new Number(11);
@@ -1496,14 +1496,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_074
-     * @tc.name: concurrentSetDeleteTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__074
+     * @tc.name: concurrent_Set_Delete_Test_static_010
      * @tc.desc: Delete a non-existent element from the `concurrentSet`.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const num: number = 10;
       concurrentSet.add(num);
@@ -1515,14 +1515,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_075
-     * @tc.name: concurrentSetDeleteTest011
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__075
+     * @tc.name: concurrent_Set_Delete_Test_static_011
      * @tc.desc: Remove the set that has only one element which is null from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
       concurrentSet.add(null);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
@@ -1533,14 +1533,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_076
-     * @tc.name: concurrentSetDeleteTest012
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__076
+     * @tc.name: concurrent_Set_Delete_Test_static_012
      * @tc.desc: Remove the set that has only one element which is undefined from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
       concurrentSet.add(undefined);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
@@ -1551,14 +1551,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_077
-     * @tc.name: concurrentSetDeleteTest013
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__077
+     * @tc.name: concurrent_Set_Delete_Test_static_013
      * @tc.desc: Remove the set that has only one element which is object from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Object> = new containers.ConcurrentSet<Object>();
       const obj: Object = new Object();
       concurrentSet.add(obj);
@@ -1570,14 +1570,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_078
-     * @tc.name: concurrentSetDeleteTest014
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__078
+     * @tc.name: concurrent_Set_Delete_Test_static_014
      * @tc.desc: Remove the set that has only one element which is bigInt from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<BigInt> = new containers.ConcurrentSet<BigInt>();
       const bigInt: BigInt = BigInt(123);
       concurrentSet.add(bigInt);
@@ -1589,14 +1589,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_079
-     * @tc.name: concurrentSetDeleteTest015
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__079
+     * @tc.name: concurrent_Set_Delete_Test_static_015
      * @tc.desc: Remove the set that has only one element which is string from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<String> = new containers.ConcurrentSet<String>();
       const string: String = new String("123");
       concurrentSet.add(string);
@@ -1608,14 +1608,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_080
-     * @tc.name: concurrentSetDeleteTest016
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__080
+     * @tc.name: concurrent_Set_Delete_Test_static_016
      * @tc.desc: Remove the set that has only one element which is boolean from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Boolean> = new containers.ConcurrentSet<Boolean>();
       const boolean1: Boolean = new Boolean(false);
       concurrentSet.add(boolean1);
@@ -1627,14 +1627,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_081
-     * @tc.name: concurrentSetDeleteTest017
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__081
+     * @tc.name: concurrent_Set_Delete_Test_static_017
      * @tc.desc: Remove the set that has only one element which is class from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Person> = new containers.ConcurrentSet<Person>();
       const person: Person = new Person('kimi', 13);
       concurrentSet.add(person);
@@ -1646,14 +1646,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_082
-     * @tc.name: concurrentSetDeleteTest018
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__082
+     * @tc.name: concurrent_Set_Delete_Test_static_018
      * @tc.desc: Remove the set that has only one element which is array from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Array<number>> = new containers.ConcurrentSet<Array<number>>();
       const array: Array<number> = new Array<number>();
       array.push(0);
@@ -1666,14 +1666,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetDeleteTest_083
-     * @tc.name: concurrentSetDeleteTest019
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__083
+     * @tc.name: concurrent_Set_Delete_Test_static_019
      * @tc.desc: Remove the set that has only one element which is number from the concurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetDeleteTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Delete_Test_static_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       const num: Number = new Number(10);
       concurrentSet.add(num);
@@ -1685,14 +1685,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_084
-     * @tc.name: concurrentSetHasTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__084
+     * @tc.name: concurrent_Set_Has_Test_static_001
      * @tc.desc: Determine whether there is a null value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
       concurrentSet.add(null);
       concurrentSet.add(null);
@@ -1701,14 +1701,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_085
-     * @tc.name: concurrentSetHasTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__085
+     * @tc.name: concurrent_Set_Has_Test_static_002
      * @tc.desc: Determine whether there is a undefined value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
       concurrentSet.add(undefined);
       concurrentSet.add(undefined);
@@ -1717,14 +1717,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_086
-     * @tc.name: concurrentSetHasTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__086
+     * @tc.name: concurrent_Set_Has_Test_static_003
      * @tc.desc: Determine whether there is a object value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Object> = new containers.ConcurrentSet<Object>();
       const obj: Object = new Object();
       const object2: Object = new Object();
@@ -1736,14 +1736,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_087
-     * @tc.name: concurrentSetHasTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__087
+     * @tc.name: concurrent_Set_Has_Test_static_004
      * @tc.desc: Determine whether there is a bigInt value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<BigInt> = new containers.ConcurrentSet<BigInt>();
       const bigInt: BigInt = BigInt(123);
       const bigInt2: BigInt = 456n;
@@ -1755,14 +1755,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_088
-     * @tc.name: concurrentSetHasTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__088
+     * @tc.name: concurrent_Set_Has_Test_static_005
      * @tc.desc: Determine whether there is a string value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<String> = new containers.ConcurrentSet<String>();
       const string: String = new String("123");
       const string2: String = "456";
@@ -1774,14 +1774,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_089
-     * @tc.name: concurrentSetHasTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__089
+     * @tc.name: concurrent_Set_Has_Test_static_006
      * @tc.desc: Determine whether there is a boolean value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Boolean> = new containers.ConcurrentSet<Boolean>();
       const boolean1: Boolean = new Boolean(false);
       const boolean2: Boolean = new Boolean(true);
@@ -1793,14 +1793,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_090
-     * @tc.name: concurrentSetHasTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__090
+     * @tc.name: concurrent_Set_Has_Test_static_007
      * @tc.desc: Determine whether there is a class value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Person> = new containers.ConcurrentSet<Person>();
       const person: Person = new Person('kimi', 13);
       const person2: Person = new Person('kimi', 13);
@@ -1812,14 +1812,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_091
-     * @tc.name: concurrentSetHasTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__091
+     * @tc.name: concurrent_Set_Has_Test_static_008
      * @tc.desc: Determine whether there is a array value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Array<number>> = new containers.ConcurrentSet<Array<number>>();
       const array: Array<number> = new Array<number>();
       array.push(0);
@@ -1833,14 +1833,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetHasTest_092
-     * @tc.name: concurrentSetHasTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__092
+     * @tc.name: concurrent_Set_Has_Test_static_009
      * @tc.desc: Determine whether there is a number value in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetHasTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Has_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<Number> = new containers.ConcurrentSet<Number>();
       const num: Number = new Number(10);
       const number2: Number = new Number(11);
@@ -1852,14 +1852,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetClearAndSizeTest_093
-     * @tc.name: concurrentSetClearAndSizeTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__093
+     * @tc.name: concurrent_Set_Clear_And_Size_Test_static_001
      * @tc.desc: The concurrentSet element is empty.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetClearAndSizeTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Clear_And_Size_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
       concurrentSet.clear();
@@ -1867,14 +1867,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetClearAndSizeTest_094
-     * @tc.name: concurrentSetClearAndSizeTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__094
+     * @tc.name: concurrent_Set_Clear_And_Size_Test_static_002
      * @tc.desc: There is one element in the concurrent set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetClearAndSizeTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Clear_And_Size_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(0);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
@@ -1883,14 +1883,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetClearAndSizeTest_095
-     * @tc.name: concurrentSetClearAndSizeTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__095
+     * @tc.name: concurrent_Set_Clear_And_Size_Test_static_003
      * @tc.desc: There are multiple elements in the ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetClearAndSizeTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Clear_And_Size_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(0);
       concurrentSet.add(1);
@@ -1900,14 +1900,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetClearAndSizeTest_096
-     * @tc.name: concurrentSetClearAndSizeTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Clear_And_Size_Test_static__096
+     * @tc.name: concurrent_Set_Clear_And_Size_Test_static_004
      * @tc.desc: Repeatedly add, clear, and remove elements from the `concurrentSet`.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetClearAndSizeTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Clear_And_Size_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(0);
       concurrentSet.add(1);
@@ -1937,27 +1937,27 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetToStringTest_097
-     * @tc.name: concurrentSetToStringTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__097
+     * @tc.name: concurrent_Set_ToString_Test_static_001
      * @tc.desc: Test the toString method when the concurrentSet is empty.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetToStringTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ToString_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       expect(concurrentSet.toString()).assertEqual("ConcurrentSet[]");
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetToStringTest_098
-     * @tc.name: concurrentSetToStringTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__098
+     * @tc.name: concurrent_Set_ToString_Test_static_002
      * @tc.desc: Test of the toString method when the elements of concurrentSet are numbers.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetToStringTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ToString_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(0);
       concurrentSet.add(1);
@@ -1966,14 +1966,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetToStringTest_099
-     * @tc.name: concurrentSetToStringTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__099
+     * @tc.name: concurrent_Set_ToString_Test_static_003
      * @tc.desc: Test of the toString method when the elements of concurrentSet are boolean.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetToStringTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ToString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<boolean> = new containers.ConcurrentSet<boolean>();
       concurrentSet.add(true);
       concurrentSet.add(false);
@@ -1981,14 +1981,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetToStringTest_100
-     * @tc.name: concurrentSetToStringTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ToString_Test_static__100
+     * @tc.name: concurrent_Set_ToString_Test_static_004
      * @tc.desc: Test of the toString method when the elements of concurrentSet are string.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetToStringTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ToString_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
       concurrentSet.add('A');
       concurrentSet.add('B');
@@ -2095,14 +2095,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetValuesTest_105
-     * @tc.name: concurrentSetValuesTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__105
+     * @tc.name: concurrent_Set_Values_Test_static_001
      * @tc.desc: Iterating over the values when the concurrentSet is empty.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetValuesTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Values_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const iter = concurrentSet.values();
       const arrayForSet: Array<number> = new Array<number>();
@@ -2120,14 +2120,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetValuesTest_106
-     * @tc.name: concurrentSetValuesTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__106
+     * @tc.name: concurrent_Set_Values_Test_static_002
      * @tc.desc: Iterate over the values when adding an element to a ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetValuesTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Values_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.add(0);
       const iter = concurrentSet.values();
@@ -2146,14 +2146,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetValuesTest_107
-     * @tc.name: concurrentSetValuesTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__107
+     * @tc.name: concurrent_Set_Values_Test_static_003
      * @tc.desc: Iterate over the values when adding 100 elements to a ConcurrentSet.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetValuesTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Values_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 100; i++) {
         concurrentSet.add(i);
@@ -2174,14 +2174,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetValuesTest_108
-     * @tc.name: concurrentSetValuesTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Values_Test_static__108
+     * @tc.name: concurrent_Set_Values_Test_static_004
      * @tc.desc: As input parameters, pass in a new set to judge elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetValuesTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Values_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 100;
       for (let i: int = 0; i < totalCount; i++) {
@@ -2389,14 +2389,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_117
-     * @tc.name: concurrentSetForEachTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__117
+     * @tc.name: concurrent_Set_ForEach_Test_static_001
      * @tc.desc: Use foreach to iterate over a ConcurrentSet and return a parameterless closure.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 100;
       for (let i: int = 0; i < totalCount; i++) {
@@ -2410,14 +2410,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_118
-     * @tc.name: concurrentSetForEachTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__118
+     * @tc.name: concurrent_Set_ForEach_Test_static_002
      * @tc.desc: Use foreach to iterate over a ConcurrentSet and return a closure with the parameter key.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 100;
       for (let i: int = 0; i < totalCount; i++) {
@@ -2431,14 +2431,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_119
-     * @tc.name: concurrentSetForEachTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__119
+     * @tc.name: concurrent_Set_ForEach_Test_static_003
      * @tc.desc: Iterate through a ConcurrentSet using foreach and return a closure with parameters key and value.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 100;
       for (let i: int = 0; i < totalCount; i++) {
@@ -2454,14 +2454,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_120
-     * @tc.name: concurrentSetForEachTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__120
+     * @tc.name: concurrent_Set_ForEach_Test_static_004
      * @tc.desc: Use foreach to iterate over a ConcurrentSet and return a closure with parameters key, value, and the set itself.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 100;
       for (let i: int = 0; i < totalCount; i++) {
@@ -2484,14 +2484,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_121
-     * @tc.name: concurrentSetForEachTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__121
+     * @tc.name: concurrent_Set_ForEach_Test_static_005
      * @tc.desc: Delete the current element in forEach
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2508,14 +2508,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_122
-     * @tc.name: concurrentSetForEachTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__122
+     * @tc.name: concurrent_Set_ForEach_Test_static_006
      * @tc.desc: Delete iterated elements in forEach
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2532,14 +2532,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_123
-     * @tc.name: concurrentSetForEachTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__123
+     * @tc.name: concurrent_Set_ForEach_Test_static_007
      * @tc.desc: Remove elements that have not been traversed in forEach
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2556,14 +2556,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_124
-     * @tc.name: concurrentSetForEachTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__124
+     * @tc.name: concurrent_Set_ForEach_Test_static_008
      * @tc.desc: Adding new elements to forEach
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2580,14 +2580,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_125
-     * @tc.name: concurrentSetForEachTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__125
+     * @tc.name: concurrent_Set_ForEach_Test_static_009
      * @tc.desc: Add elements while deleting
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2607,14 +2607,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_126
-     * @tc.name: concurrentSetForEachTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__126
+     * @tc.name: concurrent_Set_ForEach_Test_static_010
      * @tc.desc: Clear collection to forEach
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       for (let i: int = 0; i < 4; i++) {
@@ -2631,14 +2631,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetForEachTest_1260
-     * @tc.name: concurrentSetForEachTest011
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_ForEach_Test_static__1260
+     * @tc.name: concurrent_Set_ForEach_Test_static_011
      * @tc.desc: Iteration over an empty set.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetForEachTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_ForEach_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       concurrentSet.forEach((key: number, value: number, set: containers.ConcurrentSet<number>): void => {
@@ -2649,14 +2649,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_127
-     * @tc.name: concurrentSetAsyncTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__127
+     * @tc.name: concurrent_Set_Async_Test_static_001
      * @tc.desc: 10 threads add the same elements at the same time to verify that the final Set state is correct.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const sameNumber: number = 42;
@@ -2670,14 +2670,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_128
-     * @tc.name: concurrentSetAsyncTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__128
+     * @tc.name: concurrent_Set_Async_Test_static_002
      * @tc.desc: 10 threads add the different elements at the same time to verify that the final Set state is correct.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const totalCount: number = 100;
@@ -2690,14 +2690,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_129
-     * @tc.name: concurrentSetAsyncTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__129
+     * @tc.name: concurrent_Set_Async_Test_static_003
      * @tc.desc: Preset 1000 pieces of data. Remove simultaneously with 10 threads and verify that the elements are removed correctly.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const totalCount: number = thousandTimes;
@@ -2715,14 +2715,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_130
-     * @tc.name: concurrentSetAsyncTest004
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__130
+     * @tc.name: concurrent_Set_Async_Test_static_004
      * @tc.desc: 10 threads execute add, remove and contains simultaneously to verify data consistency.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       for (let i = 0; i < loopTenTimes; i++) {
@@ -2734,14 +2734,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_131
-     * @tc.name: concurrentSetAsyncTest005
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__131
+     * @tc.name: concurrent_Set_Async_Test_static_005
      * @tc.desc: 10 threads partially execute add, partially execute remove and contains to verify data consistency.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       for (let i = 0; i < loopFiveTimes; i++) {
@@ -2754,14 +2754,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_132
-     * @tc.name: concurrentSetAsyncTest006
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__132
+     * @tc.name: concurrent_Set_Async_Test_static_006
      * @tc.desc: Start 10 threads. Some threads call the loop iterator, and some threads call add() or remove().
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(new taskpool.Task((localSet: containers.ConcurrentSet<number>, s: number) => {
@@ -2852,14 +2852,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_133
-     * @tc.name: concurrentSetAsyncTest007
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__133
+     * @tc.name: concurrent_Set_Async_Test_static_007
      * @tc.desc: During the iteration process, another thread modifies the Set. Check whether the iterator can handle it correctly or throw an exception.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const concurrentSet2: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 1000;
@@ -2887,14 +2887,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_134
-     * @tc.name: concurrentSetAsyncTest008
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__134
+     * @tc.name: concurrent_Set_Async_Test_static_008
      * @tc.desc: Start 10 threads. Each thread initializes the queue using a different ArrayLike object.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let arrayNull = new Array<number>(0);
 
@@ -2951,14 +2951,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_135
-     * @tc.name: concurrentSetAsyncTest009
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__135
+     * @tc.name: concurrent_Set_Async_Test_static_009
      * @tc.desc: Start 10 threads. Each thread initializes a queue with a different iterable object.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const iterArrays: Array<IterableIterator<number>> = new Array<IterableIterator<number>>();
       const array: Array<number> = new Array<number>();
@@ -2977,14 +2977,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetAsyncTest_136
-     * @tc.name: concurrentSetAsyncTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Async_Test_static__136
+     * @tc.name: concurrent_Set_Async_Test_static_010
      * @tc.desc: Start 10 threads. Each thread initializes a queue using a different set object.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetAsyncTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Async_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const iterArrays: Array<IterableIterator<number>> = new Array<IterableIterator<number>>();
       const set: Set<number> = new Set<number>();
@@ -3003,14 +3003,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetPerformanceTest_137
-     * @tc.name: concurrentSetPerformanceTest001
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static__137
+     * @tc.name: concurrent_Set_Performance_Test_static_001
      * @tc.desc: Single-threaded loop for 1000 times of interface testing.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetPerformanceTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Performance_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const totalCount: number = 1000;
       for (let i = 0; i < totalCount; i++) {
@@ -3024,14 +3024,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetPerformanceTest_138
-     * @tc.name: concurrentSetPerformanceTest002
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static__138
+     * @tc.name: concurrent_Set_Performance_Test_static_002
      * @tc.desc: Multi-threaded (10 threads) competition with 1000 tests.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetPerformanceTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Performance_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
 
@@ -3049,14 +3049,14 @@ export default function ConcurrentSetTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrentSetPerformanceTest_139
-     * @tc.name: concurrentSetPerformanceTest003
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Performance_Test_static__139
+     * @tc.name: concurrent_Set_Performance_Test_static_003
      * @tc.desc: There are 1000 elements. Perform timing for operations on common interfaces multiple times.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    it("concurrentSetPerformanceTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("concurrent_Set_Performance_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
 

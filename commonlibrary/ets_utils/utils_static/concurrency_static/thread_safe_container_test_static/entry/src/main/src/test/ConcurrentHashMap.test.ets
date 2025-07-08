@@ -72,41 +72,41 @@ function createModifyTask(map:  containers.ConcurrentHashMap<string, string>, ke
 export default function ConcurrentHashMapTest() {
   describe('ConcurrentHashMapTest', (): void => {
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorwitharrayliketest_0100
-     * @tc.name      : constructorWithArrayLikeTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0100
+     * @tc.name      : constructor_With_ArrayLike_static_Test_001
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMapNull:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       expect(String(concurrentHashMapNull.size)).assertEqual('0');
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0101
-     * @tc.name      : constructorWithArrayLikeTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0101
+     * @tc.name      : constructor_With_ArrayLike_static_Test_002
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       let result = concurrentHashMap.set(1, "one");
       expect(String(result.size)).assertEqual('1');
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0102
-     * @tc.name      : constructorWithArrayLikeTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0102
+     * @tc.name      : constructor_With_ArrayLike_static_Test_003
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let emptyArray: Array<[Number, string]> = new Array<[Number, string]>();
       let arrayLike = emptyArray as ArrayLike<[Number, string]>;
       let constructorWithEmpty:  containers.ConcurrentHashMap<Number, string> = new  containers.ConcurrentHashMap<Number, string>(arrayLike);
@@ -114,14 +114,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0103
-     * @tc.name      : constructorWithArrayLikeTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0103
+     * @tc.name      : constructor_With_ArrayLike_static_Test_004
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let emptyArray: [string, Boolean][] = [];
       let arrayLike = emptyArray as ArrayLike<[string, Boolean]>;
       let concurrentHashMap:  containers.ConcurrentHashMap<string, Boolean> = new  containers.ConcurrentHashMap<string, Boolean>(arrayLike);
@@ -131,14 +131,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0104
-     * @tc.name      : constructorWithArrayLikeTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0104
+     * @tc.name      : constructor_With_ArrayLike_static_Test_005
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: [string, Number][] = [["", 100], ["key1", 200]];
       let arrayLike = entries as ArrayLike<[string, Number]>;
       let concurrentHashMap:  containers.ConcurrentHashMap<string, Number> = new  containers.ConcurrentHashMap<string, Number>(arrayLike);
@@ -149,14 +149,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0105
-     * @tc.name      : constructorWithArrayLikeTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0105
+     * @tc.name      : constructor_With_ArrayLike_static_Test_006
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: [Number, string][] = [[1, ""], [2, "value1"]];
       let arrayLike = entries as ArrayLike<[Number, string]>;
       let concurrentHashMap:  containers.ConcurrentHashMap<Number, string> = new  containers.ConcurrentHashMap<Number, string>(arrayLike);
@@ -166,14 +166,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0106
-     * @tc.name      : constructorWithArrayLikeTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0106
+     * @tc.name      : constructor_With_ArrayLike_static_Test_007
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let longKey = "this_is_a_very_long_string_key_with_multiple_characters_1234567890";
       let entries: [string, Boolean][] = [[longKey, true], ["short", false]];
       let arrayLike = entries as ArrayLike<[string, Boolean]>;
@@ -185,14 +185,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0107
-     * @tc.name      : constructorWithArrayLikeTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0107
+     * @tc.name      : constructor_With_ArrayLike_static_Test_008
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let longValue = "this_is_a_very_long_string_value_with_multiple_characters_0987654321";
       let entries: [Number, string][] = [[1, longValue], [2, "short"]];
       let arrayLike = entries as ArrayLike<[Number, string]>;
@@ -203,14 +203,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithArrayLikeTest_0108
-     * @tc.name      : constructorWithArrayLikeTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0108
+     * @tc.name      : constructor_With_ArrayLike_static_Test_009
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithArrayLikeTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_ArrayLike_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrKeys: Number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       let arrValues: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
       let array = Array<[Number, string]>(10);
@@ -226,14 +226,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0109
-     * @tc.name      : constructorWithIterableTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0109
+     * @tc.name      : constructor_With_Iterable_static_Test_001
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       let iterable = concurrentHashMap.entries();
       let concurrentIter:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(iterable);
@@ -241,14 +241,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0110
-     * @tc.name      : constructorWithIterableTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0110
+     * @tc.name      : constructor_With_Iterable_static_Test_002
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       concurrentHashMap.set(1, "one");
       let iterable = concurrentHashMap.entries();
@@ -259,14 +259,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0111
-     * @tc.name      : constructorWithIterableTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0111
+     * @tc.name      : constructor_With_Iterable_static_Test_003
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       for (let i = 0; i < 1000; i++) {
         concurrentHashMap.set(i, `value${i}`);
@@ -277,14 +277,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0112
-     * @tc.name      : constructorWithIterableTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0112
+     * @tc.name      : constructor_With_Iterable_static_Test_006
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new Map<number | null | undefined, string | null | undefined>();
       map.set(null, "nullKey");
       map.set(undefined, "undefinedKey");
@@ -297,14 +297,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0113
-     * @tc.name      : constructorWithIterableTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0113
+     * @tc.name      : constructor_With_Iterable_static_Test_007
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentHashMap = new Map<number, string>();
       const totalCount: number = 10;
       for (let i = 0; i < totalCount; i++) {
@@ -316,14 +316,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0114
-     * @tc.name      : constructorWithIterableTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0114
+     * @tc.name      : constructor_With_Iterable_static_Test_008
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const concurrentHashMap = new  containers.ConcurrentHashMap<number, string>();
       const totalCount: number = 10;
       for (let i: number = 0; i < totalCount; i++) {
@@ -335,14 +335,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithIterableTest_0115
-     * @tc.name      : constructorWithIterableTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0115
+     * @tc.name      : constructor_With_Iterable_static_Test_009
      * @tc.desc      : Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithIterableTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       concurrentHashMap.set(1, "one");
       concurrentHashMap.set(2, "two");
@@ -354,14 +354,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0116
-     * @tc.name      : constructorWithRemoveTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0116
+     * @tc.name      : constructor_With_Remove_static_Test_001
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       hashMap.set(1, "one");
       hashMap.set(2, "two");
@@ -372,14 +372,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0117
-     * @tc.name      : constructorWithRemoveTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0117
+     * @tc.name      : constructor_With_Remove_static_Test_002
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap:  containers.ConcurrentHashMap<string, number> = new  containers.ConcurrentHashMap<string, number>();
       hashMap.set("a", 100);
       hashMap.set("b", 200);
@@ -390,14 +390,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0118
-     * @tc.name      : constructorWithRemoveTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0118
+     * @tc.name      : constructor_With_Remove_static_Test_003
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "first");
       expect(map.remove(1)).assertEqual("first");
@@ -407,14 +407,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0119
-     * @tc.name      : constructorWithRemoveTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0119
+     * @tc.name      : constructor_With_Remove_static_Test_004
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<BigInt, string>();
       const bigNum = BigInt(9999999999999999);
       map.set(bigNum, "bigNumber");
@@ -423,14 +423,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0120
-     * @tc.name      : constructorWithRemoveTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0120
+     * @tc.name      : constructor_With_Remove_static_Test_005
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<boolean, string>();
       map.set(true, "yes");
       map.set(false, "no");
@@ -440,14 +440,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0121
-     * @tc.name      : constructorWithRemoveTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0121
+     * @tc.name      : constructor_With_Remove_static_Test_006
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<Person, string>();
       const person = new Person("Alice");
       map.set(person, "developer");
@@ -456,14 +456,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0122
-     * @tc.name      : constructorWithRemoveTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0122
+     * @tc.name      : constructor_With_Remove_static_Test_007
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<Person2, number>();
       const person = new Person2(13);
       map.set(person, 13);
@@ -472,14 +472,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0123
-     * @tc.name      : constructorWithRemoveTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0123
+     * @tc.name      : constructor_With_Remove_static_Test_008
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number[], string>();
       const arr: number[] = [1, 2, 3];
 
@@ -489,14 +489,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0124
-     * @tc.name      : constructorWithRemoveTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0124
+     * @tc.name      : constructor_With_Remove_static_Test_009
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<TestObject, string>();
       const obj: TestObject = {
         id: 123,
@@ -508,28 +508,28 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0125
-     * @tc.name      : constructorWithGetTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0125
+     * @tc.name      : constructor_With_GetTest_static_Test_001
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "one");
       expect(String(ConcurrentHashMap.get(1))).assertEqual('one');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0126
-     * @tc.name      : constructorWithGetTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0126
+     * @tc.name      : constructor_With_GetTest_static_Test_002
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "one");
       ConcurrentHashMap.set(2, "two");
@@ -540,14 +540,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0127
-     * @tc.name      : constructorWithGetTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0127
+     * @tc.name      : constructor_With_GetTest_static_Test_003
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "value");
       ConcurrentHashMap.set(2, "value");
@@ -558,14 +558,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0128
-     * @tc.name      : constructorWithGetTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0128
+     * @tc.name      : constructor_With_GetTest_static_Test_004
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "value");
       ConcurrentHashMap.set(1, "newvalue");
@@ -573,27 +573,27 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0129
-     * @tc.name      : constructorWithGetTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0129
+     * @tc.name      : constructor_With_GetTest_static_Test_005
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       expect(String(ConcurrentHashMap.get(999))).assertEqual('undefined');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0130
-     * @tc.name      : constructorWithGetTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0130
+     * @tc.name      : constructor_With_GetTest_static_Test_006
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       map.set("key", "new");
       map.set("KEY", "NEW");
@@ -602,96 +602,96 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0131
-     * @tc.name      : constructorWithGetTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0131
+     * @tc.name      : constructor_With_GetTest_static_Test_007
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "");
       expect(String(map.get(1))).assertEqual("");
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0132
-     * @tc.name      : constructorWithGetTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0132
+     * @tc.name      : constructor_With_GetTest_static_Test_008
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
       map.set(1, undefined);
       expect(String(map.get(1))).assertEqual('undefined');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0133
-     * @tc.name      : constructorWithGetTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0133
+     * @tc.name      : constructor_With_GetTest_static_Test_009
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, null> = new  containers.ConcurrentHashMap<number, null>();
       map.set(1, null);
       expect(String(map.get(1))).assertEqual("null");
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithGetTest_0134
-     * @tc.name      : constructorWithGetTest0010
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_GetTest_static_Test_0134
+     * @tc.name      : constructor_With_GetTest_static_Test_0010
      * @tc.desc      : Get the value corresponding to the specified key. If it does not exist, return undefined.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithGetTest0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_GetTest_static_Test_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       expect(String(map.get(1))).assertEqual('undefined');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0135
-     * @tc.name      : constructorWithisEmptyTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0135
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_001
      * @tc.desc      : Judge whether this ConcurrentHashMap is empty.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       expect(String(ConcurrentHashMap.isEmpty())).assertEqual('true');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0136
-     * @tc.name      : constructorWithisEmptyTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0136
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_001
      * @tc.desc      : Judge whether this ConcurrentHashMap is empty.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "value");
       expect(String(ConcurrentHashMap.isEmpty())).assertEqual('false');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0137
-     * @tc.name      : constructorWithisEmptyTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0137
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_003
      * @tc.desc      : Judge whether this ConcurrentHashMap is empty.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "value");
       expect(String(ConcurrentHashMap.isEmpty())).assertEqual('false');
@@ -700,14 +700,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0138
-     * @tc.name      : constructorWithisEmptyTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0138
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_004
      * @tc.desc      : Judge whether this ConcurrentHashMap is empty.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       for (let i = 0; i < 100; i++) {
         map.set(i, `value${i}`)
@@ -720,14 +720,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0139
-     * @tc.name      : constructorWithisEmptyTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0139
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_005
      * @tc.desc      : Verify isEmpty after clear operation
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "value1");
       map.set(2, "value2");
@@ -736,14 +736,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0140
-     * @tc.name      : constructorWithisEmptyTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0140
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_006
      * @tc.desc      : Verify isEmpty with concurrent modifications
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "value1");
       map.delete(1);
@@ -751,14 +751,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0141
-     * @tc.name      : constructorWithisEmptyTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0141
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_007
      * @tc.desc      : Verify isEmpty after adding and removing same key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "value1");
       map.set(1, "value2");
@@ -767,14 +767,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0142
-     * @tc.name      : constructorWithisEmptyTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0142
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_008
      * @tc.desc      : Verify isEmpty with null values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, null>();
       map.set(1, null);
       expect(String(map.isEmpty())).assertEqual('false');
@@ -783,14 +783,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithisEmptyTest_0143
-     * @tc.name      : constructorWithisEmptyTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0143
+     * @tc.name      : constructor_With_isEmpty_static_Test_static_Test_009
      * @tc.desc      : Verify isEmpty with undefined values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithisEmptyTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_isEmpty_static_Test_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, undefined>();
       map.set(1, undefined);
       expect(String(map.isEmpty())).assertEqual('false');
@@ -799,14 +799,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0144
-     * @tc.name      : constructorWithtoStringTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0144
+     * @tc.name      : constructor_With_toString_static_Test_001
      * @tc.desc      : Verify toString after removing elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       ConcurrentHashMap.set(1, "one");
       ConcurrentHashMap.set(2, "two");
@@ -815,14 +815,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0145
-     * @tc.name      : constructorWithtoStringTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0145
+     * @tc.name      : constructor_With_toString_static_Test_002
      * @tc.desc      : Verify toString after removing elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       for (let i = 0; i < 100; i++) {
         ConcurrentHashMap.set(i, `value${i}`)
@@ -832,28 +832,28 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0146
-     * @tc.name      : constructorWithtoStringTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0146
+     * @tc.name      : constructor_With_toString_static_Test_003
      * @tc.desc      : Verify toString after removing elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let ConcurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       let str = ConcurrentHashMap.toString();
       expect(str).assertEqual('');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0147
-     * @tc.name      : constructorWithtoStringTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0147
+     * @tc.name      : constructor_With_toString_static_Test_005
      * @tc.desc      : Verify toString after removing elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -863,14 +863,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0148
-     * @tc.name      : constructorWithtoStringTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0148
+     * @tc.name      : constructor_With_toString_static_Test_006
      * @tc.desc      : Verify toString with null values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string | null>();
       map.set(1, null);
       map.set(2, "two");
@@ -879,14 +879,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithtoStringTest_0149
-     * @tc.name      : constructorWithtoStringTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0149
+     * @tc.name      : constructor_With_toString_static_Test_007
      * @tc.desc      : Verify toString with null values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithtoStringTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_toString_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string | undefined>();
       map.set(1, undefined);
       map.set(2, "two");
@@ -895,14 +895,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0150
-     * @tc.name      : constructorWithvaluesTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0150
+     * @tc.name      : constructor_With_values_static_Test_001
      * @tc.desc      : Verify values iterator with values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       const iterator = map.values();
       const result = iterator.next();
@@ -911,14 +911,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0151
-     * @tc.name      : constructorWithvaluesTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0151
+     * @tc.name      : constructor_With_values_static_Test_002
      * @tc.desc      : Verify values iterator with values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -927,14 +927,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0152
-     * @tc.name      : constructorWithvaluesTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0152
+     * @tc.name      : constructor_With_values_static_Test_003
      * @tc.desc      : Verify values iterator with values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       let iter = map.values();
       let result = '';
@@ -949,14 +949,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0153
-     * @tc.name      : constructorWithvaluesTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0153
+     * @tc.name      : constructor_With_values_static_Test_004
      * @tc.desc      : Verify values iterator with values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, boolean> = new  containers.ConcurrentHashMap<string, boolean>();
       map.set('aaa', true);
       let iter = map.values();
@@ -969,14 +969,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0154
-     * @tc.name      : constructorWithvaluesTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0154
+     * @tc.name      : constructor_With_values_static_Test_005
      * @tc.desc      : Verify values iterator with null/undefined values
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string | null | undefined>();
       map.set(1, null);
       map.set(2, undefined);
@@ -986,14 +986,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithvaluesTest_0155
-     * @tc.name      : constructorWithvaluesTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0155
+     * @tc.name      : constructor_With_values_static_Test_006
      * @tc.desc      : Verify values iterator after map modification
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithvaluesTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_values_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       const iterator = map.values();
@@ -1005,14 +1005,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0156
-     * @tc.name      : constructorWithKeysTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0156
+     * @tc.name      : constructor_With_Key_static_Test_001
      * @tc.desc      : Return a new iterator object that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       const iterator = map.keys();
       const result = iterator.next();
@@ -1021,14 +1021,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0157
-     * @tc.name      : constructorWithKeysTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0157
+     * @tc.name      : constructor_With_Key_static_Test_002
      * @tc.desc      : Return a new iterator object that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -1037,14 +1037,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0158
-     * @tc.name      : constructorWithKeysTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0158
+     * @tc.name      : constructor_With_Key_static_Test_003
      * @tc.desc      : Verify keys iterator with duplicate keys (shouldn't happen but verify behavior)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "first");
       map.set(1, "second");
@@ -1054,14 +1054,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0159
-     * @tc.name      : constructorWithKeysTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0159
+     * @tc.name      : constructor_With_Key_static_Test_004
      * @tc.desc      : Verify keys iterator with various key types
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number | string | null, string>();
       map.set(1, "number");
       map.set("1", "string");
@@ -1074,14 +1074,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0160
-     * @tc.name      : constructorWithKeysTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0160
+     * @tc.name      : constructor_With_Key_static_Test_005
      * @tc.desc      : Return a new iterator object that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       let iter = map.keys();
       let result = '';
@@ -1096,14 +1096,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0161
-     * @tc.name      : constructorWithKeysTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0161
+     * @tc.name      : constructor_With_Key_static_Test_006
      * @tc.desc      : Return a new iterator object that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, boolean> = new  containers.ConcurrentHashMap<string, boolean>();
       map.set('aaa', true);
 
@@ -1117,14 +1117,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0162
-     * @tc.name      : constructorWithforEachTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0162
+     * @tc.name      : constructor_With_forEach_static_Test_001
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -1138,14 +1138,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0163
-     * @tc.name      : constructorWithforEachTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0163
+     * @tc.name      : constructor_With_forEach_static_Test_002
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -1161,14 +1161,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0164
-     * @tc.name      : constructorWithforEachTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0164
+     * @tc.name      : constructor_With_forEach_static_Test_003
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -1182,14 +1182,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0165
-     * @tc.name      : constructorWithforEachTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0165
+     * @tc.name      : constructor_With_forEach_static_Test_004
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -1204,14 +1204,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0166
-     * @tc.name      : constructorWithforEachTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0166
+     * @tc.name      : constructor_With_forEach_static_Test_005
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       let count = 0;
       map.forEach(() => {
@@ -1221,41 +1221,41 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithMapTest_0167
-     * @tc.name      : constructorWithMapTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_0167
+     * @tc.name      : constructor_With_Map_static_Test_001
      * @tc.desc      : To create an empty set
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithMapTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Map_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       expect(String(map.size)).assertEqual('0');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithMapTest_0168
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_0168
      * @tc.name      : Contains an element
      * @tc.desc      : The collection contains an element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithMapTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Map_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, 'one');
       expect(String(map.size)).assertEqual('1');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithMapTest_0169
-     * @tc.name      : constructorWithMapTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_0169
+     * @tc.name      : constructor_With_Map_static_Test_003
      * @tc.desc      : A map of a thousand elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithMapTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Map_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       for (let i = 0; i < 1000; i++) {
         concurrentHashMap.set(i, `value${i}`);
@@ -1264,14 +1264,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorTest_0170
-     * @tc.name      : constructorTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_static_Test_0170
+     * @tc.name      : constructor_static_Test_001
      * @tc.desc      : Map of two elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       concurrentHashMap.set(1, 'one');
       concurrentHashMap.set(2, 'two');
@@ -1279,56 +1279,56 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithSetTest_0167
-     * @tc.name      : constructorWithSetTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Set_static_Test_0167
+     * @tc.name      : constructor_With_Set_static_Test_001
      * @tc.desc      : Hashmap of different parameters
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithSetTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Set_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const WithSet:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       WithSet.set(10, '10');
       expect(String(WithSet.size)).assertEqual('1');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0168
-     * @tc.name      : setWithSetTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0168
+     * @tc.name      : set_With_Set_static_Test_001
      * @tc.desc      : The value is null
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let SetTest:  containers.ConcurrentHashMap<number, null> = new  containers.ConcurrentHashMap<number, null>();
       SetTest.set(10, null);
       expect(String(SetTest.size)).assertEqual('1');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0169
-     * @tc.name      : setWithSetTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0169
+     * @tc.name      : set_With_Set_static_Test_002
      * @tc.desc      : The value is undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let SetTest1:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
       SetTest1.set(10, undefined);
       expect(String(SetTest1.size)).assertEqual('1');
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0170
-     * @tc.name      : setWithSetTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0170
+     * @tc.name      : set_With_Set_static_Test_003
      * @tc.desc      : Set different key values to undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
       keyData.set(10, undefined);
       keyData.set(20, undefined);
@@ -1336,14 +1336,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0171
-     * @tc.name      : setWithSetTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0171
+     * @tc.name      : set_With_Set_static_Test_004
      * @tc.desc      : Duplicate key data already exists
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
       keyData.set(10, undefined);
       expect(String(keyData.size)).assertEqual('1');
@@ -1354,14 +1354,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0172
-     * @tc.name      : setWithSetTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0172
+     * @tc.name      : set_With_Set_static_Test_005
      * @tc.desc      : Set BigInt to a value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<boolean, BigInt> = new  containers.ConcurrentHashMap<boolean, BigInt>();
       const key = true;
       const value = BigInt(12345678901234567890n);
@@ -1371,14 +1371,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0173
-     * @tc.name      : setWithSetTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0173
+     * @tc.name      : set_With_Set_static_Test_006
      * @tc.desc      : Set BigInt to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<BigInt, boolean> = new  containers.ConcurrentHashMap<BigInt, boolean>();
       const key = BigInt(9007199254740991);
       const value = true;
@@ -1388,14 +1388,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0174
-     * @tc.name      : setWithSetTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0174
+     * @tc.name      : set_With_Set_static_Test_007
      * @tc.desc      : Set object to a value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<object, CustomClass> = new  containers.ConcurrentHashMap<object, CustomClass>();
       const key: KeyType = {
         id: 1
@@ -1407,14 +1407,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0175
-     * @tc.name      : setWithSetTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0175
+     * @tc.name      : set_With_Set_static_Test_008
      * @tc.desc      : Set array to a value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<CustomClass, number[]> = new  containers.ConcurrentHashMap<CustomClass, number[]>();
       const key = new CustomClass(1, "Alice");
       const value = [1, 2, 3];
@@ -1424,14 +1424,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0176
-     * @tc.name      : setWithSetTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0176
+     * @tc.name      : set_With_Set_static_Test_009
      * @tc.desc      : Set object to a value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number[], object> = new  containers.ConcurrentHashMap<number[], object>();
       const key = [1, 2, 3];
       const value: KeyType2 = {
@@ -1443,14 +1443,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0177
-     * @tc.name      : setWithSetTest010
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0177
+     * @tc.name      : set_With_Set_static_Test010
      * @tc.desc      : Set BigInt to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<BigInt, string> = new  containers.ConcurrentHashMap<BigInt, string>();
       const key = BigInt(9007199254740991);
       const value = "TestString";
@@ -1460,14 +1460,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0178
-     * @tc.name      : setWithSetTest011
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0178
+     * @tc.name      : set_With_Set_static_Test011
      * @tc.desc      : Set boolean to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<boolean, string> = new  containers.ConcurrentHashMap<boolean, string>();
       const key = false;
       const value = "TestBooleanKey";
@@ -1477,14 +1477,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0179
-     * @tc.name      : setWithSetTest012
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0179
+     * @tc.name      : set_With_Set_static_Test012
      * @tc.desc      : Set class to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<CustomClass, string> = new  containers.ConcurrentHashMap<CustomClass, string>();
       const key = new CustomClass(1, "Alice");
       const value = "TestString";
@@ -1494,14 +1494,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0180
-     * @tc.name      : setWithSetTest013
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0180
+     * @tc.name      : set_With_Set_static_Test013
      * @tc.desc      : Set array to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number[], boolean> = new  containers.ConcurrentHashMap<number[], boolean>();
       const key: number[] = [1, 2, 3];
       const value = true;
@@ -1511,14 +1511,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0181
-     * @tc.name      : setWithSetTest014
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0181
+     * @tc.name      : set_With_Set_static_Test014
      * @tc.desc      : Set object to a key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<object, number[]> = new  containers.ConcurrentHashMap<object, number[]>();
       const key: KeyType = {
         id: 2
@@ -1530,14 +1530,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0182
-     * @tc.name      : setWithSetTest015
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0182
+     * @tc.name      : set_With_Set_static_Test015
      * @tc.desc      : The value of the replacement key is one
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       keyData.set(1, "one");
       expect(keyData.get(1)).assertEqual("one");
@@ -1546,14 +1546,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0183
-     * @tc.name      : setWithSetTest016
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0183
+     * @tc.name      : set_With_Set_static_Test016
      * @tc.desc      : Test whether the key exists after being deleted
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       keyData.set(1, "one");
       expect(keyData.delete(1)).assertTrue();
@@ -1561,14 +1561,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0184
-     * @tc.name      : setWithSetTest017
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0184
+     * @tc.name      : set_With_Set_static_Test017
      * @tc.desc      : Undefined is returned when any key is obtained in an empty mapping
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       keyData.set(1, "one");
       expect(keyData.get(1)).assertEqual('one');
@@ -1577,14 +1577,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0185
-     * @tc.name      : deleteKeyWithTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0185
+     * @tc.name      : delete_Key_With_Test_static__001
      * @tc.desc      : The value is deleted as null
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, null> = new  containers.ConcurrentHashMap<string, null>();
       const key = '1';
       const value = null;
@@ -1596,14 +1596,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0186
-     * @tc.name      : deleteKeyWithTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0186
+     * @tc.name      : delete_Key_With_Test_static__002
      * @tc.desc      : The value is deleted as undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
       const key = 1;
       const value = undefined;
@@ -1616,14 +1616,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0187
-     * @tc.name      : deleteKeyWithTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0187
+     * @tc.name      : delete_Key_With_Test_static__003
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       hashMap.set(1, "one");
       let flag: boolean = hashMap.delete(1);
@@ -1631,14 +1631,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0188
-     * @tc.name      : deleteKeyWithTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0188
+     * @tc.name      : delete_Key_With_Test_static__004
      * @tc.desc      : The value of Bigin in the property is deleted as key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<BigInt, string> = new  containers.ConcurrentHashMap<BigInt, string>();
       const key = BigInt(9007199254740991);
       const value = "TestString";
@@ -1651,14 +1651,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0189
-     * @tc.name      : deleteKeyWithTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0189
+     * @tc.name      : delete_Key_With_Test_static__005
      * @tc.desc      : The value of boolean in the property is deleted as key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<boolean, string> = new  containers.ConcurrentHashMap<boolean, string>();
       const key = true;
       const value = "TestString";
@@ -1671,14 +1671,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0190
-     * @tc.name      : deleteKeyWithTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0190
+     * @tc.name      : delete_Key_With_Test_static__006
      * @tc.desc      : The value of class in the property is deleted as key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<CustomClass, string> = new  containers.ConcurrentHashMap<CustomClass, string>();
       const key = new CustomClass(1, "Alice");
       const value = "TestString";
@@ -1691,14 +1691,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0191
-     * @tc.name      : deleteKeyWithTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0191
+     * @tc.name      : delete_Key_With_Test_static__007
      * @tc.desc      : The value of array in the property is deleted as key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number[], string> = new  containers.ConcurrentHashMap<number[], string>();
       const key = [1, 2, 3];
       const value = "TestString";
@@ -1711,14 +1711,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0192
-     * @tc.name      : deleteKeyWithTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0192
+     * @tc.name      : delete_Key_With_Test_static__008
      * @tc.desc      : The value of object in the property is deleted as key
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<object, string> = new  containers.ConcurrentHashMap<object, string>();
       const key: CustomClass2 = {
         a: 1, b: 2
@@ -1733,14 +1733,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0193
-     * @tc.name      : deleteKeyWithTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0193
+     * @tc.name      : delete_Key_With_Test_static__009
      * @tc.desc      : The value of bigin in the property is deleted as value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static__009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, BigInt> = new  containers.ConcurrentHashMap<string, BigInt>();
       const key = "key1";
       const value = BigInt(9007199254740991);
@@ -1753,14 +1753,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0194
-     * @tc.name      : deleteKeyWithTest010
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0194
+     * @tc.name      : delete_Key_With_Test_static_010
      * @tc.desc      : The value of boolean in the property is deleted as value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, boolean> = new  containers.ConcurrentHashMap<string, boolean>();
       const key = "key1";
       const value = true;
@@ -1773,14 +1773,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0195
-     * @tc.name      : deleteKeyWithTest011
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0195
+     * @tc.name      : delete_Key_With_Test_static_011
      * @tc.desc      : The value of class in the property is deleted as value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, CustomClass> = new  containers.ConcurrentHashMap<string, CustomClass>();
       const key = "key1";
       const value = new CustomClass(1, "Alice");
@@ -1793,14 +1793,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0196
-     * @tc.name      : deleteKeyWithTest012
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0196
+     * @tc.name      : delete_Key_With_Test_static_012
      * @tc.desc      : The value of array in the property is deleted as value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, number[]> = new  containers.ConcurrentHashMap<string, number[]>();
       const key = "key1";
       const value = [1, 2, 3];
@@ -1813,14 +1813,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0197
-     * @tc.name      : deleteKeyWithTest013
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0197
+     * @tc.name      : delete_Key_With_Test_static_013
      * @tc.desc      : The value of object in the property is deleted as value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, object> = new  containers.ConcurrentHashMap<string, object>();
       const key = "key1";
       const value: CustomClass2 = {
@@ -1835,14 +1835,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_deleteKeyWithTest_0198
-     * @tc.name      : deleteKeyWithTest014
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0198
+     * @tc.name      : delete_Key_With_Test_static_014
      * @tc.desc      : Data that does not exist
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("deleteKeyWithTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("delete_Key_With_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key1";
       const value = "value1";
@@ -1856,14 +1856,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0199
-     * @tc.name      : hasWithTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0199
+     * @tc.name      : has_With_Test_static_001
      * @tc.desc      : The key is null and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
       const key = null;
       const value = "value1";
@@ -1873,14 +1873,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0200
-     * @tc.name      : hasWithTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0200
+     * @tc.name      : has_With_Test_static_002
      * @tc.desc      : The key is undefined and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
       const key = "key";
       const value = undefined;
@@ -1890,14 +1890,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0201
-     * @tc.name      : hasWithTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0201
+     * @tc.name      : has_With_Test_static_003
      * @tc.desc      : The map is empty and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -1910,14 +1910,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0202
-     * @tc.name      : hasWithTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0202
+     * @tc.name      : has_With_Test_static_004
      * @tc.desc      : The key is consistent and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       keyData.set("key1", "value1")
       keyData.set("key2", "value2")
@@ -1931,14 +1931,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0203
-     * @tc.name      : hasWithTest005
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0203
+     * @tc.name      : has_With_Test_static_005
      * @tc.desc      : Inconsistent data with the key and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const keyUpper = "KEY";
       const keyLower = "key";
@@ -1957,14 +1957,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0204
-     * @tc.name      : hasWithTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0204
+     * @tc.name      : has_With_Test_static_006
      * @tc.desc      : The key is inconsistent with the uppercase and lowercase of the data, and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
       const key = "key";
       const value = undefined;
@@ -1977,28 +1977,28 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0205
-     * @tc.name      : hasWithTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0205
+     * @tc.name      : has_With_Test_static_007
      * @tc.desc      : A map with an element and the property has has
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map: Map<number, string> = new Map<number, string>();
       let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(map);
       expect(String(keyData.size)).assertEqual("0");
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0206
-     * @tc.name      : hasWithTest008
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0206
+     * @tc.name      : has_With_Test_static_008
      * @tc.desc      : Replacement value
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       let flag: boolean = map.replace(1, "first");
@@ -2006,14 +2006,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0207
-     * @tc.name      : hasWithTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0207
+     * @tc.name      : has_With_Test_static_009
      * @tc.desc      : Get the values of keys one and two
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -2022,14 +2022,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_hasWithTest_0208
-     * @tc.name      : hasWithTest009
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0208
+     * @tc.name      : has_With_Test_static_009
      * @tc.desc      : Find a value that does not exist
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("hasWithTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("has_With_Test_static010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       expect(map.has(1)).assertTrue();
@@ -2038,13 +2038,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0209
-     * @tc.name      : replaceWithTest001
+     * @tc.name      : replaceWithTest_001
      * @tc.desc      : Null is the key, and the property is replace
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
       map.set(null, 'value')
       let flag: boolean = map.replace(null, "value1");
@@ -2053,13 +2053,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0210
-     * @tc.name      : replaceWithTest002
+     * @tc.name      : replaceWithTest_002
      * @tc.desc      : Undefined is the key, and the property is replace
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<undefined, string> = new  containers.ConcurrentHashMap<undefined, string>();
       map.set(undefined, 'value')
       let flag: boolean = map.replace(undefined, 'value1');
@@ -2068,13 +2068,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0211
-     * @tc.name      : replaceWithTest003
+     * @tc.name      : replaceWithTest_003
      * @tc.desc      : The map is empty and the property is replace
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       const flag = map.replace(1, "one");
       expect(flag).assertFalse();
@@ -2084,13 +2084,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0212
-     * @tc.name      : replaceWithTest004
+     * @tc.name      : replaceWithTest_004
      * @tc.desc      : The data with the same key and value is the same
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2104,13 +2104,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0213
-     * @tc.name      : replaceWithTest005
+     * @tc.name      : replaceWithTest_005
      * @tc.desc      : The data with the same key and value is the same
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2124,13 +2124,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0214
-     * @tc.name      : replaceWithTest006
+     * @tc.name      : replaceWithTest_006
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("replaceWithTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("replaceWithTest_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2144,13 +2144,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0215
-     * @tc.name      : clearWithTest001
+     * @tc.name      : clearWithTest_001
      * @tc.desc      : Empty map
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("clearWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("clearWithTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       map.clear();
       expect(String(map.size)).assertEqual("0");
@@ -2158,13 +2158,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0216
-     * @tc.name      : clearWithTest002
+     * @tc.name      : clearWithTest_002
      * @tc.desc      : Non-empty map
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("clearWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("clearWithTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       map.set('key1', 'value1')
       map.set('key2', 'value2')
@@ -2178,13 +2178,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0217
-     * @tc.name      : clearWithTest003
+     * @tc.name      : clearWithTest_003
      * @tc.desc      : Multiple addition and deletion operations after clear
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("clearWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("clearWithTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2203,13 +2203,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_clearWithTest_0218
-     * @tc.name      : clearWithTest004
+     * @tc.name      : clearWithTest_004
      * @tc.desc      : Repeated Clearing
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("clearWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("clearWithTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2229,14 +2229,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0219
-     * @tc.name      : getSizeWithTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0219
+     * @tc.name      : getSize_With_Test_static_001
      * @tc.desc      : Empty map
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSizeWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("getSize_With_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const nonExistentKey = "nonExistentKey";
       expect(map.get(nonExistentKey)).assertUndefined();
@@ -2244,14 +2244,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0220
-     * @tc.name      : getSizeWithTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0220
+     * @tc.name      : getSize_With_Test_static_002
      * @tc.desc      : Non-empty map, 100 elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSizeWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("getSize_With_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key1 = "key1";
       const value1 = "value1";
@@ -2270,14 +2270,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0221
-     * @tc.name      : getSizeWithTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0221
+     * @tc.name      : getSize_With_Test_static_003
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSizeWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("getSize_With_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2290,14 +2290,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSizeWithTest_0222
-     * @tc.name      : getSizeWithTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0222
+     * @tc.name      : getSize_With_Test_static_004
      * @tc.desc      : Transfer the new map as an input parameter for element judgment
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSizeWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("getSize_With_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key1 = "key1";
       const value1 = "value1";
@@ -2328,14 +2328,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0223
-     * @tc.name      : iteratorWithTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iterator_With_Test_static_0223
+     * @tc.name      : iterator_With_Test_static_001
      * @tc.desc      : Empty map
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("iteratorWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("iterator_With_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       let count = 0;
       const iterator = map.entries();
@@ -2348,14 +2348,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0224
-     * @tc.name      : iteratorWithTest002
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iterator_With_Test_static_0224
+     * @tc.name      : iterator_With_Test_static_002
      * @tc.desc      : Non-empty map, 100 elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("iteratorWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("iterator_With_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       for (let i = 0; i < 100; i++) {
         const key = `key${i}`;
@@ -2376,14 +2376,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0225
-     * @tc.name      : iteratorWithTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iterator_With_Test_static_0225
+     * @tc.name      : iterator_With_Test_static_003
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("iteratorWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("iterator_With_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2403,14 +2403,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iteratorWithTest_0226
-     * @tc.name      : iteratorWithTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_iterator_With_Test_static_0226
+     * @tc.name      : iterator_With_Test_static_004
      * @tc.desc      : Transfer the new map as an input parameter for element judgment
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("iteratorWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("iterator_With_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map1:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       let map2: Map<string, string> = new Map<string, string>();
       map1.set("key1", "value1");
@@ -2432,13 +2432,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0227
-     * @tc.name      : entriesWithTest001
+     * @tc.name      : entriesWithTest_001
      * @tc.desc      : Empty map
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("entriesWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("entriesWithTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const iterator = map.entries();
       let entry = iterator.next();
@@ -2447,13 +2447,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0228
-     * @tc.name      : entriesWithTest002
+     * @tc.name      : entriesWithTest_002
      * @tc.desc      : Non-empty map, 100 elements
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("entriesWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("entriesWithTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       for (let i = 0; i < 100; i++) {
         const key = `key${i}`;
@@ -2478,13 +2478,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0229
-     * @tc.name      : entriesWithTest003
+     * @tc.name      : entriesWithTest_003
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("entriesWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("entriesWithTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
       const value = "value";
@@ -2508,13 +2508,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_entriesWithTest_0230
-     * @tc.name      : entriesWithTest004
+     * @tc.name      : entriesWithTest_004
      * @tc.desc      : Transfer the new map as an input parameter for element judgment
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("entriesWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("entriesWithTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map1:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       let map2: Map<string, string> = new Map<string, string>();
       map1.set("key1", "value1");
@@ -2537,13 +2537,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0231
-     * @tc.name      : multithreadingWithTest001
+     * @tc.name      : multithreadingWithTest_001
      * @tc.desc      : Multiple threads set the same key at the same time and verify that the map status is correct
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreadingWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreadingWithTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const sameKey: string = "sharedKey";
@@ -2560,13 +2560,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0232
-     * @tc.name      : multithreadingWithTest002
+     * @tc.name      : multithreadingWithTest_002
      * @tc.desc      : Multiple threads set different keys at the same time to verify that the final map status is correct
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreadingWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreadingWithTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const threadCount: number = 10;
@@ -2587,13 +2587,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0233
-     * @tc.name      : multithreadingWithTest003
+     * @tc.name      : multithreadingWithTest_003
      * @tc.desc      : Multiple threads run set and get at the same time to verify data consistency
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreadingWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreadingWithTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const sameKey: string = "sharedKey";
@@ -2611,13 +2611,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0234
-     * @tc.name      : multithreadingWithTest004
+     * @tc.name      : multithreadingWithTest_004
      * @tc.desc      : 10 Add set elements to the container at the same time
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreadingWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreadingWithTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const threadCount: number = 10;
@@ -2638,13 +2638,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0235
-     * @tc.name      : multithreadingWithTest005
+     * @tc.name      : multithreadingWithTest_005
      * @tc.desc      : The initial container contains 1000 elements, and 10 concurrent operations are performed on the container to replace the replace element
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreadingWithTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreadingWithTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       for (let i: number = 0; i < 1000; i++) {
@@ -2663,14 +2663,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0236
-     * @tc.name      : performanceTestingWithTest001
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0236
+     * @tc.name      : performancer_With_Test_static_001
      * @tc.desc      :  On three threads (EAWorker), the hashMap has 1000 elements, and the operation of the common interface is timed multiple times
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("performanceTestingWithTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("performancer_With_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       for (let i: number = 0; i < 10; i++) {
@@ -2699,14 +2699,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SSUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0237
-     * @tc.name      : performanceTestingWithTest002
+     * @tc.number    : SSUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0237
+     * @tc.name      : performancer_With_Test_static_002
      * @tc.desc      : Single-thread loop 1000 times interface test
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("performanceTestingWithTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("performancer_With_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       for (let i: number = 0; i < 1000; i++) {
         concurrentMap.set(`key${i}`, `value${i}`);
@@ -2729,14 +2729,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0238
-     * @tc.name      : performanceTestingWithTest003
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0238
+     * @tc.name      : performancer_With_Test_static_003
      * @tc.desc      : Multi-thread (10) competition 1000 tests
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("performanceTestingWithTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("performancer_With_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       for (let i: number = 0; i < 1000; i++) {
@@ -2763,14 +2763,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performanceTestingWithTest_0239
-     * @tc.name      : performanceTestingWithTest004
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_performancer_With_Test_static_0239
+     * @tc.name      : performancer_With_Test_static_004
      * @tc.desc      : The hashMap has 1000 elements, and the operation of the common interface is timed for multiple times
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("performanceTestingWithTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("performancer_With_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       for (let i: number = 0; i < 1000; i++) {
         concurrentMap.set(`key${i}`, `value${i}`);
@@ -2800,14 +2800,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0240
-     * @tc.name      : constructorWithRemoveTest010
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0240
+     * @tc.name      : constructor_With_Remove_static_Test010
      * @tc.desc      : Verify remove operation returns correct value and updates map state
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       hashMap.set(1, "one");
       hashMap.set(2, "two");
@@ -2824,14 +2824,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithRemoveTest_0241
-     * @tc.name      : constructorWithRemoveTest011
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Remove_static_Test_STATIC_0241
+     * @tc.name      : constructor_With_Remove_static_Test011
      * @tc.desc      : Verify remove operation returns correct value and updates map state.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithRemoveTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Remove_static_Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const hashMap = new  containers.ConcurrentHashMap<number, string | null | undefined>();
       hashMap.set(1, "one");
       hashMap.set(2, null);
@@ -2845,14 +2845,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithforEachTest_0242
-     * @tc.name      : constructorWithforEachTest006
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_forEach_static_Test_0242
+     * @tc.name      : constructor_With_forEach_static_Test_006
      * @tc.desc      : Test forEach() iteration with value/key/map callback params.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithforEachTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_forEach_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new  containers.ConcurrentHashMap<number, string>();
       map.set(1, "one");
       map.set(2, "two");
@@ -2867,14 +2867,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0243
-     * @tc.name      : constructorWithKeysTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0243
+     * @tc.name      : constructor_With_Key_static_Test_007
      * @tc.desc      : Return a new iterator that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map = new  containers.ConcurrentHashMap<number, string>();
       for (let i = 0; i < 100; i++) {
         map.set(i, "value" + i);
@@ -2896,14 +2896,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_setWithSetTest_0245
-     * @tc.name      : setWithSetTest018
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0245
+     * @tc.name      : set_With_Set_static_Test018
      * @tc.desc      : Batch insert 100 elements with 10ms interval.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("setWithSetTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("set_With_Set_static_Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       const totalCount: number = 100;
       for (let i: number = 0; i < totalCount; i++) {
@@ -2920,14 +2920,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_constructorWithIterableTest_0246
-     * @tc.name: constructorWithIterableTest010
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_constructor_With_Iterable_static_Test_0246
+     * @tc.name: constructor_With_Iterable_static_Test010
      * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with Integer.MAX_VALUE elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("constructorWithIterableTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("constructor_With_Iterable_static_Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const mapEntries: Map<number, string> = new Map<number, string>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: number = 0; i < totalCount; i++) {
@@ -2938,14 +2938,14 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructorWithKeysTest_0247
-     * @tc.name      : constructorWithKeysTest007
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0247
+     * @tc.name      : constructor_With_Key_static_Test_007
      * @tc.desc      : Verify keys iterator returns correct values for a populated ConcurrentHashMap.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructorWithKeysTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const inputMap = new Map<number, string>();
       inputMap.set(1, "value1");
       inputMap.set(2, "value2");
