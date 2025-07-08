@@ -253,5 +253,40 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
         }
       }
     });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0200
+     * @tc.name       : testSetWindowShadowEnabledwithoutPermission
+     * @tc.desc       : 验证2in1设备应用不申请权限报201
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testSetWindowShadowEnabledwithoutPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "testSetWindowShadowEnabledwithoutPermission";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        windowClass.setWindowShadowEnabled(true).then(() => {
+          console.info(`${caseName} Succeeded in calling setWindowShadowEnabled.`);
+          expect().assertFail();
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            done();
+          } else {
+            expect(err.code).assertEqual(201);
+            done()
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
