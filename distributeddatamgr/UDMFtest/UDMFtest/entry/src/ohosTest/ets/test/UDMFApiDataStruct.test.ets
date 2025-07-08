@@ -2293,7 +2293,7 @@ export default function UDMFApiDataStructTest() {
     });
     
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2355,7 +2355,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2411,7 +2411,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2467,7 +2467,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2523,7 +2523,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2580,7 +2580,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2638,7 +2638,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2698,7 +2698,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2758,7 +2758,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2819,7 +2819,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2880,7 +2880,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -2941,7 +2941,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3002,7 +3002,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3062,7 +3062,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3122,7 +3122,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3182,7 +3182,7 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3243,7 +3243,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3304,7 +3304,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3364,7 +3364,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
@@ -3424,7 +3424,7 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
      * @tc.desc      : Verify the properties of the contentForm type
      * @tc.size      : MediumTest
