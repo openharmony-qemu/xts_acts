@@ -88,12 +88,94 @@ export default function windowImmersiveTest() {
       }
     })
     afterAll(async () => {
-      // await windowClass.setWindowLayoutFullScreen(false);
-      // await windowClass.setWindowSystemBarEnable(['status']);
-      // await windowClass.setFullScreen(false);
+      await windowClass.setWindowLayoutFullScreen(false);
+      await windowClass.setWindowSystemBarEnable(['status']);
+      await windowClass.setSpecificSystemBarEnabled('status', true);
+      await windowClass.setFullScreen(false);
       let windowClass = windowStage.getMainWindowSync();
       await windowClass.recover();
     })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.name      : test_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.desc      : test_LANSCAPE_SHOW_STATUS_BAR_0100
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await sleep(1000);
+        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
+        await sleep(3000);
+        windowClass.on('avoidAreaChange', async (data) => {
+          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
+           ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+           if(data.type == 0){
+              windowClass.off('avoidAreaChange');
+              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+              await sleep(1000);
+              done();
+           }else{
+            await sleep(1000);
+           }
+        });
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
+        await sleep(2000);
+          
+      } catch (exception) {
+        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.name      : test_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.desc      : test_LANSCAPE_HIDE_STATUS_BAR_0100
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await sleep(1000);
+        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        await sleep(3000);
+        windowClass.on('avoidAreaChange', async (data) => {
+          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+          if(data.type == 0){
+              windowClass.off('avoidAreaChange');
+              await windowClass.setSpecificSystemBarEnabled('status', true);
+              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+              await sleep(1000);
+              done();
+           }else{
+            await sleep(1000);
+           }
+        });
+        await windowClass.setSpecificSystemBarEnabled('status', false);
+        console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
+        await sleep(2000);
+
+          
+      } catch (exception) {
+        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
+        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+        expect().assertFail();
+        done();
+      }
+    });
     /**
      * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0100
      * @tc.name      : testOnavoidAreaChangeInLandScape
@@ -2443,88 +2525,7 @@ export default function windowImmersiveTest() {
       }
     });
     
-     /**
-     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.name      : test_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.desc      : test_LANSCAPE_SHOW_STATUS_BAR_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(1000);
-        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-        await sleep(3000);
-        windowClass.on('avoidAreaChange', async (data) => {
-          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
-           ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-           if(data.type == 0){
-              windowClass.off('avoidAreaChange');
-              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-              await sleep(1000);
-              done();
-           }else{
-            await sleep(1000);
-           }
-        });
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
-        await sleep(2000);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-          
-      } catch (exception) {
-        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.name      : test_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.desc      : test_LANSCAPE_HIDE_STATUS_BAR_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(1000);
-        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        await sleep(3000);
-        windowClass.on('avoidAreaChange', async (data) => {
-          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-          if(data.type == 0){
-              windowClass.off('avoidAreaChange');
-              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-              await sleep(1000);
-              done();
-           }else{
-            await sleep(1000);
-           }
-        });
-        await windowClass.setSpecificSystemBarEnabled('status', false);
-        console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
-        await sleep(2000);
-
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-          
-      } catch (exception) {
-        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        expect().assertFail();
-        done();
-      }
-    });
+     
 
   })
 }
