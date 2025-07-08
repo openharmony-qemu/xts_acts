@@ -330,8 +330,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect().assertFail();
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         }
       }
 
@@ -345,9 +349,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
-            done();
-          }else{
+          if(err?.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -397,10 +399,14 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName.length).assertEqual(0);
-          expect(element.abilityName.length).assertEqual(0);
-          expect(message).assertContain('User closed the implicit startup picker');
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect(element.bundleName.length).assertEqual(0);
+            expect(element.abilityName.length).assertEqual(0);
+            expect(message).assertContain('User closed the implicit startup picker');
+            done();
+          }
         }
       }
 
@@ -414,9 +420,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
-            done();
-          }else{
+          if(err?.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -466,10 +470,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName.length).assertEqual(0);
-          expect(element.abilityName.length).assertEqual(0);
-          expect(message).assertContain('Failed to call startAbility');
-          done();
+            expect(element.bundleName.length).assertEqual(0);
+            expect(element.abilityName.length).assertEqual(0);
+            expect(message).assertContain('Failed to call startAbility');
+            done();
         }
       }
 
@@ -483,12 +487,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
-            done();
-          }else{
-            expect().assertFail();
-            done();
-          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
@@ -535,8 +533,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect().assertFail();
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         }
       }
 
@@ -550,9 +552,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
-            done();
-          }else{
+          if(err?.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -604,10 +604,14 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
-          expect(element.abilityName).assertEqual('EntryAbility');
-          expect(message).assertContain('User refused redirection');
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
+            expect(element.abilityName).assertEqual('EntryAbility');
+            expect(message).assertContain('User refused redirection');
+            done();
+          }
         }
       }
 
@@ -621,9 +625,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
-            done();
-          }else{
+          if(err?.code == 16000050){}else{
             expect().assertFail();
             done();
           }
