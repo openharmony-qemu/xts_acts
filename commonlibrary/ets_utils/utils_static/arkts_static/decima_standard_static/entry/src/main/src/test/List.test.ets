@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import timerTest from "./Timer.test"
+import decimalTest1 from "./decimal/Decimal1.test";
+
 export default function testsuite() {
-    timerTest();
+    decimalTest1();
 }
