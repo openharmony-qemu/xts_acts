@@ -696,14 +696,14 @@ static napi_value OHNetConnSetPacUrl(napi_env env, napi_callback_info info)
 Http_Request *request = nullptr;
 
 void Http_SampleResponseCallback(Http_Response *response, uint32_t errCode) {
-    if (response == NULL) {
+    if (response == nullptr) {
         return;
     }
     if (errCode != 0) {
         response->destroyResponse(&response);
         return;
     }
-    if (response->headers != NULL) {
+    if (response->headers != nullptr) {
         Http_HeaderEntry *entries = OH_Http_GetHeaderEntries(response->headers);
         
         Http_HeaderValue *headerValue;
@@ -720,7 +720,7 @@ void Http_SampleResponseCallback(Http_Response *response, uint32_t errCode) {
 }
 
 size_t Http_SampleOnDataReceiveCallback(const char *data) {
-    if (data == NULL) {
+    if (data == nullptr) {
         return 0;
     }
 
@@ -736,7 +736,7 @@ void Http_SampleOnDownloadProgressCallback(uint64_t totalSize, uint64_t transfer
 }
 
 void Http_SampleOnHeaderReceiveCallback(Http_Headers *headers) {
-    if (headers != NULL) {
+    if (headers != nullptr) {
         Http_HeaderEntry *entries = OH_Http_GetHeaderEntries(headers);
         
         Http_HeaderValue *headerValue;
@@ -764,16 +764,16 @@ static napi_value CallHttpClientApi(napi_env env, napi_callback_info info) {
     
     Http_Request *request = OH_Http_CreateRequest(senddata);
         OH_LOG_INFO(LOG_APP, "success %{public}s tests", request->url);
-    if (request == NULL) {
+    if (request == nullptr) {
         return 0;
     }
     request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
-    if (request->options == NULL) {
+    if (request->options == nullptr) {
         return 0;
     }
     request->options->method = NET_HTTP_METHOD_GET;
     Http_Headers *headers = OH_Http_CreateHeaders();
-    if (headers == NULL) {
+    if (headers == nullptr) {
         return 0;
     }
     const char *key = "testKey";
