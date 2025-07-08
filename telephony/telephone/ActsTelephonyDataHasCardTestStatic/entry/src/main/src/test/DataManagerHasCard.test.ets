@@ -72,7 +72,7 @@ export default function dataManagerTest() {
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         } else {
-                            hilog.info(domain, tag, '%{public}s', caseName +' getCellularDataState: data ->'+JSON.stringify(data));
+                            hilog.info(domain, tag, '%{public}s', caseName+ 'get getCellularDataState success');
                             ExpectTrue(true);
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -151,7 +151,6 @@ export default function dataManagerTest() {
                         ExpectFail();
                         done();
                     } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
                         ExpectTrue(data !== undefined);
                         done();
                     }
@@ -183,8 +182,7 @@ export default function dataManagerTest() {
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                        ExpectTrue(true);
+                        ExpectTrue(data != undefined);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }
