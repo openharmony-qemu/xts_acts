@@ -42,7 +42,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { PhotoPickerResult } from '../MainAbility/common/PhotoPickerResult'
 import {
   RecentPhotoOptions,
-  PhotoSource,
+  PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 
@@ -2145,6 +2145,38 @@ export default function TextPicker() {
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       router.back();
       console.info("testPicker45 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker46
+     * @tc.name      : testPicker46
+     * @tc.desc      : Testing getRecentPhotoInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker46', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let options: RecentPhotoOptions = new RecentPhotoOptions();
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+      options.period = 0;
+      options.photoSource = PhotoSource.ALL;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      try{
+        phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
+          console.info('testPicker40, photoAccessHelper.getRecentPhotoInfo successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(result));
+          expect(true).assertTrue();
+        })
+      } catch(err) {
+        console.error(`testPicker40, photoAccessHelper.getRecentPhotoInfo failed with err: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      }
+      console.info("testPicker40 finish");
       done();
     });
   })
