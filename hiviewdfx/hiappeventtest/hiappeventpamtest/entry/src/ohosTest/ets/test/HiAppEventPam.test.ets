@@ -291,7 +291,7 @@ export default function HiAppEventPamTest() {
 
     /**
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0301
-     * @tc.name SUB_DFX_DFT_HiAppEvent_SetPam_0301
+     * @tc.name testHiAppEventSetPam031
      * @tc.desc 验证setEventParam接口在关闭打点功能后,返回错误码11100001
      * @tc.size MediumTest
      * @tc.type Function
