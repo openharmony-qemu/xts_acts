@@ -202,4 +202,5 @@ ani_boolean test_array_CreateBuffer([[maybe_unused]] ani_env *env, [[maybe_unuse
     ASSERT_EQ(resultData[2U], 3U);
     return ANI_TRUE;
 }
+
 #endif // ARKTS_ANI_TEST_ARRAYOPERATIONS_H

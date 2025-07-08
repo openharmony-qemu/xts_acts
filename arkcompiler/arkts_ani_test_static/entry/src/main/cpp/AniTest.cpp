@@ -33,6 +33,9 @@
 #include "NameSpaceSupport.h"
 #include "TupleOperations.h"
 #include "VariableOperations.h"
+#include "VmOps.h"
+#include "Promise.h"
+#include "WeakGlobalReferences.h"
 
 namespace {
     std::array methods = {
@@ -48,6 +51,8 @@ namespace {
                             reinterpret_cast<void *>(test_GlobalReference_Create)},
         ani_native_function{"test_ExistUnhandledError", ":Z",
                             reinterpret_cast<void *>(test_ExistUnhandledError)},
+        ani_native_function{"test_ResetError", ":Z",
+                            reinterpret_cast<void *>(test_ResetError)},
         ani_native_function{"test_Class_FindMethod", ":Z",
                             reinterpret_cast<void *>(test_Class_FindMethod)},
         ani_native_function{"test_Class_BindNativeMethods", ":Z",
@@ -90,6 +95,8 @@ namespace {
                             reinterpret_cast<void *>(test_Array_New_Ref)},
         ani_native_function{"test_Object_New_A", ":Z",
                             reinterpret_cast<void *>(test_Object_New_A)},
+        ani_native_function{"test_Object_New_V", ":Z",
+                            reinterpret_cast<void *>(test_Object_New_V)},
         ani_native_function{"test_Class_GetStaticField_Boolean", ":Z",
                             reinterpret_cast<void *>(test_Class_GetStaticField_Boolean)},
         ani_native_function{"test_Class_GetStaticField_Char", ":Z",
@@ -695,7 +702,17 @@ namespace {
                             reinterpret_cast<void *>(test_TupleValue_SetItem_Double)},
         ani_native_function{"test_TupleValue_SetItem_Ref", ":Z", reinterpret_cast<void *>(test_TupleValue_SetItem_Ref)},
         ani_native_function{"test_TupleValue_GetNumberOfItems", ":Z",
-                            reinterpret_cast<void *>(test_TupleValue_GetNumberOfItems)}
+                            reinterpret_cast<void *>(test_TupleValue_GetNumberOfItems)},
+        ani_native_function{"test_AttachCurrentThreadAndDetachCurrentThread", ":Z",
+                            reinterpret_cast<void *>(test_AttachCurrentThreadAndDetachCurrentThread)},
+        ani_native_function{"test_Promise_New", ":Z",
+                            reinterpret_cast<void *>(test_Promise_New)},
+        ani_native_function{"test_PromiseResolver_Resolve", ":Z",
+                            reinterpret_cast<void *>(test_PromiseResolver_Resolve)},
+        ani_native_function{"test_PromiseResolver_Reject", ":Z",
+                            reinterpret_cast<void *>(test_PromiseResolver_Reject)},
+        ani_native_function{"test_WeakReference_Delete", ":Z",
+                            reinterpret_cast<void *>(test_WeakReference_Delete)},
     };
 }
 
