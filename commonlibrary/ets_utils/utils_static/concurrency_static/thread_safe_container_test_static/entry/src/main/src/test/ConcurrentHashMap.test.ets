@@ -114,7 +114,7 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_0102
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_ArrayLike_static_TesT_STATIC_00102
      * @tc.name      : constructor_With_ArrayLike_static_Test_004
      * @tc.desc      : Initialize map correctly from ArrayLike<[K,V]>
      * @tc.size      : MediumTest
@@ -1234,7 +1234,7 @@ export default function ConcurrentHashMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_0167
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Map_static_Test_00167
      * @tc.name      : constructor_With_Map_static_Test_002
      * @tc.desc      : The collection contains an element
      * @tc.size      : MediumTest
@@ -1271,7 +1271,7 @@ export default function ConcurrentHashMapTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructor_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("onstructor_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       concurrentHashMap.set(1, 'one');
       concurrentHashMap.set(2, 'two');
@@ -2251,7 +2251,7 @@ export default function ConcurrentHashMapTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSize_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("get_Size_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key1 = "key1";
       const value1 = "value1";
@@ -2271,7 +2271,7 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0221
-     * @tc.name      : get_Size_With_Test_static_Test_003
+     * @tc.name      : getSize_With_Test_static_Test_003
      * @tc.desc      : Map with one element
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2291,7 +2291,7 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_getSize_With_Test_static_0222
-     * @tc.name      : get_Size_With_Test_static_Test_004
+     * @tc.name      : getSize_With_Test_static_Test_004
      * @tc.desc      : Transfer the new map as an input parameter for element judgment
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2587,13 +2587,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_multithreadingWithTest_0233
-     * @tc.name      : multithreading_With_Test_static_Test_002
+     * @tc.name      : multithreading_With_Test_static_Test_0002
      * @tc.desc      : Multiple threads run set and get at the same time to verify data consistency
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("multithreading_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("multithreading_With_Test_static_Test_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const concurrentMap:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       const sameKey: string = "sharedKey";
@@ -2868,7 +2868,7 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0243
-     * @tc.name      : onstructor_With_Key_static_Test_007
+     * @tc.name      : constructor_With_Key_static_Test_007
      * @tc.desc      : Return a new iterator that contains the keys contained in this mapping.
      * @tc.size      : MediumTest
      * @tc.type      : Function
