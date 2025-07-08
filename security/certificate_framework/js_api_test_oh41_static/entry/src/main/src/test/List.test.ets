@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import certificateCRLJsunit from "./certificateCRL.test";
-import certificateJsunit from "./certificate.test";
-import certFrameworkCreateCollectionJsAPIFunctionTestUnit from './createCollection.test';
-import certFrameworkSelectCertsJsAPIFunctionTestUnit from './selectCerts.test';
-import certFrameworkSelectCRLsJsAPIFunctionTestUnit from './selectCRLs.test';
-import certFrameworkCertMatchJsAPIFunctionTestUnit from './certMatch.test';
-import certFrameworkCRLMatchJsAPIFunctionTestUnit from './crlMatch.test';
-import certFrameworkCertChainJsAPIFunctionTestUnit from './certChain.test';
+import certificateCRLJsunit from "./CertificateCRL.test";
+import certificateJsunit from "./Certificate.test";
+import certFrameworkCreateCollectionJsAPIFunctionTestUnit from './CreateCollection.test';
+import certFrameworkSelectCertsJsAPIFunctionTestUnit from './SelectCerts.test';
+import certFrameworkSelectCRLsJsAPIFunctionTestUnit from './SelectCRLs.test';
+import certFrameworkCertMatchJsAPIFunctionTestUnit from './CertMatch.test';
+import certFrameworkCRLMatchJsAPIFunctionTestUnit from './CrlMatch.test';
+import certFrameworkCertChainJsAPIFunctionTestUnit from './CertChain.test';
 
 export default function testsuite() {
   certificateCRLJsunit();

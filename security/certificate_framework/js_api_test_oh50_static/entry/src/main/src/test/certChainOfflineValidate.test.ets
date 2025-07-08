@@ -878,7 +878,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3500
-    // * @tc.name SUB_Security_Cert_Framework_CertChain_Online_Func_3500
+    //  * @tc.name SUB_Security_Cert_Framework_CertChain_Online_Func_3500
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1
@@ -1048,7 +1048,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
     // /**
     //  * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_4100
-    // * @tc.name SUB_Security_Cert_Framework_CertChain_Online_Func_4100
+    //  * @tc.name SUB_Security_Cert_Framework_CertChain_Online_Func_4100
     //  * @tc.desc Use Promise Type
     //  * @tc.size SmallTest
     //  * @tc.level Level1

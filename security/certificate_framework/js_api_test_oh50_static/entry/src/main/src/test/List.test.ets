@@ -12,18 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import certFrameworkSelectCertsJsAPIFunctionTestUnit from './selectCerts.test';
-import certFrameworkSelectCRLsJsAPIFunctionTestUnit from './selectCRLs.test';
-import certFrameworkCertMatchJsAPIFunctionTestUnit from './certMatch.test';
-import certFrameworkCRLMatchJsAPIFunctionTestUnit from './crlMatch.test';
-import certFrameworkCertChainExtJsAPIFunctionTestUnit from './certChainExt.test'
-import certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit from './createTrustAnchor.test'
-import certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit from './certChainOfflineValidate.test';
-import certFrameworkCertChainPolicyJsAPIFunctionTestUnit from './certChainPolicy.test';
-import certFrameworkCertNameJsAPIFunctionTestUnit from './certName.test';
-import certFrameworkParseP12CertTestUnit from './parseP12Cert.test';
-import certFrameworkCertPkcs7ExtCMSFunctionTestUnit from './certP7.test';
-import certFrameworkCertCsrTestUnit from './certCsr.test';
+import certFrameworkSelectCertsJsAPIFunctionTestUnit from './SelectCerts.test';
+import certFrameworkSelectCRLsJsAPIFunctionTestUnit from './SelectCRLs.test';
+import certFrameworkCertMatchJsAPIFunctionTestUnit from './CertMatch.test';
+import certFrameworkCRLMatchJsAPIFunctionTestUnit from './CrlMatch.test';
+import certFrameworkCertChainExtJsAPIFunctionTestUnit from './CertChainExt.test'
+import certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit from './CreateTrustAnchor.test'
+import certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit from './CertChainOfflineValidate.test';
+import certFrameworkCertChainPolicyJsAPIFunctionTestUnit from './CertChainPolicy.test';
+import certFrameworkCertNameJsAPIFunctionTestUnit from './CertName.test';
+import certFrameworkParseP12CertTestUnit from './ParseP12Cert.test';
+import certFrameworkCertPkcs7ExtCMSFunctionTestUnit from './CertP7.test';
+import certFrameworkCertCsrTestUnit from './CertCsr.test';
 export default function testsuite() {
   certFrameworkSelectCertsJsAPIFunctionTestUnit();
   certFrameworkSelectCRLsJsAPIFunctionTestUnit();
