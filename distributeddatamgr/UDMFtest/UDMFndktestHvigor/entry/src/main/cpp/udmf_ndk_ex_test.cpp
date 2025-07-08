@@ -967,7 +967,7 @@ static napi_value OH_UdmfOptions_SetVisibility008(napi_env env, napi_callback_in
     OH_UdsFileUri *getFileUri = OH_UdsFileUri_Create();
     OH_UdmfRecord_GetFileUri(getRecords[0], getFileUri);
     const char *getUri = OH_UdsFileUri_GetFileUri(getFileUri);
-    NAPI_ASSERT(env, strcmp(getUri, uri.c_str()) == 0, "OH_UdsFileUri_GetFileUri is fail.");   
+    NAPI_ASSERT(env, strcmp(getUri, uri.c_str()) == 0, "OH_UdsFileUri_GetFileUri is fail."); 
     unsigned int dataSize2 = 0;
     OH_UdmfData* dataArray2 = nullptr;
     int deleteRes = OH_Udmf_DeleteUnifiedData(options, &dataArray2, &dataSize2);

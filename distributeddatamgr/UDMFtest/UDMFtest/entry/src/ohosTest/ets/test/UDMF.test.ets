@@ -3995,7 +3995,7 @@ export default function UDMFApiTest() {
 
      /**
      * @tc.number    : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9380
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9360
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9380
      * @tc.desc      : Test UDMF creating a unifieddata with a text record.
      * @tc.size      : MEDIUM
      * @tc.type      : Function

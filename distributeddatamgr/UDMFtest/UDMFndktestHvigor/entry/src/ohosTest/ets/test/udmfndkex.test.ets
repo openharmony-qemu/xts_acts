@@ -945,7 +945,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0200
      * @tc.name OH_UdmfOptions_GetVisibility002
      * @tc.desc OH_UdmfOptions_GetVisibility002
      * @tc.level: Level 2
@@ -959,7 +959,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0300
      * @tc.name OH_UdmfOptions_SetVisibility001
      * @tc.desc OH_UdmfOptions_SetVisibility001
      * @tc.level: Level 2
@@ -973,7 +973,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0400
      * @tc.name OH_UdmfOptions_SetVisibility002
      * @tc.desc OH_UdmfOptions_SetVisibility002
      * @tc.level: Level 2
@@ -987,7 +987,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0500
      * @tc.name OH_UdmfOptions_SetVisibility003
      * @tc.desc OH_UdmfOptions_SetVisibility003
      * @tc.level: Level 2
@@ -1001,7 +1001,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0600
      * @tc.name OH_UdmfOptions_SetVisibility004
      * @tc.desc OH_UdmfOptions_SetVisibility004
      * @tc.level: Level 2
@@ -1015,7 +1015,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0700
      * @tc.name OH_UdmfOptions_SetVisibility005
      * @tc.desc OH_UdmfOptions_SetVisibility005
      * @tc.level: Level 2
@@ -1029,7 +1029,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0800
      * @tc.name OH_UdmfOptions_SetVisibility006
      * @tc.desc OH_UdmfOptions_SetVisibility006
      * @tc.level: Level 2
@@ -1043,7 +1043,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0900
      * @tc.name OH_UdmfOptions_SetVisibility007
      * @tc.desc OH_UdmfOptions_SetVisibility007
      * @tc.level: Level 2
@@ -1057,7 +1057,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1000
      * @tc.name OH_UdmfOptions_SetVisibility008
      * @tc.desc OH_UdmfOptions_SetVisibility008
      * @tc.level: Level 2
@@ -1071,7 +1071,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1100
      * @tc.name OH_UdmfOptions_SetVisibility009
      * @tc.desc OH_UdmfOptions_SetVisibility009
      * @tc.level: Level 2
@@ -1085,7 +1085,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1200
      * @tc.name OH_UdmfOptions_SetVisibility010
      * @tc.desc OH_UdmfOptions_SetVisibility010
      * @tc.level: Level 2
@@ -1100,7 +1100,7 @@ export default function UdmfNdkexTest() {
     });
   
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1300
      * @tc.name OH_UdmfOptions_SetVisibility011
      * @tc.desc OH_UdmfOptions_SetVisibility011
      * @tc.level: Level 2
@@ -1114,7 +1114,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
      /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1400
      * @tc.name OH_UdmfOptions_SetVisibility012
      * @tc.desc OH_UdmfOptions_SetVisibility012
      * @tc.level: Level 2
@@ -1128,7 +1128,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1500
      * @tc.name OH_UdmfOptions_SetVisibility013
      * @tc.desc OH_UdmfOptions_SetVisibility013
      * @tc.level: Level 2
@@ -1142,7 +1142,7 @@ export default function UdmfNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1600
      * @tc.name OH_UdmfOptions_SetVisibility014
      * @tc.desc OH_UdmfOptions_SetVisibility014
      * @tc.level: Level 2
@@ -1157,7 +1157,7 @@ export default function UdmfNdkexTest() {
     });
 
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1700
      * @tc.name OH_UdmfOptions_SetVisibility015
      * @tc.desc OH_UdmfOptions_SetVisibility015
      * @tc.level: Level 2
@@ -1172,7 +1172,7 @@ export default function UdmfNdkexTest() {
     });
 
     /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1800
      * @tc.name OH_UdmfOptions_SetVisibility016
      * @tc.desc OH_UdmfOptions_SetVisibility016
      * @tc.level: Level 2
@@ -1187,7 +1187,7 @@ export default function UdmfNdkexTest() {
     });
 
         /**
-     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkAddUpTest_1900
      * @tc.name OH_UdmfOptions_SetVisibility017
      * @tc.desc OH_UdmfOptions_SetVisibility017
      * @tc.level: Level 2
