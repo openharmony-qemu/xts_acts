@@ -135,7 +135,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse005", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse005", 17100021, 2025070411, done,
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse005", "17100021", 2025070411, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -151,7 +151,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse006", 123);
-      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse006", 17100021, 2025070412, done,
+      Utils.registerBaseEvent("testSchemeHandlerDidFailCompleteIfNoResponse006", "17100021", 2025070412, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

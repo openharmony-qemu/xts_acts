@@ -176,7 +176,7 @@ struct webViewSdkSchemeHandlerThree {
                     }
                     case 'emitSchemeHandlerDidFailCompleteIfNoResponse005': {
                       try {
-                        let errorCode = 666;
+                        let errorCode = '';
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                           try {
@@ -185,17 +185,17 @@ struct webViewSdkSchemeHandlerThree {
                             console.log(this.emitKey + 'didFail end');
                             resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
                           } catch (error) {
-                            errorCode = error.code;
+                            errorCode = String(error.code);
                             console.log(this.emitKey + 'error code' + error.code);
                           }
                           return true
                         })
                         this.controller.setWebSchemeHandler('https', this.schemeHandler);
                         this.controller.loadUrl(URL);
-                        let check = (v1: number, v2: number): boolean => {
+                        let check = (v1: string, v2: string): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => errorCode, check, 17100021, 2025070411, this.emitKey);
+                        await waitForAssert(() => errorCode, check, '17100021', 2025070411, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
@@ -203,7 +203,7 @@ struct webViewSdkSchemeHandlerThree {
                     }
                     case 'emitSchemeHandlerDidFailCompleteIfNoResponse006': {
                       try {
-                        let errorCode = 666;
+                        let errorCode = '';
                         this.schemeHandler.onRequestStart((
                           request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
                           try {
@@ -212,17 +212,17 @@ struct webViewSdkSchemeHandlerThree {
                             console.log(this.emitKey + 'didFail end');
                             resourceHandler.didFail(WebNetErrorList.ERR_FAILED, false);
                           } catch (error) {
-                            errorCode = error.code;
+                            errorCode = String(error.code);
                             console.log(this.emitKey + 'error code' + error.code);
                           }
                           return true
                         })
                         this.controller.setWebSchemeHandler('https', this.schemeHandler);
                         this.controller.loadUrl(URL);
-                        let check = (v1: number, v2: number): boolean => {
+                        let check = (v1: string, v2: string): boolean => {
                           return v1 === v2;
                         }
-                        await waitForAssert(() => errorCode, check, 17100021, 2025070412, this.emitKey);
+                        await waitForAssert(() => errorCode, check, '17100021', 2025070412, this.emitKey);
                       } catch (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       }
