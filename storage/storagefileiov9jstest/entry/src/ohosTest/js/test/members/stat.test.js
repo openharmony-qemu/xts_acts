@@ -20,7 +20,7 @@ import {
 import { TestType, Size, Level } from '@ohos/hypium';
 
 const LocationType = {
-  'LOCAL': 1,
+  'LOCAl': 1,
   'CLOUD': 2,
 }
 
@@ -2398,7 +2398,7 @@ describe('fileIO_fs_stat', function () {
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_LOCATION_0000
    * @tc.name fileIO_stat_async_location_000
    * @tc.desc Test the location member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.location is LOCAL.
+   * Enter the path or fd parameter to get stat.location is LOCAl.
    * @tc.size MEDIUM
    * @tc.type Functoin
    * @tc.level Level 3
@@ -2411,7 +2411,7 @@ describe('fileIO_fs_stat', function () {
     try {
       let stat = await fileIO.stat(fpath);
       expect(stat.location == 1).assertTrue();
-      expect(fileIO.LocationType.LOCAL == 1).assertTrue();
+      expect(fileIO.LocationType.LOCAl == 1).assertTrue();
 
       let file = fileIO.openSync(fpath);
       let stat2 = await fileIO.stat(file.fd);
