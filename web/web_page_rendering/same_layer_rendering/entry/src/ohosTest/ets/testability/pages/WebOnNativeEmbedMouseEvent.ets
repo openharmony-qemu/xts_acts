@@ -184,9 +184,6 @@ struct WebIndex {
         Button("WebOnNativeEmbedMouseEvent").id('WebOnNativeEmbedMouseButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
-          let webRect = Utils.getComponentRect('onNativeEmbedMouseEventButton');
-          let X = Utils.getRectHorizontalCenterX(webRect)
-          let Y = Utils.getRectVerticalCenterY(webRect)
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
               let value: string;

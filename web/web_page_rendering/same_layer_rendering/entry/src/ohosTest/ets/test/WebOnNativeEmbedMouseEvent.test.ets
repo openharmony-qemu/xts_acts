@@ -55,7 +55,7 @@ export default function webViewControllerPart2() {
     })
 
    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_NATIVEEMBEDSTATUS_0100
+    * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
     * @tc.name       : emitOnNativeEmbedMouseEvent001
     * @tc.desc       : emitOnNativeEmbedMouseEvent001
     * @tc.size       : MediumTest
