@@ -2646,7 +2646,7 @@ export default function abilityTest() {
       };
       let want: Want = {
         bundleName: 'com.example.myapplication',
-        abilityName: 'TestAbility'
+        abilityName: 'StartAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
