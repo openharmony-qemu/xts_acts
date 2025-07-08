@@ -17,6 +17,7 @@ group("ActsWebLeatherCandyCacheTest") {
     deps = [
       "leather_candy_cache_one:ActsWebLeatherCandyCacheOneTest",
       "leather_candy_cache_two:ActsWebLeatherCandyCacheTwoTest",
+      "leather_candy_cache_two_static:ActsWebLeatherCandyCacheTwoStaticTest",
     ]
   }
 }
