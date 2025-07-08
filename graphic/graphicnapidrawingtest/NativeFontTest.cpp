@@ -31,12 +31,18 @@
 #include "rosen_text/typography.h"
 #include "rosen_text/typography_create.h"
 
+#define NUM_10 10
+#define NUM_52 52
+#define NUM_100 100
+#define NUM_1200 1200
+
 using namespace testing;
 using namespace testing::ext;
 
 namespace OHOS {
     static const char* FONT_FAMILY = "Roboto-Black";
     static const char* FONT_PATH = "/data/Roboto-Black.ttf";
+    constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
 namespace Rosen {
 namespace Drawing {
 class NativeFontTest : public testing::Test {
@@ -465,6 +471,435 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTestWithIndent, Function |
     OH_Drawing_TypographyPaint(typography, cCanvas, position[0], position[1]);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_DestroyTypographyHandler(handler);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_001
+ * @tc.name  : OHDrawingCreateTextTab001
+ * @tc.desc  : test for the text tab create and destroy
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, OHDrawingCreateTextTab001, Function | MediumTest | Level0)
+{
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
+    EXPECT_NE(textTab, nullptr);
+    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_END, -1.0);
+    EXPECT_NE(textTab2, nullptr);
+    OH_Drawing_DestroyTextTab(textTab);
+    OH_Drawing_DestroyTextTab(textTab2);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_002
+ * @tc.name  : OHDrawingCreateTextTab002
+ * @tc.desc  : test for get alignment of the text tab
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, OHDrawingCreateTextTab002, Function | MediumTest | Level0)
+{
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
+    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_JUSTIFY, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(nullptr), TEXT_ALIGN_LEFT);
+    OH_Drawing_DestroyTextTab(textTab);
+    OH_Drawing_DestroyTextTab(textTab2);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_003
+ * @tc.name  : OHDrawingCreateTextTab003
+ * @tc.desc  : test for get location of the text tab
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, OHDrawingCreateTextTab003, Function | MediumTest | Level0)
+{
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab), 0.0);
+    OH_Drawing_DestroyTextTab(textTab);
+    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, -100.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab2), -100.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(nullptr), 0.0);
+    OH_Drawing_DestroyTextTab(textTab2);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_001
+ * @tc.name  : TypographyTest001
+ * @tc.desc  : test for text tab with left alignment
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, TypographyTest001, Function | MediumTest | Level0)
+{
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyTextWordBreakType(typoStyle, WORD_BREAK_TYPE_BREAK_ALL);
+    OH_Drawing_SetTypographyTextMaxLines(typoStyle, NUM_10);
+  
+    OH_Drawing_TextTab* tab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, NUM_100);
+    OH_Drawing_SetTypographyTextTab(typoStyle, tab);
+      
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateSharedFontCollection());
+    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_SetTextStyleFontSize(textStyle, NUM_52);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, textStyle);
+  
+    const char *text = "Hello\tWorld\tHello";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+  
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TypographyLayout(typography, NUM_1200);
+  
+    double width = OH_Drawing_TypographyGetLongestLine(typography);
+    EXPECT_NEAR(width, 522.772095, FLOAT_DATA_EPSILON);
+  
+    // branch coverage
+    OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
+  
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTextStyle(textStyle);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTextTab(tab);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_002
+ * @tc.name  : TypographyTest002
+ * @tc.desc  : test for text tab with left alignment
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, TypographyTest002, Function | MediumTest | Level0)
+{
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyTextWordBreakType(typoStyle, WORD_BREAK_TYPE_BREAK_ALL);
+    OH_Drawing_SetTypographyTextMaxLines(typoStyle, NUM_10);
+   
+    OH_Drawing_TextTab* tab = OH_Drawing_CreateTextTab(TEXT_ALIGN_RIGHT, NUM_100);
+    OH_Drawing_SetTypographyTextTab(typoStyle, tab);
+       
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateSharedFontCollection());
+    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_SetTextStyleFontSize(textStyle, NUM_52);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, textStyle);
+   
+    const char *text = "Hello\tWorld\tHello";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+   
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TypographyLayout(typography, NUM_1200);
+   
+    double width = OH_Drawing_TypographyGetLongestLine(typography);
+    EXPECT_NEAR(width, 386.828308, FLOAT_DATA_EPSILON);
+   
+    // branch coverage
+    OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
+   
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTextStyle(textStyle);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTextTab(tab);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_003
+ * @tc.name  : TypographyTest003
+ * @tc.desc  : test for text tab with center alignment
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, TypographyTest003, Function | MediumTest | Level0)
+{
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyTextWordBreakType(typoStyle, WORD_BREAK_TYPE_BREAK_ALL);
+    OH_Drawing_SetTypographyTextMaxLines(typoStyle, NUM_10);
+    
+    OH_Drawing_TextTab* tab = OH_Drawing_CreateTextTab(TEXT_ALIGN_CENTER, NUM_100);
+    OH_Drawing_SetTypographyTextTab(typoStyle, tab);
+        
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateSharedFontCollection());
+    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_SetTextStyleFontSize(textStyle, NUM_52);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, textStyle);
+    
+    const char *text = "Hello\tWorld\tHello";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+    
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TypographyLayout(typography, NUM_1200);
+    
+    double width = OH_Drawing_TypographyGetLongestLine(typography);
+    EXPECT_NEAR(width, 393.414185, FLOAT_DATA_EPSILON);
+    
+    // branch coverage
+    OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
+    
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTextStyle(textStyle);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTextTab(tab);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_004
+ * @tc.name  : TypographyTest004
+ * @tc.desc  : test for setting both the texttab and text layout direction
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, TypographyTest004, Function | MediumTest | Level0)
+{
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyTextWordBreakType(typoStyle, WORD_BREAK_TYPE_BREAK_ALL);
+    OH_Drawing_SetTypographyTextMaxLines(typoStyle, NUM_10);
+    OH_Drawing_SetTypographyTextAlign(typoStyle, TEXT_ALIGN_CENTER);
+     
+    OH_Drawing_TextTab* tab = OH_Drawing_CreateTextTab(TEXT_ALIGN_CENTER, NUM_100);
+    OH_Drawing_SetTypographyTextTab(typoStyle, tab);
+         
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateSharedFontCollection());
+    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_SetTextStyleFontSize(textStyle, NUM_52);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, textStyle);
+     
+    const char *text = "Hello\tWorld\tHello";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+     
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TypographyLayout(typography, NUM_1200);
+     
+    double width = OH_Drawing_TypographyGetLongestLine(typography);
+    EXPECT_NEAR(width, 414.388336, FLOAT_DATA_EPSILON);
+     
+    // branch coverage
+    OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
+     
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTextStyle(textStyle);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTextTab(tab);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_005
+ * @tc.name  : TypographyTest005
+ * @tc.desc  : test for setting both the texttab and ellipsis
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, TypographyTest005, Function | MediumTest | Level0)
+{
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyTextWordBreakType(typoStyle, WORD_BREAK_TYPE_BREAK_ALL);
+    OH_Drawing_SetTypographyTextMaxLines(typoStyle, NUM_10);
+    OH_Drawing_SetTypographyTextEllipsis(typoStyle, "...");
+    OH_Drawing_SetTypographyTextEllipsisModal(typoStyle, ELLIPSIS_MODAL_TAIL);
+      
+    OH_Drawing_TextTab* tab = OH_Drawing_CreateTextTab(TEXT_ALIGN_CENTER, NUM_100);
+    OH_Drawing_SetTypographyTextTab(typoStyle, tab);
+          
+    OH_Drawing_TypographyCreate *handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateSharedFontCollection());
+    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
+    OH_Drawing_SetTextStyleFontSize(textStyle, NUM_52);
+    OH_Drawing_TypographyHandlerPushTextStyle(handler, textStyle);
+      
+    const char *text = "Hello\tWorld\tHello";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+      
+    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TypographyLayout(typography, NUM_1200);
+      
+    double width = OH_Drawing_TypographyGetLongestLine(typography);
+    EXPECT_NEAR(width, 414.388336, FLOAT_DATA_EPSILON);
+      
+    // branch coverage
+    OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
+      
+    OH_Drawing_DestroyTypography(typography);
+    OH_Drawing_DestroyTextStyle(textStyle);
+    OH_Drawing_DestroyTypographyHandler(handler);
+    OH_Drawing_DestroyTextTab(tab);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_001
+ * @tc.name  : FontGetTextPath001
+ * @tc.desc  : test for common character of textpath
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, FontGetTextPath001, Function | MediumTest | Level0)
+{
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    EXPECT_NE(font, nullptr);
+    const char* str = "Hello 中文";
+    size_t length = std::char_traits<char>::length(str);
+    float x = 12.0f;
+    float y = 150.0f;
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    ASSERT_NE(path, nullptr);
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, str, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    EXPECT_TRUE(OH_Drawing_PathGetLength(path, false) > 0);
+    if (path != nullptr) {
+        OH_Drawing_PathDestroy(path);
+    }
+    OH_Drawing_FontDestroy(font);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_002
+ * @tc.name  : FontGetTextPath002
+ * @tc.desc  : test for UTF16 and UTF32 character of textpath
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, FontGetTextPath002, Function | MediumTest | Level0)
+{
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    EXPECT_NE(font, nullptr);
+
+    float x = 12.0f;
+    float y = 150.0f;
+    const char16_t* u16str = u"Hello 中文";
+    size_t u16strLen = std::char_traits<char16_t>::length(u16str);
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, u16str, sizeof(char16_t) * u16strLen, TEXT_ENCODING_UTF16, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    float u16PathLen = OH_Drawing_PathGetLength(path, false);
+
+    const char32_t* u32str = U"Hello 中文";
+    size_t u32strLen = std::char_traits<char32_t>::length(u32str);
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, u32str, sizeof(char32_t) * u32strLen, TEXT_ENCODING_UTF32, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    float u32PathLen = OH_Drawing_PathGetLength(path, false);
+    ASSERT_TRUE(u16PathLen > 0 && u32PathLen > 0);
+    ASSERT_EQ(u16PathLen, u32PathLen);
+    if (path != nullptr) {
+        OH_Drawing_PathDestroy(path);
+    }
+    OH_Drawing_FontDestroy(font);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_003
+ * @tc.name  : FontGetTextPath003
+ * @tc.desc  : test for space character of textpath
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, FontGetTextPath003, Function | MediumTest | Level0)
+{
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    EXPECT_NE(font, nullptr);
+    const char* space = " ";
+    size_t length = std::char_traits<char>::length(space);
+    float x = 12.0f;
+    float y = 150.0f;
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    ASSERT_NE(path, nullptr);
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, space, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    EXPECT_TRUE(OH_Drawing_PathGetLength(path, false) == 0);
+    EXPECT_FALSE(OH_Drawing_PathIsClosed(path, false));
+    if (path != nullptr) {
+        OH_Drawing_PathDestroy(path);
+    }
+    OH_Drawing_FontDestroy(font);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_004
+ * @tc.name  : FontGetTextPath004
+ * @tc.desc  : test for negative coordinates of textpath
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, FontGetTextPath004, Function | MediumTest | Level0)
+{
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    EXPECT_NE(font, nullptr);
+    const char* str = "Hello 中文";
+    size_t length = std::char_traits<char>::length(str);
+    float x = -1.0f;
+    float y = -1.0f;
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    ASSERT_NE(path, nullptr);
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, str, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    if (path != nullptr) {
+        EXPECT_TRUE(OH_Drawing_PathGetLength(path, false) > 0);
+        OH_Drawing_PathDestroy(path);
+    }
+    OH_Drawing_FontDestroy(font);
+}
+
+/*
+ * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_005
+ * @tc.name  : FontGetTextPath005
+ * @tc.desc  : test for conversion of glyphsID to path
+ * @tc.size  : MediumTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(NativeFontTest, FontGetTextPath005, Function | MediumTest | Level0)
+{
+    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    EXPECT_NE(font, nullptr);
+    const char* str = "Hello 中文";
+    uint32_t count = 0;
+    count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
+    EXPECT_NE(count, 0);
+    uint16_t glyphs[count];
+    OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
+
+    float x = 12.0f;
+    float y = 150.0f;
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    ASSERT_NE(path, nullptr);
+    EXPECT_EQ(OH_Drawing_FontGetTextPath(font, glyphs, sizeof(glyphs), TEXT_ENCODING_GLYPH_ID, x, y, path),
+        OH_DRAWING_SUCCESS);
+    ASSERT_NE(path, nullptr);
+    if (path != nullptr) {
+        EXPECT_TRUE(OH_Drawing_PathGetLength(path, false) > 0);
+        OH_Drawing_PathDestroy(path);
+    }
+    OH_Drawing_FontDestroy(font);
 }
 } // namespace Drawing
 } // namespace Rosen
