@@ -93,7 +93,6 @@ export default function windowImmersiveTest() {
       await windowClass.setWindowSystemBarEnable(['status']);
       await windowClass.setSpecificSystemBarEnabled('status', true);
       await windowClass.setFullScreen(false);
-      let windowClass = windowStage.getMainWindowSync();
       await windowClass.recover();
     })
     /**
