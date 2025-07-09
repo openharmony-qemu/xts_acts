@@ -1,0 +1,10 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/alphabetIndexer",
+    "MainAbility/pages/swiper",
+    "MainAbility/pages/scroll",
+    "MainAbility/pages/scrollEnablePaging",
+    "MainAbility/pages/scrollNestedScroll"
+  ]
+}

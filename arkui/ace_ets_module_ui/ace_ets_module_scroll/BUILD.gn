@@ -25,6 +25,13 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_api15:ActsAceEtsModuleScrollApi15Test",
       "ace_ets_module_scroll_api16:ActsAceEtsModuleScrollApi16Test",
       "ace_ets_module_scroll_api18:ActsAceEtsModuleScrollApi18Test",
+      "ace_ets_module_scroll_api11_static:ActsAceEtsModuleScrollApi11StaticTest",
+      "ace_ets_module_scroll_api12_static:ActsAceEtsModuleScrollApi12StaticTest",
+      "ace_ets_module_scroll_api13_static:ActsAceEtsModuleScrollApi13StaticTest",
+      "ace_ets_module_scroll_api14_static:ActsAceEtsModuleScrollApi14StaticTest",
+      "ace_ets_module_scroll_api15_static:ActsAceEtsModuleScrollApi15StaticTest",
+      "ace_ets_module_scroll_api16_static:ActsAceEtsModuleScrollApi16StaticTest",
+      "ace_ets_module_scroll_api18_static:ActsAceEtsModuleScrollApi18StaticTest",
     ]
   } else {
     deps = [
@@ -42,6 +49,16 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_nowear_api14:ActsAceEtsModuleScrollNowearApi14Test",
       "ace_ets_module_scroll_nowear_api15:ActsAceEtsModuleScrollNowearApi15Test",
       "ace_ets_module_scroll_nowear_api16:ActsAceEtsModuleScrollNowearApi16Test",
+      "ace_ets_module_scroll_api11_static:ActsAceEtsModuleScrollApi11StaticTest",
+      "ace_ets_module_scroll_api12_static:ActsAceEtsModuleScrollApi12StaticTest",
+      "ace_ets_module_scroll_api13_static:ActsAceEtsModuleScrollApi13StaticTest",
+      "ace_ets_module_scroll_api14_static:ActsAceEtsModuleScrollApi14StaticTest",
+      "ace_ets_module_scroll_api15_static:ActsAceEtsModuleScrollApi15StaticTest",
+      "ace_ets_module_scroll_api16_static:ActsAceEtsModuleScrollApi16StaticTest",
+      "ace_ets_module_scroll_api18_static:ActsAceEtsModuleScrollApi18StaticTest",
+      "ace_ets_module_scroll_nowear_api11_static:ActsAceEtsModuleScrollNowearApi11StaticTest",
+      "ace_ets_module_scroll_nowear_api12_static:ActsAceEtsModuleScrollNowearApi12StaticTest",
+      "ace_ets_module_scroll_nowear_api15_static:ActsAceEtsModuleScrollNowearApi15StaticTest",
     ]
   }
 }
