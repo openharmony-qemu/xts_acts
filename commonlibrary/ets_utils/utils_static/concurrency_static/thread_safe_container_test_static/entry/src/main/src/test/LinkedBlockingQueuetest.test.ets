@@ -562,7 +562,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_GetCapacityTest_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_GetCapacityTest_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(Int.MAX_VALUE);
       let res1 = queueIntPop1.capacity;
       expect(res1).assertEqual(Int.MAX_VALUE);
@@ -584,7 +584,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linkedBlockingQueueGetCapacityTest_000126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linkedBlockingQueueGetCapacityTest_000126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(Int.MAX_VALUE);
       let res1 = queueIntPop1.capacity;
       expect(res1).assertEqual(Int.MAX_VALUE);
@@ -1282,7 +1282,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameterTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_NoParameterTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE);
       let res = queueIntPop1.size;
@@ -1297,7 +1297,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linkedBlockingQueueNoParameterTest_000164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linkedBlockingQueueNoParameterTest_000164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE + 1);
       let res = queueIntPop1.size;
@@ -1660,7 +1660,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameterTest_static_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_NoParameterTest_static_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new Array<int>(Int.MAX_VALUE);
       let iter = arr.values();
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);

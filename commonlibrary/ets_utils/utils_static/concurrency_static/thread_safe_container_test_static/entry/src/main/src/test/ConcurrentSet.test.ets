@@ -738,7 +738,7 @@ export default function ConcurrentSetTest() {
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrent_Set_Constructor_Test_static_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const array: Array<number> = new Array<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {
@@ -757,7 +757,7 @@ export default function ConcurrentSetTest() {
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrent_Set_Constructor_Test_static_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("concurrent_Set_Constructor_Test_static_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {
