@@ -1,0 +1,11 @@
+{
+  "src": [
+    "MainAbility/pages/Index/index",
+    "MainAbility/pages/animateto",
+    "MainAbility/pages/animationCurve",
+    "MainAbility/pages/Animation/animate_play_mode",
+    "MainAbility/pages/Animation/animator",
+    "MainAbility/pages/Animation/Animation",
+    "MainAbility/pages/Animation/animate"
+  ]
+}

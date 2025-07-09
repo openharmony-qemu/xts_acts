@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/AnimatorResult/setExpectedFrameRateRange",
+    "MainAbility/pages/CurvePage",
+    "MainAbility/pages/SimpleAnimatorOptionsPage"
+
+  ]
+}
