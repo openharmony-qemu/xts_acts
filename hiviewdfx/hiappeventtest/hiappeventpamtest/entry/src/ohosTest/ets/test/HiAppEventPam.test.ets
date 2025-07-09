@@ -299,9 +299,9 @@ export default function HiAppEventPamTest() {
      */
     it('testHiAppEventSetPam031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam031 start');
-      let config1：hiAppEvent.ConfigOption = {
-        disable：true,
-      };
+      let config1 = {
+        disable：true
+      }as hiAppEvent.ConfigOption;
       hiAppEvent.configure(config1);
       try {
         let eventParams: Record<string, hiAppEvent.ParamType> = {
@@ -319,9 +319,9 @@ export default function HiAppEventPamTest() {
         expect(false).assertTrue()
         done();
       }
-      let config2：hiAppEvent.ConfigOption = {
-        disable：false,
-      };
+      let config2 = {
+        disable：false
+      }as hiAppEvent.ConfigOption;
       hiAppEvent.configure(config2);
     })
 
