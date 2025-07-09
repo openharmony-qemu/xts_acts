@@ -702,7 +702,7 @@ export default function abilityTest() {
               JSON.stringify(error) + ",data: " + JSON.stringify(data));
             })
           } else if (event === 'Hap2MainAbility10onForeground') {
-            await sleep(100);
+            await sleep(1000);
             globalThis.abilityContext.startAbility({
               bundleName: "com.example.lifecycletest",
               abilityName: "Hap3MainAbility3",
@@ -712,6 +712,7 @@ export default function abilityTest() {
             })
           } else if (event === 'Hap3MainAbility3onForeground') {
             hap3MainAbility3onForegroundCount++;
+            await sleep(1000);
             if (hap3MainAbility3onForegroundCount == 3) {
               clearInterval(intervalId);
               let listTemp = JSON.stringify(globalThis.mainAbility4ListKey);
@@ -738,7 +739,7 @@ export default function abilityTest() {
                   done();
                 });
             } else {
-              await sleep(100);
+              await sleep(1000);
               globalThis.abilityContext.startAbility({
                 bundleName: "com.example.lifecycletest",
                 abilityName: "Hap2MainAbility10",

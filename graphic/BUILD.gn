@@ -50,6 +50,7 @@ group("graphic") {
       "nativeFontNdk:ActsNativeFontTest",
       "nativebuffer:ActsNativeBufferTest",
       "nativedrawing:ActsNativeDrawingTest",
+      "nativefence:ActsNativeFenceTest",
       "nativeimage:ActsNativeImageTest",
       "nativevsync:ActsNativeVsyncTest",
       "nativewindow:ActsNativeWindowTest",

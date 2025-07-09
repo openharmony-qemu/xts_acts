@@ -125,9 +125,6 @@ export default function windowImmersiveTest() {
       }
     })
     afterAll(async () => {
-      // await windowClass.setWindowLayoutFullScreen(false);
-      // await windowClass.setWindowSystemBarEnable(['status']);
-      // await windowClass.setFullScreen(false);
       let windowClass = windowStage.getMainWindowSync();
       await windowClass.setWindowLayoutFullScreen(false);
       await windowClass.setWindowSystemBarEnable(['status']);
@@ -155,19 +152,19 @@ export default function windowImmersiveTest() {
         windowClass.on('avoidAreaChange', async (data) => {
           console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-          if(data.type == 0){
-            windowClass.off('avoidAreaChange');
-            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+           if(data.type == 0){
+              windowClass.off('avoidAreaChange');
+              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+              await sleep(1000);
+              done();
+           }else{
             await sleep(1000);
-            done();
-          }else{
-            await sleep(1000);
-          }
+           }
         });
         await windowClass.setSpecificSystemBarEnabled('status', true);
         console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(2000);
-
+          
       } catch (exception) {
         console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -196,20 +193,20 @@ export default function windowImmersiveTest() {
         windowClass.on('avoidAreaChange', async (data) => {
           console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
           if(data.type == 0){
-            windowClass.off('avoidAreaChange');
-            await windowClass.setSpecificSystemBarEnabled('status', true);
-            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+              windowClass.off('avoidAreaChange');
+              await windowClass.setSpecificSystemBarEnabled('status', true);
+              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+              await sleep(1000);
+              done();
+           }else{
             await sleep(1000);
-            done();
-          }else{
-            await sleep(1000);
-          }
+           }
         });
         await windowClass.setSpecificSystemBarEnabled('status', false);
         console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
         await sleep(2000);
 
-
+          
       } catch (exception) {
         console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -217,7 +214,6 @@ export default function windowImmersiveTest() {
         done();
       }
     });
-
     /**
      * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0100
      * @tc.name      : testOnavoidAreaChangeInLandScape

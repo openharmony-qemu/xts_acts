@@ -994,6 +994,29 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testTriggerCombineKeysWithId over');
         })
+
+        /*
+         * @tc.number: uiTest_20033
+         * @tc.name: test_origin
+         * @tc.desc: specifies the string value match pattern.
+         */
+        it('test_origin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(TestTag, 'test_origin start');
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let button1 = await driver.findComponent(ON.originalText('next page'))
+            console.log(`${TestTag}, test_origin button1: ${JSON.stringify(button1)}`);
+            let originText = await button1.getOriginalText();
+            console.log(`${TestTag}, test_origin originText: ${JSON.stringify(originText)}`);
+            expect(originText == 'next page').assertTrue()
+            let button2 = await driver.findComponent(ON.originalText('next',MatchPattern.STARTS_WITH))
+            console.log(`${TestTag}, test_origin button2: ${JSON.stringify(button2)}`);
+            let originText1 = await button2.getOriginalText();
+            console.log(`${TestTag}, test_origin originText1: ${JSON.stringify(originText1)}`);
+            expect(originText1 == 'next page').assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(TestTag, 'test_origin end');
+        })
     })
     describe('UiTest_API16', () => {
         let driver: Driver
