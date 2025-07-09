@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -279,6 +280,27 @@ struct httpAuthHandler {
               break;
             }
 
+            case 'emitGetWebIdInitErr': {
+              try {
+                this.errorCode = '0';
+                this.errorMsg = 'failed';
+                this.controllerTwo.getWebId();
+              } catch (error: BusinessError) {
+                console.error(`emitGetWebIdInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = '' + error.code
+                this.errorMsg = error.message
+              }
+              Utils.emitEvent(this.errorCode, 642)
+              Utils.emitEvent(this.errorMsg, 643)
+              break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              // Adjust the loaded pages according to the running sequence of the test suite
+              router.pushUrl({ url: "pages/webViewSharedRenderProcessToken" })
+            }
           }
         })
       }

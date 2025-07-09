@@ -27,7 +27,7 @@ export default function setOverlayEnabled() {
     it("Sub_Bms_Framework_Status_OverlayEnable_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         overlay.setOverlayEnabled("", true, (err: BusinessError<void> | null) => {
-          if (err?.code != 0) {
+          if (err && err.code != 0) {
             hilog.error(0x0000, 'testParamTag', 'o1 setOverlayEnabled callback failed: %{public}s', JSON.stringify(err));
             expect(err?.code).assertEqual(401);
             done();
@@ -69,7 +69,7 @@ export default function setOverlayEnabled() {
           })
         await Utils.msSleep(1000);
         overlay.setOverlayEnabled(MODULE_NAME1, true, (err: BusinessError<void> | null) => {
-          if (err?.code != 0) {
+          if (err && err.code != 0) {
             hilog.error(0x0000, 'testParamTag', 'o1 setOverlayEnabled callback failed: %{public}s', JSON.stringify(err));
             expect(err?.code).assertEqual(17700002);
             done();
@@ -89,7 +89,7 @@ export default function setOverlayEnabled() {
     it("Sub_Bms_Framework_Status_OverlayEnable_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         overlay.setOverlayEnabled(moduleName2, true, (err: BusinessError<void> | null) => {
-          if (err?.code != 0) {
+          if (err && err.code != 0) {
             hilog.error(0x0000, 'testParamTag', 'o1 setOverlayEnabled callback failed: %{public}s', JSON.stringify(err));
             expect(err?.code).assertEqual(17700033);
             done();

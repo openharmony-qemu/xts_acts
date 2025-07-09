@@ -25,6 +25,10 @@ group("arkts_static") {
       "util_standard_test_static:ActsUtilStaticTest",
       "com_url_standard_static:ActsUrlStaticTest",
       "stream_standard_test_static:ActsStreamStaticTest",
+      "stringDecoder_standard_test_static:ActsStringDecoderStaticTest",
+      "global_standard_static:ActsGlobalStaticTest",
+      "xml_standard_static:ActsXmlStaticTest",
+      "decima_standard_static:ActsDecimaStaticTest",
     ]
   }
 }

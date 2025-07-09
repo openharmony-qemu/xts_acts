@@ -22,6 +22,7 @@ group("concurrency_static") {
       "asynclock_test_static:ActsAsyncLockStaticTest",
       "eaworker_test_static:ActsEAWorkerStaticTest",
       "atomics_test_static:ActsAtomicsStaticTest",
+      "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
     ]
   }
 }
