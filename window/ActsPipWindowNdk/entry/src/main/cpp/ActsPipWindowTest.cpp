@@ -47,6 +47,7 @@ constexpr int32_t FAIL = -1;
 constexpr int32_t SUCCESS = 0;
 constexpr int32_t WIDTH = 50;
 constexpr int32_t HEIGHT = 50;
+constexpr int32_t RECT_VALUE = 1000;
 int32_t g_timer1 = 0;
 int32_t g_timer2 = 0;
 int32_t g_timer3 = 0;
@@ -1560,13 +1561,14 @@ static napi_value TestSetPipInitialSurfaceRect(napi_env env, napi_callback_info 
     uint32_t controllerId = 0;
     int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
     OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRect ret=%{public}d", ret);
-    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 1000, 1000);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, RECT_VALUE, RECT_VALUE,
+        RECT_VALUE, RECT_VALUE);
     OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRect res=%{public}d", res);
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     if (ret != 0 || res != 0) {
         napi_create_int32(env, ret == 0? res: ret, &result);
         return result;
     }
-    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1594,13 +1596,13 @@ static napi_value TestSetPipInitialSurfaceRectwithInvalidWidth(napi_env env, nap
     uint32_t controllerId = 0;
     int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
     OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRectwithInvalidWidth ret=%{public}d", ret);
-    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 0, 1000);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, RECT_VALUE, RECT_VALUE, 0, RECT_VALUE);
     OH_LOG_INFO(LOG_APP, "TestSetPipInitialSurfaceRectwithInvalidWidth res=%{public}d", res);
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     if (ret != 0) {
         napi_create_int32(env, ret, &result);
         return result;
     }
-    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     napi_create_int32(env, res, &result);
     return result;
 }
@@ -1628,15 +1630,16 @@ static napi_value TestUnsetPipInitialSurfaceRect(napi_env env, napi_callback_inf
     uint32_t controllerId = 0;
     int32_t ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
     OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect ret=%{public}d", ret);
-    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, 1000, 1000, 1000, 1000);
+    int32_t res = OH_PictureInPicture_SetPipInitialSurfaceRect(controllerId, RECT_VALUE, RECT_VALUE,
+        RECT_VALUE, RECT_VALUE);
     int32_t res1 = OH_PictureInPicture_UnsetPipInitialSurfaceRect(controllerId);
     OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect res=%{public}d", res);
     OH_LOG_INFO(LOG_APP, "TestUnsetPipInitialSurfaceRect res1=%{public}d", res1);
-    if (res1 != 0) {
-        napi_create_int32(env, res1, &result);
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    if (ret != 0 || res1 != 0) {
+        napi_create_int32(env, ret == 0? res1: ret, &result);
         return result;
     }
-    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
