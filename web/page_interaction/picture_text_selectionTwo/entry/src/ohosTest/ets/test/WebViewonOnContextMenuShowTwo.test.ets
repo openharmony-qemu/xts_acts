@@ -66,7 +66,7 @@ export default function WebViewEnumAndFontLibrary() {
 
 
     /*
-    * @tc.number     : SUB_WEB_EMITONCONTEXTMENUSHOW_0100
+    * @tc.number     : SUB_WEB_EMITONCONTEXTMENUSHOWTWO_0100
     * @tc.name       : emitOnContextMenuShowTwo001
     * @tc.desc       : emitOnContextMenuShowTwo001
     * @tc.size       : MediumTest
@@ -76,7 +76,7 @@ export default function WebViewEnumAndFontLibrary() {
     it('emitOnContextMenuShowTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnContextMenuShowTwo001", 10)
       Utils.registerEvent("emitOnContextMenuShowTwo001", ContextMenuMediaType.AUDIO, 20250709, done);
-      sendEventByKey('emitOnContextMenuShowTwo001', 10, '');
+      sendEventByKey('webviewOnContextMenuShowTwoButton', 10, '');
     })
 
 
