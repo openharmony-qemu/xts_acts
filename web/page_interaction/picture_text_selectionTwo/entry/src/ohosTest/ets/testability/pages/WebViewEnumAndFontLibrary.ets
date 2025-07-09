@@ -313,7 +313,7 @@ struct WebViewEnumAndFontLibrary {
         Text(this.webResultText).fontSize(20)
       }
 
-      Web({ src: $rawfile("WebViewEnumAndFontLibrary.html"), controller: this.controller })
+      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
         .onControllerAttached(() => {
           try {
             let id = this.controller.getWebId();
