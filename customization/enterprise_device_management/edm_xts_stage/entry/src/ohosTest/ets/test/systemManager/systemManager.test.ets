@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -31,6 +31,9 @@ export default function systemManagerTest() {
     testGetUpdateAuthData();
     testSetAutoUnlockAfterReboot();
     testGetAutoUnlockAfterReboot();
+    testGetDisallowedNearLinkProtocols();
+    testAddDisallowedNearLinkProtocols();
+    testRemoveDisallowedNearLinkProtocols();
   })
 }
 
@@ -1023,4 +1026,231 @@ function testGetAutoUnlockAfterReboot() {
     }
     done();
   });
+}
+
+function testGetDisallowedNearLinkProtocols() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0001
+   * @tc.name      : test_get_disallowed_near_link_protocols_0001
+   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols without admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it('test_get_disallowed_near_link_protocols_0001', Level.LEVEL2, async (done: Function) => {
+    try {
+       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0002
+   * @tc.name      : test_get_disallowed_near_link_protocols_0002
+   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols without invalid admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it('test_get_disallowed_near_link_protocols_0002', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(INVALID_WANT, DEFAULT_USER_ID);
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0003
+   * @tc.name      : test_get_disallowed_near_link_protocols_0003
+   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it('test_get_disallowed_near_link_protocols_0003', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_NEARLINK_JS_0004
+   * @tc.name      : test_get_disallowed_near_link_protocols_0004
+   * @tc.desc      : test systemManager getDisallowedNearLinkProtocols success
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it('test_get_disallowed_near_link_protocols_0004', Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+      expect(protocols).not().assertNull();
+      expect(protocols.length).assertEqual(0);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddDisallowedNearLinkProtocols() {
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
+     * @tc.name      : test_add_disallowed_nearlink_protocols_0001
+     * @tc.desc      : test systemManager addDisallowedNearLinkProtocols without admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_add_disallowed_nearlink_protocols_0001', Level.LEVEL2, async (done: Function) => {
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            expect(false).assertTrue();
+        } catch (error) {
+            expect(error.code == 9200001).assertTrue();
+        }
+        done();
+    });
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
+     * @tc.name      : test_add_disallowed_nearlink_protocols_0002
+     * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_add_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            expect(false).assertTrue();
+        } catch (error) {
+            expect(error.code == 9200002).assertTrue();
+        } finally {
+            await adminManager.disableAdmin(SELFWANT);
+        }
+        done();
+    });
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
+     * @tc.name      : test_add_disallowed_nearlink_protocols_0003
+     * @tc.desc      : test systemManager addDisallowedNearLinkProtocols with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_add_disallowed_nearlink_protocols_0003', Level.LEVEL2, async (done: Function) => {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            let protocols: Array<systemManager.NearLinkProtocol> =
+                systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+            expect(protocols.length == nearlinkProtocols.length).assertTrue();
+        } catch (error) {
+            expect(false).assertTrue();
+        } finally {
+            await adminManager.disableSuperAdmin(SELFHAPNAME);
+        }
+        done();
+    });
+}
+
+function testRemoveDisallowedNearLinkProtocols() {
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0001
+     * @tc.name      : test_remove_disallowed_nearlink_protocols_0001
+     * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols without admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_remove_disallowed_nearlink_protocols_0001', Level.LEVEL2, async (done: Function) => {
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            expect(false).assertTrue();
+        } catch (error) {
+            expect(error.code == 9200001).assertTrue();
+        }
+        done();
+    });
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0002
+     * @tc.name      : test_remove_disallowed_nearlink_protocols_0002
+     * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_remove_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            expect(false).assertTrue();
+        } catch (error) {
+            expect(error.code == 9200002).assertTrue();
+        } finally {
+            await adminManager.disableAdmin(SELFWANT);
+        }
+        done();
+    });
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_NEARLINK_PROTOCOLS_JS_0003
+     * @tc.name      : test_remove_disallowed_nearlink_protocols_0003
+     * @tc.desc      : test systemManager removeDisallowedNearLinkProtocols with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it('test_remove_disallowed_nearlink_protocols_0003', Level.LEVEL2, async (done: Function) => {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let nearlinkProtocols: Array<number> = new Array();
+        nearlinkProtocols.push(0);
+        nearlinkProtocols.push(1);
+        try {
+            systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+            let protocols: Array<systemManager.NearLinkProtocol> =
+                systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+            expect(protocols.length == 0).assertTrue();
+        } catch (error) {
+            expect(false).assertTrue();
+        } finally {
+            await adminManager.disableSuperAdmin(SELFHAPNAME);
+        }
+        done();
+    });
 }

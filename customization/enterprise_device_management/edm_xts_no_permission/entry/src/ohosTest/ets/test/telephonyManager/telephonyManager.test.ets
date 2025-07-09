@@ -24,6 +24,12 @@ export default function telephonyManagerTest() {
     testSetSimDisabled();
     testSetSimEnabled();
     testIsSimDisabled();
+    testAddOutgoingCallPolicyNumbers();
+    testRemoveOutgoingCallPolicyNumbers();
+    testGetOutgoingCallPolicyNumbers();
+    testAddIncomingCallPolicyNumbers();
+    testRemoveIncomingCallPolicyNumbers();
+    testGetIncomingCallPolicyNumbers();
   })
 }
 
@@ -96,3 +102,144 @@ function testIsSimDisabled() {
   });
 }
 
+function testAddOutgoingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_add_outgoing_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager addOutgoingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_add_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, 0, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetOutgoingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_get_outgoing_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager getOutgoingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveOutgoingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_remove_outgoing_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager removeOutgoingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_remove_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, 0, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddIncomingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_add_incoming_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager addIncomingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_add_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, 0, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetIncomingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_get_incoming_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager getIncomingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveIncomingCallPolicyNumbers() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.name      : test_remove_incoming_call_policy_numbers_0100
+   * @tc.desc      : test telephonyManager removeIncomingCallPolicyNumbers with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_remove_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let numbers: Array<string> = ["13112345678","13687654321"];
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, 0, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}

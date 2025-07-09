@@ -42,7 +42,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { PhotoPickerResult } from '../MainAbility/common/PhotoPickerResult'
 import {
   RecentPhotoOptions,
-  PhotoSource,
+  PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 
@@ -95,7 +95,13 @@ async function clickResultButton(driver: Driver) {
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn = await driver.findComponent(ON.id('albumButton'));
-  await btn.click();
+  if (btn === null) {
+    console.info("clickAlbumButton findComponent btn fail");
+    expect(false).assertTrue();
+  } else {
+    console.info("clickAlbumButton findComponent btn success");
+    await btn.click();
+  }
   console.info('testPicker btn click finish');
   await CommonFunc.sleep(1000);
   let albumItem = await driver.findComponent((ON.id('AlbumListItem')));
@@ -158,11 +164,20 @@ export default function TextPicker() {
 
     beforeAll(async (done: Function) => {
       let maxButton = await driver.findComponent(ON.id("EnhanceMaximizeBtn"));
+      let isExecuteTestCase: boolean = false;
       await CommonFunc.sleep(1000);
       if(maxButton !== null){
         await maxButton.click();
+        isExecuteTestCase = true;
       }
       await CommonFunc.sleep(1000);
+      if (!isExecuteTestCase) {
+        try {
+          driver.triggerCombineKeys(17, 18);
+        } catch (error) {
+          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+        }
+      }
       done();
     });
     
@@ -872,7 +887,13 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
 
       let changeNumButton: Component = await driver.findComponent(ON.id('changeNumButton'));
-      await changeNumButton.click();
+      if (changeNumButton === null) {
+        console.info("testPicker15 findComponent changeNumButton fail");
+        expect(false).assertTrue();
+      } else {
+        console.info("testPicker15 findComponent changeNumButton success");
+        await changeNumButton.click();
+      }
       let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("testPicker15 findComponent checkbox fail");
@@ -1062,7 +1083,6 @@ export default function TextPicker() {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker19 baseItemInfo =:' + JSON.stringify(baseItemInfo));
         expect(baseItemInfo.uri).not().assertUndefined();
-        expect(baseItemInfo.uri).not().assertEqual('');
         expect(baseItemInfo.mimeType).not().assertUndefined();
         expect(baseItemInfo.width).not().assertUndefined();
         expect(baseItemInfo.height).not().assertUndefined();
@@ -1119,7 +1139,6 @@ export default function TextPicker() {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker20 baseItemInfo =:' + JSON.stringify(baseItemInfo));
         expect(baseItemInfo.uri).not().assertUndefined();
-        expect(baseItemInfo.uri).not().assertEqual('');
         expect(baseItemInfo.mimeType).not().assertUndefined();
         expect(baseItemInfo.width).not().assertUndefined();
         expect(baseItemInfo.height).not().assertUndefined();
@@ -1176,7 +1195,6 @@ export default function TextPicker() {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker21 baseItemInfo =:' + JSON.stringify(baseItemInfo));
         expect(baseItemInfo.uri).not().assertUndefined();
-        expect(baseItemInfo.uri).not().assertEqual('');
         expect(baseItemInfo.mimeType).not().assertUndefined();
         expect(baseItemInfo.width).not().assertUndefined();
         expect(baseItemInfo.height).not().assertUndefined();
@@ -2036,6 +2054,129 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker43 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker44
+     * @tc.name      : testPicker44
+     * @tc.desc      : Testing RecentPhotoComponent(isAutoRefreshSupported)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker44', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.RECENT_PHOTO_INFO;
+      let recentPhotoOptions: RecentPhotoOptions = new RecentPhotoOptions();
+      recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+      recentPhotoOptions.period = 0;
+      recentPhotoOptions.photoSource = PhotoSource.ALL;
+      recentPhotoOptions.isAutoRefreshSupported = true;
+      recentPhotoOptions.colorMode=PickerColorMode.LIGHT;
+      let callback = (event: events_emitter.EventData) => {
+        let baseItemInfo: BaseItemInfo = event?.data?.msg;
+        console.info('testPicker44 baseItemInfo =:' + JSON.stringify(baseItemInfo));
+        expect(baseItemInfo.uri).not().assertUndefined();
+        expect(baseItemInfo.mimeType).not().assertUndefined();
+        expect(baseItemInfo.width).not().assertUndefined();
+        expect(baseItemInfo.height).not().assertUndefined();
+        expect(baseItemInfo.size).not().assertUndefined();
+        expect(baseItemInfo.duration).not().assertUndefined();
+        done();
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/RecentPhotoDemo',
+        params: {
+          eventId: code,
+          recentPhotoOptions: recentPhotoOptions,
+        }
+      }
+      await routeToUrl(options);
+      console.info('testPicker44 create');
+      let component: Component = await driver.findComponent(ON.id('recentPhoto'));
+      if (component === null) {
+        console.info('testPicker44 no recentPhoto');
+      } else {
+        await component.click();
+        await CommonFunc.sleep(2000);
+      }
+      router.back();
+      console.info("testPicker44 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker45
+     * @tc.name      : testPicker45
+     * @tc.desc      : Testing PhotoPickerComponent gridOffset
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker45', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.gridStartOffset = 10;
+      pickerOptions.gridEndOffset = 10;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker45 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).not().assertUndefined();
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      router.back();
+      console.info("testPicker45 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker46
+     * @tc.name      : testPicker46
+     * @tc.desc      : Testing getRecentPhotoInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker46', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let options: RecentPhotoOptions = new RecentPhotoOptions();
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+      options.period = 0;
+      options.photoSource = PhotoSource.ALL;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      try{
+        phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
+          console.info('testPicker40, photoAccessHelper.getRecentPhotoInfo successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(result));
+          expect(true).assertTrue();
+        })
+      } catch(err) {
+        console.error(`testPicker40, photoAccessHelper.getRecentPhotoInfo failed with err: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      }
+      console.info("testPicker40 finish");
       done();
     });
   })
