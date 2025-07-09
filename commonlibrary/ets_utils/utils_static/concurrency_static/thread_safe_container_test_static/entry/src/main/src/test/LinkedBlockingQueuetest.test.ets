@@ -393,13 +393,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0118
-     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest
+     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01
      * @tc.desc      : Verify that for a queue with an initial capacity.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
         for (let i:int = 0; i < 2; i++) {
@@ -533,7 +533,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_00126
      * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_008
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after add/poll operations on max capacity queue.
      * @tc.size      : MediumTest
@@ -800,7 +800,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_00139
      * @tc.name      : linked_Blocking_Queue_Test_static_014
      * @tc.desc      : Verify queue size becomes 0 after add-poll sequence on capacity-1 queue.
      * @tc.size      : MediumTest
@@ -1086,7 +1086,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0154
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_00154
      * @tc.name      : linked_Blocking_Queue_Test_static_030
      * @tc.desc      : Create a task to operate on a LinkedBlockingQueue.
      * @tc.size      : MediumTest
@@ -1246,13 +1246,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0163
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_001
+     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_0001
      * @tc.desc      : Test LinkedBlockingQueue constructor with capacity 0.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("linked_Blocking_Queue_NoParameterTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_NoParameterTest_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
 
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       let res = queueIntPop1.size;
@@ -1275,7 +1275,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00164
      * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_003
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
@@ -1290,7 +1290,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0164
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
      * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_004
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
@@ -1669,7 +1669,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00185
      * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_023
      * @tc.desc      : Verify LinkedBlockingQueue capacity with array of undefined ints.
      * @tc.size      : MediumTest
@@ -2213,13 +2213,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_pushWithTest_0210
-     * @tc.name      : pushWithTest_static_011
+     * @tc.name      : pushWithTest_static_0011
      * @tc.desc      : Test the actual size of the queue with capacity-1 after the element is added
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("pushWithTest_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("pushWithTest_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         const capacity = 5;
         const queue = new containers.LinkedBlockingQueue<number>(capacity);

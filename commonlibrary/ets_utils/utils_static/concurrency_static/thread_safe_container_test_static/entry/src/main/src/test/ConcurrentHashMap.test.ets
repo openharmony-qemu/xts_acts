@@ -2236,7 +2236,7 @@ export default function ConcurrentHashMapTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("getSize_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("get_Size_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const nonExistentKey = "nonExistentKey";
       expect(map.get(nonExistentKey)).assertUndefined();
@@ -2939,13 +2939,13 @@ export default function ConcurrentHashMapTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0247
-     * @tc.name      : constructor_With_Key_static_Test_007
+     * @tc.name      : constructor_With_Key_static_Test_0007
      * @tc.desc      : Verify keys iterator returns correct values for a populated ConcurrentHashMap.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("constructor_With_Key_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Key_static_Test_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const inputMap = new Map<number, string>();
       inputMap.set(1, "value1");
       inputMap.set(2, "value2");

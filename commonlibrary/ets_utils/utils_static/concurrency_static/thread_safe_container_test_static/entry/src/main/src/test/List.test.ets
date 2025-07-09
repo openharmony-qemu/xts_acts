@@ -1,5 +1,5 @@
 import ConcurrentHashMapTest from './ConcurrentHashMap.test';
-import ArrayBlockingQueuetest from './ArrayBlockingQueue';
+import ArrayBlockingQueuetest from './ArrayBlockingQueue.test';
 import LinkedBlockingQueuetest from './LinkedBlockingQueuetest.test';
 import ConcurrentSetTest from "./ConcurrentSet.test";
 
