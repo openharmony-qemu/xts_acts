@@ -19,6 +19,7 @@ group("webPermissions") {
       "web_permissions_three:ActsWebPermissionsThreeTest",
       "web_permissions_two:ActsWebPermissionsTwoTest",
       "web_permissions_one_static:ActsWebPermissionsOneStaticTest",
+      "web_permissions_four_static:ActsWebPermissionsOFourStaticTest",
     ]
   }
 }
