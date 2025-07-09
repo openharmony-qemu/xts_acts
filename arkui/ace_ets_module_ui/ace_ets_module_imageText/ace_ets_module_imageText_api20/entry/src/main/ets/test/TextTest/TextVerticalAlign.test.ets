@@ -123,7 +123,7 @@ export default function TextVerticalAlignTest() {
      */
     it('TextVerticalAlignTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0050] START');
-      let strJson = getInspectorByKey('TextModifier_textVerticalAlign_true');
+      let strJson = getInspectorByKey('Text_TextVerticalAlign_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextVerticalAlignTest_0050] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.BASELINE');

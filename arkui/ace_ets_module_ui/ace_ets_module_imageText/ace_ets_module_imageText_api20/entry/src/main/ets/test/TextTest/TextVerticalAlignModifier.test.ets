@@ -51,7 +51,7 @@ export default function ModifierTextVerticalAlignTest() {
      */
     it('ModifierTextVerticalAlignTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0010] START');
-      let strJson = getInspectorByKey('Text_ModifierTextVerticalAlign_BASELINE');
+      let strJson = getInspectorByKey('Modifier_TextVerticalAlign_BASELINE');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ModifierTextVerticalAlignTest_0010] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.BASELINE');
@@ -69,7 +69,7 @@ export default function ModifierTextVerticalAlignTest() {
      */
     it('ModifierTextVerticalAlignTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0020] START');
-      let strJson = getInspectorByKey('Text_ModifierTextVerticalAlign_BOTTOM');
+      let strJson = getInspectorByKey('Modifier_TextVerticalAlign_BOTTOM');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ModifierTextVerticalAlignTest_0020] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.BOTTOM');
@@ -87,7 +87,7 @@ export default function ModifierTextVerticalAlignTest() {
      */
     it('ModifierTextVerticalAlignTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0030] START');
-      let strJson = getInspectorByKey('Text_ModifierTextVerticalAlign_CENTER');
+      let strJson = getInspectorByKey('Modifier_TextVerticalAlign_CENTER');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ModifierTextVerticalAlignTest_0030] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.CENTER');
@@ -105,7 +105,7 @@ export default function ModifierTextVerticalAlignTest() {
      */
     it('ModifierTextVerticalAlignTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0040] START');
-      let strJson = getInspectorByKey('Text_ModifierTextVerticalAlign_TOP');
+      let strJson = getInspectorByKey('Modifier_TextVerticalAlign_TOP');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ModifierTextVerticalAlignTest_0040] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.TOP');
@@ -116,36 +116,18 @@ export default function ModifierTextVerticalAlignTest() {
     /**
      * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0050
      * @tc.name      ModifierTextVerticalAlignTest_0050
-     * @tc.desc      test the textVerticalAlign of TextModifier: default
+     * @tc.desc      test the textVerticalAlign of TextModifier: undefined
      * @tc.level:    Level 2
      * @tc.type :
      * @tc.size :
      */
     it('ModifierTextVerticalAlignTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0050] START');
-      let strJson = getInspectorByKey('TextModifier_ModifierTextVerticalAlign_true');
+      let strJson = getInspectorByKey('Modifier_TextVerticalAlign_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ModifierTextVerticalAlignTest_0050] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
       expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.BASELINE');
       console.info('[ModifierTextVerticalAlignTest_0050] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0060
-     * @tc.name      ModifierTextVerticalAlignTest_0060
-     * @tc.desc      test the textVerticalAlign of TextModifier: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('ModifierTextVerticalAlignTest_0060', Level.LEVEL2, async (done: Function) => {
-      console.info('[ModifierTextVerticalAlignTest_0060] START');
-      let strJson = getInspectorByKey('Text_ModifierTextVerticalAlign_undefined');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[ModifierTextVerticalAlignTest_0060] value: ' + JSON.stringify(obj.$attrs.textVerticalAlign));
-      expect(obj.$attrs.textVerticalAlign).assertEqual('TextVerticalAlign.BASELINE');
-      console.info('[ModifierTextVerticalAlignTest_0060] END');
       done();
     });
   })

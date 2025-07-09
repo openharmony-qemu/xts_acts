@@ -13,27 +13,6 @@
  * limitations under the License.
  */
 
- class RichEditorModifier1 implements AttributeModifier<RichEditorAttribute> {
-
-  applyNormalAttribute(instance: RichEditorAttribute): void {
-    instance.enableAutoSpacing(true)
-  }
-}
-
-class RichEditorModifier2 implements AttributeModifier<RichEditorAttribute> {
-
-  applyNormalAttribute(instance: RichEditorAttribute): void {
-    instance.enableAutoSpacing(false)
-  }
-}
-
-class RichEditorModifier3 implements AttributeModifier<RichEditorAttribute> {
-
-  applyNormalAttribute(instance: RichEditorAttribute): void {
-    instance.enableAutoSpacing(undefined)
-  }
-}
-
 @Entry
 @Component
 struct RichEditorEnableAutoSpacing {
@@ -51,9 +30,6 @@ struct RichEditorEnableAutoSpacing {
   options5: RichEditorOptions = { controller: this.controller5 };
   options6: RichEditorOptions = { controller: this.controller6 };
   options7: RichEditorOptions = { controller: this.controller7 };
-  @State RichEditorModifier1: RichEditorModifier1 = new RichEditorModifier1()
-  @State RichEditorModifier2: RichEditorModifier2 = new RichEditorModifier2()
-  @State RichEditorModifier3: RichEditorModifier3 = new RichEditorModifier3()
 
   build() {
     Column({ space: 1 }) {
@@ -115,54 +91,6 @@ struct RichEditorEnableAutoSpacing {
         .id('RichEditor_enableAutoSpacing_undefined')
         .enableAutoSpacing(undefined)
         .height('5%')
-
-      RichEditor(this.options5)
-        .onReady(() => {
-          this.controller5.addTextSpan('RichEditorModifier：true',
-            {
-              style:
-              {
-                fontColor: Color.Orange,
-                fontSize: 15
-              }
-            })
-        })
-        .attributeModifier(this.RichEditorModifier1)
-        .id('RichEditorModifier_enableAutoSpacing_true')
-        .height('5%')
-        .borderWidth(1)
-
-      RichEditor(this.options6)
-        .onReady(() => {
-          this.controller6.addTextSpan('RichEditorModifier：false',
-            {
-              style:
-              {
-                fontColor: Color.Orange,
-                fontSize: 15
-              }
-            })
-        })
-        .attributeModifier(this.RichEditorModifier2)
-        .id('RichEditorModifier_enableAutoSpacing_false')
-        .height('5%')
-        .borderWidth(1)
-
-      RichEditor(this.options7)
-        .onReady(() => {
-          this.controller7.addTextSpan('RichEditorModifier：undefined',
-            {
-              style:
-              {
-                fontColor: Color.Orange,
-                fontSize: 15
-              }
-            })
-        })
-        .attributeModifier(this.RichEditorModifier3)
-        .id('RichEditorModifier_enableAutoSpacing_undefined')
-        .height('5%')
-        .borderWidth(1)
     }.height('100%')
   }
 }

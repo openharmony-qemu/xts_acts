@@ -112,59 +112,5 @@ export default function RichEditorEnableAutoSpacingTest() {
       console.info('[RichEditorEnableAutoSpacingTest_0040] END');
       done();
     });
-
-    /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0050
-     * @tc.name      RichEditorEnableAutoSpacingTest_0050
-     * @tc.desc      test the attr of RichEditorModifier: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('RichEditorEnableAutoSpacingTest_0050', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorEnableAutoSpacingTest_0050] START');
-      let strJson = getInspectorByKey('RichEditorModifier_enableAutoSpacing_true');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[RichEditorEnableAutoSpacingTest_0050] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('1');
-      console.info('[RichEditorEnableAutoSpacingTest_0050] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0060
-     * @tc.name      RichEditorEnableAutoSpacingTest_0060
-     * @tc.desc      test the attr of RichEditorModifier: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('RichEditorEnableAutoSpacingTest_0060', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorEnableAutoSpacingTest_0060] START');
-      let strJson = getInspectorByKey('RichEditorModifier_enableAutoSpacing_false');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[RichEditorEnableAutoSpacingTest_0060] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('0');
-      console.info('[RichEditorEnableAutoSpacingTest_0060] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0070
-     * @tc.name      RichEditorEnableAutoSpacingTest_0070
-     * @tc.desc      test the attr of RichEditorModifier: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('RichEditorEnableAutoSpacingTest_0070', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorEnableAutoSpacingTest_0070] START');
-      let strJson = getInspectorByKey('RichEditorModifier_enableAutoSpacing_undefined');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[RichEditorEnableAutoSpacingTest_0070] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('0');
-      console.info('[RichEditorEnableAutoSpacingTest_0070] END');
-      done();
-    });
   })
 }

@@ -54,6 +54,6 @@ struct TextVerticalAlign1 {
         .borderWidth(1)
     }
     .alignItems(HorizontalAlign.Center)
-    .width("100%")
+    .width('100%')
   }
 }
