@@ -179,6 +179,19 @@ export default function PluralRulesInIntlTest() {
       console.log('pluralrules_test_static_3400 ' + value);
       expect(value).assertEqual('other');
     })
+        
+    /* *
+    * @tc.number  pluralrules_test_static_3200
+    * @tc.name    pluralrules_test_static_3200
+    * @tc.desc    get PluralRules with zh locale and maximumFractionDigits options, check the select result
+    */
+    it('pluralrules_test_static_3200', Level.LEVEL0, async (): Promise<void> => {
+      let pl = new intl.PluralRules('zh', {'maximumFractionDigits': 11});
+      let value = pl.select(0);
+      console.log('pluralrules_test_3200 ' + value);
+      expect(value).assertEqual('other');
+    })
+
     console.log('*************end PluralRulesInIntlTest*************');
   })
 }

@@ -1496,7 +1496,7 @@ export default function streamTest() {
       while (writableStream.write('t')) {
         num++;
       }
-      expect(number).assertEqual(0);
+      expect(num).assertEqual(0);
     });
 
     // Check the StreamWritableCbTwice.

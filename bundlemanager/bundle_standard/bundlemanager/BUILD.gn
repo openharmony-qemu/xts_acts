@@ -17,9 +17,11 @@ group("bundlemanager") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsabilitybmsenumteststatic:ActsAbilityBMSEnumStaticTest",
       "actsbmsaccesstokentest:ActsBmsAccessTokenTest",
       "actsbmsatomicserviceetstest:actsbmsatomicserviceetstest",
       "actsbmscontextmenutest:ActsBmsContextmenuTest",
+      "actsbmscontextmenuteststatic:ActsBmsContextmenuStaticTest",
       "actsbmsetsunpermissiontest:ActsBmsEtsUnPermissionTest",
       "actsbmsgetinfostest:ActsBmsGetInfosTest",
       "actsbmsgetlauncherabilityinfo2test:ActsBmsGetLauncherAbilityInfo2Test",
@@ -40,6 +42,8 @@ group("bundlemanager") {
       "actsbundlemanagerstageteststatic:ActsBundleMgrStageEtsStaticTest",
       "actsbundlemanagertest:ActsBundleManagerTest",
       "actsbundlemanagertestcaseAddition:ActsbundlemgrcaseAdditionEtsTest",
+      "actsbundlemanagerteststatic:ActsBundleMgrStaticTest",
+      "actsbundlemanagertestcaseAdditionstatic:ActsbundlemgrcaseAdditionEtsStaticTest",
       "actsbundlenativeninthapitest:ActsBundleNativeNinthApiTest",
       "actsbundlenativetest:ActsBundleNativeTest",
       "sceneProject/bmsaccesstokenfive:bmsAccessTokenTest5",
