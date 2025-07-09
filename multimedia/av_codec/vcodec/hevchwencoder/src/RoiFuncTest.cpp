@@ -27,12 +27,12 @@
 #include "avcodec_common.h"
 
 namespace {
-OH_AVCodec* venc_ = NULL;
-OH_AVCapability* cap = nullptr;
-OH_AVCapability* cap_hevc = nullptr;
-const char* g_codecName = "";
-const char* g_codecNameHevc = "";
-const char* g_outDirTest = "/data/test/media/videoEncodeFileRoi.h265";
+OH_AVCodec *g_venc = nullptr;
+OH_AVCapability *g_capHevc = nullptr;
+OH_AVCapability *g_cap = nullptr;
+const char *g_outDirTest = "/data/test/media/VIDEO_ENCODE_FILE_ROI.h265";
+const char *g_codecName = "";
+const char *g_codecNameHevc = "";
 } // namespace
 namespace OHOS {
 namespace Media {
@@ -61,20 +61,20 @@ using namespace testing::ext;
 
 void HwEncFuncRoiTest::SetUpTestCase()
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(cap);
+    g_cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    g_codecName = OH_AVCapability_GetName(g_cap);
     cout << "codecname: " << g_codecName << endl;
-    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecNameHevc = OH_AVCapability_GetName(cap_hevc);
+    g_capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    g_codecNameHevc = OH_AVCapability_GetName(g_capHevc);
     cout << "codecname_hevc: " << g_codecNameHevc << endl;
 }
 void HwEncFuncRoiTest::TearDownTestCase() {}
 void HwEncFuncRoiTest::SetUp() {}
 void HwEncFuncRoiTest::TearDown()
 {
-    if (venc_ != NULL) {
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
 }
 namespace {
@@ -85,7 +85,7 @@ namespace {
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_001, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     if (!isSupported) {
         return;
     }
@@ -115,7 +115,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_001, TestSize.Level1)
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_002, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_VBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_VBR);
     if (!isSupported) {
         return;
     }
@@ -127,7 +127,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_002, TestSize.Level1)
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->DEFAULT_BITRATE_MODE = VBR;
     vEncSample->INP_DIR = INP_DIR_1920_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHevc));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -142,7 +142,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_002, TestSize.Level1)
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_003, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     if (!isSupported) {
         return;
     }
@@ -153,7 +153,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_003, TestSize.Level1)
     vEncSample->OUT_DIR = g_outDirTest;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHevc));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -168,7 +168,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_003, TestSize.Level1)
 //  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_004, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -195,7 +195,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_004, TestSize.Level1)
 //  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_005, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -222,7 +222,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_005, TestSize.Level1)
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_006, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     if (!isSupported) {
         return;
     }
@@ -251,7 +251,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_006, TestSize.Level1)
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_007, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_VBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_VBR);
     if (!isSupported) {
         return;
     }
@@ -263,7 +263,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_007, TestSize.Level1)
     vEncSample->SURF_INPUT = true;
     vEncSample->DEFAULT_BITRATE_MODE = VBR;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHevc));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -278,7 +278,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_007, TestSize.Level1)
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_008, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CBR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     if (!isSupported) {
         return;
     }
@@ -290,7 +290,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_008, TestSize.Level1)
     vEncSample->SURF_INPUT = true;
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHevc));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -305,7 +305,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_008, TestSize.Level1)
 //  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_009, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -333,7 +333,7 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_009, TestSize.Level1)
 //  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_010, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }

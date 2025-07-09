@@ -26,13 +26,11 @@ using namespace std;
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
-namespace
-{
-OH_AVCodec* venc_ = NULL;
+namespace {
+OH_AVCodec* g_venc = nullptr;
 const char* g_codecName = "";
-OH_AVCapability* cap_enc = nullptr;
-OH_AVFormat* format_ = NULL;
-OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
+OH_AVCapability* g_capEnc = nullptr;
+OH_AVFormat* g_format = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -54,33 +52,25 @@ protected:
 
 void HwEncSqrFuncTest::SetUpTestCase()
 {
-    cap_enc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(cap_enc);
+    g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    g_codecName = OH_AVCapability_GetName(g_capEnc);
     cout << "g_codecname: " << g_codecName << endl;
 }
 void HwEncSqrFuncTest::TearDownTestCase() {}
-void HwEncSqrFuncTest::SetUp()
-{
-    signal_ = new VEncAPI11Signal();
-}
+void HwEncSqrFuncTest::SetUp() {}
 void HwEncSqrFuncTest::TearDown()
 {
-    if (format_ != nullptr)
+    if (g_format != nullptr)
     {
-        OH_AVFormat_Destroy(format_);
-        format_ = nullptr;
+        OH_AVFormat_Destroy(g_format);
+        g_format = nullptr;
     }
-    if (venc_ != nullptr)
+    if (g_venc != nullptr)
     {
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
-    if (signal_ != nullptr)
-    {
-        delete signal_;
-        signal_ = nullptr;
-    }
-    }
+}
 } // namespace Media
 } // namespace OHOS
 
@@ -92,7 +82,7 @@ namespace {
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_001, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported)
     {
         return;
@@ -129,7 +119,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_001, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_002, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -164,7 +154,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_002, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -198,7 +188,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_004, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -231,7 +221,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_004, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_005, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -266,7 +256,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_005, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_006, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -297,7 +287,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_006, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_007, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -327,7 +317,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_007, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_008, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -357,7 +347,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_008, TestSize.Level2)
  */
 HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_009, TestSize.Level2)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }

@@ -27,11 +27,10 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec* venc_ = NULL;
-OH_AVCapability* cap_enc = nullptr;
+OH_AVCodec* g_venc = nullptr;
+OH_AVCapability* g_capEnc = nullptr;
 const char* g_codecName = "";
-OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
-OH_AVFormat* format_ = NULL;
+OH_AVFormat* g_format = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -54,28 +53,21 @@ protected:
 
 void HwEncBFuncTest::SetUpTestCase()
 {
-    cap_enc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(cap_enc);
+    g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    g_codecName = OH_AVCapability_GetName(g_capEnc);
     cout << "g_codecname: " << g_codecName << endl;
 }
 void HwEncBFuncTest::TearDownTestCase() {}
-void HwEncBFuncTest::SetUp()
-{
-    signal_ = new VEncAPI11Signal();
-}
+void HwEncBFuncTest::SetUp() {}
 void HwEncBFuncTest::TearDown()
 {
-    if (venc_ != NULL) {
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
-    if (format_ != nullptr) {
-        OH_AVFormat_Destroy(format_);
-        format_ = nullptr;
-    }
-    if (signal_) {
-        delete signal_;
-        signal_ = nullptr;
+    if (g_format != nullptr) {
+        OH_AVFormat_Destroy(g_format);
+        g_format = nullptr;
     }
 }
 } // namespace Media
@@ -89,7 +81,7 @@ namespace {
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     if (!bsupport) {
         return;
     }
@@ -103,9 +95,9 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 0;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->INP_DIR = INP_DIR_720_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframe(format_);
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframe(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -122,7 +114,7 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     if (!bsupport) {
         return;
     }
@@ -136,9 +128,9 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->INP_DIR = INP_DIR_720_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframes(format_);
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframes(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -155,24 +147,23 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_003, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
-    if (!isSupported || !bsupport) {
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    if (!bsupport) {
         return;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->DEFAULT_WIDTH = 1080;
-    vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = "/data/test/media/1080_1920_nv12_01.h265";
-    vEncSample->SURF_INPUT = true;
+    vEncSample->DEFAULT_WIDTH = 1280;
+    vEncSample->DEFAULT_HEIGHT = 720;
+    vEncSample->OUT_DIR = "/data/test/media/1280_720_YUV420_03.h265";
     vEncSample->MODE_ENABLE = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->B_ENABLE = true;
+    vEncSample->DEFAULT_BITRATE_MODE = CBR;
     vEncSample->DEFAULT_BFRAME = 0;
-    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12  ;
-    vEncSample->INP_DIR = INP_DIR_1080_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframes(format_);
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
+    vEncSample->INP_DIR = INP_DIR_720_30;
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframes(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -189,8 +180,8 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_003, TestSize.Level2)
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported || !bsupport) {
         return;
     }
@@ -205,9 +196,9 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframes(format_);
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframes(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -224,8 +215,8 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported || !bsupport) {
         return;
     }
@@ -240,9 +231,9 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = -1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframes(format_);
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframes(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -259,8 +250,8 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_006, TestSize.Level2)
 {
-    bool bsupport = OH_AVCapability_IsFeatureSupported(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported || !bsupport) {
         return;
     }
@@ -275,9 +266,9 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_006, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 100;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, format_);
-    int32_t ret_1 = vEncSample->GetBframes(format_);
+    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, g_format);
+    int32_t ret_1 = vEncSample->GetBframes(g_format);
     ASSERT_GT(ret_1, 0);
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());

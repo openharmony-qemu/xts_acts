@@ -27,10 +27,9 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec* venc_ = NULL;
-OH_AVCapability* cap_enc = nullptr;
+OH_AVCodec* g_venc = nullptr;
+OH_AVCapability* g_capEnc = nullptr;
 const char* g_codecName = "";
-OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -49,24 +48,17 @@ public:
 
 void HwEncApiNdkTest::SetUpTestCase()
 {
-    cap_enc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(cap_enc);
+    g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    g_codecName = OH_AVCapability_GetName(g_capEnc);
     cout << "g_codecName: " << g_codecName << endl;
 }
 void HwEncApiNdkTest::TearDownTestCase() {}
-void HwEncApiNdkTest::SetUp()
-{
-    signal_ = new VEncAPI11Signal();
-}
+void HwEncApiNdkTest::SetUp() {}
 void HwEncApiNdkTest::TearDown()
 {
-    if (venc_ != NULL) {
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
-    }
-    if (signal_) {
-        delete signal_;
-        signal_ = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
 }
 } // namespace Media
@@ -80,7 +72,7 @@ namespace {
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -96,7 +88,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
     std::string input = inputDir;
-    std::string output = outputDir;  
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -123,7 +115,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -166,7 +158,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -209,7 +201,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -252,7 +244,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }
@@ -295,7 +287,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
 {
-    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_enc, BITRATE_MODE_SQR);
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
     if (!isSupported) {
         return;
     }

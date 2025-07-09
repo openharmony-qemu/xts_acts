@@ -895,7 +895,8 @@ void VEncAPI11Sample::StopOutloop()
 }
 
 int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir,
- std::string &outputDir, uint32_t &w, uint32_t &h, uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
+                                           std::outputDir, uint32_t &w, uint32_t &h,
+                                           uint32_t &bitrateMode, uint32_t &bitRate, bool &Mode)
 {
     std::ifstream file(filePath);
     if (!file.is_open()) {
