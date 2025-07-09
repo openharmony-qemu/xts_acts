@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <style>
-	#fileAccess2 {
-	    display:block;
-        width: 300px;
-        height: 150px;
-        line-height: 150px;
-        text-align: center;
-        background-color: orange;
-
-     }
-
-    #contain {
-        display: flex;
-        justify-content: center; /* 水平居中 */
-        align-items: center;
-    }
+        .contain {
+                  position: relative; /* 父元素设为相对定位 */
+                  height: 100vh; /* 示例：父元素高度为视口高度 */
+                  border: 1px solid #ccc;
+              }
+              #fileAccess2 {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%); /* 通过平移自身宽高的50%实现居中 */
+                  width: 300px;
+                  height: 100px;
+                  background-color: lightblue;
+                  text-align: center;
+                  line-height: 100px;
+              }
     </style>
 </head>
 <body>
