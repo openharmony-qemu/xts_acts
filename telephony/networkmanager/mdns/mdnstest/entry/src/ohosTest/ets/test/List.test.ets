@@ -19,7 +19,7 @@ import EmptyTest from './Empty.test';
 import wifiManager from '@ohos.wifiManager';
 
 export default function testsuite() {
-    if(canIUse("SystemCapability.Communication.NetManager.MDNS" && wifiManager.isWifiActive() )){
+    if(canIUse("SystemCapability.Communication.NetManager.MDNS")&& wifiManager.isWifiActive()){
         NetworkManagerMdnsTest();
         mdnsTest();
     }else{
