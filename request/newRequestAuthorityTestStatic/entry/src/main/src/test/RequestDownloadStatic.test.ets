@@ -201,6 +201,245 @@ export default function RequestDownloadStaticTest() {
       hilog.info(domain, tag, "-----------------------SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 end-----------------------");
       done();
     });
+
+    /*
+     * @tc.number: SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.name: SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.desc: download task
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('SUB_Misc_REQUEST_On_Download_Completed_Static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_On_Download_Completed_Static_0040 is starting--------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Misc_REQUEST_On_Download_Completed_Static_0040',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 create success");
+        let on_completedCallback = (pro: request.agent.Progress): void => {
+          try {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.state: " + pro.state);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.index: " + pro.index);
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 pro.processed: " + pro.processed);
+            expect(pro.state).assertEqual(64);
+            expect(pro.index).assertEqual(0);
+            expect(pro.processed).assertEqual(15444);
+            done();
+          } catch (err) {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 task.start");
+      } catch (err) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_onResponse_Static_0100
+     * @tc.name: SUB_Request_Agent_onResponse_Static_0100
+     * @tc.desc: request config saveas validate
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('SUB_Request_Agent_onResponse_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-------SUB_Request_Agent_onResponse_Static_0100 is starting-----------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+        saveas: './SUB_Request_Agent_onResponse_Static_0100',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 create success");
+        let responseCallback_1 = (info: request.agent.HttpResponse) => {
+          try {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 response info: " + JSON.stringify(info));
+            expect(info.version).assertEqual('HTTP/1.1');
+            expect(info.statusCode).assertEqual(200);
+            expect(info.reason).assertEqual('OK');
+            done();
+          } catch (err) {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('response', responseCallback_1);
+        await task.start();
+        hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 task.start");
+      } catch (err) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
+     * @tc.name SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
+     * @tc.desc Start the download task
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Misc_REQUEST_Start_Download_Callback_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 is starting----------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: './SUB_Misc_REQUEST_Start_Download_Callback_Static_0010.txt',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        task.start((err: BusinessError | null): void => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create err: " + err?.code + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create success: " + task);
+            expect(true).assertTrue();
+            done();
+          } 
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 download catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.desc: request config saveas validate
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('SUB_Request_Agent_TaskSaveas_Static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_1000 is starting-----------------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: '/data/storage/el2/base',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1000 create not err");
+        expect().assertFail();
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1000 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(13400001);
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.desc: request config saveas validate
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('SUB_Request_Agent_TaskSaveas_Static_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_1100 is starting-------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: '/data/storage/el2/base',
+      };
+      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
+        try {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create err: " + err?.code + JSON.stringify(err));
+            expect(err?.code).assertEqual(13400001);
+            done();
+          } else {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create success: " + task);
+            expect().assertFail();
+            done();
+          }
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_1100 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+          done();
+        }
+      });
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.desc: request config saveas validate
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('SUB_Request_Agent_TaskSaveas_Static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_0500 is starting-----------------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0500',
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0500 create not err");
+        expect().assertFail();
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0500 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.name: SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.desc: request config saveas validate
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('SUB_Request_Agent_TaskSaveas_Static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_0600 is starting-------------");
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0600',
+      };
+      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_0600 downloadTask: " + task);
+        try {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create err: " + err?.code + JSON.stringify(err));
+            expect(err?.code).assertEqual(401);
+            done();
+          } else {
+            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create success: " + task);
+            expect().assertFail();
+            done();
+          }
+        } catch (err: BusinessError) {
+          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_0600 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+          done();
+        }
+      });
+    });
     
 
   })
