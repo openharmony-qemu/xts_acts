@@ -770,13 +770,13 @@ export default function ConcurrentSetTest() {
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__037
-     * @tc.name: concurrent_Set_Constructor_Test_static_037
+     * @tc.name: concurrent_Set_Constructor_static_037
      * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of an set with Integer.MAX_VALUE elements.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("concurrent_Set_Constructor_Test_static_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("concurrent_Set_Constructor_static_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: int = 0; i < totalCount; i++) {

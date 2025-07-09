@@ -357,13 +357,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0116
-     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest
+     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest001
      * @tc.desc      : Verify that the remaining capacity and capacity of a queue with a capacity of 1 are both 1.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
         let res = queueIntPop1.remainingCapacity();
@@ -374,13 +374,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0117
-     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest
+     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01
      * @tc.desc      : Verify that the remaining capacity of a queue with a capacity.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
         let res = queueIntPop1.remainingCapacity();
@@ -393,13 +393,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueRemainingCapacityNullQueuePopTest_0118
-     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01
+     * @tc.name      : linked_Blocking_Queue_RemainingCapacityNullQueuePopTest0001
      * @tc.desc      : Verify that for a queue with an initial capacity.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("linked_Blocking_Queue_RemainingCapacityNullQueuePopTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
         for (let i:int = 0; i < 2; i++) {
@@ -513,7 +513,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_00126
      * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_007
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after push/pop operations on max capacity queue.
      * @tc.size      : MediumTest
@@ -577,7 +577,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0126
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_000126
      * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_010
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after poll/add operations on max capacity queue.
      * @tc.size      : MediumTest
@@ -786,13 +786,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
-     * @tc.name      : linked_Blocking_Queue_Test_static_013
+     * @tc.name      : linked_Blocking_Queue_static_013
      * @tc.desc      : Add an element to a LinkedBlockingQueue with a capacity of 1, then perform a poll operation.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linked_Blocking_Queue_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1 = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE);
       let res = queueIntPop1.poll();
@@ -1291,13 +1291,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_004
+     * @tc.name      : linked_Blocking_Queue_NoParameter_static_004
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameterTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linked_Blocking_Queue_NoParameter_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE + 1);
       let res = queueIntPop1.size;
@@ -1670,13 +1670,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00185
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_023
+     * @tc.name      : linked_Blocking_Queue_NoParameter_static_023
      * @tc.desc      : Verify LinkedBlockingQueue capacity with array of undefined ints.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameterTest_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linked_Blocking_Queue_NoParameter_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new Array<int>(Int.MAX_VALUE);
       let iter = arr.values();
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);

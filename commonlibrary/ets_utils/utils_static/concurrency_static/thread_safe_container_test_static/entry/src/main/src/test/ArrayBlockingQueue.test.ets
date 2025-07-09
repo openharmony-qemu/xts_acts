@@ -118,7 +118,7 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ACTUALCAPACITYTEST_0100
-     * @tc.name      : actua_lCapacity_Test_static
+     * @tc.name      : actual_Capacity_Test_static
      * @tc.desc      : Verify queue capacity initialization
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -138,7 +138,7 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-   it("invalid_Capacity_Test_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("invalid_Capacity_Test_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const capacity = -1;
       const queue = new containers.ArrayBlockingQueue<number>(capacity);
       expect(String(queue.capacity)).assertEqual('-1');
@@ -209,14 +209,18 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Negative_Test_static_0106_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      try {
-        const queue = new containers.ArrayBlockingQueue<number>(-1);
-        throw new Error('Negative capacity error');
-      } catch (error) {
-        throw new Error('Max cap push fail');
-      }
-    });
+    it('property_Capacity_Negative_Test_static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        let count: number = 0;
+        try {
+          const queue = new containers.ArrayBlockingQueue<number>(-1);
+          throw new Error('Negative capacity error');
+        } catch (error) {
+          throw new Error('Max cap push fail');
+          count ++
+        }
+        expect(coont).assertEqual(1)
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYZERO_0107
@@ -226,16 +230,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Zero_Test_static_0107_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(0);
-      expect(queue.capacity).assertEqual(0);
-      try {
-        queue.push(1);
-        throw new Error('Enqueue to full queue error');
-      } catch (error) {
-        expect((error as Error).message).assertEqual('Queue is full');
-      }
-    });
+    it('property_Capacity_Zero_Test_static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(0);
+        expect(queue.capacity).assertEqual(0);
+        try {
+          queue.push(1);
+          throw new Error('Enqueue to full queue error');
+        } catch (error) {
+          expect((error as Error).message).assertEqual('Queue is full');
+        }
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTY_CAPACITYSINGLEELEMENT_0108
@@ -245,16 +250,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Single_Element_Test_static_0108_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      expect(String(queue.capacity)).assertEqual('1');
-      try {
-        queue.push(1);
-      } catch (error) {
-        expect(false).assertEqual(true);
-      }
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it('property_Capacity_Single_Element_Test_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        expect(String(queue.capacity)).assertEqual('1');
+        try {
+          queue.push(1);
+        } catch (error) {
+          expect(false).assertEqual(true);
+        }
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYMAXVALUE_0109
@@ -264,16 +270,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Max_Value_Test_static_0109_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE);
-      expect(queue.capacity).assertEqual(Int.MAX_VALUE);
-      try {
-        queue.push(1);
-        expect(queue.size).assertEqual(1);
-      } catch (error) {
-        throw new Error('Max cap push fail');
-      }
-    });
+    it('property_Capacity_Max_Value_Test_static_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE);
+        expect(queue.capacity).assertEqual(Int.MAX_VALUE);
+        try {
+          queue.push(1);
+          expect(queue.size).assertEqual(1);
+        } catch (error) {
+          throw new Error('Max cap push fail');
+        }
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYOVERFLOW_0110
@@ -283,16 +290,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('property_Capacity_Overflow_Test_static_0110_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const TAG = 'propertyCapacityOverflow';
-      try {
-        const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE + 1);
-        throw new Error('Create queue with overflow capacity failed');
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-        console.error(`${TAG} failed, error: ${JSON.stringify(error)}`);
-      }
-    });
+    it('property_Capacity_Overflow_Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const TAG = 'propertyCapacityOverflow';
+        try {
+          const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE + 1);
+          throw new Error('Create queue with overflow capacity failed');
+        } catch (error) {
+          expect(error instanceof Error).assertTrue();
+          console.error(`${TAG} failed, error: ${JSON.stringify(error)}`);
+        }
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_EMPTYQUEUETEST_0111
@@ -315,22 +323,23 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      queue.push(1);
+    it("Array_Blocking_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        queue.push(1);
 
-      let isBlocked = false;
-      setTimeout(() => {
-        queue.push(2);
-        isBlocked = true;
-      }, 10);
+        let isBlocked = false;
+        setTimeout(() => {
+          queue.push(2);
+          isBlocked = true;
+        }, 10);
 
-      expect(isBlocked).assertFalse();
-      queue.pop();
-      setTimeout(() => {
-        expect(isBlocked).assertTrue();
-      }, 20);
-    });
+        expect(isBlocked).assertFalse();
+        queue.pop();
+        setTimeout(() => {
+          expect(isBlocked).assertTrue();
+        }, 20);
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHMANYTEST_0113
@@ -340,16 +349,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_PushMany_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
-      queue.push("");
-      queue.push(null);
-      queue.push(undefined);
-      queue.push("@@");
+    it("Array_Blocking_Queue_PushMany_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
+        queue.push("");
+        queue.push(null);
+        queue.push(undefined);
+        queue.push("@@");
 
-      expect(String(queue.size)).assertEqual('4');
-      expect(queue.pop()).assertEqual("");
-    });
+        expect(String(queue.size)).assertEqual('4');
+        expect(queue.pop()).assertEqual("");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHSTRINGTEST_0114
@@ -359,11 +369,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_PushString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(3);
-      queue.push("hello");
-      expect(queue.pop()).assertEqual("hello");
-    });
+    it("Array_Blocking_Queue_PushString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(3);
+        queue.push("hello");
+        expect(queue.pop()).assertEqual("hello");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBIGINTTEST_0115
@@ -373,12 +384,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_PushString_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<bigint>(2);
-      const bigIntNum = BigInt(9007199254740991);
-      queue.push(bigIntNum);
-      expect(String(queue.pop())).assertEqual('9007199254740991');
-    });
+    it("Array_Blocking_Queue_PushString_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<bigint>(2);
+        const bigIntNum = BigInt(9007199254740991);
+        queue.push(bigIntNum);
+        expect(String(queue.pop())).assertEqual('9007199254740991');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHBOOLEANTEST_0116
@@ -388,11 +400,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_PushString_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<boolean>(1);
-      queue.push(true);
-      expect(queue.pop()).assertTrue();
-    });
+    it("Array_Blocking_Queue_PushString_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<boolean>(1);
+        queue.push(true);
+        expect(queue.pop()).assertTrue();
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHCLASSTEST_0117
@@ -402,12 +415,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_Push_Class_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<TestClass>(1);
-      const obj = new TestClass();
-      queue.push(obj);
-      expect(queue.pop()).assertEqual(obj);
-    });
+    it("Array_Blocking_Queue_Push_Class_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<TestClass>(1);
+        const obj = new TestClass();
+        queue.push(obj);
+        expect(queue.pop()).assertEqual(obj);
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0118
@@ -417,11 +431,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_Push_Empty_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(10);
-      queue.push(1);
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_Push_Empty_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(10);
+        queue.push(1);
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHEMPTYTEST_0119
@@ -431,11 +446,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_Push_Only_One_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(1);
-      queue.push("single");
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_Push_Only_One_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(1);
+        queue.push("single");
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueuePUSHTENTEST_0120
@@ -445,20 +461,21 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_Push_Ten_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.push(1);
-      expect(String(queue.size)).assertEqual('1');
-      for (let i = 2; i <= capacity; i++) {
-        queue.push(i);
-      }
-      expect(String(queue.size)).assertEqual(String(capacity));
-    });
+    it("Array_Blocking_Queue_Push_Ten_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.push(1);
+        expect(String(queue.size)).assertEqual('1');
+        for (let i = 2; i <= capacity; i++) {
+          queue.push(i);
+        }
+        expect(String(queue.size)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSPECIALVALUES_0121
-     * @tc.name      : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSPECIALVALUES_0121
+     * @tc.name      : property_Push_SpecialValues_static
      * @tc.desc      : Verify pushing and popping special values (empty string, null, undefined)
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -661,10 +678,11 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0130
@@ -674,11 +692,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      queue.push(1);
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        queue.push(1);
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0131
@@ -688,14 +707,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.push(i);
-      }
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.push(i);
+        }
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0132
@@ -705,11 +725,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(10);
-      queue.push(1);
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(10);
+        queue.push(1);
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0133
@@ -719,14 +740,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.push(i);
-      }
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.push(i);
+        }
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPUSHTEST_0134
@@ -736,14 +758,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Push_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity; i++) {
-        queue.push(i);
-      }
-      expect(String(queue.size)).assertEqual(String(capacity));
-    });
+    it("Array_Blocking_Queue_With_Push_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity; i++) {
+          queue.push(i);
+        }
+        expect(String(queue.size)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0135
@@ -753,16 +776,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity; i++) {
-        queue.push(i);
-      }
-      const firstElement = queue.pop();
-      expect(String(firstElement)).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity; i++) {
+          queue.push(i);
+        }
+        const firstElement = queue.pop();
+        expect(String(firstElement)).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0136
@@ -772,17 +796,18 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity; i++) {
-        queue.push(i);
-      }
-      const firstElement = queue.pop();
-      const secondElement = queue.pop();
-      expect(String(secondElement)).assertEqual('1');
-      expect(String(queue.size)).assertEqual(String(capacity - 2));
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity; i++) {
+          queue.push(i);
+        }
+        const firstElement = queue.pop();
+        const secondElement = queue.pop();
+        expect(String(secondElement)).assertEqual('1');
+        expect(String(queue.size)).assertEqual(String(capacity - 2));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0137
@@ -792,16 +817,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<string | null>(capacity);
-      queue.push("");
-      queue.push(null);
-      queue.push("@@@");
-      expect(queue.pop()).assertEqual("");
-      expect(String(queue.pop())).assertEqual("null");
-      expect(queue.pop()).assertEqual("@@@");
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<string | null>(capacity);
+        queue.push("");
+        queue.push(null);
+        queue.push("@@@");
+        expect(queue.pop()).assertEqual("");
+        expect(String(queue.pop())).assertEqual("null");
+        expect(queue.pop()).assertEqual("@@@");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0138
@@ -811,14 +837,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<string | undefined>(capacity);
-      queue.push("");
-      queue.push("undefined");
-      expect(queue.pop()).assertEqual("");
-      expect(String(queue.pop())).assertEqual("undefined");
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<string | undefined>(capacity);
+        queue.push("");
+        queue.push("undefined");
+        expect(queue.pop()).assertEqual("");
+        expect(String(queue.pop())).assertEqual("undefined");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0139
@@ -828,12 +855,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      queue.push(100);
-      expect(String(queue.pop())).assertEqual('100');
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        queue.push(100);
+        expect(String(queue.pop())).assertEqual('100');
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOPTEST_0140
@@ -843,22 +871,23 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Pop_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.push(i);
-      }
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-      const firstElement = queue.pop();
-      expect(String(firstElement)).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity - 2));
-      for (let i = 1; i < capacity - 1; i++) {
-        expect(String(queue.pop())).assertEqual(String(i));
-        expect(String(queue.size)).assertEqual(String(capacity - 2 - i));
-      }
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_Pop_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.push(i);
+        }
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+        const firstElement = queue.pop();
+        expect(String(firstElement)).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity - 2));
+        for (let i = 1; i < capacity - 1; i++) {
+          expect(String(queue.pop())).assertEqual(String(i));
+          expect(String(queue.size)).assertEqual(String(capacity - 2 - i));
+        }
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0141
@@ -868,15 +897,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(10);
-      for (let i = 0; i < capacity; i++) {
-        queue.add(i);
-      }
-      expect(String(queue.add(11))).assertEqual('false');
-      expect(String(queue.size)).assertEqual(String(capacity));
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(10);
+        for (let i = 0; i < capacity; i++) {
+          queue.add(i);
+        }
+        expect(String(queue.add(11))).assertEqual('false');
+        expect(String(queue.size)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0142
@@ -886,15 +916,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 5;
-      const queue = new containers.ArrayBlockingQueue<string>(5);
-      expect(String(queue.add(""))).assertEqual('true');
-      expect(queue.add('null')).assertTrue();
-      expect(queue.add('undefined')).assertTrue();
-      expect(String(queue.add("381yeqwhe239847qkedq4971"))).assertEqual('true');
-      expect(String(queue.size)).assertEqual('4');
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 5;
+        const queue = new containers.ArrayBlockingQueue<string>(5);
+        expect(String(queue.add(""))).assertEqual('true');
+        expect(queue.add('null')).assertTrue();
+        expect(queue.add('undefined')).assertTrue();
+        expect(String(queue.add("381yeqwhe239847qkedq4971"))).assertEqual('true');
+        expect(String(queue.size)).assertEqual('4');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0143
@@ -904,11 +935,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(1);
-      expect(String(queue.add('hello'))).assertEqual('true');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(1);
+        expect(String(queue.add('hello'))).assertEqual('true');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0144
@@ -918,14 +950,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<bigint>(1);
-      let initialCapacity = queue.capacity;
-      expect(String(initialCapacity)).assertEqual('1');
-      const bigIntNum = BigInt(9007199254740991);
-      expect(String(queue.add(bigIntNum))).assertEqual('true');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<bigint>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
+        const bigIntNum = BigInt(9007199254740991);
+        expect(String(queue.add(bigIntNum))).assertEqual('true');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0145
@@ -935,13 +968,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<boolean>(1);
-      let initialCapacity = queue.capacity;
-      expect(String(initialCapacity)).assertEqual('1');
-      expect(String(queue.add(false))).assertEqual('true');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<boolean>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
+        expect(String(queue.add(false))).assertEqual('true');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0146
@@ -951,15 +985,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number[]>(1);
-      let initialCapacity = queue.capacity;
-      expect(String(initialCapacity)).assertEqual('1');
+    it("Array_Blocking_Queue_With_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number[]>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
 
-      const arr = [1, 2, 3];
-      expect(String(queue.add(arr))).assertEqual('true');
-      expect(String(queue.size)).assertEqual('1');
-    });
+        const arr = [1, 2, 3];
+        expect(String(queue.add(arr))).assertEqual('true');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0147
@@ -969,18 +1004,19 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
-      let initialCapacity = queue.capacity;
-      expect(String(initialCapacity)).assertEqual('1');
-      const arr = [1, 2, 3];
-      queue.add(arr);
-      let sizeAfterPush = queue.size;
-      expect(String(sizeAfterPush)).assertEqual('1');
+    it("Array_Blocking_Queue_With_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
+        const arr = [1, 2, 3];
+        queue.add(arr);
+        let sizeAfterPush = queue.size;
+        expect(String(sizeAfterPush)).assertEqual('1');
 
-      let poppedArray = queue.pop();
-      expect(String(poppedArray)).assertEqual(String(arr));
-    });
+        let poppedArray = queue.pop();
+        expect(String(poppedArray)).assertEqual(String(arr));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0148
@@ -990,40 +1026,42 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
-      let initialCapacity = queue.capacity;
-      expect(String(initialCapacity)).assertEqual('1');
+    it("Array_Blocking_Queue_With_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
 
-      const dateInstance = new Date();
-      queue.add(dateInstance);
-      let sizeAfterPush = queue.size;
-      expect(String(sizeAfterPush)).assertEqual('1');
+        const dateInstance = new Date();
+        queue.add(dateInstance);
+        let sizeAfterPush = queue.size;
+        expect(String(sizeAfterPush)).assertEqual('1');
 
-      let poppedDate = queue.pop();
-      expect(String(poppedDate.getTime())).assertEqual(String(dateInstance.getTime()));
-    });
+        let poppedDate = queue.pop();
+        expect(String(poppedDate.getTime())).assertEqual(String(dateInstance.getTime()));
+      });
 
-        /**
-         * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
-         * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0009
-         * @tc.desc      : Verify adding object with key-value pair to queue
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
-         */
-        it("Array_Blocking_Queue_With_Add_Test_static_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0149
+     * @tc.name      : Array_Blocking_Queue_With_Add_Test_static_0009
+     * @tc.desc      : Verify adding object with key-value pair to queue
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it("Array_Blocking_Queue_With_Add_Test_static_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
 
-          let queue: containers.ArrayBlockingQueue<QueueItem2> = new containers.ArrayBlockingQueue<QueueItem2>(1);
-          let initialCapacity = queue.capacity;
-          expect(String(initialCapacity)).assertEqual('1');
+        let queue: containers.ArrayBlockingQueue<QueueItem2> = new containers.ArrayBlockingQueue<QueueItem2>(1);
+        let initialCapacity = queue.capacity;
+        expect(String(initialCapacity)).assertEqual('1');
 
-          let addKey = queue.add({
-            key: "value"
-          });
-          expect(String(addKey)).assertEqual('true');
-          expect(String(queue.size)).assertEqual('1');
+        let addKey = queue.add({
+          key: "value"
         });
+        expect(String(addKey)).assertEqual('true');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0150
@@ -1033,11 +1071,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(0);
-      expect(queue.add(1)).assertTrue();
-      expect(queue.size).assertEqual(1);
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(0);
+        expect(queue.add(1)).assertTrue();
+        expect(queue.size).assertEqual(1);
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0151
@@ -1047,13 +1086,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      expect(queue.add(1)).assertTrue();
-      expect(String(queue.size)).assertEqual('1');
-      expect(queue.add(2)).assertFalse();
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        expect(queue.add(1)).assertTrue();
+        expect(String(queue.size)).assertEqual('1');
+        expect(queue.add(2)).assertFalse();
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0152
@@ -1063,14 +1103,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 5;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        expect(queue.add(i)).assertTrue();
-      }
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 5;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          expect(queue.add(i)).assertTrue();
+        }
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHADDTEST_0153
@@ -1080,18 +1121,19 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Add_Test_static_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      expect(queue.add(1)).assertTrue();
-      expect(String(queue.size)).assertEqual('1');
-      for (let i = 0; i < capacity - 1; i++) {
-        expect(queue.add(i)).assertTrue();
-      }
-      expect(String(queue.size)).assertEqual(String(capacity));
-      expect(queue.add(11)).assertFalse();
-      expect(String(queue.size)).assertEqual(String(capacity));
-    });
+    it("Array_Blocking_Queue_With_Add_Test_static_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        expect(queue.add(1)).assertTrue();
+        expect(String(queue.size)).assertEqual('1');
+        for (let i = 0; i < capacity - 1; i++) {
+          expect(queue.add(i)).assertTrue();
+        }
+        expect(String(queue.size)).assertEqual(String(capacity));
+        expect(queue.add(11)).assertFalse();
+        expect(String(queue.size)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0154
@@ -1101,11 +1143,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(0);
-      expect(String(queue.poll())).assertEqual('0');
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_Poll_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(0);
+        expect(String(queue.poll())).assertEqual('0');
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0155
@@ -1115,13 +1158,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      queue.add(100);
-      expect(String(queue.poll())).assertEqual('100');
-      expect(String(queue.size)).assertEqual('0');
-      expect(String(queue.poll()).toString()).assertEqual('undefined');
-    });
+    it("Array_Blocking_Queue_With_Poll_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        queue.add(100);
+        expect(String(queue.poll())).assertEqual('100');
+        expect(String(queue.size)).assertEqual('0');
+        expect(String(queue.poll()).toString()).assertEqual('undefined');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0156
@@ -1131,18 +1175,19 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
-      queue.add("");
-      queue.add(null);
-      queue.add(undefined);
-      queue.add("huiafyef23@y8#");
-      expect(queue.poll()).assertEqual("");
-      expect(String(queue.poll())).assertEqual("null");
-      expect(String(queue.poll())).assertEqual("undefined");
-      expect(String(queue.size)).assertEqual('1');
-      expect(queue.poll()).assertEqual("huiafyef23@y8#");
-    });
+    it("Array_Blocking_Queue_With_Poll_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
+        queue.add("");
+        queue.add(null);
+        queue.add(undefined);
+        queue.add("huiafyef23@y8#");
+        expect(queue.poll()).assertEqual("");
+        expect(String(queue.poll())).assertEqual("null");
+        expect(String(queue.poll())).assertEqual("undefined");
+        expect(String(queue.size)).assertEqual('1');
+        expect(queue.poll()).assertEqual("huiafyef23@y8#");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0157
@@ -1152,16 +1197,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 5;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.add(i);
-      }
-      expect(String(queue.poll())).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity - 2));
-      expect(queue.add(99)).assertTrue();
-    });
+    it("Array_Blocking_Queue_With_Poll_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 5;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.add(i);
+        }
+        expect(String(queue.poll())).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity - 2));
+        expect(queue.add(99)).assertTrue();
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0158
@@ -1171,25 +1217,26 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity; i++) {
-        queue.add(i * 10);
-      }
-      expect(String(queue.poll())).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
+    it("Array_Blocking_Queue_With_Poll_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity; i++) {
+          queue.add(i * 10);
+        }
+        expect(String(queue.poll())).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
 
-      for (let i = 1; i < capacity - 1; i++) {
-        expect(String(queue.poll())).assertEqual(String(i * 10));
-      }
-      expect(String(queue.size)).assertEqual('1');
-      expect(queue.add(99)).assertTrue();
+        for (let i = 1; i < capacity - 1; i++) {
+          expect(String(queue.poll())).assertEqual(String(i * 10));
+        }
+        expect(String(queue.size)).assertEqual('1');
+        expect(queue.add(99)).assertTrue();
 
-      expect(String(queue.poll())).assertEqual('90');
-      expect(String(queue.size)).assertEqual('1');
-      expect(String(queue.poll())).assertEqual('99');
-    });
+        expect(String(queue.poll())).assertEqual('90');
+        expect(String(queue.size)).assertEqual('1');
+        expect(String(queue.poll())).assertEqual('99');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHPOLLTEST_0159
@@ -1199,16 +1246,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Poll_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(3);
-      queue.add("first");
-      queue.add("second");
+    it("Array_Blocking_Queue_With_Poll_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(3);
+        queue.add("first");
+        queue.add("second");
 
-      expect(queue.poll()).assertEqual("first");
-      expect(String(queue.size)).assertEqual('1');
-      expect(queue.poll()).assertEqual("second");
-      expect(String(queue.size)).assertEqual('0');
-    });
+        expect(queue.poll()).assertEqual("first");
+        expect(String(queue.size)).assertEqual('1');
+        expect(queue.poll()).assertEqual("second");
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_016
@@ -1218,15 +1266,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(3);
-      queue.add(10);
-      queue.add(20);
-      queue.add(30);
-      expect(String(queue.getFirst())).assertEqual('10');
-      expect(String(queue.size)).assertEqual('3');
-      expect(queue.add(40)).assertFalse();
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(3);
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        expect(String(queue.getFirst())).assertEqual('10');
+        expect(String(queue.size)).assertEqual('3');
+        expect(queue.add(40)).assertFalse();
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0161
@@ -1236,15 +1285,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
-      queue.add("");
-      queue.add(null);
-      queue.add(undefined);
-      queue.add("yihahah111");
-      expect(String(queue.getFirst())).assertEqual("");
-      expect(String(queue.size)).assertEqual('4');
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
+        queue.add("");
+        queue.add(null);
+        queue.add(undefined);
+        queue.add("yihahah111");
+        expect(String(queue.getFirst())).assertEqual("");
+        expect(String(queue.size)).assertEqual('4');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0162
@@ -1254,11 +1304,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(0);
-      expect(String(queue.getFirst())).assertEqual('null');
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(0);
+        expect(String(queue.getFirst())).assertEqual('null');
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0163
@@ -1268,12 +1319,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(1);
-      queue.add("1");
-      expect(String(queue.getFirst())).assertEqual("1");
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(1);
+        queue.add("1");
+        expect(String(queue.getFirst())).assertEqual("1");
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0164
@@ -1283,18 +1335,19 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 5;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.add(i);
-      }
-      expect(String(queue.getFirst())).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity - 1));
-      queue.add(123);
-      expect(String(queue.getFirst())).assertEqual('0');
-      expect(String(queue.size)).assertEqual(String(capacity));
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 5;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.add(i);
+        }
+        expect(String(queue.getFirst())).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity - 1));
+        queue.add(123);
+        expect(String(queue.getFirst())).assertEqual('0');
+        expect(String(queue.size)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0165
@@ -1304,13 +1357,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<boolean>(1);
-      queue.add(true);
-      expect(queue.getFirst()).assertTrue();
-      expect(String(queue.size)).assertEqual('1');
-      expect(queue.getFirst()).assertTrue();
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<boolean>(1);
+        queue.add(true);
+        expect(queue.getFirst()).assertTrue();
+        expect(String(queue.size)).assertEqual('1');
+        expect(queue.getFirst()).assertTrue();
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHGETFIRSTTEST_0166
@@ -1320,19 +1374,20 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_GetFirst_Test_static_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.add(111);
-      expect(String(queue.getFirst())).assertEqual('111');
-      expect(String(queue.size)).assertEqual('1');
-      for (let i = 1; i < capacity; i++) {
-        queue.add(100 + i);
-      }
-      expect(String(queue.getFirst())).assertEqual('111');
-      expect(String(queue.size)).assertEqual(String(capacity));
-      expect(queue.add(200)).assertFalse();
-    });
+    it("Array_Blocking_Queue_With_GetFirst_Test_static_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.add(111);
+        expect(String(queue.getFirst())).assertEqual('111');
+        expect(String(queue.size)).assertEqual('1');
+        for (let i = 1; i < capacity; i++) {
+          queue.add(100 + i);
+        }
+        expect(String(queue.getFirst())).assertEqual('111');
+        expect(String(queue.size)).assertEqual(String(capacity));
+        expect(queue.add(200)).assertFalse();
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0167
@@ -1342,13 +1397,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Capacity_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 0;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      expect(String(queue.capacity)).assertEqual('0');
-      queue.add(123);
-      expect(String(queue.capacity)).assertEqual('0');
-    });
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 0;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        expect(String(queue.capacity)).assertEqual('0');
+        queue.add(123);
+        expect(String(queue.capacity)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0168
@@ -1358,11 +1414,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Capacity_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = -1;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      expect(String(queue.capacity)).assertEqual('-1');
-    });
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = -1;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        expect(String(queue.capacity)).assertEqual('-1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHCAPACITYTEST_0169
@@ -1372,15 +1429,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_Capacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 1;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.add(123);
-      expect(String(queue.capacity)).assertEqual('1');
-      expect(String(queue.size)).assertEqual('1');
-      expect(String(queue.poll())).assertEqual('123');
-      expect(String(queue.capacity)).assertEqual('1');
-    });
+    it("Array_Blocking_Queue_With_Capacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 1;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.add(123);
+        expect(String(queue.capacity)).assertEqual('1');
+        expect(String(queue.size)).assertEqual('1');
+        expect(String(queue.poll())).assertEqual('123');
+        expect(String(queue.capacity)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueWITHREMAININGCAPACITYTEST_0170
@@ -1390,7 +1448,8 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 3;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1410,7 +1469,8 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 5;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1427,7 +1487,8 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const queue = new containers.ArrayBlockingQueue<boolean>(1);
         expect(String(queue.remainingCapacity())).assertEqual('1');
@@ -1445,7 +1506,8 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const capacity = 4;
         const queue = new containers.ArrayBlockingQueue<number>(capacity);
@@ -1514,16 +1576,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamic_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 3;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.push(1);
-      queue.push(2);
-      queue.push(3);
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 3;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.push(1);
+        queue.push(2);
+        queue.push(3);
 
-      expect(String(queue.size)).assertEqual('3');
-      expect(String(queue.capacity)).assertEqual(String(capacity));
-    });
+        expect(String(queue.size)).assertEqual('3');
+        expect(String(queue.capacity)).assertEqual(String(capacity));
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0177
@@ -1533,15 +1596,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamic_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(0);
-      expect(String(queue.size)).assertEqual('0');
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(0);
+        expect(String(queue.size)).assertEqual('0');
 
-      queue.add("test");
-      expect(String(queue.size)).assertEqual('1');
-      queue.poll();
-      expect(String(queue.size)).assertEqual('0');
-    });
+        queue.add("test");
+        expect(String(queue.size)).assertEqual('1');
+        queue.poll();
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0178
@@ -1551,15 +1615,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetSizeDynamic_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(0);
-      expect(String(queue.size)).assertEqual('0');
+    it("ArrayBlockingQueueGetSizeDynamic_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(0);
+        expect(String(queue.size)).assertEqual('0');
 
-      queue.push("data");
-      expect(String(queue.size)).assertEqual('1');
-      queue.pop();
-      expect(String(queue.size)).assertEqual('0');
-    });
+        queue.push("data");
+        expect(String(queue.size)).assertEqual('1');
+        queue.pop();
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETSIZEDYNAMICTEST_0179
@@ -1586,11 +1651,12 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyTrue_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(0);
-      expect(String(queue.isEmpty())).assertEqual('true');
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("ArrayBlockingQueueIsEmptyTrue_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(0);
+        expect(String(queue.isEmpty())).assertEqual('true');
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYTRUETEST_0181
@@ -1600,12 +1666,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyFalse_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(2);
-      queue.push("data");
-      expect(String(queue.isEmpty())).assertEqual('false');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueIsEmptyFalse_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(2);
+        queue.push("data");
+        expect(String(queue.isEmpty())).assertEqual('false');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0182
@@ -1615,16 +1682,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyChange_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<boolean>(0);
-      expect(String(queue.isEmpty())).assertEqual('true');
+    it("ArrayBlockingQueueIsEmptyChange_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<boolean>(0);
+        expect(String(queue.isEmpty())).assertEqual('true');
 
-      queue.add(true);
-      expect(String(queue.isEmpty())).assertEqual('false');
+        queue.add(true);
+        expect(String(queue.isEmpty())).assertEqual('false');
 
-      queue.poll();
-      expect(String(queue.isEmpty())).assertEqual('true');
-    });
+        queue.poll();
+        expect(String(queue.isEmpty())).assertEqual('true');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0183
@@ -1634,14 +1702,15 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyBoundary_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(1);
-      expect(String(queue.isEmpty())).assertEqual('true');
-      queue.push(1);
-      expect(String(queue.isEmpty())).assertEqual('false');
-      queue.pop();
-      expect(String(queue.isEmpty())).assertEqual('true');
-    });
+    it("ArrayBlockingQueueIsEmptyBoundary_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(1);
+        expect(String(queue.isEmpty())).assertEqual('true');
+        queue.push(1);
+        expect(String(queue.isEmpty())).assertEqual('false');
+        queue.pop();
+        expect(String(queue.isEmpty())).assertEqual('true');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0184
@@ -1651,16 +1720,17 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyMixed_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(3);
-      queue.push("a");
-      queue.pop();
-      expect(String(queue.isEmpty())).assertEqual('true');
+    it("ArrayBlockingQueueIsEmptyMixed_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(3);
+        queue.push("a");
+        queue.pop();
+        expect(String(queue.isEmpty())).assertEqual('true');
 
-      queue.add("b");
-      queue.pop();
-      expect(String(queue.isEmpty())).assertEqual('true');
-    });
+        queue.add("b");
+        queue.pop();
+        expect(String(queue.isEmpty())).assertEqual('true');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueISEMPTYCHANGETEST_0185
@@ -1670,15 +1740,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueIsEmptyConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(10);
-      queue.push(1);
-      queue.pop();
-      queue.push(2);
-      expect(String(queue.isEmpty())).assertEqual('false');
-      queue.pop();
-      expect(String(queue.isEmpty())).assertEqual('true');
-    });
+    it("ArrayBlockingQueueIsEmptyConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(10);
+        queue.push(1);
+        queue.pop();
+        queue.push(2);
+        expect(String(queue.isEmpty())).assertEqual('false');
+        queue.pop();
+        expect(String(queue.isEmpty())).assertEqual('true');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0186
@@ -1688,15 +1759,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity; i++) {
-        queue.add(i);
-      }
-      expect(String(queue.getEnd())).assertEqual('9');
-      expect(String(queue.size)).assertEqual('10');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity; i++) {
+          queue.add(i);
+        }
+        expect(String(queue.getEnd())).assertEqual('9');
+        expect(String(queue.size)).assertEqual('10');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0187
@@ -1706,29 +1778,30 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 5;
-      const queue = new containers.ArrayBlockingQueue<string | null | undefined>(capacity);
-      queue.add("");
-      queue.add(null);
-      queue.add(undefined);
-      queue.add("@#$");
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 5;
+        const queue = new containers.ArrayBlockingQueue<string | null | undefined>(capacity);
+        queue.add("");
+        queue.add(null);
+        queue.add(undefined);
+        queue.add("@#$");
 
-      expect(String(queue.getEnd())).assertEqual('@#$');
-      expect(queue.size).assertEqual(4);
+        expect(String(queue.getEnd())).assertEqual('@#$');
+        expect(queue.size).assertEqual(4);
 
-      queue.poll();
-      queue.add(null);
-      expect(queue.getEnd()).assertEqual(null);
+        queue.poll();
+        queue.add(null);
+        expect(queue.getEnd()).assertEqual(null);
 
-      queue.poll();
-      queue.add(undefined);
-      expect(queue.getEnd()).assertEqual(undefined);
+        queue.poll();
+        queue.add(undefined);
+        expect(queue.getEnd()).assertEqual(undefined);
 
-      queue.poll();
-      queue.add("");
-      expect(String(queue.getEnd())).assertEqual("");
-    });
+        queue.poll();
+        queue.add("");
+        expect(String(queue.getEnd())).assertEqual("");
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0188
@@ -1738,12 +1811,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      expect(String(queue.getEnd()).toString()).assertEqual('undefined');
-      expect(String(queue.size)).assertEqual('0');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        expect(String(queue.getEnd()).toString()).assertEqual('undefined');
+        expect(String(queue.size)).assertEqual('0');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0189
@@ -1753,13 +1827,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 1;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.add(100)
-      expect(String(queue.getEnd())).assertEqual('100');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 1;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.add(100)
+        expect(String(queue.getEnd())).assertEqual('100');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0190
@@ -1769,13 +1844,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 1;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      queue.add(100)
-      expect(String(queue.getEnd())).assertEqual('100');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 1;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        queue.add(100)
+        expect(String(queue.getEnd())).assertEqual('100');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0191
@@ -1785,15 +1861,16 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
-      for (let i = 0; i < capacity - 1; i++) {
-        queue.add(i)
-      }
-      expect(String(queue.getEnd())).assertEqual('8');
-      expect(String(queue.size)).assertEqual('9');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
+        for (let i = 0; i < capacity - 1; i++) {
+          queue.add(i)
+        }
+        expect(String(queue.getEnd())).assertEqual('8');
+        expect(String(queue.size)).assertEqual('9');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0192
@@ -1803,24 +1880,25 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 10;
-      const queue = new containers.ArrayBlockingQueue<number>(capacity);
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 10;
+        const queue = new containers.ArrayBlockingQueue<number>(capacity);
 
-      queue.add(1);
-      expect(String(queue.size)).assertEqual('1');
-      expect(String(queue.getEnd())).assertEqual('1');
+        queue.add(1);
+        expect(String(queue.size)).assertEqual('1');
+        expect(String(queue.getEnd())).assertEqual('1');
 
-      for (let i = 2; i < capacity; i++) {
-        queue.add(i);
-      }
-      expect(String(queue.size)).assertEqual('9');
-      expect(String(queue.getEnd())).assertEqual('9');
+        for (let i = 2; i < capacity; i++) {
+          queue.add(i);
+        }
+        expect(String(queue.size)).assertEqual('9');
+        expect(String(queue.getEnd())).assertEqual('9');
 
-      queue.add(10);
-      expect(String(queue.size)).assertEqual('10');
-      expect(String(queue.getEnd())).assertEqual('10');
-    });
+        queue.add(10);
+        expect(String(queue.size)).assertEqual('10');
+        expect(String(queue.getEnd())).assertEqual('10');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0193
@@ -1830,13 +1908,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const capacity = 1;
-      const queue = new containers.ArrayBlockingQueue<string>(capacity);
-      queue.add('hahah')
-      expect(String(queue.getEnd())).assertEqual('hahah');
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const capacity = 1;
+        const queue = new containers.ArrayBlockingQueue<string>(capacity);
+        queue.add('hahah')
+        expect(String(queue.getEnd())).assertEqual('hahah');
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0194
@@ -1846,13 +1925,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(5);
-      queue.add('hahah')
-      queue.add('xixixi')
-      expect(String(queue.getEnd())).assertEqual('xixixi');
-      expect(String(queue.size)).assertEqual('2');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(5);
+        queue.add('hahah')
+        queue.add('xixixi')
+        expect(String(queue.getEnd())).assertEqual('xixixi');
+        expect(String(queue.size)).assertEqual('2');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0195
@@ -1862,13 +1942,14 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<string>(5);
-      queue.add('hahah')
-      queue.add('hahah')
-      expect(String(queue.getEnd())).assertEqual('hahah');
-      expect(String(queue.size)).assertEqual('2');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<string>(5);
+        queue.add('hahah')
+        queue.add('hahah')
+        expect(String(queue.getEnd())).assertEqual('hahah');
+        expect(String(queue.size)).assertEqual('2');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0196
@@ -1878,12 +1959,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(5);
-      queue.add(Number.MAX_SAFE_INTEGER);
-      expect(String(queue.getEnd())).assertEqual(String(Number.MAX_SAFE_INTEGER));
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(5);
+        queue.add(Number.MAX_SAFE_INTEGER);
+        expect(String(queue.getEnd())).assertEqual(String(Number.MAX_SAFE_INTEGER));
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueGETENDCONCURRENTTEST_0197
@@ -1893,12 +1975,13 @@ export default function ArrayBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueGetEndConcurrent_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const queue = new containers.ArrayBlockingQueue<number>(5);
-      queue.add(Number.MIN_SAFE_INTEGER);
-      expect(String(queue.getEnd())).assertEqual(String(Number.MIN_SAFE_INTEGER));
-      expect(String(queue.size)).assertEqual('1');
-    });
+    it("ArrayBlockingQueueGetEndConcurrent_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (): void => {
+        const queue = new containers.ArrayBlockingQueue<number>(5);
+        queue.add(Number.MIN_SAFE_INTEGER);
+        expect(String(queue.getEnd())).assertEqual(String(Number.MIN_SAFE_INTEGER));
+        expect(String(queue.size)).assertEqual('1');
+      });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.ArrayBlockingQueueCONSTRUCTORCONCURRENTTEST_0198
@@ -1978,13 +2061,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTORWITHSETTEST_202
-     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_003
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_0003
      * @tc.desc      : The test initializes the queue with an array containing one element (capacity = 0)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWith_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const oneElementArray = new Array<Int>(42);
@@ -2673,13 +2756,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_232
-     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_001
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_0001
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWith_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
@@ -2695,13 +2778,13 @@ export default function ArrayBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMON_LIBRARY_UTIL_BASE_containers.ArrayBlockingQueueCONSTRUCTOR_WITH_SET_TEST_233
-     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_002
+     * @tc.name      : ArrayBlockingQueueConstructorWith_Test_static_0002
      * @tc.desc      : empty queue
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it("ArrayBlockingQueueConstructorWith_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("ArrayBlockingQueueConstructorWith_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           const emptyArray = new Array<Int>();
