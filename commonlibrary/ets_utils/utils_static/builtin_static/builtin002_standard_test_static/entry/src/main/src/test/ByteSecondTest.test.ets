@@ -1087,13 +1087,13 @@ export default function builtinsByteSecondPrototypebTest() {
 
     /**
      * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5700
-     * @tc.name builtinsByteSecondPrototypebTest5700
+     * @tc.name builtinsByteSecondPrototypebTest05700
      * @tc.desc test toString return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsByteSecondPrototypebTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsByteSecondPrototypebTest05700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5700'
         const value:number = 42;
