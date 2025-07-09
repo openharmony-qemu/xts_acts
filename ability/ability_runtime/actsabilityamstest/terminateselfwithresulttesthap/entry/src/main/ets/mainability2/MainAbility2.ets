@@ -27,13 +27,13 @@ export default class MainAbility2 extends UIAbility {
     hilog.info(0x0000, 'MainAbility2', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'MainAbility2', `want, 50 == ${JSON.stringify(want)}`);
     AppStorage.SetOrCreate<boolean>('onCreate', true);
-    par1am.setTextNme(want.action);
+    param.setTextNme(want.action);
   }
 
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
 
   async onDestroy(): Promise<void> {

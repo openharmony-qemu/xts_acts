@@ -31,10 +31,10 @@ export default class MainAbility extends UIAbility {
     param.setTextNme(want.action);
   }
 
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
   async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'MainAbility', '%{public}s', 'Ability onDestroy');

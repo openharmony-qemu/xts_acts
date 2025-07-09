@@ -30,10 +30,10 @@ export default class MainAbility extends UIAbility {
     param.setTextNme(want.action);
   }
 
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
 
   async onDestroy(): Promise<void> {

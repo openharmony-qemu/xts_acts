@@ -29,10 +29,10 @@ export default class EntryAbility4 extends UIAbility {
     AppStorage.SetOrCreate<boolean>('onCreate', true);
     param.setTextNme(want.action);
   }
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
   async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'EntryAbility4', '%{public}s', 'Ability onDestroy');

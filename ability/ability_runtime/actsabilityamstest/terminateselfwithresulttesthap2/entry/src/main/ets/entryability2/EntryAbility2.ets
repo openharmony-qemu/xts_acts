@@ -39,7 +39,7 @@ export default class EntryAbility2 extends UIAbility {
     let onForeground = AppStorage.get<boolean>('onForeground');
     let onDestroy = true;
     let events = param.getTextNme();
-    
+
     if (events) {
       let commonEventData: commonEventManger.CommonEventPublishData = {
         parameters: {
@@ -109,9 +109,9 @@ export default class EntryAbility2 extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
 }

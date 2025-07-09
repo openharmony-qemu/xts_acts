@@ -26,10 +26,10 @@ export default class ThirdAbility extends UIAbility {
     globalThis.secondContext = this.context;
   }
 
-  sleep(ms: number): Promise<void>{
+  sleep(ms: number): Promise<void> {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, ms)
-    })
+    });
   }
 
   async onDestroy(): Promise<void> {
