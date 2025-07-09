@@ -18,11 +18,12 @@ import Consume0030Test from './consumeTest/Consume0030Test.test';
 import Consume0040Test from './consumeTest/Consume0040Test.test';
 import Consume0050Test from './consumeTest/Consume0050Test.test';
 import Consume0060Test from './consumeTest/Consume0060Test.test';
-
+import ConsumeDefault0240 from './consumeTest/ConsumeDefault0240.test';
 export default function testsuite() {
     Consume0020Test();
     Consume0030Test();
     Consume0040Test();
     Consume0050Test();
     Consume0060Test();
+    ConsumeDefault0240();
 }
