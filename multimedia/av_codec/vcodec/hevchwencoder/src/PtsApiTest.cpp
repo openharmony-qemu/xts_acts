@@ -27,10 +27,10 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec *venc_ = NULL;
-OH_AVCapability *cap_enc = nullptr;
-const char *g_codecName = "";
-OHOS::Media::VEncAPI11Signal *signal_ = nullptr;
+OH_AVCodec* venc_ = NULL;
+OH_AVCapability* cap_enc = nullptr;
+const char* g_codecName = "";
+OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -45,7 +45,6 @@ public:
     void SetUp(void);
     // TearDown: Called after each test cases
     void TearDown(void);
-
 };
 
 void HwEncApiNdkTest::SetUpTestCase()
@@ -55,7 +54,8 @@ void HwEncApiNdkTest::SetUpTestCase()
     cout << "g_codecName: " << g_codecName << endl;
 }
 void HwEncApiNdkTest::TearDownTestCase() {}
-void HwEncApiNdkTest::SetUp() {
+void HwEncApiNdkTest::SetUp()
+{
     signal_ = new VEncAPI11Signal();
 }
 void HwEncApiNdkTest::TearDown()
@@ -93,12 +93,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;  
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -138,12 +136,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -183,12 +179,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -228,12 +222,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -273,12 +265,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -318,12 +308,10 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height, bitrateMode, bitRate, surfaceMode);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    std::strncpy(input, inputDir.c_str(), inputDir.length() - 1);
-    input[inputDir.length() - 1] = '\0';
-    std::strncpy(output, outputDir.c_str(), outputDir.length() - 1);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
+     bitrateMode, bitRate, surfaceMode);
+    std::string input = inputDir;
+    std::string output = outputDir;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;

@@ -30,9 +30,16 @@ constexpr int64_t NANOS_IN_MICRO = 1000L;
 constexpr uint32_t FRAME_INTERVAL = 16666;
 constexpr uint8_t RGBA_SIZE = 4;
 constexpr uint32_t DOUBLE = 2;
+constexpr uint32_t ZERO = 0;
+constexpr uint32_t ONE = 1;
+constexpr uint32_t TWO = 2;
+constexpr uint32_t THREE = 3;
+constexpr uint32_t FOUR = 4;
+constexpr uint32_t FIVE = 5;
+constexpr uint32_t SIX = 6;
 sptr<Surface> cs = nullptr;
 sptr<Surface> ps = nullptr;
-VEncAPI11Sample *enc_sample = nullptr;
+VEncAPI11Sample* enc_sample = nullptr;
 int32_t g_picWidth;
 int32_t g_picHeight;
 int32_t g_keyWidth;
@@ -473,7 +480,7 @@ void VEncAPI11Sample::InputFuncSurface()
             g_flagValue = false;
             break;
         }
-        if (inputframeCount == 5 && !isParamSetSurface && enableParameter) {
+        if (inputframeCount == FIVE && !isParamSetSurface && enableParameter) {
             int32_t paramResult = SetParameter();
             if (paramResult != 0) {
                 cout << "set param failed, error:" << paramResult << endl;
@@ -485,8 +492,7 @@ void VEncAPI11Sample::InputFuncSurface()
         inputframeCount++;
         if (sleepOnFPS) {
             usleep(FRAME_INTERVAL);
-        }
-        
+        }   
     }
 }
 
@@ -704,13 +710,9 @@ void VEncAPI11Sample::InputFunc()
             if (CheckResult(isRandomEosSuccess, pushResult) == -1) {
                 break;
             }
-            if (frameCount_1 == 5 && !isParamSet && enableParameter) {
-                int32_t paramResult = SetParameter();
-                if (paramResult != 0) {
-                    errCount = errCount + 1;
-                    break;
-                }
-                isParamSet = true;
+            if (frameCount_1 == FIVE && !isParamSet && enableParameter) {
+                SetParmaeter();
+                isPamraSet = true;
             }
         }
         if (sleepOnFPS) {
@@ -892,8 +894,8 @@ void VEncAPI11Sample::StopOutloop()
     }
 }
 
-int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir, std::string &outputDir,
-    uint32_t &w, uint32_t &h, uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
+int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir,
+ std::string &outputDir, uint32_t &w, uint32_t &h, uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
 {
     std::ifstream file(filePath);
     if (!file.is_open()) {
@@ -902,37 +904,37 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &in
     std::string temp;
     int32_t num = 0;
     while (getline(file, temp)) {
-        if (num == 0) {
+        if (num == ZERO) {
             inputDir = temp;
             num++;
             continue;
         }
-        if (num == 1) {
+        if (num == ONE) {
             outputDir = temp;
             num++;
             continue;
         }
-        if (num == 2) {
+        if (num == TWO) {
             w = stoi(temp);
             num++;
             continue;
         }
-        if (num == 3) {
+        if (num == THREE) {
             h = stoi(temp);
             num++;
             continue;
         }
-        if (num == 4) {
+        if (num == FOUR) {
             bitarateMode = stoi(temp);
             num++;
             continue;
         }
-        if (num == 5) {
+        if (num == FIVE) {
             bitRate = stoi(temp);
             num++;
             continue;
         }
-        if (num == 6) {
+        if (num == SIX) {
             surfaceMode = stoi(temp) == 1 ? true : false;
             num++;
             continue;

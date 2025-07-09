@@ -132,8 +132,8 @@ public:
     void readMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
-    int32_t LoadTimeStampData(std::string filePath, std::string &inputDir, std::string &outputDir, uint32_t &w, uint32_t &h,
-        uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode);
+    int32_t LoadTimeStampData(std::string filePath, std::string &inputDir, std::string &outputDir, uint32_t &w,
+     uint32_t &h, uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode);
     VEncAPI11Signal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;

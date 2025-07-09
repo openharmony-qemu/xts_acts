@@ -28,11 +28,11 @@ using namespace OHOS::Media;
 using namespace testing::ext;
 namespace
 {
-OH_AVCodec *venc_ = NULL;
-const char *g_codecName = "";
-OH_AVCapability *cap_enc = nullptr;
-OH_AVFormat *format_ = NULL;
-OHOS::Media::VEncAPI11Signal *signal_ = nullptr;
+OH_AVCodec* venc_ = NULL;
+const char* g_codecName = "";
+OH_AVCapability* cap_enc = nullptr;
+OH_AVFormat* format_ = NULL;
+OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -70,12 +70,12 @@ void HwEncSqrFuncTest::TearDown()
         OH_AVFormat_Destroy(format_);
         format_ = nullptr;
     }
-    if (venc_ != NULL)
+    if (venc_ != nullptr)
     {
         OH_VideoEncoder_Destroy(venc_);
         venc_ = nullptr;
     }
-    if (signal_)
+    if (signal_ != nullptr)
     {
         delete signal_;
         signal_ = nullptr;
@@ -84,8 +84,7 @@ void HwEncSqrFuncTest::TearDown()
 } // namespace Media
 } // namespace OHOS
 
-namespace
-{
+namespace {
 /**
  * @tc.number    : VIDEO_HW_ENCODE_FUNC_SQR_001
  * @tc.name      : VIDEO_HW_ENCODE_FUNC_SQR_001

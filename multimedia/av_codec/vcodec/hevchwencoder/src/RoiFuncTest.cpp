@@ -27,12 +27,12 @@
 #include "avcodec_common.h"
 
 namespace {
-OH_AVCodec *venc_ = NULL;
-OH_AVCapability *cap = nullptr;
-OH_AVCapability *cap_hevc = nullptr;
-const char *g_codecName = "";
-const char *g_codecNameHevc = "";
-const char *g_outDirTest = "/data/test/media/videoEncodeFileRoi.h265";
+OH_AVCodec* venc_ = NULL;
+OH_AVCapability* cap = nullptr;
+OH_AVCapability* cap_hevc = nullptr;
+const char* g_codecName = "";
+const char* g_codecNameHevc = "";
+const char* g_outDirTest = "/data/test/media/videoEncodeFileRoi.h265";
 } // namespace
 namespace OHOS {
 namespace Media {

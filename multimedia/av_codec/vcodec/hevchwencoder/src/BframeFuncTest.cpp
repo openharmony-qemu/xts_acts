@@ -27,11 +27,11 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec *venc_ = NULL;
-OH_AVCapability *cap_enc = nullptr;
-const char *g_codecName = "";
-OHOS::Media::VEncAPI11Signal *signal_ = nullptr;
-OH_AVFormat *format_ = NULL;
+OH_AVCodec* venc_ = NULL;
+OH_AVCapability* cap_enc = nullptr;
+const char* g_codecName = "";
+OHOS::Media::VEncAPI11Signal* signal_ = nullptr;
+OH_AVFormat* format_ = NULL;
 } // namespace
 
 namespace OHOS {
@@ -48,8 +48,8 @@ public:
     void TearDown(void);
 
 protected:
-    const char *INP_DIR_1080_30 = "/data/test/media/1080_1920_nv12.yuv";
-    const char *INP_DIR_720_YUV420 = "/data/test/media/1280_720_yuv420p_01.yuv";
+    const char* INP_DIR_1080_30 = "/data/test/media/1080_1920_nv12.yuv";
+    const char* INP_DIR_720_30 = "/data/test/media/1280_720_yuv420p_01.yuv";
 };
 
 void HwEncBFuncTest::SetUpTestCase()
@@ -59,7 +59,8 @@ void HwEncBFuncTest::SetUpTestCase()
     cout << "g_codecname: " << g_codecName << endl;
 }
 void HwEncBFuncTest::TearDownTestCase() {}
-void HwEncBFuncTest::SetUp() {
+void HwEncBFuncTest::SetUp()
+{
     signal_ = new VEncAPI11Signal();
 }
 void HwEncBFuncTest::TearDown()
@@ -101,7 +102,7 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
     vEncSample->DEFAULT_BFRAME = 0;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
-    vEncSample->INP_DIR = INP_DIR_720_YUV420;
+    vEncSample->INP_DIR = INP_DIR_720_30;
     format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     ASSERT_NE(NULL, format_);
     int32_t ret_1 = vEncSample->GetBframe(format_);
@@ -134,7 +135,7 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
     vEncSample->DEFAULT_BFRAME = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
-    vEncSample->INP_DIR = INP_DIR_720_YUV420;
+    vEncSample->INP_DIR = INP_DIR_720_30;
     format_ = OH_AVCapability_GetFeatureProperties(cap_enc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
     ASSERT_NE(NULL, format_);
     int32_t ret_1 = vEncSample->GetBframes(format_);

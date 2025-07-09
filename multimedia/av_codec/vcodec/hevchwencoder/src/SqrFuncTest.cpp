@@ -28,11 +28,11 @@ using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
 OH_AVCodec *venc_ = NULL;
-OH_AVCapability *cap = nullptr;
-OH_AVCapability *cap_enc = nullptr;
-const char *g_codecName = "";
-const char *g_outDirTest = "/data/test/media/videoEncodeFileRoi.h265";
-OH_AVFormat *format;
+OH_AVCapability* cap = nullptr;
+OH_AVCapability* cap_enc = nullptr;
+const char* g_codecName = "";
+const char* g_outDirTest = "/data/test/media/videoEncodeFileRoi.h265";
+OH_AVFormat* format;
 } // namespace
 
 namespace OHOS {
@@ -49,7 +49,7 @@ public:
     void TearDown(void);
 
 protected:
-    const char *INP_DIR_1080_30 = "/data/test/media/1080_1920_nv12.yuv";
+    const char* INP_DIR_1080_30 = "/data/test/media/1080_1920_nv12.yuv";
 };
 
 void HwEncFuncSqrTest::SetUpTestCase()
