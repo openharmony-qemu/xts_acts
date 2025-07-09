@@ -20,7 +20,7 @@ import WebViewEnumAndSetWebController from './WebViewEnumAndSetWebController.tes
 import webViewMenuShowResult from './webViewMenuShowResult.test'
 import webViewHasImageJsunit from './webViewHasImageJsunit.test'
 import WebViewonOnContextMenuShow from './WebViewonOnContextMenuShow.test'
-
+import WebViewonOnContextMenuShowTwo from './WebViewonOnContextMenuShowTwo.test'
 
 
 export default function testsuite() {
@@ -30,5 +30,6 @@ export default function testsuite() {
   webViewMenuShowResult()
   webViewHasImageJsunit()
   WebViewonOnContextMenuShow()
+  WebViewonOnContextMenuShowTwo()
 
 }
