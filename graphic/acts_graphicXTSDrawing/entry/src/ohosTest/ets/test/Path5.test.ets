@@ -172,11 +172,11 @@ export default function drawingTsPath5Test() {
         expect(e.code).assertEqual(25900001);
       }
       try {
-        path.approximate(1.1);
-        console.info(msg + `approximate 1.1 successes`);
+        path.approximate(-1.1);
+        console.info(msg + `approximate -1.1 successes`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `approximate 1.1 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `approximate -1.1 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(25900001);
       }
     })
