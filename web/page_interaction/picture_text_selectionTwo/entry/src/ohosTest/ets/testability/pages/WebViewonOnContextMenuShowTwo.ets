@@ -96,7 +96,7 @@ struct WebComponent {
               case "emitOnContextMenuShowTwo001": {
                 try {
                   let driver = Driver.create();
-                  let button = await driver.findComponent(ON.id('OnContextMenuShowKey'));
+                  let button = await driver.findComponent(ON.id('OnContextMenuShowTwoKey'));
                   await button.longClick();
                   await Utils.sleep(2000);
                   break;
