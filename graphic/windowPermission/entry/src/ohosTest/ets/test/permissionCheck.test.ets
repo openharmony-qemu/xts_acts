@@ -60,7 +60,11 @@ async function terminateAbility(caseName: string) {
 export default function windowPromiseTest(context: common.UIAbilityContext) {
   describe('windowPermissionCheck_test', () => {
     console.log('describe windowPermissionCheck_test start!!!')
+    let windowStage: ohosWindow.WindowStage;
 
+    beforeAll(() => {
+      windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
+    })
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_PERMISSION_JS_API_0010
      * @tc.name      : testCreateFloatWindowPermission_Promise
@@ -257,7 +261,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     /**
      * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0200
      * @tc.name       : testSetWindowShadowEnabledwithoutPermission
-     * @tc.desc       : 楠岃瘉2in1璁惧搴旂敤涓嶇敵璇锋潈闄愭姤201
+     * @tc.desc       : 验证2in1设备应用不申请权限报201
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 2

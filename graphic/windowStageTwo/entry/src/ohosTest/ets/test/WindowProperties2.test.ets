@@ -20,7 +20,7 @@ import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import { image } from '@kit.ImageKit';
-import { ColorMetrics } from '@kit.ArkUI';
+import { ColorMetrics, screenshot } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -65,8 +65,10 @@ export default function windowPropertiesTest2() {
     let windowStage: ohosWindow.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let fileDir: string = '';
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
+      fileDir = AppStorage.get('filePath') as string;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       isAutoWindow =
@@ -1628,6 +1630,743 @@ export default function windowPropertiesTest2() {
         done()
       }
     })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0100
+     * @tc.name       : testOnScreenShotAppEventwithDestoryedSubWindow
+     * @tc.desc       : 验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOnScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOnScreenShotAppEventwithDestoryedSubWindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = await windowStage.createSubWindow('testOnScreenShotAppEventwithDestoryedSubWindow');
+      await windowClass.destroyWindow();
+      try {
+        const callback = (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
+        }
+        windowClass.on('screenshotAppEvent', callback);
+        console.info(msgStr + 'Succeeded in calling on screenshotAppEvent.');
+        expect().assertFail();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        expect(exception.code).assertEqual(1300002)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
+     * @tc.name       : testOffScreenShotAppEventwithDestoryedSubWindow
+     * @tc.desc       : 验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOffScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffScreenShotAppEventwithDestoryedSubWindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = await windowStage.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow');
+      await windowClass.destroyWindow();
+      try {
+        const callback = (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
+        }
+        windowClass.off('screenshotAppEvent', callback);
+        console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
+        expect().assertFail();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        expect(exception.code).assertEqual(1300002)
+        done()
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0300
+     * @tc.name       : testOnScreenShotAppEventwithScreenShotCapture
+     * @tc.desc       : 验证screenshot接口屏幕截屏后触发on_screenshotAppEvent回调
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOnScreenShotAppEventwithScreenShotCapture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testOnScreenShotAppEventwithScreenShotCapture";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "dialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let subWindow: window.Window | undefined;
+      let dialogWindow: window.Window | undefined;
+
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        const callback1 = (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback1 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            mainWindow.off('screenshotAppEvent', callback1);
+            done();
+          }
+        }
+        mainWindow.on('screenshotAppEvent', callback1);
+        console.info(msgStr + 'main window succeeded in calling on screenshotAppEvent.');
+
+        subWindow = await windowStage.createSubWindow('testOnScreenShotAppEventwithScreenShotCapture');
+        const callback2 = async (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback2 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            subWindow?.off('screenshotAppEvent', callback2);
+            await subWindow?.destroyWindow();
+            done();
+          }
+        }
+        subWindow.on('screenshotAppEvent', callback2);
+        console.info(msgStr + 'sub window succeeded in calling on screenshotAppEvent.');
+
+        dialogWindow = await window.createWindow(config);
+        const callback3 = async (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback3 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            dialogWindow?.off('screenshotAppEvent', callback3);
+            await dialogWindow?.destroyWindow();
+            done();
+          }
+        }
+        dialogWindow.on('screenshotAppEvent', callback3);
+        console.info(msgStr + 'dialog window succeeded in calling on screenshotAppEvent.');
+
+        let captureOption: screenshot.CaptureOption = {
+          "displayId": 0
+        };
+        let promise = screenshot.capture(captureOption);
+        promise.then((pixelMap: image.PixelMap) => {
+          console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
+          pixelMap.release(); // PixelMap使用完后及时释放内存
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ' Failed to save screenshot. Code: ' + JSON.stringify(err));
+          mainWindow.off('screenshotAppEvent', callback1);
+          subWindow?.off('screenshotAppEvent', callback2);
+          dialogWindow?.off('screenshotAppEvent', callback3);
+          await subWindow?.destroyWindow();
+          await dialogWindow?.destroyWindow();
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(exception));
+        await subWindow?.destroyWindow();
+        await dialogWindow?.destroyWindow();
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0400
+     * @tc.name       : testOnScreenShotAppEventwithScreenShot
+     * @tc.desc       : 验证屏幕截屏后触发on_screenshotAppEvent回调
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOnScreenShotAppEventwithScreenShot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testOnScreenShotAppEventwithScreenShot";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "dialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let subWindow: window.Window | undefined;
+      let dialogWindow: window.Window | undefined;
+
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        const callback1 = (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback1 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            mainWindow.off('screenshotAppEvent', callback1);
+            done();
+          }
+        }
+        mainWindow.on('screenshotAppEvent', callback1);
+        console.info(msgStr + 'main window succeeded in calling on screenshotAppEvent.');
+
+        subWindow = await windowStage.createSubWindow('testOnScreenShotAppEventwithScreenShotCapture');
+        const callback2 = async (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback2 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            subWindow?.off('screenshotAppEvent', callback2);
+            await subWindow?.destroyWindow();
+            done();
+          }
+        }
+        subWindow.on('screenshotAppEvent', callback2);
+        console.info(msgStr + 'sub window succeeded in calling on screenshotAppEvent.');
+
+        dialogWindow = await window.createWindow(config);
+        const callback3 = async (data: window.ScreenshotEventType) => {
+          console.log(`${caseName} callback3 data: ${JSON.stringify(data)}`);
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            expect(data).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            dialogWindow?.off('screenshotAppEvent', callback3);
+            await dialogWindow?.destroyWindow();
+            done();
+          }
+        }
+        dialogWindow.on('screenshotAppEvent', callback3);
+        console.info(caseName + 'dialog window succeeded in calling on screenshotAppEvent.');
+
+        let filePath = fileDir + '/1.png';
+        console.error(caseName + ' filePath: ' + filePath);
+        let promise = Driver.create().screenCap(filePath);
+        promise.then((data: boolean) => {
+          console.log(caseName + 'Succeeded in calling screenCap, data: ' + data);
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ' Failed to call screenCap. Code: ' + JSON.stringify(err));
+          mainWindow.off('screenshotAppEvent', callback1);
+          subWindow?.off('screenshotAppEvent', callback2);
+          dialogWindow?.off('screenshotAppEvent', callback3);
+          await subWindow?.destroyWindow();
+          await dialogWindow?.destroyWindow();
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(exception));
+        await subWindow?.destroyWindow();
+        await dialogWindow?.destroyWindow();
+        if (exception.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0500
+     * @tc.name       : testScreenshotEventType
+     * @tc.desc       : 验证ScreenshotEventType枚举值
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testScreenshotEventType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testScreenshotEventType";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        console.info(msgStr + 'Succeeded. window.ScreenshotEventType:' + JSON.stringify(window.ScreenshotEventType));
+        expect(window.ScreenshotEventType.SYSTEM_SCREENSHOT).assertEqual(0);
+        expect(window.ScreenshotEventType.SYSTEM_SCREENSHOT_ABORT).assertEqual(1);
+        expect(window.ScreenshotEventType.SCROLL_SHOT_START).assertEqual(2);
+        expect(window.ScreenshotEventType.SCROLL_SHOT_END).assertEqual(3);
+        expect(window.ScreenshotEventType.SCROLL_SHOT_ABORT).assertEqual(4);
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
+     * @tc.name       : testSetWindowShadowEnabledwithPermission
+     * @tc.desc       : 验证非2in1设备调用接口报801，2in1设备调用成功
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testSetWindowShadowEnabledwithPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "testSetWindowShadowEnabledwithPermission";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        windowClass.setWindowShadowEnabled(true).then(() => {
+          console.info(`${caseName} Succeeded in calling setWindowShadowEnabled.`);
+          expect(true).assertTrue()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0300
+     * @tc.name       : testSetWindowShadowEnabledwithUnsupportedSubwindow
+     * @tc.desc       : 验证子窗调用接口报1300004
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testSetWindowShadowEnabledwithUnsupportedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = "testSetWindowShadowEnabledwithUnsupportedSubwindow";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = await windowStage.createSubWindow('testSetWindowShadowEnabledwithUnsupportedSubwindow');
+      try {
+        windowClass.setWindowShadowEnabled(true).then(async () => {
+          console.info(`${caseName} Succeeded in calling setWindowShadowEnabled.`);
+          await windowClass.destroyWindow()
+          expect().assertFail();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await windowClass.destroyWindow()
+          if (err.code === 801) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect(err.code).assertEqual(1300004);
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+        await windowClass.destroyWindow()
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledTrue
+     * @tc.desc       : 创建float系统窗配置使用默认density
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testCreateFloatWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testCreateFloatWindowwithDefaultDensityEnabledTrue";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "testCreateFloatWindowwithDefaultDensityEnabledTrue",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+        defaultDensityEnabled: true
+      };
+      let subWindowClass: window.Window | undefined;
+      console.info(`${caseName} Succeeded in creating the float window.`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 1300002 || err.code === 801) {
+            await subWindowClass?.destroyWindow();
+            done()
+          } else {
+            expect().assertFail();
+            await subWindowClass?.destroyWindow();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledFalse
+     * @tc.desc       : 创建float窗配置不使用默认density
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testCreateFloatWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testCreateFloatWindowwithDefaultDensityEnabledFalse";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "testCreateFloatWindowwithDefaultDensityEnabledFalse",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+        defaultDensityEnabled: false
+      };
+      let subWindowClass: window.Window | undefined;
+      console.info(`${caseName} Succeeded in creating the float window.`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 1300002 || err.code === 801) {
+            await subWindowClass?.destroyWindow();
+            done()
+          } else {
+            expect().assertFail();
+            await subWindowClass?.destroyWindow();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledTrue
+     * @tc.desc       : 创建dialog系统窗配置使用默认density
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testCreateDialogWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testCreateDialogWindowwithDefaultDensityEnabledTrue";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "testCreateDialogWindowwithDefaultDensityEnabledTrue",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+        defaultDensityEnabled: true
+      };
+      let subWindowClass: window.Window | undefined;
+      console.info(`${caseName} Succeeded in creating the float window.`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            await subWindowClass?.destroyWindow();
+            done()
+          } else {
+            expect().assertFail();
+            await subWindowClass?.destroyWindow();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledFalse
+     * @tc.desc       : 创建dialog窗配置不使用默认density
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testCreateDialogWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testCreateDialogWindowwithDefaultDensityEnabledFalse";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "testCreateDialogWindowwithDefaultDensityEnabledFalse",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+        defaultDensityEnabled: false
+      };
+      let subWindowClass: window.Window | undefined;
+      console.info(`${caseName} Succeeded in creating the float window.`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
+            await subWindowClass?.destroyWindow();
+            done()
+          } else {
+            expect().assertFail();
+            await subWindowClass?.destroyWindow();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_TRUE_0100
+     * @tc.name       : testSetCustomDensitywithSubwindowApplytoSubwindowTrue
+     * @tc.desc       : 主窗调用setcustomdensity修改显示大小同步子窗、系统窗
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testSetCustomDensitywithSubwindowApplytoSubwindowTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testSetCustomDensitywithSubwindowApplytoSubwindowTrue";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindowClass = await windowStage.createSubWindow('testSetCustomDensitywithSubwindowApplytoSubwindowTrue');
+      await subWindowClass.setUIContent('testability/pages/First/index2');
+      await subWindowClass.showWindow();
+      await sleep(200);
+      let config: window.Configuration = {
+        name: "dialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+      };
+      let dialogWindowClass = await window.createWindow(config);
+      await dialogWindowClass.setUIContent('testability/pages/First/index2');
+      await dialogWindowClass.showWindow();
+      await sleep(200);
+      let config2: window.Configuration = {
+        name: "floatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+      };
+      let floatWindowClass: window.Window | undefined;
+      try {
+        window.createWindow(config2).then(async (data) => {
+          floatWindowClass = data;
+          await floatWindowClass.setUIContent('testability/pages/First/index2');
+          await floatWindowClass.showWindow();
+          await sleep(200);
+          windowStage.setCustomDensity(1, true);
+          windowStage.setCustomDensity(2, true);
+          let subWindowInfo = subWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
+          expect(subWindowInfo).assertEqual(2);
+          let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
+          expect(dialogWindowInfo).assertEqual(2);
+          let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
+          expect(floatWindowInfo).assertEqual(2);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          if (err.code === 1300002 || err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        await dialogWindowClass?.destroyWindow();
+        await floatWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_FALSE_0100
+     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowFalse
+     * @tc.desc       : 主窗调用setcustomdensity修改显示大小不同步子窗、系统窗
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testSetCustomDensitywithFloatwindowApplytoSubwindowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowFalse";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindowClass = await windowStage.createSubWindow('testSetCustomDensitywithFloatwindowApplytoSubwindowFalse');
+      await subWindowClass.setUIContent('testability/pages/First/index2');
+      await subWindowClass.showWindow();
+      await sleep(200);
+      let config: window.Configuration = {
+        name: "dialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+      };
+      let dialogWindowClass = await window.createWindow(config);
+      await dialogWindowClass.setUIContent('testability/pages/First/index2');
+      await dialogWindowClass.showWindow();
+      await sleep(200);
+      let config2: window.Configuration = {
+        name: "floatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+      };
+      let floatWindowClass: window.Window | undefined;
+      try {
+        window.createWindow(config2).then(async (data) => {
+          floatWindowClass = data;
+          await floatWindowClass.setUIContent('testability/pages/First/index2');
+          await floatWindowClass.showWindow();
+          await sleep(200);
+          windowStage.setCustomDensity(1, true);
+          windowStage.setCustomDensity(2, false);
+          let subWindowInfo = subWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
+          expect(subWindowInfo).assertEqual(1);
+          let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
+          expect(dialogWindowInfo).assertEqual(1);
+          let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
+          expect(floatWindowInfo).assertEqual(1);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          if (err.code === 1300002 || err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        await dialogWindowClass?.destroyWindow();
+        await floatWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_UNDEFINED_0100
+     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined
+     * @tc.desc       : 主窗调用setcustomdensity修改显示大小默认不同步子窗、系统窗
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let subWindowClass = await windowStage.createSubWindow('testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined');
+      await subWindowClass.setUIContent('testability/pages/First/index2');
+      await subWindowClass.showWindow();
+      await sleep(200);
+      let config: window.Configuration = {
+        name: "dialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+      };
+      let dialogWindowClass = await window.createWindow(config);
+      await dialogWindowClass.setUIContent('testability/pages/First/index2');
+      await dialogWindowClass.showWindow();
+      await sleep(200);
+      let config2: window.Configuration = {
+        name: "floatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+      };
+      let floatWindowClass: window.Window | undefined;
+      try {
+        window.createWindow(config2).then(async (data) => {
+          floatWindowClass = data;
+          await floatWindowClass.setUIContent('testability/pages/First/index2');
+          await floatWindowClass.showWindow();
+          await sleep(200);
+          windowStage.setCustomDensity(1, true);
+          windowStage.setCustomDensity(2, undefined);
+          let subWindowInfo = subWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
+          expect(subWindowInfo).assertEqual(1);
+          let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
+          expect(dialogWindowInfo).assertEqual(1);
+          let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
+          console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
+          expect(floatWindowInfo).assertEqual(1);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} createWindow Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          await dialogWindowClass?.destroyWindow();
+          await floatWindowClass?.destroyWindow();
+          if (err.code === 1300002 || err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      } catch (e) {
+        console.error(`${caseName} Failed2. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        await subWindowClass?.destroyWindow();
+        await dialogWindowClass?.destroyWindow();
+        await floatWindowClass?.destroyWindow();
+        done()
+      }
+    });
+
   })
 }
 
