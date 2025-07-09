@@ -80,7 +80,7 @@ export default function webOnBeforeUnload() {
       sendEventByKey('WebOnBeforeUnloadButton', 10, '');
     })
     /*
-    * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0100
+    * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0200
     * @tc.name       : testOnBeforeUnloadIsReloadFalse
     * @tc.desc       : test onBeforeUnload isReload false
     * @tc.size       : MediumTest
