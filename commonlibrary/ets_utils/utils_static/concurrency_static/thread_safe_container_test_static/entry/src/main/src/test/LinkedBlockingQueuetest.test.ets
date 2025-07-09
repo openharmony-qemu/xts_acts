@@ -533,7 +533,7 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_00126
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_000126
      * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_008
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after add/poll operations on max capacity queue.
      * @tc.size      : MediumTest
@@ -578,13 +578,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_000126
-     * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_010
+     * @tc.name      : linkedBlockingQueueGetCapacityTest_000126
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after poll/add operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_GetCapacityTest_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linkedBlockingQueueGetCapacityTest_000126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(Int.MAX_VALUE);
       let res1 = queueIntPop1.capacity;
       expect(res1).assertEqual(Int.MAX_VALUE);
@@ -786,13 +786,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
-     * @tc.name      : linked_Blocking_Queue_static_013
+     * @tc.name      : linkedBlockingQueueTest_0139
      * @tc.desc      : Add an element to a LinkedBlockingQueue with a capacity of 1, then perform a poll operation.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linkedBlockingQueueTest_0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1 = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE);
       let res = queueIntPop1.poll();
@@ -1291,13 +1291,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
-     * @tc.name      : linked_Blocking_Queue_NoParameter_static_004
+     * @tc.name      : linkedBlockingQueueNoParameterTest_000164
      * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameter_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linkedBlockingQueueNoParameterTest_000164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE + 1);
       let res = queueIntPop1.size;
@@ -1670,13 +1670,13 @@ export default function LinkedBlockingQueuetest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00185
-     * @tc.name      : linked_Blocking_Queue_NoParameter_static_023
+     * @tc.name      : linkedBlockingQueueNoParameterTest_00185
      * @tc.desc      : Verify LinkedBlockingQueue capacity with array of undefined ints.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_NoParameter_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    xit("linkedBlockingQueueNoParameterTest_00185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new Array<int>(Int.MAX_VALUE);
       let iter = arr.values();
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
