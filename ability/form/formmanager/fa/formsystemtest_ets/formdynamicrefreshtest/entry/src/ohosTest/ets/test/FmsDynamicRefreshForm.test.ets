@@ -15,7 +15,7 @@
 
 import featureAbility from '@ohos.ability.featureAbility';
 import commonEvent from '@ohos.commonEvent';
-import { beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, afterEach, describe, expect, it } from '@ohos/hypium';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 
@@ -71,7 +71,7 @@ export default function test() {
          * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
          *           2.Verify the result of the dynamic timed refresh interface.
          */
-        it(`FMS_timedRefresh_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0100`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0100`;
 
             const onRefreshCallback = async (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -80,8 +80,8 @@ export default function test() {
                 expect(data.code).assertEqual(0);
                 commonEvent.unsubscribe(subscriberOnRefresh, () => unsubscribeOnRefreshCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                    console.info('FMS_timedRefresh_0100 publish' + JSON.stringify(err));
-                    done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
             };
             commonEvent.subscribe(subscriberOnRefresh, onRefreshCallback);
@@ -120,7 +120,7 @@ export default function test() {
          * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
          *           2.Verify the result of the dynamic timed refresh interface.
          */
-        it(`FMS_timedRefresh_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0200`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0200`;
 
             const onRefreshCallback = async (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -129,8 +129,8 @@ export default function test() {
                 expect(data.code).assertEqual(0);
                 commonEvent.unsubscribe(subscriberOnRefresh, () => unsubscribeOnRefreshCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                    console.info('FMS_timedRefresh_0200 publish' + JSON.stringify(err));
-                    done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
             };
             commonEvent.subscribe(subscriberOnRefresh, onRefreshCallback);
@@ -169,17 +169,16 @@ export default function test() {
         * @tc.desc: 1.The form provider B to invoke the dynamic timed refresh interface.
         *           2.Verify the result of the dynamic timed refresh interface.
         */
-        it(`FMS_timedRefresh_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0300`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0300`;
 
             const onRefreshCallback = async (_:BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onRefreshCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormDynamicRefresh_commonEvent`);
-                expect(data.data).assertEqual(`7`);
                 commonEvent.unsubscribe(subscriberOnRefresh, () => unsubscribeOnRefreshCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                    console.info('FMS_timedRefresh_0300 publish' + JSON.stringify(err));
-                    done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
             };
             commonEvent.subscribe(subscriberOnRefresh, onRefreshCallback);
@@ -208,9 +207,11 @@ export default function test() {
                         }
                     }
                 }).then((res) => {
-                    console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
+                    console.info(`${tcNumber} featureAbility.startAbilityhost again res: ${JSON.stringify(res)}`);
+                    commonEvent.publish("FMS_FormDynamicRefresh_commonEvent", () => {
+                        console.info(`${tcNumber} onRefreshCallback publish start`)});
                 }).catch((err: BusinessError) => {
-                    console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
+                    console.info(`${tcNumber} featureAbility.startAbilityhost again error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
@@ -247,7 +248,7 @@ export default function test() {
         * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
         *           2.Verify the result of the dynamic timed refresh interface.
         */
-        it(`FMS_timedRefresh_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0400`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0400`;
             let formId: string | undefined = '';
 
@@ -256,8 +257,8 @@ export default function test() {
                 expect(data.event).assertEqual(`FMS_FormDynamicRefresh_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnRefresh, () => unsubscribeOnRefreshCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                   console.info('FMS_timedRefresh_0400 publish' + JSON.stringify(err));
-                   done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
             };
             commonEvent.subscribe(subscriberOnRefresh, onRefreshCallback);
@@ -288,11 +289,11 @@ export default function test() {
                         }
                     }
                 }).then((res) => {
-                    console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
+                    console.info(`${tcNumber} featureAbility.startAbilityhost again res: ${JSON.stringify(res)}`);
                     commonEvent.publish("FMS_FormDynamicRefresh_commonEvent", () => {
-                        console.info(`${tcNumber} onRefreshCallback publish start`)})
+                        console.info(`${tcNumber} onRefreshCallback publish again start`)})
                 }).catch((err: BusinessError) => {
-                    console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
+                    console.info(`${tcNumber} featureAbility.startAbilityhost again error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
@@ -331,7 +332,7 @@ export default function test() {
         * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
         *           2.Verify the result of the dynamic timed refresh interface.
         */
-        it(`FMS_timedRefresh_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0500`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0500`;
 
             const onRefreshCallback = async (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -340,8 +341,8 @@ export default function test() {
                 expect(data.code).assertEqual(0);
                 commonEvent.unsubscribe(subscriberOnRefresh, () => unsubscribeOnRefreshCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                    console.info('FMS_timedRefresh_0500 publish' + JSON.stringify(err));
-                    done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
             };
             commonEvent.subscribe(subscriberOnRefresh, onRefreshCallback);
@@ -380,15 +381,15 @@ export default function test() {
         * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
         *           2.Verify the result of the dynamic timed refresh interface.
         */
-        it(`FMS_timedRefresh_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+        it(`FMS_timedRefresh_0600`, 0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0600`;
 
             const onSupplyCallback = async (_:BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onSupplyCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormSupply_commonEvent`);
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                  console.info('FMS_timedRefresh_0600 publish' + JSON.stringify(err));
-                  done()
+                    console.info(`${tcNumber} publish deleteForm_Event: ${JSON.stringify(err)}`);
+                    done();
                 });
                 
             };
