@@ -53,6 +53,7 @@ struct IndexPage {
     { title: 'PanGesture', uri: 'pages/ArkUI/PanGesture' },
     { title: 'DraggingSizeChangeEffect', uri: 'pages/ArkUI/DraggingSizeChangeEffect' },
     { title: 'KeyEvent', uri: 'pages/ArkUI/KeyEvent' },
+    { title: 'CapiKeyEvent', uri: 'pages/ArkUI/CapiKeyEvent' },
     { title: 'bindSheetTest', uri: 'pages/ArkUI/bindSheetTest' },
     { title: 'CanvasFillStyle', uri: 'pages/ArkUI/CanvasFillStyle' },
     { title: 'CanvasLineWidth', uri: 'pages/ArkUI/CanvasLineWidth' },
