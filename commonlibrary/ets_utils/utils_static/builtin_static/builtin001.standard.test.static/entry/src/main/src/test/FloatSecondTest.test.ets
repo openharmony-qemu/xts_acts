@@ -68,7 +68,7 @@ export default function builtinsFloatSecondPrototypebTest() {
 
     /**
      * @tc.number SUB_BUILTINS_FLOAT_SECOND_PROTOTYPEB_TEST_0100
-     * @tc.name builtinsFloatPrototypebTest0100
+     * @tc.name builtinsFloatSecondPrototypebTest0100
      * @tc.desc test isLessEqualThan(other: Float): boolean
      * @tc.size MediumTest
      * @tc.type Function

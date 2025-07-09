@@ -45,7 +45,7 @@ export default function builtinsByteSecondPrototypebTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0100
      * @tc.name builtinsByteSecondPrototypebTest0100
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -65,7 +65,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0200
      * @tc.name builtinsByteSecondPrototypebTest0200
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -85,7 +85,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0310
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0310
      * @tc.name builtinsByteSecondPrototypebTest0310
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -105,7 +105,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0400
      * @tc.name builtinsByteSecondPrototypebTest0400
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0500
      * @tc.name builtinsByteSecondPrototypebTest0500
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -145,7 +145,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0600
      * @tc.name builtinsByteSecondPrototypebTest0600
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0700
      * @tc.name builtinsByteSecondPrototypebTest0700
      * @tc.desc test acompareTo  return value
      * @tc.size MediumTest
@@ -185,7 +185,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0800
      * @tc.name builtinsByteSecondPrototypebTest0800
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_0900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_0900
      * @tc.name builtinsByteSecondPrototypebTest0900
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -223,7 +223,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1000
      * @tc.name builtinsByteSecondPrototypebTest1000
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1100
      * @tc.name builtinsByteSecondPrototypebTest1100
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -261,7 +261,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1200
      * @tc.name builtinsByteSecondPrototypebTest1200
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -280,7 +280,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1310
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1310
      * @tc.name builtinsByteSecondPrototypebTest1310
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1400
      * @tc.name builtinsByteSecondPrototypebTest1400
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1500
      * @tc.name builtinsByteSecondPrototypebTest1500
      * @tc.desc test toDouble return value
      * @tc.size MediumTest
@@ -339,7 +339,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1600
      * @tc.name builtinsByteSecondPrototypebTest1600
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -357,7 +357,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1700
      * @tc.name builtinsByteSecondPrototypebTest1700
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -375,7 +375,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1800
      * @tc.name builtinsByteSecondPrototypebTest1800
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_1900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_1900
      * @tc.name builtinsByteSecondPrototypebTest1900
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -411,7 +411,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2000
      * @tc.name builtinsByteSecondPrototypebTest2000
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -429,7 +429,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2100
      * @tc.name builtinsByteSecondPrototypebTest2100
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -448,7 +448,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2200
      * @tc.name builtinsByteSecondPrototypebTest2200
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -467,7 +467,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2310
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2310
      * @tc.name builtinsByteSecondPrototypebTest2310
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -486,7 +486,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2400
      * @tc.name builtinsByteSecondPrototypebTest2400
      * @tc.desc test toFloat return value
      * @tc.size MediumTest
@@ -505,7 +505,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2500
      * @tc.name builtinsByteSecondPrototypebTest2500
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -523,7 +523,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2600
      * @tc.name builtinsByteSecondPrototypebTest2600
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -541,7 +541,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2700
      * @tc.name builtinsByteSecondPrototypebTest2700
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -559,7 +559,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2800
      * @tc.name builtinsByteSecondPrototypebTest2800
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -577,7 +577,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_2900
      * @tc.name builtinsByteSecondPrototypebTest2900
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -595,7 +595,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3000
      * @tc.name builtinsByteSecondPrototypebTest3000
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3100
      * @tc.name builtinsByteSecondPrototypebTest3100
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -633,7 +633,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3200
      * @tc.name builtinsByteSecondPrototypebTest3200
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -652,7 +652,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3300
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3300
      * @tc.name builtinsByteSecondPrototypebTest3300
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -671,7 +671,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3400
      * @tc.name builtinsByteSecondPrototypebTest3400
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -689,7 +689,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3500
      * @tc.name builtinsByteSecondPrototypebTest3500
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -707,7 +707,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3600
      * @tc.name builtinsByteSecondPrototypebTest3600
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -725,7 +725,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3700
      * @tc.name builtinsByteSecondPrototypebTest3700
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -743,7 +743,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3800
      * @tc.name builtinsByteSecondPrototypebTest3800
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -761,7 +761,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_3900
      * @tc.name builtinsByteSecondPrototypebTest3900
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -779,7 +779,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4000
      * @tc.name builtinsByteSecondPrototypebTest4000
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -797,7 +797,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4100
      * @tc.name builtinsByteSecondPrototypebTest4100
      * @tc.desc test toInt return value
      * @tc.size MediumTest
@@ -816,7 +816,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4200
      * @tc.name builtinsByteSecondPrototypebTest4200
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -834,7 +834,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4300
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4300
      * @tc.name builtinsByteSecondPrototypebTest4300
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -852,7 +852,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4400
      * @tc.name builtinsByteSecondPrototypebTest4400
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -870,7 +870,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4500
      * @tc.name builtinsByteSecondPrototypebTest4500
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -888,7 +888,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4600
      * @tc.name builtinsByteSecondPrototypebTest4600
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -906,7 +906,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4700
      * @tc.name builtinsByteSecondPrototypebTest4700
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -924,7 +924,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4800
      * @tc.name builtinsByteSecondPrototypebTest4800
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -942,7 +942,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_4900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_4900
      * @tc.name builtinsByteSecondPrototypebTest4900
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -960,7 +960,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5000
      * @tc.name builtinsByteSecondPrototypebTest5000
      * @tc.desc test toShort return value
      * @tc.size MediumTest
@@ -978,7 +978,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5100
      * @tc.name builtinsByteSecondPrototypebTest5100
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -996,7 +996,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5200
      * @tc.name builtinsByteSecondPrototypebTest5200
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1014,7 +1014,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5300
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5300
      * @tc.name builtinsByteSecondPrototypebTest5300
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1032,7 +1032,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5400
      * @tc.name builtinsByteSecondPrototypebTest5400
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1050,7 +1050,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5500
      * @tc.name builtinsByteSecondPrototypebTest5500
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1068,7 +1068,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5600
      * @tc.name builtinsByteSecondPrototypebTest5600
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1086,7 +1086,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5700
      * @tc.name builtinsByteSecondPrototypebTest5700
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1105,7 +1105,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5700
      * @tc.name builtinsByteSecondPrototypebTest5700
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1124,7 +1124,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5800
      * @tc.name builtinsByteSecondPrototypebTest5800
      * @tc.desc test valueOf() return value
      * @tc.size MediumTest
@@ -1141,7 +1141,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_5900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5900
      * @tc.name builtinsByteSecondPrototypebTest5900
      * @tc.desc test valueOf() return value
      * @tc.size MediumTest
@@ -1157,7 +1157,7 @@ export default function builtinsByteSecondPrototypebTest() {
         Done();
       })
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6000
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6000
          * @tc.name builtinsByteSecondPrototypebTest6000
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1174,7 +1174,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6100
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6100
          * @tc.name builtinsByteSecondPrototypebTest6100
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1191,7 +1191,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6200
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6200
          * @tc.name builtinsByteSecondPrototypebTest6200
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1208,7 +1208,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6300
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6300
          * @tc.name builtinsByteSecondPrototypebTest6300
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1225,7 +1225,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6400
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6400
          * @tc.name builtinsByteSecondPrototypebTest6400
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1243,7 +1243,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6500
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6500
          * @tc.name builtinsByteSecondPrototypebTest6500
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1262,7 +1262,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6500
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6500
          * @tc.name builtinsByteSecondPrototypebTest6500
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
@@ -1281,7 +1281,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6600
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6600
          * @tc.name builtinsByteSecondPrototypebTest6600
          * @tc.desc test sub() return value
          * @tc.size MediumTest
@@ -1300,7 +1300,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6700
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6700
          * @tc.name builtinsByteSecondPrototypebTest6700
          * @tc.desc test sub() return value
          * @tc.size MediumTest
@@ -1319,7 +1319,7 @@ export default function builtinsByteSecondPrototypebTest() {
           })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6800
      * @tc.name builtinsByteSecondPrototypebTest6800
      * @tc.desc test sub() return value
      * @tc.size MediumTest
@@ -1338,7 +1338,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6900
      * @tc.name builtinsByteSecondPrototypebTest6900
      * @tc.desc test sub() return value
      * @tc.size MediumTest
@@ -1357,7 +1357,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7000
      * @tc.name builtinsByteSecondPrototypebTest7000
      * @tc.desc test sub() return value
      * @tc.size MediumTest
@@ -1376,7 +1376,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7100
      * @tc.name builtinsByteSecondPrototypebTest7100
      * @tc.desc test sub() return value
      * @tc.size MediumTest
@@ -1395,7 +1395,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7200
      * @tc.name builtinsByteSecondPrototypebTest7200
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1413,7 +1413,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7200
      * @tc.name builtinsByteSecondPrototypebTest7200
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1431,7 +1431,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7300
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7300
      * @tc.name builtinsByteSecondPrototypebTest7300
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1449,7 +1449,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7400
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7400
      * @tc.name builtinsByteSecondPrototypebTest7400
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1467,7 +1467,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7500
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7500
      * @tc.name builtinsByteSecondPrototypebTest7500
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1485,7 +1485,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7600
      * @tc.name builtinsByteSecondPrototypebTest7600
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1504,7 +1504,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7700
      * @tc.name builtinsByteSecondPrototypebTest7700
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
@@ -1522,7 +1522,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8100
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8100
      * @tc.name builtinsByteSecondPrototypebTest8100
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
@@ -1540,7 +1540,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8200
      * @tc.name builtinsByteSecondPrototypebTest8200
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
@@ -1558,7 +1558,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7800
      * @tc.name builtinsByteSecondPrototypebTest7800
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
@@ -1576,7 +1576,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_7900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7900
      * @tc.name builtinsByteSecondPrototypebTest7900
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
@@ -1594,7 +1594,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_8000
      * @tc.name builtinsByteSecondPrototypebTest8000
      * @tc.desc test unboxed return value
      * @tc.size MediumTest
