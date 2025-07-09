@@ -27,10 +27,10 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec* g_venc = nullptr;
+OH_AVCodec* gVenc = nullptr;
 const char* g_codecName = "";
 OH_AVCapability* g_capEnc = nullptr;
-OH_AVFormat* g_format = nullptr;
+OH_AVFormat* gFormat = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -60,15 +60,13 @@ void HwEncSqrFuncTest::TearDownTestCase() {}
 void HwEncSqrFuncTest::SetUp() {}
 void HwEncSqrFuncTest::TearDown()
 {
-    if (g_format != nullptr)
-    {
-        OH_AVFormat_Destroy(g_format);
-        g_format = nullptr;
+    if (gVenc != NULL) {
+        OH_VideoEncoder_Destroy(gVenc);
+        gVenc = nullptr;
     }
-    if (g_venc != nullptr)
-    {
-        OH_VideoEncoder_Destroy(g_venc);
-        g_venc = nullptr;
+    if (gFormat != nullptr) {
+        OH_AVFormat_Destroy(gFormat);
+        gFormat = nullptr;
     }
 }
 } // namespace Media
@@ -136,7 +134,8 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_002, TestSize.Level2)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_MAX_BITRATE = 100000000;
     vEncSample->DEFAULT_SQR_FACTOR = 32;
-    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000 vEncSample->DEFAULT_SQR_FACTOR_RUN = 51;
+    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000;
+    vEncSample->DEFAULT_SQR_FACTOR_RUN = 51;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
@@ -204,7 +203,8 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_004, TestSize.Level2)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_MAX_BITRATE = 100000000;
     vEncSample->DEFAULT_SQR_FACTOR = 32;
-    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000 vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000;
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -238,7 +238,8 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_005, TestSize.Level2)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_MAX_BITRATE = 100000000;
     vEncSample->DEFAULT_SQR_FACTOR = 51;
-    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000 vEncSample->DEFAULT_SQR_FACTOR_RUN = 1;
+    vEncSample->DEFAULT_MAX_BITRATE_RUN = 1000000;
+    vEncSample->DEFAULT_SQR_FACTOR_RUN = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
@@ -269,7 +270,7 @@ HWTEST_F(HwEncSqrFuncTest, VIDEO_HW_ENCODE_FUNC_SQR_006, TestSize.Level2)
     vEncSample->MAXBITE_ENABLE_RUN = true;
     vEncSample->FACTOR_ENABLE_RUN = true;
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
-    vEncSample->DEFAULT_MAX_BITRATE_RUN = 4000000 vEncSample->DEFAULT_SQR_FACTOR_RUN = 28;
+    vEncSample->DEFAULT_MAX_BITRATE_RUN = 4000000;vEncSample->DEFAULT_SQR_FACTOR_RUN = 28;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
     ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));

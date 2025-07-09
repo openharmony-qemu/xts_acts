@@ -19,7 +19,7 @@
 #include <openssl/rand.h>
 #include "iconsumer_surface.h"
 #include "native_buffer_inner.h"
-#include "videoEnc_API11_test.h"
+#include "VideoencApi11Sample.h"
 #include "native_avcapability.h"
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -199,7 +199,7 @@ int32_t VEncAPI11Sample::ConfigureVideoEncoder()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_PTS_BASED_RATECONTROL, 1);
     }
     if (FACTOR_ENABLE) {
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, DEFAUFT_SQR_FACTOR);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, DEFAULT_SQR_FACTOR);
     }
     if (MAXBITE_ENABLE) {
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_MAX_BITRATE, DEFAULT_MAX_BITRATE);
@@ -294,8 +294,8 @@ int32_t VEncAPI11Sample::OpenFile()
         (void)OH_VideoEncoder_Stop(venc_);
         return AV_ERR_UNKNOWN;
     }
-    inFile_->open(INP_DIR, ios::in | ios::binary);
-    cout << "input file: " << INP_DIR << endl;
+    inFile_->open(INP_DIR.c_str(), ios::in | ios::binary);
+    cout << "input file: " << INP_DIR.c_str() << endl;
     if (!inFile_->is_open()) {
         ret = OpenFileFail();
     }
@@ -354,7 +354,7 @@ int32_t VEncAPI11Sample::StartVideoEncoder()
 void VEncAPI11Sample::readMultiFilesFunc()
 {
     if (!readMultiFiles) {
-        inFile_->open(INP_DIR, ios::in | ios::binary);
+        inFile_->open(INP_DIR.c_str(), ios::in | ios::binary);
         if (!inFile_->is_open()) {
             OpenFileFail();
         }
@@ -492,7 +492,7 @@ void VEncAPI11Sample::InputFuncSurface()
         inputframeCount++;
         if (sleepOnFPS) {
             usleep(FRAME_INTERVAL);
-        }   
+        }
     }
 }
 
@@ -711,8 +711,8 @@ void VEncAPI11Sample::InputFunc()
                 break;
             }
             if (frameCount_1 == FIVE && !isParamSet && enableParameter) {
-                SetParmaeter();
-                isPamraSet = true;
+                SetParameter();
+                isParamSet = true;
             }
         }
         if (sleepOnFPS) {
@@ -792,7 +792,7 @@ void VEncAPI11Sample::OutputFuncFail()
 
 void VEncAPI11Sample::OutputFunc()
 {
-    FILE *outFile = fopen(OUT_DIR, "wb");
+    FILE *outFile = fopen(OUT_DIR.c_str(), "wb");
     while (g_flagValue) {
         if (!isRunning_.load()) {
             break;
@@ -895,8 +895,8 @@ void VEncAPI11Sample::StopOutloop()
 }
 
 int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir,
-                                           std::outputDir, uint32_t &w, uint32_t &h,
-                                           uint32_t &bitrateMode, uint32_t &bitRate, bool &Mode)
+                                           std::string outputDir, uint32_t &w, uint32_t &h,
+                                           uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
 {
     std::ifstream file(filePath);
     if (!file.is_open()) {
@@ -926,7 +926,7 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &in
             continue;
         }
         if (num == FOUR) {
-            bitarateMode = stoi(temp);
+            bitrateMode = stoi(temp);
             num++;
             continue;
         }

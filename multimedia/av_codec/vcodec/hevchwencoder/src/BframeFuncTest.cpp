@@ -27,10 +27,10 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec* g_venc = nullptr;
+OH_AVCodec* gVenc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
-const char* g_codecName = "";
-OH_AVFormat* g_format = nullptr;
+const char* g_codecName_ = "";
+OH_AVFormat* gFormat = nullptr;
 } // namespace
 
 namespace OHOS {
@@ -54,20 +54,20 @@ protected:
 void HwEncBFuncTest::SetUpTestCase()
 {
     g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(g_capEnc);
-    cout << "g_codecname: " << g_codecName << endl;
+    g_codecName_ = OH_AVCapability_GetName(g_capEnc);
+    cout << "g_codecname: " << g_codecName_ << endl;
 }
 void HwEncBFuncTest::TearDownTestCase() {}
 void HwEncBFuncTest::SetUp() {}
 void HwEncBFuncTest::TearDown()
 {
-    if (g_venc != NULL) {
-        OH_VideoEncoder_Destroy(g_venc);
-        g_venc = nullptr;
+    if (gVenc != NULL) {
+        OH_VideoEncoder_Destroy(gVenc);
+        gVenc = nullptr;
     }
-    if (g_format != nullptr) {
-        OH_AVFormat_Destroy(g_format);
-        g_format = nullptr;
+    if (gFormat != nullptr) {
+        OH_AVFormat_Destroy(gFormat);
+        gFormat = nullptr;
     }
 }
 } // namespace Media
@@ -95,11 +95,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 0;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->INP_DIR = INP_DIR_720_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframe(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -128,11 +128,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->INP_DIR = INP_DIR_720_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframes(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -161,11 +161,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_003, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 0;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->INP_DIR = INP_DIR_720_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframes(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -196,11 +196,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframes(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -231,11 +231,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = -1;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframes(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -266,11 +266,11 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_006, TestSize.Level2)
     vEncSample->DEFAULT_BFRAME = 100;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    g_format = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
-    ASSERT_NE(NULL, g_format);
-    int32_t ret_1 = vEncSample->GetBframes(g_format);
+    gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
+    ASSERT_NE(NULL, gFormat);
+    int32_t ret_1 = vEncSample->GetBframes(gFormat);
     ASSERT_GT(ret_1, 0);
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName_));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());

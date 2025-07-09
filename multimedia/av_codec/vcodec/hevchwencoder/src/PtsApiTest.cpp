@@ -27,7 +27,7 @@ using namespace OHOS;
 using namespace OHOS::Media;
 using namespace testing::ext;
 namespace {
-OH_AVCodec* g_venc = nullptr;
+OH_AVCodec* gVenc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
 const char* g_codecName = "";
 } // namespace
@@ -56,9 +56,9 @@ void HwEncApiNdkTest::TearDownTestCase() {}
 void HwEncApiNdkTest::SetUp() {}
 void HwEncApiNdkTest::TearDown()
 {
-    if (g_venc != NULL) {
-        OH_VideoEncoder_Destroy(g_venc);
-        g_venc = nullptr;
+    if (gVenc != NULL) {
+        OH_VideoEncoder_Destroy(gVenc);
+        gVenc = nullptr;
     }
 }
 } // namespace Media
