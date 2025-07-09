@@ -21,6 +21,7 @@ import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+let driver = Driver.create();
 
 export default function WebRegisterAsyncThreadJavaScriptProxy() {
 
@@ -43,7 +44,6 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       } catch (err) {
         console.error("push WebRegisterAsyncThreadJavaScriptProxy page error: " + err);
       }
-      let driver = Driver.create();
       await driver.waitForComponent(ON.id("RegisterAsyncThreadJavaScriptProxy"),10000);
       console.log("waitForComponent RegisterAsyncThreadJavaScriptProxy==>");
       done()
