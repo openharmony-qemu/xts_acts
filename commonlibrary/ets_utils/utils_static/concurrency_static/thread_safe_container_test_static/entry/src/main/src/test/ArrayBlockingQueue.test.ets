@@ -219,7 +219,7 @@ export default function ArrayBlockingQueuetest() {
           throw new Error('Max cap push fail');
           count ++
         }
-        expect(coont).assertEqual(1)
+        expect(count).assertEqual(1)
       });
 
     /**
@@ -2302,8 +2302,8 @@ export default function ArrayBlockingQueuetest() {
           const map = new Set<int | undefined>()
           const queue: containers.ArrayBlockingQueue<int | undefined> =
             new containers.ArrayBlockingQueue<int | undefined>(1, map.values());
-          expect(String(queue.size)).assertEqual('0'); // 队列大小应为 0
-          expect(String(queue.capacity)).assertEqual('1'); // 队列容量应为 1
+          expect(String(queue.size)).assertEqual('0');
+          expect(String(queue.capacity)).assertEqual('1');
         } catch (error) {
           expect(error instanceof Error).assertTrue();
         }

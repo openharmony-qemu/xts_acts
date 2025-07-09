@@ -784,20 +784,6 @@ export default function LinkedBlockingQueuetest() {
       expect(String(res)).assertEqual('undefined');
     })
 
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_0139
-     * @tc.name      : linkedBlockingQueueTest_0139
-     * @tc.desc      : Add an element to a LinkedBlockingQueue with a capacity of 1, then perform a poll operation.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linkedBlockingQueueTest_0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let queueIntPop1 = new containers.LinkedBlockingQueue<int>();
-      queueIntPop1.add(Int.MAX_VALUE);
-      let res = queueIntPop1.poll();
-      expect(String(res)).assertEqual('null');
-    })
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueTest_00139
@@ -1272,36 +1258,6 @@ export default function LinkedBlockingQueuetest() {
       queueIntPop1.add(1);
       let res = queueIntPop1.size;
       expect(String(res)).assertEqual('1');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00164
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_003
-     * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      queueIntPop1.add(Int.MAX_VALUE);
-      let res = queueIntPop1.size;
-      expect(String(res)).assertEqual(Int.MAX_VALUE);
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_000164
-     * @tc.name      : linkedBlockingQueueNoParameterTest_000164
-     * @tc.desc      : Test adding single element to empty LinkedBlockingQueue.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linkedBlockingQueueNoParameterTest_000164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      queueIntPop1.add(Int.MAX_VALUE + 1);
-      let res = queueIntPop1.size;
-      expect(String(res)).assertEqual(Int.MAX_VALUE + 1);
     })
 
     /**

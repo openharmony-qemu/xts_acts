@@ -2918,25 +2918,6 @@ export default function ConcurrentHashMapTest() {
       }
       expect(allValid).assertTrue();
     });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_constructor_With_Iterable_static_Test_0246
-     * @tc.name: constructor_With_Iterable_static_Test_0246
-     * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with Integer.MAX_VALUE elements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
-    it("constructor_With_Iterable_static_Test_0246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const mapEntries: Map<number, string> = new Map<number, string>();
-      const totalCount: number = Int.MAX_VALUE;
-      for (let i: number = 0; i < totalCount; i++) {
-        mapEntries.set(i, `value${i}`);
-      }
-      const concurrentHashMap:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>(mapEntries);
-      expect(String(concurrentHashMap.size)).assertEqual(String(totalCount));
-    });
-
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Key_static_Test_0247
      * @tc.name      : constructor_With_Key_static_Test_0007

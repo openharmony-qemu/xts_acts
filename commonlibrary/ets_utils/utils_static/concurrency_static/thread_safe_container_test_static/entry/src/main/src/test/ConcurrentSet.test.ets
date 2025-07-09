@@ -730,62 +730,7 @@ export default function ConcurrentSetTest() {
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__035
-     * @tc.name: concurrent_Set_Constructor_Test_static_035
-     * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an array with Integer.MAX_VALUE elements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
-    it("concurrent_Set_Constructor_Test_static_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const array: Array<number> = new Array<number>();
-      const totalCount: number = Int.MAX_VALUE;
-      for (let i: int = 0; i < totalCount; i++) {
-        array.push(i);
-      }
-      const iter = array.values();
-      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
-      expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(totalCount));
-    })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__036
-     * @tc.name: concurrent_Set_Constructor_Test_static_036
-     * @tc.desc: Initialize a ConcurrentSet by iterating over the values of an set with Integer.MAX_VALUE elements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
-    it("concurrent_Set_Constructor_Test_static_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<number> = new Set<number>();
-      const totalCount: number = Int.MAX_VALUE;
-      for (let i: int = 0; i < totalCount; i++) {
-        set.add(i);
-      }
-      const iter = set.values();
-      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
-      expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(totalCount));
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static_037
-     * @tc.name: concurrent_Set_Constructor_Test_static_037
-     * @tc.desc: Initialize a ConcurrentSet by iterating over the keys of an set with Integer.MAX_VALUE elements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
-    it("concurrent_Set_Constructor_Test_static_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<number> = new Set<number>();
-      const totalCount: number = Int.MAX_VALUE;
-      for (let i: int = 0; i < totalCount; i++) {
-        set.add(i);
-      }
-      const iter = set.keys();
-      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
-      expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(totalCount));
-    })
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__038
