@@ -43,10 +43,10 @@ let audioMedia: number = 3;
 let audioRingtone: number = 2;
 let minVol: number = 0;
 let maxVol: number = 15;
-let maxVolPc: number = 20;
+let maxVolPc: number = 100;
 let lowVol: number = 5;
 let highVol: number = 14;
-let outOfRangeVol: number = 28;
+let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
 
