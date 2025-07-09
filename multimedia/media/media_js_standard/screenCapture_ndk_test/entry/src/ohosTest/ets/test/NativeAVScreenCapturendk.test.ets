@@ -623,5 +623,33 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
 
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-False
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-True
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingTrue();
+      expect(result).assertEqual(0);
+      done();
+    });
+
   })
 }

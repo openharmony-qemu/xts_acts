@@ -887,7 +887,7 @@ static napi_value normalAVScreenCaptureStrategyForKeepCaptureDuringCallFalse(nap
     if (result == AV_SCREEN_CAPTURE_ERR_OK) {
         result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
     }
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (screenCaptureNormal) {
         result = OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
@@ -921,7 +921,7 @@ static napi_value normalAVScreenCaptureStrategyForKeepCaptureDuringCallTrue(napi
     if (result == AV_SCREEN_CAPTURE_ERR_OK) {
         result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
     }
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (screenCaptureNormal) {
         result = OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
@@ -1458,6 +1458,59 @@ static napi_value normalSelectionCallbackStop(napi_env env, napi_callback_info i
     napi_create_int32(env, result2, &res);
     return res;
 }
+
+static napi_value normalAVScreenCaptureStrategyForBFramesEncodingFalse(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_StrategyForBFramesEncoding(strategy, false);
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureNormal, strategy);
+    }
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureStrategyForBFramesEncodingTrue(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_StrategyForBFramesEncoding(strategy, true);
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureNormal, strategy);
+    }
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1527,6 +1580,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"normalSelectionCallback", nullptr, normalSelectionCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalSelectionCallbackStop", nullptr, normalSelectionCallbackStop, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForBFramesEncodingFalse", nullptr,
+            normalAVScreenCaptureStrategyForBFramesEncodingFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForBFramesEncodingTrue", nullptr,
+            normalAVScreenCaptureStrategyForBFramesEncodingTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

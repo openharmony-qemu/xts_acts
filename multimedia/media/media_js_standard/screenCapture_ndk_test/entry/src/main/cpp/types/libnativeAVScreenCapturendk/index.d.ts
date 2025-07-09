@@ -45,3 +45,5 @@ export const normalAreaTest: () => number;
 export const normalStrategyTest: () => number;
 export const normalSelectionCallback: () => number;
 export const normalSelectionCallbackStop: () => number;
+export const normalAVScreenCaptureStrategyForBFramesEncodingFalse: () => number;
+export const normalAVScreenCaptureStrategyForBFramesEncodingTrue: () => number;
