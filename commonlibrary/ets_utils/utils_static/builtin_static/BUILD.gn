@@ -17,6 +17,7 @@ group("builtin_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "builtin001_standard_test_static:ActsBuiltin1StaticTest",
       "builtin002_standard_test_static:ActsBuiltin2StaticTest",
     ]
   }
