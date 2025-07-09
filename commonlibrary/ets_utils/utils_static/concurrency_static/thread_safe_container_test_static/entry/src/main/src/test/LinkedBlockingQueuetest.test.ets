@@ -533,14 +533,14 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_000126
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_linkedBlockingQueueGetCapacityTest_0001260
      * @tc.name      : linked_Blocking_Queue_GetCapacityTest_static_008
      * @tc.desc      : Verify capacity equals Int.MAX_VALUE after add/poll operations on max capacity queue.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linked_Blocking_Queue_GetCapacityTest_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_GetCapacityTest_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(Int.MAX_VALUE);
       let res1 = queueIntPop1.capacity;
       expect(res1).assertEqual(Int.MAX_VALUE);
@@ -792,7 +792,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linkedBlockingQueueTest_0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linkedBlockingQueueTest_0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1 = new containers.LinkedBlockingQueue<int>();
       queueIntPop1.add(Int.MAX_VALUE);
       let res = queueIntPop1.poll();
@@ -1676,7 +1676,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    xit("linkedBlockingQueueNoParameterTest_00185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linkedBlockingQueueNoParameterTest_00185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new Array<int>(Int.MAX_VALUE);
       let iter = arr.values();
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);

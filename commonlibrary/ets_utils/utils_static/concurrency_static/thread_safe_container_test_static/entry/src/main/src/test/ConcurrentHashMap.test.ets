@@ -2927,7 +2927,7 @@ export default function ConcurrentHashMapTest() {
      * @tc.type: Function
      * @tc.level: Level 0
      */
-    xit("constructor_With_Iterable_static_Test_0246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("constructor_With_Iterable_static_Test_0246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const mapEntries: Map<number, string> = new Map<number, string>();
       const totalCount: number = Int.MAX_VALUE;
       for (let i: number = 0; i < totalCount; i++) {
