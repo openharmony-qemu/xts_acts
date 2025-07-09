@@ -150,7 +150,7 @@ struct WebComponent {
                     let RedoButton = await driver.findComponent(ON.id("webviewundoingredokey"));
                     await RedoButton.click();
                     await driver.triggerKey(2001);
-                    await Utils.sleep(2000);
+                    await Utils.sleep(4000);
                     let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                     let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
                     let X = Utils.getRectHorizontalCenterX(webRect)
