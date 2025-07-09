@@ -695,7 +695,7 @@ static napi_value OHNetConnSetPacUrl(napi_env env, napi_callback_info info)
 
 Http_Request *request = nullptr;
 
-void Http_SampleResponseCallback(Http_Response *response, uint32_t errCode) 
+void Http_SampleResponseCallback(Http_Response *response, uint32_t errCode)
 {
     if (response == nullptr) {
         return;
@@ -720,7 +720,7 @@ void Http_SampleResponseCallback(Http_Response *response, uint32_t errCode)
     response->destroyResponse(&response);
 }
 
-size_t Http_SampleOnDataReceiveCallback(const char *data) 
+size_t Http_SampleOnDataReceiveCallback(const char *data)
 {
     if (data == nullptr) {
         return 0;
@@ -729,17 +729,17 @@ size_t Http_SampleOnDataReceiveCallback(const char *data)
     return 0;
 }
 
-void Http_SampleOnUploadProgressCallback(uint64_t totalSize, uint64_t transferredSize) 
+void Http_SampleOnUploadProgressCallback(uint64_t totalSize, uint64_t transferredSize)
 {
     return;
 }
 
-void Http_SampleOnDownloadProgressCallback(uint64_t totalSize, uint64_t transferredSize) 
+void Http_SampleOnDownloadProgressCallback(uint64_t totalSize, uint64_t transferredSize)
 {
     return;
 }
 
-void Http_SampleOnHeaderReceiveCallback(Http_Headers *headers) 
+void Http_SampleOnHeaderReceiveCallback(Http_Headers *headers)
 {
     if (headers != nullptr) {
         Http_HeaderEntry *entries = OH_Http_GetHeaderEntries(headers);
@@ -758,7 +758,7 @@ void Http_SampleOnHeaderReceiveCallback(Http_Headers *headers)
     }
 }
 
-void Http_SampleOnEndCallback() 
+void Http_SampleOnEndCallback()
 { 
     return; 
 }
@@ -768,7 +768,8 @@ void Http_SampleOnCancelCallback()
     return; 
 }
 
-static napi_value CallHttpClientApi(napi_env env, napi_callback_info info) {
+static napi_value CallHttpClientApi(napi_env env, napi_callback_info info)
+{
     napi_value res;
 
     const char *senddata = "https://www.eee-eee.com/blog-news/";
