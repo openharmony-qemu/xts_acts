@@ -65,7 +65,7 @@ export default function AtomicServiceSearchTest() {
       let driver = await Driver.create();
       await driver.delayMs(2000);
       // 查看AtomicServiceSearchTest是否存在以下入口。
-      let tab1 = await driver.findComponent(ON.text("修改placeholder"));
+      let tab1 = await driver.findComponent(ON.text("Demo01"));
       expect(tab1 !== null).assertTrue();
       console.info('[AtomicServiceSearchTest_0100] END');
       done();

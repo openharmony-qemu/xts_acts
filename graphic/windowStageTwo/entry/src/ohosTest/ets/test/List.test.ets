@@ -32,6 +32,7 @@ import windowControlsTest from './WindowControls.test';
 import windowKeyBorad from './WindowKeyBorad.test';
 
 export default function testsuite() {
+  windowEventTest();
   windowFocusTest();
   windowAutoSaveTest();
   windowTitleBarTest();
@@ -43,7 +44,6 @@ export default function testsuite() {
   windowMaximizeTest();
   windowImmersiveTest();
   windowPCTest();
-  windowEventTest();
   windowControlsTest();
   windowKeyBorad()
   windowRotationTest();

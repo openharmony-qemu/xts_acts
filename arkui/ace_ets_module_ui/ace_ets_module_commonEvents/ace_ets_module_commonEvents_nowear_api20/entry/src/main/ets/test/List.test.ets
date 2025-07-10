@@ -16,9 +16,13 @@
 import DragModifier from './DragEvent/DragModifier.test';
 import normalDrag from './DragEvent/normalDrag.test';
 import dragSpringLoading from './DragEvent/dragSpringLoading.test';
+import FrameNodeTest from './frameNode/framenode.test';
+import enableInternalDropAnimation from './DragEvent/enableInternalDropAnimation.test';
 
 export default function testsuite() {
   DragModifier();
   normalDrag();
   dragSpringLoading();
+  FrameNodeTest();
+  enableInternalDropAnimation();
 }

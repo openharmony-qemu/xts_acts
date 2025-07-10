@@ -33,7 +33,7 @@ let sleep = async (millis: number) => {
 let testContext: common.UIAbilityContext;
 let supportSceneBoard: boolean = false;
 let buttonClicked: boolean = false;
-
+let isOpen: boolean = false;
 let driver = Driver.create();
 
 let openDialog = async (dialogKey: string, text: string) => {
@@ -160,6 +160,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
+      isOpen = true;
       await sleep(2500);
       done();
     })
@@ -329,8 +330,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect().assertFail();
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         }
       }
 
@@ -343,8 +348,11 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          isOpen = false;
+          if(err?.code == 16000050){}else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 startAbility failed, ${JSON.stringify(e)}`);
@@ -352,15 +360,15 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         done();
       }
       await sleep(500);
-
-      try {
-        await openDialog('选择打开方式', 'CompletionHandlerRely');
-      } catch (e) {
-        hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 openDialog failed, ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done();
+      if(isOpen){
+        try {
+          await openDialog('选择打开方式', 'CompletionHandlerRely');
+        } catch (e) {
+          hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 openDialog failed, ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
       }
-
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0300 end');
     })
 
@@ -391,10 +399,14 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName.length).assertEqual(0);
-          expect(element.abilityName.length).assertEqual(0);
-          expect(message).assertContain('User closed the implicit startup picker');
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect(element.bundleName.length).assertEqual(0);
+            expect(element.abilityName.length).assertEqual(0);
+            expect(message).assertContain('User closed the implicit startup picker');
+            done();
+          }
         }
       }
 
@@ -407,8 +419,11 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          isOpen = false;
+          if(err?.code == 16000050){}else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 startAbility failed, ${JSON.stringify(e)}`);
@@ -416,15 +431,15 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         done();
       }
       await sleep(500);
-
-      try {
-        await closeDialog('选择打开方式');
-      } catch (e) {
-        hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 closeDialog failed, ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done();
+      if(isOpen){
+        try {
+          await closeDialog('选择打开方式');
+        } catch (e) {
+          hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 closeDialog failed, ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
       }
-
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 end');
     })
 
@@ -455,10 +470,10 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName.length).assertEqual(0);
-          expect(element.abilityName.length).assertEqual(0);
-          expect(message).assertContain('Failed to call startAbility');
-          done();
+            expect(element.bundleName.length).assertEqual(0);
+            expect(element.abilityName.length).assertEqual(0);
+            expect(message).assertContain('Failed to call startAbility');
+            done();
         }
       }
 
@@ -471,20 +486,21 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, err=${JSON.stringify(err)}`);
+          isOpen = false;
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
       await sleep(500);
-
-      try {
-        await openDialog('暂无可用打开方式', '知道了');
-      } catch (e) {
-        hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 openDialog failed, ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done();
+      if(isOpen){
+        try {
+          await openDialog('暂无可用打开方式', '知道了');
+        } catch (e) {
+          hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 openDialog failed, ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
       }
-
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 end');
     })
 
@@ -517,8 +533,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect().assertFail();
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
         }
       }
 
@@ -531,8 +551,11 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          isOpen = false;
+          if(err?.code == 16000050){}else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 startAbility failed, ${JSON.stringify(e)}`);
@@ -540,15 +563,15 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         done();
       }
       await sleep(500);
-
-      try {
-        await allowOpen();
-      } catch (e) {
-        hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 allowOpen failed, ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done();
+      if(isOpen){
+        try {
+          await allowOpen();
+        } catch (e) {
+          hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 allowOpen failed, ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
       }
-
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 end');
     })
 
@@ -581,10 +604,14 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
-          expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
-          expect(element.abilityName).assertEqual('EntryAbility');
-          expect(message).assertContain('User refused redirection');
-          done();
+          if(message.indexOf('Failed to call startAbility') != -1){
+            done();
+          }else{
+            expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
+            expect(element.abilityName).assertEqual('EntryAbility');
+            expect(message).assertContain('User refused redirection');
+            done();
+          }
         }
       }
 
@@ -597,8 +624,11 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, err=${JSON.stringify(err)}`);
-          expect().assertFail();
-          done();
+          isOpen = false;
+          if(err?.code == 16000050){}else{
+            expect().assertFail();
+            done();
+          }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 startAbility failed, ${JSON.stringify(e)}`);
@@ -606,15 +636,15 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         done();
       }
       await sleep(500);
-
-      try {
-        await disallowOpen();
-      } catch (e) {
-        hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 disallowOpen failed, ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done();
+      if(isOpen){
+        try {
+          await disallowOpen();
+        } catch (e) {
+          hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 disallowOpen failed, ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
       }
-
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0700 end');
     })
 

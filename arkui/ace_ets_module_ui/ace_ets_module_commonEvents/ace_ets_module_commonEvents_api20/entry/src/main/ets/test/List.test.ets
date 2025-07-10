@@ -16,11 +16,13 @@
 import getDisplayId from './DragTest/getDisplayId.test';
 import tapLocationTest from './TapGestureTest/tapLocation.test';
 import PanGestureTest from './PanGestureTest/observer.test';
-import FrameNodeTest from './frameNode/framenode.test';
+import colorMetricsTest from './ColorTest/colorMetrics.test';
+import onTouchTestDoneTest from './GestureRecognizerTest/onTouchTestDone.test';
 
 export default function testsuite() {
   getDisplayId();
   tapLocationTest();
   PanGestureTest();
-  FrameNodeTest();
+  colorMetricsTest();
+  onTouchTestDoneTest();
 }

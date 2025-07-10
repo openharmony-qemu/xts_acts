@@ -48,17 +48,34 @@ export default function windowKeyBorad() {
       await sleep(1000);
       if (isPCStatus==''||isAutoWindow == 'false') {
         let input = await driver.findComponent(ON.id('textInput'));
+        console.info('beforeAll input: ' + JSON.stringify(input));
         await sleep(1000);
         await input.click();
         await sleep(1000);
-        let text = await driver.findComponent(ON.text('下一步'));
+        let text1 = await driver.findComponent(ON.text('同意'));
+        console.info('beforeAll text1: ' + JSON.stringify(text1));
+        let text2 = await driver.findComponent(ON.text('下一步'));
+        console.info('beforeAll text2: ' + JSON.stringify(text2));
         await sleep(1000);
-        if (text) {
+        if (text1) {
+          await text1.click();
+          console.info('beforeAll 同意 click success');
+          await sleep(1000);
+          let text = await driver.findComponent(ON.text('下一步'));
+          console.info('beforeAll text: ' + JSON.stringify(text));
           await text.click();
-        }else{
+          console.info('beforeAll 下一步 click success');
+          await sleep(1000);
+        } else if(text2){
+          await text2.click();
+          console.info('beforeAll 下一步 click success');
+          await sleep(1000);
+        } else{
           await driver.pressBack();
+          console.info('beforeAll pressBack success');
         }
         await sleep(1000);
+
       }
     });
     beforeEach(() => {
@@ -117,8 +134,10 @@ export default function windowKeyBorad() {
           let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
+          console.info(`${caseName}  input: ` + JSON.stringify(input));
           await sleep(1000);
           await input.click();
+          console.info(`${caseName}  click success: ` + JSON.stringify(input));
           await sleep(500);
 
         }
@@ -841,6 +860,24 @@ export default function windowKeyBorad() {
         }
       }
     });
+
+    /**
+     * @tc.number    : testWindowAnimationCurve_0100
+     * @tc.name      : testWindowAnimationCurveEnum
+     * @tc.desc      : Test the function value of WindowAnimationCurve
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testWindowAnimationCurveEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testWindowAnimationCurveEnum';
+      console.log(caseName + 'begin.');
+      console.log(caseName + 'window.WindowAnimationCurve.LINEAR: '+window.WindowAnimationCurve.LINEAR);
+      console.log(caseName + 'window.WindowAnimationCurve.INTERPOLATION_SPRING: '+window.WindowAnimationCurve.INTERPOLATION_SPRING);
+      expect(window.WindowAnimationCurve.LINEAR).assertEqual(0);
+      expect(window.WindowAnimationCurve.INTERPOLATION_SPRING).assertEqual(1);
+      done();
+    })
 
   })
 }
