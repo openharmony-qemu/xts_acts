@@ -205,7 +205,7 @@ export default function windowImmersiveTest() {
         await windowClass.setSpecificSystemBarEnabled('status', false);
         console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
         await sleep(2000);
-        
+
       } catch (exception) {
         console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -240,6 +240,59 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
+     * @tc.name      : testIsImmersiveLayoutwithMaximize
+     * @tc.desc      : 验证maximize后调用IsImmersiveLayout
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testIsImmersiveLayoutwithMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithMaximize';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        if (isPCStatus != '' || isAutoWindow =='true') {
+          await windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
+          await sleep(200);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+          expect(res).assertEqual(false);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
+          await sleep(200);
+          let res2 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+          expect(res2).assertEqual(false);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          await sleep(200);
+          let res3 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 3: ${res3}.`);
+          expect(res3).assertEqual(true);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
+          await sleep(200);
+          let res4 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 4: ${res4}.`);
+          expect(res4).assertEqual(true);
+          await windowClass.recover();
+          await sleep(200);
+
+          done();
+        } else {
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        done()
       }
     });
 
@@ -2603,9 +2656,13 @@ export default function windowImmersiveTest() {
     it('testIsImmersiveLayoutwithSubWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithSubWindowDefaultState';
       let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithSubWindowDefaultState')
+      await windowClass.setUIContent('testability/pages/Index1');
+      await windowClass.showWindow();
+      await sleep(300);
       try {
         let res = windowClass.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
+
         if (isPCStatus == '' || isAutoWindow =='false'){
           expect(res).assertEqual(true);
         } else{
@@ -2688,6 +2745,9 @@ export default function windowImmersiveTest() {
       try {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/Index1');
+          await subWindowClass.showWindow();
+          await sleep(300);
           let res = subWindowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout: ${res}.`);
           expect(res).assertEqual(false);
@@ -2834,50 +2894,7 @@ export default function windowImmersiveTest() {
         done()
       }
     });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
-     * @tc.name      : testIsImmersiveLayoutwithMaximize
-     * @tc.desc      : 验证maximize后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMaximize';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        if (isPCStatus != '') {
-          await windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
-          await sleep(200);
-          let res = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
-          expect(res).assertEqual(false);
-          await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
-          await sleep(200);
-          let res2 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-          expect(res2).assertEqual(false);
-          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
-          await sleep(200);
-          let res3 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 3: ${res3}.`);
-          expect(res3).assertEqual(true);
-          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
-          await sleep(200);
-          let res4 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 4: ${res4}.`);
-          expect(res4).assertEqual(true);
-          done();
-        } else {
-          done();
-        }
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done()
-      }
-    });
+    
   })
 }
 
