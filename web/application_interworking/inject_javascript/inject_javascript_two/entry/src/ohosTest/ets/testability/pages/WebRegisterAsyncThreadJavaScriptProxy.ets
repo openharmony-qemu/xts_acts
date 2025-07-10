@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { URL_EXAMPLE ,URL_BAIDU} from '../../test/Config.test';
+import { URL_EXAMPLE, URL_EXAMPLE_HTTP, URL_BAIDU} from '../../test/Config.test';
 
 @Entry
 @Component
