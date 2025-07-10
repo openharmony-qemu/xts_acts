@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef FFRT_JOB_UTILS_H
+#define FFRT_JOB_UTILS_H
+
 #include <cstdint>
 #include <functional>
 #include <atomic>
@@ -6,68 +24,65 @@
 namespace ffrt {
 
 namespace detail {
-    static constexpr uint64_t cacheline_size = 64;
-
-    struct non_copyable {
+    struct NonCopyable {
     protected:
-        non_copyable() = default;
-        ~non_copyable() = default;
-        non_copyable(const non_copyable&) = delete;
-        non_copyable& operator=(const non_copyable&) = delete;
+        NonCopyable() = default;
+        ~NonCopyable() = default;
+        NonCopyable(const NonCopyable&) = delete;
+        NonCopyable& operator=(const NonCopyable&) = delete;
     };
 }
 
 template <int UsageId = 0, class FiberLocal = char, class ThreadLocal = char>
-struct fiber : detail::non_copyable {
-
-    struct thread_env :  detail::non_copyable {
-        fiber* cur = nullptr;
+struct Fiber : detail::NonCopyable {
+    struct ThreadEnv :  detail::NonCopyable {
+        Fiber* cur = nullptr;
         bool (*cond)(void*) = nullptr;
         ThreadLocal tl;
     };
 
-    static __attribute__((noinline)) thread_env& env()
+    static __attribute__((noinline)) ThreadEnv& Env()
     {
-        static thread_local thread_env ctx;
+        static thread_local ThreadEnv ctx;
         return ctx;
     }
 
-    static fiber* init(std::function<void()>&& f, void* stack, size_t stack_size)
+    static Fiber* Init(std::function<void()>&& f, void* stack, size_t stack_size)
     {
-        if (stack == nullptr || stack_size < sizeof(fiber) + min_stack_size) {
+        if (stack == nullptr || stack_size < sizeof(Fiber) + minStackSize) {
             return nullptr;
         }
-        auto c = new (stack) fiber(std::forward<std::function<void()>>(f));
-        if (ffrt_fiber_init(&c->fb, reinterpret_cast<void(*)(void*)>(fiber_entry), c,
-            static_cast<char*>(stack) + sizeof(fiber), stack_size - sizeof(fiber))) {
-            c->~fiber<UsageId, FiberLocal, ThreadLocal>();
+        auto c = new (stack) Fiber(std::forward<std::function<void()>>(f));
+        if (ffrt_fiber_init(&c->fb, reinterpret_cast<void(*)(void*)>(fiberEntry), c,
+            static_cast<char*>(stack) + sizeof(Fiber), stack_size - sizeof(Fiber))) {
+            c->~Fiber<UsageId, FiberLocal, ThreadLocal>();
             return nullptr;
         }
         return c;
     }
 
-    inline void destroy()
+    inline void Destroy()
     {
-        this->~fiber<UsageId, FiberLocal, ThreadLocal>();
+        this->~Fiber<UsageId, FiberLocal, ThreadLocal>();
     }
 
-    bool start()
+    bool Start()
     {
-        bool done;
-        auto& e = fiber::env();
+        bool currentDone;
+        auto& e = Fiber::Env();
 
         do {
             e.cond = nullptr;
             e.cur = this;
             ffrt_fiber_switch(&link, &fb);
-            done = this->done;
+            currentDone = this->done;
         } while (e.cond && !(e.cond)(this));
         e.cond = nullptr;
-        return done;
+        return currentDone;
     }
 
     template<bool is_final = false>
-    static inline void suspend(thread_env& e, bool (*cond)(void*) = nullptr)
+    static inline void Suspend(ThreadEnv& e, bool (*cond)(void*) = nullptr)
     {
         auto j = e.cur;
         if constexpr(is_final) {
@@ -81,31 +96,31 @@ struct fiber : detail::non_copyable {
     }
 
     template<bool is_final = false>
-    static inline void suspend(bool (*cond)(void*) = nullptr)
+    static inline void Suspend(bool (*cond)(void*) = nullptr)
     {
-        suspend<is_final>(fiber::env(), cond);
+        Suspend<is_final>(Fiber::Env(), cond);
     }
 
-    FiberLocal& local()
+    FiberLocal& Local()
     {
         return local_;
     }
 
     uint64_t id;
 
-    static constexpr uint64_t min_stack_size = 32;
+    static constexpr uint64_t minStackSize = 32;
 
-    fiber(std::function<void()>&& f)
+    Fiber(std::function<void()>&& f)
     {
         fn = std::forward<std::function<void()>>(f);
         id = idx.fetch_add(1, std::memory_order_relaxed);
     }
 
-    static void fiber_entry(fiber* c)
+    static void fiberEntry(Fiber* c)
     {
         c->fn();
         c->fn = nullptr;
-        suspend<true>();
+        Suspend<true>();
     }
 
     ffrt_fiber_t fb;
@@ -115,13 +130,5 @@ struct fiber : detail::non_copyable {
     FiberLocal local_;
     static inline std::atomic_uint64_t idx{0};
 };
-
-template <typename T>
-struct type_size {
-    static constexpr size_t value = sizeof(T);
-};
-template <>
-struct type_size<void> {
-    static constexpr size_t value = 0;
-};
 }
+#endif

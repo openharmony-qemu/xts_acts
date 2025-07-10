@@ -3900,23 +3900,24 @@ static napi_value FfrtThisTaskUpdateQos(napi_env env, napi_callback_info info)
     return result;
 }
 
-static bool suspend_func([[maybe_unused]] void* p)
+static bool SuspendFunc([[maybe_unused]] void* p)
 {
-  return true;
+    return true;
 }
 
-static napi_value ffrt_fiber_001(napi_env env, napi_callback_info info) {
-    constexpr uint64_t stack_size = 16 * 1024;
-    std::array<char, stack_size> stack;
-    using fiber_t = ffrt::fiber<>;
+static napi_value ffrt_fiber_001(napi_env env, napi_callback_info info)
+{
+    constexpr uint64_t stackSize = 16 * 1024;
+    std::array<char, stackSize> stack;
+    using fiber_t = ffrt::Fiber<>;
     std::atomic<int> a = {0};
-    auto t = fiber_t::init([&a] {
+    auto t = fiber_t::Init([&a] {
         for (int i = 0; i < 10; i++) {
             a++;
-            fiber_t::suspend(suspend_func);
+            fiber_t::Suspend(SuspendFunc);
         }
-    }, &stack, stack_size);
-    t->start();
+    }, &stack, stackSize);
+    t->Start();
 
     napi_value result;
     napi_create_double(env, a.load(), &result);
