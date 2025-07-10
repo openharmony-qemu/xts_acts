@@ -18,6 +18,7 @@ group("concurrency_static") {
   if (is_standard_system) {
     deps = [
       "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
+      "sequenceRunner_test_static:ActsSequenceRunnerStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
       "asynclock_test_static:ActsAsyncLockStaticTest",
     ]
