@@ -65,8 +65,9 @@ struct webOnBeforeUnload {
             switch (this.emitKey) {
               case 'emitOnBeforeUnloadIsReloadTrue': {
                 try {
+                  this.isPageEnd = -1;
                   await Utils.clickComponent('onBeforeUnloadWebView');
-                  await Utils.sleep(1000);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   this.controller.runJavaScript('myRefresh()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -89,8 +90,9 @@ struct webOnBeforeUnload {
               }
               case 'emitOnBeforeUnloadIsReloadFalse': {
                 try {
+                  this.isPageEnd = -1;
                   await Utils.clickComponent('onBeforeUnloadWebView');
-                  await Utils.sleep(1000);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   this.controller.runJavaScript('myNewPage()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
