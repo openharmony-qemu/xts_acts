@@ -15,7 +15,7 @@
 // import Stack_Text from './Stack_Text/Stack_Text.test';
 import grid_colSpanJsunit from './GridColTest/grid_col.test';
 import grid_rowOnBreakpointChangeJsunit from './GridRowTest/grid_row.test';
-// import inspectorJsunit from './inspectorTest/inspector.test'
+import inspectorJsunit from './inspectorTest/inspector.test';
 import Column_Space from './ColumnTest/spaceChanged/Column_Space.test';
 import Column_Space_String from './ColumnTest/spaceChanged/Column_Space_String.test';
 import Column_Space_Default from './ColumnTest/spaceChanged/Column_Space_Default.test';
@@ -71,7 +71,7 @@ import Stack_Position_Change from './Stack/StackItem_change/stack_position_chang
 
 export default function testsuite() {
   // Stack_Text()
-  // inspectorJsunit()
+  inspectorJsunit()
   Column_Space()
   Column_Space_String()
   Column_Space_Default()
