@@ -90,7 +90,7 @@ export class MyBackupExtAbility extends BackupExtensionAbility {
   }
 }
 
-export default function onReleaseTest(){
+export default function onreleaseTest(){
 describe('onRelease_js_test',async () => {
 
    /**
