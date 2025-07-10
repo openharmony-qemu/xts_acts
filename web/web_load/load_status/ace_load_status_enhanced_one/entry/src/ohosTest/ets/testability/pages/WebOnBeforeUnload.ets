@@ -68,7 +68,7 @@ struct webOnBeforeUnload {
               case 'emitOnBeforeUnloadIsReloadTrue': {
                 try {
                   await Utils.clickComponent('onBeforeUnloadWebView');
-                  await driver.waitForComponent(ON.id('WebOnBeforeUnloadButton'),10000);
+                  await driver.waitForComponent(ON.id('onBeforeUnloadWebView'),10000);
                   this.controller.runJavaScript('myRefresh()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -92,7 +92,7 @@ struct webOnBeforeUnload {
               case 'emitOnBeforeUnloadIsReloadFalse': {
                 try {
                   await Utils.clickComponent('onBeforeUnloadWebView');
-                  await driver.waitForComponent(ON.id('WebOnBeforeUnloadButton'),10000);
+                  await driver.waitForComponent(ON.id('onBeforeUnloadWebView'),10000);
                   this.controller.runJavaScript('myNewPage()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
