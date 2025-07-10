@@ -1062,7 +1062,7 @@ export default function dataShareConfigPublishTest() {
 
     /**
      * @tc.name dataShareConfigPublishTest031
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0300
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0350
      * @tc.desc allowList length is 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY

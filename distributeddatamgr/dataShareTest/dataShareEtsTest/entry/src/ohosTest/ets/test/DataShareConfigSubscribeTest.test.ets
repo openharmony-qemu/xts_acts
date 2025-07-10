@@ -737,7 +737,7 @@ export default function dataShareConfigSubscribeTest() {
 
     /**
      * @tc.name dataShareConfigSubscribeTest022
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0870
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0950
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
