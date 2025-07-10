@@ -678,8 +678,6 @@ export default function ActsCommonEventSystemAPITest() {
     // })
 
 
-
-     //问题单号：DTS2025061850295
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
