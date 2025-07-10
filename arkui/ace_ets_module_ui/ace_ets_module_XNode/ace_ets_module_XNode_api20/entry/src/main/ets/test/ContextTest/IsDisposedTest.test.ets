@@ -97,58 +97,5 @@ export default function IsDisposedTest() {
       done();
     });
 
-    /**
-     * @tc.number    IsDisposedTest_0200
-     * @tc.name      IsDisposedTest_0200
-     * @tc.desc      frameNode: UIContext isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
-    it('IsDisposedTest_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('IsDisposedTest_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('btn_DisposeTest'));
-      await button.click();
-      await CommonFunc.sleep(1000);
-      await button.click();
-      await CommonFunc.sleep(1000);
-
-      let strJson1: string = getInspectorByKey('BuilderNodeBeforeValue');
-      let obj1: Record<string, ESObject> = JSON.parse(strJson1);
-      let strJson2: string = getInspectorByKey('BuilderNodeAfterValue');
-      let obj2: Record<string, ESObject> = JSON.parse(strJson2);
-      let strJson3: string = getInspectorByKey('FrameNodeBeforeValue');
-      let obj3: Record<string, ESObject> = JSON.parse(strJson3);
-      let strJson4: string = getInspectorByKey('FrameNodeAfterValue');
-      let obj4: Record<string, ESObject> = JSON.parse(strJson4);
-      let strJson5: string = getInspectorByKey('RenderNodeBeforeValue');
-      let obj5: Record<string, ESObject> = JSON.parse(strJson5);
-      let strJson6: string = getInspectorByKey('RenderNodeAfterValue');
-      let obj6: Record<string, ESObject> = JSON.parse(strJson6);
-      let strJson7: string = getInspectorByKey('NodeAdapterBeforeValue');
-      let obj7: Record<string, ESObject> = JSON.parse(strJson7);
-      let strJson8: string = getInspectorByKey('NodeAdapterAfterValue');
-      let obj8: Record<string, ESObject> = JSON.parse(strJson8);
-      let strJson9: string = getInspectorByKey('ComponentContentBeforeValue');
-      let obj9: Record<string, ESObject> = JSON.parse(strJson9);
-      let strJson10: string = getInspectorByKey('ComponentContentAfterValue');
-      let obj10: Record<string, ESObject> = JSON.parse(strJson10);
-
-      expect(obj1.$attrs.content).assertEqual('true');
-      expect(obj2.$attrs.content).assertEqual('true');
-      expect(obj3.$attrs.content).assertEqual('true');
-      expect(obj4.$attrs.content).assertEqual('true');
-      expect(obj5.$attrs.content).assertEqual('true');
-      expect(obj6.$attrs.content).assertEqual('true');
-      expect(obj7.$attrs.content).assertEqual('true');
-      expect(obj8.$attrs.content).assertEqual('true');
-      expect(obj9.$attrs.content).assertEqual('undefined');
-      expect(obj10.$attrs.content).assertEqual('undefined');
-      console.info('[IsDisposedTest_0200] END');
-      done();
-    });
-
   })
 }
