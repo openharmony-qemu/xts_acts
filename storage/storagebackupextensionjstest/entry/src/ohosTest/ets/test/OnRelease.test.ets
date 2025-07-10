@@ -17,7 +17,7 @@ import { describe, it, expect, Level } from '@ohos/hypium';
 import BackupExtensionContext from '@ohos.file.BackupExtensionContext';
 import BackupExtensionAbility, { BundleVersion } from '@ohos.application.BackupExtensionAbility';
 import contextConstant from '@ohos.app.ability.contextConstant';
-import fileio from '@ohos.fileio';
+import fileIo from '@ohos.fileio';
 
 interface ProgressInfo {
   progressed: number,
@@ -105,8 +105,29 @@ describe('onRelease_js_test',async () => {
    it("test_Backup_onRelease_001", Level.LEVEL1, () => {
       try {
          let backupext = new MyBackupExtAbility();
-         backupext.onRelease();
+         backupext.onRelease(1);
          console.log('backup-onRelease run ok');
+         expect(true).assertTrue();
+      } catch (error) {
+         console.info(`test_Backup_onRelease_001 error: ${JSON.stringify(error)}`);
+         expect(false).assertTrue();
+      }
+   });
+
+   /**
+   * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0100
+   * @tc.name test_Backup_onRelease_001
+   * @tc.desc Test onRelease() interfaces
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 1
+   * @tc.require
+   */
+   it("test_Backup_onRelease_001", Level.LEVEL1, () => {
+      try {
+         let backupext = new MyBackupExtAbility();
+         backupext.onRelease(2);
+         console.log('restore-onRelease run ok');
          expect(true).assertTrue();
       } catch (error) {
          console.info(`test_Backup_onRelease_001 error: ${JSON.stringify(error)}`);
