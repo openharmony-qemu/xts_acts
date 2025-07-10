@@ -15,6 +15,16 @@
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+        "remount",
+        "cat > /etc/security/certificates/aefc3878.0 << EOF\n-----BEGIN CERTIFICATE-----\nMIIBgzCCASqgAwIBAgIUeWln0fIsaUBsYjr7iVYc9E8EZLQwCgYIKoZIzj0EAwIw\nNjELMAkGA1UEBhMCQ04xFTATBgNVBAoMDFJvb3QgQ0EgQ29ycDEQMA4GA1UEAwwH\nUm9vdCBDQTAeFw0yNTA3MDkwMjU3MzFaFw0zNTA3MDcwMjU3MzFaMDYxCzAJBgNV\nBAYTAkNOMRUwEwYDVQQKDAxSb290IENBIENvcnAxEDAOBgNVBAMMB1Jvb3QgQ0Ew\nWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATBGJF/0Q92U/lKky5REBxi4gfzdCRm\nvM9slQllInC7rSTZ82aHQS3I+aM/AHxuASG0/ngJ6gDrh08bqiSrrcVMoxYwFDAS\nBgNVHRMBAf8ECDAGAQH/AgECMAoGCCqGSM49BAMCA0cAMEQCIGZOS2JreLWL8C3D\natcJO21la1FHJq/xhXl43KeWh3NzAiBd7VlaZz/MgvJuOmb2aAJ7h6qDnRi9lnov\nd3QUTjhPxQ==\n-----END CERTIFICATE-----\nEOF"
+      ],
+      "teardown-command": [
+        "rm -rf /etc/security/certificates/aefc3878.0"
+      ]
     }
   ]
 }
