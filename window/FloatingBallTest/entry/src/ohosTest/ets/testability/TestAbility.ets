@@ -20,7 +20,6 @@ import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import { common } from '@kit.AbilityKit';
 
 export default class TestAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -33,6 +32,7 @@ export default class TestAbility extends UIAbility {
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    AppStorage.setOrCreate('bundleName',want.bundleName);
   }
 
   onDestroy() {
@@ -41,19 +41,17 @@ export default class TestAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
-    AppStorage.setOrCreate('context',this.context);
-    AppStorage.setOrCreate('windowStage',windowStage);
-    let mainWindow = windowStage.getMainWindowSync();
-    AppStorage.setOrCreate('mainWindow',mainWindow);
     windowStage.loadContent('testability/pages/Index', (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
-      // globalThis.windowStage = windowStage;
-
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
+    AppStorage.setOrCreate('context',this.context);
+    AppStorage.setOrCreate('windowStage',windowStage);
+    let mainWindow = windowStage.getMainWindowSync();
+    AppStorage.setOrCreate('mainWindow',mainWindow);
   }
 
   onWindowStageDestroy() {

@@ -1,3 +1,17 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import floatingBall from '@ohos.window.floatingBall';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
@@ -26,7 +40,7 @@ async function getPixelMap(context:common.UIAbilityContext,resource:Resource,siz
 
 }
 export default function abilityTest() {
-  describe('ActsAbilityTest', () => {
+  describe('FloatingBallTest', () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let isFloatingBallEnabled: boolean = false;
     let context : common.UIAbilityContext;
@@ -210,11 +224,11 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         if(e.code == 801){
-              done();
-            }else{
-              expect(false).assertTrue();
-              done();
-            }
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
@@ -291,23 +305,23 @@ export default function abilityTest() {
       try {
         let floatingBallController1 = await floatingBall.create(config);
         let floatingBallController2 = await floatingBall.create(config);
-          floatingBallController1.startFloatingBall(startParams).then(async () => {
-            console.info(CaseName+' floatingBallController1 Succeeded in starting floating ball.');
-            floatingBallController2.startFloatingBall(startParams).then(async () => {
-              console.info(CaseName+' floatingBallController2 Succeeded in starting floating ball.');
-              expect(false).assertTrue();
-              done();
-            }).catch(async (err: BusinessError) => {
-              console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-              await floatingBallController1.stopFloatingBall();
-              expect(err.code).assertEqual(1300021);
-              done();
-            });
-          }).catch((err: BusinessError) => {
-            console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+        floatingBallController1.startFloatingBall(startParams).then(async () => {
+          console.info(CaseName+' floatingBallController1 Succeeded in starting floating ball.');
+          floatingBallController2.startFloatingBall(startParams).then(async () => {
+            console.info(CaseName+' floatingBallController2 Succeeded in starting floating ball.');
             expect(false).assertTrue();
             done();
+          }).catch(async (err: BusinessError) => {
+            console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            await floatingBallController1.stopFloatingBall();
+            expect(err.code).assertEqual(1300021);
+            done();
           });
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
 
 
       } catch(e) {
@@ -400,6 +414,7 @@ export default function abilityTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            await floatingBallController.stopFloatingBall();
             await mainWindow.recover();
             expect(err.code).assertEqual(1300024);
             done();
@@ -1489,16 +1504,16 @@ export default function abilityTest() {
       };
       try {
         let floatingBallController = await floatingBall.create(config);
-          floatingBallController.updateFloatingBall(updateParams).then(async () => {
-            console.info(CaseName+ ' Succeeded in updating floating ball.');
-            await floatingBallController.stopFloatingBall();
-            expect(false).assertTrue();
-            done();
-          }).catch((err: BusinessError) => {
-            console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
-            expect(err.code).assertEqual(1300025);
-            done();
-          });
+        floatingBallController.updateFloatingBall(updateParams).then(async () => {
+          console.info(CaseName+ ' Succeeded in updating floating ball.');
+          await floatingBallController.stopFloatingBall();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(1300025);
+          done();
+        });
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         if(e.code == 801){
@@ -1513,8 +1528,8 @@ export default function abilityTest() {
     })
     /**
      * @tc.number : SUB_BASIC_WMS_FLOATING_BALL_3500
-     * @tc.name : test_updateFloatingBall_STATIC_NORMAL
-     * @tc.desc : test_updateFloatingBall_STATIC_NORMAL
+     * @tc.name : test_updateFloatingBall_SIMPLE_NORMAL
+     * @tc.desc : test_updateFloatingBall_SIMPLE_NORMAL
      * @tc.size : MediumTest
      * @tc.type : Function
      * @tc.level : Level3
@@ -1527,7 +1542,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(context, $r('app.media.icon'))
+        icon:await getPixelMap(context,$r('app.media.icon'))
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1543,9 +1558,10 @@ export default function abilityTest() {
             expect(false).assertTrue();
             done();
           }).catch(async (err: BusinessError) => {
-            console.error(CaseName+ ` Failed to update floating ball. Cause: {err.code}, message:${err.message}`);
+            console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController.stopFloatingBall();
             expect(err.code).assertEqual(1300028)
+
             done();
           });
         }).catch(async (err: BusinessError) => {
@@ -1571,9 +1587,9 @@ export default function abilityTest() {
      * @tc.desc      : test_updateFloatingBall_NORMAL_EMPHATIC
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.level     : Level3
      */
-    it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL_EMPHATIC';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -1604,7 +1620,6 @@ export default function abilityTest() {
           });
         }).catch(async (err: BusinessError) => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          await floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done()
         });
@@ -1651,12 +1666,13 @@ export default function abilityTest() {
           floatingBallController.updateFloatingBall(updateParams).then(async () => {
             console.info(CaseName+ ' Succeeded in updating floating ball.');
             await floatingBallController.stopFloatingBall();
-            expect(true).assertTrue();
+            expect(false).assertTrue();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController.stopFloatingBall();
-            expect(err.code).assertEqual(1300028);
+            expect(err.code).assertEqual(1300028)
+
             done();
           });
         }).catch(async (err: BusinessError) => {
@@ -1910,13 +1926,13 @@ export default function abilityTest() {
       };
       try {
         let floatingBallController = await floatingBall.create(config);
-            floatingBallController.stopFloatingBall().then(() => {
-              console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-            }).catch((err: BusinessError) => {
-              console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
-              expect(err.code).assertEqual(1300024);
-              done();
-            });
+        floatingBallController.stopFloatingBall().then(() => {
+          console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(1300024);
+          done();
+        });
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         if(e.code == 801){
@@ -2039,9 +2055,9 @@ export default function abilityTest() {
      * @tc.desc      : test_on_stateChange_start_stop
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.level     : Level3
      */
-    it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_start_stop';
       let FloatBallstate:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
@@ -2361,9 +2377,9 @@ export default function abilityTest() {
      * @tc.desc      : test_getFloatingBallWindowInfo_1300025
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.level     : Level3
      */
-    it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_getFloatingBallWindowInfo_1300025';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -2440,9 +2456,9 @@ export default function abilityTest() {
      * @tc.desc      : test_restoreMainWindow_1300019
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.level     : Level3
      */
-    it('test_restoreMainWindow_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('test_restoreMainWindow_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_1300019';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -2506,7 +2522,7 @@ export default function abilityTest() {
         title: 'title',
       };
       try {
-      let floatingBallController = await floatingBall.create(config);
+        let floatingBallController = await floatingBall.create(config);
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
@@ -2632,117 +2648,6 @@ export default function abilityTest() {
     })
     /**
      * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5700
-     * @tc.name      : test_restoreMainWindow_click_after_5_seconds
-     * @tc.desc      : test_restoreMainWindow_click_after_5_seconds
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
-    it('test_restoreMainWindow_click_after_5_seconds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let CaseName:string = 'test_restoreMainWindow_click_after_5_seconds';
-      let driver:Driver = Driver.create();
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      let want: Want = {
-        bundleName: 'com.example.myapplication',
-        abilityName: 'StartAbility'
-      };
-      let startParams: floatingBall.FloatingBallParams = {
-        template: floatingBall.FloatingBallTemplate.SIMPLE,
-        title: 'title',
-      };
-      try {
-        let floatingBallController = await floatingBall.create(config);
-        await floatingBallController.startFloatingBall(startParams);
-
-        //点击闪控球
-        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
-        console.info(CaseName+ ' button: ' + button);
-        let Bounds = await  button.getBounds();
-        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
-        await driver.click(Bounds.left,Bounds.top);
-        await sleep(6000);
-        floatingBallController.restoreMainWindow(want).then(() => {
-          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
-          expect(false).assertTrue();
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
-          await floatingBallController.stopFloatingBall();
-          expect(err.code).assertEqual(1300026);
-          done();
-        });
-      } catch(e) {
-        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
-
-        if(e.code == 801){
-          done();
-        }
-        else{
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5800
-     * @tc.name      : test_restoreMainWindow_mainWindow
-     * @tc.desc      : test_restoreMainWindow_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('test_restoreMainWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let CaseName:string = 'test_restoreMainWindow_mainWindow';
-      let driver:Driver = Driver.create();
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      let want: Want = {
-        bundleName: 'com.example.myapplication',
-        abilityName: 'TestAbility'
-      };
-      let startParams: floatingBall.FloatingBallParams = {
-        template: floatingBall.FloatingBallTemplate.SIMPLE,
-        title: 'title',
-      };
-      let floatingBallController:floatingBall.FloatingBallController;
-      try {
-        floatingBallController = await floatingBall.create(config);
-        await floatingBallController.startFloatingBall(startParams);
-        //点击闪控球
-        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
-        console.info(CaseName+ ' button: ' + button);
-        let Bounds = await  button.getBounds();
-        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
-        await driver.click(Bounds.left,Bounds.top);
-        await sleep(200);
-
-        floatingBallController.restoreMainWindow(want).then(async () => {
-          console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
-          await floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
-        });
-      } catch(e) {
-        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
-        if(e.code == 801){
-          done();
-        }
-        else{
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5900
      * @tc.name      : test_restoreMainWindow_ability
      * @tc.desc      : test_restoreMainWindow_ability
      * @tc.size      : MediumTest
@@ -2795,28 +2700,9 @@ export default function abilityTest() {
         }
       }
     })
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
   })
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,12 +37,13 @@ export default class StartAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Index', (err) => {
+    windowStage.loadContent('testability/pages/First/index', (err) => {
       if (err.code) {
         hilog.error(domain, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
       }
       hilog.info(domain, 'testTag', 'Succeeded in loading the content.');
+      
     });
   }
 
