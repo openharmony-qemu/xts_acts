@@ -1758,7 +1758,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300-over maxbufferSize
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300
      * @tc.desc      : 1.create PixelMap
      *                 2.create ImagePacker
      *                 3.call packing
