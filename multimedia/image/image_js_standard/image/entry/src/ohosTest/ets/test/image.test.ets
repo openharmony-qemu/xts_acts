@@ -3047,7 +3047,7 @@ export default function imageJsTest() {
 
         /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
-         * @tc.name      : createIncrementalSource
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
          * @tc.desc      : 1.create imagesource
          *                 2.return not null
          * @tc.size      : MEDIUM
@@ -3067,7 +3067,7 @@ export default function imageJsTest() {
 
         /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
-         * @tc.name      : createIncrementalSource
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
          * @tc.desc      : 1.create imagesource
          *                 2.return not null
          * @tc.size      : MEDIUM
@@ -3081,13 +3081,13 @@ export default function imageJsTest() {
                 expect(incSouce != undefined).assertTrue();
                 done();
             } catch (error) {
-                console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100 failed ' + error);
+                console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100 failed ' + error);
             }
         });
 
         /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
-         * @tc.name      : getImageInfo(callback)
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
          * @tc.desc      : 1.call createImageSource(uri)
          *                 2.call getImageInfo(callback)
          * @tc.size      : MEDIUM
@@ -3111,7 +3111,7 @@ export default function imageJsTest() {
 
         /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
-         * @tc.name      : createImageSource(uri)-not exist uri
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
          * @tc.desc      : 1.call createImageSource(uri)
          *                 2.set not exist uri
          *                 3.return null

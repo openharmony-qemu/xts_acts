@@ -596,7 +596,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0600
-     * @tc.name      : packToData ImageSource - promise - quality -1
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0600
      * @tc.desc      : 1.create ImageSource
      *                 2.call packToData
      *                 3.call return array
@@ -615,7 +615,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0700
-     * @tc.name      : packToData ImageSource - promise - quality 0
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0700
      * @tc.desc      : 1.create ImageSource
      *                 2.call packToData
      *                 3.call return array
@@ -634,7 +634,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0800
-     * @tc.name      : packToData ImageSource - promise - quality 100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_IMAGESOURCE_PROMISE_0800
      * @tc.desc      : 1.create ImageSource
      *                 2.call packToData
      *                 3.call return array
@@ -653,7 +653,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1100
-     * @tc.name      : SUB_IMAGE_packToData_PixelMap_011 - Promise - RGB888 quality -1
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1100
      * @tc.desc      : 1.create PixelMap
      *                 2.create ImagePacker
      *                 3.call packToData
@@ -671,7 +671,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1200
-     * @tc.name      : SUB_IMAGE_packToData_PixelMap_012 - Promise - RGB888 quality 0
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1200
      * @tc.desc      : 1.create PixelMap
      *                 2.create ImagePacker
      *                 3.call packToData
@@ -689,7 +689,7 @@ export default function imagePackToData() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1300
-     * @tc.name      : SUB_IMAGE_packToData_PixelMap_012 - Promise - RGB888 quality 100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1300
      * @tc.desc      : 1.create PixelMap
      *                 2.create ImagePacker
      *                 3.call packToData

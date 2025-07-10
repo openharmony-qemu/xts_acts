@@ -1002,7 +1002,7 @@ export default function imagePicture() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_CREATE_PICTURE_FROM_PARCEL_0100
-     * @tc.name      : test createPictureFromParcel
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_CREATE_PICTURE_FROM_PARCEL_0100
      * @tc.desc      : 1.create picture object by decode image source
      *                 2.test marshalling and create Picture From Parcel
      * @tc.size      : MediumTest

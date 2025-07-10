@@ -1456,7 +1456,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
-     * @tc.name      : packing ImageSource - promise - format error
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
      * @tc.desc      : 1.create ImageSource
      *                 2.call packing
      *                 3.call return array
@@ -1502,7 +1502,7 @@ export default function imagePacking() {
           done();
         }
       } catch (error) {
-        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900 error: " + error);
         expect(false).assertTrue();
         done();
       }
@@ -1510,7 +1510,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
-     * @tc.name      : packing ImageSource - promise - quality error
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
      * @tc.desc      : 1.create ImageSource
      *                 2.call packing
      *                 3.call return array
@@ -1556,14 +1556,14 @@ export default function imagePacking() {
           done();
         }
       } catch (error) {
-        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000 error: " + error);
         expect(false).assertTrue();
         done();
       }
     });
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
-     * @tc.name      : packing ImageSource - promise - quality too large
+     * @tc.name      : pSUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
      * @tc.desc      : 1.create ImageSource
      *                 2.call packing
      *                 3.call return array
@@ -1609,7 +1609,7 @@ export default function imagePacking() {
           done();
         }
       } catch (error) {
-        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300 error: " + error);
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100 error: " + error);
         expect(false).assertTrue();
         done();
       }
@@ -1617,7 +1617,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
-     * @tc.name      : packing ImageSource - callback - format error
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
      * @tc.desc      : 1.create ImageSource
      *                 2.call packing
      *                 3.return array
@@ -1656,7 +1656,7 @@ export default function imagePacking() {
           done();
         }
       } catch (error) {
-        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500 error: " + error);
+        console.info("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200 error: " + error);
         expect(false).assertTrue();
         done();
       }
@@ -1664,7 +1664,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
-     * @tc.name      : release ImagePacker - promise
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
      * @tc.desc      : 1.create ImagePacker
      *                 2.call release
      *                 3.return undefined
@@ -1697,7 +1697,7 @@ export default function imagePacking() {
     });
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100
-     * @tc.name      : release ImagePacker - callback
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100
      * @tc.desc      : 1.create ImagePacker
      *                 2.call release
      *                 3.return undefined
