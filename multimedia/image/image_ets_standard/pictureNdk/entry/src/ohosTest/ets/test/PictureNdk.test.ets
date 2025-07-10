@@ -96,6 +96,9 @@ const orientationValueErr = "-1";
 
 const testAllAuxiliaryPicturesExcludeFragmentJpg = "AllAuxiliaryPictures_exclude_fragment.jpg";
 
+let isSupportHEIFDecode: boolean;
+let fileDir: string | undefined;
+
 enum ErrorCode {
   /** operation success */
   IMAGE_SUCCESS = 0,
@@ -229,6 +232,18 @@ const testCreatePictureByPixelMap = (caseName: string, fileName: string) => {
   ndkTest.createTestPixelmapByImageSource(image.PixelMapFormat.RGBA_8888);
   let result: number = ndkTest.CreatePictureByPixelmap();
   expect(result).assertEqual(ErrorCode.IMAGE_SUCCESS);
+}
+
+const newCreatePictureByPixelMap = (caseName: string, fileName: string, done: Function) => {
+  if((!fileName.toLowerCase().endsWith('.heic')) || (fileName.toLowerCase().endsWith('.heic') && isSupportHEIFDecode)){
+    testCreateImageSource(caseName, fileName)
+    ndkTest.createTestPixelmapByImageSource(image.PixelMapFormat.RGBA_8888);
+    let result: number = ndkTest.CreatePictureByPixelmap();
+    expect(result).assertEqual(ErrorCode.IMAGE_SUCCESS);
+  }else{
+    expect(true).assertTrue()
+    done()
+  }
 }
 
 const testCreatePictureByImageSource = (caseName: string, fileName: string, 
@@ -466,7 +481,10 @@ async function sleep(delay: number): Promise<void> {
 export default function pictureNdkTest() {
   describe('pictureNdkTest', () => {
     let isSupportHdr: boolean = false;
+    fileDir = AppStorage.get('pathDir')
     beforeAll(async () => {
+      isSupportHEIFDecode = 
+        image.createImageSource(fileDir + '/' + 'test.jpg').supportedFormats.includes('image/heic')
       isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
         if (res) {
           console.info("file exists");
@@ -4255,7 +4273,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4291,7 +4309,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4327,7 +4345,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4363,7 +4381,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4400,7 +4418,7 @@ export default function pictureNdkTest() {
       ]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4436,7 +4454,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Uncompressed"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4472,7 +4490,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Reversed mono"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4508,7 +4526,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "_cuva%s\\d"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4544,7 +4562,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "华为"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4581,7 +4599,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "TNY-AL00"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4617,7 +4635,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4653,7 +4671,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Top-left"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4689,7 +4707,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4725,7 +4743,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4761,7 +4779,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4797,7 +4815,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: " 0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4833,7 +4851,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: " 0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4869,7 +4887,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Chunky format"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4905,7 +4923,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Inch"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4942,7 +4960,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3 bytes undefined data"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -4978,7 +4996,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "华为"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5014,7 +5032,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2024:12:31"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5050,7 +5068,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "None"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5086,7 +5104,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "252, 0/0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5122,7 +5140,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: " 0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5159,7 +5177,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "252"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5195,7 +5213,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2798"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5231,7 +5249,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "4"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5267,7 +5285,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0.299, 0.587, 0.114"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5303,7 +5321,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3, 2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5339,7 +5357,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Centered"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5376,7 +5394,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "222,  0, 1.5,  0, 25.2, 25.2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5413,7 +5431,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "undefined (Photographer) - [None] (Editor)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5449,7 +5467,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1/34 sec."}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5485,7 +5503,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "f/1.0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5521,7 +5539,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Not defined"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5557,7 +5575,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "abc"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5593,7 +5611,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.2.0.0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5629,7 +5647,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "N"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5665,7 +5683,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "39, 54, 20"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5701,7 +5719,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "E"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5737,7 +5755,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "120, 52, 26"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5773,7 +5791,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Sea level"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5809,7 +5827,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0.00"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5845,7 +5863,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "11:37:58.00"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5881,7 +5899,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "xxx"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5917,7 +5935,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "A"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5953,7 +5971,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -5989,7 +6007,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "182"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6025,7 +6043,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "N"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6061,7 +6079,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "150"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6097,7 +6115,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "T"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6133,7 +6151,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "38.0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6169,7 +6187,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "M"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6205,7 +6223,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.23"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6241,7 +6259,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "xxx"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6277,7 +6295,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "N"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6313,7 +6331,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "33, 22, 11"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6349,7 +6367,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "E"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6385,7 +6403,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "33, 22, 11"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6421,7 +6439,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "T"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6457,7 +6475,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6493,7 +6511,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "N"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6529,7 +6547,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "10"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6565,7 +6583,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "CELLID"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6601,7 +6619,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "arexxx"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6637,7 +6655,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2025:01:11"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6673,7 +6691,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6709,7 +6727,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6745,7 +6763,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6781,7 +6799,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6817,7 +6835,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "4 bytes undefined data"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6854,7 +6872,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Standard output sensitivity (SOS) and ISO speed"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6890,7 +6908,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6926,7 +6944,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6962,7 +6980,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -6998,7 +7016,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1456"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7034,7 +7052,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1456"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7070,7 +7088,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Exif Version 1.1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7106,7 +7124,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2024:01:25 05:51:34"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7142,7 +7160,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2022:06:02 15:51:34"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7178,7 +7196,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2024:01:25"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7214,7 +7232,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "chex"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7250,7 +7268,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "cfh"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7286,7 +7304,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Y R G B"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7322,7 +7340,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "24"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7358,7 +7376,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.50 EV (1/6 sec.)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7394,7 +7412,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "4.00 EV (f/4.0)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7430,7 +7448,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.50 EV (19.38 cd/m^2)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7466,7 +7484,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "23.00 EV"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7502,7 +7520,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.50 EV (f/2.4)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7538,7 +7556,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.5 m"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7574,7 +7592,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Pattern"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7610,7 +7628,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Daylight"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7647,7 +7665,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Strobe return light not detected"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7683,7 +7701,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0.0 mm"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7720,7 +7738,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "(x,y) = (12,13)"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7789,7 +7807,7 @@ export default function pictureNdkTest() {
           'HwMnoteSceneTextConf:11'}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7825,7 +7843,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "256"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7861,7 +7879,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7897,7 +7915,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7933,7 +7951,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -7969,7 +7987,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "4"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8005,7 +8023,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8041,7 +8059,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "6"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8077,7 +8095,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "7"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8113,7 +8131,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "8"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8149,7 +8167,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "9"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8185,7 +8203,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "10"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8221,7 +8239,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "11"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8257,7 +8275,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "122"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8293,7 +8311,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8329,7 +8347,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8365,7 +8383,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8401,7 +8419,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1 2 3 4 5 6 7 8"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8438,7 +8456,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8474,7 +8492,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1 2 3 4"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8510,7 +8528,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "5 6 7 8"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8547,7 +8565,7 @@ export default function pictureNdkTest() {
         {name: "webp", fileName: "test_exif_v2.webp", errorData: "987654321", value: '1 2 3 4 5 6 7 8'}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8583,7 +8601,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8619,7 +8637,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8655,7 +8673,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "3"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8691,7 +8709,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "4"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8727,7 +8745,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8763,7 +8781,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "6"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8799,7 +8817,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "7"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8835,7 +8853,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "place for user comments"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8871,7 +8889,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123456"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8907,7 +8925,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "427000"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8943,7 +8961,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "427000"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -8979,7 +8997,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "FlashPix Version 1.0"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9015,7 +9033,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "sRGB"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9051,7 +9069,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "123"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9087,7 +9105,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "234"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9123,7 +9141,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "/usr/home"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9159,7 +9177,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "832"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9195,7 +9213,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "13"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9231,7 +9249,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1080"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9267,7 +9285,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "880"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9303,7 +9321,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Inch"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9339,7 +9357,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0, 1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9375,7 +9393,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1.5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9412,7 +9430,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Two-chip color area sensor"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9448,7 +9466,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "DSC"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9484,7 +9502,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Directly photographed"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9520,7 +9538,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "1 bytes undefined data"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9556,7 +9574,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Normal process"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9592,7 +9610,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Auto exposure"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9628,7 +9646,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Manual white balance"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9664,7 +9682,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "321"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9700,7 +9718,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9736,7 +9754,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Standard"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9772,7 +9790,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Normal"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9808,7 +9826,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Normal"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9844,7 +9862,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Normal"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9880,7 +9898,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Normal"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9916,7 +9934,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2xxx"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9952,7 +9970,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "Unknown"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -9988,7 +10006,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "FXIC012"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10024,7 +10042,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "c.uec"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10060,7 +10078,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "exoch"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10096,7 +10114,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "0.8, 2.5, 1.5, 0.5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10132,7 +10150,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "xxwx"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10168,7 +10186,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "txaw"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10204,7 +10222,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "qxhc"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10240,7 +10258,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10276,7 +10294,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "23, 34"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10312,7 +10330,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "xxxw"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10348,7 +10366,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2.5"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10384,7 +10402,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "2, 2, 3, 1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10420,7 +10438,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v2.heic", value: "153, 841"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10456,7 +10474,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10492,7 +10510,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10528,7 +10546,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10564,7 +10582,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10600,7 +10618,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10636,7 +10654,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10672,7 +10690,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
@@ -10708,7 +10726,7 @@ export default function pictureNdkTest() {
         {name: "heif", fileName: "test_exif_v4.heic", value: "1"}]
       try {
         for(let i = 0; i < values.length; i++){
-            testCreatePictureByPixelMap(caseName, values[i].fileName);
+            newCreatePictureByPixelMap(caseName, values[i].fileName, done);
             let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, key)
             if(PropertyValue != values[i].value){
                 console.log("compare value error file:" + values[i].fileName + "get value: " + PropertyValue + "compare value: " + values[i].value);
