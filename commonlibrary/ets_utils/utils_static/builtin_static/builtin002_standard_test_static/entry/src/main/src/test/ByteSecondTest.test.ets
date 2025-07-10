@@ -1086,7 +1086,7 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_05700
      * @tc.name builtinsByteSecondPrototypebTest05700
      * @tc.desc test toString return value
      * @tc.size MediumTest
@@ -1105,16 +1105,16 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5700
-     * @tc.name builtinsByteSecondPrototypebTest5700
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_5701
+     * @tc.name builtinsByteSecondPrototypebTest5701
      * @tc.desc test toString return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsByteSecondPrototypebTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsByteSecondPrototypebTest5701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest5700'
+        const caseName = 'builtinsByteSecondPrototypebTest5701'
         const byte1 = new Byte(1);
         const byte2 = new Byte(-1);
         expect(byte1.toString()).assertEqual('1');
@@ -1262,16 +1262,16 @@ export default function builtinsByteSecondPrototypebTest() {
           })
 
         /**
-         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6500
-         * @tc.name builtinsByteSecondPrototypebTest6500
+         * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_6501
+         * @tc.name builtinsByteSecondPrototypebTest6501
          * @tc.desc test valueOf() return value
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('builtinsByteSecondPrototypebTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('builtinsByteSecondPrototypebTest6501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
           async (Done: () => void):Promise<void> => {
-            const caseName = 'builtinsByteSecondPrototypebTest6500';
+            const caseName = 'builtinsByteSecondPrototypebTest6501';
             const value = 65;
             const fromConstructor = new Byte(value);
             const fromValueOf = Byte.valueOf(value);
@@ -1413,16 +1413,16 @@ export default function builtinsByteSecondPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7200
-     * @tc.name builtinsByteSecondPrototypebTest7200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_SECOND_TEST_7201
+     * @tc.name builtinsByteSecondPrototypebTest7201
      * @tc.desc test toString return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsByteSecondPrototypebTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsByteSecondPrototypebTest7201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsByteSecondPrototypebTest7200';
+        const caseName = 'builtinsByteSecondPrototypebTest7201';
         const negativeValue = new Byte(-3);
         const binaryResult = negativeValue.toString(2);
         expect(binaryResult).assertEqual('-11');

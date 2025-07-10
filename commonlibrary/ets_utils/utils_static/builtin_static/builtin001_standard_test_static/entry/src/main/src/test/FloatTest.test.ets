@@ -1488,16 +1488,16 @@ export default function builtinsFloatPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_7400
-     * @tc.name builtinsFloatPrototypebTest7400
+     * @tc.number SUB_BUILTINS_FLOAT_PROTOTYPEB_TEST_7401
+     * @tc.name builtinsFloatPrototypebTest7401
      * @tc.desc test isGreaterEqualThan(other: Float): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsFloatPrototypebTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsFloatPrototypebTest7401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsFloatPrototypebTest7400';
+        const caseName = 'builtinsFloatPrototypebTest7401';
         console.info(`${caseName}, test start`);
         const a = new Float(5.0);
         const b = new Float(10.0);

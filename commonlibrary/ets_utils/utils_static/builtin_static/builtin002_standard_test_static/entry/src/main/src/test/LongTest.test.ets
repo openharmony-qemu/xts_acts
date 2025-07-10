@@ -534,16 +534,16 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2500
-     * @tc.name builtinsLongPrototypebTest2500
+     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2501
+     * @tc.name builtinsLongPrototypebTest2501
      * @tc.desc test div(other: Long) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsLongPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsLongPrototypebTest2501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'BuiltinsLongPrototypebTest2500'
+        const caseName = 'BuiltinsLongPrototypebTest2501'
         console.info(`${caseName}, test start`);
         const a = new Long(-100);
         const b = new Long(20);
@@ -554,16 +554,16 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2500
-     * @tc.name builtinsLongPrototypebTest2500
+     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2502
+     * @tc.name builtinsLongPrototypebTest2502
      * @tc.desc test div(other: Long) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsLongPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsLongPrototypebTest2502', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'BuiltinsLongPrototypebTest2500'
+        const caseName = 'BuiltinsLongPrototypebTest2502'
         console.info(`${caseName}, test start`);
         const a = new Long(100);
         const b = new Long(1);
@@ -574,16 +574,16 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2500
-     * @tc.name builtinsLongPrototypebTest2500
+     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_2503
+     * @tc.name builtinsLongPrototypebTest2503
      * @tc.desc test div(other: Long) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsLongPrototypebTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsLongPrototypebTest2503', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'BuiltinsLongPrototypebTest2500'
+        const caseName = 'BuiltinsLongPrototypebTest2503'
         console.info(`${caseName}, test start`);
         const a = new Long(0);
         const b = new Long(20);
@@ -1131,16 +1131,16 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_5100
-     * @tc.name builtinsLongPrototypebTest5100
+     * @tc.number SUB_BUILTINS_LONG_PROTOTYPEB_TEST_5101
+     * @tc.name builtinsLongPrototypebTest5101
      * @tc.desc test mul(other: Long) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsLongPrototypebTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsLongPrototypebTest5101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'BuiltinsLongPrototypebTest5100'
+        const caseName = 'BuiltinsLongPrototypebTest5101'
         console.info(`${caseName}, test start`);
         const a = new Long(-7);
         const b = new Long(-4);

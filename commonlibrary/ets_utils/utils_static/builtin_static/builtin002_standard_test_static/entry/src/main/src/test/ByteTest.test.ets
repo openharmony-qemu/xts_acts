@@ -414,14 +414,14 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2000
-     * @tc.name builtinsBytePrototypebTest2000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_02000
+     * @tc.name builtinsBytePrototypebTest02000
      * @tc.desc test public constructor(value: byte) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest02000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsBytePrototypebTest1200'
         console.info(`${caseName}, test start`);
@@ -836,16 +836,16 @@ export default function builtinsBytePrototypebTest() {
       })
     
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3900
-     * @tc.name builtinsBytePrototypebTest3900
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_3901
+     * @tc.name builtinsBytePrototypebTest3901
      * @tc.desc test div
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest3901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest3900'
+        const caseName = 'builtinsBytePrototypebTest3901'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(10);
         const byte2 = new Byte(10);
@@ -1394,16 +1394,16 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6800
-     * @tc.name builtinsBytePrototypebTest6800
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_6801
+     * @tc.name builtinsBytePrototypebTest6801
      * @tc.desc test isGreaterThan
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest6801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest6800'
+        const caseName = 'builtinsBytePrototypebTest6801'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MIN_VALUE);
         const byte2 = new Byte(Byte.MIN_VALUE + 1 as byte);
@@ -1693,16 +1693,16 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8000
-     * @tc.name builtinsBytePrototypebTest8000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8001
+     * @tc.name builtinsBytePrototypebTest8001
      * @tc.desc test $_hashCode
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest8000'
+        const caseName = 'builtinsBytePrototypebTest8001'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(0);
         const result = byte1.$_hashCode();
@@ -1829,16 +1829,16 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8600
-     * @tc.name builtinsBytePrototypebTest8600
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_8601
+     * @tc.name builtinsBytePrototypebTest8601
      * @tc.desc test $_hashCode
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest8601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest8600'
+        const caseName = 'builtinsBytePrototypebTest8601'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(5);
         const byte2 = new Byte(5);
@@ -1924,16 +1924,16 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_9000
-     * @tc.name builtinsBytePrototypebTest9000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_9001
+     * @tc.name builtinsBytePrototypebTest9001
      * @tc.desc test toByte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest9001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest9000'
+        const caseName = 'builtinsBytePrototypebTest9001'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MAX_VALUE);
         const result = byte1.toByte();
@@ -1943,14 +1943,15 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_9000
-     * @tc.name builtinsBytePrototypebTest9000
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_9002
+     * @tc.name builtinsBytePrototypebTest9002
      * @tc.desc test toByte
+     * @tc.size MediumTest
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest9002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsBytePrototypebTest9000'
         console.info(`${caseName}, test start`);
