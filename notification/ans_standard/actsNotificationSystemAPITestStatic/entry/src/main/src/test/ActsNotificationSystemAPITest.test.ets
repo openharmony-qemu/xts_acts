@@ -85,7 +85,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4100
      * @tc.desc: test function publish takes userId
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Publish_Static_4100'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_4100 START`);
@@ -137,7 +137,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4200
      * @tc.desc: test function publishAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('Sub_Notification_Ans_Publish_Publish_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Publish_Static_4200'
         console.info(`Sub_Notification_Ans_Publish_Publish_Static_4200 START`);
@@ -179,11 +179,11 @@ export default function ActsNotificationSystemAPITest() {
       })
 
     /*
-         * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4300
-         * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4300
-         * @tc.desc: test function publishAsBundle
-         */
-    it('Sub_Notification_Ans_Publish_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4300
+     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4300
+     * @tc.desc: test function publishAsBundle
+     */
+    it('Sub_Notification_Ans_Publish_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Publish_Static_4300'
         console.info(`Sub_Notification_Ans_Publish_Publish_Static_4300 START`);
@@ -232,7 +232,7 @@ export default function ActsNotificationSystemAPITest() {
      * @tc.name: Sub_Notification_Ans_Publish_Cancel_Static_0150
      * @tc.desc: test function cancelAsBundle
      */
-    it('Sub_Notification_Ans_Publish_Cancel_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('Sub_Notification_Ans_Publish_Cancel_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Cancel_Static_0150'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_0150 START`);
@@ -258,7 +258,7 @@ export default function ActsNotificationSystemAPITest() {
     * @tc.name: Sub_Notification_Ans_Publish_Cancel_Static_0160
     * @tc.desc: test function cancelAsBundle
     */
-    it('Sub_Notification_Ans_Publish_Cancel_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('Sub_Notification_Ans_Publish_Cancel_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Publish_Cancel_Static_0160'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_0160 START`);
