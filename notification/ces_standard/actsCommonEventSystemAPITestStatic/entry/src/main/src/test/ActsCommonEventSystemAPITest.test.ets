@@ -28,7 +28,7 @@ import {
 import Utils from './Util.test';
 
 let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-
+let testAbilityContext: common.UIAbilityContext;
 let bundleName: string = 'com.example.actscommonEventsystemapitest'
 
 
@@ -37,8 +37,6 @@ export default function ActsCommonEventSystemAPITest() {
   describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', (): void => {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
-
-    let testAbilityContext: common.UIAbilityContext;
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
