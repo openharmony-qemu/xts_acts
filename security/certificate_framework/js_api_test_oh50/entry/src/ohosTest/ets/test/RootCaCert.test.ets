@@ -830,6 +830,73 @@ export default function certFrameworkRootCaCertTestUnit() {
         }
         done();
       });
+      
+      /**
+     * @tc.number SUB_Security_Cert_Framework_RootCA_Func_1700
+     * @tc.name SUB_Security_Cert_Framework_RootCA_Func_1700
+     * @tc.desc Use Promise Type, TrustSystemCa Is True, Test New Scene
+     * @tc.size Mediumtest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it("SUB_Security_Cert_Framework_RootCA_Func_1700",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let encodingBlob1: cert.EncodingBlob = {
+            data: stringToUint8Array(intermediateCert),
+            encodingFormat: cert.EncodingFormat.FORMAT_PEM
+          };
+          let encodingBlob2: cert.EncodingBlob = {
+            data: stringToUint8Array(endEntityCert),
+            encodingFormat: cert.EncodingFormat.FORMAT_PEM
+          };
+          let x509CertChain: cert.X509CertChain = await cert.createX509CertChain(encodingBlob1);
+          let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob2);
+          const param: cert.CertChainValidationParameters = {
+            trustAnchors: [
+              {
+                CACert: x509Cert
+              }
+            ],
+            trustSystemCa: true // rootCa: aefc3878.0
+          }
+          const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
+          expect(validationRes.trustAnchor.CACert).not().assertNull();
+        } catch (error) {
+          console.error(`RootCA_Func_1700 1.1 ${error}, error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number SUB_Security_Cert_Framework_RootCA_Func_1800
+     * @tc.name SUB_Security_Cert_Framework_RootCA_Func_1800
+     * @tc.desc Use Promise Type, TrustSystemCa Is True, Test New Scene
+     * @tc.size Mediumtest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it("SUB_Security_Cert_Framework_RootCA_Func_1800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let encodingBlob1: cert.EncodingBlob = {
+            data: stringToUint8Array(endEntityCert),
+            encodingFormat: cert.EncodingFormat.FORMAT_PEM
+          };
+          let x509CertChain: cert.X509CertChain = await cert.createX509CertChain(encodingBlob1);
+          const param: cert.CertChainValidationParameters = {
+            trustAnchors: [],
+            trustSystemCa: true // rootCa: c4bcda47.0
+          }
+          const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
+          expect(validationRes.trustAnchor.CACert).not().assertNull();
+        } catch (error) {
+          console.error(`RootCA_Func_1800 1.1 ${error}, error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
 
   })
 }
