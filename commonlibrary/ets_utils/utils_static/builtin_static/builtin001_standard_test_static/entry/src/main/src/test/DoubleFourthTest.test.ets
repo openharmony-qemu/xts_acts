@@ -484,7 +484,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-    
+
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_FOURTH_PROTOTYPEB_TEST_2700
      * @tc.name builtinsDoubleFourthPrototypebTest2700
