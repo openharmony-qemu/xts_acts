@@ -624,14 +624,14 @@ export default function Decimal3Test() {
     //     74, 3);
     // });
     // /**
-    //  * @tc.number    : DECIMAL_TEST3_010_2
-    //  * @tc.name      : Decimal_sqrt_Func_010_2
+    //  * @tc.number    : DECIMAL_TEST3_010_3
+    //  * @tc.name      : Decimal_sqrt_Func_010_3
     //  * @tc.desc      : Test div
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_010_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    // it("Decimal_sqrt_Func_010_3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //
     // });
     // /**
@@ -660,14 +660,14 @@ export default function Decimal3Test() {
     //     33, 2);
     // });
     // /**
-    //  * @tc.number    : DECIMAL_TEST3_010_1
-    //  * @tc.name      : Decimal_sqrt_Func_010_1
+    //  * @tc.number    : DECIMAL_TEST3_011_1
+    //  * @tc.name      : Decimal_sqrt_Func_011_1
     //  * @tc.desc      : Test div
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_010_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    // it("Decimal_sqrt_Func_011_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   test_sqrt_001('9.5408249368370749687627590642478e-80750', '9.1027340475372175567247E-161499', 32, 4);
     //   test_sqrt_001('2.4283599683e+171849', '5.896932135288822595493869E+343698', 11, 0);
     //   test_sqrt_001('2.1e+498604095779994', '4.2961949068353E+997208191559988', 2, 0);
@@ -687,7 +687,7 @@ export default function Decimal3Test() {
     //
     // });
     // /**
-    //  * @tc.number    : DECIMAL_TEST3_010_2
+    //  * @tc.number    : DECIMAL_TEST3_010_1
     //  * @tc.name      : Decimal_sqrt_Func_010_1
     //  * @tc.desc      : Test div
     //  * @tc.size      : MediumTest
@@ -1338,7 +1338,7 @@ export default function Decimal3Test() {
     //     6);
     // });
     // /**
-    //  * @tc.number    : DECIMAL_TEST3_018_1
+    //  * @tc.number    : DECIMAL_TEST3_018_2
     //  * @tc.name      : Decimal_sqrt_Func_018_2
     //  * @tc.desc      : Test div
     //  * @tc.size      : MediumTest

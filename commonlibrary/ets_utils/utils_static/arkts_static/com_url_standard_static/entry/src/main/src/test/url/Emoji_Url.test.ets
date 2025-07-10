@@ -30,8 +30,8 @@ import hilog from '@ohos.hilog';
 import Url from '@ohos.url';
 import Utils from '../Util.test';
 
-export default function Url_Emoji_append_get() {
-  describe('Url_Emoji_append_get', (): void => {
+export default function Url_Emoji() {
+  describe('Url_Emoji', (): void => {
     afterEach(() => {
       await Utils.msSleep(10)
     })

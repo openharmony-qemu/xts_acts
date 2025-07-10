@@ -430,14 +430,14 @@ export default function Decimal5Test() {
       test_isFinite_001(n.equals('0x1'));
     })
     /**
-     * @tc.number    : DECIMAL_TEST5_008
-     * @tc.name      : Decimal_isFinite_Func_008
+     * @tc.number    : DECIMAL_TEST5_008_1
+     * @tc.name      : Decimal_isFinite_Func_008_1
      * @tc.desc      : Test isFinite
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_isFinite_Func_008_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(n.equals('0o1'));
       test_isFinite_001(n.equals('0b1'));
       test_isFinite_001(n.greaterThan(0.99999));
