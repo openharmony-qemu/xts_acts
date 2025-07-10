@@ -53,7 +53,7 @@ struct Fiber : detail::NonCopyable {
             return nullptr;
         }
         auto c = new (stack) Fiber(std::forward<std::function<void()>>(f));
-        if (ffrt_fiber_init(&c->fb, reinterpret_cast<void(*)(void*)>(fiberEntry), c,
+        if (ffrt_fiber_init(&c->fb, reinterpret_cast<void(*)(void*)>(FiberEntry), c,
             static_cast<char*>(stack) + sizeof(Fiber), stack_size - sizeof(Fiber))) {
             c->~Fiber<UsageId, FiberLocal, ThreadLocal>();
             return nullptr;
@@ -116,7 +116,7 @@ struct Fiber : detail::NonCopyable {
         id = idx.fetch_add(1, std::memory_order_relaxed);
     }
 
-    static void fiberEntry(Fiber* c)
+    static void FiberEntry(Fiber* c)
     {
         c->fn();
         c->fn = nullptr;
