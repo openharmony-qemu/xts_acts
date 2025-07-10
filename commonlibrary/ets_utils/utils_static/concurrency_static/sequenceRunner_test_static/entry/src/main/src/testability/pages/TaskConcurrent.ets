@@ -291,23 +291,21 @@ export async function printArgsWaitG(a: AsyncLockTest2): Promise<never> {
   } catch(e: BusinessError) {
 
   } finally {
-    if (Math.random() < 1) {
-      throw new Error('await error')
-    }
+  }
+  if (Math.random() < 1) {
+    throw new Error('await error')
   }
 }
 
 export async function printArgsWaitH(a: AsyncLockTest2): Promise<never> {
   try {
     await a.setCount(10).then((): void => {
-
     })
   } catch(e: BusinessError) {
-
   } finally {
-    if (Math.random() < 1) {
-      throw new Error('await error')
-    }
+  }
+  if (Math.random() < 1) {
+    throw new Error('await error')
   }
 }
 

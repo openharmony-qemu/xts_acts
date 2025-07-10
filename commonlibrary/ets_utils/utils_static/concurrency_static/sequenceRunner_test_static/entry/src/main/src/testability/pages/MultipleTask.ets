@@ -18,38 +18,6 @@ import fs from '@ohos.file.fs'
 import {
   //asyncLockWork,
   printArgs1, setTimeOutWork } from './TaskMethodTest'
-// import { MeasureText } from '@kit.ArkUI'
-
-// export async function multipleTask1() {
-//   setTimeout(() => {
-//     1 + 1
-//   }, 100)
-//
-//   test2()
-//
-//   let time = Date.now().toString()
-//   let path = Contexts.path + '/' + time + '.txt'
-//   fs.open(path, fs.OpenMode.READ_ONLY | fs.OpenMode.CREATE).then((data: fs.File) => {
-//     fs.close(data)
-//     fs.unlink(path)
-//   })
-//   await sleep(500)
-//   let work = new worker.ThreadWorker('./workers/WorkerTaskGroup.ets');
-//   work.postMessage('')
-//   work.terminate()
-// }
-
-// export async function multipleTask2() {
-//   await sleep(500)
-//   let work = new worker.ThreadWorker('./workers/WorkerTaskGroup1.ets');
-//   work.postMessage('')
-//   work.terminate()
-// }
-
-// export async function multipleTask3() {
-//   let task1: taskpool.Task = new taskpool.Task(asyncLockWork);
-//   await taskpool.execute(task1)
-// }
 
 export async function multipleTask4() {
 
@@ -65,26 +33,24 @@ export async function multipleTask4() {
 
 export async function multipleTask5() {
   sleep(500).then(() => {
-    /*let work = new worker.ThreadWorker('./workers/WorkerTaskGroup4.ets');
-    work.postMessage('')
-    work.terminate()*/
+
   })
 }
 
 export async function multipleUITask1() {
   await testUI()
-//  MeasureText.measureText({ 'textContent': 'asyncTask' })
+
 }
 
 export async function multipleUITask2() {
   await testUI1()
-//  MeasureText.measureText({ 'textContent': 'asyncTask' })
+
 }
 
 export async function multipleUITask3() {
   for (let i = 0; i < 100; i++) {
     await testUI()
-    //MeasureText.measureText({ 'textContent': 'asyncTask' })
+
   }
 
 }
@@ -92,7 +58,7 @@ export async function multipleUITask3() {
 export async function multipleUITask4() {
   for (let i = 0; i < 100; i++) {
     await testUI1()
-    //MeasureText.measureText({ 'textContent': 'asyncTask' })
+
   }
 }
 

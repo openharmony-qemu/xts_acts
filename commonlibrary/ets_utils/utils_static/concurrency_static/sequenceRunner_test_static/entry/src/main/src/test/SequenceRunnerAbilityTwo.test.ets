@@ -74,7 +74,7 @@ import {
   EnumTest,
   SendableFunction,
 } from '../testability/pages/SequenceRunnerTaskMethodTest';
-import { AsyncLock_1, BaseClass } from '../testability/pages/SequenceRunnerSendableTest';
+import { AsyncLock1, BaseClass } from '../testability/pages/SequenceRunnerSendableTest';
 import { BusinessError } from '@ohos.base';
 import { sleep } from '../testability/pages/Utils';
 
@@ -532,8 +532,8 @@ export default function sequenceRunnerAbilityTest_2() {
 
       task1Count = 0;
       task2Count = 0;
-      let asyncLock1: AsyncLock_1 = new AsyncLock_1()
-      let asyncLock2: AsyncLock_1 = new AsyncLock_1()
+      let asyncLock1: AsyncLock1 = new AsyncLock1()
+      let asyncLock2: AsyncLock1 = new AsyncLock1()
       let asn3 = asyncLock1.count_
       let asn4 = asyncLock2.count_
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -542,7 +542,7 @@ export default function sequenceRunnerAbilityTest_2() {
         let task3: taskpool.Task = new taskpool.Task(printAsyncLock3, asn3);
         let task4: taskpool.Task = new taskpool.Task(printAsyncLock4, asn4);
         try {
-          sequenceRunner.execute(task3).then((result: AsyncLock_1): void => {
+          sequenceRunner.execute(task3).then((result: AsyncLock1): void => {
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = result.toString();
             task1Count++;
@@ -557,7 +557,7 @@ export default function sequenceRunnerAbilityTest_2() {
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
-          sequenceRunner.execute(task4).then((result: AsyncLock_1): void => {
+          sequenceRunner.execute(task4).then((result: AsyncLock1): void => {
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = result.toString();
             task2Count++;

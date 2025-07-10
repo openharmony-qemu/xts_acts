@@ -68,20 +68,20 @@ export function addFunction(a: number, b: number): number {
   return a + b;
 }
 
-export class AsyncLock_1 {
-  public count_: number = 1;
+export class AsyncLock1 {
+  public count: number = 1;
 
   public async getCount(): Promise<number> {
     let lock: AsyncLock = AsyncLock.request('lock_1');
     return lock.lockAsync((): number => {
-      return this.count_;
+      return this.count;
     })
   }
 
   public async setCount(count: number): Promise<void> {
     let lock: AsyncLock = AsyncLock.request('lock_1');
     await lock.lockAsync((): void => {
-      this.count_ = count;
+      this.count = count;
     })
   }
 }

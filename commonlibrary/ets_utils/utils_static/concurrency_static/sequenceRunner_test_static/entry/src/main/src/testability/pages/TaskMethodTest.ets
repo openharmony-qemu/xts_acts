@@ -129,78 +129,11 @@ export async function printArgs9(args: number): Promise<number> {
   return args;
 }
 
-/**
- * worker线程
- * @param args
- * @returns
- */
+
 export function printArgs10(args: number): number {
   console.info('printArgs: ' + args);
-  // WorkThread.workerStageModel.postMessage('worker线程')
   return args;
 }
-
-// /**
-//  * task-二级
-//  * @param args
-//  * @returns
-//  */
-// export async function printArgs11(args: number): Promise<number> {
-//   console.info('printArgs: ' + args);
-//   let task: taskpool.Task = new taskpool.Task(test);
-//   await taskpool.execute(task)
-//   return args;
-// }
-//
-// /**
-//  * task-二级
-//  * @param args
-//  * @returns
-//  */
-// export async function printArgs12(args: number): Promise<number> {
-//   console.info('printArgs: ' + args);
-//   let task: taskpool.Task = new taskpool.Task(test1);
-//   await taskpool.execute(task).then(() => {
-//     let s: string[] = []
-//     s[0].split('')[1].toString()
-//   })
-//   return args;
-// }
-
-// /**
-//  * task-二级
-//  * @param args
-//  * @returns
-//  */
-// export async function printArgs13(args: number): Promise<number> {
-//   console.info('printArgs: ' + args);
-//   let task: taskpool.Task = new taskpool.Task(test1);
-//   try {
-//     await taskpool.execute(task).then(() => {
-//       let s: string[] = []
-//       s[0].split('')[1].toString()
-//     })
-//   } catch(e: BusinessError) {
-//     let s: string[] = []
-//     s[0].split('')[1].toString()
-//   }
-//   return args;
-// }
-//
-// /**
-//  * task-二级
-//  * @param args
-//  * @returns
-//  */
-// export async function printArgs14(args: number): Promise<number> {
-//   console.info('printArgs: ' + args);
-//   let task: taskpool.Task = new taskpool.Task(test1);
-//   await taskpool.execute(task).finally((): void => {
-//     let s: string[] = []
-//     s[0].split('')[1].toString()
-//   })
-//   return args;
-// }
 
 export function testTransfer(arg1: ArrayBuffer, arg2: ArrayBuffer): number {
   console.info('testTransfer arg1 byteLength: ' + arg1.byteLength);
@@ -214,7 +147,6 @@ export function testFunc(arr: Array<BaseClass>, num: number): number {
   baseInstance1.SetNum = 100;
   console.info('sendable: num1 is: ' + baseInstance1.GetNum);
   console.info('sendable: isDone1 is: ' + baseInstance1.isDone1);
-  // 获取斐波那契数列第num项的结果
   let res: number = baseInstance1.publicFunc(num);
   return res;
 }
@@ -273,11 +205,6 @@ export async function cancelTask(task: taskpool.Task): Promise<string> {
   });
 }
 
-/**
- * setTimeout
- * @param args
- * @returns
- */
 export async function timeout(args: number): Promise<number> {
   console.info('printArgs: ' + args);
   setTimeout((): void => {
@@ -286,11 +213,6 @@ export async function timeout(args: number): Promise<number> {
   return args;
 }
 
-/**
- * task-二级
- * @param args
- * @returns
- */
 export async function secPool(args: number): Promise<number> {
   console.info('printArgs: ' + args);
   let task: taskpool.Task = new taskpool.Task(test1);

@@ -1265,7 +1265,7 @@ export default function sequenceRunnerTaskTest() {
 
     /**
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3900
-     * @tc.name Sequence_Runner_TaskTest_3800
+     * @tc.name Sequence_Runner_TaskTest_3900
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
