@@ -125,9 +125,6 @@ export default function windowImmersiveTest() {
       }
     })
     afterAll(async () => {
-      // await windowClass.setWindowLayoutFullScreen(false);
-      // await windowClass.setWindowSystemBarEnable(['status']);
-      // await windowClass.setFullScreen(false);
       let windowClass = windowStage.getMainWindowSync();
       await windowClass.setWindowLayoutFullScreen(false);
       await windowClass.setWindowSystemBarEnable(['status']);
@@ -154,7 +151,7 @@ export default function windowImmersiveTest() {
         await sleep(3000);
         windowClass.on('avoidAreaChange', async (data) => {
           console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
-           ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
           if(data.type == 0){
             windowClass.off('avoidAreaChange');
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -208,13 +205,41 @@ export default function windowImmersiveTest() {
         await windowClass.setSpecificSystemBarEnabled('status', false);
         console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
         await sleep(2000);
-
-
+        
       } catch (exception) {
         console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
         expect().assertFail();
         done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
+     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
+     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        await sleep(2000);
+        let res = windowClass.isImmersiveLayout();
+        console.log(`${caseName} isImmersiveLayout: ${res}.`);
+        expect(res).assertEqual(false);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (exception.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
 
@@ -2566,37 +2591,6 @@ export default function windowImmersiveTest() {
         done();
       }
     });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
-     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
-     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        await sleep(2000);
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(false);
-        done();
-      } catch (exception) {
-        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-        if (exception.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
-    
-     
 
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
