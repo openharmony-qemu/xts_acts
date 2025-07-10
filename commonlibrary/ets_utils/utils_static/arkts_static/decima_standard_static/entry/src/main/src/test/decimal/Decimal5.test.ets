@@ -52,8 +52,8 @@ function test_floor_002(expected: string, n: string) {
   expect(expected).assertEqual(Decimal.floor(n).valueOf());
 }
 
-export default function Decimal4Test() {
-  describe('Decimal4Test', () => {
+export default function Decimal5Test() {
+  describe('Decimal5Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       afterEach(() => {
