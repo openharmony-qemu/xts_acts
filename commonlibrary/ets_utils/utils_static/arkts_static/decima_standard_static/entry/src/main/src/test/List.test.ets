@@ -14,7 +14,14 @@
 */
 
 import decimalTest1 from "./decimal/Decimal1.test";
-
+import decimalTest2 from "./decimal/Decimal2.test";
+import decimalTest3 from "./decimal/Decimal3.test";
+import decimalTest4 from "./decimal/Decimal4.test";
+import decimalTest5 from "./decimal/Decimal5.test";
 export default function testsuite() {
     decimalTest1();
+    decimalTest2();
+    decimalTest3();
+    decimalTest4();
+    decimalTest5();
 }

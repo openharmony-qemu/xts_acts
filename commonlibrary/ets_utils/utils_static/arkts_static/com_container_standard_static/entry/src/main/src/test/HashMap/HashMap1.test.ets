@@ -111,7 +111,7 @@ export default function HashMapTest1() {
       let c = new InfoC()
       hashMap.set(1, c);
       let res = hashMap.get(1);
-      expect(String(res)).assertEqual(c);
+      expect(res).assertEqual(c);
     });
 
     /**
@@ -471,7 +471,7 @@ export default function HashMapTest1() {
     it("testHashMap0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
       let res = hashMap.get(3);
-      expect(String(res)).assertEqual(undefined);
+      expect(res).assertEqual(undefined);
     });
 
     /**
