@@ -63,7 +63,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri1 = "datashareproxy://com.example.myapplication/test1";
@@ -98,7 +98,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc uri is 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -136,7 +136,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -171,7 +171,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -204,7 +204,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -239,7 +239,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -274,7 +274,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -309,7 +309,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -344,7 +344,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -379,7 +379,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -414,7 +414,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -446,7 +446,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -478,7 +478,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -513,7 +513,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc value length is 4096
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -548,7 +548,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc value length is 4097
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -578,7 +578,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -613,7 +613,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -648,7 +648,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -683,7 +683,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -723,7 +723,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc allowList length is 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -761,7 +761,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -796,7 +796,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -831,7 +831,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -866,7 +866,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -889,7 +889,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc depth is 2,UPSTREAM
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -912,7 +912,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc proxyData is []
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -936,7 +936,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc uri is 32
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -973,7 +973,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc uri is 33
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1006,7 +1006,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc uri is 32,then add uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1066,7 +1066,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc allowList length is 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1109,7 +1109,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc three different uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1157,7 +1157,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc three same uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1203,7 +1203,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc contains error bundle name
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1242,7 +1242,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc error bundle name
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1276,7 +1276,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc error bundle name
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1350,7 +1350,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.desc error bundle name
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigPublishTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {

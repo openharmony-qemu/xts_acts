@@ -81,7 +81,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc uri is kong
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "";
@@ -112,7 +112,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc uri length Equal 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(33);
@@ -144,7 +144,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc uri length more than 256
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -174,7 +174,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc uris
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris = []
@@ -200,7 +200,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = " ";
@@ -229,7 +229,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "@#$%^&*";
@@ -260,7 +260,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -285,7 +285,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -310,7 +310,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/ ";
@@ -341,7 +341,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/@#$%^&*";
@@ -372,7 +372,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/路径";
@@ -404,7 +404,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -433,7 +433,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -462,7 +462,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc [uri] more than 32
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris: string[] = [];
@@ -491,7 +491,7 @@ export default function dataShareConfigGetTest() {
      * @tc.desc [uri] more than 32
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigGetTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris: string[] = [];

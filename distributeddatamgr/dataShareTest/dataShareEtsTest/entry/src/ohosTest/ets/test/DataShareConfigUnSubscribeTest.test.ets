@@ -102,7 +102,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -127,7 +127,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -152,7 +152,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -174,7 +174,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -196,7 +196,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -218,7 +218,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
@@ -240,7 +240,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "";
@@ -266,7 +266,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -293,7 +293,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -317,7 +317,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = " ";
@@ -343,7 +343,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "@#￥%^&*";
@@ -369,7 +369,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -388,7 +388,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -407,7 +407,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/ ";
@@ -433,7 +433,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/路径";
@@ -459,7 +459,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.desc single uri
      * @tc.size MediumTest
      * @tc.type RELIABILITY
-     * @tc.level Level 3
+     * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.example.myapplication/test1";
