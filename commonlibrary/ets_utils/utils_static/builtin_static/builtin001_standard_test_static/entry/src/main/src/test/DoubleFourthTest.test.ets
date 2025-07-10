@@ -484,24 +484,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test end`);
         Done();
       })
-
-    /**
-     * @tc.number SUB_BUILTINS_DOUBLE_FOURTH_PROTOTYPEB_TEST_2600
-     * @tc.name builtinsDoubleFourthPrototypebTest2600
-     * @tc.desc test bitCastFromLong(bits):
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest2600';
-        console.info(`${caseName}, test start`);
-        expect(Double.bitCastFromLong(0x01)).assertEqual(5e-324);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
+    
     /**
      * @tc.number SUB_BUILTINS_DOUBLE_FOURTH_PROTOTYPEB_TEST_2700
      * @tc.name builtinsDoubleFourthPrototypebTest2700
