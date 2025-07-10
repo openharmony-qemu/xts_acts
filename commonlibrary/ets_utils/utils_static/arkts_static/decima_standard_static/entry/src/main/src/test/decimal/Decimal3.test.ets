@@ -687,8 +687,8 @@ export default function Decimal3Test() {
     //
     // });
     // /**
-    //  * @tc.number    : DECIMAL_TEST3_010_1
-    //  * @tc.name      : Decimal_sqrt_Func_010_1
+    //  * @tc.number    : DECIMAL_TEST3_011_2
+    //  * @tc.name      : Decimal_sqrt_Func_011_2
     //  * @tc.desc      : Test div
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
