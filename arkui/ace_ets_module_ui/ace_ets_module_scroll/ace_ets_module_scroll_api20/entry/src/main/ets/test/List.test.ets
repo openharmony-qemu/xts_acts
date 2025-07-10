@@ -26,6 +26,10 @@ import scrollBarColor from './ScrollBarTest/scrollBarColor.test';
 import canOverGrid from './GridTest/canOverGrid.test';
 import canOverList from './ListTest/canOverList.test';
 import canOverScroll from './ScrollTest/canOverScroll.test';
+import syncLoadGrid from './GridTest/syncLoadGrid.test';
+import syncLoadList from './ListTest/syncLoadList.test';
+import syncLoadGroup from './ListTest/syncLoadGroup.test';
+import syncLoadFlow from './WaterFlowTest/syncLoadFlow.test';
 
 export default function testsuite() {
   barHeightNoMinHeightLimit();
@@ -41,4 +45,8 @@ export default function testsuite() {
   canOverGrid()
   canOverList()
   canOverScroll()
+  syncLoadGrid()
+  syncLoadList()
+  syncLoadGroup()
+  syncLoadFlow()
 }

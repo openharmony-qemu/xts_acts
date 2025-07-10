@@ -13,6 +13,10 @@
         "MainAbility/pages/Grid/canOverGrid",
         "MainAbility/pages/List/canOverList",
         "MainAbility/pages/Tabs/barHeightNoMinHeightLimit",
-        "MainAbility/pages/Scroll/canOverScroll"
+        "MainAbility/pages/Scroll/canOverScroll",
+        "MainAbility/pages/Grid/syncLoadGrid",
+        "MainAbility/pages/List/syncLoadList",
+        "MainAbility/pages/List/syncLoadGroup",
+        "MainAbility/pages/WaterFlow/syncLoadFlow"
     ]
 }
