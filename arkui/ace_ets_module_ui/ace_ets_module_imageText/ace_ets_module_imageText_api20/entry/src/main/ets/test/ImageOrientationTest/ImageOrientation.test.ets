@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
 
@@ -32,7 +32,7 @@ export default function ImageOrientationTest() {
         if (!('ImageOrientation' === pages.name)) {
           console.info('get ImageOrientationTest pages.name:' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2500);
+          await CommonFunc.sleep(2500);
           console.info('push ImageOrientationTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
