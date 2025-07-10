@@ -30,8 +30,8 @@ namespace {
 OH_AVCodec *gVenc = nullptr;
 OH_AVCapability* gCap = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
-const char* g_codecName = "";
-const char* g_outDir = "/data/test/media/videoEncodeFileRoi.h265";
+const char* CODEC_NAME = "";
+const char* OUT_DIR = "/data/test/media/videoEncodeFileRoi.h265";
 } // namespace
 
 namespace OHOS {
@@ -54,8 +54,8 @@ protected:
 void HwEncFuncSqrTest::SetUpTestCase()
 {
     g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(g_capEnc);
-    cout << "codecname: " << g_codecName << endl;
+    CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
+    cout << "codecname: " << CODEC_NAME << endl;
 }
 void HwEncFuncSqrTest::TearDownTestCase() {}
 void HwEncFuncSqrTest::SetUp() {}
@@ -84,7 +84,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_001, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->MAXBITE_ENABLE = true;
@@ -96,7 +96,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_001, TestSize.Level1)
     vEncSample->DEFAULT_SQR_FACTOR = 32;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -118,7 +118,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_002, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->MAXBITE_ENABLE = true;
@@ -128,7 +128,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_002, TestSize.Level1)
     vEncSample->DEFAULT_SQR_FACTOR = 32;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -150,7 +150,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->MODE_ENABLE = true;
@@ -160,7 +160,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -182,13 +182,13 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_004, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->MODE_ENABLE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -210,7 +210,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_005, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->SURF_INPUT = true;
@@ -220,7 +220,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_005, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -242,7 +242,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_006, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
@@ -250,7 +250,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_006, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -272,7 +272,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_007, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
@@ -282,7 +282,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_007, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -304,7 +304,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_008, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
@@ -316,7 +316,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_008, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -338,7 +338,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_009, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
@@ -352,7 +352,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_009, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -377,7 +377,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_010, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
     vEncSample->MAXBITE_ENABLE = true;
@@ -409,7 +409,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_011, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->MODE_ENABLE = true;
@@ -419,7 +419,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_011, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -441,13 +441,13 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_012, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->MODE_ENABLE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -469,7 +469,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_013, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->FACTOR_ENABLE = true;
     vEncSample->SURF_INPUT = true;
@@ -479,7 +479,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_013, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -501,7 +501,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_014, TestSize.Level1)
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->DEFAULT_WIDTH = 1080;
     vEncSample->DEFAULT_HEIGHT = 1920;
-    vEncSample->OUT_DIR = g_outDir;
+    vEncSample->OUT_DIR = OUT_DIR;
     vEncSample->SETBIRATE = true;
     vEncSample->SURF_INPUT = true;
     vEncSample->MODE_ENABLE = true;
@@ -509,7 +509,7 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_014, TestSize.Level1)
     vEncSample->DEFAULT_BITRATE_MODE = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->INP_DIR = INP_DIR_1080_30;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoderSqr());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());

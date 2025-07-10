@@ -29,7 +29,7 @@ using namespace testing::ext;
 namespace {
 OH_AVCodec* gVenc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
-const char* g_codecName = "";
+const char* CODEC_NAME = "";
 } // namespace
 
 namespace OHOS {
@@ -49,8 +49,8 @@ public:
 void HwEncApiNdkTest::SetUpTestCase()
 {
     g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    g_codecName = OH_AVCapability_GetName(g_capEnc);
-    cout << "g_codecName: " << g_codecName << endl;
+    CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
+    cout << "CODEC_NAME: " << CODEC_NAME << endl;
 }
 void HwEncApiNdkTest::TearDownTestCase() {}
 void HwEncApiNdkTest::SetUp() {}
@@ -100,7 +100,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -143,7 +143,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -186,7 +186,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -229,7 +229,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -272,7 +272,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -315,7 +315,7 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
     vEncSample->SURF_INPUT = surfaceMode;
     vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 2000;
     vEncSample->enablePTSBasedRateControl = true;
-    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+    ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
     ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
