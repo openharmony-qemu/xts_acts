@@ -534,8 +534,8 @@ export default function sequenceRunnerAbilityTest_2() {
       task2Count = 0;
       let asyncLock1: AsyncLock1 = new AsyncLock1()
       let asyncLock2: AsyncLock1 = new AsyncLock1()
-      let asn3 = asyncLock1.count_
-      let asn4 = asyncLock2.count_
+      let asn3 = asyncLock1.count
+      let asn4 = asyncLock2.count
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
 
       for (let i = 0; i < 10; i++) {

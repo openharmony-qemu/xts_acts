@@ -68,6 +68,7 @@ export default function sequenceRunnerTaskTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach((): void => {
+    beforeEach((): void => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -130,53 +131,6 @@ export default function sequenceRunnerTaskTest() {
       expect(string(count2)).assertEqual('10')
 
     })
-
-    // /**
-    //  * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1100
-    //  * @tc.name Sequence_Runner_TaskTest_1100
-    //  * @tc.desc test TaskGroup
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 2
-    //  */
-    // it('Sequence_Runner_TaskTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-    //   // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-    //   const Tag: string = 'Sequence_Runner_TaskTest_1100'
-    //
-    //   let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
-    //   let count1: number = 0
-    //   let count2: number = 0
-    //   for (let i = 0; i < 10; i++) {
-    //     let task1: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs4, 1.0);
-    //     let task2: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs4, 1.0);
-    //     try {
-    //       try {
-    //         runner.execute(task1).then((): void => {
-    //         })
-    //       } catch(e: BusinessError) {
-    //         // expect(e.message).assertContain('Cannot read property split of undefined')
-    //         count1 = count1 + 1
-    //       }
-    //     } catch (error: BusinessError) {
-    //       console.info( `${Tag}`, '%{public}s', `Task1 ---error：：${JSON.stringify(error)}}`);
-    //     }
-    //     try {
-    //       runner.execute(task2).then().catch((e: BusinessError) => {
-    //         // expect(e.message).assertContain('Cannot read property split of undefined')
-    //         count2 = count2 + 1
-    //       })
-    //     } catch (error: BusinessError) {
-    //       console.info( `${Tag}`, '%{public}s', `Task2 ---error：：${JSON.stringify(error)}`);
-    //     }
-    //   }
-    //
-    //   while (count2 < 10) {
-    //     await sleep(100)
-    //   }
-    //
-    //   expect(string(count1)).assertEqual('10')
-    //   expect(string(count2)).assertEqual('10')
-    // })
 
     /**
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1200

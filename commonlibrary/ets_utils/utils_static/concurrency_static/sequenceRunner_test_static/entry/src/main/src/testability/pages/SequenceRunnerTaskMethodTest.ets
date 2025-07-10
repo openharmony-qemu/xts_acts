@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { Count1, Count2 } from './DataFlg';
-import { BaseClass, DeriveClass, addFunction, AsyncLock_1 } from './SequenceRunnerSendableTest';
+import { BaseClass, DeriveClass, addFunction, AsyncLock1 } from './SequenceRunnerSendableTest';
 
 // import { map } from '@kit.ConnectivityKit';
 // import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
@@ -573,30 +573,6 @@ export function concatArrayTaskFunction4(args: ConcatArray<string>): ConcatArray
   return args;
 }
 
-// export function bitVectorTaskFunction1(args: BitVector): BitVector {
-//   console.log(`Task 2 is running with input: ${args}`);
-//   return args;
-// }
-//
-// export function bitVectorTaskFunction2(args: BitVector): BitVector {
-//   console.log(`Task 2 is running with input: ${args}`);
-//   return args;
-// }
-//
-// export function bitVectorTaskFunction3(args: BitVector): BitVector {
-//   console.log(`Task 2 is running with input: ${args}`);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return args;
-// }
-//
-// export function bitVectorTaskFunction4(args: BitVector): BitVector {
-//   console.log(`Task 2 is running with input: ${args}`);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return args;
-// }
-
 export type union1 = string | number;
 export type union2 = string | number;
 export type union3 = string | number;
@@ -756,24 +732,24 @@ export function anyTaskFunction2(args1: string, args2: string): string {
   return args1 + args2;
 }
 
-export function printAsyncLock1(ason: AsyncLock_1): AsyncLock_1 {
+export function printAsyncLock1(ason: AsyncLock1): AsyncLock1 {
   console.info('printArgs: ' + ason);
   return ason;
 }
 
-export function printAsyncLock2(ason: AsyncLock_1): AsyncLock_1 {
+export function printAsyncLock2(ason: AsyncLock1): AsyncLock1 {
   console.info('printArgs: ' + ason);
   return ason;
 }
 
-export function printAsyncLock3(ason: AsyncLock_1): AsyncLock_1 {
+export function printAsyncLock3(ason: AsyncLock1): AsyncLock1 {
   console.info('printArgs: ' + ason);
   let s: string[] = []
   s[0].split('')[1].toString()
   return ason;
 }
 
-export function printAsyncLock4(ason: AsyncLock_1): AsyncLock_1 {
+export function printAsyncLock4(ason: AsyncLock1): AsyncLock1 {
   console.info('printArgs: ' + ason);
   let s: string[] = []
   s[0].split('')[1].toString()
