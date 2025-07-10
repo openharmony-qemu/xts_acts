@@ -26,7 +26,7 @@ export default function ActsNotificationBadgeTest() {
      * @tc.name: Sub_Notification_Ans_Corner_SetNum_Static_0900
      * @tc.desc: verify the callback function of setBadgeNumber
      */
-    it('Sub_Notification_Ans_Corner_SetNum_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Corner_SetNum_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         notificationManager.setBadgeNumber(10, (err: BusinessError | null) => {
           if (err) {
@@ -56,7 +56,7 @@ export default function ActsNotificationBadgeTest() {
      * @tc.name: Sub_Notification_Ans_Corner_SetNum_Static_1000
      * @tc.desc: verify the promise function of setBadgeNumber
      */
-    it('Sub_Notification_Ans_Corner_SetNum_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Corner_SetNum_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         notificationManager.setBadgeNumber(10).then(() => {
           console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_1000 success`)

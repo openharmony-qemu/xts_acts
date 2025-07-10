@@ -149,7 +149,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
      * @tc.desc: test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>  {
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   let Tag :string ='Sub_Notification_Ces_StaticEvent_Config_Static_1300'
     //   //构造commonEventManager.publish401错误码
     //   try {
@@ -394,7 +394,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
      * @tc.desc: test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
     //   let id :number = 1
     //   let label:string = "label"
@@ -454,7 +454,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
      * @tc.desc: test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     // let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281'
     //   try {
     //     notificationManager.addSlot(null, (err: BusinessError | null) => {
@@ -536,7 +536,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
      * @tc.desc: test function publishAsUser
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //   let Tag :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284'
     //   try {
     //     notificationManager.setBadgeNumber(null, (err: BusinessError | null) => {
@@ -866,7 +866,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
      * @tc.desc: test function publishAsUser
      */
-    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287'
         let BundleOption: notificationManager.BundleOption = {
@@ -906,7 +906,7 @@ export default function ActsCommonEventSystemAPITest() {
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
      * @tc.desc: test function publish
      */
-    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_SUITE_NAME = 'Sub_Notification'
         const TEST_CASE_NAME = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288'
