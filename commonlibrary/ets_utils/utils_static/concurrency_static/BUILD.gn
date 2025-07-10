@@ -17,11 +17,15 @@ group("concurrency_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
       "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
+      "taskpool_base_test_static:ActsTaskpoolBaseStaticTest",
       "asynclock_test_static:ActsAsyncLockStaticTest",
       "eaworker_test_static:ActsEAWorkerStaticTest",
-      "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
+      "atomics_test_static:ActsAtomicsStaticTest",
+      "promise_test_static:ActsPromiseStaticTest",  
     ]
+
   }
 }

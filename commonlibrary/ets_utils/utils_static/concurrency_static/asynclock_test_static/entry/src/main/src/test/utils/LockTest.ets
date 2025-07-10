@@ -235,11 +235,11 @@ export async function sharedMultiWorkerTest() {
 }
 
 
-export function isAvailableTrueJob(lockName: string): Promise<void> {
+export function isAvailableTrueJob(lockName: string) {
   let lock = AsyncLock.request(lockName);
   let options = new AsyncLockOptions<void>();
   options.isAvailable = true;
-  let p: Promise<void> = lock.lockAsync((): void => {
+  let p: Promise<void> = lock.lockAsync(() => {
   }, AsyncLockMode.EXCLUSIVE, options);
   p.then((): void => {
     hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', 'Test failed: the lock is acquired');
@@ -247,7 +247,6 @@ export function isAvailableTrueJob(lockName: string): Promise<void> {
   p.catch((): void => {
     hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', 'Test passed');
   });
-  return p;
 }
 
 // test entry point
@@ -831,8 +830,7 @@ function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<Pro
   tidBuf[0] = 0;
   let promises = new Array<Promise<NullishType>>(4);
   for (let i: int = 0; i < 4; ++i) {
-    promises.push(taskpool.execute(applyLockJob, lockName, mode, tidBuf, i + 1));
-    // promises[i] = temp as Promise<void>;
+    promises.push(taskpool.execute(applyLockJob, lockName, mode, tidBuf, 0));
   }
   return Promise.all(promises);
 }
