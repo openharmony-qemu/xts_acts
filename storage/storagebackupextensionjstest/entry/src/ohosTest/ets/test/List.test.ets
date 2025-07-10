@@ -14,6 +14,9 @@
  */
 
 import backupdirTest from './backupdir.test'
+import onReleaseTest from './onRelease.test'
+
 export default function testsuite() {
   backupdirTest()
+  onReleaseTest()
 }
