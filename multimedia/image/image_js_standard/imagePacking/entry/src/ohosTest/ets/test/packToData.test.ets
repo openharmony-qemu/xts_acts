@@ -684,7 +684,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 0
       };
-      packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1200", 5, packOpts);
+      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1200", 5, packOpts);
     });
 
     /**
@@ -702,7 +702,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 100
       };
-      packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1300", 5, packOpts);
+      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1300", 5, packOpts);
     });
   })
 }
