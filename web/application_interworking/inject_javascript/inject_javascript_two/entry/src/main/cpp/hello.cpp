@@ -315,8 +315,6 @@ static napi_value RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister",
         "RegisterAsyncThreadJavaScriptProxy success");
 
-    controller->refresh(webTagValue);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AsyncRegister", "ArkWeb_ControllerAPI refresh");
     napi_value output;
     NAPI_CALL(env, napi_create_string_utf8(env, "RunSuccess", NAPI_AUTO_LENGTH, &output));
     return output;

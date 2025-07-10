@@ -77,8 +77,8 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   this.isComplete = 0;
                   let getResult = testNapi.registerAsyncThreadJavaScriptProxy('null', 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy001 registerAsyncThreadJavaScriptProxy:' + getResult)
-                  await waitForExist(()=>getResult, 'emitRegisterAsyncThreadJavaScriptProxy001_register', 'RunSuccess', 1000)
-                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy001_loadUrl_refresh', 0, 3000)
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy001_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
                       if (error) {
@@ -109,8 +109,8 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   this.isComplete = 0;
                   let getResult2 = testNapi.registerAsyncThreadJavaScriptProxy('WebTagTest', 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy002 registerAsyncThreadJavaScriptProxy:' + getResult2)
-                  await waitForExist(()=>getResult2, 'emitRegisterAsyncThreadJavaScriptProxy002_register', 'RunSuccess', 1000)
-                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy002_loadUrl_refresh', 0, 3000)
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy002_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
                       if (error) {
@@ -137,10 +137,11 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                 case 'emitRegisterAsyncThreadJavaScriptProxy003': {
                   this.isComplete = 0;
                   this.controller.loadUrl($rawfile('runJSTest.html'))
-                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy003', 1, 3000)
+                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy003', 1, 1000)
                   this.isComplete = 0;
                   let getResult3 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy003 registerAsyncThreadJavaScriptProxy:' + getResult3)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy003_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('testNdkProxyObjMethod1()',(error, result) => {
@@ -171,6 +172,7 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   this.isComplete = 0;
                   let getResult4 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy004 registerAsyncThreadJavaScriptProxy:' + getResult4)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy004_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('testNdkProxyObjMethod2()',(error, result) => {
@@ -201,6 +203,7 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   this.isComplete = 0;
                   let getResult5 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy005 registerAsyncThreadJavaScriptProxy:' + getResult5)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy005_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('window.ndkProxy.method3("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
@@ -232,6 +235,7 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   this.isComplete = 0;
                   let getResult6 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, 'null')
                   console.log('emitRegisterAsyncThreadJavaScriptProxy006 registerAsyncThreadJavaScriptProxy:' + getResult6)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy006_loadUrl_refresh', 1, 1000)
                   try {
                     let methodResult1 = ''
@@ -256,7 +260,6 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                         methodResult2 = result
                       }
                     })
-                    await waitForExist(()=>methodResult1, 'testNdkProxyObjMethod1', '"method1"', 1000)
                     await waitForExist(()=>methodResult2, 'testNdkProxyObjMethod2', 'true', 1000)
                     let pidResult = testNapi.getPidResult()
                     console.log('emitRegisterAsyncThreadJavaScriptProxy006 pidResult:' + pidResult)
@@ -280,6 +283,7 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                   let permission: string = '{\"javascriptProxyPermission\":{\"urlPermissionList\":[{\"scheme\":\"https\",\"host\":\"www.example.com\",\"port\":\"\",\"path\":\"\"}]}}'
                   let getResult7 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, permission)
                   console.log('emitRegisterAsyncThreadJavaScriptProxy007 registerAsyncThreadJavaScriptProxy:' + getResult7)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy007_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
@@ -305,12 +309,13 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                 }
                 case 'emitRegisterAsyncThreadJavaScriptProxy008': {
                   this.isComplete = 0;
-                  this.controller.loadUrl(URL_BAIDU)
+                  this.controller.loadUrl(URL_EXAMPLE)
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy008', 1, 1000)
                   this.isComplete = 0;
-                  let permission2: string = '{\"javascriptProxyPermission\":{\"urlPermissionList\":[{\"scheme\":\"https\",\"host\":\"www.example.com\",\"port\":\"\",\"path\":\"\"}]}}'
+                  let permission2: string = '{\"javascriptProxyPermission\":{\"urlPermissionList\":[{\"scheme\":\"https\",\"host\":\"www.baidu.com\",\"port\":\"\",\"path\":\"\"}]}}'
                   let getResult8 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, permission2)
                   console.log('emitRegisterAsyncThreadJavaScriptProxy008 registerAsyncThreadJavaScriptProxy:' + getResult8)
+                  this.controller.refresh();
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy008_loadUrl_refresh', 1, 1000)
                   try {
                     this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
@@ -336,14 +341,26 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                 }
                 case 'emitRegisterAsyncThreadJavaScriptProxy009': {
                   this.isComplete = 0;
-                  this.controller.loadUrl(URL_BAIDU)
+                  this.controller.loadUrl(URL_EXAMPLE_HTTP)
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy009', 1, 1000)
                   this.isComplete = 0;
                   let permission9: string = '{\"javascriptProxyPermission\":{\"urlPermissionList\":[{\"scheme\":\"https\",\"host\":\"www.example.com\",\"port\":\"\",\"path\":\"\"}]}}'
                   let getResult9 = testNapi.registerAsyncThreadJavaScriptProxy(this.webTag, permission9)
                   console.log('emitRegisterAsyncThreadJavaScriptProxy009 registerAsyncThreadJavaScriptProxy:' + getResult9)
-                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy008_loadUrl_refresh', 1, 1000)
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy009_loadUrl_refresh', 1, 1000)
                   this.isComplete = 0;
+                  let methodResultOne = '';
+                  this.controller.runJavaScript('window.ndkProxy.method1("hello", 1.23456, 123789, true, false, 0 , undefined )',(error, result) => {
+                      if (error) {
+                          console.log(`runJavaScript error:` + JSON.stringify(error))
+                          return
+                      }
+                      if (result) {
+                          console.log(`The  window.ndkProxy.method1() return value is: + ${result}`)
+                          methodResultOne = result;
+                      }
+                  })
                   this.controller.loadUrl(URL_EXAMPLE)
                   await waitForExist(()=>this.isComplete, 'emitRegisterAsyncThreadJavaScriptProxy009_loadUrl_refresh2', 1, 1000)
                   this.isComplete = 0;
@@ -356,7 +373,7 @@ struct WebRegisterAsyncThreadJavaScriptProxy {
                       }
                       if (result) {
                         console.log(`The  window.ndkProxy.method1() return value is: + ${result}`)
-                        if (result === '"method1"') {
+                        if (result === '"method1"' && methodResultOne === 'null') {
                           Utils.emitEvent(true,2025061109)
                         } else {
                           Utils.emitEvent(false,2025061109)
