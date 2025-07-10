@@ -488,16 +488,16 @@ export default function builtinsBytePrototypebTest() {
       })
 
     /**
-     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2200
-     * @tc.name builtinsBytePrototypebTest2200
+     * @tc.number SUB_BUILTINS_BYTE_PROTOTYPEB_TEST_2201
+     * @tc.name builtinsBytePrototypebTest2201
      * @tc.desc test public constructor(value: byte) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('builtinsBytePrototypebTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('builtinsBytePrototypebTest2201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'builtinsBytePrototypebTest1220'
+        const caseName = 'builtinsBytePrototypebTest2201'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(-99);
         expect(byte1.toString()).assertEqual('-99');
