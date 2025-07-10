@@ -115,22 +115,22 @@ describe('onRelease_js_test',async () => {
    });
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0100
-   * @tc.name test_Backup_onRelease_001
+   * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0200
+   * @tc.name test_Backup_onRelease_002
    * @tc.desc Test onRelease() interfaces
    * @tc.size MEDIUM
    * @tc.type Function
    * @tc.level Level 1
    * @tc.require
    */
-   it("test_Backup_onRelease_001", Level.LEVEL1, () => {
+   it("test_Backup_onRelease_002", Level.LEVEL1, () => {
       try {
          let backupext = new MyBackupExtAbility();
          backupext.onRelease(2);
          console.log('restore-onRelease run ok');
          expect(true).assertTrue();
       } catch (error) {
-         console.info(`test_Backup_onRelease_001 error: ${JSON.stringify(error)}`);
+         console.info(`test_Backup_onRelease_002 error: ${JSON.stringify(error)}`);
          expect(false).assertTrue();
       }
    });
