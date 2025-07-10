@@ -103,3 +103,4 @@ export const AvPlayerErrorSetPlaybackRate: (a:number) => number;
 export const AvPlayerCompleteSetPlaybackRate: (a:number) => NdkUser;
 export const AvPlayerSetPlaybackRateBeforePause: (a:number) => number;
 export const CheckAvPlayerPlaybackRate: (a:NdkUser) => number;
+export const setup: (filePath: string, type: number, offset: number, size: number) => number;
