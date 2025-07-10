@@ -1564,7 +1564,7 @@ export default function objectStoreTestV9() {
      * @tc.size: MediumTest
      * @tc.level: Level 2
      */
-    it('V9testbindAssetStore009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('V9testbindAssetStore009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* V9testbindAssetStore009 start *************");
       let g_object = distributedObject.create(context, {
         title: "bindAssettest-title",
@@ -1581,7 +1581,7 @@ export default function objectStoreTestV9() {
         }
       });
       expect(g_object == undefined).assertEqual(false);
-      await g_object.setSessionId("sessionBA8");
+      await g_object.setSessionId("session009");
       let asset1: commonType.Asset = {
         name: "name1",
         uri: "uri1",
@@ -1601,12 +1601,11 @@ export default function objectStoreTestV9() {
         assetName: "asset1"
       };
       try {
-        g_object.bindAssetStore("asset009", null);
+        await g_object.bindAssetStore("asset009", null);
         expect().assertFail();
       } catch (error) {
         console.info(`V9testbindAssetStore009 err is: ${error.code} and msg is: ${error.message}`);
-        expect(error.code == 401).assertTrue();
-        done();
+        expect(error.code).assertEqual('401');
       }
     })
 
