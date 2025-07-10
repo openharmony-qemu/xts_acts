@@ -39,7 +39,6 @@ group("bundlemanager") {
       "actsbundlemanagertest:ActsBundleManagerTest",
       "actsbundlemanagertestcaseAddition:ActsbundlemgrcaseAdditionEtsTest",
       "actsbundlenativeninthapitest:ActsBundleNativeNinthApiTest",
-      "actsbundlenativetest:ActsBundleNativeTest",
       "actsbundlenativetwotest:ActsBundleNativeTwoTest",
       "actsbundleshortcuttest:ActsBundleShortCutTest",
       "sceneProject/bmsaccesstokenfive:bmsAccessTokenTest5",
