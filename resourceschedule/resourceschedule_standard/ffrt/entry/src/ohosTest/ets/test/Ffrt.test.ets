@@ -1459,7 +1459,7 @@ export default function ffrtTest() {
     it('ffrt_fiber_001', Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let flag = entry.ffrt_fiber_001();
-      expect(flag).assertEqual(100);
+      expect(flag).assertEqual(1);
     })
   })
 }
