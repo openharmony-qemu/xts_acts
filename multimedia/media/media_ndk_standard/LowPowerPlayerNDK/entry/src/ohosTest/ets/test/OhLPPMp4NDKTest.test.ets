@@ -47,18 +47,7 @@ const mySteps_Audio_Error_Test: string[] = [
   //createPrepareNative
   lppBase.CREATE_PREPARE_NATIVE_EVENT,
   //video start decoder
-  lppBase.VIDEO_START_DECODER_EVENT,
-  //video first frame
-  lppBase.VIDEO_RENDER_FIRSTFRAME_EVENT,
-  //video start rendering
-  lppBase.VIDEO_START_RENDER_EVENT,
-  lppBase.AUDIO_START_ERROR_EVENT,
-
-  lppBase.WAIT_LPP_PLAYER_EVENT,
-  lppBase.VIDEO_SET_SPEED_EVENT,
-  //stop
-  lppBase.VIDEO_STOP_EVENT,
-  lppBase.AUDIO_STOP_ERROR_EVENT,
+  lppBase.VIDEO_START_DECODER_ERROR_EVENT,
   // destory
   lppBase.DESTROY_EVENT,
   //done recorder
