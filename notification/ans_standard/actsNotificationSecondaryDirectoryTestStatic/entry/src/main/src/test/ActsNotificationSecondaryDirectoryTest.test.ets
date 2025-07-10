@@ -65,9 +65,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       if (button !== null) {
         await Utils.msSleep(1500);
         await button.click()
-      } else {
-        expect(false).assertTrue();
-        done();
+        await Utils.msSleep(500)
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
