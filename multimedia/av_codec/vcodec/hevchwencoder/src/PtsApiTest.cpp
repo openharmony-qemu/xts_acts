@@ -87,8 +87,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -130,8 +134,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -173,8 +181,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -216,8 +228,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -259,8 +275,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;
@@ -302,8 +322,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
     bool surfaceMode = false;
     vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
      bitrateMode, bitRate, surfaceMode);
-    std::string input = inputDir;
-    std::string output = outputDir;
+    char *input = new char[1024];
+    char *output = new char[1024];
+    std::snprintf(input, 1024, "%s", inputDir.c_str());
+    input[inputDir.length() -1] = '\0';
+    std::snprintf(output, 1024, "%s", outputDir.c_str());
+    output[inputDir.length() -1] = '\0';
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
     vEncSample->OUT_DIR = output;

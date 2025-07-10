@@ -55,8 +55,8 @@ class VEncAPI11Sample : public NoCopyable {
 public:
     VEncAPI11Sample() = default;
     ~VEncAPI11Sample();
-    std::string INP_DIR = "/data/test/media/1280_720_nv.yuv";
-    std::string OUT_DIR = "/data/test/media/VEncTest.h265";
+    const char *INP_DIR = "/data/test/media/1280_720_nv.yuv";
+    const char *OUT_DIR = "/data/test/media/VEncTest.h265";
     const char *roiInfo = "0,0-128,64=-4;100,200-300,400=3";
     uint32_t DEFAULT_WIDTH = 1280;
     uint32_t DEFAULT_HEIGHT = 720;
@@ -133,7 +133,7 @@ public:
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
     int32_t LoadTimeStampData(std::string filePath, std::string &inputDir,
-                            std::string outputDir, uint32_t &w, uint32_t &h,
+                            std::string &outputDir, uint32_t &w, uint32_t &h,
                             uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode);
     VEncAPI11Signal *signal_;
     uint32_t errCount = 0;

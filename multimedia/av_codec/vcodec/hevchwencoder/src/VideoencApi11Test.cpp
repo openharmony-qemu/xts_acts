@@ -294,8 +294,8 @@ int32_t VEncAPI11Sample::OpenFile()
         (void)OH_VideoEncoder_Stop(venc_);
         return AV_ERR_UNKNOWN;
     }
-    inFile_->open(INP_DIR.c_str(), ios::in | ios::binary);
-    cout << "input file: " << INP_DIR.c_str() << endl;
+    inFile_->open(INP_DIR, ios::in | ios::binary);
+    cout << "input file: " << INP_DIR << endl;
     if (!inFile_->is_open()) {
         ret = OpenFileFail();
     }
@@ -354,7 +354,7 @@ int32_t VEncAPI11Sample::StartVideoEncoder()
 void VEncAPI11Sample::readMultiFilesFunc()
 {
     if (!readMultiFiles) {
-        inFile_->open(INP_DIR.c_str(), ios::in | ios::binary);
+        inFile_->open(INP_DIR, ios::in | ios::binary);
         if (!inFile_->is_open()) {
             OpenFileFail();
         }
@@ -792,7 +792,7 @@ void VEncAPI11Sample::OutputFuncFail()
 
 void VEncAPI11Sample::OutputFunc()
 {
-    FILE *outFile = fopen(OUT_DIR.c_str(), "wb");
+    FILE *outFile = fopen(OUT_DIR, "wb");
     while (g_flagValue) {
         if (!isRunning_.load()) {
             break;
@@ -895,7 +895,7 @@ void VEncAPI11Sample::StopOutloop()
 }
 
 int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir,
-                                           std::string outputDir, uint32_t &w, uint32_t &h,
+                                           std::string &outputDir, uint32_t &w, uint32_t &h,
                                            uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
 {
     std::ifstream file(filePath);
