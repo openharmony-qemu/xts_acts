@@ -1,9 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/Scroll/ScrollEffectEdge",
-    "MainAbility/pages/Swiper/SwiperOnSelected",
-    "MainAbility/pages/Tabs/TabBarComponentContent",
-    "MainAbility/pages/Tabs/TabsOnSelected"
-  ]
-}
