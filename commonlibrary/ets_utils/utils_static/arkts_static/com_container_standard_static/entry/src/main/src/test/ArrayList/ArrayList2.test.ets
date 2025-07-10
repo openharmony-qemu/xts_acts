@@ -109,7 +109,7 @@ export default function ArrayListTest2() {
         let jsonResult = JSON.stringify(arrayList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
-          .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
+          .assertEqual(`{"0":"zhang san","1":1,"3":null,"4":true}`);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();

@@ -1257,7 +1257,7 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         treeSet.popFirst();
         let result = treeSet.has("sparrow");
-        expect(String(result)).assertFalse();
+        expect(result).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1393,7 +1393,7 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         treeSet.popLast();
         let result = treeSet.has("squirrel");
-        expect(String(result)).assertFalse();
+        expect(result).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1560,14 +1560,14 @@ export default function TreeSetTest2() {
         treeSet.add("a");
         treeSet.clear();
         let result = treeSet.has("a");
-        expect(String(result)).assertFalse();
+        expect(result).assertFalse();
         let resultOne = treeSet.has("b");
         expect(resultOne).assertFalse();
         let resultTwo = treeSet.has("c");
         expect(resultTwo).assertFalse();
         let resultThree = treeSet.has("d");
         expect(resultThree).assertFalse();
-        expect(String(treeSet.length)).assertEqual('0');
+        expect(treeSet.length).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1974,7 +1974,7 @@ export default function TreeSetTest2() {
         treeSet.add('CCC');
         treeSet.add('DDD');
         treeSet.forEach((value): void => {
-          expect(String(treeSet.has(value))).assertTrue();
+          expect(treeSet.has(value)).assertTrue();
         });
         treeSet.clear();
         let length = treeSet.length;
@@ -2002,7 +2002,7 @@ export default function TreeSetTest2() {
         treeSet.add('CCC');
         treeSet.add('DDD');
         treeSet.forEach((value, index, treeSet: TreeSet<string>): void => {
-          expect(String(treeSet.has(value))).assertTrue()
+          expect(treeSet.has(value)).assertTrue()
         });
         treeSet.clear();
         let length = treeSet.length;
