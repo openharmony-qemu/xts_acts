@@ -96,7 +96,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_tanh_Func_001", 0, () => {
+    it("Decimal_tanh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -110,13 +110,13 @@ export default function Decimal4Test() {
       test_tanh_001('-0', 20, 4, '-0');
       test_tanh_001('Infinity', 40, 4, '1');
       test_tanh_001('-Infinity', 40, 4, '-1');
-      test_tanh_001('0.20269', 1, 0, '0.2');
+      test_tanh_001('0.20269', 1, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.2');
       test_tanh_001('0.42', 6, 5, '0.39693');
       test_tanh_001('-0.35339119', 8, 1, '-0.33937958');
       test_tanh_001('0.153', 8, 1, '0.15181721');
       test_tanh_001('0.26', 1, 1, '0.2');
       test_tanh_001('-0.5', 4, 4, '-0.4621');
-      test_tanh_001('0.5301167511', 10, 0, '0.4854703307');
+      test_tanh_001('0.5301167511', 10, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.4854703307');
       test_tanh_001('0.1', 6, 2, '0.099668');
       test_tanh_001('-0.1947', 8, 6, '-0.19227651');
       test_tanh_001('0.62055680437965736490569245685566214324448351639', 9, 3, '0.551515589');
@@ -133,23 +133,24 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_tanh_Func_002", 0, () => {
+    it("Decimal_tanh_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_tanh_001('0.5499', 3, 2, '0.501');
-      test_tanh_001('0.27', 4, 0, '0.2637');
-      test_tanh_001('-0.20874419', 6, 0, '-0.205765');
-      test_tanh_001('-0.9', 9, 0, '-0.716297871');
-      test_tanh_001('-0.66', 10, 0, '-0.5783634131');
+      test_tanh_001('0.27', 4, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.2637');
+      test_tanh_001('-0.20874419', 6, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.205765');
+      test_tanh_001('-0.9', 9, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.716297871');
+      test_tanh_001('-0.66', 10, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.5783634131');
       test_tanh_001('0.5', 8, 1, '0.46211715');
       test_tanh_001('-0.8730255767917122199088529', 5, 1, '-0.7029');
       test_tanh_001('-0.3', 6, 4, '-0.291313');
       test_tanh_001('0.0772947', 5, 6, '0.077141');
       test_tanh_001('-0.1', 5, 4, '-0.099668');
       test_tanh_001('-0.5530719666927749554276959', 5, 2, '-0.50281');
-      test_tanh_001('-0.76695591420216557012230781', 7, 0, '-0.6451559');
+      test_tanh_001('-0.76695591420216557012230781', 7, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '-0.6451559');
       test_tanh_001('-0.28931973768077305489831982152049', 1, 3, '-0.3');
       test_tanh_001('-0.631664433177866683720536966087102', 3, 5, '-0.559');
       test_tanh_001('0.4647093', 9, 2, '0.433914635');
-      test_tanh_001('-0.293097', 2, 0, '-0.29');
+      test_tanh_001('-0.293097', 2, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.29');
       test_tanh_001('0.39968', 6, 2, '0.379676');
       test_tanh_001('-0.56478323116711527', 10, 5, '-0.5115177648');
       test_tanh_001('-0.60158', 2, 2, '-0.53');
@@ -167,10 +168,11 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_tanh_Func_004", 0, () => {
+    it("Decimal_tanh_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_tanh_001('0.32', 10, 1, '0.3095069212');
-      test_tanh_001('0.478', 9, 0, '0.444640449');
-      test_tanh_001('-0.2127882653536975970432160655692', 1, 0, '-0.3');
+      test_tanh_001('0.478', 9, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.444640449');
+      test_tanh_001('-0.2127882653536975970432160655692', 1, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '-0.3');
       test_tanh_001('0.668', 9, 2, '0.583662747');
       test_tanh_001('0.1054319768894549379656717', 6, 5, '0.105043');
       test_tanh_001('-0.2159146041935965', 6, 3, '-0.212621');
@@ -178,18 +180,22 @@ export default function Decimal4Test() {
       test_tanh_001('0.35', 10, 1, '0.3363755443');
       test_tanh_001('0.3', 3, 2, '0.292');
       test_tanh_001('0.38276035385122733156525463', 1, 1, '0.3');
-      test_tanh_001('-0.751550287803356896438162105272645', 31, 0, '-0.6360729215504306567971084126656');
+      test_tanh_001('-0.751550287803356896438162105272645', 31, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '-0.6360729215504306567971084126656');
       test_tanh_001('0.2958626290477698111067628542902641468424491987425491552317600599757584700042', 33, 4,
         '0.287521804057197325874867763687105');
       test_tanh_001('-0.1624241525', 60, 5, '-0.161010729348804314083016365256060397030839070169914629959771');
-      test_tanh_001('-0.3246133', 23, 0, '-0.3136723151870226491541');
+      test_tanh_001('-0.3246133', 23, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.3136723151870226491541');
       test_tanh_001('0.7574510519751273', 52, 2, '0.6395731248592590736391239000170979980280431536354096');
       test_tanh_001('0.52677087', 9, 5, '0.482908861');
-      test_tanh_001('0.01504298596871499648833185964254026', 19, 0, '0.01504185137182836531');
+      test_tanh_001('0.01504298596871499648833185964254026', 19, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '0.01504185137182836531');
       test_tanh_001('-0.66543541401805503420777', 66, 4,
         '-0.581969286944420744706095110187298812957954793212156080645254407938');
-      test_tanh_001('0.016497376645717697522865', 24, 0, '0.0164958801477289569077129');
-      test_tanh_001('0.79228702880353249365', 45, 0, '0.659702681921377249169326566285194050648896939');
+      test_tanh_001('0.016497376645717697522865', 24, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '0.0164958801477289569077129');
+      test_tanh_001('0.79228702880353249365', 45, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '0.659702681921377249169326566285194050648896939');
       test_tanh_001('-0.32047744', 35, 3, '-0.30993856125352144923141124282332793');
       test_tanh_001('0.78607526651121', 28, 5, '0.6561799353543745431928429623');
       test_tanh_001('-0.130782154855323731897567604029773075178369276247566438028657144457559876456195235141546572', 80,
@@ -208,10 +214,10 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    // it("Decimal_tanh_Func_005", 0, () => {
+    // it("Decimal_tanh_Func_005",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   test_tanh_001('0.2002343534718092035', 32, 2, '0.19760053356302078332195382537244');
     //   test_tanh_001('0.4316', 73, 2, '0.4066575843743152347702788188048559212155195983052915894345749387848887185');
-    //   test_tanh_001('0.0297026', 47, 0, '0.029693868096821512437865399347977108636469769826');
+    //   test_tanh_001('0.0297026', 47,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.029693868096821512437865399347977108636469769826');
     //   test_tanh_001('0.53196297398345769364909690685747648864854530119854', 56, 1,
     //     '0.48688016788770163925717272861291678368256194265983517854');
     //   test_tanh_001('-0.86540495196', 57, 4, '-0.699031973057205236065847483268440159156292260431585544883');
@@ -241,7 +247,7 @@ export default function Decimal4Test() {
     //   test_tanh_001('-0.2803292668048951604355466058306354327579221441238441133669431820221412822995', 69, 4,
     //     '-0.2732097971115351269678804248529217531253775527585485646027761857336');
     //   test_tanh_001('0.209183180524407073852661413214033433796240391516313838917745903006946400344329579472178537414263299679577464721107342550013722994343049',
-    //     3, 0, '0.207');
+    //     3,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.207');
     //   test_tanh_001('-0.21323411415637447', 100, 3,
     //     '-0.2100599987497949082863636944922996664334987508835646248560687414181626030840090573861293885022227807');
     //   test_tanh_001('-0.934150529137316227495052114810154290011321681684010680698706327964978851230256', 97, 1,
@@ -265,7 +271,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_tanh_Func_006", 0, () => {
+    it("Decimal_tanh_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -292,7 +298,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_random_Func_007", 0, () => {
+    it("Decimal_random_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let maxDigits = 100;
       let sd: number = 0;
       let r: Decimal = new Decimal(0);
@@ -316,7 +322,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_random_Func_008", 0, () => {
+    it("Decimal_random_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let maxDigits = 100;
       let sd: number = 0;
       let r: Decimal = new Decimal(0);
@@ -340,7 +346,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_sinh_Func_009", 0, () => {
+    it("Decimal_sinh_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -356,9 +362,9 @@ export default function Decimal4Test() {
       test_sinh_001('-Infinity', 40, 4, '-Infinity');
       test_sinh_001('-0.01117212161', 7, 3, '-0.01117236');
       test_sinh_001('-0.01', 3, 6, '-0.01');
-      test_sinh_001('0.4855939', 4, 0, '0.505');
+      test_sinh_001('0.4855939', 4, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.505');
       test_sinh_001('-0.35', 4, 6, '-0.3572');
-      test_sinh_001('0.595', 3, 0, '0.631');
+      test_sinh_001('0.595', 3, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '0.631');
       test_sinh_001('-0.7', 10, 1, '-0.7585837018');
       test_sinh_001('0.477765550220420530146451989244265', 1, 5, '0.5');
       test_sinh_001('-0.6', 4, 6, '-0.6367');
@@ -380,7 +386,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_sinh_Func_010", 0, () => {
+    it("Decimal_sinh_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_sinh_001('0.9', 9, 5, '1.02651673');
       test_sinh_001('0.01952', 4, 6, '0.01952');
       test_sinh_001('-0.7', 6, 5, '-0.758584');
@@ -422,7 +428,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_sinh_Func_011", 0, () => {
+    it("Decimal_sinh_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_sinh_001('0.966', 2, 1, '1.1');
       test_sinh_001('-0.2', 6, 4, '-0.201336');
       test_sinh_001('0.3', 5, 6, '0.30452');
@@ -430,7 +436,8 @@ export default function Decimal4Test() {
       test_sinh_001('0.7409761', 8, 4, '0.81066696');
       test_sinh_001('-0.09', 9, 6, '-0.0901215492');
       test_sinh_001('-0.18', 10, 4, '-0.1809735759');
-      test_sinh_001('-0.5', 74, 0, '-0.5210953054937473616224256264114915591059289826114805279460935764528022509');
+      test_sinh_001('-0.5', 74, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '-0.5210953054937473616224256264114915591059289826114805279460935764528022509');
       test_sinh_001('0.949452626313209516617699142908712', 60, 1,
         '1.09867096195815727081614237630458180228025051136935234032153');
       test_sinh_001('-0.82630505', 54, 4, '-0.923598615474838199854541207197320474034631988093767029');
@@ -449,7 +456,8 @@ export default function Decimal4Test() {
       test_sinh_001('-0.5481208052771', 80, 6,
         '-0.57598196281877562249156649817140676025943322140952007665313949431943795521753859');
       test_sinh_001('0.4658', 43, 2, '0.4828277558817488705330396156695883903876349');
-      test_sinh_001('0.658924', 67, 0, '0.7076519258213409489258117150888493713909348882371351431016717177769');
+      test_sinh_001('0.658924', 67, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '0.7076519258213409489258117150888493713909348882371351431016717177769');
       test_sinh_001('0.84095', 76, 4, '0.9436339889105945408359964397732399439736824767663826815978864604057978720873');
       test_sinh_001('0.1', 42, 1, '0.10016675001984402582372938352190502351492');
     });
@@ -461,7 +469,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_sinh_Func_012", 0, () => {
+    it("Decimal_sinh_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_sinh_001('-0.546469309180216992488477103741682161392', 53, 0,
         '-0.57407689286989186234869758011224724765162964238150871');
       test_sinh_001('0.952940960228', 79, 6,
@@ -479,12 +487,14 @@ export default function Decimal4Test() {
         '0.395517999377232409663582197928235951630498131157951753386415315480929149180554295455429916');
       test_sinh_001('-0.54290785843486103750513205980437253195531977198208721625688182147166538076323037457917540157093128639',
         47, 6, '-0.56997393244891117340616510127151254831177604424');
-      test_sinh_001('-0.557397920603136432530648049076469730271228686196969657', 23, 0, '-0.58671285120863734551043');
+      test_sinh_001('-0.557397920603136432530648049076469730271228686196969657', 23,
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, '-0.58671285120863734551043');
       test_sinh_001('-0.116426108886043214339286002636572559104915423316062689133928015970375', 86, 0,
         '-0.11668931394827265385287124886310892715353176113654298509501455004648909379387424934137');
       test_sinh_001('0.20004668', 65, 4, '0.20138361947662140883950941306502243833641683553233187922633602303');
       test_sinh_001('-0.72854338143449469754924045207742119688876235959260851289818192195120823675633348027917164866022227116150939180735340401518132565983221327345338239572304554973',
-        57, 0, '-0.794724373946660205913430120299005955752529862100864743743');
+        57, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        '-0.794724373946660205913430120299005955752529862100864743743');
       test_sinh_001('0.7075348682409645', 33, 3, '0.768062858516298468179764221964258');
       test_sinh_001('0.9656450627407202186276140853108319189098662197785614356229', 112, 6,
         '1.122871917243193329250848114954520140832952763020717131988745064541821469254295854275194543068093878175092993757');
@@ -508,7 +518,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_sinh_Func_013", 0, () => {
+    it("Decimal_sinh_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -532,9 +542,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_014", 0, () => {
+    it("Decimal_div_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -571,9 +581,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_015", 0, () => {
+    it("Decimal_div_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_002('999.5', 1, '999', 3, 8);
       test_div_002('-999.5', 1, '-1000', 3, 8);
       test_div_001('-2.8', '3', '-1', 1, 3);
@@ -614,11 +624,11 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_016", 0, () => {
+    it("Decimal_div_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('1', '1', '1', 13, 6);
-      Decimal.set({ toExpNeg: 0, toExpPos: 0 });
+      Decimal.set({ toExpNeg: TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, toExpPos: 0 });
       test_div_001('-9.0201582007891419174890e+493625', '-5.50622769083719199346231074389e-8',
         '1.638173847369118854685833779858335057671769579218908745636679e+493633', 61, 4);
       test_div_001('5.8729543161021068260124718708021832883057695897e+49274', '-8.708403405379587884587853336e+41461',
@@ -669,9 +679,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_017", 0, () => {
+    it("Decimal_div_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-9.046986850521113233994088030748718263e+649192', '7.42739066e+75',
         '-1.2180572242205330874563272306385885272661826030839207264749e+649117', 59, 3);
       test_div_001('-7.0140966397407758056324106e-567327', '53259.7776732322775987808330561104626988',
@@ -730,9 +740,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_018", 0, () => {
+    it("Decimal_div_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-1.8252099405739206816451704100248812959e+1186', '-3.42243088142742109427052805672e-9',
         '5.333080502746823979506640819479922185269986904173244526721149958304591733214947e+1194', 79, 4);
       test_div_001('-2.26794496381269349400848879905354658898089516910667e+492', '6.9657557700813802540e-7189957',
@@ -796,9 +806,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_019", 0, () => {
+    it("Decimal_div_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('2.8138856089460929272361416217404739394197772e-5864',
         '4.120358854405098750175445168459012485500020673033832e+13388',
         '6.829224609739396965225736675346830773941251044978533929261416840376667913341292696644e-19253', 85, 2);
@@ -871,9 +881,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_020", 0, () => {
+    it("Decimal_div_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('3.05259816713008214309752e-34', '9.072438477569600795244081994373265659e+3600595',
         '3.3646942601784797867441e-3600630', 23, 5);
       test_div_001('3.5933388527257947e-69', '7.1641505002922391424671237937068824e+93521',
@@ -922,9 +932,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_021", 0, () => {
+    it("Decimal_div_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-3.09307e+5347', '-0.8984736838504547635274923785',
         '3.442582744042642266786782278260624614507789e+5347', 43, 3);
       test_div_001('1.278957083641480297045115728536640377e-882', '-9.1829578959430558e-90519',
@@ -989,9 +999,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_022", 0, () => {
+    it("Decimal_div_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('5.930990738383053010721102273e-97036',
         '-3.65966511964763315813782962456128293763264222893735645e+500',
         '-1.6206375568467619650484357428145577548720152013649725255302838490585441e-97536', 73, 0);
@@ -1063,9 +1073,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_023", 0, () => {
+    it("Decimal_div_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-0.902795617323001343413834248792',
         '-1.9622832254556375292432978323544368070474621301919288930e-7605547',
         '4.60074063525347791647263727570223375233476678038450676053498613441846299e+7605546', 72, 5);
@@ -1134,9 +1144,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_024", 0, () => {
+    it("Decimal_div_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-4.5117823143987985011645809838922723', '-6.00323433799578982350060902993223313807644382e+4086',
         '7.515585866509885184268837828897735923269261979645976910830709421410102482169159766563263e-4087', 88, 3);
       test_div_001('-7.4593069795167803409689743730979615453017626076532e-14',
@@ -1209,9 +1219,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_025", 0, () => {
+    it("Decimal_div_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-21', '-3.70850481417723207e-614', '5.662659495470833e+614', 16, 0);
       test_div_001('-9.58661405316543228368760763975257686567373339e-7358831', '-2.313910171251627663e+3318',
         '4.1430363945286144463766335205684117955699333404499322374415e-7362149', 59, 1);
@@ -1291,9 +1301,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_026", 0, () => {
+    it("Decimal_div_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('9.39182367043563579687809217392347e+6340', '-4.250798904654189760777762103e-30', '-2.20942e+6370',
         6, 2);
       test_div_001('5.231864e-4086', '-3.28882441273043192689015188108526433185e+69',
@@ -1368,9 +1378,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_027", 0, () => {
+    it("Decimal_div_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('983326.3529671', '4.94670376809815834641010722044433880038e+1258390',
         '1.9878415993063518243178667667199833409018125874458e-1258385', 50, 4);
       test_div_001('-4.75992158e-5024', '-5.74257395010042921477085748004249382743005431374588507872780e-74735',
@@ -1432,9 +1442,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_028", 0, () => {
+    it("Decimal_div_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('5.262694813393922563321996504321750944298404865e+575',
         '-5.27194871272972704640595467498038359604198471206982404550e-6428575',
         '-9.98244690940664904824180323510480234891254747217390046867982787938145121410706590862433793592286912e+6429149',
@@ -1484,9 +1494,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_029", 0, () => {
+    it("Decimal_div_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('7.4616536852330028276844750455006760e-8213273',
         '-8.2616947301811015785381280075461055528562843038319069159e-89', '-9.032e-8213185', 4, 5);
       test_div_001('-7.2684620847414561029923060748011961389878918997817e+87108', '1.948949090678718996919e-536318',
@@ -1545,9 +1555,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_030", 0, () => {
+    it("Decimal_div_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-7016364441823846934204633960.3246656336726794986082', '6.267890414729140882953463043550540194e+71',
         '-1.1194140257040614563483e-44', 23, 0);
       test_div_001('3.81096696335100355559824657758339e-27', '-2.66e+499444',
@@ -1602,9 +1612,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_031", 0, () => {
+    it("Decimal_div_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('6.915626408396995959757568961988119758281756464113147402772e+286302',
         '-3162.5608939936388120318745',
         '-2.186717233344410689191305768633537907690605443288196266993964591605791604315e+286299', 76, 4);
@@ -1677,9 +1687,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_032", 0, () => {
+    it("Decimal_div_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('6.90798422701265445098778106e-24', '4.0360722484987e+722897',
         '1.7115610924909040265927784803960678188103834405789e-722921', 51, 5);
       test_div_001('-1.6717449184931518514025394010707104237e+51', '-2.6045e-900585',
@@ -1736,9 +1746,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_033", 0, () => {
+    it("Decimal_div_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('8.129451975131457857e-74', '8.869163209722283113995855593533903424761637e+93582',
         '9.165974042e-93657', 10, 5);
       test_div_001('115297180.9500040358261890643216883791745981094374599890744', '1.6156778e+59619',
@@ -1804,9 +1814,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_034", 0, () => {
+    it("Decimal_div_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('6.9873812870178255895e+27249', '-7.07149107988029991181662887992194025064562374268e+95',
         '-9.881057909976324172662205032137680894515657641325e+27153', 49, 0);
       test_div_001('2.1152163290656455693673204267197398831e-61',
@@ -1872,9 +1882,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_035", 0, () => {
+    it("Decimal_div_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-0.658690924922719154496897934506963532092562393', '3.178280915e-896',
         '-2.0724754750720930358570835596102855247222928153284399e+895', 53, 1);
       test_div_001('3.9815061582932841373774251441439598018e-8672718',
@@ -1932,9 +1942,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_036", 0, () => {
+    it("Decimal_div_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('2.9517e+521', '-7.89119997561653605330960087176194e-3494',
         '-3.74049575365042621551648678541640064830712526e+4014', 45, 0);
       test_div_001('8.867967317389959920447289565924941031782833389334349e-7', '-2.15597467819795821286944654e-778',
@@ -1987,9 +1997,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_037", 0, () => {
+    it("Decimal_div_Func_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('2.33745385599444758369211913838826364580840764e-94684',
         '2.173362335414754919677478542441835426383774721030332800e+611330',
         '1.0755012258682481304453563089276001858000756370506149746287776676100234367527278276983679818e-706014', 92, 5);
@@ -2048,9 +2058,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_038", 0, () => {
+    it("Decimal_div_Func_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-4.624166e-70', '-9.3289351920', '4.9567993611590736410381100222783067652e-71', 39, 2);
       test_div_001('3.095934977386501436397164003e+8543046', '-0.8113213089353323344967667936292695786579663',
         '-3.8159172491712132469758486541178761750384395407780130776116031191500742554815487e+8543046', 81, 2);
@@ -2099,9 +2109,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_039", 0, () => {
+    it("Decimal_div_Func_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-5.8537208685979961804257724819363504650619833457e-406', '2.70006233530852421326150389e-2810',
         '-2.167994713325430435716938510175728970929943257751040650986980622372211e+2404', 70, 5);
       test_div_001('3334.78107253269059738584567915642232492818', '-8972180632559.4892',
@@ -2188,9 +2198,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_040", 0, () => {
+    it("Decimal_div_Func_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('1.598566217012987004339943101673162639730215928921906639e-635',
         '-5.5152130078801634771423297e-35708', '-2.89846686742e+35072', 12, 2);
       test_div_001('2.703209117229891481438995327412080901452327075200757612e-34985',
@@ -2246,9 +2256,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_041", 0, () => {
+    it("Decimal_div_Func_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('2.53415295977175651933249676513e-969125', '-5.9177478931779603437e-13',
         '-4.28229286802358325518944712427e-969113', 30, 2);
       test_div_001('2045768316.447', '8.667e+14375', '2.3604111185496711664935964e-14367', 28, 1);
@@ -2314,9 +2324,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_042", 0, () => {
+    it("Decimal_div_Func_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-6.9596693490802999514161313229487402867972607764597969656', '0.285226683055',
         '-2.440048481627601891131e+1', 22, 1);
       test_div_001('8213460144.175071054072894126373913199631949943627338',
@@ -2378,9 +2388,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_043", 0, () => {
+    it("Decimal_div_Func_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('8.63344450591553536794379391357748211859613547151595216686882e+631007', '-9.306113242e-9',
         '-9.2771754237326476839618431043131315880414852483652510521092367339150846752612512428e+631015', 83, 3);
       test_div_001('6.32284303943007431017430713697567343622998485776636892e-18204',
@@ -2439,9 +2449,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_044", 0, () => {
+    it("Decimal_div_Func_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-1.4869439219432551169022982211734456823791811e-53821', '-4.753962373314970926600160e-174260',
         '3.127799097211614676184374590345322354170231441e+120438', 46, 0);
       test_div_001('-9842810715.9', '6.60e-1698463', '-1.4913349569545454e+1698472', 17, 1);
@@ -2507,9 +2517,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_045", 0, () => {
+    it("Decimal_div_Func_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('9.2e-326014121238', '-9.07e-76', '-1.0143329658214e-326014121162', 14, 4);
       test_div_001('-7.22327739417772967251812419997120919619633699046547e-6186894660293',
         '-6.3769027162794938112644712016423387e+15531292765228',
@@ -2565,9 +2575,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_046", 0, () => {
+    it("Decimal_div_Func_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('9.68468476476931178176001218812114617858e-9042', '-4.351426837802378087e-3922',
         '-2.22563428635293669783342668520694795499991487062628653382642814248e-5120', 66, 1);
       test_div_001('-6.673881203135270007501032890781676e+197', '-8.6130247e+5574477675', '7.74859173e-5574477479', 9,
@@ -2627,9 +2637,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_047", 0, () => {
+    it("Decimal_div_Func_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-4.4261203993578076655836e+787568578554',
         '-1.09996983956065779587019620309266550937270720011352e+59408794921163',
         '4.0238561460245650861475347988199477648605072309975919369249233277670985289138655590183690383863e-58621226342609',
@@ -2702,9 +2712,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_048", 0, () => {
+    it("Decimal_div_Func_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_div_001('-3.12121494951535774296813228065142594e-478824224292',
         '8.50191771196677938994457457569983125317092894e+3040', '-3.6711893189957913554e-478824227333', 20, 2);
       test_div_001('-3.905945148e-172570', '8.89926102560e-12918480850270',
@@ -2761,9 +2771,9 @@ export default function Decimal4Test() {
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_div_Func_049", 0, () => {
+    it("Decimal_div_Func_049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,

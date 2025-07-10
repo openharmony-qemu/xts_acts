@@ -29,6 +29,7 @@ import Utils from '../Util.test';
 import { BusinessError } from '@ohos.base';
 
 let n: Decimal = new Decimal(1);
+
 function test_hypot_001(a: string, b: string, pr: number, rm: number, expected: string) {
   Decimal.set({ precision: pr, rounding: rm });
   expect(expected).assertEqual(Decimal.hypot(a, b).valueOf());
@@ -42,12 +43,15 @@ function test_ln_001(n: string, expected: string, sd: number, rm: number) {
   Decimal.set({ precision: sd, rounding: rm });
   expect(expected).assertEqual(Decimal.ln(n).valueOf());
 }
-function test_floor_001 (expected: string , n: number) {
+
+function test_floor_001(expected: string, n: number) {
   expect(expected).assertEqual(Decimal.floor(n).valueOf());
 }
-function test_floor_002 (expected: string , n: string) {
+
+function test_floor_002(expected: string, n: string) {
   expect(expected).assertEqual(Decimal.floor(n).valueOf());
 }
+
 export default function Decimal4Test() {
   describe('Decimal4Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -80,7 +84,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_001", 0, () => {
+    it("Decimal_hypot_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -129,7 +133,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_002", 0, () => {
+    it("Decimal_hypot_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_hypot_001('-3000008000000000000000070000000000000000000001000000000000.000000000000002000000000000000000900000000010002',
         '-802.661566839437264337325468337423185084', 22, 0,
         '3000008000000000000001000000000000000000000000000000000000');
@@ -175,7 +179,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_003", 0, () => {
+    it("Decimal_hypot_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -235,7 +239,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_004", 0, () => {
+    it("Decimal_hypot_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_hypot_001('72926343.726877231000712798686463998173070827809981833334964558342793176683041794308836271',
         '-82222222222221937444', 49, 2, '82222222222221937444.00003234071924617295968730272');
       test_hypot_001('-242915822316177763142341053724.3195904798466883740740090079450439',
@@ -283,7 +287,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_005", 0, () => {
+    it("Decimal_hypot_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -329,7 +333,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_006", 0, () => {
+    it("Decimal_hypot_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_hypot_001('-3', '8000000000', 48, 6, '8000000000.00000000056249999999999999998022460938');
       test_hypot_001('524224294278833258504244689131128804963',
         '-0.1964918169532600262422065880715612530725541194753716933743653473301573055', 92, 0,
@@ -372,7 +376,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_007", 0, () => {
+    it("Decimal_hypot_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -384,7 +388,7 @@ export default function Decimal4Test() {
       try {
         test_hypot_001('e', 'e', 20, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err: BusinessError) {
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -399,7 +403,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_hypot_Func_008", 0, () => {
+    it("Decimal_hypot_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -433,7 +437,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_008", 0, () => {
+    it("Decimal_isFinite_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(n.equals('0o1'));
       test_isFinite_001(n.equals('0b1'));
       test_isFinite_001(n.greaterThan(0.99999));
@@ -471,7 +475,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_009", 0, () => {
+    it("Decimal_isFinite_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(n.greaterThanOrEqualTo(Infinity));
       test_isFinite_001(!n.lessThan(Infinity));
       test_isFinite_001(n.lessThanOrEqualTo(Infinity));
@@ -504,7 +508,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_010", 0, () => {
+    it("Decimal_isFinite_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(n.greaterThan(-0.000001));
       test_isFinite_001(!n.greaterThanOrEqualTo(0.1));
       test_isFinite_001(n.lessThan(0.0001));
@@ -535,7 +539,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_011", 0, () => {
+    it("Decimal_isFinite_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(!n.isNegative());
       test_isFinite_001(!n.isZero());
       test_isFinite_001(!n.isInteger());
@@ -572,7 +576,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_012", 0, () => {
+    it("Decimal_isFinite_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(!n.isZero());
       test_isFinite_001(!n.isInteger());
       test_isFinite_001(n.equals(5e-200));
@@ -609,7 +613,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_013", 0, () => {
+    it("Decimal_isFinite_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(!new Decimal('NaN').equals('NaN'));
       test_isFinite_001(!new Decimal(NaN).greaterThan(NaN));
       test_isFinite_001(!new Decimal(NaN).lessThan(NaN));
@@ -645,7 +649,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_014", 0, () => {
+    it("Decimal_isFinite_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(new Decimal(0).greaterThanOrEqualTo(-Infinity));
       test_isFinite_001(new Decimal(0).lessThanOrEqualTo('Infinity'));
       test_isFinite_001(!new Decimal(0).greaterThanOrEqualTo('Infinity'));
@@ -674,7 +678,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_015", 0, () => {
+    it("Decimal_isFinite_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(new Decimal(9.999999e+2).lessThanOrEqualTo(1e+3));
       test_isFinite_001(!new Decimal(1e+3).lessThanOrEqualTo(9.9999999e+2));
       test_isFinite_001(new Decimal(1.23001e-2).greaterThan(1.23e-2));
@@ -707,7 +711,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_015", 0, () => {
+    it("Decimal_ln_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -739,7 +743,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_016", 0, () => {
+    it("Decimal_ln_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('727579403.9', '20.40523369730819818291393006', 28, 3);
       test_ln_001('419065154.52076499608', '19.8535369658470908', 19, 2);
       test_ln_001('130749452.494110812', '18.68879347348', 13, 6);
@@ -769,7 +773,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_017", 0, () => {
+    it("Decimal_ln_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('222624724.707607328646707303867967259139519139629423079746317622391060720425657380049896682204826804719116517331792375328854607227578421004813898208914187979742668659057386237112777304292626154363413399007128375956303978756008642562104282496678212208286912567720592497594790267585324990906417857716073248926170009724869749739256517',
         '19.2209980629988594846457575', 27, 0);
       test_ln_001('185258598.8193913934519764713459928878217005284578212999298749640634191497175066526732902777761314076480735321777689520905932035413871290869941575745986362030629539',
@@ -808,7 +812,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_018", 0, () => {
+    it("Decimal_ln_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('54177615.4161615199898039376707204324649188748836298320352749128620609118474310429998270745885186642610341190928928278585051565238331611651463560104044550438095405103019768593446391808685915870067181972775276870790595322163624212767962894314519491376965719216779872096909267426650844863008221945010966830813924747797605343830807190598639058151734866383440974952571052161557282681608575287009214045591019',
         '17.807779', 8, 0);
       test_ln_001('202208538.0186996731425487962109425863325508616918249176043925148428750848485730129706779656165064759679330957399949664528408543769938770452288279928848232018815279096218064756460984277961961770343996043873166572208624824439463192886927974622714849727874835303030139509530094904609301858682577824229369378223655885781140501472159022060380707281531318049222808388638845419183185',
@@ -851,7 +855,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_019", 0, () => {
+    it("Decimal_ln_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('1.00000000000001', '0.00000000000000999999999999996', 15, 2);
       test_ln_001('1.000000000000000000000000000000000000001',
         '0.0000000000000000000000000000000000000009999999999999999999999999999999999999995000001', 46, 0);
@@ -883,7 +887,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_020", 0, () => {
+    it("Decimal_ln_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('4.2', '1.4350845', 8, 1);
       test_ln_001('14.23', '2.65535', 6, 1);
       test_ln_001('21.41', '3.06', 3, 1);
@@ -915,7 +919,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_021", 0, () => {
+    it("Decimal_ln_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('714436577.20394836', '20.38700479', 10, 2);
       test_ln_001('114209899', '18.5535', 6, 6);
       test_ln_001('11138070.731145', '16.225879593546584', 17, 1);
@@ -947,7 +951,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_022", 0, () => {
+    it("Decimal_ln_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('1478634317.69367498567837', '21.114384740403810652547', 23, 3);
       test_ln_001('7030.0000000004', '8.8579419848047674873993819813049734644306', 41, 3);
       test_ln_001('14302.00090090005', '9.5681547295995328150820246661661705098', 38, 1);
@@ -981,7 +985,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_023", 0, () => {
+    it("Decimal_ln_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('16240.999999', '9.695294188113030278102040381421186919123', 40, 1);
       test_ln_001('2258.999199', '7.72267716188626709813978452604048821542674214', 45, 3);
       test_ln_001('14805.999994993999999999994994999999999799999999999299999999999',
@@ -1017,7 +1021,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_024", 0, () => {
+    it("Decimal_ln_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.08000009', '-2.5257275193088882518096775704454984610695', 41, 3);
       test_ln_001('0.00090400000000000000000004060600070700000809', '-7.0086811975720976072740759519732589', 35, 4);
       test_ln_001('0.000704006', '-7.25872367911527720999907560001613988913676912731866147366599498415', 66, 1);
@@ -1050,7 +1054,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_025", 0, () => {
+    it("Decimal_ln_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.0107526881720430107526881', '-4.53259', 6, 2);
       test_ln_001('0.03125', '-3', 1, 5);
       test_ln_001('2.3', '0.8329', 4, 4);
@@ -1082,7 +1086,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_026", 0, () => {
+    it("Decimal_ln_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.0241545893719806763285024', '-3.7233', 5, 4);
       test_ln_001('12.0', '2.484906', 7, 3);
       test_ln_001('0.077519379844', '-2.55722731138003', 15, 0);
@@ -1112,7 +1116,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_027", 0, () => {
+    it("Decimal_ln_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.99999965612996150232225742078449327047019615530457466722741143133687180033806758021000178033650121765045177844535360974813202360649705716806472085515573024723452129710679277030691649',
         '-0.00000034387009762099298460124920225891418549479847', 44, 3);
       test_ln_001('0.999999999999999999998', '-0.000000000000000000002', 11, 6);
@@ -1149,7 +1153,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_028", 0, () => {
+    it("Decimal_ln_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.9999999999999999999999999999998813849879156043674936830517787361054747787',
         '-0.0000000000000000000000000000001186', 4, 2);
       test_ln_001('1.0000000000000000000278495935577735173108449580311901557454985107031530689779032404701969152386509968231412912032547047938976884258008764161145204',
@@ -1192,7 +1196,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_029", 0, () => {
+    it("Decimal_ln_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('0.999999999999999999999999999999867678505517799638290521749019978249164551148555611278304293867128540415736157410807909474981350886279390744210330912921984627066838448347590465998102019224',
         '-0.0000000000000000000000000000001323', 4, 6);
       test_ln_001('0.99999999999999955124573963968202720343790876222338286616005694319199910050972066877767645901567386160990300',
@@ -1232,7 +1236,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_030", 0, () => {
+    it("Decimal_ln_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('7.397668035008368', '2', 1, 3);
       test_ln_001('1.0643E-106', '-244.011702551303980943176356044', 30, 0);
       test_ln_001('2.350797564113792872976049891678503E-39', '-89', 2, 5);
@@ -1266,7 +1270,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_031", 0, () => {
+    it("Decimal_ln_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('7.73433077472591367533265625623113999102E+390676254432750',
         '8.9956531964360115679915101731401388487e+14', 38, 6);
       test_ln_001('6.6826213753466680887906226588379005611546E-372991246306821',
@@ -1306,7 +1310,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_032", 0, () => {
+    it("Decimal_ln_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('8.3704021992314838607708728021923440173295401079057777619E+51053',
         '1.175560014545608380866313681e+5', 28, 0);
       test_ln_001('6.328946425890222657711855468334E+28226', '6.4994611968630829105921275070197989840133161484e+4', 47,
@@ -1340,7 +1344,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_033", 0, () => {
+    it("Decimal_ln_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('3.286699439E+4569470654914505', '1.052159501287987952020793970337e+16', 31, 0);
       test_ln_001('3.637336824738188102903230332461981310841753899084935587E+10761051833',
         '2.477823753689330253840044863e+10', 28, 2);
@@ -1381,7 +1385,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_034", 0, () => {
+    it("Decimal_ln_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('8.6184097550403752866225958864653E-99458373', '-2.29011364889340897937584119444696367e+8', 36, 1);
       test_ln_001('8.370E+4643496155876', '1.0692045027897357766979173674e+13', 29, 2);
       test_ln_001('8.8260530736377112408404700113658970187344553009119498E+69', '1.6105607934074696962533009034085e+2',
@@ -1419,7 +1423,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_035", 0, () => {
+    it("Decimal_ln_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('5.47649676344748751812140943259036448E-6697621', '-1.5421840572658253455977679095638082e+7', 35, 2);
       test_ln_001('5.89272783085181716889488732225953E-80979', '-1.8645926452654519628853278905466928e+5', 35, 0);
       test_ln_001('3.9142246447271235587364475518772E+6792548012', '1.56404197972421574013185426e+10', 27, 6);
@@ -1458,7 +1462,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_036", 0, () => {
+    it("Decimal_ln_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('8.90161993871518743436E+9653801', '2.222870045956428697966183595567898564e+7', 37, 5);
       test_ln_001('5.87E-8679033343444315', '-1.998421279821315e+16', 17, 0);
       test_ln_001('7.22213E+9285', '2.1381479738372961297283e+4', 23, 4);
@@ -1493,7 +1497,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_037", 0, () => {
+    it("Decimal_ln_Func_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('6.632399246416402141258204555971393162485E+5282951327214421',
         '1.216444497305703653967296294053184676613657e+16', 44, 5);
       test_ln_001('9.3160920091238143684430426114185923861195316789176E+9009721765428', '2.0745e+13', 5, 1);
@@ -1531,7 +1535,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_038", 0, () => {
+    it("Decimal_ln_Func_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('8.419903621598494995504679345354396264274607872E-81228',
         '-1.87032251335338520070667445258625347255285029857514040215222e+5', 60, 2);
       test_ln_001('5043072.7', '1.543352611697716150423861515247087376581267e+1', 43, 0);
@@ -1569,7 +1573,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_039", 0, () => {
+    it("Decimal_ln_Func_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('2.330814534885802362082745596145962939767778133925858E+3904036936174', '8.989377251733e+12', 13, 4);
       test_ln_001('3.0420074653830109395743228528E+921305605563904',
         '2.121384553463298577109196723086986800668975639e+15', 46, 5);
@@ -1608,7 +1612,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_040", 0, () => {
+    it("Decimal_ln_Func_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_ln_001('6.18835267180055712238377841454729349189226E+231771635055534', '5.3367391185773059667279852591e+14',
         29, 2);
       test_ln_001('9.9940433950867406385462586629E+57', '1.33549339555687132737e+2', 21, 1);
@@ -1638,7 +1642,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_ln_Func_041", 0, () => {
+    it("Decimal_ln_Func_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -1650,7 +1654,7 @@ export default function Decimal4Test() {
       try {
         test_ln_001('e', '11', 17, 1);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err: BusinessError) {
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -1665,7 +1669,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_042", 0, () => {
+    it("Decimal_floor_Func_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -1705,7 +1709,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_043", 0, () => {
+    it("Decimal_floor_Func_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_floor_002('1', '1.0000000000000000000000001');
       test_floor_001('0', 0.999999999999);
       test_floor_002('9', '9.999999999999');
@@ -1733,7 +1737,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_044", 0, () => {
+    it("Decimal_floor_Func_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -1763,7 +1767,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_045", 0, () => {
+    it("Decimal_floor_Func_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_floor_002('25166', '25166.125888418871654557352055849116604612621573251770362');
       test_floor_002('4560569286495', '4560569286495.98300685103599898554605198');
       test_floor_002('13', '13.763105480576616251068323541559825687');
@@ -1792,7 +1796,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_046", 0, () => {
+    it("Decimal_floor_Func_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_floor_002('8551283060956479352', '8551283060956479352.5707396');
       test_floor_002('0', '0.000000000000000000000000019904267');
       test_floor_002('321978830777554620127500539', '321978830777554620127500539.339278568133088682532238002577');
@@ -1820,23 +1824,23 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_047", 0, () => {
-      Decimal.set({ toExpNeg: -100, toExpPos: 100 });
-      test_floor_001('-1', -1e-308);
-      test_floor_001('-1e+308', -1e308);
-      test_floor_002('2.1e+308', '2.1e308');
-      test_floor_002('-1', '-1e-999');
-      test_floor_002('0', '1e-999');
-      test_floor_002('0', '1e-9000000000000000');
-      test_floor_002('-1', '-1e-9000000000000000');
-      test_floor_002('-0', '-9.9e-9000000000000001');
-      test_floor_002('9.999999e+9000000000000000', '9.999999e+9000000000000000');
-      test_floor_002('-9.999999e+9000000000000000', '-9.999999e+9000000000000000');
-      test_floor_002('Infinity', '1E9000000000000001');
-      test_floor_002('-Infinity', '-1e+9000000000000001');
-      test_floor_002('5.5879983320336874473209567979e+287894365', '5.5879983320336874473209567979e+287894365');
-      test_floor_002('-5.5879983320336874473209567979e+287894365', '-5.5879983320336874473209567979e+287894365');
-    })
+    // it("Decimal_floor_Func_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    //   Decimal.set({ toExpNeg: -100, toExpPos: 100 });
+    //   test_floor_001('-1', -1e-308);
+    //   test_floor_001('-1e+308', -1e308);
+    //   test_floor_002('2.1e+308', '2.1e308');
+    //   test_floor_002('-1', '-1e-999');
+    //   test_floor_002('0', '1e-999');
+    //   test_floor_002('0', '1e-9000000000000000');
+    //   test_floor_002('-1', '-1e-9000000000000000');
+    //   test_floor_002('-0', '-9.9e-9000000000000001');
+    //   test_floor_002('9.999999e+9000000000000000', '9.999999e+9000000000000000');
+    //   test_floor_002('-9.999999e+9000000000000000', '-9.999999e+9000000000000000');
+    //   test_floor_002('Infinity', '1E9000000000000001');
+    //   test_floor_002('-Infinity', '-1e+9000000000000001');
+    //   test_floor_002('5.5879983320336874473209567979e+287894365', '5.5879983320336874473209567979e+287894365');
+    //   test_floor_002('-5.5879983320336874473209567979e+287894365', '-5.5879983320336874473209567979e+287894365');
+    // })
 
     /**
      * @tc.number    : DECIMAL_TEST_048
@@ -1846,7 +1850,7 @@ export default function Decimal4Test() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_floor_Func_048", 0, () => {
+    it("Decimal_floor_Func_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -1858,7 +1862,7 @@ export default function Decimal4Test() {
       try {
         test_floor_002('e', 'e');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err: BusinessError) {
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

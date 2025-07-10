@@ -138,9 +138,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_001", 0, () => {
+    it("Decimal_toBinary_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_003('NaN', NaN, 20, 4);
       test_toBinary_001('NaN', 'NaN', 20, 4);
       test_toBinary_003('Infinity', Infinity, 20, 4);
@@ -166,9 +166,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_002", 0, () => {
+    it("Decimal_toBinary_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b11111001010110010000011011010110111010011011110010100101011010010000111011110110011011011100001110000001110010101000001101',
         '5178750376444939350710857550952606221', 122, 4);
       test_toBinary_001('0b100110', '38', 6, 4);
@@ -212,9 +212,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_003", 0, () => {
+    it("Decimal_toBinary_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1000100010101010011110010010110101110000011100110', '300531517677798', 49, 4);
       test_toBinary_001('0b10100001111011110000000110100110101010010101001001111011110000101000110111000010000000100010111011',
         '200464110595405607835630307515', 98, 4);
@@ -258,9 +258,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_004", 0, () => {
+    it("Decimal_toBinary_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1010101011001011000110110010001011101011111101100', '375578620712940', 49, 4);
       test_toBinary_001('0b11101111110110011011001010101101010000001100111010010010100101', '4320760375549338789', 62,
         4);
@@ -310,9 +310,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_005", 0, () => {
+    it("Decimal_toBinary_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b10110101110101110100000111010001011000111011010000101001110101111110110001011000000',
         '6869753008454091059192512', 83, 4);
       test_toBinary_001('0b11101001010111011000000010011000001110011111110011111000110011110011001111011111101111000100010110001110100101',
@@ -362,9 +362,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_006", 0, () => {
+    it("Decimal_toBinary_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1100', '12', 4, 4);
       test_toBinary_001('0b1000000110001111010010110000101010101011101111101011011101000000000101010100011100',
         '2447314272063451666863388', 82, 4);
@@ -409,9 +409,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_007", 0, () => {
+    it("Decimal_toBinary_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1101001110111010100010011100001', '1776108769', 31, 4);
       test_toBinary_001('0b100000001100000110111101111110000001100110101101000100111111001110011100010111101101011000101010101011111100000001010101111111',
         '42786787446528052699594039883348317567', 126, 4);
@@ -452,9 +452,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_008", 0, () => {
+    it("Decimal_toBinary_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1101100111111101001001001100011001000011101001001100000001000111110000101001100010011011011100101100000010001000100110010111111010011111000000001000001001011010101111110101',
         '5097456801022432585476312678303126165684672742665205', 172, 4);
       test_toBinary_001('0b1111000101001100001000111101001001110001110000011100100101000000111001000010100010000110110100010001011010101001000011000110010101000010001111001110110000100110110000111011',
@@ -494,9 +494,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_009", 0, () => {
+    it("Decimal_toBinary_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b11011000100011101011010010001001101010111010000100000110100010011010100100101000110011001000000101100101',
         '17157448231253463055811180527973', 104, 4);
       test_toBinary_001('0b1001111101111001100110000011001', '1337773081', 31, 4);
@@ -533,9 +533,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_010", 0, () => {
+    it("Decimal_toBinary_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b11110110100000100001101001110011101100010110000110011101110010101110101010111001001000101011101101100000010000100101',
         '79996489761592791530139097880724517', 116, 4);
       test_toBinary_001('0b1101000110', '838', 10, 4);
@@ -588,9 +588,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_011", 0, () => {
+    it("Decimal_toBinary_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b11110111101000011110000010001', '519322641', 29, 4);
       test_toBinary_001('0b10100000110110110111011011110111110110111001000001001000100101000001110101001101000011111000100011011110110100111101111',
         '417609385350091179779636810113575407', 119, 4);
@@ -639,9 +639,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_012", 0, () => {
+    it("Decimal_toBinary_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b111101001100101010011001111111100101100011110011110', '2153208033232798', 51, 4);
       test_toBinary_001('0b101111100110101010011111110100000001110001010101110001000001101101101011111010100110011011011',
         '7366381587271251372942380251', 93, 4);
@@ -693,9 +693,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_013", 0, () => {
+    it("Decimal_toBinary_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b11000000101111101111010110110101001110011010001011001011', '54253158045164235', 56, 4);
       test_toBinary_001('0b1011101000010110000100000100111001010100101101011011101001001011001111001100101110010100100011101011',
         '921454163161847327849553938667', 100, 4);
@@ -747,9 +747,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_014", 0, () => {
+    it("Decimal_toBinary_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b1101000001100011011001110000010011000100110001000011010110000100', '15015958852762088836',
         64, 4);
       test_toBinary_001('0b11110011111110100111011111001010001010010100010010110', '8584226467555478', 53, 4);
@@ -793,9 +793,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_015", 0, () => {
+    it("Decimal_toBinary_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toBinary_001('0b110010', '50.3', 6, 4);
       test_toBinary_002('0b0p+0', '0', 40, 4);
       test_toBinary_002('0b1p+53', '9007199254740992', 40, 4);
@@ -813,9 +813,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_016", 0, () => {
+    it("Decimal_toBinary_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 7,
@@ -855,9 +855,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_017", 0, () => {
+    it("Decimal_toBinary_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_005('0', 0.4, 0);
       test_toDecimalPlaces_005('-0', -0.4, 0);
       test_toDecimalPlaces_005('-0', -0.5, 0);
@@ -896,9 +896,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_018", 0, () => {
+    it("Decimal_toBinary_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('0.0039', '0.0039', 4, 3);
       test_toDecimalPlaces_006('-41620.65299', '-41620.65299', 6, 5);
       test_toDecimalPlaces_006('0.0011117', '0.0011117', 7, 0);
@@ -940,9 +940,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_019", 0, () => {
+    it("Decimal_toBinary_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('336379823', '336379823', 4, 1);
       test_toDecimalPlaces_006('310614', '310614', 7, 0);
       test_toDecimalPlaces_006('-375811635', '-375811635', 8, 3);
@@ -986,9 +986,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_020", 0, () => {
+    it("Decimal_toBinary_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-0.0449', '-0.0449', 4, 3);
       test_toDecimalPlaces_006('-0', '-0.003', 0, 4);
       test_toDecimalPlaces_006('85942', '85942', 2, 5);
@@ -1033,9 +1033,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_021", 0, () => {
+    it("Decimal_toBinary_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-85023', '-85023', 4, 3);
       test_toDecimalPlaces_006('-0', '-0.008097491', 0, 2);
       test_toDecimalPlaces_006('-0.026', '-0.0259', 3, 4);
@@ -1083,9 +1083,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_022", 0, () => {
+    it("Decimal_toBinary_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('232730083859746141163.7653402888578932348762190816502',
         '232730083859746141163.76534028885789323487621908165018267559238917447610653431235463768839108', 31, 5);
       test_toDecimalPlaces_006('-499311204526771278437755030091270601.471802335',
@@ -1150,9 +1150,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_023", 0, () => {
+    it("Decimal_toBinary_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('2549907485257905040787802731022172814.032473410309278713663931353982863019132463',
         '2549907485257905040787802731022172814.03247341030927871366393135398286301913246263649610180999011', 42, 4);
       test_toDecimalPlaces_006('7245563391265598645357861460253613932139592382610560614764364520097782949512752649',
@@ -1221,9 +1221,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_024", 0, () => {
+    it("Decimal_toBinary_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-0.000000000000000000001', '-0.00000000000000000000000000000000000000001462340018509',
         21, 0);
       test_toDecimalPlaces_006('0.006', '0.0059936079684973012978514720463815026319867172', 4, 2);
@@ -1288,9 +1288,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_025", 0, () => {
+    it("Decimal_toBinary_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-0.0000000000000001', '-0.0000000000000000000000000034534834', 16, 0);
       test_toDecimalPlaces_006('-0.0000000000000000000008286492885892336366506247591678062602',
         '-0.00000000000000000000082864928858923363665062475916780626021532507656936043414109352811732', 58, 1);
@@ -1356,9 +1356,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_026", 0, () => {
+    it("Decimal_toBinary_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-0.00158',
         '-0.00158276409341184629828973465939702170102740363504722102864514069935682480434491', 5, 2);
       test_toDecimalPlaces_006('-2625562538887919963240549817430379735187837775384',
@@ -1430,9 +1430,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_027", 0, () => {
+    it("Decimal_toBinary_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('3593092835933826522602826541522473977510499517734180584911059518',
         '3593092835933826522602826541522473977510499517734180584911059518', 39, 2);
       test_toDecimalPlaces_006('0.00000000000240671872382434259',
@@ -1498,9 +1498,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_028", 0, () => {
+    it("Decimal_toBinary_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('85750000000000000000000000000000000000000001',
         '85750000000000000000000000000000000000000000.5', 0, 7);
       test_toDecimalPlaces_006('-357280726879877087440504485199000000000000000000000',
@@ -1559,9 +1559,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_029", 0, () => {
+    it("Decimal_toBinary_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toDecimalPlaces_006('-79578809228411034521778967729244470830365009197702327546767865195836773388369068481948969.900741',
         '-79578809228411034521778967729244470830365009197702327546767865195836773388369068481948969.9007405268', 6, 8);
       test_toDecimalPlaces_006('-98635952437161220.96618',
@@ -1616,9 +1616,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_030", 0, () => {
+    it("Decimal_toBinary_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 7,
@@ -1643,9 +1643,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_031", 0, () => {
+    it("Decimal_toBinary_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 7,
@@ -1684,9 +1684,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_032", 0, () => {
+    it("Decimal_toBinary_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_010('1.120e-1', 0.112, 3);
       test_toExponential_010('-1e+0', -1, 0);
       test_toExponential_010('-1e+1', -11, 0);
@@ -1732,9 +1732,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_033", 0, () => {
+    it("Decimal_toBinary_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('1.00e+9', '999702726', 2);
       test_toExponential_009('1.000e+3', '999.964717', 3);
       Decimal.set({ rounding: 0 });
@@ -1777,9 +1777,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_034", 0, () => {
+    it("Decimal_toBinary_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-2.715269856970717e+19', '-27152698569707163435', 15);
       test_toExponential_009('-5.67681004e+20', '-567681003999187989540.627303416332508226276308449233', 8);
       test_toExponential_009('-2.06809e+27', '-2068085084336615438842661921.06985539576218546524301', 5);
@@ -1815,9 +1815,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_035", 0, () => {
+    it("Decimal_toBinary_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('7.0e-1', '0.7', 1);
       test_toExponential_009('5.2109749078977455423107465583658126e+37', '52109749078977455423107465583658126637', 34);
       test_toExponential_009('3.631093819552528994444977110063007461579154042777868294000e-29',
@@ -1860,9 +1860,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_036", 0, () => {
+    it("Decimal_toBinary_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-2.17797482005219478530856429744726e+29',
         '-217797482005219478530856429744.7268928676963181', 32);
       test_toExponential_009('-3.9547e+11', '-395476721391', 4);
@@ -1905,9 +1905,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_037", 0, () => {
+    it("Decimal_toBinary_Func_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-5.28860565e-16', '-0.00000000000000052886056528317233012115396784629214632', 8);
       test_toExponential_009('6.4114675970838738000e-18', '0.0000000000000000064114675970838738', 19);
       test_toExponential_009('8.00000000000000000000e-20', '0.00000000000000000008', 20);
@@ -1948,9 +1948,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_038", 0, () => {
+    it("Decimal_toBinary_Func_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-3.5699537605753905457597e-14',
         '-0.00000000000003569953760575390545759785014980652333323889116', 22);
       test_toExponential_009('-2.9892536880349975618286e+12', '-2989253688034.9975618286212199904979534461637613', 22);
@@ -1996,9 +1996,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_039", 0, () => {
+    it("Decimal_toBinary_Func_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-7.232463101115829118145025733451801e-17',
         '-0.00000000000000007232463101115829118145025733451800457178', 33);
       test_toExponential_009('-1.18320100044154762448545914170978206041022039e+22',
@@ -2046,9 +2046,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_040", 0, () => {
+    it("Decimal_toBinary_Func_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-9.663e-30', '-0.00000000000000000000000000000966289400023904753107633012', 3);
       test_toExponential_009('-2.315198482309e+12', '-2315198482308.7361348', 12);
       test_toExponential_009('-8.158235289416e+18', '-8158235289415958939', 12);
@@ -2097,9 +2097,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_041", 0, () => {
+    it("Decimal_toBinary_Func_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-7.906e+11', '-790612526329.410459220189562', 3);
       test_toExponential_009('-3.1841363e-22', '-0.00000000000000000000031841363', 7);
       test_toExponential_009('-6.2068049304845006e+20', '-620680493048450055389.3227069760888437941041', 16);
@@ -2143,9 +2143,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_042", 0, () => {
+    it("Decimal_toBinary_Func_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-7.0e+2', '-703', 1);
       test_toExponential_009('-2.6249e+33', '-2624861185343559570287214983819906', 4);
       test_toExponential_009('-6.510119186347371697501169416839709631422185436811698613000000000000000000000000000000e-31',
@@ -2194,9 +2194,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_043", 0, () => {
+    it("Decimal_toBinary_Func_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-4.9556506e+13', '-49556505932168.7211084603', 7);
       test_toExponential_009('-8.133584588946e+26', '-813358458894586332533196788.490201803951456991010654609646', 12);
       test_toExponential_009('-3.824207296e+22', '-38242072955850210158724', 9);
@@ -2242,9 +2242,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_044", 0, () => {
+    it("Decimal_toBinary_Func_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-5.4277306444432e+11', '-542773064444.317654960431120452254700391693837992', 13);
       test_toExponential_009('-4.355706886680889557797360814402e+30',
         '-4355706886680889557797360814401.536556745674646509159280626', 30);
@@ -2289,9 +2289,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_044_1", 0, () => {
+    it("Decimal_toBinary_Func_044_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toExponential_009('-4.7e+11', '-469485715327', 1);
       test_toExponential_009('-7.372223291560455075681748682810527006883e+16',
         '-73722232915604550.75681748682810527006882666313809409', 39);
@@ -2334,9 +2334,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_045", 0, () => {
+    it("Decimal_toBinary_Func_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -2361,9 +2361,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_046", 0, () => {
+    it("Decimal_toBinary_Func_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -2426,9 +2426,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_047", 0, () => {
+    it("Decimal_toBinary_Func_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_exp_011('40.95984262795251', '614658133673303019.41715', 23, 1);
       test_exp_011('50.57728', '9234930123395249855007.64784227728909958776637', 45, 0);
       test_exp_011('-9.295952106254287693', '0.00009179505707794839996147521992', 28, 3);
@@ -2474,9 +2474,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_047_1", 0, () => {
+    it("Decimal_toBinary_Func_047_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_exp_011('52.6735295600', '75131702520984694212520.839', 26, 5);
       test_exp_011('4.91754742409', '136.667015585278752656929641054712859399847337855456678258883', 60, 0);
       test_exp_011('-8.291786018917236430647515856', '0.0002505', 4, 3);
@@ -2503,9 +2503,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_048", 0, () => {
+    it("Decimal_toBinary_Func_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 40,
         rounding: 4,
@@ -2529,9 +2529,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_049", 0, () => {
+    it("Decimal_toBinary_Func_049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -2580,9 +2580,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_050", 0, () => {
+    it("Decimal_toBinary_Func_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_min_012(NaN, Decimal.min(NaN).valueOf());
       test_min_012(NaN, Decimal.min(-2, 0, -1, NaN).valueOf());
       test_min_012(NaN, Decimal.min(-2, NaN, 0, -1).valueOf());
@@ -2623,9 +2623,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_051", 0, () => {
+    it("Decimal_toBinary_Func_051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_min_012(0, Decimal.min(2, 0, 1).valueOf());
       test_min_012(-1, Decimal.min('-1', 0, new Decimal(1)).valueOf());
       test_min_012(-1, Decimal.min('-1', new Decimal(1)).valueOf());
@@ -2676,9 +2676,9 @@ export default function Decimal2Test() {
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_toBinary_Func_052", 0, () => {
+    it("Decimal_toBinary_Func_052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
