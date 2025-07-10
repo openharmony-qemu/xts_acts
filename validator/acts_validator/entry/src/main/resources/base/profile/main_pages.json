@@ -144,7 +144,8 @@
     "pages/ArkUI/AccessibilityScrollTriggerablePage",
 	"pages/ArkUI/EmbeddedComponentInstanceTest",
     "pages/ArkUI/OnAccessibilityActionIntercept",
-    "pages/ArkUI/AccessBilityHoverTransparent"
+    "pages/ArkUI/AccessBilityHoverTransparent",
+    "pages/ArkUI/hoverScaleInterruption"
   ]
 }
 

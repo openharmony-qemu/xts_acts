@@ -119,6 +119,7 @@ struct IndexPage {
     { title: 'AccessibilityScrollTriggerablePage', uri: 'pages/ArkUI/AccessibilityScrollTriggerablePage' },
     { title: 'OnAccessibilityActionIntercept', uri: 'pages/ArkUI/OnAccessibilityActionIntercept' },
     { title: 'AccessBilityHoverTransparent', uri: 'pages/ArkUI/AccessBilityHoverTransparent' },
+    { title: 'hoverScaleInterruption', uri: 'pages/ArkUI/hoverScaleInterruption' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
