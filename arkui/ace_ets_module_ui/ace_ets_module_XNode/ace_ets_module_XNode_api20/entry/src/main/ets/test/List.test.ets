@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
+import DrawModifierOneTest from './DrawTest/DrawModifierOneTest.test';
+import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
 import BuilderNodeOneTest from './LocalStorageTest/BuilderNodeOneTest.test';
 import BuilderNodeTwoTest from './LocalStorageTest/BuilderNodeTwoTest.test';
 import BuilderNodeThreeTest from './LocalStorageTest/BuilderNodeThreeTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
+  DrawModifierOneTest();
+  DrawModifierTwoTest();
   BuilderNodeOneTest();
   BuilderNodeTwoTest();
   BuilderNodeThreeTest();

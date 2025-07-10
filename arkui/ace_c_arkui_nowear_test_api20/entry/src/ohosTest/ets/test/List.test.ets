@@ -13,7 +13,15 @@
  * limitations under the License.
  */
 import buttonGetTypeTest from './button/ButtonGetTypeTest.test'
+import focusWrapModeTest from './grid/FocusWrapModeTest.test'
+import dragEventGetDisplayIdTest from './dragEventTest/dragEventGetDisplayId.test'
+import dragEventGetDragSourceTest from './dragEventTest/dragEventGetDragSource.test'
+import enableDropDisallowedBadgeTest from './dropBadge/enableDropDisallowedBadge.test'
 
 export default function testsuite() {
   buttonGetTypeTest();
+  focusWrapModeTest();
+  dragEventGetDisplayIdTest();
+  dragEventGetDragSourceTest();
+  enableDropDisallowedBadgeTest();
 }

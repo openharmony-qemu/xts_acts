@@ -13,18 +13,32 @@
  * limitations under the License.
  */
 
+import barHeightNoMinHeightLimit from './TabsTest/barHeightNoMinHeightLimit.test';
 import maintainPosition from './SwiperTest/maintainPosition.test';
 import barMarginGrid from './GridTest/barMarginGrid.test';
 import barMarginList from './ListTest/barMarginList.test';
 import barMarginScroll from './ScrollTest/barMarginScroll.test';
 import curvesTabs from './TabsTest/curvesTabs.test';
+import focusWrapModeList from './ListTest/focusWrapModeList.test';
+import focusWrapModeList2 from './ListTest/focusWrapModeList2.test';
 import maxDownRefresh from './RefreshTest/maxDownRefresh.test';
+import scrollBarColor from './ScrollBarTest/scrollBarColor.test';
+import canOverGrid from './GridTest/canOverGrid.test';
+import canOverList from './ListTest/canOverList.test';
+import canOverScroll from './ScrollTest/canOverScroll.test';
 
 export default function testsuite() {
+  barHeightNoMinHeightLimit();
+  focusWrapModeList();
+  focusWrapModeList2();
   maintainPosition()
   barMarginGrid()
   barMarginList()
   barMarginScroll()
   curvesTabs()
   maxDownRefresh()
+  scrollBarColor()
+  canOverGrid()
+  canOverList()
+  canOverScroll()
 }

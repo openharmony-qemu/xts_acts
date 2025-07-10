@@ -51,6 +51,9 @@ struct IndexPage {
     { title: 'LongPressGesture', uri: 'pages/ArkUI/LongPressGesture' },
     { title: 'TapGesture', uri: 'pages/ArkUI/TapGesture' },
     { title: 'PanGesture', uri: 'pages/ArkUI/PanGesture' },
+    { title: 'DraggingSizeChangeEffect', uri: 'pages/ArkUI/DraggingSizeChangeEffect' },
+    { title: 'KeyEvent', uri: 'pages/ArkUI/KeyEvent' },
+    { title: 'CapiKeyEvent', uri: 'pages/ArkUI/CapiKeyEvent' },
     { title: 'bindSheetTest', uri: 'pages/ArkUI/bindSheetTest' },
     { title: 'CanvasFillStyle', uri: 'pages/ArkUI/CanvasFillStyle' },
     { title: 'CanvasLineWidth', uri: 'pages/ArkUI/CanvasLineWidth' },
@@ -116,7 +119,7 @@ struct IndexPage {
     { title: 'AccessibilityDefaultFocusPage', uri: 'pages/ArkUI/AccessibilityDefaultFocusPage' },
     { title: 'AccessibilityScrollTriggerablePage', uri: 'pages/ArkUI/AccessibilityScrollTriggerablePage' },
     { title: 'OnAccessibilityActionIntercept', uri: 'pages/ArkUI/OnAccessibilityActionIntercept' },
-    
+    { title: 'AccessBilityHoverTransparent', uri: 'pages/ArkUI/AccessBilityHoverTransparent' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
