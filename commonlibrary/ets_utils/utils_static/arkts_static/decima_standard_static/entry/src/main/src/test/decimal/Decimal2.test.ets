@@ -133,7 +133,7 @@ export default function Decimal2Test() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_001
+     * @tc.number    : DECIMAL_TEST2_001
      * @tc.name      : Decimal_toBinary_Func_001
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -161,7 +161,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_002
+     * @tc.number    : DECIMAL_TEST2_002
      * @tc.name      : Decimal_toBinary_Func_002
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -207,7 +207,7 @@ export default function Decimal2Test() {
         '613876598207563084074184752663166261629198587982848', 169, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_003
+     * @tc.number    : DECIMAL_TEST2_003
      * @tc.name      : Decimal_toBinary_Func_003
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -253,7 +253,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_004
+     * @tc.number    : DECIMAL_TEST2_004
      * @tc.name      : Decimal_toBinary_Func_004
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -305,7 +305,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_005
+     * @tc.number    : DECIMAL_TEST2_005
      * @tc.name      : Decimal_toBinary_Func_005
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -357,7 +357,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_006
+     * @tc.number    : DECIMAL_TEST2_006
      * @tc.name      : Decimal_toBinary_Func_006
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -404,7 +404,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_007
+     * @tc.number    : DECIMAL_TEST2_007
      * @tc.name      : Decimal_toBinary_Func_007
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -447,7 +447,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_008
+     * @tc.number    : DECIMAL_TEST2_008
      * @tc.name      : Decimal_toBinary_Func_008
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -489,7 +489,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_009
+     * @tc.number    : DECIMAL_TEST2_009
      * @tc.name      : Decimal_toBinary_Func_009
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -528,7 +528,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_010
+     * @tc.number    : DECIMAL_TEST2_010
      * @tc.name      : Decimal_toBinary_Func_010
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -583,7 +583,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_011
+     * @tc.number    : DECIMAL_TEST2_011
      * @tc.name      : Decimal_toBinary_Func_011
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -634,7 +634,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_012
+     * @tc.number    : DECIMAL_TEST2_012
      * @tc.name      : Decimal_toBinary_Func_012
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -688,7 +688,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_013
+     * @tc.number    : DECIMAL_TEST2_013
      * @tc.name      : Decimal_toBinary_Func_013
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -742,7 +742,7 @@ export default function Decimal2Test() {
         '9703219505953893074023234217532878016916428047889', 163, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_014
+     * @tc.number    : DECIMAL_TEST2_014
      * @tc.name      : Decimal_toBinary_Func_014
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -788,7 +788,7 @@ export default function Decimal2Test() {
         '29513071238598351326634077220532565729.753116233815194468461197227952', 125, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_015
+     * @tc.number    : DECIMAL_TEST2_015
      * @tc.name      : Decimal_toBinary_Func_015
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -808,7 +808,7 @@ export default function Decimal2Test() {
       test_toBinary_002('0b1.001010101110101p-4', '0b1.001010101110101p-4', 16, 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_016
+     * @tc.number    : DECIMAL_TEST2_016
      * @tc.name      : Decimal_toBinary_Func_016
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -850,7 +850,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_005('-1', -1.5, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_017
+     * @tc.number    : DECIMAL_TEST2_017
      * @tc.name      : Decimal_toBinary_Func_017
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -891,7 +891,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_018
+     * @tc.number    : DECIMAL_TEST2_018
      * @tc.name      : Decimal_toBinary_Func_018
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -935,7 +935,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('-3', '-3.614204', 0, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_019
+     * @tc.number    : DECIMAL_TEST2_019
      * @tc.name      : Decimal_toBinary_Func_019
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -981,7 +981,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('-2.3995861', '-2.39958606', 7, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_020
+     * @tc.number    : DECIMAL_TEST2_020
      * @tc.name      : Decimal_toBinary_Func_020
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1028,7 +1028,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('805.25', '805.2467', 2, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_021
+     * @tc.number    : DECIMAL_TEST2_021
      * @tc.name      : Decimal_toBinary_Func_021
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1078,7 +1078,7 @@ export default function Decimal2Test() {
         '-0.0000000000000000000000000000000000048810387700772580768508931440796984745771392', 29, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_022
+     * @tc.number    : DECIMAL_TEST2_022
      * @tc.name      : Decimal_toBinary_Func_022
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1145,7 +1145,7 @@ export default function Decimal2Test() {
         '47845474280015515238795364952786480611238289992139357357828.23935359', 7, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_023
+     * @tc.number    : DECIMAL_TEST2_023
      * @tc.name      : Decimal_toBinary_Func_023
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1216,7 +1216,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('-0.00000062136', '-0.00000062135994705765807424168688040116009865960794', 13, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_024
+     * @tc.number    : DECIMAL_TEST2_024
      * @tc.name      : Decimal_toBinary_Func_024
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1283,7 +1283,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('0', '0.00000000000000000000000000000000000000000000021714481944', 43, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_025
+     * @tc.number    : DECIMAL_TEST2_025
      * @tc.name      : Decimal_toBinary_Func_025
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1351,7 +1351,7 @@ export default function Decimal2Test() {
         '-0.00000000000000000000000000000000000000000000489005761683946256390055271579820502403', 59, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_026
+     * @tc.number    : DECIMAL_TEST2_026
      * @tc.name      : Decimal_toBinary_Func_026
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1425,7 +1425,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('-0.00000000000000291161', '-0.0000000000000029116100944057582762735577555', 21, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_027
+     * @tc.number    : DECIMAL_TEST2_027
      * @tc.name      : Decimal_toBinary_Func_027
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1493,7 +1493,7 @@ export default function Decimal2Test() {
         '672783487870821678831521822264427999625400000000000000000000000000000000000000000.5', 0, 7);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_028
+     * @tc.number    : DECIMAL_TEST2_028
      * @tc.name      : Decimal_toBinary_Func_028
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1554,7 +1554,7 @@ export default function Decimal2Test() {
         '-6113258580590430007589739873373442564851315606055053637944', 20, 8);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_029
+     * @tc.number    : DECIMAL_TEST2_029
      * @tc.name      : Decimal_toBinary_Func_029
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1611,7 +1611,7 @@ export default function Decimal2Test() {
       test_toDecimalPlaces_006('-336051', '-336050.5', 0, 8);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_030
+     * @tc.number    : DECIMAL_TEST2_030
      * @tc.name      : Decimal_toBinary_Func_030
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1638,7 +1638,7 @@ export default function Decimal2Test() {
       }
     });
     /**
-     * @tc.number    : DECIMAL_TEST_031
+     * @tc.number    : DECIMAL_TEST2_031
      * @tc.name      : Decimal_toBinary_Func_031
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1679,7 +1679,7 @@ export default function Decimal2Test() {
       test_toExponential_010('1.100e-1', 0.11, 3);
     })
     /**
-     * @tc.number    : DECIMAL_TEST_032
+     * @tc.number    : DECIMAL_TEST2_032
      * @tc.name      : Decimal_toBinary_Func_032
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1727,7 +1727,7 @@ export default function Decimal2Test() {
       test_toExponential_009('1.000e+7', '9999512.8', 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_033
+     * @tc.number    : DECIMAL_TEST2_033
      * @tc.name      : Decimal_toBinary_Func_033
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1772,7 +1772,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-8.54e+10', '-85390930743', 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_034
+     * @tc.number    : DECIMAL_TEST2_034
      * @tc.name      : Decimal_toBinary_Func_034
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1810,7 +1810,7 @@ export default function Decimal2Test() {
       test_toExponential_009('7.75700e-24', '0.000000000000000000000007757', 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_035
+     * @tc.number    : DECIMAL_TEST2_035
      * @tc.name      : Decimal_toBinary_Func_035
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1855,7 +1855,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-6.375e+14', '-637540984314799.4', 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_036
+     * @tc.number    : DECIMAL_TEST2_036
      * @tc.name      : Decimal_toBinary_Func_036
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1900,7 +1900,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-1.17181502970008783734855040984899000e-1', '-0.117181502970008783734855040984899', 35);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_037
+     * @tc.number    : DECIMAL_TEST2_037
      * @tc.name      : Decimal_toBinary_Func_037
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1943,7 +1943,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-3.49346327e+22', '-34934632714180035424463', 8);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_038
+     * @tc.number    : DECIMAL_TEST2_038
      * @tc.name      : Decimal_toBinary_Func_038
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -1991,7 +1991,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-4.5e-11', '-0.000000000044673422483', 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_039
+     * @tc.number    : DECIMAL_TEST2_039
      * @tc.name      : Decimal_toBinary_Func_039
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2041,7 +2041,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-6.30535781e+20', '-630535780834495012856', 8);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_040
+     * @tc.number    : DECIMAL_TEST2_040
      * @tc.name      : Decimal_toBinary_Func_040
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2092,7 +2092,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-8.55e-27', '-0.00000000000000000000000000855367295711812079', 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_041
+     * @tc.number    : DECIMAL_TEST2_041
      * @tc.name      : Decimal_toBinary_Func_041
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2138,7 +2138,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-8.9667567079038139e+16', '-89667567079038139', 16);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_042
+     * @tc.number    : DECIMAL_TEST2_042
      * @tc.name      : Decimal_toBinary_Func_042
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2189,7 +2189,7 @@ export default function Decimal2Test() {
       test_toExponential_009('-1.283656440009563e+24', '-1283656440009563292695670.575360580373829197017512', 15);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_043
+     * @tc.number    : DECIMAL_TEST2_043
      * @tc.name      : Decimal_toBinary_Func_043
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2237,7 +2237,7 @@ export default function Decimal2Test() {
 
     });
     /**
-     * @tc.number    : DECIMAL_TEST_044
+     * @tc.number    : DECIMAL_TEST2_044
      * @tc.name      : Decimal_toBinary_Func_044
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2284,7 +2284,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_0441
+     * @tc.number    : DECIMAL_TEST2_0441
      * @tc.name      : Decimal_toBinary_Func_044_1
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2329,7 +2329,7 @@ export default function Decimal2Test() {
       test_toExponential_009('1e+2', '123', -0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_045
+     * @tc.number    : DECIMAL_TEST2_045
      * @tc.name      : Decimal_toBinary_Func_045
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2356,7 +2356,7 @@ export default function Decimal2Test() {
       }
     });
     /**
-     * @tc.number    : DECIMAL_TEST_046
+     * @tc.number    : DECIMAL_TEST2_046
      * @tc.name      : Decimal_toBinary_Func_046
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2421,7 +2421,7 @@ export default function Decimal2Test() {
       test_exp_011('0.9', '2.45960311115694966380012656360247069542177230644', 48, 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_047
+     * @tc.number    : DECIMAL_TEST2_047
      * @tc.name      : Decimal_toBinary_Func_047
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2469,7 +2469,7 @@ export default function Decimal2Test() {
 
     });
     /**
-     * @tc.number    : DECIMAL_TEST_0471
+     * @tc.number    : DECIMAL_TEST2_0471
      * @tc.name      : Decimal_toBinary_Func_047_1
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2498,7 +2498,7 @@ export default function Decimal2Test() {
       test_exp_011('-4.4768686752786086271180252E+574398129049502', '0e+0', 15, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_048
+     * @tc.number    : DECIMAL_TEST2_048
      * @tc.name      : Decimal_toBinary_Func_048
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2524,7 +2524,7 @@ export default function Decimal2Test() {
       }
     });
     /**
-     * @tc.number    : DECIMAL_TEST_049
+     * @tc.number    : DECIMAL_TEST2_049
      * @tc.name      : Decimal_toBinary_Func_049
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2575,7 +2575,7 @@ export default function Decimal2Test() {
       test_max_012(2, Decimal.max(2, 1, 0).valueOf());
     });
     /**
-     * @tc.number    : DECIMAL_TEST_050
+     * @tc.number    : DECIMAL_TEST2_050
      * @tc.name      : Decimal_toBinary_Func_050
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2618,7 +2618,7 @@ export default function Decimal2Test() {
       test_min_012(0, Decimal.min(2, 1, 0).valueOf());
     });
     /**
-     * @tc.number    : DECIMAL_TEST_051
+     * @tc.number    : DECIMAL_TEST2_051
      * @tc.name      : Decimal_toBinary_Func_051
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest
@@ -2671,7 +2671,7 @@ export default function Decimal2Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_052
+     * @tc.number    : DECIMAL_TEST2_052
      * @tc.name      : Decimal_toBinary_Func_052
      * @tc.desc      : Test toBinary
      * @tc.size      : MediumTest

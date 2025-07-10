@@ -90,7 +90,7 @@ export default function Decimal4Test() {
 
     /**
      * @tc.number    : DECIMAL_TEST4_001
-     * @tc.name      : Decimal_div_Func_001
+     * @tc.name      : Decimal_tanh_Func_001
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -127,7 +127,7 @@ export default function Decimal4Test() {
     });
     /**
      * @tc.number    : DECIMAL_TEST4_002
-     * @tc.name      : Decimal_div_Func_002
+     * @tc.name      : Decimal_tanh_Func_002
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -162,7 +162,7 @@ export default function Decimal4Test() {
     });
     /**
      * @tc.number    : DECIMAL_TEST4_004
-     * @tc.name      : Decimal_div_Func_004
+     * @tc.name      : Decimal_tanh_Func_004
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -265,7 +265,7 @@ export default function Decimal4Test() {
     // });
     /**
      * @tc.number    : DECIMAL_TEST4_006
-     * @tc.name      : Decimal_div_Func_006
+     * @tc.name      : Decimal_tanh_Func_006
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -537,7 +537,7 @@ export default function Decimal4Test() {
       }
     });
     /**
-     * @tc.number    : DECIMAL_TEST_014
+     * @tc.number    : DECIMAL_TEST4_014
      * @tc.name      : Decimal_div_Func_014
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -576,7 +576,7 @@ export default function Decimal4Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_015
+     * @tc.number    : DECIMAL_TEST4_015
      * @tc.name      : Decimal_div_Func_015
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -619,7 +619,7 @@ export default function Decimal4Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_016
+     * @tc.number    : DECIMAL_TEST4_016
      * @tc.name      : Decimal_div_Func_016
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -674,7 +674,7 @@ export default function Decimal4Test() {
         '5.36018467107502097209360022333300020062468708142031209526934182877919e-906180', 69, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_017
+     * @tc.number    : DECIMAL_TEST4_017
      * @tc.name      : Decimal_div_Func_017
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -735,7 +735,7 @@ export default function Decimal4Test() {
         '-6.165551852549068675875315487455698620448242921611056694146328281821305148315378561e-971406', 82, 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_018
+     * @tc.number    : DECIMAL_TEST4_018
      * @tc.name      : Decimal_div_Func_018
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -801,7 +801,7 @@ export default function Decimal4Test() {
       test_div_001('-7.40794403e-1867427', '1.07829970890779e-80', '-6.870023212288082e-1867347', 16, 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_019
+     * @tc.number    : DECIMAL_TEST4_019
      * @tc.name      : Decimal_div_Func_019
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -876,7 +876,7 @@ export default function Decimal4Test() {
         '-5.81385878280794397787160794e+968310', 27, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_020
+     * @tc.number    : DECIMAL_TEST4_020
      * @tc.name      : Decimal_div_Func_020
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -927,7 +927,7 @@ export default function Decimal4Test() {
       test_div_001('4.5204228951407159990066208e-3745', '-0.004', '-1.1301057237851789997516552e-3742', 69, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_021
+     * @tc.number    : DECIMAL_TEST4_021
      * @tc.name      : Decimal_div_Func_021
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -994,7 +994,7 @@ export default function Decimal4Test() {
       test_div_001('-4.9692553578428e+924108', '2.1462368e+32185', '-2.3153341503802376326787426e+891923', 26, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_022
+     * @tc.number    : DECIMAL_TEST4_022
      * @tc.name      : Decimal_div_Func_022
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1068,7 +1068,7 @@ export default function Decimal4Test() {
       test_div_001('8.3087090877835785554965e+35979', '1.3611234824345e+2711755', '6.10430221432e-2675776', 12, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_023
+     * @tc.number    : DECIMAL_TEST4_023
      * @tc.name      : Decimal_div_Func_023
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1139,7 +1139,7 @@ export default function Decimal4Test() {
         6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_024
+     * @tc.number    : DECIMAL_TEST4_024
      * @tc.name      : Decimal_div_Func_024
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1214,7 +1214,7 @@ export default function Decimal4Test() {
       test_div_001('-5.968397680044276695651584e+9096', '-4.614517534700289e+64', '1.293e+9032', 4, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_025
+     * @tc.number    : DECIMAL_TEST4_025
      * @tc.name      : Decimal_div_Func_025
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1296,7 +1296,7 @@ export default function Decimal4Test() {
         '5.6180385630325402341196339417374033872626693292561486830335778243264266518716597e+52', 80, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_026
+     * @tc.number    : DECIMAL_TEST4_026
      * @tc.name      : Decimal_div_Func_026
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1373,7 +1373,7 @@ export default function Decimal4Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_027
+     * @tc.number    : DECIMAL_TEST4_027
      * @tc.name      : Decimal_div_Func_027
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1437,7 +1437,7 @@ export default function Decimal4Test() {
         '2.90024895181232384129379269188490273010492115113846753163330746652769733972509352974147353e-817', 90, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_028
+     * @tc.number    : DECIMAL_TEST4_028
      * @tc.name      : Decimal_div_Func_028
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1489,7 +1489,7 @@ export default function Decimal4Test() {
         97, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_029
+     * @tc.number    : DECIMAL_TEST4_029
      * @tc.name      : Decimal_div_Func_029
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1550,7 +1550,7 @@ export default function Decimal4Test() {
         '-1.1980163219416569074208688960981e+16573', 32, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_030
+     * @tc.number    : DECIMAL_TEST4_030
      * @tc.name      : Decimal_div_Func_030
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1607,7 +1607,7 @@ export default function Decimal4Test() {
         '-1.70207280470520469485545830180759296578670882013617711034068981979e+9397', 66, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_031
+     * @tc.number    : DECIMAL_TEST4_031
      * @tc.name      : Decimal_div_Func_031
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1682,7 +1682,7 @@ export default function Decimal4Test() {
         3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_032
+     * @tc.number    : DECIMAL_TEST4_032
      * @tc.name      : Decimal_div_Func_032
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1741,7 +1741,7 @@ export default function Decimal4Test() {
       test_div_001('9.485789339622840784590481050e-758233', '-7e+726', '-1e-758959', 1, 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_033
+     * @tc.number    : DECIMAL_TEST4_033
      * @tc.name      : Decimal_div_Func_033
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1809,7 +1809,7 @@ export default function Decimal4Test() {
         '-1.13040054300297319643962874557566832355716223527807796889969229301300843252608254e+47549', 81, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_034
+     * @tc.number    : DECIMAL_TEST4_034
      * @tc.name      : Decimal_div_Func_034
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1877,7 +1877,7 @@ export default function Decimal4Test() {
       test_div_001('-4.6e-810', '-7647911169041102028645.23085440342151535045257679732464', '6e-832', 2, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_035
+     * @tc.number    : DECIMAL_TEST4_035
      * @tc.name      : Decimal_div_Func_035
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1937,7 +1937,7 @@ export default function Decimal4Test() {
       test_div_001('9.65741929292706227426625727019365e-7429', '-2.4677357009003e-3116544', '-3.91e+3109115', 3, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_036
+     * @tc.number    : DECIMAL_TEST4_036
      * @tc.name      : Decimal_div_Func_036
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -1992,7 +1992,7 @@ export default function Decimal4Test() {
         95, 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_037
+     * @tc.number    : DECIMAL_TEST4_037
      * @tc.name      : Decimal_div_Func_037
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2053,7 +2053,7 @@ export default function Decimal4Test() {
         100, 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_038
+     * @tc.number    : DECIMAL_TEST4_038
      * @tc.name      : Decimal_div_Func_038
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2104,7 +2104,7 @@ export default function Decimal4Test() {
         '-2.706107971301503253744450452957962096033375556282593804502133202e-648040', 64, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_039
+     * @tc.number    : DECIMAL_TEST4_039
      * @tc.name      : Decimal_div_Func_039
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2193,7 +2193,7 @@ export default function Decimal4Test() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_040
+     * @tc.number    : DECIMAL_TEST4_040
      * @tc.name      : Decimal_div_Func_040
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2251,7 +2251,7 @@ export default function Decimal4Test() {
         '-1.1325143267071699637599563469e-6352336', 30, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_041
+     * @tc.number    : DECIMAL_TEST4_041
      * @tc.name      : Decimal_div_Func_041
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2319,7 +2319,7 @@ export default function Decimal4Test() {
         '7.22586e+5640407', 6, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_042
+     * @tc.number    : DECIMAL_TEST4_042
      * @tc.name      : Decimal_div_Func_042
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2383,7 +2383,7 @@ export default function Decimal4Test() {
         '-7.158929881586e-2137651', 13, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_043
+     * @tc.number    : DECIMAL_TEST4_043
      * @tc.name      : Decimal_div_Func_043
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2444,7 +2444,7 @@ export default function Decimal4Test() {
       test_div_001('-2e+9408647', '6.792365459e-279427', '-2.9444824e+9688073', 8, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_044
+     * @tc.number    : DECIMAL_TEST4_044
      * @tc.name      : Decimal_div_Func_044
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2512,7 +2512,7 @@ export default function Decimal4Test() {
       test_div_001('-5.088e+875712901', '1.4199149740929254e+2656459117', '-3.584e-1780746216', 4, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_045
+     * @tc.number    : DECIMAL_TEST4_045
      * @tc.name      : Decimal_div_Func_045
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2570,7 +2570,7 @@ export default function Decimal4Test() {
         '1.16952044255256e-911975906225956', 15, 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_046
+     * @tc.number    : DECIMAL_TEST4_046
      * @tc.name      : Decimal_div_Func_046
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2632,7 +2632,7 @@ export default function Decimal4Test() {
         '1.742078004771201e-29249', 16, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_047
+     * @tc.number    : DECIMAL_TEST4_047
      * @tc.name      : Decimal_div_Func_047
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2707,7 +2707,7 @@ export default function Decimal4Test() {
         99, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_048
+     * @tc.number    : DECIMAL_TEST4_048
      * @tc.name      : Decimal_div_Func_048
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
@@ -2766,7 +2766,7 @@ export default function Decimal4Test() {
         '1.5895188485429311671129328589432262498789522829589418372332279392e+9567', 65, 2);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_049
+     * @tc.number    : DECIMAL_TEST4_049
      * @tc.name      : Decimal_div_Func_049
      * @tc.desc      : Test div
      * @tc.size      : MediumTest

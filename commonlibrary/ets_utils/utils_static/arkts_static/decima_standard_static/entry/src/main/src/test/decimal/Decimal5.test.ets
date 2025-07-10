@@ -671,14 +671,14 @@ export default function Decimal4Test() {
       test_isFinite_001(new Decimal(1.23e+2).lessThanOrEqualTo(1.23001e+2));
     })
     /**
-     * @tc.number    : DECIMAL_TEST5_009
-     * @tc.name      : Decimal_isFinite_Func_009
+     * @tc.number    : DECIMAL_TEST5_014_1
+     * @tc.name      : Decimal_isFinite_Func_014_1
      * @tc.desc      : Test isFinite
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it("Decimal_isFinite_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_isFinite_Func_014_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_isFinite_001(new Decimal(9.999999e+2).lessThanOrEqualTo(1e+3));
       test_isFinite_001(!new Decimal(1e+3).lessThanOrEqualTo(9.9999999e+2));
       test_isFinite_001(new Decimal(1.23001e-2).greaterThan(1.23e-2));
@@ -1662,7 +1662,7 @@ export default function Decimal4Test() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_042
+     * @tc.number    : DECIMAL_TEST5_042
      * @tc.name      : Decimal_floor_Func_042
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1702,7 +1702,7 @@ export default function Decimal4Test() {
       test_floor_001('-2', -1.7);
     })
     /**
-     * @tc.number    : DECIMAL_TEST_043
+     * @tc.number    : DECIMAL_TEST5_043
      * @tc.name      : Decimal_floor_Func_043
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1730,7 +1730,7 @@ export default function Decimal4Test() {
       test_floor_002('-2685', '-2685');
     })
     /**
-     * @tc.number    : DECIMAL_TEST_044
+     * @tc.number    : DECIMAL_TEST5_044
      * @tc.name      : Decimal_floor_Func_044
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1760,7 +1760,7 @@ export default function Decimal4Test() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_045
+     * @tc.number    : DECIMAL_TEST5_045
      * @tc.name      : Decimal_floor_Func_045
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1789,7 +1789,7 @@ export default function Decimal4Test() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_046
+     * @tc.number    : DECIMAL_TEST5_046
      * @tc.name      : Decimal_floor_Func_046
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1817,7 +1817,7 @@ export default function Decimal4Test() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_047
+     * @tc.number    : DECIMAL_TEST5_047
      * @tc.name      : Decimal_floor_Func_047
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
@@ -1843,7 +1843,7 @@ export default function Decimal4Test() {
     // })
 
     /**
-     * @tc.number    : DECIMAL_TEST_048
+     * @tc.number    : DECIMAL_TEST5_048
      * @tc.name      : Decimal_floor_Func_048
      * @tc.desc      : Test floor
      * @tc.size      : MediumTest
