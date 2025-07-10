@@ -15,9 +15,6 @@ struct DatePickerCanLoop {
         .canLoop(this.isLoop)
         .onDateChange((value: Date) => {
           console.info("DatePicker:onDateChange()" + value.toString());
-            let strJson = getInspectorByKey('datePicker');
-            let obj: ESObject = JSON.parse(strJson);
-            console.info('DatePickerDialogCanLoopTest_0100 component obj is: ' + obj.$attrs.canLoop);
         })
 
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
