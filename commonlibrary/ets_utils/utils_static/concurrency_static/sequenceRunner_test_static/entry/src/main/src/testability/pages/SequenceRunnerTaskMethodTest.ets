@@ -15,11 +15,6 @@
 import { Count1, Count2 } from './DataFlg';
 import { BaseClass, DeriveClass, addFunction, AsyncLock1 } from './SequenceRunnerSendableTest';
 
-// import { map } from '@kit.ConnectivityKit';
-// import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
-
-// let bitVector: BitVector = new BitVector(0);
-
 export function printArgs1(args: number): number {
   console.info('printArgs: ' + args);
   Count1.count++
