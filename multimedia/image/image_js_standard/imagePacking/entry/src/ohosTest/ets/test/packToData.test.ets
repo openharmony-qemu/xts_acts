@@ -703,6 +703,6 @@ export default function imagePackToData() {
         quality: 100
       };
       packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_1300", 5, packOpts);
-    })
+    });
   })
 }

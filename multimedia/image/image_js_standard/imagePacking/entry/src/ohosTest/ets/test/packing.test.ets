@@ -1824,7 +1824,7 @@ export default function imagePacking() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100
-     * @tc.name      : test the packing interface uses many PixelMaps
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100
      * @tc.desc      : 1.create PixelMap List
      *               : 2.get writefd
      *               : 3.create ImagePacker
