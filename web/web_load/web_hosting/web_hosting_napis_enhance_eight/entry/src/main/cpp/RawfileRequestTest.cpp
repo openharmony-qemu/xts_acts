@@ -30,12 +30,12 @@ namespace {
 uint8_t buffer[1024];
 cnd_t http_body_cnd;
 mtx_t http_body_mtx;
-uint8_t* readBuffer;
+uint8_t* g_readBuffer;
 
-int32_t setAsyncReadCallback_ = -1;
-int32_t asyncRead_ = -1;
-int32_t asyncReadMore_ = -1;
-int32_t asyncReadCallback_ = -1;
+int32_t g_setAsyncReadCallback_ = -1;
+int32_t g_asyncRead_ = -1;
+int32_t g_asyncReadMore_ = -1;
+int32_t g_asyncReadCallback_ = -1;
 
 int g_workerPid = -1;
 int g_asyncPid = -1;
@@ -50,16 +50,16 @@ void ReadCallback(const ArkWeb_HttpBodyStream  *httpBodyStream, uint8_t* buffer,
     OH_LOG_INFO(LOG_APP, "ReadCallback async thread id :%{public}d", g_asyncPid);
     OH_LOG_INFO(LOG_APP, "ReadCallback read http body back.");
     OH_LOG_INFO(LOG_APP, "ReadCallback data :%{public}s", (char *)buffer);
-    readBuffer = buffer;
-    asyncReadCallback_ = 1;
-    OH_LOG_INFO(LOG_APP, "ReadCallback asyncReadCallback :%{public}d", asyncReadCallback_);
+    g_readBuffer = buffer;
+    g_asyncReadCallback_ = 1;
+    OH_LOG_INFO(LOG_APP, "ReadCallback g_asyncReadCallback :%{public}d", g_asyncReadCallback_);
     bool isEof = OH_ArkWebHttpBodyStream_IsEof(httpBodyStream);
     if (!isEof && bytesRead != 0) {
-        memset(buffer, 0, 10);
+        std::fill(buffer, 0, 10);
         OH_LOG_INFO(LOG_APP, "ReadCallback OH_ArkWebHttpBodyStream_AsyncRead start");
         OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, 10);
-        asyncReadMore_ = 1;
-        OH_LOG_INFO(LOG_APP, "ReadCallback asyncReadMore :%{public}d", asyncReadMore_);
+        g_asyncReadMore_ = 1;
+        OH_LOG_INFO(LOG_APP, "ReadCallback g_asyncReadMore :%{public}d", g_asyncReadMore_);
         OH_LOG_INFO(LOG_APP, "ReadCallback OH_ArkWebHttpBodyStream_AsyncRead end");
     } else {
         OH_LOG_INFO(LOG_APP, "ReadCallback RawfileRequest OH_ArkWebHttpBodyStream_GetUserData");
@@ -72,14 +72,13 @@ void ReadCallback(const ArkWeb_HttpBodyStream  *httpBodyStream, uint8_t* buffer,
     }
 }
 
-
 int ReadHttpBodyOnWorkerThread(void* userData)
 {
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread start.");
     std::size_t hashValue = std::hash<std::thread::id>()(std::this_thread::get_id());
     g_workerPid = static_cast<int>(hashValue);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread thread id :%{public}d", g_workerPid);
-    memset(buffer, 0, 10);
+    std::fill(buffer, 0, 10);
     ArkWeb_HttpBodyStream *httpBodyStream = (ArkWeb_HttpBodyStream *)userData;
 
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_httpBodyStreamNullptr :%{public}d", g_httpBodyStreamNullptr);
@@ -89,8 +88,8 @@ int ReadHttpBodyOnWorkerThread(void* userData)
     } else {
         OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, g_bufLen);
     }
-    asyncRead_ = 1;
-    OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread asyncRead :%{public}d", asyncRead_);
+    g_asyncRead_ = 1;
+    OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_asyncRead :%{public}d", g_asyncRead_);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread OH_ArkWebHttpBodyStream_AsyncRead end");
     cnd_init(&http_body_cnd);
     mtx_init(&http_body_mtx, mtx_plain);
@@ -98,17 +97,15 @@ int ReadHttpBodyOnWorkerThread(void* userData)
     return 0;
 }
 
-
 int ReadRawfileOnWorkerThread(void* userData)
 {
     OH_LOG_INFO(LOG_APP, "ReadRawfileOnWorkerThread start.");
     RawfileRequest * rawfileRequest = (RawfileRequest *)userData;
     if (rawfileRequest) {
-        rawfileRequest->ReadRawfileDataOnWorkerThread();
+        rawfileRequest->ReadRawfileThread();
     }
     return 0;
 }
-
 
 // ArkWeb_HttpBodyStream的初始化回调。
 void InitCallback(const ArkWeb_HttpBodyStream *httpBodyStream, ArkWeb_NetError result)
@@ -122,18 +119,15 @@ void InitCallback(const ArkWeb_HttpBodyStream *httpBodyStream, ArkWeb_NetError r
         return;
     }
 
-
     if (thrd_detach(th) != thrd_success) {
         OH_LOG_ERROR(LOG_APP, "detach thread failed.");
     }
 }
 
-
 const int blockSize = 1024 * 8;
 
 
 }  // namespace
-
 
 RawfileRequest::RawfileRequest(const ArkWeb_ResourceRequest *resourceRequest,
                                const ArkWeb_ResourceHandler *resourceHandler,
@@ -147,28 +141,28 @@ RawfileRequest::~RawfileRequest() {}
 
 int RawfileRequest::SetAsyncReadCallback()
 {
-    return setAsyncReadCallback_;
+    return g_setAsyncReadCallback_;
 }
 
 int RawfileRequest::AsyncRead()
 {
-    return asyncRead_;
+    return g_asyncRead_;
 }
 
 int RawfileRequest::AsyncReadMore()
 {
-    return asyncReadMore_;
+    return g_asyncReadMore_;
 }
 
 int RawfileRequest::AsyncReadCallback()
 {
-    return asyncReadCallback_;
+    return g_asyncReadCallback_;
 }
 
 std::string RawfileRequest::ReadBufferValue()
 {
-    if (readBuffer) {
-        return std::string((char *)readBuffer);
+    if (g_readBuffer) {
+        return std::string(static_cast<char*>g_readBuffer);
     }
     return "";
 }
@@ -184,11 +178,11 @@ int RawfileRequest::ThreadIdEqual()
 void RawfileRequest::Start()
 {
     OH_LOG_INFO(LOG_APP, "RawfileRequest start a rawfile request.");
-    setAsyncReadCallback_ = -1;
-    asyncRead_ = -1;
-    asyncReadMore_ = -1;
-    asyncReadCallback_ = -1;
-    readBuffer = nullptr;
+    g_setAsyncReadCallback_ = -1;
+    g_asyncRead_ = -1;
+    g_asyncReadMore_ = -1;
+    g_asyncReadCallback_ = -1;
+    g_readBuffer = nullptr;
     g_workerPid = -1;
     g_asyncPid = -1;
     OH_LOG_INFO(LOG_APP, "RawfileRequest Start  httpBodyStreamNullptr_ :%{public}d", httpBodyStreamNullptr_);
@@ -215,14 +209,14 @@ void RawfileRequest::Start()
         OH_LOG_ERROR(LOG_APP, "RawfileRequest Start have http body stream");
         OH_ArkWebHttpBodyStream_SetUserData(stream_, this);
         OH_ArkWebHttpBodyStream_SetAsyncReadCallback(stream_, ReadCallback);
-        setAsyncReadCallback_ = 1;
-        OH_LOG_INFO(LOG_APP, "RawfileRequest Start  setAsyncReadCallback :%{public}d", setAsyncReadCallback_);
+        g_setAsyncReadCallback_ = 1;
+        OH_LOG_INFO(LOG_APP, "RawfileRequest Start  g_setAsyncReadCallback :%{public}d", g_setAsyncReadCallback_);
         OH_LOG_INFO(LOG_APP, "RawfileRequest Start OH_ArkWebHttpBodyStream_SetAsyncReadCallback end");
         OH_ArkWebHttpBodyStream_Init(stream_, InitCallback);
     } else {
         OH_LOG_ERROR(LOG_APP, "RawfileRequest ReadRawfileOnWorkerThread start.");
         thrd_t th;
-        if (thrd_create(&th, ReadRawfileOnWorkerThread, (void *)this) != thrd_success) {
+        if (thrd_create(&th, ReadRawfileOnWorkerThread, static_cast<void*>(this)) != thrd_success) {
             OH_LOG_ERROR(LOG_APP, "RawfileRequest Start ReadRawfileOnWorkerThread create thread failed.");
             return;
         }
@@ -237,20 +231,22 @@ void RawfileRequest::Start()
 // 在worker线程中读取rawfile，并通过ResourceHandler返回给Web内核。
 void RawfileRequest::ReadDataOnWorkerThread()
 {
+    const int HTTP_OK = 200;
     OH_LOG_INFO(LOG_APP, "ReadDataOnWorkerThread read rawfile in worker thread.");
     OH_ArkWebResponse_SetError(response(), ARKWEB_NET_OK);
-    OH_ArkWebResponse_SetStatus(response(), 200);
+    OH_ArkWebResponse_SetStatus(response(), HTTP_OK);
     OH_ArkWebResponse_SetCharset(response(), "UTF-8");
     OH_ArkWebResponse_SetMimeType(response(), "text/html");
     DidReceiveResponse();
-    DidReceiveData(readBuffer, 100);
+    const int DATA_SIZE = 100;
+    DidReceiveData(readBuffer, DATA_SIZE);
     DidFinish();
 }
 
 // 在worker线程中读取rawfile，并通过ResourceHandler返回给Web内核。
-void RawfileRequest::ReadRawfileDataOnWorkerThread()
+void RawfileRequest::ReadRawfileThread()
 {
-    OH_LOG_INFO(LOG_APP, "ReadRawfileDataOnWorkerThread read rawfile in worker thread.");
+    OH_LOG_INFO(LOG_APP, "ReadRawfileThread read rawfile in worker thread.");
     const struct UrlInfo {
         std::string resource;
         std::string mimeType;
@@ -278,11 +274,13 @@ void RawfileRequest::ReadRawfileDataOnWorkerThread()
 
     RawFile *rawfile = OH_ResourceManager_OpenRawFile(resourceManager(), rawfilePath().c_str());
     if (!rawfile) {
-        OH_LOG_INFO(LOG_APP, "ReadRawfileDataOnWorkerThread OH_ArkWebResponse_SetStatus 404.");
-        OH_ArkWebResponse_SetStatus(response(), 404);
+        OH_LOG_INFO(LOG_APP, "ReadRawfileThread OH_ArkWebResponse_SetStatus 404.");
+        const int HTTP_NOT_FOUND = 404;
+        OH_ArkWebResponse_SetStatus(response(), HTTP_NOT_FOUND);
     } else {
-        OH_LOG_INFO(LOG_APP, "ReadRawfileDataOnWorkerThread OH_ArkWebResponse_SetStatus 200.");
-        OH_ArkWebResponse_SetStatus(response(), 200);
+        OH_LOG_INFO(LOG_APP, "ReadRawfileThread OH_ArkWebResponse_SetStatus 200.");
+        const int HTTP_OK = 200;
+        OH_ArkWebResponse_SetStatus(response(), HTTP_OK);
     }
 
     for (auto &urlInfo : urlInfos) {
@@ -308,14 +306,12 @@ void RawfileRequest::ReadRawfileDataOnWorkerThread()
         consumed += ret;
         OH_ResourceManager_SeekRawFile(rawfile, consumed, 0);
         DidReceiveData(buffer, ret);
-        memset(buffer, 0, blockSize);
+        std::fill(buffer, 0, blockSize);
     }
-
 
     OH_ResourceManager_CloseRawFile(rawfile);
     DidFinish();
 }
-
 
 void RawfileRequest::Stop()
 {
@@ -339,7 +335,6 @@ void RawfileRequest::DidReceiveResponse()
     }
 }
 
-
 void RawfileRequest::DidReceiveData(const uint8_t *buffer, int64_t bufLen)
 {
     OH_LOG_INFO(LOG_APP, "did receive data.");
@@ -349,7 +344,6 @@ void RawfileRequest::DidReceiveData(const uint8_t *buffer, int64_t bufLen)
     }
 }
 
-
 void RawfileRequest::DidFinish()
 {
     OH_LOG_INFO(LOG_APP, "did finish.");
@@ -358,7 +352,6 @@ void RawfileRequest::DidFinish()
         OH_ArkWebResourceHandler_DidFinish(resourceHandler_);
     }
 }
-
 
 void RawfileRequest::DidFailWithError(ArkWeb_NetError errorCode)
 {

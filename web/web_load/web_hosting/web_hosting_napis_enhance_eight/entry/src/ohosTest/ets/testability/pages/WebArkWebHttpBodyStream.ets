@@ -511,8 +511,8 @@ struct WebArkWebHttpBodyStream {
                     }
                   })
                   await waitForExist(()=>testNapi.requestStop(), 'OH_ArkWebHttpBodyStream_AsyncRead019_requestStop', 1, 1000)
-                  let readBufferValue_hello:string = testNapi.readBufferValue()
-                  console.info('readBufferValue_hello:' + readBufferValue_hello)
+                  let readBufferValueHello:string = testNapi.readBufferValue()
+                  console.info('readBufferValueHello:' + readBufferValueHello)
 
                   this.controller.runJavaScript("textPost('https://www.example.com/httpBodyStreamNullptr','GT_BUFFER')",(error, result) => {
                     if (error) {

@@ -28,13 +28,13 @@ ArkWeb_SchemeHandler *g_schemeHandler;
 ArkWeb_SchemeHandler *g_schemeHandlerForSW;
 NativeResourceManager *g_resourceManager;
 
-int32_t testSetAsyncReadCallback = -1;
-int32_t testAsyncRead = -1;
-int32_t testAsyncReadMore = -1;
-int32_t testAsyncReadCallback = -1;
-std::string testReadBufferValue = "";
-int32_t testThreadIdEqual = -1;
-int32_t testRequestStop = -1;
+int32_t g_testSetAsyncReadCallback = -1;
+int32_t g_testAsyncRead = -1;
+int32_t g_testAsyncReadMore = -1;
+int32_t g_testAsyncReadCallback = -1;
+std::string g_testReadBufferValue = "";
+int32_t g_testThreadIdEqual = -1;
+int32_t g_testRequestStop = -1;
 
 // 注册三方协议的配置，需要在Web内核初始化之前调用，否则会注册失败。
 static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info)
@@ -70,7 +70,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
     int size = OH_ArkWebRequestHeaderList_GetSize(headerList);
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart OH_ArkWebRequestHeaderList_GetSize header size %{public}d", size);
 
-    for(int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++) {
         char *key;
         char *value;
         OH_ArkWebRequestHeaderList_GetHeader(headerList, i, &key, &value);
@@ -79,20 +79,21 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
             value);
     }
 
-
     RawfileRequest* request = new RawfileRequest(resourceRequest, resourceHandler, g_resourceManager);
     OH_ArkWebResourceRequest_SetUserData(resourceRequest, request);
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart OH_ArkWebResourceRequest_SetUserData");
     if (strcmp(url, "https://www.example.com/httpBodyStreamNullptr") == 0) {
         request->httpBodyStreamNullptr_ = true;
     } else {
-       request->httpBodyStreamNullptr_ = false;
+        request->httpBodyStreamNullptr_ = false;
     }
+
 
     if (strcmp(url, "https://www.example.com/bufLenZero") == 0) {
         request->bufLen_ = 0;
     } else {
-       request->bufLen_ = 10;
+       const int DEFAULT_BUF_LEN = 10;
+       request->bufLen_ = DEFAULT_BUF_LEN;
     }
 
     request->Start();
@@ -111,12 +112,12 @@ void OnURLRequestStop(const ArkWeb_SchemeHandler *schemeHandler,
 
     RawfileRequest *rawfileRequest = (RawfileRequest *)OH_ArkWebResourceRequest_GetUserData(request);
     if (rawfileRequest) {
-        testSetAsyncReadCallback = rawfileRequest->SetAsyncReadCallback();
-        testAsyncRead = rawfileRequest->AsyncRead();
-        testAsyncReadMore = rawfileRequest->AsyncReadMore();
-        testAsyncReadCallback = rawfileRequest->AsyncReadCallback();
-        testReadBufferValue = rawfileRequest->ReadBufferValue();
-        testThreadIdEqual = rawfileRequest->ThreadIdEqual();
+        g_testSetAsyncReadCallback = rawfileRequest->SetAsyncReadCallback();
+        g_testAsyncRead = rawfileRequest->AsyncRead();
+        g_testAsyncReadMore = rawfileRequest->AsyncReadMore();
+        g_testAsyncReadCallback = rawfileRequest->AsyncReadCallback();
+        g_testReadBufferValue = rawfileRequest->ReadBufferValue();
+        g_testThreadIdEqual = rawfileRequest->ThreadIdEqual();
         rawfileRequest->Stop();
     }
     testRequestStop = 1;
@@ -186,7 +187,7 @@ static napi_value InitResourceManager(napi_env env, napi_callback_info info)
 static napi_value SetAsyncReadCallback(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testSetAsyncReadCallback == 1) {
+    if (g_testSetAsyncReadCallback == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);
@@ -197,7 +198,7 @@ static napi_value SetAsyncReadCallback(napi_env env, napi_callback_info info)
 static napi_value AsyncRead(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testAsyncRead == 1) {
+    if (g_testAsyncRead == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);
@@ -208,7 +209,7 @@ static napi_value AsyncRead(napi_env env, napi_callback_info info)
 static napi_value AsyncReadMore(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testAsyncReadMore == 1) {
+    if (g_testAsyncReadMore == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);
@@ -219,7 +220,7 @@ static napi_value AsyncReadMore(napi_env env, napi_callback_info info)
 static napi_value AsyncReadCallback(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testAsyncReadCallback == 1) {
+    if (g_testAsyncReadCallback == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);
@@ -230,14 +231,14 @@ static napi_value AsyncReadCallback(napi_env env, napi_callback_info info)
 static napi_value ReadBufferValue(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    napi_create_string_utf8(env, testReadBufferValue.c_str(), NAPI_AUTO_LENGTH, &result);
+    napi_create_string_utf8(env, g_testReadBufferValue.c_str(), NAPI_AUTO_LENGTH, &result);
     return result;
 }
 
 static napi_value ThreadIdEqual(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testThreadIdEqual == 1) {
+    if (g_testThreadIdEqual == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);
@@ -248,7 +249,7 @@ static napi_value ThreadIdEqual(napi_env env, napi_callback_info info)
 static napi_value RequestStop(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    if (testRequestStop == 1) {
+    if (g_testRequestStop == 1) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, -1, &result);

@@ -36,7 +36,7 @@ public:
 
     void Start();
     void Stop();
-    void ReadRawfileDataOnWorkerThread();
+    void ReadRawfileThread();
     void ReadDataOnWorkerThread();
 
 

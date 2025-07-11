@@ -26,7 +26,7 @@
             xhr.send(formData);
             xhr.onreadystatechange = function (err) {
                 console.log(err.target.status);
-            }
+            };
         }
         function textPutXhr(url) {
             let formData = new FormData();
@@ -37,29 +37,29 @@
             xhr.send(formData);
             xhr.onreadystatechange = function (err) {
                 console.log(err.target.status);
-            }
+            };
         }
         function textPost(url, dataType) {
             let xhr = new XMLHttpRequest();
             xhr.open('POST', url, true);
-            if(dataType === 'TEXT'){
+            if (dataType === 'TEXT') {
                 xhr.setRequestHeader('Content-Type', 'text/plain');
                 let textValue = 'text@plain#ABC#abc@123';
                 xhr.send(textValue);
-            } else if(dataType === 'BYTES'){
+            } else if (dataType === 'BYTES') {
                 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
                 let byteArray = [104, 101, 108, 108, 111];
                 let byteData = new Blob([new Uint8Array(byteArray)]);
                 xhr.send(byteData);
-            } else if(dataType === 'BLOB'){
+            } else if (dataType === 'BLOB') {
                 let formData = new FormData();
                 let myBlob = new Blob(['This is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob dataThis is my blob data'], {type : 'text/plain'});
                 formData.append('blob', myBlob);
                 xhr.send(formData);
-            } else if(dataType === 'ARRAYBUFFER'){
+            } else if (dataType === 'ARRAYBUFFER') {
                 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
                 let arrayBuffer = new ArrayBuffer(15);
-                const uint8Array = new Uint8Array(arrayBuffer)
+                const uint8Array = new Uint8Array(arrayBuffer);
                 uint8Array[0] = 65;
                 uint8Array[1] = 104;
                 uint8Array[2] = 101;
@@ -74,21 +74,21 @@
                 uint8Array[11] = 67;
                 uint8Array[12] = 66;
                 xhr.send(uint8Array.buffer);
-            } else if(dataType === 'DOCUMENTOBJECT'){
+            } else if (dataType === 'DOCUMENTOBJECT') {
                 xhr.setRequestHeader('Content-Type', 'text/html');
                 let testHtml = '<html><body bgcolor=\'white\'>abcdef12query</body></html>';
                 xhr.send(testHtml);
-            } else if(dataType === 'LT_BUFFER'){
+            } else if (dataType === 'LT_BUFFER') {
                 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
                 let byteArray = [104, 101, 108];
                 let byteData = new Blob([new Uint8Array(byteArray)]);
                 xhr.send(byteData);
-            } else if(dataType === 'EQ_BUFFER'){
+            } else if (dataType === 'EQ_BUFFER') {
                 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
                 let byteArray = [104, 101, 108, 108, 111, 104, 101, 108, 108, 111];
                 let byteData = new Blob([new Uint8Array(byteArray)]);
                 xhr.send(byteData);
-            } else if(dataType === 'GT_BUFFER'){
+            } else if (dataType === 'GT_BUFFER') {
                 xhr.setRequestHeader('Content-Type', 'application/octet-stream');
                 let byteArray = [104, 101, 108, 108, 111, 119, 111, 114, 100, 104, 101, 108];
                 let byteData = new Blob([new Uint8Array(byteArray)]);
@@ -99,13 +99,13 @@
                 console.log(xhr.status);
                 console.log(xhr.getAllResponseHeaders());
                 console.log(xhr.getResponseHeader('Content-Type'));
-                if(xhr.readyState === 4) {
-                    if(xhr.status === 0 || xhr.status === 200) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 0 || xhr.status === 200) {
                         console.log(xhr.responseText);
                         document.getElementById('response_content').innerText = xhr.responseText;
                     }
                 }
-            }
+            };
         }
 
         function testPostChunked(url) {
@@ -125,9 +125,10 @@
                 body: rs,
                 duplex: 'half'
             }).then(response => {
-                if(response.ok) {
+                if (response.ok) {
                     return 'ok';
                 }
+                return '';
             }).then(data => {
                 console.log(data);
                 document.getElementById('response_content').innerText = data;
