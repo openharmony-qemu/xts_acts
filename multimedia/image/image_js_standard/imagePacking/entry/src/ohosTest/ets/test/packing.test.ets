@@ -1563,7 +1563,7 @@ export default function imagePacking() {
     });
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
-     * @tc.name      : pSUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
      * @tc.desc      : 1.create ImageSource
      *                 2.call packing
      *                 3.call return array
