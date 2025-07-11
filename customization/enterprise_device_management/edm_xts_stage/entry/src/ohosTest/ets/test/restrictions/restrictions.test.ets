@@ -2806,10 +2806,8 @@ function testGetDisallowedForAccountPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     const userId = 0;
     try {
-      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, userId);
-      expect(false).assertTrue();
-    } catch (error) {
-      expect(error.code == 401).assertTrue();
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, userId);
+      expect(ret).assertFalse();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
