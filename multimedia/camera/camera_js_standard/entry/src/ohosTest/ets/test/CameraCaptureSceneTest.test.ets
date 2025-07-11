@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -315,7 +315,7 @@ let setAutoZoomRatio = (session: cameraObj.PhotoSession) => {
     let err = error as BusinessError;
     console.error('Failed to get the zoom ratio range. errorCode = ' + err.code);
   }
-  if (zoomRatioRange.length <= 0) {
+  if (zoomRatioRange.length <= 0 || zoomRatioRange == undefined) {
     return;
   }
   // 设置可变焦距比
@@ -373,7 +373,22 @@ export default function cameraCaptureSceneTest() {
         // 启动会话
         await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
         // 获取asset
-        asset = await getAssetFromCapture()
+        let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+          if (err) {
+              console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+          }
+          console.info("get photoAsset success: " + asset)
+          let requestOptions: photoAccessHelper.RequestOptions = {
+            deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
+        }
+        const handler = new MediaDataHandler();
+      }
+      
+        photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+      
+        // 使用当前拍照设置进行拍照, 触发回调
+        await photoOutput.capture(captureSetting);
+        await sleep(3000)
         // 保存asset
         try {
             console.info('context: ' + JSON.stringify(context));
@@ -503,254 +518,13 @@ export default function cameraCaptureSceneTest() {
      */
     it('SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100', Level.LEVEL1, async (done: Function) => {
         console.info(TAG + " --------------Enter SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100--------------");
-        let photoSession: cameraObj.PhotoSession | undefined = undefined;
-        let cameraInput: cameraObj.CameraInput | undefined = undefined;
-        let previewOutput: cameraObj.PreviewOutput | undefined = undefined;
-        let photoOutput: cameraObj.PhotoOutput | undefined = undefined;
-
-        class MediaDataHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
-            onDataPrepared(data: ArrayBuffer) {
-            if (data === undefined) {
-                console.error('Error occurred when preparing data');
-                return;
-            }
-            console.info('on image data prepared');
-            // 请在获取到拍照buffer后，再释放session，提前释放session，会导致无法正常出图。
-            releaseCamSession();
-            }
+        let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
+        let requestOptions: photoAccessHelper.RequestOptions = {
+            deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
         }
-
-        let mediaLibRequestBuffer = async (photoAsset: photoAccessHelper.PhotoAsset) => {
-            let requestOptions: photoAccessHelper.RequestOptions = {
-                deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
-            }
-            const handler = new MediaDataHandler();
-            try {
-                console.info('context: ' + JSON.stringify(context));
-                console.info('photoAsset: ' + photoAsset);
-                console.info('requestOptions: ' + JSON.stringify(requestOptions));
-                console.info('handler: ' + handler);
-                await photoAccessHelper.MediaAssetManager.requestImageData(context, photoAsset, requestOptions, handler);
-                console.info('requestImageData successfully');
-                expect(true).assertTrue()
-            } catch (err) {
-                console.info('mediaLibRequestBuffer failed to save photoAsset: ' + err.code)
-                expect().assertFail()
-            }
-        }
-
-        let setPhotoOutputCb = (photoOutput: cameraObj.PhotoOutput) => {
-            //监听回调之后，调用photoOutput的capture方法，低质量图上报后触发回调
-            photoOutput.on('photoAssetAvailable', (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset): void => {
-            console.info('getPhotoAsset start');
-            console.info(`err: ${JSON.stringify(err)}`);
-            if ((err !== undefined && err.code !== 0) || photoAsset === undefined) {
-                console.error('getPhotoAsset failed');
-                return;
-            }
-            // 调用媒体库接口注册低质量图或高质量图buffer回调，自定义处理
-            mediaLibRequestBuffer(photoAsset);
-            });
-        }
-
-        let deferredCaptureCase = async (baseContext: common.BaseContext, surfaceId: string) => {
-            // 创建CameraManager对象
-            let cameraManager: cameraObj.CameraManager = cameraObj.getCameraManager(baseContext);
-            if (!cameraManager) {
-                console.error('camera.getCameraManager error');
-                return;
-            }
-            // 监听相机状态变化
-            cameraManager.on('cameraStatus', (err: BusinessError, cameraStatusInfo: cameraObj.CameraStatusInfo) => {
-            if (err !== undefined && err.code !== 0) {
-                console.error('cameraStatus with errorCode = ' + err.code);
-                return;
-            }
-            console.info(`camera : ${cameraStatusInfo.camera.cameraId}`);
-            console.info(`status: ${cameraStatusInfo.status}`);
-            });
-
-            // 获取相机列表
-            let cameraArray: Array<cameraObj.CameraDevice> = cameraManager.getSupportedCameras();
-            if (cameraArray.length <= 0) {
-                console.error('cameraManager.getSupportedCameras error');
-                return;
-            }
-
-            for (let index = 0; index < cameraArray.length; index++) {
-                console.info('cameraId : ' + cameraArray[index].cameraId); // 获取相机ID
-                console.info('cameraPosition : ' + cameraArray[index].cameraPosition); // 获取相机位置
-                console.info('cameraType : ' + cameraArray[index].cameraType); // 获取相机类型
-                console.info('connectionType : ' + cameraArray[index].connectionType); // 获取相机连接类型
-            }
-
-            // 创建相机输入流
-            try {
-            cameraInput = cameraManager.createCameraInput(cameraArray[0]);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to createCameraInput errorCode = ' + err.code);
-            }
-            if (cameraInput === undefined) {
-                return;
-            }
-
-            // 监听cameraInput错误信息
-            let cameraDevice: cameraObj.CameraDevice = cameraArray[0];
-            cameraInput.on('error', cameraDevice, (error: BusinessError) => {
-                console.error(`Camera input error code: ${error.code}`);
-            })
-
-            // 打开相机
-            await cameraInput.open();
-
-            // 获取支持的模式类型
-            let sceneModes: Array<cameraObj.SceneMode> = cameraManager.getSupportedSceneModes(cameraArray[0]);
-            let isSupportPhotoMode: boolean = sceneModes.indexOf(cameraObj.SceneMode.NORMAL_PHOTO) >= 0;
-            if (!isSupportPhotoMode) {
-                console.error('photo mode not support');
-                return;
-            }
-            // 获取相机设备支持的输出流能力
-            let cameraOutputCap: cameraObj.CameraOutputCapability =
-            cameraManager.getSupportedOutputCapability(cameraArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
-            if (!cameraOutputCap) {
-                console.error('cameraManager.getSupportedOutputCapability error');
-                return;
-            }
-            console.info('outputCapability: ' + JSON.stringify(cameraOutputCap));
-
-            let previewProfilesArray: Array<cameraObj.Profile> = cameraOutputCap.previewProfiles;
-            if (!previewProfilesArray) {
-                console.error('createOutput previewProfilesArray == null || undefined');
-            }
-
-            let photoProfilesArray: Array<cameraObj.Profile> = cameraOutputCap.photoProfiles;
-            if (!photoProfilesArray) {
-                console.error('createOutput photoProfilesArray == null || undefined');
-            }
-
-            // 创建预览输出流
-            try {
-                previewOutput = cameraManager.createPreviewOutput(previewProfilesArray[0], surfaceId);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error(`Failed to create the PreviewOutput instance. error code: ${err.code}`);
-            }
-            if (previewOutput === undefined) {
-                return;
-            }
-
-            // 监听预览输出错误信息
-            previewOutput.on('error', (error: BusinessError) => {
-            console.error(`Preview output error code: ${error.code}`);
-            });
-
-            // 创建拍照输出流
-            try {
-                photoOutput = cameraManager.createPhotoOutput(photoProfilesArray[0]);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to createPhotoOutput errorCode = ' + err.code);
-            }
-            if (photoOutput === undefined) {
-            return;
-            }
-
-            //注册监听photoAssetAvailable回调
-            setPhotoOutputCb(photoOutput);
-
-            //创建会话
-            try {
-                photoSession = cameraManager.createSession(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to create the session instance. errorCode = ' + err.code);
-            }
-            if (photoSession === undefined) {
-                return;
-            }
-            // 监听session错误信息
-            photoSession.on('error', (error: BusinessError) => {
-            console.error(`Capture session error code: ${error.code}`);
-            });
-
-            // 开始配置会话
-            try {
-                photoSession.beginConfig();
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to beginConfig. errorCode = ' + err.code);
-            }
-
-            // 向会话中添加相机输入流
-            try {
-                photoSession.addInput(cameraInput);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to addInput. errorCode = ' + err.code);
-            }
-
-            // 向会话中添加预览输出流
-            try {
-                photoSession.addOutput(previewOutput);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to addOutput(previewOutput). errorCode = ' + err.code);
-            }
-
-            // 向会话中添加拍照输出流
-            try {
-                photoSession.addOutput(photoOutput);
-            } catch (error) {
-                let err = error as BusinessError;
-                console.error('Failed to addOutput(photoOutput). errorCode = ' + err.code);
-            }
-
-            // 提交会话配置
-            await photoSession.commitConfig();
-
-            // 启动会话
-            await photoSession.start().then(() => {
-                console.info('Promise returned to indicate the session start success.');
-            });
-
-            let photoCaptureSetting: cameraObj.PhotoCaptureSetting = {
-            quality: cameraObj.QualityLevel.QUALITY_LEVEL_HIGH, // 设置图片质量高
-            rotation: cameraObj.ImageRotation.ROTATION_0 // 设置图片旋转角度0
-            }
-
-            // 使用当前拍照设置触发一次拍照
-            photoOutput.capture(photoCaptureSetting, (err: BusinessError) => {
-            if (err) {
-                console.error(`Failed to capture the photo ${err.message}`);
-                return;
-            }
-            console.info('Callback invoked to indicate the photo capture request success.');
-            });
-        }
-
-        let releaseCamSession = async () => {
-            // 停止当前会话
-            await photoSession?.stop();
-
-            // 释放相机输入流
-            await cameraInput?.close();
-
-            // 释放预览输出流
-            await previewOutput?.release();
-
-            // 释放拍照输出流
-            await photoOutput?.release();
-
-            // 释放会话
-            await photoSession?.release();
-
-            // 会话置空
-            photoSession = undefined;
-        }
-        await deferredCaptureCase(context, surfaceIds)
-        await sleep(5000)
+        const handler = new MediaDataHandler();
+        let result = await testSegmentedCapture(context, asset, requestOptions, handler)
+        expect(result).assertTrue()
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0100--------------");
         done()
     });
@@ -894,178 +668,6 @@ export default function cameraCaptureSceneTest() {
         console.info(TAG + " --------------Exit SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_FROM_CAPTURE_0900--------------");
         done()
     });
-
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100
-     * @tc.desc      : test camera photoOutput capture on format heic
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100', Level.LEVEL2, async (done: Function) => {
-      console.info(TAG + " --------------Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100--------------");
-      // 启动会话
-      await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO)
-      // 设置回调
-      setPhotoOutputCb(photoOutput)
-      // 设置闪光灯模式
-      setAutoFlashMode(cameraSession)
-      // 设置变焦模式
-      setAutoFocusMode(cameraSession)
-      // 设置焦距比
-      setAutoZoomRatio(cameraSession)
-      // 拍照触发回调，获取图片对象imageObj
-      photoOutput.capture(captureSetting);
-      await sleep(3000)
-      console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100, imageObj: " + imageObj);
-      expect(imageObj != undefined).assertTrue()
-      imageObj.release()
-      // 释放会话
-      await stopCameraSession()
-      console.info(TAG + " --------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0100--------------");
-      done()
-    });
-
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200
-     * @tc.desc      : test all format supported of photo output
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200--------------");
-      // 获取所有支持的格式
-      let formatData = getOutPutFormatArray(0, cameraObj.SceneMode.NORMAL_PHOTO)
-      console.info("formatData: " + JSON.stringify(formatData))
-      // 遍历所有支持的格式
-      for (let i = 0; i < formatData.photoProfiles.length; i++) {
-        let currentFormat = formatData.photoProfiles[i]
-        console.info("currentFormat: " + JSON.stringify(currentFormat))
-        // 创建相机
-        getCameraDevices()
-        // 创建输入流
-        await createInput(0);
-        let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
-        // 创建指定格式的输出流
-        for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          if ( cameraOutputCap.photoProfiles[i].format == currentFormat) {
-            photoOutput = cameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
-            console.log(`createPhotoOutput ok: ${JSON.stringify(photoOutput)}, format: ${JSON.stringify(cameraOutputCap.photoProfiles[i].format)}`)
-            let previewProfile = cameraOutputCap.previewProfiles.find((previewProfile: cameraObj.Profile) => {
-              return Math.abs((previewProfile.size.width / previewProfile.size.height) - (cameraOutputCap.photoProfiles[i].size.width / cameraOutputCap.photoProfiles[i].size.height)) < Number.EPSILON;
-            });
-            previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceIds);
-            console.log(`createPreviewOutput ok: ${JSON.stringify(previewOutput)}`)
-            break
-          }
-        }
-        // 设置回调
-        setPhotoOutputCb(photoOutput)
-        // 创建会话
-        createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO)
-        if (cameraInput) {
-          cameraSession.addInput(cameraInput);
-        }
-        if (previewOutput) {
-          cameraSession.addOutput(previewOutput);
-        }
-        if (photoOutput) {
-          cameraSession.addOutput(photoOutput);
-        }
-        await cameraSession.commitConfig();
-        await cameraSession.start()
-
-        // 拍照触发回调，获取图片对象imageObj
-        photoOutput.capture(captureSetting);
-        await sleep(3000)
-        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200, imageObj: " + imageObj);
-        expect(imageObj != undefined).assertTrue()
-        imageObj.release()
-        // 释放会话
-        await stopCameraSession()
-      }
-      console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0200--------------");
-      done();
-    })
-
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300
-     * @tc.desc      : test  photo output format CAMERA_FORMAT_HEIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300', Level.LEVEL2, async (done: Function) => {
-      console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300--------------");
-
-      let currentFormat = cameraObj.CameraFormat.CAMERA_FORMAT_HEIC
-      console.info("currentFormat: " + JSON.stringify(currentFormat))
-      // 创建相机
-      getCameraDevices()
-      // 创建输入流
-      await createInput(0);
-      let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
-      // 创建指定格式的输出流
-      let photoProfile: cameraObj.Profile = {
-        format: currentFormat,
-        size: cameraOutputCap.photoProfiles[0].size
-      }
-
-      photoOutput = cameraManager.createPhotoOutput(photoProfile);
-      console.log(`createPhotoOutput ok: ${JSON.stringify(photoOutput)}, ${JSON.stringify(photoProfile)}`)
-      let previewProfile = cameraOutputCap.previewProfiles.find((previewProfile: cameraObj.Profile) => {
-        return Math.abs((previewProfile.size.width / previewProfile.size.height) - (photoProfile.size.width / photoProfile.size.height)) < Number.EPSILON;
-      });
-      previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceIds);
-      console.log(`createPreviewOutput ok: ${JSON.stringify(previewOutput)}, ${JSON.stringify(previewProfile)}`)
-
-      // 设置回调
-      setPhotoOutputCb(photoOutput)
-      // 创建会话
-      createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO)
-      if (cameraInput) {
-        cameraSession.addInput(cameraInput);
-      }
-      if (previewOutput) {
-        cameraSession.addOutput(previewOutput);
-      }
-      if (photoOutput) {
-        try {
-          cameraSession.addOutput(photoOutput);
-        } catch (err) {
-          console.info(`addOutput photoOutput failed, error code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`)
-          let formatData = getOutPutFormatArray(0, cameraObj.SceneMode.NORMAL_PHOTO)
-          if (formatData.photoProfiles.includes(currentFormat)) {
-            expect().assertFail()
-          } else {
-            expect(err.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR)
-            photoOutput.release()
-            previewOutput.release()
-            console.info("SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300 success")
-            done()
-            return
-          }
-        }
-      }
-      await cameraSession.commitConfig();
-      await cameraSession.start()
-
-      // 拍照触发回调，获取图片对象imageObj
-      photoOutput.capture(captureSetting);
-      await sleep(3000)
-      console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300, imageObj: " + imageObj);
-      expect(imageObj != undefined).assertTrue()
-      imageObj.release()
-      // 释放会话
-      await stopCameraSession()
-
-      console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_0300--------------");
-      done();
-    })
 
   })
 }
