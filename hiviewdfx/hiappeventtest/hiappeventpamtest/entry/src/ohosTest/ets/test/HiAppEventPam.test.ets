@@ -290,6 +290,36 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0301
+     * @tc.name testHiAppEventSetPam031
+     * @tc.desc 验证setEventParam接口在关闭打点功能后,返回错误码11100001
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHiAppEventSetPam031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info('testHiAppEventSetPam031 start');
+      hiAppEvent.configure({disable: true});
+      try {
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() => {
+          console.log('testHiAppEventSetPam031 Event parameters set successfully.');
+        }).catch((error: BusinessError) => {
+          console.error('testHiAppEventSetPam031 Error:', error.message, 'testHiAppEventSetPam031 Code:', error.code);
+          expect(error.code == 11100001).assertTrue()
+          done()
+        });
+      } catch (err) {
+        console.error(`testHiAppEventSetPam031 > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue()
+        done();
+      }
+      hiAppEvent.configure({disable: false});
+    })
+
+    /**
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0400
      * @tc.name testHiAppEventSetPam04
      * @tc.desc 验证setEventParam接口domain包含特殊字符,返回错误码11101001

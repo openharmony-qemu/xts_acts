@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
+import DrawModifierOneTest from './DrawTest/DrawModifierOneTest.test';
+import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
+  DrawModifierOneTest();
+  DrawModifierTwoTest();
 }

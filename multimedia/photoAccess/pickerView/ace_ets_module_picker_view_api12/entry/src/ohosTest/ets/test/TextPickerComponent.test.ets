@@ -42,7 +42,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { PhotoPickerResult } from '../MainAbility/common/PhotoPickerResult'
 import {
   RecentPhotoOptions,
-  PhotoSource,
+  PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 
@@ -95,7 +95,13 @@ async function clickResultButton(driver: Driver) {
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn = await driver.findComponent(ON.id('albumButton'));
-  await btn.click();
+  if (btn === null) {
+    console.info("clickAlbumButton findComponent btn fail");
+    expect(false).assertTrue();
+  } else {
+    console.info("clickAlbumButton findComponent btn success");
+    await btn.click();
+  }
   console.info('testPicker btn click finish');
   await CommonFunc.sleep(1000);
   let albumItem = await driver.findComponent((ON.id('AlbumListItem')));
@@ -158,15 +164,19 @@ export default function TextPicker() {
 
     beforeAll(async (done: Function) => {
       let maxButton = await driver.findComponent(ON.id("EnhanceMaximizeBtn"));
+      let isExecuteTestCase: boolean = false;
       await CommonFunc.sleep(1000);
       if(maxButton !== null){
         await maxButton.click();
+        isExecuteTestCase = true;
       }
       await CommonFunc.sleep(1000);
-      try {
-        driver.triggerCombineKeys(17, 18);
-      } catch (error) {
-        console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+      if (!isExecuteTestCase) {
+        try {
+          driver.triggerCombineKeys(17, 18);
+        } catch (error) {
+          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+        }
       }
       done();
     });
@@ -877,7 +887,13 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
 
       let changeNumButton: Component = await driver.findComponent(ON.id('changeNumButton'));
-      await changeNumButton.click();
+      if (changeNumButton === null) {
+        console.info("testPicker15 findComponent changeNumButton fail");
+        expect(false).assertTrue();
+      } else {
+        console.info("testPicker15 findComponent changeNumButton success");
+        await changeNumButton.click();
+      }
       let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("testPicker15 findComponent checkbox fail");
@@ -2129,6 +2145,38 @@ export default function TextPicker() {
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       router.back();
       console.info("testPicker45 finish");
+      done();
+    });
+
+    /**
+     * @tc.number    : testPicker46
+     * @tc.name      : testPicker46
+     * @tc.desc      : Testing getRecentPhotoInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testPicker46', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let options: RecentPhotoOptions = new RecentPhotoOptions();
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+      options.period = 0;
+      options.photoSource = PhotoSource.ALL;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      try{
+        phAccessHelper.getRecentPhotoInfo(options).then((result : RecentPhotoInfo) => {
+          console.info('testPicker40, photoAccessHelper.getRecentPhotoInfo successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(result));
+          expect(true).assertTrue();
+        })
+      } catch(err) {
+        console.error(`testPicker40, photoAccessHelper.getRecentPhotoInfo failed with err: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      }
+      console.info("testPicker40 finish");
       done();
     });
   })

@@ -38,6 +38,8 @@
     "MainAbility/pages/Text/TextGetparagraphs",
     "MainAbility/pages/StyledString/fromHtml",
     "MainAbility/pages/Text/EnablePreviewMenu",
-    "MainAbility/pages/ImageSpan/ImageSpanAlignment"
+    "MainAbility/pages/ImageSpan/ImageSpanAlignment",
+    "MainAbility/pages/Text/TextNumberTransitionTest",
+    "MainAbility/pages/SymbolGlyph/SymbolEffectTest"
   ]
 }

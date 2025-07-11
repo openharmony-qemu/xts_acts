@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll,afterAll,it, expect , TestType, Size, Level} from '@ohos/hypium';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -77,6 +77,68 @@ export default function windowEventTest() {
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
     })
+    afterAll(async () => {
+      
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+    })
+/**
+     * @tc.number    : SUB_BASIC_WMS_TOUCHOUTSIDE_0100
+     * @tc.name      : testTouchOutSide_0100
+     * @tc.desc      : 验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testTouchOutSide_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTouchOutSide_0100 ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_0100');
+      await subWindowClass.setUIContent('testability/pages/First/index2');
+      await sleep(1000);
+      try {
+
+        let timer = 0;
+
+        let windowLimits = subWindowClass.getWindowLimits();
+        console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
+        await sleep(1000);
+        let displayInfo = display.getDefaultDisplaySync();
+        console.info(`${caseName} :display.getDefaultDisplaySync. info: ${JSON.stringify(displayInfo)}`);
+        await subWindowClass.moveWindowTo(displayInfo.width/2, displayInfo.height/2);
+
+        await subWindowClass.showWindow();
+        await sleep(1000);
+        let windowProperties = subWindowClass.getWindowProperties();
+        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+        const callback = async () => {
+          timer++;
+          console.log(`${caseName} timer: ${timer}`);
+          expect(timer).assertEqual(1);
+          await sleep(300);
+          mainWindow.off('touchOutside');
+
+          await subWindowClass.destroyWindow();
+          done();
+        }
+        mainWindow.on('touchOutside', callback);
+        let driver: Driver = Driver.create();
+        await sleep(200);
+        await driver.click(Math.round(windowProperties.windowRect.left as number+10), Math.round(windowProperties.windowRect.top as number+10));
+        await sleep(300);
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass.destroyWindow();
+        if (e.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
 
     /**
      * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
@@ -141,64 +203,6 @@ export default function windowEventTest() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_TOUCHOUTSIDE_0100
-     * @tc.name      : testTouchOutSide_0100
-     * @tc.desc      : 验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('testTouchOutSide_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTouchOutSide_0100 ';
-      console.log(caseName + 'begin');
-      let mainWindow = windowStage.getMainWindowSync();
-      let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_0100');
-      await subWindowClass.setUIContent('testability/pages/First/index2');
-      await sleep(1000);
-      try {
-
-        let timer = 0;
-
-        let windowLimits = subWindowClass.getWindowLimits();
-        console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
-        await sleep(1000);
-        let displayInfo = display.getDefaultDisplaySync();
-        console.info(`${caseName} :display.getDefaultDisplaySync. info: ${JSON.stringify(displayInfo)}`);
-        await subWindowClass.moveWindowTo(displayInfo.width/2, displayInfo.height/2);
-
-        await subWindowClass.showWindow();
-        await sleep(1000);
-        let windowProperties = subWindowClass.getWindowProperties();
-        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        const callback = async () => {
-          timer++;
-          console.log(`${caseName} timer: ${timer}`);
-          expect(timer).assertEqual(1);
-          await sleep(300);
-          mainWindow.off('touchOutside');
-
-          await subWindowClass.destroyWindow();
-          done();
-        }
-        mainWindow.on('touchOutside', callback);
-        let driver: Driver = Driver.create();
-        await sleep(200);
-        await driver.click(Math.round(windowProperties.windowRect.left as number+10), Math.round(windowProperties.windowRect.top as number+10));
-        await sleep(300);
-
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        await subWindowClass.destroyWindow();
-        if (e.code === 801) {
-          done()
-        } else {
-          expect().assertFail();
-          done()
-        }
-      }
-    });
-
+    
   })
 }

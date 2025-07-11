@@ -45,6 +45,8 @@ import RichEditorEnableAutoSpacingTest from './RichEditorTest/RichEditorEnableAu
 import RichEditorTextVerticalAlignTest from './RichEditorTest/RichEditorTextVerticalAlign.test';
 import TextGetParagraphsTest from './TextTest/TextGetparagraphs.test';
 import fromHtmlTest from './StyledStringTest/fromHtml.test';
+import TextNumberTransitionTest from './TextTest/TextNumberTransitionTest.test';
+import SymbolEffectTest from './SymbolGlyphTest/SymbolEffectTest.test';
 
 
 export default function testsuite() {
@@ -80,4 +82,6 @@ export default function testsuite() {
   RichEditorTextVerticalAlignTest();
   TextGetParagraphsTest();
   fromHtmlTest();
+  TextNumberTransitionTest();
+  SymbolEffectTest();
 }
