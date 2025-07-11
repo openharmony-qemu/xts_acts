@@ -43,6 +43,7 @@
           }
         ]
       }
-    ]
+    ],
+    "crossAppSharedConfig": "$profile:shared_config"
   }
 }
