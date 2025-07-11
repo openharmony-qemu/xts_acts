@@ -29,7 +29,7 @@ import Utils from './Util.test';
 
 let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
-let bundleName: string = 'com.example.actscommonEventsystemapitest'
+let bundleName: string = 'com.example.systemAPI.static'
 
 
 export default function ActsCommonEventSystemAPITest() {
