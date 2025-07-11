@@ -68,6 +68,7 @@
 static int32_t g_gPlaytime = 100;
 int g_currentPathId = 0;
 float g_minDelta = 0.001;
+int32_t g_duration = PARAM_DURATION_10000;
 static napi_env screenCaptureEnv;
 
 #undef LOG_DOMIN 0x3200
@@ -2742,183 +2743,46 @@ static napi_value CheckAvPlayerPlaybackRate(napi_env env, napi_callback_info inf
     return result;
 }
 
-void OnSurfaceCreatedCB(OH_NativeXComponent *component, void *window);
-void OnSurfaceDestroyedCB(OH_NativeXComponent *component, void *window);
-
-class SampleRenderer {
-public:
-    SampleRenderer(std::string &id) { this->id_ = id; }
-    ~SampleRenderer() {}
-    static SampleRenderer *GetInstance(std::string &id) {
-        if (instance_.find(id) == instance_.end()) {
-            SampleRenderer *instance = new SampleRenderer(id);
-            instance_[id] = instance;
-            return instance;
-        } else {
-            return instance_[id];
-        }
-    }
-    static void Release(std::string &id)  {
-        SampleRenderer *render = SampleRenderer::GetInstance(id);
-        if (render != nullptr) {
-            instance_.erase(instance_.find(id));
-        }
-    }
-    void RegisterCallback(OH_NativeXComponent *nativeXComponent) {
-        renderCallback_.OnSurfaceCreated = OnSurfaceCreatedCB;
-        renderCallback_.OnSurfaceDestroyed = OnSurfaceDestroyedCB;
-        OH_NativeXComponent_RegisterCallback(nativeXComponent, &renderCallback_);
+void seekAvPlayerStateTest(OH_AVPlayer *player, AVPlayerSeekMode seekMode, OH_AVErrCode errorCode)
+{
+    int32_t ret;
+    LOG("AVPlayerState  OH_AVPlayer_Seek");
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_f2, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_f2, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
     }
 
-public:
-    static std::unordered_map<std::string, SampleRenderer *> instance_;
-    std::string id_;
-
-private:
-    OH_NativeXComponent_Callback renderCallback_;
-};
-std::unordered_map<std::string, SampleRenderer *> SampleRenderer::instance_;
-
-class SampleManager {
-public:
-    ~SampleManager() {
-        LOG("Callback ~PluginManager");
-        for (auto iter = nativeXComponentMap_.begin(); iter != nativeXComponentMap_.end(); ++iter) {
-            if (iter->second != nullptr) {
-                delete iter->second;
-                iter->second = nullptr;
-            }
-        }
-        nativeXComponentMap_.clear();
-        for (auto iter = pluginRenderMap_.begin(); iter != pluginRenderMap_.end(); ++iter) {
-            if (iter->second != nullptr) {
-                delete iter->second;
-                iter->second = nullptr;
-            }
-        }
-        pluginRenderMap_.clear();
-    }
-    static SampleManager *GetInstance() { return &SampleManager::pluginManager_; }
-    void SetNativeXComponent(std::string &id, OH_NativeXComponent *nativeXComponent) {
-        if (nativeXComponent == nullptr) {
-            return;
-        }
-        surfaceId_ = &id;
-        nativeXComponentMap_[id] = nativeXComponent;
-    }
-    void SetNativeWindow(OHNativeWindow *nativeWindow, uint64_t width, uint64_t height) {
-        nativeWindow_ = nativeWindow;
-        height_ = height;
-        width_ = width;
-    }
-    void SetAVPlayer(OH_AVPlayer *player) { player_ = player; }
-    void Export(napi_env env, napi_value exports) {
-        LOG("Call PluginManager::Export");
-        if ((env == nullptr) || (exports == nullptr)) {
-            LOG("PluginManager %{public}s", "Export: env or exports is null");
-            return;
-        }
-        napi_value exportInstance = nullptr;
-        if (napi_get_named_property(env, exports, OH_NATIVE_XCOMPONENT_OBJ, &exportInstance) != napi_ok) {
-            LOG("PluginManager %{public}s", "Export: napi_get_named_property fail");
-            return;
-        }
-        OH_NativeXComponent *nativeXComponent = nullptr;
-        if (napi_unwrap(env, exportInstance, reinterpret_cast<void **>(&nativeXComponent)) != napi_ok) {
-            LOG("PluginManager %{public}s", "Export: napi_unwrap fail");
-            return;
-        }
-        char idStr[OH_XCOMPONENT_ID_LEN_MAX + 1] = {'\0'};
-        uint64_t idSize = OH_XCOMPONENT_ID_LEN_MAX + 1;
-        if (OH_NativeXComponent_GetXComponentId(nativeXComponent, idStr, &idSize) != OH_NATIVEXCOMPONENT_RESULT_SUCCESS) {
-            LOG("PluginManager Export: OH_NativeXComponent_GetXComponentId fail");
-            return;
-        }
-        LOG("Call PluginManager::Export surfaceID=%{public}s", idStr);
-        std::string id(idStr);
-        auto context = SampleManager::GetInstance();
-        if ((context != nullptr) && (nativeXComponent != nullptr)) {
-            context->SetNativeXComponent(id, nativeXComponent);
-            auto render = context->GetRender(id);
-            if (render != nullptr) {
-                render->RegisterCallback(nativeXComponent);
-            }
-        }
-    }
-    SampleRenderer *GetRender(std::string &id) {
-        if (pluginRenderMap_.find(id) == pluginRenderMap_.end()) {
-            SampleRenderer *instance = SampleRenderer::GetInstance(id);
-            pluginRenderMap_[id] = instance;
-            return instance;
-        }
-        return pluginRenderMap_[id];
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_10000, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
     }
 
-public:
-    static SampleManager pluginManager_;
-    std::unordered_map<std::string, SampleRenderer *> pluginRenderMap_;
-    std::unordered_map<std::string, OH_NativeXComponent *> nativeXComponentMap_;
-    std::string *surfaceId_;
-    OHNativeWindow *nativeWindow_ = nullptr;
-    uint64_t height_;
-    uint64_t width_;
-    OH_AVPlayer *player_ = nullptr;
-    OH_NativeXComponent_Callback renderCallback_;
-};
-SampleManager SampleManager::pluginManager_;
-
-void OnSurfaceCreatedCB(OH_NativeXComponent *component, void *window) {
-    LOG("OnSurfaceCreatedCB");
-    if ((component == nullptr) || (window == nullptr)) {
-        return;
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, g_duration, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", g_duration, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
     }
-    char idStr[OH_XCOMPONENT_ID_LEN_MAX + 1] = {'\0'};
-    uint64_t idSize = OH_XCOMPONENT_ID_LEN_MAX + 1;
-    if (OH_NativeXComponent_GetXComponentId(component, idStr, &idSize) != OH_NATIVEXCOMPONENT_RESULT_SUCCESS) {
-        return;
-    }
-    uint64_t width;
-    uint64_t height;
-    OH_NativeXComponent_GetXComponentSize(component, window, &width, &height);
-    auto context = SampleManager::GetInstance();
-    OHNativeWindow *nativeWindow = static_cast<OHNativeWindow *>(window);
-    if ((context != nullptr) && (nativeWindow != nullptr)) {
-        context->SetNativeWindow(nativeWindow, width, height);
-    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
 }
-void OnSurfaceDestroyedCB(OH_NativeXComponent *component, void *window) {
-    LOG("OnSurfaceDestroyedCB");
-    if ((component == nullptr) || (window == nullptr)) {
-        return;
-    }
-    char idStr[OH_XCOMPONENT_ID_LEN_MAX + 1] = {'\0'};
-    uint64_t idSize = OH_XCOMPONENT_ID_LEN_MAX + 1;
-    if (OH_NativeXComponent_GetXComponentId(component, idStr, &idSize) != OH_NATIVEXCOMPONENT_RESULT_SUCCESS) {
-        return;
-    }
-    std::string id(idStr);
-    SampleRenderer::Release(id);
-}
-
-void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody, void *userData) {
+void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody, void *userData)
+{
     int32_t ret;
     int32_t value = -1;
-
     int32_t state = -1;
     int32_t stateChangeReason = -1;
     AVPlayerState avState = AV_IDLE;
-
     float volume = 0.0;
-
     int32_t width = -1;
     int32_t height = -1;
-
     int32_t bufferType = -1;
     int32_t bufferValue = -1;
-
     uint8_t *bitRates;
     size_t size;
-
     int32_t interruptType = -1;
     int32_t interruptForce = -1;
     int32_t interruptHint = -1;
@@ -2928,7 +2792,7 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE, &state);
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE_CHANGE_REASON, &stateChangeReason);
         OH_AVPlayer_GetState(player, &avState); // 获取当前播放状态
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_STATE_CHANGE  state: %{public}d ,stateChangeReason: %{public}d", 
+        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_STATE_CHANGE  state: %{public}d ,stateChangeReason: %{public}d",
             state, stateChangeReason);
         avState = static_cast<AVPlayerState>(state);
         switch (avState) {
@@ -2937,29 +2801,17 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
             break;
         case AV_INITIALIZED: {
             LOG("AVPlayerState  AV_INITIALIZED");
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_f2, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_f2, ret);
-            if (ret != AV_ERR_INVALID_VAL) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_10000, ret);
-            if (ret != AV_ERR_INVALID_VAL) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_33333333, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_33333333, ret);
-            if (ret != AV_ERR_INVALID_VAL) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
-            }
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
 
-            auto context = SampleManager::GetInstance();
-            ret = OH_AVPlayer_SetVideoSurface(player, context->nativeWindow_);
+            EGLDisplay display = nullptr;
+            EGLContext context = nullptr;
+            EGLSurface surface = nullptr;
+            InitGLES(display, context, surface);
+            GLuint textureId = PARAM_0;
+            glGenTextures(ONEVAL, &textureId);
+            OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+            OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+            ret = OH_AVPlayer_SetVideoSurface(player, window);
             LOG("OH_AVPlayer_SetVideoSurface ret:%{public}d", ret);
             ret = OH_AVPlayer_Prepare(player); // 设置播放源后触发该状态上报
             if (ret != AV_ERR_OK) {
@@ -2969,26 +2821,7 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
         } break;
         case AV_PREPARED:
             LOG("AVPlayerState AV_PREPARED");
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_f2, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_f2, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_10000, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_33333333, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_33333333, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
             ret = OH_AVPlayer_SetAudioEffectMode(player, EFFECT_NONE); // 设置音频音效模式
             LOG("OH_AVPlayer_SetAudioEffectMode ret:%{public}d", ret);
             ret = OH_AVPlayer_Play(player); // 调用播放接口开始播放
@@ -2996,41 +2829,32 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
             break;
         case AV_PLAYING:
             LOG("AVPlayerState AV_PLAYING");
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_f2, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_f2, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_10000, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
-            
-            ret = OH_AVPlayer_Seek(player, PARAM_DURATION_33333333, AV_SEEK_CLOSEST);
-            LOG("call NAPI_Global_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d",
-                PARAM_DURATION_33333333, ret);
-            if (ret != AV_ERR_OK) {
-                napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 0");
-            }
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
             break;
         case AV_PAUSED:
             LOG("AVPlayerState AV_PAUSED");
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Stop(player); 
+            LOG("OH_AVPlayer_Stop ret:%{public}d", ret);
             break;
         case AV_STOPPED:
             LOG("AVPlayerState AV_STOPPED");
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Release(player); // 调用播放接口开始播放
+            LOG("OH_AVPlayer_Release ret:%{public}d", ret);
             break;
         case AV_COMPLETED:
             LOG("AVPlayerState AV_COMPLETED");
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Pause(player); 
+            LOG("OH_AVPlayer_Pause ret:%{public}d", ret);
             break;
         case AV_ERROR:
             LOG("AVPlayerState AV_ERROR");
             break;
         case AV_RELEASED:
             LOG("AVPlayerState AV_RELEASED");
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
             break;
         default:
             break;
@@ -3048,13 +2872,9 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BITRATE, &value);
         LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_BITRATEDONE value: %{public}d", value);
         break;
-    case AV_INFO_TYPE_EOS:
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_EOS");
-        break;
     case AV_INFO_TYPE_POSITION_UPDATE:
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_CURRENT_POSITION, &value);
         // 以下log会频繁打印
-        // LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_POSITION_UPDATE value: %{public}d", value);
         break;
     case AV_INFO_TYPE_MESSAGE:
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_MESSAGE_TYPE, &value);
@@ -3067,15 +2887,13 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
     case AV_INFO_TYPE_RESOLUTION_CHANGE:
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_VIDEO_WIDTH, &width);
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_VIDEO_HEIGHT, &height);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_RESOLUTION_CHANGE width: %{public}d, height: %{public}d", 
-            width, height);
+        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_RESOLUTION_CHANGE width: %{public}d, height: %{public}d", width,
+            height);
         break;
     case AV_INFO_TYPE_BUFFERING_UPDATE:
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BUFFERING_TYPE, &bufferType);
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BUFFERING_VALUE, &bufferValue);
         // 以下log会频繁打印
-//        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_BUFFERING_UPDATE bufferType: %{public}d, bufferValue: %{public}d",
-//            bufferType, bufferValue);
         break;
     case AV_INFO_TYPE_BITRATE_COLLECT:
         OH_AVFormat_GetBuffer(infoBody, OH_PLAYER_BITRATE_ARRAY, &bitRates, &size);
@@ -3090,42 +2908,24 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_INTERRUPT_FORCE, &interruptForce);
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_INTERRUPT_HINT, &interruptHint);
         LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_INTERRUPT_EVENT interruptType: %{public}d, "
-            "interruptForce: %{public}d, interruptHint: %{public}d", interruptType, interruptForce, interruptHint);
-        break;
-    case AV_INFO_TYPE_DURATION_UPDATE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_DURATION, &value);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_DURATION_UPDATE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_IS_LIVE_STREAM:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_IS_LIVE_STREAM, &value);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_IS_LIVE_STREAM value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_TRACKCHANGE:
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_TRACKCHANGE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_TRACK_INFO_UPDATE:
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_TRACK_INFO_UPDATE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_SUBTITLE_UPDATE:
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_SUBTITLE_UPDATE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_AUDIO_OUTPUT_DEVICE_CHANGE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_DEVICE_CHANGE_REASON, &value);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_AUDIO_OUTPUT_DEVICE_CHANGE value: %{public}d", value);
+            "interruptForce: %{public}d, interruptHint: %{public}d",
+            interruptType, interruptForce, interruptHint);
         break;
     default:
         break;
     }
 }
-void OHAVPlayerOnErrorCallback(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg, void *userData) {
+void OHAVPlayerOnErrorCallback(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg, void *userData)
+{
     LOG("OHAVPlayerOnErrorCallback errorCode: %{public}d ,errorMsg: %{public}s", errorCode, errorMsg);
 }
-static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info) {
+static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info)
+{
 
     LOG("Call NAPI AVPlayer setup");
     screenCaptureEnv = env;
-    size_t argc = 4;
-    napi_value args[4] = {nullptr};
+    size_t argc = PARAM_4;
+    napi_value args[PARAM_4] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     // 获取参数类型
     napi_valuetype stringType;
@@ -3171,13 +2971,9 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info) {
     int pSize;
     napi_get_value_int32(env, args[3], &pSize);
     LOG("fd size %{public}d", pSize);
-    
-    // 创建播放实例
-    if(SampleManager::GetInstance()->player_) {
-        OH_AVPlayer_Release(SampleManager::GetInstance()->player_);
-    }
+    g_duration = pSize - PARAM_4;
     OH_AVPlayer *player = OH_AVPlayer_Create();
-    SampleManager::GetInstance()->SetAVPlayer(player);
+    seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
     // 设置回调，监听信息
     LOG("call OH_AVPlayer_SetPlayerOnInfoCallback");
     int32_t ret = OH_AVPlayer_SetOnInfoCallback(player, OHAVPlayerOnInfoCallback, nullptr);
@@ -3186,8 +2982,7 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info) {
     ret = OH_AVPlayer_SetOnErrorCallback(player, OHAVPlayerOnErrorCallback, nullptr);
     LOG("OH_AVPlayer_SetPlayerOnErrorCallback ret:%{public}d", ret);
     {
-        LOG("player %{public}s  >> fd: %{public}d offset: %{public}d fileSize: %{public}d", 
-            url, pType, pOffset, pSize);
+        LOG("player %{public}s  >> fd: %{public}d offset: %{public}d fileSize: %{public}d", url, pType, pOffset, pSize);
         LOG("call %{public}s", "OH_AVPlayer_SetFDSource");
         ret = OH_AVPlayer_SetFDSource(player, pType, pOffset, pSize);
         LOG("OH_AVPlayer_SetFDSource ret:%{public}d", ret);
@@ -3197,11 +2992,17 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info) {
     OH_AudioStream_Usage streamUsage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_UNKNOWN;
     ret = OH_AVPlayer_SetAudioRendererInfo(player, streamUsage);
     LOG("OH_AVPlayer_SetAudioRendererInfo ret:%{public}d", ret);
+    if (ret != AV_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_SetAudioRendererInfo is 0");
+    }
     // 设置音频流打断模式
     LOG("call OH_AVPlayer_SetAudioInterruptMode");
     OH_AudioInterrupt_Mode interruptMode = OH_AudioInterrupt_Mode::AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT;
     ret = OH_AVPlayer_SetAudioInterruptMode(player, interruptMode);
     LOG("OH_AVPlayer_SetAudioInterruptMode ret:%{public}d", ret);
+    if (ret != AV_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_SetAudioInterruptMode is 0");
+    }
     napi_value value;
     napi_create_int32(env, 0, &value);
     return value;
