@@ -268,7 +268,7 @@ export default function fileIOMoveDir() {
         fs.moveDirSync(dpath.srcDir, dpath.destDir, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
       } catch (e: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_004 has failed for' + e.message + ', code: ' + e.code + e.data);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_004 has failed for' + e.message + ', code: ' + e.code);
         let stat1 = fs.statSync(dpath.srcDir + '/srcFile_first_01');
         let stat2 = fs.statSync(dpath.srcDir + '/srcDir_first/srcFile_second_01');
         let stat3 = fs.statSync(dpath.destDir + '/srcDir/srcFile_first_01');
