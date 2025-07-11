@@ -22,6 +22,7 @@ group("ActsAceEtsModuleCommonAttrsOtherTest") {
       "ace_ets_module_commonAttrsOther_api11:ActsAceEtsModuleCommonAttrsOtherApi11Test",
       "ace_ets_module_commonAttrsOther_api12:ActsAceEtsModuleCommonAttrsOtherApi12Test",
       "ace_ets_module_commonAttrsOther_nowear_api11:ActsAceEtsModuleCommonAttrsOtherNoWearApi11Test",
+      "ace_ets_module_commonAttrsOther_api11_static:ActsAceEtsModuleCommonAttrsOtherApi11TestStaticMain",
     ]
   }
 }
