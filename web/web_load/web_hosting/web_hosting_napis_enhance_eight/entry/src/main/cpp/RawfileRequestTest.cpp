@@ -28,9 +28,9 @@
 namespace {
 
 
-uint8_t buffer[1024];
-cnd_t httpBodyCnd;
-mtx_t httpBodyMtx;
+uint8_t g_buffer[1024];
+cnd_t g_httpBodyCnd;
+mtx_t g_httpBodyMtx;
 uint8_t* g_readBuffer;
 
 int32_t g_setAsyncReadCallback = -1;
@@ -69,7 +69,7 @@ void ReadCallback(const ArkWeb_HttpBodyStream  *httpBodyStream, uint8_t* bufferD
         if (rawfileRequest) {
             OH_LOG_INFO(LOG_APP, "ReadCallback RawfileRequest ReadDataOnWorkerThread start");
             rawfileRequest->ReadDataOnWorkerThread();
-            cnd_signal(&httpBodyCnd);
+            cnd_signal(&g_httpBodyCnd);
         }
     }
 }
@@ -81,28 +81,31 @@ int ReadHttpBodyOnWorkerThread(void* userData)
     std::size_t hashValue = std::hash<std::thread::id>()(std::this_thread::get_id());
     g_workerPid = static_cast<int>(hashValue);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread thread id :%{public}d", g_workerPid);
-    memset(buffer, 0, bufferLength);
+    memset(g_buffer, 0, bufferLength);
     ArkWeb_HttpBodyStream *httpBodyStream = (ArkWeb_HttpBodyStream *)userData;
 
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_httpBodyStreamNullptr :%{public}d", g_httpBodyStreamNullptr);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_bufLen :%{public}d", g_bufLen);
     if (g_httpBodyStreamNullptr) {
-        OH_ArkWebHttpBodyStream_AsyncRead(nullptr, buffer, bufferLength);
+        OH_ArkWebHttpBodyStream_AsyncRead(nullptr, g_buffer, bufferLength);
     } else {
-        OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, g_bufLen);
+        OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, g_buffer, g_bufLen);
     }
     g_asyncRead = 1;
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_asyncRead :%{public}d", g_asyncRead);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread OH_ArkWebHttpBodyStream_AsyncRead end");
-    if (cnd_init(&httpBodyCnd) != thrd_success) {
-        OH_LOG_ERROR(LOG_APP, "Failed to initialize condition variable http_body_cnd");
+    if (cnd_init(&g_httpBodyCnd) != thrd_success) {
+        OH_LOG_ERROR(LOG_APP, "Failed to initialize condition variable httpBodyCnd");
         return -1;
     }
-    if (mtx_init(&httpBodyMtx, mtx_plain) != thrd_success) {
-        OH_LOG_ERROR(LOG_APP, "Failed to initialize mutex http_body_mtx");
+    if (mtx_init(&g_httpBodyMtx, mtx_plain) != thrd_success) {
+        OH_LOG_ERROR(LOG_APP, "Failed to initialize mutex httpBodyMtx");
         return -1;
     }
-    cnd_wait(&httpBodyCnd, &httpBodyMtx);
+    if (cnd_wait(&g_httpBodyCnd, &g_httpBodyMtx) != thrd_success) {
+        OH_LOG_ERROR(LOG_APP, "Failed to initialize cnd_wait httpBodyCnd httpBodyMtx");
+        return -1;
+    }
     return 0;
 }
 
@@ -254,7 +257,7 @@ void RawfileRequest::ReadDataOnWorkerThread()
 const struct UrlInfo {
     std::string resource;
     std::string mimeType;
-} urlInfos[] = {
+} URL_INFOS[] = {
     {"test.html", "text/html"},
     {"video.html", "text/html"},
     {"isolated.html", "text/html"},
@@ -292,7 +295,7 @@ void RawfileRequest::ReadRawfileThread()
         OH_ArkWebResponse_SetStatus(response(), httpOk);
     }
 
-    for (auto &urlInfo : urlInfos) {
+    for (auto &urlInfo : URL_INFOS) {
         if (urlInfo.resource == rawfilePath()) {
             OH_ArkWebResponse_SetMimeType(response(), urlInfo.mimeType.c_str());
             break;

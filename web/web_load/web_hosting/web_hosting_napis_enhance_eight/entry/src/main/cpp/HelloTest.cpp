@@ -93,8 +93,8 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
     if (strcmp(url, "https://www.example.com/bufLenZero") == 0) {
         request->bufLen_ = 0;
     } else {
-       const int defaultBufLen = 10;
-       request->bufLen_ = defaultBufLen;
+        const int defaultBufLen = 10;
+        request->bufLen_ = defaultBufLen;
     }
 
     request->Start();
