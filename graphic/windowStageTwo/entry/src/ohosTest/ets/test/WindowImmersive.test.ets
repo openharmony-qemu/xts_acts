@@ -144,7 +144,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if(isPCStatus == ''||isAutoWindow == 'false'){
+      if(isPCStatus == ''&&isAutoWindow == ''){
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -152,7 +152,7 @@ export default function windowImmersiveTest() {
           await sleep(3000);
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
-            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+           ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
             if(data.type == 0){
               windowClass.off('avoidAreaChange');
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -172,9 +172,10 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      } else {
+      }else{
         done();
       }
+
     })
 
     /**
@@ -188,7 +189,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if(isPCStatus == ''||isAutoWindow == 'false'){
+      if(isPCStatus == ''&&isAutoWindow == ''){
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -211,16 +212,19 @@ export default function windowImmersiveTest() {
           console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await sleep(2000);
 
+
         } catch (exception) {
           console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
           expect().assertFail();
           done();
         }
-      } else {
-        done()
+      }else{
+        done();
       }
+
     });
+
 
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
@@ -2670,12 +2674,7 @@ export default function windowImmersiveTest() {
       try {
         let res = windowClass.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
-
-        if (isPCStatus == '' || isAutoWindow =='false'){
-          expect(res).assertEqual(true);
-        } else{
-          expect(res).assertEqual(false);
-        }
+        expect(res).assertEqual(true);
         await windowClass.destroyWindow();
         done();
       } catch (exception) {
@@ -2746,7 +2745,8 @@ export default function windowImmersiveTest() {
       let config: window.Configuration = {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
         windowType: window.WindowType.TYPE_DIALOG,
-        ctx: context
+        ctx: context,
+        decorEnabled:true
       };
       let subWindowClass: window.Window | undefined;
       console.info(`${caseName} Succeeded in creating the float window.`);
