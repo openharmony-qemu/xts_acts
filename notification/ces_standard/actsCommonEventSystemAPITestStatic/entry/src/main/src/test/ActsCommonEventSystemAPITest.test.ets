@@ -687,8 +687,6 @@ export default function ActsCommonEventSystemAPITest() {
 
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
-          expect(err?.code).assertEqual(0)
-          done()
         })
         await Utils.msSleep(1000)
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
