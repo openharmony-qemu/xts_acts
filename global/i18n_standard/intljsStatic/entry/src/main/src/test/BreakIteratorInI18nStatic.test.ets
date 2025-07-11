@@ -106,10 +106,10 @@ export default function BreakIteratorInI18nTest() {
 
 
     /* *
-   * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0400
-   * @tc.name    i18n_test_iterator_static_0400
-   * @tc.desc    test next interface
-   */
+    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0400
+    * @tc.name    i18n_test_iterator_static_0400
+    * @tc.desc    test next interface
+    */
     it('i18n_test_iterator_static_0400', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_test_iterator_static_0400 ' + 'start');
       let iterator = i18n.getLineInstance('en');
@@ -117,6 +117,20 @@ export default function BreakIteratorInI18nTest() {
       let value = iterator.next();
       console.log('i18n_test_iterator_static_0400 ' + value);
       expect(value).assertEqual(3);
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0500
+    * @tc.name    i18n_test_iterator_static_0500
+    * @tc.desc    check the next interface with param, test next interface with param
+    */
+    it('i18n_test_iterator_static_0500', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_test_iterator_static_0500 ' + 'start');
+      let iterator =i18n.getLineInstance('en');
+      iterator.setLineBreakText('My name is Tom.Welcome to the sky world.');
+      let value = iterator.next(2);
+      console.log('i18n_test_iterator_static_0500 ' + value);
+      expect(value).assertEqual(8);
     })
 
 

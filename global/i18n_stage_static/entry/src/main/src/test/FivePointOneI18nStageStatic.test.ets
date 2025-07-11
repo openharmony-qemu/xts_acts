@@ -33,6 +33,8 @@ import hilog from '@ohos.hilog'
 import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
+import { TextStyle, StyledString } from 'arkui.component.styledString'
+import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -102,6 +104,20 @@ export default function FivePointOne_i18nStageTest() {
       expect(formattedRange == "-9 - 9.9").assertTrue();
     })
 
+    /**
+     * @tc.number   : SUB_GLOBAL_refinedFormat_static_0190
+     * @tc.name     : SUB_GLOBAL_refinedFormat_static_0190
+     * @tc.desc     : begin code large than stop code
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 0
+     */
+    it('SUB_GLOBAL_refinedFormat_static_0190', Level.LEVEL0, async (): Promise<void> => {
+      let numFormat = new intl.NumberFormat("zh-hans-CN");
+      let formattedRange: string = numFormat.formatRange(9, 0);
+      expect(formattedRange == "").assertTrue();
+    })
+    
     /**
      * @tc.number   : SUB_GLOBAL_I18N_getTemperatureName_static_0100
      * @tc.name     : I18N_test_getTemperatureName_static_0100
@@ -176,6 +192,72 @@ export default function FivePointOne_i18nStageTest() {
       console.log('I18N_test_getSimplifiedLanguage_static_01_static_0100 type_two:' + type_two);
       expect(type_one).assertEqual('en-GB');
       expect(type_two).assertEqual('en');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_I18N_StyledNumberFormat_static_02_static_00100
+     * @tc.name     : SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
+     * @tc.desc     :fontColor &fontFamily & fontSize & fontWeight & fontStyle
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100', Level.LEVEL0,  async (): Promise<void> => {
+      let integer_textStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Italic
+      });
+      let decimal_textStyle = new TextStyle({
+        fontColor: Color.Black,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Normal,
+        fontStyle: FontStyle.Normal
+      });
+      let fraction_textStyle = new TextStyle({
+        fontColor: Color.Green,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Regular,
+        fontStyle: FontStyle.Normal
+      });
+      let unit_textStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Arial",
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      });
+      let number_format = new intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'EUR',
+        currencyDisplay: 'name',
+        currencySign: 'accounting',
+        signDisplay: 'always'
+      });
+      let styledNumberFormat = new i18n.StyledNumberFormat(number_format, {
+        integer: integer_textStyle,
+        decimal: decimal_textStyle,
+        fraction: fraction_textStyle,
+        unit: unit_textStyle
+      });
+      let result = styledNumberFormat.format(123456.789);
+      console.log('testscw', result.getString());
+      expect(result.getString() == "+123,456.79 euros").assertTrue();
+
+      let arrList = result.getStyles(0, result.length);
+      let testList: Array<string> = [];
+      let resultList: Array<string> = ["#FFFF0000", "Arial", "12", "1", "#FF000000", "Arial", "10", "0",
+        "#FF008000", "Arial", "14", "0", "#FF0000FF", "Arial", "13", "1"];
+      for (let i=0; i<arrList.length; i++) {
+        let arr=arrList[i].styledValue as TextStyle
+        testList.push(arr.fontColor as String)
+        testList.push(arr.fontFamily as String)
+        testList.push(String(arr.fontWeight))
+        testList.push(String(arr.fontStyle ))
+      };
+      console.log('testscw', testList.toString());
+      console.log('testscw', resultList.toString());
+      expect(testList.toString() == resultList.toString()).assertTrue();
     })
 
     /**
@@ -353,6 +435,23 @@ export default function FivePointOne_i18nStageTest() {
       expect(numberFormatted == "123.456").assertTrue();
       done();
     })
+    
+    /**
+     * @tc.number   : SUB_GLOBAL_refinedFormat_static_0320
+     * @tc.name     : SUB_GLOBAL_refinedFormat_static_0320
+     * @tc.desc     : maximumFractionDigits: 2 & roundingIncrement: 1
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('SUB_GLOBAL_refinedFormat_static_0320', Level.LEVEL0, async (): Promise<void> => {
+      let numOptions: intl.NumberOptions = {
+        maximumFractionDigits: 2, roundingIncrement: 1
+      };
+      let numfmt: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN", numOptions);
+      let numberFormatted: string = numfmt.format(123.456);
+      expect(numberFormatted == "123.46").assertTrue();
+    })
 
     /**
      * @tc.number   : SUB_GLOBAL_FilePathMirroring_static_0100
@@ -386,6 +485,25 @@ export default function FivePointOne_i18nStageTest() {
         i18n.getSimpleDateTimeFormatByPattern("'time('y'/'M'/'d' 'h':'m':'s')'", locale);
       let dateFormatted: string = formatter.format(date);
       expect(dateFormatted == "time(2024/12/13 6:30:25)").assertTrue();
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_refinedFormat_static_0630
+     * @tc.name     : SUB_GLOBAL_refinedFormat_static_0630
+     * @tc.desc     : roundingMode: "halfExpand" & maximumSignificantDigits: 5
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('SUB_GLOBAL_refinedFormat_static_0630', Level.LEVEL0,  async (done: () => void): Promise<void> => {
+      let numOptions: intl.NumberOptions = {
+        roundingMode: "halfExpand", maximumSignificantDigits: 5
+      };
+      let numfmt: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN", numOptions);
+      let numberFormatted: string = numfmt.format(123.454);
+      console.log('numberFormatted:'+numberFormatted);
+      expect(numberFormatted == "123.45").assertTrue();
+      done();
     })
 
     /**

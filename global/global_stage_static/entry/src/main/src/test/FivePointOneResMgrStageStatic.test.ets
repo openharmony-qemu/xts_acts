@@ -33,6 +33,9 @@ import hilog from '@ohos.hilog'
 import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
+import { TextStyle, StyledString } from 'arkui.component.styledString'
+import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
+
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -71,6 +74,25 @@ export default function FivePointOne_resMgrStageTest() {
     it('resourceManager_test_getIntPluralStringValueSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let value = res.getIntPluralStringValueSync(0x0100000f, 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringValueSync_static_0100:' + value);
+      expect(value).assertEqual('2 apples');
+    })
+
+    /**
+     * @tc.number   : resourceManager_test_getIntPluralStringValueSync_static_0200
+     * @tc.name     : resourceManager_test_getIntPluralStringValueSync_static_0200
+     * @tc.desc     : getIntPluralStringValueSync with object
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('resourceManager_test_getIntPluralStringValueSync_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let resource: resourceManager.Resource = {
+        bundleName: "com.example.global_stage.static",
+        moduleName: "entry",
+        id: 0x01000036
+      };
+      let value = res.getIntPluralStringValueSync(resource, 2, 2, 'test');
+      console.log('resourceManager_test_getIntPluralStringValueSync_0200:' + value);
       expect(value).assertEqual('2 apples');
     })
 
@@ -164,6 +186,39 @@ export default function FivePointOne_resMgrStageTest() {
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_1000 error code:' + err.code);
         expect(err.code == 9001001).assertTrue();
       }
+    })
+       
+    /**
+     * @tc.number   : resourceManager_test_getIntPluralStringByNameSync_static_0100
+     * @tc.name     : resourceManager_test_getIntPluralStringByNameSync_static_0100
+     * @tc.desc     : getIntPluralStringByNameSync with name
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('resourceManager_test_getIntPluralStringByNameSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let value = res.getIntPluralStringByNameSync('p_str4', 2, 2, 'test');
+      console.log('resourceManager_test_getIntPluralStringByNameSync_0100:' + value);
+      expect(value).assertEqual('2 apples');
+    })
+    
+    /**
+     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.name     : resourceManager_test_getDoublePluralStringValueSync_static_0200
+     * @tc.desc     : getDoublePluralStringValueSync with object
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('resourceManager_test_getDoublePluralStringValueSync_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let resource: resourceManager.Resource = {
+        bundleName: "com.example.global_stage.static",
+        moduleName: "entry",
+        id: 0x01000036
+      };
+      let value = res.getDoublePluralStringValueSync(resource, 2.1, 2, 'test');
+      console.log('resourceManager_test_getDoublePluralStringValueSync_0200:' + value);
+      expect(value).assertEqual('2 apples');
     })
 
     /**
