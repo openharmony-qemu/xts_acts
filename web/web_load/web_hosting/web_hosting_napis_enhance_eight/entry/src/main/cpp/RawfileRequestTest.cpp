@@ -57,7 +57,7 @@ void ReadCallback(const ArkWeb_HttpBodyStream  *httpBodyStream, uint8_t* bufferD
     const int bufferLength = 10;
     bool isEof = OH_ArkWebHttpBodyStream_IsEof(httpBodyStream);
     if (!isEof && bytesRead != 0) {
-        memset(bufferData, 0, bufferLength);
+        std::fill_n(bufferData, bufferLength, 0);
         OH_LOG_INFO(LOG_APP, "ReadCallback OH_ArkWebHttpBodyStream_AsyncRead start");
         OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, bufferData, bufferLength);
         g_asyncReadMore = 1;
@@ -81,7 +81,7 @@ int ReadHttpBodyOnWorkerThread(void* userData)
     std::size_t hashValue = std::hash<std::thread::id>()(std::this_thread::get_id());
     g_workerPid = static_cast<int>(hashValue);
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread thread id :%{public}d", g_workerPid);
-    memset(g_buffer, 0, bufferLength);
+    std::fill_n(g_buffer, bufferLength, 0);
     ArkWeb_HttpBodyStream *httpBodyStream = (ArkWeb_HttpBodyStream *)userData;
 
     OH_LOG_INFO(LOG_APP, "ReadHttpBodyOnWorkerThread g_httpBodyStreamNullptr :%{public}d", g_httpBodyStreamNullptr);
@@ -174,7 +174,7 @@ int RawfileRequest::AsyncReadCallback()
 std::string RawfileRequest::ReadBufferValue()
 {
     if (g_readBuffer) {
-        return std::string((char *)g_readBuffer);
+        return std::string(reinterpret_cast<char *>(g_readBuffer));
     }
     return "";
 }
@@ -318,7 +318,7 @@ void RawfileRequest::ReadRawfileThread()
         consumed += ret;
         OH_ResourceManager_SeekRawFile(rawfile, consumed, 0);
         DidReceiveData(buffer, ret);
-        memset(buffer, 0, BLOCK_SIZE);
+        std::fill_n(buffer, BLOCK_SIZE, 0);
     }
 
     OH_ResourceManager_CloseRawFile(rawfile);
