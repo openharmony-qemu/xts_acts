@@ -42,6 +42,9 @@ import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInp
 import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/TextVerticalAlignModifier.test';
 import RichEditorEnableAutoSpacingTest from './RichEditorTest/RichEditorEnableAutoSpacing.test';
+import RichEditorTextVerticalAlignTest from './RichEditorTest/RichEditorTextVerticalAlign.test';
+import TextGetParagraphsTest from './TextTest/TextGetparagraphs.test';
+import fromHtmlTest from './StyledStringTest/fromHtml.test';
 
 
 export default function testsuite() {
@@ -74,4 +77,7 @@ export default function testsuite() {
   TextVerticalAlignTest();
   ModifierTextVerticalAlignTest();
   RichEditorEnableAutoSpacingTest();
+  RichEditorTextVerticalAlignTest();
+  TextGetParagraphsTest();
+  fromHtmlTest();
 }

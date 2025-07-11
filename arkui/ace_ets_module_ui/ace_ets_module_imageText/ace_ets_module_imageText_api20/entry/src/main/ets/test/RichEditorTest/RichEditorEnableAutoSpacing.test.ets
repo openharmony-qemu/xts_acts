@@ -54,7 +54,7 @@ export default function RichEditorEnableAutoSpacingTest() {
       let strJson = getInspectorByKey('RichEditor_enableAutoSpacing_true');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RichEditorEnableAutoSpacingTest_0010] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('1');
+      expect(obj.$attrs.enableAutoSpacing).assertEqual('true');
       console.info('[RichEditorEnableAutoSpacingTest_0010] END');
       done();
     });
@@ -72,7 +72,7 @@ export default function RichEditorEnableAutoSpacingTest() {
       let strJson = getInspectorByKey('RichEditor_enableAutoSpacing_false');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RichEditorEnableAutoSpacingTest_0020] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('0');
+      expect(obj.$attrs.enableAutoSpacing).assertEqual('false');
       console.info('[RichEditorEnableAutoSpacingTest_0020] END');
       done();
     });
@@ -90,7 +90,7 @@ export default function RichEditorEnableAutoSpacingTest() {
       let strJson = getInspectorByKey('RichEditor_enableAutoSpacing_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RichEditorEnableAutoSpacingTest_0030] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('0');
+      expect(obj.$attrs.enableAutoSpacing).assertEqual('false');
       console.info('[RichEditorEnableAutoSpacingTest_0030] END');
       done();
     });
@@ -108,7 +108,7 @@ export default function RichEditorEnableAutoSpacingTest() {
       let strJson = getInspectorByKey('RichEditor_enableAutoSpacing_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RichEditorEnableAutoSpacingTest_0040] value: ' + JSON.stringify(obj.$attrs.enableAutoSpacing));
-      expect(obj.$attrs.enableAutoSpacing).assertEqual('0');
+      expect(obj.$attrs.enableAutoSpacing).assertEqual('false');
       console.info('[RichEditorEnableAutoSpacingTest_0040] END');
       done();
     });
