@@ -436,10 +436,10 @@ function testSetDisallowedForAccountPolicy() {
   it("test_set_disallowed_policy_for_account_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, false, DEFAULT_USER_ID);
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
