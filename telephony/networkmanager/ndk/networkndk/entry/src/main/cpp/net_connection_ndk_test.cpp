@@ -772,7 +772,7 @@ static napi_value CallHttpClientApi(napi_env env, napi_callback_info info)
 {
     napi_value res;
 
-    const char *senddata = "https://www.eee-eee.com/blog-news/";
+    const char *senddata = "https://www.baidu.com";
     
     Http_Request *request = OH_Http_CreateRequest(senddata);
         OH_LOG_INFO(LOG_APP, "success %{public}s tests", request->url);
