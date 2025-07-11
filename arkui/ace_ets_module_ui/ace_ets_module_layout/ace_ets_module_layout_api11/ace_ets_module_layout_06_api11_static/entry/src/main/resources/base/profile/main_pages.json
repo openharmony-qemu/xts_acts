@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/List/ListItem_Delete/ListItem_Delete_End_Resource",
+    "MainAbility/pages/List/ListItem_Delete/ListItem_Delete_Start_Resource",
+    "MainAbility/pages/List/List_divider/List_divider_resource"
+  ]
+}

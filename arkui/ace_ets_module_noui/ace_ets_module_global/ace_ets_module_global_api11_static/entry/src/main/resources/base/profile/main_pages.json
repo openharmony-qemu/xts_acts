@@ -1,0 +1,11 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Resource/ResourceColor",
+        "MainAbility/pages/Resource/ResourceFloat",
+        "MainAbility/pages/Resource/ResourceInteger",
+        "MainAbility/pages/Resource/ResourcePlural",
+        "MainAbility/pages/Resource/ResourceStrarray",
+        "MainAbility/pages/Resource/ResourceString"
+    ]
+}
