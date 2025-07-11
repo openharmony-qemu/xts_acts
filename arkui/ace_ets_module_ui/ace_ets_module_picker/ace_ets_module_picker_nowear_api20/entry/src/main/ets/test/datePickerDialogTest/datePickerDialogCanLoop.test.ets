@@ -68,6 +68,8 @@ export default function DatePickerDialogCanLoopTest() {
       let canLoopAttr: string = picker.$attrs.canLoop;
       console.info('DatePickerDialogCanLoopTest_0100 true component obj is: ' + canLoopAttr);
       expect(canLoopAttr).assertEqual('true');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
       done();
     });
 
@@ -97,6 +99,8 @@ export default function DatePickerDialogCanLoopTest() {
       let canLoopAttr: string = picker.$attrs.canLoop;
       console.info('DatePickerDialogCanLoopTest_0200 false component obj is: ' + canLoopAttr);
       expect(canLoopAttr).assertEqual('false');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
       done();
     });
 
@@ -126,6 +130,8 @@ export default function DatePickerDialogCanLoopTest() {
       let canLoopAttr: string = picker.$attrs.canLoop;
       console.info('DatePickerDialogCanLoopTest_0300 null component obj is: ' + canLoopAttr);
       expect(canLoopAttr).assertEqual('true');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
       done();
     });
 
@@ -155,6 +161,8 @@ export default function DatePickerDialogCanLoopTest() {
       let canLoopAttr: string = picker.$attrs.canLoop;
       console.info('DatePickerDialogCanLoopTest_0400 undefined component obj is: ' + canLoopAttr);
       expect(canLoopAttr).assertEqual('true');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await btn1?.click();
       done();
     });
   })
