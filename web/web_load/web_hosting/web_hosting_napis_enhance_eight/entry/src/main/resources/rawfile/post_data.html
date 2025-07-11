@@ -117,7 +117,9 @@
                     uploaded += buf.byteLength;
                     crypto.getRandomValues(buf);
                     ctrl.enqueue(buf);
-                    if ((start + 1000) < Date.now()) ctrl.close();
+                    if ((start + 1000) < Date.now()) {
+                        ctrl.close();
+                    }
                 }
             });
             fetch(url, {

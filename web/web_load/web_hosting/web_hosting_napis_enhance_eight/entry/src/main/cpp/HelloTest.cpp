@@ -42,7 +42,8 @@ static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "register custom schemes");
     OH_ArkWeb_RegisterCustomSchemes("custom", ARKWEB_SCHEME_OPTION_STANDARD | ARKWEB_SCHEME_OPTION_CORS_ENABLED);
     OH_ArkWeb_RegisterCustomSchemes("custom-local", ARKWEB_SCHEME_OPTION_LOCAL);
-    OH_ArkWeb_RegisterCustomSchemes("custom-csp-bypassing", ARKWEB_SCHEME_OPTION_CSP_BYPASSING | ARKWEB_SCHEME_OPTION_STANDARD);
+    OH_ArkWeb_RegisterCustomSchemes("custom-csp-bypassing",
+        ARKWEB_SCHEME_OPTION_CSP_BYPASSING | ARKWEB_SCHEME_OPTION_STANDARD);
     OH_ArkWeb_RegisterCustomSchemes("custom-isolated", ARKWEB_SCHEME_OPTION_DISPLAY_ISOLATED);
     return nullptr;
 }
@@ -55,7 +56,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
 {
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart schemeHandler");
     *intercept = true;
-    testRequestStop = -1;
+    g_testRequestStop = -1;
     char *url;
     OH_ArkWebResourceRequest_GetUrl(resourceRequest, &url);
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart schemeHandler url %{public}s", url);
@@ -74,7 +75,8 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
         char *key;
         char *value;
         OH_ArkWebRequestHeaderList_GetHeader(headerList, i, &key, &value);
-        OH_LOG_INFO(LOG_APP, "OnURLRequestStart OH_ArkWebRequestHeaderList_GetHeader header key:%{public}s,value:%{public}s",
+        OH_LOG_INFO(LOG_APP,
+            "OnURLRequestStart OH_ArkWebRequestHeaderList_GetHeader header key:%{public}s,value:%{public}s",
             key,
             value);
     }
@@ -88,12 +90,11 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
         request->httpBodyStreamNullptr_ = false;
     }
 
-
     if (strcmp(url, "https://www.example.com/bufLenZero") == 0) {
         request->bufLen_ = 0;
     } else {
-       const int DEFAULT_BUF_LEN = 10;
-       request->bufLen_ = DEFAULT_BUF_LEN;
+       const int defaultBufLen = 10;
+       request->bufLen_ = defaultBufLen;
     }
 
     request->Start();
@@ -120,7 +121,7 @@ void OnURLRequestStop(const ArkWeb_SchemeHandler *schemeHandler,
         g_testThreadIdEqual = rawfileRequest->ThreadIdEqual();
         rawfileRequest->Stop();
     }
-    testRequestStop = 1;
+    g_testRequestStop = 1;
     OH_LOG_ERROR(LOG_APP, "OnURLRequestStop end.");
 }
 
