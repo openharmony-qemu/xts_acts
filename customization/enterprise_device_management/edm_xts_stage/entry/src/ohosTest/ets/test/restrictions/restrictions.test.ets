@@ -2272,10 +2272,10 @@ function testSetDisallowedForAccountPolicy() {
   it("test_set_disallowed_policy_for_account_0935", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, DEFAULT_USER_ID);
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, '', true, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2717,7 +2717,7 @@ function testGetDisallowedForAccountPolicy() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0904
    * @tc.name      : test_get_disallowed_policy_for_account_0904
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount without admin
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with unActiveadmin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -2785,10 +2785,10 @@ function testGetDisallowedForAccountPolicy() {
   it("test_get_disallowed_policy_for_account_0907", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      restrictions.getDisallowedPolicyForAccount(SELFWANT, null, DEFAULT_USER_ID);
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, '', DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
