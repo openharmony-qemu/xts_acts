@@ -5,8 +5,6 @@
         "MainAbility/pages/Grid/barMarginGrid",
         "MainAbility/pages/List/barMarginList",
         "MainAbility/pages/Scroll/barMarginScroll",
-        "MainAbility/pages/List/focusWrapModeList",
-        "MainAbility/pages/List/focusWrapModeList2",
         "MainAbility/pages/Tabs/curvesTabs",
         "MainAbility/pages/Refresh/maxDownRefresh",
         "MainAbility/pages/ScrollBar/scrollBarColor",
