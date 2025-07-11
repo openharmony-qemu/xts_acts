@@ -52,6 +52,7 @@ const LABEL_SMS = "sms";
 const LABEL_MMS = "mms";
 const LABEL_AIRPLANE_MODE = "airplaneMode";
 const LABEL_NOTIFICATION = "notification";
+const LABEL_NFC = "nfc";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1242,6 +1243,27 @@ function testSetDisallowedPolicy() {
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_NOTIFICATION)).assertFalse();
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0157
+   * @tc.name      : test_set_disallowed_policy_0157
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0157", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_NFC, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_NFC)).assertFalse();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

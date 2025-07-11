@@ -40,6 +40,8 @@ import TextAreaAutoCapitalizationModeModifierTest from './TextAreaTest/TextAreaA
 import TextInputAutoCapitalizationModeTest from './TextInputTest/TextInputAutoCapitalizationMode.test';
 import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInputAutoCapitalizationModeModifier.test';
 import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
+import TextNumberTransitionTest from './TextTest/TextNumberTransitionTest.test';
+import SymbolEffectTest from './SymbolGlyphTest/SymbolEffectTest.test';
 
 
 export default function testsuite() {
@@ -70,4 +72,6 @@ export default function testsuite() {
   TextInputAutoCapitalizationModeTest();
   TextInputAutoCapitalizationModeModifierTest();
   ImageOrientationTest();
+  TextNumberTransitionTest();
+  SymbolEffectTest();
 }
