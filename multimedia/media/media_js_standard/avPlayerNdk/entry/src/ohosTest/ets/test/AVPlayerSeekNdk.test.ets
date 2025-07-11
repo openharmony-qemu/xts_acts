@@ -27,8 +27,8 @@ function getContext(): Context {
 }
 const PATH_DEMO =  "demo_no_audio_10s.mp4"
 
-export default function AVPlayerSeekNdkTest() {
-  describe('AVPlayerSeekNdkTest', () => {
+export default function AVPlayerSeekNdk() {
+  describe('AVPlayerSeekNdk', () => {
 
     beforeAll(async () => {
       await Utils.sleep(2000)
