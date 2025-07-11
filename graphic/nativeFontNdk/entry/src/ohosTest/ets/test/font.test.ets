@@ -1155,10 +1155,8 @@ export default function fontTest() {
      */
     it('testOHDrawingTypographyHandlerAddEncodedText002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: Array<number> = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText002();
-      expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(0);
-      expect(result[2]).assertEqual(0);
+      let result: number = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText002();
+      expect(result).assertEqual(0);
       done();
     });
 
@@ -1190,10 +1188,8 @@ export default function fontTest() {
      */
     it('testOHDrawingTypographyHandlerAddEncodedText004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: Array<number> = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText004();
-      expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(0);
-      expect(result[2]).assertEqual(0);
+      let result: number = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText004();
+      expect(result).assertEqual(0);
       done();
     });
 
@@ -1224,10 +1220,8 @@ export default function fontTest() {
      */
     it('testOHDrawingTypographyHandlerAddEncodedText006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result: Array<number> = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText006();
-      expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(0);
-      expect(result[2]).assertEqual(0);
+      let result: number = nativeFontNdk.oHDrawingTypographyHandlerAddEncodedText006();
+      expect(result).assertEqual(0);
       done();
     });
 

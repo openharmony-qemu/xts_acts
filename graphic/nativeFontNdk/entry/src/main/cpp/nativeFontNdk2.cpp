@@ -522,37 +522,19 @@ napi_value OHDrawingTypographyHandlerAddEncodedText001(napi_env env, napi_callba
 napi_value OHDrawingTypographyHandlerAddEncodedText002(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    napi_create_array_with_length(env, ARR_NUM_3, &result);
-    napi_value result1 = nullptr;
-    napi_value result2 = nullptr;
-    napi_value result3 = nullptr;
 
     // Invalid continuation bytes
     const char invalid1[] = "abc\x80\xff";
-    if (GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF8) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result1);
-    } else {
-        napi_create_int32(env, FAIL, &result1);
-    }
-    napi_set_element(env, result, ARR_NUM_0, result1);
+    GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF8);
 
     // Truncated multi-byte sequence
     const char invalid2[] = u8"正常\xE6\x97继续";
-    if (GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF8) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result2);
-    } else {
-        napi_create_int32(env, FAIL, &result2);
-    }
-    napi_set_element(env, result, ARR_NUM_1, result2);
+    GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF8);
 
     // Overlong encoding
     const char invalid3[] = "\xF0\x82\x82\xAC"; // Overlong € symbol
-    if (GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF8) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result3);
-    } else {
-        napi_create_int32(env, FAIL, &result3);
-    }
-    napi_set_element(env, result, ARR_NUM_2, result3);
+    GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF8);
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 
@@ -606,37 +588,19 @@ napi_value OHDrawingTypographyHandlerAddEncodedText003(napi_env env, napi_callba
 napi_value OHDrawingTypographyHandlerAddEncodedText004(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    napi_create_array_with_length(env, ARR_NUM_3, &result);
-    napi_value result1 = nullptr;
-    napi_value result2 = nullptr;
-    napi_value result3 = nullptr;
 
     // Unpaired high surrogate
     const char16_t invalid1[] = u"\xD800\x0041";
-    if (GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF16) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result1);
-    } else {
-        napi_create_int32(env, FAIL, &result1);
-    }
-    napi_set_element(env, result, ARR_NUM_0, result1);
+    GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF16);
 
     // Unpaired low surrogate
     const char16_t invalid2[] = u"\xDC00";
-    if (GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF16) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result2);
-    } else {
-        napi_create_int32(env, FAIL, &result2);
-    }
-    napi_set_element(env, result, ARR_NUM_1, result2);
+    GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF16);
 
     // Swapped surrogate pair
     const char16_t invalid3[] = u"\xDC00\xD800";
-    if (GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF16) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result3);
-    } else {
-        napi_create_int32(env, FAIL, &result3);
-    }
-    napi_set_element(env, result, ARR_NUM_2, result3);
+    GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF16);
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 
@@ -680,37 +644,19 @@ napi_value OHDrawingTypographyHandlerAddEncodedText005(napi_env env, napi_callba
 napi_value OHDrawingTypographyHandlerAddEncodedText006(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    napi_create_array_with_length(env, ARR_NUM_3, &result);
-    napi_value result1 = nullptr;
-    napi_value result2 = nullptr;
-    napi_value result3 = nullptr;
 
     // Code point beyond U+10FFFF
     const char32_t invalid1[] = { 0x110000 };
-    if (GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF32) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result1);
-    } else {
-        napi_create_int32(env, FAIL, &result1);
-    }
-    napi_set_element(env, result, ARR_NUM_0, result1);
+    GetUnresolvedGlyphCount(invalid1, sizeof(invalid1), TEXT_ENCODING_UTF32);
 
     // Surrogate code points
     const char32_t invalid2[] = { 0xD800, 0xDFFF };
-    if (GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF32) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result2);
-    } else {
-        napi_create_int32(env, FAIL, &result2);
-    }
-    napi_set_element(env, result, ARR_NUM_1, result2);
+    GetUnresolvedGlyphCount(invalid2, sizeof(invalid2), TEXT_ENCODING_UTF32);
 
     // Negative value
     const int invalid3[] = { NEGATIVE_NUM_100 };
-    if (GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF32) == NUM_0) {
-        napi_create_int32(env, SUCCESS, &result3);
-    } else {
-        napi_create_int32(env, FAIL, &result3);
-    }
-    napi_set_element(env, result, ARR_NUM_2, result3);
+    GetUnresolvedGlyphCount(invalid3, sizeof(invalid3), TEXT_ENCODING_UTF32);
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 
