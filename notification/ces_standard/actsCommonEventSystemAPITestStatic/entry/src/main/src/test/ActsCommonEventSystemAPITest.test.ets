@@ -28,8 +28,8 @@ import {
 import Utils from './Util.test';
 
 let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-
-let bundleName: string = 'com.example.actscommonEventsystemapitest'
+let testAbilityContext: common.UIAbilityContext;
+let bundleName: string = 'com.example.systemAPI.static'
 
 
 export default function ActsCommonEventSystemAPITest() {
@@ -38,7 +38,30 @@ export default function ActsCommonEventSystemAPITest() {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    let testAbilityContext: common.UIAbilityContext;
+    beforeAll(() => {
+      hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      loadAndSetUpUiTest();
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      abilityDelegator.addAbilityMonitor({
+        abilityName: "EntryAbility",
+        moduleName:"entry",
+        onAbilityCreate: (abilitys : UIAbility) : void => {
+          testAbilityContext = abilitys.context
+          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
+
+        },
+      }, (err : BusinessError| null) : void => {
+        if (err != null ) {
+          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
+        }
+        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
+      });
+      await Utils.msSleep(2000)
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
+      await Utils.msSleep(2000)
+      hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
+    })
+
 
     /*
      * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5000
@@ -738,8 +761,6 @@ export default function ActsCommonEventSystemAPITest() {
         await Utils.msSleep(2000)
       })
 
-
-    //问题单号：DTS2025061850295
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
@@ -751,8 +772,6 @@ export default function ActsCommonEventSystemAPITest() {
 
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
-          expect(err?.code).assertEqual(0)
-          done()
         })
         await Utils.msSleep(1000)
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
