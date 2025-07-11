@@ -24,13 +24,12 @@ const CODE_PARAMETER_ERROR: number = 401;
 
 export default function bmsZlibChecksumAdler32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let adler1: Double = 0;
-  let adler2: Double = 0;
-  let buf1 = new ArrayBuffer(21);
-  let buf2 = new ArrayBuffer(19);
-  let str1 = 'hello Adler32Combine1';
-  let str2 = 'hei Adler32Combine2';
-  let len2 = buf2.byteLength;
+  let adler1: long = 0;
+  let adler2: long = 0;
+  let buf1: ArrayBuffer = new ArrayBuffer(21);
+  let buf2: ArrayBuffer = new ArrayBuffer(19);
+  let str1: string = 'hello Adler32Combine1';
+  let str2: string = 'hei Adler32Combine2';
   describe('bmsZlibChecksumAdler32CombineTest', () => {
     beforeAll(() => {
       let data1 = new Uint8Array(buf1);
@@ -60,7 +59,7 @@ export default function bmsZlibChecksumAdler32CombineTest() {
     it("Sub_Bms_Zlib_Checksum_Check_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
-          len2 = 123;
+          let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_1200 start`);
           let num: number = await checksum.adler32Combine(adler1, adler2, len2);
           hilog.info(Domain, TAG,
