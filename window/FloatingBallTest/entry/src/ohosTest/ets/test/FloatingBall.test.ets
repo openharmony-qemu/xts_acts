@@ -1528,8 +1528,8 @@ export default function abilityTest() {
     })
     /**
      * @tc.number : SUB_BASIC_WMS_FLOATING_BALL_3500
-     * @tc.name : test_updateFloatingBall_SIMPLE_NORMAL
-     * @tc.desc : test_updateFloatingBall_SIMPLE_NORMAL
+     * @tc.name : test_updateFloatingBall_STATIC_NORMAL
+     * @tc.desc : test_updateFloatingBall_STATIC_NORMAL
      * @tc.size : MediumTest
      * @tc.type : Function
      * @tc.level : Level3
