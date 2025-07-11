@@ -141,7 +141,7 @@ export default function focusWrapModeList() {
       await CommonFunc.sleep(2000);
       let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
       expect(text3IsFocused3).assertEqual(true);
-      console.info('[focusWrapModeList_0500] value:' + text3IsFocused3);
+      console.info('[focusWrapModeList_0500] value: ' + text3IsFocused3);
       console.info('[focusWrapModeList_0500] END');
       done();
     });
