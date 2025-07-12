@@ -59,7 +59,7 @@ export default function DecimalTest007() {
     console.info("start################################start");
     /**
      * @tc.number    : DECIMAL_TEST7_001
-     * @tc.name      : Decimal_div_Func_001
+     * @tc.name      : Decimal_tanh_Func_001
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -90,7 +90,7 @@ export default function DecimalTest007() {
     });
     /**
      * @tc.number    : DECIMAL_TEST7_002
-     * @tc.name      : Decimal_div_Func_002
+     * @tc.name      : Decimal_tanh_Func_002
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -129,7 +129,7 @@ export default function DecimalTest007() {
     });
     /**
      * @tc.number    : DECIMAL_TEST7_003
-     * @tc.name      : Decimal_div_Func_003
+     * @tc.name      : Decimal_tanh_Func_003
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -167,7 +167,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_004
-     * @tc.name      : Decimal_div_Func_004
+     * @tc.name      : Decimal_tanh_Func_004
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -221,7 +221,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_005
-     * @tc.name      : Decimal_div_Func_005
+     * @tc.name      : Decimal_tanh_Func_005
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -272,7 +272,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_006
-     * @tc.name      : Decimal_div_Func_006
+     * @tc.name      : Decimal_tanh_Func_006
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -327,7 +327,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_007
-     * @tc.name      : Decimal_div_Func_007
+     * @tc.name      : Decimal_tanh_Func_007
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -383,7 +383,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_008
-     * @tc.name      : Decimal_div_Func_008
+     * @tc.name      : Decimal_tanh_Func_008
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -440,7 +440,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_009
-     * @tc.name      : Decimal_div_Func_009
+     * @tc.name      : Decimal_tanh_Func_009
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -496,7 +496,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_010
-     * @tc.name      : Decimal_div_Func_010
+     * @tc.name      : Decimal_tanh_Func_010
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -547,7 +547,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_011
-     * @tc.name      : Decimal_div_Func_011
+     * @tc.name      : Decimal_tanh_Func_011
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -592,7 +592,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_012
-     * @tc.name      : Decimal_div_Func_012
+     * @tc.name      : Decimal_tanh_Func_012
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -639,7 +639,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_013
-     * @tc.name      : Decimal_div_Func_013
+     * @tc.name      : Decimal_tanh_Func_013
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -693,7 +693,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_014
-     * @tc.name      : Decimal_div_Func_014
+     * @tc.name      : Decimal_tanh_Func_014
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -750,7 +750,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_015
-     * @tc.name      : Decimal_div_Func_015
+     * @tc.name      : Decimal_tanh_Func_015
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -811,7 +811,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_016
-     * @tc.name      : Decimal_div_Func_016
+     * @tc.name      : Decimal_tanh_Func_016
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -867,7 +867,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_017
-     * @tc.name      : Decimal_div_Func_017
+     * @tc.name      : Decimal_tanh_Func_017
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -913,7 +913,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_018
-     * @tc.name      : Decimal_div_Func_018
+     * @tc.name      : Decimal_tanh_Func_018
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -968,7 +968,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_019
-     * @tc.name      : Decimal_div_Func_019
+     * @tc.name      : Decimal_tanh_Func_019
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1023,7 +1023,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_020
-     * @tc.name      : Decimal_div_Func_020
+     * @tc.name      : Decimal_tanh_Func_020
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1081,7 +1081,7 @@ export default function DecimalTest007() {
     });
     /**
      * @tc.number    : DECIMAL_TEST7_021
-     * @tc.name      : Decimal_div_Func_021
+     * @tc.name      : Decimal_tanh_Func_021
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1131,7 +1131,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_022
-     * @tc.name      : Decimal_div_Func_022
+     * @tc.name      : Decimal_tanh_Func_022
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1189,7 +1189,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_023
-     * @tc.name      : Decimal_div_Func_023
+     * @tc.name      : Decimal_tanh_Func_023
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1249,7 +1249,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_024
-     * @tc.name      : Decimal_div_Func_024
+     * @tc.name      : Decimal_tanh_Func_024
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1306,7 +1306,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_025
-     * @tc.name      : Decimal_div_Func_025
+     * @tc.name      : Decimal_tanh_Func_025
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1361,7 +1361,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_026
-     * @tc.name      : Decimal_div_Func_026
+     * @tc.name      : Decimal_tanh_Func_026
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1418,7 +1418,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_027
-     * @tc.name      : Decimal_div_Func_027
+     * @tc.name      : Decimal_tanh_Func_027
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1478,7 +1478,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_028
-     * @tc.name      : Decimal_div_Func_028
+     * @tc.name      : Decimal_tanh_Func_028
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1532,7 +1532,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_029
-     * @tc.name      : Decimal_div_Func_029
+     * @tc.name      : Decimal_tanh_Func_029
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1588,7 +1588,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_030
-     * @tc.name      : Decimal_div_Func_030
+     * @tc.name      : Decimal_tanh_Func_030
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1644,7 +1644,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_031
-     * @tc.name      : Decimal_div_Func_031
+     * @tc.name      : Decimal_tanh_Func_031
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1698,7 +1698,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_032
-     * @tc.name      : Decimal_div_Func_032
+     * @tc.name      : Decimal_tanh_Func_032
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1755,7 +1755,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_033
-     * @tc.name      : Decimal_div_Func_033
+     * @tc.name      : Decimal_tanh_Func_033
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1808,7 +1808,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_034
-     * @tc.name      : Decimal_div_Func_034
+     * @tc.name      : Decimal_tanh_Func_034
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1862,7 +1862,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_035
-     * @tc.name      : Decimal_div_Func_035
+     * @tc.name      : Decimal_tanh_Func_035
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1915,7 +1915,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_036
-     * @tc.name      : Decimal_div_Func_036
+     * @tc.name      : Decimal_tanh_Func_036
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -1964,7 +1964,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_037
-     * @tc.name      : Decimal_div_Func_037
+     * @tc.name      : Decimal_tanh_Func_037
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2014,7 +2014,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_038
-     * @tc.name      : Decimal_div_Func_038
+     * @tc.name      : Decimal_tanh_Func_038
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2068,7 +2068,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_039
-     * @tc.name      : Decimal_div_Func_039
+     * @tc.name      : Decimal_tanh_Func_039
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2123,7 +2123,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_040
-     * @tc.name      : Decimal_div_Func_040
+     * @tc.name      : Decimal_tanh_Func_040
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2175,7 +2175,7 @@ export default function DecimalTest007() {
     });
     /**
      * @tc.number    : DECIMAL_TEST7_041
-     * @tc.name      : Decimal_div_Func_041
+     * @tc.name      : Decimal_tanh_Func_041
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2234,7 +2234,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_042
-     * @tc.name      : Decimal_div_Func_042
+     * @tc.name      : Decimal_tanh_Func_042
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2288,7 +2288,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_043
-     * @tc.name      : Decimal_div_Func_043
+     * @tc.name      : Decimal_tanh_Func_043
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2344,7 +2344,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_044
-     * @tc.name      : Decimal_div_Func_044
+     * @tc.name      : Decimal_tanh_Func_044
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2403,7 +2403,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_045
-     * @tc.name      : Decimal_div_Func_045
+     * @tc.name      : Decimal_tanh_Func_045
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2457,7 +2457,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_046
-     * @tc.name      : Decimal_div_Func_046
+     * @tc.name      : Decimal_tanh_Func_046
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2513,7 +2513,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_047
-     * @tc.name      : Decimal_div_Func_047
+     * @tc.name      : Decimal_tanh_Func_047
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2571,7 +2571,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_048
-     * @tc.name      : Decimal_div_Func_048
+     * @tc.name      : Decimal_tanh_Func_048
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2624,7 +2624,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_049
-     * @tc.name      : Decimal_div_Func_049
+     * @tc.name      : Decimal_tanh_Func_049
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2682,7 +2682,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_050
-     * @tc.name      : Decimal_div_Func_050
+     * @tc.name      : Decimal_tanh_Func_050
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2739,7 +2739,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_051
-     * @tc.name      : Decimal_div_Func_051
+     * @tc.name      : Decimal_tanh_Func_051
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2801,7 +2801,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_052
-     * @tc.name      : Decimal_div_Func_052
+     * @tc.name      : Decimal_tanh_Func_052
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2859,7 +2859,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_053
-     * @tc.name      : Decimal_div_Func_053
+     * @tc.name      : Decimal_tanh_Func_053
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2916,7 +2916,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_054
-     * @tc.name      : Decimal_div_Func_054
+     * @tc.name      : Decimal_tanh_Func_054
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -2977,7 +2977,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_055
-     * @tc.name      : Decimal_div_Func_055
+     * @tc.name      : Decimal_tanh_Func_055
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -3044,7 +3044,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_056
-     * @tc.name      : Decimal_div_Func_056
+     * @tc.name      : Decimal_tanh_Func_056
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -3108,7 +3108,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_057
-     * @tc.name      : Decimal_div_Func_057
+     * @tc.name      : Decimal_tanh_Func_057
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -3166,7 +3166,7 @@ export default function DecimalTest007() {
 
     /**
      * @tc.number    : DECIMAL_TEST7_058
-     * @tc.name      : Decimal_div_Func_058
+     * @tc.name      : Decimal_tanh_Func_058
      * @tc.desc      : Test div
      * @tc.size      : MediumTest
      * @tc.type      : Function

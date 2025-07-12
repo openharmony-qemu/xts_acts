@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsDecimal2Test.hap"
+                "ActsDecimal2StaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

@@ -53,7 +53,7 @@ export default function DecimalTest006() {
     console.info("start################################start");
     /**
      * @tc.number    : DECIMAL_TEST6_001
-     * @tc.name      : Decimal_sinh_Func_01
+     * @tc.name      : Decimal_sinh_Func_001
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -82,7 +82,7 @@ export default function DecimalTest006() {
     });
     /**
      * @tc.number    : DECIMAL_TEST6_002
-     * @tc.name      : Decimal_sinh_Func_02
+     * @tc.name      : Decimal_sinh_Func_002
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -113,7 +113,7 @@ export default function DecimalTest006() {
     });
     /**
      * @tc.number    : DECIMAL_TEST6_003
-     * @tc.name      : Decimal_sinh_Func_03
+     * @tc.name      : Decimal_sinh_Func_003
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -146,7 +146,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_004
-     * @tc.name      : Decimal_sinh_Func_04
+     * @tc.name      : Decimal_sinh_Func_004
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -178,7 +178,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_005
-     * @tc.name      : Decimal_sinh_Func_05
+     * @tc.name      : Decimal_sinh_Func_005
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -211,7 +211,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_006
-     * @tc.name      : Decimal_sinh_Func_06
+     * @tc.name      : Decimal_sinh_Func_006
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -247,7 +247,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_007
-     * @tc.name      : Decimal_sinh_Func_07
+     * @tc.name      : Decimal_sinh_Func_007
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -282,7 +282,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_008
-     * @tc.name      : Decimal_sinh_Func_08
+     * @tc.name      : Decimal_sinh_Func_008
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -323,7 +323,7 @@ export default function DecimalTest006() {
 
     /**
      * @tc.number    : DECIMAL_TEST6_009
-     * @tc.name      : Decimal_sinh_Func_09
+     * @tc.name      : Decimal_sinh_Func_009
      * @tc.desc      : Test sinh
      * @tc.size      : MediumTest
      * @tc.type      : Function

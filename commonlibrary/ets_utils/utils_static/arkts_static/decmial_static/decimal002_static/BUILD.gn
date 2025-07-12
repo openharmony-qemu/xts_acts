@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsDecimal2Test") {
+ohos_js_app_static_suite("ActsDecimal2StaticTest") {
 #   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsDecimal2Test"
+  hap_name = "ActsDecimal2StaticTest"
   part_name = "ets_utils"
   subsystem_name = "commonlibrary"
 }
