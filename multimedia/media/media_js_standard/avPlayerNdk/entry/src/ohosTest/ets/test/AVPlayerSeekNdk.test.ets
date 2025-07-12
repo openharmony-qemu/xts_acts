@@ -349,7 +349,7 @@ export default function AVPlayerSeekNdk() {
      * @tc.level      : Level 0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0900', Level.LEVEL0, async (done: Function) => {
-      fileNameTest = "AVPlayer/H263_AAC.ts";
+      fileNameTest = "H263_AAC.ts";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
       let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);

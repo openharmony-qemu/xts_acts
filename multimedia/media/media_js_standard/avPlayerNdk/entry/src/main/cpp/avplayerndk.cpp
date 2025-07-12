@@ -2775,8 +2775,6 @@ void handleSeekStateChange(OH_AVPlayer *player, AVPlayerState state)
     int32_t ret;
     LOG("handleSeekStateChange AVPlayerState state:%{public}d", state);
     switch (state) {
-        case AV_IDLE: // 成功调用reset接口后触发该状态机上报
-            break;
         case AV_INITIALIZED: {
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
             EGLDisplay display = nullptr;
@@ -2789,12 +2787,12 @@ void handleSeekStateChange(OH_AVPlayer *player, AVPlayerState state)
             OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
             ret = OH_AVPlayer_SetVideoSurface(player, window);
             LOG("OH_AVPlayer_SetVideoSurface ret:%{public}d", ret);
-            ret = OH_AVPlayer_Prepare(player); 
+            ret = OH_AVPlayer_Prepare(player);
+            LOG("OH_AVPlayer_Prepare ret:%{public}d", ret);
         } break;
         case AV_PREPARED:
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
             ret = OH_AVPlayer_Play(player); // 调用播放接口开始播放
-            LOG("OH_AVPlayer_Play ret:%{public}d", ret);
             break;
         case AV_PLAYING:
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
@@ -2809,11 +2807,8 @@ void handleSeekStateChange(OH_AVPlayer *player, AVPlayerState state)
             break;
         case AV_COMPLETED:
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
-            ret = OH_AVPlayer_Pause(player); 
+            ret = OH_AVPlayer_Pause(player);
             LOG("OH_AVPlayer_Pause ret:%{public}d", ret);
-            break;
-        case AV_ERROR:
-            LOG("AVPlayerState AV_ERROR");
             break;
         case AV_RELEASED:
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
