@@ -473,7 +473,6 @@ export default function cameraCaptureSceneTest() {
             try {
                 photoAccessHelper.MediaAssetManager.cancelRequest(context, requestId);
                 console.info("request cancelled successfully");
-                expect(true).assertTrue()
               } catch (err) {
                 console.error(`cancelRequest failed with error: ${err.code}, ${err.message}`);
                 expect().assertFail()
