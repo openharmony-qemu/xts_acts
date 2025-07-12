@@ -399,7 +399,7 @@ export default function PowerTest() {
 
     /**
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0121
-     * @tc.name testSystem_API_Test_Power_Manager_0601
+     * @tc.name System_API_Test_Power_Manager_0601
      * @tc.desc Test the third-party application call setPowerMode will be blocked
      * @tc.level: Level 3
      * @tc.type: Function
@@ -457,7 +457,7 @@ export default function PowerTest() {
 
     /**
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0131
-     * @tc.name testSystem_API_Test_Power_Manager_0701
+     * @tc.name System_API_Test_Power_Manager_0701
      * @tc.desc Test the third-party application call setPowerMode will be blocked
      * @tc.level: Level 3
      * @tc.type: Function
