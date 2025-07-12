@@ -20,6 +20,7 @@
 #include "customcomponent/customcomponent_ondraw_behind_test.h"
 #include "EmbeddedComponentOption/EmbeddedComponentOptionTest.h"
 #include "uiState/UiStatesTest.h"
+#include "nodeUtils/NodeUniqueIdTest.h"
 
 namespace ArkUICapiTest
 {
