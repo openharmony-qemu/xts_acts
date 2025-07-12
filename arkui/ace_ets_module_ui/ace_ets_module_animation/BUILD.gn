@@ -17,5 +17,7 @@ group("ActsAceEtsModuleAnimationTest") {
     "ace_ets_module_animation_api11:ActsAceEtsModuleAnimationApi11Test",
     "ace_ets_module_animation_api12:ActsAceEtsModuleAnimationApi12Test",
     "ace_ets_module_animation_api16:ActsAceEtsModuleAnimationApi16Test",
+    "ace_ets_module_animation_api11_static:ActsAceEtsModuleAnimationApi11StaticTest",
+    "ace_ets_module_animation_api12_static:ActsAceEtsModuleAnimationApi12StaticTest",
   ]
 }
