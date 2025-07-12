@@ -19,7 +19,7 @@ import Url from '@ohos.url'
 import hilog from '@ohos.hilog'
 
 export default function urlTest2() {
-  describe('UrlFunTest',  (): void => {
+  describe('urlTest2',  (): void => {
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00100
      * @tc.name: testParamsAppend001

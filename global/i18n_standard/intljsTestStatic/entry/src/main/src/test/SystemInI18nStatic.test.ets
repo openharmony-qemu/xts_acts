@@ -61,10 +61,10 @@ export default function SystemIni18nTest() {
       console.info("afterAll case");
     });
     /* *
-        * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0100
-        * @tc.name    i18n_system_test_static_0100
-        * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US and true param
-        */
+    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0100
+    * @tc.name    i18n_system_test_static_0100
+    * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US and true param
+    */
     it('i18n_system_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US', true);
       console.log('i18n_system_test_static_0100 ' + value);
@@ -149,6 +149,105 @@ export default function SystemIni18nTest() {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US');
       console.log('i18n_system_test_static_0800 ' + value);
       expect(value).assertEqual('China');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1100
+    * @tc.name    i18n_system_test_static_1100
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and true param
+    */
+    it('i18n_system_test_static_1100', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', true);
+      console.log('i18n_system_test_static_1100 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1200
+    * @tc.name    i18n_system_test_static_1200
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and undefined param
+    */
+    it('i18n_system_test_static_1200', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', undefined);
+      console.log('i18n_system_test_static_1200 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1300
+    * @tc.name    i18n_system_test_static_1300
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and null param
+    */
+    it('i18n_system_test_static_1300', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', undefined);
+      console.log('i18n_system_test_static_1300 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1400
+    * @tc.name    i18n_system_test_static_1400
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-GB and true param
+    */
+    it('i18n_system_test_static_1400', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-GB', true);
+      console.log('i18n_system_test_static_1400 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1500
+    * @tc.name    i18n_system_test_static_1500
+    * @tc.desc    check the language, getDisplayLanguage with zh and en-US and true param
+    */
+    it('i18n_system_test_static_1500', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh', 'en-US', true);
+      console.log('i18n_system_test_static_1500 ' + value);
+      expect(value).assertEqual('Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1600
+    * @tc.name    i18n_system_test_static_1600
+    * @tc.desc    check the language, getDisplayLanguage with zh-CN and en-US and true param
+    */
+    it('i18n_system_test_static_1600', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-CN', 'en-US', true);
+      console.log('i18n_system_test_static_1600 ' + value);
+      expect(value).assertEqual('Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1700
+    * @tc.name    i18n_system_test_static_1700
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans and en-US and true param
+    */
+    it('i18n_system_test_static_1700', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans', 'en-US', true);
+      console.log('i18n_system_test_static_1700 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1800
+    * @tc.name    i18n_system_test_static_1800
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and false param
+    */
+    it('i18n_system_test_static_1800', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', false);
+      console.log('i18n_system_test_static_1800 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1900
+    * @tc.name    i18n_system_test_static_1900
+    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US param
+    */
+    it('i18n_system_test_static_1900', Level.LEVEL0, async (): Promise<void> => {
+      let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US');
+      console.log('i18n_system_test_static_1900 ' + value);
+      expect(value).assertEqual('Simplified Chinese');
     })
 
     /* *

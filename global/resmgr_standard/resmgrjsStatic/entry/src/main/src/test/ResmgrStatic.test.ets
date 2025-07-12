@@ -217,8 +217,6 @@ export default function ResmgrTest() {
       })
     })
 
-   
-
     /* *
     * @tc.number  SUB_GLOBAL_RESMGR_JS_static_0800
     * @tc.name    getStringArrayValue_test_static_004
@@ -581,6 +579,38 @@ export default function ResmgrTest() {
       })
     })
 
+    /**
+     * @tc.number   : getRawFd_test_static_0100
+     * @tc.name     : getRawFd_test_static_0100
+     * @tc.desc     : errcode 9001005 in callback mode
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('getRawFd_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
+      res.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
+        console.log('getRawFd_test_static_0100 error code:' + error?.code);
+        expect(error?.code).assertEqual(9001005);
+      })
+    })
+
+    /**
+     * @tc.number   : getRawFd_test_static_0200
+     * @tc.name     : getRawFd_test_static_0200
+     * @tc.desc     : errcode 9001005 in promise mode
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('getRawFd_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
+      res.getRawFd('plural_name_loop').then(() => {
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        console.log('getRawFd_test_static_0200 error code:' + error.code);
+        expect(error.code).assertEqual(9001005);
+      })
+    })
+
     /* *
      * @tc.number  SUB_GLOBAL_RESMGR_JS_static_2200
      * @tc.name    closeRawFd_test_static_001
@@ -717,6 +747,36 @@ export default function ResmgrTest() {
           console.log('getMediaByName_test_static_001 Failed');
           expect().assertFail();
         }
+        done();
+      })
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_static_0100
+     * @tc.name getMediaByName_test_static_0100
+     * @tc.desc get the media in callback mode, test getMediaByName method in callback mode with density
+     */
+    it('getMediaByName_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getMediaByName('foreground', 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
+        if (value?.length) {
+          console.log('getMediaByName_test_static_0100 ' + value?.length);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.log('getMediaByName_test_static_0100 Failed');
+          expect().assertFail();
+          done();
+        }
+      })
+    })
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_2900
+    * @tc.name    getMediaByName_test_static_002
+    * @tc.desc    get the media in promise mode, test getMediaByName method in promise mode
+    */
+    it('getMediaByName_test_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getMediaByName('startIcon').then(value => {
+        expect(value.length > 0).assertTrue();
         done();
       })
     })
@@ -917,23 +977,6 @@ export default function ResmgrTest() {
     })
 
     /* *
-     * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0500
-     * @tc.name    getMediaContent_test_static_0100
-     * @tc.desc    test getMediaContent method in callback mode with density
-    */
-    it('getMediaContent_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
-      res?.getMediaContent(0x01000001, 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContent_test_static_0100 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContent_test_static_0100 Failed');
-          expect().assertFail();
-        }
-      })
-    })
-
-    /* *
      * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0800
      * @tc.name    getMediaContentBase64_test_static_0200
      * @tc.desc    test getMediaContentBase64 method in promise mode with density
@@ -956,9 +999,54 @@ export default function ResmgrTest() {
       expect(value !== null).assertTrue();
       done();
     })
-
+ 
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0100
+    * @tc.name    getColor_test_static_0100
+    * @tc.desc    test getColor method in callback mode get the color in callback mode
+    */
+    it('getColor_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getColor(0x01000033, (err: BusinessError<void> | null, value: number | undefined) => {
+          expect(value !== null).assertTrue();
+          console.log('getColor_test_static_001 ' + value);
+          expect(value).assertEqual(4294967295);
+          done();
+      })
+    })
    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0200
+    * @tc.name    getColor_test_static_0200
+    * @tc.desc    get the color in promise mode,test getColor method in promise mode
+    */
+    it('getColor_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getColor(0x01000033).then(value => {
+        expect(value !== null).assertTrue();
+        console.log('getColor_test_static_0200 ' + value);
+        expect(value).assertEqual(4294967295);
+        done();
+      })
+    }) 
 
+    /* *
+     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0110
+     * @tc.name    getColor_test_static_0110
+     * @tc.desc    test getColor method in callback mode
+     */
+    it('getColor_test_static_0110', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.getColor(0x21000014, (err: BusinessError<void> | null, value: number | undefined) => {
+          console.log('getColor_test_static_0110 err.code ' + err?.code + '-');
+          console.log('getColor_test_static_0110 err.message ' + err?.message + '-');
+          expect(err?.code == 9001001).assertTrue();
+          done();
+        })
+      } catch (error: BusinessError) {
+        console.log('getColor_test_static_0110 error.code' + error.code);
+        console.log('getColor_test_static_0110 error.message' + error.message);
+      }
+    })
+   
     /* *
      * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0120
      * @tc.name    getColor_test_static_0120
@@ -997,6 +1085,25 @@ export default function ResmgrTest() {
       }
     })
 
+     /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0140
+    * @tc.name    getColor_test_static_0140
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0140', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.getColor(0x01000034, (err: BusinessError<void> | null, value: number | undefined) => {
+          console.log('getColor_test_static_0140 err.code ' + err?.code + '-');
+          console.log('getColor_test_static_0140 err.message ' + err?.message + '-');
+          expect(err?.code == 9001006).assertTrue();
+          done();
+        })
+      } catch (error: BusinessError) {
+        console.log('getColor_test_static_0140 error.code' + error.code);
+        console.log('getColor_test_static_0140 error.message' + error.message);
+      }
+    })
+
     /* *
     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0150
     * @tc.name    getColor_test_static_0150
@@ -1014,6 +1121,203 @@ export default function ResmgrTest() {
         console.log('getColor_test_static_0150 error.code' + error.code);
         console.log('getColor_test_static_0150 error.message' + error.message);
       }
+    })
+        /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0210
+    * @tc.name    getColor_test_static_0210
+    * @tc.desc    test getColor method in promise mode get the color in promise mode
+    */
+    it('getColor_test_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColor(0x01234567).then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColor_test_static_0210 err.code ' + error.code + '-');
+              console.log('getColor_test_static_0210 err.message ' + error.message + '-');
+              expect(error.code == 9001001).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColor_test_static_0210 error.code' + error.code);
+          console.log('getColor_test_static_0210 error.message' + error.message);
+      }
+    })
+
+     /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0220
+    * @tc.name    getColor_test_static_0220
+    * @tc.desc    test getColor method in promise mode get the color in promise mode
+    */
+    it('getColor_test_static_0220', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColor(0x01000006).then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColor_test_static_0220 err.code ' + error.code + '-');
+              console.log('getColor_test_static_0220 err.message ' + error.message + '-');
+              expect(error.code == 9001002).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColor_test_static_0220 error.code' + error.code);
+          console.log('getColor_test_static_0220 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0230
+    * @tc.name    getColor_test_static_0230
+    * @tc.desc    test getColor method in promise mode get the color in promise mode
+    */
+    it('getColor_test_static_0230', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColor(0x01000006).then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColor_test_static_0230 err.code ' + error.code + '-');
+              console.log('getColor_test_static_0230 err.message ' + error.message + '-');
+              expect(error.code == 9001002).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColor_test_static_0230 error.code' + error.code);
+          console.log('getColor_test_static_0230 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0240
+    * @tc.name    getColor_test_static_0240
+    * @tc.desc    test getColor method in promise mode get the color in promise mode
+    */
+    it('getColor_test_static_0240', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColor(0x01000034).then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColor_test_static_0240 err.code ' + error.code + '-');
+              console.log('getColor_test_static_0240 err.message ' + error.message + '-');
+              expect(error.code == 9001006).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColor_test_static_0240 error.code' + error.code);
+          console.log('getColor_test_static_0240 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0250
+    * @tc.name    getColor_test_static_0250
+    * @tc.desc    getColor_test_static_0250 test getColor method in callback mode
+    */
+    it('getColor_test_static_0250', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x21000014
+      }).then(()=>{})
+        .catch((err:Error) => {
+          let error = err as BusinessError;
+          console.log('getColor_test_static_0250 err.code ' + error.code + '-');
+          console.log('getColor_test_static_0250 err.message ' + error.message + '-');
+          expect(error.code == 9001001).assertTrue();
+          done();
+        });
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0260
+    * @tc.name    getColor_test_static_0260 
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0260', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x0100000e
+      }).then(()=>{})
+        .catch((err:Error) => {
+          let error = err as BusinessError;
+          console.log('getColor_test_static_0260 err.code ' + error.code + '-');
+          console.log('getColor_test_static_0260 err.message ' + error.message + '-');
+          expect(error.code == 9001002).assertTrue();
+          done();
+        });
+    })
+
+     /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0270
+    * @tc.name    getColor_test_static_0270
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000034
+      }).then(()=>{})
+        .catch((err:Error) => {
+          let error = err as BusinessError;
+          console.log('getColor_test_static_0270 err.code ' + error.code + '-');
+          console.log('getColor_test_static_0270 err.message ' + error.message + '-');
+          expect(error.code == 9001006).assertTrue();
+          done();
+        });
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0280
+    * @tc.name    getColor_test_static_0280
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0280', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x21000014
+      }, (err: BusinessError<void> | null, value: number | undefined) => {
+        console.log('getColor_test_static_0280 err.code ' + err?.code + '-');
+        console.log('getColor_test_static_0280 err.message ' + err?.message + '-');
+        expect(err?.code == 9001001).assertTrue();
+        done();
+      });
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0290
+    * @tc.name    getColor_test_static_0290
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0290', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x0100000e
+      }, (err: BusinessError<void> | null, value: number | undefined) => {
+        console.log('getColor_test_static_0280 err.code ' + err?.code + '-');
+        console.log('getColor_test_static_0280 err.message ' + err?.message + '-');
+        expect(err?.code == 9001002).assertTrue();
+        done();
+      });
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_static_0300
+    * @tc.name    getColor_test_static_0300
+    * @tc.desc    test getColor method in callback mode
+    */
+    it('getColor_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColor({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000034
+      }, (err: BusinessError<void> | null, value: number | undefined) => {
+        console.log('getColor_test_static_0300 err.code ' + err?.code + '-');
+        console.log('getColor_test_static_0300 err.message ' + err?.message + '-');
+        expect(err?.code == 9001006).assertTrue();
+        done();
+      });
     })
 
     /* *
@@ -1148,6 +1452,25 @@ export default function ResmgrTest() {
         console.log('getColorByName_test_static_0120 error.message' + error.message);
       }
     })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0130
+    * @tc.name    getColorByName_test_static_0130
+    * @tc.desc    test getColorByName method in callback mode get the color by name in callback mode
+    */
+    it('getColorByName_test_static_0130', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColorByName('integer_0', (err: BusinessError<void> | null, value: number | undefined) => {
+              console.log('getColorByName_test_static_0130 err.code ' + err?.code + '-');
+              console.log('getColorByName_test_static_0130 err.message ' + err?.message + '-');
+              expect(err?.code == 9001003).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColorByName_test_static_0130 error.code' + error.code);
+          console.log('getColorByName_test_static_0130 error.message' + error.message);
+      }
+    })
 
     /* *
     * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0140
@@ -1190,6 +1513,19 @@ export default function ResmgrTest() {
     })
 
     /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0100
+    * @tc.name    getColorByNameSync_test_static_001
+    * @tc.desc    get the sync color by name,test getColorByNameSync method
+    */
+    it('getColorByNameSync_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getColorByNameSync('color_test1');
+      expect(value !== null).assertTrue();
+      console.log('getColorByNameSync_test_static_001 ' + value);
+      expect(value).assertEqual(4294967295);
+      done();
+    })
+
+    /* *
    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0200
    * @tc.name    getColorByNameSync_test_static_003
    * @tc.desc    test getColorByNameSync method
@@ -1203,6 +1539,121 @@ export default function ResmgrTest() {
         expect(JSON.stringify(err.code)).assertEqual('9001003');
         expect(err.message).assertEqual('Invalid resource name');
         done();
+      }
+    })
+    
+   
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0400
+    * @tc.name    getColorByNameSync_test_static_004
+    * @tc.desc    get the sync color by name,test getColorByNameSync method
+    */
+    it('getColorByNameSync_test_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getColorByNameSync('color_notexist');
+      } catch (err: BusinessError) {
+        console.log('getColorByNameSync_test_static_004 err.code' + err.code);
+        console.log('getColorByNameSync_test_static_004 err.message' + err.message);
+        expect(err.code).assertEqual(9001003);
+        expect(err.message).assertEqual('Invalid resource name');
+        done();
+      }
+    })
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0200
+    * @tc.name    getColorByName_test_static_0200
+    * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
+    */
+    it('getColorByName_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getColorByName('color_test1').then((value: number) => {
+          expect(value !== null).assertTrue();
+          console.log('getColorByName_test_static_0200 ' + value);
+          expect(value).assertEqual(4294967295);
+          done();
+      })
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
+    * @tc.name    getColorByName_test_static_0210
+    * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
+    */
+    it('getColorByName_test_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColorByName('color_notexist').then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColorByName_test_static_0210 err.code ' + error.code + '-');
+              console.log('getColorByName_test_static_0210 err.message ' + error.message + '-');
+              expect(error.code == 9001003).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColorByName_test_static_0210 error.code' + error.code);
+          console.log('getColorByName_test_static_0210 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0220
+    * @tc.name    getColorByName_test_static_0220
+    * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
+    */
+    it('getColorByName_test_static_0220', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColorByName('integer_0').then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColorByName_test_static_0220 err.code ' + error.code + '-');
+              console.log('getColorByName_test_static_0220 err.message ' + error.message + '-');
+              expect(error.code == 9001003).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColorByName_test_static_0220 error.code' + error.code);
+          console.log('getColorByName_test_static_0220 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0230
+    * @tc.name    getColorByName_test_static_0230
+    * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
+    */
+    it('getColorByName_test_static_0230', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColorByName('color_test5').then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColorByName_test_static_0230 err.code ' + error.code + '-');
+              console.log('getColorByName_test_static_0230 err.message ' + error.message + '-');
+              expect(error.code == 9001004).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColorByName_test_static_0230 error.code' + error.code);
+          console.log('getColorByName_test_static_0230 error.message' + error.message);
+      }
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_static_0240
+    * @tc.name    getColorByName_test_static_0250
+    * @tc.desc    test getColorByName method in promise mode get the color by name in promise mode
+    */
+    it('getColorByName_test_static_0250', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try{
+          res?.getColorByName('color_test3').then((value: number) => {
+          }).catch((err: Object | null | undefined) => {
+              let error = err as BusinessError
+              console.log('getColorByName_test_static_0240 err.code ' + error.code + '-');
+              console.log('getColorByName_test_static_0240 err.message ' + error.message + '-');
+              expect(error.code == 9001006).assertTrue();
+              done();
+          })
+      } catch (error: BusinessError) {
+          console.log('getColorByName_test_static_0240 error.code' + error.code);
+          console.log('getColorByName_test_static_0240 error.message' + error.message);
       }
     })
 
@@ -1236,6 +1687,23 @@ export default function ResmgrTest() {
         console.log('getColorByNameSync_test_static_006 err.message' + err.message);
         expect(err.code).assertEqual(9001006);
         expect(err.message).assertEqual('The resource is referenced cyclically');
+        done();
+      }
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_static_0700
+    * @tc.name    getColorByNameSync_test_static_007
+    * @tc.desc    get the sync color by name,test getColorByNameSync method
+    */
+    it('getColorByNameSync_test_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getColorByNameSync('integer_1');
+      } catch (err: BusinessError) {
+        console.log('getColorByNameSync_test_static_007 err.code' + err.code);
+        console.log('getColorByNameSync_test_static_007 err.message' + err.message);
+        expect(err.code).assertEqual(9001003);
+        expect(err.message).assertEqual('Invalid resource name');
         done();
       }
     })
@@ -1333,6 +1801,24 @@ export default function ResmgrTest() {
       hilog.info(domain, tag, 'getStringArrayValue callback 9001006 end');
     })
 
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0500
+    * @tc.name    getMediaContent_test_static_0100
+    * @tc.desc    get the media in callback mode,test getMediaContent method in callback mode with density
+    */
+    it('getMediaContent_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getMediaContent(0x01000001, 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
+        if (value?.length) {
+          console.log('getMediaContent_test_static_0100 ' + value?.length);
+          expect(true).assertTrue();
+        } else {
+          console.log('getMediaContent_test_static_0100 Failed');
+          expect().assertFail();
+        }
+        done();
+      })
+    })
+
     /**
      * @tc.number   : getMediaContent_test_static_0300
      * @tc.name     : getMediaContent_test_static_0300
@@ -1411,6 +1897,25 @@ export default function ResmgrTest() {
       })
     })
 
+
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_static_0700
+    * @tc.name    getMediaContentBase64_test_static_0100
+    * @tc.desc    get the media in callback mode,test getMediaContentBase64 method in callback mode with density
+    */
+    it('getMediaContentBase64_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res?.getMediaContentBase64(0x01000001, 0, (err: BusinessError<void> | null, value: string | undefined) => {
+        if (value?.length) {
+          console.log('getMediaContentBase64_test_static_0100 ' + value?.length);
+          expect(true).assertTrue();
+        } else {
+          console.log('getMediaContentBase64_test_static_0100 Failed');
+          expect().assertFail();
+        }
+        done();
+      })
+    })
+    
     /**
      * @tc.number   : getMediaContentBase64_test_static_0300
      * @tc.name     : getMediaContentBase64_test_static_0300
@@ -1518,23 +2023,6 @@ export default function ResmgrTest() {
     })
 
     /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_static_0400
-    * @tc.name    i18n_test_relativetimeformat_static_0400
-    * @tc.desc    format the relativetime with 100 second, get the formatToParts value
-    */
-    it('i18n_test_relativetimeformat_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.log('i18n_test_relativetimeformat_static_0400 ' + 'start');
-      let relativetimefmt = new intl.RelativeTimeFormat("en", {
-        "numeric": "auto"
-      });
-      let parts = relativetimefmt.formatToParts(10, "seconds");
-      console.log('i18n_test_relativetimeformat_static_0400 ' + parts + 'value');
-      expect(parts[1].type).assertEqual("integer");
-      expect(parts[1].unit).assertEqual("seconds");
-      done();
-    })
-
-    /* *
      * @tc.number  getConfiguration_test_static_001
      * @tc.name    getConfiguration_test_static_001
      * @tc.desc    test getConfiguration method in callback mode
@@ -1547,6 +2035,575 @@ export default function ResmgrTest() {
         done();
       })
     })
+      /* *
+    * @tc.number getStringValue_test_static_012
+    * @tc.name getStringValue_test_static_012
+    * @tc.desc get the string in callback mode
+    */
+    it('getStringValue_test_static_012', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x1001 id not exist,throw 9001001 error code
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x1001
+      }, (err: BusinessError<void> | null, value: string | undefined) => {
+        if (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_012 err.code' + err?.code);
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_012 err.message' + err?.message);
+          expect(err?.code == 9001001).assertTrue();
+          done();
+        } else {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_012');
+          expect(value !== null).assertTrue();
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_012' + value);
+          done();
+        }
+      })
+    })
+
+    /* *
+    * @tc.number getStringValue_test_static_013
+    * @tc.name getStringValue_test_static_013
+    * @tc.desc  test getString method in callback mode get the string in callback mode
+    */
+    it('getStringValue_test_static_013', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x01000000 id is integer resource,throw 9001002 error code
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000002
+      }, (err: BusinessError<void> | null, value: string | undefined) => {
+        if (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_013 err.code' + err?.code);
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_013 err.message' + err?.message);
+          expect(err?.code == 9001002).assertTrue();
+          done();
+        } else {
+          expect(value !== null).assertTrue();
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_013' + value);
+          done();
+        }
+      })
+    })
+
+    /* *
+    * @tc.number getStringValue_test_static_014
+    * @tc.name   getStringValue_test_static_014
+    * @tc.desc   test getString method in callback mode get the string in callback mode
+    */
+    it('getStringValue_test_static_014', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000017
+      }, (err: BusinessError<void> | null, value: string | undefined) => {
+        if (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_014 err.code' + err?.code);
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_014 err.message' + err?.message);
+          expect(err?.code == 9001006).assertTrue();
+          done();
+        } else {
+          expect(value !== null).assertTrue();
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_014' + value);
+          done();
+        }
+      })
+    })
+
+    /* *
+    * @tc.number getStringValue_test_static_015
+    * @tc.name getStringValue_test_static_015
+    * @tc.desc test getString method in promise mode
+    */
+    it('getStringValue_test_static_015', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x1001 id not exist,throw 9001001 error code
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x1001
+      }).then((value: string) => {
+        expect(value !== null).assertTrue();
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_015' + value);
+        expect(value).assertEqual('L2Test');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_015 error.code' + error?.code);
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_015 error.message' + error?.message);
+        expect(JSON.stringify(error?.code) == '9001001').assertTrue();
+        done();
+      })
+    })
+
+    /* *
+    * @tc.number getStringValue_test_static_016
+    * @tc.name getStringValue_test_static_016
+    * @tc.desc test getString method in promise mode
+    */
+    it('getStringValue_test_static_016', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x02000000 id is integer resource,throw 9001002 error code
+      hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016 promise start');
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000002
+      }).then((value: string) => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016 promise try' + value);
+        expect(value !== null).assertTrue();
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016' + value);
+        expect(value).assertEqual('L2Test');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016 promise catch');
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016 error.code' + error?.code);
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_016 error.message' + error?.message);
+        expect(JSON.stringify(error?.code) == '9001002').assertTrue();
+        done();
+      })
+    })
+
+    /* *
+    * @tc.number getStringValue_test_static_017
+    * @tc.name getStringValue_test_static_017
+    * @tc.desc test getString method in promise mode
+    */
+    it('getStringValue_test_static_017', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x01000006 id re-ref,throw 9001006 error code
+      res?.getStringValue({
+        bundleName: "ohos.resmgr.test.static",
+        moduleName: "entry",
+        id: 0x01000017
+      }).then((value: string) => {
+        expect(value !== null).assertTrue();
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_017' + value);
+        expect(value).assertEqual('%4$f');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_017 error.code' + error.code);
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_017 error.message' + error.message);
+        expect(JSON.stringify(error?.code) == '9001006').assertTrue();
+        done();
+      })
+    })
+
+    /* *
+    * @tc.number getStringArrayByName_test_static_003
+    * @tc.name   getStringArrayByName_test_static_003
+    * @tc.desc   test getStringArrayByName method in callback mode get the string in callback mode
+    */
+    it('getStringArrayByName_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getStringArrayByName('sizeListThree', (err: BusinessError<void> | null, value: Array<String> | undefined) => {
+        if (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_003 err.code' + err?.code);
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_003 err.message' + err?.message);
+          expect(err?.code == 9001006).assertTrue();
+          done();
+        } else {
+          expect(value !== null).assertTrue();
+          hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_003' + value);
+          done();
+        }
+      })
+    })
+
+    /* *
+    * @tc.number getStringArrayByName_test_static_004
+    * @tc.name getStringArrayByName_test_static_004
+    * @tc.desc test getStringArrayByName method in promise mode
+    */
+    it('getStringArrayByName_test_static_004', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 0x01000006 id re-ref,throw 9001006 error code
+      res?.getStringArrayByName('sizeListThree').then((value: string): void => {
+        expect(value !== null).assertTrue();
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_004' + value);
+        expect(value).assertEqual('%4$f');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_004 error.code' + error?.code);
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getStringArrayByName_test_static_004 error.message' + error?.message);
+        expect(JSON.stringify(error?.code) == '9001006').assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   : resourceManager_test_getStringByNameSync_static_0270
+     * @tc.name     : resourceManager_test_getStringByNameSync_static_0270
+     * @tc.desc     : errcode 9001006
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 3
+     */
+    it('resourceManager_test_getStringByNameSync_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res.getStringByNameSync('test_stringLoopB', 'aaa', 1);
+        done();
+      } catch (err: BusinessError) {
+        console.log('resourceManager_test_getStringByNameSync_static_0270 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001006);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : resourceManager_test_getStringByNameSync_static_0280
+     * @tc.name      : resourceManager_test_getStringByNameSync_static_0280
+     * @tc.desc      : Parameter out of index
+     * @tc.size      : Medium Test
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('resourceManager_test_getStringByNameSync_static_0280', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let resMgr = res;
+      try {
+        resMgr.getStringByNameSync('test_stringTwentyFour', "format string", "format", "1.5", "string");
+        done();
+      } catch (error: BusinessError) {
+        console.log('resourceManager_test_getStringByNameSync_0280' + error?.code + error?.message);
+        expect(error?.code).assertEqual(9001008);
+        done();
+      }
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_3600
+    * @tc.name    getBoolean_test_static_001
+    * @tc.desc    get the boolean value, test getBoolean method
+    */
+    it('getBoolean_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getBoolean(0x0100002f);
+      console.log('getBoolean_test_static_001 ' + value);
+      expect(value).assertTrue();
+      done();
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_3700
+    * @tc.name    getBooleanByName_test_static_001
+    * @tc.desc    get the boolean value, test getBooleanByName method
+    */
+    it('getBooleanByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getBooleanByName('boolean_1');
+      console.log('getBooleanByName_test_static_001 ' + value);
+      expect(value).assertTrue();
+      done();
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_3800
+    * @tc.name    getinteger_test_static_001
+    * @tc.desc    get the interger value, test getNumber method with interger id
+    */
+    it('getinteger_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getNumber(0x01000002);
+      console.log('getinteger_test_static_001 1');
+      console.log('getinteger_test_static_001 ' + value);
+      expect(value).assertEqual(100);
+      done();
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_3900
+    * @tc.name    getintegerByName_test_static_001
+    * @tc.desc    get the interger value, test getNumberByName with interger
+    */
+    it('getintegerByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getNumberByName('integer_1');
+      console.log('getintegerByName_test_static_001 ' + value);
+      expect(value).assertEqual(100);
+      done();
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_RESMGR_JS_4000
+    * @tc.name    getfloat_test_static_001
+    * @tc.desc    get the float value, test getNumber with float id
+    */
+    it('getfloat_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res!.getNumber(0x01000002);
+      console.log('getfloat_test_static_001 ' + value);
+      expect(value > 0).assertTrue();
+      done();
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0100
+     * @tc.name getDrawableDescriptor_test_static_0100
+     * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with normal pic
+     */
+    it('getDrawableDescriptor_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDrawableDescriptor(0x01000001);
+      console.log('getDrawableDescriptor_test_static_0100 ' + JSON.stringify(value));
+      expect(value != null).assertTrue();
+      done();
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0200
+     * @tc.name getDrawableDescriptor_test_static_0200
+     * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with normal pic and density
+     */
+    it('getDrawableDescriptor_test_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDrawableDescriptor(0x01000001, 120);
+      console.log('getDrawableDescriptor_test_static_0200 ' + JSON.stringify(value));
+      expect(value != null).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0300
+     * @tc.name getDrawableDescriptor_test_static_0300
+     * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with json style pic
+     */
+    it('getDrawableDescriptor_test_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDrawableDescriptor(0x01000001);
+      console.log('getDrawableDescriptor_test_static_0300 ' + value);
+      expect(value != null).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0400
+     * @tc.name getDrawableDescriptor_test_static_0400
+     * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with json style pic and density
+     */
+    it('getDrawableDescriptor_test_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDrawableDescriptor(0x01000001, 240);
+      console.log('getDrawableDescriptor_test_static_0400 ' + value);
+      expect(value != null).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0600
+     * @tc.name getDrawableDescriptor_test_static_0600
+     * @tc.desc test the getDrawableDescriptor method return 9001001, getDrawableDescriptor with not exist resource id
+     */
+    it('getDrawableDescriptor_test_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptor(0x01234567);
+        console.log('getDrawableDescriptor_test_static_0600 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_static_0600 ' + error.code);
+        console.log('getDrawableDescriptor_test_static_0600 ' + error.message);
+        expect(error.code == 9001001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0700
+     * @tc.name getDrawableDescriptor_test_static_0700
+     * @tc.desc test the getDrawableDescriptor method return 9001002, getDrawableDescriptor with string resource id
+     */
+    it('getDrawableDescriptor_test_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptor(0x01000038);
+        console.log('getDrawableDescriptor_test_static_0700 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_static_0700 ' + error.code);
+        console.log('getDrawableDescriptor_test_static_0700 ' + error.message);
+        expect(error.code == 9001002).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_static_0800
+     * @tc.name getDrawableDescriptor_test_static_0800
+     * @tc.desc test the getDrawableDescriptor method return 401,getDrawableDescriptor with not exist density
+     */
+    it('getDrawableDescriptor_test_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptor(0x200001D, 130);
+        console.log('getDrawableDescriptor_test_static_0800 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_static_0800 ' + error.code);
+        console.log('getDrawableDescriptor_test_static_0800 ' + error.message);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1000
+     * @tc.name getDrawableDescriptor_test_1000
+     * @tc.desc test the getDrawableDescriptor method, getDrawableDescriptor with 0 density
+     */
+    it('getDrawableDescriptor_test_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptor(0x200001D, 0);
+        console.log('getDrawableDescriptor_test_1000 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1000 ' + error.code);
+        console.log('getDrawableDescriptor_test_1000 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1100
+     * @tc.name getDrawableDescriptor_test_1100
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic
+     */
+    it('getDrawableDescriptor_test_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('icon');
+        console.log('getDrawableDescriptor_test_1100 ' + JSON.stringify(value));
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1100 ' + error.code);
+        console.log('getDrawableDescriptor_test_1100 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1120
+     * @tc.name getDrawableDescriptor_test_1120
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with undefined density
+     */
+    it('getDrawableDescriptor_test_1120', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('icon', undefined);
+        console.log('getDrawableDescriptor_test_1120 ' + JSON.stringify(value));
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1120 ' + error.code);
+        console.log('getDrawableDescriptor_test_1120 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1140
+     * @tc.name getDrawableDescriptor_test_1140
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with null density
+     */
+    it('getDrawableDescriptor_test_1140', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('foreground', undefined);
+        console.log('getDrawableDescriptor_test_1140 ' + JSON.stringify(value));
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1140 ' + error.code);
+        console.log('getDrawableDescriptor_test_1140 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1200
+     * @tc.name getDrawableDescriptor_test_1200
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with normal pic and density
+     */
+    it('getDrawableDescriptor_test_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('icon', 120);
+        console.log('getDrawableDescriptor_test_1200 ' + JSON.stringify(value));
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1200 ' + error.code);
+        console.log('getDrawableDescriptor_test_1200 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1300
+     * @tc.name getDrawableDescriptor_test_1300
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic
+     */
+    it('getDrawableDescriptor_test_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('stratify');
+        console.log('getDrawableDescriptor_test_1300 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1300 ' + error.code);
+        console.log('getDrawableDescriptor_test_1300 ' + error.message);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1400
+     * @tc.name getDrawableDescriptor_test_1400
+     * @tc.desc test the getDrawableDescriptorByName method, getDrawableDescriptorByName with json style pic and density
+     */
+    it('getDrawableDescriptor_test_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('stratify', 240);
+        console.log('getDrawableDescriptor_test_1400 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1400 ' + error.code);
+        console.log('getDrawableDescriptor_test_1400 ' + error.message);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1600
+     * @tc.name getDrawableDescriptor_test_1600
+     * @tc.desc test the getDrawableDescriptorByName method return 9001003, getDrawableDescriptorByName with not exist pic name
+     */
+    it('getDrawableDescriptor_test_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('stratify1');
+        console.log('getDrawableDescriptor_test_1600 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1600 ' + error.code);
+        console.log('getDrawableDescriptor_test_1600 ' + error.message);
+        expect(error.code == 9001003).assertTrue();
+      }
+      done();
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1800
+     * @tc.name getDrawableDescriptor_test_1800
+     * @tc.desc test the getDrawableDescriptorByName method return 401,getDrawableDescriptorByName with not exist density
+     */
+    it('getDrawableDescriptor_test_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('stratify', 130);
+        console.log('getDrawableDescriptor_test_1800 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_1800 ' + error.code);
+        console.log('getDrawableDescriptor_test_1800 ' + error.message);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_2000
+     * @tc.name getDrawableDescriptor_test_2000
+     * @tc.desc test the getDrawableDescriptorByName method,getDrawableDescriptorByName with 0 density
+     */
+    it('getDrawableDescriptor_test_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getDrawableDescriptorByName('stratify', 0);
+        console.log('getDrawableDescriptor_test_2000 ' + value);
+        expect(value != null).assertTrue();
+      } catch (error: BusinessError) {
+        console.log('getDrawableDescriptor_test_2000 ' + error.code);
+        console.log('getDrawableDescriptor_test_2000 ' + error.message);
+      }
+      done();
+    })
+
     console.log('*************end ResmgrTest*************');
   })
 }

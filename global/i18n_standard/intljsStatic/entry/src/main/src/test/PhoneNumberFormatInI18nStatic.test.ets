@@ -119,6 +119,19 @@ export default function PhoneNumberFormatInI18nTest() {
       expect(valid).assertEqual(true);
     })
 
+    
+    /**
+    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0500
+    * @tc.name    i18n_phonenumberformat_test_static_0500
+    * @tc.desc    get the isValidNumber value, test isValidNumber interface with 110 param
+    */
+    it('i18n_phonenumberformat_test_static_0500', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_0500 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let valid = phonenumber.isValidNumber('110');
+      console.log('i18n_phonenumberformat_test_static_0500 ' + valid);
+      expect(valid).assertEqual(false);
+    })
 
     /**
      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_0600
@@ -545,6 +558,158 @@ export default function PhoneNumberFormatInI18nTest() {
       let value = phonenumber.format('626202337' + ran);
       console.log('i18n_phonenumberformat_test_static_3200 ' + value);
       expect(value).assertEqual('+1626202337' + ran);
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3300
+     * @tc.name i18n_phonenumberformat_test_static_3300
+     * @tc.desc get the getLocationName value, test getLocationName method with 135... num in zh-CN locale
+     */
+    it('i18n_phonenumberformat_test_static_3300', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3300 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3300 ' + ran);
+      let value = phonenumber.getLocationName('1351057467' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_3300 ' + value);
+      expect(value == '中国' || value == '广东省深圳市').assertTrue();
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3400
+     * @tc.name i18n_phonenumberformat_test_static_3400
+     * @tc.desc get the getLocationName value, test getLocationName method with 135... num in en-US locale
+     */
+    it('i18n_phonenumberformat_test_static_3400', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3400 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3400 ' + ran);
+      let value = phonenumber.getLocationName('+861351057467' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3400 ' + value);
+      expect(value == 'China' || value == 'Shenzhen, Guangdong').assertTrue();
+      let value2 = phonenumber.getLocationName('+86 1351057467' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3400 ' + value2);
+      expect(value2 == 'China' || value2 == 'Shenzhen, Guangdong').assertTrue();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3500
+     * @tc.name i18n_phonenumberformat_test_static_3500
+     * @tc.desc get the getLocationName value,test getLocationName method with 158... num in en-US locale
+     */
+    it('i18n_phonenumberformat_test_static_3500', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3500 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3500 ' + ran);
+      let value1 = phonenumber.getLocationName('+861586661737' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3500 ' + value1);
+      expect(value1 == 'China' || value1 == 'Jinan, Shandong').assertTrue();
+      let value2 = phonenumber.getLocationName('+86 1586661737' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3500 ' + value2);
+      expect(value2 == 'China' || value2 == 'Jinan, Shandong').assertTrue();
+    })
+   
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3600
+     * @tc.name i18n_phonenumberformat_test_static_3600
+     * @tc.desc get the getLocationName value,test getLocationName method with 027... num in zh-CN locale
+     */
+    it('i18n_phonenumberformat_test_static_3600', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3600 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3600 ' + ran);
+      let value = phonenumber.getLocationName('027-5937411' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_3600 ' + value);
+      expect(value == '中国' || value == '湖北省武汉市').assertTrue();
+    })
+    
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3700
+     * @tc.name i18n_phonenumberformat_test_static_3700
+     * @tc.desc get the getLocationName value, test getLocationName method with 0728... num in zh-CN locale
+     */
+    it('i18n_phonenumberformat_test_static_3700', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3700 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3700 ' + ran);
+      let value = phonenumber.getLocationName('0728-623797' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_3700 ' + value);
+      expect(value == '中国' || value == '湖北省仙桃市').assertTrue();
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3800
+     * @tc.name i18n_phonenumberformat_test_static_3800
+     * @tc.desc get the getLocationName value, test getLocationName method with +34... num in en-US locale
+     */
+    it('i18n_phonenumberformat_test_static_3800', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3800 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3800 ' + ran);
+      let value1 = phonenumber.getLocationName('+3460724205' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3800 ' + value1);
+      expect(value1).assertEqual('Spain');
+      let value2 = phonenumber.getLocationName('+34 60724205' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3800 ' + value2);
+      expect(value2).assertEqual('Spain');
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_static_3900
+     * @tc.name i18n_phonenumberformat_test_static_3900
+     * @tc.desc get the getLocationName value, test getLocationName method with +39... num in en-US locale
+     */
+    it('i18n_phonenumberformat_test_static_3900', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_3900 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_3900 ' + ran);
+      let value = phonenumber.getLocationName('+39342652441' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3900 ' + value);
+      expect(value).assertEqual('Italy');
+      let value2 = phonenumber.getLocationName('+39 342652441' + ran, 'en-US');
+      console.log('i18n_phonenumberformat_test_static_3900 ' + value2);
+      expect(value2).assertEqual('Italy');
+    })
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4000
+     * @tc.name i18n_phonenumberformat_test_static_4000
+     * @tc.desc test getLocationName method with +39... num in zh-CN locale,get the getLocationName value
+     */
+    it('i18n_phonenumberformat_test_static_4000', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_4000 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_4000 ' + ran);
+      let value = phonenumber.getLocationName('+39342652441' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_4000 ' + value);
+      expect(value).assertEqual('意大利');
+      let value2 = phonenumber.getLocationName('+39 342652441' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_4000 ' + value2);
+      expect(value2).assertEqual('意大利');
+    })
+
+    /**
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4100
+     * @tc.name i18n_phonenumberformat_test_static_4100
+     * @tc.desc test getLocationName method with +34... num in zh-CN locale,get the getLocationName value
+     */
+    it('i18n_phonenumberformat_test_static_4100', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_phonenumberformat_test_static_4100 ' + 'start');
+      let phonenumber = new i18n.PhoneNumberFormat('CN');
+      let ran = Math.ceil(Math.random() * 9);
+      console.log('i18n_phonenumberformat_test_static_4100 ' + ran);
+      let value1 = phonenumber.getLocationName('+3460724205' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_4100 ' + value1);
+      expect(value1).assertEqual('西班牙');
+      let value2 = phonenumber.getLocationName('+34 60724205' + ran, 'zh-CN');
+      console.log('i18n_phonenumberformat_test_static_4100 ' + value2);
+      expect(value2).assertEqual('西班牙');
     })
 
     console.log('*************end PhoneNumberFormatInI18nTest*************');
