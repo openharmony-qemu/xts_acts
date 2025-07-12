@@ -52,7 +52,7 @@
 #define PARAM_WIDTH 1920
 #define PARAM_HEIGHT 1080
 #define PARAM_FD_PREPARE_WAIT_TIME 2
-#define PARAM_DURATION_f2 -2
+#define PARAM_DURATION_F2 -2
 #define PARAM_DURATION 10000
 #define PARAM_DURATION_10000 10000
 #define PARAM_DURATION_33333333 33333333
@@ -70,6 +70,7 @@ int g_currentPathId = 0;
 float g_minDelta = 0.001;
 int32_t g_duration = PARAM_DURATION_10000;
 static napi_env screenCaptureEnv;
+static OH_AVPlayer *g_player;
 
 #undef LOG_DOMIN 0x3200
 #define LOG_TAG "AVPlayerNdk_xtsDemo"
@@ -2776,16 +2777,6 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
     int32_t state = -1;
     int32_t stateChangeReason = -1;
     AVPlayerState avState = AV_IDLE;
-    float volume = 0.0;
-    int32_t width = -1;
-    int32_t height = -1;
-    int32_t bufferType = -1;
-    int32_t bufferValue = -1;
-    uint8_t *bitRates;
-    size_t size;
-    int32_t interruptType = -1;
-    int32_t interruptForce = -1;
-    int32_t interruptHint = -1;
     switch (type) {
     case AV_INFO_TYPE_STATE_CHANGE:
         LOG("AVPlayerOnInfoType AV_INFO_TYPE_STATE_CHANGE");
@@ -2834,14 +2825,12 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
         case AV_PAUSED:
             LOG("AVPlayerState AV_PAUSED");
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
-            ret = OH_AVPlayer_Stop(player); 
+            ret = OH_AVPlayer_Stop(player);
             LOG("OH_AVPlayer_Stop ret:%{public}d", ret);
             break;
         case AV_STOPPED:
             LOG("AVPlayerState AV_STOPPED");
             seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
-            ret = OH_AVPlayer_Release(player); // 调用播放接口开始播放
-            LOG("OH_AVPlayer_Release ret:%{public}d", ret);
             break;
         case AV_COMPLETED:
             LOG("AVPlayerState AV_COMPLETED");
@@ -2867,49 +2856,6 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
     case AV_INFO_TYPE_SPEEDDONE:
         OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_PLAYBACK_SPEED, &value);
         LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_SPEEDDONE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_BITRATEDONE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BITRATE, &value);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_BITRATEDONE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_POSITION_UPDATE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_CURRENT_POSITION, &value);
-        // 以下log会频繁打印
-        break;
-    case AV_INFO_TYPE_MESSAGE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_MESSAGE_TYPE, &value);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_MESSAGE value: %{public}d", value);
-        break;
-    case AV_INFO_TYPE_VOLUME_CHANGE:
-        OH_AVFormat_GetFloatValue(infoBody, OH_PLAYER_VOLUME, &volume);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_VOLUME_CHANGE value: %{public}f", volume);
-        break;
-    case AV_INFO_TYPE_RESOLUTION_CHANGE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_VIDEO_WIDTH, &width);
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_VIDEO_HEIGHT, &height);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_RESOLUTION_CHANGE width: %{public}d, height: %{public}d", width,
-            height);
-        break;
-    case AV_INFO_TYPE_BUFFERING_UPDATE:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BUFFERING_TYPE, &bufferType);
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BUFFERING_VALUE, &bufferValue);
-        // 以下log会频繁打印
-        break;
-    case AV_INFO_TYPE_BITRATE_COLLECT:
-        OH_AVFormat_GetBuffer(infoBody, OH_PLAYER_BITRATE_ARRAY, &bitRates, &size);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_BITRATE_COLLECT size: %{public}zu", size);
-        for (size_t i = 0, cnt = size / sizeof(uint32_t); i < cnt; i++) {
-            LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_BITRATE_COLLECT bitRates[%{public}zu]: %{public}u", i,
-                *(static_cast<uint32_t *>(static_cast<void *>(bitRates)) + i));
-        }
-        break;
-    case AV_INFO_TYPE_INTERRUPT_EVENT:
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_INTERRUPT_TYPE, &interruptType);
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_INTERRUPT_FORCE, &interruptForce);
-        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_AUDIO_INTERRUPT_HINT, &interruptHint);
-        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_INTERRUPT_EVENT interruptType: %{public}d, "
-            "interruptForce: %{public}d, interruptHint: %{public}d",
-            interruptType, interruptForce, interruptHint);
         break;
     default:
         break;
@@ -2955,7 +2901,7 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info)
     }
     // 读取传入的string放入buffer中
     char *url = new char[length + 1];
-    if (napi_ok != napi_get_value_string_utf8(env, args[0], url, length + 1, &length)) {
+    if (napi_ok != napi_get_value_string_utf8(env, args[PARAM_0], url, length + 1, &length)) {
         delete[] url;
         url = nullptr;
         // 处理异常
@@ -2963,16 +2909,17 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info)
         return nullptr;
     }
     int pType;
-    napi_get_value_int32(env, args[1], &pType);
+    napi_get_value_int32(env, args[PARAM_1], &pType);
     LOG("fd type %{public}d", pType);
     int pOffset;
-    napi_get_value_int32(env, args[2], &pOffset);
+    napi_get_value_int32(env, args[PARAM_2], &pOffset);
     LOG("fd size %{public}d", pOffset);
     int pSize;
-    napi_get_value_int32(env, args[3], &pSize);
+    napi_get_value_int32(env, args[PARAM_3], &pSize);
     LOG("fd size %{public}d", pSize);
     g_duration = pSize - PARAM_4;
     OH_AVPlayer *player = OH_AVPlayer_Create();
+    g_player = player;
     seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
     // 设置回调，监听信息
     LOG("call OH_AVPlayer_SetPlayerOnInfoCallback");
@@ -3008,6 +2955,19 @@ static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info)
     return value;
 }
 
+static napi_value NAPI_Global_Release(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (g_player != NULL) {
+        ret = OH_AVPlayer_Release(g_player);
+        LOG("OH_AVPlayer_Release ret:%{public}d", ret);
+    } else {
+        LOG("no found Player Instances");
+    }
+    napi_value value;
+    napi_create_int32(env, ret, &value);
+    return value;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3163,7 +3123,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"CheckAvPlayerPlaybackRate", nullptr, CheckAvPlayerPlaybackRate, nullptr,
             nullptr, nullptr, napi_default, nullptr},
-        {"setup", nullptr, NAPI_Global_Setup, nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"setup", nullptr, NAPI_Global_Setup, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"release", nullptr, NAPI_Global_Release, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     SampleManager::GetInstance()->Export(env, exports);

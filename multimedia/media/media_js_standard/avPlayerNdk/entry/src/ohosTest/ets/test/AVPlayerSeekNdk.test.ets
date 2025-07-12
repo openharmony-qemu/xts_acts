@@ -52,6 +52,24 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
+      done();
+    });
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1200
+     * @tc.name       : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1200
+     * @tc.desc       : test seekAvPlayerStateTest
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1200', Level.LEVEL0, async (done: Function) => {
+      let fileDescriptor: resourceManager.RawFileDescriptor | undefined =
+        await globalThis.abilityContext.resourceManager.getRawFd("H264_AAC.mp4");
+      console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
+      avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
+      await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -68,6 +86,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -84,6 +103,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -100,6 +120,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -116,6 +137,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -132,6 +154,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -148,6 +171,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -164,6 +188,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -180,6 +205,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -196,6 +222,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -212,6 +239,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -228,6 +256,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -244,6 +273,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -260,6 +290,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -276,6 +307,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -292,6 +324,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -308,6 +341,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -324,6 +358,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
     /**
@@ -340,6 +375,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptor?.fd);
       avplayer.setup('sss', fileDescriptor?.fd, fileDescriptor?.offset, fileDescriptor?.length);
       await Utils.sleep(5000)
+      await avplayer.release();
       done();
     });
 
