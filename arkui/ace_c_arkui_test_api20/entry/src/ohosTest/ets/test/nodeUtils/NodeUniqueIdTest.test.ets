@@ -25,6 +25,14 @@ export default function NodeUniqueIdTest(){
       done();
     })
 
+    /*
+     * @tc.number     : SUB_ARKUI_CAPI_NODE_UNIQUEID_0100
+     * @tc.name       : testPostOnIdle001
+     * @tc.desc       : testing Post On Idle
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testNodeUniqueId001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestNodeUniqueId';
       await Utils.pushPage(`nodeUtils/${PAGE_TAG}`);
