@@ -3127,7 +3127,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"release", nullptr, NAPI_Global_Release, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-    SampleManager::GetInstance()->Export(env, exports);
     return exports;
 }
 EXTERN_C_END
