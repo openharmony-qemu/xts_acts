@@ -27,7 +27,7 @@ export default function NodeUniqueIdTest(){
 
     /*
      * @tc.number     : SUB_ARKUI_CAPI_NODE_UNIQUEID_0100
-     * @tc.name       : testPostOnIdle001
+     * @tc.name       : testNodeUniqueId001
      * @tc.desc       : testing Post On Idle
      * @tc.size       : MediumTest
      * @tc.type       : Function
