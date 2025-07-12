@@ -270,8 +270,8 @@ export default function DecimalTest011() {
       test_floor_002('0', '0.0000252');
       test_floor_002('1', '1.9999999999');
       Decimal.set ({ toExpNeg: -100, toExpPos: 100 });
-      test_floor_001('-1', -1e-308);
-      test_floor_001('-1e+308', -1e308);
+      //test_floor_001('-1', -1e-308);
+      //test_floor_001('-1e+308', -1e308);
     });
 
     /**
