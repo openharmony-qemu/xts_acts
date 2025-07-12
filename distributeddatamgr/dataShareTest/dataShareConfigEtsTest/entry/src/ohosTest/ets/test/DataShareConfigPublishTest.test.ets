@@ -44,12 +44,12 @@ export default function dataShareConfigPublishTest() {
       console.info(TAG + "afterEach---------------------------------");
       let uris: string[] = [];
       for (let i = 0; i < 32; i++) {
-        let testUri = "datashareproxy://com.example.myapplication/test" + i;
+        let testUri = "datashareproxy://com.acts.dataShare.config/test" + i;
         uris.push(testUri);
       }
       await g_handle!.delete(uris, g_config);
       let tmpStr = "123456".repeat(34);
-      let testUri2 = "datashareproxy://com.example.myapplication/test11235" + tmpStr;
+      let testUri2 = "datashareproxy://com.acts.dataShare.config/test11235" + tmpStr;
       let uris2 = [testUri2];
       await g_handle!.delete(uris2, g_config);
     })
@@ -66,7 +66,7 @@ export default function dataShareConfigPublishTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigPublishTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri1 = "datashareproxy://com.example.myapplication/test1";
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
       try {
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
@@ -102,7 +102,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
-      let testUri1 = "datashareproxy://com.example.myapplication/test11235" + tmpStr;
+      let testUri1 = "datashareproxy://com.acts.dataShare.config/test11235" + tmpStr;
       let uris = [testUri1];
       try {
         let proxyData: dataShare.ProxyData[] = [];
@@ -176,7 +176,7 @@ export default function dataShareConfigPublishTest() {
     it('dataShareConfigPublishTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let tmpStr = "123456".repeat(34);
-        let testUri1 = "datashareproxy://com.example.myapplication/test11234" + tmpStr + "9";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test11234" + tmpStr + "9";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -418,7 +418,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -450,7 +450,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -482,7 +482,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -517,7 +517,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -552,7 +552,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -582,7 +582,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -617,7 +617,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -652,7 +652,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -687,7 +687,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let allowListArr: Array<string> = [];
         for (let i = 0; i < 256; i++) {
@@ -727,7 +727,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let allowListArr: Array<string> = [];
         for (let i = 0; i < 257; i++) {
@@ -765,7 +765,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -800,7 +800,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -835,7 +835,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -942,7 +942,7 @@ export default function dataShareConfigPublishTest() {
       try {
         let proxyData: dataShare.ProxyData[] = [];
         for (let i = 0; i < 32; i++) {
-          let testUri = "datashareproxy://com.example.myapplication/test" + i;
+          let testUri = "datashareproxy://com.acts.dataShare.config/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
             value: "value is less" + i,
@@ -979,7 +979,7 @@ export default function dataShareConfigPublishTest() {
       try {
         let proxyData: dataShare.ProxyData[] = [];
         for (let i = 0; i < 33; i++) {
-          let testUri = "datashareproxy://com.example.myapplication/test" + i;
+          let testUri = "datashareproxy://com.acts.dataShare.config/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
             value: "value is less" + i,
@@ -1012,7 +1012,7 @@ export default function dataShareConfigPublishTest() {
       try {
         let proxyData: dataShare.ProxyData[] = [];
         for (let i = 0; i < 32; i++) {
-          let testUri = "datashareproxy://com.example.myapplication/test" + i;
+          let testUri = "datashareproxy://com.acts.dataShare.config/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
             value: "value is less" + i,
@@ -1037,7 +1037,7 @@ export default function dataShareConfigPublishTest() {
       }
 
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test99";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test99";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -1070,7 +1070,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let allowListArr: Array<string> = [];
         for (let i = 0; i < 257; i++) {
@@ -1113,9 +1113,9 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
-        let testUri2 = "datashareproxy://com.example.myapplication/test2";
-        let testUri3 = "datashareproxy://com.example.myapplication/test3";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
+        let testUri2 = "datashareproxy://com.acts.dataShare.config/test2";
+        let testUri3 = "datashareproxy://com.acts.dataShare.config/test3";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -1161,7 +1161,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -1208,7 +1208,7 @@ export default function dataShareConfigPublishTest() {
     it('dataShareConfigPublishTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let testUri1 = "datashareproxy://com.example.myappli234cation/test1";
-        let testUri2 = "datashareproxy://com.example.myapplication/test1";
+        let testUri2 = "datashareproxy://com.acts.dataShare.config/test1";
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -1280,7 +1280,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let uris = [
           testUri1
         ]
@@ -1354,7 +1354,7 @@ export default function dataShareConfigPublishTest() {
      */
     it('dataShareConfigPublishTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
-        let testUri1 = "datashareproxy://com.example.myapplication/test1";
+        let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
         let uris = [
           testUri1
         ]

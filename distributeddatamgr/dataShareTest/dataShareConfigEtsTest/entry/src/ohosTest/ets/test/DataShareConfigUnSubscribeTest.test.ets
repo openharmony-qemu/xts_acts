@@ -20,7 +20,7 @@ let g_handle: dataShare.DataProxyHandle | undefined = undefined;
 let g_config: dataShare.DataProxyConfig = {
   type: 0 as dataShare.DataProxyType.SHARED_CONFIG
 }
-let testUri1 = "datashareproxy://com.example.myapplication/test1";
+let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
 let uris = [
   testUri1,
 ]
@@ -105,7 +105,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -130,7 +130,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -155,7 +155,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -177,7 +177,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -199,7 +199,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -221,7 +221,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -270,7 +270,7 @@ export default function dataShareConfigUnSubscribeTest() {
      */
     it('dataShareConfigUnSubscribeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
-      let testUri = "datashareproxy://com.example.myapplication/test11234" + tmpStr;
+      let testUri = "datashareproxy://com.acts.dataShare.config/test11234" + tmpStr;
       let uris = [
         testUri
       ]
@@ -297,7 +297,7 @@ export default function dataShareConfigUnSubscribeTest() {
      */
     it('dataShareConfigUnSubscribeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
-      let testUri = "datashareproxy://com.example.myapplication/test11234" + tmpStr + "9";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test11234" + tmpStr + "9";
       let uris = [
         testUri
       ]
@@ -410,7 +410,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/ ";
+      let testUri = "datashareproxy://com.acts.dataShare.config/ ";
       let uris = [
         testUri
       ]
@@ -436,7 +436,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/路径";
+      let testUri = "datashareproxy://com.acts.dataShare.config/路径";
       let uris = [
         testUri
       ]
@@ -462,7 +462,7 @@ export default function dataShareConfigUnSubscribeTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigUnSubscribeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]

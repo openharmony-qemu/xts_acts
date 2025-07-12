@@ -20,7 +20,7 @@ let g_handle: dataShare.DataProxyHandle | undefined = undefined;
 let g_config: dataShare.DataProxyConfig = {
   type: 0 as dataShare.DataProxyType.SHARED_CONFIG
 }
-let testUri1 = "datashareproxy://com.example.myapplication/test1";
+let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
 let TAG = "ttt ";
 
 export default function dataShareConfigDeleteTest() {
@@ -114,7 +114,7 @@ export default function dataShareConfigDeleteTest() {
      */
     it('dataShareConfigDeleteTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(33);
-      let testUri = "datashareproxy://com.example.myapplication/test1" + tmpStr;
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1" + tmpStr;
       let uris = [
         testUri
       ]
@@ -144,7 +144,7 @@ export default function dataShareConfigDeleteTest() {
      */
     it('dataShareConfigDeleteTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
-      let testUri = "datashareproxy://com.example.myapplication/test11234" + tmpStr + "9";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test11234" + tmpStr + "9";
       let uris = [
         testUri
       ]
@@ -308,7 +308,7 @@ export default function dataShareConfigDeleteTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigDeleteTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/";
+      let testUri = "datashareproxy://com.acts.dataShare.config/";
       let uris = [
         testUri
       ]
@@ -338,7 +338,7 @@ export default function dataShareConfigDeleteTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigDeleteTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/@#$%^&*";
+      let testUri = "datashareproxy://com.acts.dataShare.config/@#$%^&*";
       let uris = [
         testUri
       ]
@@ -368,7 +368,7 @@ export default function dataShareConfigDeleteTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigDeleteTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/路径";
+      let testUri = "datashareproxy://com.acts.dataShare.config/路径";
       let uris = [
         testUri
       ]
@@ -398,7 +398,7 @@ export default function dataShareConfigDeleteTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigDeleteTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]
@@ -427,7 +427,7 @@ export default function dataShareConfigDeleteTest() {
      * @tc.level Level 1
      */
     it('dataShareConfigDeleteTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testUri = "datashareproxy://com.example.myapplication/test1";
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
       let uris = [
         testUri
       ]

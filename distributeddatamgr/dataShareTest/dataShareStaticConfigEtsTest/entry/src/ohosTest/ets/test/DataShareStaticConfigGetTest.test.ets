@@ -79,7 +79,6 @@ export default function dataShareStaticConfigGetTest() {
           testUriStr10,
           testUriStr11,
           testUriStr12,
-          // testUriStr13,
           testUriStr14,
           testUriStr15,
           testUriStr16,
