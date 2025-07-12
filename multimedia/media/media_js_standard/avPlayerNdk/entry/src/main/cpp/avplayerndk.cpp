@@ -2749,8 +2749,8 @@ void seekAvPlayerStateTest(OH_AVPlayer *player, AVPlayerSeekMode seekMode, OH_AV
     int32_t ret;
     LOG("AVPlayerState  OH_AVPlayer_Seek");
     std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
-    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_f2, seekMode);
-    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_f2, ret);
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_F2, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_F2, ret);
     if (ret != errorCode) {
         napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
     }
@@ -2830,7 +2830,7 @@ void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_A
             break;
         case AV_STOPPED:
             LOG("AVPlayerState AV_STOPPED");
-            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
             break;
         case AV_COMPLETED:
             LOG("AVPlayerState AV_COMPLETED");

@@ -100,7 +100,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "H264_AAC.mp4";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorRaw fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -117,7 +118,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "demo_video_audio_10s.mp4";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -134,7 +136,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "H264_AAC.mkv";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -151,7 +154,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "01.mp3";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -168,7 +172,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "AAC_48000_32_1.aac";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -185,7 +190,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "vorbis_48000_32_1.wav";
       fileDescriptorRaw = await getRawFd(fileNameTest);
       console.info(TAG, 'player fileDescriptor fd://' + fileDescriptorRaw?.fd);
-      avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorRaw?.fd, fileDescriptorRaw?.offset, fileDescriptorRaw?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -202,7 +208,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "vp8_720x480_60.webm";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -219,7 +226,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "mpeg2video_320x240_60.mkv";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -236,7 +244,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "test_hdr_1.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -253,7 +262,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "mpeg2.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -270,7 +280,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "MPEG4_AAC.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -287,7 +298,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "h263_aac.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -304,7 +316,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "hevc_720x480_60.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -321,7 +334,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "mpeg4_320x240_60.mkv";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -338,7 +352,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "AVPlayer/H263_AAC.ts";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -355,7 +370,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "avc_mp3.flv";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -372,7 +388,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "01.mpeg";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -389,7 +406,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "1vp9_320x240_30.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -406,7 +424,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "audio_2video.avi";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
@@ -423,7 +442,8 @@ export default function AVPlayerSeekNdk() {
       fileNameTest = "output_8k.mp4";
       await getFileFd(fileNameTest);
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
-      avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
       await Utils.sleep(5000)
       await avplayer.release();
       done();
