@@ -123,7 +123,46 @@ export default function CalendarIni18nTest() {
       console.log('i18n_calendar_test_static_0400 ' + name);
       expect(name).assertEqual('和历');
     })
-
+    
+    /**
+    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0500
+    * @tc.name    i18n_calendar_test_static_0500
+    * @tc.desc    get the getDisplayName value, test getDisplayName interface
+    */
+    it('i18n_calendar_test_static_0500', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_calendar_test_static_0500 ' + 'start');
+      let calendar = i18n.getCalendar('zh');
+      let value = calendar.getDisplayName('zh');
+      console.log('i18n_calendar_test_static_0500 ' + value);
+      expect(value).assertEqual('公历');
+    })
+    
+    /**
+     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0600
+     * @tc.name    i18n_calendar_test_static_0600
+     * @tc.desc    get the getDisplayName value, test getDisplayName interface with en param
+     */
+    it('i18n_calendar_test_static_0600', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_calendar_test_static_0600 ' + 'start');
+      let calendar = i18n.getCalendar('zh');
+      let value = calendar.getDisplayName('en');
+      console.log('i18n_calendar_test_static_0600 ' + value);
+      expect(value).assertEqual('Gregorian Calendar');
+    })
+    
+    /**
+     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0700
+     * @tc.name    i18n_calendar_test_static_0700
+     * @tc.desc    test get interface, get the get value
+     */
+    it('i18n_calendar_test_static_0700', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_calendar_test_static_0700 ' + 'start');
+      let calendar = i18n.getCalendar('zh');
+      let value = calendar.get('year');
+      console.log('i18n_calendar_test_static_0700 ' + value);
+      expect(value).assertLarger(0.0);
+    })
+ 
     /**
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0800
      * @tc.name i18n_calendar_test_static_0800
@@ -137,6 +176,19 @@ export default function CalendarIni18nTest() {
       let value = calendar.get('month');
       console.log('i18n_calendar_test_static_0800 ' + value);
       expect(value).assertEqual(8);
+    })
+    
+    /**
+     * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_static_0900
+     * @tc.name    i18n_calendar_test_static_0900
+     * @tc.desc    get the get value, test get interface with day_of_year param
+     */
+    it('i18n_calendar_test_static_0900', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_calendar_test_static_0900 ' + 'start');
+      let calendar = i18n.getCalendar('zh');
+      let value = calendar.get('day_of_year');
+      console.log('i18n_calendar_test_static_0900 ' + value);
+      expect(value).assertLarger(0.0);
     })
 
     /**
@@ -363,6 +415,26 @@ export default function CalendarIni18nTest() {
       let value = calendar.isWeekend();
       console.log('i18n_calendar_test_static_2500 ' + value);
       expect(value).assertTrue();
+    })
+    
+    /**
+     *@tc.number   :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
+     *@tc.name     :SUB_GLOBAL_I18N_SR000IFGNH_static_0010
+     *@tc.desc     :HolidayManager-input.ics file
+     *@tc.size     :MEDIUM
+     *@tc.type     :Function
+     *@tc.level    :Level 0
+     */
+    it('SUB_GLOBAL_I18N_SR000IFGNH_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try{
+        let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
+        console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010' + holidayManager);
+      } catch (e: BusinessError) {
+        expect(e.code==null).assertTrue();
+        console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010_errorCode'+e.code);
+        console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010_errorMessage'+e.message);
+      }
+      done();
     })
     console.log('*************end CalendarIni18nTest*************');
   })

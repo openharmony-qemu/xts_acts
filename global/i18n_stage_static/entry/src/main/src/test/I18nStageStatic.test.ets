@@ -166,6 +166,42 @@ export default function i18nStageTest() {
     })
 
     /**
+     * @tc.number   : SUB_GLOBAL_i18n_HolidayManager_static_0010
+     * @tc.name     : SUB_GLOBAL_i18n_SR000IFGNH_static_0010
+     * @tc.desc     : HolidayManager-input .ics file
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 0
+     */
+    it('SUB_GLOBAL_i18n_SR000IFGNH_static_0010', Level.LEVEL0, async (): Promise<void> => {
+      try {
+        let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
+        console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0010:' + holidayManager);
+      } catch (e:BusinessError) {
+        console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0010 code&message:' + e.code + e.message);
+        expect(e.code == null).assertTrue();
+      }
+    })
+    
+    /**
+     * @tc.number   : SUB_GLOBAL_i18n_HolidayManager_static_0020
+     * @tc.name     : SUB_GLOBAL_i18n_SR000IFGNH_static_0020
+     * @tc.desc     : HolidayManager-input .xml file
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 0
+     */
+    it('SUB_GLOBAL_i18n_SR000IFGNH_static_0020', Level.LEVEL0, async (): Promise<void> => {
+      try {
+        let holidayManager = new i18n.HolidayManager("A.xml");
+        console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0020:' + holidayManager);
+      } catch (e:BusinessError) {
+        console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0020 code&message:' + e.code + e.message);
+        expect(e.code == 890001).assertTrue();
+      }
+    })
+
+    /**
      * @tc.number   : SUB_GLOBAL_I18N_isHoliday_static_0030
      * @tc.name     : SUB_GLOBAL_I18N_SR000IFGNH_static_0030
      * @tc.desc     : isHoliday-input null(The current date is used by default)
@@ -539,6 +575,24 @@ export default function i18nStageTest() {
     })
 
     /**
+     * @tc.number   : SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
+     * @tc.name     : SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
+     * @tc.desc     : setAppPreferredLanguage - Set App Preferred Language
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 0
+     */
+    it('SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100', Level.LEVEL0, async (): Promise<void> => {
+      try {
+        i18n.System.setAppPreferredLanguage('zh');
+      } catch (e) {
+        let error = e as BusinessError
+        console.log('SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100 code&message:' + error.code + error.message);
+        expect(error.code).assertNull();
+      }
+    })
+
+    /**
      * @tc.number   : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
      * @tc.name     : SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
      * @tc.desc     : setAppPreferredLanguage - Set App Preferred Language to invalid language
@@ -799,6 +853,339 @@ export default function i18nStageTest() {
       console.log('SUB_GLOBAL_I18N_SR000IFGMS_static_0800:' + value);
       expect(value != null).assertTrue();
     })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0010
+     * @tc.name     : dateTimeFormatAdapt_test_static_0010
+     * @tc.desc     : check the dateStyle is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0010', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN", {
+        dateStyle: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0010:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
+        expect(dateFmt.format(data)).assertEqual('2020年12月20日');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('2020/12/20');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0020
+     * @tc.name     : dateTimeFormatAdapt_test_static_0020
+     * @tc.desc     : check the timeStyle is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0020', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN", {
+        timeStyle: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0020:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
+        expect(dateFmt.format(data)).assertEqual('GMT+8 下午2:23:16');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('下午2:23');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0030
+     * @tc.name     : dateTimeFormatAdapt_test_static_0030
+     * @tc.desc     : check the weekday is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0030', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN", {
+        weekday: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0030:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
+        expect(dateFmt.format(data)).assertEqual('星期日');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('周日');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0040
+     * @tc.name     : dateTimeFormatAdapt_test_static_0040
+     * @tc.desc     : check the month is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0040', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("en-gb", {
+        month: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0040:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
+        expect(dateFmt.format(data)).assertEqual('December');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('Dec');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0050
+     * @tc.name     : dateTimeFormatAdapt_test_static_0050
+     * @tc.desc     : check the timeZoneName is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0050', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN", {
+        timeZoneName: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0050:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      console.log('dateTimeFormatAdapt_test_static_0050:' + devType);
+      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
+        console.log('dateTimeFormatAdapt_test_static_0050:' + dateFmt.format(data));
+        expect(dateFmt.format(data)).assertEqual('2020/12/20 中国标准时间');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('2020/12/20 GMT+8');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0060
+     * @tc.name     : dateTimeFormatAdapt_test_static_0060
+     * @tc.desc     : check the dayPeriod is adapt to auto
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0060', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN", {
+        dayPeriod: 'long'
+      });
+      console.log('dateTimeFormatAdapt_test_static_0060:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('2020/12/20');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0070
+     * @tc.name     : dateTimeFormatAdapt_test_static_0070
+     * @tc.desc     : check the option is null
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('dateTimeFormatAdapt_test_static_0070', Level.LEVEL1, async (): Promise<void> => {
+      let data = new Date(2020, 11, 20, 14, 23, 16);
+      let dateFmt = new intl.DateTimeFormat("zh-CN");
+      console.log('dateTimeFormatAdapt_test_static_0070:' + dateFmt.format(data));
+      let devType = deviceInfo.deviceType;
+      if (devType == '2in1' || devType == 'tablet') {
+        expect(dateFmt.format(data)).assertEqual('2020年12月20日');
+      } else {
+        expect(dateFmt.format(data)).assertEqual('2020/12/20');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0080
+     * @tc.name     : numberFormatAdapt_test_static_0080
+     * @tc.desc     : format the datetime with currencyDisplay symbol
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('numberFormatAdapt_test_static_0080', Level.LEVEL1, async (): Promise<void> => {
+      let data = 123456.789;
+      let numFmt = new intl.NumberFormat("en-GB", {
+        currencyDisplay: 'symbol'
+      });
+      console.log('numberFormatAdapt_test_static_0080:' + numFmt.format(data));
+      expect(numFmt.format(data)).assertEqual('123,456.789');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0090
+     * @tc.name     : numberFormatAdapt_test_static_0090
+     * @tc.desc     : format the datetime with currencyDisplay short
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('numberFormatAdapt_test_static_0090', Level.LEVEL1, async (): Promise<void> => {
+      let data = 123456.789;
+      let numFmt = new intl.NumberFormat("en-GB", {
+        currencyDisplay: 'narrowSymbol'
+      });
+      console.log('numberFormatAdapt_test_static_0090:' + numFmt.format(data));
+      expect(numFmt.format(data)).assertEqual('123,456.789');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0150
+     * @tc.name     : numberFormatAdapt_test_static_0150
+     * @tc.desc     : format the datetime with unitDisplay long
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('numberFormatAdapt_test_static_0150', Level.LEVEL1, async (): Promise<void> => {
+      console.log('numberFormatAdapt_test_static_0150:' + 'start');
+      let numFmt = new intl.NumberFormat("en-GB", {
+        style: 'unit', unit: 'meter', unitDisplay: 'long'
+      });
+      console.log('numberFormatAdapt_test_static_0150' + numFmt.format(123456.789));
+      expect(numFmt.format(123456.789)).assertEqual('123,456.789 metres');
+    })
+    
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0160
+     * @tc.name     : numberFormatAdapt_test_static_0160
+     * @tc.desc     : format the datetime with unitDisplay long
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('numberFormatAdapt_test_static_0160', Level.LEVEL1, async (): Promise<void> => {
+      console.log('numberFormatAdapt_test_static_0160:' + 'start');
+      let numFmt = new intl.NumberFormat("en-GB", {
+        style: 'unit', unit: 'meter', unitDisplay: 'short'
+      });
+      console.log('numberFormatAdapt_test_static_0090' + numFmt.format(123456.789));
+      expect(numFmt.format(123456.789)).assertEqual('123,456.789 m');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0100
+     * @tc.name     : relativeTimeFormatAdapt_test_static_0100
+     * @tc.desc     : format timeStyle is long
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0100', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0100:' + 'start');
+      let relativeTimeFmt = new intl.RelativeTimeFormat("en", {
+        style: 'long'
+      });
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0100' + value);
+      expect(value).assertEqual('in 100 seconds');
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_Localization_foramtAdapt_static_0110
+     * @tc.name     : relativeTimeFormatAdapt_test_static_0110
+     * @tc.desc     : format the timeStyle is null
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('relativeTimeFormatAdapt_test_static_0110', Level.LEVEL1, async (): Promise<void> => {
+      console.log('relativeTimeFormatAdapt_test_static_0110:' + 'start');
+      let relativeTimeFmt = new intl.RelativeTimeFormat("en");
+      let value = relativeTimeFmt.format(100, 'second');
+      console.log('relativeTimeFormatAdapt_test_static_0110' + value);
+      let devTyp = deviceInfo.deviceType;
+      console.log('relativeTimeFormatAdapt_test_static_0110 device' + devTyp);
+      if (devTyp == '2in1' || devTyp == 'tablet' || devTyp == 'phone' || devTyp == 'default') {
+        expect(value).assertEqual('in 100 seconds');
+      } else {
+        expect(value).assertEqual('in 100 sec.');
+      }
+    })
+
+
+    /**
+     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0100
+     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0100
+     * @tc.desc     : adapter in adding
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('SUB_GLOBAL_numberFormatTyping_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let option: i18n.PhoneNumberFormatOptions = {
+        type: "TYPING"
+      };
+      let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat("CN", option);
+      let phoneNumber = "13801048465";
+      let arr: Array<String> = ['1', '13', '138', '138 0', '138 01', '138 010', '138 0104', '1380 1048', '138 0104 84',
+        '138 0104 846', '138 0104 8465']
+      let formatted = "";
+      let k = 0;
+      for (let i of phoneNumber) {
+        formatted = formatted + i;
+        let result = phoneNumberFormat.format(formatted);
+        console.info('SUB_GLOBAL_numberFormatTyping_static_0100_arr', arr[k])
+        expect(result).assertEqual(arr[k])
+        k += 1
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0200
+     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0200
+     * @tc.desc     : adapter in delete
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 2
+     */
+    it('SUB_GLOBAL_numberFormatTyping_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let option: i18n.PhoneNumberFormatOptions = {
+        type: "TYPING"
+      };
+      let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat("CN", option);
+      let phoneNumber = "13801048465";
+      let result = phoneNumberFormat.format(phoneNumber.substring(0, phoneNumber.length - 1));
+      expect(result).assertEqual('138 0104 846')
+    })
+
+
+    /**
+     * @tc.number   : SUB_GLOBAL_numberFormatTyping_static_0300
+     * @tc.name     : SUB_GLOBAL_numberFormatTyping_static_0300
+     * @tc.desc     : not CN phone number
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 1
+     */
+    it('SUB_GLOBAL_numberFormatTyping_static_0300', Level.LEVEL1, async (): Promise<void> => {
+      let option: i18n.PhoneNumberFormatOptions = {
+        type: "TYPING"
+      };
+      let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat("CN", option);
+      let phoneNumber = "00886960186456";
+      let arr: Array<String> = ['0', '00', '00 8', '00 88', '00 886 ', '00 886 9', '00 886 96', '00 886 960',
+        '00 886 960 1', '00 886 960 18', '00 886 960 186', '00 886 960 186 4', '00 886 960 186 45',
+        '00 886 960 186 456']
+      let formatted = "";
+      let k = 0
+      for (let i of phoneNumber) {
+        formatted = formatted + i;
+        let result = phoneNumberFormat.format(formatted);
+        console.info('SUB_GLOBAL_numberFormatTyping_static_0300_arr', arr[k])
+        expect(result).assertEqual(arr[k])
+        k += 1
+      }
+    })
+
     console.log('*************end i18nStageTest*************');
   })
 }
