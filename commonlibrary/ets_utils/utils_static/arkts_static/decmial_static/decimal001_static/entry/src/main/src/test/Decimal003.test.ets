@@ -24,10 +24,9 @@ import {
   Size,
   TestType
 } from '../../../hypium/index';
-import { Decimal, Deque } from '@kit.ArkTS';
+import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
-
 
 function test_sqrt_001(expected: string, n: string, sd: number, rm: number) {
   Decimal.set({ precision: sd, rounding: rm });
@@ -63,10 +62,10 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_001", 0, () => {
-      Decimal.set ({
+    it("Decimal_sqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
         precision: 20,
         rounding: 4,
         toExpNeg: -9e15,
@@ -93,9 +92,17 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_002", 0, () => {
+    it("Decimal_sqrt_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
+        precision: 20,
+        rounding: 4,
+        toExpNeg: -9e15,
+        toExpPos: 9e15,
+        minE: -9e15,
+        maxE: 9e15
+      });
       for (let i = 0; i < 500; i++) {
         let j = Math.floor(Math.random() * Math.pow(2, Math.floor(Math.random() * 26) + 1));
         j *= j;
@@ -108,9 +115,17 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_003", 0, () => {
+    it("Decimal_sqrt_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
+        precision: 20,
+        rounding: 4,
+        toExpNeg: -9e15,
+        toExpPos: 9e15,
+        minE: -9e15,
+        maxE: 9e15
+      });
       test_sqrt_001('11', '101', 2, 0);
       test_sqrt_001('11', '111', 2, 0);
       test_sqrt_002('1000', 999000.25, 3, 0);
@@ -134,9 +149,17 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_004", 0, () => {
+    it("Decimal_sqrt_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
+        precision: 20,
+        rounding: 4,
+        toExpNeg: -9e15,
+        toExpPos: 9e15,
+        minE: -9e15,
+        maxE: 9e15
+      });
       test_sqrt_001('10', '101', 2, 5);
       test_sqrt_001('11', '111', 2, 5);
       test_sqrt_002('999', 999000.25, 3, 5);
@@ -162,9 +185,17 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_005", 0, () => {
+    it("Decimal_sqrt_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
+        precision: 20,
+        rounding: 4,
+        toExpNeg: -9e15,
+        toExpPos: 9e15,
+        minE: -9e15,
+        maxE: 9e15
+      });
       test_sqrt_001('54108953.7650348268963935650889893674872', '2927778877546676.5690784769302', 39, 6);
       test_sqrt_001('1.0000000000001', '1.000000000000000001402', 14, 2);
       test_sqrt_001('18.000001', '324.0000000000000000000008467', 8, 2);
@@ -173,12 +204,15 @@ export default function DecimalTest003() {
       test_sqrt_001('7.1', '49.00000000000000000000007338', 2, 0);
       test_sqrt_001('19.00000000000001', '361.0000000000000000000000005645', 16, 2);
       test_sqrt_001('1.0000001', '1.00000000000000000000000000000006986', 8, 0);
-      test_sqrt_001('30771277.0274560007853901874282412', '946871489900441.411712749999999999999999999999999999999999999999', 33, 6);
+      test_sqrt_001('30771277.0274560007853901874282412',
+        '946871489900441.411712749999999999999999999999999999999999999999', 33, 6);
       test_sqrt_001('668.093253221434649746', '446348.594999999999999999999999999999', 21, 5);
       test_sqrt_001('0.9999999999999999999999999999999999999999', '0.9999999999999999999999999999999999999998', 40, 5);
-      test_sqrt_001('0.9999999999999999999997187097975391240474677563824', '0.9999999999999999999994374195950782480949355918890297218761543222489261', 49, 3);
+      test_sqrt_001('0.9999999999999999999997187097975391240474677563824',
+        '0.9999999999999999999994374195950782480949355918890297218761543222489261', 49, 3);
       test_sqrt_001('0.0000000000000298840312673111495324166498096924391126062701', '8.9305532478563043E-28', 45, 5);
-      test_sqrt_001('0.0000000000000000000000000000000000000000025385115498645', '6.4440408887956349899441566682289191111111111111111111E-84', 14, 5);
+      test_sqrt_001('0.0000000000000000000000000000000000000000025385115498645',
+        '6.4440408887956349899441566682289191111111111111111111E-84', 14, 5);
     });
 
     /**
@@ -187,9 +221,9 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    // it("Decimal_sqrt_Func_006", 0, () => {
+    // it("Decimal_sqrt_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('0.0000000000000000000000000000000000000000000000000000140471526414353053458592377645343274655348630930173397', '1.97322497331782876158645511100784258994087355048761111111111111E-106', 54, 5);
     //   test_sqrt_001('0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002598902022257132166703490111187879281161770014282895', '6.7542917212922111E-232', 52, 5);
     //   test_sqrt_001('0.00999999999999999999999999999949', '0.00009999999999999999999999999999', 30, 1);
@@ -210,9 +244,9 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    // it("Decimal_sqrt_Func_007", 0, () => {
+    // it("Decimal_sqrt_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   Decimal.set({ toExpNeg: 0, toExpPos: 0 });
     //   test_sqrt_001('2.0885911135683898927279398736031752344015545504649127170644896370353379e-4', '4.36221283967684692666426416376714916311505871923000872592271965E-8', 71, 6);
     //   test_sqrt_001('8.026722039667633182260408511913520451120702453123749778e+1023704129', '6.442826670208612947748038374549405718510075898758412768822080597099708051296751984704859E+2047408259', 55, 6);
@@ -234,9 +268,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_008", 0, () => {
+    // it("Decimal_sqrt_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   Decimal.set({ toExpNeg: 0, toExpPos: 0 });
     //   test_sqrt_001('6.834069539249451103168749378990917542555757999511237679195e-204174793001024', '4.670450646729720489233321886824609831695025907588563949E-408349586002047', 58, 4);
     //   test_sqrt_001('3.138284384168760310983231869196862541278664719980474337283125219910900471e-34848021177070', '9.848828875917495153223800564466445801240606621764417514110475E-69696042354140', 73, 0);
@@ -257,9 +291,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_009", 0, () => {
+    // it("Decimal_sqrt_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   Decimal.set({ toExpNeg: 0, toExpPos: 0 });
     //   test_sqrt_001('6.01309285636782899752364197007684920017398969437949e-1790', '3.61572856993018165706134046141609828036662065978484170009821375392882703132369124228069E-3579', 51, 1);
     //   test_sqrt_001('9.509773153923080543680696577222501710491282865e+412437011050', '9.04357854390761345545547419189409265295580849E+824874022101', 46, 0);
@@ -284,9 +318,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_010", 0, () => {
+    // it("Decimal_sqrt_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('8.2220388454970543626652913918343189618675218734756075784049153881385219e+3', '67601922.776862534581068550153256371638256888653847213492979247915305924432354685660', 71, 6);
     //   test_sqrt_001('1.64244486917406282584413656933972205192398555455095912262410121870819135e+9340508786387', '2.6976251482762043514129832714354246217401306620466914174989739297066373978821E+18681017572774', 72, 5);
     //   test_sqrt_001('9.79090692715782911695847092370781210596001172136e+3115677438', '9.586185845626716371804688230667770283863635486094832181975090257E+6231354877', 48, 5);
@@ -307,9 +341,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_011", 0, () => {
+    // it("Decimal_sqrt_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('1.612e+29382080784098', '2.59549542566482274489688514562643282E+58764161568196', 4, 0);
     //   test_sqrt_001('2.21e+957', '4.88485916656072684684336288223350318510382769049147063964695662933003E+1914', 3, 1);
     //   test_sqrt_001('8.62822128158912829157811086596256560701532576e-8740918', '7.44462024840675394866139306388888378538969579877716771591568819584308250214770680342900129457E-17481835', 45, 0);
@@ -331,9 +365,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_012", 0, () => {
+    // it("Decimal_sqrt_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('3.068981347405821994329370885223153147810167995e-134', '9.4186465107248546707630495330709378212295744168927053819144383155698062121265279905897752271E-268', 46, 5);
     //   test_sqrt_001('6.0271249500033e-10781347401', '3.6326235162953181809577645353279210E-21562694801', 14, 1);
     //   test_sqrt_001('3.199125028856e+25795', '1.023440095025536568635708921517360961793E+51591', 13, 6);
@@ -354,9 +388,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_013", 0, () => {
+    // it("Decimal_sqrt_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('1.5321135075443986e+3740', '2.3473718E+7480', 17, 3);
     //   test_sqrt_001('1.72340673782204014190446948179592390656068185428e+1299869167652256', '2.9701307839704062069609474255783085619215767002151887992880369960243164553E+2599738335304512', 48, 6);
     //   test_sqrt_001('2.6489093408250026638898665191805392071832816e+37475657', '7.01672069590995012448612570344661497015681231635520477773E+74951314', 44, 0);
@@ -382,9 +416,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_014", 0, () => {
+    // it("Decimal_sqrt_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('6.703595e+401', '4.49381922866E+803', 7, 6);
     //   test_sqrt_001('9.7608119539308818711822517856627039556134970352903e+1249', '9.527345E+2499', 50, 0);
     //   test_sqrt_001('3.0066592756745816541757861126198711210412117e+139049925673', '9.04E+278099851346', 44, 4);
@@ -408,9 +442,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_015", 0, () => {
+    // it("Decimal_sqrt_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('7.2998671170787362309999885642096413366997803441454046e-3', '0.000053288059927007419736192864488572091336455240976257828090775274140470718273556545610819', 53, 1);
     //   test_sqrt_001('5.11117005049595857693e+9', '26124059285086859749.111136068760', 21, 5);
     //   test_sqrt_001('1.89935540125106114644973371135677739395218e+49685', '3.607550940261579490044139098611195000453932161335896883380180003006836843018711910962E+99370', 42, 0);
@@ -436,9 +470,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_016", 0, () => {
+    // it("Decimal_sqrt_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('6.303431321113571e+275056324656282', '3.97332464199955790588897588438551310212027677784886403329179755857444550904597263134605E+550112649312565', 18, 4);
     //   test_sqrt_001('6.576174355328564536662125352346e+21602351976988', '4.32460691516810613850278067385309182411399820938966096E+43204703953977', 31, 2);
     //   test_sqrt_001('2.07630346262337137491871083e-3090618529044467', '4.311036068901801732099430365860481210539754465419778810616524065681770638162008279484055169E-6181237058088934', 27, 2);
@@ -460,9 +494,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_017", 0, () => {
+    // it("Decimal_sqrt_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('6.85223487409204247121078477321652642e+13', '4695312276972318913824783267.23915150099092256', 36, 2);
     //   test_sqrt_001('1.89753938328297503876364212659e+4', '360065571.110993325', 30, 2);
     //   test_sqrt_001('1.73793786659448789397819131927279578513780780522093623215e-26159', '3.020428028143E-52318', 57, 6);
@@ -486,9 +520,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_018", 0, () => {
+    // it("Decimal_sqrt_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.008039e+36729025', '4.032219417259540272204478866331908221389931400048743477485727321671916860580259161402773798107E+73458050', 7, 6);
     //   test_sqrt_001('7.51692279236539994967372050974313334001215192497833104202e-2440875511683227', '5.6504128266382441683929602449473591619319549900002408802881702717481E-4881751023366453', 57, 2);
     //   test_sqrt_001('3.0435123169140879772323396228229690669146412039176588151e+8', '92629672232077598.90063863301233712326343840597041607655456994461', 56, 6);
@@ -512,9 +546,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_019", 0, () => {
+    // it("Decimal_sqrt_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('6.864734640020072049718705304013039739459327696999280834990366263684919488693e+28', '4.712458167789150819E+57', 76, 3);
     //   test_sqrt_001('9.4403813337678765859e+2275528598282', '8.9120799726952952463715474436836438839285693903355297048145204533165099122605783431631909389375E+4551057196565', 20, 2);
     //   test_sqrt_001('1.401091686602968166559525283171170204216e+4918493', '1.9630579142679499665419988066E+9836986', 40, 1);
@@ -535,9 +569,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_020", 0, () => {
+    // it("Decimal_sqrt_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('9.0168891708498077340870422538771763991860996900736805340459998564777522117427e+1646179540063', '8.1304290319388533208865555457549157885068286554112709492694227672649E+3292359080127', 77, 0);
     //   test_sqrt_001('8.977858829152028877e+40', '8.0601949156183038822620916355105579058051056436917994500749067325934920E+81', 19, 2);
     //   test_sqrt_001('4.2017305790590619e+646808528', '1.7654539859E+1293617057', 17, 3);
@@ -559,9 +593,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_021", 0, () => {
+    // it("Decimal_sqrt_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.203089e+335', '4.85360341581551E+670', 7, 3);
     //   test_sqrt_001('4.910625878493595047710096578187419155296332340361665271615e+158478680481', '2.411424651853099211331932586857671419333629451402446313055708226355472325441681706664245120160E+316957360963', 58, 0);
     //   test_sqrt_001('2.14658304513912472592069256949618e+0', '4.607818769678757580622617058038482756337638794621523984131268073532516530956591238950305713306', 33, 4);
@@ -583,9 +617,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_022", 0, () => {
+    // it("Decimal_sqrt_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('7.6531546e-3210839', '5.85707760360226795537203615034919E-6421677', 8, 3);
     //   test_sqrt_001('5.1545158401e-849458529874', '2.6569033546401399505222840937237E-1698917059747', 11, 3);
     //   test_sqrt_001('1.362796e+820366697', '1.8572130578086568903670432137573555816173399866229650898073903609534634685E+1640733394', 7, 3);
@@ -607,9 +641,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_023", 0, () => {
+    // it("Decimal_sqrt_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.380529012851904667362202911642711024107714e+198681597152426', '5.666918381029663696953608649066197933231308460645707103242820405560172691798118435135524461103430183E+397363194304852', 45, 5);
     //   test_sqrt_001('2.54746401587652656029608220458044130513888776543718542834122918527624080395488e+32532', '6.489572912185759966860293134205566227925787911969794771866E+65064', 78, 2);
     //   test_sqrt_001('6.92698673696026591387308445e+107400231637266', '4.79831452540234321937856594164763711E+214800463274533', 27, 4);
@@ -631,9 +665,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_024", 0, () => {
+    // it("Decimal_sqrt_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.44369944036062486685492557249769572445990273975135928852505135432044491079041e+3973481', '5.9716669548188311704969626601027296830809246015644883490860409903708929680E+7946962', 78, 3);
     //   test_sqrt_001('9.9766657347831312895713804962380972879872133625410810249905126198373397e+4902005181527', '9.9533859183595836960393341304494815647224E+9804010363055', 71, 2);
     //   test_sqrt_001('1.55e+26246', '2.401659339220326238148181906366427704224780832955898700E+52492', 4, 6);
@@ -655,9 +689,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_025", 0, () => {
+    // it("Decimal_sqrt_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('3.0742131314253906754227821858e+96706326503', '9.450786377428306361560309171177304320240134953027243301587893245054872736802088043071493639E+193412653006', 29, 1);
     //   test_sqrt_001('9.6526054e+6', '93172790036170.613444694347666418780549753491881062334620953897827553473780799108203', 8, 0);
     //   test_sqrt_001('2.764550263766756063892234262466594517907118311533593420860995828119465404401809e-431912159', '7.6427381608928405257681569294347818369102356176996211973E-863824318', 79, 3);
@@ -676,9 +710,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_026", 0, () => {
+    // it("Decimal_sqrt_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('9.5438933355313647910084093295703513e+363658650', '9.10859E+727317301', 35, 3);
     //   test_sqrt_001('3.00666e+472622870', '9.04E+945245740', 7, 2);
     //   test_sqrt_001('2.837780823108084927845098354231270362354547981102e+3799336425332871', '8.053E+7598672850665742', 49, 6);
@@ -701,9 +735,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_027", 0, () => {
+    // it("Decimal_sqrt_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('1.650095715573914339995571593605530228843869509809576660267100705710199e+460348481858', '2.72281587055538841173686928082096620997022877836901707243689996E+920696963716', 71, 1);
     //   test_sqrt_001('2.5961509971494339104070358328276508155305955410565531e+27506184764', '6.7400E+55012369528', 53, 0);
     //   test_sqrt_001('6.98318893856197088096157423785895630275546e+1', '4876.49277516542655231337713128136167574490306845440883621473529483335813066', 42, 6);
@@ -726,9 +760,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_028", 0, () => {
+    // it("Decimal_sqrt_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('5.0531262501544526519574040306536300193230181695512694054594791474960429e+43540097', '2.553408490E+87080195', 71, 1);
     //   test_sqrt_001('7.82604e+4', '6124701461.30253396696741160592218892208', 6, 3);
     //   test_sqrt_001('2.2398583586237716716486413363400318012837209715720882626185e+47', '5.0169654666967765488407729714423591421E+94', 59, 6);
@@ -752,9 +786,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_029", 0, () => {
+    // it("Decimal_sqrt_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('3.14106344730876479475193343625504e-910', '9.8662795800192214301268467968737763973E-1820', 33, 2);
     //   test_sqrt_001('6.8863641511930920159e+1434', '4.742201122283735467286752580639151338402147978758E+2869', 20, 5);
     //   test_sqrt_001('9.1536625949357836061871605822069283444244503528403697e+93673802', '8.3789538901926503620943368526446290753065226079800268864837819950868226858046E+187347605', 53, 5);
@@ -781,9 +815,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_030", 0, () => {
+    // it("Decimal_sqrt_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.2572378462909762847780411032884150727038656700793e+46981', '5.0951226947283250806636033744756427856016086366224E+93962', 50, 2);
     //   test_sqrt_001('9.0281062255204740105304768996726311145672013275416789795275497995048942097e+226702402736093', '8.150670201928153993411272129594404183375704672E+453404805472187', 74, 3);
     //   test_sqrt_001('2.64772769892363307093059365640630051052232478304226906666646516317583776e+295003889110756', '7.0104619676474369342365609690167930592871571199219650021680E+590007778221512', 72, 2);
@@ -810,9 +844,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_031", 0, () => {
+    // it("Decimal_sqrt_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('1.861442505620019066170426433408338273749989194997433001e+25044421131632', '3.46496820172893471274450231665851340050925461712723830282019910966406769659794792E+50088842263264', 55, 2);
     //   test_sqrt_001('2.96906281918975236955954438611698479173299363074681248825253049431984948e+2137858258433490', '8.815334024295000171588787248553700566011567E+4275716516866980', 72, 3);
     //   test_sqrt_001('5.175035338263985141e-19506965', '2.678099075228103912053736336553650966855863923E-39013929', 19, 1);
@@ -840,9 +874,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_032", 0, () => {
+    // it("Decimal_sqrt_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.3051841717555917375661e-3805332', '5.3138740657125134679225950980E-7610664', 23, 5);
     //   test_sqrt_001('1.58649846866898977e+17', '25169773910890495218058815869093616.163248025716892103133483661936354157144385347', 18, 6);
     //   test_sqrt_001('1.832487619892217619778605787594363341371e+489189', '3.35801087705824464519194153474023E+978378', 41, 6);
@@ -870,9 +904,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_033", 0, () => {
+    // it("Decimal_sqrt_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('1.49777148251106029879789692329117828615e-494834655520847', '2.24331941382337940650496041556953252175484515884385876892851088684239094331708000189663420216840E-989669311041694', 39, 5);
     //   test_sqrt_001('6.95456711664340560996070853420178762114841e-38627491422785', '4.8366003779897772450979302026969538397871395603455798715295598491356099722574E-77254982845569', 42, 3);
     //   test_sqrt_001('3.10149148573625247e-4', '9.6192494360944667705321067387464882437575358E-8', 18, 5);
@@ -896,9 +930,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_034", 0, () => {
+    // it("Decimal_sqrt_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('2.361286043755e+281976835', '5.5756717804303509418805557E+563953670', 13, 5);
     //   test_sqrt_001('5.47722557505166113456969782800802e+405615457129', '3E+811230914259', 33, 6);
     //   test_sqrt_001('1.7178698335153e+144561611584745', '2.9510767649015787272590443004662758146251322168953340785510127474489250982992775086288323854164153E+289123223169490', 14, 2);
@@ -920,9 +954,9 @@ export default function DecimalTest003() {
     //  * @tc.desc      : Test sqrt
     //  * @tc.size      : MediumTest
     //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
+    //  * @tc.level     : Level 1
     //  */
-    // it("Decimal_sqrt_Func_035", 0, () =>{
+    // it("Decimal_sqrt_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_sqrt_001('8.49192304e+1387453895', '7.2112757E+2774907791', 9, 4);
     //   test_sqrt_001('1.6985163959801521e+3936837', '2.88495794741340509204059372399499124467343954532861012543791870383E+7873674', 17, 3);
     //   test_sqrt_001('4.991092064869170494e-124451984', '2.4911E-248903967', 19, 0);
@@ -945,10 +979,10 @@ export default function DecimalTest003() {
      * @tc.desc      : Test sqrt
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.level     : Level 1
      */
-    it("Decimal_sqrt_Func_036", 0, () => {
-      Decimal.set ({
+    it("Decimal_sqrt_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      Decimal.set({
         precision: 20,
         rounding: 4,
         toExpNeg: -9e15,
@@ -965,7 +999,5 @@ export default function DecimalTest003() {
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: eee`);
       }
     });
-
-
-});
+  });
 }
