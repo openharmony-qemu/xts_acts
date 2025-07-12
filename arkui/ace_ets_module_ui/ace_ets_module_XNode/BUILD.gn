@@ -34,6 +34,7 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api12_static:ActsAceEtsModuleXNodeApi12StaticTest",
       "ace_ets_module_XNode_api15_static:ActsAceEtsModuleXNodeApi15StaticTest",
       "ace_ets_module_XNode_api16_static:ActsAceEtsModuleXNodeApi16StaticTest",
+      "ace_ets_module_XNodeNoWear_api12_static:ActsAceEtsModuleXNodeNoWearApi12StaticTest",
     ]
   }
 }
