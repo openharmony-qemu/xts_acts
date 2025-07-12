@@ -84,6 +84,80 @@ export default function GraphicUiEffectInterfaceStatic() {
       }
       done();
     })
-  })
 
+    /**
+     * @tc.number    : uiEffectTest_static_0200
+     * @tc.name      : uiEffectTest_static_0200
+     * @tc.desc      : uiEffect for test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level1
+     */
+    it("uiEffectTest_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = " =====uiEffectTest_static_0200==== "
+        try {
+          let visualEffect: uiEffect.VisualEffect = uiEffect.createEffect()
+          // let filter: uiEffect.Filter = uiEffect.createFilter();
+          console.log(msg + " Succeed in uiEffect.createFilter " + JSON.stringify(visualEffect))
+          expect(true).assertTrue()
+          done()
+        } catch (err) {
+          console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
+          console.log(msg + " Failed in uiEffect.createFilter " + err)
+          expect().assertFail()
+          done()
+        }
+      })
+
+    /**
+     * @tc.number    : uiEffectTest_static_0300
+     * @tc.name      : uiEffectTest_static_0300
+     * @tc.desc      : uiEffect for test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level1
+     */
+    it("uiEffectTest_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = " =====uiEffectTest_static_0300==== "
+        try {
+          let filter: uiEffect.Filter = uiEffect.createFilter();
+          console.log(msg + " Succeed in uiEffect.createFilter ")
+          expect(true).assertTrue()
+          done()
+        } catch (err) {
+          console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
+          console.log(msg + " Failed in uiEffect.createFilter " + err)
+          expect().assertFail()
+          done()
+        }
+      })
+
+    /**
+     * @tc.number    : uiEffectTest_static_0400
+     * @tc.name      : uiEffectTest_static_0400
+     * @tc.desc      : uiEffect for test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level1
+     */
+    it("uiEffectTest_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = " =====uiEffectTest_static_0400==== "
+        try {
+          let filter: uiEffect.Filter = uiEffect.createFilter();
+          filter.blur(20);
+          console.log(msg + " Succeed in uiEffect.createFilter blur ")
+          expect(true).assertTrue()
+          done()
+        } catch (err) {
+          console.log(msg + " Failed in uiEffect.createFilter " + JSON.stringify(err))
+          console.log(msg + " Failed in uiEffect.createFilter " + err)
+          expect().assertFail()
+          done()
+        }
+      })
+
+  })
 }
