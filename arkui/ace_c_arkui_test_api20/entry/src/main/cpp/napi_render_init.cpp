@@ -45,6 +45,8 @@ namespace ArkUICapiTest
             nullptr, nullptr, nullptr, napi_default, nullptr},
             {"uiStatesTest", nullptr, UiStatesTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"testNodeUniqueId", nullptr, NodeUniqueIdTest::testNodeUniqueId001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
