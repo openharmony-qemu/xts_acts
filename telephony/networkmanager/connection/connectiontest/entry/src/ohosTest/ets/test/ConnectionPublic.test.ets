@@ -7384,7 +7384,7 @@ export default function ConnectionPublicTest() {
               done();
             } else {
               console.info(`${caseName} getConnectionProperties: data->${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.routes[0].iface == 'string');
+              ExpectTrue(typeof data.routes[0].interface == 'string');
               console.info(`${caseName}---End`);
               done();
             }
@@ -7578,7 +7578,7 @@ export default function ConnectionPublicTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             console.info(`${caseName} getConnectionProperties: success data->${JSON.stringify(data)}`);
-            ExpectTrue(typeof data.routes[0].iface == 'string');
+            ExpectTrue(typeof data.routes[0].interface == 'string');
             console.info(`${caseName}---End`);
             done();
           }).catch((error: BusinessError) => {
