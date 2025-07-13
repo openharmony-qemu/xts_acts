@@ -119,7 +119,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start getKvstore");
@@ -143,7 +143,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest002 start ");
       try {
         let store = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
@@ -166,7 +166,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest003 start ");
       const KEY_TEST_STRING_ELEMENT = 'key_test_string';
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -198,7 +198,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 start ");
       const KEY_TEST_DOUBLE_ELEMENT = 'key_test_double';
       let VALUE_TEST_DOUBLE_ELEMENT : double = 11;
@@ -235,7 +235,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest005 start ");
       const KEY_TEST_BOOL_ELEMENT = 'key_test_boolean';
       const VALUE_TEST_BOOL_ELEMENT : Boolean = false;
@@ -263,7 +263,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest006 start ");
       const KEY_TEST_UINT8ARRAY_ELEMENT = 'key_test_number_array';
       const buffer = new ArrayBuffer(8);
@@ -289,7 +289,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest007 start ");
       try {
         let store : distributedKVStore.SingleKVStore = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
@@ -313,7 +313,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest008 start ");
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
@@ -337,7 +337,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest009 start ");
       try {
         kvManager.getKVStore(TEST_SINGLE_STORE_ID, singleOptions, (err: BusinessError|null, store: distributedKVStore.SingleKVStore|undefined) => {
@@ -362,7 +362,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest010 start ");
       const KEY_TEST_UINT8ARRAY_ELEMENT = 'key_test_number_array';
       const buffer = new ArrayBuffer(8);
@@ -388,7 +388,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest011 start ");
       const KEY_TEST_STRING_ELEMENT = 'key_test_string';
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -416,7 +416,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest012 start ");
       const KEY_TEST_DOUBLE_ELEMENT = 'key_test_double';
       let VALUE_TEST_DOUBLE_ELEMENT : double = 11;
@@ -443,7 +443,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest013 start ");
       const KEY_TEST_BOOL_ELEMENT = 'key_test_boolean';
       const VALUE_TEST_BOOL_ELEMENT : Boolean = false;
@@ -470,7 +470,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest014 start ");
       const KEY_TEST_BOOL_ELEMENT = 'key_test_boolean';
       const VALUE_TEST_BOOL_ELEMENT : Boolean = false;
@@ -502,7 +502,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest015 start ");
       const KEY_TEST_DOUBLE_ELEMENT = 'key_test_double';
       let VALUE_TEST_DOUBLE_ELEMENT : double = 11;
@@ -535,7 +535,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest016 start ");
       const KEY_TEST_STRING_ELEMENT = 'key_test_string';
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -566,7 +566,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest017 start ");
       const KEY_TEST_STRING_ELEMENT = 'key_test_string';
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -597,7 +597,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest018 start ");
       const KEY_TEST_STRING_ELEMENT = 'key_test_string';
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -627,7 +627,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest019 start ");
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
@@ -653,7 +653,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest020 start ");
       let deviceId : string = "000000000000000000";
       const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
@@ -679,7 +679,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('KvStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest021 start ");
       try {
         let fieldNode: distributedKVStore.FieldNode | null = new distributedKVStore.FieldNode('id');
