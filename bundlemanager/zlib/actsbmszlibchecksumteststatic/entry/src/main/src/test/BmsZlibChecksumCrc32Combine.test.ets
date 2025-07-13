@@ -23,13 +23,12 @@ const Domain: number = 0x0000;
 
 export default function bmsZlibChecksumCrc32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let crc1: Double = 0;
-  let crc2: Double = 0;
+  let crc1: long = 0;
+  let crc2: long = 0;
   let buf1: ArrayBuffer = new ArrayBuffer(21);
   let buf2: ArrayBuffer = new ArrayBuffer(19);
   let str1: string = 'hello Crc32Combine1';
   let str2: string = 'hei Crc32Combine2';
-  let len2 = buf2.byteLength;
   describe('bmsZlibChecksumCrc32CombineTest', () => {
     beforeAll(() => {
       let data1 = new Uint8Array(buf1);
@@ -59,7 +58,7 @@ export default function bmsZlibChecksumCrc32CombineTest() {
     it("Sub_Bms_Zlib_Checksum_Check_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
-          len2 = 123;
+          let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 start`);
           let num: number = await checksum.crc32Combine(crc1, crc2, len2);
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_3400 Crc32Combine:(${crc1},${crc2},${len2})=>${num}`);

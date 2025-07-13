@@ -67,7 +67,7 @@ export default function ActsZlibInterfaceTest() {
         zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
-            zlib.getOriginalSize(outFile35).then((data: number): void => {
+            zlib.getOriginalSize(outFile35).then((data: long): void => {
               hilog.info(domain, tag, `ActsZlibInterfaceTest_static_01 getOriginalSize success. getOriginalSize: ${data}`);
               expect(data >= 0).assertEqual(true);
               done();
@@ -106,7 +106,7 @@ export default function ActsZlibInterfaceTest() {
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_03 start==================");
       let compressedFile: string = dir + '/not_found.zip';
       try {
-        zlib.getOriginalSize(compressedFile).then((data: number) => {
+        zlib.getOriginalSize(compressedFile).then((data: long): void => {
           hilog.info(domain, tag, `ACTS_ZlibInterfaceTest_static_03 getOriginalSize success. getOriginalSize: ${data}`);
           expect(data).assertFail();
           done();
@@ -139,7 +139,7 @@ export default function ActsZlibInterfaceTest() {
       fs.closeSync(file);
       let compressedFile30: string = dir + '/test33.txt';
       try {
-        zlib.getOriginalSize(compressedFile30).then((data: number): void => {
+        zlib.getOriginalSize(compressedFile30).then((data: long): void => {
           hilog.info(domain, tag, `ACTS_ZlibInterfaceTest_static_04 getOriginalSize success. getOriginalSize: ${data}`);
           expect(data).assertFail();
           done();

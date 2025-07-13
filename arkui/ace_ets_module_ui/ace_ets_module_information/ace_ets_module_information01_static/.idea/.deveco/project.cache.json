@@ -1,0 +1,16 @@
+{
+	"BuildOptions":{
+		"BUNDLE_NAME":"com.arkui.ace.ets.module.information01.static",
+		"SELECT_BUILD_MODE":"",
+		"BUILD_PATH":{
+			"OUTPUT_PATH":"C:\\Users\\lenovo\\Desktop\\ku555\\xts_acts_555\\arkui\\ace_ets_module_ui\\ace_ets_module_information\\ace_ets_module_information01_static\\build\\outputs\\default"
+		},
+		"SELECT_BUILD_PRODUCT":"default"
+	},
+	"CommonInfo":{
+		"crossplatform.projectType":"",
+		"project.ide.version":"5.0.7.1",
+		"current.select.product":"default",
+		"current.select.buildMode":""
+	}
+}

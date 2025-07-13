@@ -170,7 +170,24 @@ export default function NormalizerInI18nTest() {
       console.log('i18n_normalizer_test_static_0800 ' + value);
       expect(value).assertEqual('\u0032\u0035');
     })
-
+ 
+    /**
+    * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_0900
+    * @tc.name i18n_normalizer_test_static_0900
+    * @tc.desc test the getInstance error code, getInstance method return 401 error code
+    */
+    it('i18n_normalizer_test_static_0900', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_normalizer_test_static_0900 ' + 'start');
+      let str = '\u0032\u2075';
+      try{
+        let normal = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
+      } catch (error: BusinessError) {
+        console.log('i18n_normalizer_test_static_0900 ' + error.code);
+        console.log('i18n_normalizer_test_static_0900 ' + error.message);
+        expect(error.code == 401).assertTrue();
+      }
+    })
+    
     /**
      * @tc.number SUB_GLOBAL_I18N_NORMALIZE_JS_static_1000
      * @tc.name i18n_normalizer_test_static_1000

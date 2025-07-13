@@ -1,0 +1,17 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Image/image",
+    "MainAbility/pages/ImageAnimator/imageAnimator",
+    "MainAbility/pages/ImageAnimator/monitorInvisibleArea",
+    "MainAbility/pages/ImageAttachment/ObjectFit",
+    "MainAbility/pages/ImageAttachment/PixelMapColorFilter",
+    "MainAbility/pages/ImageAttachment/ResourceDefault",
+    "MainAbility/pages/ImageAttachment/VerticalAlign",
+    "MainAbility/pages/ImageContent/ImageContentEmpty",
+    "MainAbility/pages/imageMatrix/imageMatrix",
+    "MainAbility/pages/ImageOrientation/ImageOrientation",
+    "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColor",
+    "MainAbility/pages/ImageError/ImageOnError"
+  ]
+}

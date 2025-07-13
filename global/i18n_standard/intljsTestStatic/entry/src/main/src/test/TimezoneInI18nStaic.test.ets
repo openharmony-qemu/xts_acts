@@ -75,6 +75,19 @@ export default function TimezoneInI18nTest() {
     })
 
     /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0400
+    * @tc.name    timezone_test_static_0400
+    * @tc.desc    get the getDisplayName value, test getDisplayName method with true param
+    */
+    it('timezone_test_static_0400', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_0400 ' + 'start');
+      let timezone = i18n.getTimeZone();
+      let value = timezone.getDisplayName(undefined);
+      console.log('timezone_test_static_0400 ' + value);
+      expect(value.length > 0).assertTrue();
+    })
+
+    /* *
     * @tc.number  timezone_test_static_0600
     * @tc.name    timezone_test_static_0600
     * @tc.desc    test getRawOffset method get the getRawOffset value
@@ -87,6 +100,44 @@ export default function TimezoneInI18nTest() {
       expect(value >= 0).assertEqual(true);
     })
 
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0700
+    * @tc.name    timezone_test_static_0700
+    * @tc.desc    get the getOffset value, test getOffset method
+    */
+    it('timezone_test_static_0700', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_0700 ' + 'start');
+      let timezone = i18n.getTimeZone();
+      let value = timezone.getOffset();
+      console.log('timezone_test_static_0700 ' + value);
+      expect(value >= 0).assertEqual(true);
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0800
+    * @tc.name    timezone_test_static_0800
+    * @tc.desc    get the getOffset value, test getOffset method with date param
+    */
+    it('timezone_test_static_0800', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_0800 ' + 'start');
+      let timezone = i18n.getTimeZone();
+      let value = timezone.getOffset(10540800000);
+      console.log('timezone_test_static_0800 ' + value);
+      expect(value >= 0).assertEqual(true);
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_0900
+    * @tc.name    timezone_test_static_0900
+    * @tc.desc    get the getID value, test getID
+    */
+    it('timezone_test_static_0900', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_0900 ' + 'start');
+      let timezone = i18n.getTimeZone('ACT');
+      let value = timezone.getID();
+      console.log('timezone_test_static_0900 ' + value);
+      expect(value).assertEqual('ACT');
+    })
     
     /* *
     * @tc.number  timezone_test_static_1000
@@ -99,6 +150,32 @@ export default function TimezoneInI18nTest() {
       let value = timezone.getDisplayName();
       console.log('timezone_test_static_1000 ' + value);
       expect(value).assertEqual('澳大利亚中部标准时间');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_1300
+    * @tc.name    timezone_test_static_1300
+    * @tc.desc    get the getID value, test getDisplayName with en-US and true param
+    */
+    it('timezone_test_static_1300', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_1300 ' + 'start');
+      let timezone = i18n.getTimeZone('Asia/Shanghai');
+      let value = timezone.getDisplayName('en-US', true);
+      console.log('timezone_test_static_1300 ' + value);
+      expect(value).assertEqual('China Standard Time');
+    })
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_I18N_JS_TIMEZONE_static_1400
+    * @tc.name    timezone_test_static_1400
+    * @tc.desc    get the getID value, test getDisplayName with zh-CN and false param
+    */
+    it('timezone_test_static_1400', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_1400 ' + 'start');
+      let timezone = i18n.getTimeZone('Asia/Shanghai');
+      let value = timezone.getDisplayName('zh-CN', false);
+      console.log('timezone_test_static_1400 ' + value);
+      expect(value).assertEqual('中国标准时间');
     })
 
     /* *
@@ -333,6 +410,120 @@ export default function TimezoneInI18nTest() {
       } catch (e: BusinessError) {
         console.log('timezone_test_static_2600 e.code' + e.code);
         console.log('timezone_test_static_2600 e.message' + e.message);
+      }
+    })
+    
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2700
+    * @tc.name timezone_test_static_2700
+    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
+    */
+    it('timezone_test_static_2700', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_2700 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(100,90);
+        console.log('timezone_test_static_2700 ' + value);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_2700 e.code' + e.code);
+        console.log('timezone_test_static_2700 e.message' + e.message);
+        expect(e.code == 890001).assertTrue();
+        expect(e.message == 'Invalid parameter, the longitude or latitude must be a valid value.').assertTrue();
+      }
+    })
+    
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2800
+    * @tc.name timezone_test_static_2800
+    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
+    */
+    it('timezone_test_static_2800', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_2800 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(100,-90.1);
+        console.log('timezone_test_static_2800 ' + value);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_2800 e.code' + e.code);
+        console.log('timezone_test_static_2800 e.message' + e.message);
+        expect(e.code == 890001).assertTrue();
+        expect(e.message == 'Invalid parameter, the longitude or latitude must be a valid value.').assertTrue();
+      }
+    })
+
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2900
+    * @tc.name timezone_test_static_2900
+    * @tc.desc get the getTimezonesByLocation value,test getTimezonesByLocation method
+    */
+    it('timezone_test_static_2900', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_2900 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(180.0,50);
+        console.log('timezone_test_static_2900 ' + value);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_2900 e.code' + e.code);
+        console.log('timezone_test_static_2900 e.message' + e.message);
+        expect(e.code == 890001).assertTrue();
+        expect(e.message == 'Invalid parameter, the longitude or latitude must be a valid value.').assertTrue();
+      }
+    })
+
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3000
+    * @tc.name timezone_test_static_3000
+    * @tc.desc get the getTimezonesByLocation value,test getTimezonesByLocation method
+    */
+    it('timezone_test_static_3000', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_3000 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(-180.1,50);
+        console.log('timezone_test_static_3000 ' + value);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_3000 e.code' + e.code);
+        console.log('timezone_test_static_3000 e.message' + e.message);
+        expect(e.code == 890001).assertTrue();
+        expect(e.message == 'Invalid parameter, the longitude or latitude must be a valid value.').assertTrue();
+      }
+    })
+
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3100
+    * @tc.name timezone_test_static_3100
+    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
+    */
+    it('timezone_test_static_3100', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_3100 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(18, -77);
+        console.log('timezone_test_static_3100 ' + value.length);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_3100 e.code' + e.code);
+        console.log('timezone_test_static_3100 e.message' + e.message);
+        expect(e.code == 401).assertTrue();
+        expect(e.message == 'Parameter error, the longitude or latitude cannot be empty.').assertTrue();
+      }
+    })
+
+    /* *
+    * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3200
+    * @tc.name timezone_test_static_3200
+    * @tc.desc get the getTimezonesByLocation value, test getTimezonesByLocation method
+    */
+    it('timezone_test_static_3200', Level.LEVEL0, async (): Promise<void> => {
+      console.log('timezone_test_static_3200 ' + 'start');
+      try{
+        let value = i18n.TimeZone.getTimezonesByLocation(18, 33);
+        console.log('timezone_test_static_3200 ' + value.length);
+        expect(value != null).assertTrue();
+      } catch (e: BusinessError) {
+        console.log('timezone_test_static_3200 e.code' + e.code);
+        console.log('timezone_test_static_3200 e.message' + e.message);
+        expect(e.code == 401).assertTrue();
+        expect(e.message == 'Parameter error, the type of latitude must be number.').assertTrue();
       }
     })
     console.log('*************end TimezoneInI18nTest*************');
