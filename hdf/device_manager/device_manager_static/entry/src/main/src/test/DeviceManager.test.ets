@@ -92,7 +92,7 @@ function assertDriverInfo(driverInfo : deviceManager.DriverInfo) {
 
 export default function DeviceManagerTest() {
   describe("DeviceManagerTest", ():void => {
-    let deviceId: double = 0;
+    let deviceId: long = 0;
     beforeAll(() => {
       hilog.info(TAG, 'testTag', 'beforeAll called');
       try {

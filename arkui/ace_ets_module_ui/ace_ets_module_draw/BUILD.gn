@@ -18,5 +18,6 @@ group("ActsAceEtsModuleDrawTest") {
     "ace_ets_module_draw_api12:ActsAceEtsModuleDrawApi12Test",
     "ace_ets_module_draw_api13:ActsAceEtsModuleDrawApi13Test",
     "ace_ets_module_draw_api11_static:ActsAceEtsModuleDrawApi11StaticTest",
+    "ace_ets_module_draw_api12_static:ActsAceEtsModuleDrawApi12StaticTest",
   ]
 }

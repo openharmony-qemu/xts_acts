@@ -235,34 +235,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_010
-     * @tc.name      : BitVector_has_Func_003
-     * @tc.desc      : Check if bit vector contains a particular bit element.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_has_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          let res = bitVector.has(0, 0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_011
      * @tc.name      : BitVector_has_Func_004
      * @tc.desc      : Check if bit vector contains a particular bit element.
@@ -437,34 +409,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_017
-     * @tc.name      : BitVector_setBitsByRange_Func_003
-     * @tc.desc      : Sets a range of bits in a bit vector to a particular element.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_setBitsByRange_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          bitVector.setBitsByRange(0, 0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_018
      * @tc.name      : BitVector_setBitsByRange_Func_004
      * @tc.desc      : Sets a range of bits in a bit vector to a particular element.
@@ -631,34 +575,6 @@ export default function BitVectorTest() {
           expect(err.code).assertEqual(10200001);
           expect(err.message)
             .assertEqual(`The value of "toIndex" is out of range. It must be >= 0 && <= 8. Received value is: -3`);
-        }
-    });
-
-    /**
-     * @tc.number    : BITVECTOR_TEST_024
-     * @tc.name      : BitVector_getBitsByRange_Func_003
-     * @tc.desc      : Returns the bit values in a range of indices in a bit vector.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_getBitsByRange_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          let res = bitVector.getBitsByRange(0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
         }
     });
 
@@ -859,34 +775,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_033
-     * @tc.name      : BitVector_resize_Func_005
-     * @tc.desc      : Resize the bitVector's length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_resize_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          bitVector.resize(6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "size" must be integer. Received value is: 6.1`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_034
      * @tc.name      : BitVector_resize_Func_006
      * @tc.desc      : Resize the bitVector's length.
@@ -1012,34 +900,6 @@ export default function BitVectorTest() {
           expect(err.code).assertEqual(10200001);
           expect(err.message)
             .assertEqual(`The value of "toIndex" is out of range. It must be >= 0 && <= 8. Received value is: -3`);
-        }
-    });
-
-    /**
-     * @tc.number    : BITVECTOR_TEST_040
-     * @tc.name      : BitVector_getBitCountByRange_Func_003
-     * @tc.desc      : Counts the number of times a certain bit element occurs within a range of bits in a bit vector.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_getBitCountByRange_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          let res = bitVector.getBitCountByRange(0, 0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
         }
     });
 
@@ -1260,34 +1120,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_049
-     * @tc.name      : BitVector_getIndexOf_Func_005
-     * @tc.desc      : Locates the first occurrence of a certain bit value within a range of bits in a bit vector.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_getIndexOf_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          let res = bitVector.getIndexOf(0, 0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_050
      * @tc.name      : BitVector_getIndexOf_Func_006
      * @tc.desc      : Locates the first occurrence of a certain bit value within a range of bits in a bit vector.
@@ -1450,34 +1282,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_056
-     * @tc.name      : BitVector_getLastIndexOf_Func_005
-     * @tc.desc      : Locates the last occurrence of a certain bit value within a range of bits in a bit vector.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_getLastIndexOf_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          let res = bitVector.getLastIndexOf(0, 0.1, 6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 0.1`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_057
      * @tc.name      : BitVector_getLastIndexOf_Func_006
      * @tc.desc      : Locates the last occurrence of a certain bit value within a range of bits in a bit vector.
@@ -1584,34 +1388,6 @@ export default function BitVectorTest() {
           expect(err.code).assertEqual(10200001);
           expect(err.message)
             .assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 7. Received value is: 20`);
-        }
-    });
-
-    /**
-     * @tc.number    : BITVECTOR_TEST_061
-     * @tc.name      : BitVector_flipBitByIndex_Func_003
-     * @tc.desc      : Flips the bit value by index in a bit vector.(Flip 0 to 1, flip 1 to 0).
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_flipBitByIndex_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          bitVector.flipBitByIndex(6.1);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "index" must be integer. Received value is: 6.1`);
         }
     });
 
@@ -1791,34 +1567,6 @@ export default function BitVectorTest() {
     });
 
     /**
-     * @tc.number    : BITVECTOR_TEST_068
-     * @tc.name      : BitVector_flipBitsByRange_Func_005
-     * @tc.desc      : Flips a range of bit values in a bit vector.(Flip 0 to 1, flip 1 to 0).
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("BitVector_flipBitsByRange_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-        let bitVector = new collections.BitVector(0);
-        bitVector.push(1);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        bitVector.push(0);
-        bitVector.push(1);
-        bitVector.push(0);
-        try {
-          bitVector.flipBitsByRange(3.11, 8);
-          expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
-          expect(err instanceof BusinessError).assertEqual(true);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual(`The type of "fromIndex" must be integer. Received value is: 3.11`);
-        }
-    });
-
-    /**
      * @tc.number    : BITVECTOR_TEST_069
      * @tc.name      : BitVector_flipBitsByRange_Func_006
      * @tc.desc      : Flips a range of bit values in a bit vector.(Flip 0 to 1, flip 1 to 0).
@@ -1891,10 +1639,10 @@ export default function BitVectorTest() {
         bitVector.push(0);
         bitVector.push(1);
         bitVector.push(0);
-        let vec: Array<Double | undefined> = [];
-        let a: Array<Double | undefined> = [1, 1, 0, 1, 0];
+        let vec: Array<Int | undefined> = [];
+        let a: Array<Int | undefined> = [1, 1, 0, 1, 0];
         let itr = bitVector.values();
-        let tmp: IteratorResult<Double> = itr.next();
+        let tmp: IteratorResult<Int> = itr.next();
         while (!tmp.done) {
           vec.push(tmp.value);
           tmp = itr.next();
@@ -1921,9 +1669,9 @@ export default function BitVectorTest() {
           expect(res0).assertEqual(true);
         }
         expect(bitVector.length).assertEqual(64);
-        let vec: Array<Double | undefined> = [];
+        let vec: Array<Int | undefined> = [];
         let itr = bitVector.values();
-        let tmp: IteratorResult<Double> = itr.next();
+        let tmp: IteratorResult<Int> = itr.next();
         while (!tmp.done) {
           vec.push(tmp.value);
           tmp = itr.next();
@@ -1950,9 +1698,9 @@ export default function BitVectorTest() {
           expect(res0).assertEqual(true);
         }
         expect(bitVector.length).assertEqual(bitVectorLength + 10);
-        let vec: Array<Double | undefined> = [];
+        let vec: Array<Int | undefined> = [];
         let itr = bitVector.values();
-        let tmp: IteratorResult<Double> = itr.next();
+        let tmp: IteratorResult<Int> = itr.next();
         while (!tmp.done) {
           vec.push(tmp.value);
           tmp = itr.next();

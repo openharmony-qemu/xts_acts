@@ -413,14 +413,6 @@ export default function PlainArrayTest1() {
         expect(err.message)
           .assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 2. Received value is: 15`);
       }
-      // try {
-      //   plainArray.removeRangeFrom(1, "a");
-      //   expect(true).assertEqual(false);
-      // } catch (err: BusinessError) {
-      //   expect(err.name).assertEqual("BusinessError");
-      //   expect(err.code).assertEqual(401);
-      //   expect(err.message).assertEqual(`The type of "size" must be small integer. Received value is: a`);
-      // }
     });
 
     /**
