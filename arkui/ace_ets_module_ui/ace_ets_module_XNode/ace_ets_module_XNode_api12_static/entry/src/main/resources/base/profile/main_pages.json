@@ -1,0 +1,14 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Search/searchButton",
+    "MainAbility/pages/Search/SearchStopBackPress",
+    "MainAbility/pages/Text/marqueeOptions1",
+    "MainAbility/pages/Text/marqueeOptions2",
+    "MainAbility/pages/Text/textAreaInputTest",
+    "MainAbility/pages/Text/minMaxFontSize",
+    "MainAbility/pages/TextArea/addOrDelText",
+    "MainAbility/pages/TextArea/TextAreaStopBackPress",
+    "MainAbility/pages/TextInput/TextInputStopBackPress"
+  ]
+}

@@ -23,9 +23,9 @@ const Domain: number = 0x0000;
 
 export default function bmsZlibChecksumCrc32Test() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let buf = new ArrayBuffer(12);
-  let bufEmpty = new ArrayBuffer(12);
-  let str = 'hello world!';
+  let buf: ArrayBuffer = new ArrayBuffer(12);
+  let bufEmpty: ArrayBuffer = new ArrayBuffer(12);
+  let str: string = 'hello world!';
   describe('bmsZlibChecksumCrc32Test', () => {
     beforeAll(() => {
       let data = new Uint8Array(buf);
@@ -44,7 +44,7 @@ export default function bmsZlibChecksumCrc32Test() {
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let crc = 0;
+        let crc: long = 0;
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_2600 start`);
         let num: number = await checksum.crc32(crc, bufEmpty);
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_2600 crc ${crc} ret: ${num}`);

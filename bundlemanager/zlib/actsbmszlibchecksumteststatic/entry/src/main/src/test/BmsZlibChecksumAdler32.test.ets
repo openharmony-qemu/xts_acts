@@ -44,7 +44,7 @@ export default function bmsZlibChecksumAdler32Test() {
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let adler: Double = 0;
+        let adler: long = 0;
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0400 start`);
         let num: number = await checksum.adler32(adler, bufEmpty);
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0400 adler ${adler} ret: ${num}`);

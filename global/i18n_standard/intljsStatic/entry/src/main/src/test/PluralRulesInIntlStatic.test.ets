@@ -94,7 +94,18 @@ export default function PluralRulesInIntlTest() {
       console.log('pluralrules_test_static_2720 ' + value);
       expect(value).assertEqual('other');
     })
-
+    
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_static_2740
+    * @tc.name    pluralrules_test_static_2740
+    * @tc.desc    check the select result, get PluralRules with zh locale and null options
+    */
+    it('pluralrules_test_static_2740', Level.LEVEL0, async (): Promise<void> => {
+      let pl = new Intl.PluralRules('zh', undefined);
+      let value = pl.select(0);
+      console.log('pluralrules_test_static_2740 ' + value);
+      expect(value).assertEqual('other');
+    })
 
     /* *
     * @tc.number  SUB_GLOBAL_INTL_JS_PLURAL_static_2800

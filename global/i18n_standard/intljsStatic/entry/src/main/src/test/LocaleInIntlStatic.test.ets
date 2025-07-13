@@ -59,11 +59,12 @@ export default function LocaleInIntlTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
+
     /* *
-   * @tc.number  SUB_GLOBAL_INTL_JS_LOCALE_static_0100
-   * @tc.name    locale_test_static_0100
-   * @tc.desc    test the language in en-Latn-GB locale
-   */
+    * @tc.number  SUB_GLOBAL_INTL_JS_LOCALE_static_0100
+    * @tc.name    locale_test_static_0100
+    * @tc.desc    test the language in en-Latn-GB locale
+    */
     it('locale_test_static_0100', Level.LEVEL0, (): void => {
       let locale: intl.Locale = new intl.Locale('en-Latn-GB');
       hilog.info(domain, tag, '%{public}s', 'locale_test_static_0100 ' + locale.language);
@@ -80,6 +81,19 @@ export default function LocaleInIntlTest() {
       let locale: intl.Locale = new intl.Locale('en-Latn-GB', undefined);
       hilog.info(domain, tag, '%{public}s', 'locale_test_static_0120 ' + locale.language);
       hilog.info(domain, tag, '%{public}s', 'locale_test_static_0120 ' + locale.numeric);
+      expect(locale.language).assertEqual('en');
+      expect(locale.numeric).assertFalse();
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_LOCALE_static_0130
+    * @tc.name    locale_test_static_0130
+    * @tc.desc    check the language, test the language in en-Latn-GB locale
+    */
+    it('locale_test_static_0130', Level.LEVEL0, async (): Promise<void> => {
+      let locale = new Intl.Locale('en-Latn-GB', undefined);
+      console.log('locale_test_static_0130 ' + locale.language);
+      console.log('locale_test_static_0130 ' + locale.numeric);
       expect(locale.language).assertEqual('en');
       expect(locale.numeric).assertFalse();
     })

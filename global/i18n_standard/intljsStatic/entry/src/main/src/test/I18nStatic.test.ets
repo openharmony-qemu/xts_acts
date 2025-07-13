@@ -59,6 +59,19 @@ export default function I18NTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
+    
+    /**
+     * @tc.number  SUB_GLOBAL_I18N_JS_static_8800
+     * @tc.name    i18n_test_static_8800
+     * @tc.desc    get the isRTL value, test isRTL interface with zh-CN param
+     */
+    it('i18n_test_static_8800', Level.LEVEL0, async (): Promise<void> => {
+      console.log('i18n_test_static_8800 ' + 'start');
+      let value = i18n.isRTL('zh-CN');
+      console.log('i18n_test_static_8800 ' + value);
+      expect(value).assertFalse();
+    })
+    
     /**
      * @tc.number i18n_test_static_8900
      * @tc.name i18n_test_static_8900

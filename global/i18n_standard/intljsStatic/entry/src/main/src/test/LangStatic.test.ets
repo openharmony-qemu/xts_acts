@@ -104,7 +104,53 @@ export default function LangTest() {
       expect(result[0].end == 19).assertTrue();
     })
 
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0100
+    * @tc.name    transfer_test_static_0100
+    * @tc.desc    check the transfer result, transfer from lower to upper
+    */
+    it('transfer_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
+      let date = 'hello';
+      let value = date.toLocaleUpperCase('zh-CN');
+      console.log('transfer_test_static_0100 ' + value);
+      expect(value).assertEqual('HELLO');
+    })
 
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0200
+    * @tc.name    transfer_test_static_0200
+    * @tc.desc    check the transfer result, transfer from upper to lower
+    */
+    it('transfer_test_static_0200', Level.LEVEL0, async (): Promise<void> => {
+      let date = 'WORLD';
+      let value = date.toLocaleLowerCase('zh-CN');
+      console.log('transfer_test_static_0200 ' + value);
+      expect(value).assertEqual('world');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0300
+    * @tc.name    transfer_test_static_0300
+    * @tc.desc    check the transfer result,transfer to upper
+    */
+    it('transfer_test_static_0300', Level.LEVEL0, async (): Promise<void> => {
+      let date = 'My name is Jack.';
+      let value = date.toLocaleUpperCase('en-US');
+      console.log('transfer_test_static_0300 ' + value);
+      expect(value).assertEqual('MY NAME IS JACK.');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0400
+    * @tc.name    transfer_test_static_0400
+    * @tc.desc    check the transfer result, transfer to lower
+    */
+    it('transfer_test_static_0400', Level.LEVEL0, async (): Promise<void> => {
+      let date = 'The sky is in BLUE-STYLE!';
+      let value = date.toLocaleLowerCase('en-US');
+      console.log('transfer_test_static_0400 ' + value);
+      expect(value).assertEqual('the sky is in blue-style!');
+    })
     console.log('*************end I18NTest*************');
   })
 }

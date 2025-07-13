@@ -1,0 +1,21 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/PatternLock/patternLock01",
+    "MainAbility/pages/PatternLock/patternLock02",
+    "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",
+    "MainAbility/pages/PatternLock/PatternLockPage",
+    "MainAbility/pages/Badge/Badge",
+    "MainAbility/pages/Badge/BadgeIndex",
+    "MainAbility/pages/Badge/badge3",
+    "MainAbility/pages/Badge/badgeNode",
+    "MainAbility/pages/Gauge/gauge",
+    "MainAbility/pages/Gauge/gaugeUx",
+    "MainAbility/pages/Gauge/gauge1",
+    "MainAbility/pages/Gauge/gauge2",
+    "MainAbility/pages/Gauge/gauge3",
+    "MainAbility/pages/Gauge/gauge4",
+    "MainAbility/pages/Gauge/GaugeContentModifier",
+    "MainAbility/pages/Gauge/GaugePrivacySensitive"
+  ]
+}
