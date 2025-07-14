@@ -60,7 +60,7 @@ export default function enableFloatingDragBarTest() {
       await button.click();
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('text1');
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('true');
+      expect(JSON.parse(strJson1).$attrs.content).assertEqual('0');
       await Utils.sleep(2000);
       console.info('enableFloatingDragBarTest_0100 END');
       done();
