@@ -1,0 +1,22 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Ellipse/ellipse",
+    "MainAbility/pages/Shape/shape3",
+    "MainAbility/pages/Circle/circle3",
+    "MainAbility/pages/line/line3",
+    "MainAbility/pages/path/path",
+    "MainAbility/pages/polygon/polygon",
+    "MainAbility/pages/polyline/polyline",
+    "MainAbility/pages/Ellipse/ellipse1",
+    "MainAbility/pages/line/line",
+    "MainAbility/pages/path/path2",
+    "MainAbility/pages/polygon/polygon2",
+    "MainAbility/pages/polyline/polyLine3",
+    "MainAbility/pages/Rect/rect",
+    "MainAbility/pages/Rect/RectPage",
+    "MainAbility/pages/Rect/RectCommonShapeMethodPage",
+    "MainAbility/pages/Shape/shape",
+    "MainAbility/pages/Circle/circle"
+  ]
+}
