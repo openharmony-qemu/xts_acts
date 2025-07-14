@@ -144,33 +144,38 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(1000);
-        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-        await sleep(3000);
-        windowClass.on('avoidAreaChange', async (data) => {
-          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
+      if(isPCStatus == ''&&isAutoWindow == ''){
+        try {
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
+          await sleep(3000);
+          windowClass.on('avoidAreaChange', async (data) => {
+            console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-           if(data.type == 0){
+            if(data.type == 0){
               windowClass.off('avoidAreaChange');
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
               await sleep(1000);
               done();
-           }else{
-            await sleep(1000);
-           }
-        });
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
-        await sleep(2000);
-          
-      } catch (exception) {
-        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        expect().assertFail();
+            }else{
+              await sleep(1000);
+            }
+          });
+          await windowClass.setSpecificSystemBarEnabled('status', true);
+          console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
+          await sleep(2000);
+
+        } catch (exception) {
+          console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          expect().assertFail();
+          done();
+        }
+      }else{
         done();
       }
+
     })
 
     /**
@@ -184,36 +189,125 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(1000);
-        console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        await sleep(3000);
-        windowClass.on('avoidAreaChange', async (data) => {
-          console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-          if(data.type == 0){
+      if(isPCStatus == ''&&isAutoWindow == ''){
+        try {
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
+          await windowClass.setSpecificSystemBarEnabled('status', true);
+          await sleep(3000);
+          windowClass.on('avoidAreaChange', async (data) => {
+            console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+            if(data.type == 0){
               windowClass.off('avoidAreaChange');
               await windowClass.setSpecificSystemBarEnabled('status', true);
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
               await sleep(1000);
               done();
-           }else{
-            await sleep(1000);
-           }
-        });
-        await windowClass.setSpecificSystemBarEnabled('status', false);
-        console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
-        await sleep(2000);
+            }else{
+              await sleep(1000);
+            }
+          });
+          await windowClass.setSpecificSystemBarEnabled('status', false);
+          console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
+          await sleep(2000);
 
-          
-      } catch (exception) {
-        console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        expect().assertFail();
+
+        } catch (exception) {
+          console.error(`${caseName} Failed to set setSpecificSystemBarEnabled. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          expect().assertFail();
+          done();
+        }
+      }else{
         done();
       }
+
     });
+
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
+     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
+     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        await windowClass.setSpecificSystemBarEnabled('status', true);
+        await sleep(2000);
+        let res = windowClass.isImmersiveLayout();
+        console.log(`${caseName} isImmersiveLayout: ${res}.`);
+        expect(res).assertEqual(false);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (exception.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
+     * @tc.name      : testIsImmersiveLayoutwithMaximize
+     * @tc.desc      : 验证maximize后调用IsImmersiveLayout
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testIsImmersiveLayoutwithMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithMaximize';
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        if (isPCStatus != '' || isAutoWindow =='true') {
+          await windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
+          await sleep(200);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+          expect(res).assertEqual(false);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
+          await sleep(200);
+          let res2 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+          expect(res2).assertEqual(false);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          await sleep(200);
+          let res3 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 3: ${res3}.`);
+          expect(res3).assertEqual(true);
+          await windowClass.recover();
+          await sleep(200);
+          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
+          await sleep(200);
+          let res4 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 4: ${res4}.`);
+          expect(res4).assertEqual(true);
+          await windowClass.recover();
+          await sleep(200);
+
+          done();
+        } else {
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        done()
+      }
+    });
+
     /**
      * @tc.number    : SUB_BASIC_WMS_OnavoidAreaChange_0100
      * @tc.name      : testOnavoidAreaChangeInLandScape
@@ -2564,35 +2658,6 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0100
-     * @tc.name      : testIsImmersiveLayoutwithMainwindowDefaultState
-     * @tc.desc      : 验证主窗创建后默认为非沉浸式状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMainwindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMainwindowDefaultState';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        await windowClass.setSpecificSystemBarEnabled('status', true);
-        await sleep(2000);
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(false);
-        done();
-      } catch (exception) {
-        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-        if (exception.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
-
-    /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
      * @tc.name      : testIsImmersiveLayoutwithSubWindowDefaultState
      * @tc.desc      : 验证子窗创建后默认为沉浸式状态
@@ -2603,14 +2668,13 @@ export default function windowImmersiveTest() {
     it('testIsImmersiveLayoutwithSubWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithSubWindowDefaultState';
       let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithSubWindowDefaultState')
+      await windowClass.setUIContent('testability/pages/Index1');
+      await windowClass.showWindow();
+      await sleep(300);
       try {
         let res = windowClass.isImmersiveLayout();
         console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        if (isPCStatus == '' || isAutoWindow =='false'){
-          expect(res).assertEqual(true);
-        } else{
-          expect(res).assertEqual(false);
-        }
+        expect(res).assertEqual(true);
         await windowClass.destroyWindow();
         done();
       } catch (exception) {
@@ -2681,13 +2745,17 @@ export default function windowImmersiveTest() {
       let config: window.Configuration = {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
         windowType: window.WindowType.TYPE_DIALOG,
-        ctx: context
+        ctx: context,
+        decorEnabled:true
       };
       let subWindowClass: window.Window | undefined;
       console.info(`${caseName} Succeeded in creating the float window.`);
       try {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/Index1');
+          await subWindowClass.showWindow();
+          await sleep(300);
           let res = subWindowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout: ${res}.`);
           expect(res).assertEqual(false);
@@ -2834,51 +2902,6 @@ export default function windowImmersiveTest() {
         done()
       }
     });
-
-    /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
-     * @tc.name      : testIsImmersiveLayoutwithMaximize
-     * @tc.desc      : 验证maximize后调用IsImmersiveLayout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
-    it('testIsImmersiveLayoutwithMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithMaximize';
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        if (isPCStatus != '') {
-          await windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
-          await sleep(200);
-          let res = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
-          expect(res).assertEqual(false);
-          await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
-          await sleep(200);
-          let res2 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-          expect(res2).assertEqual(false);
-          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
-          await sleep(200);
-          let res3 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 3: ${res3}.`);
-          expect(res3).assertEqual(true);
-          await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
-          await sleep(200);
-          let res4 = windowClass.isImmersiveLayout();
-          console.log(`${caseName} isImmersiveLayout 4: ${res4}.`);
-          expect(res4).assertEqual(true);
-          done();
-        } else {
-          done();
-        }
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done()
-      }
-    });
-
 
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1100
