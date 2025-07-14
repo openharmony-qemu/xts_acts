@@ -524,7 +524,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupExecute1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
