@@ -28,7 +28,7 @@ export default function runJavaScriptErrorCode() {
 
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/runJavaScriptErrorCode.ets',
+        url: 'testability/pages/runJavaScriptErrorCode',
       }
       try {
         router.clear();

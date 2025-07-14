@@ -18,11 +18,12 @@ import { Hypium } from '@ohos/hypium';
 import { waitForExist } from '../../test/WaitTest.test';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
+import webView from '@ohos.web.webview';
 
 @Entry
 @Component
 struct Index {
-  controller: WebController = new WebController();
+  controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
