@@ -16,6 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import ohosWindow from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@kit.TestKit';
+import floatingBall from '@ohos.window.floatingBall';
 
 export default function windowErrCode201_1() {
   describe('windowErrCode201_1', () => {
@@ -64,6 +66,123 @@ export default function windowErrCode201_1() {
           done()
         }
 
+      }
+    })
+
+    /**
+     * @tc.number    : test_startFloatingBall_ErrorCode_201
+     * @tc.name      : test_startFloatingBall_ErrorCode_201
+     * @tc.desc      : test_startFloatingBall_ErrorCode_201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_startFloatingBall_ErrorCode_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_startFloatingBall_ErrorCode_201';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'content'
+      };
+      try {
+        floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+          let floatingBallController: floatingBall.FloatingBallController = data;
+          console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+
+          floatingBallController.startFloatingBall(startParams).then(() => {
+            console.info(CaseName+' Succeeded in starting floating ball.');
+            expect(false).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((err: BusinessError) => {
+          console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+          if(err.code == 801){
+            done()
+          }else {
+            expect(false).assertTrue();
+            done();
+          }
+
+        });
+      } catch(e) {
+        console.error( CaseName+  `Failed to test_Create_1300019. Cause:${e.code}, message:${e.message}`);
+        expect(e.code).assertEqual(201);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : test_restoreMainWindow_ErrorCode_201
+     * @tc.name      : test_restoreMainWindow_ErrorCode_201
+     * @tc.desc      : test_restoreMainWindow_ErrorCode_201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('test_restoreMainWindow_ErrorCode_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_restoreMainWindow_ErrorCode_201';
+      let driver:Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let want: Want = {
+        bundleName: 'com.example.floatballtest',
+        abilityName: 'TestAbility'
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let floatingBallController:floatingBall.FloatingBallController;
+      try {
+        floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        //点击闪控球
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName+ ' button: ' + button);
+        let Bounds = await  button.getBounds();
+        console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.click(Bounds.left,Bounds.top);
+        await sleep(200);
+        try{
+          floatingBallController.restoreMainWindow(want).then(async () => {
+            console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+            await floatingBallController.stopFloatingBall();
+            expect(true).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }catch (err) {
+          console.error( CaseName+  `Failed to restore. Cause:${err.code}, message:${err.message}`);
+          await floatingBallController.stopFloatingBall();
+          if(err.code == 201){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
+        }
+
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(e.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
