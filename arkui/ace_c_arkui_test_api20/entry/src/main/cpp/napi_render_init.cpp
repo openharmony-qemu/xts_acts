@@ -21,6 +21,7 @@
 #include "EmbeddedComponentOption/EmbeddedComponentOptionTest.h"
 #include "uiState/UiStatesTest.h"
 #include "touchTestDone/OntouchTestDoneTest.h"
+#include "nodeUtils/NodeUniqueIdTest.h"
 #include "uiInput/UiInputErrorCodeTest.h"
 
 namespace ArkUICapiTest
@@ -48,6 +49,8 @@ namespace ArkUICapiTest
             {"uiStatesTest", nullptr, UiStatesTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"ontouchTestDone", nullptr, OntouchTestDoneTest::CreateNativeNode, nullptr, nullptr,nullptr, napi_default, nullptr},
+            {"testNodeUniqueId", nullptr, NodeUniqueIdTest::testNodeUniqueId001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
             {"uiInputErrorCodeTest", nullptr, ButtonErrorCodeTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };

@@ -18,6 +18,7 @@ import CustomComponentOnDrawFrontTest from "./customcomponent/CustomComponentOnD
 import CustomComponentOnDrawBehindTest from "./customcomponent/CustomComponentOnDrawBehindTest.test"
 import uiStatesTest from './uiState/UiStatesTest.test'
 import OntouchTestDoneTest from "./touchTestDone/OntouchTestDoneTest.test"
+import NodeUniqueIdTest from "./nodeUtils/NodeUniqueIdTest.test"
 import uiInputErrorCodeTest from './uiInput/UiInputErrorCodeTest.test'
 
 export default function testsuite() {
@@ -27,5 +28,6 @@ export default function testsuite() {
   CustomComponentOnDrawBehindTest();
   uiStatesTest();
   OntouchTestDoneTest();
+  NodeUniqueIdTest();
   uiInputErrorCodeTest();
 }

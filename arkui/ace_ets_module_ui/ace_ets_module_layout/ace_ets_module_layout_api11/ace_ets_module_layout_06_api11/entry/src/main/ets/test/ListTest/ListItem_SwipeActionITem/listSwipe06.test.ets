@@ -77,7 +77,7 @@ export default function listSwipe06Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0060 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(80)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(90)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(4500);
       // judge the swipeActionState

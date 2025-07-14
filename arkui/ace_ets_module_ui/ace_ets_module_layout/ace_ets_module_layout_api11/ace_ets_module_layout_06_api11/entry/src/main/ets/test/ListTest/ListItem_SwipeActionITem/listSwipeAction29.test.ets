@@ -131,7 +131,7 @@ export default function listSwipeAction29Jsunit() {
 
       // swipe the listItem to right
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(5)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(100)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(5000);
       // judge the swipeActionOffset
@@ -145,7 +145,7 @@ export default function listSwipeAction29Jsunit() {
       expect(Math.abs(Math.round(Number(JSON.parse(textSwipeOffset).$attrs.content))-Math.round(px2vp(swipe_width)))<=1).assertTrue();
       // reset
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(2)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(230)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(230)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(5000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset29'));
