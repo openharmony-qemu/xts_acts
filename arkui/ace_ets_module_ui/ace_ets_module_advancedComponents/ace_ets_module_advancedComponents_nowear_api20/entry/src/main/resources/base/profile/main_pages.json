@@ -1,10 +1,6 @@
 {
   "src": [
     "MainAbility/pages/index/Index",
-    "MainAbility/pages/segmentButton/SegmentButtonBorder",
-    "MainAbility/pages/progressButton/progressButtonTest",
-    "MainAbility/pages/subHeader/subHeaderSelect",
-    "MainAbility/pages/subHeaderV2/subHeaderV2Select",
-    "MainAbility/pages/swipeRefresher/swipeRefresherPageTest"
+    "MainAbility/pages/segmentButton/SegmentButtonBorder"
   ]
 }

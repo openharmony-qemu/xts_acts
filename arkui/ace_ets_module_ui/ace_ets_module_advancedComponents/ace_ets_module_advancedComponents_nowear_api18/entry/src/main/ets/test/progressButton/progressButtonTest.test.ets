@@ -19,8 +19,6 @@ import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils';
 
-
-
 export default function progressButtonTest() {
   describe('progressButtonTest', () => {
     beforeEach(async (done: Function) => {

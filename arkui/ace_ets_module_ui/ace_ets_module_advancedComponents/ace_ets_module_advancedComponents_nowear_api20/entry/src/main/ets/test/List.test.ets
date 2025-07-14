@@ -14,15 +14,6 @@
  */
 
 import SegmentButtonBorderTest from './segmenButton/SegmentButtonBorderTest.test';
-import ProgressButtonTest from './progressButton/progressButtonTest.test';
-import SubHeaderSelectTest from './subHeader/subHeaderSelect.test';
-import SubHeaderV2SelectTest from './subHeaderV2/subHeaderV2Select.test';
-import SwipeRefresherPageTest from './swipeRefresher/swipeRefresherPageTest.test';
-
 export default function testsuite() {
   SegmentButtonBorderTest();
-  ProgressButtonTest();
-  SubHeaderSelectTest();
-  SubHeaderV2SelectTest();
-  SwipeRefresherPageTest();
 }
