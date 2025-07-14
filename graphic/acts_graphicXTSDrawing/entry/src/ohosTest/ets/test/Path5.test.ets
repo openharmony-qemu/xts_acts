@@ -152,6 +152,34 @@ export default function drawingTsPath5Test() {
       }
 
     })
+	/**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3903
+     * @tc.name      : testPathApproximateAbnormal
+     * @tc.desc      : testPathApproximateAbnormal
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testPathApproximateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathApproximateAbnormal';
+      let path: drawing.Path = new drawing.Path();
+      try {
+        path.approximate(-0.99999);
+        console.info(msg + `approximate -0.99999 successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `approximate -0.99999 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(25900001);
+      }
+      try {
+        path.approximate(-1.1);
+        console.info(msg + `approximate -1.1 successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `approximate -1.1 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(25900001);
+      }
+    })
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4000
      * @tc.name      : testPathInterpolateNormal
@@ -312,6 +340,36 @@ export default function drawingTsPath5Test() {
       } catch (e) {
         console.info(msg + `interpolate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
+      }
+    })
+	/**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4003
+     * @tc.name      : testPathInterpolateAbnormal
+     * @tc.desc      : testPathInterpolateAbnormal
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testPathInterpolateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathInterpolateAbnormal';
+      let path: drawing.Path = new drawing.Path();
+      let other: drawing.Path = new drawing.Path();
+      let interpolatedPath: drawing.Path = new drawing.Path();
+      try {
+        path.interpolate(other,-0.99999, interpolatedPath);
+        console.info(msg + `interpolate -0.99999 successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `interpolate -0.99999 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(25900001);
+      }
+      try {
+        path.interpolate(other,1.1, interpolatedPath);
+        console.info(msg + `interpolate 1.1 successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `interpolate 1.1 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(25900001);
       }
     })
     /**

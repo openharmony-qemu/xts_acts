@@ -30,6 +30,9 @@
     "MainAbility/pages/RichEditor/RichEditorUndoStyle",
     "MainAbility/pages/UIContext/disableMenuItems",
     "MainAbility/pages/UIContext/disableSystemServiceMenuItems",
-    "MainAbility/pages/RichEditor/setTypingParagraphStyle"
+    "MainAbility/pages/RichEditor/setTypingParagraphStyle",
+    "MainAbility/pages/ImageOrientation/ImageOrientation",
+    "MainAbility/pages/Text/TextNumberTransitionTest",
+    "MainAbility/pages/SymbolGlyph/SymbolEffectTest"
   ]
 }

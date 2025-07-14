@@ -34,6 +34,8 @@ export default function systemManagerTest() {
     testRemoveDisallowedNearLinkProtocols();
     testSetAutoUnlockAfterReboot();
     testGetAutoUnlockAfterReboot();
+    testSetInstallLocalEnterpriseAppEnabled();
+    testGetInstallLocalEnterpriseAppEnabled();
   })
 }
 
@@ -319,6 +321,52 @@ function testGetAutoUnlockAfterReboot() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 801 || error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetInstallLocalEnterpriseAppEnabled() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_JS_0100
+   * @tc.name      : test_set_install_local_enterprise_app_0100
+   * @tc.desc      : test systemManager setInstallLocalEnterpriseAppEnabled with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_install_local_enterprise_app_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetInstallLocalEnterpriseAppEnabled() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_JS_0100
+   * @tc.name      : test_get_install_local_enterprise_app_0100
+   * @tc.desc      : test systemManager getInstallLocalEnterpriseAppEnabled with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_install_local_enterprise_app_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
