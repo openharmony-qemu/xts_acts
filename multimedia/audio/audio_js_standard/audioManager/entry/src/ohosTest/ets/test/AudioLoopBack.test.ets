@@ -144,7 +144,9 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0300", Level.LEVEL2, async () => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-        expect(null != audioLoopBack);
+        if (null == audioLoopBack) {
+          expect(audioLoopBack).assertFail();
+        }
       }
     })
     
@@ -327,7 +329,7 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ENABLE_JS_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ENABLE_JS_0200
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_ENABLE_0200
      * @tc.desc      : enable
      * @tc.size      : MEDIUM
