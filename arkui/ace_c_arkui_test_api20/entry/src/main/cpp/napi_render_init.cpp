@@ -21,6 +21,7 @@
 #include "EmbeddedComponentOption/EmbeddedComponentOptionTest.h"
 #include "uiState/UiStatesTest.h"
 #include "nodeUtils/NodeUniqueIdTest.h"
+#include "uiInput/UiInputErrorCodeTest.h"
 
 namespace ArkUICapiTest
 {
@@ -48,6 +49,8 @@ namespace ArkUICapiTest
                 napi_default, nullptr},
             {"testNodeUniqueId", nullptr, NodeUniqueIdTest::testNodeUniqueId001,
              nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"uiInputErrorCodeTest", nullptr, ButtonErrorCodeTest::CreateNativeNode, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

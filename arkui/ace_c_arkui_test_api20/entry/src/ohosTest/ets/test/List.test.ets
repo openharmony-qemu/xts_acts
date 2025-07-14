@@ -18,6 +18,7 @@ import CustomComponentOnDrawFrontTest from "./customcomponent/CustomComponentOnD
 import CustomComponentOnDrawBehindTest from "./customcomponent/CustomComponentOnDrawBehindTest.test"
 import uiStatesTest from './uiState/UiStatesTest.test'
 import NodeUniqueIdTest from "./nodeUtils/NodeUniqueIdTest.test"
+import uiInputErrorCodeTest from './uiInput/UiInputErrorCodeTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   CustomComponentOnDrawBehindTest();
   uiStatesTest();
   NodeUniqueIdTest();
+  uiInputErrorCodeTest();
 }
