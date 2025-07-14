@@ -86,17 +86,19 @@ export default function NavigationBindToNestedScrollable() {
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
+
+      let tooBarTop1 = 0;
+      let tooBarBottom1 = 0;
       if (navigationWidth < 1500) {
         await driver.assertComponentExist(ON.type('ToolBar'));
         await driver.delayMs(1000);
+        let component3: Component  = await driver.findComponent(ON.type('ToolBar'));
+        let toolBarRect = await component3.getBounds();
+        let tooBarTop1 = toolBarRect.top;
+        let tooBarBottom1 = toolBarRect.bottom;
+        console.info('NavigationBindToNestedScrollable_0100 test tooBarTop1: ', tooBarTop1);
+        console.info('NavigationBindToNestedScrollable_0100 test tooBarBottom1: ', tooBarBottom1);
       }
-
-      let component3: Component  = await driver.findComponent(ON.type('ToolBar'));
-      let toolBarRect = await component3.getBounds();
-      let tooBarTop1 = toolBarRect.top;
-      let tooBarBottom1 = toolBarRect.bottom;
-      console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
-      console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
       await driver.swipe(Math.round(right - vp2px(11)), Math.round(bottom - vp2px(12)), Math.round(right - vp2px(11)), Math.round(top));
       await driver.delayMs(500)

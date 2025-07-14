@@ -58,7 +58,7 @@ export default function CallUXUsabilityOptimizationTest() {
       try {
         let isEnabled: boolean = data.isCellularDataRoamingEnabledSync(0);
         console.info(`${caseName} success`);
-        expect(isEnabled).assertEqual(0);
+        expect(isEnabled).assertFalse();
         done();
       } catch (error) {
         console.info(`${caseName} fall`);

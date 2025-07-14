@@ -22,3 +22,5 @@ export const testEmbeddedComponentOption: (a: string) => void;
 export const uiStatesTest: (a: string) => void;
 
 export const ontouchTestDone: (a: string) => void;
+
+export const uiInputErrorCodeTest: (a: string) => void;

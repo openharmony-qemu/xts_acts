@@ -21,6 +21,7 @@
 #include "EmbeddedComponentOption/EmbeddedComponentOptionTest.h"
 #include "uiState/UiStatesTest.h"
 #include "touchTestDone/OntouchTestDoneTest.h"
+#include "uiInput/UiInputErrorCodeTest.h"
 
 namespace ArkUICapiTest
 {
@@ -47,6 +48,8 @@ namespace ArkUICapiTest
             {"uiStatesTest", nullptr, UiStatesTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"ontouchTestDone", nullptr, OntouchTestDoneTest::CreateNativeNode, nullptr, nullptr,nullptr, napi_default, nullptr},
+            {"uiInputErrorCodeTest", nullptr, ButtonErrorCodeTest::CreateNativeNode, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

@@ -52,7 +52,10 @@
 #define PARAM_WIDTH 1920
 #define PARAM_HEIGHT 1080
 #define PARAM_FD_PREPARE_WAIT_TIME 2
+#define PARAM_DURATION_F2 (-2)
 #define PARAM_DURATION 10000
+#define PARAM_DURATION_10000 10000
+#define PARAM_DURATION_33333333 33333333
 #define PARAM_0666 0666
 #define PARAM_0666 0666
 #define PATH_NO_AUDIO "/data/storage/el2/base/files/demo_no_audio_10s.mp4"
@@ -65,6 +68,9 @@
 static int32_t g_gPlaytime = 100;
 int g_currentPathId = 0;
 float g_minDelta = 0.001;
+int32_t g_duration = PARAM_DURATION_10000;
+static napi_env screenCaptureEnv;
+static OH_AVPlayer *g_player;
 
 #undef LOG_DOMIN 0x3200
 #define LOG_TAG "AVPlayerNdk_xtsDemo"
@@ -2738,6 +2744,172 @@ static napi_value CheckAvPlayerPlaybackRate(napi_env env, napi_callback_info inf
     return result;
 }
 
+void seekAvPlayerStateTest(OH_AVPlayer *player, AVPlayerSeekMode seekMode, OH_AVErrCode errorCode)
+{
+    int32_t ret;
+    LOG("AVPlayerState  OH_AVPlayer_Seek");
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_F2, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_F2, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_10000, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+    ret = OH_AVPlayer_Seek(player, g_duration, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", g_duration, ret);
+    if (ret != errorCode) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
+}
+void handleSeekStateChange(OH_AVPlayer *player, AVPlayerState state)
+{
+    int32_t ret;
+    LOG("handleSeekStateChange AVPlayerState state:%{public}d", state);
+    switch (state) {
+        case AV_INITIALIZED: {
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
+            EGLDisplay display = nullptr;
+            EGLContext context = nullptr;
+            EGLSurface surface = nullptr;
+            InitGLES(display, context, surface);
+            GLuint textureId = PARAM_0;
+            glGenTextures(ONEVAL, &textureId);
+            OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+            OHNativeWindow *window = OH_NativeImage_AcquireNativeWindow(image);
+            ret = OH_AVPlayer_SetVideoSurface(player, window);
+            LOG("OH_AVPlayer_SetVideoSurface ret:%{public}d", ret);
+            ret = OH_AVPlayer_Prepare(player);
+            LOG("OH_AVPlayer_Prepare ret:%{public}d", ret);
+        } break;
+        case AV_PREPARED:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Play(player); // 调用播放接口开始播放
+            break;
+        case AV_PLAYING:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            break;
+        case AV_PAUSED:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Stop(player);
+            LOG("OH_AVPlayer_Stop ret:%{public}d", ret);
+            break;
+        case AV_STOPPED:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
+            break;
+        case AV_COMPLETED:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_OK);
+            ret = OH_AVPlayer_Pause(player);
+            LOG("OH_AVPlayer_Pause ret:%{public}d", ret);
+            break;
+        case AV_RELEASED:
+            seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
+            break;
+        default:
+            break;
+        }
+}
+void OHAVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody, void *userData)
+{
+    int32_t value = -1;
+    int32_t state = -1;
+    int32_t stateChangeReason = -1;
+    AVPlayerState avState = AV_IDLE;
+    switch (type) {
+    case AV_INFO_TYPE_STATE_CHANGE:
+        LOG("AVPlayerOnInfoType AV_INFO_TYPE_STATE_CHANGE");
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE, &state);
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_STATE_CHANGE_REASON, &stateChangeReason);
+        OH_AVPlayer_GetState(player, &avState); // 获取当前播放状态
+        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_STATE_CHANGE  state: %{public}d ,stateChangeReason: %{public}d",
+            state, stateChangeReason);
+        avState = static_cast<AVPlayerState>(state);
+        handleSeekStateChange(player, avState);
+        break;
+    case AV_INFO_TYPE_SEEKDONE:
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_SEEK_POSITION, &value);
+        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_SEEKDONE value: %{public}d", value);
+        break;
+    case AV_INFO_TYPE_SPEEDDONE:
+        OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_PLAYBACK_SPEED, &value);
+        LOG("OHAVPlayerOnInfoCallback AV_INFO_TYPE_SPEEDDONE value: %{public}d", value);
+        break;
+    default:
+        break;
+    }
+}
+void OHAVPlayerOnErrorCallback(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg, void *userData)
+{
+    LOG("OHAVPlayerOnErrorCallback errorCode: %{public}d ,errorMsg: %{public}s", errorCode, errorMsg);
+}
+static napi_value NAPI_Global_Setup(napi_env env, napi_callback_info info)
+{
+    screenCaptureEnv = env;
+    size_t argc = PARAM_4;
+    napi_value args[PARAM_4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int pType;
+    napi_get_value_int32(env, args[PARAM_1], &pType);
+    LOG("fd type %{public}d", pType);
+    int pOffset;
+    napi_get_value_int32(env, args[PARAM_2], &pOffset);
+    LOG("fd size %{public}d", pOffset);
+    int pDurationSize;
+    napi_get_value_int32(env, args[PARAM_3], &pDurationSize);
+    LOG("fd size %{public}d", pDurationSize);
+    g_duration = pDurationSize - PARAM_4;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    g_player = player;
+    seekAvPlayerStateTest(player, AV_SEEK_CLOSEST, AV_ERR_INVALID_VAL);
+    // 设置回调，监听信息
+    int32_t ret = OH_AVPlayer_SetOnInfoCallback(player, OHAVPlayerOnInfoCallback, nullptr);
+    LOG("OH_AVPlayer_SetPlayerOnInfoCallback ret:%{public}d", ret);
+    ret = OH_AVPlayer_SetOnErrorCallback(player, OHAVPlayerOnErrorCallback, nullptr);
+    LOG("OH_AVPlayer_SetPlayerOnErrorCallback ret:%{public}d", ret);
+    {
+        ret = OH_AVPlayer_SetFDSource(player, pType, pOffset, pDurationSize);
+        LOG("OH_AVPlayer_SetFDSource ret:%{public}d", ret);
+    }
+    // 设置音频流类型
+    OH_AudioStream_Usage streamUsage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_UNKNOWN;
+    ret = OH_AVPlayer_SetAudioRendererInfo(player, streamUsage);
+    LOG("OH_AVPlayer_SetAudioRendererInfo ret:%{public}d", ret);
+    if (ret != AV_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_SetAudioRendererInfo is 0");
+    }
+    // 设置音频流打断模式
+    OH_AudioInterrupt_Mode interruptMode = OH_AudioInterrupt_Mode::AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT;
+    ret = OH_AVPlayer_SetAudioInterruptMode(player, interruptMode);
+    LOG("OH_AVPlayer_SetAudioInterruptMode ret:%{public}d", ret);
+    if (ret != AV_ERR_OK) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_SetAudioInterruptMode is 0");
+    }
+    napi_value value;
+    napi_create_int32(env, 0, &value);
+    return value;
+}
+
+static napi_value NAPI_Global_Release(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (g_player != NULL) {
+        ret = OH_AVPlayer_Release(g_player);
+        LOG("OH_AVPlayer_Release ret:%{public}d", ret);
+    } else {
+        LOG("no found Player Instances");
+    }
+    napi_value value;
+    napi_create_int32(env, ret, &value);
+    return value;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2892,7 +3064,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"AvPlayerSetPlaybackRateBeforePause", nullptr, OhAvPlayerSetPlaybackRateBeforePause, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"CheckAvPlayerPlaybackRate", nullptr, CheckAvPlayerPlaybackRate, nullptr,
-            nullptr, nullptr, napi_default, nullptr}
+            nullptr, nullptr, napi_default, nullptr},
+        {"setup", nullptr, NAPI_Global_Setup, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"release", nullptr, NAPI_Global_Release, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
@@ -2904,7 +3078,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "avplayer",
+    .nm_modname = "avplayerndk",
     .nm_priv = ((void *)0),
     .reserved = { 0 },
 };
