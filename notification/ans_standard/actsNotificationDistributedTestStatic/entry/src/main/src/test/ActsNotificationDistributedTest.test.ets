@@ -26,7 +26,7 @@ export default function ActsNotificationDistributedTest() {
     * @tc.name      : Sub_Notification_Ans_Enable_SetEnable_Static_5000
     * @tc.desc      : Obtains whether the device supports distributed notification
     */
-    it('Sub_Notification_Ans_Enable_SetEnable_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
+    it('Sub_Notification_Ans_Enable_SetEnable_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5000"
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5000 START`)
       notificationManager.isDistributedEnabled((err: BusinessError | null, data:boolean | undefined) => {
@@ -49,7 +49,7 @@ export default function ActsNotificationDistributedTest() {
     * @tc.name      : Sub_Notification_Ans_Enable_SetEnable_Static_5100
     * @tc.desc      : Obtains whether the device supports distributed notification
     */
-    it('Sub_Notification_Ans_Enable_SetEnable_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('Sub_Notification_Ans_Enable_SetEnable_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5100"
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5100 START`)
       let data : boolean =  false

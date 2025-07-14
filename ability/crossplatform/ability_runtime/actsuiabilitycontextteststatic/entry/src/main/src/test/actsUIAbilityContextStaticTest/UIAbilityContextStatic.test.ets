@@ -33,7 +33,7 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.uiabilitycontexttest.static")
       await Utils.msSleep(2000);
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -48,11 +48,11 @@ export default function UIAbilityContextStatic() {
     it("testAbilityInfoStatic001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testAbilityInfoStatic001 start');
       try {
-        hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(context));
+        hilog.info(domain, tag, 'testAbilityInfoStatic001 info');
         if (context){
           expect(context != null).assertTrue();
           let abilityInfo = context.abilityInfo;
-          hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(abilityInfo));
+          hilog.info(domain, tag, 'testAbilityInfoStatic001 info');
           expect(abilityInfo != null).assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.bundleName: ` + abilityInfo.bundleName);
           expect(abilityInfo.bundleName == "com.example.uiabilitycontexttest.static").assertTrue();
@@ -144,7 +144,7 @@ export default function UIAbilityContextStatic() {
       try {
         if (context) {
           let result = context.resourceManager
-          hilog.info(domain, tag, "testResourceManagerStatic001 resourceManager:" + JSON.stringify(result));
+          hilog.info(domain, tag, "testResourceManagerStatic001 resourceManager");
           expect(result != null).assertTrue();
           done();
         } else {

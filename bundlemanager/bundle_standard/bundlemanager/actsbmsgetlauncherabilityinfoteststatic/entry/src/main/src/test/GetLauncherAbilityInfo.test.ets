@@ -11,8 +11,8 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import { LauncherAbilityInfo } from 'bundleManager.LauncherAbilityInfo';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testtag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: number = 0x0000;
+let tag: string = 'testtag';
 const BUNDLE_NAME2 = 'ohos.acts.bms.getlauncherabilityinfo.test.static';
 const TEST_SUITE_NAME = 'launcherBundleManagerTest'
 
@@ -41,6 +41,8 @@ export default function actsGetLauncherAbilityInfoTest() {
         expect(data[0].elementName.bundleName).assertEqual(BUNDLE_NAME2);
         expect(data[0].elementName.moduleName).assertEqual("entry");
         expect(data[0].elementName.abilityName).assertEqual('EntryAbility');
+        expect(data[0].elementName.shortName).assertEqual('');
+        expect(data[0].elementName.uri).assertEqual('/ohos.acts.bms.getlauncherabilityinfo.test.static/entry/EntryAbility');
         done();
         hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
       } catch (errData) {
@@ -64,7 +66,7 @@ export default function actsGetLauncherAbilityInfoTest() {
      * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000
      * @tc.desc: Test getLauncherAbilityInfoSync with parameter error return errcode 401.
      */
-    it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+    it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000';
         try {

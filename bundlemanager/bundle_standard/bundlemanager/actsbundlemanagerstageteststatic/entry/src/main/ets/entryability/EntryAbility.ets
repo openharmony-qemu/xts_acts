@@ -21,7 +21,7 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
   }
@@ -42,7 +42,7 @@ class EntryAbility extends UIAbility {
     }else{
       hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
     }
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>())
   }
 
   onBackground() {

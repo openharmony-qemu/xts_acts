@@ -11,8 +11,8 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import { LauncherAbilityInfo } from 'bundleManager.LauncherAbilityInfo';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testtag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: number = 0x0000;
+let tag: string = 'testtag';
 const TEST_SUITE_NAME = 'launcherBundleManagerTest'
 
 export default function actsGetLauncherAbilityInfo2Test() {

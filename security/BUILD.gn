@@ -21,7 +21,9 @@ group("security") {
     deps = [
       "access_token/AccessTokenTest_Normal_js:ActsAccessTokenApiJSNormalTest",
       "accesstokenNDKTest:ActsAccessTokenNDKTest",
-      "accessTokenStaticTest:ActsAccessTokenStaticTest",
+      "accessTokenTestStatic:ActsAccessTokenStaticTest",
+      "requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",
+      "requestPermissionOnSettingStaticTest:ActsRequestPermissionsOnSettingStaticTest",
       "asset",
       "certificate_framework",
       "certificate_manager",
