@@ -62,8 +62,9 @@ struct ViewportAvoidTestPage {
 
             case "emitAvoidVisibleViewportBottom002": {
               this.controller.loadUrl('https://www.baidu.com')
-              await Utils.sleep(1000)
+              await Utils.sleep(2000)
               this.controller.loadUrl("resource://rawfile/index.html")
+              await Utils.sleep(1000)
               let driver: Driver = Driver.create();
               let AvoidHeightButton = await driver.findComponent(ON.id("WebAvoidHeightTwoButton"));
               await AvoidHeightButton.click();
