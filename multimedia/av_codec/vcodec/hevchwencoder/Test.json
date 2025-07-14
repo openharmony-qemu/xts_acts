@@ -17,7 +17,7 @@
             ],
             "push": [
                 "ActsHevcEncoderTest->/data/local/tmp/ActsHevcEncoderTest",
-                "./resource/media/codec/video_decoder/. ->/data/test/media/"
+                "./resource/media/codec/video_encoder/. ->/data/test/media/"
             ]
         },
         {
