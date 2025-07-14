@@ -98,13 +98,13 @@ struct WebViewControllerPart3 {
               try {
                 this.arrTime = []
                 this.controller.removeCache(true)
-                this.controller.loadUrl('https://www.huawei.com')
+                this.controller.loadUrl('https://www.baidu.com')
                 await Utils.sleep(3000)
                 this.controller.removeCache(true);
                 await Utils.sleep(3000)
-                this.controller.prefetchPage('https://www.huawei.com');
+                this.controller.prefetchPage('https://www.baidu.com');
                 await Utils.sleep(3000)
-                this.controller.loadUrl('https://www.huawei.com')
+                this.controller.loadUrl('https://www.baidu.com')
                 await Utils.sleep(3000)
                 if (this.arrTime[1] - this.arrTime[0] < 0) {
                   Utils.emitEvent(true, 100079)
