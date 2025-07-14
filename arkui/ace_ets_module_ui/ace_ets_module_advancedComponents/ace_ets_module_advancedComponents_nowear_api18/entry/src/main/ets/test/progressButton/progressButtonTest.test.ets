@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function progressButtonTest() {
   describe('progressButtonTest', () => {
@@ -33,20 +33,20 @@ export default function progressButtonTest() {
         if (!('progressButtonTest' == pages.name)) {
           console.info('get progressButtonTest pages.name: ' + JSON.stringify(pages.name));
           await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await CommonFunc.sleep(2000);
           console.info('push progressButtonTest page result successful');
         }
       } catch (err) {
         console.error('push progressButtonTest page error: ' + err);
       }
 
-      await Utils.sleep(1000);
+      await CommonFunc.sleep(1000);
       console.info('progressButtonTest beforeEach end');
       done();
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      await CommonFunc.sleep(1000);
       console.info('progressButtonTest after each called');
     })
 

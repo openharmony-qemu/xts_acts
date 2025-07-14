@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function subHeaderV2Select() {
   describe('subHeaderV2Select', () => {
@@ -31,20 +31,20 @@ export default function subHeaderV2Select() {
         if (!('subHeaderV2Select' == pages.name)) {
           console.info('get subHeaderV2Select pages.name: ' + JSON.stringify(pages.name));
           await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await CommonFunc.sleep(2000);
           console.info('push subHeaderV2Select page result successful');
         }
       } catch (err) {
         console.error('push subHeaderV2Select page error: ' + err);
       }
 
-      await Utils.sleep(1000);
+      await CommonFunc.sleep(1000);
       console.info('subHeaderV2Select beforeEach end');
       done();
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      await CommonFunc.sleep(1000);
       console.info('subHeaderV2Select after each called');
     })
 
