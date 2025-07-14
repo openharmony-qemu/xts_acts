@@ -1017,6 +1017,40 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_origin end');
         })
+
+        /*
+         * @tc.number: uiTest_20034
+         * @tc.name: testWindowAttrWithId
+         * @tc.desc: find window by WindowFilter and get it's active status.
+         */
+        it('testWindowAttrWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, testWindowAttrWithId disPlay is: ${JSON.stringify(disPlay)}`);
+            let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,active:true,title:'',displayId: disPlay.id})
+            await window.focus()
+            await driver.delayMs(waitUiReadyMs)
+            let isActive = await window.isActive()
+            expect(isActive == true).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
+
+        /*
+         * @tc.number: uiTest_20035
+         * @tc.name: testScreenCaptureWithId
+         * @tc.desc: capture the specified area of current screen.
+         */
+        it('testScreenCaptureWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, testScreenCaptureWithId disPlay is: ${JSON.stringify(disPlay)}`);
+            let savePath = '/data/storage/el2/base/cache/testScreenCaptureWithId.png'
+            let success = await driver.screenCapture(savePath, {left: 0, top: 0, right: 100, bottom: 100, displayId: disPlay.id})
+            expect(success == true).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
     })
     describe('UiTest_API16', () => {
         let driver: Driver
