@@ -1475,5 +1475,195 @@ export default function graphicImagePixelMap() {
         }
         done();
       })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6200
+     * @tc.name: graphicImagePixelMap_static_6200
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        try {
+          const flag = pixelMap.isEditable;
+          expect(false).assertEqual(flag);
+        } catch (err: BusinessError) {
+          console.info('www data graphicImagePixelMap_static_6200 error ' + JSON.stringify(err))
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6300
+     * @tc.name: graphicImagePixelMap_static_6300
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const readBuffer: ArrayBuffer = new ArrayBuffer(96);
+        try {
+          pixelMap.readPixelsToBuffer(readBuffer, (err: BusinessError<void> | null) => {
+            if(!err){
+              console.info('www data graphicImagePixelMap_static_6300 succeed')
+              expect(true).assertTrue();
+            } else {
+              expect().assertFail();
+            }
+          })
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6400
+     * @tc.name: graphicImagePixelMap_static_6400
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6), // 6为需要创建的像素buffer大小，取值为：height * width *1.5。
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        if (pixelMap != undefined) {
+          pixelMap.readPixels(area, (error: BusinessError | null) => {
+            if (error) {
+              console.error('Failed to read pixelMap from the specified area. ');
+              expect().assertFail();
+            } else {
+              console.info('Succeeded in reading pixelMap from the specified area.');
+              expect(true).assertTrue();
+            }
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6500
+     * @tc.name: graphicImagePixelMap_static_6500
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const area: image.PositionArea = {
+          pixels: new ArrayBuffer(6), // 6为需要创建的像素buffer大小，取值为：height * width *1.5。
+          offset: 0,
+          stride: 8,
+          region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+        };
+        if (pixelMap != undefined) {
+          await pixelMap.readPixels(area).then(() => {
+            console.info('Succeeded in reading the image data in the area.');
+            expect(true).assertTrue();
+          }).catch((error) => {
+            console.error('Failed to read the image data in the area. ');
+            expect().assertFail();
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6600
+     * @tc.name: graphicImagePixelMap_static_6600
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          await pixelMap.writeBufferToPixels(color).then(() => {
+            console.info("Succeeded in writing data from a buffer to a PixelMap.");
+            expect(true).assertTrue();
+          }).catch((error) => {
+            console.error('Failed to write data from a buffer to a PixelMap.');
+            expect().assertFail();
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6700
+     * @tc.name: graphicImagePixelMap_static_6700
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        if (pixelMap != undefined) {
+          pixelMap.writeBufferToPixels(color, (error: BusinessError | null) => {
+            if (error) {
+              console.error('Failed to read pixelMap from the specified area. ');
+              expect().assertFail();
+            } else {
+              console.info('Succeeded in reading pixelMap from the specified area.');
+              expect(true).assertTrue();
+            }
+          })
+        }
+        done();
+      })
+
+    /**
+     * @tc.number: graphicImagePixelMap_static_6800
+     * @tc.name: graphicImagePixelMap_static_6800
+     * @tc.desc: image API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('graphicImagePixelMap_static_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = i + 1;
+        }
+        try {
+          let getDensity: number = pixelMap.getDensity();
+          expect(true).assertTrue();
+        } catch (err) {
+          console.info('www data graphicImagePixelMap_static_6800 error');
+          expect().assertFail();
+        }
+        done();
+      })
+
   })
 }
