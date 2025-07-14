@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,9 +19,13 @@
 #include "native_avcodec_videoencoder.h"
 #include "native_averrors.h"
 #include "videoenc_sample.h"
+#include "videoenc_api11_sample.h"
 #include "native_avcodec_base.h"
 #include "avcodec_codec_name.h"
 #include "native_avcapability.h"
+#include "avcodec_info.h"
+#include "avcodec_list.h"
+#include "avcodec_common.h"
 
 namespace {
 OH_AVCodec *venc_ = NULL;
@@ -833,6 +837,758 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5900, TestSize.Level2)
         ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
     } else {
         return;
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0010
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0010
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0010, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->ConfigureVideoEncoder());
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0020
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0020
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0020, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        uint32_t index = 0;
+        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->QueryInputBuffer(index, 0));
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0030
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0030
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0030, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        uint32_t index = 0;
+        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->QueryOutputBuffer(index, 0));
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0040
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0040
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0040, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OPERATE_NOT_PERMIT, vEncSample->SetVideoEncoderCallback());
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0050
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0050
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0050, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Reset());
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0070
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0070
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0070, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Flush());
+        uint32_t index = 0;
+        ASSERT_EQ(AV_ERR_INVALID_STATE, vEncSample->QueryInputBuffer(index, 0));
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0080
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0080
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0080, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Flush());
+        uint32_t index = 0;
+        ASSERT_EQ(AV_ERR_INVALID_STATE, vEncSample->QueryOutputBuffer(index, 0));
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0090
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0090
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0090, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->getInputBufferIndexRepeat = true;
+        vEncSample->isRunning_.store(true);
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->OpenFile());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        vEncSample->SyncInputFunc();
+        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0100
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0100
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0100, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
+        uint32_t index = 0;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->QueryInputBuffer(index, -1));
+        ASSERT_EQ(nullptr, vEncSample->GetInputBuffer(index+100));
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0110
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0110
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0110, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->getOutputBufferIndexRepeated = true;
+        vEncSample->noDestroy = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0120
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0120
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0120, TestSize.Level2)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->getOutputBufferIndexNoExisted = true;
+        vEncSample->noDestroy = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(true, vEncSample->abnormalIndexValue);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0130
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0130
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0130, TestSize.Level0)
+{
+    if (cap != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0130.h264";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = CBR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0140
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0140
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0140, TestSize.Level1)
+{
+    if (cap != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_VBR)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0140.h264";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = VBR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0150
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0150
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0150, TestSize.Level1)
+{
+    if (cap != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0150.h264";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = CQ;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0160
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0160
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0160, TestSize.Level1)
+{
+    if (cap != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_SQR)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0160.h264";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = SQR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0210
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0210
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0210, TestSize.Level0)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0210.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = CBR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0220
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0220
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0220, TestSize.Level1)
+{
+    if (cap_hevc != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_VBR)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0220.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = VBR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0230
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0230
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0230, TestSize.Level1)
+{
+    if (cap_hevc != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CQ)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0230.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = CQ;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0240
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0240
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0240, TestSize.Level1)
+{
+    if (cap_hevc != nullptr && OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_SQR)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0240.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->DEFAULT_BITRATE_MODE = SQR;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0360
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0360
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0360, TestSize.Level0)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0360.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->syncInputWaitTime = 0;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0370
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0370
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0370, TestSize.Level1)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0370.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->syncInputWaitTime = 100000;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0380
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0380
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0380, TestSize.Level0)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0380.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->syncOutputWaitTime = 0;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0390
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0390
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0390, TestSize.Level1)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0390.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->syncOutputWaitTime = 100000;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0400
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0400
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0400, TestSize.Level2)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0400.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->queryInputBufferEOS = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0410
+ * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0410
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0410, TestSize.Level2)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_SYNC_FUNC_0410.h265";
+        vEncSample->enbleSyncMode = 1;
+        vEncSample->queryOutputBufferEOS = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0010
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0010
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0010, TestSize.Level1)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/176_144_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0010.h265";
+        vEncSample->DEFAULT_WIDTH = 176;
+        vEncSample->DEFAULT_HEIGHT = 144;
+        vEncSample->DEFAULT_BITRATE_MODE = CBR;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0020
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0020
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0020, TestSize.Level0)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0020.h265";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_BITRATE_MODE = CQ;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0030
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0030
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0030, TestSize.Level0)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1920_1080_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0030.h265";
+        vEncSample->DEFAULT_WIDTH = 1920;
+        vEncSample->DEFAULT_HEIGHT = 1080;
+        vEncSample->DEFAULT_BITRATE_MODE = SQR;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0040
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0040
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0040, TestSize.Level1)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/4096_4096_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0040.h265";
+        vEncSample->DEFAULT_WIDTH = 4096;
+        vEncSample->DEFAULT_HEIGHT = 4096;
+        vEncSample->DEFAULT_BITRATE_MODE = VBR;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0110
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0110
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0110, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0110.h265";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        vEncSample->TEMPORAL_ENABLE = true;
+        vEncSample->TEMPORAL_CONFIG = true;
+        vEncSample->TEMPORAL_JUMP_MODE = true;
+        int32_t temporalGopSize = 8;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0130
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0130
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0130, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0130.h265";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        vEncSample->enableLTR = true;
+        vEncSample->ltrParam.ltrCount = 5;
+        vEncSample->ltrParam.ltrInterval = 5;
+        vEncSample->ltrParam.enableUseLtr = true;
+        vEncSample->ltrParam.useLtrIndex = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0150
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0150
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0150, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_ENCODE_RGBA1010102_0150.h265";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = true;
+        vEncSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0170
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0170
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0170, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0180
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0180
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0180, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA;
+        vEncSample->configMain10 = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
+    }
+}
+
+/**
+ * @tc.number    : VIDEO_ENCODE_RGBA1010102_0190
+ * @tc.name      : VIDEO_ENCODE_RGBA1010102_0190
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
+{
+    if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_rgba1010102.yuv";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
+        vEncSample->configMain10 = false;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
     }
 }
 } // namespace
