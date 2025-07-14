@@ -71,7 +71,15 @@ export default function selectDividerTest() {
       console.info('selectDividerTest_001 END');
       done();
     });
-
+    
+    /**
+    * @tc.number    selectDividerTest_002
+    * @tc.name      selectDividerTest_002
+    * @tc.desc      set selectDividerTest mode:1
+    * @tc.level:    Level 1
+    * @tc.type :
+    * @tc.size :
+    */
     it('selectDividerTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('selectDividerTest_002 START');
       let driver = await Driver.create()
