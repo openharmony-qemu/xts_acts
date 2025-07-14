@@ -1,0 +1,33 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/marquee/marquee",
+        "MainAbility/pages/RichEditor/SXvalueResource",
+        "MainAbility/pages/ContainerSpan/APITextBackgroundStyle",
+        "MainAbility/pages/SymbolGlyph/SXSymbolGlyphSINGLE01",
+        "MainAbility/pages/Search/SearchTest",
+        "MainAbility/pages/span/spanApi/spanApi1",
+        "MainAbility/pages/SymbolGlyph/symbolGlyphApi/symbolGlyphApi1",
+        "MainAbility/pages/SymbolGlyph/symbolGlyphApi/symbolGlyphApi2",
+        "MainAbility/pages/SymbolGlyph/symbolGlyphApi/symbolGlyphApi3",
+        "MainAbility/pages/SymbolGlyph/symbolGlyphApi/symbolGlyphApi4",
+        "MainAbility/pages/SymbolGlyph/symbolGlyphApi/symbolGlyphApi5",
+        "MainAbility/pages/symbolSpan/symbolSpanApi/symbolspan",
+        "MainAbility/pages/symbolSpan/symbolSpanApi/symbolSpanApi1",
+        "MainAbility/pages/span/Span",
+        "MainAbility/pages/Search/search_caret",
+        "MainAbility/pages/Search/search_maxLength",
+        "MainAbility/pages/Search/search_maxLength2",
+        "MainAbility/pages/Search/search_top",
+        "MainAbility/pages/Search/search_bottom",
+        "MainAbility/pages/marquee/marqueeUI",
+        "MainAbility/pages/span/spanUI",
+        "MainAbility/pages/span/span3",
+        "MainAbility/pages/Search/searchPage1",
+        "MainAbility/pages/Search/SearchType",
+        "MainAbility/pages/ImageSpan/ImageSpanVisibility",
+        "MainAbility/pages/ContainerSpan/ContainerSpanModifier",
+        "MainAbility/pages/Search/SearchModifier",
+        "MainAbility/pages/SymbolGlyph/fontWeight"
+    ]
+}
