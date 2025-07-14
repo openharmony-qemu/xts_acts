@@ -44,6 +44,7 @@ export default function verificationStaticTest() {
      */
     it('SUB_AA_OpenHarmony_AbilityConstant_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0200 ==>';
+      await Utils.msSleep(2000);
       let launchWant: Want = AppStorage.get<Want>("launchWant") as Want;
       let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant") as Want;
       let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
