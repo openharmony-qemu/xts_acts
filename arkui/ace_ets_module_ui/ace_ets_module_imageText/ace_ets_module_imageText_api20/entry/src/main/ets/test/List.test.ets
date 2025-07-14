@@ -48,6 +48,7 @@ import fromHtmlTest from './StyledStringTest/fromHtml.test';
 import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
 import TextNumberTransitionTest from './TextTest/TextNumberTransitionTest.test';
 import SymbolEffectTest from './SymbolGlyphTest/SymbolEffectTest.test';
+import shaderStyleTest from './TextTest/shaderStyle.test';
 
 
 export default function testsuite() {
@@ -86,4 +87,5 @@ export default function testsuite() {
   ImageOrientationTest();
   TextNumberTransitionTest();
   SymbolEffectTest();
+  shaderStyleTest();
 }
