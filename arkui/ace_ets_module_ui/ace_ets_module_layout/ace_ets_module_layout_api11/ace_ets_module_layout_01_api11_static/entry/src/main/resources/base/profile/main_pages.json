@@ -66,6 +66,7 @@
     "MainAbility/pages/GridCol/Grid_Col_Offset/Grid_Col_Offset_GridColColumnOption",
     "MainAbility/pages/Column/Column",
     "MainAbility/pages/Stack/Stack",
-    "MainAbility/pages/Stack/stackAlignContentPage"
+    "MainAbility/pages/Stack/stackAlignContentPage",
+    "MainAbility/pages/inspector/inspector"
   ]
 }
