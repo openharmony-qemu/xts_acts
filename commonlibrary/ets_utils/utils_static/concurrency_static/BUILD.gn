@@ -19,6 +19,8 @@ group("concurrency_static") {
     deps = [
       "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
       "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
+      "taskDelayed_test_static:ActsTaskDelayedStaticTest",
+      "taskgroup_test_static:ActsTaskgroupStaticTest",
       "sequenceRunner_test_static:ActsSequenceRunnerStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
       "taskpool_base_test_static:ActsTaskpoolBaseStaticTest",
