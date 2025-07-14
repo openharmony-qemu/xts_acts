@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { promptAction, OperationType, SubHeader } from '@kit.ArkUI';
+import { Prompt, OperationType, SubHeader } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -31,7 +31,7 @@ struct SubHeaderExample {
           value: $r('sys.string.cloud_file_download_loading'),
           selected: 2,
           onSelect: () => {
-            promptAction.showToast({ message: 'demo' });
+            Prompt.showToast({ message: 'demo' });
           }
         },
         operationType: OperationType.ICON_GROUP,
@@ -39,17 +39,17 @@ struct SubHeaderExample {
         operationItem: [{
           value: $r('sys.symbol.ohos_lungs'),
           action: () => {
-            promptAction.showToast({ message: 'icon1' });
+            Prompt.showToast({ message: 'icon1' });
           }
         }, {
           value: $r('sys.symbol.ohos_lungs'),
           action: () => {
-            promptAction.showToast({ message: 'icon2' });
+            Prompt.showToast({ message: 'icon2' });
           }
         }, {
           value: $r('sys.symbol.ohos_lungs'),
           action: () => {
-            promptAction.showToast({ message: 'icon3' });
+            Prompt.showToast({ message: 'icon3' });
           }
         }],
         // 设置右侧icon图标symbol样式
