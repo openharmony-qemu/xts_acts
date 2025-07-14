@@ -7,6 +7,7 @@
     "MainAbility/pages/customcomponent/CustomComponentOnDrawFrontTest",
     "MainAbility/pages/EmbeddedComponentOption/TestEmbeddedComponentOption",
     "MainAbility/pages/uiState/UiStatesTest",
+    "MainAbility/pages/nodeUtils/TestNodeUniqueId",
     "MainAbility/pages/uiInput/UiInputErrorCodeTest"
   ]
 }
