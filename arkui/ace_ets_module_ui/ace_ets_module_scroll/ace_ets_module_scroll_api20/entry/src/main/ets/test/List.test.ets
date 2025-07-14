@@ -28,7 +28,10 @@ import gridStopDrag from './GridTest/gridStopDrag.test';
 import listStopDrag from './ListTest/listStopDrag.test';
 import scrollStopDrag from './ScrollTest/scrollStopDrag.test';
 import waterFlowStopDrag from './WaterFlowTest/waterFlowStopDrag.test';
-
+import syncLoadGrid from './GridTest/syncLoadGrid.test';
+import syncLoadList from './ListTest/syncLoadList.test';
+import syncLoadGroup from './ListTest/syncLoadGroup.test';
+import syncLoadFlow from './WaterFlowTest/syncLoadFlow.test';
 
 export default function testsuite() {
   barHeightNoMinHeightLimit();
@@ -46,4 +49,8 @@ export default function testsuite() {
   listStopDrag()
   scrollStopDrag()
   waterFlowStopDrag()
+  syncLoadGrid()
+  syncLoadList()
+  syncLoadGroup()
+  syncLoadFlow()
 }
