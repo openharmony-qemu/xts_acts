@@ -17,6 +17,7 @@ import EmbeddedComponentOptionTest from "./EmbeddedComponentOption/EmbeddedCompo
 import CustomComponentOnDrawFrontTest from "./customcomponent/CustomComponentOnDrawFrontTest.test"
 import CustomComponentOnDrawBehindTest from "./customcomponent/CustomComponentOnDrawBehindTest.test"
 import uiStatesTest from './uiState/UiStatesTest.test'
+import OntouchTestDoneTest from "./touchTestDone/OntouchTestDoneTest.test"
 import NodeUniqueIdTest from "./nodeUtils/NodeUniqueIdTest.test"
 import uiInputErrorCodeTest from './uiInput/UiInputErrorCodeTest.test'
 
@@ -26,6 +27,7 @@ export default function testsuite() {
   CustomComponentOnDrawFrontTest();
   CustomComponentOnDrawBehindTest();
   uiStatesTest();
+  OntouchTestDoneTest();
   NodeUniqueIdTest();
   uiInputErrorCodeTest();
 }
