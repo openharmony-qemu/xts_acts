@@ -39,7 +39,6 @@ struct SubHeaderExample {
       secondaryTitle: '二级标题'
     });
 
-    this.selectedValue = 'selectDemo';
     this.select = new SubHeaderV2Select({
       options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
       selectedContent: this.selectedValue,
