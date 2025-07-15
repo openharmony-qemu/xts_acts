@@ -46,7 +46,8 @@ export default function moveAbilityToBackgroundTestStatic() {
         hilog.info(domain, tag, 'start success');
         let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
         hilog.info(domain, tag, 'getcontext success, context: ' + context);
-        context.moveAbilityToBackground().then(() => {
+        context.moveAbilityToBackground().then(async () => {
+          await Utils.msSleep(2000);
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
