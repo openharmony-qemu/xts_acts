@@ -61,7 +61,7 @@ export default function swipeRefresherPageTest() {
       let driver = await Driver.create();
       await driver.delayMs(2000);
       // 查看swipeRefresherPage是否存在以下控件。
-      let swipeRefresher = await driver.findComponent(ON.text($r('sys.string.cloud_file_download_loading')));
+      let swipeRefresher = await driver.findComponent(ON.text('demo for test'));
       expect(swipeRefresher !== null).assertTrue();
       console.info('[swipeRefresherPageTest_0100] END');
       done();

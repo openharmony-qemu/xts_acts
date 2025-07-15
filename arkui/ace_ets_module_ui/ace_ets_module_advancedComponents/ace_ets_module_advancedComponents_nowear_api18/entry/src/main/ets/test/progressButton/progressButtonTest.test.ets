@@ -64,7 +64,7 @@ export default function progressButtonTest() {
       await driver.delayMs(2000);
 
       //查询ProgressButton是否存在 '下载按钮'的文本
-      let ProgressButtonItem = await driver.findComponent(ON.text($r('sys.string.cloud_file_download_loading')));
+      let ProgressButtonItem = await driver.findComponent(ON.text('demo for test'));
       expect(ProgressButtonItem !== null).assertTrue();
       console.info('[ProgressButtonTest_0100] END');
       done();

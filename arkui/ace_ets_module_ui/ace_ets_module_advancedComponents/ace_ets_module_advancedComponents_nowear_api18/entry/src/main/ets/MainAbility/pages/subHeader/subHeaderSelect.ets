@@ -28,7 +28,7 @@ struct SubHeaderExample {
         // 设置左侧select
         select: {
           options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
-          value: $r('sys.string.cloud_file_download_loading'),
+          value: $r('app.string.description_application'),
           selected: 2,
           onSelect: () => {
             Prompt.showToast({ message: 'demo' });

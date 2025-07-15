@@ -21,7 +21,7 @@ struct SwipeRefresherPageTest {
   build() {
     Column() {
       SwipeRefresher({
-        content: $r('sys.string.cloud_file_download_loading'),
+        content: $r('app.string.description_application'),
         isLoading: true,
       })
       SwipeRefresher({

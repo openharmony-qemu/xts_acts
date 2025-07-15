@@ -19,7 +19,7 @@ import { ProgressButton } from '@ohos.arkui.advanced.ProgressButton';
 @Component
 struct Index {
   @State progressIndex: number = 0;
-  @State textState: ResourceStr = $r('sys.string.cloud_file_download_loading');
+  @State textState: ResourceStr = $r('app.string.description_application');
   @State buttonWidth: number = 200;
   @State isRunning: boolean = false;
   @State enableState: boolean = true;
