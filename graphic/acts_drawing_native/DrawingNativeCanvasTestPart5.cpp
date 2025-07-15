@@ -799,7 +799,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNorma
     OH_Drawing_SamplingOptions* samplingOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
-    
+    // 1. The interface of OH_Drawing_CanvasDrawPixelMapRectConstraint is called normally.
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 200, 200);
     EXPECT_NE(src, nullptr);
@@ -808,7 +808,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNorma
     OH_Drawing_ErrorCode errorCode;
     errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::STRICT_SRC_RECT_CONSTRAINT);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-
+    // 2. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
@@ -910,7 +910,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintAbnor
     OH_Drawing_SamplingOptions* samplingOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
-    
+    // 1. The last parameter of the verification interface passes an enumeration value that is out of range.
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 200, 200);
     EXPECT_NE(src, nullptr);
@@ -920,7 +920,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintAbnor
     errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
         canvas, pixelMap, src, dst, samplingOptions, static_cast<OH_Drawing_SrcRectConstraint>(3));
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-
+    // 2. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
@@ -963,7 +963,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintMulti
     OH_Drawing_SamplingOptions* samplingOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
-    
+    // 1. The interface of OH_Drawing_ShaderEffectCreatePixelMapShader is called 10 times.
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 200, 200);
     EXPECT_NE(src, nullptr);
@@ -975,7 +975,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintMulti
             canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::FAST_SRC_RECT_CONSTRAINT);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
-
+    // 2. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
