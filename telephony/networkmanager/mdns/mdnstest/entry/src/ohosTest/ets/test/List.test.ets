@@ -17,9 +17,11 @@ import mdnsTest from './mdns.test';
 import NetworkManagerMdnsTest from './mdnsOnAndOff.test';
 import EmptyTest from './Empty.test';
 import wifiManager from '@ohos.wifiManager';
+import connection from '@ohos.net.connection';
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
-    if(canIUse("SystemCapability.Communication.NetManager.MDNS")&& wifiManager.isWifiActive()){
+    if(canIUse("SystemCapability.Communication.NetManager.MDNS")&& wifiManager.isWifiActive() && netHandle.netId >=100){
         NetworkManagerMdnsTest();
         mdnsTest();
     }else{
