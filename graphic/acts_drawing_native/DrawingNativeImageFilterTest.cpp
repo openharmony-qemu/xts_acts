@@ -14,6 +14,7 @@
  */
 
 #include "drawing_bitmap.h"
+#include "drawing_rect.h"
 #include "drawing_color.h"
 #include "drawing_color_filter.h"
 #include "drawing_error_code.h"
@@ -466,6 +467,82 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectMulti
     }
     // 3. Destroy objects.
     OH_Drawing_ShaderEffectDestroy(shaderEffect);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600
+ * @tc.name: testImageFilterCreateBlurWithCropNormal
+ * @tc.desc: test for testImageFilterCreateBlurWithCropNormal
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNormal, Function | SmallTest | Level0) {
+    // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);
+    OH_Drawing_ImageFilter *imageFilter1 =
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, nullptr, nullptr);
+    OH_Drawing_ImageFilter *imageFilter2 =
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+    EXPECT_NE(imageFilter2, nullptr);
+    // 3. Destroy objects.
+    OH_Drawing_RectDestroy(cropRect);
+    OH_Drawing_ImageFilterDestroy(imageFilter1);
+    OH_Drawing_ImageFilterDestroy(imageFilter2);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601
+ * @tc.name: testImageFilterCreateBlurWithCropNull
+ * @tc.desc: test for testImageFilterCreateBlurWithCropNull
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNull, Function | SmallTest | Level3) {
+    // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);
+    OH_Drawing_ImageFilter *imageFilter1 =
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, nullptr, nullptr);
+    OH_Drawing_ImageFilter *imageFilter2 =
+        OH_Drawing_ImageFilterCreateBlurWithCrop(0, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+    EXPECT_NE(imageFilter2, nullptr);
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10, 0, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+    EXPECT_NE(imageFilter2, nullptr);
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+    EXPECT_NE(imageFilter2, nullptr);
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, nullptr, cropRect);
+    EXPECT_NE(imageFilter2, nullptr);
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, nullptr);
+    EXPECT_NE(imageFilter2, nullptr);
+    // 3. Destroy objects.
+    OH_Drawing_ImageFilterDestroy(imageFilter1);
+    OH_Drawing_ImageFilterDestroy(imageFilter2);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602
+ * @tc.name: testImageFilterCreateBlurWithCropMultiCalls
+ * @tc.desc: test for testImageFilterCreateBlurWithCropMultiCalls
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropMultiCalls, Function | SmallTest | Level3) {
+    // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);
+    OH_Drawing_ImageFilter *imageFilter1 =
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, nullptr, nullptr);
+    OH_Drawing_ImageFilter *imageFilter2 = nullptr;
+    for (int i = 0; i < 10; i++) {
+        imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(
+            10, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+        EXPECT_NE(imageFilter2, nullptr);
+    }
+    // 3. Destroy objects.
+    OH_Drawing_RectDestroy(cropRect);
+    OH_Drawing_ImageFilterDestroy(imageFilter1);
+    OH_Drawing_ImageFilterDestroy(imageFilter2);
 }
 } // namespace Drawing
 } // namespace Rosen
