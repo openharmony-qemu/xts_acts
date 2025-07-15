@@ -25,7 +25,7 @@ import {
 @Entry
 @ComponentV2
 struct SubHeaderExample {
-  @Local selectedValue: ResourceStr = $r('app.string.description_application');
+  @Local selectedValue: ResourceStr = $r('app.string.download');
   @Local selectedIndex: number = 0;
   @Local title: SubHeaderV2Title = new SubHeaderV2Title({ primaryTitle: '一级标题', secondaryTitle: '二级标题' });
   @Local operationItems: SubHeaderV2OperationItem[] = [];

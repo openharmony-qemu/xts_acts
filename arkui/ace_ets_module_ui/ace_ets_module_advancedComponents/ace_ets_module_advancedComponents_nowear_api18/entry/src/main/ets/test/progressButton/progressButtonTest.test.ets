@@ -63,8 +63,8 @@ export default function progressButtonTest() {
       let driver = await Driver.create();
       await driver.delayMs(2000);
 
-      //查询ProgressButton是否存在 '下载按钮'的文本
-      let ProgressButtonItem = await driver.findComponent(ON.text('demo for test'));
+      //查询ProgressButton是否存在 '下载'的文本
+      let ProgressButtonItem = await driver.findComponent(ON.text('下载'));
       expect(ProgressButtonItem !== null).assertTrue();
       console.info('[ProgressButtonTest_0100] END');
       done();

@@ -61,7 +61,7 @@ export default function subHeaderSelect() {
       let driver = await Driver.create();
       await driver.delayMs(2000);
       // subHeaderSelect是否存在以下入口。
-      let selectDemoValue = await driver.findComponent(ON.text('demo for test'));
+      let selectDemoValue = await driver.findComponent(ON.text('下载'));
       expect(selectDemoValue !== null).assertTrue();
       await driver.delayMs(1000);
       console.info('[subHeaderSelect_0100] END');
