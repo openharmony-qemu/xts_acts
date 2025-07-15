@@ -5216,7 +5216,7 @@ describe('UrlFunTest', function () {
     it('testUrlparseURL0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
       expect(uu2.pathname).assertEqual('/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa');
       expect(uu2.params.get('xx')).assertEqual('&优优');
@@ -5233,7 +5233,7 @@ describe('UrlFunTest', function () {
     it('testUrlparseURL0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
     })
 
@@ -5262,7 +5262,7 @@ describe('UrlFunTest', function () {
     it('testUrlparseURL0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
       expect(uu2.pathname).assertEqual('/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa');
       expect(uu2.params.get('xx')).assertEqual('&优优');
@@ -5338,7 +5338,7 @@ describe('UrlFunTest', function () {
     it('testUrlparseURL0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
       expect(uu2.pathname).assertEqual('/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa');
       expect(uu2.params.get('xx')).assertEqual('&优优');
@@ -5975,7 +5975,7 @@ describe('UrlFunTest', function () {
             + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
             + "¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
         let object = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
-        const pathnameEncode = "/%20!%22#$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5C[]%5E_%60abcde"
+        const pathnameEncode = "/%20!%22#$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ/[]%5E_%60abcde"
             + "fghijklmnopqrstuvwxyz%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80"
             + "%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2"
             + "%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2"
@@ -6146,7 +6146,7 @@ describe('UrlFunTest', function () {
             + "%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5"
             + "%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0"
             + "%C2%B1%C2%B2%C2%B3%C2%B4%C2%B5%C2%B6%C2%B7%C2%B8%C2%B9%C2%BA%C2%BB%C2%BC%C2%BD%C2%BE%C2%BF%C3%80%C3"
-            + "%81@host:8080/%20!%22#$%&'()*+,-./09:;%3C=%3E?@A%5C[]%5E_%60a%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80"
+            + "%81@host:8080/%20!%22#$%&'()*+,-./09:;%3C=%3E?@A/[]%5E_%60a%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80"
             + "%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C"
             + "%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2"
             + "%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0%C2%B1%C2%B2%C2%B3"
@@ -6178,8 +6178,8 @@ describe('UrlFunTest', function () {
    */
     it('testNewURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams('aa=%E4%B8%AD%E5%9B%BD%BD');
-        expect(params.toString()).assertEqual('aa=%E4%B8%AD%E5%9B%BD%25BD');
-        expect(params.get('aa')).assertEqual('中国%BD');
+        expect(params.toString()).assertEqual('aa=%E4%B8%AD%E5%9B%BD%EF%BF%BD');
+        expect(params.get('aa')).assertEqual('中国�');
     })
 
   /**
@@ -6192,8 +6192,8 @@ describe('UrlFunTest', function () {
    */
     it('testNewURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let params = new Url.URLParams('aa=bc%F0%9F%98%82%F0Ad');
-        expect(params.toString()).assertEqual('aa=bc%F0%9F%98%82%25F0Ad');
-        expect(params.get('aa')).assertEqual('bc😂%F0Ad');
+        expect(params.toString()).assertEqual('aa=bc%F0%9F%98%82%EF%BF%BDAd');
+        expect(params.get('aa')).assertEqual('bc😂�Ad');
     })
 
   /**
