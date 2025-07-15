@@ -26,6 +26,7 @@ group("communication") {
       "dsoftbus/capi_ipc:ActsCAPIIPCTest",
       "dsoftbus/ipc_stage/ipc_stageserver:ActsIPCEtsServer",
       "dsoftbus/ipc_stage/ipc_stagetest:ActsIPCEtsTest",
+      "dsoftbus/IPCTaiheTestStatic:ActsIPCTaiheStaticTest",
       "dsoftbus/rpc:ActsRpcJsTest",
       "dsoftbus/rpc_request:ActsRpcRequestJsTest",
       "netstack_http_nop:ActsHttpNopStageTest",
