@@ -55,16 +55,18 @@ export default function enableFloatingDragBarTest() {
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('dragbar'));
       await button.click();
-      await Utils.sleep(2000);
-
-      await button.click();
       await Utils.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id('close'));
+      await button1.click();
+      await Utils.sleep(2000);
       let strJson1 = getInspectorByKey('text1');
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('0');
       await Utils.sleep(2000);
       console.info('enableFloatingDragBarTest_0100 END');
       done();
     });
+
 
   })
 }
