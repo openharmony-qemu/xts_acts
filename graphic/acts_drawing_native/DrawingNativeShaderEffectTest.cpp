@@ -1962,7 +1962,7 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderNorm
     OH_Drawing_ShaderEffect *shaderEffect = OH_Drawing_ShaderEffectCreatePixelMapShader(
         pixelMap, OH_Drawing_TileMode::CLAMP, OH_Drawing_TileMode::CLAMP, samplingOptions, matrix);
     EXPECT_NE(shaderEffect, nullptr);
-    // 3. Destroy objects.
+    // 2. Destroy objects.
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_ShaderEffectDestroy(shaderEffect);
     OH_Drawing_SamplingOptionsDestroy(samplingOptions);
