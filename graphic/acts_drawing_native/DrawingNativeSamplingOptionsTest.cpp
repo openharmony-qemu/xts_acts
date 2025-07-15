@@ -134,8 +134,8 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCreateDestroyDestr
  * @tc.level : Level 0
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNormal, Function | SmallTest | Level0) {
-    // 1. Enumerate OH_Drawing_FilterMode and OH_Drawing_MipmapMode values with cross iteration
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
+    // 1. The interface of OH_Drawing_SamplingOptionsCopy is called normally.
     OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
     EXPECT_NE(samplingOptions, nullptr);
     // 2. Destroy the objects created in step 1 with OH_Drawing_SamplingOptionsDestroy
@@ -152,7 +152,7 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNormal, Functi
  * @tc.level : Level 3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNull, Function | SmallTest | Level3) {
-    // 1. Enumerate OH_Drawing_FilterMode and OH_Drawing_MipmapMode values with cross iteration
+    // 1. The interface of OH_Drawing_SamplingOptionsCopy is passed null.
     OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCopy(nullptr);
     EXPECT_EQ(samplingOptions, nullptr);
     // 2. Destroy the objects created in step 1 with OH_Drawing_SamplingOptionsDestroy
@@ -168,9 +168,9 @@ HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyNull, Function
  * @tc.level : Level 3
  */
 HWTEST_F(DrawingNativeSamplingOptionsTest, testSamplingOptionsCopyMultiCalls, Function | SmallTest | Level3) {
-    // 1. Enumerate OH_Drawing_FilterMode and OH_Drawing_MipmapMode values with cross iteration
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_SamplingOptions *samplingOptions = nullptr;
+    // 1. The interface of OH_Drawing_SamplingOptionsCopy is called 10 times.
     for (int i = 0; i < 10; i++) {
         samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
         EXPECT_NE(samplingOptions, nullptr);
