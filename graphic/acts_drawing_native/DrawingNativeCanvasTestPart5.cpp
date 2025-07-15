@@ -806,7 +806,8 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapRectConstraintNorma
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, 200, 200);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_ErrorCode errorCode;
-    errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::STRICT_SRC_RECT_CONSTRAINT);
+    errorCode = OH_Drawing_CanvasDrawPixelMapRectConstraint(
+        canvas, pixelMap, src, dst, samplingOptions, OH_Drawing_SrcRectConstraint::STRICT_SRC_RECT_CONSTRAINT);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 2. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
