@@ -13,9 +13,6 @@
 * limitations under the License.
 */
 
-// import { ArkTSUtils } from '@kit.ArkTS';
-//
-//
 export class BaseClass {
   private str: string = 'sendable: BaseClass';
   public static num: Number = 10;
@@ -97,16 +94,6 @@ export class AsyncLockTestThen {
     })
   }
 
-  // async setCount(count: Number) {
-  //
-  //   await this.lock_.lockAsync(() => {
-  //     this.count_ = count;
-  //   }).then((e: Object|null|undefined) => {
-  //     let s: string[] = []
-  //     s[0].split('')[1].toString()
-  //   })
-  // }
-
   async setCount(count: Number) {
     let s: string[] = []
     s[0].split('')[1].toString()
@@ -125,20 +112,6 @@ export class AsyncLockTestCatch {
       return this.count_;
     })
   }
-
-  // async setCount(count: Number) {
-
-    // await this.lock_.lockAsync(() => {
-    //   this.count_ = count;
-    // }).then(() => {
-    //   let s: string[] = []
-    //   s[0].split('')[1].toString()
-    // }).catch(() => {
-    //   let s: string[] = []
-    //   s[0].split('')[1].toString()
-    // })
-
-  // }
 
   async setCount(count: Number) {
     let s: string[] = []

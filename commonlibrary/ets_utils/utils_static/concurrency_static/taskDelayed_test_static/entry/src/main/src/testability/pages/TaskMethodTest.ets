@@ -88,10 +88,12 @@ export async function testFun2(cycleCount: number, step: number): Promise<number
 }
 
 export async function testFun3(cycleCount: Number, text: string): Promise<number[]> {
-  let textWidthList: number[] = new Array<Number>();
+  const textWidthList: number[] = [];
+
   for (let i = 0; i < cycleCount; i++) {
-    textWidthList.push(i as Number)
+    textWidthList.push(i);
   }
+
   return textWidthList;
 }
 

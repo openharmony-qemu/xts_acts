@@ -712,45 +712,6 @@ export function printConcatArray4(concat: ConcatArray<Number>): ConcatArray<Numb
   return concat;
 }
 
-
-// export function printBitVector1(bitVector: BitVector): BitVector {
-//   console.info('printArgs: ' + bitVector);
-//   return bitVector;
-// }
-//
-//
-// export function printBitVector2(bitVector: BitVector): BitVector {
-//   console.info('printArgs: ' + bitVector);
-//   return bitVector;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-
-// export function printBitVector3(bitVector: BitVector): BitVector {
-//   console.info('printArgs: ' + bitVector);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return bitVector;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-
-// export function printBitVector4(bitVector: BitVector): BitVector {
-//   console.info('printArgs: ' + bitVector);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return bitVector;
-// }
-
-
 type Union = string | Number | Array<Number>;
 
 

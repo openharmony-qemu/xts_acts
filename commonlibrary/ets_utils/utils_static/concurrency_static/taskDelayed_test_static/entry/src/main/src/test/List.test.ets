@@ -14,7 +14,7 @@
 */
 
 import executeDelayedTaskErrorTest from './ExecuteDelayedTaskError.test';
-import taskPoolExecuteDelayedTimeConsumTest from './TaskPoolExecuteDelayedTimeConsumTest';
+import taskPoolExecuteDelayedTimeConsumTest from './TaskPoolExecuteDelayedTimeConsumTest.test';
 import taskPoolTaskExecuteDelayedTest from './TaskPoolTaskExecuteDelayed.test';
 
 export default function testsuite() {

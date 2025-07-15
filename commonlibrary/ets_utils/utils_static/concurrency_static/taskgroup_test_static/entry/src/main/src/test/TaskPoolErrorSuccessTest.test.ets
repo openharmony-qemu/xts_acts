@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType} from "../../../hypium/index";
 import {
@@ -193,7 +194,7 @@ export default function taskPoolErrorSuccessTest() {
     })
 
     /**
-     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_0700
+     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_0701
      * @tc.name taskPoolTaskErrorSuccessTest1007
      * @tc.desc test Task
      * @tc.size MediumTest

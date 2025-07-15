@@ -324,52 +324,6 @@ export default function executeDelayedTaskErrorTest() {
     })
 
     /**
-     * @tc.number SUB_EXECUTE_DELAYED_TASK_ERROR_TEST_0700
-     * @tc.name executeDelayedTaskErrorTest0700
-     * @tc.desc Testing Task onReceiveData ThrowError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('executeDelayedTaskErrorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   const caseName = 'executeDelayedTaskErrorTest0700';
-    //   console.info(`${caseName} test start`);
-    //   let num = 0;
-    //   const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-    //   const eTask: taskpool.Task = new taskpool.Task(normalTask2, caseName);
-    //   eTask.onReceiveData(() => {
-    //     console.log(`onReceiveData Task ${caseName} executed`);
-    //     try {
-    //       throw new Error(`Error in task ${caseName}`)
-    //     } catch (err: Error) {
-    //       console.error(`${caseName} executing error task failed, error: ${err.message}`);
-    //       expect(err.message).assertContain(`Error in task ${caseName}`);
-    //     }
-    //   });
-    //
-    //   for (let i = 1; i <= 10; i++) {
-    //     try {
-    //       // 执行正常任务
-    //       taskpool.executeDelayed(100, nTask)
-    //       // 执行抛异常任务
-    //       taskpool.executeDelayed(100, eTask)
-    //     } catch (err: Error) {
-    //       console.error(`${caseName} executing error task failed, error: ${err.message}`);
-    //       expect(err.message).assertContain(`Error in task ${caseName}`);
-    //     }
-    //     num++;
-    //   }
-    //
-    //   while (num < 10) {
-    //     await sleep(100);
-    //   }
-    //
-    //   expect(num).assertEqual(10);
-    //   done();
-    //   console.info(`${caseName} test end`);
-    // })
-
-    /**
      * @tc.number SUB_EXECUTE_DELAYED_TASK_ERROR_TEST_0800
      * @tc.name executeDelayedTaskErrorTest0800
      * @tc.desc Testing Task then ThrowError
@@ -426,7 +380,6 @@ export default function executeDelayedTaskErrorTest() {
 
       for (let i = 1; i <= 10; i++) {
         try {
-          // 执行正常任务
           taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
           taskpool.executeDelayed(100, eTask).catch(():void => {

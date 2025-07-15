@@ -69,7 +69,7 @@ export default function taskPoolTaskGroupExecuteTest() {
     })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0100
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0100
      * @tc.name taskPoolTaskGroupExecute1001
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
@@ -104,7 +104,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0200
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0200
      * @tc.name taskPoolTaskGroupExecute1001_2
      * @tc.desc test TaskGroup error
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0300
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0300
      * @tc.name taskPoolTaskGroupExecute1002
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
@@ -181,7 +181,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0400
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0400
      * @tc.name taskPoolTaskGroupExecute1002_1
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0500
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0500
      * @tc.name taskPoolTaskGroupExecute1003
      * @tc.desc test task1.name
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_0600
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0600
      * @tc.name taskPoolTaskGroupExecute1004
      * @tc.desc test isCanceled
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1000
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1000
      * @tc.name taskPoolTaskGroupExecute1008
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
@@ -345,7 +345,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1100
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1100
      * @tc.name taskPoolTaskGroupExecute1009
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1200
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1200
      * @tc.name taskPoolTaskGroupExecute1010
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
@@ -448,7 +448,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1300
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1300
      * @tc.name taskPoolTaskGroupExecute1011
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
@@ -507,7 +507,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1600
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1600
      * @tc.name taskPoolTaskGroupExecute1013
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
@@ -547,7 +547,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1700
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1700
      * @tc.name taskPoolTaskGroupExecute1013_1
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
@@ -598,7 +598,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_1900
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_1900
      * @tc.name taskPoolTaskGroupExecute1015
      * @tc.desc test isDone
      * @tc.size MediumTest
@@ -625,7 +625,7 @@ export default function taskPoolTaskGroupExecuteTest() {
       })
 
     /**
-     * @tc.Number TASKPOOL_TASKGROUP_EXECUTE_2000
+     * @tc.number TASKPOOL_TASKGROUP_EXECUTE_2000
      * @tc.name taskPoolTaskGroupExecute1016
      * @tc.desc test isDone
      * @tc.size MediumTest

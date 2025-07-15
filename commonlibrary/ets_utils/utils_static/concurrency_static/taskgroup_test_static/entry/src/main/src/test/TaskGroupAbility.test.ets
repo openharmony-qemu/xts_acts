@@ -620,7 +620,7 @@ export default function TaskGroupAbilityTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupTask1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskGroupTask01500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -650,7 +650,7 @@ export default function TaskGroupAbilityTest() {
 
     /**
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_01600
-     * @tc.name taskPoolTaskGroupTask01600
+     * @tc.name taskPoolTaskGroupTask1600
      * @tc.desc Create two tasks with Map parameters and Map return values, and execute them 10 times,error
      * @tc.size MediumTest
      * @tc.type Function
