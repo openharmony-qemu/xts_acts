@@ -517,6 +517,7 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNull, Fu
     imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10, 10, OH_Drawing_TileMode::CLAMP, imageFilter1, nullptr);
     EXPECT_NE(imageFilter2, nullptr);
     // 5. Destroy objects.
+    OH_Drawing_RectDestroy(cropRect);
     OH_Drawing_ImageFilterDestroy(imageFilter1);
     OH_Drawing_ImageFilterDestroy(imageFilter2);
 }
