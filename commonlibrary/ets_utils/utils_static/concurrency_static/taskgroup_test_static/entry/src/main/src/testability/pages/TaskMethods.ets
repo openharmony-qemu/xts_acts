@@ -14,10 +14,7 @@
 */
 import { Count1, Count2, MyClass, MyEnum, SendableTestClass } from './TaskDataFlg';
 import { AsyncLocks, BaseClass, DeriveClass } from './SendableTest';
-// import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
-//
-//
-//
+
 export function printStr1(str: string): string {
   console.info(`printStr: ${str}`);
   return str;
@@ -28,11 +25,6 @@ export function printStr2(str: string): string {
   return str;
 }
 
-/**
- * error
- * @param args
- * @returns
- */
 
 export function printStr3(str: string): string {
   console.info('printStr: ' + str);
@@ -40,12 +32,6 @@ export function printStr3(str: string): string {
   s[0].split('')[1].toString()
   return str;
 }
-
-/**
- * error
- * @param args
- * @returns
- */
 
 export function printStr4(str: string): string {
   console.info('printStr: ' + str);
@@ -66,11 +52,6 @@ export function printArgs2(args: Number): Number {
   return args;
 }
 
-/**
- * error
- * @param args
- * @returns
- */
 export function printArgs3(args: Number): Number {
   let s: string[] = []
   s[0].split('')[1].toString()
@@ -849,41 +830,6 @@ export function printEnum4(en: MyEnum): MyEnum {
   return en;
 }
 
-// export function printASON1(ason: ISendable): ISendable {
-//   console.info('printArgs: ' + ason);
-//   return ason;
-// }
-//
-// export function printASON2(ason: ISendable): ISendable {
-//   console.info('printArgs: ' + ason);
-//   return ason;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-// export function printASON3(ason: ISendable): ISendable {
-//   console.info('printArgs: ' + ason);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return ason;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-// export function printASON4(asn: ISendable): ISendable {
-//   console.info('printArgs: ' + asn);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return asn;
-// }
-
-
 export function printAsyncLock1(asn: AsyncLock): AsyncLock {
   console.info('printArgs: ' + asn);
   return asn;
@@ -953,44 +899,6 @@ export function printSendableTestClass2(arg: SendableTestClass): SendableTestCla
   console.info('Task two is processing...' + arg);
   return arg;
 }
-
-
-// export function printISendable1(arg: ISendable): ISendable {
-//   console.info('printArgs: ' + arg);
-//   return arg;
-// }
-//
-//
-//
-// export function printISendable2(arg: ISendable): ISendable {
-//   console.info('printArgs: ' + arg);
-//   return arg;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-// export function printISendable3(arg: ISendable): ISendable {
-//   console.info('printArgs: ' + arg);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return arg;
-// }
-
-/**
- * error
- * @param args
- * @returns
- */
-// export function printISendable4(arg: ISendable): ISendable {
-//   console.info('printArgs: ' + arg);
-//   let s: string[] = []
-//   s[0].split('')[1].toString()
-//   return arg;
-// }
-
 
 type SendableFunction = (func: SendableFunction) => SendableFunction;
 

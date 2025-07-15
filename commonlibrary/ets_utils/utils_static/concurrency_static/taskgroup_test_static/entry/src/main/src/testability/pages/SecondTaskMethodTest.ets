@@ -13,24 +13,10 @@
 * limitations under the License.
 */
 
-// import { printArgs1001, printArgs1002, } from '../../testability/pages/TaskMethodTest';
 import { Count1, Count2, Count3, Count4,
   AsyncLocks
 } from './DataFlg';
 
-// export function printArgs1003(args: Number): Number {
-//   console.info('printArgs: ' + args);
-//   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-//   taskGroup.addTask(printArgs1001, 1.0);
-//   return args;
-// }
-
-// export function printArgs1004(args: Number): Number {
-//   console.info('printArgs: ' + args);
-//   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-//   taskGroup.addTask(printArgs1002, 1.0);
-//   return args;
-// }
 
 export async function foo1(asynclock: AsyncLocks) {
   asynclock.setCount(10)

@@ -241,30 +241,7 @@ export async function printArgsWait3(a: AsyncLockTest1) {
     }
   })
 }
-//
-//
-// export async function printArgsWorker1(args: Number): Promise<Number> {
-//   console.info('printArgs: ' + args);
-//   let work = new worker.ThreadWorker('../../workers/Worker.ets');
-//   work.onmessage = (e: MessageEvents) => {
-//     let data: string = e.data;
-//     console.info('worker1 onmessage is: ', data);
-//     work.terminate()
-//   }
-//   work.onmessageerror = () => {
-//     console.info('worker1 onmessageerror');
-//     work.terminate()
-//   }
-//
-//   work.onexit = (e: Number) => {
-//     console.info('worker1 onexit code is: ', e);
-//   }
-//
-//   work.postMessage('1');
-//   return args;
-// }
-//
-//
+
 export async function printArgsTaskpool(args: Number): Promise<Number> {
   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
   taskGroup.addTask(printArgs01, 1.0);

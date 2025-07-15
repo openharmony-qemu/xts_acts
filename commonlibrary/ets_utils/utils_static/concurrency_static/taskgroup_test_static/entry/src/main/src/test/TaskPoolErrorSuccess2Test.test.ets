@@ -51,14 +51,14 @@ export default function taskPoolErrorSuccess2Test() {
 
 
     /**
-     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2700
-     * @tc.name taskPoolTaskErrorSuccessTest1027
+     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_SECOND_TEST_2700
+     * @tc.name taskPoolTaskErrorSuccessSecondTest1027
      * @tc.desc test task-二级-error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupExecute1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -92,14 +92,14 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
-     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2800
-     * @tc.name taskPoolTaskErrorSuccessTest1028
+     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_SECOND_TEST_2800
+     * @tc.name taskPoolTaskErrorSuccessSecondTest1028
      * @tc.desc test task-二级-error-then
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupExecute1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -133,14 +133,14 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
-     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_2900
-     * @tc.name taskPoolTaskErrorSuccessTest1029
+     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_SECOND_TEST_2900
+     * @tc.name taskPoolTaskErrorSuccessSecondTest1029
      * @tc.desc test task-二级-error-catch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupExecute1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -174,14 +174,14 @@ export default function taskPoolErrorSuccess2Test() {
     })
 
     /**
-     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_TEST_3000
-     * @tc.name taskPoolTaskErrorSuccessTest1030
+     * @tc.number TASKPOOL_TASK_ERROR_SUCCESS_SECOND_TEST_3000
+     * @tc.name taskPoolTaskErrorSuccessSecondTest1030
      * @tc.desc test task-二级-error-catch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskGroupExecute1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
