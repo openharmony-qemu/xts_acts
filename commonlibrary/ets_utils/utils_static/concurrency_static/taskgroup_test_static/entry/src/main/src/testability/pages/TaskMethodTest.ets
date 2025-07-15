@@ -236,14 +236,6 @@ export function testFunc(arr: Array<BaseClass>, num: Number): Number {
   return res;
 }
 
-//
-//
-// export function printLog(arr: Array<DeriveClass>): void {
-//   let deriveInstance = arr[0];
-//   deriveInstance.printName();
-// }
-//
-//
 export async function asyncLock(a: AsyncLockTest) {
   await a.setCount(10)
 }

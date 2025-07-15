@@ -107,7 +107,7 @@ export default function executeDelayedTaskErrorTest() {
 
     /**
      * @tc.number SUB_EXECUTE_DELAYED_TASK_ERROR_TEST_0100
-     * @tc.name executeDelayedTaskErrorTest0100--单号DTS2504080046065
+     * @tc.name executeDelayedTaskErrorTest0100
      * @tc.desc Testing Task ThrowError
      * @tc.size MediumTest
      * @tc.type Function

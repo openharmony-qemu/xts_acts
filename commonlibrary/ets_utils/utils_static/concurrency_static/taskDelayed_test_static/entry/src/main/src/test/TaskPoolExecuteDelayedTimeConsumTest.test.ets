@@ -162,14 +162,14 @@ export default function taskPoolExecuteDelayedTimeConsumTest() {
     });
 
     /**
-     * @tc.number taskPoolExecuteDelayedTimeConsumTest0102_2
-     * @tc.name taskPoolExecuteDelayedTimeConsumTest0102_2
+     * @tc.number taskPoolExecuteDelayedTimeConsumTest0102_3
+     * @tc.name taskPoolExecuteDelayedTimeConsumTest0102_3
      * @tc.desc The task takes larger time than the delay time fail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolExecuteDelayedTimeConsumTest0102_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolExecuteDelayedTimeConsumTest0102_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       // 记录任务开始时间
       let startTime: number = Date.now();
       let flag :boolean= false;
