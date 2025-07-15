@@ -50,7 +50,30 @@
             "value":'true'
           }
         ]
-      }
+      },{
+        "name": "StartTestAbility3",
+        "srcEntry": "./ets/testability/StartTestAbility3.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "portrait",
+      },
+      {
+        "name": "StartTestAbility4",
+        "srcEntry": "./ets/testability/StartTestAbility4.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "portrait",
+      },
     ],
     "requestPermissions": [
       {
