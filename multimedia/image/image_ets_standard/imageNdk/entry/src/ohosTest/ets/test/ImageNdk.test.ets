@@ -32,6 +32,14 @@ interface picTypeValue {
   errorData?: string
 }
 
+async function sleep(delay: number): Promise<void> {
+  return new Promise((resolve, _) => {
+    setTimeout(async () => {
+      resolve();
+    }, delay);
+  });
+};
+
 export default function imageNdkTest() {
   describe('ImageNdkTest', () => {
     let globalpixelmap: image.PixelMap;
@@ -47,6 +55,7 @@ export default function imageNdkTest() {
         }
       }
       console.info('afterEach case');
+      await sleep(200);
     })
 
     beforeAll(async () => {
