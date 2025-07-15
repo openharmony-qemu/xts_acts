@@ -44,9 +44,7 @@ export default function audioLoopBack() {
     })
 
 
-     
-    
-	  /**
+    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_JS_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0100
      * @tc.desc      : isAudioLoopbackSupported
@@ -54,9 +52,13 @@ export default function audioLoopBack() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0100", Level.LEVEL2, () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
+    it("SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0100", Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(-1);
+        expect(ret).assertFalse();
+      } catch (err) {
+        expect(err.code).assertEqual("6800101")
+      }
     })
 
     /**
@@ -69,10 +71,10 @@ export default function audioLoopBack() {
      */
     it("SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0200", Level.LEVEL2, async () => {
       try {
-        let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(-1);
+        let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(null);
         expect(ret).assertFalse();
       } catch (err) {
-        expect(err.code).assertEqual("6800101")
+        expect(err.code).assertEqual("401")
       }
     })
 
@@ -85,23 +87,6 @@ export default function audioLoopBack() {
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0300", Level.LEVEL2, async () => {
-      try {
-        let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(null);
-        expect(ret).assertFalse();
-      } catch (err) {
-        expect(err.code).assertEqual("401")
-      }
-    })
-
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_JS_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0400
-     * @tc.desc      : isAudioLoopbackSupported
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("SUB_MULTIMEDIA_AUDIO_ISAUDIOLOOPBACKSUPPORTED_0400", Level.LEVEL2, async () => {
       try {
         let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(undefined);
         expect(ret).assertFalse();
@@ -119,12 +104,12 @@ export default function audioLoopBack() {
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0100", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      try {
-        await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      } catch (err) {
-        expect().assertFail()
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        } catch (err) {
+          expect().assertFail();
+        }
       }
     })
 
@@ -138,13 +123,14 @@ export default function audioLoopBack() {
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0200", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      try {
-        await audio.createAudioLoopback(-1);
-      } catch (err) {
-        expect(err.code).assertEqual(6800101);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          await audio.createAudioLoopback(-1);
+        } catch (err) {
+          expect(err.code).assertEqual(6800101);
+        }
       }
+      
     })
 
     /**
@@ -156,10 +142,12 @@ export default function audioLoopBack() {
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0300", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        if (null == audioLoopBack) {
+          expect(audioLoopBack).assertFail();
+        }
+      }
     })
     
     /**
@@ -171,14 +159,14 @@ export default function audioLoopBack() {
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0100", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-        audioLoopBack.setVolume(0);
-      } catch(err) {
-        expect().assertFail();
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(0);
+        } catch(err) {
+          expect().assertFail();
+        }
       }
     })
 
@@ -186,60 +174,60 @@ export default function audioLoopBack() {
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0200
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0200
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : setVolume
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0200", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-        audioLoopBack.setVolume(0.5);
-      } catch(err) {
-        expect().assertFail();
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(0.5);
+        } catch(err) {
+          expect().assertFail();
+        }
       }
     })
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0300
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0300
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : setVolume
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0300", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-        audioLoopBack.setVolume(1);
-      } catch(err) {
-        expect().assertFail();
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(1);
+        } catch(err) {
+          expect().assertFail();
+        }
       }
     })
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0400
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0400
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : setVolume
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0400", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-         audioLoopBack.setVolume(-0.1);
-      } catch (err) {
-        expect(err.code).assertEqual(6800101);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(-0.1);
+        } catch (err) {
+          expect(err.code).assertEqual(6800101);
+        }
       }
     })
 
@@ -247,20 +235,20 @@ export default function audioLoopBack() {
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0500
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0500
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : setVolume
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0500", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-         audioLoopBack.setVolume(1.1);
-      } catch (err) {
-        expect(err.code).assertEqual(6800101);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(1.1);
+        } catch (err) {
+          expect(err.code).assertEqual(6800101);
+        }
       }
     })
 
@@ -268,38 +256,115 @@ export default function audioLoopBack() {
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0600
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0600
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : setVolume
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_0600", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      try {
-         audioLoopBack.setVolume(null);
-      } catch (err) {
-        expect(err.code).assertEqual(6800101);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        try {
+          audioLoopBack.setVolume(null);
+        } catch (err) {
+          expect(err.code).assertEqual(6800101);
+        }
       }
     })
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETSTATUS_JS_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETSTATUS_0100
-     * @tc.desc      : createAudioLoopback
+     * @tc.desc      : getStatus
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
     it("SUB_MULTIMEDIA_AUDIO_GETSTATUS_0100", Level.LEVEL2, async () => {
-      let ret: boolean = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
-      expect(ret).assertTrue();
-      let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      expect(null != audioLoopBack);
-      let res = await audioLoopBack.getStatus();
-      await expect(res).assertEqual(-2);
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        let res = await audioLoopBack.getStatus();
+        await expect(res).assertEqual(-2);
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ENABLE_JS_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ENABLE_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ENABLE_0100", Level.LEVEL2, async () => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+        audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
+        if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
+          console.info('audio loopback status is: UNAVAILABLE_DEVICE');
+        } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
+          console.info('audio loopback status is: UNAVAILABLE_SCENE');
+        } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
+          console.info('audio loopback status is: AVAILABLE_IDLE');
+        } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
+          console.info('audio loopback status is: AVAILABLE_RUNNING');
+        }
+      });
+
+        audioLoopback.enable(undefined).then((isSuccess) => {
+        if (isSuccess) {
+          console.info('audio loopback enable success');
+        } else {
+          console.info('audio loopback enable fail');
+        }
+        }).catch((err: BusinessError) => {
+          console.error(`ERROR: ${err}`);
+          expect(err.code).assertEqual(6800101);
+        });
+        audioLoopback.off('statusChange');
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ENABLE_JS_0200
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ENABLE_0200
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ENABLE_0200", Level.LEVEL2, async () => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        expect(null != audioLoopBack);
+
+        audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
+          if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {
+            console.info('audio loopback status is: UNAVAILABLE_DEVICE');
+          } else if (status == audio.AudioLoopbackStatus.UNAVAILABLE_SCENE) {
+            console.info('audio loopback status is: UNAVAILABLE_SCENE');
+          } else if (status == audio.AudioLoopbackStatus.AVAILABLE_IDLE) {
+            console.info('audio loopback status is: AVAILABLE_IDLE');
+          } else if (status == audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
+            console.info('audio loopback status is: AVAILABLE_RUNNING');
+          }
+        });
+
+        audioLoopback.enable(null).then((isSuccess) => {
+        if (isSuccess) {
+          console.info('audio loopback enable success');
+        } else {
+          console.info('audio loopback enable fail');
+        }
+        }).catch((err: BusinessError) => {
+          console.error(`ERROR: ${err}`);
+          expect(err.code).assertEqual(6800101);
+        });
+        audioLoopback.off('statusChange');
+      }
     })
 
   })

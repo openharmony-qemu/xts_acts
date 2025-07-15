@@ -710,6 +710,315 @@ export default function applicationManagerTest() {
       done();
     })
 
+     /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DIS_001
+     * @tc.name      : test_addAutoStartAppsByDis_001
+     * @tc.desc      : test addAutoStartAppsByDis method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addAutoStartAppsByDis_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [SELFWANT];
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DIS_002
+     * @tc.name      : test_addAutoStartAppsByDis_002
+     * @tc.desc      : test addAutoStartAppsByDis method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addAutoStartAppsByDis_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [SELFWANT];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DIS_003
+     * @tc.name      : test_addAutoStartAppsByDis_003
+     * @tc.desc      : test addAutoStartAppsByDis method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addAutoStartAppsByDis_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAutoStartApps(SELFWANT, null, DEFAULT_USER_ID, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DIS_004
+     * @tc.name      : test_addAutoStartAppsByDis_004
+     * @tc.desc      : test addAutoStartAppsByDis method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addAutoStartAppsByDis_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_001
+     * @tc.name      : test_removeAutoStartAppsByUserId_001
+     * @tc.desc      : test removeAutoStartAppsByUserId method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeAutoStartAppsByUserId_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [SELFWANT];
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_002
+     * @tc.name      : test_removeAutoStartAppsByUserId_002
+     * @tc.desc      : test removeAutoStartAppsByUserId method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeAutoStartAppsByUserId_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [SELFWANT];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_003
+     * @tc.name      : test_removeAutoStartAppsByUserId_003
+     * @tc.desc      : test removeAutoStartAppsByUserId method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeAutoStartAppsByUserId_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAutoStartApps(SELFWANT, null, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_004
+     * @tc.name      : test_removeAutoStartAppsByUserId_004
+     * @tc.desc      : test removeAutoStartAppsByUserId method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeAutoStartAppsByUserId_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_001
+     * @tc.name      : test_getAutoStartAppsByUserId_001
+     * @tc.desc      : test getAutoStartAppsByUserId method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getAutoStartAppsByUserId_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_002
+     * @tc.name      : test_getAutoStartAppsByUserId_002
+     * @tc.desc      : test getAutoStartAppsByUserId method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getAutoStartAppsByUserId_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_003
+     * @tc.name      : test_getAutoStartAppsByUserId_003
+     * @tc.desc      : test getAutoStartAppsByUserId method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getAutoStartAppsByUserId_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETAUTOSTARTAPPS_USERID_004
+     * @tc.name      : test_getAutoStartAppsByUserId_004
+     * @tc.desc      : test getAutoStartAppsByUserId method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getAutoStartAppsByUserId_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODITYAUTOSTARTAPP_001
+     * @tc.name      : test_isModifyAutoStartAppsDisallowed_001
+     * @tc.desc      : test isModifyAutoStartAppsDisallowed method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_isModifyAutoStartAppsDisallowed_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let disallowModifty: boolean = true;
+        disallowModifty = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODITYAUTOSTARTAPP_002
+     * @tc.name      : test_isModifyAutoStartAppsDisallowed_002
+     * @tc.desc      : test isModifyAutoStartAppsDisallowed method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_isModifyAutoStartAppsDisallowed_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        let disallowModifty: boolean = true;
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        disallowModifty = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODITYAUTOSTARTAPP_003
+     * @tc.name      : test_isModifyAutoStartAppsDisallowed_003
+     * @tc.desc      : test isModifyAutoStartAppsDisallowed method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_isModifyAutoStartAppsDisallowed_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        let disallowModifty: boolean = true;
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        disallowModifty = applicationManager.isModifyAutoStartAppsDisallowed(null, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
     /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_001
      * @tc.name      : test_addKeepAliveApps_001
