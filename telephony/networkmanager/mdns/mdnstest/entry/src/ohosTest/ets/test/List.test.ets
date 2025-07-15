@@ -20,20 +20,19 @@ import connection from '@ohos.net.connection';
 let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
-    if(canIUse("SystemCapability.Communication.NetManager.MDNS")){
-        if(netHandle.netId != 0){
-        let NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
-        if(NetCapabilities.bearerTypes[0] == 1){
-            NetworkManagerMdnsTest();
-            mdnsTest();
-        }
+  if(canIUse("SystemCapability.Communication.NetManager.MDNS")){
+    if(netHandle.netId != 0){
+      let NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+      if(NetCapabilities.bearerTypes[0] == 1){
+        NetworkManagerMdnsTest();
+        mdnsTest();
       }else{
-          EmptyTest();
-      }
-        
-    }else{
         EmptyTest();
+      }
+    }else{
+      EmptyTest();
     }
+  }else{
+    EmptyTest();
+  }
 }
-
-
