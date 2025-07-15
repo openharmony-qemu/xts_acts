@@ -19,6 +19,8 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_api11:ActsAceEtsModuleCommonEventsApi11Test",
       "ace_ets_module_commonEvents_api12:ActsAceEtsModuleCommonEventsApi12Test",
       "ace_ets_module_commonEvents_api14:ActsAceEtsModuleCommonEventsApi14Test",
+      "ace_ets_module_commonEvents_api12_static:ActsAceEtsModuleCommonEventsApi12StaticTest",
+      "ace_ets_module_commonEvents_api14_static:ActsAceEtsModuleCommonEventsApi14StaticTest",
     ]
   } else {
     deps = [
@@ -30,6 +32,12 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_api17:ActsAceEtsModuleCommonEventsApi17Test",
       "ace_ets_module_commonEvents_noware_api14:ActsAceEtsModuleCommonEventsNoWearApi14Test",
       "ace_ets_module_commonEvents_nowear_api11:ActsAceEtsModuleCommonEventsNoWearApi11Test",
+      "ace_ets_module_commonEvents_api12_static:ActsAceEtsModuleCommonEventsApi12StaticTest",
+      "ace_ets_module_commonEvents_api12None_static:ActsAceEtsModuleCommonEventsApi12NoneStaticTest",
+      "ace_ets_module_commonEvents_api14_static:ActsAceEtsModuleCommonEventsApi14StaticTest",
+      "ace_ets_module_commonEvents_api15_static:ActsAceEtsModuleCommonEventsApi15StaticTest",
+      "ace_ets_module_commonEvents_api17_static:ActsAceEtsModuleCommonEventsApi17StaticTest",
+      "ace_ets_module_commonEvents_nowear_api11_static:ActsAceEtsModuleCommonEventsNoWearApi11StaticTest",
     ]
   }
 }
