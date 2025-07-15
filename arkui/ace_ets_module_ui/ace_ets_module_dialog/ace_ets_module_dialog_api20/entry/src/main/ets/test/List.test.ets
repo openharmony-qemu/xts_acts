@@ -19,6 +19,10 @@ import SheetTypeTest from './SheetTypeTest/sheetTypeSide.test';
 import closeToastTest from './promptActionTest/closeToastTest.test';
 import dismissSheetActionTest from './SheetTypeTest/dismissSheetAction.test';
 import bindContentCoverTest from './BindContentCoverTest/bindContentCover.test';
+import selectModalModeTest from './MenuTest/selectModalMode.test';
+import PreviewScaleModeTest from './MenuTest/PreviewScaleModeTest.test';
+import AvailableLayoutAreaTest from './MenuTest/AvailableLayoutAreaTest.test';
+import enableFloatingDragBarTest from './SheetTypeTest/enableFloatingDragBar.test';
 
 export default function testsuite() {
   menuSubMenuExpandSymbolTest();
@@ -28,4 +32,8 @@ export default function testsuite() {
   closeToastTest();
   dismissSheetActionTest();
   bindContentCoverTest()
+  selectModalModeTest();
+  PreviewScaleModeTest();
+  AvailableLayoutAreaTest();
+  enableFloatingDragBarTest();
 }
