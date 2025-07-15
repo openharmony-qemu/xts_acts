@@ -18,10 +18,12 @@ import NetworkManagerMdnsTest from './mdnsOnAndOff.test';
 import EmptyTest from './Empty.test';
 import wifiManager from '@ohos.wifiManager';
 import connection from '@ohos.net.connection';
-let netHandle = connection.getDefaultNetSync();
+import data from '@ohos.telephony.data';
 
+let netHandle = connection.getDefaultNetSync();
+let isDataEnabled: boolean = data.isCellularDataEnabledSync();
 export default function testsuite() {
-    if(canIUse("SystemCapability.Communication.NetManager.MDNS")&& wifiManager.isWifiActive() && netHandle.netId >=100){
+    if(canIUse("SystemCapability.Communication.NetManager.MDNS")&& wifiManager.isWifiActive() && netHandle.netId >=100 && isDataEnabled == false){
         NetworkManagerMdnsTest();
         mdnsTest();
     }else{
