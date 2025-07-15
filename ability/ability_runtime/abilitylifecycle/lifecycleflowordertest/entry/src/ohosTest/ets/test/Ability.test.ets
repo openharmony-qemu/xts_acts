@@ -32,11 +32,14 @@ export default function ActsLifeCycleFlowOrderTest() {
     })
 
     /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OnWillForeground_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_OnWillForeground_0100
-     * @tc.desc   : Check the timing sequence of the callback when the mobile app enters the foreground during cold start
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0100
+     * @tc.desc   Check the timing sequence of the callback when the mobile app enters the foreground during cold start
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillForeground_0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillForeground_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0100';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -74,11 +77,14 @@ export default function ActsLifeCycleFlowOrderTest() {
     })
 
     /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OnWillForeground_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_OnWillForeground_0200
-     * @tc.desc   : Check the timing sequence of the callback when the mobile app enters the foreground after a hot start
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0200
+     * @tc.desc   Check the timing sequence of the callback when the mobile app enters the foreground after a hot start
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillForeground_0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillForeground_0200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0200';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -133,11 +139,14 @@ export default function ActsLifeCycleFlowOrderTest() {
 
 
     /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OnWillForeground_0900
-     * @tc.name   : SUB_Ability_AbilityRuntime_OnWillForeground_0900
-     * @tc.desc   : The delay in the onWillForeground interface when a mobile app is launched and enters the foreground
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0900
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0900
+     * @tc.desc   The delay in the onWillForeground interface when a mobile app is launched and enters the foreground
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillForeground_0900', Level.LEVEL0, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillForeground_0900', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0900';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -174,11 +183,14 @@ export default function ActsLifeCycleFlowOrderTest() {
     })
 
     /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OnWillForeground_1000
-     * @tc.name   : SUB_Ability_AbilityRuntime_OnWillForeground_1000
-     * @tc.desc   : Mobile app launches and enters the foreground onDidForeground: interface delay
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_1000
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_1000
+     * @tc.desc   Mobile app launches and enters the foreground onDidForeground: interface delay
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillForeground_1000', Level.LEVEL0, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillForeground_1000', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_1000';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {

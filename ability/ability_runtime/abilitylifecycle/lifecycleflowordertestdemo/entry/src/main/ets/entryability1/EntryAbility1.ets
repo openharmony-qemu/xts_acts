@@ -2,11 +2,17 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { commonEventManager } from '@kit.BasicServicesKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 interface EventDataI {
   data: string
 }
 
+async function sleep(time: number) {
+  return new Promise<void>((resolve, reject) => {
+    setTimeout(resolve, time)
+  });
+}
 
 export default class EntryAbility1 extends UIAbility {
   private abilityLifeArr: Array<string> = []
@@ -54,6 +60,20 @@ export default class EntryAbility1 extends UIAbility {
         hilog.info(0x0000, 'lifecycleflowordertestdemo', 'Ability_test EntryAbility1 resume event');
       } else if (data === window.WindowStageEventType.ACTIVE) {
         hilog.info(0x0000, 'lifecycleflowordertestdemo', 'Ability_test EntryAbility1 active event');
+        await sleep(1000)
+        this.context.moveAbilityToBackground().then(() => {
+          console.log(`lifecycleflowordertestdemo moveAbilityToBackground success.`);
+        }).catch((err: BusinessError) => {
+          console.log(`lifecycleflowordertestdemo moveAbilityToBackground error: ${JSON.stringify(err)}.`);
+          if(err.code == 801){
+            let commonEventData: EventDataI = {
+              data: '801'
+            };
+            commonEventManager.publish(this.wantParam.toString(), commonEventData, (err) => {
+              console.info('lifecycleflowordertestdemo ====> [onWillBackground_0100 moveAbilityToBackground result] publish: ' + JSON.stringify(err));
+            });
+          }
+        });
       } else if (data === window.WindowStageEventType.PAUSED) {
         hilog.info(0x0000, 'lifecycleflowordertestdemo', 'Ability_test EntryAbility1 paused event');
       }
