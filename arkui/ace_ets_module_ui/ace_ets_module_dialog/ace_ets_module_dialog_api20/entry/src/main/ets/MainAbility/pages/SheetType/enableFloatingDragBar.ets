@@ -55,6 +55,13 @@ struct SheetTest {
       Text('this is Sheet')
       TextInput({ placeholder: 'input your word...' }).backgroundColor(Color.Blue)
         .margin({ top: 20 })
+      Button("close modal 1")
+      .id('close')
+        .margin(10)
+        .fontSize(20)
+        .onClick(() => {
+          this.showSheet = false;
+        })
     }
     .backgroundColor(Color.Pink)
     .width('100%')
@@ -165,7 +172,12 @@ struct SheetTest {
               console.log('BindSheep onAppear.');
             },
             onDisappear: () => {
-              this.txt1 = JSON.stringify(this.enableFloatingDragBar[this.enableFloatingDragBarIndex])
+              let arr = JSON.stringify(this.enableFloatingDragBar[this.enableFloatingDragBarIndex])
+              if( arr == "true"){
+                this.txt1 = '0'
+              }else {
+                this.txt1 = '1'
+              }
               console.log('BindSheep onDisappear.');
             },
             onHeightDidChange: (height: number)=>{
