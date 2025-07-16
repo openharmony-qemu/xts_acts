@@ -629,30 +629,28 @@ export default function windowPropertiesTest2() {
       };
       try {
         windowClass = await ohosWindow.createWindow(config);
+        console.info(`${caseName} Succeeded in creating the float window.`);
         expect(!!windowClass).assertTrue();
         await windowClass.setUIContent('testability/pages/First/index2');
       console.info(`${caseName} Succeeded in loading the windowClass  content.`);
       await windowClass.showWindow();
       await sleep(200);
-      } catch (err) {
-        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-        expect().assertFail();
-        done()
-      }
-    
-      try {
-        windowClass!.setWindowShadowRadius(0)
+      windowClass!.setWindowShadowRadius(0)
         expect(true).assertTrue();
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await windowClass!.destroyWindow();
         done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
+      } catch (err) {
+        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
         await windowClass!.destroyWindow();
-        if (exception.code == 801) {
+        if (err.code == 801) {
           console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+          await windowClass!.destroyWindow(); 
           done();
-        } else {
+        } else if(err.code == 130002){
+          console.info(`${caseName} The current device type does not support to create float Window`);
+          done();
+        }else {
           expect().assertFail();
           done();
         }
@@ -677,35 +675,33 @@ export default function windowPropertiesTest2() {
       };
       try {
         windowClass = await ohosWindow.createWindow(config);
+        console.info(`${caseName} Succeeded in creating the float window.`);
         expect(!!windowClass).assertTrue();
         await windowClass.setUIContent('testability/pages/First/index2');
         console.info(`${caseName} Succeeded in loading the windowClass  content.`);
         await windowClass.showWindow();
         await sleep(200);
-      } catch (err) {
-        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-        expect().assertFail();
-        done()
-      }
-    
-      try {
         windowClass!.setWindowShadowRadius(4)
         expect(true).assertTrue();
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await windowClass!.destroyWindow();
         done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
+      } catch (err) {
+        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
         await windowClass!.destroyWindow();
-        if (exception.code == 801) {
+        if (err.code == 801) {
           console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+          await windowClass!.destroyWindow(); 
           done();
-        } else {
+        } else if(err.code == 130002){
+          console.info(`${caseName} The current device type does not support to create float Window`);
+          done();
+        }else {
           expect().assertFail();
           done();
         }
-      
       }
+    
     })
 
     /**
@@ -1094,6 +1090,7 @@ export default function windowPropertiesTest2() {
       };
       try {
         windowClass = await ohosWindow.createWindow(config);
+        console.info(`${caseName} Succeeded in creating the float window.`);
         await windowClass.setUIContent('testability/pages/First/index2');
         await windowClass.showWindow();
         await sleep(1000);
@@ -1140,6 +1137,7 @@ export default function windowPropertiesTest2() {
       };
       try {
         windowClass = await ohosWindow.createWindow(config);
+        console.info(`${caseName} Succeeded in creating the float window.`);
         await windowClass.setUIContent('testability/pages/First/index2');
         await windowClass.showWindow();
         await sleep(1000);
