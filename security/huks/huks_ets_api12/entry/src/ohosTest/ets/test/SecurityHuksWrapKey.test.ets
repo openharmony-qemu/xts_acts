@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import huks from '@ohos.security.huks';
+import { huks } from '@kit.UniversalKeystoreKit';
 import { CheckSoftware } from './utils/huks/HuksOptionsUtils';
 import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
 import { GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
@@ -42,15 +42,15 @@ export default function SecurityHuksWrapKeyTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_WrapKey_Api20_Func_0100
-     * @tc.name   : SUB_Security_HUKS_KeyGenerate_WrapKey_Api20_Func_0100
+     * @tc.number : SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
+     * @tc.name   : SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100
      * @tc.desc   : test wrapKeyItem, process success
      * @tc.size   : SmallTest
      * @tc.type   : Function
      * @tc.level  : Level3
      */
-    it('SUB_Security_HUKS_KeyGenerate_WrapKey_Api20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let testNumber: string = "SUB_Security_HUKS_KeyGenerate_WrapKey_Api20_Func_0100";
+    it('SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100";
       let wrapKeyOptions: huks.HuksOptions = GetWrapKeyOptions();
       try {
         await huks.wrapKeyItem(testNumber, wrapKeyOptions);
@@ -66,15 +66,15 @@ export default function SecurityHuksWrapKeyTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_UnwrapKey_Api20_Func_0100
-     * @tc.name   : SUB_Security_HUKS_KeyGenerate_UnwrapKey_Api20_Func_0100
+     * @tc.number : SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
+     * @tc.name   : SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100
      * @tc.desc   : test unwrapKeyItem, process success
      * @tc.size   : SmallTest
      * @tc.type   : Function
      * @tc.level  : Level3
      */
-    it('SUB_Security_HUKS_KeyGenerate_UnwrapKey_Api20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let testNumber: string = "SUB_Security_HUKS_KeyGenerate_UnwrapKey_Api20_Func_0100";
+    it('SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100";
       let wrapKeyOptions: huks.HuksOptions = GetWrapKeyOptions();
       try {
         await huks.unwrapKeyItem(testNumber, wrapKeyOptions, StringToUint8Array(GetDataBySize(64)));
