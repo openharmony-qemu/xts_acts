@@ -88,7 +88,7 @@ void HwEncFunc2NdkTest::TearDown()
     }
 }
 namespace {
-bool isSupportRGBA1010102Format()
+bool isSupportRgba1010102Format()
 {
     const int32_t *pixelFormat = nullptr;
     uint32_t pixelFormatNum = 0;
@@ -1369,7 +1369,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0410, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0010, TestSize.Level1)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1397,7 +1397,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0010, TestSize.Level1)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0020, TestSize.Level0)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1425,7 +1425,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0020, TestSize.Level0)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0030, TestSize.Level0)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1453,7 +1453,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0030, TestSize.Level0)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0040, TestSize.Level1)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1481,7 +1481,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0040, TestSize.Level1)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0110, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1512,7 +1512,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0110, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0130, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1544,7 +1544,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0130, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0150, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1571,7 +1571,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0150, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0170, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1597,7 +1597,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0170, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0180, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -1623,7 +1623,7 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0180, TestSize.Level2)
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
 {
     if (cap_hevc != nullptr && ! access("/system/lib64/media/", 0)) {
-        if (!isSupportRGBA1010102Format()) {
+        if (!isSupportRgba1010102Format()) {
             return;
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
