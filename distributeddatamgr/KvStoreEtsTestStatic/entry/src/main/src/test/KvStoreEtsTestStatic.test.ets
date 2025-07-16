@@ -52,7 +52,7 @@ export default function KvStoreEtsTestStatic() {
     }
     hilog.info(domain, tag, '%{public}s', '================ describe kvstoretest singleOptions');
 
-    let singleOptions2 : distributedKVStore.Options = {
+    let singleOptions4 : distributedKVStore.Options = {
       createIfMissing : true,
       encrypt : false,
       backup : false,
