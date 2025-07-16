@@ -1024,7 +1024,7 @@ export default function AVPlayerSetPlaybackRateTest() {
                     avPlayer.setPlaybackRate(setrate)
                     console.info(`case operationRecord[${state}] call`)
                     if(state == PREPARED) return false
-                    else true
+                    else return true
                 }
             })
             let callback: media.OnPlaybackRateDone = (rate: number) => {
@@ -1081,7 +1081,7 @@ export default function AVPlayerSetPlaybackRateTest() {
                     }
                     console.info(`case operationRecord[${state}] call`)
                     if(state == PREPARED) return false
-                    else true
+                    else return true
                 }
             })
             operationRecord[STOPPED] = async () => {
