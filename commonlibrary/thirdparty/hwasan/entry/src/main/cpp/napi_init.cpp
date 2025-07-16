@@ -86,6 +86,7 @@ static std::string GetBuffer(int pid)
     ftruncate(fileno(fp), 0);
     rewind(fp);
     fclose(fp);
+    remove(file);
     return buffer;
 }
 
