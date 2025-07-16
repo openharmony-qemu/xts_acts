@@ -121,6 +121,7 @@ struct IndexPage {
     { title: 'OnAccessibilityActionIntercept', uri: 'pages/ArkUI/OnAccessibilityActionIntercept' },
     { title: 'AccessBilityHoverTransparent', uri: 'pages/ArkUI/AccessBilityHoverTransparent' },
     { title: 'hoverScaleInterruption', uri: 'pages/ArkUI/hoverScaleInterruption' },
+    { title: 'transform3D', uri: 'pages/ArkUI/transform3D' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

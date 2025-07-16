@@ -146,7 +146,8 @@
 	"pages/ArkUI/EmbeddedComponentInstanceTest",
     "pages/ArkUI/OnAccessibilityActionIntercept",
     "pages/ArkUI/AccessBilityHoverTransparent",
-    "pages/ArkUI/hoverScaleInterruption"
+    "pages/ArkUI/hoverScaleInterruption",
+    "pages/ArkUI/transform3D"
   ]
 }
 
