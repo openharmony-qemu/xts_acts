@@ -147,7 +147,7 @@
       },
       {
         "name": "ohos.permission.UPDATE_CONFIGURATION"
-      }
+      },
       {
         "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }

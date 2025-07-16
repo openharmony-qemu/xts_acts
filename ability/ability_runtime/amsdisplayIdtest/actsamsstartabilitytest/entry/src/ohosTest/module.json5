@@ -53,7 +53,7 @@
       },
       {
         "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
-      }
+      },
       {
         "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }
