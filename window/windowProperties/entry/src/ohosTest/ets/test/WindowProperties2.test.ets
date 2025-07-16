@@ -1076,99 +1076,113 @@ export default function windowPropertiesTest2() {
       }
     })
 
-    // /**
-    //  * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0600
-    //  * @tc.name       : test_setWindowCornerRadius_0600
-    //  * @tc.desc       : 验证悬浮窗圆角值为0
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 3
-    //  */
-    // it('test_setWindowCornerRadius_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-    //   let caseName = "test_setWindowCornerRadius_0600";
-    //   let msgStr = 'jsunittest ' + caseName + ' ';
-    //   console.log(msgStr + 'begin.');
-    //   let windowClass: window.Window | null = null;
-    //   let config: window.Configuration = {
-    //     name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
-    //   };
-    //   try {
-    //     windowClass = await ohosWindow.createWindow(config);
-    //     expect(!!windowClass).assertTrue();
-    //   } catch (err) {
-    //     console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-    //     expect().assertFail();
-    //     done()
-    //   }
-    //
-    //   try {
-    //     windowClass!.setWindowCornerRadius(0)
-    //     let result = windowClass!.getWindowCornerRadius()
-    //     expect(result).assertEqual(0)
-    //     console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
-    //     await windowClass!.destroyWindow();
-    //     done()
-    //   } catch (exception) {
-    //     console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
-    //     await windowClass!.destroyWindow();
-    //     // if (exception.code == 801) {
-    //     //   console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
-    //     //   done();
-    //     // } else {
-    //     //   expect().assertFail();
-    //     //   done();
-    //     // }
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0600
+     * @tc.name       : testSetWindowCornerRadiusTYPE_FLOAT0
+     * @tc.desc       : 验证悬浮窗圆角值为0
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testSetWindowCornerRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowCornerRadiusTYPE_FLOAT0";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "testSetWindowCornerRadiusTYPE_FLOAT0", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+      };
+      try {
+        windowClass = await ohosWindow.createWindow(config);
+        await windowClass.setUIContent('testability/pages/First/index2');
+        await windowClass.showWindow();
+        await sleep(1000);
+        expect(!!windowClass).assertTrue();
+        try {
+        windowClass!.setWindowCornerRadius(0)
+        let result = windowClass!.getWindowCornerRadius()
+        expect(result).assertEqual(0)
+        console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
+        await windowClass!.destroyWindow();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
+        await windowClass!.destroyWindow();
+        if (exception.code == 801) {
+          console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+        
+      }
+      } catch (err) {
+        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+        if(err.code === 1300002){
+          done();
+        }else{
+          expect().assertFail();
+        done()
+        }
+        
+      }
+    
+      
+    })
 
-    // /**
-    //  * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0700
-    //  * @tc.name       : test_setWindowCornerRadius_0700
-    //  * @tc.desc       : 验证悬浮窗圆角值为5
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 3
-    //  */
-    // it('test_setWindowCornerRadius_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-    //   let caseName = "test_setWindowCornerRadius_0700";
-    //   let msgStr = 'jsunittest ' + caseName + ' ';
-    //   console.log(msgStr + 'begin.');
-    //   let windowClass: window.Window | null = null;
-    //   let config: window.Configuration = {
-    //     name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
-    //   };
-    //   try {
-    //     windowClass = await ohosWindow.createWindow(config);
-    //     expect(!!windowClass).assertTrue();
-    //   } catch (err) {
-    //     console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-    //     expect().assertFail();
-    //     done()
-    //   }
-    //
-    //   try {
-    //     windowClass!.setWindowCornerRadius(5)
-    //     let result = windowClass!.getWindowCornerRadius()
-    //     expect(result).assertEqual(5)
-    //     console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
-    //     await windowClass!.destroyWindow();
-    //     done()
-    //   } catch (exception) {
-    //     console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
-    //     await windowClass!.destroyWindow();
-    //     // if (exception.code == 801) {
-    //     //   console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
-    //     //   done();
-    //     // } else {
-    //     //   expect().assertFail();
-    //     //   done();
-    //     // }
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0700
+     * @tc.name       : testSetWindowCornerRadiusTYPE_FLOAT5
+     * @tc.desc       : 验证悬浮窗圆角值为5
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testSetWindowCornerRadiusTYPE_FLOAT5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowCornerRadiusTYPE_FLOAT5";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "testSetWindowCornerRadiusTYPE_FLOAT5", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+      };
+      try {
+        windowClass = await ohosWindow.createWindow(config);
+        await windowClass.setUIContent('testability/pages/First/index2');
+        await windowClass.showWindow();
+        await sleep(1000);
+        expect(!!windowClass).assertTrue();
+        try {
+        windowClass!.setWindowCornerRadius(5)
+        let result = windowClass!.getWindowCornerRadius()
+        expect(result).assertEqual(5)
+        console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
+        await windowClass!.destroyWindow();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
+        await windowClass!.destroyWindow();
+        if (exception.code == 801) {
+          console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+        if(err.code === 1300002){
+          done();
+        }else{
+          expect().assertFail();
+        done()
+        }
+      }
+    
+      
+      }
+    })
 
     /**
      * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0800
