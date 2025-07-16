@@ -366,6 +366,69 @@ export default function audioLoopBack() {
         audioLoopback.off('statusChange');
       }
     })
-
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        console.error(`ERROR: ${err}`);
+        except(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        console.error(`ERROR: ${err}`);
+        except(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        console.error(`ERROR: ${err}`);
+        except(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        console.error(`ERROR: ${err}`);
+        except(false).assertTrue();
+      }
+    })
   })
 }
