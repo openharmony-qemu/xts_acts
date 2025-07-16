@@ -15,7 +15,7 @@ let tag: string = 'testTag';
 let context:common.UIAbilityContext;
 
 export default function UiAbilityContextStartAbilityStatic() {
-  describe("AbilityUIAbilityContextTestStatic", (): void => {
+  describe("ActsStartAbilityErrorTestStatic", (): void => {
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
