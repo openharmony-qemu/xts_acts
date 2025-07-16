@@ -611,97 +611,102 @@ export default function windowPropertiesTest2() {
       }
     })
 
-    // /**
-    //  * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0400
-    //  * @tc.name       : test_setWindowShadowRadius_0400
-    //  * @tc.desc       : 验证悬浮窗设置阴影为0
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 3
-    //  */
-    // it('test_setWindowShadowRadius_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-    //   let caseName = "test_setWindowShadowRadius_0400";
-    //   let msgStr = 'jsunittest ' + caseName + ' ';
-    //   console.log(msgStr + 'begin.');
-    //   let windowClass: window.Window | null = null;
-    //   let config: window.Configuration = {
-    //     name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
-    //   };
-    //   try {
-    //     windowClass = await ohosWindow.createWindow(config);
-    //     expect(!!windowClass).assertTrue();
-    //   } catch (err) {
-    //     console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-    //     expect().assertFail();
-    //     done()
-    //   }
-    //
-    //   try {
-    //     windowClass!.setWindowShadowRadius(0)
-    //     expect(true).assertTrue();
-    //     console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
-    //     await windowClass!.destroyWindow();
-    //     done()
-    //   } catch (exception) {
-    //     console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
-    //     await windowClass!.destroyWindow();
-    //     // if (exception.code == 801) {
-    //     //   console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
-    //     //   done();
-    //     // } else {
-    //     //   expect().assertFail();
-    //     //   done();
-    //     // }
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0400
+     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT0
+     * @tc.desc       : 验证悬浮窗设置阴影为0
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testSetWindowShadowRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowShadowRadiusTYPE_FLOAT0";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+      };
+      try {
+        windowClass = await ohosWindow.createWindow(config);
+        expect(!!windowClass).assertTrue();
+        await windowClass.setUIContent('testability/pages/First/index2');
+      console.info(`${caseName} Succeeded in loading the windowClass  content.`);
+      await windowClass.showWindow();
+      await sleep(200);
+      } catch (err) {
+        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    
+      try {
+        windowClass!.setWindowShadowRadius(0)
+        expect(true).assertTrue();
+        console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
+        await windowClass!.destroyWindow();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
+        await windowClass!.destroyWindow();
+        if (exception.code == 801) {
+          console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
 
-    // /**
-    //  * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0500
-    //  * @tc.name       : test_setWindowShadowRadius_0500
-    //  * @tc.desc       : 验证悬浮窗设置阴影为4
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 3
-    //  */
-    // it('test_setWindowShadowRadius_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-    //   let caseName = "test_setWindowShadowRadius_0500";
-    //   let msgStr = 'jsunittest ' + caseName + ' ';
-    //   console.log(msgStr + 'begin.');
-    //   let windowClass: window.Window | null = null;
-    //   let config: window.Configuration = {
-    //     name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
-    //   };
-    //   try {
-    //     windowClass = await ohosWindow.createWindow(config);
-    //     expect(!!windowClass).assertTrue();
-    //   } catch (err) {
-    //     console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-    //     expect().assertFail();
-    //     done()
-    //   }
-    //
-    //   try {
-    //     windowClass!.setWindowShadowRadius(4)
-    //     expect(true).assertTrue();
-    //     console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
-    //     await windowClass!.destroyWindow();
-    //     done()
-    //   } catch (exception) {
-    //     console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
-    //     await windowClass!.destroyWindow();
-    //     // if (exception.code == 801) {
-    //     //   console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
-    //     //   done();
-    //     // } else {
-    //     //   expect().assertFail();
-    //     //   done();
-    //     // }
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0500
+     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT4
+     * @tc.desc       : 验证悬浮窗设置阴影为4
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testSetWindowShadowRadiusTYPE_FLOAT4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowShadowRadiusTYPE_FLOAT4";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+      };
+      try {
+        windowClass = await ohosWindow.createWindow(config);
+        expect(!!windowClass).assertTrue();
+        await windowClass.setUIContent('testability/pages/First/index2');
+        console.info(`${caseName} Succeeded in loading the windowClass  content.`);
+        await windowClass.showWindow();
+        await sleep(200);
+      } catch (err) {
+        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    
+      try {
+        windowClass!.setWindowShadowRadius(4)
+        expect(true).assertTrue();
+        console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
+        await windowClass!.destroyWindow();
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception));
+        await windowClass!.destroyWindow();
+        if (exception.code == 801) {
+          console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      
+      }
+    })
 
     /**
      * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0100
