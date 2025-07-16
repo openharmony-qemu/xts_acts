@@ -23,11 +23,6 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.SUPPORT_APP_SERVICE_EXTENSION"
-      }
-    ],
     "abilities": [
       {
         "name": "TestAbility",
