@@ -26,7 +26,7 @@ export default function JsLeakWatcherNewTest() {
   describe('JsLeakWatcherNewTest', () => {
         /**
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_0700
-     * @tc.name testJsLeakWatcher09
+     * @tc.name testJsLeakWatcher07
      * @tc.desc 验证enableLeakWatcher接口正常传参
      * @tc.size MediumTest
      * @tc.type Function
@@ -118,7 +118,7 @@ export default function JsLeakWatcherNewTest() {
 
     /**
      * @tc.number SUB_DFX_DFR_jsLeakWatcher_Interface_1000
-     * @tc.name testJsLeakWatcher100
+     * @tc.name testJsLeakWatcher10
      * @tc.desc 验证enableLeakWatcher接口config参数传入undefined值返回错误码10801002
      * @tc.size MediumTest
      * @tc.type Function
