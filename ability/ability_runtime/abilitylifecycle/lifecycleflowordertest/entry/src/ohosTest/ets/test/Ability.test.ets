@@ -190,7 +190,7 @@ export default function ActsLifeCycleFlowOrderTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillForeground_1000', Level.LEVEL3, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillForeground_1000', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_1000';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {

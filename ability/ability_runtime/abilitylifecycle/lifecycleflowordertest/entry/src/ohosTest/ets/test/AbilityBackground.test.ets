@@ -181,7 +181,7 @@ export default function ActsLifeCycleMainBackgroundTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('SUB_Ability_AbilityRuntime_OnWillBackground_1400', Level.LEVEL3, async (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_OnWillBackground_1400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_1400';
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
