@@ -30,6 +30,7 @@ export default function KvStoreEtsTestStatic() {
   hilog.info(domain, tag, '%{public}s', '================ export kvstoretest start ....');
   const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
   const TEST_SINGLE_STORE_ID = 'single_testId';
+  const TEST_SINGLE_STORE_ID4 = 'single_testId4';
   const TEST_DEVICE_STORE_ID = 'device_testId';
   const KEY_TEST_STRING_ELEMENT = 'key_test_string';
   hilog.info(domain, tag, '%{public}s', '================ export kvstoretest 111');
@@ -50,6 +51,17 @@ export default function KvStoreEtsTestStatic() {
       securityLevel : distributedKVStore.SecurityLevel.S1,
     }
     hilog.info(domain, tag, '%{public}s', '================ describe kvstoretest singleOptions');
+
+    let singleOptions2 : distributedKVStore.Options = {
+      createIfMissing : true,
+      encrypt : false,
+      backup : false,
+      autoSync : true,
+      kvStoreType : distributedKVStore.KVStoreType.SINGLE_VERSION,
+      schema : undefined,
+      securityLevel : distributedKVStore.SecurityLevel.S4,
+    }
+    hilog.info(domain, tag, '%{public}s', '================ describe kvstoretest singleOptions4');
 
     let options1: distributedKVStore.Options = {
       createIfMissing: false,
@@ -125,6 +137,30 @@ export default function KvStoreEtsTestStatic() {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start getKvstore");
         let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 getKvstore end");
+        expect(store != null).assertTrue();
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name       : KvStoreTest0011
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
+     * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start getKvstore");
+        let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID4, singleOptions4);
+        hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 getKvstore end");
         expect(store != null).assertTrue();
         done();
       } catch (e) {
