@@ -774,7 +774,98 @@ export default function TimerTest1() {
       done();
     });
 
+    /**
+     * @tc.number SUB_Timer_Test_2400
+     * @tc.name TimerTest024
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TimerTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TAG: string = "TimerTest024";
+      console.info(`${TAG} test start`);
+      const intervalPeriod: number = 100;
+      const executionTime: number = 150;
 
+      let executionCount: number = 0;
+      let lastExecutionEnd: number = 0;
+      let isContinuousExecution: boolean = true;
+
+      try {
+        const intervalId = setInterval(() => {
+          const start: number = Math.floor(Date.now());
+          executionCount++;
+          await Utils.msSleep(executionTime);
+          const currentEnd: number = Math.floor(Date.now());
+          if (lastExecutionEnd > 0 && (currentEnd - lastExecutionEnd) > intervalPeriod + 5) {
+            isContinuousExecution = false;
+          }
+          lastExecutionEnd = currentEnd;
+        }, intervalPeriod);
+        setTimeout(() => {
+          try {
+            clearInterval(intervalId);
+            expect(executionCount > 1).assertTrue();
+            expect(isContinuousExecution).assertFalse();
+          } catch (e: Error) {
+            console.error(`${TAG} catch error: code =>  message => ${e.message}`);
+            expect(false).assertFail();
+          }
+        }, 350);
+      } catch (e: Error) {
+        console.error(`${TAG} catch error: code =>  message => ${e.message}`);
+        expect(false).assertFail();
+      }
+      console.info(`${TAG} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Timer_Test_2500
+     * @tc.name TimerTest025
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('TimerTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TAG: string = "TimerTest025";
+      console.info(`${TAG} test start`);
+      const intervalPeriod: number = 100;
+      const executionTime: number = 50;
+
+      let executionCount: number = 0;
+      let lastExecutionStart: number = 0;
+      let intervalDeviation: boolean = false;
+
+      try {
+        const intervalId = setInterval(async () => {
+          const start: number = Date.now();
+          executionCount++;
+          if (lastExecutionStart > 0) {
+            const actualInterval = start - lastExecutionStart;
+            if (Math.abs(actualInterval - intervalPeriod) > 10) {
+              intervalDeviation = true;
+            }
+          }
+          lastExecutionStart = start;
+          await Utils.msSleep(executionTime);
+        }, intervalPeriod);
+        setTimeout(() => {
+          clearInterval(intervalId);
+        }, 500);
+        await Utils.msSleep(500);
+        expect(executionCount > 1 && executionCount < 5).assertTrue();
+        expect(intervalDeviation).assertEqual(true);
+      } catch (e: Error) {
+        console.error(`${TAG} catch error: code1 =>  message => ${e.message}`);
+        expect(false).assertFail();
+      }
+      console.info(`${TAG} test end`);
+      await Utils.msSleep(500);
+      done();
+    });
 
     /**
      * @tc.number SUB_Timer_Test_2600
