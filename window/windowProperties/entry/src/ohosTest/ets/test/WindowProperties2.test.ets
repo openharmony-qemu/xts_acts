@@ -1098,37 +1098,28 @@ export default function windowPropertiesTest2() {
         await windowClass.showWindow();
         await sleep(1000);
         expect(!!windowClass).assertTrue();
-        try {
         windowClass!.setWindowCornerRadius(0)
         let result = windowClass!.getWindowCornerRadius()
         expect(result).assertEqual(0)
         console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
         await windowClass!.destroyWindow();
         done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
-        await windowClass!.destroyWindow();
-        if (exception.code == 801) {
-          console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-        
-      }
       } catch (err) {
         console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
         if(err.code === 1300002){
           done();
+        }else if(err.code == 801){
+          console.error(msgStr + 'setWindowCornerRadius failed ' + 'caught, err: ' + JSON.stringify(err));
+          await windowClass!.destroyWindow();
+          done();
         }else{
           expect().assertFail();
-        done()
+          done()
         }
-        
+
       }
-    
-      
+
+
     })
 
     /**
@@ -1153,35 +1144,27 @@ export default function windowPropertiesTest2() {
         await windowClass.showWindow();
         await sleep(1000);
         expect(!!windowClass).assertTrue();
-        try {
         windowClass!.setWindowCornerRadius(5)
         let result = windowClass!.getWindowCornerRadius()
         expect(result).assertEqual(5)
         console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
         await windowClass!.destroyWindow();
         done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
-        await windowClass!.destroyWindow();
-        if (exception.code == 801) {
-          console.info(`${caseName} The current device type does not support to setWindowCornerRadius`);
-          done();
-        } else {
-          expect().assertFail();
-          done();
+        } catch (err) {
+          console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+          if(err.code === 1300002){
+            done();
+          }else if(err.code == 801){
+            console.error(msgStr + 'setWindowCornerRadius failed ' + 'caught, err: ' + JSON.stringify(err));
+            await windowClass!.destroyWindow();
+            done();
+          }else{
+            expect().assertFail();
+            done()
+          }
+
         }
-      } catch (err) {
-        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-        if(err.code === 1300002){
-          done();
-        }else{
-          expect().assertFail();
-        done()
-        }
-      }
-    
-      
-      }
+        
     })
 
     /**
