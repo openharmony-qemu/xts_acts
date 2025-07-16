@@ -902,7 +902,7 @@ export default function CameraErrorCodeUsecaseTest() {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400--------------");
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400 cameraManager == null || undefined")
+          "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400 cameraManager is null or undefined")
         expect().assertFail();
         done();
       } else {
