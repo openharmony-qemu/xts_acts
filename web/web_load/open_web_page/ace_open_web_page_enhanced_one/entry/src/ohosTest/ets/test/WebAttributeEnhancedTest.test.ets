@@ -38,7 +38,6 @@ export default function webAttributeEnhancedTest() {
         if (!("WebAttributeEnhancedTest" == pages.name)) {
           console.info("get WebAttributeEnhancedTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeEnhancedTest page success " + JSON.stringify(result));
         }
       } catch (err) {
