@@ -32,6 +32,8 @@ interface picTypeValue {
   errorData?: string
 }
 
+const domain = 0x0000;
+
 async function sleep(delay: number): Promise<void> {
   return new Promise((resolve, _) => {
     setTimeout(async () => {
@@ -11616,7 +11618,6 @@ export default function imageNdkTest() {
       done();
     })
 
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
@@ -11631,29 +11632,25 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,30);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=30){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
     
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
@@ -11668,29 +11665,24 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,60);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=60){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
-    
-
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300
@@ -11706,29 +11698,25 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,50);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=50){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
     
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
@@ -11743,29 +11731,25 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,90);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=90){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
     
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
@@ -11780,28 +11764,24 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,100);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=100){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
-    
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600
@@ -11817,28 +11797,24 @@ export default function imageNdkTest() {
         let packingOpts:image.PackingOption = ndkTest.CreatePackingOptions();
         const setQuality:number=ndkTest.PackingOptionsSetQuality(packingOpts,0);
         if(setQuality){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error` + setQuality);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error` + setQuality);
           expect(false).assertTrue();
           done();
         }
         const resQuality:number=ndkTest.PackingOptionsGetQuality(packingOpts);
-
         if (resQuality!=0){
-          hilog.info(0x0000, testTag, `PackingOptionsSetQuality error`);
+          hilog.info(domain, testTag, `PackingOptionsSetQuality error`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, testTag, `Test exception  ` );
         expect(true).assertTrue();
         done();
       } catch (error) {
-        hilog.info(0x0000, testTag, `Test exception  ` + error);
+        hilog.info(domain, testTag, `Test exception ` + error);
         expect().assertFail();
         done();
       }
-      
     })
 
-   
   })
 }
