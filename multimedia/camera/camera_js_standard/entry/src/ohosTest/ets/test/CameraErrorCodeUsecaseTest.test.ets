@@ -371,7 +371,7 @@ export default function CameraErrorCodeUsecaseTest() {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_0100--------------");
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
-          "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_0100 == null || undefined");
+          "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_0100 cameraManager is null or undefined");
         expect().assertFail();
         done();
       } else {
