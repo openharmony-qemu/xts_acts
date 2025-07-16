@@ -1001,6 +1001,7 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_SESSION_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_SESSION_0100--------------");
+      createCameraSessionInstance();
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_SESSION_0100 cameraManager == null || undefined")
@@ -1008,7 +1009,7 @@ export default function CameraErrorCodeUsecaseTest() {
         done();
       }
       try {
-        mCameraSession.createSession(0);
+        mCameraManager.createSession(0);
         expect().assertFail();
         done();
       } catch (error) {
@@ -1467,7 +1468,7 @@ export default function CameraErrorCodeUsecaseTest() {
       createOutput(0);
       try {
         mCameraSession.removeInput(mCameraInput);
-        except().assertFail();
+        expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_0400 FAILED");
