@@ -3665,7 +3665,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TaskpoolConcurrency_0635
      * @tc.name       : testExecuteFunc0002
      * @tc.desc       : Test the function of the constructor function.
      * @tc.size       : MediumTest
@@ -3724,7 +3724,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0101
      * @tc.name      : testExecuteFunc004
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3757,7 +3757,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0102
      * @tc.name      : testTaskpoolExecute005
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3795,7 +3795,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0103
      * @tc.name      : testTaskpoolExecute006
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3827,7 +3827,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0104
      * @tc.name      : testTaskpoolExecute007
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3861,7 +3861,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0105
      * @tc.name      : testTaskpoolExecute008
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3895,7 +3895,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0106
      * @tc.name      : testTaskpoolExecute009
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3931,7 +3931,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0107
      * @tc.name      : testTaskpoolExecute011
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -3966,7 +3966,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0108
      * @tc.name      : testTaskpoolExecute012
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4005,7 +4005,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0109
      * @tc.name      : testTaskpoolExecute013
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4039,7 +4039,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0110
      * @tc.name      : testTaskpoolExecute014
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4074,7 +4074,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0111
      * @tc.name      : testTaskpoolExecute015
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4109,7 +4109,7 @@ export default function TaskPoolBaseTest() {
 
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0112
      * @tc.name      : testTaskpoolExecute016
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4147,7 +4147,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0113
      * @tc.name      : testTaskpoolExecute017
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4181,7 +4181,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0114
      * @tc.name      : testTaskpoolExecute018
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4215,7 +4215,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0115
      * @tc.name      : testTaskpoolExecute019
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4268,7 +4268,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0116
      * @tc.name      : testTaskpoolExecute020
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4321,7 +4321,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0117
      * @tc.name      : testTaskpoolExecute021
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4372,7 +4372,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0118
      * @tc.name      : testTaskpoolTask001
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4397,7 +4397,7 @@ export default function TaskPoolBaseTest() {
         done()
       });
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0119
      * @tc.name      : testTaskpoolTask002
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4430,7 +4430,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0120
      * @tc.name      : testTaskpoolTask003
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4462,7 +4462,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0121
      * @tc.name      : testTaskpoolTask004
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4497,7 +4497,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0122
      * @tc.name      : testTaskpoolTask005
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4530,7 +4530,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0123
      * @tc.name      : testTaskpoolTask006
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4562,7 +4562,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0124
      * @tc.name      : testTaskpoolTask007
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4596,7 +4596,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0125
      * @tc.name      : testTaskpoolTask008
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4632,7 +4632,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0126
      * @tc.name      : testTaskpoolTask010
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4666,7 +4666,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0127
      * @tc.name      : testTaskpoolTask011
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4706,7 +4706,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0128
      * @tc.name      : testTaskpoolTask012
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4744,7 +4744,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0129
      * @tc.name      : testTaskpoolTask013
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4752,7 +4752,7 @@ export default function TaskPoolBaseTest() {
      * @tc.level     : Level 2
      */
     //func:使用@Concurrent装饰器装饰,返回Object(class)类型，参数1：string，参数2：Object(class)----then中可断言返回类型及返回值
-    xit('testTaskpoolTask013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testTaskpoolTask013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName: string = 'testTaskpoolTask013';
         let isTerminate: boolean = false;
@@ -4779,7 +4779,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0130
      * @tc.name      : testTaskpoolTask014
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4787,7 +4787,7 @@ export default function TaskPoolBaseTest() {
      * @tc.level     : Level 2
      */
     //func:使用@Concurrent装饰器装饰,返回ArrayBuffer类型，参数1：string，参数2：ArrayBuffer----then中可断言返回类型及返回值
-    xit('testTaskpoolTask014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testTaskpoolTask014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName: string = 'testTaskpoolTask014';
         let isTerminate: boolean = false;
@@ -4814,7 +4814,7 @@ export default function TaskPoolBaseTest() {
       });
 
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0100
+     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_0131
      * @tc.name      : testTaskpoolTask015
      * @tc.desc      : Test the function of the constructor function.
      * @tc.size      : MediumTest
@@ -4822,7 +4822,7 @@ export default function TaskPoolBaseTest() {
      * @tc.level     : Level 2
      */
     //func:使用@Concurrent装饰器装饰,返回TypedArray类型，参数1：TypedArray，参数2：boolean----then中可断言返回类型及返回值
-    xit('testTaskpoolTask015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testTaskpoolTask015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const caseName: string = 'testTaskpoolTask015';
         let isTerminate: boolean = false;
