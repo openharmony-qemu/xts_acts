@@ -211,7 +211,7 @@ export default function windowPropertiesTest() {
 
         /**
         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0200
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.name      : testSetCustomDensityParamCheck
         * @tc.desc      : getWindowDensityInfo, DPI-1 getWindowDensityInfo
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -247,7 +247,7 @@ export default function windowPropertiesTest() {
 
         /**
         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0300
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.name      : testSetCustomDensityParamCheck1
         * @tc.desc      : 有效左边界校验
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -275,8 +275,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0300
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0400
+        * @tc.name      : testSetCustomDensityParamCheck2
         * @tc.desc      : effective right boundary
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -304,8 +304,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0400
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0500
+        * @tc.name      : testSetCustomDensityParamCheck5
         * @tc.desc      : testGetWindowDensityInfo with aruguments null
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -334,8 +334,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0500
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0600
+        * @tc.name      : testSetCustomDensityParamCheck6
         * @tc.desc      : testGetWindowDensityInfo with arguments undefined
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -364,8 +364,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0600
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0700
+        * @tc.name      : testSetCustomDensity
         * @tc.desc      : new ability set dpi
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -424,8 +424,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0700
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0800
+        * @tc.name      : testSetCustomDensity1
         * @tc.desc      : new abilty setDefaultDensityEnabled true
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -487,8 +487,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0800
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0900
+        * @tc.name      : testSetCustomDensity2
         * @tc.desc      : new abilty setDefaultDensityEnabled false
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -546,8 +546,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0900
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1000
+        * @tc.name      : testSetCustomDensity3
         * @tc.desc      : multi ability,set ability with diffrent dpi
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -629,8 +629,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1000
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1100
+        * @tc.name      : testOnSetCustomDensity
         * @tc.desc      : on systemDensityChange
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -712,8 +712,8 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1100
-        * @tc.name      : testGetWindowDensityInfo
+        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
+        * @tc.name      : testOnSetCustomDensity1
         * @tc.desc      : off systemDensityChange event
         * @tc.size      : MediumTest
         * @tc.type      : Function
@@ -942,7 +942,7 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8600
          * @tc.name      : testGetWindowPropertiesInMainWindow
          * @tc.desc      : get the current window properties
          * @tc.size      : MediumTest
@@ -964,7 +964,7 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8700
          * @tc.name      : testGetWindowPropertiesInSubWindow
          * @tc.desc      : get the current window properties
          * @tc.size      : MediumTest
@@ -1772,7 +1772,7 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
-         * @tc.name      : testSetWindowBackgroundColor
+         * @tc.name      : testSetMainWindowBackgroundColor
          * @tc.desc      : set main window colorSpace
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1939,7 +1939,7 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
-         * @tc.name      : testSetWindowBrightnessCallback_0.5
+         * @tc.name      : testSetWindowBrightnessCallback0.5
          * @tc.desc      : set window brightness
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1968,14 +1968,14 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
-         * @tc.name      : testSetWindowBrightnessCallback_1
+         * @tc.name      : testSetWindowBrightnessCallback1
          * @tc.desc      : set window brightness
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 3
          */
         it('testSetWindowBrightnessCallback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName = 'TestSetWindowBrightnessCallback_1';
+            let caseName = 'testSetWindowBrightnessCallback1';
             try {
                 let windowClass = windowStage.getMainWindowSync();
                 windowClass.setWindowBrightness(1, (err: BusinessError) => {
@@ -2085,7 +2085,7 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
-         * @tc.name      : testSetWindowBrightnessPromise_0
+         * @tc.name      : testSetWindowBrightnessPromise0
          * @tc.desc      : set window brightness
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -2111,7 +2111,7 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
-         * @tc.name      : testSetWindowBrightnessPromise_0.5
+         * @tc.name      : testSetWindowBrightnessPromise0.5
          * @tc.desc      : set window brightness
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -2137,14 +2137,14 @@ export default function windowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
-         * @tc.name      : testSetWindowBrightnessPromise_1
+         * @tc.name      : testSetWindowBrightnessPromise1
          * @tc.desc      : set window brightness
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 3
          */
         it('testSetWindowBrightnessPromise1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName = 'testSetWindowBrightnessPromise_1';
+            let caseName = 'testSetWindowBrightnessPromise1';
             try {
                 let windowClass = windowStage.getMainWindowSync();
                 windowClass.setWindowBrightness(1).then(() => {
@@ -3537,7 +3537,7 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7800
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7900
      * @tc.name      : testmoveWindowToGlobal_moveConfiguration
      * @tc.desc      : testmoveWindowToGlobal_moveConfiguration
      * @tc.size      : MediumTest
@@ -3574,7 +3574,7 @@ export default function windowPropertiesTest() {
       }
     })
      /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7800
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0100
          * @tc.name      : testsetWindowLayoutFullScreen_callback_401
          * @tc.desc      : testsetWindowLayoutFullScreen_callback_401
          * @tc.size      : MediumTest
@@ -3604,7 +3604,7 @@ export default function windowPropertiesTest() {
             }
         })
          /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7800
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0200
          * @tc.name      : testsetWindowLayoutFullScreen_promise_401
          * @tc.desc      : testsetWindowLayoutFullScreen_promise_401
          * @tc.size      : MediumTest
@@ -3634,7 +3634,7 @@ export default function windowPropertiesTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7900
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
          * @tc.name      : testgetGlobalRect
          * @tc.desc      : get the global rect.
          * @tc.size      : MediumTest
@@ -3662,7 +3662,7 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8000
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0100
          * @tc.name      : testRestoreByMinimize
          * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
          * @tc.size      : MediumTest
@@ -3718,7 +3718,7 @@ export default function windowPropertiesTest() {
       })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8100
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0200
          * @tc.name      : testRestoreByMinimizeBtn
          * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
          * @tc.size      : MediumTest
@@ -3995,15 +3995,8 @@ export default function windowPropertiesTest() {
           }
       }
     })
-      /**
-       * @tc.number    : SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0100
-       * @tc.name      : test_GET_VISIBLEWINDOWINFO_0100
-       * @tc.desc      : test_GET_VISIBLEWINDOWINFO_0100
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 0
-       */
-       /**
+     
+    /**
      * @tc.number    : SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0100
      * @tc.name      : test_GET_VISIBLEWINDOWINFO_0100
      * @tc.desc      : test_GET_VISIBLEWINDOWINFO_0100
@@ -4091,7 +4084,7 @@ export default function windowPropertiesTest() {
 
        /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0020
-     * @tc.name      : testSetDefaultDensityEnabled_true
+     * @tc.name      : testSetDefaultDensityEnabled_false
      * @tc.desc      : Test the function value of setDefaultDensityEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -4151,7 +4144,7 @@ export default function windowPropertiesTest() {
     })
 
      /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0100
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0900
          * @tc.name      : test_setWindowGrayScale_0
          * @tc.desc      : test_setWindowGrayScale_0
          * @tc.size      : MediumTest
@@ -4185,7 +4178,7 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0200
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1000
          * @tc.name      : test_setWindowGrayScale_0.5
          * @tc.desc      : test_setWindowGrayScale_0.5
          * @tc.size      : MediumTest
@@ -4219,7 +4212,7 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0300
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1100
          * @tc.name      : test_setWindowGrayScale_1
          * @tc.desc      : test_setWindowGrayScale_1
          * @tc.size      : MediumTest
@@ -4254,7 +4247,7 @@ export default function windowPropertiesTest() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0400
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1200
          * @tc.name      : test_setWindowGrayScale_-1
          * @tc.desc      : test_setWindowGrayScale_-1
          * @tc.size      : MediumTest
@@ -4288,7 +4281,7 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0500
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1300
          * @tc.name      : test_setWindowGrayScale_2
          * @tc.desc      : test_setWindowGrayScale_2
          * @tc.size      : MediumTest
@@ -4323,7 +4316,7 @@ export default function windowPropertiesTest() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0600
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1400
          * @tc.name      : test_subWindow_setWindowGrayScale_1
          * @tc.desc      : test_subWindow_setWindowGrayScale_1
          * @tc.size      : MediumTest

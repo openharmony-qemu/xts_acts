@@ -439,7 +439,7 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0200
+     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
      * @tc.name       : test_setWindowShadowRadius_1300004
      * @tc.desc       : test_setWindowShadowRadius_1300004
      * @tc.size       : MediumTest
@@ -464,7 +464,7 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
+     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0400
      * @tc.name       : test_setWindowShadowRadius_negative1
      * @tc.desc       : test_setWindowShadowRadius_negative1
      * @tc.size       : MediumTest
@@ -1263,7 +1263,7 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0200
+     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0300
      * @tc.name       : test_getWindowCornerRadius_dialog_1300004
      * @tc.desc       : test_getWindowCornerRadius_dialog_1300004
      * @tc.size       : MediumTest
