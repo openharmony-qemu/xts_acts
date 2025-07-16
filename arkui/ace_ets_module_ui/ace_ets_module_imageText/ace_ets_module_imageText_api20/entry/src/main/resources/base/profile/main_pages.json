@@ -41,6 +41,7 @@
     "MainAbility/pages/ImageSpan/ImageSpanAlignment",
     "MainAbility/pages/ImageOrientation/ImageOrientation",
     "MainAbility/pages/Text/TextNumberTransitionTest",
-    "MainAbility/pages/SymbolGlyph/SymbolEffectTest"
+    "MainAbility/pages/SymbolGlyph/SymbolEffectTest",
+    "MainAbility/pages/Text/shaderStyle"
   ]
 }

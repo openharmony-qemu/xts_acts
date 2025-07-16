@@ -13,19 +13,27 @@
  * limitations under the License.
  */
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
+import InheritFreezeOptionsTest from './BuilderNodeTest/InheritFreezeOptionsTest.test';
+import ComponentInheritFreezeOptionsTest from './ComponentContentTest/ComponentInheritFreezeOptionsTest.test';
 import DrawModifierOneTest from './DrawTest/DrawModifierOneTest.test';
 import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
 import IsDisposedTest from './ContextTest/IsDisposedTest.test';
+import DrawForegroundTest from './DrawTest/DrawForegroundTest.test';
 import BuilderNodeOneTest from './LocalStorageTest/BuilderNodeOneTest.test';
 import BuilderNodeTwoTest from './LocalStorageTest/BuilderNodeTwoTest.test';
 import BuilderNodeThreeTest from './LocalStorageTest/BuilderNodeThreeTest.test';
+import DarkModeTest from './UIAppearance/DarkModeTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
+  InheritFreezeOptionsTest();
+  ComponentInheritFreezeOptionsTest();
   DrawModifierOneTest();
   DrawModifierTwoTest();
   IsDisposedTest();
+  DrawForegroundTest();
   BuilderNodeOneTest();
   BuilderNodeTwoTest();
   BuilderNodeThreeTest();
+  DarkModeTest();
 }

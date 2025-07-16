@@ -90,7 +90,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
@@ -136,7 +135,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
@@ -182,7 +180,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
@@ -228,7 +225,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
@@ -274,7 +270,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
@@ -320,7 +315,6 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
-    input[inputDir.length() - 1] = '\0';
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->MAXBITE_ENABLE = true;
     vEncSample->INP_DIR = input;
