@@ -17,6 +17,7 @@ import taskTest from "./Task.test";
 import executeDelayedTest from "./ExecuteDelayed.test";
 import taskGroupTest from "./TaskGroup.test";
 import taskPoolTest from "./TaskPool.test";
+import TaskPoolBaseTest from "./TaskPoolBase.test";
 
 
 export default function testsuite() {
@@ -24,4 +25,5 @@ export default function testsuite() {
   executeDelayedTest();
   taskGroupTest();
   taskPoolTest()
+  TaskPoolBaseTest()
 }
