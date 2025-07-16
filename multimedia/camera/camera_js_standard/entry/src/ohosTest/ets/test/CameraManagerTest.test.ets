@@ -1122,7 +1122,7 @@ export default function cameraManagerTest() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100', Level.LEVEL1, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100--------------");
       if (isEmpty(mCameraManager)) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100 mCameraManager == null || undefined")
