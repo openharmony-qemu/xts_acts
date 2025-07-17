@@ -755,24 +755,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           await terminateAbility(msgStr);
           console.info(`${msgStr} terminateSelf end.`);
         }).catch((err: BusinessError) => {
-          if (err.code != 801) {
             console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
-          } else {
-            console.log(msgStr + 'innner catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
         });
       } catch (err) {
-        if (err.code != 801) {
-          console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
-        } else {
-          console.log(msgStr + 'out catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-          console.log(msgStr + JSON.stringify(err))
-          expect(err.code).assertEqual(801);
-        }
       }
     })
     /**
@@ -806,24 +794,12 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           await terminateAbility(msgStr);
           console.info(`${msgStr} terminateSelf end.`);
         }).catch((err: BusinessError) => {
-          if (err.code != 801) {
             console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
-          } else {
-            console.log(msgStr + 'innner catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
         });
       } catch (err) {
-        if (err.code != 801) {
-          console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
-        } else {
-          console.log(msgStr + 'out catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-          console.log(msgStr + JSON.stringify(err))
-          expect(err.code).assertEqual(801);
-        }
       }
     })
   })
