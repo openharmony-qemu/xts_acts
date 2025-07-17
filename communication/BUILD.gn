@@ -32,6 +32,7 @@ group("communication") {
       "netstack_http_nop:ActsHttpNopStageTest",
       "netstack_socket_nop:ActsSocketNoPermissionTest",
       "nfc_Controller:ActsNFCJSTest",
+      "nfc_ControllerStatic:ActsNFCJSStaticTest",
       "nfc_ErrorCode:ActsNFCErrorJSTest",
       "nfc_SecureElement:ActsnfcSEServiceTest",
       "nfc_SecureElement_2:ActsnfcSEServiceTest2",
