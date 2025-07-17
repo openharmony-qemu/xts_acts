@@ -68,20 +68,20 @@ class DrawingNativeCanvasPart6Test : public testing::Test {
 
 /*
  * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
- * @tc.name: testCanvasDrawSingleCharacterWithFeaturesNormal
- * @tc.desc: test for testCanvasDrawSingleCharacterWithFeaturesNormal
+ * @tc.name: testCanvasDrawSingleChaWithFeaturesNormal
+ * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesNormal
  * @tc.size  : SmallTest
  * @tc.type  : Function
  * @tc.level : Level 0
  */
-HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleCharacterWithFeaturesNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     const char *str1 = "1";
     const char *str2 = "H";
     const char *str3 = "a";
     const char *str4 = "你";
     const char *str5 = "（";
-    const char *str6 = "("; 
+    const char *str6 = "(";
     const char *str7 = "{";
     const char *str8 = "龘";
     const char *str9 = "無";
@@ -113,13 +113,13 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleCharacterWithFeatures
 }
 /*
  * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
- * @tc.name: testCanvasDrawSingleCharacterWithFeaturesAbNormal
- * @tc.desc: test for testCanvasDrawSingleCharacterWithFeaturesAbNormal
+ * @tc.name: testCanvasDrawSingleChaWithFeaturesAbNormal
+ * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesAbNormal
  * @tc.size  : SmallTest
  * @tc.type  : Function
  * @tc.level : Level 3
  */
-HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleCharacterWithFeaturesAbNormal, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesAbNormal, Function | SmallTest | Level3) {
     float curX = 100.0f;
     float curY = 100.0f;
     float textSize = 50.0f;
@@ -153,13 +153,13 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleCharacterWithFeatures
 }
 /*
  * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
- * @tc.name: testCanvasDrawSingleCharacterWithFeaturesCalls
- * @tc.desc: test for testCanvasDrawSingleCharacterWithFeaturesCalls
+ * @tc.name: testCanvasDrawSingleChaWithFeaturesCalls
+ * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesCalls
  * @tc.size  : SmallTest
  * @tc.type  : Function
  * @tc.level : Level 2
  */
-HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleCharacterWithFeaturesCalls, Function | SmallTest | Level2) {
+HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesCalls, Function | SmallTest | Level2) {
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     const char *str1 = "1";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
