@@ -22,7 +22,7 @@ export default function bindSheetKeyboardAvoidMode(){
     beforeEach(async (done:Function) =>{
       console.info("bindSheetKeyboardAvoidMode beforeEach start");
       let options:router.RouterOptions = {
-        url: 'MainAbility/pages/Menu/keyboardAvoidMode',
+        url: 'MainAbility/pages/SheetType/keyboardAvoidMode',
       }
       try {
         router.clear();
