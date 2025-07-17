@@ -111,7 +111,7 @@ export default function audioLoopBack() {
         try {
           let audioLoopBack: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           if (null == audioLoopBack) {
-            expect(audioLoopBack).assertFail();
+            expect().assertFail();
           }
         } catch (err) {
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0100 ERROR: ${err}`);
