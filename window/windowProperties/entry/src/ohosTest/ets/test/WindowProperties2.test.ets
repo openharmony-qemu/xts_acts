@@ -635,7 +635,7 @@ export default function windowPropertiesTest2() {
       console.info(`${caseName} Succeeded in loading the windowClass  content.`);
       await windowClass.showWindow();
       await sleep(200);
-      windowClass!.setWindowShadowRadius(0)
+      await windowClass!.setWindowShadowRadius(0)
         expect(true).assertTrue();
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await windowClass!.destroyWindow();
@@ -681,7 +681,7 @@ export default function windowPropertiesTest2() {
         console.info(`${caseName} Succeeded in loading the windowClass  content.`);
         await windowClass.showWindow();
         await sleep(200);
-        windowClass!.setWindowShadowRadius(4)
+        await windowClass!.setWindowShadowRadius(4)
         expect(true).assertTrue();
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await windowClass!.destroyWindow();
