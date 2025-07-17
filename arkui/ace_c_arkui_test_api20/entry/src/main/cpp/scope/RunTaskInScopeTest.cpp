@@ -90,43 +90,43 @@ napi_value RunTaskInScopeTest::testRunTaskInScope(napi_env env, napi_callback_in
     ArkUI_NodeHandle column = CreateChildNode(nodeAPI);
     
     nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
-       auto button = OH_ArkUI_NodeEvent_GetNodeHandle(event);
-       auto targetId = OH_ArkUI_NodeEvent_GetTargetId(event);
-       auto uiContext1 = OH_ArkUI_GetContextByNode(button);
+        auto button = OH_ArkUI_NodeEvent_GetNodeHandle(event);
+        auto targetId = OH_ArkUI_NodeEvent_GetTargetId(event);
+        auto uiContext1 = OH_ArkUI_GetContextByNode(button);
        
-       ArkUI_NumberValue background_color_value[] = {{.u32 = COLOR_GREEN}};
-       ArkUI_AttributeItem background_color_item = {background_color_value,
-           sizeof(background_color_value) / sizeof(ArkUI_NumberValue)};
-       if (targetId == NUMBER_4) {
-           auto ec = OH_ArkUI_RunTaskInScope(nullptr, test1, [](void *userData) {
-               auto test = (Test *)userData;
-               ArkUI_AttributeItem LABEL_Item = {.string = "success"};
-               nodeAPI->setAttribute(test->pageOneButton1, NODE_BUTTON_LABEL, &LABEL_Item);
-           });
-           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code4 = %{public}d", ec);
-           if (ec == ARKUI_ERROR_CODE_UI_CONTEXT_INVALID) {
-               nodeAPI->setAttribute(button, NODE_BACKGROUND_COLOR, &background_color_item);
-           }
-       }
-       if (targetId == NUMBER_5) {
-           auto uiContext = OH_ArkUI_GetContextByNode(test1->button5);
-           auto ec = OH_ArkUI_RunTaskInScope(uiContext, test1, nullptr);
-           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code5 = %{public}d", ec);
-           if (ec == ARKUI_ERROR_CODE_CALLBACK_INVALID) {
-               nodeAPI->setAttribute(button, NODE_BACKGROUND_COLOR, &background_color_item);
-           }
-       }
-       if (targetId == NUMBER_6) {
-           auto uiContext = OH_ArkUI_GetContextByNode(test1->button5);
-           auto ec = OH_ArkUI_RunTaskInScope(uiContext, test1, [](void *userData) {
-               auto test = (Test *)userData;
-               ArkUI_NumberValue background_color_value[] = {{.u32 = 0xFF00FF00}};
-               ArkUI_AttributeItem background_color_item = {background_color_value,
-                   sizeof(background_color_value) / sizeof(ArkUI_NumberValue)};
-               nodeAPI->setAttribute(test->button5, NODE_BACKGROUND_COLOR, &background_color_item);
-           });
-           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code6 = %{public}d", ec);
-       }
+        ArkUI_NumberValue background_color_value[] = {{.u32 = COLOR_GREEN}};
+        ArkUI_AttributeItem background_color_item = {background_color_value,
+            sizeof(background_color_value) / sizeof(ArkUI_NumberValue)};
+        if (targetId == NUMBER_4) {
+            auto ec = OH_ArkUI_RunTaskInScope(nullptr, test1, [](void *userData) {
+                auto test = (Test *)userData;
+                ArkUI_AttributeItem LABEL_Item = {.string = "success"};
+                nodeAPI->setAttribute(test->pageOneButton1, NODE_BUTTON_LABEL, &LABEL_Item);
+            });
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code4 = %{public}d", ec);
+            if (ec == ARKUI_ERROR_CODE_UI_CONTEXT_INVALID) {
+                nodeAPI->setAttribute(button, NODE_BACKGROUND_COLOR, &background_color_item);
+            }
+        }
+        if (targetId == NUMBER_5) {
+            auto uiContext = OH_ArkUI_GetContextByNode(test1->button5);
+            auto ec = OH_ArkUI_RunTaskInScope(uiContext, test1, nullptr);
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code5 = %{public}d", ec);
+            if (ec == ARKUI_ERROR_CODE_CALLBACK_INVALID) {
+                nodeAPI->setAttribute(button, NODE_BACKGROUND_COLOR, &background_color_item);
+            }
+        }
+        if (targetId == NUMBER_6) {
+            auto uiContext = OH_ArkUI_GetContextByNode(test1->button5);
+            auto ec = OH_ArkUI_RunTaskInScope(uiContext, test1, [](void *userData) {
+                auto test = (Test *)userData;
+                ArkUI_NumberValue background_color_value[] = {{.u32 = 0xFF00FF00}};
+                ArkUI_AttributeItem background_color_item = {background_color_value,
+                    sizeof(background_color_value) / sizeof(ArkUI_NumberValue)};
+                nodeAPI->setAttribute(test->button5, NODE_BACKGROUND_COLOR, &background_color_item);
+            });
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "RunTaskInScope code6 = %{public}d", ec);
+        }
     });
     
     std::string id(xComponentID);
