@@ -22,9 +22,9 @@ export default function promiseTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Promise_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Promise_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Promise_New_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function promiseTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("PromiseResolver_Reject_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("PromiseResolver_Reject_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'PromiseResolver_Reject_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function promiseTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("PromiseResolver_Resolve_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("PromiseResolver_Resolve_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'PromiseResolver_Resolve_0100 start');
         let cls = new Foo();

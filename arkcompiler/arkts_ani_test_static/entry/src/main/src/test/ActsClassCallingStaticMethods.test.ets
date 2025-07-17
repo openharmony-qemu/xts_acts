@@ -22,9 +22,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Boolean_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Boolean_A_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Boolean_V_0100 start');
         let cls = new Foo();
@@ -79,9 +79,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Char_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Char_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Char_A_0100 start');
         let cls = new Foo();
@@ -117,9 +117,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Char_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Char_V_0100 start');
         let cls = new Foo();
@@ -136,9 +136,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Byte_0100 start');
         let cls = new Foo();
@@ -155,9 +155,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Byte_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Byte_A_0100 start');
         let cls = new Foo();
@@ -174,9 +174,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Byte_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Byte_V_0100 start');
         let cls = new Foo();
@@ -193,9 +193,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Short_0100 start');
         let cls = new Foo();
@@ -212,9 +212,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Short_A_0100 start');
         let cls = new Foo();
@@ -231,9 +231,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Short_V_0100 start');
         let cls = new Foo();
@@ -250,9 +250,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Int_0100 start');
         let cls = new Foo();
@@ -269,9 +269,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Int_A_0100 start');
         let cls = new Foo();
@@ -288,9 +288,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Int_V_0100 start');
         let cls = new Foo();
@@ -307,9 +307,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Long_0100 start');
         let cls = new Foo();
@@ -326,9 +326,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Long_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Long_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Long_A_0100 start');
         let cls = new Foo();
@@ -345,9 +345,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Long_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Long_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Long_V_0100 start');
         let cls = new Foo();
@@ -364,9 +364,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Float_0100 start');
         let cls = new Foo();
@@ -383,9 +383,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Float_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Float_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Float_A_0100 start');
         let cls = new Foo();
@@ -402,9 +402,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Float_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Float_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Float_V_0100 start');
         let cls = new Foo();
@@ -421,9 +421,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Double_0100 start');
         let cls = new Foo();
@@ -440,9 +440,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Double_A_0100 start');
         let cls = new Foo();
@@ -459,9 +459,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Double_V_0100 start');
         let cls = new Foo();
@@ -478,9 +478,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Ref_0100 start');
         let cls = new Foo();
@@ -497,9 +497,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Ref_A_0100 start');
         let cls = new Foo();
@@ -516,9 +516,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Ref_V_0100 start');
         let cls = new Foo();
@@ -535,9 +535,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Void_0100 start');
         let cls = new Foo();
@@ -554,9 +554,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Void_A_0100 start');
         let cls = new Foo();
@@ -573,9 +573,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethodByName_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethodByName_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethodByName_Void_V_0100 start');
         let cls = new Foo();
@@ -592,9 +592,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Short_0100 start');
         let cls = new Foo();
@@ -611,9 +611,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Short_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Short_A_0100 start');
         let cls = new Foo();
@@ -630,9 +630,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Short_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Short_V_0100 start');
         let cls = new Foo();
@@ -649,9 +649,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Int_0100 start');
         let cls = new Foo();
@@ -668,9 +668,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Int_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Int_A_0100 start');
         let cls = new Foo();
@@ -687,9 +687,9 @@ export default function callingStaticMethodsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_CallStaticMethod_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Int_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Int_V_0100 start');
         let cls = new Foo();
@@ -706,9 +706,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Double_0100 start');
         let cls = new Foo();
@@ -725,9 +725,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Double_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Double_A_0100 start');
         let cls = new Foo();
@@ -744,9 +744,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Double_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Double_V_0100 start');
         let cls = new Foo();
@@ -763,9 +763,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Void_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Void_0100 start');
         let cls = new Foo();
@@ -782,9 +782,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Void_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Void_A_0100 start');
         let cls = new Foo();
@@ -801,9 +801,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Void_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Void_V_0100 start');
         let cls = new Foo();
@@ -820,9 +820,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Long_0100 start');
         let cls = new Foo();
@@ -839,9 +839,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Float_0100 start');
         let cls = new Foo();
@@ -858,9 +858,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Ref_0100 start');
         let cls = new Foo();
@@ -877,9 +877,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Ref_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Ref_V_0100 start');
         let cls = new Foo();
@@ -896,9 +896,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Ref_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Ref_A_0100 start');
         let cls = new Foo();
@@ -915,9 +915,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Boolean_0100 start');
         let cls = new Foo();
@@ -934,9 +934,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Boolean_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Boolean_A_0100 start');
         let cls = new Foo();
@@ -953,9 +953,9 @@ export default function callingStaticMethodsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_CallStaticMethod_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_CallStaticMethod_Boolean_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_CallStaticMethod_Boolean_V_0100 start');
         let cls = new Foo();

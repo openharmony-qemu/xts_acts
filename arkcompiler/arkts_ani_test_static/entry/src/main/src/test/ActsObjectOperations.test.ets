@@ -22,9 +22,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Object_InstanceOf_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Object_InstanceOf_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Object_InstanceOf_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Object_GetType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Object_GetType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Object_GetType_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Object_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Object_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'Object_New_0100 start');
       let cls = new Foo();
@@ -79,9 +79,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Reference_IsNull_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_IsNull_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_IsNull_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Reference_IsUndefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_IsUndefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_IsUndefined_0100 start');
         let cls = new Foo();
@@ -117,9 +117,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Reference_IsNullishValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_IsNullishValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_IsNullishValue_0100 start');
         let cls = new Foo();
@@ -136,9 +136,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Reference_Equals_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_Equals_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_Equals_0100 start');
         let cls = new Foo();
@@ -155,9 +155,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Array_New_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Array_New_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Array_New_Ref_0100 start');
         let cls = new Foo();
@@ -174,9 +174,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Object_New_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Object_New_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Object_New_A_0100 start');
         let cls = new Foo();
@@ -193,9 +193,9 @@ export default function objectOperationsTest() {
       * @tc.desc      : MediumTest
       * @tc.size      : Function
       * @tc.type      : Function test
-      * @tc.level     : Level 3
+      * @tc.level     : Level 0
       */
-    it("Object_New_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Object_New_V_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Object_New_V_0100 start');
         let cls = new Foo();

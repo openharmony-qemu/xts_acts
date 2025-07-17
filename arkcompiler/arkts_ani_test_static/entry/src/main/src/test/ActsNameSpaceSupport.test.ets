@@ -22,9 +22,9 @@ export default function nameSpaceSupportTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Namespace_FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Namespace_FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Namespace_FindNamespace_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function nameSpaceSupportTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Namespace_FindClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Namespace_FindClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Namespace_FindClass_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function nameSpaceSupportTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Namespace_FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Namespace_FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Namespace_FindEnum_0100 start');
         let cls = new Foo();
@@ -79,9 +79,9 @@ export default function nameSpaceSupportTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Namespace_FindFunction_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Namespace_FindFunction_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Namespace_FindFunction_0100 start');
         let cls = new Foo();
