@@ -17,6 +17,7 @@ import InheritFreezeOptionsTest from './BuilderNodeTest/InheritFreezeOptionsTest
 import ComponentInheritFreezeOptionsTest from './ComponentContentTest/ComponentInheritFreezeOptionsTest.test';
 import DrawModifierOneTest from './DrawTest/DrawModifierOneTest.test';
 import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
+import IsDisposedTest from './ContextTest/IsDisposedTest.test';
 import DrawForegroundTest from './DrawTest/DrawForegroundTest.test';
 import BuilderNodeOneTest from './LocalStorageTest/BuilderNodeOneTest.test';
 import BuilderNodeTwoTest from './LocalStorageTest/BuilderNodeTwoTest.test';
@@ -29,6 +30,7 @@ export default function testsuite() {
   ComponentInheritFreezeOptionsTest();
   DrawModifierOneTest();
   DrawModifierTwoTest();
+  IsDisposedTest();
   DrawForegroundTest();
   BuilderNodeOneTest();
   BuilderNodeTwoTest();
