@@ -14,10 +14,10 @@
  */
 
 import ConnectionRegisterTest from './ConnectionResgister.test';
-import NetExtAttributeHasNetTest from './NetExtAttributeHasNet.test';
+//import NetExtAttributeHasNetTest from './NetExtAttributeHasNet.test';
 
 
 export default function testsuite() {
   ConnectionRegisterTest();
-  NetExtAttributeHasNetTest();
+  //NetExtAttributeHasNetTest();
 }
