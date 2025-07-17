@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ namespace {
 
 }
 
-static napi_value GetKeyCodeEvent_KEY_APOSTROPHE(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyApostrophe(napi_env env, napi_callback_info info)
 {
     if(KEY_APOSTROPHE_ISTRUE){
         napi_value retValue;
@@ -42,7 +42,7 @@ static napi_value GetKeyCodeEvent_KEY_APOSTROPHE(napi_env env, napi_callback_inf
     return 0;
 }
 
-static napi_value GetKeyCodeEvent_KEY_GRAVE(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyGrave(napi_env env, napi_callback_info info)
 {
     if(KEY_GRAVE_ISTRUE){
         napi_value retValue;
@@ -51,7 +51,7 @@ static napi_value GetKeyCodeEvent_KEY_GRAVE(napi_env env, napi_callback_info inf
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_MINUS(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyMinus(napi_env env, napi_callback_info info)
 {
     if(KEY_MINUS_ISTRUE){
         napi_value retValue;
@@ -60,7 +60,7 @@ static napi_value GetKeyCodeEvent_KEY_MINUS(napi_env env, napi_callback_info inf
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_EQUALS(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyEquals(napi_env env, napi_callback_info info)
 {
     if(KEY_EQUALS_ISTRUE){
         napi_value retValue;
@@ -69,7 +69,7 @@ static napi_value GetKeyCodeEvent_KEY_EQUALS(napi_env env, napi_callback_info in
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_LEFT_BRACKET(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyLeftbracket(napi_env env, napi_callback_info info)
 {
     if(KEY_LEFT_BRACKET_ISTRUE){
         napi_value retValue;
@@ -78,7 +78,7 @@ static napi_value GetKeyCodeEvent_KEY_LEFT_BRACKET(napi_env env, napi_callback_i
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_RIGHT_BRACKET(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyRightbracket(napi_env env, napi_callback_info info)
 {
     if(KEY_RIGHT_BRACKET_ISTRUE){
         napi_value retValue;
@@ -87,7 +87,7 @@ static napi_value GetKeyCodeEvent_KEY_RIGHT_BRACKET(napi_env env, napi_callback_
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_BACKSLASH(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyBackslash(napi_env env, napi_callback_info info)
 {
     if(KEY_BACKSLASH_ISTRUE){
         napi_value retValue;
@@ -96,7 +96,7 @@ static napi_value GetKeyCodeEvent_KEY_BACKSLASH(napi_env env, napi_callback_info
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_SEMICOLON(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeySemicolon(napi_env env, napi_callback_info info)
 {
     if(KEY_SEMICOLON_ISTRUE){
         napi_value retValue;
@@ -105,7 +105,7 @@ static napi_value GetKeyCodeEvent_KEY_SEMICOLON(napi_env env, napi_callback_info
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_SLASH(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeySlash(napi_env env, napi_callback_info info)
 {
     if(KEY_SLASH_ISTRUE){
         napi_value retValue;
@@ -114,7 +114,7 @@ static napi_value GetKeyCodeEvent_KEY_SLASH(napi_env env, napi_callback_info inf
     }
     return 0;
 }
-static napi_value GetKeyCodeEvent_KEY_AT(napi_env env, napi_callback_info info)
+static napi_value GetKeyCodeEventKeyAt(napi_env env, napi_callback_info info)
 {
     if(KEY_AT_ISTRUE){
         napi_value retValue;
@@ -170,26 +170,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"GetKeyCodeEvent_KEY_APOSTROPHE",
-         nullptr, GetKeyCodeEvent_KEY_APOSTROPHE, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_GRAVE",
-         nullptr, GetKeyCodeEvent_KEY_GRAVE, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_MINUS",
-         nullptr, GetKeyCodeEvent_KEY_MINUS, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_EQUALS",
-         nullptr, GetKeyCodeEvent_KEY_EQUALS, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_LEFT_BRACKET",
-         nullptr, GetKeyCodeEvent_KEY_LEFT_BRACKET, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_RIGHT_BRACKET",
-         nullptr, GetKeyCodeEvent_KEY_RIGHT_BRACKET, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_BACKSLASH",
-         nullptr, GetKeyCodeEvent_KEY_BACKSLASH, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_SEMICOLON",
-         nullptr, GetKeyCodeEvent_KEY_SEMICOLON, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_SLASH",
-         nullptr, GetKeyCodeEvent_KEY_SLASH, nullptr, nullptr, nullptr, napi_default, nullptr},
-                {"GetKeyCodeEvent_KEY_AT",
-         nullptr, GetKeyCodeEvent_KEY_AT, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyApostrophe",
+         nullptr, GetKeyCodeEventKeyApostrophe, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyGrave",
+         nullptr, GetKeyCodeEventKeyGrave, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyMinus",
+         nullptr, GetKeyCodeEventKeyMinus, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyEquals",
+         nullptr, GetKeyCodeEventKeyEquals, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyLeftbracket",
+         nullptr, GetKeyCodeEventKeyLeftbracket, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyRightbracket",
+         nullptr, GetKeyCodeEventKeyRightbracket, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyBackslash",
+         nullptr, GetKeyCodeEventKeyBackslash, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeySemicolon",
+         nullptr, GetKeyCodeEventKeySemicolon, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeySlash",
+         nullptr, GetKeyCodeEventKeySlash, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyAt",
+         nullptr, GetKeyCodeEventKeyAt, nullptr, nullptr, nullptr, napi_default, nullptr},
         
         {"InitKeyMonitor",
          nullptr, InitKeyMonitor, nullptr, nullptr, nullptr, napi_default, nullptr},

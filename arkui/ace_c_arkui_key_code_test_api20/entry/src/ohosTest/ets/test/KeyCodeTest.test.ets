@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,13 +26,16 @@ export default function KeyCodeNdkTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`KeyCodeTest/KeyCodeTest`, done);
     });
-    /**
-     * @tc.number  : KEY_APOSTROPHE_TEST
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+
+    /*
+     * @tc.number     : KEY_APOSTROPHE_TEST
+     * @tc.name       : KEY_APOSTROPHE_TEST
+     * @tc.desc       : testing KEY_APOSTROPHE interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('KEY_APOSTROPHE_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('KEY_APOSTROPHE_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_APOSTROPHE_TEST start====");
@@ -40,7 +43,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2063);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_APOSTROPHE();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyApostrophe();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -50,7 +53,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_GRAVE_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_GRAVE_TEST
+     * @tc.name       : KEY_GRAVE_TEST
+     * @tc.desc       : testing KEY_GRAVE interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_GRAVE_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_GRAVE_TEST start====");
@@ -58,7 +69,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2056);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_GRAVE();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyGrave();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -68,8 +79,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-
-    it('KEY_MINUS_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_MINUS_TEST
+     * @tc.name       : KEY_MINUS_TEST
+     * @tc.desc       : testing KEY_MINUS interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_MINUS_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_MINUS_TEST start====");
@@ -77,7 +95,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2057);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_MINUS();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyMinus();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -87,7 +105,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_EQUALS_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_EQUALS_TEST
+     * @tc.name       : KEY_EQUALS_TEST
+     * @tc.desc       : testing KEY_EQUALS interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_EQUALS_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_MINUS_TEST start====");
@@ -95,7 +121,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2058);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_EQUALS();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyEquals();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -105,7 +131,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_LEFT_BRACKET_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_LEFT_BRACKET_TEST
+     * @tc.name       : KEY_LEFT_BRACKET_TEST
+     * @tc.desc       : testing KEY_LEFT_BRACKET interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_LEFT_BRACKET_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_LEFT_BRACKET_TEST start====");
@@ -113,7 +147,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2059);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_LEFT_BRACKET();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyLeftbracket();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -123,7 +157,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_RIGHT_BRACKET_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_RIGHT_BRACKET_TEST
+     * @tc.name       : KEY_RIGHT_BRACKET_TEST
+     * @tc.desc       : testing KEY_RIGHT_BRACKET interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_RIGHT_BRACKET_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_RIGHT_BRACKET_TEST start====");
@@ -131,7 +173,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2060);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_RIGHT_BRACKET();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyRightbracket();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -141,7 +183,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_BACKSLASH_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_BACKSLASH_TEST
+     * @tc.name       : KEY_BACKSLASH_TEST
+     * @tc.desc       : testing KEY_BACKSLASH interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_BACKSLASH_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_BACKSLASH_TEST start====");
@@ -149,7 +199,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2061);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_BACKSLASH();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyBackslash();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -159,7 +209,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_SEMICOLON_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_SEMICOLON_TEST
+     * @tc.name       : KEY_SEMICOLON_TEST
+     * @tc.desc       : testing KEY_SEMICOLON interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_SEMICOLON_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_SEMICOLON_TEST start====");
@@ -167,7 +225,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2062);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_SEMICOLON();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeySemicolon();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -177,7 +235,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_SLASH_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_SLASH_TEST
+     * @tc.name       : KEY_SLASH_TEST
+     * @tc.desc       : testing KEY_SLASH interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_SLASH_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_SLASH_TEST start====");
@@ -185,7 +251,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2064);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_SLASH();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeySlash();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {
@@ -195,7 +261,15 @@ export default function KeyCodeNdkTest() {
         }
       })
 
-    it('KEY_AT_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /*
+     * @tc.number     : KEY_AT_TEST
+     * @tc.name       : KEY_AT_TEST
+     * @tc.desc       : testing KEY_AT interface
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KEY_AT_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>KEY_AT_TEST start====");
@@ -203,7 +277,7 @@ export default function KeyCodeNdkTest() {
           Utils.sleep(1000)
           await driver.triggerKey(2065);
           Utils.sleep(1000)
-          let a: number = keyCodeNdk.GetKeyCodeEvent_KEY_AT();
+          let a: number = keyCodeNdk.GetKeyCodeEventKeyAt();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
         } catch (err) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const GetKeyCodeEvent_KEY_APOSTROPHE: () => number;
-export const GetKeyCodeEvent_KEY_GRAVE: () => number;
-export const GetKeyCodeEvent_KEY_MINUS: () => number;
-export const GetKeyCodeEvent_KEY_EQUALS: () => number;
-export const GetKeyCodeEvent_KEY_LEFT_BRACKET: () => number;
-export const GetKeyCodeEvent_KEY_RIGHT_BRACKET: () => number;
-export const GetKeyCodeEvent_KEY_BACKSLASH: () => number;
-export const GetKeyCodeEvent_KEY_SEMICOLON: () => number;
-export const GetKeyCodeEvent_KEY_SLASH: () => number;
-export const GetKeyCodeEvent_KEY_AT: () => number;
+export const GetKeyCodeEventKeyApostrophe: () => number;
+export const GetKeyCodeEventKeyGrave: () => number;
+export const GetKeyCodeEventKeyMinus: () => number;
+export const GetKeyCodeEventKeyEquals: () => number;
+export const GetKeyCodeEventKeyLeftbracket: () => number;
+export const GetKeyCodeEventKeyRightbracket: () => number;
+export const GetKeyCodeEventKeyBackslash: () => number;
+export const GetKeyCodeEventKeySemicolon: () => number;
+export const GetKeyCodeEventKeySlash: () => number;
+export const GetKeyCodeEventKeyAt: () => number;
 export const InitKeyMonitor: (keyCode: number) => number;
