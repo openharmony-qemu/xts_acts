@@ -865,15 +865,10 @@ export default function i18nStageTest() {
     it('dateTimeFormatAdapt_test_static_0010', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
       let dateFmt = new intl.DateTimeFormat("zh-CN", {
-        dateStyle: 'long'
+        dateStyle: 'full'
       });
-      console.log('dateTimeFormatAdapt_test_static_0010:' + dateFmt.format(data));
-      let devType = deviceInfo.deviceType;
-      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
-        expect(dateFmt.format(data)).assertEqual('2020年12月20日');
-      } else {
-        expect(dateFmt.format(data)).assertEqual('2020/12/20');
-      }
+      console.log('dateTimeFormatAdapt_test_0010:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('2020年12月20日星期日');
     })
 
     /**
@@ -887,15 +882,10 @@ export default function i18nStageTest() {
     it('dateTimeFormatAdapt_test_static_0020', Level.LEVEL1, async (): Promise<void> => {
       let data = new Date(2020, 11, 20, 14, 23, 16);
       let dateFmt = new intl.DateTimeFormat("zh-CN", {
-        timeStyle: 'long'
+        timeStyle: 'full'
       });
-      console.log('dateTimeFormatAdapt_test_static_0020:' + dateFmt.format(data));
-      let devType = deviceInfo.deviceType;
-      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
-        expect(dateFmt.format(data)).assertEqual('GMT+8 下午2:23:16');
-      } else {
-        expect(dateFmt.format(data)).assertEqual('下午2:23');
-      }
+      console.log('dateTimeFormatAdapt_test_0020:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('中国标准时间 下午2:23:16');
     })
 
     /**
@@ -911,13 +901,8 @@ export default function i18nStageTest() {
       let dateFmt = new intl.DateTimeFormat("zh-CN", {
         weekday: 'long'
       });
-      console.log('dateTimeFormatAdapt_test_static_0030:' + dateFmt.format(data));
-      let devType = deviceInfo.deviceType;
-      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
-        expect(dateFmt.format(data)).assertEqual('星期日');
-      } else {
-        expect(dateFmt.format(data)).assertEqual('周日');
-      }
+      console.log('dateTimeFormatAdapt_test_0030:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('星期日');
     })
 
     /**
@@ -933,13 +918,8 @@ export default function i18nStageTest() {
       let dateFmt = new intl.DateTimeFormat("en-gb", {
         month: 'long'
       });
-      console.log('dateTimeFormatAdapt_test_static_0040:' + dateFmt.format(data));
-      let devType = deviceInfo.deviceType;
-      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
-        expect(dateFmt.format(data)).assertEqual('December');
-      } else {
-        expect(dateFmt.format(data)).assertEqual('Dec');
-      }
+      console.log('dateTimeFormatAdapt_test_0040:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('December');
     })
 
     /**
@@ -955,15 +935,8 @@ export default function i18nStageTest() {
       let dateFmt = new intl.DateTimeFormat("zh-CN", {
         timeZoneName: 'long'
       });
-      console.log('dateTimeFormatAdapt_test_static_0050:' + dateFmt.format(data));
-      let devType = deviceInfo.deviceType;
-      console.log('dateTimeFormatAdapt_test_static_0050:' + devType);
-      if (devType == '2in1' || devType == 'tablet'|| devType == 'default') {
-        console.log('dateTimeFormatAdapt_test_static_0050:' + dateFmt.format(data));
-        expect(dateFmt.format(data)).assertEqual('2020/12/20 中国标准时间');
-      } else {
-        expect(dateFmt.format(data)).assertEqual('2020/12/20 GMT+8');
-      }
+      console.log('dateTimeFormatAdapt_test_0050:' + dateFmt.format(data));
+      expect(dateFmt.format(data)).assertEqual('2020/12/20 中国标准时间');
     })
 
     /**

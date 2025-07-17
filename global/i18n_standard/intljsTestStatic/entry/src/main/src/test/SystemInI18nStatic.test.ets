@@ -256,10 +256,10 @@ export default function SystemIni18nTest() {
     * @tc.desc getSystemLanguages test
     */
     it('i18n_system_test_static_2200', Level.LEVEL2, async (): Promise<void> => {
-      let value = i18n.System.getSystemLanguages();
+      let value = i18n.System.getSystemLanguages(); 
       let len = value.length;
       console.log('i18n_system_test_static_2200 ' + len);
-      expect(len).assertLarger(0);
+      expect(len > 0).assertTrue();
     })
 
     /* *
@@ -271,7 +271,7 @@ export default function SystemIni18nTest() {
       let value = i18n.System.getSystemCountries('en');
       let len = value.length;
       console.log('i18n_system_test_static_2300 ' + len);
-      expect(len).assertLarger(0);
+      expect(len > 0).assertTrue();
     })
 
     /* *
@@ -370,7 +370,7 @@ export default function SystemIni18nTest() {
       console.log('i18n_system_test_static_3600 ' + 'start');
       let value = i18n.System.getPreferredLanguageList();
       console.log('i18n_system_test_static_3600 ' + value);
-      expect(value.length).assertLarger(0);
+      expect(value.length > 0).assertTrue();
     })
 
     /* *
@@ -384,7 +384,7 @@ export default function SystemIni18nTest() {
       console.log('i18n_system_test_static_3700 ' + value);
       let list = i18n.System.getPreferredLanguageList();
       console.log('i18n_system_test_static_3700 ' + list);
-      expect(list.length).assertLarger(0);
+      expect(value.length > 0).assertTrue();
       if (list[0] == 'zh-Hans') {
         expect(value).assertEqual('zh-Hans');
       } else if (list[0] == 'en') {

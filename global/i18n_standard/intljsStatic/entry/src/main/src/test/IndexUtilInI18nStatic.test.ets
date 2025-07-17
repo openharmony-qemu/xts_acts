@@ -83,7 +83,7 @@ export default function IndexUtilInI18nTest() {
       let value = index.getIndexList();
       let len = value.length;
       console.log('i18n_test_indexutil_static_0200 ' + value);
-      expect(len).assertLarger(0);
+      expect(len>0).assertTrue();
     })
 
     /* *
