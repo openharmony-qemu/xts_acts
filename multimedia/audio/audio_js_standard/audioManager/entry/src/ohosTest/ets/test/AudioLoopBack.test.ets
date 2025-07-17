@@ -384,8 +384,8 @@ export default function audioLoopBack() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
      * @tc.desc      : enable
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -401,8 +401,8 @@ export default function audioLoopBack() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100
      * @tc.desc      : enable
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -418,8 +418,8 @@ export default function audioLoopBack() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100
      * @tc.desc      : enable
      * @tc.size      : MEDIUM
      * @tc.type      : Function
