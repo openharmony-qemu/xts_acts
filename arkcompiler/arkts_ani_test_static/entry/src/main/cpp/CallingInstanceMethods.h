@@ -19,7 +19,7 @@
 #include <cstdarg>
 
 const char *CALLINSTMETH_CLASS_NAME = "Lentry/src/main/src/ets/CallingInstanceMethods/Test;";
-const char *CALLINSTMETH_MOD_NAME = "entry.src.main.src.ets.CallingInstanceMethods";
+const char *CALLINSTMETH_MOD_NAME = "Lentry/src/main/src/ets/CallingInstanceMethods;";
 
 ani_boolean GetMethodAndObject([[maybe_unused]] ani_env *env, const char *methodName,
                                const char *signature, ani_object *object, ani_method *method)
@@ -407,10 +407,12 @@ ani_boolean test_Module_BindNativeFunctions([[maybe_unused]] ani_env *env, [[may
 
 ani_boolean test_Namespace_BindNativeFunctions([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
+    ani_module module{};
+    ASSERT_EQ(env->FindModule(CALLINSTMETH_MOD_NAME, &module), ANI_OK);
+    ASSERT_NE(module, nullptr);
     ani_namespace nsA{};
     ani_function fn{};
-    const std::string nsName = std::string(CALLINSTMETH_MOD_NAME) + ".A";
-    ASSERT_EQ(env->FindNamespace(nsName.c_str(), &nsA), ANI_OK);
+    ASSERT_EQ(env->Module_FindNamespace(module, "LA;", &nsA), ANI_OK);
     ASSERT_NE(nsA, nullptr);
     ASSERT_EQ(env->Namespace_FindFunction(nsA, "checkSumB", ":Z", &fn), ANI_OK);
     ASSERT_NE(fn, nullptr);

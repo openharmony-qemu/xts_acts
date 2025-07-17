@@ -17,6 +17,37 @@
 #define ARKTS_ANI_TEST_MODULESUPPORT_H
 #include "Common.h"
 
+ani_int test_Module_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_module module{};
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/ModuleSupport;", &module), ANI_OK);
+    ASSERT_NE(module, nullptr);
+    ani_namespace ns{};
+    ASSERT_EQ(env->Module_FindNamespace(module, "LAnynsTwo;", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Module_FindClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls{};
+    ani_module module{};
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/ModuleSupport;", &module), ANI_OK);
+    ASSERT_EQ(env->Module_FindClass(module, "LFooTwo;", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Module_FindEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_module module = nullptr;
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/ModuleSupport;", &module), ANI_OK);
+    ani_enum enm = nullptr;
+    ASSERT_EQ(env->Module_FindEnum(module, "ETWO", &enm), ANI_OK);
+    ASSERT_NE(enm, nullptr);
+    return ANI_TRUE;
+}
+
 ani_int test_Module_FindFunction([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_module module{};

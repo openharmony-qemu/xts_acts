@@ -22,9 +22,9 @@ export default function accessingStaticFieldsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_GetStaticField_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Boolean_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Char_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Byte_0100 start');
         let cls = new Foo();
@@ -79,9 +79,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Short_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Int_0100 start');
         let cls = new Foo();
@@ -117,9 +117,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Long_0100 start');
         let cls = new Foo();
@@ -136,9 +136,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Float_0100 start');
         let cls = new Foo();
@@ -155,9 +155,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Double start');
         let cls = new Foo();
@@ -174,9 +174,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticField_Ref start');
         let cls = new Foo();
@@ -193,9 +193,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Boolean start');
         let cls = new Foo();
@@ -212,9 +212,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Char start');
         let cls = new Foo();
@@ -231,9 +231,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Byte start');
         let cls = new Foo();
@@ -250,9 +250,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Short start');
         let cls = new Foo();
@@ -269,9 +269,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Int start');
         let cls = new Foo();
@@ -288,9 +288,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Long start');
         let cls = new Foo();
@@ -307,9 +307,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Float start');
         let cls = new Foo();
@@ -326,9 +326,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Double start');
         let cls = new Foo();
@@ -345,9 +345,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticField_Ref start');
         let cls = new Foo();
@@ -364,9 +364,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Boolean start');
         let cls = new Foo();
@@ -383,9 +383,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Char start');
         let cls = new Foo();
@@ -402,9 +402,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Byte start');
         let cls = new Foo();
@@ -421,9 +421,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Short start');
         let cls = new Foo();
@@ -440,9 +440,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Int start');
         let cls = new Foo();
@@ -459,9 +459,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Long start');
         let cls = new Foo();
@@ -478,9 +478,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Float start');
         let cls = new Foo();
@@ -497,9 +497,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Double start');
         let cls = new Foo();
@@ -516,9 +516,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_GetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_GetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_GetStaticFieldByName_Ref start');
         let cls = new Foo();
@@ -535,9 +535,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Boolean start');
         let cls = new Foo();
@@ -554,9 +554,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Char start');
         let cls = new Foo();
@@ -573,9 +573,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Byte start');
         let cls = new Foo();
@@ -592,9 +592,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Short start');
         let cls = new Foo();
@@ -611,9 +611,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Int start');
         let cls = new Foo();
@@ -630,9 +630,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Long start');
         let cls = new Foo();
@@ -649,9 +649,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Float start');
         let cls = new Foo();
@@ -668,9 +668,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Double start');
         let cls = new Foo();
@@ -687,9 +687,9 @@ export default function accessingStaticFieldsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Class_SetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_SetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_SetStaticFieldByName_Ref start');
         let cls = new Foo();

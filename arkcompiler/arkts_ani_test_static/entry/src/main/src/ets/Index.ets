@@ -316,8 +316,14 @@ export class Foo {
   native test_Variable_GetValue_Byte(): boolean;
   native test_Variable_GetValue_Short(): boolean;
   native test_Variable_GetValue_Float(): boolean;
+  native test_Module_FindNamespace(): boolean;
+  native test_Module_FindClass(): boolean;
+  native test_Module_FindEnum(): boolean;
   native test_Module_FindFunction(): boolean;
   native test_Module_FindVariable(): boolean;
+  native test_Namespace_FindNamespace(): boolean;
+  native test_Namespace_FindClass(): boolean;
+  native test_Namespace_FindEnum(): boolean;
   native test_Namespace_FindFunction(): boolean;
   native test_Enum_GetEnumItemByName(): boolean;
   native test_Enum_GetEnumItemByIndex(): boolean;
@@ -354,22 +360,6 @@ export class Foo {
 
   native test_ANI_CreateVMAndDestroyVM(): boolean;
   native test_AttachCurrentThreadAndDetachCurrentThread(): boolean;
-
-  native test_Array_New_Set_Get(): boolean;
-  native test_Array_Push_Pop(): boolean;
-
-  native test_FixedArray_GetLength(): boolean;
-  native test_FixedArray_Boolean(): boolean;
-  native test_FixedArray_Byte(): boolean;
-  native test_FixedArray_Char(): boolean;
-  native test_FixedArray_Short(): boolean;
-  native test_FixedArray_Int(): boolean;
-  native test_FixedArray_Long(): boolean;
-  native test_FixedArray_Float(): boolean;
-  native test_FixedArray_Double(): boolean;
-  native test_FixedArray_Get_Ref(): boolean;
-  native test_FixedArray_New_Ref(): boolean;
-  native test_FixedArray_Set_Ref(): boolean;
 
   constructor() {
   }

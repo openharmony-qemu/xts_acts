@@ -19,7 +19,6 @@ import enumOperationsTest from "./ActsEnumOperations.test";
 import tupleOperationsTest from "./ActsTupleOperations.test";
 import vmOpsTest from "./ActsVmOps.test"
 import exceptionTest from "./ActsException.test"
-import fixedArrayTest from "./ActsFixedArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
@@ -43,7 +42,6 @@ export default function testsuite() {
     enumOperationsTest();
     tupleOperationsTest();
     vmOpsTest();
-    fixedArrayTest();
     promiseTest();
     exceptionTest();
     weakGlobalReferencesTest();

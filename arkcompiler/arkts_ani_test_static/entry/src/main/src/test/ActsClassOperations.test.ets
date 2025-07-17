@@ -22,9 +22,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("findClass_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("findClass_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'findClass_static_0100 start');
       let cls = new Foo();
@@ -41,9 +41,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("class_FindStaticMethodBoolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("class_FindStaticMethodBoolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'class_FindStaticMethodBoolean_0100 start');
       let cls = new Foo();
@@ -60,9 +60,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("class_FindStaticMethodInt_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("class_FindStaticMethodInt_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'class_FindStaticMethodInt_0100 start');
       let cls = new Foo();
@@ -79,9 +79,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Class_BindNativeMethods_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Class_BindNativeMethods_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Class_BindNativeMethods_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Type_GetSuperClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Type_GetSuperClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Type_GetSuperClass_0100 start');
         let cls = new Foo();
@@ -117,9 +117,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("test_Type_IsAssignableFrom_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_Type_IsAssignableFrom_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'test_Type_IsAssignableFrom_0100 start');
         let cls = new Foo();
@@ -136,9 +136,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("FindModule_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("FindModule_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'FindModule_0100 start');
         let cls = new Foo();
@@ -155,9 +155,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'FindNamespace_0100 start');
         let cls = new Foo();
@@ -174,9 +174,9 @@ export default function classOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'FindEnum_0100 start');
         let cls = new Foo();
