@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowEnterpriseTest from './WindowEnterpriseTest.test';
+import windowEnterpriseTest from './WindowEnterpriseTest.test';
 
 
 export default function testsuite() {
-  WindowEnterpriseTest();
+  windowEnterpriseTest();
 }
