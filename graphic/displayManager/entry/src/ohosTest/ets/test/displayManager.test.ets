@@ -1759,8 +1759,12 @@ export default function displayTest() {
       try {
         let result = display.getDisplayByIdSync(0).supportedRefreshRates;
         console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
-        expect(result).assertEqual(undefined);
-        done();
+        if (result === undefined) {
+          done();
+        } else {
+          expect(!result).assertNull();
+          done();
+        }
       } catch (e) {
         console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
         expect().assertFail();
