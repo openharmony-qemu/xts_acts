@@ -1228,7 +1228,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingNull, Function | SmallTest
  * @tc.type  : Function
  * @tc.level : Level 0
  */
-HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleCharacterWithFeaturesNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesNormal, Function | SmallTest | Level0) {
     const char *str = "H";
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
