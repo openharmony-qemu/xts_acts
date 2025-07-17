@@ -1,0 +1,16 @@
+{
+	"CommonInfo":{
+		"project.ide.version":"5.1.0.840",
+		"current.select.product":"default",
+		"current.select.buildMode":"",
+		"crossplatform.projectType":""
+	},
+	"BuildOptions":{
+		"SELECT_BUILD_PRODUCT":"default",
+		"BUNDLE_NAME":"com.acts.ncperrcode",
+		"BUILD_PATH":{
+			"OUTPUT_PATH":"D:\\code\\ace_c_arkui_key_code_test_api20\\build\\outputs\\default"
+		},
+		"SELECT_BUILD_MODE":""
+	}
+}
