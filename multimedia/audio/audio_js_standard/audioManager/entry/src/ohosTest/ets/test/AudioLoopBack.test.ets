@@ -14,7 +14,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 import { Driver } from '@ohos.UiTest';
@@ -378,7 +378,8 @@ export default function audioLoopBack() {
       try {
         let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MEDIA);
       } catch (err) {
-        console.error(`ERROR: ${err}`);
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
         except(false).assertTrue();
       }
     })
@@ -390,11 +391,12 @@ export default function audioLoopBack() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_MULTIMEDIA_AUDIO_VOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
-        let ret: boolean = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+        let ret: number = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
       } catch (err) {
-        console.error(`ERROR: ${err}`);
+        let error = err as BusinessError;
+        console.error(`getVolumeByStream ERROR: ${error}`);
         except(false).assertTrue();
       }
     })
@@ -406,11 +408,12 @@ export default function audioLoopBack() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_MULTIMEDIA_AUDIO_MAXVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
-        let ret: boolean = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+        let ret: number = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
       } catch (err) {
-        console.error(`ERROR: ${err}`);
+        let error = err as BusinessError;
+        console.error(`getMaxVolumeByStream ERROR: ${error}`);
         except(false).assertTrue();
       }
     })
@@ -422,11 +425,12 @@ export default function audioLoopBack() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_MULTIMEDIA_AUDIO_MINVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
-        let ret: boolean = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+        let ret: number = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
       } catch (err) {
-        console.error(`ERROR: ${err}`);
+        let error = err as BusinessError;
+        console.error(`getMinVolumeByStream ERROR: ${error}`);
         except(false).assertTrue();
       }
     })
