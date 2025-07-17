@@ -31,7 +31,7 @@ namespace ArkUICapiTest
             {"TestSetForceDarkConfig", nullptr, TestSetForceDarkConfig, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestInitModuleForArkTSEnv", nullptr, TestInitModuleForArkTSEnv, nullptr, nullptr, nullptr,
-                napi_default, nullptr},            
+                napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
