@@ -1073,12 +1073,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0600
-     * @tc.name       : testSetWindowCornerRadiusTYPE_FLOAT0
-     * @tc.desc       : 验证悬浮窗圆角值为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number : SUB_BASIC_WMS_setWindowCornerRadius_0600
+     * @tc.name : testSetWindowCornerRadiusTYPE_FLOAT0
+     * @tc.desc : 验证悬浮窗圆角值为0
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 3
      */
     it('testSetWindowCornerRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowCornerRadiusTYPE_FLOAT0";
@@ -1089,30 +1089,37 @@ export default function windowPropertiesTest2() {
         name: "testSetWindowCornerRadiusTYPE_FLOAT0", windowType: window.WindowType.TYPE_FLOAT, ctx: context
       };
       try {
-        windowClass = await ohosWindow.createWindow(config);
-        console.info(`${caseName} Succeeded in creating the float window.`);
-        await windowClass.setUIContent('testability/pages/First/index2');
-        await windowClass.showWindow();
-        await sleep(1000);
-        expect(!!windowClass).assertTrue();
-        windowClass!.setWindowCornerRadius(0)
-        let result = windowClass!.getWindowCornerRadius()
-        expect(result).assertEqual(0)
-        console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
-        await windowClass!.destroyWindow();
-        done()
-      } catch (err) {
-        console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-        if(err.code === 1300002){
-          done();
-        }else if(err.code == 801){
-          console.error(msgStr + 'setWindowCornerRadius failed ' + 'caught, err: ' + JSON.stringify(err));
+        ohosWindow.createWindow(config).then(async (data)=>{
+          windowClass = data;
+          console.info(`${caseName} Succeeded in creating the float window.`);
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000);
+          expect(!!windowClass).assertTrue();
+          await windowClass!.setWindowCornerRadius(0.0)
+          let result = windowClass!.getWindowCornerRadius()
+          expect(result).assertEqual(0)
+          console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
           await windowClass!.destroyWindow();
-          done();
-        }else{
-          expect().assertFail();
           done()
-        }
+        }).catch(async (err:BusinessError)=>{
+          console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+          if (err.code === 1300002) {
+            done();
+          } else if (err.code == 801) {
+            console.error(msgStr + 'setWindowCornerRadius failed ' + 'caught, err: ' + JSON.stringify(err));
+            await windowClass!.destroyWindow();
+            done();
+          } else {
+            expect().assertFail();
+            done()
+          }
+        })
+
+      } catch (err) {
+        console.error(msgStr + 'faild ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
 
       }
 
@@ -1136,33 +1143,39 @@ export default function windowPropertiesTest2() {
         name: "testSetWindowCornerRadiusTYPE_FLOAT5", windowType: window.WindowType.TYPE_FLOAT, ctx: context
       };
       try {
-        windowClass = await ohosWindow.createWindow(config);
-        console.info(`${caseName} Succeeded in creating the float window.`);
-        await windowClass.setUIContent('testability/pages/First/index2');
-        await windowClass.showWindow();
-        await sleep(1000);
-        expect(!!windowClass).assertTrue();
-        windowClass!.setWindowCornerRadius(5)
-        let result = windowClass!.getWindowCornerRadius()
-        expect(result).assertEqual(5)
-        console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
-        await windowClass!.destroyWindow();
-        done()
-        } catch (err) {
+        ohosWindow.createWindow(config).then(async (data)=>{
+          windowClass = data;
+          console.info(`${caseName} Succeeded in creating the float window.`);
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000);
+          expect(!!windowClass).assertTrue();
+          await windowClass!.setWindowCornerRadius(5.0)
+          let result = windowClass!.getWindowCornerRadius()
+          expect(result).assertEqual(5)
+          console.info(msgStr + 'Succeeded in calling setWindowCornerRadius.');
+          await windowClass!.destroyWindow();
+          done()
+        }).catch(async (err:BusinessError)=>{
           console.error(msgStr + 'ohosWindow.createWindow ' + 'caught, err: ' + JSON.stringify(err));
-          if(err.code === 1300002){
+          if (err.code === 1300002) {
             done();
-          }else if(err.code == 801){
+          } else if (err.code == 801) {
             console.error(msgStr + 'setWindowCornerRadius failed ' + 'caught, err: ' + JSON.stringify(err));
             await windowClass!.destroyWindow();
             done();
-          }else{
+          } else {
             expect().assertFail();
             done()
           }
+        })
 
-        }
-        
+      } catch (err) {
+        console.error(msgStr + 'faild ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
+
+      }
     })
 
     /**
