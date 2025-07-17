@@ -1,9 +1,9 @@
 {
-    "description": "Configuration for hjunit demo Tests",
+    "description": "ani xts tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "180000",
-        "shell-timeout": "180000",
+        "test-timeout": "800000",
+        "shell-timeout": "800000",
         "bundle-name": "com.acts.anitest.static",
         "module-name": "entry"
     },

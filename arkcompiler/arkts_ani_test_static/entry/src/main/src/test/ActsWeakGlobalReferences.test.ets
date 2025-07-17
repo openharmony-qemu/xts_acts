@@ -22,9 +22,9 @@ export default function weakGlobalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("WeakReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("WeakReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'WeakReference_Delete_0100 start');
         let cls = new Foo();

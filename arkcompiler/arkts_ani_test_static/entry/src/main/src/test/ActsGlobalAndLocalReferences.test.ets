@@ -22,9 +22,9 @@ export default function globalAndLocalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("GlobalReference_Create_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("GlobalReference_Create_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'GlobalReference_Create_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function globalAndLocalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Reference_StrictEquals_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_StrictEquals_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_StrictEquals_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function globalAndLocalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("GlobalReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("GlobalReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'GlobalReference_Delete_0100 start');
         let cls = new Foo();
@@ -79,9 +79,9 @@ export default function globalAndLocalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Reference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Reference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Reference_Delete_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function globalAndLocalReferencesTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnsureEnoughReferences_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnsureEnoughReferences_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnsureEnoughReferences_0100 start');
         let cls = new Foo();

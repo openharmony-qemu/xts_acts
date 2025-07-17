@@ -22,9 +22,9 @@ export default function variableOperationsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Variable_SetValue_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Long_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function variableOperationsTest() {
     * @tc.desc      : MediumTest
     * @tc.size      : Function
     * @tc.type      : Function test
-    * @tc.level     : Level 3
+    * @tc.level     : Level 0
     */
-    it("Variable_SetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Int_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Double_0100 start');
         let cls = new Foo();
@@ -80,9 +80,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Ref_0100 start');
         let cls = new Foo();
@@ -99,9 +99,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Double_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Double_0100 start');
         let cls = new Foo();
@@ -118,9 +118,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Boolean_0100 start');
         let cls = new Foo();
@@ -137,9 +137,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Int_0100 start');
         let cls = new Foo();
@@ -156,9 +156,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Long_0100 start');
         let cls = new Foo();
@@ -175,9 +175,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Namespace_FindVariable_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Namespace_FindVariable_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Namespace_FindVariable_0100 start');
         let cls = new Foo();
@@ -194,9 +194,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Boolean_0100 start');
         let cls = new Foo();
@@ -213,9 +213,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Char_0100 start');
         let cls = new Foo();
@@ -232,9 +232,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Byte_0100 start');
         let cls = new Foo();
@@ -251,9 +251,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Short_0100 start');
         let cls = new Foo();
@@ -270,9 +270,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Float_0100 start');
         let cls = new Foo();
@@ -289,9 +289,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_SetValue_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_SetValue_Ref_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_SetValue_Ref_0100 start');
         let cls = new Foo();
@@ -308,9 +308,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Char_0100 start');
         let cls = new Foo();
@@ -327,9 +327,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Byte_0100 start');
         let cls = new Foo();
@@ -346,9 +346,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Short_0100 start');
         let cls = new Foo();
@@ -365,9 +365,9 @@ export default function variableOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Variable_GetValue_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Variable_GetValue_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Variable_GetValue_Float_0100 start');
         let cls = new Foo();

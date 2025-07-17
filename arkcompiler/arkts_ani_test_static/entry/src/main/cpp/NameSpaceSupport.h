@@ -19,10 +19,63 @@
 
 inline ani_int Sum([[maybe_unused]] ani_env *env, ani_int a, ani_int b) { return a + b; }
 
-ani_int test_Namespace_FindFunction([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Namespace_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_namespace ns{};
-    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.NameSpaceSupport.ops", &ns), ANI_OK);
+    ani_module module;
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/NameSpaceSupport;", &module), ANI_OK);
+    ASSERT_EQ(env->Module_FindNamespace(module, "Lops;", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_namespace result{};
+    ASSERT_EQ(env->Namespace_FindNamespace(ns, "Ltest002B;", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Namespace_FindClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns{};
+    ani_module module;
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/NameSpaceSupport;", &module), ANI_OK);
+    ASSERT_EQ(env->Module_FindNamespace(module, "Lops;", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_namespace result{};
+    ASSERT_EQ(env->Namespace_FindNamespace(ns, "Ltest002B;", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_class cls{};
+    ASSERT_EQ(env->Namespace_FindClass(result, "LTestA002;", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    return ANI_TRUE;
+}
+
+ani_int test_Namespace_FindEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns = nullptr;
+    ani_module module = nullptr;
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/NameSpaceSupport;", &module), ANI_OK);
+    ASSERT_EQ(env->Module_FindNamespace(module, "Lops;", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+
+    ani_namespace result = nullptr;
+    ASSERT_EQ(env->Namespace_FindNamespace(ns, "Ltest002B;", &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_enum aniEnum = nullptr;
+    ASSERT_EQ(env->Namespace_FindEnum(result, "LColorAA;", &aniEnum), ANI_OK);
+    ASSERT_NE(aniEnum, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Namespace_FindFunction([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_module module;
+    ani_namespace ns{};
+    ASSERT_EQ(env->FindModule("Lentry/src/main/src/ets/NameSpaceSupport;", &module), ANI_OK);
+    ASSERT_EQ(env->Module_FindNamespace(module, "Lops;", &ns), ANI_OK);
     ASSERT_NE(ns, nullptr);
 
     ani_function fn{};
