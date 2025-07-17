@@ -22,10 +22,10 @@ import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
   if (sim.getMaxSimCount()>1){
-    SocketGetSocketFdTest();
-    TcpSocketServerCloseTest();
     TlsSocketServerCloseTest();
+    TcpSocketServerCloseTest();
     LocalSocketServerCloseTest();
+    SocketGetSocketFdTest();
   }else{
     EmptyTest()
   }
