@@ -699,12 +699,9 @@ void VDecAPI11Sample::SyncInputFunc()
             break;
         }
         uint32_t index;
-        cout << "OH_VideoDecoder_QueryInputBuffer start" << endl;
         if (OH_VideoDecoder_QueryInputBuffer(vdec_, &index, syncInputWaitTime) != AV_ERR_OK) {
-            cout << "OH_VideoDecoder_QueryInputBuffer fail" << endl;
             continue;
         }
-        cout << "OH_VideoDecoder_QueryInputBuffer succ" << endl;
         OH_AVBuffer *buffer = OH_VideoDecoder_GetInputBuffer(vdec_, index);
         if (buffer == nullptr) {
             cout << "OH_VideoDecoder_GetInputBuffer fail" << endl;
@@ -1005,12 +1002,9 @@ void VDecAPI11Sample::SyncOutputFunc()
         }
         OH_AVCodecBufferAttr attr;
         uint32_t index = 0;
-        cout << "OH_VideoDecoder_QueryOutputBuffer start" << endl;
         if (OH_VideoDecoder_QueryOutputBuffer(vdec_, &index, syncOutputWaitTime) != AV_ERR_OK) {
-            cout << "OH_VideoDecoder_QueryOutputBuffer fail" << endl;
             continue;
         }
-        cout << "OH_VideoDecoder_QueryOutputBuffer succ" << endl;
         OH_AVBuffer *buffer = OH_VideoDecoder_GetOutputBuffer(vdec_, index);
         if (buffer == nullptr) {
             cout << "OH_VideoDecoder_GetOutputBuffer fail" << endl;
