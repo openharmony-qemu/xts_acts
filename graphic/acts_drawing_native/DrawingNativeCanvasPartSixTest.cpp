@@ -54,15 +54,15 @@ class DrawingNativeCanvasPart6Test : public testing::Test {
     void SetUp() override
     {
         // 设置代码
-        std::cout << "DrawingNativeCanvasPart5Test Setup code called before each test case." << std::endl;
+        std::cout << "DrawingNativeCanvasPart6Test Setup code called before each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativeCanvasPart5Test errorCodeReset before each test case." << std::endl;
+        std::cout << "DrawingNativeCanvasPart6Test errorCodeReset before each test case." << std::endl;
     }
     void TearDown() override
     {
-        std::cout << "DrawingNativeCanvasPart5Test Setup code called after each test case." << std::endl;
+        std::cout << "DrawingNativeCanvasPart6Test Setup code called after each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativeCanvasPart5Test errorCodeReset after each test case." << std::endl;
+        std::cout << "DrawingNativeCanvasPart6Test errorCodeReset after each test case." << std::endl;
     }
 };
 
