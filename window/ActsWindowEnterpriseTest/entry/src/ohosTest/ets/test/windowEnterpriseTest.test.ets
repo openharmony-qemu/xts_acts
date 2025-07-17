@@ -93,8 +93,8 @@ async function terminateAbility4(caseName: string) {
   await sleep(1000)
 }
 
-export default function windowEnterpriseTest() {
-    describe('windowEnterpriseTest', () => {
+export default function WindowEnterpriseTest() {
+    describe('WindowEnterpriseTest', () => {
         let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
         let context: common.UIAbilityContext;
         let windowStage: ohosWindow.WindowStage;
