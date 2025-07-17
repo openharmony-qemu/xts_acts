@@ -214,6 +214,8 @@ export default function UsbTransferTest() {
         hilog.info(domain, tag, 'interrupt testUsbCancelTransfer002 enter');
         if (!isDeviceConnected) {
           hilog.info(domain, tag, 'usb testUsbCancelTransfer002 No device is connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
         }
         let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
         if (devicesList.length == 0) {
@@ -249,6 +251,8 @@ export default function UsbTransferTest() {
         hilog.info(domain, tag, 'usb usbControlTransfer begin');
         if (!isDeviceConnected) {
           hilog.info(domain, tag, 'usb not connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
         }
         let param: UsbMgr.USBDeviceRequestParams = {
           bmRequestType: 0x80,
@@ -294,6 +298,8 @@ export default function UsbTransferTest() {
         hilog.info(domain, tag, 'usb test_bulkTransfer02 begin');
         if (!isDeviceConnected) {
           hilog.info(domain, tag, 'usb not connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
         }
 
         try {
