@@ -661,6 +661,7 @@ export default function WebSocketPermissionDeniedTest() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerCloseNoP0100';
       console.info(`${caseName} test start`);
       try {
+        let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
         tlsServer.close().then(()=>{
           console.info(`${caseName} tlsServer close success `);
           ExpectTrue(false);
