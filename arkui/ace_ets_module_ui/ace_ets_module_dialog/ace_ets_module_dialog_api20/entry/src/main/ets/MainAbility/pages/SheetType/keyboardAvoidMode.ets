@@ -157,7 +157,7 @@ struct SheetTransitionExample {
             title:"title",
             subtitle:"subtitle"
           },
-          height:500,
+          height:700,
           width:400,
           placementOnTarget: this.placementOnTarget,
           keyboardAvoidMode: this.keyboardAvoidMode,
