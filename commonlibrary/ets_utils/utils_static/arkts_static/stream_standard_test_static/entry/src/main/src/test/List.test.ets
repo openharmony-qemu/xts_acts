@@ -14,7 +14,8 @@
  */
 
 import streamTest from './StreamTest.test'
-
+import streamTest1 from './StreamTest1.test'
 export default function testsuite() {
   streamTest();
+  streamTest1();
 }
