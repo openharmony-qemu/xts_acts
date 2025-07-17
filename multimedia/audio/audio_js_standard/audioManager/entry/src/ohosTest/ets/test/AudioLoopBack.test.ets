@@ -380,7 +380,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`isStreamActive ERROR: ${error}`);
-        except(false).assertTrue();
+        expect(false).assertTrue();
       }
     })
     /**
@@ -397,7 +397,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`getVolumeByStream ERROR: ${error}`);
-        except(false).assertTrue();
+        expect(false).assertTrue();
       }
     })
     /**
@@ -414,7 +414,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`getMaxVolumeByStream ERROR: ${error}`);
-        except(false).assertTrue();
+        expect(false).assertTrue();
       }
     })
     /**
@@ -431,7 +431,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`getMinVolumeByStream ERROR: ${error}`);
-        except(false).assertTrue();
+        expect(false).assertTrue();
       }
     })
   })
