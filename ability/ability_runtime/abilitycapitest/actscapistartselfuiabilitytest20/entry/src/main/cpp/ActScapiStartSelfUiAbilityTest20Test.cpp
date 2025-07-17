@@ -22,7 +22,7 @@ namespace {
 static const uint32_t MAX_NAME_LENGTH = 1024;
 }
 
-static napi_value DestroyChildProcessConfigsInvalid(napi_env env, napi_callback_info info) 
+static napi_value DestroyChildProcessConfigsInvalid(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "DestroyChildProcessConfigsInvalid");
     Ability_ChildProcessConfigs *configs;
@@ -38,13 +38,20 @@ static napi_value DestroyChildProcessConfigsInvalid(napi_env env, napi_callback_
 
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) 
+static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
- {"DestroyChildProcessConfigsInvalid", nullptr, DestroyChildProcessConfigsInvalid,
-         nullptr, nullptr, nullptr, napi_default, nullptr}};
+        {"DestroyChildProcessConfigsInvalid", 
+         nullptr, 
+         DestroyChildProcessConfigsInvalid,
+         nullptr, 
+         nullptr, 
+         nullptr, 
+         napi_default, 
+         nullptr}
+    };
 
-    napi_define_properties(env, exports,(desc) / sizeof(desc[0]), desc);
+    napi_define_properties(env, exports, (desc) / sizeof(desc[0]), desc);
     return exports;
 }
 EXTERN_C_END
