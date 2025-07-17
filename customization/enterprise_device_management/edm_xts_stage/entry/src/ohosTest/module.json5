@@ -180,6 +180,9 @@
       },
       {
         "name": "ohos.permission.ENTERPRISE_MANAGE_TELEPHONY"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_SET_WALLPAPER"
       }
     ]
   }
