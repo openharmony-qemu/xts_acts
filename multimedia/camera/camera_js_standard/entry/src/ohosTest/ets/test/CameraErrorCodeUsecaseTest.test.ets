@@ -594,7 +594,7 @@ export default function CameraErrorCodeUsecaseTest() {
         } catch (error) {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_PREVIEW_OUTPUT_0300 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
-          expect(error.code).assertEqual('7400201');
+          expect(error.code).assertEqual('7400101');
           done();
         }
         done();
