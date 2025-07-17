@@ -1387,6 +1387,12 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesandFeatureDestroyNULL, Func
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     OH_Drawing_ErrorCode code = OH_Drawing_FontFeaturesDestroy(nullptr);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    int count = 10;
+    for (int i = 0; i < count; i++) {
+        OH_Drawing_FontFeatures* features1 = OH_Drawing_FontFeaturesCreate();
+        OH_Drawing_ErrorCode code1 = OH_Drawing_FontFeaturesDestroy(features1);
+        EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+    }
     OH_Drawing_FontFeaturesDestroy(features);
 }
 } // namespace Drawing
