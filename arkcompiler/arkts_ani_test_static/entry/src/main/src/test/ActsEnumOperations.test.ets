@@ -22,9 +22,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Enum_GetEnumItemByName_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Enum_GetEnumItemByName_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Enum_GetEnumItemByName_0100 start');
         let cls = new Foo();
@@ -41,9 +41,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("Enum_GetEnumItemByIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("Enum_GetEnumItemByIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Enum_GetEnumItemByIndex_0100 start');
         let cls = new Foo();
@@ -60,9 +60,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnumItem_GetEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnumItem_GetEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnumItem_GetEnum_0100 start');
         let cls = new Foo();
@@ -79,9 +79,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnumItem_GetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnumItem_GetValue_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnumItem_GetValue_Int_0100 start');
         let cls = new Foo();
@@ -98,9 +98,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnumItem_GetValue_String_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnumItem_GetValue_String_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnumItem_GetValue_String_0100 start');
         let cls = new Foo();
@@ -117,9 +117,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnumItem_GetName_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnumItem_GetName_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnumItem_GetName_极0100 start');
         let cls = new Foo();
@@ -136,9 +136,9 @@ export default function enumOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("EnumItem_GetIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("EnumItem_GetIndex_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'EnumItem_GetIndex_0100 start');
         let cls = new Foo();

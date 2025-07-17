@@ -22,9 +22,9 @@ export default function EnvOperationsTest() {
      * @tc.desc      : MediumTest
      * @tc.size      : Function
      * @tc.type      : Function test
-     * @tc.level     : Level 3
+     * @tc.level     : Level 0
      */
-    it("test_getEnv_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("test_getEnv_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'test_getEnv_0100 start');
         let cls = new Foo();
