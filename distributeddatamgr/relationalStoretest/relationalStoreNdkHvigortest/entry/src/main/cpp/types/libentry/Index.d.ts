@@ -120,3 +120,5 @@ export const OH_Rdb_CreateCryptoParam0400: () => number;
 export const OH_Rdb_CreateCryptoParam0500: () => number;
 export const OH_Rdb_CreateCryptoParam0600: () => number;
 export const OH_Rdb_CreateCryptoParam0700: () => number;
+
+export const OH_Rdb_SetSemanticIndex_Param_0100: () => number;
