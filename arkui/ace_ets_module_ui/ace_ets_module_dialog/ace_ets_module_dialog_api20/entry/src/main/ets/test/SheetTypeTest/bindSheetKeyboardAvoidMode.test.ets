@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -42,13 +42,11 @@ export default function bindSheetKeyboardAvoidMode(){
     });
     /* *
     * @tc.number: bindSheetKeyboardAvoidMode_0100
-    * @tc.name  : bindSheetTest_01
+    * @tc.name  : bindSheetKeyboardAvoidMode_0100
     * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
+    * @tc.level : Level 1
     */
-    it('bindSheetKeyboardAvoidMode_0100', 0, async (done:Function) =>{
+    it('bindSheetKeyboardAvoidMode_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(2000);
