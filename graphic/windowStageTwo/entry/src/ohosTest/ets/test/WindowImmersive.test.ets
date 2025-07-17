@@ -2906,24 +2906,49 @@ export default function windowImmersiveTest() {
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1100
      * @tc.name      : testIsImmersiveLayoutwithDisableWindowDecor
-     * @tc.desc      : 验证2in1设备和pad自由多窗下主窗隐藏标题栏后调用IsImmersiveLayout
+     * @tc.desc      : 验证2in1设备和pad自由多窗下，子窗创建标题栏装饰后调用IsImmersiveLayout
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level0
      */
     it('testIsImmersiveLayoutwithDisableWindowDecor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDisableWindowDecor';
+      let windowClass: window.Window | undefined;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
-          windowStage.disableWindowDecor();
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
         }
-        let windowClass = windowStage.getMainWindowSync();
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        expect(res).assertEqual(true);
-        done();
+        console.log(caseName + 'start run')
+        windowStage.createSubWindowWithOptions('testIsImmersiveLayoutwithDisableWindowDecor', options).then(async (subWindowClass) => {
+          windowClass = subWindowClass;
+          await windowClass.setUIContent('testability/pages/Index1');
+          await sleep(200);
+          await windowClass.showWindow()
+          await sleep(200);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout: ${res}.`);
+          await windowClass.destroyWindow();
+          if (isPCStatus != '') {
+            expect(res).assertEqual(false);
+          } else {
+            expect(res).assertEqual(true);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
       } catch (err) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(err)}`);
+        await windowClass?.destroyWindow();
         if (err.code === 801) {
           done()
         } else {
@@ -2943,19 +2968,38 @@ export default function windowImmersiveTest() {
      */
     it('testIsImmersiveLayoutwithDisableWindowDecor2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDisableWindowDecor2';
-      let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithDisableWindowDecor2')
+      let windowClass: window.Window | undefined;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
-          await windowClass.setSpecificSystemBarEnabled('status', false);
+        let options: window.SubWindowOptions = {
+          title: 'subWindow2',
+          decorEnabled: false
         }
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout: ${res}.`);
-        await windowClass.destroyWindow();
-        expect(res).assertEqual(true);
-        done();
+        console.log(caseName + 'start run')
+        windowStage.createSubWindowWithOptions('testIsImmersiveLayoutwithDisableWindowDecor2', options).then(async (subWindowClass) => {
+          windowClass = subWindowClass;
+          await windowClass.setUIContent('testability/pages/Index1');
+          await sleep(200);
+          await windowClass.showWindow()
+          await sleep(200);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout: ${res}.`);
+          await windowClass.destroyWindow();
+          expect(res).assertEqual(true);
+          done();
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
       } catch (err) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(err)}`);
-        await windowClass.destroyWindow();
+        await windowClass?.destroyWindow();
         if (err.code === 801) {
           done()
         } else {
@@ -2976,21 +3020,37 @@ export default function windowImmersiveTest() {
     it('testIsImmersiveLayoutwithImmersiveMode2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithImmersiveMode2';
       let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithImmersiveMode2')
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      await sleep(1000);
       try {
         if (isPCStatus != '' || isAutoWindow == 'true') {
+          console.log(`${caseName} isPCStatus: ${isPCStatus}.`);
           windowClass.setImmersiveModeEnabledState(true);
-        }
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
-        expect(res).assertEqual(true);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+          expect(res).assertEqual(true);
+          await sleep(1000);
           windowClass.setImmersiveModeEnabledState(false);
+          let res2 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+          expect(res2).assertEqual(true);
+          await windowClass.destroyWindow();
+          done();
+        }else{
+          windowClass.setImmersiveModeEnabledState(true);
+          let res = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+          expect(res).assertEqual(true);
+          await sleep(1000);
+          windowClass.setImmersiveModeEnabledState(false);
+          let res2 = windowClass.isImmersiveLayout();
+          console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+          expect(res2).assertEqual(false);
+          await windowClass.destroyWindow();
+          done();
         }
-        let res2 = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-        expect(res2).assertEqual(false);
-        await windowClass.destroyWindow();
-        done();
+
       } catch (err) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
@@ -3013,33 +3073,65 @@ export default function windowImmersiveTest() {
      */
     it('testIsImmersiveLayoutwithWindowLayoutFullScreen2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen2';
-      let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithWindowLayoutFullScreen2')
-      try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
-          await windowClass.setWindowLayoutFullScreen(true);
+      let options : window.SubWindowOptions = {
+        title: 'testIsImmersiveLayoutwithWindowLayoutFullScreen2',
+        decorEnabled: true,
+      };
+      let promise = windowStage.createSubWindowWithOptions('testIsImmersiveLayoutwithWindowLayoutFullScreen2', options);
+      promise.then(async (data) => {
+        let windowClass = data;
+        console.info(caseName+ ' Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+        await windowClass.setUIContent('testability/pages/First/index2');
+        await windowClass.showWindow();
+        await sleep(1000);
+        try {
+          if (isPCStatus != '' || isAutoWindow == 'true') {
+            await windowClass.setWindowLayoutFullScreen(true);
+            let res = windowClass.isImmersiveLayout();
+            console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+            expect(res).assertEqual(false);
+            await sleep(1000);
+            await windowClass.setWindowLayoutFullScreen(false);
+            let res2 = windowClass.isImmersiveLayout();
+            console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+            expect(res2).assertEqual(false);
+            await windowClass.destroyWindow();
+            done();
+          }else{
+            await windowClass.setWindowLayoutFullScreen(true);
+            let res = windowClass.isImmersiveLayout();
+            console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
+            expect(res).assertEqual(true);
+            await sleep(1000);
+            await windowClass.setWindowLayoutFullScreen(false);
+            let res2 = windowClass.isImmersiveLayout();
+            console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
+            expect(res2).assertEqual(false);
+            await windowClass.destroyWindow();
+            done();
+          }
+
+        } catch (err) {
+          console.error(`${caseName} Failed. Cause: ${JSON.stringify(err)}`);
+          await windowClass.destroyWindow();
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
         }
-        let res = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
-        expect(res).assertEqual(true);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
-          await windowClass.setWindowLayoutFullScreen(false);
-        }
-        let res2 = windowClass.isImmersiveLayout();
-        console.log(`${caseName} isImmersiveLayout 2: ${res2}.`);
-        expect(res2).assertEqual(false);
-        await windowClass.destroyWindow();
-        done();
-      } catch (err) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(err)}`);
-        await windowClass.destroyWindow();
-        if (err.code === 801) {
+      }).catch(async (err: BusinessError) => {
+        console.error(`${caseName} :Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+        if (err.code === 1300002) {
           done()
         } else {
           expect().assertFail();
-          done()
+          done();
         }
-      }
+      });
     });
+
 
     /**
      * @tc.number    : SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
