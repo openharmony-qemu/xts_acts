@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ export default function ActsCapabilityStartSelfUIAbilityTest() {
 
     /**
      * @tc.number  : Acts_Capability_Start_Self_UIAbility_Test
-     * @tc.name    : test OH_OsAccount_GetName Test Normal Scene
+     * @tc.name    : Acts_Capability_Start_Self_UIAbility_Test
      * @tc.desc    : Gets the name of the OS account to which the caller process belongs.
      * @tc.level   : Level0
      * @tc.size    : MediumTest
