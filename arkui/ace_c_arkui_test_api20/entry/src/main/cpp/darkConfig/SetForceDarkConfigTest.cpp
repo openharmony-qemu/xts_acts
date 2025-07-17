@@ -23,7 +23,8 @@ static napi_value TestSetForceDarkConfig(napi_env env, napi_callback_info info)
     auto ret1 = OH_ArkUI_SetForceDarkConfig(nullptr, false, ArkUI_NodeType::ARKUI_NODE_UNDEFINED, nullptr);
     auto ret2 = OH_ArkUI_SetForceDarkConfig(nullptr, true, ArkUI_NodeType::ARKUI_NODE_UNDEFINED, nullptr);
     auto ret3 = OH_ArkUI_SetForceDarkConfig(nullptr, true, ArkUI_NodeType::ARKUI_NODE_TEXT, nullptr);
-    auto ret4 = OH_ArkUI_SetForceDarkConfig(nullptr, false, ArkUI_NodeType::ARKUI_NODE_BUTTON, [](uint32_t color){return color;});
+    auto ret4 = OH_ArkUI_SetForceDarkConfig(nullptr, false, ArkUI_NodeType::ARKUI_NODE_BUTTON,
+        [](uint32_t color) {return color;});
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NO_ERROR);
