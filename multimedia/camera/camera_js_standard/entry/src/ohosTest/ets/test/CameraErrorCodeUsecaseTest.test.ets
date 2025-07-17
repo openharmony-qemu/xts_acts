@@ -1414,20 +1414,18 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_0400', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_0400--------------");
-      
       try {
         await createInput(0);
         createCameraSessionInstance();
-        mCameraSession.addInput(mCameraInput);
         createOutput(0);
         mCameraSession.addOutput(mPreviewOutput);
-        mCameraSession.beginConfig();
+        mCameraSession.addOutput(mPreviewOutput);
         expect().assertFail();
         done();
       } catch (error) {
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_0400 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
-        expect(error.code).assertEqual('7400105');
+        expect(error.code).assertEqual('7400201');
         done();
       }
       done();

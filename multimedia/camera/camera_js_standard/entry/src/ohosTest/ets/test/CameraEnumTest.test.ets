@@ -141,7 +141,7 @@ export default function cameraEnumTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
-     * @tc.name      : Camera HostDeviceType Eunm
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
      * @tc.desc      : Camera HostDeviceType Eunm
      * @tc.size      : MEDIUM
      * @tc.type      : Function
