@@ -206,7 +206,7 @@ export default function Multicastconnection201Test() {
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("testNetworkManagerDNSclearCustomDNSRulesPromise0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,async (done:Function)=> {
+    it("testNetworkManagerDNSclearCustomDNSRulesPromise0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done:Function)=> {
       const caseName: string = 'testNetworkManagerDNSclearCustomDNSRulesPromise0200';
       console.info(`${caseName}---Start`);
       try {
@@ -263,7 +263,7 @@ export default function Multicastconnection201Test() {
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-   it("testNetworkMgrConnectionSetNetExtAttributeNoP0100", 0, async (done: Function) => {
+   it("testNetworkMgrConnectionSetNetExtAttributeNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeNoP0100";
      console.info(`${caseName}---Start`);
      try{
@@ -293,7 +293,7 @@ export default function Multicastconnection201Test() {
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-   it("testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100", 0, async (done: Function) => {
+   it("testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSyncNoP0100";
      console.info(`${caseName}---Start`);
      try{
@@ -317,7 +317,7 @@ export default function Multicastconnection201Test() {
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-   it("testNetworkMgrConnectionGetNetExtAttributeNoP0100", 0, async (done: Function) => {
+   it("testNetworkMgrConnectionGetNetExtAttributeNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeNoP0100";
      console.info(`${caseName}---Start`);
      try{
