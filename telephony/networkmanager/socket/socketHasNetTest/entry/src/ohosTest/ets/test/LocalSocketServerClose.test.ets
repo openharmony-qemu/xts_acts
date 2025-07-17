@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,15 +40,15 @@ const ExpectFail: () => void = () => {
 export default function LocalSocketServerCloseTest() {
   describe("LocalSocketServerCloseTest", () => {
 
-   /**
+    /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0100
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0100
      * @tc.desc   : check whether the close interface takes effect.
-     * @tc.level  : Level 0
+     * @tc.level  : Level 2
      * @tc.type   : Function
      * @tc.size   : MEDIUMTEST
      */
-    it('testNetworkMgrSocketLocalSocketServerClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNetworkMgrSocketLocalSocketServerClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketServerClose0100';
       console.info(`${caseName} test start`);
       try {
@@ -101,7 +101,6 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
-    
     /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0200
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0200
@@ -177,8 +176,7 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
-    
-    /**
+   /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0300
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0300
      * @tc.desc   : check whether the close interface takes effect.
@@ -252,7 +250,7 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-    /**
+        /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0400
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0400
      * @tc.desc   : check whether the close interface takes effect.
@@ -321,7 +319,7 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-    /**
+        /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0500
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0500
      * @tc.desc   : check whether the close interface takes effect.
@@ -386,7 +384,7 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-    /**
+        /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0600
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0600
      * @tc.desc   : check whether the close interface takes effect.
@@ -450,8 +448,7 @@ export default function LocalSocketServerCloseTest() {
         done();
       }
     });
-    
-    /**
+        /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0700
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0700
      * @tc.desc   : check whether the close interface takes effect.
@@ -496,7 +493,7 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-    /**
+   /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0800
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0800
      * @tc.desc   : check whether the close interface takes effect.
@@ -548,7 +545,7 @@ export default function LocalSocketServerCloseTest() {
       }
     });
     
-    /**
+   /**
      * @tc.number : SUB_NetworkMgr_Socket_LocalSocketServer_Close_0900
      * @tc.name   : testNetworkMgrSocketLocalSocketServerClose0900
      * @tc.desc   : check whether the close interface takes effect.
