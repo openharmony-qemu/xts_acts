@@ -653,10 +653,10 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.DISTRIBUTED)
               count = count + 27
               break;
-            case 'selection':
-              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
-              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
-              count = count + 28;
+            case 'liveForm':
+              console.info("liveForm" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.LIVE_FORM)
+              count = count + 28
               break;
           }
           console.info("count" + JSON.stringify(count));
@@ -845,9 +845,9 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.DISTRIBUTED)
               count = count + 27
               break;
-            case 'selection':
-              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
-              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+            case 'liveForm':
+              console.info("liveForm" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.LIVE_FORM)
               count = count + 28
               break;
             }
@@ -1554,9 +1554,9 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.DISTRIBUTED)
               count = count + 27
               break;
-          case 'selection':
-              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
-              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+          case 'liveForm':
+              console.info("liveForm" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.LIVE_FORM)
               count = count + 28
               break;
         }

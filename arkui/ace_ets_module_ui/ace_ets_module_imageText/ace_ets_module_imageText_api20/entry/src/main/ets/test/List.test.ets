@@ -39,8 +39,16 @@ import TextAreaAutoCapitalizationModeTest from './TextAreaTest/TextAreaAutoCapit
 import TextAreaAutoCapitalizationModeModifierTest from './TextAreaTest/TextAreaAutoCapitalizationModeModifier.test';
 import TextInputAutoCapitalizationModeTest from './TextInputTest/TextInputAutoCapitalizationMode.test';
 import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInputAutoCapitalizationModeModifier.test';
+import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
+import ModifierTextVerticalAlignTest from './TextTest/TextVerticalAlignModifier.test';
+import RichEditorEnableAutoSpacingTest from './RichEditorTest/RichEditorEnableAutoSpacing.test';
+import RichEditorTextVerticalAlignTest from './RichEditorTest/RichEditorTextVerticalAlign.test';
+import TextGetParagraphsTest from './TextTest/TextGetparagraphs.test';
+import fromHtmlTest from './StyledStringTest/fromHtml.test';
+import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
 import TextNumberTransitionTest from './TextTest/TextNumberTransitionTest.test';
 import SymbolEffectTest from './SymbolGlyphTest/SymbolEffectTest.test';
+import shaderStyleTest from './TextTest/shaderStyle.test';
 
 
 export default function testsuite() {
@@ -70,6 +78,14 @@ export default function testsuite() {
   TextAreaAutoCapitalizationModeModifierTest();
   TextInputAutoCapitalizationModeTest();
   TextInputAutoCapitalizationModeModifierTest();
+  TextVerticalAlignTest();
+  ModifierTextVerticalAlignTest();
+  RichEditorEnableAutoSpacingTest();
+  RichEditorTextVerticalAlignTest();
+  TextGetParagraphsTest();
+  fromHtmlTest();
+  ImageOrientationTest();
   TextNumberTransitionTest();
   SymbolEffectTest();
+  shaderStyleTest();
 }

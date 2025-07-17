@@ -21,6 +21,7 @@ add_library(nativerender SHARED
     component/GridComponentTest.cpp
     component/TextComponentTest.cpp
     grid/FocusWrapModeTest.cpp
+    dialog/DialogGetStateTest.cpp
 )
 
 add_library(nativefunc SHARED

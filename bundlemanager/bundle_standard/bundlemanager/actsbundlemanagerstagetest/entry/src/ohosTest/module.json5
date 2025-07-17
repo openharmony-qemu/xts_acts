@@ -450,9 +450,9 @@
         "description": "$string:form_description",
         "icon": "$media:icon",
         "label": "$string:entry_label",
-        "name": "selection",
+        "name": "liveForm",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
-        "type": "selection",
+        "type": "liveForm",
         "visible": true
     }
   ],

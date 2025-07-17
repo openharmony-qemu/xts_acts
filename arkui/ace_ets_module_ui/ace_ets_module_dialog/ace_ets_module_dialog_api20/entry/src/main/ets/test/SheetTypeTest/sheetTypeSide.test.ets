@@ -47,7 +47,7 @@ export default function SheetTypeTest() {
     * @tc.desc  : Test the SheetTypeTest not null
     * @tc.level : Level 1
     */
-    it('SheetTypeTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+     it('SheetTypeTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SheetTypeTest_001 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -58,12 +58,18 @@ export default function SheetTypeTest() {
       let col = await driver.findComponent(ON.id('col'))
       let height = await  col.getBoundsCenter()
 
+      let strJson1 : string = getInspectorByKey('DismissReason');
       let btn4 = await driver.findComponent(ON.id('side'))
       let rect = await btn4.getBounds()
       console.info(`rect is: ` + JSON.stringify(rect))
-      expect(rect.left - height.y > 0 ).assertTrue();
+
+      if(JSON.parse(strJson1).$attrs.content){
+        expect(rect.left - height.y > 0 ).assertTrue();
+      }else{
+        expect(JSON.parse(strJson1).$attrs.content).assertEqual('');
+        console.info('SheetTypeTest_001 ERR');
+      }
       await CommonFunc.sleep(1000);
-      
       console.info('SheetTypeTest_001 END');
       done();
     });

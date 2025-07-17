@@ -422,7 +422,7 @@ struct textInputTest {
         TextInput({ text: "input your word...", controller: this.controller })
           .key("ArkUX_Stage_TextInput_selectedColor_0600")
           .placeholderColor(Color.Grey)
-          .backgroundColor($r("sys.color.ohos_id_color_text_highlight_bg"))
+          .backgroundColor($r("sys.color.comp_emphasize_secondary"))
           .placeholderFont({ size: 14, weight: 400 })
           .caretColor(Color.Blue)
           .selectedBackgroundColor("")

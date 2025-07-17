@@ -44,9 +44,6 @@ export default function ReminderAgentTest() {
                 await sleep(1000);
                 await usbButton.click();
                 await sleep(500);
-                done()
-            } else {
-                done()
             }
 
             await sleep(500);

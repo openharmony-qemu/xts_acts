@@ -274,7 +274,7 @@ export default function refreshOffsetChangeJsunit() {
       console.info("[refreshOffsetChangeJsunit_0800] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('onStateChange:3');
 
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.5),Math.round(left + width*0.2),Math.round(top + height*0.6));
+      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.5),Math.round(left + width*0.2),Math.round(top + height*0.8));
       let strJson = getInspectorByKey('refresh_mess1_2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[refreshOffsetChangeJsunit_0800] component obj is: " + JSON.stringify(obj));

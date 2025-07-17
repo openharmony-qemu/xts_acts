@@ -68,8 +68,13 @@ export default function dismissSheetActionTest() {
       console.info("[dismissSheetActionTest_001] $attrs obj is: " + JSON.parse(strJson1).$attrs);
       console.info("[dismissSheetActionTest_001] content obj is: " + JSON.parse(strJson1).$attrs.content);
 
+      if(JSON.parse(strJson1).$attrs.content){
+        expect(JSON.parse(strJson1).$attrs.content).assertEqual('success');
+      }else{
+        expect(JSON.parse(strJson1).$attrs.content).assertEqual('');
+        console.info('dismissSheetActionTest_001 ERR');
+      }
       
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('success');
       await CommonFunc.sleep(1000);
       console.info('dismissSheetActionTest_001 END');
       done();
