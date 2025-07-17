@@ -869,6 +869,7 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0300', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0300--------------");
+      createCameraSessionInstance();
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0300 cameraManager == null || undefined")
@@ -900,6 +901,7 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400--------------");
+      createCameraSessionInstance();
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_VIDEO_OUTPUT_0400 cameraManager is null or undefined")
@@ -942,6 +944,7 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0100--------------");
+      createCameraSessionInstance();
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0100 cameraManager == null || undefined")
@@ -970,6 +973,7 @@ export default function CameraErrorCodeUsecaseTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0200', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0200--------------");
+      createCameraSessionInstance();
       if (isEmpty(mCameraManager)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_METADATA_OUTPUT_0200 cameraManager == null || undefined")
@@ -2956,7 +2960,7 @@ export default function CameraErrorCodeUsecaseTest() {
         await createInput(0);
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
-        expect(error.code).assertEqual('7400201');
+        expect(error.code).assertEqual('7400105');
         done();
       }
       done();
