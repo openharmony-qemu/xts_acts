@@ -40,11 +40,11 @@ export default function NetExtAttributeNoNetTest() {
      * @tc.number : SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0600
      * @tc.name   : testNetworkMgrConnectionSetNetExtAttributeSync0600
      * @tc.desc   : To test the extended network attribute function
-     * @tc.level  : Level 0
+     * @tc.level  : Level 3
      * @tc.type   : Function
      * @tc.size   : MediumTest
      */
-   it("testNetworkMgrConnectionSetNetExtAttributeSync0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
+   it("testNetworkMgrConnectionSetNetExtAttributeSync0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0600";
      console.info(`${caseName}---Start`);
      try{
