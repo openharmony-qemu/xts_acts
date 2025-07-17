@@ -14,27 +14,26 @@
  */
 
 #include "napi/native_api.h"
+#include <ace/xcomponent/native_xcomponent_key_event.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
-#include <ace/xcomponent/native_xcomponent_key_event.h>
 namespace {
-    static const uint32_t MAX_NAME_LENGTH = 1024;
-    static bool KEY_APOSTROPHE_ISTRUE = 0;
-    static bool KEY_GRAVE_ISTRUE = 0;
-    static bool KEY_MINUS_ISTRUE = 0;
-    static bool KEY_EQUALS_ISTRUE = 0;
-    static bool KEY_LEFT_BRACKET_ISTRUE = 0;
-    static bool KEY_RIGHT_BRACKET_ISTRUE = 0;
-    static bool KEY_BACKSLASH_ISTRUE = 0;
-    static bool KEY_SEMICOLON_ISTRUE = 0;
-    static bool KEY_SLASH_ISTRUE = 0;
-    static bool KEY_AT_ISTRUE = 0;
+static const uint32_t MAX_NAME_LENGTH = 1024;
+static bool KEY_APOSTROPHE_ISTRUE = 0;
+static bool KEY_GRAVE_ISTRUE = 0;
+static bool KEY_MINUS_ISTRUE = 0;
+static bool KEY_EQUALS_ISTRUE = 0;
+static bool KEY_LEFT_BRACKET_ISTRUE = 0;
+static bool KEY_RIGHT_BRACKET_ISTRUE = 0;
+static bool KEY_BACKSLASH_ISTRUE = 0;
+static bool KEY_SEMICOLON_ISTRUE = 0;
+static bool KEY_SLASH_ISTRUE = 0;
+static bool KEY_AT_ISTRUE = 0;
 
-}
+} 
 
-static napi_value GetKeyCodeEventKeyApostrophe(napi_env env, napi_callback_info info)
-{
-    if(KEY_APOSTROPHE_ISTRUE){
+static napi_value GetKeyCodeEventKeyApostrophe(napi_env env, napi_callback_info info) {
+    if (KEY_APOSTROPHE_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_APOSTROPHE_ISTRUE, &retValue);
         return retValue;
@@ -42,81 +41,72 @@ static napi_value GetKeyCodeEventKeyApostrophe(napi_env env, napi_callback_info 
     return 0;
 }
 
-static napi_value GetKeyCodeEventKeyGrave(napi_env env, napi_callback_info info)
-{
-    if(KEY_GRAVE_ISTRUE){
+static napi_value GetKeyCodeEventKeyGrave(napi_env env, napi_callback_info info) {
+    if (KEY_GRAVE_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_GRAVE_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyMinus(napi_env env, napi_callback_info info)
-{
-    if(KEY_MINUS_ISTRUE){
+static napi_value GetKeyCodeEventKeyMinus(napi_env env, napi_callback_info info) {
+    if (KEY_MINUS_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_MINUS_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyEquals(napi_env env, napi_callback_info info)
-{
-    if(KEY_EQUALS_ISTRUE){
+static napi_value GetKeyCodeEventKeyEquals(napi_env env, napi_callback_info info) {
+    if (KEY_EQUALS_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_EQUALS_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyLeftbracket(napi_env env, napi_callback_info info)
-{
-    if(KEY_LEFT_BRACKET_ISTRUE){
+static napi_value GetKeyCodeEventKeyLeftbracket(napi_env env, napi_callback_info info) {
+    if (KEY_LEFT_BRACKET_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_LEFT_BRACKET_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyRightbracket(napi_env env, napi_callback_info info)
-{
-    if(KEY_RIGHT_BRACKET_ISTRUE){
+static napi_value GetKeyCodeEventKeyRightbracket(napi_env env, napi_callback_info info) {
+    if (KEY_RIGHT_BRACKET_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_RIGHT_BRACKET_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyBackslash(napi_env env, napi_callback_info info)
-{
-    if(KEY_BACKSLASH_ISTRUE){
+static napi_value GetKeyCodeEventKeyBackslash(napi_env env, napi_callback_info info) {
+    if (KEY_BACKSLASH_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_BACKSLASH_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeySemicolon(napi_env env, napi_callback_info info)
-{
-    if(KEY_SEMICOLON_ISTRUE){
+static napi_value GetKeyCodeEventKeySemicolon(napi_env env, napi_callback_info info) {
+    if (KEY_SEMICOLON_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_SEMICOLON_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeySlash(napi_env env, napi_callback_info info)
-{
-    if(KEY_SLASH_ISTRUE){
+static napi_value GetKeyCodeEventKeySlash(napi_env env, napi_callback_info info) {
+    if (KEY_SLASH_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_SLASH_ISTRUE, &retValue);
         return retValue;
     }
     return 0;
 }
-static napi_value GetKeyCodeEventKeyAt(napi_env env, napi_callback_info info)
-{
-    if(KEY_AT_ISTRUE){
+static napi_value GetKeyCodeEventKeyAt(napi_env env, napi_callback_info info) {
+    if (KEY_AT_ISTRUE) {
         napi_value retValue;
         napi_create_int32(env, KEY_AT_ISTRUE, &retValue);
         return retValue;
@@ -125,74 +115,58 @@ static napi_value GetKeyCodeEventKeyAt(napi_env env, napi_callback_info info)
 }
 
 static napi_value InitKeyMonitor(napi_env env, napi_callback_info info) {
-    
+
     char str[MAX_NAME_LENGTH] = {0};
     size_t argc = 1;
     int32_t intValue;
     napi_value args[1]; // 存储参数数组
-    
+
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_get_value_int32(env, args[0], &intValue);
     if (KEY_APOSTROPHE == intValue) {
         KEY_APOSTROPHE_ISTRUE = 1;
-    }
-    if (KEY_GRAVE == intValue) {
+    } else if (KEY_GRAVE == intValue) {
         KEY_GRAVE_ISTRUE = 1;
-    }
-    if (KEY_MINUS == intValue) {
+    } else if (KEY_MINUS == intValue) {
         KEY_MINUS_ISTRUE = 1;
-    }
-    if (KEY_EQUALS == intValue) {
+    } else if (KEY_EQUALS == intValue) {
         KEY_EQUALS_ISTRUE = 1;
-    }
-    if (KEY_LEFT_BRACKET == intValue) {
+    } else if (KEY_LEFT_BRACKET == intValue) {
         KEY_LEFT_BRACKET_ISTRUE = 1;
-    }
-    if (KEY_RIGHT_BRACKET == intValue) {
+    } else if (KEY_RIGHT_BRACKET == intValue) {
         KEY_RIGHT_BRACKET_ISTRUE = 1;
-    }
-    if (KEY_BACKSLASH == intValue) {
+    } else if (KEY_BACKSLASH == intValue) {
         KEY_BACKSLASH_ISTRUE = 1;
-    }
-    if (KEY_SEMICOLON == intValue) {
+    } else if (KEY_SEMICOLON == intValue) {
         KEY_SEMICOLON_ISTRUE = 1;
-    }
-    if (KEY_SLASH == intValue) {
+    } else if (KEY_SLASH == intValue) {
         KEY_SLASH_ISTRUE = 1;
-    }
-    if (KEY_AT == intValue) {
+    } else if (KEY_AT == intValue) {
         KEY_AT_ISTRUE = 1;
     }
     return nullptr;
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
-{
+static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
-        {"GetKeyCodeEventKeyApostrophe",
-         nullptr, GetKeyCodeEventKeyApostrophe, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyGrave",
-         nullptr, GetKeyCodeEventKeyGrave, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyMinus",
-         nullptr, GetKeyCodeEventKeyMinus, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyEquals",
-         nullptr, GetKeyCodeEventKeyEquals, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyLeftbracket",
-         nullptr, GetKeyCodeEventKeyLeftbracket, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyRightbracket",
-         nullptr, GetKeyCodeEventKeyRightbracket, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyBackslash",
-         nullptr, GetKeyCodeEventKeyBackslash, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeySemicolon",
-         nullptr, GetKeyCodeEventKeySemicolon, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeySlash",
-         nullptr, GetKeyCodeEventKeySlash, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetKeyCodeEventKeyAt",
-         nullptr, GetKeyCodeEventKeyAt, nullptr, nullptr, nullptr, napi_default, nullptr},
-        
-        {"InitKeyMonitor",
-         nullptr, InitKeyMonitor, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyApostrophe", nullptr, GetKeyCodeEventKeyApostrophe, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetKeyCodeEventKeyGrave", nullptr, GetKeyCodeEventKeyGrave, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyMinus", nullptr, GetKeyCodeEventKeyMinus, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyEquals", nullptr, GetKeyCodeEventKeyEquals, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetKeyCodeEventKeyLeftbracket", nullptr, GetKeyCodeEventKeyLeftbracket, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetKeyCodeEventKeyRightbracket", nullptr, GetKeyCodeEventKeyRightbracket, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetKeyCodeEventKeyBackslash", nullptr, GetKeyCodeEventKeyBackslash, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetKeyCodeEventKeySemicolon", nullptr, GetKeyCodeEventKeySemicolon, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetKeyCodeEventKeySlash", nullptr, GetKeyCodeEventKeySlash, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyCodeEventKeyAt", nullptr, GetKeyCodeEventKeyAt, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"InitKeyMonitor", nullptr, InitKeyMonitor, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

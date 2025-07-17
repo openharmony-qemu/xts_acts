@@ -39,10 +39,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_APOSTROPHE_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2063);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyApostrophe();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -65,10 +65,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_GRAVE_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2056);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyGrave();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -91,10 +91,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_MINUS_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2057);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyMinus();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -117,10 +117,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_MINUS_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2058);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyEquals();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -143,10 +143,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_LEFT_BRACKET_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2059);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyLeftbracket();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -169,10 +169,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_RIGHT_BRACKET_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2060);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyRightbracket();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -195,10 +195,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_BACKSLASH_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2061);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyBackslash();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -221,10 +221,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_SEMICOLON_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2062);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeySemicolon();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -247,10 +247,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_SLASH_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2064);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeySlash();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
@@ -273,10 +273,10 @@ export default function KeyCodeNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>KEY_AT_TEST start====");
-          let driver = await Driver.create()
-          Utils.sleep(1000)
+          let driver = await Driver.create();
+          Utils.sleep(1000);
           await driver.triggerKey(2065);
-          Utils.sleep(1000)
+          Utils.sleep(1000);
           let a: number = keyCodeNdk.GetKeyCodeEventKeyAt();
           expect(KEY_CODE_EVENT_OK).assertEqual(a);
           done()
