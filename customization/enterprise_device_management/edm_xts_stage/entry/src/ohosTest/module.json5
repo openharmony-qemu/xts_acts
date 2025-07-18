@@ -71,6 +71,9 @@
         "name": "ohos.permission.MANAGE_ENTERPRISE_DEVICE_ADMIN"
       },
       {
+        "name": "ohos.permission.START_PROVISIONING_MESSAGE"
+      },
+      {
         "name": "ohos.permission.SET_ENTERPRISE_INFO"
       },
       {
