@@ -35,7 +35,7 @@ export default function abilityTest() {
 
     /*
      * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0100
-     * @tc.name: Call the interface to return whether the current application is running
+     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0100
      * @tc.desc: Call the interface to return whether the current application is running
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -57,7 +57,7 @@ export default function abilityTest() {
 
     /*
      * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0200
-     * @tc.name: Call the interface to return whether the current application is running
+     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0200
      * @tc.desc: Call the interface to return whether the current application is running
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -79,7 +79,7 @@ export default function abilityTest() {
 
         /*
      * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0300
-     * @tc.name: Call the interface to 401 when bundlename is undefined.
+     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0300
      * @tc.desc: Call the interface to 401 when bundlename is undefined.
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -107,16 +107,16 @@ export default function abilityTest() {
     })
 
             /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0200
-     * @tc.name: Registering an Application Status Listener.
+     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0400
+     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0400
      * @tc.desc: Registering an Application Status Listener.
      * @tc.size: MediumTest
      * @tc.type: Function
      * @tc.level: Level 3
      */
-    it('SUB_Ability_AbilityRuntime_AppManager_0200', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0200";
-      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] start');
+    it('SUB_Ability_AbilityRuntime_AppManager_0400', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_0400";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] start');
       let pid = 0;
       let applicationStateObserver: appManager.ApplicationStateObserver = {
         onForegroundApplicationChanged(appStateData) {
@@ -182,7 +182,7 @@ export default function abilityTest() {
         bundleName: "com.acts.startuiserviceextensionrely",
         abilityName: "EntryAbility"
       },(err, data)=>{
-        console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] startAbility result ' + err?.code);
+        console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] startAbility result ' + err?.code);
       })
       await sleep(1000);
       try {
@@ -197,7 +197,7 @@ export default function abilityTest() {
         console.error('waitForComponent error' + JSON.stringify(err));
         done();
       }
-      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] end');
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] end');
     })
 
   })

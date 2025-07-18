@@ -101,8 +101,11 @@ export default function startAbilityOptions() {
         appManager.off('applicationState', observerId, (err: BusinessError) => {
           if (err) {
             console.error(`unregisterApplicationStateObserverCallback fail, err: ${JSON.stringify(err)}`);
+            expect().assertFail();
+            done();
           } else {
             console.log('unregisterApplicationStateObserverCallback success.');
+            expect(err).assertNull();
             done();
           }
         });
@@ -110,6 +113,8 @@ export default function startAbilityOptions() {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         console.error(`[appManager] error: ${code}, ${message} `);
+        expect().assertFail();
+        done();
       }
 
     })
@@ -161,17 +166,19 @@ export default function startAbilityOptions() {
 
       try {
         appManager.off('applicationState', observerId).then((data) => {
-          done();
           console.log(`unregisterApplicationStateObserver success, data: ${JSON.stringify(data)}`);
+          expect(data).assertTrue();
+          done();
         }).catch((err: BusinessError) => {
           console.error(`unregisterApplicationStateObserver fail, err: ${JSON.stringify(err)}`);
+          try{expect().assertFail()}catch{};
+          done();
         });
       } catch (paramError) {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         console.error(`[appManager] error: ${code}, ${message} `);
       }
-
     })
   })
 }
