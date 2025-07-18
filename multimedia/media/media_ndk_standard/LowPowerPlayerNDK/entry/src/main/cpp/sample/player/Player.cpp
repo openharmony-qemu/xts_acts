@@ -168,7 +168,7 @@ int32_t Player::CreateLppVideoStreamer()
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetCallback ret:::%{public}d", ret);
     ret = lppVideoStreamer_->SetErrorCallback(lppVideoContext_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetErrorCallback ret:::%{public}d", ret);
-    int32_t ret = lppVideoStreamer_->SetFirstFrameDecodedCallback(lppVideoContext_);
+    ret = lppVideoStreamer_->SetFirstFrameDecodedCallback(lppVideoContext_);
     AVCODEC_SAMPLE_LOGW("lppVideoStreamer_ SetFirstFrameDecoded ret:::%{public}d", ret);
     AVCODEC_SAMPLE_LOGW("Create OUT");
     return AVCODEC_SAMPLE_ERR_OK;
