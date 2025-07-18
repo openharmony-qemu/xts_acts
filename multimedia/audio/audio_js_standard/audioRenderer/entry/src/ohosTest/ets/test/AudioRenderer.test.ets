@@ -13804,18 +13804,18 @@ export default function audioRendererTest() {
         usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
         rendererFlags: 0
       }
-      let audioRendererOptions:audio.audioRendererOptions = {
+      let audioRendererOptions:audio.AudioRendererOptions = {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer:audio.AudioRender = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       console.info(`${TAG},createAudioRenderer SUCCESS`);
       let minStreamVolumeValue:number = audioRenderer.getMinStreamVolumeSync();
       console.info(`${TAG},getMinStreamVolumeSync SUCCESS,minStreamVolumeValue : ${minStreamVolumeValue}`);
       try{
         let streamVolumeChangeCB:Callback<audio.StreamVolumeEvent> = (data:audio.StreamVolumeEvent) =>{
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
-          expect(data.streamUsage).assertEqual(streamUsage);
+          expect(data.StreamUsage).assertEqual(streamUsage);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
           expect(data.volume).assertEqual(minStreamVolumeValue);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
@@ -13823,7 +13823,7 @@ export default function audioRendererTest() {
         };
         console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
 
-        audioVolumeManager.on('streamVolumeChange',streamUsage,streamVolumeChangeCB)
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         await audioRenderer.setVolume(minStreamVolumeValue).then(() =>{
           console.info(`${TAG},setVolume SUCCESS`);
@@ -13864,7 +13864,7 @@ export default function audioRendererTest() {
         };
         console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
 
-        audioVolumeManager.on('streamVolumeChange',streamUsage,streamVolumeChangeCB)
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -13901,7 +13901,7 @@ export default function audioRendererTest() {
         
         let offStreamVolumeChangeCB:ESObject = 1;
 
-        audioVolumeManager.on('streamVolumeChange',streamUsage,streamVolumeChangeCB)
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.off('streamVolumeChange',streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
@@ -14022,7 +14022,7 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
-        expect(AudioVolumeManager.isSystemMutedForStream).assertEqual(false);
+        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(false);
         done();
       }catch(error){
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
@@ -14049,7 +14049,7 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(-1)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
-        expect(AudioVolumeManager.isSystemMutedForStream).assertEqual(false);
+        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(false);
         expect(false).assertTrue();
         done();
       }catch(error){
