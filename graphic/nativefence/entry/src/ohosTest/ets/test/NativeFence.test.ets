@@ -18,80 +18,80 @@ import nativefence from 'libnativefence.so'
 
 export default function nativeFenceTest() {
     describe('NativeFenceTest', () => {
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0100
-       * @tc.name       : testOHNativeFenceWait0100
-       * @tc.desc       : test OH_NativeFence_Wait
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
 
-      it('testOHNativeFenceWait0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let result: number = nativefence.nativeFenceWaitIs0();
-        expect(result).assertEqual(0);
-        done();
-      });
+    /**
+     * @tc.number     : SUB_BASIC _GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0100
+     * @tc.name       : testNativeFenceWait0100
+     * @tc.desc       : test OH_NativeFence_Wait
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0101
-       * @tc.name       : testOHNativeFenceWait0101
-       * @tc.desc       : test OH_NativeFence_Wait
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
+    it('testNativeFenceWait0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativefence.nativeFenceWaitIs0();
+      expect(result).assertEqual(0);
+      done();
+    });
 
-      it('testOHNativeFenceWait0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        let result: number = nativefence.nativeFenceWaitIs500();
-        expect(result).assertEqual(0);
-        done();
-      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0101
+     * @tc.name       : testNativeFenceWait0101
+     * @tc.desc       : test OH_NativeFence_Wait
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0102
-       * @tc.name       : testOHNativeFenceWait0102
-       * @tc.desc       : test OH_NativeFence_Wait
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
+    it('testNativeFenceWait0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = nativefence.nativeFenceWaitIs500();
+      expect(result).assertEqual(0);
+      done();
+    });
 
-      it('testOHNativeFenceWait0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        let result: number = nativefence.nativeFenceWaitIs5000();
-        expect(result).assertEqual(0);
-        done();
-      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0102
+     * @tc.name       : testNativeFenceWait0102
+     * @tc.desc       : test OH_NativeFence_Wait
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0103
-       * @tc.name       : testOHNativeFenceWait0103
-       * @tc.desc       : test OH_NativeFence_Wait
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
+    it('testNativeFenceWait0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = nativefence.nativeFenceWaitIs5000();
+      expect(result).assertEqual(0);
+      done();
+    });
 
-      it('testOHNativeFenceWait0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        let result: number = nativefence.nativeFenceWaitKill();
-        expect(result).assertEqual(0);
-        done();
-      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0103
+     * @tc.name       : testNativeFenceWait0103
+     * @tc.desc       : test OH_NativeFence_Wait
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0200
-       * @tc.name       : testOHNativeFenceWaitForever0200
-       * @tc.desc       : test OH_NativeFence_WaitForever
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
+    it('testNativeFenceWait0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = nativefence.nativeFenceWaitKill();
+      expect(result).assertEqual(0);
+      done();
+    });
 
-      it('testOHNativeFenceWaitForever0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let result: number = nativefence.nativeFenceWaitForeverKill();
-        expect(result).assertEqual(0);
-        done();
-      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0200
+     * @tc.name       : testNativeFenceWaitForever0200
+     * @tc.desc       : test OH_NativeFence_WaitForever
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
 
+    it('testNativeFenceWaitForever0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativefence.nativeFenceWaitForeverKill();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }
