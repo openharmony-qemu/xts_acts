@@ -18,7 +18,7 @@
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 namespace {
-static const uint32_t MAX_NAME_LENGTH = 1024; 
+static const uint32_t MAX_NAME_LENGTH = 1024;
 static bool g_keyApostropheIsTrue = 0;
 static bool g_keyGraveIsTrue = 0;
 static bool g_keyMinusIsTrue = 0;
@@ -160,23 +160,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "GetKeyCodeEventKeyApostrophe", nullptr, GetKeyCodeEventKeyApostrophe, nullptr, nullptr, nullptr, napi_default,
-         nullptr },
-        { "GetKeyCodeEventKeyGrave", nullptr, GetKeyCodeEventKeyGrave, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "GetKeyCodeEventKeyMinus", nullptr, GetKeyCodeEventKeyMinus, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "GetKeyCodeEventKeyEquals", nullptr, GetKeyCodeEventKeyEquals, nullptr, nullptr, nullptr, napi_default,
-         nullptr },
-        { "GetKeyCodeEventKeyLeftbracket", nullptr, GetKeyCodeEventKeyLeftbracket, nullptr, nullptr, nullptr,
-         napi_default, nullptr },
-        { "GetKeyCodeEventKeyRightbracket", nullptr, GetKeyCodeEventKeyRightbracket, nullptr, nullptr, nullptr,
-         napi_default, nullptr },
-        { "GetKeyCodeEventKeyBackslash", nullptr, GetKeyCodeEventKeyBackslash, nullptr, nullptr, nullptr, napi_default,
-         nullptr },
-        { "GetKeyCodeEventKeySemicolon", nullptr, GetKeyCodeEventKeySemicolon, nullptr, nullptr, nullptr, napi_default,
-         nullptr },
-        { "GetKeyCodeEventKeySlash", nullptr, GetKeyCodeEventKeySlash, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "GetKeyCodeEventKeyApostrophe", nullptr, GetKeyCodeEventKeyApostrophe, nullptr, nullptr, nullptr, 
+          napi_default, nullptr },
+        { "GetKeyCodeEventKeyGrave", nullptr, GetKeyCodeEventKeyGrave, nullptr, nullptr, nullptr, napi_default, 
+          nullptr },
+        { "GetKeyCodeEventKeyMinus", nullptr, GetKeyCodeEventKeyMinus, nullptr, nullptr, nullptr, napi_default, 
+          nullptr },
+        { "GetKeyCodeEventKeyEquals", nullptr, GetKeyCodeEventKeyEquals, nullptr, nullptr, nullptr, napi_default, 
+          nullptr },
+        { "GetKeyCodeEventKeyLeftbracket", nullptr, GetKeyCodeEventKeyLeftbracket, nullptr, nullptr, nullptr, 
+          napi_default, nullptr },
+        { "GetKeyCodeEventKeyRightbracket", nullptr, GetKeyCodeEventKeyRightbracket, nullptr, nullptr, nullptr, 
+          napi_default, nullptr },
+        { "GetKeyCodeEventKeyBackslash", nullptr, GetKeyCodeEventKeyBackslash, nullptr, nullptr, nullptr, 
+          napi_default, nullptr },
+        { "GetKeyCodeEventKeySemicolon", nullptr, GetKeyCodeEventKeySemicolon, nullptr, nullptr, nullptr, 
+          napi_default, nullptr },
+        { "GetKeyCodeEventKeySlash", nullptr, GetKeyCodeEventKeySlash, nullptr, nullptr, nullptr, napi_default, 
+          nullptr },
         { "GetKeyCodeEventKeyAt", nullptr, GetKeyCodeEventKeyAt, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "InitKeyMonitor", nullptr, InitKeyMonitor, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "InitKeyMonitor", nullptr, InitKeyMonitor, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
@@ -191,7 +194,7 @@ static napi_module demoModule = {
     .nm_register_func = Init,
     .nm_modname = "keycodendk",
     .nm_priv = ((void *)0),
-    .reserved = {0},
+    .reserved = {0}
 };
 
 extern "C" __attribute__((constructor)) void RegisterModule(void) { napi_module_register(&demoModule); }
