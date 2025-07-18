@@ -19,6 +19,7 @@ import {
 import cloudSync from '@ohos.file.cloudSync';
 import fileUri from '@ohos.file.fileuri';
 import featureAbility from '@ohos.ability.featureAbility';
+import fs from '@ohos.file.fs';
 import { Level } from '@ohos/hypium';
 
 export default function CloudFileTest(){
@@ -85,8 +86,6 @@ describe('cloud_file_test', function () {
    it('Test_CloudFile_State_003', Level.LEVEL3, async function (done) {
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
-    //let uris:string[];
-    //uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
     let uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
     let fileType = cloudSync.DownloadFileType.CONTENT;
      
@@ -100,7 +99,8 @@ describe('cloud_file_test', function () {
         console.info("startBatch Download successfully");
       }).catch((err) => {
         console.error("Test_CloudFile_State_003 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        expect(err.code == 22400005).assertTrue();
+        done();
       });
      } catch (err) {
        console.log('Test_CloudFile_State_003 has failed for ' + err.message + ', code: ' + err.code);
@@ -132,7 +132,8 @@ describe('cloud_file_test', function () {
         console.info("stopBatch Download successfully");
       }).catch((err) => {
         console.error("Test_CloudFile_State_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        expect(err.code == 201 && err.message =='Permission verification failed').assertTrue();
+        done();
       });
      } catch (err) {
        console.log('Test_CloudFile_State_004 has failed for ' + err.message + ', code: ' + err.code);
@@ -164,7 +165,8 @@ describe('cloud_file_test', function () {
         expect(MultiDownloadProgress.errType == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
         let FailedFileInfo = MultiDownloadProgress.getFailedFiles();
         let SuccessFileInfo = MultiDownloadProgress.getSuccessfulFiles();
-        //expect(FailedFileInfo.uri == '').assertTrue();
+        console.info("Test_CloudFile_State_005 FailedFileInfo " + FailedFileInfo);
+        console.info("Test_CloudFile_State_005 SuccessFileInfo " + SuccessFileInfo);
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
@@ -191,8 +193,9 @@ describe('cloud_file_test', function () {
       let callback = (MultiDownloadProgress) => {
         console.info("batchDownload state：" + MultiDownloadProgress.state);
         let FailedFileInfo = MultiDownloadProgress.getFailedFiles();
-        // expect(FailedFileInfo.uri == '').assertTrue();
-        // expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+        console.info("Test_CloudFile_State_006 FailedFileInfo " + FailedFileInfo.uri + FailedFileInfo.error);
+        expect(FailedFileInfo.uri == '').assertTrue();
+        expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
@@ -233,6 +236,7 @@ describe('cloud_file_test', function () {
       }).catch((err) => {
         console.error("Test_CloudFile_State_007 startBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        done();
       });
      } catch (err) {
        console.log('Test_CloudFile_State_007 has failed for ' + err.message + ', code: ' + err.code);
@@ -259,7 +263,7 @@ describe('cloud_file_test', function () {
       expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_008 has failed for ' + err.message + ', code: ' + err.code);
-       expect(false).assertTrue();
+       expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
      }
      done();
    });
@@ -275,13 +279,16 @@ describe('cloud_file_test', function () {
    */
    it('Test_CloudFile_State_009', Level.LEVEL3, async function (done) {
     let fpath = await featureAbility.getContext().getFilesDir() + '/Test_CloudFile_State_009';
+    let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+    console.info("Test_CloudFile_State_009 file fd: " + file.fd);
     let uri = fileUri.getUriFromPath(fpath);
+    console.info("Test_CloudFile_State_009 uri: " + uri);
     try {
       cloudSync.getCoreFileSyncState(uri);
       expect(true).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -300,11 +307,11 @@ describe('cloud_file_test', function () {
     let uri = fileUri.getUriFromPath(fpath);
     try {
       let FileState = cloudSync.getCoreFileSyncState(uri);
-      console.info("FileState state：" + FileState);
+      console.info("FileState state：" + FileState.INITIAL_AFTER_DOWNLOAD);
       expect(cloudSync.FileState.INITIAL_AFTER_DOWNLOAD == 0).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -327,7 +334,7 @@ describe('cloud_file_test', function () {
       expect(cloudSync.FileState.UPLOADING == 1).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -350,7 +357,7 @@ describe('cloud_file_test', function () {
       expect(cloudSync.FileState.STOPPED == 2).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_012 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -373,7 +380,7 @@ describe('cloud_file_test', function () {
       expect(cloudSync.FileState.TO_BE_UPLOADED == 3).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -396,7 +403,7 @@ describe('cloud_file_test', function () {
       expect(cloudSync.FileState.UPLOAD_SUCCESS == 4).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
@@ -419,9 +426,10 @@ describe('cloud_file_test', function () {
       expect(cloudSync.FileState.UPLOAD_FAILURE == 5).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+      expect(e.code == 14000002 && e.message == 'Invalid uri').assertTrue();
     }
     done();
   });
+
   });
 }

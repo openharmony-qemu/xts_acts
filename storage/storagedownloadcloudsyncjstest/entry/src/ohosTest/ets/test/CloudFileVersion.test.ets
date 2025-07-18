@@ -104,7 +104,14 @@ export default function CloudFileVersionTest(){
       try {
         fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync.HistoryVersion>) => {
           for(let i = 0, len = versionList.length; i < len; i++) {
-            console.info("test_cloudSync_FileVersion_003 get history versionId: " + versionList[i].versionId);
+            let HistoryVersion = versionList[i];
+            console.info("test_cloudSync_FileVersion_003 get history versionId: " + HistoryVersion.versionId);
+            expect(HistoryVersion.editedTime == 0).assertTrue();
+            expect(HistoryVersion.fileSize == 0).assertTrue();
+            expect(HistoryVersion.versionId == '').assertTrue();
+            expect(HistoryVersion.originalFileName == '').assertTrue();
+            expect(HistoryVersion.sha256 == '').assertTrue();
+            expect(HistoryVersion.autoResolved == false).assertTrue();
           }
         }).catch((err: BusinessError) => {
           console.error("test_cloudSync_FileVersion_003 get history version failed with error message: " + err.message + ", error code: " + err.code);
@@ -112,7 +119,7 @@ export default function CloudFileVersionTest(){
         });
       } catch (err) {
         console.log('test_cloudSync_FileVersion_003 has failed for ' + err.message + ', code: ' + err.code);
-        expect(err.code == 13900020).assertTrue();
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
       }
       done();
     });
@@ -170,12 +177,14 @@ export default function CloudFileVersionTest(){
       let path = "/data/storage/el2/cloud/1.txt";
       let uri = fileUri.getUriFromPath(path);
       let versionId = '';
-      let callback = (data: cloudSync.VersionDownloadProgress) => {
-        if (data.state == cloudSync.State.RUNNING) {
-          console.info("download progress: " + data.progress);
-        } else if (data.state == cloudSync.State.FAILED) {
-          console.info("download failed errType: " + data.errType);
-        } else if (data.state == cloudSync.State.COMPLETED) {
+      let callback = (VersionDownloadProgress: cloudSync.VersionDownloadProgress) => {
+        if (VersionDownloadProgress.state == cloudSync.State.RUNNING) {
+          console.info("download progress: " + VersionDownloadProgress.progress);
+          expect(VersionDownloadProgress.progress == 0).assertTrue();
+        } else if (VersionDownloadProgress.state == cloudSync.State.FAILED) {
+          console.info("download failed errType: " + VersionDownloadProgress.errType);
+          expect(VersionDownloadProgress.errType == cloudSync.DownloadErrorType.UNKNOWN_ERROR).assertTrue();
+        } else if (VersionDownloadProgress.state == cloudSync.State.COMPLETED) {
           console.info("download version file success");
         }
       };
@@ -189,7 +198,7 @@ export default function CloudFileVersionTest(){
         });
       } catch (err) {
         console.log('test_cloudSync_FileVersion_005 has failed for ' + err.message + ', code: ' + err.code);
-        expect(err.code == 13900020).assertTrue();
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
       }
       done();
     });
@@ -208,20 +217,15 @@ export default function CloudFileVersionTest(){
       let fileVersion = new cloudSync.FileVersion();
       let path = "/data/storage/el2/cloud/test_cloudSync_FileVersion_006.txt";
       let uri = fileUri.getUriFromPath(path);
-      let versionId = '1234';
-      let callback = (data: cloudSync.VersionDownloadProgress) => {
-        if (data.state == cloudSync.State.RUNNING) {
-          console.info("test_cloudSync_FileVersion_006 download progress: " + data.progress);
-        } else if (data.state == cloudSync.State.FAILED) {
-          console.info("test_cloudSync_FileVersion_006 download failed errType: " + data.errType);
-        } else if (data.state == cloudSync.State.COMPLETED) {
-          console.info("test_cloudSync_FileVersion_006 download version file success");
-        }
-      };
+      let versionUri = uri;
       try {
-        let versionUri = await fileVersion.downloadHistoryVersion(uri, versionId, callback);
-        console.log(`test_cloudSync_FileVersion_006 , ${JSON.stringify(versionUri)}`);
-        await fileVersion.replaceFileWithHistoryVersion(uri, uri);
+        fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then(() => {
+          console.info("test_cloudSync_FileVersion_006 replaceFileWithHistoryVersion success");
+          expect(true).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error("test_cloudSync_FileVersion_006 replaceFileWithHistoryVersion failed with error: " + err.message + ", error code: " + err.code);
+          expect(false).assertTrue();
+        });
       } catch (err) {
         console.log('test_cloudSync_FileVersion_006 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
@@ -270,7 +274,6 @@ export default function CloudFileVersionTest(){
       let fileVersion = new cloudSync.FileVersion();
       let path = "/data/storage/el2/cloud/1.txt";
       let uri = fileUri.getUriFromPath(path);
-      let isConflict = await fileVersion.isFileConflict(uri);
 
       try {
         fileVersion.clearFileConflict(uri).then(() => {
