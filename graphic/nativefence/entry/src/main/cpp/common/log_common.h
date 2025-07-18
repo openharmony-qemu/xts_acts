@@ -19,7 +19,7 @@
 #undef LOG_DOMAIN
 #undef LOG_TAG
 #define LOG_DOMAIN 0x3200
-#define LOG_TAG "NativeFenceSample"
+#define LOG_TAG "DrawingSample"
 
 constexpr const char *APP_LOG_TAG = "NativeFenceSample";
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, APP_LOG_TAG, __VA_ARGS__))

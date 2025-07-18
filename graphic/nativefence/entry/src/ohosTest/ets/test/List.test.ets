@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import nativeFenceTest from './NativeFence.test';
-
 export default function testsuite() {
   nativeFenceTest();
 }
