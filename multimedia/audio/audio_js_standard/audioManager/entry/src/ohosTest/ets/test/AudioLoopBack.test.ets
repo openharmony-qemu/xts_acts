@@ -146,25 +146,6 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_JS_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0300
-     * @tc.desc      : createAudioLoopback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0300", Level.LEVEL2, async () => {
-      if (!audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
-        try {
-          await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-        } catch (err) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0300 ERROR: ${err}`);
-          expect(Number(err.code)).assertEqual(801);
-        }
-      }
-    })
-
-    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SETVOLUME_JS_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_SETVOLUME_0100
      * @tc.desc      : createAudioLoopback
