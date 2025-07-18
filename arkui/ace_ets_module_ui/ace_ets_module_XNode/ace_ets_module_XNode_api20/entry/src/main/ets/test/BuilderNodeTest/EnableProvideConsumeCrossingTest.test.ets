@@ -58,14 +58,14 @@ export default function EnableProvideConsumeCrossingTest() {
       console.info('EnableProvideConsumeCrossingTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('text_change_i'));
+      let button1 = await driver.findComponent(ON.id('btn_change_i'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('text_change_c'));
+      let button2 = await driver.findComponent(ON.id('btn_change_c'));
       await button2.click();
       await CommonFunc.sleep(1000);
 
-      let strJson1: string = getInspectorByKey('btn_change_i');
+      let strJson1: string = getInspectorByKey('text_change_i');
       let obj1: Record<string, ESObject> = JSON.parse(strJson1);
       console.info("[EnableProvideConsumeCrossingTest_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[EnableProvideConsumeCrossingTest_0100] content obj1 is: " + JSON.stringify(obj1.$attrs.content));
