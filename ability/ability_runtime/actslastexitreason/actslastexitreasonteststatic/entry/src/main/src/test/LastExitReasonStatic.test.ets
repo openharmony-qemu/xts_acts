@@ -90,13 +90,13 @@ export default function lastExitReasonStaticTest() {
         let lastExitDetailInfo = AppStorage.get<AbilityConstant.LastExitDetailInfo>("lastExitDetailInfo");
         hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 lastExitDetailInfo: ' + JSON.stringify(lastExitDetailInfo));
         expect(lastExitDetailInfo?.exitMsg).assertEqual("");
-        expect(lastExitDetailInfo?.exitSubReason).assertEqual(0);
-        expect(lastExitDetailInfo?.pid).assertEqual(0);
+        expect(lastExitDetailInfo?.exitSubReason).assertEqual(-1);
+        expect(lastExitDetailInfo?.pid).assertEqual(-1);
         expect(lastExitDetailInfo?.processName).assertEqual("");
         expect(lastExitDetailInfo?.pss).assertEqual(0);
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
-        expect(lastExitDetailInfo?.uid).assertEqual(0);
+        expect(lastExitDetailInfo?.uid).assertEqual(-1);
         // let launchReasonMessage = launchParam?.launchReasonMessage as string
         // hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 launchReasonMessage: ' + launchReasonMessage);
         // expect(launchReasonMessage).assertEqual("");
