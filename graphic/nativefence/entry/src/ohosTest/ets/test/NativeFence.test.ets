@@ -20,7 +20,7 @@ export default function nativeFenceTest() {
     describe('NativeFenceTest', () => {
       /**
        * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0100
-       * @tc.name       : OH_NativeFence_Wait
+       * @tc.name       : testOHNativeFenceWait0100
        * @tc.desc       : test OH_NativeFence_Wait
        * @tc.size       : MediumTest
        * @tc.type       : Function
@@ -35,7 +35,7 @@ export default function nativeFenceTest() {
 
       /**
        * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0101
-       * @tc.name       : OH_NativeFence_Wait
+       * @tc.name       : testOHNativeFenceWait0101
        * @tc.desc       : test OH_NativeFence_Wait
        * @tc.size       : MediumTest
        * @tc.type       : Function
@@ -50,7 +50,7 @@ export default function nativeFenceTest() {
 
       /**
        * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0102
-       * @tc.name       : OH_NativeFence_Wait
+       * @tc.name       : testOHNativeFenceWait0102
        * @tc.desc       : test OH_NativeFence_Wait
        * @tc.size       : MediumTest
        * @tc.type       : Function
@@ -65,7 +65,7 @@ export default function nativeFenceTest() {
 
       /**
        * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0103
-       * @tc.name       : OH_NativeFence_Wait
+       * @tc.name       : testOHNativeFenceWait0103
        * @tc.desc       : test OH_NativeFence_Wait
        * @tc.size       : MediumTest
        * @tc.type       : Function
@@ -80,7 +80,7 @@ export default function nativeFenceTest() {
 
       /**
        * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_FENCE_0200
-       * @tc.name       : OH_NativeFence_WaitForever
+       * @tc.name       : testOHNativeFenceWaitForever0200
        * @tc.desc       : test OH_NativeFence_WaitForever
        * @tc.size       : MediumTest
        * @tc.type       : Function
