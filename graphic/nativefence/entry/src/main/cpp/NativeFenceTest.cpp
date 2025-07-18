@@ -82,7 +82,7 @@ static napi_value NativeFenceWaitIs500(napi_env env, napi_callback_info info)
     sigemptyset(&mask);
     sigaddset(&mask, SIGINT); // Monitor SIGINT signal (Ctrl C)
     sigaddset(&mask, SIGURG); // Monitor SIGURG signal (Emergency event)
-    sigprocmask(SIG_BLOCK, &mask, NULL);
+    sigprocmask(SIG_BLOCK, &mask, nullptr);
     int sfd = signalfd(-1, &mask, 0);
     if (sfd == -1) {
         perror("signalfd failed");
@@ -111,7 +111,7 @@ static napi_value NativeFenceWaitIs5000(napi_env env, napi_callback_info info)
     sigemptyset(&mask);
     sigaddset(&mask, SIGINT); // Monitor SIGINT signal (Ctrl C)
     sigaddset(&mask, SIGURG); // Monitor SIGURG signal (Emergency event)
-    sigprocmask(SIG_BLOCK, &mask, NULL);
+    sigprocmask(SIG_BLOCK, &mask, nullptr);
     int sfd = signalfd(-1, &mask, 0);
     if (sfd == -1) {
         perror("signalfd failed");
@@ -141,7 +141,7 @@ static napi_value NativeFenceWaitKill(napi_env env, napi_callback_info info)
     sigemptyset(&mask);
     sigaddset(&mask, SIGINT); // Monitor SIGINT signal (Ctrl C)
     sigaddset(&mask, SIGURG); // Monitor SIGURG signal (Emergency event)
-    sigprocmask(SIG_BLOCK, &mask, NULL);
+    sigprocmask(SIG_BLOCK, &mask, nullptr);
     int sfd = signalfd(-1, &mask, 0);
     if (sfd == -1) {
         perror("signalfd failed");
@@ -156,7 +156,7 @@ static napi_value NativeFenceWaitKill(napi_env env, napi_callback_info info)
     pid_t pid = getpid();
     int ret = kill(pid, SIGURG);
     if (ret < 0) {
-        std::cout << "kill failed" << strerror(errno);
+        LOGI("zy---kill failed: %{public}d", strerror(errno));
     }
     // Waiting for waitThread to complete
     waitThread.join();
@@ -192,7 +192,7 @@ static napi_value NativeFenceWaitForeverKill(napi_env env, napi_callback_info in
     sigemptyset(&mask);
     sigaddset(&mask, SIGINT); // Monitor SIGINT signal (Ctrl C)
     sigaddset(&mask, SIGTTIN); // Monitor SIGURG signal (The background job reads data from the user terminal)
-    sigprocmask(SIG_BLOCK, &mask, NULL);
+    sigprocmask(SIG_BLOCK, &mask, nullptr);
     int sfd = signalfd(-1, &mask, 0);
     if (sfd == -1) {
         perror("signalfd failed");
@@ -207,7 +207,7 @@ static napi_value NativeFenceWaitForeverKill(napi_env env, napi_callback_info in
     pid_t pid = getpid();
     int ret = kill(pid, SIGTTIN);
     if (ret < 0) {
-        std::cout << "kill failed" << strerror(errno);
+        LOGI("zy---kill failed: %{public}d", strerror(errno));
     }
     // Waiting for waitThread to complete
     waitThread.join();
