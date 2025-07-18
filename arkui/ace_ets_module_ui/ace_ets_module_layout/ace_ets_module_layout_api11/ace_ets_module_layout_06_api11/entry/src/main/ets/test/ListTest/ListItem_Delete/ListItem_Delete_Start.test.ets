@@ -73,7 +73,7 @@ export default function ListItem_Delete_Start() {
 
       let driver = Driver.create();
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(10)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(2000);
 
@@ -120,7 +120,7 @@ export default function ListItem_Delete_Start() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(30)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(80)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(2000);
 
@@ -168,7 +168,7 @@ export default function ListItem_Delete_Start() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_0400 value is" + left + " --" + right + "--" + top + "--" + bottom);
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(30)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(80)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(2000);
 
@@ -216,7 +216,7 @@ export default function ListItem_Delete_Start() {
       console.info("SUB_ACE_ListItem_Delete_Start_0500 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(30)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(80)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(2000);
 

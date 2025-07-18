@@ -15,6 +15,7 @@
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router'
 import { Driver, Component, ON } from '@ohos.UiTest'
+import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 import config from '@ohos.accessibility.config'
 import accessibility from '@ohos.accessibility';
@@ -97,13 +98,17 @@ export default function ListDeleteTest() {
       expect(JSON.parse(strJson).$attrs.startDeleteAreaDistance).assertEqual("0.00vp");
       expect(JSON.parse(strJson).$attrs.endDeleteAreaDistance).assertEqual("0.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
       let driver: Driver = Driver.create()
       console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] - (rectCenter[3] -rectCenter[2]) / 4),
-        Math.round(rectCenter[1] +  globalThis.winTop),
-        Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] -rectCenter[2]) / 4),
-        Math.round(rectCenter[1] +  globalThis.winTop))
+      let swipeRect = CommonFunc.getComponentRectOnScreen('MyList2_ListItem0');
+      let top = swipeRect.top;
+      let right = swipeRect.right;
+      let left = swipeRect.left;
+      let bottom = swipeRect.bottom;
+      console.info("ArkUI_List_Delete_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      let height = bottom -top;
+      let width = right - left;
+      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
       await sleep(3000);
       let strJsonButtonDel: string = getInspectorByKey(baseKey + '_Button_Del');
       expect(JSON.parse(strJsonButtonDel).$attrs.visibility).assertEqual("Visibility.Visible");

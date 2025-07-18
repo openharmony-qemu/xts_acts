@@ -89,7 +89,7 @@ export default function ListItem_Delete_Start_Resource() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(10)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
       );
       await CommonFunc.sleep(2000);
 

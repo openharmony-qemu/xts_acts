@@ -17,6 +17,7 @@ import focusWrapModeTest from './grid/FocusWrapModeTest.test'
 import dragEventGetDisplayIdTest from './dragEventTest/dragEventGetDisplayId.test'
 import dragEventGetDragSourceTest from './dragEventTest/dragEventGetDragSource.test'
 import enableDropDisallowedBadgeTest from './dropBadge/enableDropDisallowedBadge.test'
+import dialogGetStateTest from './dialog/DialogGetStateTest.test'
 
 export default function testsuite() {
   buttonGetTypeTest();
@@ -24,4 +25,5 @@ export default function testsuite() {
   dragEventGetDisplayIdTest();
   dragEventGetDragSourceTest();
   enableDropDisallowedBadgeTest();
+  dialogGetStateTest();
 }

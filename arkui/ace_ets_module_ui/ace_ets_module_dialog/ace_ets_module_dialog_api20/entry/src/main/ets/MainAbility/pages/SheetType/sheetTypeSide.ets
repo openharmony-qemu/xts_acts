@@ -19,6 +19,7 @@ struct SheetTypeExample {
   @State isShowBottom: boolean = false
   @State isShowSide: boolean = false
   @State sheetHeight: number = 300;
+  @State str: string = ''
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
  @Builder
@@ -61,7 +62,18 @@ struct SheetTypeExample {
           onTypeDidChange: (data: SheetType) => {
             console.log("SideSheet type change:" + data)
           },
+          onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
+            if (DismissSheetAction.reason == DismissReason.SLIDE) {
+              DismissSheetAction.dismiss(); //注册dismiss行为
+              this.str = 'success'
+            }
+          }),
+          onWillSpringBackWhenDismiss: ((SpringBackAction: SpringBackAction) => {
+            //没有注册springBack，下拉半模态页面无回弹行为
+            SpringBackAction.springBack();
+          }),
         })
+         Text(this.str).key('DismissReason')
     }
     .id('col')
     .justifyContent(FlexAlign.Center)

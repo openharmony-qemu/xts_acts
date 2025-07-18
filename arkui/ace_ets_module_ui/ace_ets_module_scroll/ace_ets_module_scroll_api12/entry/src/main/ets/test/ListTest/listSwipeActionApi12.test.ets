@@ -56,9 +56,16 @@ export default function listSwipeActionApi12Test() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       // swipe the listItem to right
-      await driver.swipe(
-        Math.round(globalThis.winLeft + vp2px(50)), Math.round(globalThis.winTop + vp2px(108)), Math.round(globalThis.winLeft + vp2px(200)), Math.round(globalThis.winTop + vp2px(108))
-      );
+      let swipeRect = CommonFunc.getComponentRectOnScreen('lSwipe29Action0');
+      let top = swipeRect.top;
+      let right = swipeRect.right;
+      let left = swipeRect.left;
+      let bottom = swipeRect.bottom;
+      console.info("listSwipeActionApi12Test_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      let height = bottom -top;
+      let width = right - left;
+      await CommonFunc.sleep(1000);
+      await driver.swipe(Math.round(left + vp2px(60)),Math.round(top + height/2),Math.round(left + vp2px(150)),Math.round(top + height/2));
       await CommonFunc.sleep(5000);
       let strJson1 = getInspectorByKey('ListTestApi12_2');
       let obj1: ESObject = JSON.parse(strJson1);

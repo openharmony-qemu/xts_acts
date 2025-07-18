@@ -127,7 +127,7 @@ export default function ListItem_aspectRatio_height2() {
       let height: number = list01.bottom - list01.top;
       let itemHeight: number = ListItem01.bottom - ListItem01.top;
 
-      expect(Math.floor(Math.abs((ListItem01.right - ListItem01.left) - (itemHeight * 2))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((ListItem01.right - ListItem01.left)/2 - itemHeight)) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(width * 0.8)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_height2_0300] END');

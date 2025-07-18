@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base'
 
 const DOMAIN = 0x0000;
 const LOG_TAG = 'COMPLETION_HANDLER_TEST';
-const DELAY_TIME = 5000;
+const DELAY_TIME = 2000;
 
 let sleep = async (millis: number) => {
   return new Promise<void>(resolve => setTimeout(resolve, millis));
@@ -155,13 +155,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
       buttonClicked = false;
+      isOpen = true;
     })
     afterEach(async (done: Function) => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      isOpen = true;
-      await sleep(2500);
+      await sleep(5000);
       done();
     })
     afterAll(() => {
@@ -222,6 +222,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await allowOpen();
         } catch (e) {
@@ -288,6 +289,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await disallowOpen();
         } catch (e) {
@@ -360,6 +362,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 isNeedOpen ' + isOpen);
       if(isOpen){
+        await sleep(500);
         try {
           await openDialog('选择打开方式', 'CompletionHandlerRely');
         } catch (e) {
@@ -432,8 +435,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 isNeedOpen ' + isOpen);
-
       if(isOpen){
+        await sleep(500);
         try {
           await closeDialog('选择打开方式');
         } catch (e) {
@@ -488,12 +491,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 startAbility succeeded');
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 startAbility failed, err=${JSON.stringify(err)}`);
-          isOpen = false;
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
       if(isOpen){
+        await sleep(500);
         try {
           await openDialog('暂无可用打开方式', '知道了');
         } catch (e) {
@@ -564,6 +567,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await allowOpen();
         } catch (e) {
@@ -635,7 +639,9 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         expect().assertFail();
         done();
       }
+      
       if(isOpen){
+        await sleep(500);
         try {
           await disallowOpen();
         } catch (e) {
