@@ -13816,7 +13816,7 @@ export default function audioRendererTest() {
       try{
         let streamVolumeChangeCB:Callback<audio.StreamVolumeEvent> = (data:audio.StreamVolumeEvent) =>{
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
-          expect(data.StreamUsage).assertEqual(streamUsage);
+          expect(data.streamUsage).assertEqual(streamUsage);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
           expect(data.volume).assertEqual(minStreamVolumeValue);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
