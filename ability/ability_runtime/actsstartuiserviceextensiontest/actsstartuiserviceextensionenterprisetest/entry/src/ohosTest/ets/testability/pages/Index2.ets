@@ -34,7 +34,7 @@ struct Index {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
             EmbeddedComponent({
-              bundleName: "com.acts.startuiserviceextensiontest",
+              bundleName: "com.acts.startuiserviceextensiontestenterprise",
               abilityName: "UIExtAbility1",
               parameters:{
                 "case":testAbilityWant?.parameters?.case as string,

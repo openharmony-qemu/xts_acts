@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "shell-timeout": "600000",
-        "bundle-name": "com.acts.startuiserviceextensiontest",
+        "bundle-name": "com.acts.startuiserviceextensiontestenterprise",
         "module-name": "entry_test",
         "testcase-timeout": 25000
     },

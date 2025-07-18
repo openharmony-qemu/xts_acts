@@ -47,7 +47,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_0100', Level.LEVEL0, async (done: Function) => {
   let tag = "SUB_Ability_AbilityRuntime_AppManager_0100";
   console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0100] start');
-  appManager.isAppRunning("com.acts.startuiserviceextensiontest").then((data: boolean) => {
+  appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise").then((data: boolean) => {
     hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
     try{expect(data).assertTrue();}catch{};
     done();
@@ -69,7 +69,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_AppManager_0200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_AppManager_0200";
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] start');
-      appManager.isAppRunning("com.acts.startuiserviceextensiontest", 1001).then((data: boolean) => {
+      appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", 1001).then((data: boolean) => {
         hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
         try{expect().assertFail();}catch{};
         done();
