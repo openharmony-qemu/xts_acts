@@ -2929,7 +2929,7 @@ export default function windowImmersiveTest() {
           let res = windowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout: ${res}.`);
           await windowClass.destroyWindow();
-          if (isPCStatus != '') {
+          if (isPCStatus != '' || isAutoWindow == 'true') {
             expect(res).assertEqual(false);
           } else {
             expect(res).assertEqual(true);
