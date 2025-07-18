@@ -16,7 +16,7 @@ import { BuilderNode, NodeContent } from '@kit.ArkUI';
 
 @Component
 struct ConsumeChild {
-  @Consume @Watch('ChangeData') message: string = ""
+  @Consume @Watch('ChangeData') message: string = ''
 
   ChangeData() {
     console.log(`ChangeData ${this.message}`);
@@ -39,7 +39,7 @@ struct ConsumeChild {
 }
 
 @Builder
-function CreateText(textMessage: string) {
+function createText(textMessage: string) {
   Column() {
     Text(textMessage)
       .fontWeight(FontWeight.Bold)
@@ -56,7 +56,7 @@ struct EnableProvideConsumeCrossingIndex {
   private builderNode: BuilderNode<[string]> = new BuilderNode<[string]>(this.getUIContext());
 
   aboutToAppear(): void {
-    this.builderNode.build(wrapBuilder(CreateText), 'Test Consume', { enableProvideConsumeCrossing: true })
+    this.builderNode.build(wrapBuilder(createText), 'Test Consume', { enableProvideConsumeCrossing: true })
     this.content.addFrameNode(this.builderNode.getFrameNode())
   }
 
