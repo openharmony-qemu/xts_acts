@@ -16,7 +16,7 @@
 import { Binding, MutableBinding, UIUtils } from '@kit.ArkUI';
 
 @Builder
-function CustomButton(num1: Binding<number>) {
+function customButton(num1: Binding<number>) {
   Row() {
     Text(num1.value.toString())
       .id('num1')
@@ -24,7 +24,7 @@ function CustomButton(num1: Binding<number>) {
   }
 }
 @Builder
-function CustomButton2(num2: MutableBinding<number>) {
+function customButton2(num2: MutableBinding<number>) {
   Row() {
     Text(num2.value.toString())
       .id('num2')
@@ -47,12 +47,12 @@ struct CompV2 {
   build() {
     Column() {
 
-      CustomButton(
+      customButton(
         UIUtils.makeBinding<number>(
           () => this.number1
         )
       )
-      CustomButton2(
+      customButton2(
         UIUtils.makeBinding<number>(
           () => this.number2,
           (val: number) => {
