@@ -111,6 +111,7 @@ export const OH_RdbTrans_InsertWithConflictResolution0100: () => number;
 export const OH_Rdb_SetCustomDir0100: () => number;
 export const OH_Rdb_SetReadOnly0100: () => number;
 export const OH_Rdb_SetPlugins0100: () => number;
+export const OH_Rdb_SetSemanticIndex_Param_0100: () => number;
 
 export const OH_Rdb_DestroyCryptoParam0100: () => number;
 export const OH_Rdb_CreateCryptoParam0100: () => number;
@@ -120,5 +121,3 @@ export const OH_Rdb_CreateCryptoParam0400: () => number;
 export const OH_Rdb_CreateCryptoParam0500: () => number;
 export const OH_Rdb_CreateCryptoParam0600: () => number;
 export const OH_Rdb_CreateCryptoParam0700: () => number;
-
-export const OH_Rdb_SetSemanticIndex_Param_0100: () => number;
