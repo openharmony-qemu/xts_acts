@@ -18,6 +18,7 @@ import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.fileio';
 import resourceManager from '@ohos.resourceManager';
 import featureAbility from '@ohos.ability.featureAbility'
+import {BusinessError} from '@ohos.base';
 
 export default function audioRendererTest() {
   describe('audioRendererTest', function () {
