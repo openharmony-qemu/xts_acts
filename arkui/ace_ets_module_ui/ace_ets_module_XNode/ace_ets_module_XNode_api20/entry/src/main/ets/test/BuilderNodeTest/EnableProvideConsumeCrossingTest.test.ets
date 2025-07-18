@@ -73,8 +73,8 @@ export default function EnableProvideConsumeCrossingTest() {
       let obj2: Record<string, ESObject> = JSON.parse(strJson2);
       console.info("[EnableProvideConsumeCrossingTest_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[EnableProvideConsumeCrossingTest_0100] content obj2 is: " + JSON.stringify(obj2.$attrs.content));
-      expect(obj1.$attrs.content).assertEqual('Hello WorldI');
-      expect(obj2.$attrs.content).assertEqual('C');
+      expect(obj1.$attrs.content).assertEqual('Hello WorldIC');
+      expect(obj2.$attrs.content).assertEqual('Hello WorldIC');
       console.info('[EnableProvideConsumeCrossingTest_0100] END');
       done();
     });
