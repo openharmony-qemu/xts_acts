@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect, beforeEach, afterEach, Level } from '@ohos/hypium';
-import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
+import { describe, beforeAll, it, expect,afterEach, Level } from '@ohos/hypium';
+import { BusinessError,systemParameterEnhance } from '@kit.BasicServicesKit';
 import { appManager, common } from '@kit.AbilityKit';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver} from '@kit.TestKit';
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
