@@ -23,13 +23,6 @@ function sleep(time: number): Promise<void> {
 
 let driver: Driver;
 let context: common.UIAbilityContext;
-let want: Want = {
-  bundleName: "com.example.startabilityerrorcode2",
-  abilityName: 'EntryAbility1',
-  parameters: {
-    pageName: 'UIExtAbilityPage'
-  }
-};
 let delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let mpEnable: string
 

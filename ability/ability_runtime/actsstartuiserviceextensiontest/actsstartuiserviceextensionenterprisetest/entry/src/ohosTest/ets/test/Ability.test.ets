@@ -3,7 +3,16 @@ import { BusinessError } from '@ohos.base';
 import { appManager } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import common from '@ohos.app.ability.common';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import hilog from '@ohos.hilog';
+
+let isSupportCapability:Boolean = false;
+let mpEnable:Boolean = false;
+let testAbilityContext: common.UIAbilityContext;
+let driver = Driver.create();
+function sleep(time: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
 
 let testAbilityContext: common.UIAbilityContext;
 let driver = Driver.create();
