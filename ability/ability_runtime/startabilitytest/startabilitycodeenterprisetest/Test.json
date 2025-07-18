@@ -16,7 +16,7 @@
                 "Startabilitycodehelpb.hap",
                 "StartAbilityCodeHelp.hap",
                 "StartAbilityCodeHelp1.hap",
-                "StartAbilityCodeEnterpriseTest.hap"
+                "ActStartAbilityCodeEnterpriseTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
