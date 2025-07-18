@@ -87,7 +87,7 @@ int32_t LppVideoStreamer::SetFirstFrameDecodedCallback(LppUserData *lppUserData)
     AVCODEC_SAMPLE_LOGI("====== lppVideoStreamer_ SetFirstFrameDecodedCallback ======");
     int32_t ret = AV_ERR_OK;
     ret = OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener(lppVideoStreamerCallback_, LppCallback::OnEos,
-                                                      lppUserData);
+                                                                    lppUserData);
     CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, ret, "Set SetFirstFrameDecodedCallback failed, ret::: %{public}d", ret);
 
     AVCODEC_SAMPLE_LOGI("OnEos ret:::%{public}d ", ret);
