@@ -562,7 +562,7 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2300
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2400
      * @tc.name      : testFontMeasureSingleCharacterWithFeaturesNormal
      * @tc.desc      : Test for testFontMeasureSingleCharacterWithFeaturesNormal.
      * @tc.size      : SmallTest
@@ -628,7 +628,7 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2301
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2401
      * @tc.name      : testFontMeasureSingleCharacterWithFeaturesNull
      * @tc.desc      : testFontMeasureSingleCharacterWithFeaturesNull
      * @tc.size      : SmallTest
@@ -674,7 +674,7 @@ export default function fontPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2303
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2403
      * @tc.name      : testFontMeasureSingleCharacterWithFeaturesMultipleCalls
      * @tc.desc      : testFontMeasureSingleCharacterWithFeaturesMultipleCalls
      * @tc.size      : SmallTest
@@ -699,7 +699,7 @@ export default function fontPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2302
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_2402
      * @tc.name      : testFontMeasureSingleCharacterWithFeaturesAbnormal
      * @tc.desc      : testFontMeasureSingleCharacterWithFeaturesAbnormal
      * @tc.size      : SmallTest
