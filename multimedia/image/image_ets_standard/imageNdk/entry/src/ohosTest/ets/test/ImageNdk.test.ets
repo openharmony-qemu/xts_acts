@@ -5588,7 +5588,7 @@ export default function imageNdkTest() {
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
       try {
         for(let j = 0; j < Data.length; j++){
-            const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].heicData);
+            const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].heifData);
             if(!checkResult){
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
@@ -5622,7 +5622,7 @@ export default function imageNdkTest() {
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
       try {
         for(let j = 0; j < Data.length; j++){
-            const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].heicData);
+            const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].heifData);
             if(!checkResult){
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
