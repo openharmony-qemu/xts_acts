@@ -4575,7 +4575,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            ExpectTrue(true, `${caseName} test connect success`);
+            expectTrue(true, `${caseName} test connect success`);
             done();
             console.info(`${caseName} test end`);
           }
@@ -4612,7 +4612,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            ExpectTrue(true, `${caseName} test connect success`);
+            expectTrue(true, `${caseName} test connect success`);
             done();
             console.info(`${caseName} test end`);
           }
