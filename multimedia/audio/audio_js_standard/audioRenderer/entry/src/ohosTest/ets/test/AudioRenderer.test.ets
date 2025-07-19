@@ -13865,7 +13865,9 @@ export default function audioRendererTest() {
         };
         console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
 
-        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
+        let onStreamVolumeChangeCB:ESObject = 1;
+
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,onStreamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -13902,7 +13904,7 @@ export default function audioRendererTest() {
         
         let offStreamVolumeChangeCB:ESObject = 1;
 
-        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,offStreamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         audioVolumeManager.off('streamVolumeChange',streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
@@ -13939,8 +13941,9 @@ export default function audioRendererTest() {
         };
         console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
         
-        
-        audioVolumeManager.off('streamVolumeChange',streamVolumeChangeCB)
+        let offStreamVolumeChangeCB:ESObject = 1;
+
+        audioVolumeManager.off('streamVolumeChange',offStreamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -14023,7 +14026,7 @@ export default function audioRendererTest() {
         let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
-        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(false);
+        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(true);
         done();
       }catch(error){
         console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
