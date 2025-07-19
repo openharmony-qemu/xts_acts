@@ -172,6 +172,7 @@ struct WebZoomAccessTest {
       }
 
       Web({ src: $rawfile('second.html'), controller: this.controller })
+        .width('80%')
         .key('WebZoomAccessTestWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
