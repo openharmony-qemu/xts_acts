@@ -642,7 +642,6 @@ export default function windowPropertiesTest2() {
           done()
         }).catch(async (err:BusinessError)=> {
           console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
-          await windowClass!.destroyWindow();
           if (err.code == 801) {
             console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
             await windowClass!.destroyWindow();
@@ -696,7 +695,6 @@ export default function windowPropertiesTest2() {
           done()
         }).catch(async (err:BusinessError)=> {
           console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
-          await windowClass!.destroyWindow();
           if (err.code == 801) {
             console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
             await windowClass!.destroyWindow();
