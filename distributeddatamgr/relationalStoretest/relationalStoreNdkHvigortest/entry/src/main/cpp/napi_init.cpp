@@ -2014,24 +2014,6 @@ static napi_value OH_Rdb_DBType_Enum_0100(napi_env env, napi_callback_info info)
     return ret;
 }
 
-static napi_value OH_Rdb_SetSemanticIndex_Param_0100(napi_env env, napi_callback_info info)
-{
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, " func OH_Rdb_SetSemanticIndex_Param_0100 ------------- ");
-    OH_Rdb_ConfigV2 *confg = OH_Rdb_CreateConfig();
-    NAPI_ASSERT(env, confg != nullptr, "OH_Rdb_CreateConfig is fail.");
-    auto ret =  OH_Rdb_SetSemanticIndex(nullptr, true);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetSemanticIndex is fail.");
-    ret = OH_Rdb_SetSemanticIndex(confg, true);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetSemanticIndex is fail.");
-    ret = OH_Rdb_SetSemanticIndex(confg, false);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetSemanticIndex is fail.");
-    ret = OH_Rdb_DestroyConfig(confg);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
-    napi_value result = nullptr;
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
