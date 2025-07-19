@@ -256,7 +256,7 @@ describe('rdbStorePluginLibsTest', function () {
             data_relationalStore.getRdbStore(context, storeConfig,(err,rdbstore)=>{
                 if(err){
                     console.log(TAG+"testPluginLibs0010 getRdbStore err: failed, err: code=" + err.code + " message=" + err.message);
-                    expect(14800021).assertEqual(err.code);
+                    expect(err.code == 14800021).assertTrue();
                     done()
                 }
                 else{
@@ -287,7 +287,7 @@ describe('rdbStorePluginLibsTest', function () {
             data_relationalStore.getRdbStore(context, storeConfig,async(err,rdbstore)=>{
                 if(err) {
                     console.log(TAG + "getRdbStore err: failed, err: code=" + err.code + " message=" + err.message);
-                    expect(14800000).assertEqual(err.code);
+                    expect(err.code == 14800000).assertTrue();
                     done()
                 }else {
                     console.log(TAG +"getrdbstore success");
