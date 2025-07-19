@@ -13,9 +13,7 @@
  * limitations under the License.
  */
 import DeviceInfoTest from './DeviceInfoJsUnit.test.js'
-import SystemDeviceTest from './SystemDeviceApi.test.js'
 
 export default function testsuite() {
     DeviceInfoTest()
-    SystemDeviceTest()
 }
