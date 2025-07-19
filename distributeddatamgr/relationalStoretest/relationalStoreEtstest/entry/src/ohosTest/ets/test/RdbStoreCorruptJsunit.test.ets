@@ -383,7 +383,7 @@ export default function rdbStoreCorruptJSunitTest() {
                     if(err)
                     {
                         console.log(TAG, "rebuiltTest001 open error"+err.code+err.message);
-                        expect(14800011).assertEqual(err.code);
+                        expect(err.code == 14800011).assertTrue();
                         done()
                     }else{
                         console.log(TAG, "rebuiltTest001 success");
