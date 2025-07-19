@@ -219,6 +219,7 @@ struct WebViewEnumAndSetWebController {
           }
         })
         .onTouchIconUrlReceived((event) => {
+          console.log('onTouchIconUrlReceived:' + event.url)
           console.log('onTouchIconUrlReceived:' + event.precomposed)
           this.precomposedResult = event.precomposed
           if (this.str === 'emitOnTouchIconUrlReceived') {
