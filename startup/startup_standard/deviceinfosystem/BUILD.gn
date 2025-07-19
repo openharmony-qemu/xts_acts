@@ -17,7 +17,7 @@ ohos_js_app_suite("startup_deviceinfo_js_test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsStartupSysDeviceInfoTest"
+  hap_name = "ActsStartupSysDeviceInfoEnterpriseTest"
   part_name = "init"
   subsystem_name = "startup"
 }
