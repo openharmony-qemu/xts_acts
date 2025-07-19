@@ -160,7 +160,7 @@ export default function startAbilityOptions() {
       try {
         appManager.off('applicationState', observerId).then((data) => {
           console.log(`unregisterApplicationStateObserver success, data: ${JSON.stringify(data)}`);
-          expect(data).assertTrue();
+          expect(data).assertEqual(undefined);
           done();
         }).catch((err: BusinessError) => {
           console.error(`unregisterApplicationStateObserver fail, err: ${JSON.stringify(err)}`);

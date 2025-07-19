@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "300000",
-        "bundle-name": "com.acts.actsinterfacemultiusersenterprisetes",
+        "bundle-name": "com.acts.actsinterfacemultiusersenterprisetest",
         "module-name":"phone",
         "shell-timeout": "300000",
         "testcase-timeout": "30000"
