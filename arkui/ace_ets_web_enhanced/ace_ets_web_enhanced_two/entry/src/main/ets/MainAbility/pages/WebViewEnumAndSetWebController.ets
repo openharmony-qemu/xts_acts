@@ -58,6 +58,7 @@ struct WebViewEnumAndSetWebController {
   @State FileSelectorMode: Number = 0
   @State MediaType: Number = 0
   @State userAgentPC:string = "";
+  @State precomposedResult:boolean =  false;
   handler: FullScreenExitHandler | null = null
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
@@ -126,6 +127,7 @@ struct WebViewEnumAndSetWebController {
               break;
             }
             case "emitCacheModeOnly": {
+              this.controller.removeCache(true);
               this.cacheError = true
               this.CacheMode = CacheMode.Only
               this.controller.loadUrl("https://www.openharmony.cn/mainPlay")
@@ -214,17 +216,14 @@ struct WebViewEnumAndSetWebController {
           if (this.cacheError) {
             Utils.emitEvent("cacheError", 1401)
             this.cacheError = false
-            setTimeout(() => {
-              this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
-            }, 2000)
           }
         })
         .onTouchIconUrlReceived((event) => {
-          console.log('onTouchIconUrlReceived:' + event.url)
-          Utils.emitEvent(event.url + '', 1371)
-          setTimeout(() => {
-            this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
-          }, 2000)
+          console.log('onTouchIconUrlReceived:' + event.precomposed)
+          this.precomposedResult = event.precomposed
+          if (this.str === 'emitOnTouchIconUrlReceived') {
+            Utils.emitEvent(event.url + '', 1371)
+          }
         })
         .onScreenCaptureRequest((event) => {
           console.log("1361 case", JSON.stringify(event))
