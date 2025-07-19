@@ -640,7 +640,7 @@ export default function RdbStoreReadOnlyTest() {
     it('testReadOnly2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* testReadOnly2000 start *************");
       try {
-        relationalStore.getRdbStore(context, STORE_CONFIG1,(err,rdbstore)=>{
+        relationalStore.getRdbStore(context, STORE_CONFIG1,async(err,rdbstore)=>{
           if(err){
             console.error(TAG, `open read-only database failed, errCode:${err.code}, message:${err.message}`);
             expect(err.code == 14800030).assertTrue();
