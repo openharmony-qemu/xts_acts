@@ -263,7 +263,7 @@ describe('cloud_file_test', function () {
       expect(true).assertTrue();
      } catch (err) {
        console.log('Test_CloudFile_State_008 has failed for ' + err.message + ', code: ' + err.code);
-       expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+       expect(err.code == 401 && err.message == 'The input parameter is invalid').assertTrue();
      }
      done();
    });
@@ -307,7 +307,7 @@ describe('cloud_file_test', function () {
     let uri = fileUri.getUriFromPath(fpath);
     try {
       let FileState = cloudSync.getCoreFileSyncState(uri);
-      console.info("FileState state：" + FileState.INITIAL_AFTER_DOWNLOAD);
+      console.info("FileState state：" + FileState);
       expect(cloudSync.FileState.INITIAL_AFTER_DOWNLOAD == 0).assertTrue();
     } catch (e) {
       console.log('Test_CloudFile_State_010 has failed for ' + e.message + ', code: ' + e.code);
