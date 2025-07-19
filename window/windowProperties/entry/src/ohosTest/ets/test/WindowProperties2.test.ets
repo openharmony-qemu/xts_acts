@@ -625,38 +625,45 @@ export default function windowPropertiesTest2() {
       console.log(msgStr + 'begin.');
       let windowClass: window.Window | null = null;
       let config: window.Configuration = {
-        name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+        name: "testSetWindowShadowRadiusTYPE_FLOAT0", windowType: window.WindowType.TYPE_FLOAT, ctx: context
       };
       try {
-        windowClass = await ohosWindow.createWindow(config);
-        console.info(`${caseName} Succeeded in creating the float window.`);
-        expect(!!windowClass).assertTrue();
-        await windowClass.setUIContent('testability/pages/First/index2');
-      console.info(`${caseName} Succeeded in loading the windowClass  content.`);
-      await windowClass.showWindow();
-      await sleep(200);
-      await windowClass!.setWindowShadowRadius(0)
-        expect(true).assertTrue();
-        console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
-        await windowClass!.destroyWindow();
-        done()
-      } catch (err) {
-        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
-        await windowClass!.destroyWindow();
-        if (err.code == 801) {
-          console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
-          await windowClass!.destroyWindow(); 
-          done();
-        } else if(err.code == 130002){
-          console.info(`${caseName} The current device type does not support to create float Window`);
-          done();
-        }else {
-          expect().assertFail();
-          done();
-        }
-      }
-    })
+        ohosWindow.createWindow(config).then(async (data)=>{
+          windowClass = data;
+          console.info(`${caseName} Succeeded in creating the float window.`);
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000);
+          expect(!!windowClass).assertTrue();
+          await windowClass!.setWindowShadowRadius(0)
+          expect(true).assertTrue();
+          console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
+          await windowClass!.destroyWindow();
+          done()
+        }).catch(async (err:BusinessError)=> {
+          console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
+          if (err.code == 801) {
+            console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+            await windowClass!.destroyWindow();
+            done();
+          } else if (err.code == 1300002) {
+            console.info(`${caseName} The current device type does not support to create float Window`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        })
 
+      } catch (err) {
+        console.error(msgStr + 'faild ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
+
+      }
+
+
+    })
     /**
      * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0500
      * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT4
@@ -671,35 +678,41 @@ export default function windowPropertiesTest2() {
       console.log(msgStr + 'begin.');
       let windowClass: window.Window | null = null;
       let config: window.Configuration = {
-        name: "floatWindow", windowType: window.WindowType.TYPE_FLOAT, ctx: context
+        name: "testSetWindowShadowRadiusTYPE_FLOAT4", windowType: window.WindowType.TYPE_FLOAT, ctx: context
       };
       try {
-        windowClass = await ohosWindow.createWindow(config);
-        console.info(`${caseName} Succeeded in creating the float window.`);
-        expect(!!windowClass).assertTrue();
-        await windowClass.setUIContent('testability/pages/First/index2');
-        console.info(`${caseName} Succeeded in loading the windowClass  content.`);
-        await windowClass.showWindow();
-        await sleep(200);
-        await windowClass!.setWindowShadowRadius(4)
-        expect(true).assertTrue();
-        console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
-        await windowClass!.destroyWindow();
-        done()
+        ohosWindow.createWindow(config).then(async (data)=>{
+          windowClass = data;
+          console.info(`${caseName} Succeeded in creating the float window.`);
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000);
+          expect(!!windowClass).assertTrue();
+          await windowClass!.setWindowShadowRadius(4)
+          expect(true).assertTrue();
+          console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
+          await windowClass!.destroyWindow();
+          done()
+        }).catch(async (err:BusinessError)=> {
+          console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
+          if (err.code == 801) {
+            console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
+            await windowClass!.destroyWindow();
+            done();
+          } else if (err.code == 1300002) {
+            console.info(`${caseName} The current device type does not support to create float Window`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        })
+
       } catch (err) {
-        console.error(msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(err));
-        await windowClass!.destroyWindow();
-        if (err.code == 801) {
-          console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
-          await windowClass!.destroyWindow(); 
-          done();
-        } else if(err.code == 130002){
-          console.info(`${caseName} The current device type does not support to create float Window`);
-          done();
-        }else {
-          expect().assertFail();
-          done();
-        }
+        console.error(msgStr + 'faild ' + 'caught, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done()
+
       }
     
     })
