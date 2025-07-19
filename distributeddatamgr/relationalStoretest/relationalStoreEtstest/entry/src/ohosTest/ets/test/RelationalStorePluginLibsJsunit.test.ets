@@ -253,7 +253,7 @@ describe('rdbStorePluginLibsTest', function () {
             let path = await context.filesDir;
             console.log(TAG+"testPluginLibs0005 path: " + path );
             storeConfig.pluginLibs = [ String(path) ];
-            data_relationalStore.getRdbStore(context, storeConfig,(err,rdbstore)=>{
+            data_relationalStore.getRdbStore(context, storeConfig,async(err,rdbstore)=>{
                 if(err){
                     console.log(TAG+"testPluginLibs0010 getRdbStore err: failed, err: code=" + err.code + " message=" + err.message);
                     expect(err.code == 14800021).assertTrue();
