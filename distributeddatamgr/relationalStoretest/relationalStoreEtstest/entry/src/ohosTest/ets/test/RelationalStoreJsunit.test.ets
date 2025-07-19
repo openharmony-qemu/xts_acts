@@ -758,7 +758,7 @@ export default function relationalStoreTest() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionEtsAPITest_3100
-     * @tc.name testRdbStore0017
+     * @tc.name testRdbStore0023
      * @tc.desc relational version
      * @tc.size MediumTest
      * @tc.type Function
