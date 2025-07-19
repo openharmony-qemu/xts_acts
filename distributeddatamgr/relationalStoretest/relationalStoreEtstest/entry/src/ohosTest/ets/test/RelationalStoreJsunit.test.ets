@@ -783,7 +783,7 @@ export default function relationalStoreTest() {
             console.error(TAG + `testRdbStore0023 Get RdbStore failed, code is ${err.code},message is ${err.message}`);
             await data_Rdb.deleteRdbStore(context, STORE_CONFIGS4.name);
             console.info(TAG +`deleteRdbStore successfully.`);
-            expect(err.code).assertEqual(14800017);
+            expect(err.code == 14800017).assertTrue();
             done()
           }else{
             console.info(TAG +`testRdbStore0023 Get RdbStore successfully.`);
