@@ -647,7 +647,7 @@ export default function windowPropertiesTest2() {
             console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
             await windowClass!.destroyWindow();
             done();
-          } else if (err.code == 130002) {
+          } else if (err.code == 1300002) {
             console.info(`${caseName} The current device type does not support to create float Window`);
             done();
           } else {
@@ -701,7 +701,7 @@ export default function windowPropertiesTest2() {
             console.info(`${caseName} The current device type does not support to setWindowShadowRadius`);
             await windowClass!.destroyWindow();
             done();
-          } else if (err.code == 130002) {
+          } else if (err.code == 1300002) {
             console.info(`${caseName} The current device type does not support to create float Window`);
             done();
           } else {
