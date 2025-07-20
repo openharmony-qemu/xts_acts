@@ -239,14 +239,14 @@ export default function dataManagerNotCartTest() {
           console.info(`${caseName}---End`);
           done();
         }).catch((err: BusinessError) => {
-          ExpectFail();
+          ExpectTrue(false);
           console.error(`${caseName} getActiveApnNam fail, err->${JSON.stringify(err)}`);
           console.info(`${caseName}---End`);
           done();
         });
       }catch (err) {
         console.error(`${caseName} catch err is `+JSON.stringify(err));
-        ExpectFail();
+        ExpectTrue(false);
         console.info(`${caseName}---End`);
         done();
       }
