@@ -5655,7 +5655,7 @@ export default function imageNdkTest() {
       const filename = 'test_exif_v4.jpg'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
       try {
-        for(let j = 0; j < createImageSourceTypes.length; j++){
+        for(let j = 0; j < Data0.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data0[j].key, Data0[j].jpegData);
             if(!checkResult){
               ndkTest.SourceRelease(imageSourceApi)
