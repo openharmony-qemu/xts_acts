@@ -23,7 +23,7 @@ export default function maxFontScaleTest() {
     beforeEach(async (done: Function) => {
       console.info('maxFontScaleTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/segmentButton/maxFontScaleTest',
+        url: 'MainAbility/pages/segbtn/maxFontScaleTest',
       }
       try {
         router.clear();
