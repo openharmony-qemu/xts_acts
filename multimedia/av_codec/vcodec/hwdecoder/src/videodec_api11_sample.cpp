@@ -621,11 +621,11 @@ int32_t VDecAPI11Sample::StartVideoDecoder()
         return ret;
     }
     if (enbleSyncMode == 0) {
-        StartDecoder();
+        ret = StartDecoder();
     } else {
-        StartSyncDecoder();
+        ret = StartSyncDecoder();
     }
-    return AV_ERR_OK;
+    return ret;
 }
 
 void VDecAPI11Sample::testAPI()
