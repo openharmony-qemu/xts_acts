@@ -235,7 +235,7 @@ describe('cloud_file_test', function () {
         expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
       }).catch((err) => {
         console.error("Test_CloudFile_State_007 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+        expect(err.code == 22400005).assertTrue();
         done();
       });
      } catch (err) {
