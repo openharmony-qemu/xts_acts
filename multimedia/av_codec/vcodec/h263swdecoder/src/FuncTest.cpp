@@ -162,7 +162,7 @@ HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SW263_BLANK_FRAME_0010, TestSize.Lev
         vDecSample->enbleBlankFrame = 1;
         ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(OH.Media.Codec.Decoder.Video.H263));
         ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
-		ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
         ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
         vDecSample->WaitForEOS();
         ASSERT_EQ(0, vDecSample->errCount);

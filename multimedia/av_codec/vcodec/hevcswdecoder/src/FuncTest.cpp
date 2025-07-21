@@ -120,7 +120,7 @@ HWTEST_F(HevcSwdecFuncNdkTest, VIDEO_SWDEC_H265_BLANK_FRAME_0010, TestSize.Level
         vDecSample->DEFAULT_WIDTH = 1920;
         vDecSample->DEFAULT_HEIGHT = 1080;
         vDecSample->DEFAULT_FRAME_RATE = 30;
-		vDecSample->SF_OUTPUT = false;
+        vDecSample->SF_OUTPUT = false;
         vDecSample->enbleBlankFrame = 1;
         ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameHevc));
         vDecSample->WaitForEOS();

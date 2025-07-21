@@ -459,7 +459,7 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDECODE_BLANK_FRAME_0010, TestSize.Level1)
         vDecSample->DEFAULT_HEIGHT = 1080;
         vDecSample->DEFAULT_FRAME_RATE = 30;
         vDecSample->enbleBlankFrame = 1;
-		vDecSample->SURFACE_OUTPUT = false;
+        vDecSample->SURFACE_OUTPUT = false;
         ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameAvc));
         vDecSample->WaitForEOS();
         ASSERT_EQ(0, vDecSample->errCount);
