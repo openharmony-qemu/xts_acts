@@ -57,8 +57,8 @@ struct WebViewEnumAndSetWebController {
   @State block: Boolean = false
   @State FileSelectorMode: Number = 0
   @State MediaType: Number = 0
-  @State userAgentPC:string = "";
   @State precomposedResult:boolean =  false;
+  @State userAgentPC:string = "";
   handler: FullScreenExitHandler | null = null
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
@@ -75,6 +75,7 @@ struct WebViewEnumAndSetWebController {
   onPageHide() {
     events_emitter.off(10)
   }
+
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
@@ -223,7 +224,7 @@ struct WebViewEnumAndSetWebController {
           this.precomposedResult = event.precomposed
           if (this.str === 'emitOnTouchIconUrlReceived') {
             Utils.emitEvent(event.url + '', 1371)
-          }       
+          }
         })
         .onScreenCaptureRequest((event) => {
           console.log("1361 case", JSON.stringify(event))
