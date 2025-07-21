@@ -102,10 +102,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1100
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1100
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: UIAbilityContext is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1100', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1100:';
@@ -175,10 +175,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1200
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1200
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: ApplicationContext is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1200', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1200:';
@@ -243,10 +243,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1300
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1300
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: AbilityStageContext is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1300', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1300:';
@@ -315,10 +315,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1400
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1400
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context(createModuleContext) is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1400', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1400:';
@@ -392,10 +392,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1500
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1500
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context(from uiability) is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1500', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1500:';
@@ -461,25 +461,16 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1700
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1700
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context(transAreaModeContext) is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1700', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1700:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1700 begin');
       let transAreaModeContext:common.Context|undefined = undefined;
       let areaMode: contextConstant.AreaMode = contextConstant.AreaMode.EL4;
-      // let moduleContext : common.Context | undefined = undefined;
-      // await application.createModuleContext(testUIAbilityContext, 'entry_test').then((data:common.Context)=>{
-      //   moduleContext = data;
-      // });
-      // if(moduleContext == undefined){
-      //   expect().assertFail();
-      //   done();
-      //   return;
-      // }
       let areaModeContext : common.Context = testUIAbilityContext.createAreaModeContext(areaMode);
       let isWoker1Done:Boolean = false;
       let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(areaModeContext);
@@ -540,24 +531,15 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1800
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1800
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context(createDisplayContext) is converted to sendableContext to pass the destruction and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1800', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1800:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1800 begin');
       let transDisplayContext:common.Context|undefined = undefined;
-      // let moduleContext : common.Context|undefined = undefined;
-      // await application.createModuleContext(testUIAbilityContext, 'entry_test').then((data:common.Context)=>{
-      //   moduleContext = data;
-      // });
-      // if(moduleContext == undefined){
-      //   expect().assertFail();
-      //   done();
-      //   return;
-      // }
       let displayContext : common.Context = testUIAbilityContext.createDisplayContext(0);
       let isWoker1Done:Boolean = false;
       let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(displayContext);
@@ -619,10 +601,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_1900
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_1900
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: UIAbilityContext is passed to destroy and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_1900', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1900:';
@@ -694,10 +676,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_2000
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_2000
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: ApplicationContext is passed to destroy and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_2000', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_2000:';
@@ -761,10 +743,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_2700
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_2700
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: AbilityStageContext is passed to destroy and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_2700', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_2700:';
@@ -835,10 +817,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_2100
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_2100
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context is passed to destroy and use between different worker threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_2100', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_2100:';
@@ -892,7 +874,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual("/data/storage/el2/base/cache");
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -914,10 +896,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_3500
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_3500
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: UIAbilityContext is passed to destroy and use between different taskpool threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_3500', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3500:';
@@ -933,10 +915,13 @@ export default function sendableContextTest() {
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
       try {
-        await taskpool.execute(returnUIAbilityContext, transContext).then((value: Object) => {
+        let task1: taskpool.Task = new taskpool.Task(returnUIAbilityContext, transContext);
+        await taskpool.execute(task1).then((value: Object) => {
           hilog.info(0x0000, 'testTag', TAG + 'taskpool result: %{public}s ', JSON.stringify(value));
           transModuleContext = value as common.UIAbilityContext;
         });
+        await sleep(1000);
+        taskpool.cancel(task1);
       } catch (error) {
         hilog.error(0x0000, 'testTag', TAG + 'Ability convertFromContext failed %{public}s', JSON.stringify(error));
       }
@@ -956,10 +941,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_3200
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_3200
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: ApplicationContext is passed to destroy and use between different taskpool threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_3200', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3200:';
@@ -975,10 +960,13 @@ export default function sendableContextTest() {
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
       try {
-        await taskpool.execute(returnApplicationContext, transContext).then((value: Object) => {
+        let task1: taskpool.Task = new taskpool.Task(returnApplicationContext, transContext);
+        await taskpool.execute(task1).then((value: Object) => {
           hilog.info(0x0000, 'testTag', 'taskpool result: %{public}s ', JSON.stringify(value));
           transModuleContext = value as common.ApplicationContext;
         });
+        await sleep(1000);
+        taskpool.cancel(task1);
       } catch (error) {
         hilog.error(0x0000, 'testTag', 'Ability convertFromContext failed %{public}s', JSON.stringify(error));
       }
@@ -999,10 +987,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_3100
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_3100
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: AbilityStageContext is passed to destroy and use between different taskpool threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_3100', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3100:';
@@ -1018,10 +1006,13 @@ export default function sendableContextTest() {
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
       try {
-        await taskpool.execute(returnAbilityStageContext, transContext).then((value: Object) => {
+        let task1: taskpool.Task = new taskpool.Task(returnAbilityStageContext, transContext);
+        await taskpool.execute(task1).then((value: Object) => {
           hilog.info(0x0000, 'testTag', 'taskpool result: %{public}s ', JSON.stringify(value));
           transModuleContext = value as common.AbilityStageContext;
         });
+        await sleep(1000);
+        taskpool.cancel(task1);
       } catch (error) {
         hilog.error(0x0000, 'testTag', 'Ability convertFromContext failed %{public}s', JSON.stringify(error));
       }
@@ -1041,10 +1032,10 @@ export default function sendableContextTest() {
     /**
      * @tc.number: SUB_Ability_AbilityRuntime_Worker_Stage_3300
      * @tc.name: SUB_Ability_AbilityRuntime_Worker_Stage_3300
-     * @tc.desc: Test UIAbility trans to woker1  convertTo and convertFrom.
+     * @tc.desc: Context is passed to destroy and use between different taskpool threads.
      * @tc.size: MediumTest
      * @tc.type: Function
-     * @tc.level: 1
+     * @tc.level: 0
      */
     it('SUB_Ability_AbilityRuntime_Worker_Stage_3300', Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3300:';
@@ -1069,10 +1060,13 @@ export default function sendableContextTest() {
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
       try {
-        await taskpool.execute(returnContext, transContext).then((value: Object) => {
+        let task1: taskpool.Task = new taskpool.Task(returnContext, transContext);
+        await taskpool.execute(task1).then((value: Object) => {
           hilog.info(0x0000, 'testTag', 'taskpool result: %{public}s ', JSON.stringify(value));
           transModuleContext = value as common.Context;
         });
+        await sleep(1000);
+        taskpool.cancel(task1);
       } catch (error) {
         hilog.error(0x0000, 'testTag', 'Ability convertFromContext failed %{public}s', JSON.stringify(error));
       }
