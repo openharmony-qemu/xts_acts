@@ -13,7 +13,7 @@
 import("//build/ohos_var.gni")
 import("//test/xts/tools/build/suite.gni")
 
-group("toolchain") {
+ohos_xts_group("toolchain") {
   testonly = true
   deps = [ "//third_party/musl:libctest" ]
   if (is_standard_system) {
