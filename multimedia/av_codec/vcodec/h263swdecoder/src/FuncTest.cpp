@@ -56,7 +56,7 @@ static string g_codecName263 = "";
 static OH_AVCapability *cap_264 = nullptr;
 static string g_codecName264 = "";
 constexpr uint32_t FRAMESIZE90 = 90;
-
+constexpr uint32_t FRAMESIZE75 = 75;
 } // namespace
 
 void H263SwdecFuncNdkTest::SetUpTestCase()
@@ -160,7 +160,7 @@ HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SW263_BLANK_FRAME_0010, TestSize.Lev
         vDecSample->DEFAULT_HEIGHT = 20;
         vDecSample->DEFAULT_FRAME_RATE = 30;
         vDecSample->enbleBlankFrame = 1;
-        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(OH.Media.Codec.Decoder.Video.H263));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder("OH.Media.Codec.Decoder.Video.H263"));
         ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
         ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
         ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
