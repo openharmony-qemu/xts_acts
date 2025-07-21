@@ -13856,7 +13856,7 @@ export default function audioRendererTest() {
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
 
       try{
-        let StreamUsage:ESObject = 1;
+        let StreamUsage:ESObject = "123";
         let streamVolumeChangeCB:Callback<audio.StreamVolumeEvent> = (data:audio.StreamVolumeEvent) =>{
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
@@ -13865,7 +13865,7 @@ export default function audioRendererTest() {
         };
         console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
 
-        audioVolumeManager.on('streamVolumeChange',StreamUsage,streamVolumeChangeCB)
+        audioVolumeManager.on('streamVolumeChange',StreamUsage,()=>{})
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -13959,8 +13959,8 @@ export default function audioRendererTest() {
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
 
       try{
-        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
-        let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(StreamUsage)
+        let streamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(streamUsage)
         console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
         expect(audioVolumeManager.isSystemMutedForStream).assertEqual(false);
         expect(true).assertTrue();
