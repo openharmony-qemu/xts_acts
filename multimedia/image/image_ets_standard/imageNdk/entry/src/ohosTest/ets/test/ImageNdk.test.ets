@@ -39,7 +39,15 @@ interface exifData {
   webpData0?:string
   pngData?:string
   dngData?:string
-  heifData?: string
+  heifData?:string
+  onlyRead?:boolean
+}
+
+interface modifyData {
+  key:string
+  modifyData:string
+  compareData?:string
+  canSetAny?:boolean
 }
 
 const Data: Array<exifData> = [
@@ -70,8 +78,8 @@ const Data: Array<exifData> = [
   {key: image.PropertyKey.WHITE_POINT, jpegData: "252, 0/0", webpData: "124, 0/0", pngData: "252, 0/0", dngData: "124.2", heifData: "252, 0/0"},
   {key: image.PropertyKey.PRIMARY_CHROMATICITIES, jpegData: " 0", webpData: "124", pngData: " 0", dngData: "124", heifData: " 0"},
   {key: image.PropertyKey.PHOTO_MODE, jpegData: "252", webpData: "123", pngData: "252", dngData: "252", heifData: "252"},
-  {key: image.PropertyKey.JPEG_INTERCHANGE_FORMAT, jpegData: "2798", webpData0: "1252", pngData: "2798", dngData: "10344", heifData: "2798"},
-  {key: image.PropertyKey.JPEG_INTERCHANGE_FORMAT_LENGTH, jpegData: "4", webpData0: "24042", pngData: "4", dngData: "4", heifData: "4"},
+  {key: image.PropertyKey.JPEG_INTERCHANGE_FORMAT, jpegData: "2798", webpData0: "1252", pngData: "2798", dngData: "10344", heifData: "2798", onlyRead: true},
+  {key: image.PropertyKey.JPEG_INTERCHANGE_FORMAT_LENGTH, jpegData: "4", webpData0: "24042", pngData: "4", dngData: "4", heifData: "4", onlyRead: true},
   {key: image.PropertyKey.YCBCR_COEFFICIENTS, jpegData: "0.299, 0.587, 0.114", 
     webpData: "0.299, 0.587, 0.114", pngData: "0.299, 0.587, 0.114", dngData: "0.299, 0.587, 0.114", heifData: "0.299, 0.587, 0.114"},
   {key: image.PropertyKey.YCBCR_SUB_SAMPLING, jpegData: "3, 2", webpData: "3, 3", pngData: "3, 2", dngData: "3, 2", heifData: "3, 2"},
@@ -205,35 +213,35 @@ const Data: Array<exifData> = [
             'HwMnoteSceneBlueSkyConf:4,HwMnoteSceneGreenPlantConf:5,HwMnoteSceneBeachConf:6,' +
             'HwMnoteSceneSnowConf:7,HwMnoteSceneSunsetConf:8,HwMnoteSceneFlowersConf:9,HwMnoteSceneNightConf:10,' +
             'HwMnoteSceneTextConf:11'},
-  {key: image.PropertyKey.SCENE_POINTER, jpegData: "256", webpData: "256", pngData: "256", dngData: "300", heifData: "256"},
-  {key: image.PropertyKey.SCENE_VERSION, jpegData: "1", webpData: "1", pngData: "1", dngData: "1", heifData: "1"},
-  {key: image.PropertyKey.SCENE_FOOD_CONF, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2"},
-  {key: image.PropertyKey.SCENE_STAGE_CONF, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3"},
-  {key: image.PropertyKey.SCENE_BLUE_SKY_CONF, jpegData: "4", webpData: "4", pngData: "4", dngData: "4", heifData: "4"},
-  {key: image.PropertyKey.SCENE_GREEN_PLANT_CONF, jpegData: "5", webpData: "5", pngData: "5", dngData: "5", heifData: "5"},
-  {key: image.PropertyKey.SCENE_BEACH_CONF, jpegData: "6", webpData: "6", pngData: "6", dngData: "6", heifData: "6"},
-  {key: image.PropertyKey.SCENE_SNOW_CONF, jpegData: "7", webpData: "7", pngData: "7", dngData: "7", heifData: "7"},
-  {key: image.PropertyKey.SCENE_SUNSET_CONF, jpegData: "8", webpData: "8", pngData: "8", dngData: "8", heifData: "8"},
-  {key: image.PropertyKey.SCENE_FLOWERS_CONF, jpegData: "9", webpData: "9", pngData: "9", dngData: "9", heifData: "9"},
-  {key: image.PropertyKey.SCENE_NIGHT_CONF, jpegData: "10", webpData: "10", pngData: "10", dngData: "10", heifData: "10"},
-  {key: image.PropertyKey.SCENE_TEXT_CONF, jpegData: "11", webpData: "11", pngData: "11", dngData: "11", heifData: "11"},
-  {key: image.PropertyKey.FACE_POINTER, jpegData: "122", webpData: "122", pngData: "122", dngData: "166", heifData: "122"},
-  {key: image.PropertyKey.FACE_VERSION, jpegData: "1", webpData: "1", pngData: "1", dngData: "1", heifData: "1"},
-  {key: image.PropertyKey.FACE_COUNT, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2"},
-  {key: image.PropertyKey.FACE_CONF, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3"},
-  {key: image.PropertyKey.FACE_SMILE_SCORE, jpegData: "1 2 3 4 5 6 7 8", webpData: "1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8"},
+  {key: image.PropertyKey.SCENE_POINTER, jpegData: "256", webpData: "256", pngData: "256", dngData: "300", heifData: "256", onlyRead: true},
+  {key: image.PropertyKey.SCENE_VERSION, jpegData: "1", webpData: "1", pngData: "1", dngData: "1", heifData: "1", onlyRead: true},
+  {key: image.PropertyKey.SCENE_FOOD_CONF, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2", onlyRead: true},
+  {key: image.PropertyKey.SCENE_STAGE_CONF, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3", onlyRead: true},
+  {key: image.PropertyKey.SCENE_BLUE_SKY_CONF, jpegData: "4", webpData: "4", pngData: "4", dngData: "4", heifData: "4", onlyRead: true},
+  {key: image.PropertyKey.SCENE_GREEN_PLANT_CONF, jpegData: "5", webpData: "5", pngData: "5", dngData: "5", heifData: "5", onlyRead: true},
+  {key: image.PropertyKey.SCENE_BEACH_CONF, jpegData: "6", webpData: "6", pngData: "6", dngData: "6", heifData: "6", onlyRead: true},
+  {key: image.PropertyKey.SCENE_SNOW_CONF, jpegData: "7", webpData: "7", pngData: "7", dngData: "7", heifData: "7", onlyRead: true},
+  {key: image.PropertyKey.SCENE_SUNSET_CONF, jpegData: "8", webpData: "8", pngData: "8", dngData: "8", heifData: "8", onlyRead: true},
+  {key: image.PropertyKey.SCENE_FLOWERS_CONF, jpegData: "9", webpData: "9", pngData: "9", dngData: "9", heifData: "9", onlyRead: true},
+  {key: image.PropertyKey.SCENE_NIGHT_CONF, jpegData: "10", webpData: "10", pngData: "10", dngData: "10", heifData: "10", onlyRead: true},
+  {key: image.PropertyKey.SCENE_TEXT_CONF, jpegData: "11", webpData: "11", pngData: "11", dngData: "11", heifData: "11", onlyRead: true},
+  {key: image.PropertyKey.FACE_POINTER, jpegData: "122", webpData: "122", pngData: "122", dngData: "166", heifData: "122", onlyRead: true},
+  {key: image.PropertyKey.FACE_VERSION, jpegData: "1", webpData: "1", pngData: "1", dngData: "1", heifData: "1", onlyRead: true},
+  {key: image.PropertyKey.FACE_COUNT, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2", onlyRead: true},
+  {key: image.PropertyKey.FACE_CONF, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3", onlyRead: true},
+  {key: image.PropertyKey.FACE_SMILE_SCORE, jpegData: "1 2 3 4 5 6 7 8", webpData: "1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8", onlyRead: true},
   {key: image.PropertyKey.FACE_RECT, jpegData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", 
-    webpData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8"},
-  {key: image.PropertyKey.FACE_LEYE_CENTER, jpegData: "1 2 3 4", webpData: "1 2 3 4", pngData: "1 2 3 4", dngData: "1 2 3 4", heifData: "1 2 3 4"},
-  {key: image.PropertyKey.FACE_REYE_CENTER, jpegData: "5 6 7 8", webpData: "5 6 7 8", pngData: "5 6 7 8", dngData: "5 6 7 8", heifData: "5 6 7 8"},
-  {key: image.PropertyKey.FACE_MOUTH_CENTER, jpegData: "1 2 3 4 5 6 7 8", webpData: "1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8"},
+    webpData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8", onlyRead: true},
+  {key: image.PropertyKey.FACE_LEYE_CENTER, jpegData: "1 2 3 4", webpData: "1 2 3 4", pngData: "1 2 3 4", dngData: "1 2 3 4", heifData: "1 2 3 4", onlyRead: true},
+  {key: image.PropertyKey.FACE_REYE_CENTER, jpegData: "5 6 7 8", webpData: "5 6 7 8", pngData: "5 6 7 8", dngData: "5 6 7 8", heifData: "5 6 7 8", onlyRead: true},
+  {key: image.PropertyKey.FACE_MOUTH_CENTER, jpegData: "1 2 3 4 5 6 7 8", webpData: "1 2 3 4 5 6 7 8", pngData: "1 2 3 4 5 6 7 8", dngData: "1 2 3 4 5 6 7 8", heifData: "1 2 3 4 5 6 7 8", onlyRead: true},
   {key: image.PropertyKey.CAPTURE_MODE, jpegData: "1", webpData: "1", pngData: "1", dngData: "1", heifData: "1"},
-  {key: image.PropertyKey.BURST_NUMBER, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2"},
-  {key: image.PropertyKey.FRONT_CAMERA, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3"},
-  {key: image.PropertyKey.ROLL_ANGLE, jpegData: "4", webpData: "4", pngData: "4", dngData: "4", heifData: "4"},
-  {key: image.PropertyKey.PITCH_ANGLE, jpegData: "5", webpData: "5", pngData: "5", dngData: "5", heifData: "5"},
-  {key: image.PropertyKey.PHYSICAL_APERTURE, jpegData: "6", webpData: "6", pngData: "6", dngData: "6", heifData: "6"},
-  {key: image.PropertyKey.FOCUS_MODE, jpegData: "7", webpData: "7", pngData: "7", dngData: "7", heifData: "7"},
+  {key: image.PropertyKey.BURST_NUMBER, jpegData: "2", webpData: "2", pngData: "2", dngData: "2", heifData: "2", onlyRead: true},
+  {key: image.PropertyKey.FRONT_CAMERA, jpegData: "3", webpData: "3", pngData: "3", dngData: "3", heifData: "3", onlyRead: true},
+  {key: image.PropertyKey.ROLL_ANGLE, jpegData: "4", webpData: "4", pngData: "4", dngData: "4", heifData: "4", onlyRead: true},
+  {key: image.PropertyKey.PITCH_ANGLE, jpegData: "5", webpData: "5", pngData: "5", dngData: "5", heifData: "5", onlyRead: true},
+  {key: image.PropertyKey.PHYSICAL_APERTURE, jpegData: "6", webpData: "6", pngData: "6", dngData: "6", heifData: "6", onlyRead: true},
+  {key: image.PropertyKey.FOCUS_MODE, jpegData: "7", webpData: "7", pngData: "7", dngData: "7", heifData: "7", onlyRead: true},
   {key: image.PropertyKey.USER_COMMENT, jpegData: "place for user comments", 
     webpData: "place for user comments.", pngData: "place for user comments", dngData: "comm", heifData: "place for user comments"},
   {key: image.PropertyKey.SUBSEC_TIME, jpegData: "123456", webpData: "123456", pngData: "123456", dngData: "427000", heifData: "123456"},
@@ -295,18 +303,169 @@ const Data: Array<exifData> = [
   {key: image.PropertyKey.XMAGE_BOTTOM, jpegData: "default_exif_value", webpData: "default_exif_value", pngData: "default_exif_value", dngData: "default_exif_value", heifData: "default_exif_value"},
   {key: image.PropertyKey.CLOUD_ENHANCEMENT_MODE, jpegData: "default_exif_value", 
     webpData: "default_exif_value", pngData: "default_exif_value", dngData: "default_exif_value", heifData: "default_exif_value"},
-  {key: image.PropertyKey.WIND_SNAPSHOT_MODE, jpegData: "default_exif_value", webpData: "default_exif_value", pngData: "default_exif_value", dngData: "8", heifData: "default_exif_value"}
+  {key: image.PropertyKey.WIND_SNAPSHOT_MODE, jpegData: "default_exif_value", webpData: "default_exif_value", pngData: "default_exif_value", dngData: "8", heifData: "default_exif_value", onlyRead: true}
 ]
 
 const Data0: Array<exifData> = [
-  {key: image.PropertyKey.IS_XMAGE_SUPPORTED, jpegData: "3"},
-  {key: image.PropertyKey.XMAGE_MODE, jpegData: "2"},
-  {key: image.PropertyKey.XMAGE_LEFT, jpegData: "0"},
-  {key: image.PropertyKey.XMAGE_TOP, jpegData: "0"},
-  {key: image.PropertyKey.XMAGE_RIGHT, jpegData: "1, 1, 1"},
-  {key: image.PropertyKey.XMAGE_BOTTOM, jpegData: "Uncompressed"},
-  {key: image.PropertyKey.CLOUD_ENHANCEMENT_MODE, jpegData: "Reversed mono"},
-  {key: image.PropertyKey.WIND_SNAPSHOT_MODE, jpegData: `_cuva%s\\d`}
+  {key: image.PropertyKey.IS_XMAGE_SUPPORTED, jpegData: "1"},
+  {key: image.PropertyKey.XMAGE_MODE, jpegData: "1"},
+  {key: image.PropertyKey.XMAGE_LEFT, jpegData: "1"},
+  {key: image.PropertyKey.XMAGE_TOP, jpegData: "1"},
+  {key: image.PropertyKey.XMAGE_RIGHT, jpegData: "1"},
+  {key: image.PropertyKey.XMAGE_BOTTOM, jpegData: "1"},
+  {key: image.PropertyKey.CLOUD_ENHANCEMENT_MODE, jpegData: "1"},
+  {key: image.PropertyKey.WIND_SNAPSHOT_MODE, jpegData: "1"}
+]
+
+const ModifyData: Array<modifyData> = [
+  {key: image.PropertyKey.BITS_PER_SAMPLE, modifyData: "1,1,1", compareData: "1, 1, 1"},
+  {key: image.PropertyKey.ORIENTATION, modifyData: "1", compareData: "Top-left"},
+  {key: image.PropertyKey.IMAGE_LENGTH, modifyData: "0", compareData: "0"},
+  {key: image.PropertyKey.IMAGE_WIDTH, modifyData: "0", compareData: "0"},
+  {key: image.PropertyKey.GPS_LATITUDE, modifyData: "39,54,20", compareData: "39, 54, 20"},
+  {key: image.PropertyKey.GPS_LONGITUDE, modifyData: "120/1 52/1 26/1", compareData: "120, 52, 26"},
+  {key: image.PropertyKey.GPS_LATITUDE_REF, modifyData: "N", compareData: "N"},
+  {key: image.PropertyKey.GPS_LONGITUDE_REF, modifyData: "E", compareData: "E"},
+  {key: image.PropertyKey.DATE_TIME_ORIGINAL, modifyData: "2024:01:25 05:51:34", compareData: "2024:01:25 05:51:34"},
+  {key: image.PropertyKey.EXPOSURE_TIME, modifyData: "1/34", compareData: "1/34 sec."},
+  {key: image.PropertyKey.SCENE_TYPE, modifyData: "1", compareData: "Directly photographed"},
+  {key: image.PropertyKey.ISO_SPEED, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.F_NUMBER, modifyData: "1/1", compareData: "f/1.0"},
+  {key: image.PropertyKey.DATE_TIME, modifyData: "2024:12:31", compareData: "2024:12:31"},
+  {key: image.PropertyKey.GPS_TIME_STAMP, modifyData: "11/1 37/1 58/1", compareData: "11:37:58.00"},
+  {key: image.PropertyKey.GPS_DATE_STAMP, modifyData: "2025:01:11", compareData: "2025:01:11"},
+  {key: image.PropertyKey.IMAGE_DESCRIPTION, modifyData: "_cuva%s\\d", compareData: "_cuva%s\\d", canSetAny: true},
+  {key: image.PropertyKey.MAKE, modifyData: "\u534e\u4e3a", compareData: "\u534e\u4e3a", canSetAny: true},
+  {key: image.PropertyKey.MODEL, modifyData: "TNY-AL00", compareData: "TNY-AL00", canSetAny: true},
+  {key: image.PropertyKey.PHOTO_MODE, modifyData: "252", compareData: "252"},
+  {key: image.PropertyKey.SENSITIVITY_TYPE, modifyData: "5", compareData: "Standard output sensitivity (SOS) and ISO speed"},
+  {key: image.PropertyKey.STANDARD_OUTPUT_SENSITIVITY, modifyData: "5", compareData: "5"},
+  {key: image.PropertyKey.RECOMMENDED_EXPOSURE_INDEX, modifyData: "123", compareData: "123"},
+  {key: image.PropertyKey.APERTURE_VALUE, modifyData: "4/1", compareData: "4.00 EV (f/4.0)"},
+  {key: image.PropertyKey.EXPOSURE_BIAS_VALUE, modifyData: "23/1", compareData: "23.00 EV"},
+  {key: image.PropertyKey.METERING_MODE, modifyData: "5", compareData: "Pattern"},
+  {key: image.PropertyKey.LIGHT_SOURCE, modifyData: "1", compareData: "Daylight"},
+  {key: image.PropertyKey.FLASH, modifyData: "5", compareData: "Strobe return light not detected"},
+  {key: image.PropertyKey.FOCAL_LENGTH, modifyData: "0/1", compareData: "0.0 mm"},
+  {key: image.PropertyKey.USER_COMMENT, modifyData: "place for user comments", compareData: "place for user comments", canSetAny: true},
+  {key: image.PropertyKey.PIXEL_X_DIMENSION, modifyData: "123", compareData: "123"},
+  {key: image.PropertyKey.PIXEL_Y_DIMENSION, modifyData: "234", compareData: "234"},
+  {key: image.PropertyKey.WHITE_BALANCE, modifyData: "1", compareData: "Manual white balance"},
+  {key: image.PropertyKey.FOCAL_LENGTH_IN_35_MM_FILM, modifyData: "2", compareData: "2"},
+  {key: image.PropertyKey.COMPRESSION, modifyData: "1", compareData: "Uncompressed"},
+  {key: image.PropertyKey.PHOTOMETRIC_INTERPRETATION, modifyData: "0", compareData: "Reversed mono"},
+  {key: image.PropertyKey.STRIP_OFFSETS, modifyData: "123", compareData: "123"},
+  {key: image.PropertyKey.SAMPLES_PER_PIXEL, modifyData: "0", compareData: "0"},
+  {key: image.PropertyKey.ROWS_PER_STRIP, modifyData: "123", compareData: "123"},
+  {key: image.PropertyKey.STRIP_BYTE_COUNTS, modifyData: "123", compareData: "123"},
+  {key: image.PropertyKey.X_RESOLUTION, modifyData: "0/1", compareData: " 0"},
+  {key: image.PropertyKey.Y_RESOLUTION, modifyData: "0/1", compareData: " 0"},
+  {key: image.PropertyKey.PLANAR_CONFIGURATION, modifyData: "1", compareData: "Chunky format"},
+  {key: image.PropertyKey.RESOLUTION_UNIT, modifyData: "2", compareData: "Inch"},
+  {key: image.PropertyKey.TRANSFER_FUNCTION, modifyData: "abc", compareData: "3 bytes undefined data", canSetAny: true},
+  {key: image.PropertyKey.SOFTWARE, modifyData: "\u534e\u4e3a", compareData: "\u534e\u4e3a", canSetAny: true},
+  {key: image.PropertyKey.ARTIST, modifyData: "None", compareData: "None", canSetAny: true},
+  {key: image.PropertyKey.WHITE_POINT, modifyData: "252/1", compareData: "252, 0/0"},
+  {key: image.PropertyKey.PRIMARY_CHROMATICITIES, modifyData: "0/1", compareData: " 0"},
+  {key: image.PropertyKey.YCBCR_COEFFICIENTS, modifyData: "299/1000 587/1000 114/1000", compareData: "0.299, 0.587, 0.114"},
+  {key: image.PropertyKey.YCBCR_SUB_SAMPLING, modifyData: "3 2", compareData: "3, 2"},
+  {key: image.PropertyKey.YCBCR_POSITIONING, modifyData: "1", compareData: "Centered"},
+  {key: image.PropertyKey.REFERENCE_BLACK_WHITE, modifyData: "222 0 1.5 0 25.2 25.2", compareData: "222,  0, 1.5,  0, 25.2, 25.2"},
+  {key: image.PropertyKey.COPYRIGHT, modifyData: "undefined", compareData: "undefined (Photographer) - [None] (Editor)", canSetAny: true},
+  {key: image.PropertyKey.EXPOSURE_PROGRAM, modifyData: "0", compareData: "Not defined"},
+  {key: image.PropertyKey.SPECTRAL_SENSITIVITY, modifyData: "abc", compareData: "abc", canSetAny: true},
+  {key: image.PropertyKey.OECF, modifyData: "excc", compareData: "4 bytes undefined data", canSetAny: true},
+  {key: image.PropertyKey.EXIF_VERSION, modifyData: "0110", compareData: "Exif Version 1.1"},
+  {key: image.PropertyKey.DATE_TIME_DIGITIZED, modifyData: "2022:06:02 15:51:34", compareData: "2022:06:02 15:51:34"},
+  {key: image.PropertyKey.COMPONENTS_CONFIGURATION, modifyData: "1456", compareData: "Y R G B"},
+  {key: image.PropertyKey.SHUTTER_SPEED, modifyData: "5/2", compareData: "2.50 EV (1/6 sec.)"},
+  {key: image.PropertyKey.BRIGHTNESS_VALUE, modifyData: "5/2", compareData: "2.50 EV (19.38 cd/m^2)"},
+  {key: image.PropertyKey.MAX_APERTURE_VALUE, modifyData: "5/2", compareData: "2.50 EV (f/2.4)"},
+  {key: image.PropertyKey.SUBJECT_DISTANCE, modifyData: "5/2", compareData: "2.5 m"},
+  {key: image.PropertyKey.SUBJECT_AREA, modifyData: "12 13", compareData: "(x,y) = (12,13)"},
+  {key: image.PropertyKey.SUBSEC_TIME, modifyData: "123456", compareData: "123456", canSetAny: true},
+  {key: image.PropertyKey.SUBSEC_TIME_ORIGINAL, modifyData: "427000", compareData: "427000", canSetAny: true},
+  {key: image.PropertyKey.SUBSEC_TIME_DIGITIZED, modifyData: "427000", compareData: "427000", canSetAny: true},
+  {key: image.PropertyKey.FLASHPIX_VERSION, modifyData: "0100", compareData: "FlashPix Version 1.0"},
+  {key: image.PropertyKey.COLOR_SPACE, modifyData: "1", compareData: "sRGB"},
+  {key: image.PropertyKey.RELATED_SOUND_FILE, modifyData: "/usr/home", compareData: "/usr/home"},
+  {key: image.PropertyKey.FLASH_ENERGY, modifyData: "832/1", compareData: "832"},
+  {key: image.PropertyKey.SPATIAL_FREQUENCY_RESPONSE, modifyData: "13", compareData: "13", canSetAny: true},
+  {key: image.PropertyKey.FOCAL_PLANE_X_RESOLUTION, modifyData: "1080/1", compareData: "1080"},
+  {key: image.PropertyKey.FOCAL_PLANE_Y_RESOLUTION, modifyData: "880/1", compareData: "880"},
+  {key: image.PropertyKey.FOCAL_PLANE_RESOLUTION_UNIT, modifyData: "2", compareData: "Inch"},
+  {key: image.PropertyKey.SUBJECT_LOCATION, modifyData: "0 1", compareData: "0, 1"},
+  {key: image.PropertyKey.EXPOSURE_INDEX, modifyData: "3/2", compareData: "1.5"},
+  {key: image.PropertyKey.SENSING_METHOD, modifyData: "3", compareData: "Two-chip color area sensor"},
+  {key: image.PropertyKey.FILE_SOURCE, modifyData: "3", compareData: "DSC", canSetAny: true},
+  {key: image.PropertyKey.CFA_PATTERN, modifyData: "3", compareData: "1 bytes undefined data", canSetAny: true},
+  {key: image.PropertyKey.CUSTOM_RENDERED, modifyData: "0", compareData: "Normal process"},
+  {key: image.PropertyKey.EXPOSURE_MODE, modifyData: "0", compareData: "Auto exposure"},
+  {key: image.PropertyKey.DIGITAL_ZOOM_RATIO, modifyData: "321/1", compareData: "321"},
+  {key: image.PropertyKey.SCENE_CAPTURE_TYPE, modifyData: "0", compareData: "Standard"},
+  {key: image.PropertyKey.GAIN_CONTROL, modifyData: "0", compareData: "Normal"},
+  {key: image.PropertyKey.CONTRAST, modifyData: "0", compareData: "Normal"},
+  {key: image.PropertyKey.SATURATION, modifyData: "0", compareData: "Normal"},
+  {key: image.PropertyKey.SHARPNESS, modifyData: "0", compareData: "Normal"},
+  {key: image.PropertyKey.DEVICE_SETTING_DESCRIPTION, modifyData: "2xxx", compareData: "2xxx", canSetAny: true},
+  {key: image.PropertyKey.SUBJECT_DISTANCE_RANGE, modifyData: "0", compareData: "Unknown"},
+  {key: image.PropertyKey.IMAGE_UNIQUE_ID, modifyData: "FXIC012", compareData: "FXIC012", canSetAny: true},
+  {key: image.PropertyKey.GPS_VERSION_ID, modifyData: "2.2.0.0", compareData: "2.2.0.0"},
+  {key: image.PropertyKey.GPS_ALTITUDE_REF, modifyData: "0", compareData: "Sea level"},
+  {key: image.PropertyKey.GPS_ALTITUDE, modifyData: "0/100", compareData: "0.00"},
+  {key: image.PropertyKey.GPS_SATELLITES, modifyData: "xxx", compareData: "xxx", canSetAny: true},
+  {key: image.PropertyKey.GPS_STATUS, modifyData: "A", compareData: "A"},
+  {key: image.PropertyKey.GPS_MEASURE_MODE, modifyData: "2", compareData: "2"},
+  {key: image.PropertyKey.GPS_DOP, modifyData: "182/1", compareData: "182"},
+  {key: image.PropertyKey.GPS_SPEED_REF, modifyData: "N", compareData: "N"},
+  {key: image.PropertyKey.GPS_SPEED, modifyData: "150/1", compareData: "150"},
+  {key: image.PropertyKey.GPS_TRACK_REF, modifyData: "T", compareData: "T"},
+  {key: image.PropertyKey.GPS_TRACK, modifyData: "114/3", compareData: "38.0"},
+  {key: image.PropertyKey.GPS_IMG_DIRECTION_REF, modifyData: "M", compareData: "M"},
+  {key: image.PropertyKey.GPS_IMG_DIRECTION, modifyData: "125/56", compareData: "2.23"},
+  {key: image.PropertyKey.GPS_MAP_DATUM, modifyData: "xxx", compareData: "xxx", canSetAny: true},
+  {key: image.PropertyKey.GPS_DEST_LATITUDE_REF, modifyData: "N", compareData: "N"},
+  {key: image.PropertyKey.GPS_DEST_LATITUDE, modifyData: "33/1 22/1 11/1", compareData: "33, 22, 11"},
+  {key: image.PropertyKey.GPS_DEST_LONGITUDE_REF, modifyData: "E", compareData: "E"},
+  {key: image.PropertyKey.GPS_DEST_LONGITUDE, modifyData: "33/1 22/1 11/1", compareData: "33, 22, 11"},
+  {key: image.PropertyKey.GPS_DEST_BEARING_REF, modifyData: "T", compareData: "T"},
+  {key: image.PropertyKey.GPS_DEST_BEARING, modifyData: "22/11", compareData: "2.0"},
+  {key: image.PropertyKey.GPS_DEST_DISTANCE_REF, modifyData: "N", compareData: "N"},
+  {key: image.PropertyKey.GPS_DEST_DISTANCE, modifyData: "10/1", compareData: "10"},
+  {key: image.PropertyKey.GPS_PROCESSING_METHOD, modifyData: "CELLID", compareData: "CELLID"},
+  {key: image.PropertyKey.GPS_AREA_INFORMATION, modifyData: "arexxx", compareData: "arexxx"},
+  {key: image.PropertyKey.GPS_DIFFERENTIAL, modifyData: "0", compareData: "0"},
+  {key: image.PropertyKey.BODY_SERIAL_NUMBER, modifyData: "exoch", compareData: "exoch", canSetAny: true},
+  {key: image.PropertyKey.CAMERA_OWNER_NAME, modifyData: "c.uec", compareData: "c.uec", canSetAny: true},
+  {key: image.PropertyKey.COMPOSITE_IMAGE, modifyData: "2", compareData: "2"},
+  {key: image.PropertyKey.COMPRESSED_BITS_PER_PIXEL, modifyData: "24/1", compareData: "24"},
+  {key: image.PropertyKey.DNG_VERSION, modifyData: "2 2 3 1", compareData: "2, 2, 3, 1"},
+  {key: image.PropertyKey.DEFAULT_CROP_SIZE, modifyData: "153 841", compareData: "153, 841"},
+  {key: image.PropertyKey.GAMMA, modifyData: "5/2", compareData: "2.5"},
+  {key: image.PropertyKey.ISO_SPEED_LATITUDE_YYY, modifyData: "1456", compareData: "1456"},
+  {key: image.PropertyKey.ISO_SPEED_LATITUDE_ZZZ, modifyData: "1456", compareData: "1456"},
+  {key: image.PropertyKey.LENS_MAKE, modifyData: "xxwx", compareData: "xxwx", canSetAny: true},
+  {key: image.PropertyKey.LENS_MODEL, modifyData: "txaw", compareData: "txaw", canSetAny: true},
+  {key: image.PropertyKey.LENS_SERIAL_NUMBER, modifyData: "qxhc", compareData: "qxhc", canSetAny: true},
+  {key: image.PropertyKey.LENS_SPECIFICATION, modifyData: "3/4 5/2 3/2 1/2", compareData: "0.8, 2.5, 1.5, 0.5"},
+  {key: image.PropertyKey.NEW_SUBFILE_TYPE, modifyData: "3", compareData: "3"},
+  {key: image.PropertyKey.OFFSET_TIME, modifyData: "2024:01:25", compareData: "2024:01:25"},
+  {key: image.PropertyKey.OFFSET_TIME_DIGITIZED, modifyData: "cfh", compareData: "cfh", canSetAny: true},
+  {key: image.PropertyKey.OFFSET_TIME_ORIGINAL, modifyData: "chex", compareData: "chex", canSetAny: true},
+  {key: image.PropertyKey.SOURCE_EXPOSURE_TIMES_OF_COMPOSITE_IMAGE, modifyData: "xxxw", compareData: "xxxw", canSetAny: true},
+  {key: image.PropertyKey.SOURCE_IMAGE_NUMBER_OF_COMPOSITE_IMAGE, modifyData: "23 34", compareData: "23, 34"},
+  {key: image.PropertyKey.SUBFILE_TYPE, modifyData: "2", compareData: "2"},
+  {key: image.PropertyKey.GPS_H_POSITIONING_ERROR, modifyData: "5/2", compareData: "2.5"},
+  {key: image.PropertyKey.PHOTOGRAPHIC_SENSITIVITY, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.CAPTURE_MODE, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.MAKER_NOTE, modifyData: "1", compareData: "1", canSetAny: true},
+  {key: image.PropertyKey.IS_XMAGE_SUPPORTED, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.XMAGE_MODE, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.XMAGE_LEFT, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.XMAGE_TOP, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.XMAGE_RIGHT, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.XMAGE_BOTTOM, modifyData: "1", compareData: "1"},
+  {key: image.PropertyKey.CLOUD_ENHANCEMENT_MODE, modifyData: "1", compareData: "1"}
 ]
 
 const domain = 0x0000;
@@ -350,7 +509,7 @@ export default function imageNdkTest() {
     const getFd = async (fileName: string) => {
       filePath = filesDir + '/' + fileName;
       console.log('filePath:', filePath)
-      let file = fs.openSync(filePath);
+      let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE);
       fileFd = file.fd;
     }
 
@@ -380,7 +539,7 @@ export default function imageNdkTest() {
       }else{
         await getFd(filename);
         imageSourceApi = ndkTest.CreateFromFd(fileFd);
-        fs.closeSync(fileFd) // getFd open fd，创建ImageSource后，close fd。
+        // fs.closeSync(fileFd) // getFd open fd，创建ImageSource后，close fd。
       }
       return imageSourceApi
     }
@@ -1408,6 +1567,59 @@ export default function imageNdkTest() {
         }
       }else{
         hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`image info fail: ${imagePropertyRes}`)
+        result = false
+      }
+      return result
+    }
+
+    const NewModifyImageProperty = async (TAG: string, imageSourceApi: image.ImageSource, key: string, modifyValue: string | undefined, value: string | undefined) => {
+      let result = true
+      const imagePropertyRes: Number = ndkTest.modifyImageProperty(imageSourceApi, key, modifyValue)
+      if(imagePropertyRes === 0){
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info success: ${imagePropertyRes}`)
+        const imagePropertyRes0: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
+        if(typeof imagePropertyRes0 === "string"){
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get image info success: ${imagePropertyRes0}`)
+          if(imagePropertyRes0 === value){
+            result = true
+          }else{
+            hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`compare value error, getValue: ${imagePropertyRes0}, compareValue: ${value}`)
+            result = false
+          }
+        }else{
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get info fail: ${imagePropertyRes0}`)
+          result = false
+        }
+      }else{
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info fail: ${imagePropertyRes}`)
+        result = false
+      }
+      return result
+    }
+
+    const NewModifyImagePropertyErr = async (TAG: string, imageSourceApi: image.ImageSource, key: string, modifyValue: string | undefined) => {
+      let result = true
+      const imagePropertyRes0: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
+      hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get image info success: ${imagePropertyRes0}`)
+
+      const imagePropertyRes: Number = ndkTest.modifyImageProperty(imageSourceApi, key, modifyValue)
+      if(imagePropertyRes === 401){
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info error: ${imagePropertyRes}`)
+        const imagePropertyRes1: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
+        if(typeof imagePropertyRes1 === "string"){
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get image info success: ${imagePropertyRes1}`)
+          if(imagePropertyRes0 === imagePropertyRes1){
+            result = true
+          }else{
+            hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`compare value error, getValue: ${imagePropertyRes1}, compareValue: ${imagePropertyRes0}`)
+            result = false
+          }
+        }else{
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get info fail: ${imagePropertyRes1}`)
+          result = false
+        }
+      }else{
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info fail: ${imagePropertyRes}`)
         result = false
       }
       return result
@@ -5296,16 +5508,19 @@ export default function imageNdkTest() {
         for(let j = 0; j < Data.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].jpegData);
             if(!checkResult){
+              closeFile(fileFd)
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
               done()
               return
             }
         }
+        closeFile(fileFd)
         ndkTest.SourceRelease(imageSourceApi)
         expect(true).assertTrue()
         done()
       } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();
@@ -5375,16 +5590,21 @@ export default function imageNdkTest() {
           }
           const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSource, Data[j].key, testData);
           if(!checkResult){
+            closeFile(fileFd)
             ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
             expect().assertFail()
             done()
             return
           }
         }
+        closeFile(fileFd)
         ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
         expect(true).assertTrue()
         done()
       } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();
@@ -5421,12 +5641,14 @@ export default function imageNdkTest() {
           const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSource, Data[j].key, testData);
           if(!checkResult){
             ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
             expect().assertFail()
             done()
             return
           }
         }
         ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
         expect(true).assertTrue()
         done()
       } catch (e) {
@@ -5454,16 +5676,19 @@ export default function imageNdkTest() {
         for(let j = 0; j < Data.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].pngData);
             if(!checkResult){
+              closeFile(fileFd)
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
               done()
               return
             }
         }
+        closeFile(fileFd)
         ndkTest.SourceRelease(imageSourceApi)
         expect(true).assertTrue()
         done()
       } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();
@@ -5522,16 +5747,19 @@ export default function imageNdkTest() {
         for(let j = 0; j < Data.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].dngData);
             if(!checkResult){
+              closeFile(fileFd)
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
               done()
               return
             }
         }
+        closeFile(fileFd)
         ndkTest.SourceRelease(imageSourceApi)
         expect(true).assertTrue()
         done()
       } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();
@@ -5590,16 +5818,19 @@ export default function imageNdkTest() {
         for(let j = 0; j < Data.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data[j].key, Data[j].heifData);
             if(!checkResult){
+              closeFile(fileFd)
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
               done()
               return
             }
         }
+        closeFile(fileFd)
         ndkTest.SourceRelease(imageSourceApi)
         expect(true).assertTrue()
         done()
       } catch (e) {
+        closeFile(fileFd)
         hilog.info(0x0000, testTag, `createImageSource error ` + e);
         expect().assertFail();
         done();
@@ -5658,11 +5889,308 @@ export default function imageNdkTest() {
         for(let j = 0; j < Data0.length; j++){
             const checkResult = await NDK_GetImagePropertyWithNull(testTag, imageSourceApi, Data0[j].key, Data0[j].jpegData);
             if(!checkResult){
+              closeFile(fileFd)
               ndkTest.SourceRelease(imageSourceApi)
               expect().assertFail()
               done()
               return
             }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100';
+      const filename = 'test_exif_v3.jpg'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+     /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200';
+      const filename = 'test_exif_v3.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300';
+      const filename = 'test_exif_v3.png'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400';
+      const filename = 'test_exif_v3.dng'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500';
+      const filename = 'test_exif_v3.heic'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600';
+      const filename = 'test_exif_v3.heic'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100';
+      const filename = 'test_exif_v3.jpg'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
+      const errData = ['++++', 'afefefe', 'efeaef54515', ''];
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+          if(ModifyData[j].canSetAny != true){
+            for(let k = 0; k < errData.length; k++){
+              const checkResult = await NewModifyImagePropertyErr(testTag, imageSourceApi, ModifyData[j].key, errData[k]);
+              if(!checkResult){
+                ndkTest.SourceRelease(imageSourceApi)
+                expect().assertFail()
+                done()
+                return
+              }
+            }
+          }
+        }
+        ndkTest.SourceRelease(imageSourceApi)
+        expect(true).assertTrue()
+        done()
+      } catch (e) {
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+     * @tc.desc      : 1.createImageSource（by Fd/Uri）
+     *                 2.modify ImageProperty
+     *				         3.compare value
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200';
+      const filename = 'test_exif_v3.heic'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
+      try {
+        for(let j = 0; j < Data.length; j++){
+          if(Data[j].onlyRead == true){
+            const checkResult = await NewModifyImagePropertyErr(testTag, imageSourceApi, Data[j].key, Data[j].heifData);
+            if(!checkResult){
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+          }
         }
         ndkTest.SourceRelease(imageSourceApi)
         expect(true).assertTrue()
