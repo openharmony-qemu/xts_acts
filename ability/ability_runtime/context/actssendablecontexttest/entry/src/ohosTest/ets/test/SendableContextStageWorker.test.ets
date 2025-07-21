@@ -152,7 +152,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -222,7 +222,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el4/base/cache");
+          expect(event.data.value).assertEqual('/data/storage/el4/base/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -293,7 +293,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -371,7 +371,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el2/base/cache");
+          expect(event.data.value).assertEqual('/data/storage/el2/base/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -440,7 +440,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -510,7 +510,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el4/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el4/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -579,7 +579,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -653,7 +653,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -722,7 +722,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el4/base/cache");
+          expect(event.data.value).assertEqual('/data/storage/el4/base/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -795,7 +795,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el3/base/haps/entry_test/cache");
+          expect(event.data.value).assertEqual('/data/storage/el3/base/haps/entry_test/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
@@ -874,7 +874,7 @@ export default function sendableContextTest() {
           return;
         }
         try{
-          expect(event.data.value).assertEqual("/data/storage/el2/base/cache");
+          expect(event.data.value).assertEqual('/data/storage/el2/base/cache');
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
