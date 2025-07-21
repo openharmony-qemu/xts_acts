@@ -23,7 +23,7 @@ struct  CompB{
       Column({ space: 20 }) {
         Row(){
           Column(){
-            Text("type-->undefined")
+            Text('type-->undefined')
             Button('button')
               .type(this.type1)
               .onClick(() => {
@@ -32,7 +32,7 @@ struct  CompB{
               .key('coBtn1')
           }
           Column(){
-            Text("type-->null")
+            Text('type-->null')
             Button('button')
               .type(this.type2)
               .onClick(() => {
@@ -43,7 +43,7 @@ struct  CompB{
         }
         Row(){
           Column(){
-            Text("文本10-->undefined")
+            Text('文本10-->undefined')
             Button('button')
               .fontSize(this.number1)
               .onClick(() => {
@@ -52,7 +52,7 @@ struct  CompB{
               .key('coBtn3')
           }
           Column(){
-            Text("文本10-->null")
+            Text('文本10-->null')
             Button('button')
               .fontSize(this.number2)
               .onClick(() => {
@@ -88,7 +88,7 @@ struct provide2 {
           Column({ space: 20 }) {
             Row(){
               Column(){
-                Text("type-->undefined")
+                Text('type-->undefined')
                 Button('button')
                   .type(this.type1)
                   .onClick(() => {
@@ -97,7 +97,7 @@ struct provide2 {
                   .key('prBtn1')
               }
               Column(){
-                Text("type-->null")
+                Text('type-->null')
                 Button('button')
                   .type(this.type2)
                   .onClick(() => {
@@ -109,7 +109,7 @@ struct provide2 {
             }
             Row(){
               Column(){
-                Text("文本10-->undefined")
+                Text('文本10-->undefined')
                 Button('button')
                   .fontSize(this.number1)
                   .onClick(() => {
@@ -118,7 +118,7 @@ struct provide2 {
                   .key('prBtn3')
               }
               Column(){
-                Text("文本10-->null")
+                Text('文本10-->null')
                 Button('button')
                   .fontSize(this.number2)
                   .onClick(() => {

@@ -40,7 +40,7 @@ struct ViewA {
         Column() {
           Row(){
             Column(){
-              Text("type-->undefined").height('5%')
+              Text('type-->undefined').height('5%')
               Button('button').height('5%')
                 .type(this.a.type1)
                 .onClick(() => {
@@ -49,7 +49,7 @@ struct ViewA {
                 .key('ziobBtn1')
             }
             Column(){
-              Text("type-->null").height('5%')
+              Text('type-->null').height('5%')
               Button('button').height('5%')
                 .type(this.a.type2)
                 .onClick(() => {
@@ -63,7 +63,7 @@ struct ViewA {
 
           Row(){
             Column(){
-              Text("文本10-->undefined").height('5%')
+              Text('文本10-->undefined').height('5%')
               Button('button').height('5%')
                 .fontSize(this.a.number1)
                 .onClick(() => {
@@ -73,7 +73,7 @@ struct ViewA {
             }
 
             Column(){
-              Text("文本10-->null").height('5%')
+              Text('文本10-->null').height('5%')
               Button('button').height('5%')
                 .fontSize(this.a.number2)
                 .onClick(() => {
@@ -103,7 +103,7 @@ struct ViewB {
             Button('compare').key('compareBtn')
             Row(){
               Column(){
-                Text("父type-->undefined").height('5%')
+                Text('父type-->undefined').height('5%')
                 Button('button').height('5%')
                   .type(this.b.type1)
                   .onClick(() => {
@@ -112,7 +112,7 @@ struct ViewB {
                   .key('obBtn1')
               }
               Column(){
-                Text("父type-->null").height('5%')
+                Text('父type-->null').height('5%')
                 Button('button').height('5%')
                   .type(this.b.type2)
                   .onClick(() => {
@@ -125,7 +125,7 @@ struct ViewB {
 
             Row(){
               Column(){
-                Text("父文本10-->undefined").height('5%')
+                Text('父文本10-->undefined').height('5%')
                 Button('button').height('5%')
                   .fontSize(this.b.number1)
                   .onClick(() => {
@@ -135,7 +135,7 @@ struct ViewB {
               }
 
               Column(){
-                Text("父文本10-->null").height('5%')
+                Text('父文本10-->null').height('5%')
                 Button('button').height('5%')
                   .fontSize(this.b.number2)
                   .onClick(() => {

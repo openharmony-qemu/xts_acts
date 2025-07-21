@@ -24,7 +24,7 @@ struct  CompE{
 
         Row(){
           Column(){
-            Text("type-->undefined").height('5%')
+            Text('type-->undefined').height('5%')
             Button('button').height('5%')
               .type(this.type1)
               .onClick(() => {
@@ -34,7 +34,7 @@ struct  CompE{
           }
 
           Column(){
-            Text("type-->null").height('5%')
+            Text('type-->null').height('5%')
             Button('button').height('5%')
               .type(this.type2)
               .onClick(() => {
@@ -46,7 +46,7 @@ struct  CompE{
 
         Row(){
           Column(){
-            Text("文本10-->undefined").height('5%')
+            Text('文本10-->undefined').height('5%')
             Button('button').height('5%')
               .fontSize(this.number1)
               .onClick(() => {
@@ -56,7 +56,7 @@ struct  CompE{
           }
 
           Column(){
-            Text("文本10-->null").height('5%')
+            Text('文本10-->null').height('5%')
             Button('button').height('5%')
               .fontSize(this.number2)
               .onClick(() => {
@@ -94,7 +94,7 @@ struct Link1 {
             Button('compare').key('compareBtn')
             Row(){
               Column(){
-                Text("Link:type->undefined")
+                Text('Link:type->undefined')
                 Button('button')
                   .type(this.type1)
                   .onClick(() => {
@@ -103,7 +103,7 @@ struct Link1 {
                   .key('liBtn1')
               }
               Column(){
-                Text("Link:type-->null")
+                Text('Link:type-->null')
                 Button('button')
                   .type(this.type2)
                   .onClick(() => {
@@ -116,7 +116,7 @@ struct Link1 {
 
             Row(){
               Column(){
-                Text("Link文本10-->undefined")
+                Text('Link文本10-->undefined')
                 Button('button')
                   .fontSize(this.number1)
                   .onClick(() => {
@@ -127,7 +127,7 @@ struct Link1 {
 
               Column(){
 
-                Text("Link文本10-->null")
+                Text('Link文本10-->null')
                 Button('button')
                   .fontSize(this.number2)
                   .onClick(() => {

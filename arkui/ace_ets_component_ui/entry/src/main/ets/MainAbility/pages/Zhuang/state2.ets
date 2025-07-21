@@ -23,7 +23,7 @@ struct state2 {
   build() {
     Column() {
       Button('compare').key('compareBtn')
-      Text("State:type-->undefined").height('5%')
+      Text('State:type-->undefined').height('5%')
       Button('button').height('5%')
         .type(this.type1)
         .onClick(() => {
@@ -31,7 +31,7 @@ struct state2 {
         })
         .key('stBtn1')
 
-      Text("State:type-->null").height('5%')
+      Text('State:type-->null').height('5%')
       Button('button').height('5%')
         .type(this.type2)
         .onClick(() => {
@@ -39,7 +39,7 @@ struct state2 {
         })
         .key('stBtn2')
 
-      Text("State文本10-->undefined").height('5%')
+      Text('State文本10-->undefined').height('5%')
       Button('button').height('5%')
         .fontSize(this.number1)
         .onClick(() => {
@@ -47,7 +47,7 @@ struct state2 {
         })
         .key('stBtn3')
 
-      Text("State文本10-->null").height('5%')
+      Text('State文本10-->null').height('5%')
       Button('button').height('5%')
         .fontSize(this.number2)
         .onClick(() => {
