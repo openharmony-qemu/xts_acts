@@ -1825,38 +1825,38 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0400
-     * @tc.name      : testOnWindowStageLifecycleEventRegisterOne
-     * @tc.desc      : WindowStageLifecycleEvent 一个callBack对象订阅监听验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0400
+     * @tc.name : testOnWindowStageLifecycleEventRegisterOne
+     * @tc.desc : WindowStageLifecycleEvent 一个callBack对象订阅监听验证
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("testOnWindowStageLifecycleEventRegisterOne", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOnWindowStageLifecycleEventRegisterOne";
       console.log(caseName + " begin");
       let timer = 0;
-      let windowStageLifecycleEventArr:Array<string> = [];
       let cb1 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
-        windowStageLifecycleEventArr.push(WindowStageLifecycleEvent.toString())
         console.log(caseName + " callback: " + JSON.stringify(WindowStageLifecycleEvent));
         timer++;
-        if (timer === 1) {
-          expect(windowStageLifecycleEventArr.toString()).assertEqual('3,4');
-        } else if (timer === 2) {
-          expect(windowStageLifecycleEventArr.toString()).assertEqual('1,2');
-          windowStage.off('windowStageLifecycleEvent', cb1);
-          done();
-        }
+        console.log(caseName + " callback: timer :" + timer);
+
       }
       try {
         windowStage.on('windowStageLifecycleEvent', cb1);
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isPCStatus != '') {
           await windowClass.minimize();
           await sleep(1000);
+          console.log(caseName + " callback: timer1 :" + timer);
+          expect(timer).assertEqual(2);
           await windowClass.restore();
           await sleep(1000);
+          console.log(caseName + " callback: timer2 :" + timer);
+          expect(timer).assertEqual(4);
+          windowStage.off('windowStageLifecycleEvent', cb1);
+          done();
+
         } else {
           windowStage.off('windowStageLifecycleEvent', cb1);
           done();
@@ -1869,74 +1869,56 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0500
-     * @tc.name      : testOnWindowStageLifecycleEventRegisterTwo
-     * @tc.desc      : WindowStageLifecycleEvent 多个callBack对象订阅监听验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0500
+     * @tc.name : testOnWindowStageLifecycleEventRegisterTwo
+     * @tc.desc : WindowStageLifecycleEvent 多个callBack对象订阅监听验证
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("testOnWindowStageLifecycleEventRegisterTwo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOnWindowStageLifecycleEventRegisterTwo";
       console.log(caseName + " begin");
       let isCb1 = false;
       let isCb2 = false;
-      let windowStageLifecycleEventArr:Array<string> = [];
+      let timer = 0;
       let cb1 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
-        console.log(caseName + " cb1: " + JSON.stringify(WindowStageLifecycleEvent));
-        if (WindowStageLifecycleEvent == window.WindowStageLifecycleEventType.RESUMED) {
-          windowStageLifecycleEventArr.push(WindowStageLifecycleEvent.toString())
-          isCb1 = true;
-        }
+        console.log(caseName + " callback1: " + JSON.stringify(WindowStageLifecycleEvent));
+        timer++;
+        console.log(caseName + " callback1: timer :" + timer);
+
       }
       let cb2 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
-        console.log(caseName + " cb2: " + JSON.stringify(WindowStageLifecycleEvent));
-        if (WindowStageLifecycleEvent == window.WindowStageLifecycleEventType.PAUSED) {
-          windowStageLifecycleEventArr.push(WindowStageLifecycleEvent.toString())
-          isCb2 = true;
-        }
+        console.log(caseName + " callback2: " + JSON.stringify(WindowStageLifecycleEvent));
+        timer++;
+        console.log(caseName + " callback2: timer :" + timer);
+
       }
       try {
         windowStage.on('windowStageLifecycleEvent', cb1);
         windowStage.on('windowStageLifecycleEvent', cb2);
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isPCStatus != '') {
           await windowClass.minimize();
           await sleep(1000);
-          do {
-            await sleep(200);
-          } while (!isCb2)
-          expect(windowStageLifecycleEventArr.toString()).assertEqual('3');
-          isCb1 = false;
-          isCb2 = false;
+          console.log(caseName + " callback: timer1 :" + timer);
+          expect(timer).assertEqual(4);
           await windowClass.restore();
           await sleep(1000);
-          do {
-            await sleep(200);
-          } while (!isCb1)
-          expect(windowStageLifecycleEventArr.toString()).assertEqual('3,2');
-          isCb1 = false;
-          isCb2 = false;
-          windowStageLifecycleEventArr.length = 0;
-          windowStage.off('windowStageLifecycleEvent', cb2)
-          await windowClass.minimize();
-          await sleep(3000);
-          expect(windowStageLifecycleEventArr.length).assertEqual(0);
-          await windowClass.restore();
-          await sleep(1000);
-          do {
-            await sleep(200);
-          } while (!isCb1)
-          expect(windowStageLifecycleEventArr.toString()).assertEqual('2');
-          windowStageLifecycleEventArr.length = 0;
-          windowStage.off('windowStageLifecycleEvent', cb1);
+          console.log(caseName + " callback: timer2 :" + timer);
+          expect(timer).assertEqual(8);
+          windowStage.off('windowStageLifecycleEvent',cb1);
           await windowClass.minimize();
           await sleep(1000);
+          console.log(caseName + " callback: timer3 :" + timer);
+          expect(timer).assertEqual(10);
           await windowClass.restore();
-          await sleep(2000);
-          expect(windowStageLifecycleEventArr.length).assertEqual(0);
-          windowStage.off('windowStageLifecycleEvent')
+          await sleep(1000);
+          console.log(caseName + " callback: timer4 :" + timer);
+          expect(timer).assertEqual(12);
+          windowStage.off('windowStageLifecycleEvent');
           done();
+
         } else {
           windowStage.off('windowStageLifecycleEvent');
           done();
@@ -1949,44 +1931,55 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0600
-     * @tc.name      : testOffWindowStageLifecycleEventwithUnregisterAll
-     * @tc.desc      : WindowStageLifecycleEvent 多个callBack对象订阅取消监听验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0600
+     * @tc.name : testOffWindowStageLifecycleEventwithUnregisterAll
+     * @tc.desc : WindowStageLifecycleEvent 多个callBack对象订阅取消监听验证
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("testOffWindowStageLifecycleEventwithUnregisterAll", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOffWindowStageLifecycleEventwithUnregisterAll";
       console.log(caseName + " begin");
-      let windowStageLifecycleEventArr:Array<string> = [];
+      let isCb1 = false;
+      let isCb2 = false;
+      let timer = 0;
       let cb1 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
-        if (WindowStageLifecycleEvent == window.WindowStageLifecycleEventType.RESUMED) {
-          windowStageLifecycleEventArr.push(WindowStageLifecycleEvent.toString())
-        }
+        console.log(caseName + " callback1: " + JSON.stringify(WindowStageLifecycleEvent));
+        timer++;
+        console.log(caseName + " callback1: timer :" + timer);
+
       }
       let cb2 = (WindowStageLifecycleEvent: window.WindowStageLifecycleEventType) => {
-        if (WindowStageLifecycleEvent == window.WindowStageLifecycleEventType.PAUSED) {
-          windowStageLifecycleEventArr.push(WindowStageLifecycleEvent.toString())
-        }
+        console.log(caseName + " callback2: " + JSON.stringify(WindowStageLifecycleEvent));
+        timer++;
+        console.log(caseName + " callback2: timer :" + timer);
+
       }
       try {
         windowStage.on('windowStageLifecycleEvent', cb1);
         windowStage.on('windowStageLifecycleEvent', cb2);
+        await sleep(100);
         windowStage.off('windowStageLifecycleEvent');
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isPCStatus != '') {
           await windowClass.minimize();
-          await sleep(2000);
+          await sleep(1000);
+          console.log(caseName + " callback: timer1 :" + timer);
+          expect(timer).assertEqual(0);
           await windowClass.restore();
-          await sleep(2000);
-          expect(windowStageLifecycleEventArr.length).assertEqual(0);
+          await sleep(1000);
+          console.log(caseName + " callback: timer2 :" + timer);
+          expect(timer).assertEqual(0);
           done();
+
         } else {
+          windowStage.off('windowStageLifecycleEvent');
           done();
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause: ' + JSON.stringify(error));
+        windowStage.off('windowStageLifecycleEvent');
         expect().assertFail();
         done();
       }

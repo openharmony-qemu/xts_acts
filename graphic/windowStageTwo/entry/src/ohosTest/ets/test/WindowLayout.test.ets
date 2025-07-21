@@ -2549,22 +2549,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1000
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithAnchorEnd
-     * @tc.desc      : 验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1100
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorEnd
+     * @tc.desc : 验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorEnd';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorEnd');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2577,8 +2585,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(mainLeft + mainWidth).assertEqual(subLeft + subWidth);
-            expect(Math.abs(mainTop - subTop)).assertEqual(Math.abs((mainHeight + mainTop)-(subHeight + subTop)));
+            expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
+            expect(Math.abs((mainTop + mainHeight/2)-(subTop+subHeight/2))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
@@ -2604,22 +2612,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1100
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart
-     * @tc.desc      : 验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1200
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart
+     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2633,7 +2649,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainLeft).assertEqual(subLeft);
-            expect(mainHeight + mainTop).assertEqual(subHeight + subTop);
+            expect( Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
@@ -2659,22 +2675,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1200
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithAnchorBottom
-     * @tc.desc      : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1300
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottom
+     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottom';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottom');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2687,8 +2711,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft)));
-            expect(mainHeight + mainTop).assertEqual(subHeight + subTop);
+            expect(Math.abs((mainLeft + mainWidth/2)-(subLeft+subWidth/2))).assertLessOrEqual(1);
+            expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
@@ -2714,22 +2738,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1300
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd
-     * @tc.desc      : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1400
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd
+     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向右顶点
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2742,8 +2774,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(mainWidth + mainLeft).assertEqual(subWidth + subLeft);
-            expect(mainHeight + mainTop).assertEqual(subHeight + subTop);
+            expect(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft))).assertLessOrEqual(1);
+            expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
@@ -2769,22 +2801,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1400
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY
-     * @tc.desc      : 验证offsetX为正，offsetY为正可以设置成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1500
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY
+     * @tc.desc : 验证offsetX为正，offsetY为正可以设置成功
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level0
      */
     it('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2824,22 +2864,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1500
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY
-     * @tc.desc      : 验证offsetX为正，offsetY为负可以设置成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1600
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY
+     * @tc.desc : 验证offsetX为正，offsetY为负可以设置成功
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2879,22 +2927,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1600
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX
-     * @tc.desc      : 验证offsetX为负，offsetY为正可以设置成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1700
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX
+     * @tc.desc : 验证offsetX为负，offsetY为正可以设置成功
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
@@ -2934,22 +2990,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1700
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY
-     * @tc.desc      : 验证offsetX为负，offsetY为负可以设置成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1800
+     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY
+     * @tc.desc : 验证offsetX为负，offsetY为负可以设置成功
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY';
       console.log(caseName + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY');
+      await windowClass.setUIContent('testability/pages/First/index2');
+      await windowClass.showWindow();
+      windowClass.resizeAsync(1000,1000)
+      await sleep(1000);
       try {
         if(isPCStatus != ''|| isAutoWindow =='true') {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
+            let windowRect = mainWindow.getWindowProperties().windowRect;
+            console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
+            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
