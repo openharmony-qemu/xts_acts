@@ -329,5 +329,36 @@ export default function transactionNdktest() {
       expect(res).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0200
+     * @tc.name OH_Rdb_SetSemanticIndex_Param_0200
+     * @tc.desc OH_Rdb_SetSemanticIndex_Param_0200
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Rdb_SetSemanticIndex_Param_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0200();
+      console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0200 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0300
+     * @tc.name OH_Rdb_SetSemanticIndex_Param_0300
+     * @tc.desc OH_Rdb_SetSemanticIndex_Param_0300
+     * @tc.level: Level 2
+     * @tc.type: Functiontion
+     * @tc.size: MediumTest
+     */
+    it('OH_Rdb_SetSemanticIndex_Param_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0300();
+      console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0300 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
   })
 }
