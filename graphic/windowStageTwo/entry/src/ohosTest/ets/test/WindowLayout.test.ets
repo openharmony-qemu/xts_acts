@@ -2397,7 +2397,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainTop).assertEqual(subTop);
-            expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLargerOrEqual(1);
+            expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {

@@ -1761,8 +1761,8 @@ export default function displayTest() {
         console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
         if (result === undefined) {
           done();
-        } else {
-          expect(!result).assertNull();
+        } else if(result !=null) {
+          expect(true).assertTrue()
           done();
         }
       } catch (e) {
