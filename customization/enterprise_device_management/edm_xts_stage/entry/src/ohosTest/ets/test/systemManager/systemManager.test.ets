@@ -1339,7 +1339,7 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       result = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(result === value).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || false).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1419,7 +1419,7 @@ function testGetInstallLocalEnterpriseAppEnabled() {
       let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(isDisallow).assertFalse();
     } catch (error) {
-      expect(error.code == 801 || false).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
