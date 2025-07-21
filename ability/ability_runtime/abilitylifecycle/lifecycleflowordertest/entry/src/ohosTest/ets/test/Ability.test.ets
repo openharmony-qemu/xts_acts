@@ -97,7 +97,7 @@ export default function ActsLifeCycleFlowOrderTest() {
           commonEventManager.subscribe(commonEventSubscriber, subscribeCallBack)
           context.startAbility({
             bundleName: 'com.acts.lifecycleflowordertestdemo',
-            abilityName: 'EntryAbility',
+            abilityName: 'EntryAbility3',
           }, (err: BusinessError) => {
             console.info(`${tag}-startAbility err:` + JSON.stringify(err));
           });
@@ -105,11 +105,9 @@ export default function ActsLifeCycleFlowOrderTest() {
           setTimeout(async () => {
             try {
               console.info('setTimeout')
-              let driver = Driver.create();
-              await driver.pressHome();
               context.startAbility({
                 bundleName: 'com.acts.lifecycleflowordertestdemo',
-                abilityName: 'EntryAbility',
+                abilityName: 'EntryAbility3',
                 parameters: {
                   parameter: '0200'
                 }
@@ -130,6 +128,9 @@ export default function ActsLifeCycleFlowOrderTest() {
         });
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
+        if(data.data == '801'){
+          done()
+        }
         expect(data.data).assertEqual("onWillForeground,onForeground,show event,onDidForeground");
         commonEventManager.unsubscribe(subscriber);
         await sleep(3000);
