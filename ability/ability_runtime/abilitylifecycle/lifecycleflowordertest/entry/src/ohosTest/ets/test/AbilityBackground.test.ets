@@ -17,8 +17,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { Driver, Component, ON } from '@kit.TestKit';
 import { common } from '@kit.AbilityKit';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 async function sleep(time: number) {
   return new Promise<void>((resolve, reject) => {
     setTimeout(resolve, time)
@@ -42,17 +40,6 @@ export default function ActsLifeCycleMainBackgroundTest() {
     */
     it('SUB_Ability_AbilityRuntime_OnWillBackground_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_0100';
-            let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      let cmd = "param get const.product.devicetype"
-      abilityDelegator.executeShellCommand(cmd,
-      (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
-        console.info('executeShellCommand : err : ' + JSON.stringify(err));
-        console.info('executeShellCommand : data : ' + d.stdResult);
-        console.info('executeShellCommand : data : ' + d.exitCode);
-        if(d.stdResult = "2in1"){
-          done()
-        }
-      })
       let subscriber: commonEventManager.CommonEventSubscriber;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['0100']
@@ -80,13 +67,13 @@ export default function ActsLifeCycleMainBackgroundTest() {
         });
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1-${data.data}`);
-        if(data.data == '801'){
-          done()
-        }
-        try {
+        if(data.data != '16000061'){
+          try {
           expect(data.data)
             .assertEqual("onWillBackground,onBackground,hidden event,onDidBackground");
-        } catch (error) {
+          } catch (error) {
+            console.error(`${tag}-expect failed, code is ${error.code}, message is ${error.message}`);
+          }
         }
         commonEventManager.unsubscribe(subscriber);
         done()

@@ -73,9 +73,9 @@ export default class EntryAbility3 extends UIAbility {
           console.log(`Ability_test EntryAbility3 moveAbilityToBackground success.`);
         }).catch((err: BusinessError) => {
           console.log(`Ability_test EntryAbility3 moveAbilityToBackground error: ${JSON.stringify(err)}.`);
-          if(err.code == 801){
+          if(err.code == 16000061){
             let commonEventData: EventDataI = {
-              data: '801'
+              data: '16000061'
             };
             commonEventManager.publish('0200', commonEventData, (err) => {
               console.info('====> [onWillForeground_0200 result] publish: ' + JSON.stringify(err));

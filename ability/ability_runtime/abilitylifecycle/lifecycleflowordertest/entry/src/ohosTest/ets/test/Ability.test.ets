@@ -128,10 +128,9 @@ export default function ActsLifeCycleFlowOrderTest() {
         });
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
-        if(data.data == '801'){
-          done()
+        if(data.data != '16000061'){
+          expect(data.data).assertEqual("onWillForeground,onForeground,show event,onDidForeground");
         }
-        expect(data.data).assertEqual("onWillForeground,onForeground,show event,onDidForeground");
         commonEventManager.unsubscribe(subscriber);
         await sleep(3000);
         done()
