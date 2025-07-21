@@ -55,7 +55,7 @@ function createGlobalParams(symAlgoName: string, paramType: string): cryptoFrame
 async function generateSymKey(symKeyGenerator: cryptoFramework.SymKeyGenerator): Promise<cryptoFramework.SymKey> {
   return new Promise<cryptoFramework.SymKey>((resolve, reject) => {
     symKeyGenerator.generateSymKey((err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]generateSymKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -77,7 +77,7 @@ async function convertSymKey(symKeyGenerator: cryptoFramework.SymKeyGenerator,
   dataBlob: cryptoFramework.DataBlob): Promise<cryptoFramework.SymKey> {
   return new Promise<cryptoFramework.SymKey>((resolve, reject) => {
     symKeyGenerator.convertKey(dataBlob, (err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]convertKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -93,7 +93,7 @@ async function initCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryptoF
   key: cryptoFramework.Key, params: cryptoFramework.ParamsSpec | null): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     cipherGenerator.init(mode, key, params, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator init failed. error is " +
             err +
@@ -115,7 +115,7 @@ async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: crypt
   plainText: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator.update(plainText, (err: BusinessError<void>|null, updateData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || updateData === undefined) {
+      if (err || updateData === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator update failed. error is " +
             err +
@@ -137,7 +137,7 @@ async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryp
   plainText: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob|null> {
   return new Promise<cryptoFramework.DataBlob|null>((resolve, reject) => {
     cipherGenerator.doFinal(plainText, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|null|undefined) => {
-      if (err?.code != 0 || finalData === undefined) {
+      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator doFinal failed. error is " +
             err +

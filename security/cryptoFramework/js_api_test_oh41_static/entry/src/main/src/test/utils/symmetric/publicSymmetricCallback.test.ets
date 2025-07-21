@@ -22,7 +22,7 @@ import { createGcmParam } from '../common/gcmParamsSpec.test';
 async function generateSymKey(symKeyGenerator: crypto.SymKeyGenerator): Promise<crypto.SymKey> {
   return new Promise<crypto.SymKey>((resolve, reject) => {
     symKeyGenerator.generateSymKey((err: BusinessError<void>|null, symKey: crypto.SymKey|undefined) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]generateSymKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -45,7 +45,7 @@ async function initCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoMod
   key: crypto.SymKey, params: crypto.ParamsSpec): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     cipherGenerator.init(mode, key, params, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator init failed. error is " + err + "mode is " + mode);
         reject(err as Error);
       } else {
@@ -60,7 +60,7 @@ async function updateCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoM
   plainText: crypto.DataBlob): Promise<crypto.DataBlob> {
   return new Promise<crypto.DataBlob>((resolve, reject) => {
     cipherGenerator.update(plainText, (err: BusinessError<void>|null, updateData: crypto.DataBlob|undefined) => {
-      if (err?.code != 0 || updateData === undefined) {
+      if (err || updateData === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator update failed. error is " + err + "mode is " + mode);
         reject(err as Error);
       } else {
@@ -75,7 +75,7 @@ async function doFinalCipher(cipherGenerator: crypto.Cipher, mode: crypto.Crypto
   dataBlob: crypto.DataBlob|null): Promise<crypto.DataBlob> {
   return new Promise<crypto.DataBlob>((resolve, reject) => {
     cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: crypto.DataBlob|undefined) => {
-      if (err?.code != 0 || finalData === undefined) {
+      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator doFinal failed. error is " + err + "mode is " + mode);
         reject(err as Error);
       } else {

@@ -151,7 +151,7 @@ async function createX509CertChainCallback(certType: string, index: number): Pro
 
   return new Promise<cert.X509CertChain>((resolve, reject) => {
     cert.createX509CertChain(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CertChain|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback]createX509CertChainCallback failed! err code: " + err?.code
         );
@@ -166,7 +166,7 @@ async function createX509CertChainCallback(certType: string, index: number): Pro
 async function createCustomizedX509CertChainCallback(encodingBlob: cert.EncodingBlob): Promise<cert.X509CertChain> {
   return new Promise<cert.X509CertChain>((resolve, reject) => {
     cert.createX509CertChain(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CertChain|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback]createCustomizedX509CertChainCallback failed! err code: " + err?.code
         );
@@ -181,7 +181,7 @@ async function createCustomizedX509CertChainCallback(encodingBlob: cert.Encoding
 async function certChainValidateCallback(certChain: cert.X509CertChain, param: cert.CertChainValidationParameters): Promise<cert.CertChainValidationResult> {
   return new Promise<cert.CertChainValidationResult>((resolve, reject) => {
     certChain.validate(param, (err: BusinessError<void>|null, data: cert.CertChainValidationResult|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback]certChainValidateCallback failed! err code: " + err?.code
         );

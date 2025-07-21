@@ -73,7 +73,7 @@ export default function SecurityRandomJsunit() {
       try {
         await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
           randomGenerator.generateRandom(0, (err: BusinessError<void>|null, dataBlob: cryptoFramework.DataBlob|undefined) => {
-            if (err?.code != 0 || dataBlob === undefined) {
+            if (err || dataBlob === undefined) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               resolve(dataBlob as cryptoFramework.DataBlob);
@@ -86,7 +86,7 @@ export default function SecurityRandomJsunit() {
       try {
         await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
           randomGenerator.generateRandom(-1, (err: BusinessError<void>|null, dataBlob: cryptoFramework.DataBlob|undefined) => {
-            if (err?.code != 0 || dataBlob === undefined) {
+            if (err || dataBlob === undefined) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               resolve(dataBlob as cryptoFramework.DataBlob);

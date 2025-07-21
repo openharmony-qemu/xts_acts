@@ -104,7 +104,7 @@ async function checkSelectCerts(certType: string, indexArr: number[], param: cer
 async function selectCertsCallback(collection: cert.CertCRLCollection, param: cert.X509CertMatchParameters): Promise<cert.X509Cert[]> {
   return new Promise<cert.X509Cert[]>((resolve, reject) => {
     collection.selectCerts(param, (err: BusinessError<void>|null, certs: cert.X509Cert[]|undefined) => {
-      if (err?.code != 0 || certs === undefined) {
+      if (err || certs === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] selectCerts failed! error code is: " + err?.code
         );

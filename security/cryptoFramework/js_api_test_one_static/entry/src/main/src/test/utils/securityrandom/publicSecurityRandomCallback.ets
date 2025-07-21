@@ -28,7 +28,7 @@ async function testSecurityRandomCallback(length: int): Promise<boolean> {
     rand = cryptoFramework.createRandom();
     expect(rand != null).assertTrue();
     rand.generateRandom(length, (err: BusinessError<void>|null, randData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || randData === undefined) {
+      if (err || randData === undefined) { // success: error is null, failed: data is undefined
         console.error("[callback]generateRandom catch err1:" + err);
         reject(err as Error);
       } else {
@@ -45,7 +45,7 @@ async function testSecurityRandomCallback(length: int): Promise<boolean> {
     });
 
     rand.generateRandom(length, (err: BusinessError<void>|null, randData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || randData === undefined) {
+      if (err || randData === undefined) { // success: error is null, failed: data is undefined
         console.error("[callback]generateRandom catch err2:" + err);
         reject(err as Error);
       } else {

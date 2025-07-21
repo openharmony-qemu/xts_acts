@@ -132,7 +132,7 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert2: cert.X509Cert = await cert.createX509Cert(encodingBlob2);
           let pubKey: cryptoFramework.PubKey = x509Cert2.getPublicKey();
           x509Cert1.verify(pubKey, (err: BusinessError<void>|null) => {
-            if (err?.code != 0) {
+            if (err) { // success: error is null, failed: data is undefined
               console.error('verify failed, errCode: ' + err?.code + ', errMsg: ' + err?.message);
               expect(err?.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
             } else {

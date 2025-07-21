@@ -354,7 +354,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let rsaKeyPair: cryptoFramework.KeyPair;
       await new Promise<void>((resolve, reject) => {
         rsaGenerator.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-          if (err?.code != 0 || tmp === undefined) {
+          if (err || tmp === undefined) { // success: error is null, failed: data is undefined
             reject(err as Error);
           } else {
             rsaKeyPair = tmp as cryptoFramework.KeyPair;
@@ -394,7 +394,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let globalSymKey: cryptoFramework.SymKey;
       await new Promise<void>((resolve, reject) => {
         globalSymKeyGenerator.generateSymKey((err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
-          if (err?.code != 0 || tmp === undefined) {
+          if (err || tmp === undefined) { // success: error is null, failed: data is undefined
             reject(err as Error);
           } else {
             globalSymKey = tmp as cryptoFramework.SymKey;

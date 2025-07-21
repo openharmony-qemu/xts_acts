@@ -36,7 +36,7 @@ async function createX509CertInstanceCallback(certType: string): Promise<cert.X5
 
   return new Promise<cert.X509Cert>((resolve, reject) => {
     cert.createX509Cert(encodingBlob, (err: BusinessError<void>|null, data: cert.X509Cert|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] create X509 Cert failed! err code: " + err?.code
         );
@@ -79,7 +79,7 @@ async function createX509CertExtensionNormalCallback(flag: string): Promise<cert
 
   return new Promise<cert.CertExtension>((resolve, reject) => {
     cert.createCertExtension(encodingBlob, (err: BusinessError<void>|null, extensionObj: cert.CertExtension|undefined) => {
-      if (err?.code != 0 || extensionObj === undefined) {
+      if (err || extensionObj === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] create X509 CertExtension failed! err code: " + err?.code
         );

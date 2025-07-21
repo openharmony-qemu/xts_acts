@@ -308,7 +308,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         let signKeyPair: cryptoFramework.KeyPair;
         await new Promise<void>((resolve, reject) => {
           specGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-            if (err?.code != 0 || keyPair === undefined) {
+            if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               signKeyPair = keyPair as cryptoFramework.KeyPair;
@@ -442,7 +442,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         let verifyKeyPair: cryptoFramework.KeyPair;
         await new Promise<void>((resolve, reject) => {
           specGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-            if (err?.code != 0 || keyPair === undefined) {
+            if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               verifyKeyPair = keyPair as cryptoFramework.KeyPair;

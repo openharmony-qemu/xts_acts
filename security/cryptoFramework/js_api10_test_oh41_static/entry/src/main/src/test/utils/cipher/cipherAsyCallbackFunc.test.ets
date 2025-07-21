@@ -21,7 +21,7 @@ async function initCipher(cipherGenerator: cpFw.Cipher, mode: cpFw.CryptoMode, k
   Promise<string> {
   return new Promise<string>((resolve, reject) => {
     cipherGenerator.init(mode, key, params, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator init failed. error is " + err + ". mode is " + mode);
         reject(err as Error);
       } else {
@@ -35,7 +35,7 @@ async function initCipher(cipherGenerator: cpFw.Cipher, mode: cpFw.CryptoMode, k
 async function doFinalCipher(cipherGenerator: cpFw.Cipher, mode: cpFw.CryptoMode, dataBlob: cpFw.DataBlob): Promise<cpFw.DataBlob> {
   return new Promise<cpFw.DataBlob>((resolve, reject) => {
     cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cpFw.DataBlob|undefined) => {
-      if (err?.code != 0 || finalData === undefined) {
+      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator doFinal failed. error is " + err + ". mode is " + mode);
         reject(err as Error);
       } else {

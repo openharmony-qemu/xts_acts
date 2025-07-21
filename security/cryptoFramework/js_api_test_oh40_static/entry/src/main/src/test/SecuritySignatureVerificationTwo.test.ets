@@ -445,7 +445,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
     //     let verifyKeyPair: cryptoFramework.KeyPair;
     //     await new Promise<void>((resolve, reject) => {
     //       specGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-    //         if (err?.code != 0 || keyPair === undefined) {
+    //         if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
     //           reject(err as Error);
     //         } else {
     //           verifyKeyPair = keyPair as cryptoFramework.KeyPair;
@@ -460,7 +460,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
     //     let dsaKeyPair: cryptoFramework.KeyPair;
     //     await new Promise<void>((resolve, reject) => {
     //       dsaGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-    //         if (err?.code != 0 || keyPair === undefined) {
+    //         if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
     //           reject(err as Error);
     //         } else {
     //           dsaKeyPair = keyPair as cryptoFramework.KeyPair;

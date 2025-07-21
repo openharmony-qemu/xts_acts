@@ -63,7 +63,7 @@ async function createX509CertInstanceCallback(certType: string): Promise<cert.X5
 
   return new Promise<cert.X509Cert>((resolve, reject) => {
     cert.createX509Cert(encodingBlob, (err: BusinessError<void>|null, data: cert.X509Cert|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] create X509 Cert failed! err code: " + err?.code
         );
@@ -101,7 +101,7 @@ async function createX509CertInstanceforCRLTestCallback(flag: string | cert.X509
 
   return new Promise<cert.X509Cert>((resolve, reject) => {
     cert.createX509Cert(encodingBlob, (err: BusinessError<void>|null, data: cert.X509Cert|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] create X509 Cert failed! err code: " + err?.code
         );
@@ -124,7 +124,7 @@ async function createX509CertInstanceforCRLTestCallback(flag: string | cert.X509
 async function verifyX509Cert(certInstance: cert.X509Cert, pubKey: cryptoFramework.PubKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     certInstance.verify(pubKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]verify failed. error is " + err);
         reject(err as Error);
       } else {
@@ -264,7 +264,7 @@ async function checkGetEncodedX509CertCallback(certType: string): Promise<string
   let gInstance: cert.X509Cert = await createX509CertInstanceCallback(certType);
   return new Promise<string>((resolve, reject) => {
     gInstance.getEncoded((err: BusinessError<void>|null, EncodingBlob: cert.EncodingBlob|undefined) => {
-      if (err?.code != 0 || EncodingBlob === undefined) {
+      if (err || EncodingBlob === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] getEncoded failed, err code is:" + err?.code
         );
@@ -311,7 +311,7 @@ async function createX509CRLInstanceCallback(certType: string): Promise<cert.X50
 
   return new Promise<cert.X509CRL>((resolve, reject) => {
     cert.createX509CRL(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CRL|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] createX509CRL failed! error code is: " + err?.code
         );
@@ -342,7 +342,7 @@ async function checkGetEncodedX509CRLCallback(certType: string): Promise<string>
   let gInstance: cert.X509CRL = await createX509CRLInstanceCallback(certType);
   return new Promise<string>((resolve, reject) => {
     gInstance.getEncoded((err: BusinessError<void>|null, EncodingBlob: cert.EncodingBlob|undefined) => {
-      if (err?.code != 0 || EncodingBlob === undefined) {
+      if (err || EncodingBlob === undefined) { // success: error is null, failed: data is undefined
         console.error("[callback] CRL getEncoded failed, err is:" + err);
         reject(err as Error);
       } else {
@@ -364,7 +364,7 @@ async function convertAsyKey(rsaGenerator: cryptoFramework.AsyKeyGenerator,
       pubKeyDataBlob,
       priKeyDataBlob,
       (err: BusinessError<void>|null, convertKeyPair: cryptoFramework.KeyPair|undefined) => {
-        if (err?.code != 0 || convertKeyPair === undefined) {
+        if (err || convertKeyPair === undefined) { // success: error is null, failed: data is undefined
           console.error("[Callback]convertKey failed. error is " + err);
           reject(err as Error);
         } else {
@@ -381,7 +381,7 @@ async function convertAsyKey(rsaGenerator: cryptoFramework.AsyKeyGenerator,
 async function verifyX509CRL(crlInstance: cert.X509CRL, pubKey: cryptoFramework.PubKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     crlInstance.verify(pubKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]verifyX509Crl failed. error is " + err);
         reject(err as Error);
       } else {
@@ -630,7 +630,7 @@ async function checkValidateOfCertChainValidatorCallback(algName: string, flag: 
     };
     console.log("certChainData.data is: " + certChainData.data);
     validator.validate(certChainData, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[callback]: validate error: " + err);
         reject(err as Error);
       } else {
@@ -668,7 +668,7 @@ async function createX509CRLExtensionsInstanceCallback(certType: string, hasExte
 
   return new Promise<cert.X509CRL>((resolve, reject) => {
     cert.createX509CRL(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CRL|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] createX509CRL failed! error code is: " + err?.code
         );
@@ -722,7 +722,7 @@ async function createX509CRLEntryExtensionsInstanceCallback(certType: string, ha
 
   return new Promise<cert.X509CRL>((resolve, reject) => {
     cert.createX509CRL(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CRL|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] createX509CRL failed! error code is: " + err?.code
         );
@@ -809,7 +809,7 @@ async function createX509CertExtensionNormalCallback(flag: string): Promise<cert
 
   return new Promise<cert.CertExtension>((resolve, reject) => {
     cert.createCertExtension(encodingBlob, (err: BusinessError<void>|null, extensionObj: cert.CertExtension|undefined) => {
-      if (err?.code != 0 || extensionObj === undefined) {
+      if (err || extensionObj === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] create X509 CertExtension failed! err code: " + err?.code
         );
@@ -848,7 +848,7 @@ async function createX509CRLInstanceWithSerialNumberCallback(): Promise<cert.X50
 
   return new Promise<cert.X509CRL>((resolve, reject) => {
     cert.createX509CRL(encodingBlob, (err: BusinessError<void>|null, data: cert.X509CRL|undefined) => {
-      if (err?.code != 0 || data === undefined) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] createX509CRL failed! error code is: " + err?.code
         );
@@ -867,7 +867,7 @@ async function checkX509CRLEntryGetSerialNumberCallback(certType: string): Promi
   let instance: cert.X509CRL = await createX509CRLInstanceWithSerialNumberCallback();
   return new Promise<string>((resolve, reject) => {
     instance.getRevokedCerts((err: BusinessError<void>|null, tmp: cert.X509CRLEntry[]|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         let certs: cert.X509CRLEntry[] = tmp as cert.X509CRLEntry[];

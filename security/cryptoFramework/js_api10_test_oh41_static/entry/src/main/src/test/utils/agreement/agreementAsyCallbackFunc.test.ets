@@ -25,7 +25,7 @@ async function normalProcess(cipherAlgName: string, isSpec:boolean, spec: cpFw.A
     agreementKeyPair = await keyGenCallbackFunc.genKeyPair(isSpec, spec, algName);
     console.log("[Callback] genKeyPair agreement success.");
     agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.log("[Callback] agreementCallbackNormalProcess agreement fail.");
         reject(err as Error);
       } else {

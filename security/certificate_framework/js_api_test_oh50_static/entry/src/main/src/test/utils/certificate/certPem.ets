@@ -311,7 +311,7 @@ async function createX509Cert(inStream: string): Promise<cert.X509Cert> {
 async function getRevokedCerts(crl: cert.X509CRL): Promise<cert.X509CRLEntry[]> {
   return new Promise<cert.X509CRLEntry[]>((resolve, reject) => {
     crl.getRevokedCerts((err: BusinessError<void>|null, crlEntries:cert.X509CRLEntry[]|undefined) => {
-      if (err?.code != 0 || crlEntries === undefined) {
+      if (err || crlEntries === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         resolve(crlEntries as cert.X509CRLEntry[]);

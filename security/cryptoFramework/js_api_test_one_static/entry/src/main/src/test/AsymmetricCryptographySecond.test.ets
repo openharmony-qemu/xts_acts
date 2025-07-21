@@ -611,7 +611,7 @@ export default function AsymmetricCryptographyJsSecondunit() {
           expect(keyPair1 != null).assertTrue();
           let keyPair2: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
             rsaGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-              if (err?.code != 0 || keyPair === undefined) {
+              if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
                 reject(err as Error);
               } else {
                 resolve(keyPair as cryptoFramework.KeyPair);
@@ -641,7 +641,7 @@ export default function AsymmetricCryptographyJsSecondunit() {
           expect(keyPair1 != null).assertTrue();
           let keyPair2: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
             rsaGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
-              if (err?.code != 0 || keyPair === undefined) {
+              if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
                 reject(err as Error);
               } else {
                 resolve(keyPair as cryptoFramework.KeyPair);

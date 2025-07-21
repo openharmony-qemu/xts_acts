@@ -19,7 +19,7 @@ import { stringTouInt8Array, uInt8ArrayToShowStr, uInt8ArrayToString } from "../
 async function generateSymKey(symKeyGenerator: crypto.SymKeyGenerator): Promise<crypto.SymKey> {
   return new Promise<crypto.SymKey>((resolve, reject) => {
     symKeyGenerator.generateSymKey((err: BusinessError<void>|null, symKey: crypto.SymKey|undefined) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(`[Callback]generateSymKey failed. error is: ${err}`);
         reject(err as Error);
       } else {
@@ -40,7 +40,7 @@ async function generateSymKey(symKeyGenerator: crypto.SymKeyGenerator): Promise<
 async function convertSymKey(symKeyGenerator: crypto.SymKeyGenerator, dataBlob: crypto.DataBlob): Promise<crypto.SymKey> {
   return new Promise<crypto.SymKey>((resolve, reject) => {
     symKeyGenerator.convertKey(dataBlob, (err: BusinessError<void>|null, symKey: crypto.SymKey|undefined) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(`[Callback]convertSymKey failed. error is: ${err}`);
         reject(err as Error);
       } else {
@@ -61,7 +61,7 @@ async function convertSymKey(symKeyGenerator: crypto.SymKeyGenerator, dataBlob: 
 async function initMac(macGenerator: crypto.Mac, symKey: crypto.SymKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     macGenerator.init(symKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(`[Callback]macGenerator init failed. error is: ${err}`);
         reject(err as Error);
       } else {
@@ -75,7 +75,7 @@ async function initMac(macGenerator: crypto.Mac, symKey: crypto.SymKey): Promise
 async function updateMac(macGenerator: crypto.Mac, dataBlob: crypto.DataBlob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     macGenerator.update(dataBlob, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(`[Callback]macGenerator update failed. error is: ${err}`);
         reject(err as Error);
       } else {
@@ -89,7 +89,7 @@ async function updateMac(macGenerator: crypto.Mac, dataBlob: crypto.DataBlob): P
 async function doFinalMac(macGenerator: crypto.Mac): Promise<crypto.DataBlob> {
   return new Promise<crypto.DataBlob>((resolve, reject) => {
     macGenerator.doFinal((err: BusinessError<void>|null, output: crypto.DataBlob|undefined) => {
-      if (err?.code != 0 || output === undefined) {
+      if (err || output === undefined) { // success: error is null, failed: data is undefined
         console.error(`[Callback]macGenerator doFinal failed. error is: ${err}`);
         reject(err as Error);
       } else {

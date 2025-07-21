@@ -108,7 +108,7 @@ async function selectCRLsCallback(collection: cert.CertCRLCollection,
   param: cert.X509CRLMatchParameters): Promise<cert.X509CRL[]> {
   return new Promise<cert.X509CRL[]>((resolve, reject) => {
     collection.selectCRLs(param, (err: BusinessError<void>|null, crls: cert.X509CRL[]|undefined) => {
-      if (err?.code != 0 || crls === undefined) {
+      if (err || crls === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] selectCRLs failed! error code is: " + err?.code
         );

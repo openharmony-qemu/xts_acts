@@ -1564,7 +1564,7 @@ let caSubCert1: string =
 async function createCertExtension(encodingBlob: cert.EncodingBlob): Promise<cert.CertExtension> {
   return new Promise<cert.CertExtension>((resolve, reject) => {
     cert.createCertExtension(encodingBlob, (err: BusinessError<void>|null, extObject: cert.CertExtension|undefined) => {
-      if (err?.code != 0 || extObject === undefined) {
+      if (err || extObject === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         resolve(extObject as cert.CertExtension);
@@ -7473,7 +7473,7 @@ async function createCertExtension(encodingBlob: cert.EncodingBlob): Promise<cer
 async function getCRLRevokedCerts(x509Crl: cert.X509CRL): Promise<cert.X509CRLEntry[]> {
   return new Promise<cert.X509CRLEntry[]>((resolve, reject) => {
     x509Crl.getRevokedCerts((err: BusinessError<void>|null, extObject: cert.X509CRLEntry[]|undefined) => {
-      if (err?.code != 0 || extObject === undefined) {
+      if (err || extObject === undefined) { // success: error is null, failed: data is undefined
         console.info("###################### failed")
         reject(err as Error)
       } else {
@@ -7488,7 +7488,7 @@ async function selectCRLs(param: cert.X509CRLMatchParameters,
   collection: cert.CertCRLCollection) : Promise<cert.X509CRL[]> {
   return new Promise<cert.X509CRL[]>((resolve, reject) => {
     collection.selectCRLs(param, (err: BusinessError<void>|null, extObject:cert.X509CRL[]|undefined) => {
-      if (err?.code != 0 || extObject === undefined) {
+      if (err || extObject === undefined) { // success: error is null, failed: data is undefined
         console.info("###################### failed")
         reject(err as Error)
       } else {
@@ -7502,7 +7502,7 @@ async function selectCRLs(param: cert.X509CRLMatchParameters,
 async function verify(x509Crl: cert.X509CRL, pubKey: cryptoFramework.PubKey): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     x509Crl.verify(pubKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.info("###################### failed")
         reject(err as Error)
       } else {

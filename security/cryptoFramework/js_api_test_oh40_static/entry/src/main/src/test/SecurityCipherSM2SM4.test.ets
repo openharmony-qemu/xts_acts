@@ -800,7 +800,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
             cipherGenerator.update(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-              if (err?.code != 0 || data === undefined) {
+              if (err || data === undefined) { // success: error is null, failed: data is undefined
                 reject(err as Error);
               } else {
                 resolve(data as cryptoFramework.DataBlob);
@@ -842,7 +842,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
             cipherGenerator.doFinal(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-              if (err?.code != 0 || data === undefined) {
+              if (err || data === undefined) { // success: error is null, failed: data is undefined
                 reject(err as Error);
               } else {
                 resolve(data as cryptoFramework.DataBlob);
@@ -857,7 +857,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
             cipherGenerator.doFinal(null, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-              if (err?.code != 0 || data === undefined) {
+              if (err || data === undefined) { // success: error is null, failed: data is undefined
                 reject(err as Error);
               } else {
                 resolve(data as cryptoFramework.DataBlob);

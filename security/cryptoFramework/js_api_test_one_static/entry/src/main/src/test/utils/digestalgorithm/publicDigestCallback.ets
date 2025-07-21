@@ -20,7 +20,7 @@ import { stringTouInt8Array, uInt8ArrayToShowStr, } from "../common/publicDoStri
 async function generateSymKey(symKeyGenerator: cryptoFramework.SymKeyGenerator): Promise<cryptoFramework.SymKey> {
   return new Promise<cryptoFramework.SymKey>((resolve, reject) => {
     symKeyGenerator.generateSymKey((err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] generateSymKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -42,7 +42,7 @@ async function generateSymKey(symKeyGenerator: cryptoFramework.SymKeyGenerator):
 async function initMac(macGenerator: cryptoFramework.Mac, symKey: cryptoFramework.SymKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     macGenerator.init(symKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback] macGenerator init failed. error is " + err);
         reject(err as Error);
       } else {
@@ -56,7 +56,7 @@ async function initMac(macGenerator: cryptoFramework.Mac, symKey: cryptoFramewor
 async function updateMac(macGenerator: cryptoFramework.Mac, dataBlob: cryptoFramework.DataBlob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     macGenerator.update(dataBlob, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback] macGenerator update failed. error is " + err);
         reject(err as Error);
       } else {
@@ -70,7 +70,7 @@ async function updateMac(macGenerator: cryptoFramework.Mac, dataBlob: cryptoFram
 async function doFinalMac(macGenerator: cryptoFramework.Mac): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     macGenerator.doFinal((err: BusinessError<void>|null, output: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || output === undefined) {
+      if (err || output === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] macGenerator doFinal failed. error is " + err
         );
@@ -134,7 +134,7 @@ async function testHMACDigestCallback(HMACAlgoName: string, keyAlgoName: string)
 async function updateMd(mdGenerator: cryptoFramework.Md, dataBlob: cryptoFramework.DataBlob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     mdGenerator.update(dataBlob, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]mdGenerator update failed. error is " + err);
         reject(err as Error);
       } else {
@@ -148,7 +148,7 @@ async function updateMd(mdGenerator: cryptoFramework.Md, dataBlob: cryptoFramewo
 async function digestMd(mdGenerator: cryptoFramework.Md): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     mdGenerator.digest((err: BusinessError<void>|null, output: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || output === undefined) {
+      if (err || output === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]mdGenerator digest failed. error is " + err);
         reject(err as Error);
       } else {

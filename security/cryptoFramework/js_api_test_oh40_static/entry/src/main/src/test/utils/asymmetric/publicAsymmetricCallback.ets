@@ -32,7 +32,7 @@ async function generateAsyKeyPair(rsaGenerator: cryptoFramework.AsyKeyGenerator
   let priKey: cryptoFramework.PriKey;
   return new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
     rsaGenerator.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]generateSymKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -60,7 +60,7 @@ async function convertAsyKey(rsaGenerator: cryptoFramework.AsyKeyGenerator,
       pubKeyDataBlob,
       priKeyDataBlob,
       (err: BusinessError<void>|null, convertKeyPair: cryptoFramework.KeyPair|undefined) => {
-        if (err?.code != 0 || convertKeyPair === undefined) {
+        if (err || convertKeyPair === undefined) { // success: error is null, failed: data is undefined
           console.error("[Callback]convertKey failed. error is " + err);
           reject(err as Error);
         } else {
@@ -78,7 +78,7 @@ async function initCipher(cipherGenerator: cryptoFramework.Cipher,
   mode: cryptoFramework.CryptoMode, key: cryptoFramework.Key, params: cryptoFramework.ParamsSpec | null): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     cipherGenerator.init(mode, key, params, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator init failed. error is " +
             err +
@@ -100,7 +100,7 @@ async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher,
   mode: cryptoFramework.CryptoMode, dataBlob: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || finalData === undefined) {
+      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator doFinal failed. error is " +
             err +
@@ -121,7 +121,7 @@ async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher,
 async function initSign(signGenerator: cryptoFramework.Sign, priKey: cryptoFramework.PriKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     signGenerator.init(priKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]signGenerator init failed. error is " + err);
         reject(err as Error);
       } else {
@@ -135,7 +135,7 @@ async function initSign(signGenerator: cryptoFramework.Sign, priKey: cryptoFrame
 async function updateSign(signGenerator: cryptoFramework.Sign, dataBlob: cryptoFramework.DataBlob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     signGenerator.update(dataBlob, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]signGenerator update failed. error is " + err);
         reject(err as Error);
       } else {
@@ -150,7 +150,7 @@ async function signForSign(signGenerator: cryptoFramework.Sign,
   dataBlob: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     signGenerator.sign(dataBlob, (err: BusinessError<void>|null, signOutput: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || signOutput === undefined) {
+      if (err || signOutput === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]signGenerator sign failed. error is " + err);
         reject(err as Error);
       } else {
@@ -164,7 +164,7 @@ async function signForSign(signGenerator: cryptoFramework.Sign,
 async function initVerify(verifyGenerator: cryptoFramework.Verify, pubKey: cryptoFramework.PubKey): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     verifyGenerator.init(pubKey, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error("[Callback]verifyGenerator init failed. error is " + err);
         reject(err as Error);
       } else {
@@ -178,7 +178,7 @@ async function initVerify(verifyGenerator: cryptoFramework.Verify, pubKey: crypt
 async function updateVerify(verifyGenerator: cryptoFramework.Verify, dataBlob: cryptoFramework.DataBlob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     verifyGenerator.update(dataBlob, (err: BusinessError<void>|null) => {
-      if (err?.code != 0) {
+      if (err) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]verifyGenerator update failed. error is " + err
         );
@@ -196,7 +196,7 @@ async function verifyForVerify(verifyGenerator: cryptoFramework.Verify,
   return new Promise<boolean>((resolve, reject) => {
     verifyGenerator.verify(dataBlob, signDataBlob,
       (err: BusinessError<void>|null, verifyOutput: boolean|undefined) => {
-      if (err?.code != 0 || verifyOutput === undefined) {
+      if (err || verifyOutput === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]signGenerator sign failed. error is " + err);
         reject(err as Error);
       } else {

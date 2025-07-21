@@ -1697,7 +1697,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         expect(pubData.data.toString()).assertEqual(specUtil.unCompressedKeyBlob(algName).data.toString());
         console.log(testNumber + `: ${algName} getEncodedDer success`);
         generator.convertKey(pubData, priData, (err: BusinessError<void>|null, data: cryptoFramework.KeyPair|undefined) => {
-          if (err?.code != 0 || data === undefined) {
+          if (err || data === undefined) { // success: error is null, failed: data is undefined
             console.error(testNumber + `: catch error ${err}`);
             expect(null).assertFail();
           } else {

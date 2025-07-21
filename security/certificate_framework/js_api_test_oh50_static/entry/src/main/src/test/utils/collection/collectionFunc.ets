@@ -37,7 +37,7 @@ function createCertCRLCollectionWithTwoParam(certs: cert.X509Cert[], crls: cert.
 async function selectCertsCallback(collect: cert.CertCRLCollection, param: cert.X509CertMatchParameters): Promise<cert.X509Cert[]> {
   return new Promise<cert.X509Cert[]>((resolve, reject) => {
     collect.selectCerts(param, (err: BusinessError<void>|null, data: cert.X509Cert[]|undefined) => {
-      if (data === undefined || err?.code != 0) {
+      if (err || data === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[callback] CertCRLCollection.selectCerts err: " + err?.code
         );

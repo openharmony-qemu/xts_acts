@@ -19,7 +19,7 @@ import { createAsyKeyGeneratorBySpec } from "./publicAsymmetricSpecCommon";
 async function generateSpecCommonAsyKeyPair(asyKeySpec: cryptoFramework.AsyKeyGeneratorBySpec, type: string): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     asyKeySpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] generateSpecCommonAsyKeyPair failed. error is " + err
         );
@@ -70,7 +70,7 @@ async function generatePubKeyByCommonSpec(asyKeySpec: cryptoFramework.AsyKeyGene
   type: string): Promise<cryptoFramework.PubKey> {
   return new Promise<cryptoFramework.PubKey>((resolve, reject) => {
     asyKeySpec.generatePubKey((err: BusinessError<void>|null, tmp: cryptoFramework.PubKey|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] generatePriKeyByCommonSpec failed. error is " + err
         );
@@ -202,7 +202,7 @@ async function generateByPriKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec, stat
       reject(err as Error);
     }
     asyKeyPairSpec.generatePriKey((err: BusinessError<void>|null, tmp: cryptoFramework.PriKey|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] generateByPriKeySpec failed. error is " + err
         );
@@ -240,7 +240,7 @@ async function rsaPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] rsaPubGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
       } else {
@@ -268,7 +268,7 @@ async function eccPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] eccPubGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
       } else {
@@ -332,7 +332,7 @@ async function dsaPriGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] dsaPriGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
       } else {
@@ -368,7 +368,7 @@ async function clearMemGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Pr
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
-      if (err?.code != 0 || tmp === undefined) {
+      if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] clearMemGetAsyKeySpec failed. error is " + err
         );
