@@ -13839,6 +13839,14 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       }
+      await audioRenderer.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('afterAll called')
+      done();
     })
 
     /**
@@ -13856,7 +13864,7 @@ export default function audioRendererTest() {
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
 
       try{
-        let StreamUsage:ESObject = "123";
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
         let streamVolumeChangeCB:Callback<audio.StreamVolumeEvent> = (data:audio.StreamVolumeEvent) =>{
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
           console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
@@ -13944,44 +13952,17 @@ export default function audioRendererTest() {
     })
     
 
+
     /**
      *@tc.number    : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0100
      *@tc.name      : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0100
-     *@tc.desc      : isSystemMutedForStream
+     *@tc.desc      : isSystemMutedForStream-6800101
      *@tc.size      : MEDIUM
      *@tc.type      : Function
      *@tc.level     : Level 1
      */
     it("SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let TAG:string = 'SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0100';
-      //define manager
-      let audioManager:audio.AudioManager = audio.getAudioManager();
-      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
-
-      try{
-        let streamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
-        let IsSystemMutedForStream : boolean  = audioVolumeManager.isSystemMutedForStream(streamUsage)
-        console.error(`Whether to isSystemMutedForStream: ${audioVolumeManager.isSystemMutedForStream}`);
-        expect(audioVolumeManager.isSystemMutedForStream).assertEqual(false);
-        expect(true).assertTrue();
-        done();
-      }catch(error){
-        console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
-        expect(Number(error.code)).assertEqual(6800101);
-        done();
-      }
-    })
-
-    /**
-     *@tc.number    : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200
-     *@tc.name      : SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200
-     *@tc.desc      : isSystemMutedForStream-6800101
-     *@tc.size      : MEDIUM
-     *@tc.type      : Function
-     *@tc.level     : Level 1
-     */
-    it("SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_ISSYSTEMMUTEDFORSTREAM_0200';
       //define manager
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
