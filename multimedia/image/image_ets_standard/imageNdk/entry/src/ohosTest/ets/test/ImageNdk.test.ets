@@ -1574,7 +1574,7 @@ export default function imageNdkTest() {
 
     const NewModifyImageProperty = async (TAG: string, imageSourceApi: image.ImageSource, key: string, modifyValue: string | undefined, value: string | undefined) => {
       let result = true
-      const imagePropertyRes: Number = ndkTest.modifyImageProperty(imageSourceApi, key, modifyValue)
+      const imagePropertyRes: Number = ndkTest.ModifyImageProperty(imageSourceApi, key, modifyValue)
       if(imagePropertyRes === 0){
         hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info success: ${imagePropertyRes}`)
         const imagePropertyRes0: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
@@ -1602,7 +1602,7 @@ export default function imageNdkTest() {
       const imagePropertyRes0: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
       hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`get image info success: ${imagePropertyRes0}`)
 
-      const imagePropertyRes: Number = ndkTest.modifyImageProperty(imageSourceApi, key, modifyValue)
+      const imagePropertyRes: Number = ndkTest.ModifyImageProperty(imageSourceApi, key, modifyValue)
       if(imagePropertyRes === 401){
         hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`modify image info error: ${imagePropertyRes}`)
         const imagePropertyRes1: String | number = ndkTest.NewGetImagePropertyWithNull(imageSourceApi, key)
