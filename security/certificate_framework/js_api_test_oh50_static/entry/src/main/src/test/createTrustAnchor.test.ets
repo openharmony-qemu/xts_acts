@@ -46,12 +46,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           expect(data[0].CACert?.getNotBeforeTime() == '240204100516Z').assertTrue();
           // done();
         // }).catch((err: BusinessError) => {
-        //   console.error(`${caseName} failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -71,17 +71,17 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
       try {
         await cert.createTrustAnchorsWithKeyStore(keystore, '123456')
           // .then((data) => {
-          //   console.log(`${caseName} success, data: ${JSON.stringify(data.length)}`);
+          //   console.log(`[XtsTestLog] success, data: ${JSON.stringify(data.length)}`);
           //   expect(null).assertFail();
           //   done();
           // })
           // .catch((err: BusinessError) => {
-          //   console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          //   console.error(`[XtsTestLog] failed, err: ${JSON.stringify(err)}`);
           //   expect(err.code == 19030001).assertTrue();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == 19030001).assertTrue();
       }
@@ -106,12 +106,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   done();
           // })
           // .catch((err: BusinessError) => {
-          //   console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          //   console.error(`[XtsTestLog] failed, err: ${JSON.stringify(err)}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error.code}`);
+        console.error(`[XtsTestLog] catch error: ${error.code}`);
         expect(error.code == 401).assertTrue(); // 返回30001与期望不符
       }
       done();
@@ -131,17 +131,17 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
       try {
         await cert.createTrustAnchorsWithKeyStore(pubKeyData, pwd)
           // .then((data) => {
-          //   console.log(`${caseName} success, data: ${JSON.stringify(data.length)}`);
+          //   console.log(`[XtsTestLog] success, data: ${JSON.stringify(data.length)}`);
           //   expect(null).assertFail();
           //   done();
           // })
           // .catch((err: BusinessError) => {
-          //   console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          //   console.error(`[XtsTestLog] failed, err: ${JSON.stringify(err)}`);
           //   expect(err.code == 19030001).assertTrue();
             // done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == 19030001).assertTrue();
       }
@@ -166,12 +166,12 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   done();
           // })
           // .catch((err: BusinessError) => {
-          //   console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          //   console.error(`[XtsTestLog] failed, err: ${JSON.stringify(err)}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error.code)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error.code)}`);
         expect(error.code).assertEqual(401);
       }
       done();

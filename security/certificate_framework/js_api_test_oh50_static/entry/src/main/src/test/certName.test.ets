@@ -79,17 +79,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         let data = await cert.createX500DistinguishedName(nameStr)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == nameStr).assertTrue();
           //   done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -109,17 +109,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         let data = await cert.createX500DistinguishedName(nameStr)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(null).assertFail();
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -143,11 +143,11 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
           //   expect(null).assertFail();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS);
       }
       done();
@@ -172,12 +172,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -197,17 +197,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         await cert.createX500DistinguishedName(nameDer)
           // .then((data) => {
-          //   console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+          //   console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
           //   expect(null).assertFail();
           //   done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -228,15 +228,15 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         await cert.createX500DistinguishedName(nameDer)
           // .then((data) => {
-          //   console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+          //   console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
           //   expect(null).assertFail();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS);
       }
       done();
@@ -256,17 +256,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         let data = await cert.createX500DistinguishedName(nameStr)
           // .then((data) => {
-          //   console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+          //   console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == nameStr).assertTrue();
           //   done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -286,27 +286,27 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         let data = await cert.createX500DistinguishedName(nameStr)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName1 sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName1 sucess: ${data.getName()}`);
             let name: string = data.getName();
         let data1 = await cert.createX500DistinguishedName(name)
               // .then((data) => {
-                console.log(`${caseName} createX500DistinguishedName2 sucess: ${data1.getName()}`);
+                console.log(`[XtsTestLog] createX500DistinguishedName2 sucess: ${data1.getName()}`);
                 expect(data1.getName() == nameStr).assertTrue();
                 // done();
               // })
               // .catch((err) => {
-              //   console.error(`${caseName} createX500DistinguishedName2 failed,err: ${err}`);
+              //   console.error(`[XtsTestLog] createX500DistinguishedName2 failed,err: ${err}`);
               //   expect(null).assertFail();
               //   done();
               // })
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName1 failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName1 failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -334,12 +334,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -366,12 +366,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} createX500DistinguishedName catch error: ${error}`);
+        console.error(`[XtsTestLog] createX500DistinguishedName catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -392,22 +392,22 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       try {
         let data = await cert.createX500DistinguishedName(nameStr)
           // .then((data) => {
-          //   console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+          //   console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             try {
               data.getName(nameType);
             } catch (err: BusinessError) {
-              console.error(`${caseName} getName catch error: ${err}`);
+              console.error(`[XtsTestLog] getName catch error: ${err}`);
               expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
               done();
             }
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} createX500DistinguishedName catch error: ${error}`);
+        console.error(`[XtsTestLog] createX500DistinguishedName catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -433,12 +433,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -467,18 +467,18 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
                 // done();
               // })
               // .catch((err) => {
-              //   console.error(`${caseName} createX500DistinguishedName2 failed,err: ${err}`);
+              //   console.error(`[XtsTestLog] createX500DistinguishedName2 failed,err: ${err}`);
               //   expect(null).assertFail();
               //   done();
               // })
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName1 failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName1 failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -500,7 +500,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509Cert.getIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName() == nameString).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -523,17 +523,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let name: string = x500DistinguishedName.getName();
         let data = await cert.createX500DistinguishedName(name)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == nameString).assertTrue();
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -554,7 +554,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509Cert.getIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName('CN')[0] == 'GlobalSign Extended Validation CA - G2').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -582,12 +582,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName2 failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName2 failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // })
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -609,7 +609,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509Cert.getSubjectX500DistinguishedName();
         expect(x500DistinguishedName.getName() == nameString).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -632,17 +632,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let name: string = x500DistinguishedName.getName();
         let data = await cert.createX500DistinguishedName(name)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == nameString).assertTrue();
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -664,7 +664,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let type: string[] = x500DistinguishedName.getName('CN');
         expect(type[0] == 'www.globalsign.com').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -692,12 +692,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -718,7 +718,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509CRL.getIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName() == '/C=CN/ST=Jiangsu/L=Nanjing/O=ts/OU=ts/CN=ts').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -740,17 +740,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let name: string = x500DistinguishedName.getName();
         let data = await cert.createX500DistinguishedName(name)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == '/C=CN/ST=Jiangsu/L=Nanjing/O=ts/OU=ts/CN=ts').assertTrue();
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -771,7 +771,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509CRL.getIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName('ST')[0] == 'Jiangsu').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -799,12 +799,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -825,7 +825,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509CRL.getRevokedCert(BigInt(1000)).getCertIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName() == '/CN=CRL issuer').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -847,17 +847,17 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let name: string = x500DistinguishedName.getName();
         let data = await cert.createX500DistinguishedName(name)
           // .then((data) => {
-            console.log(`${caseName} createX500DistinguishedName sucess: ${data.getName()}`);
+            console.log(`[XtsTestLog] createX500DistinguishedName sucess: ${data.getName()}`);
             expect(data.getName() == '/CN=CRL issuer').assertTrue();
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -878,7 +878,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         let x500DistinguishedName = x509CRL.getRevokedCert(BigInt(1000)).getCertIssuerX500DistinguishedName();
         expect(x500DistinguishedName.getName('CN')[0] == 'CRL issuer').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -906,12 +906,12 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
             // done();
           // })
           // .catch((err) => {
-          //   console.error(`${caseName} createX500DistinguishedName failed,err: ${err}`);
+          //   console.error(`[XtsTestLog] createX500DistinguishedName failed,err: ${err}`);
           //   expect(null).assertFail();
           //   done();
           // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -933,7 +933,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(toStringData != null).assertTrue();
         expect(toStringData.length == 4365).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -955,7 +955,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(toStringData != null).assertTrue();
         expect(toStringData.length == 2086).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -977,7 +977,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(toStringData != null).assertTrue();
         expect(toStringData.length == 74).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -999,7 +999,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(toStringData != null).assertTrue();
         expect(toStringData.length == 10133).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1018,11 +1018,11 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       const x509Cert: cert.X509Cert = await certChainFunc3.createX509Cert();
       try {
         let hashCodeData = x509Cert.hashCode();
-        console.log(`${caseName} hashCode sucess: ${hashCodeData}`);
+        console.log(`[XtsTestLog] hashCode sucess: ${hashCodeData}`);
         expect(hashCodeData != null).assertTrue();
         expect(hashCodeData.length == 32).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1041,11 +1041,11 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       const x509CRL: cert.X509CRL = await certChainFunc3.createX509Crl();
       try {
         let hashCodeData = x509CRL.hashCode();
-        console.log(`${caseName} hashCode sucess: ${hashCodeData}`);
+        console.log(`[XtsTestLog] hashCode sucess: ${hashCodeData}`);
         expect(hashCodeData != null).assertTrue();
         expect(hashCodeData.length == 32).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1064,11 +1064,11 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       const x509CRL: cert.X509CRL = await certChainFunc3.createX509CrlEntryTest1();
       try {
         let hashCodeData = x509CRL.getRevokedCert(BigInt(1000)).hashCode();
-        console.log(`${caseName} hashCode sucess: ${hashCodeData}`);
+        console.log(`[XtsTestLog] hashCode sucess: ${hashCodeData}`);
         expect(hashCodeData != null).assertTrue();
         expect(hashCodeData.length == 32).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1087,11 +1087,11 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
       const x509CertChain: cert.X509CertChain = await certChainFunc3.createX509CertChain1();
       try {
         let hashCodeData = x509CertChain.hashCode();
-        console.log(`${caseName} hashCode sucess: ${hashCodeData}`);
+        console.log(`[XtsTestLog] hashCode sucess: ${hashCodeData}`);
         expect(hashCodeData != null).assertTrue();
         expect(hashCodeData.length == 32).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1115,7 +1115,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(certExtension.checkCA() == -1).assertTrue();
         expect(certExtension.hasUnsupportedCriticalExtension() == false).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1138,7 +1138,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(certExtension.getEncoded().data.length == 47).assertTrue();
         expect(certExtension.hasUnsupportedCriticalExtension() == false).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -1162,7 +1162,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
         expect(certExtension.getEncoded().data.length == 14).assertTrue();
         expect(certExtension.hasUnsupportedCriticalExtension() == false).assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${error}`);
+        console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
       done();

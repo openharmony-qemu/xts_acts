@@ -160,12 +160,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           expect(cert_ChainValidationResult.trustAnchor.nameConstraints != null).assertTrue();
           done();
         } catch (err: BusinessError) {
-          console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+          console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
           expect(null).assertFail();
           done();
         }
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
         done();
       }
@@ -203,13 +203,13 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
         await cert.buildX509CertChain(param)//.then((data) => {
           // expect(null).assertFail();
         //}).catch((err) => {
-          //console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+          //console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
           //expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         //});
       } catch (error: BusinessError) {
-        // console.error(`${caseName} catch error: ${error}`);
+        // console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
-        console.error(`${caseName} createX509CertChain failed, err: ${error}`);
+        console.error(`[XtsTestLog] createX509CertChain failed, err: ${error}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
       }
       done();
@@ -247,14 +247,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           //done();
         //}).catch((err) => {
-        //  console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //  console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //  expect(null).assertFail();
         //  done();
         //});
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -294,14 +294,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 1).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -341,14 +341,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -388,14 +388,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -436,14 +436,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -483,14 +483,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -529,14 +529,14 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
         expect(data.certChain.getCertList().length == 2).assertTrue();
         expect(data.validationResult.trustAnchor.CACert?.getNotBeforeTime() == '201212201944Z').assertTrue();
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail();
       }
       done();
@@ -574,12 +574,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         //   done();
         // });
       } catch (error: BusinessError) {
-        // console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        // console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         // expect(null).assertFail();
         // done();
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
@@ -620,12 +620,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         //   done();
         // });
       } catch (error: BusinessError) {
-        // console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        // console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         // expect(null).assertFail();
         // done();
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
@@ -666,12 +666,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         //   done();
         // });
       } catch (error: BusinessError) {
-        // console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        // console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         // expect(null).assertFail();
         // done();
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
@@ -712,12 +712,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
       }
@@ -751,12 +751,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
       }
@@ -794,12 +794,12 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           // expect(null).assertFail();
           // done();
         // }).catch((err) => {
-        //   console.error(`${caseName} createX509CertChain failed, err: ${err}`);
+        //   console.error(`[XtsTestLog] createX509CertChain failed, err: ${err}`);
         //   expect(null).assertFail();
         //   done();
         // });
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(error.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
       }
@@ -831,7 +831,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
         // expect(subjectName).assertEqual("C=CN,ST=陕西,L=西安,O=测试,CN=中文测试");
         // expect(subjectName2.length).assertLarger(0);
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail()
       }
       done();
@@ -863,7 +863,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
         // expect(subjectName).assertEqual("C=CN,ST=陕西,L=西￥安,O=测%试,CN=中文@测试");
         // expect(subjectName2.length).assertLarger(0);
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail()
       }
       done();
@@ -899,7 +899,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
           expect(error.code).assertEqual(19030001);
         }
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail()
       }
       done();
@@ -932,7 +932,7 @@ export default function certFrameworkCertChainExtJsAPIFunctionTestUnit() {
         // expect(subjectName).assertEqual("CN=Example Root CA");
         // expect(subjectName2).assertEqual("/CN=Example Root CA");
       } catch (error: BusinessError) {
-        console.error(`${caseName} catch error: ${JSON.stringify(error)}`);
+        console.error(`[XtsTestLog] catch error: ${JSON.stringify(error)}`);
         expect(null).assertFail()
       }
       done();
