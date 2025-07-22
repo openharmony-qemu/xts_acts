@@ -22,7 +22,7 @@ import { createGcmParam } from '../common/gcmParamsSpec.test';
 async function generateSymKey(symKeyGenerator: crypto.SymKeyGenerator): Promise<crypto.SymKey> {
   return new Promise<crypto.SymKey>((resolve, reject) => {
     symKeyGenerator.generateSymKey((err: BusinessError<void>|null, symKey: crypto.SymKey|undefined) => {
-      if (err) { // success: error is null, failed: data is undefined
+      if (err || symKey === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback]generateSymKey failed. error is " + err);
         reject(err as Error);
       } else {
@@ -33,8 +33,6 @@ async function generateSymKey(symKeyGenerator: crypto.SymKeyGenerator): Promise<
           let encodeKey = symKey.getEncoded();
           console.log("[Callback]key getEncoded hex: " + uInt8ArrayToShowStr(encodeKey.data));
           resolve(symKey as crypto.SymKey);
-        } else {
-          reject(err as Error);
         }
       }
     });
