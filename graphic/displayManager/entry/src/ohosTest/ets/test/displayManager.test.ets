@@ -1756,17 +1756,27 @@ export default function displayTest() {
       let caseName = "testMainScreenSupportRefreshRate";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
+      //正整数
+      let regNum = /^[1-9]\d*/
       try {
         let result = display.getDisplayByIdSync(0).supportedRefreshRates;
         console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
         if (result === undefined) {
           done();
         } else if(result !=null) {
-          expect(true).assertTrue()
+          let length = result.length;
+          console.log(`${caseName} dresult.length: ${length}`);
+          for(let i=0;i<length-1;i++){
+            console.log(`${caseName} i: i:${result[i]}`);
+            //判断是否为正整数
+            expect(regNum.test(String(result[i]))).assertTrue();
+            //判断递增
+            expect(result[i]).assertLess(result[i+1]);
+          }
           done();
         }
       } catch (e) {
-        console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
+        console.error(`${caseName} Failed.err:${JSON.stringify(e)}`);
         expect().assertFail();
         done()
       }
