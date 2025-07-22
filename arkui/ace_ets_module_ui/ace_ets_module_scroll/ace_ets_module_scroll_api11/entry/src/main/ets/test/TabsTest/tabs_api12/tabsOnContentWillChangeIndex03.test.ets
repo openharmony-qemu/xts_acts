@@ -60,7 +60,7 @@ export default function tabsOnContentWillChangeIndex03JsunitTest() {
       tabsRect.top + "," + tabsRect.bottom );
       // swipe index 3 to index 2  left swipe to right
 
-      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),
+      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.3 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.9 + tabsRect.left),
         Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
       await CommonFunc.sleep(2000);
 

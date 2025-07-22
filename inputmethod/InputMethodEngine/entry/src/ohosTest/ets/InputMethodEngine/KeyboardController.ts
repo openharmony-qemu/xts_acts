@@ -982,6 +982,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
+    await this.InputClient.moveCursor(inputmethodengine.CURSOR_LEFT);
     console.info(TAG + '====>receive inputMethodEngine_test_076 success');
     inputKeyboardDelegate.on('selectionChange', (oldBegin, oldEnd, newBegin, newEnd) => {
       console.info(TAG + '====>inputKeyboardDelegate.on("selectionChange")');

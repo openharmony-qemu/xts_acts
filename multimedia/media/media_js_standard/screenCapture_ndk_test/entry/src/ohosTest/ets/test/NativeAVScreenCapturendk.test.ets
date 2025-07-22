@@ -554,5 +554,129 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
 
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
+     * @tc.desc         normalAVScreenCaptureErrorTest 1
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureErrorTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureErrorTest();
+      console.info(Tag + "normalAVScreenCaptureErrorTest-------------res:" + result);
+      expect(result).assertEqual(2);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
+     * @tc.desc         normalAreaTest 1
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAreaTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAreaTest();
+      console.info(Tag + "normalAreaTest-------------res:" + result);
+      expect(result).assertEqual(3);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
+     * @tc.desc         normalStrategyTest 1
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalStrategyTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalStrategyTest();
+      console.info(Tag + "normalStrategyTest-------------res:" + result);
+      expect(result).assertEqual(3);
+      await Utils.btnTextScreenCapture();
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
+     * @tc.desc         normalSelectionCallback
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "normalSelectionCallback-------------before click:");
+      let result: number = myScreenCaptureNdk.normalSelectionCallback();
+      console.info(Tag + "normalSelectionCallback-------------result:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.normalSelectionCallbackStop();
+      console.info(Tag + "normalSelectionCallbackStop-------------resultStop:" + resultStop);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-False
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-True
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingTrue();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
+     * @tc.desc         OH_AVScreenCapture_StrategyForPickerPopUp-False
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPickerPopUpFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
+     * @tc.desc         OH_AVScreenCapture_StrategyForPickerPopUp-True
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPickerPopUpTrue();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

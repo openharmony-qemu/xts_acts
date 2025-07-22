@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll,afterAll,it, expect , TestType, Size, Level} from '@ohos/hypium';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -71,77 +71,17 @@ export default function windowEventTest() {
       console.log('jsUnittest beforeAll systemWindowTypeDicArr=' + JSON.stringify(systemWindowTypeDicArr) + '   ,length=' + systemWindowTypeDicArr.length);
       systemWindowTypeArr = Object.keys(systemWindowTypeDic);
       isPCStatus = settings.getValueSync(context,'isStatusBarExist','',settings.domainName.USER_PROPERTY)
-      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.DEVICE_SHARED);
+      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
     })
-
-    /**
-     * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
-     * @tc.name : testTouchOutSide_TopBar_0100
-     * @tc.desc : 验证点击窗口范围内的topbar区域不触发touchOutside回调
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
-     */
-    it('testTouchOutSide_TopBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTouchOutSide_TopBar_0100 ';
-      console.log(caseName + 'begin');
-      let mainWindow = windowStage.getMainWindowSync();
-      let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_TopBar_0100');
-      await subWindowClass.setUIContent('testability/pages/First/index2');
-      await sleep(1000);
-      let timer = 0;
-      try {
-        let windowLimits = subWindowClass.getWindowLimits();
-        console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number);
-        await subWindowClass.moveWindowTo(200, 0);
-        await subWindowClass.showWindow();
-        await sleep(1000);
-        
-        const callback = () => {
-          timer++;
-          console.log(`${caseName} timer: ${timer}`);
-        }
-        subWindowClass.on('touchOutside', callback);
-        await mainWindow.setPreferredOrientation(window.Orientation.LANDSCAPE);
-
-        await sleep(3000);
-        let windowProperties = subWindowClass.getWindowProperties();
-        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let driver: Driver = Driver.create();
-        await sleep(200);
-        // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), 0);
-        await sleep(300);
-        console.log(`${caseName} timer1: ${timer}`);
-        expect(timer).assertEqual(0);
-        // await driver.click(((windowLimits.minWidth as number+200)+10) , 0);
-        await driver.click(((windowProperties.windowRect.left as number)-10) , 0);
-        await sleep(300);
-        console.log(`${caseName} timer2: ${timer}`);
-        expect(timer).assertEqual(1);
-        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT);
-        await sleep(1000);
-        subWindowClass.off('touchOutside');
-        await subWindowClass.destroyWindow();
-        done();
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        await subWindowClass.destroyWindow();
-        if (e.code === 801) {
-          done()
-        } else {
-          expect().assertFail();
-          done()
-        }
-      }
-    });
-
-    /**
+    afterAll(async () => {
+      
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+    })
+/**
      * @tc.number    : SUB_BASIC_WMS_TOUCHOUTSIDE_0100
      * @tc.name      : testTouchOutSide_0100
      * @tc.desc      : 验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
@@ -200,5 +140,71 @@ export default function windowEventTest() {
       }
     });
 
+    /**
+     * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
+     * @tc.name : testTouchOutSide_TopBar_0100
+     * @tc.desc : 验证点击窗口范围内的topbar区域不触发touchOutside回调
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it('testTouchOutSide_TopBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTouchOutSide_TopBar_0100 ';
+      console.log(caseName + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_TopBar_0100');
+      await subWindowClass.setUIContent('testability/pages/First/index2');
+      await sleep(1000);
+      let timer = 0;
+      try {
+        let windowLimits = subWindowClass.getWindowLimits();
+        console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number);
+        await subWindowClass.moveWindowTo(200, 0);
+        await subWindowClass.showWindow();
+        await sleep(1000);
+        
+        const callback = () => {
+          timer++;
+          console.log(`${caseName} timer: ${timer}`);
+        }
+        subWindowClass.on('touchOutside', callback);
+        await mainWindow.setPreferredOrientation(window.Orientation.LANDSCAPE);
+        await mainWindow.setSpecificSystemBarEnabled('status', false);
+        await sleep(3000);
+        let windowProperties = subWindowClass.getWindowProperties();
+        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+        let driver: Driver = Driver.create();
+        await sleep(200);
+        // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
+        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), 0);
+        await sleep(300);
+        console.log(`${caseName} timer1: ${timer}`);
+        expect(timer).assertEqual(0);
+        // await driver.click(((windowLimits.minWidth as number+200)+10) , 0);
+        await driver.click(((windowProperties.windowRect.left as number)-10) , 0);
+        await sleep(300);
+        console.log(`${caseName} timer2: ${timer}`);
+        expect(timer).assertEqual(1);
+        await mainWindow.setPreferredOrientation(window.Orientation.PORTRAIT);
+        await sleep(1000);
+        subWindowClass.off('touchOutside');
+        await subWindowClass.destroyWindow();
+        await mainWindow.setSpecificSystemBarEnabled('status', true);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass.destroyWindow();
+        await mainWindow.setSpecificSystemBarEnabled('status', true);
+        if (e.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    
   })
 }

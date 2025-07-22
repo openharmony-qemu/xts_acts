@@ -994,6 +994,63 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testTriggerCombineKeysWithId over');
         })
+
+        /*
+         * @tc.number: uiTest_20033
+         * @tc.name: test_origin
+         * @tc.desc: specifies the string value match pattern.
+         */
+        it('test_origin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(TestTag, 'test_origin start');
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let button1 = await driver.findComponent(ON.originalText('next page'))
+            console.log(`${TestTag}, test_origin button1: ${JSON.stringify(button1)}`);
+            let originText = await button1.getOriginalText();
+            console.log(`${TestTag}, test_origin originText: ${JSON.stringify(originText)}`);
+            expect(originText == 'next page').assertTrue()
+            let button2 = await driver.findComponent(ON.originalText('next',MatchPattern.STARTS_WITH))
+            console.log(`${TestTag}, test_origin button2: ${JSON.stringify(button2)}`);
+            let originText1 = await button2.getOriginalText();
+            console.log(`${TestTag}, test_origin originText1: ${JSON.stringify(originText1)}`);
+            expect(originText1 == 'next page').assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(TestTag, 'test_origin end');
+        })
+
+        /*
+         * @tc.number: uiTest_20034
+         * @tc.name: testWindowAttrWithId
+         * @tc.desc: find window by WindowFilter and get it's active status.
+         */
+        it('testWindowAttrWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, testWindowAttrWithId disPlay is: ${JSON.stringify(disPlay)}`);
+            let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,active:true,title:'',displayId: disPlay.id})
+            await window.focus()
+            await driver.delayMs(waitUiReadyMs)
+            let isActive = await window.isActive()
+            expect(isActive == true).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
+
+        /*
+         * @tc.number: uiTest_20035
+         * @tc.name: testScreenCaptureWithId
+         * @tc.desc: capture the specified area of current screen.
+         */
+        it('testScreenCaptureWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, testScreenCaptureWithId disPlay is: ${JSON.stringify(disPlay)}`);
+            let savePath = '/data/storage/el2/base/cache/testScreenCaptureWithId.png'
+            let success = await driver.screenCapture(savePath, {left: 0, top: 0, right: 100, bottom: 100, displayId: disPlay.id})
+            expect(success == true).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+        })
     })
     describe('UiTest_API16', () => {
         let driver: Driver

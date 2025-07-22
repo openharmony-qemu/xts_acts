@@ -24,6 +24,15 @@ import scrollBarColor from './ScrollBarTest/scrollBarColor.test';
 import canOverGrid from './GridTest/canOverGrid.test';
 import canOverList from './ListTest/canOverList.test';
 import canOverScroll from './ScrollTest/canOverScroll.test';
+import gridStopDrag from './GridTest/gridStopDrag.test';
+import listStopDrag from './ListTest/listStopDrag.test';
+import scrollStopDrag from './ScrollTest/scrollStopDrag.test';
+import waterFlowStopDrag from './WaterFlowTest/waterFlowStopDrag.test';
+import syncLoadGrid from './GridTest/syncLoadGrid.test';
+import syncLoadList from './ListTest/syncLoadList.test';
+import syncLoadGroup from './ListTest/syncLoadGroup.test';
+import syncLoadFlow from './WaterFlowTest/syncLoadFlow.test';
+import stateChange from './ScrollTest/stateChange.test';
 
 export default function testsuite() {
   barHeightNoMinHeightLimit();
@@ -37,4 +46,13 @@ export default function testsuite() {
   canOverGrid()
   canOverList()
   canOverScroll()
+  gridStopDrag()
+  listStopDrag()
+  scrollStopDrag()
+  waterFlowStopDrag()
+  syncLoadGrid()
+  syncLoadList()
+  syncLoadGroup()
+  syncLoadFlow()
+  stateChange()
 }

@@ -717,6 +717,36 @@ static napi_value EglSwapBuffersWithDamageKHRRect2(napi_env env, napi_callback_i
     return result;
 }
 
+static napi_value EglSwapBuffersWithDamageKHRSurfaceRectsNull(napi_env env, napi_callback_info info)
+{
+    EGLDisplay m_eglDisplay = nullptr;
+    EGLConfig m_eglConf = nullptr;
+    EGLint numConfigs;
+    EGLint config_size = 1;
+    m_eglDisplay = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+    NAPI_ASSERT(env, m_eglDisplay != EGL_NO_DISPLAY, "eglGetDisplay error");
+    eglInitialize(m_eglDisplay, nullptr, nullptr);
+    eglChooseConfig(m_eglDisplay, confAttr, &m_eglConf, config_size, &numConfigs);
+
+    EGLSurface m_eglSurface = nullptr;
+    EGLint *rects = nullptr;
+    PFNEGLSWAPBUFFERSWITHDAMAGEKHRPROC eglSwapBuffersWithDamageKHR_ =
+        (PFNEGLSWAPBUFFERSWITHDAMAGEKHRPROC)eglGetProcAddress("eglSwapBuffersWithDamageKHR");
+    EGLint n_RectsDamageArea = 0;
+    m_eglSurface = nullptr;
+    if (eglSwapBuffersWithDamageKHR_) {
+        EGLBoolean ret = eglSwapBuffersWithDamageKHR_(m_eglDisplay, m_eglSurface, rects, n_RectsDamageArea);
+        NAPI_ASSERT(env, ret == EGL_FALSE, "eglSwapBuffersWithDamageKHR update null area error");
+    }
+
+    eglDestroySurface(m_eglDisplay, m_eglSurface);
+    eglReleaseThread();
+    eglTerminate(m_eglDisplay);
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 static napi_value EglQueryContext(napi_env env, napi_callback_info info)
 {
     EGLDisplay m_eglDisplay = nullptr;
@@ -1474,6 +1504,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"eglSwapBuffersWithDamageKHRRect2", nullptr, EglSwapBuffersWithDamageKHRRect2, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"EglSwapBuffersWithDamageKHRSurfaceRectsNull", nullptr, EglSwapBuffersWithDamageKHRSurfaceRectsNull, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
         {"eglQueryContext", nullptr, EglQueryContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"eglQueryContextAbnormal", nullptr, EglQueryContextAbnormal, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"eglQueryString", nullptr, EglQueryString, nullptr, nullptr, nullptr, napi_default, nullptr},

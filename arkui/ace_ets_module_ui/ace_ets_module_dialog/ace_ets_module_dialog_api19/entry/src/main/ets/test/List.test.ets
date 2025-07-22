@@ -37,6 +37,8 @@ import UIShowDialogCallbackBlurStyleOptionsTest from './UIContextTest/showDialog
 import updateMenu from './promptActionTest/updateMenu.test.ets'
 import openMenuAnchorPositionTest from './promptActionTest/openMenuAnchorPosition.test'
 import updateMenuAnchorPositionTest from './promptActionTest/updateMenuAnchorPosition.test'
+import selectDividerTest from './selectDividerTest/selectDividerTest.test'
+import CustomDialogControllerOptionsTest from './customDialogTest/CustomDialogControllerOptions.test'
 
 export default function testsuite() {
     alertDialogBackgroundEffectTest()
@@ -64,4 +66,7 @@ export default function testsuite() {
     updateMenu()
     openMenuAnchorPositionTest()
     updateMenuAnchorPositionTest()
+    selectDividerTest()
+    CustomDialogControllerOptionsTest()
+
 }

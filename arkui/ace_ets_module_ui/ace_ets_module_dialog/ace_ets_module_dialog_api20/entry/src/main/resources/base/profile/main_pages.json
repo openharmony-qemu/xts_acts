@@ -7,6 +7,11 @@
     "MainAbility/pages/SheetType/sheetTypeSide",
     "MainAbility/pages/SheetType/dismissSheetAction",
     "MainAbility/pages/promptAction/closeToastTest",
-    "MainAbility/pages/BindContentCover/bindContentCover"
+    "MainAbility/pages/BindContentCover/bindContentCover",
+    "MainAbility/pages/Menu/selectModalMode",
+    "MainAbility/pages/SheetType/enableFloatingDragBar",
+    "MainAbility/pages/Menu/PreviewScaleMode",
+    "MainAbility/pages/SheetType/keyboardAvoidMode",
+    "MainAbility/pages/Menu/AvailableLayoutArea"
   ]
 }

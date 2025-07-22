@@ -121,7 +121,7 @@ export default function ListItem_Delete_Start_Default() {
       console.info("SUB_ACE_ListItem_Delete_Start_Default_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(10)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + vp2px(50))
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + vp2px(50))
       );
       await CommonFunc.sleep(2000);
 
@@ -169,7 +169,7 @@ export default function ListItem_Delete_Start_Default() {
       console.info("SUB_ACE_ListItem_Delete_Start_Default_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + vp2px(100)), Math.round(globalThis.winTop  + top + vp2px(50))
+        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + vp2px(50))
       );
       await CommonFunc.sleep(2000);
 

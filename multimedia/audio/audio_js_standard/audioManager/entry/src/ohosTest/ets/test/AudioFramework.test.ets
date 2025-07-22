@@ -43,10 +43,10 @@ let audioMedia: number = 3;
 let audioRingtone: number = 2;
 let minVol: number = 0;
 let maxVol: number = 15;
-let maxVolPc: number = 20;
+let maxVolPc: number = 100;
 let lowVol: number = 5;
 let highVol: number = 14;
-let outOfRangeVol: number = 28;
+let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
 
@@ -6153,6 +6153,74 @@ export default function audioFramework() {
         }
         expect(flag).assertTrue();
         done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: number = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`getVolumeByStream ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: number = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`getMaxVolumeByStream ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100
+     * @tc.desc      : enable
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: number = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MEDIA);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`getMinVolumeByStream ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
     })
   })
 }
