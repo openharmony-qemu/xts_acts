@@ -211,7 +211,7 @@ export default function abilityTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it("testgetLastWindowPromiseTest_static_0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it("testgetLastWindowPromiseTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         window.getLastWindow(context).then((ret: window.Window|undefined): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getLastWindow promise success '+ JSON.stringify(ret));
