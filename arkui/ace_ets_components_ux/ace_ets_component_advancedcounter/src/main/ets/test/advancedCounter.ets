@@ -52,6 +52,7 @@ export default function abilityTest() {
       let listCounterComponent = await driver.findComponent(ON.text('Number'))
       let type = await listCounterComponent.getType();
       expect(type).assertEqual('Text');
+      await driver.delayMs(2000);
       done();
       });
     
@@ -65,6 +66,7 @@ export default function abilityTest() {
       let compactCounter = await driver.findComponent(ON.text('Total'))
       let type = await compactCounter.getType();
       expect(type).assertEqual('Text');
+      await driver.delayMs(2000);
       done();
       });
         
