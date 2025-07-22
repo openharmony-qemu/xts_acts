@@ -15,18 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/徐乐/.ohos/config/openharmony/default_windowOneStatic_39OcaEwIp5ar2nDa1_8SiPQebYUn1BBO5XnuEp24aPg=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BD2E6106D80D0974D212B470CE94244D5456B41027CFC48CED0DA2F95E92D9E61C581A4CF5F9EAF",
-          "profile": "C:/Users/徐乐/.ohos/config/openharmony/default_windowOneStatic_39OcaEwIp5ar2nDa1_8SiPQebYUn1BBO5XnuEp24aPg=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/徐乐/.ohos/config/openharmony/default_windowOneStatic_39OcaEwIp5ar2nDa1_8SiPQebYUn1BBO5XnuEp24aPg=.p12",
-          "storePassword": "0000001BB599BF6395B39D4A84E7733D2AEE491AFCFBB9506E6C12B40EBA889F2B479F7540B9820BD6EF37"
-        }
-      }
     ],
     "products": [
       {
