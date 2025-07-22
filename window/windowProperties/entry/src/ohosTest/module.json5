@@ -118,6 +118,9 @@
         "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
       },
       {
+        "name": "ohos.permission.SET_WINDOW_TRANSPARENT"
+      },
+      {
         "name": "ohos.permission.WINDOW_TOPMOST",
         "usedScene": {
           "abilities": [
