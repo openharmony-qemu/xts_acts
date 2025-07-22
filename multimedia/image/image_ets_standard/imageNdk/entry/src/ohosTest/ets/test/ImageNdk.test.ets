@@ -6141,7 +6141,7 @@ export default function imageNdkTest() {
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200';
-      const filename = 'test_exif_v3.heic'
+      const filename = 'test_exif_v2.heic'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
       try {
         for(let j = 0; j < Data.length; j++){
