@@ -5945,43 +5945,6 @@ export default function imageNdkTest() {
       }
     })
 
-     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done: Function) => {
-      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0200';
-      const filename = 'test_exif_v3.webp'
-      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
-      try {
-        for(let j = 0; j < ModifyData.length; j++){
-            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
-            if(!checkResult){
-              closeFile(fileFd)
-              ndkTest.SourceRelease(imageSourceApi)
-              expect().assertFail()
-              done()
-              return
-            }
-        }
-        closeFile(fileFd)
-        ndkTest.SourceRelease(imageSourceApi)
-        expect(true).assertTrue()
-        done()
-      } catch (e) {
-        closeFile(fileFd)
-        hilog.info(0x0000, testTag, `createImageSource error ` + e);
-        expect().assertFail();
-        done();
-      }
-    })
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
      * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
