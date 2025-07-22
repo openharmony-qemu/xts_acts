@@ -17,15 +17,26 @@
 import testrdb from 'libtransaction.so';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
+import deviceInfo from '@ohos.deviceInfo';
 
 let TAG = '[transaction_test]';
 
+let deviceList = [
+  '2in1'
+];
+
 export default function transactionNdktest() {
+  let isValidDeviceType = false;
   describe('transactionNdktest', () => {
 
     beforeAll(() => {
       console.info(TAG + "beforeAll");
       let res = testrdb.RdbstoreSetUpTestCase();
+      let deviceTypeInfo = deviceInfo.deviceType;
+      let result = deviceList.find((value, index, obj) => {
+        return value === deviceTypeInfo;
+      });
+      isValidDeviceType = result !== undefined;
     })
     beforeEach(() => {
       console.info(TAG + "beforeEach");
@@ -324,6 +335,9 @@ export default function transactionNdktest() {
      * @tc.size: MediumTest
      */
     it('OH_Rdb_SetSemanticIndex_Param_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isValidDeviceType) {
+        done();
+      }
       let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0100();
       console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0100 res=" + res );
       expect(res).assertEqual(0);
@@ -339,6 +353,9 @@ export default function transactionNdktest() {
      * @tc.size: MediumTest
      */
     it('OH_Rdb_SetSemanticIndex_Param_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isValidDeviceType) {
+        done();
+      }
       let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0200();
       console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0200 res=" + res );
       expect(res).assertEqual(0);
@@ -354,6 +371,9 @@ export default function transactionNdktest() {
      * @tc.size: MediumTest
      */
     it('OH_Rdb_SetSemanticIndex_Param_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (!isValidDeviceType) {
+        done();
+      }
       let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0300();
       console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0300 res=" + res );
       expect(res).assertEqual(0);
