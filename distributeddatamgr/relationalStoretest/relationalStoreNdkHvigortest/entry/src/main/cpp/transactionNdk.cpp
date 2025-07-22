@@ -42,6 +42,8 @@
 
 #define DIRMODE 0770
 
+#define WAIT_TIME 3
+
 const char *TAG = "transaction_ctest";
 const char *RDB_TEST_PATH = "/data/storage/el2/database/com.example.buchongndktest/entry/";
 static OH_Rdb_Store *g_transStore;
@@ -817,7 +819,7 @@ static napi_value OH_Rdb_SetSemanticIndex_Param_0200(napi_env env, napi_callback
     store = OH_Rdb_CreateOrOpen(confg, &errCode);
     NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CreateOrOpen is fail.");
     InsertData(env, store);
-    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::this_thread::sleep_for(std::chrono::seconds(WAIT_TIME));
 
     char querySql[] = "select count(*) from mail_inverted";
     OH_Cursor *cursor = OH_Rdb_ExecuteQuery(store, querySql);
@@ -864,7 +866,7 @@ static napi_value OH_Rdb_SetSemanticIndex_Param_0300(napi_env env, napi_callback
     store = OH_Rdb_CreateOrOpen(confg, &errCode);
     NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CreateOrOpen is fail.");
     InsertData(env, store);
-    std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::this_thread::sleep_for(std::chrono::seconds(WAIT_TIME));
 
     char querySql[] = "select count(*) from mail_inverted";
     OH_Cursor *cursor = OH_Rdb_ExecuteQuery(store, querySql);
