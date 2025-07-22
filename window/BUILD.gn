@@ -19,5 +19,7 @@ group("window") {
     "windowProperties:ActsWindowPropertiesTest",
     "windowStartAbility:ActsWindowStartAbilityTest",
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
+    "windowOneStatic:ActsWindowOneStaticTest",
+    "windowTwoStatic:ActsWindowTwoStaticTest",
   ]
 }
