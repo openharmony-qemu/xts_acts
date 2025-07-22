@@ -41,6 +41,8 @@
     "MainAbility/pages/ImageOrientation/ImageOrientation",
     "MainAbility/pages/Text/TextNumberTransitionTest",
     "MainAbility/pages/SymbolGlyph/SymbolEffectTest",
-    "MainAbility/pages/Text/shaderStyle"
+    "MainAbility/pages/Text/shaderStyle",
+    "MainAbility/pages/RichEditor/RichEditorTextMenuItemId",
+    "MainAbility/pages/Text/TextMenuItemId"
   ]
 }
