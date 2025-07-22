@@ -5336,7 +5336,7 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_0100
      * @tc.name      : DeviceRole - ALL Device Role
      * @tc.desc      : DeviceRole - ALL Device Role
      * @tc.size      : MEDIUM
@@ -5354,7 +5354,7 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0100
      * @tc.name      : DeviceRole - ALL Device Role
      * @tc.desc      : DeviceRole - ALL Device Role
      * @tc.size      : MEDIUM
