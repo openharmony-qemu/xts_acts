@@ -518,7 +518,7 @@ async function checkValidateOfCertChainValidatorPromise(algName: string, flag?: 
       encodingFormat: cert.EncodingFormat.FORMAT_PEM,
     };
     console.log("certChainData.data is: " + certChainData.data);
-    validator.validate(certChainData)
+    await validator.validate(certChainData)
   } catch (error: BusinessError) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
