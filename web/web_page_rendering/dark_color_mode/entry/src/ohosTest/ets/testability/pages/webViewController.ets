@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 
 @Entry
 @Component
@@ -103,8 +104,9 @@ struct webViewController {
                       Utils.emitEvent(error.code, 31040)
                       return;
                     }
-                    if (result) {
-                      Utils.emitEvent(result, 31040)
+                    if (JSON.parse(result) == (this.currentColorMode == ConfigurationConstant.ColorMode.COLOR_MODE_DARK)){
+                      // 如果系统颜色和获取的颜色是一样的 就返回true
+                      Utils.emitEvent(true, 31040)
                     }
                   });
               } catch (error) {
