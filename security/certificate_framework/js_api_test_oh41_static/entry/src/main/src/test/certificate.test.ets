@@ -71,7 +71,7 @@ export default function certificateJsunit() {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("pem", false);
         console.log("############### data:" + data.data + ":" + data.data.length + ": " + typeof data)
-        expect(data === null).assertTrue();
+        expect(data.data.length === 0).assertTrue(); // 1.2: null 落需求后回退
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -86,7 +86,7 @@ export default function certificateJsunit() {
     it("Security_Cert_Framework_Certificate_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLExtensionsPromise("der", false)
-        expect(data == null).assertTrue();
+        expect(data.data.length === 0).assertTrue(); // 1.2: null 落需求后回退
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -131,7 +131,7 @@ export default function certificateJsunit() {
     it("Security_Cert_Framework_Certificate_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("pem", false)
-        expect(data == null).assertTrue();
+        expect(data.data.length === 0).assertTrue(); // 1.2: null 落需求后回退
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -146,7 +146,7 @@ export default function certificateJsunit() {
     it("Security_Cert_Framework_Certificate_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data: cert.DataBlob = await certPromise.checkGetX509CRLEntryExtensionsPromise("der", false)
-        expect(data == null).assertTrue();
+        expect(data.data.length === 0).assertTrue(); // 1.2: null 落需求后回退
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
