@@ -384,34 +384,34 @@ export default function certificateCRLJsunit() {
       done();
     });
 
-    // /**
-    //  * @tc.number Security_Cert_Framework_CRL_Func_2600
-    //  * @tc.name Check verify for X509 CRL with invalid PublicKey
-    //  * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-    //  */
-    // it("Security_Cert_Framework_CRL_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   try {
-    //     await certPromise.verifyX509CRLPromise("der", "NULL")
-    //   } catch (error: BusinessError) {
-    //     console.error(`“${error}“, error code: ${error.code}`);
-    //     expect(error.code == 401).assertTrue();
-    //   }
-    //   done();
-    // });
-    // /**
-    //  * @tc.number Security_Cert_Framework_CRL_Func_2700
-    //  * @tc.name Check verify for X509 CRL with invalid PublicKey
-    //  * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-    //  */
-    // it("Security_Cert_Framework_CRL_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   try {
-    //     await certCallback.verifyX509CRLCallback("der", "000")
-    //   } catch (error: BusinessError) {
-    //     console.error(`“${error}“, error code: ${error.code}`);
-    //     expect(error.code == 401).assertTrue();
-    //   }
-    //   done();
-    // });
+    /**
+     * @tc.number Security_Cert_Framework_CRL_Func_2600
+     * @tc.name Check verify for X509 CRL with invalid PublicKey
+     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
+     */
+    it("Security_Cert_Framework_CRL_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await certPromise.verifyX509CRLPromise("der", "NULL")
+      } catch (error: BusinessError) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    });
+    /**
+     * @tc.number Security_Cert_Framework_CRL_Func_2700
+     * @tc.name Check verify for X509 CRL with invalid PublicKey
+     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
+     */
+    it("Security_Cert_Framework_CRL_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await certCallback.verifyX509CRLCallback("der", "000")
+      } catch (error: BusinessError) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    });
     /**
      * @tc.number Security_Cert_Framework_CRL_Func_2800
      * @tc.name check getSerialNumber for X509 CRL Entry

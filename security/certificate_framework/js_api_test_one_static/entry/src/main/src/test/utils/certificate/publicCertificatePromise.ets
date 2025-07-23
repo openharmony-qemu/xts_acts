@@ -312,11 +312,8 @@ async function verifyX509CrlPromise(crlType: string, flag?: string): Promise<voi
     let convertKeyPair: cryptoFramework.KeyPair = await asyKeyGenerator.convertKey(pubEncodingBlob, priEncodingBlob);
     expect(convertKeyPair != null).assertTrue();
     let pubKey: cryptoFramework.PubKey = convertKeyPair.pubKey;
-    console.info("############# : 1");
     globalCrlInstance.verify(pubKey);
-    console.info("############# : 2");
   } catch (error: BusinessError) {
-    console.info("############# : 3");
     console.error(`“${error}“, 1.2 error code: ${error.code}`);
     throw error as Error;
   }

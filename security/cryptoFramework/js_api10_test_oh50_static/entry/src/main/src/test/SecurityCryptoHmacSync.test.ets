@@ -231,7 +231,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         mac.updateSync(message);
       } catch (error: BusinessError) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect(error.code).assertEqual(401); // 1.1:30001
       }
       done();
     });

@@ -127,9 +127,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     it("SUB_Security_CryptoFramework_ErrCode_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let keyMessage = '';
+        // let keyMessage = '';
         let keyBlob: cryptoFramework.DataBlob = {
-          data : new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+          data : new Uint8Array() // new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
         }
         let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
         let key = symKeyGenerator.convertKeySync(keyBlob);
@@ -179,8 +179,8 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let cipher = cryptoFramework.createCipher('AES128|CCM|PKCS7');
         let symKey = await symKeyGenerator.generateSymKey();
         await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
-        let message = "";
-        let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+        // let message = "";
+        let plainText: cryptoFramework.DataBlob = { data: new Uint8Array() } // new Uint8Array(buffer.from(message, 'utf-8').buffer) };
         cipher.updateSync(plainText);
         console.info("updateSync success");
         gcmParams.authTag = cipher.doFinalSync(plainText);
