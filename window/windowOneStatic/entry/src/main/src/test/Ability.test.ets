@@ -69,7 +69,7 @@ export default function abilityTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'testGetMainWindowCallBack start');
         windowStage.getMainWindow((err: BusinessError<void> | null, data: window.Window | undefined) => {
-          const errCode: number = err?.code as double;
+          const errCode: number = err?.code as int;
           if (errCode) {
             console.error(`finaltest [ANI] getMainWindow callback fail . Cause code: ${err?.code}, message: ${err?.message}`);
             expect(false).assertTrue();
@@ -291,7 +291,7 @@ export default function abilityTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           win.setWindowKeepScreenOn(false, (err: BusinessError<void> | null): void => {
-            const errCode: number = err?.code as double;
+            const errCode: number = err?.code as int;
             if (errCode) {
               hilog.info(0x0000, '[ANI]',
                 `finaltest [ANI] setWindowKeepScreenOn callback Failed, Cause code: ${err?.code}, message: ${err?.message}`);
@@ -341,7 +341,7 @@ export default function abilityTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           win.setWindowTouchable(false, (err: BusinessError<void> | null): void => {
-            const errCode: number = err?.code as double;
+            const errCode: number = err?.code as int;
             if (errCode) {
               hilog.info(0x0000, '[ANI]',
                 `finaltest [ANI] setWindowTouchable callback Failed, Cause code: ${err?.code}, message: ${err?.message}`);
@@ -412,7 +412,7 @@ export default function abilityTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           win.isWindowSupportWideGamut((err: BusinessError<void> | null, data: boolean | undefined) => {
-            const errCode: number = err?.code as double;
+            const errCode: number = err?.code as int;
             if (errCode) {
               hilog.info(0x0000, '[ANI]', 'finaltest [ANI] isWindowSupportWideGamut callback Failed ' + errCode);
               expect(false).assertTrue();
@@ -676,7 +676,7 @@ export default function abilityTest() {
       async (done: () => void): Promise<void> => {
         win.minimize((err: BusinessError<void> | null) => {
           if (err?.code) {
-            const errCode: number = err?.code as double;
+            const errCode: number = err?.code as int;
             if (errCode == 801) {
               hilog.info(0x0000, '[ANI]', 'finaltest [ANI] minimize callback Succeeded');
               expect(true).assertTrue();
@@ -1306,7 +1306,7 @@ export default function abilityTest() {
     it("setPreferredOrientationCallbackTest_static_0145",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         win.setPreferredOrientation(window.Orientation.AUTO_ROTATION, (err: BusinessError<void> | null) => {
-          const errCode: number = err?.code as double;
+          const errCode: number = err?.code as int;
           if (errCode) {
             hilog.info(0x0000, '[ANI]',
               `finaltest [ANI] setPreferredOrientation callback Failed. Cause code : ${err?.code}, message: ${err?.message}`);
@@ -1356,7 +1356,7 @@ export default function abilityTest() {
     it("setWindowPrivacyModeCallbackTest_static_0147",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         win.setWindowPrivacyMode(true, (err: BusinessError<void> | null) => {
-          const errCode: number = err?.code as double;
+          const errCode: number = err?.code as int;
           if (errCode) {
             hilog.info(0x0000, '[ANI]',
               `finaltest [ANI] setWindowPrivacyMode callback Failed. Cause code: ${err?.code}, message: ${err?.message}`);
