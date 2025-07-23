@@ -19,7 +19,6 @@ import business_error from '@ohos.base';
 import cert from '@ohos.security.cert';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import print from '@ohos.print';
-import { URL } from '../../test/Config.test';
 
 class TestObj {
   constructor() {
@@ -284,13 +283,13 @@ struct Second {
             case "emitPrefetchPage": {
               try {
                 this.webviewCtl.removeCache(true);
-                this.webviewCtl.loadUrl(URL);
+                this.webviewCtl.loadUrl('https://www.huawei.com');
 
                 if (this.arr.length > 2) {
                   this.webviewCtl.removeCache(true);
                 }
-                this.webviewCtl.prefetchPage(URL);
-                this.webviewCtl.loadUrl(URL);
+                this.webviewCtl.prefetchPage('https://www.huawei.com');
+                this.webviewCtl.loadUrl('https://www.huawei.com');
 
                 setTimeout(() => {
                   if (this.arr.length > 3) {
