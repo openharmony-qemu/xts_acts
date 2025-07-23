@@ -402,7 +402,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 5);
       let values = new Array<string>("A", "B", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i]));
+        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
       }
       try {
         plainArray.removeRangeFrom(15, 5);
@@ -434,7 +434,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 3, 4, 5);
       let values = new Array<string>("A", "B", "V", "D", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i]));
+        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
       }
       try {
         plainArray.setValueAt(-1, "X");
@@ -509,7 +509,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 3, 4, 5);
       let values = new Array<string>("A", "B", "C", "D", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i]));
+        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
       }
     });
 

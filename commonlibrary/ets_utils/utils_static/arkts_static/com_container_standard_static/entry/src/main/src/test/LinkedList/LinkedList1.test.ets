@@ -1057,9 +1057,9 @@ export default function LinkedListTest1() {
         linkedList.add(4);
         linkedList.add(5);
         linkedList.add(4);
-        linkedList.forEach((value: Number, index?: Number) => {
+        linkedList.forEach((value: Number, index: int) => {
           console.log("value:" + value, "index:" + index);
-          expect(String(linkedList.get(index as Number) as Number)).assertEqual(String(value));
+          expect(linkedList.get(index)).assertEqual(value);
         });
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1085,11 +1085,11 @@ export default function LinkedListTest1() {
         linkedList.add(5);
         linkedList.add(4);
         linkedListNew.add(0);
-        linkedList.forEach((value: Number, index?: Number) => {
+        linkedList.forEach((value: Number, index: int) => {
           console.log("value:" + value, "index:" + index);
-          expect(String(linkedList.get(index as Number) as Number)).assertEqual(String(value))
+          expect(linkedList.get(index)).assertEqual(value)
         });
-        // expect(linkedListNew.convertToArray().toString()).assertEqual("0");
+        expect(linkedListNew.convertToArray()).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1139,8 +1139,8 @@ export default function LinkedListTest1() {
         linkedList.add(4);
         linkedList.add(5);
         linkedList.add(4);
-        linkedList.forEach((value: number, index: number, linkedList: LinkedList<number>) => {
-          expect(String(linkedList.get(index))).assertEqual(String(value));
+        linkedList.forEach((value: number, index: int, linkedList: LinkedList<number>) => {
+          expect(linkedList.get(index)).assertEqual(value);
         });
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
