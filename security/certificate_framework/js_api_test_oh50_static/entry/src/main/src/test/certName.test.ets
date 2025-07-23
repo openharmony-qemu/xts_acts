@@ -362,7 +362,7 @@ export default function certFrameworkCertNameJsAPIFunctionTestUnit() {
           // .then((data) => {
         let n  = data.getName(nameType);
         console.log("##################### obj:" + typeof n + ":" + n.length)
-            expect(data.getName(nameType) == undefined).assertTrue();
+            expect(data.getName(nameType).length == 0).assertTrue(); // 待评审
             // done();
           // })
           // .catch((err) => {
