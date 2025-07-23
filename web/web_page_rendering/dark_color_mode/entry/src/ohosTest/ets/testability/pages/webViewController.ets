@@ -29,6 +29,8 @@ struct webViewController {
   @State javaScriptAccess: boolean = true
   @State darkMode: WebDarkMode = WebDarkMode.Off
   @State forceDarkAccess: boolean = false
+  @StorageProp('currentColorMode') currentColorMode: ConfigurationConstant.ColorMode =
+    ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
