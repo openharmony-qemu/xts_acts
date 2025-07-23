@@ -676,7 +676,7 @@ export default function ArrayListTest2() {
         arrayList.add(`"`);
 
         let fromIndex = Math.floor(1.5);
-        arrayList.removeByRange(fromIndex, Math.floor(arrayList.length));
+        arrayList.removeByRange(fromIndex as int, Math.floor(arrayList.length) as int);
         expect(String(arrayList.length)).assertEqual(String(fromIndex));
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -938,7 +938,7 @@ export default function ArrayListTest2() {
         arrayList.add(51);
         arrayList.add(8);
         arrayList.add(0);
-        arrayList.subArrayList(Math.floor(1), Math.floor(5));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(5) as int);
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":1,"1":22,"2":3,"3":24,"4":5,"5":51,"6":8,"7":0}`);
@@ -963,7 +963,7 @@ export default function ArrayListTest2() {
         arrayList.insert(2, 0);
         arrayList.add(1);
         arrayList.add(22);
-        arrayList.subArrayList(Math.floor(1), Math.floor(2));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.clear();
         expect(String(arrayList.length)).assertEqual('0');
       } catch (err: BusinessError) {
@@ -987,7 +987,7 @@ export default function ArrayListTest2() {
         arrayList.insert(2, 0);
         arrayList.add(1);
         arrayList.add(22);
-        arrayList.subArrayList(Math.floor(1), Math.floor(2));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         let result = arrayList.clone();
         expect(String(arrayList.length)).assertEqual(String(result.length));
       } catch (err: BusinessError) {
@@ -1011,7 +1011,7 @@ export default function ArrayListTest2() {
         arrayList.insert(2, 0);
         arrayList.add(1);
         arrayList.add(22);
-        arrayList.subArrayList(Math.floor(1), Math.floor(2));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.clear();
         let result = arrayList.clone();
         expect(String(result.length)).assertEqual('0');
@@ -1038,7 +1038,7 @@ export default function ArrayListTest2() {
         arrayList.add(22);
         arrayList.remove(1);
         arrayList.increaseCapacityTo(1);
-        arrayList.subArrayList(Math.floor(1), Math.floor(2));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.trimToCurrentLength();
         let result = arrayList.getCapacity();
         expect(String(result)).assertEqual(String(arrayList.length));
@@ -1064,7 +1064,7 @@ export default function ArrayListTest2() {
         arrayList.add(1);
         arrayList.add(22);
         arrayList.remove(1)
-        arrayList.subArrayList(Math.floor(1), Math.floor(2));
+        arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.clear();
         arrayList.trimToCurrentLength();
         expect(arrayList.getCapacity()).assertEqual(0);
@@ -1385,7 +1385,7 @@ export default function ArrayListTest2() {
         arrayList.add(4);
         arrayList.add(5);
         arrayList.add(4);
-        arrayList.forEach((value: number, index: number) => {
+        arrayList.forEach((value: number, index: int) => {
           result.add(value);
           result.add(index);
         });
@@ -1416,7 +1416,7 @@ export default function ArrayListTest2() {
         arrayList.add(5);
         arrayList.add(4);
         newArrayList.add(4)
-        arrayList.forEach((value: number, index: number) => {
+        arrayList.forEach((value: number, index: int) => {
           result.add(value);
           result.add(index);
         });
