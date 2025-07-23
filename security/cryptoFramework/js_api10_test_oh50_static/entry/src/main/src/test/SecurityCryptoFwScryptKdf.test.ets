@@ -26,11 +26,11 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let testAbilityContext:common.UIAbilityContext;
 
 
-async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfPromiseStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -39,9 +39,9 @@ async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): 
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -52,26 +52,28 @@ async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): 
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfPromiseStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       // });
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doScryptKdfPromiseStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
+
   return ret;
 }
 
-async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfSyncStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -80,9 +82,9 @@ async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Pro
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -93,25 +95,27 @@ async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Pro
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfSyncStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
-      clearTimeout(timeoutId);
+
     } catch (error: BusinessError) {
       console.error(`doScryptKdfSyncStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
-async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfCallbackStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -120,9 +124,9 @@ async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long):
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -134,17 +138,19 @@ async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long):
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfCallbackStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
-      clearTimeout(timeoutId);
+
     } catch (error: BusinessError) {
       console.error(`doScryptKdfCallbackStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 

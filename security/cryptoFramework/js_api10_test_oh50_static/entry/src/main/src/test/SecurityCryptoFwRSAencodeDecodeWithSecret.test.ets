@@ -31,11 +31,11 @@ let testAbilityContext:common.UIAbilityContext;
 async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let index1: number = Math.floor(Math.random() * 7);
@@ -47,28 +47,29 @@ async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doRSAEncodeDecodeByPasswdPromiseSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
 
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let index1: number = Math.floor(Math.random() * 7);
@@ -80,16 +81,17 @@ async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<bo
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doRSAEncodeDecodeByPasswdSyncSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }

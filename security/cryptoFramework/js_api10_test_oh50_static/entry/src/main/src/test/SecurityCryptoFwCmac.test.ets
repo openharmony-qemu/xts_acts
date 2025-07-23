@@ -36,7 +36,7 @@ async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: n
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -49,18 +49,18 @@ async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: n
       }
       await doCmacPromiseSpilt(spec, msg, symKey, blockSize);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacPromiseSplitStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacPromiseSplitStub “${error}“, error code: ${error.code}`);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
@@ -68,7 +68,7 @@ async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean>
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -81,18 +81,18 @@ async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean>
       }
       await doMacPromise(spec, symKey, msg);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacPromiseStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacPromiseStub “${error}“, error code: ${error.code}`);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
@@ -100,7 +100,7 @@ async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: numb
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -115,16 +115,17 @@ async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: numb
       await new Promise<void>((resolve, reject) => {
         timeoutId = setTimeout(() => {
           console.info("################ doCmacSyncSplitStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacSyncSplitStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
@@ -132,7 +133,7 @@ async function doCmacSyncStub(algName: string, msgLen: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
   let timeoutId:int = 0;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -145,18 +146,19 @@ async function doCmacSyncStub(algName: string, msgLen: int): Promise<boolean> {
       }
       doMacSync(spec, symKey, msg);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacSyncStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacSyncStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
@@ -166,7 +168,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     it("SUB_Security_CryptoFramework_Cmac_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let msgLen: number = 1024;
+        let msgLen: int = 1024;
         let blockSize: number = 25;
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         // Promise

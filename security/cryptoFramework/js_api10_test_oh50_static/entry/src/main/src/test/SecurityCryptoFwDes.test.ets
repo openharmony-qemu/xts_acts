@@ -29,7 +29,7 @@ async function doGenDes64Stub(mode: string): Promise<boolean> {
   let timeoutId:int = 0;
   let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, 1000 * 2);
   while (!timeFlag) {
@@ -49,16 +49,17 @@ async function doGenDes64Stub(mode: string): Promise<boolean> {
       }
       console.info("##################### doGenDes64Stub:" + mode);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -70,7 +71,7 @@ async function doEncryptDes64Stub(mode: string, type: asyncType): Promise<boolea
   let ret: boolean = true;
   let algName: string = "DES64";
   let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_PROMISE);
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, 1000 * 2);
   while (!timeFlag) {
@@ -98,16 +99,17 @@ async function doEncryptDes64Stub(mode: string, type: asyncType): Promise<boolea
       }
       console.info("##################### doEncryptDes64Stub:" + mode + ":" + ret);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -119,7 +121,7 @@ async function doUpdateEncryptDes64Stub(mode: string, type: asyncType): Promise<
   let ret: boolean = true;
   let algName: string = "DES64";
   let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_PROMISE);
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, 1000 * 2);
   while (!timeFlag) {
@@ -158,16 +160,17 @@ async function doUpdateEncryptDes64Stub(mode: string, type: asyncType): Promise<
       }
       console.info("##################### doUpdateEncryptDes64Stub:" + mode + ":" + ret);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }

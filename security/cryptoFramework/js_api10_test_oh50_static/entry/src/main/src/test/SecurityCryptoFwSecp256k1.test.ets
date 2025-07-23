@@ -37,12 +37,12 @@ let testAbilityContext:common.UIAbilityContext;
 async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId: int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
   let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let keyPair: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -60,16 +60,17 @@ async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Prom
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyByDigestSpec “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -77,11 +78,11 @@ async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Prom
 async function doSignVerifyByDigestSpecCallbackStub(algName: string, dataLen: int): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId: int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
   while (!timeFlag) {
     try {
@@ -100,27 +101,28 @@ async function doSignVerifyByDigestSpecCallbackStub(algName: string, dataLen: in
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyByDigestSpecCallback “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId: int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let keyPair_r: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -135,16 +137,17 @@ async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doAgreementByDigestSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -152,11 +155,11 @@ async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
 async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, dataLen: int, blockSize: number): Promise<boolean> {
   let timeFlag: boolean = false;
   let timeoutId: int = 0;
-  let intervalTime = 10000;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   let msg: cryptoFramework.DataBlob = await createFullData(dataLen);
   while (!timeFlag) {
     try {
@@ -202,16 +205,17 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyWithUpdateByDigestSpecCallbackStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
