@@ -32,6 +32,22 @@ function genGcmOrCcmParamsSpec(iv: number[], aad: number[], tag: number[], algNa
   return gcmParamsSpec;
 }
 
+function genCcmParamsSpec(iv: number[], aad: number[], tag: number[], algName: string): cryptoFramework.CcmParamsSpec {
+  let dataIv = new Uint8Array(iv);
+  let ivBlob: cryptoFramework.DataBlob = { data: dataIv };
+  let dataAad = new Uint8Array(aad);
+  let aadBlob: cryptoFramework.DataBlob = { data: dataAad };
+  let dataTag = new Uint8Array(tag);
+  let tagBlob: cryptoFramework.DataBlob = { data: dataTag };
+  let gcmParamsSpec: cryptoFramework.CcmParamsSpec = {
+    iv: ivBlob,
+    aad: aadBlob,
+    authTag: tagBlob,
+    algName: algName
+  };
+  return gcmParamsSpec;
+}
+
 function genIvParamsSpec(iv: number[]): cryptoFramework.IvParamsSpec {
   let dataIv = new Uint8Array(iv);
   let ivBlob: cryptoFramework.DataBlob = { data: dataIv };
@@ -461,6 +477,7 @@ let SM4_GCM_VECTOR: sm4GcmVector[] = [
 
 export {
   genGcmOrCcmParamsSpec,
+  genCcmParamsSpec,
   genIvParamsSpec,
   createSymKeySync,
   createSymKeyPromise,

@@ -405,7 +405,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
       let dataTag: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let specAlgName: string = "CcmParamsSpec";
       let dataLen: int = 20;
-      let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
+      let paramSpec: cryptoFramework.CcmParamsSpec = syncSymEncAndDecUtils.genCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
       try {
         let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
         let mode: string = "CCM";
@@ -1563,7 +1563,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "SM4_128";
-        let encAlgName: string = "SM4_128|GCM|NoPadding"
+        let encAlgName: string = "SM4_128|GCM|NoPadding";
         let dataTag: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0];
         let specAlgName: string = "GcmParamsSpec";
         for (let vector of syncSymEncAndDecUtils.SM4_GCM_VECTOR) {
