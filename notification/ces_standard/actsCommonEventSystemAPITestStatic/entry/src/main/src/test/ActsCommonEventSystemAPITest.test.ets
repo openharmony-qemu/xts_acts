@@ -328,7 +328,7 @@ export default function ActsCommonEventSystemAPITest() {
           notificationSlotType: notificationManager.SlotType.LIVE_VIEW,
           isOngoing: true,
           isUnremovable: false,
-          extraInfo: {
+          extendInfo: {
             'testKey': 'testValue'
           } as Record<String, Object>,
         }
@@ -391,7 +391,7 @@ export default function ActsCommonEventSystemAPITest() {
           notificationSlotType: notificationManager.SlotType.LIVE_VIEW,
           isOngoing: true,
           isUnremovable: false,
-          extraInfo: {
+          extendInfo: {
             'testKey': 'testValue'
           } as Record<String, Object>
         }
@@ -814,7 +814,7 @@ export default function ActsCommonEventSystemAPITest() {
           }
         }
 
-        for (let index: number = 0; index <= 10; index++) {
+        for (let index: int = 0; index <= 10; index++) {
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
