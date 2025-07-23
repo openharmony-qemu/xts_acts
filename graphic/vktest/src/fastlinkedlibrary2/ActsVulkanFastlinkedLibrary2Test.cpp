@@ -40,14 +40,14 @@ namespace OHOS {
     }
 
     /*
-     * @tc.number: ActsVulkanFastlinkedLibrary2Test
-     * @tc.name  : ActsVulkanFastlinkedLibrary2Test
+     * @tc.number: TestVulkanFastlinkedLibraryTestCase002
+     * @tc.name  : TestVulkanFastlinkedLibraryTestCase002
      * @tc.desc  : test vulkan xts
      * @tc.size  : MediumTest
      * @tc.type  : Function
      * @tc.level : Level 1
      */
-    HWTEST_F(ActsVulkanFastlinkedLibrary2Test, TestVulkanFastlinkedLibraryTestCase, Function | MediumTest | Level2)
+    HWTEST_F(ActsVulkanFastlinkedLibrary2Test, TestVulkanFastlinkedLibraryTestCase002, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanFastlinkedLibrary2Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {

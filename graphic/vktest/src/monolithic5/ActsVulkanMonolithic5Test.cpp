@@ -40,14 +40,14 @@ namespace OHOS {
     }
 
     /*
-     * @tc.number: ActsVulkanMonolithic5Test
-     * @tc.name  : ActsVulkanMonolithic5Test
+     * @tc.number: TestVulkanMonolithicTestCase005
+     * @tc.name  : TestVulkanMonolithicTestCase005
      * @tc.desc  : test vulkan xts
      * @tc.size  : MediumTest
      * @tc.type  : Function
      * @tc.level : Level 1
      */
-    HWTEST_F(ActsVulkanMonolithic5Test, TestVulkanMonolithicTestCase, Function | MediumTest | Level2)
+    HWTEST_F(ActsVulkanMonolithic5Test, TestVulkanMonolithicTestCase005, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanMonolithic5Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
