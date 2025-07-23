@@ -21,3 +21,4 @@ multimedia/media/media_js_standard/avPlayer/entry/src/main/resources/rawfile/No_
 multimedia/media/media_js_standard/avPlayer/entry/src/main/resources/rawfile/mjpeg_mp3.mp3 filter=lfs diff=lfs merge=lfs -text
 video.mp4 filter=lfs diff=lfs merge=lfs -text
 multimedia/media/media_js_standard/avPlayer/entry/src/main/resources/rawfile/H264_AAC_AAC_multiAudio.mp4 filter=lfs diff=lfs merge=lfs -text
+/customization/enterprise_device_management/edm_xts_stage/entry/src/ohosTest/resources/resfile/101mb.bmp filter=lfs diff=lfs merge=lfs -text
