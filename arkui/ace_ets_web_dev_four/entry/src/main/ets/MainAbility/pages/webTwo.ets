@@ -283,13 +283,13 @@ struct Second {
             case "emitPrefetchPage": {
               try {
                 this.webviewCtl.removeCache(true);
-                this.webviewCtl.loadUrl("https://www.huawei.com");
+                this.webviewCtl.loadUrl('https://www.huawei.com');
 
                 if (this.arr.length > 2) {
                   this.webviewCtl.removeCache(true);
                 }
-                this.webviewCtl.prefetchPage("https://www.huawei.com");
-                this.webviewCtl.loadUrl("https://www.huawei.com");
+                this.webviewCtl.prefetchPage('https://www.huawei.com');
+                this.webviewCtl.loadUrl('https://www.huawei.com');
 
                 setTimeout(() => {
                   if (this.arr.length > 3) {
