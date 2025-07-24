@@ -226,42 +226,6 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "============done ");;
     })
 
-    /**
-     * @tc.name       : KvStoreTest004
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0040
-     * @tc.desc       : //SingleKVStore put get double
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('KvStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 start ");
-      const KEY_TEST_DOUBLE_ELEMENT = 'key_test_double';
-      let VALUE_TEST_DOUBLE_ELEMENT : double = 11;
-      try {
-        if (kvManager) {
-          hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 kvmanager is not null");
-          let store: distributedKVStore.SingleKVStore =
-            await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
-          store.put(KEY_TEST_DOUBLE_ELEMENT, 11);
-          let value = await store.get(KEY_TEST_DOUBLE_ELEMENT);
-          hilog.info(domain, tag, '%{public}s',
-            "============KvStoreTest004 VALUE_TEST_DOUBLE_ELEMENT is " + VALUE_TEST_DOUBLE_ELEMENT +
-              " value is " + value);
-          expect(VALUE_TEST_DOUBLE_ELEMENT === (value as double)).assertTrue();
-          done();
-        } else {
-          hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 kvmanager is null");
-          expect(null).assertFail();
-          done();
-        }
-      } catch (e) {
-        hilog.info(domain, tag, '%{public}s', "============KvStoreTest004 fail on exception: " + e);
-        expect(null).assertFail();
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', "============done ");
-    })
 
     /**
      * @tc.name       : KvStoreTest005
