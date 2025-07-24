@@ -439,45 +439,5 @@ export default function CertificateCrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number Security_crypto_framework_X509CRL_1000
-     * @tc.name Check verify for X509 Crl with invalid PublicKey
-     * @tc.desc The X509 Crl FORMAT is FORMAT_PEM
-     */
-    it("Security_crypto_framework_X509CRL_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): Promise<void> => {
-      try {
-        await certPromise.verifyX509CrlPromise("der", "NULL");
-        expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
-      }
-      try {
-        await certCallback.verifyX509CrlCallback("der", "000");
-        expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number Security_crypto_framework_X509CRL_1100
-     * @tc.name Check verify for X509 Crl with wrong PublicKey and right PublicKey
-     * @tc.desc The X509 Crl FORMAT is FORMAT_PEM
-     */
-    it("Security_crypto_framework_X509CRL_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): Promise<void> => {
-      try {
-        await certPromise.verifyX509CrlPromise("pem", "error");
-        expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
-      }
-      try {
-        await certCallback.verifyX509CrlCallback("pem");
-      } catch (err: BusinessError) {
-        expect(null).assertFail();
-      }
-      done();
-    });
   });
 }

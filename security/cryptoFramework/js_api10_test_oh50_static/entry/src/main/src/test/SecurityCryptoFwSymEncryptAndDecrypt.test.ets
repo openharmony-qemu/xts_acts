@@ -537,7 +537,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for (let rsaSpec of syncSymEncAndDecUtils.ASY_CIPHER_OAEP_SPEC) {
           let algName: string = rsaSpec[0][0] != "RSA" ? rsaSpec[0][0] : "RSA2048";
           let padding: string = rsaSpec[1][0];
-          let keyPair= await syncSymEncAndDecUtils.createAsymKeySync(algName);
+          let keyPair = await syncSymEncAndDecUtils.createAsymKeySync(algName);
           let mdName: string = rsaSpec[2][0];
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {

@@ -196,6 +196,8 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
     }
     let pSource = new Uint8Array([1, 2, 3, 4]);
     cipher.setCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR, pSource);
+    let pS: string | Uint8Array = cipher.getCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR);
+    console.log("##################### pS:" + pS);
     let encryptCipher = cipher.doFinalSync(data);
 
     return encryptCipher;
