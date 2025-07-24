@@ -21,6 +21,7 @@ group("arkts_static") {
       "com_container_standard_static:ActsContainerStaticTest",
       "com_uri_standard_static:ActsUriStaticTest",
       "com_url_standard_static:ActsUrlStaticTest",
+      "stream_standard_test_static:ActsStreamStaticTest",
     ]
   }
 }
