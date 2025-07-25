@@ -82,7 +82,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -133,7 +133,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -178,7 +178,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -215,7 +215,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0400
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -262,7 +262,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -309,7 +309,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -357,7 +357,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -405,7 +405,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0800
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -452,7 +452,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_0900
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_0900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -500,7 +500,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1000
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -548,7 +548,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -597,7 +597,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -645,7 +645,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -692,7 +692,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1400
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -739,7 +739,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -787,7 +787,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -835,7 +835,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1601
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1601
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -872,7 +872,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -916,7 +916,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1800
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -961,7 +961,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_1900
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_1900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1005,7 +1005,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2000
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1049,7 +1049,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1096,7 +1096,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1147,7 +1147,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1205,7 +1205,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2400
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1256,7 +1256,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1301,7 +1301,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1346,7 +1346,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1389,7 +1389,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2800
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1434,7 +1434,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_2900
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_2900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1479,7 +1479,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3000
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1522,7 +1522,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1557,7 +1557,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1592,7 +1592,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1626,7 +1626,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1661,7 +1661,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1695,7 +1695,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1730,7 +1730,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3800
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1757,7 +1757,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3900
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1787,7 +1787,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4000
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1817,7 +1817,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1843,7 +1843,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1869,7 +1869,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4400
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1895,7 +1895,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1921,7 +1921,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1964,7 +1964,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1999,7 +1999,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4800
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2036,7 +2036,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4900
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2078,7 +2078,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5000
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2103,7 +2103,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2128,7 +2128,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5200
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2160,7 +2160,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5300
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2200,7 +2200,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5400
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2240,7 +2240,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5500
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2280,7 +2280,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5600
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -2325,7 +2325,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_5700
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_5700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1

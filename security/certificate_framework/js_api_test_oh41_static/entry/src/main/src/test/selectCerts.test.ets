@@ -38,7 +38,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0100
-     * @tc.name check CertCRLCollection.selectCerts with parameter null
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0100
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -57,7 +57,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0200
-     * @tc.name check CertCRLCollection.selectCerts with parameter null
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0200
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -77,7 +77,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0300
-     * @tc.name check CertCRLCollection.selectCerts with parameter empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0300
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -97,7 +97,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0400
-     * @tc.name check CertCRLCollection.selectCerts with parameter x509Cert, the cert is in collection
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0400
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -129,7 +129,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0500
-     * @tc.name check CertCRLCollection.selectCerts with parameter x509Cert, the cert is not in collection
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0500
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -160,7 +160,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0600
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, in incorrect format
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -190,7 +190,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0700
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, in duration
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0700
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -214,7 +214,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0800
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, less than notBefore
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -238,7 +238,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_0900
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, equal with notBefore
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_0900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -262,7 +262,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1000
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, equal with notAfterDate
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1000
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -286,7 +286,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1100
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate, greater than notAfterDate
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1100
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -310,7 +310,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1200
-     * @tc.name check CertCRLCollection.selectCerts with parameter validDate empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1200
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -340,7 +340,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1300
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -365,7 +365,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1400
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1400
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -389,7 +389,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1500
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer, change country and province order
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1500
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -418,7 +418,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1600
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer, change country order
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -448,7 +448,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1700
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer not resolvable
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1700
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -478,7 +478,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1800
-     * @tc.name check CertCRLCollection.selectCerts with parameter issuer empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1800
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -508,7 +508,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_1900
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all true, length 9
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_1900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -532,7 +532,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2000
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage partly true, length 9
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -555,7 +555,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2100
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all false, length 9
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2100
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -579,7 +579,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2200
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all true, length 8, same as cert
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2200
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -603,7 +603,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2300
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all true, length 8, not same as cert
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2300
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -626,7 +626,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2400
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all true, length 10
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2400
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -650,7 +650,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2500
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all false, length 10
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2500
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -674,7 +674,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2600
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2600
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -704,7 +704,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2700
-     * @tc.name check CertCRLCollection.selectCerts with parameter keyUsage all true, length 9, cert does not contain keyUsage
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2700
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -728,7 +728,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2800
-     * @tc.name check CertCRLCollection.selectCerts with parameter serialNumber correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -752,7 +752,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_2900
-     * @tc.name check CertCRLCollection.selectCerts with parameter serialNumber incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_2900
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -776,7 +776,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3000
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -800,7 +800,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3100
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3100
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -824,7 +824,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3200
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject, change country and province order
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3200
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -854,7 +854,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3300
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject, change country and province order
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3300
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -884,7 +884,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3400
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject not resolvable
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3400
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -914,7 +914,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3500
-     * @tc.name check CertCRLCollection.selectCerts with parameter subject empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3500
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -944,7 +944,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3600
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKey correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3600
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -968,7 +968,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3700
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKey incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3700
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -994,7 +994,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3800
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKey empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3800
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -1026,7 +1026,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_3900
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKeyAlgID correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_3900
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1050,7 +1050,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_4000
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKeyAlgID incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_4000
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1074,7 +1074,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_4100
-     * @tc.name check CertCRLCollection.selectCerts with parameter publicKeyAlgID empty
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_4100
      * @tc.desc Use Callback Type
      * @tc.size SmallTest
      * @tc.level Level2
@@ -1104,7 +1104,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_4200
-     * @tc.name check CertCRLCollection.selectCerts with parameter all correct
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_4200
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1
@@ -1143,7 +1143,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Select_Certs_Func_4300
-     * @tc.name check CertCRLCollection.selectCerts with parameter partly incorrect
+     * @tc.name SUB_Security_Cert_Framework_Select_Certs_Func_4300
      * @tc.desc Use Promise Type
      * @tc.size SmallTest
      * @tc.level Level1

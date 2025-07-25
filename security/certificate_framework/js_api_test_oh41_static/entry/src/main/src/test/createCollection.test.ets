@@ -39,7 +39,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0300
-     * @tc.name createCertCRLCollection with empty certs
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0300
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -57,7 +57,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0400
-     * @tc.name createCertCRLCollection with 0 certs, 2 crl
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0400
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -78,7 +78,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0500
-     * @tc.name createCertCRLCollection with one pem cert
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0500
      * @tc.desc crl not set
      * @tc.size SmallTest
      * @tc.level Level1
@@ -97,7 +97,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0700
-     * @tc.name createCertCRLCollection with one pem cert,0 crl
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0700
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -116,7 +116,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0800
-     * @tc.name createCertCRLCollection with one pem cert,one pem crl
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0800
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -136,7 +136,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_0900
-     * @tc.name createCertCRLCollection with one pem cert,two pem crls
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_0900
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -158,7 +158,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1000
-     * @tc.name createCertCRLCollection with one der cert,one der crl
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_1000
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -178,7 +178,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1100
-     * @tc.name createCertCRLCollection with one der cert,two der crls
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_1100
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1
@@ -200,7 +200,7 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_Create_Collection_Func_1200
-     * @tc.name createCertCRLCollection with two pem certs and two der certs,two pem crls and two der crls
+     * @tc.name SUB_Security_Cert_Framework_Create_Collection_Func_1200
      * @tc.desc set crl
      * @tc.size SmallTest
      * @tc.level Level1

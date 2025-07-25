@@ -22,7 +22,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0000
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -68,7 +68,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0001
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0001
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -114,7 +114,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0002
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -160,7 +160,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0003
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0003
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -206,7 +206,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0004
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0004
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -252,7 +252,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0005
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0005
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -298,7 +298,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0006
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0006
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -344,7 +344,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0007
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0007
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -393,7 +393,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_008
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_008
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -442,7 +442,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0100
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0100
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -467,7 +467,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0200
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0200
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -499,7 +499,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0300
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0300
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -526,7 +526,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0400
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0400
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -560,7 +560,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0401
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0401
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -594,7 +594,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0402
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0402
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -628,7 +628,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0403
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0403
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -662,7 +662,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0404
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0404
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -696,7 +696,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0405
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0405
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -730,7 +730,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0406
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0406
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -764,7 +764,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0407
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0407
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -798,7 +798,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0408
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0408
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -832,7 +832,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0500
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0500
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -857,7 +857,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0600
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0600
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -883,7 +883,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0700
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Padding Is Not Expect. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0700
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -907,7 +907,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0800
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. keyPair Is Not Expect. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0800
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -934,7 +934,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0900
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. keyPair Is Not Expect. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_0900
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -957,7 +957,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1000
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. doFinalSync(null). Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1000
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -981,7 +981,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1100
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1100
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -1005,7 +1005,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1200
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1200
      * @tc.desc algorithm is RSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -1077,7 +1077,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1300
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1300
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1133,7 +1133,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1400
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1400
      * @tc.desc algorithm is SM2_256
      * @tc.size Medium
      * @tc.type Func
@@ -1163,7 +1163,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1500
-     * @tc.name Test Asymmetric Alg algName Encrypt And Decrypt. Sync Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1500
      * @tc.desc algorithm is SM2_256
      * @tc.size Medium
      * @tc.type Func
@@ -1244,7 +1244,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1600
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1600
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1284,7 +1284,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1700
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1700
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1324,7 +1324,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1800
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1800
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1361,7 +1361,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1900
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_1900
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1413,7 +1413,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2000
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2000
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1447,7 +1447,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2100
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2100
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1485,7 +1485,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2200
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2200
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1523,7 +1523,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2300
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2300
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1554,7 +1554,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2400
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -1596,7 +1596,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2500
-     * @tc.name Test Symmetric Alg algName Encrypt And Decrypt. Split Update. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2500
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func

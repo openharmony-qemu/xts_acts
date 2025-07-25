@@ -47,7 +47,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0100
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -87,7 +87,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0200
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -117,7 +117,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0300
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -149,7 +149,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0400
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0400
      * @tc.desc The X509 Cert Format is DER
      * @tc.size SmallTest
      * @tc.level Level1
@@ -182,7 +182,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0500
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0500
      * @tc.desc The X509 Cert Format is DER
      * @tc.size SmallTest
      * @tc.level Level1
@@ -213,7 +213,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0700
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0700
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -238,7 +238,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_0900
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_0900
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -268,7 +268,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_1000
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_1000
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -298,7 +298,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_1100
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_1100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -320,7 +320,7 @@ export default function certFrameworkParseP12CertTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_1200
-     * @tc.name parse pkcs12 cert
+     * @tc.name SUB_Security_Cert_Framework_ParseP12Cert_Func_1200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size SmallTest
      * @tc.level Level1

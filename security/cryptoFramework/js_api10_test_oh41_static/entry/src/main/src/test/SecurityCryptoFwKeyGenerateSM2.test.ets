@@ -23,7 +23,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100
-     * @tc.name Test createAsyKeyGeneratorBySpec error params process is fail
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100
      * @tc.desc 1. AsyKeyGenerator with algName SM2_512
      * @tc.size Medium
      * @tc.type Func
@@ -47,7 +47,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200
-     * @tc.name Test createAsyKeyGeneratorBySpec error type. process is fail
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200
      * @tc.desc 1. AsyKeyGenerator with algName SM2_512
      * @tc.size Medium
      * @tc.type Func
@@ -71,7 +71,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300
-     * @tc.name Test keyGenerateBySpec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with Promise style
      * @tc.size Medium
@@ -94,7 +94,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400
-     * @tc.name Test keyGenerateBySpec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -117,7 +117,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500
-     * @tc.name Test keyGenerateBySpec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with Promise style
      * @tc.size Medium
@@ -140,7 +140,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600
-     * @tc.name Test keyGenerateBySpec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -163,7 +163,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700
-     * @tc.name Test priKeyGenerate By pub Spec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700
      * @tc.desc 1. AsyKeyGenerator with algName SM2
      * @tc.desc 2. Test interface with Promise style
      * @tc.size Medium
@@ -187,7 +187,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800
-     * @tc.name Test priKeyGenerate By pub Spec sm2. process is fail
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -211,7 +211,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000
-     * @tc.name Test getAsyKeySpec sm2. process is success
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000
      * @tc.desc 1. AsyKeyGenerator with algName SM2_256
      * @tc.desc 2. Test interface with Promise style
      * @tc.size Medium
@@ -244,7 +244,7 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200
-     * @tc.name Test getAsyKeySpec sm2. get format,algName. process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200
      * @tc.desc AsyKeyGenerator with spec
      * @tc.size Medium
      * @tc.type Func

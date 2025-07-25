@@ -43,7 +43,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_0100
-     * @tc.name use RsaKeyPair structure to create KeyGenerator,and generate KeyPair
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0100
      * use keyPair.pubkey to get AsyKeySpecItem
      * expecting a successful return.
      * @tc.desc the asyKeySpec is RSA key pair, Use the callback Style of Interface
@@ -80,7 +80,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0200
-     * @tc.name use DSAKeyPair structure to create KeyGenerator,and generate KeyPair
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0200
      * use keyPair.pubkey to get AsyKeySpecItem
      * expecting a successful return.
      * @tc.desc the asyKeySpec is Dsa Key Pair, Use the promise Style of Interface
@@ -125,7 +125,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0300
-     * @tc.name use ECCKeyPair structure to create KeyGenerator,and generate KeyPair
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0300
      * use keyPair.pubkey to get AsyKeySpecItem
      * expecting a successful return.
      * @tc.desc the asyKeySpec is RSA key pair, Use the callback Style of Interface
@@ -204,7 +204,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0400
-     * @tc.name RSA priKey parsing and parameter acquisition
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0400
      * @tc.desc the asyKeySpec is genRsa2048KeyPairSpec, Use the promise Style of Interface
      */
     it(
@@ -239,7 +239,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0500
-     * @tc.name DSA priKey parsing and parameter acquisition
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0500
      * @tc.desc the asyKeySpec is genDsa2048KeyPairSpec, Use the callback Style of Interface
      */
     it(
@@ -282,7 +282,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0600
-     * @tc.name ECC priKey parsing and parameter acquisition
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0600
      * @tc.desc the asyKeySpec is eccCommonSpec, Use the promise Style of Interface
      */
     it(
@@ -353,7 +353,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0700
-     * @tc.name pubKey parsing and parameter acquisition failed
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0700
      * @tc.desc Pass in exception parameter mode cryptoFramework.AsyKeySpecItem.DSA_P_BN, and call it synchronously
      * @tc.desc Pass in exception parameter mode 1024, and call it synchronously
      * @tc.desc Call it as a synchronously without passing in parameters
@@ -383,7 +383,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_0800
-     * @tc.name priKey parsing and parameter acquisition failed
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_0800
      * @tc.desc Pass in exception parameter mode cryptoFramework.AsyKeySpecItem.DSA_P_BN, and call it synchronously
      * @tc.desc Pass in exception parameter mode cryptoFramework.AsyKeySpecItem.DSA_P_BN and
      * cryptoFramework.AsyKeySpecItem.DSA_P_BN, and call it synchronously
@@ -415,7 +415,7 @@ export default function AsyGetKeySpecBySpecJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeySpec_Func_1000
-     * @tc.name prikey zeroing
+     * @tc.name Security_CryptoFramework_AsyKeySpec_Func_1000
      * @tc.desc the asyKeySpec is eccCommonSpec, Use the promise Style of Interface
      */
     it(

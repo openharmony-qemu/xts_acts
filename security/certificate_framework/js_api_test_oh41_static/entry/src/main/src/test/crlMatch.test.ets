@@ -46,7 +46,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0100
-     * @tc.name check X509CRL match for parameter null
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0100
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -66,7 +66,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0200
-     * @tc.name check X509CRL match for parameter undefined
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0200
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -86,7 +86,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0300
-     * @tc.name check X509CRL match for parameter empty
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0300
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -113,7 +113,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0400
-     * @tc.name check X509CRL match for parameter issuer all match
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0400
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -143,7 +143,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0500
-     * @tc.name check X509CRL match for parameter issuer partly match
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0500
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -173,7 +173,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0600
-     * @tc.name check X509CRL match for parameter issuer not match
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0600
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -203,7 +203,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0700
-     * @tc.name check X509CRL match for parameter issuer not resolvable
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0700
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -233,7 +233,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0800
-     * @tc.name check X509CRL match for parameter issuer empty
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0800
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level2
@@ -263,7 +263,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_0900
-     * @tc.name check X509CRL match for parameter x509Cert, which is in CRL
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_0900
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -283,7 +283,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1000
-     * @tc.name check X509CRL match for parameter x509Cert, which is not in CRL
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1000
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -303,7 +303,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1100
-     * @tc.name check X509CRL match for parameter crl number
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1100
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1
@@ -342,7 +342,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CRL_Match_Func_1200
-     * @tc.name check X509CRL match for parameter crl number
+     * @tc.name SUB_Security_Cert_Framework_CRL_Match_Func_1200
      * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
      * @tc.size SmallTest
      * @tc.level Level1

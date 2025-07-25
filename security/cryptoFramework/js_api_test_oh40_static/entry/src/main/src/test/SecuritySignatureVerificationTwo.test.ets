@@ -30,7 +30,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1900
-     * @tc.name Use createAsyKeyGenerator to Create DSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1900
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the DSAKeyPar structure with a signature verification type of "DSA|SHA224"
      * and use a callback style interface
@@ -59,7 +59,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2000
-     * @tc.name Use createAsyKeyGenerator to Create DSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2000
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the DSAKeyPar structure with a signature verification type of "DSA1024|SHA224"
      * and use a callback style interface
@@ -88,7 +88,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2100
-     * @tc.name Use createAsyKeyGenerator to Create DSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2100
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the DSAKeyPar structure with a signature verification type of "DSA2048|SHA256"
      * and use a promise style interface
@@ -117,7 +117,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2200
-     * @tc.name Use createAsyKeyGenerator to Create DSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2200
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the DSAKeyPar structure with a signature verification type of "DSA3072|SHA384"
      * and use a callback style interface
@@ -146,7 +146,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2300
-     * @tc.name Scenario testing of signature verification and key generation and conversion combination
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2300
      * @tc.desc Pass in key generation parameter "DSA1024|PRIMES_2",
      * signature verification parameter "DSA1024|SHA1",
      * and use a promise style interface
@@ -172,7 +172,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2400
-     * @tc.name Scenario testing of signature verification and key generation and conversion combination
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2400
      * @tc.desc Pass in key generation parameter "DSA2048|PRIMES_2",
      * signature verification parameter "DSA2048|SHA256",
      * and use a callback style interface
@@ -198,7 +198,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2500
-     * @tc.name Scenario testing of signature verification and key generation and conversion combination
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2500
      * @tc.desc Pass in key generation parameter "DSA3072|PRIMES_2",
      * signature verification parameter "DSA3072|SHA384",
      * and use a promise style interface
@@ -224,7 +224,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2600
-     * @tc.name Exception in creating signature object
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2600
      * @tc.desc Pass in an exception parameter "RSA10000|PKCS1|SHA224" and call it as a synchronously
      * @tc.desc Pass in an exception parameter null and call it as a synchronously
      * @tc.desc Pass in an exception parameter "RSA1024PKCS1MD5RSA1024PKCS1MD5RSA1024PKCS1MD5" and
@@ -263,7 +263,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2800
-     * @tc.name Exception in adding signature data to rsa objects
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2800
      * @tc.desc Call it as a promise without passing in parameters
      * @tc.desc Pass in two exception parameters "This is a sign test" and "This is a sign test"
      * and call them as promise
@@ -306,7 +306,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_2900
-     * @tc.name Signature data anomaly
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_2900
      * @tc.desc Pass in an exception parameter "This is a sign test" and "This is a sign test"
      * call it in the form of a callback
      * @tc.descPass in an exception parameter null and call it as a callback
@@ -342,7 +342,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3000
-     * @tc.name Exception in signature setting parameter mode
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3000
      * @tc.desc Pass in exception parameter mode 1024, parameter 2, and call it synchronously
      * @tc.desc Pass in exception parameter mode cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM,
      * parameter 4294967296, and call it synchronously
@@ -375,7 +375,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3200
-     * @tc.name Abnormal situation of creating verification objects
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3200
      * @tc.desc Pass in an exception parameter "RSA10000|SHA224" and call it as a synchronously
      * @tc.desc Pass in an exception parameter null and call it as a synchronously
      * @tc.desc Pass in an exception parameter "RSA1024PKCS1MD5RSA1024PKCS1MD5RSA1024PKCS1MD5" and
@@ -426,7 +426,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3300
-     * @tc.name Abnormal situation of initialization verification object
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3300
      * @tc.desc Pass in an exception parameter null and call it as a async
      * @tc.desc Pass in the two public keys generated by the exception parameter rsa and call them as async
      * @tc.desc Pass in the public key generated by the exception parameter dsa and call it as a async
@@ -480,7 +480,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3400
-     * @tc.name Abnormal situation of additional signature verification data
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3400
      * @tc.desc Call it as a promise without passing in parameters
      * @tc.desc Pass in an exception parameter null and call it as a promise
      * @tc.desc Pass in an exception parameter "" and call it as a promise
@@ -523,7 +523,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3500
-     * @tc.name Abnormal situation of visa verification signature data
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3500
      * @tc.desc Call it as a callback without passing in parameters
      * @tc.desc Pass in an exception parameter null and call it as a callback
      * @tc.desc Pass in an exception parameter "" and call it as a callback
@@ -566,7 +566,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3600
-     * @tc.name Abnormal situation of parameter mode for signature verification setting
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3600
      * @tc.desc Pass in exception parameter mode cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM,
      * parameter 0, and call it synchronously
      * @tc.desc Pass in exception parameter mode cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM,
@@ -617,7 +617,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3700
-     * @tc.name Abnormal situation of parameter mode for signature verification getting
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3700
      * @tc.desc Pass in exception parameter mode 10000, and call it synchronously
      * @tc.desc Call it as a synchronously without passing in parameters
      * @tc.desc Pass in exception parameter mode 6, and call it synchronously
@@ -648,7 +648,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_3800
-     * @tc.name Signature verification and corresponding algorithm for obtaining signatures
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_3800
      * @tc.desc Pass in algorithm name "RSA1024|PKCS1|SHA512" and call it using the promise method
      */
     it(

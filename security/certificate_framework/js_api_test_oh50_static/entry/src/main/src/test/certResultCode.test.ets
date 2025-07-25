@@ -59,7 +59,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0100
-     * @tc.name parse cert and verify, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0100
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -85,7 +85,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0100
-     * @tc.name parse cert and verify, CallBack style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -111,7 +111,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0300
-     * @tc.name parse cert and verify, CallBack style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -148,7 +148,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0400
-     * @tc.name parse cert and verify, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0400
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -180,7 +180,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0700
-     * @tc.name parse CRL, Callback style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0700
      * @tc.desc The X509 CRL Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -213,7 +213,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1300
-     * @tc.name parse cert and get pubkey, Promise style.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1300
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
      * @tc.level Level1
@@ -238,7 +238,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1400
-     * @tc.name parse cert and check date.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1400
      * @tc.desc The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
      * @tc.size Medium
      * @tc.level Level1
@@ -264,7 +264,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1600
-     * @tc.name parse cert and check date.
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1600
      * @tc.desc The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
      * @tc.size Medium
      * @tc.level Level1
@@ -290,7 +290,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1800
-     * @tc.name parse cert and check date, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1800
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -315,7 +315,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1900
-     * @tc.name parse cert and check date, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1900
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -340,7 +340,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2000
-     * @tc.name parse cert and check signature, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2000
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -365,7 +365,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2100
-     * @tc.name parse cert and check signature alg name, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2100
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -397,7 +397,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2200
-     * @tc.name parse cert and check signature alg oid, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2200
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -422,7 +422,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2300
-     * @tc.name parse cert and check signature alg oid, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2300
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -446,7 +446,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2400
-     * @tc.name parse cert and check signature alg oid, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2400
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -471,7 +471,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2500
-     * @tc.name parse cert and check ExtKeyUsage, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2500
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -496,7 +496,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2600
-     * @tc.name parse cert and check keyUsage, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2600
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -521,7 +521,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2700
-     * @tc.name parse cert and check subject alt name, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2700
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -546,7 +546,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2800
-     * @tc.name parse cert and check issuer alt name, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2800
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -571,7 +571,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3000
-     * @tc.name parse cert and check issuer alt name, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3000
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -596,7 +596,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3100
-     * @tc.name parse cert and check crl point, return ERR_RUNTIME_ERROR
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3100
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -621,7 +621,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3200
-     * @tc.name parse cert and check crl point, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3200
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -646,7 +646,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3300
-     * @tc.name parse cert and check issuer, return ERR_OUT_OF_MEMORY
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3300
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -672,7 +672,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3400
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3400
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -697,7 +697,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3500
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3500
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -723,7 +723,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3600
-     * @tc.name parse cert and check extension, return INVALID_PARAMS、ERR_RUNTIME_ERROR
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3600
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -765,7 +765,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3700
-     * @tc.name parse cert and check extension, return INVALID_PARAMS、ERR_RUNTIME_ERROR
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3700
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -802,7 +802,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3800
-     * @tc.name parse cert and check extension, return INVALID_PARAMS、ERR_RUNTIME_ERROR
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3800
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -821,7 +821,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3900
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3900
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -846,7 +846,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4000
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4000
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -872,7 +872,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4100
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4100
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -898,7 +898,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4200
-     * @tc.name parse cert and check extension, return INVALID_PARAMS、ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4200
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -942,7 +942,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5100
-     * @tc.name parse cert and check extension, return INVALID_PARAMS
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5100
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -968,7 +968,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5200
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5200
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -994,7 +994,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5500
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5500
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1019,7 +1019,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5600
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5600
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1044,7 +1044,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5700
-     * @tc.name parse cert and check extension, return ERR_OUT_OF_MEMORY
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5700
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1070,7 +1070,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5800
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5800
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1096,7 +1096,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_6900
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_6900
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1121,7 +1121,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7000
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7000
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1146,7 +1146,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7300
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7300
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1172,7 +1172,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7500
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7500
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1202,7 +1202,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7900
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7900
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1227,7 +1227,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8200
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8200
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1252,7 +1252,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8300
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8300
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1278,7 +1278,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8600
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8600
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1303,7 +1303,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8700
-     * @tc.name parse cert chain, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8700
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1337,7 +1337,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8800
-     * @tc.name parse cert and check extension, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8800
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1373,7 +1373,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8900
-     * @tc.name parse cert chain, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8900
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1406,7 +1406,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9000
-     * @tc.name parse cert chain, return ERR_CRYPTO_OPERATION
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9000
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1430,7 +1430,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9100
-     * @tc.name cert pkcs7 cms
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9100
      * @tc.desc Use Promise Type
      * @tc.size Medium
      * @tc.level Level1
@@ -1479,7 +1479,7 @@ export default function certFrameworkResultCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9200
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9200
      * @tc.desc The X509 CSR
      * @tc.size Medium
      * @tc.level Level1

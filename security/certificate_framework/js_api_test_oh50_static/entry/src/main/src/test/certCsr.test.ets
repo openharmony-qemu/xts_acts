@@ -67,7 +67,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0100
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0100
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -102,7 +102,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0200
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0200
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -138,7 +138,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0300
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0300
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -174,7 +174,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0400
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0400
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -210,7 +210,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0500
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0500
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -250,7 +250,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0600
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0600
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -286,7 +286,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0700
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0700
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -323,7 +323,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0800
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0800
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -361,7 +361,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_0900
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_0900
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -392,7 +392,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1000
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1000
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -422,7 +422,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1100
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1100
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -458,7 +458,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1200
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1200
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -491,7 +491,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1201
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1201
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -524,7 +524,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1300
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1300
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -556,7 +556,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1301
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1301
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -588,7 +588,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1400
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1400
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -621,7 +621,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1500
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1500
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -654,7 +654,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1501
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1501
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -687,7 +687,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1502
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1502
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -720,7 +720,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1600
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1600
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -752,7 +752,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1700
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1700
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -784,7 +784,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1701
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1701
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -816,7 +816,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1800
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1800
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -852,7 +852,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_1900
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_1900
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1
@@ -889,7 +889,7 @@ export default function certFrameworkCertCsrTestUnit() {
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertCsr_Func_2000
-     * @tc.name generate csr
+     * @tc.name SUB_Security_Cert_Framework_CertCsr_Func_2000
      * @tc.desc The X509 CSR
      * @tc.size SmallTest
      * @tc.level Level1

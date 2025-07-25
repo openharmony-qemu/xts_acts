@@ -24,7 +24,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
-     * @tc.name Test convertKey with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
      * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -48,7 +48,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200
-     * @tc.name Test convertKey with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200
      * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -72,7 +72,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
-     * @tc.name Test key generate with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -99,7 +99,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400
-     * @tc.name Test key generate with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -126,7 +126,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
-     * @tc.name Test key generate with dh, process success, AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
@@ -148,7 +148,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
-     * @tc.name Test key generate with dh, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -171,7 +171,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -194,7 +194,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -217,7 +217,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -240,7 +240,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000
-     * @tc.name Test key compare Spec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generateKeyPair by DH_ffdhe2048, compare Spec
      * @tc.size Medium
      * @tc.type Func
@@ -273,7 +273,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
      * @tc.desc generatePubKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -298,7 +298,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
      * @tc.desc generatePubKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -323,7 +323,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300
      * @tc.desc generatePriKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -348,7 +348,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
      * @tc.desc generatePriKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -373,7 +373,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
      * @tc.desc generateKeyPair by spec
      * @tc.desc getAsyKeySpec
      * @tc.size Medium
@@ -401,7 +401,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
      * @tc.desc generateKeyPair by spec, getAsyKeySpec
      * @tc.size Medium
      * @tc.type Func
@@ -428,7 +428,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
-     * @tc.name Test key format/algName with dh. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
      * @tc.desc generateKeyPair by DH_modp1536
      * @tc.size Medium
      * @tc.type Func

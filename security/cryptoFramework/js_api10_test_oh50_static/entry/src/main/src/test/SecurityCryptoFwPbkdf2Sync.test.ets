@@ -22,7 +22,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0100
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0100
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0200
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0200
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0201
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0201
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -109,7 +109,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0300
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0300
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -138,7 +138,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0400
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0400
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -167,7 +167,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0500
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0500
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -193,7 +193,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0501
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0501
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -219,7 +219,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0502
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0502
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -245,7 +245,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0600
-     * @tc.name Test PBKDF2 algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0600
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func
@@ -271,7 +271,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0700
-     * @tc.name Test PBKDF2 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0700
      * @tc.desc algorithm is PBKDF2
      * @tc.size Medium
      * @tc.type Func

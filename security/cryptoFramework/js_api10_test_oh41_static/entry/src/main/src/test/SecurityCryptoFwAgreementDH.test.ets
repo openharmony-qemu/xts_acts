@@ -23,7 +23,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Agreement_DH_Func_0100
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0100
      * @tc.desc AsyKeyGenerator with algName DH_modp1536
      * @tc.size Medium
      * @tc.type Func
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0200
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0200
      * @tc.desc AsyKeyGenerator with algName DH_modp2048
      * @tc.size Medium
      * @tc.type Func
@@ -79,7 +79,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0300
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0300
      * @tc.desc AsyKeyGenerator with algName DH_modp3072
      * @tc.size Medium
      * @tc.type Func
@@ -107,7 +107,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0400
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0400
      * @tc.desc AsyKeyGenerator with algName DH_modp4096
      * @tc.size Medium
      * @tc.type Func
@@ -135,7 +135,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0500
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0500
      * @tc.desc AsyKeyGenerator with algName DH_modp6144
      * @tc.size Medium
      * @tc.type Func
@@ -163,7 +163,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0600
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0600
      * @tc.desc AsyKeyGenerator with algName DH_modp8192
      * @tc.size Medium
      * @tc.type Func
@@ -191,7 +191,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0700
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0700
      * @tc.desc AsyKeyGenerator with algName DH_ffdhe2048
      * @tc.size Medium
      * @tc.type Func
@@ -219,7 +219,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0800
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0800
      * @tc.desc AsyKeyGenerator with algName DH_ffdhe3072
      * @tc.size Medium
      * @tc.type Func
@@ -247,7 +247,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_0900
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_0900
      * @tc.desc AsyKeyGenerator with algName DH_ffdhe4096
      * @tc.size Medium
      * @tc.type Func
@@ -275,7 +275,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1000
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1000
      * @tc.desc AsyKeyGenerator with algName DH_ffdhe6144
      * @tc.size Medium
      * @tc.type Func
@@ -303,7 +303,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1100
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1100
      * @tc.desc AsyKeyGenerator with algName DH_ffdhe8192
      * @tc.size Medium
      * @tc.type Func
@@ -331,7 +331,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1200
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1200
      * @tc.desc AsyKeyGeneratorBySpec with algName DH
      * @tc.size Medium
      * @tc.type Func
@@ -356,7 +356,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1300
-     * @tc.name Test agreement with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1300
      * @tc.desc AsyKeyGeneratorByCommonSpec with algName DH
      * @tc.size Medium
      * @tc.type Func
@@ -381,7 +381,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1400
-     * @tc.name Test agreement with dh, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1400
      * @tc.desc AsyKeyGeneratorBySpec with algName DH_modp1536
      * @tc.size Medium
      * @tc.type Func
@@ -409,7 +409,7 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_DH_Func_1500
-     * @tc.name Test Agreement algName with dh. Process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_DH_Func_1500
      * @tc.desc create Agreement by DH_modp1536
      * @tc.size Medium
      * @tc.type Func

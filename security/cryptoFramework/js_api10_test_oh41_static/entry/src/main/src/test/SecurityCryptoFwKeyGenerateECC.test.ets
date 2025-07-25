@@ -27,7 +27,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0100
-     * @tc.name test convertKey with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0100
      * @tc.desc AsyKeyGenerator with algName X25519, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0200
-     * @tc.name test convertKey with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0200
      * @tc.desc AsyKeyGenerator with algName X25519, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -75,7 +75,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0300
-     * @tc.name test key generate with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0300
      * @tc.desc AsyKeyGeneratorBySpec with X25519Spec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -100,7 +100,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0400
-     * @tc.name test key generate bySpec with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0400
      * @tc.desc generatePriKey by X25519Spec
      * @tc.size Medium
      * @tc.type Func
@@ -125,7 +125,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0500
-     * @tc.name test key generate with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0500
      * @tc.desc AsyKeyGeneratorBySpec with X25519Spec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -150,7 +150,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0600
-     * @tc.name test key generate bySpec with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0600
      * @tc.desc generatePriKey by X25519spec
      * @tc.size Medium
      * @tc.type Func
@@ -175,7 +175,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0700
-     * @tc.name test key generate bySpec with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0700
      * @tc.desc generateKeyPair by X25519spec, getAsyKeySpec
      * @tc.size Medium
      * @tc.type Func
@@ -202,7 +202,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0800
-     * @tc.name test key generate bySpec with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0800
      * @tc.desc generateKeyPair by X25519, getAsyKeySpec
      * @tc.size Medium
      * @tc.type Func
@@ -229,7 +229,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0900
-     * @tc.name test convertKey with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_0900
      * @tc.desc AsyKeyGenerator with algName Ed25519, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -253,7 +253,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1000
-     * @tc.name test convertKey with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1000
      * @tc.desc AsyKeyGenerator with algName Ed25519, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -277,7 +277,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1100
-     * @tc.name test key generate with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1100
      * @tc.desc AsyKeyGeneratorBySpec with Ed25519Spec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -302,7 +302,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1200
-     * @tc.name test key generate bySpec with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1200
      * @tc.desc generatePriKey by Ed25519spec
      * @tc.size Medium
      * @tc.type Func
@@ -327,7 +327,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1300
-     * @tc.name test key generate with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1300
      * @tc.desc AsyKeyGeneratorBySpec with Ed25519Spec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -352,7 +352,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1400
-     * @tc.name test key generate bySpec with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1400
      * @tc.desc generatePriKey by Ed25519Spec
      * @tc.size Medium
      * @tc.type Func
@@ -377,7 +377,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1500
-     * @tc.name test key generate bySpec with ECC, promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1500
      * @tc.desc generateKeyPair by Ed25519Spec, getAsyKeySpec
      * @tc.size Medium
      * @tc.type Func
@@ -404,7 +404,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1600
-     * @tc.name test key generate bySpec with ECC, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1600
      * @tc.desc generateKeyPair by Ed25519Spec, getAsyKeySpec
      * @tc.size Medium
      * @tc.type Func
@@ -431,7 +431,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1700
-     * @tc.name test key format/algName with ecc. Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1700
      * @tc.desc generateKeyPair by X25519
      * @tc.size Medium
      * @tc.type Func
@@ -461,7 +461,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1800
-     * @tc.name test key format/algName with ecc. Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1800
      * @tc.desc generateKeyPair by X25519
      * @tc.size Medium
      * @tc.type Func
@@ -491,7 +491,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1900
-     * @tc.name test ecc key getEncodedDer to compressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_1900
      * @tc.desc generateKeyPair by ecc
      * @tc.size Medium
      * @tc.type Func
@@ -524,7 +524,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2000
-     * @tc.name test brainPool key getEncodedDer to compressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2000
      * @tc.desc generateKeyPair by brainPool
      * @tc.size Medium
      * @tc.type Func
@@ -559,7 +559,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100
-     * @tc.name test ecc key getEncodedDer to unCompressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100
      * @tc.desc generateKeyPair by ecc
      * @tc.size Medium
      * @tc.type Func
@@ -592,7 +592,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2200
-     * @tc.name test brainPool key getEncodedDer to unCompressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2200
      * @tc.desc generateKeyPair by brainPool
      * @tc.size Medium
      * @tc.type Func
@@ -627,7 +627,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2300
-     * @tc.name test convert unCompressed brainPoolP256r1 key to signVerify, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2300
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -656,7 +656,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2400
-     * @tc.name test convert compressed brainPoolP256r1 key to agreement, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2400
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -685,7 +685,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2500
-     * @tc.name test getEncodedDer with unsupported sm2 key and unCompressed format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2500
      * @tc.desc generateKeyPair by sm2
      * @tc.size Medium
      * @tc.type Func
@@ -710,7 +710,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2600
-     * @tc.name test getEncodedDer with unsupported rsa key and compressed format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2600
      * @tc.desc generateKeyPair by rsa
      * @tc.size Medium
      * @tc.type Func
@@ -735,7 +735,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2700
-     * @tc.name test getEncodedDer with error format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2700
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -760,7 +760,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2800
-     * @tc.name test getEncodedDer with empty format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2800
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -785,7 +785,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2900
-     * @tc.name test convertKey unCompressed key with different generator, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2900
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -818,7 +818,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3000
-     * @tc.name test convertKey with error compressed key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3000
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -849,7 +849,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3100
-     * @tc.name test convertKey with error compressed key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3100
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -880,7 +880,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3200
-     * @tc.name test convertKey with error compressed key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3200
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -911,7 +911,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3300
-     * @tc.name test convert unCompressed key with different generator, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3300
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -944,7 +944,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3400
-     * @tc.name test convertKey with error unCompressed brainPoolP256r1 key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3400
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -975,7 +975,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3500
-     * @tc.name test convertKey with error unCompressed brainPoolP256r1 key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3500
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1006,7 +1006,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3600
-     * @tc.name test convertKey with error unCompressed brainPoolP256r1 key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3600
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1037,7 +1037,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3700
-     * @tc.name test convertKey with error unCompressed brainPoolP256r1 key, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3700
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1068,7 +1068,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3800
-     * @tc.name test getEncodedPoint with ecc point and compressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3800
      * @tc.desc generateKeyPair by ecc
      * @tc.size Medium
      * @tc.type Func
@@ -1099,7 +1099,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3900
-     * @tc.name test getEncodedPoint with brainPool point and compressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_3900
      * @tc.desc generateKeyPair by brainPool
      * @tc.size Medium
      * @tc.type Func
@@ -1132,7 +1132,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4000
-     * @tc.name test getEncodedPoint with sm2 point and compressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4000
      * @tc.desc generateKeyPair by sm2
      * @tc.size Medium
      * @tc.type Func
@@ -1161,7 +1161,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4100
-     * @tc.name test getEncodedPoint with ecc point and unCompressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4100
      * @tc.desc generateKeyPair by ecc
      * @tc.size Medium
      * @tc.type Func
@@ -1192,7 +1192,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4200
-     * @tc.name test getEncodedPoint with brainPool point and unCompressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4200
      * @tc.desc generateKeyPair by brainPool
      * @tc.size Medium
      * @tc.type Func
@@ -1225,7 +1225,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4300
-     * @tc.name test getEncodedPoint with sm2 point and unCompressed format, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4300
      * @tc.desc generateKeyPair by sm2
      * @tc.size Medium
      * @tc.type Func
@@ -1254,7 +1254,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4400
-     * @tc.name test getEncodedPoint with unCompressed format and error curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4400
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1279,7 +1279,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4500
-     * @tc.name test getEncodedPoint with unCompressed format and different curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4500
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1304,7 +1304,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4600
-     * @tc.name test getEncodedPoint with unCompressed format and empty curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4600
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1329,7 +1329,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4700
-     * @tc.name test getEncodedPoint with unCompressed format and error curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4700
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1354,7 +1354,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4800
-     * @tc.name test getEncodedPoint with empty format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4800
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1378,7 +1378,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4900
-     * @tc.name test getEncodedPoint with error format, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_4900
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1402,7 +1402,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5000
-     * @tc.name test getEncodedPoint with unCompressed format and error x value, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5000
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1427,7 +1427,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5100
-     * @tc.name test convertPoint with compressed format and different curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5100
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1451,7 +1451,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5200
-     * @tc.name test convertPoint with compressed format and empty curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5200
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1475,7 +1475,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5300
-     * @tc.name test convertPoint with compressed format and error curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5300
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1499,7 +1499,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5400
-     * @tc.name test convertPoint with error compressed point, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5400
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1523,7 +1523,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5500
-     * @tc.name test convertPoint with error compressed point, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5500
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1547,7 +1547,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5600
-     * @tc.name test convertPoint with unCompressed format and different curveName, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5600
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1571,7 +1571,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5700
-     * @tc.name test convertPoint with error unCompressed point, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5700
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1595,7 +1595,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5800
-     * @tc.name test convertPoint with error unCompressed point, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5800
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1619,7 +1619,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5900
-     * @tc.name test convertPoint with error unCompressed point, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_5900
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1646,7 +1646,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_6000
-     * @tc.name test convertKeySync with unCompressed format,  process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_6000
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func
@@ -1677,7 +1677,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_6100
-     * @tc.name test convertKeySync with unCompressed format, callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_6100
      * @tc.desc generateKeyPair by brainPoolP256r1
      * @tc.size Medium
      * @tc.type Func

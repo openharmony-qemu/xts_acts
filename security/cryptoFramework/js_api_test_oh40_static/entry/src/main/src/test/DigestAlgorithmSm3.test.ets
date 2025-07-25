@@ -29,7 +29,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_MDSM3_Func_0100
-     * @tc.name Summary Calculation scenario testing
+     * @tc.name Security_CryptoFramework_MDSM3_Func_0100
      * @tc.desc the asyAlgoName is "SM3", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_MDSM3_Func_0100",
@@ -49,7 +49,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_MDSM3_Func_0200
-     * @tc.name Summary Calculation scenario testing
+     * @tc.name Security_CryptoFramework_MDSM3_Func_0200
      * @tc.desc the asyAlgoName is "SM4", Use the async Style of Interface
      */
     it("Security_CryptoFramework_MDSM3_Func_0200",
@@ -66,7 +66,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_MDSM3_Func_0300
-     * @tc.name Summary Calculation scenario testing
+     * @tc.name Security_CryptoFramework_MDSM3_Func_0300
      * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
      * @tc.desc the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
      * Use the async Style of Interface
@@ -122,7 +122,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_MDSM3_Func_0500
-     * @tc.name Obtain summary calculation results scenario testing
+     * @tc.name Security_CryptoFramework_MDSM3_Func_0500
      * @tc.desc The md object was not initialized, and obtain calculation result sand call them as async
      */
     it("Security_CryptoFramework_MDSM3_Func_0500",
@@ -160,7 +160,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_MDSM3_Func_0600
-     * @tc.name Obtain the summary calculation algorithm name
+     * @tc.name Security_CryptoFramework_MDSM3_Func_0600
      * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
      */
     it("Security_CryptoFramework_MDSM3_Func_0600",
@@ -177,7 +177,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0100
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0100
      * @tc.desc the asyAlgoName is "AES128", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_0100",
@@ -195,7 +195,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0200
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0200
      * @tc.desc the asyAlgoName is "AES192", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_0200",
@@ -213,7 +213,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0300
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0300
      * @tc.desc the asyAlgoName is "AES256", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_0300",
@@ -231,7 +231,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0400
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0400
      * @tc.desc the asyAlgoName is "3DES192", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_0400",
@@ -249,7 +249,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0500
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0500
      * @tc.desc the asyAlgoName is "SM4_128", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_0500",
@@ -267,7 +267,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0600
-     * @tc.name Create a calculation message authentication code object scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0600
      * @tc.desc the asyAlgoName is "SHA5", Use the async Style of Interface
      * @tc.desc the asyAlgoName is null, Use the async Style of Interface
      */
@@ -285,7 +285,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0700
-     * @tc.name Calculate message authentication code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0700
      * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
      * @tc.desc the asyAlgoName is "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz" take 10000 characters,
      * Use the async Style of Interface
@@ -342,7 +342,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0800
-     * @tc.name Initialize the calculation message authentication code object scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0800
      * @tc.desc Pass in an exception parameter null and call it as a Promise
      * @tc.desc Pass in an exception parameter "sroundpriKey" and call it as a Promise
      * @tc.desc Incoming rsa asymmetric key pair, and call them as Promise
@@ -373,7 +373,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_0900
-     * @tc.name Calculate Message Authentication Code scenario testing
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_0900
      * @tc.desc The mac object was not initialized, and the data is "Mac test data"
      * was passed in as a Callback to be called
      * @tc.desc Call it as a promise without passing in parameters
@@ -414,7 +414,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_HMACSM3_Func_1000
-     * @tc.name Obtain the calculate message authentication code algorithm name
+     * @tc.name Security_CryptoFramework_HMACSM3_Func_1000
      * @tc.desc the asyAlgoName is "SM3", Use the async Style of Interface
      */
     it("Security_CryptoFramework_HMACSM3_Func_1000",

@@ -25,7 +25,7 @@ export default function SecurityRandomSyncJsunit() {
     });
     /**
      * @tc.number Security_CryptoFramework_RandomSync_Func_0100
-     * @tc.name Synchronous generation of random numbers
+     * @tc.name Security_CryptoFramework_RandomSync_Func_0100
      * @tc.desc the length of random is 12, use sync style of interface
      */
     it(
@@ -47,7 +47,7 @@ export default function SecurityRandomSyncJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_RandomSync_Func_0200
-     * @tc.name Call the generateRandomSync interface with abnormal parameters,
+     * @tc.name Security_CryptoFramework_RandomSync_Func_0200
      * expecting the result to return an exception.
      * @tc.desc the length of random is 0, use sync style of interface
      * the length of random is "string", use sync style of interface
@@ -81,7 +81,7 @@ export default function SecurityRandomSyncJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_RandomSync_Func_0300
-     * @tc.name Create a random number object, get the algname.
+     * @tc.name Security_CryptoFramework_RandomSync_Func_0300
      * @tc.desc no parameters,use sync style of interface
      */
     it(
@@ -97,7 +97,7 @@ export default function SecurityRandomSyncJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Enum_Func_0100
-     * @tc.name cover AsyKeySpecItem  AsyKeySpecType  CipherSpecItem  SignSpecItem all enum value
+     * @tc.name Security_CryptoFramework_Enum_Func_0100
      * @tc.desc no parameters,use sync style of interface
      */
     it("Security_CryptoFramework_Enum_Func_0100",

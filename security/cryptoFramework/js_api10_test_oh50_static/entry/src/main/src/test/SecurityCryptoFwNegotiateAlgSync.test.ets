@@ -22,7 +22,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0100
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0100
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0200
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0200
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -76,7 +76,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0300
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0300
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -105,7 +105,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0400
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0400
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -127,7 +127,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0500
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0500
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -150,7 +150,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0600
-     * @tc.name Test algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0600
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -173,7 +173,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0700
-     * @tc.name Test agreeAlg algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0700
      * @tc.desc algorithm is agreeAlg
      * @tc.size Medium
      * @tc.type Func
@@ -196,7 +196,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0800
-     * @tc.name Test agreeAlg algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0800
      * @tc.desc algorithm is agreeAlg
      * @tc.size Medium
      * @tc.type Func

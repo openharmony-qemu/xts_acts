@@ -43,7 +43,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0100
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0100
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA1", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0100",
@@ -64,7 +64,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0200
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0200
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA224", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0200",
@@ -85,7 +85,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0300
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0300
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0300",
@@ -106,7 +106,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0400
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0400
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA384", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0400",
@@ -127,7 +127,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0500
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0500
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA512", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0500",
@@ -148,7 +148,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0600
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0600
      * @tc.desc the asyAlgoName is "RSA|PKCS1|MD5", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0600",
@@ -169,7 +169,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0700
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0700
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA1", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0700",
@@ -193,7 +193,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_0800
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0800
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA224", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0800",
@@ -217,7 +217,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Encrypt_And_Decrypt_Test_0900
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_0900
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA256", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_0900",
@@ -241,7 +241,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1000
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1000
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA384", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1000",
@@ -265,7 +265,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1100
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1100
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_SHA512", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1100",
@@ -289,7 +289,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1200
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1200
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA1|MGF1_MD5", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1200",
@@ -313,7 +313,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1300
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1300
      * @tc.desc the asyAlgoName is "RSA|PKCS1|SHA256", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1300",
@@ -334,7 +334,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1400
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1400
      * @tc.desc the asyAlgoName is "AES|ECB|PKCS7", Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1400",
@@ -355,7 +355,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1500
-     * @tc.name Encryption and decryption scenario testing
+     * @tc.name Security_CryptoFramework_Cipher_Func_1500
      * @tc.desc the asyAlgoName is "3DES|ECB|PKCS5", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_1500",
@@ -376,7 +376,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1600
-     * @tc.name create cipher failed
+     * @tc.name Security_CryptoFramework_Cipher_Func_1600
      * @tc.desc Pass in an exception parameter null and call it as a async
      * @tc.desc Pass in an exception parameter "ECC128|GCM|PKCS7" and call it as a async
      */
@@ -394,7 +394,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1800
-     * @tc.name test Cipher.update with invalid parameters
+     * @tc.name Security_CryptoFramework_Cipher_Func_1800
      * @tc.desc First do not Cipher.init with AsyncCallback interface
      * @tc.desc Second input null with Promise interface
      * @tc.desc Third input empty parameter with  AsyncCallback interface
@@ -433,7 +433,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_1900
-     * @tc.name test Cipher.doFinal with invalid parameters
+     * @tc.name Security_CryptoFramework_Cipher_Func_1900
      * @tc.desc First do not Cipher.init with AsyncCallback interface
      * @tc.desc Second input null with Promise interface
      * @tc.desc Third input empty parameter with  AsyncCallback interface
@@ -492,7 +492,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_2000
-     * @tc.name set and get fill mode before init
+     * @tc.name Security_CryptoFramework_Cipher_Func_2000
      * @tc.desc the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Callback Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_2000",
@@ -516,7 +516,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_2100
-     * @tc.name set and get fill mode after init
+     * @tc.name Security_CryptoFramework_Cipher_Func_2100
      * @tc.desc the itemType is OAEP_MGF1_PSRC_UINT8ARR, Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_2100",
@@ -540,7 +540,7 @@ export default function SecurityCipherJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_Cipher_Func_2400
-     * @tc.name Obtain the encryption and decryption algorithm name
+     * @tc.name Security_CryptoFramework_Cipher_Func_2400
      * @tc.desc the asyAlgoName is "RSA|PKCS1_OAEP|SHA256|MGF1_SHA1", Use the Promise Style of Interface
      */
     it("Security_CryptoFramework_Cipher_Func_2400",

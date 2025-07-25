@@ -27,7 +27,7 @@ export default function SecurityKeyAgreementJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0100
-     * @tc.name Test the scenario of key agreement using ECC and expect a successful result.
+     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0100
      * @tc.desc the type of secret key is "ECC"(No length), use promise style of interface
      */
     it(
@@ -49,7 +49,7 @@ export default function SecurityKeyAgreementJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0200
-     * @tc.name Input illegal algorithm for key agreement testing scenario, expect to return failure.
+     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0200
      * @tc.desc the type of secret key is "ECC1024"(illegal algorithm), use promise style of interface
      */
     it(
@@ -71,7 +71,7 @@ export default function SecurityKeyAgreementJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0300
-     * @tc.name Obtain key agreement algorithm
+     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0300
      * @tc.desc the type of secret key is "ECC521", use promise style of interface
      */
     it(
@@ -89,7 +89,7 @@ export default function SecurityKeyAgreementJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0400
-     * @tc.name use EccCommon structure and "ECC521" for key agreement scenario testing,expect a successful return.
+     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0400
      * @tc.desc use the ECCCommon structure to create AsyKeyGenerator object
      * a key type of "ECC521" to create KeyAgreement object
      * use a promise style interface
@@ -115,7 +115,7 @@ export default function SecurityKeyAgreementJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0500
-     * @tc.name use RsaKeyPair structure and "ECC521" for key agreement scenario testing,expect a successful return.
+     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0500
      * @tc.desc use the RsaKeyPair structure to create AsyKeyGenerator object
      * a key type of "ECC521" to create KeyAgreement object
      */

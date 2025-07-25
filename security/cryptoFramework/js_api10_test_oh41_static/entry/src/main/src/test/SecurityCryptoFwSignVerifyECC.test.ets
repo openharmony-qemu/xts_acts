@@ -25,7 +25,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0100
-     * @tc.name Test signVerify with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0100
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0200
-     * @tc.name Test signVerify with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0200
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0300
-     * @tc.name Test signVerify with ECC, Callback style, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0300
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -109,7 +109,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0400
-     * @tc.name Test signVerify with ECC, Promise style, process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0400
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -138,7 +138,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0500
-     * @tc.name Test signVerify with ECC, Callback style, process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0500
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -167,7 +167,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0600
-     * @tc.name Test signVerify algName with ECC. Process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0600
      * @tc.desc create Sign/Verify with Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -192,7 +192,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0700
-     * @tc.name Test signVerify algName with ECC. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0700
      * @tc.desc create Sign/Verify with error algName ED25519
      * @tc.size Medium
      * @tc.type Func
@@ -222,7 +222,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0800
-     * @tc.name Test signVerify algName with ECC. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0800
      * @tc.desc create Sign/Verify with unavailable algName X25519
      * @tc.size Medium
      * @tc.type Func
@@ -253,7 +253,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0900
-     * @tc.name Test signVerify with ECC. Promise style. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0900
      * @tc.desc init Sign/Verify with unavailable algName X25519
      * @tc.size Medium
      * @tc.type Func

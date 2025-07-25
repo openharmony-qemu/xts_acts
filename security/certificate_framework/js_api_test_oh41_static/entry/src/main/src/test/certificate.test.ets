@@ -34,7 +34,7 @@ export default function certificateJsunit() {
 
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0100
-     * @tc.name check X509CRL get extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0100
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -49,7 +49,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0200
-     * @tc.name check X509CRL get extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0200
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -64,7 +64,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0300
-     * @tc.name check X509CRL get extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0300
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -80,7 +80,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0400
-     * @tc.name check X509CRL get extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0400
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -95,7 +95,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0500
-     * @tc.name check X509CRLEntry get extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0500
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -110,7 +110,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0600
-     * @tc.name check X509CRLEntry get extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0600
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -125,7 +125,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0700
-     * @tc.name check X509CRLEntry get extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0700
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -140,7 +140,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0800
-     * @tc.name check X509CRLEntry get extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0800
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -155,7 +155,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_0900
-     * @tc.name check X509CRLEntry has extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_0900
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -171,7 +171,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_1000
-     * @tc.name check X509CRLEntry has extension true by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_1000
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -187,7 +187,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_1100
-     * @tc.name check X509CRLEntry has extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_1100
      * @tc.desc The X509 certificate FORMAT is FORMAT_PEM
      */
     it("Security_Cert_Framework_Certificate_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -203,7 +203,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_1200
-     * @tc.name check X509CRLEntry has extension false by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_1200
      * @tc.desc The X509 certificate FORMAT is FORMAT_DER
      */
     it("Security_Cert_Framework_Certificate_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -219,7 +219,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_1300
-     * @tc.name X509 cert extension has not unSupported Critical by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_1300
      * @tc.desc certExtension test
      */
     it("Security_Cert_Framework_Certificate_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -235,7 +235,7 @@ export default function certificateJsunit() {
     });
     /**
      * @tc.number Security_Cert_Framework_Certificate_Func_1400
-     * @tc.name X509 cert extension has unSupported Critical by promise
+     * @tc.name Security_Cert_Framework_Certificate_Func_1400
      * @tc.desc certExtension test
      */
     it("Security_Cert_Framework_Certificate_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

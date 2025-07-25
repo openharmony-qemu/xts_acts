@@ -22,7 +22,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0100
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0100
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -46,7 +46,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0200
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0200
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -75,7 +75,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0300
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0300
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -97,7 +97,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0400
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0400
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0500
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0500
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func

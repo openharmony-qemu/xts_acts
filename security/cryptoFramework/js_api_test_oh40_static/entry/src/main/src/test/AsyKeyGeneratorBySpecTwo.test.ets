@@ -107,7 +107,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_0900
-     * @tc.name ECC PriKey generation Pubkey
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_0900
      * @tc.desc the asyKeySpec is eccPrikeySpec, Use the promise Style of Interface
      */
     it(
@@ -137,7 +137,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1000
-     * @tc.name ECC PubKey generation Prikey
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1000
      * @tc.desc the asyKeySpec is eccPubkeySpec, Use the callback Style of Interface
      */
     it(
@@ -167,7 +167,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1100
-     * @tc.name RSA Key generation scenario by spec
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1100
      * @tc.desc the asyKeySpec is genRsa2048CommonSpec, Use the callback Style of Interface
      */
     it(
@@ -193,7 +193,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1200
-     * @tc.name RSA Key generation scenario by spec
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1200
      * @tc.desc the asyKeySpec is genRsa2048PubKetSpec, Use the promise Style of Interface
      */
     it(
@@ -218,7 +218,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1300
-     * @tc.name RSA Key generation scenario by spec
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1300
      * @tc.desc the asyKeySpec is genRsa2048KeyPairSpec, Use the promise Style of Interface
      */
     it(
@@ -243,7 +243,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1400
-     * @tc.name RSA pubKey generation prikey failed
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1400
      * @tc.desc the asyKeySpec is genRsa2048PubKetSpec, Use the callback Style of Interface
      */
     it(
@@ -272,7 +272,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1500
-     * @tc.name create key parser failed
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1500
      * @tc.desc Pass in an exception parameter error EccCommonStruct and call it as a async
      * @tc.desc Pass in an exception parameter error RsaKeyPairStruct and call it as a async
      * @tc.desc Pass in an exception parameter error DsaKeyPairStruct and call it as a async
@@ -319,7 +319,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1600
-     * @tc.name relatively pubkey and prikey
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1600
      * @tc.desc the asyKeySpec is genDsaKeyPairSpecErr, Use the promise Style of Interface
      */
     it(
@@ -344,7 +344,7 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_GeneratorBySpec_Func_1700
-     * @tc.name relatively pubkey and prikey
+     * @tc.name Security_CryptoFramework_GeneratorBySpec_Func_1700
      * @tc.desc the asyKeySpec is "DSA", Use the callback Style of Interface
      */
     it(

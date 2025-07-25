@@ -160,7 +160,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
      * @tc.desc algorithm is scrypt stub test
      * @tc.size Medium
      * @tc.type Func
@@ -202,7 +202,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
      * @tc.desc algorithm is scrypt test
      * @tc.size Medium
      * @tc.type Func
@@ -240,7 +240,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
      * @tc.desc algorithm is scrypt test
      * @tc.size Medium
      * @tc.type Func
@@ -276,7 +276,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
      * @tc.desc algorithm is scrypt salt is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -312,7 +312,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
      * @tc.desc algorithm is scrypt salt is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -348,7 +348,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
      * @tc.desc algorithm is scrypt passphrase is Uint8Array test
      * @tc.size Medium
      * @tc.type Func
@@ -384,7 +384,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
      * @tc.desc algorithm is scrypt passphrase is Uint8Array test
      * @tc.size Medium
      * @tc.type Func
@@ -420,7 +420,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
      * @tc.desc algorithm is scrypt passphrase is Uint8Array test
      * @tc.size Medium
      * @tc.type Func
@@ -456,7 +456,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
      * @tc.desc algorithm is scrypt passphrase is string test
      * @tc.size Medium
      * @tc.type Func
@@ -492,7 +492,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
      * @tc.desc algorithm is scrypt keySize is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -527,7 +527,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
      * @tc.desc algorithm is scrypt keySize is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -562,7 +562,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
      * @tc.desc algorithm is scrypt p is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -597,7 +597,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
      * @tc.desc algorithm is scrypt n is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -632,7 +632,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
      * @tc.desc algorithm is scrypt n is 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -667,7 +667,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
      * @tc.desc algorithm is scrypt n is not power of 2 test
      * @tc.size Medium
      * @tc.type Func
@@ -702,7 +702,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
      * @tc.desc algorithm is scrypt n is negative number test
      * @tc.size Medium
      * @tc.type Func
@@ -737,7 +737,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
      * @tc.desc algorithm is scrypt r is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -772,7 +772,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
      * @tc.desc algorithm is scrypt r is negative number test
      * @tc.size Medium
      * @tc.type Func
@@ -807,7 +807,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
      * @tc.desc algorithm is scrypt n >= 2^(128 * r/8) test
      * @tc.size Medium
      * @tc.type Func
@@ -842,7 +842,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
      * @tc.desc algorithm is scrypt n >= ((UINT32_MAX/128)/r) test
      * @tc.size Medium
      * @tc.type Func
@@ -877,7 +877,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
      * @tc.desc algorithm is scrypt p > ((2^32 -1) * 32)/(128 * r) test
      * @tc.size Medium
      * @tc.type Func
@@ -912,7 +912,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -947,7 +947,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
      * @tc.desc algorithm is scrypt r * p * 128 >= UINT32_MAX test
      * @tc.size Medium
      * @tc.type Func
@@ -982,7 +982,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -1017,7 +1017,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -1052,7 +1052,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
      * @tc.desc algorithm is scrypt r * p * 128 > UINT32_MAX test
      * @tc.size Medium
      * @tc.type Func
@@ -1087,7 +1087,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
      * @tc.desc algorithm is scrypt passphrase is empty, type string test
      * @tc.size Medium
      * @tc.type Func
@@ -1122,7 +1122,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
      * @tc.desc algorithm is scrypt passphrase is empty, type string test
      * @tc.size Medium
      * @tc.type Func
@@ -1157,7 +1157,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
      * @tc.desc algorithm is scrypt vector test
      * @tc.size Medium
      * @tc.type Func

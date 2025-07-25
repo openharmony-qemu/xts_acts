@@ -42,7 +42,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_Enum_Func_0100
-     * @tc.name X509 Cert Enum Type Test
+     * @tc.name Security_CertificateFramework_Enum_Func_0100
      * @tc.desc X509 Cert Enum Type Test
      */
     it("Security_CertificateFramework_Enum_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -58,7 +58,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0100
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_TBS Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0100
      * @tc.desc Create Der Cert with Promise Style
      */
     it("Security_CertificateFramework_CertTest_Func_0100",
@@ -87,7 +87,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0200
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_PUBLIC_KEY Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0200
      * @tc.desc Create Der Cert with Callback Style
      */
     it("Security_CertificateFramework_CertTest_Func_0200",
@@ -116,7 +116,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0300
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_ISSUER_UNIQUE_ID Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0300
      * @tc.desc Create Der Cert with Promise Style
      */
     it("Security_CertificateFramework_CertTest_Func_0300",
@@ -149,7 +149,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0400
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_SUBJECT_UNIQUE_ID Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0400
      * @tc.desc Create Der Cert with Callback Style
      */
     it("Security_CertificateFramework_CertTest_Func_0400",
@@ -182,7 +182,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertTest_Func_0500
-     * @tc.name X509 getItem for CERT_ITEM_TYPE_EXTENSIONS Test
+     * @tc.name Security_CertificateFramework_CertTest_Func_0500
      * @tc.desc Create Der Cert with Promise Style
      */
     it("Security_CertificateFramework_CertTest_Func_0500",
@@ -214,7 +214,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0100
-     * @tc.name X509 CertExtension getEncoded Test
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0100
      * @tc.desc Create Der CertExtension with Promise Style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_0100",
@@ -244,7 +244,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0200
-     * @tc.name X509 CertExtension getOidList and  getEntry Test 1
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0200
      * @tc.desc Create Der CertExtension with Callback Style
      * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_ALL
      */
@@ -294,7 +294,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0300
-     * @tc.name X509 CertExtension getOidList and  getEntry Test 2
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0300
      * @tc.desc Create Der CertExtension with Promise Style
      * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_CRITICAL
      */
@@ -344,7 +344,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0400
-     * @tc.name X509 CertExtension getOidList and  getEntry Test 3
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0400
      * @tc.desc Create Der CertExtension with Callback Style
      * @tc.desc ExtensionOidType is EXTENSION_OID_TYPE_UNCRITICAL
      */
@@ -398,7 +398,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0500
-     * @tc.name X509 CertExtension checkCA Test 1
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0500
      * @tc.desc Use callback style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_0500",
@@ -421,7 +421,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_0600
-     * @tc.name X509 CertExtension Test With Invalid Parm
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_0600
      * @tc.desc Create Der CertExtension with Promise Style
      */
     it(
@@ -447,7 +447,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1000
-     * @tc.name X509 CertExtension getEntry Test With Invalid Param 1
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1000
      * @tc.desc Create Der CertExtension with Promise Style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1000",
@@ -479,7 +479,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1400
-     * @tc.name X509 CertExtension getEntry Test With Invalid Param 5
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1400
      * @tc.desc Create Der CertExtension with Promise Style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1400",
@@ -512,7 +512,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1500
-     * @tc.name X509 CertExtension getEncoded Test With Invalid Params
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1500
      * @tc.desc Create Der CertExtension with Promise Style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1500",
@@ -537,7 +537,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1600
-     * @tc.name X509 CertExtension checkCA Test With Invalid Param 1
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1600
      * @tc.desc Use callback style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1600",
@@ -562,7 +562,7 @@ export default function CertFrameworkFuncTestJSUnit() {
 
     /**
      * @tc.number Security_CertificateFramework_CertExtensionTest_Func_1700
-     * @tc.name X509 CertExtension checkCA Test With Invalid Param 2
+     * @tc.name Security_CertificateFramework_CertExtensionTest_Func_1700
      * @tc.desc Use callback style
      */
     it("Security_CertificateFramework_CertExtensionTest_Func_1700",

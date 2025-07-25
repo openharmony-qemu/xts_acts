@@ -28,7 +28,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0100
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0100
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
      * @tc.size Medium
      * @tc.type Func
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0200
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0200
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
      * @tc.size Medium
      * @tc.type Func
@@ -74,7 +74,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0300
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0300
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
      * @tc.size Medium
      * @tc.type Func
@@ -97,7 +97,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0400
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0400
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
      * @tc.size Medium
      * @tc.type Func
@@ -120,7 +120,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0500
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0500
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
      * @tc.size Medium
      * @tc.type Func
@@ -143,7 +143,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0600
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0600
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
      * @tc.size Medium
      * @tc.type Func
@@ -166,7 +166,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0700
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0700
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
      * @tc.size Medium
      * @tc.type Func
@@ -189,7 +189,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0800
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0800
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
      * @tc.size Medium
      * @tc.type Func
@@ -212,7 +212,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_0900
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_0900
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
      * @tc.size Medium
      * @tc.type Func
@@ -235,7 +235,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1000
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1000
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
      * @tc.size Medium
      * @tc.type Func
@@ -258,7 +258,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1100
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1100
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
      * @tc.size Medium
      * @tc.type Func
@@ -281,7 +281,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1200
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1200
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
      * @tc.size Medium
      * @tc.type Func
@@ -304,7 +304,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1300
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1300
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
      * @tc.size Medium
      * @tc.type Func
@@ -327,7 +327,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1400
-     * @tc.name Test genECCCommonParamSpec with brainpool, sm2, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1400
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
      * @tc.size Medium
      * @tc.type Func
@@ -350,7 +350,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1500
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1500
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp224r1'
      * @tc.size Medium
      * @tc.type Func
@@ -373,7 +373,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1600
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1600
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp384r1'
      * @tc.size Medium
      * @tc.type Func
@@ -396,7 +396,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1700
-     * @tc.name Test genECCCommonParamSpec with ecc, process is successful
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1700
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp521r1'
      * @tc.size Medium
      * @tc.type Func
@@ -419,7 +419,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_1800
-     * @tc.name Test genECCCommonParamSpec with rsa, process is failed
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_1800
      * @tc.desc 1. genECCCommonParamSpec with error curveName 'RSA512'
      * @tc.size Medium
      * @tc.type Func
@@ -443,7 +443,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2000
-     * @tc.name Test cipher with 'SM2_256', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2000
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
      * @tc.size Medium
      * @tc.type Func
@@ -468,7 +468,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2100
-     * @tc.name Test signVerify with 'SM2_256', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2100
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
      * @tc.size Medium
      * @tc.type Func
@@ -493,7 +493,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2200
-     * @tc.name Test signVerify with 'ECC_brainpoolP256t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2200
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
      * @tc.size Medium
      * @tc.type Func
@@ -518,7 +518,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2300
-     * @tc.name Test agreement with 'ECC_brainpoolP512t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2300
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
      * @tc.size Medium
      * @tc.type Func
@@ -543,7 +543,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2400
-     * @tc.name Test agreement with 'ECC256', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2400
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_X9_62_prime256v1'
      * @tc.size Medium
      * @tc.type Func
@@ -569,7 +569,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2500
-     * @tc.name Test params diff with 'SM2256', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2500
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
      * @tc.size Medium
      * @tc.type Func
@@ -595,7 +595,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2600
-     * @tc.name Test params diff with 'ECC384', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2600
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp384r1'
      * @tc.size Medium
      * @tc.type Func
@@ -620,7 +620,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2700
-     * @tc.name Test params diff with 'ECC_BrainPoolP160r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2700
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
      * @tc.size Medium
      * @tc.type Func
@@ -646,7 +646,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2800
-     * @tc.name Test params diff with 'ECC_BrainPoolP192t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2800
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192t1'
      * @tc.size Medium
      * @tc.type Func
@@ -672,7 +672,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_2900
-     * @tc.name Test params diff with 'ECC_BrainPoolP224r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_2900
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224r1'
      * @tc.size Medium
      * @tc.type Func
@@ -698,7 +698,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3000
-     * @tc.name Test params diff with 'ECC_BrainPoolP256t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3000
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256t1'
      * @tc.size Medium
      * @tc.type Func
@@ -724,7 +724,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3100
-     * @tc.name Test params diff with 'ECC_BrainPoolP320r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3100
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320r1'
      * @tc.size Medium
      * @tc.type Func
@@ -750,7 +750,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3200
-     * @tc.name Test params diff with 'ECC_BrainPoolP384t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3200
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384t1'
      * @tc.size Medium
      * @tc.type Func
@@ -776,7 +776,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3300
-     * @tc.name Test params diff with 'ECC_BrainPoolP512r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3300
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512r1'
      * @tc.size Medium
      * @tc.type Func
@@ -802,7 +802,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3400
-     * @tc.name Test params diff with 'ECC_BrainPoolP160t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3400
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160t1'
      * @tc.size Medium
      * @tc.type Func
@@ -828,7 +828,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3500
-     * @tc.name Test params diff with 'ECC_BrainPoolP192r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3500
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP192r1'
      * @tc.size Medium
      * @tc.type Func
@@ -854,7 +854,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3600
-     * @tc.name Test params diff with 'ECC_BrainPoolP224t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3600
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP224t1'
      * @tc.size Medium
      * @tc.type Func
@@ -880,7 +880,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3700
-     * @tc.name Test params diff with 'ECC_BrainPoolP256r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3700
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP256r1'
      * @tc.size Medium
      * @tc.type Func
@@ -906,7 +906,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3800
-     * @tc.name Test params diff with 'ECC_BrainPoolP320t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3800
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP320t1'
      * @tc.size Medium
      * @tc.type Func
@@ -932,7 +932,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_3900
-     * @tc.name Test params diff with 'ECC_BrainPoolP384r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_3900
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP384r1'
      * @tc.size Medium
      * @tc.type Func
@@ -958,7 +958,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4000
-     * @tc.name Test params diff with 'ECC_BrainPoolP512t1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_4000
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP512t1'
      * @tc.size Medium
      * @tc.type Func
@@ -984,7 +984,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4100
-     * @tc.name Test params diff with 'ECC_BrainPoolP160r1', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_4100
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_brainpoolP160r1'
      * @tc.size Medium
      * @tc.type Func
@@ -1009,7 +1009,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4200
-     * @tc.name Test keyPair params diff with 'ECC', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_4200
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_secp224r1'
      * @tc.size Medium
      * @tc.type Func
@@ -1034,7 +1034,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_genECCCommonSpec_Func_4300
-     * @tc.name Test keyPair params diff with 'SM256', process is success
+     * @tc.name Security_CryptoFramework_genECCCommonSpec_Func_4300
      * @tc.desc 1. genECCCommonParamSpec with curveName 'NID_sm2'
      * @tc.size Medium
      * @tc.type Func

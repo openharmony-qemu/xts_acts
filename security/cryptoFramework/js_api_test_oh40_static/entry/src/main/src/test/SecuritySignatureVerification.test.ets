@@ -30,7 +30,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0100
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0100
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the RSAKeyPar structure with a signature verification type of "RSA512|PKCS1|MD5"
      * and use a callback style interface
@@ -59,7 +59,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0200
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0200
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec after init Sign/Verify object
      * @tc.desc Use a promise style interface to pass in the RSAKeyPar structure with signature verification type
@@ -92,7 +92,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0300
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0300
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec before init Sign/Verify object
      * @tc.desc Use a callback style interface to pass in the RSAKeyPar structure with signature verification type
@@ -126,7 +126,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0400
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0400
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec after init Sign/Verify object
      * @tc.desc Use a promise style interface to pass in the RSAKeyPar structure with signature verification type
@@ -159,7 +159,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0500
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0500
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec before init Sign/Verify object
      * @tc.desc Use a callback style interface to pass in the RSAKeyPar structure with signature verification type
@@ -193,7 +193,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0600
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0600
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec after init Sign/Verify object
      * @tc.desc Use a promise style interface to pass in the RSAKeyPar structure with signature verification type
@@ -226,7 +226,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0700
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0700
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec before init Sign/Verify object
      * @tc.desc Use a callback style interface to pass in the RSAKeyPar structure with signature verification type
@@ -260,7 +260,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0800
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0800
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the RSAKeyPar structure with a signature verification type of "RSA|PKCS1|MD5"
      * and use a promise style interface
@@ -289,7 +289,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0900
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_0900
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec before init Sign/Verify object
      * @tc.desc Use a callback style interface to pass in the RSAKeyPar structure with signature verification type
@@ -323,7 +323,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1000
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1000
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec after init Sign/Verify object
      * @tc.desc Use a promise style interface to pass in the RSAKeyPar structure with signature verification type
@@ -356,7 +356,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1100
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1100
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec before init Sign/Verify object
      * @tc.desc Use a callback style interface to pass in the RSAKeyPar structure with signature verification type
@@ -390,7 +390,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1200
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create RSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1200
      * and Signature verification combination scenario testing
      * and set Sign/Verify spec after init Sign/Verify object
      * @tc.desc Use a promise style interface to pass in the RSAKeyPar structure with signature verification type
@@ -423,7 +423,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1300
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create ECC asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1300
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the ECCKeyPar structure with a signature verification type of "ECC256|SHA256"
      * and use a callback style interface
@@ -452,7 +452,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1400
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create ECC asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1400
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the ECCKeyPair structure with a signature verification type of "ECC|SHA224"(No length)
      * and use a promise style interface
@@ -481,7 +481,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1500
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create ECC asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1500
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the ECCKeyPar structure with a signature verification type of "ECC224|SHA256"
      * and use a callback style interface
@@ -510,7 +510,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1600
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create ECC asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1600
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the ECCKeyPar structure with a signature verification type of "ECC384|SHA224"
      * and use a promise style interface
@@ -539,7 +539,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1700
-     * @tc.name Use createAsyKeyGeneratorBySpec to Create ECC asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1700
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the ECCKeyPar structure with a signature verification type of "ECC521|SHA256"
      * and use a callback style interface
@@ -568,7 +568,7 @@ export default function SecuritySignatureVerificationJsunit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_1800
-     * @tc.name Use createAsyKeyGenerator to Create DSA asyKeySpec
+     * @tc.name Security_CryptoFramework_SignatureVerification_Func_1800
      * and Signature verification combination scenario testing
      * @tc.desc Pass in the DSAKeyPar structure with a signature verification type of "DSA|SHA1"
      * and use a promise style interface

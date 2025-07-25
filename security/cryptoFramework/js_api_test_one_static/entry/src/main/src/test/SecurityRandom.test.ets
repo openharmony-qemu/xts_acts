@@ -30,7 +30,7 @@ export default function SecurityRandomJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_Random_0100
-     * @tc.name support security random and set random seed
+     * @tc.name Security_crypto_framework_Random_0100
      * @tc.desc the length of random is 32, use promise style of interface
      */
     it("Security_crypto_framework_Random_0100",
@@ -47,7 +47,7 @@ export default function SecurityRandomJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_Random_0200
-     * @tc.name Support setting random number seed and restart encryption and decryption framework
+     * @tc.name Security_crypto_framework_Random_0200
      * @tc.desc the length of random is 32, use callback style of interface
      */
     it("Security_crypto_framework_Random_0200",
@@ -64,7 +64,7 @@ export default function SecurityRandomJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_Random_0300
-     * @tc.name Test generateRandom with invalid input
+     * @tc.name Security_crypto_framework_Random_0300
      * @tc.desc First input 0, Second input null, Third input -1, Fourth input 2147483648
      */
     it("Security_crypto_framework_Random_0300",
@@ -101,7 +101,7 @@ export default function SecurityRandomJsunit() {
 
     /**
      * @tc.number Security_crypto_framework_Random_0500
-     * @tc.name test enumerated values
+     * @tc.name Security_crypto_framework_Random_0500
      * @tc.desc cover 100% Enumerated values
      */
     it("Security_crypto_framework_Random_0500",

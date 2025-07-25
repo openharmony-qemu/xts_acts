@@ -23,7 +23,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100
-     * @tc.name Test createAsyKeyGenerator with wrong BrainPool, process is fail
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100
      * @tc.desc 1. AsyKeyGenerator with algName BrainPool
      * @tc.size Medium
      * @tc.type Func
@@ -45,7 +45,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300
-     * @tc.name Test getAsyKeySpec with BrainPool, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -82,7 +82,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -105,7 +105,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -128,7 +128,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -151,7 +151,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -174,7 +174,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -197,7 +197,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -220,7 +220,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -243,7 +243,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -266,7 +266,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -289,7 +289,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -312,7 +312,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -335,7 +335,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -358,7 +358,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -381,7 +381,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
      * @tc.desc 3. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -404,7 +404,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -427,7 +427,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -450,7 +450,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -473,7 +473,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -496,7 +496,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -519,7 +519,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -542,7 +542,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
      * @tc.desc 3. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -565,7 +565,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600
-     * @tc.name Test generateKeyPair with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600
      * @tc.desc 1. AsyKeyGenerator with algName BrainPool
      * @tc.desc 3. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -590,7 +590,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700
-     * @tc.name Test generateKeyPair with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.desc 3. Test interface with AsyncCallback style
      * @tc.size Medium
@@ -615,7 +615,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -638,7 +638,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -661,7 +661,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -684,7 +684,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -707,7 +707,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -730,7 +730,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -753,7 +753,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
      * @tc.desc 3. Test interface with Callback style
      * @tc.size Medium
@@ -776,7 +776,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -799,7 +799,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -822,7 +822,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -845,7 +845,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -868,7 +868,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -891,7 +891,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -914,7 +914,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
      * @tc.desc 3. Test interface with Callback style
      * @tc.size Medium
@@ -937,7 +937,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -961,7 +961,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -985,7 +985,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -1009,7 +1009,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -1033,7 +1033,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -1057,7 +1057,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -1081,7 +1081,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
      * @tc.desc 3. Test interface with Callback style
      * @tc.size Medium
@@ -1105,7 +1105,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000
-     * @tc.name Test createAsyGeneratorBySpec with error BrainPool spec, process is successful
+     * @tc.name Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.size Medium
      * @tc.type Func
@@ -1137,7 +1137,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200
-     * @tc.name Test algName,format with BrainPool. Promsie style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200
      * @tc.desc AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.size Medium
      * @tc.type Func
