@@ -234,7 +234,7 @@ export default function abilityTest() {
     it("shiftAppWindowFocusPromiseTest_static_0208",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let winID = win.getWindowProperties().id;
-        window.shiftAppWindowFocus(winID, winID).then((): void => {
+        window.shiftAppWindowFocus(winID as int, winID as int).then((): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] shiftAppWindowFocus promise success');
           expect(true).assertTrue();
           done();
