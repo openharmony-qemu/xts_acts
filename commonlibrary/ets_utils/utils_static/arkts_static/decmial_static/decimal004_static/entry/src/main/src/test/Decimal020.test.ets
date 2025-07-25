@@ -67,8 +67,8 @@ export default function DecimalTest020() {
      * @tc.level     : Level 1
      */
     it("Decimal_sign_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      test_sign_002(NaN, NaN);
-      test_sign_001('NaN', NaN);
+      test_sign_002(NaN, Double.toInt(NaN));
+      test_sign_001('NaN', Double.toInt(NaN));
       test_sign_002(Infinity, 1);
       test_sign_002(-Infinity, -1);
       test_sign_001('Infinity', 1);
