@@ -15,6 +15,6 @@
 import CertificateJsunit from "./Certificate.test";
 import CertificateCrlJsunit from './CertificateCrl.test'
 export default function testsuite() {
-  CertificateJsunit();
-  CertificateCrlJsunit();
+    CertificateJsunit();
+    CertificateCrlJsunit();
 }

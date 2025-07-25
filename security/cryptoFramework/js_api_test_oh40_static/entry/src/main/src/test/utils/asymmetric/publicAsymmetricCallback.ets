@@ -463,7 +463,7 @@ async function signAbnormalParameterProcess(
   asyKeySpec: cryptoFramework.AsyKeySpec,
   signVerifyAlgoName: string,
   signType: int
-) {
+): Promise<void> {
   let globalText: string = "This is a sign test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
   try {

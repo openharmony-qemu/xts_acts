@@ -167,8 +167,8 @@ export default function DigestAlgorithmJsunit() {
      * @tc.desc Use the Callback Style of Interface
      */
     it("Security_crypto_framework_MD_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let mdGenerator: cryptoFramework.Md = cryptoFramework.createMd("SHA224");
       try {
+        let mdGenerator: cryptoFramework.Md = cryptoFramework.createMd("SHA224");
         await mdGenerator.digest();
       } catch (err: BusinessError) {
         console.error("err is " + err.code);

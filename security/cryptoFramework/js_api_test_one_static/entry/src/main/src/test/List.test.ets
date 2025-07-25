@@ -19,9 +19,9 @@ import DigestAlgorithmJsunit from "./DigestAlgorithm.test";
 import SecurityRandomJsunit from "./SecurityRandom.test";
 
 export default function testsuite() {
+  SecurityRandomJsunit();
+  DigestAlgorithmJsunit();
   SymmetricCryptographyJsunit();
   AsymmetricCryptographyJsunit();
   AsymmetricCryptographyJsSecondunit();
-  DigestAlgorithmJsunit();
-  SecurityRandomJsunit();
 }
