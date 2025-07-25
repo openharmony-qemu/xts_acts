@@ -630,8 +630,6 @@ export default function KvStoreEtsTestStatic() {
     it('KvStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest021 start ");
       try {
-        let fieldNode: distributedKVStore.FieldNode | null = new distributedKVStore.FieldNode('id');
-        hilog.info(domain, tag, '%{public}s', "============KvStoreTest021 FieldNode done ");
         let schema: distributedKVStore.Schema | null = new distributedKVStore.Schema();
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest021 Schema done ");
         done();
