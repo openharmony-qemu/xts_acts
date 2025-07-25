@@ -27,14 +27,14 @@ import {
 import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
-function test_sign_001 (n: string, expected: number) {
+function test_sign_001 (n: string, expected: int) {
   if (Number.isNaN(expected)) {
     expect("NaN").assertEqual(Decimal.sign(n).toString());
   } else {
     expect(expected).assertEqual(Decimal.sign(n));
   }
 }
-function test_sign_002 (n: number, expected: number) {
+function test_sign_002 (n: number, expected: int) {
   if (Number.isNaN(expected)) {
     expect("NaN").assertEqual(Decimal.sign(n).toString());
   } else {

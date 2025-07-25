@@ -28,7 +28,7 @@ import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-function test_tan_001 (n: string, pr: number, rm: number, expected: string) {
+function test_tan_001 (n: string, pr: number, rm: int, expected: string) {
   Decimal.set({ precision: pr, rounding: rm });
   expect(expected).assertEqual(Decimal.tan(n).valueOf());
 }

@@ -28,12 +28,12 @@ import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-function test_log_001 (n: string, base: string, expected: string, sd: number, rm: number) {
+function test_log_001 (n: string, base: string, expected: string, sd: number, rm: int) {
   Decimal.set ({ precision: sd, rounding: rm });
   expect(expected).assertEqual(Decimal.log(n, base).valueOf());
   expect(expected).assertEqual(new Decimal(n).log(base).valueOf());
 }
-function test_log_002 (n: string, base: number, expected: string, sd: number, rm: number) {
+function test_log_002 (n: string, base: number, expected: string, sd: number, rm: int) {
   Decimal.set ({ precision: sd, rounding: rm });
   expect(expected).assertEqual(Decimal.log(n, base).valueOf());
   expect(expected).assertEqual(new Decimal(n).log(base).valueOf());

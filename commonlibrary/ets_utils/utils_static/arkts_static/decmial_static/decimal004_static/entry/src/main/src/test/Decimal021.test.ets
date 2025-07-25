@@ -28,11 +28,11 @@ import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-function test_pow_001 (base: string, exp: string, expected: string, sd: number, rm: number) {
+function test_pow_001 (base: string, exp: string, expected: string, sd: number, rm: int) {
   Decimal.set ({ precision: sd, rounding: rm });
   expect(expected).assertEqual(Decimal.pow(base, exp).valueOf());
 }
-function test_pow_002 (base: string, exp: number, expected: string, sd: number, rm: number) {
+function test_pow_002 (base: string, exp: number, expected: string, sd: number, rm: int) {
   Decimal.set ({ precision: sd, rounding: rm });
   expect(expected).assertEqual(Decimal.pow(base, exp).valueOf());
 }
