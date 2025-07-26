@@ -34,6 +34,7 @@ group("storage") {
       "storagepickerjstest:storagepicker_js_test",
       "storagesecuritylabeljstest:storagesecuritylabel_js_test",
       "storagestatfsjstest:storagestatfs_js_test",
+      "storagestatfsjsteststatic:storagestatfs_js_test_static",
       "storagestatisticsjstest:storagestatistics_js_test",
     ]
   }
