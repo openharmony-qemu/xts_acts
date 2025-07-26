@@ -84,7 +84,7 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
-     * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0100
+     * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0200
      * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0200
      * @tc.desc The X509 Cert Format is PEM
      * @tc.size Medium
