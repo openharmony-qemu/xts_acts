@@ -100,7 +100,7 @@ export default function KvStoreEtsTestStatic() {
 
         },
       }, (err : BusinessError|null) : void => {
-        if(err?.code != 0){
+        if(err?.code !== 0){
           hilog.info(domain, tag, '%{public}s', '================ errcode='+ err?.code);
         }
         hilog.info(domain, tag, '%{public}s', ' ================ zyh BusinessError  end');
@@ -137,7 +137,7 @@ export default function KvStoreEtsTestStatic() {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start getKvstore");
         let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 getKvstore end");
-        expect(store != null).assertTrue();
+        expect(store !== null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
@@ -161,7 +161,7 @@ export default function KvStoreEtsTestStatic() {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start getKvstore");
         let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID4, singleOptions4);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 getKvstore end");
-        expect(store != null).assertTrue();
+        expect(store !== null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
@@ -184,7 +184,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         let store = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest002 success ");
-        expect(store != null).assertTrue();
+        expect(store !== null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
