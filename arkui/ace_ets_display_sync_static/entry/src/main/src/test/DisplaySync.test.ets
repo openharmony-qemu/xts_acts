@@ -41,7 +41,7 @@ export default function displaySyncTest() {
          * @tc.type       : Function
          * @tc.level      : Level 0
          */
-        it("displaySync_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+        it("displaySync_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
             await startAbility(bundleName, 'EntryAbility');
             let driver = Driver.create();
             let start = await driver.findComponent(ON.text('start'));
