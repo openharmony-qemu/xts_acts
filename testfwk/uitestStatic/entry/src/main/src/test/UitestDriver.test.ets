@@ -1844,7 +1844,7 @@ export default function uitestDriverTest() {
     })
 
     /*
-     * @tc.number: uitestDriverTest_0056
+     * @tc.number: uitestDriverTest_0096
      * @tc.name: testDriverInputTextMode_static
      * @tc.desc: enter '123',the values of both paste and addition are false
      */
@@ -1897,7 +1897,7 @@ export default function uitestDriverTest() {
     })
 
     /*
-     * @tc.number: uitestDriverTest_0057
+     * @tc.number: uitestDriverTest_0097
      * @tc.name: testDriverInputTextMode1_static
      * @tc.desc: enter '长贵儿',the values of both paste and addition are false
      */
@@ -2026,8 +2026,8 @@ export default function uitestDriverTest() {
     })
 
     /*
-     * @tc.number: uitestDriverTest_0059
-     * @tc.name: testDriverInputText3
+     * @tc.number: uitestDriverTest_0099
+     * @tc.name: testDriverInputTextMode3_static
      * @tc.desc: enter '123',the values of paste is false,the values of addition is true
      */
     it('testDriverInputTextMode3_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
@@ -2125,7 +2125,7 @@ export default function uitestDriverTest() {
     })
 
     /*
-     * @tc.number: uitestDriverTest_0061
+     * @tc.number: uitestDriverTest_0079
      * @tc.name: testFlingWithId_static
      * @tc.desc: fling test
      */
@@ -2186,7 +2186,7 @@ export default function uitestDriverTest() {
 
     /*
      * @tc.number: uitestDriverTest_0062
-     * @tc.name: testPressBackWithId
+     * @tc.name: testPressBackWithId_static
      * @tc.desc: pressBack test
      */
     it('testPressBackWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
@@ -2222,7 +2222,7 @@ export default function uitestDriverTest() {
     })
 
     /*
-     * @tc.number: uitestDriverTest_0063
+     * @tc.number: uitestDriverTest_0093
      * @tc.name: testTriggerKeyWithId_static
      * @tc.desc: triggerKey test
      */

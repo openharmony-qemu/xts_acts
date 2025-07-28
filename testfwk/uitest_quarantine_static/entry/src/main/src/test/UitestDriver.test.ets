@@ -354,7 +354,7 @@ export default function uitestDriverTest() {
 
     /*
      * @tc.number: uitestDriverTest_0037
-     * @tc.name: testPressHomeWithId
+     * @tc.name: testPressHomeWithId_static
      * @tc.desc: pressHome test
      */
     it('testPressHomeWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
