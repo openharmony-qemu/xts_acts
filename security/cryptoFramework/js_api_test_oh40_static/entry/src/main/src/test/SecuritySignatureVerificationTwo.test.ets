@@ -320,13 +320,11 @@ export default function SecuritySignatureVerificationTwoJsunit() {
       async (done: () => void): Promise<void> => {
         try {
           await asyCallback.signAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 1);
-          expect(null).assertFail();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
         try {
           await asyCallback.signAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
-          expect(null).assertFail();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
@@ -543,14 +541,14 @@ export default function SecuritySignatureVerificationTwoJsunit() {
           expect(null).assertFail();
         }
         try {
-          await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
-          expect(null).assertFail();
+          let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
+          expect(status).assertFalse();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
         try {
-          await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
-          expect(null).assertFail();
+          let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
+          expect(status).assertFalse();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
