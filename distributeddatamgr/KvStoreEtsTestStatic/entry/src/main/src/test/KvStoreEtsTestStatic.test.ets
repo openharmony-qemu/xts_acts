@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 
+
 export default function KvStoreEtsTestStatic() {
   let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
   let tag: string = 'testTag >>>>>> '; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -88,9 +89,34 @@ export default function KvStoreEtsTestStatic() {
 
     beforeAll (() => {
       hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-      context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      abilityDelegator.addAbilityMonitor({
+        abilityName: "EntryAbility",
+        moduleName:"entry",
+        onAbilityCreate: (abilitys : UIAbility) : void => {
+          context = abilitys.context
+          context.stageMode = true;
+          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate end');
+          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate context=' + context);
 
-      hilog.info(domain, tag, '%{public}s', '================ beforeAll end==========');
+        },
+      }, (err : BusinessError|null) : void => {
+        if(err?.code != 0){
+          hilog.info(domain, tag, '%{public}s', '================ errcode='+ err?.code);
+        }
+        hilog.info(domain, tag, '%{public}s', ' ================ zyh BusinessError  end');
+      });
+
+      try {
+        hilog.info(domain, tag, '%{public}s', "============beforeAll msSleep");
+        await Utils.msSleep(2000)
+        hilog.info(domain, tag, '%{public}s', "============beforeAll aa start");
+        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        await Utils.msSleep(2000)
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============beforeAll e: " + e);
+        hilog.info(domain, tag, '%{public}s', '================ beforeAll end==========');
+      }
     })
 
     beforeEach(() => {
