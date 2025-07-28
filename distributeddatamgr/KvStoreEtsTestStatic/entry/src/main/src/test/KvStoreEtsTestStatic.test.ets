@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-   
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import distributedKVStore from '@ohos.data.distributedKVStore';
 import hilog from '@ohos.hilog'
@@ -88,26 +88,8 @@ export default function KvStoreEtsTestStatic() {
 
     beforeAll (() => {
       hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          context = abilitys.context
-          context.stageMode = true;
-          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate end');
-          hilog.info(domain, tag, '%{public}s', '================ onAbilityCreate context=' + context);
+      context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
 
-        },
-      }, (err : BusinessError|null) : void => {
-        if(err?.code !== 0){
-          hilog.info(domain, tag, '%{public}s', '================ errcode='+ err?.code);
-        }
-        hilog.info(domain, tag, '%{public}s', ' ================ zyh BusinessError  end');
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
-      await Utils.msSleep(2000)
       hilog.info(domain, tag, '%{public}s', '================ beforeAll end==========');
     })
 
@@ -137,7 +119,7 @@ export default function KvStoreEtsTestStatic() {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start getKvstore");
         let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 getKvstore end");
-        expect(store !== null).assertTrue();
+        expect(store != null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
@@ -161,7 +143,7 @@ export default function KvStoreEtsTestStatic() {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start getKvstore");
         let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID4, singleOptions4);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 getKvstore end");
-        expect(store !== null).assertTrue();
+        expect(store != null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
@@ -184,7 +166,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         let store = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest002 success ");
-        expect(store !== null).assertTrue();
+        expect(store != null).assertTrue();
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e);
