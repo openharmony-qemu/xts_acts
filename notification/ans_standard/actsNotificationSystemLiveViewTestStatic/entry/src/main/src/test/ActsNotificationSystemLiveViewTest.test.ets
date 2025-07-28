@@ -1595,7 +1595,6 @@ export default function ActsNotificationSystemLiveViewTest() {
   * @tc.type: Function
   * @tc.level Level 3
   */
-    //问题单号：DTS2025060627133
     it('Sub_Notification_Ans_Live_Publish_Static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7500'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
