@@ -25,8 +25,9 @@ group("testfwk") {
       "uitest:ActsUiTest",
       "uitestScene:ActsUiTestScene",
       "uitest_errorcode:ActsUiTestErrorCodeTest",
+      "uitest_errorcode_static:ActsUiTestErrorCodeStaticTest",
       "uitest_quarantine:ActsUiTestQuarTest",
-      "perftest:ActsPerfTestTest",
+      "uitest_quarantine_static:ActsUiTestQuarStaticTest",
     ]
   }
 }
