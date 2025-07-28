@@ -63,7 +63,7 @@ export default function SecurityKeyAgreementJsunit() {
           })
           .catch((err: Error) => {
             console.error("AsyPromise keyAgreementProcess catch error: " + err);
-            expect(err.code).assertEqual(401);
+            expect((err as BusinessError).code).assertEqual(401);
           });
         done();
       }
@@ -107,7 +107,7 @@ export default function SecurityKeyAgreementJsunit() {
             console.error(
               "AsyPromise keyAgreementBySpecProcess catch error: " + err
             );
-            expect(err.code).assertEqual(401);
+            expect((err as BusinessError).code).assertEqual(401);
           });
         done();
       }
@@ -135,7 +135,7 @@ export default function SecurityKeyAgreementJsunit() {
             console.error(
               "AsyPromise keyAgreementBySpecProcess catch error: " + err
             );
-            expect(err.code).assertEqual(401);
+            expect((err as BusinessError).code).assertEqual(401);
           });
         done();
       }
