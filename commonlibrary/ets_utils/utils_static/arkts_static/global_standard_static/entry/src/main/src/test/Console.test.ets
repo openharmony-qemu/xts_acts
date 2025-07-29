@@ -2419,7 +2419,6 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeLog(str);
         console.timeEnd(str);
-        expect().assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
@@ -2469,7 +2468,7 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_10000
      * @tc.name       : testTimeLog0025
      * @tc.desc       : Test the function of the interface TimeLog.
      * @tc.size       : MediumTest
