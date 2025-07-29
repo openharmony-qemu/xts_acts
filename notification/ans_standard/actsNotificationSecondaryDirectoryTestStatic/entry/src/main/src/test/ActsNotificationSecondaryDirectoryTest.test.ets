@@ -25,6 +25,7 @@ import { BusinessError } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -41,23 +42,10 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       loadAndSetUpUiTest();
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err: BusinessError | null): void => {
-        if (err != null) {
-          hilog.info(domain, tag, '%{public}s', '-----' + err.code);
-        }
-        hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
       let driver = Driver.create();
       await Utils.msSleep(1500);
       let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));

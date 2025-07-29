@@ -22,6 +22,8 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
 import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+
 const DOMAIN_NUMBER: number = 0xFF00;
 let bundle_name:string = "com.example.actssubscribertestunorder.static"
 let testAbilityContext:common.UIAbilityContext;
@@ -34,23 +36,10 @@ export default function ActsSubscriberTestUnorder() {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
       loadAndSetUpUiTest();
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll end');
     })
 

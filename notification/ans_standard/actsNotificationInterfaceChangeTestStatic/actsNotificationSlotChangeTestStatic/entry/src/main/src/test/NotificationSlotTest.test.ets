@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType} from "../../../hypium/index";
 import notificationManager from '@ohos.notificationManager';
 import { BusinessError } from '@ohos.base';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default function ActsNotificationSlotTest() {
   describe('ActsNotificationSlotTest', () => {

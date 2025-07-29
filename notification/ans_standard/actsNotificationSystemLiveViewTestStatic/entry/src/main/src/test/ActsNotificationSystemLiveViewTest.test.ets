@@ -19,6 +19,7 @@ import {BusinessError} from '@ohos.base';
 import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundleName: string = 'com.example.systemliveView.static'
 const TAG = 'NotificationActs'

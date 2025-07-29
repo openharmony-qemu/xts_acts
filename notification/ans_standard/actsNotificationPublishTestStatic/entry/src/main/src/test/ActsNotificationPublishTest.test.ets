@@ -25,6 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actsnotificationpublish.static"
 let domain: number = 0x0000;
 let wantAgentData : Object = {}
@@ -67,23 +68,10 @@ export default function ActsNotificationPublishTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       loadAndSetUpUiTest();
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(1000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(1000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
       wantAgent.getWantAgent(wantAgentInfo).then((data) => {
         wantAgentData = data;
       }).catch((err: BusinessError) :void => {
