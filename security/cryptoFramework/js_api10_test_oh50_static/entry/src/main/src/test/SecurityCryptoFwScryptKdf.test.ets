@@ -724,7 +724,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
             expect(res.ret).assertFalse();
-            expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+            expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
         // taskpool.cancel(taskGroup);
@@ -794,7 +794,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
             expect(res.ret).assertFalse();
-            expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+            expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
         // taskpool.cancel(taskGroup);
