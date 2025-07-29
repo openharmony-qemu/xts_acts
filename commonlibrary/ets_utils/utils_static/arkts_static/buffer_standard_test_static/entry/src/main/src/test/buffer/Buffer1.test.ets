@@ -3290,7 +3290,7 @@ export default function BufferTest1() {
         expect(false).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
-        expect(String(err.code)).assertEqual(10200001);
+        expect(String(err.code)).assertEqual('10200001');
       }
     });
 
@@ -3782,7 +3782,7 @@ export default function BufferTest1() {
         let buf = buffer.from("abc");
         let str = buf.toString("binary");
         expect(String(str)).assertEqual("abc");
-      } catch (err:Error) {
+      } catch (err:BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
       }
@@ -4192,7 +4192,7 @@ export default function BufferTest1() {
           let index = buf.indexOf("ab", 0, encode);
           expect(String(index)).assertEqual('-1');
         }
-      } catch (err: Error) {
+      } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
       }
@@ -4358,7 +4358,7 @@ export default function BufferTest1() {
           let index = buf.lastIndexOf("ab", 0, encode);
           expect(String(index)).assertEqual('-1');
         }
-      } catch (err: Error) {
+      } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
       }
