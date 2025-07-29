@@ -137,9 +137,9 @@ export default function KvStoreEtsTestStatic() {
      * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.level      : Level 0
      */
-    it('KvStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+    it('KvStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start getKvstore");
@@ -161,9 +161,9 @@ export default function KvStoreEtsTestStatic() {
      * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.level      : Level 0
      */
-    it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+    it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start getKvstore");
