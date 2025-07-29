@@ -22,7 +22,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100
-     * @tc.name Test Generator Asymmetric Key algName with RSA. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100
      * @tc.desc algorithm is RSA
      * @tc.size Medium
      * @tc.type Func
@@ -55,7 +55,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0200
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0200
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -84,7 +84,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0201
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0201
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -113,7 +113,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0202
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0202
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -142,7 +142,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0300
-     * @tc.name Test Generator Asymmetric Key algName with DSA. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0300
      * @tc.desc algorithm is DSA
      * @tc.size Medium
      * @tc.type Func
@@ -171,7 +171,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0301
-     * @tc.name Test Generator Asymmetric Key algName with DSA. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0301
      * @tc.desc algorithm is DSA
      * @tc.size Medium
      * @tc.type Func
@@ -200,7 +200,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0400
-     * @tc.name Test Generator Asymmetric Key algName with SM2. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0400
      * @tc.desc algorithm is SM2
      * @tc.size Medium
      * @tc.type Func
@@ -229,7 +229,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0500
-     * @tc.name Test Generator Asymmetric Key algName with 25519. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0500
      * @tc.desc algorithm is 25519
      * @tc.size Medium
      * @tc.type Func
@@ -258,7 +258,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0600
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0600
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -287,7 +287,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0601
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0601
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -316,7 +316,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0602
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0602
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -345,7 +345,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0700
-     * @tc.name Test Generator Asymmetric Key algName with SM2 Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0700
      * @tc.desc algorithm is SM2 Spec
      * @tc.size Medium
      * @tc.type Func
@@ -371,7 +371,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
-     * @tc.name Test Generator Asymmetric Key algName with RSA Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
      * @tc.desc algorithm is RSA Spec
      * @tc.size Medium
      * @tc.type Func
@@ -402,7 +402,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
      * @tc.desc algorithm is ECC Spec
      * @tc.size Medium
      * @tc.type Func
@@ -433,7 +433,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000
      * @tc.desc algorithm is ECC Spec
      * @tc.size Medium
      * @tc.type Func
@@ -442,14 +442,14 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "ECC256";
-        let a: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE');
-        let b: bigint = BigInt('0xB4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4');
-        let p: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001');
-        let gX: bigint = BigInt('0xB70E0CBD6BB4BF7F321390B94A03C1D356C21122343280D6115C1D21');
-        let gY: bigint = BigInt('0xbd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e34');
-        let n: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D');
+        let a: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298878');
+        let b: bigint = BigInt('18958286285566608000408668544493926415504680968679321075787234672564');
+        let p: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298881');
+        let gX: bigint = BigInt('19277929113566293071110308034699488026831934219452440156649784352033');
+        let gY: bigint = BigInt('19926808758034470970197974370888749184205991990603949537637343198772');
+        let n: bigint = BigInt('26959946667150639794667015087019625940457807714424391721682722368061');
         let h: int = 1;
-        let sk: bigint = BigInt('0x0038939bfb7af5365552c34ff4dfc256c928211119e80f876d97724b98');
+        let sk: bigint = BigInt('5958211279885070464920675858557961186290168537951857871398143937432');
         let eccPriKeySpec: cryptoFramework.ECCPriKeySpec = asyKeySyncUtils.genEccPriKeySpec(gX, gY, a, b, p, n, h, sk);
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         let priKey: cryptoFramework.PriKey = generatorBySpec.generatePriKeySync();
@@ -467,7 +467,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100
      * @tc.desc algorithm is ECC Spec
      * @tc.size Medium
      * @tc.type Func
@@ -475,14 +475,14 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let a: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE');
-        let b: bigint = BigInt('0xB4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4');
-        let p: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001');
-        let gX: bigint = BigInt('0xB70E0CBD6BB4BF7F321390B94A03C1D356C21122343280D6115C1D21');
-        let gY: bigint = BigInt('0xbd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e56');
-        let n: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D');
+        let a: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298878');
+        let b: bigint = BigInt('18958286285566608000408668544493926415504680968679321075787234672564');
+        let p: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298881');
+        let gX: bigint = BigInt('19277929113566293071110308034699488026831934219452440156649784352033');
+        let gY: bigint = BigInt('19926808758034470970197974370888749184205991990603949537637343198806');
+        let n: bigint = BigInt('26959946667150639794667015087019625940457807714424391721682722368061');
         let h: int = 1;
-        let sk: bigint = BigInt('0x0038939bfb7af5365552c34ff4dfc256c928211119e80f876d97724b98');
+        let sk: bigint = BigInt('5958211279885070464920675858557961186290168537951857871398143937432');
         let eccPriKeySpec: cryptoFramework.ECCPriKeySpec = asyKeySyncUtils.genEccPriKeySpec(gX, gY, a, b, p, n, h, sk);
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();
@@ -496,7 +496,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200
      * @tc.desc algorithm is ECC Spec
      * @tc.size Medium
      * @tc.type Func
@@ -504,14 +504,14 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let a: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE');
-        let b: bigint = BigInt('0xB4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4');
-        let p: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000015C1D21');
-        let gX: bigint = BigInt('0xB70E0CBD6BB4BF7F321390B94A03C1D356C21122343280D6115C1D21');
-        let gY: bigint = BigInt('0xbd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e34');
-        let n: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D');
+        let a: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298878');
+        let b: bigint = BigInt('18958286285566608000408668544493926415504680968679321075787234672564');
+        let p: bigint = BigInt('452312848583266388373324160190187140050506649604373537406227380470653132065');
+        let gX: bigint = BigInt('19277929113566293071110308034699488026831934219452440156649784352033');
+        let gY: bigint = BigInt('19926808758034470970197974370888749184205991990603949537637343198772');
+        let n: bigint = BigInt('26959946667150639794667015087019625940457807714424391721682722368061');
         let h: int = 1;
-        let sk: bigint = BigInt('0x0038939bfb7af5365552c34ff4dfc256c928211119e80f876d97724b98');
+        let sk: bigint = BigInt('5958211279885070464920675858557961186290168537951857871398143937432');
         let eccPriKeySpec: cryptoFramework.ECCPriKeySpec = asyKeySyncUtils.genEccPriKeySpec(gX, gY, a, b, p, n, h, sk);
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();
@@ -525,7 +525,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300
      * @tc.desc algorithm is ECC Spec
      * @tc.size Medium
      * @tc.type Func
@@ -533,14 +533,14 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let a: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE');
-        let b: bigint = BigInt('0xB4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB7');
-        let p: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001');
-        let gX: bigint = BigInt('0xB70E0CBD6BB4BF7F321390B94A03C1D356C21122343280D6115C1D21');
-        let gY: bigint = BigInt('0xbd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e34');
-        let n: bigint = BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D');
+        let a: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298878');
+        let b: bigint = BigInt('18958286285566608000408668544493926415504680968679321075787234672567');
+        let p: bigint = BigInt('26959946667150639794667015087019630673557916260026308143510066298881');
+        let gX: bigint = BigInt('19277929113566293071110308034699488026831934219452440156649784352033');
+        let gY: bigint = BigInt('19926808758034470970197974370888749184205991990603949537637343198772');
+        let n: bigint = BigInt('26959946667150639794667015087019625940457807714424391721682722368061');
         let h: int = 1;
-        let sk: bigint = BigInt('0x0038939bfb7af5365552c34ff4dfc256c928211119e80f876d97724b98');
+        let sk: bigint = BigInt('5958211279885070464920675858557961186290168537951857871398143937432');
         let eccPriKeySpec: cryptoFramework.ECCPriKeySpec = asyKeySyncUtils.genEccPriKeySpec(gX, gY, a, b, p, n, h, sk);
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();

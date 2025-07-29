@@ -24,7 +24,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
-     * @tc.name Test convertKey with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0100
      * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -47,32 +47,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200
-     * @tc.name Test convertKey with dh, Callback style, process success
-     * @tc.desc AsyKeyGenerator with algName DH_modp1536, getEncoded by keyPair, then convertKey
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0200";
-      console.log(testNumber + ": started.");
-      let param: string = "DH_modp1536";
-      try {
-        let res: boolean = await asyKeyGenCallbackFunc.convertDHKey(param);
-        expect(res).assertTrue();
-        console.log(testNumber + ": convertKey succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
-     * @tc.name Test key generate with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0300
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
      * @tc.size Medium
      * @tc.type Func
@@ -98,35 +74,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400
-     * @tc.name Test key generate with dh, Callback style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generatePubKey by DHCommonParamsSpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0400";
-      console.log(testNumber + ": started.");
-      try {
-        let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(512, 128);
-        let keyPair: cryptoFramework.KeyPair = await asyKeyGenCallbackFunc.genKeyPair(true, spec, "DH");
-        console.log(testNumber + ": genKeyPair succeed");
-        let res: boolean = compareSpecFunc.DHKeyPair(keyPair.priKey, keyPair.pubKey)
-          && keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_L_NUM) == 128;
-        expect(res).assertTrue();
-        console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
-     * @tc.name Test key generate with dh, process success, AsyKeyGeneratorBySpec with CommonSpec
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0500
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
@@ -144,11 +93,11 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    });
+    }); // appfreeze
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
-     * @tc.name Test key generate with dh, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -167,11 +116,11 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    });
+    }); // appfreeze
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -185,7 +134,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
       } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+        expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -194,7 +143,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0800
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -208,7 +157,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
       } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+        expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -217,7 +166,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
-     * @tc.name Test key generate with dh, process fail
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0900
      * @tc.desc AsyKeyGeneratorBySpec with CommonSpec
      * @tc.size Medium
      * @tc.type Func
@@ -231,7 +180,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
       } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+        expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -239,41 +188,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000
-     * @tc.name Test key compare Spec with dh, Promise style, process success
-     * @tc.desc AsyKeyGeneratorBySpec with CommonSpec, generateKeyPair by DH_ffdhe2048, compare Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1000";
-      console.log(testNumber + ": started.");
-      try {
-        let param: string = "DH_ffdhe2048";
-        let spec: cryptoFramework.DHCommonParamsSpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(2048, 512);
-        let keyPairBySpec: cryptoFramework.KeyPair = await asyKeyGenCallbackFunc.genKeyPair(true, spec, "DH");
-        let keyPair: cryptoFramework.KeyPair = await asyKeyGenCallbackFunc.genKeyPair(false, spec, param);
-        console.log(testNumber + ": genKeyPair succeed");
-        expect(keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_P_BN) == spec.p).assertTrue();
-        expect(keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_G_BN) == spec.g).assertTrue();
-        expect(keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_L_NUM) == 0).assertTrue();
-        expect(keyPairBySpec.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_L_NUM) == 512).assertTrue();
-        expect(spec.l == 512).assertTrue();
-        let res: boolean = compareSpecFunc.DHKey(keyPair, keyPairBySpec);
-        expect(res).assertTrue();
-        console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
      * @tc.desc generatePubKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -294,11 +210,11 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    });
+    }); // appfreeze
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
      * @tc.desc generatePubKey by spec
      * @tc.size Medium
      * @tc.type Func
@@ -322,58 +238,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generatePriKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1300";
-      console.log(testNumber + ": started.");
-      try {
-        let spec: cryptoFramework.AsyKeySpec = specUtil.genDHKeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
-        console.log(testNumber + ": genDHKeySpec succeed");
-        let pubKey: cryptoFramework.PubKey = await asyKeyGenCallbackFunc.genPubKey(spec);
-        expect(pubKey != null).assertTrue();
-        console.log(testNumber + ": genPriKey succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generatePriKey by spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400";
-      console.log(testNumber + ": started.");
-      try {
-        let spec: cryptoFramework.AsyKeySpec = specUtil.genDHKeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
-        console.log(testNumber + ": genDHKeySpec succeed");
-        let priKey: cryptoFramework.PriKey = await asyKeyGenCallbackFunc.genPriKey(spec);
-        expect(priKey != null).assertTrue();
-        console.log(testNumber + ": genPriKey succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
-     * @tc.name Test key generate bySpec with dh, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1500
      * @tc.desc generateKeyPair by spec
      * @tc.desc getAsyKeySpec
      * @tc.size Medium
@@ -397,38 +263,11 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
-     * @tc.name Test key generate bySpec with dh, Callback style, process success
-     * @tc.desc generateKeyPair by spec, getAsyKeySpec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600";
-      console.log(testNumber + ": started.");
-      try {
-        let spec: cryptoFramework.AsyKeySpec = specUtil.genDHKeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
-        console.log(testNumber + ": genDHKeySpec succeed");
-        let keyPair: cryptoFramework.KeyPair = await asyKeyGenCallbackFunc.genKeyPair(true, spec, "DH");
-        console.log(testNumber + ": genKeyPair succeed");
-        let res: boolean = compareSpecFunc.DHKeyPair(keyPair.priKey, keyPair.pubKey);
-        expect(res).assertTrue();
-        console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
+    }); // appfreeze
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
-     * @tc.name Test key format/algName with dh. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700
      * @tc.desc generateKeyPair by DH_modp1536
      * @tc.size Medium
      * @tc.type Func

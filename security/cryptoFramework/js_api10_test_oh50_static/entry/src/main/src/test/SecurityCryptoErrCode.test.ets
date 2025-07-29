@@ -23,7 +23,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0100
-     * @tc.name 传人损坏的私钥数据，convertKey返回17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0100
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -48,7 +48,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0200
-     * @tc.name 传人损坏的私钥数据，convertKeySync返回17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0200
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -73,7 +73,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0300
-     * @tc.name convertKeySync返回401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0300
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -94,7 +94,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0400
-     * @tc.name convertKey 中KeyBlob值为空；期望 返回401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0400
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -118,7 +118,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0500
-     * @tc.name convertKey 中KeyBlob值为空；期望 返回401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0500
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -127,9 +127,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     it("SUB_Security_CryptoFramework_ErrCode_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let keyMessage = '';
+        // let keyMessage = '';
         let keyBlob: cryptoFramework.DataBlob = {
-          data : new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+          data : new Uint8Array() // new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
         }
         let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
         let key = symKeyGenerator.convertKeySync(keyBlob);
@@ -144,7 +144,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0600
-     * @tc.name generateRandom返回17620001错误码
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0600
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -165,7 +165,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0900
-     * @tc.name doFinalSync返回17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_0900
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -179,8 +179,8 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let cipher = cryptoFramework.createCipher('AES128|CCM|PKCS7');
         let symKey = await symKeyGenerator.generateSymKey();
         await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
-        let message = "";
-        let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+        // let message = "";
+        let plainText: cryptoFramework.DataBlob = { data: new Uint8Array() } // new Uint8Array(buffer.from(message, 'utf-8').buffer) };
         cipher.updateSync(plainText);
         console.info("updateSync success");
         gcmParams.authTag = cipher.doFinalSync(plainText);
@@ -194,7 +194,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1000
-     * @tc.name updateSync为空数组
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1000
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -221,7 +221,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1100
-     * @tc.name setCipherSpec返回801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1100
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -243,7 +243,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1200
-     * @tc.name getCipherSpec 返回801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1200
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -264,7 +264,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1300
-     * @tc.name initSync 返回17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1300
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -288,7 +288,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1400
-     * @tc.name priKey.getAsyKeySpec 返回 17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1400
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -330,7 +330,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1500
-     * @tc.name pubKey.getAsyKeySpec 返回 17630001
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1500
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -373,7 +373,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1600
-     * @tc.name hkdf 返回 801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1600
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -401,7 +401,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1700
-     * @tc.name hkdf 返回 401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1700
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -430,7 +430,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1800
-     * @tc.name ECCKeyUtil 返回 401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1800
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -447,8 +447,8 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         // console.info('ECC_PK_Y_BN 16：' + eccPkY.toString(16));
         // 将eccPkX.toString(16)结果放入x，eccPkY.toString(16)结果放入y。
         let returnPoint: cryptoFramework.Point = {
-          x: BigInt('0x1' + "a1"), // eccPkX.toString(16)),
-          y: BigInt('0x1' + "b1")// eccPkY.toString(16))
+          x: BigInt("11"), // eccPkX.toString(16)),
+          y: BigInt("11")// eccPkY.toString(16))
         };
         let returnData = cryptoFramework.ECCKeyUtil.getEncodedPoint('NID_brainpoolP258r1', returnPoint, 'UNCOMPRESSED');
         console.info('returnData: ' + returnData);
@@ -462,7 +462,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_1900
-     * @tc.name ECCKeyUtil 返回 401
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_1900
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -484,7 +484,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2000
-     * @tc.name getEncoded判断是否返回801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_2000
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -506,7 +506,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2100
-     * @tc.name setSignSpec判断是否返回801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_2100
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func
@@ -543,7 +543,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_2200
-     * @tc.name genECCCommonParamsSpec判断是否返回801
+     * @tc.name SUB_Security_CryptoFramework_ErrCode_Func_2200
      * @tc.desc convertKey
      * @tc.size Medium
      * @tc.type Func

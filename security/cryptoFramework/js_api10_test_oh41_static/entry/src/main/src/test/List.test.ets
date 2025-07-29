@@ -12,7 +12,6 @@ import SecurityCryptoFwSignVerifyECCBrainPoolTestUnit from './SecurityCryptoFwSi
 import SecurityCryptoFwSignVerifySM2TestUnit from './SecurityCryptoFwSignVerifySM2.test'
 export default function testsuite() {
   SecurityCryptoFwCipherSM2TestUnit();
-  SecurityCryptoFwGenECCCommonSpecTestUnit();
   SecurityCryptoFwKeyGenerateECCTestUnit();
   SecurityCryptoFwKeyGenerateDHTestUnit();
   SecurityCryptoFwAgreementDHTestUnit();
@@ -23,4 +22,5 @@ export default function testsuite() {
   SecurityCryptoFwSignVerifyECCTestUnit();
   SecurityCryptoFwSignVerifyECCBrainPoolTestUnit();
   SecurityCryptoFwSignVerifySM2TestUnit();
+  SecurityCryptoFwGenECCCommonSpecTestUnit();
 }

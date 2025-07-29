@@ -26,7 +26,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
     
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0100
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -55,7 +55,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0200
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -84,7 +84,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0300
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -113,7 +113,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0400
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0400
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -142,7 +142,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0500
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -171,7 +171,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0600
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0600
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -200,7 +200,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0700
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -229,7 +229,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0800
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -258,7 +258,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_0900
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_0900
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -287,7 +287,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1000
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1000
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -316,7 +316,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1100
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1100
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -345,7 +345,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1200
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1200
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -374,7 +374,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1300
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1300
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -402,37 +402,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1400
-     * @tc.name Test signVerify with brainPool, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
-     * @tc.desc 3. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("Security_CryptoFramework_SignVerify_BrainPool_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.log("Security_CryptoFramework_SignVerify_BrainPool_Func_1400: started.");
-      let algName: string = "ECC_BrainPoolP512t1";
-      let signVerifyAlg: string = "ECC_BrainPoolP512t1|MD5";
-      let spec: cpFw.AsyKeySpec = {
-        algName: "ECC",
-        specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-      };
-      try {
-        let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlg, false, spec, algName);
-        expect(res).assertTrue();
-        console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1400: signVerify succeed`);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1400 catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log("Security_CryptoFramework_SignVerify_BrainPool_Func_1400: success.");
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1500
-     * @tc.name Test signVerify with brainPool, process is successful
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1500
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
      * @tc.desc 3. Test interface with Promise style
      * @tc.size Medium
@@ -456,40 +427,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1600
-     * @tc.name Test signVerify with brainPool, process is successful
-     * @tc.desc 1. AsyKeyGeneratorBySpec with algName ECC_BrainPoolP512t1
-     * @tc.desc 2. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
-     */
-    it("Security_CryptoFramework_SignVerify_BrainPool_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log("Security_CryptoFramework_SignVerify_BrainPool_Func_1600: started.");
-      let curveName: string = "NID_brainpoolP512t1";
-      let spec: cryptoFramework.ECCKeyPairSpec = {
-        algName: "ECC",
-        specType: cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC,
-        params: cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName),
-        sk: specUtil.p512t1Sk(),
-        pk: specUtil.p512t1Pk(),
-      };
-      let signVerifyAlg: string = "ECC_BrainPoolP512t1|MD5";
-      try {
-        let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlg, true, spec, "ECC");
-        expect(res).assertTrue();
-        console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1600: signVerify succeed`);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1600 catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log("Security_CryptoFramework_SignVerify_BrainPool_Func_1600: success.");
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1700
-     * @tc.name Test signVerify with error brainPool, process is fail
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1700
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1|NoHash
      * @tc.size Medium
      * @tc.type Func
@@ -514,7 +453,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_SignVerify_BrainPool_Func_1800
-     * @tc.name Test signVerify with error brainPool, process is fail
+     * @tc.name Security_CryptoFramework_SignVerify_BrainPool_Func_1800
      * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1|NoHash
      * @tc.size Medium
      * @tc.type Func
@@ -539,7 +478,7 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_BrainPool_Func_3100
-     * @tc.name Test signVerify algName with brainPool, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_BrainPool_Func_3100
      * @tc.desc create Sign/Verify with ECC_BrainPoolP224t1|SHA256
      * @tc.size Medium
      * @tc.type Func

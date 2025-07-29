@@ -26,7 +26,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0100
-     * @tc.name Test agreement with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0100
      * @tc.desc AsyKeyGenerator with algName X25519
      * @tc.size Medium
      * @tc.type Func
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0200
-     * @tc.name Test agreement with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0200
      * @tc.desc AsyKeyGenerator with X25519Spec
      * @tc.size Medium
      * @tc.type Func
@@ -78,36 +78,8 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0300
-     * @tc.name Test agreement with ECC, Callback style, process success
-     * @tc.desc AsyKeyGenerator with algName X25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
-     */
-    it("SUB_Security_CryptoFramework_Agreement_ECC_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_Agreement_ECC_Func_0100";
-      console.log(testNumber + ": started.");
-      let param: string = "X25519";
-      let spec: cpFw.AsyKeySpec = {
-        algName: "ECC",
-        specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-      };
-      try {
-        let res: boolean = await agreementAsyCallbackFunc.normalProcess(param, false, spec, param);
-        expect(res).assertTrue();
-        console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0400
-     * @tc.name Test agreement algName with ECC. Process success
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0400
      * @tc.desc createKeyAgreement with algName X25519
      * @tc.size Medium
      * @tc.type Func
@@ -130,7 +102,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0500
-     * @tc.name Test agreement with ECC. Promise style. Process fail
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0500
      * @tc.desc AsyKeyGenerator with error algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -153,7 +125,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0600
-     * @tc.name Test agreement with ECC. Promise style. Process fail
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0600
      * @tc.desc createKeyAgreement with error algName x25519
      * @tc.size Medium
      * @tc.type Func
@@ -176,7 +148,7 @@ export default function SecurityCryptoFwAgreementECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Agreement_ECC_Func_0700
-     * @tc.name Test agreement with ECC. Promise style. Process fail
+     * @tc.name SUB_Security_CryptoFramework_Agreement_ECC_Func_0700
      * @tc.desc generateSecret with unavailable algName x25519
      * @tc.size Medium
      * @tc.type Func

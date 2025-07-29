@@ -22,7 +22,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0100
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0100
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -48,7 +48,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0200
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0200
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -74,7 +74,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0300
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0300
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -96,7 +96,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0400
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0400
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -128,7 +128,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0500
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0500
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -157,7 +157,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0600
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0600
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -186,7 +186,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0700
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0700
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -210,7 +210,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0800
-     * @tc.name Test HMAC algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_HMACSync_Func_0800
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -231,7 +231,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         mac.updateSync(message);
       } catch (error: BusinessError) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect(error.code).assertEqual(401); // 1.1:30001
       }
       done();
     });

@@ -21,7 +21,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0100
-     * @tc.name Test ECC RFC5915 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0100
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -44,7 +44,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0200
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0200
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -73,7 +73,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0201
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0201
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -102,7 +102,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0202
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0202
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -131,7 +131,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0300
-     * @tc.name Test RSA RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0300
      * @tc.desc algorithm is RSA
      * @tc.size Medium
      * @tc.type Func
@@ -165,7 +165,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0400
-     * @tc.name Test DSA RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0400
      * @tc.desc algorithm is DSA
      * @tc.size Medium
      * @tc.type Func
@@ -197,7 +197,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0500
-     * @tc.name Test SM2_256 RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0500
      * @tc.desc algorithm is SM2_256
      * @tc.size Medium
      * @tc.type Func
@@ -224,7 +224,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0600
-     * @tc.name Test Ed25519 RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0600
      * @tc.desc algorithm is Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -251,7 +251,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0700
-     * @tc.name Test DH_modp2048 RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0700
      * @tc.desc algorithm is DH_modp2048
      * @tc.size Medium
      * @tc.type Func
@@ -278,7 +278,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0800
-     * @tc.name Test X25519 RFC5208 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_ECCRFC5915_Func_0800
      * @tc.desc algorithm is X25519
      * @tc.size Medium
      * @tc.type Func

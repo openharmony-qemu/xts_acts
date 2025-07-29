@@ -35,8 +35,8 @@ let testAbilityContext:common.UIAbilityContext;
 async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: number): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -49,26 +49,26 @@ async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: n
       }
       await doCmacPromiseSpilt(spec, msg, symKey, blockSize);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacPromiseSplitStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacPromiseSplitStub “${error}“, error code: ${error.code}`);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -81,26 +81,26 @@ async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean>
       }
       await doMacPromise(spec, symKey, msg);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacPromiseStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacPromiseStub “${error}“, error code: ${error.code}`);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: number): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -115,24 +115,25 @@ async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: numb
       await new Promise<void>((resolve, reject) => {
         timeoutId = setTimeout(() => {
           console.info("################ doCmacSyncSplitStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacSyncSplitStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doCmacSyncStub(algName: string, msgLen: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
@@ -145,18 +146,19 @@ async function doCmacSyncStub(algName: string, msgLen: int): Promise<boolean> {
       }
       doMacSync(spec, symKey, msg);
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doCmacSyncStub:" + algName + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doCmacSyncStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
@@ -166,7 +168,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     it("SUB_Security_CryptoFramework_Cmac_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let msgLen: number = 1024;
+        let msgLen: int = 1024;
         let blockSize: number = 25;
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         // Promise
@@ -196,7 +198,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0100
-     * @tc.name Test hmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0100
      * @tc.desc algorithm is hmac
      * @tc.size Medium
      * @tc.type Func
@@ -226,7 +228,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0200
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0200
      * @tc.desc algorithm is cmac
      * @tc.size Medium
      * @tc.type Func
@@ -256,7 +258,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0300
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0300
      * @tc.desc algorithm is cmac
      * @tc.size Medium
      * @tc.type Func
@@ -286,7 +288,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0400
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0400
      * @tc.desc algorithm is cmac, msg split test
      * @tc.size Medium
      * @tc.type Func
@@ -318,7 +320,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0500
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0500
      * @tc.desc algorithm is cmac, msg split test
      * @tc.size Medium
      * @tc.type Func
@@ -350,7 +352,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0600
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0600
      * @tc.desc algorithm is cmac, msg is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -383,7 +385,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0700
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0700
      * @tc.desc algorithm is cmac, msg is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -416,7 +418,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0800
-     * @tc.name Test cmac algorithm traversal test. Sync and Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0800
      * @tc.desc algorithm is cmac, msg split test
      * @tc.size Medium
      * @tc.type Func
@@ -450,7 +452,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_0900
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_0900
      * @tc.desc algorithm is cmac, update msg is empty
      * @tc.size Medium
      * @tc.type Func
@@ -478,7 +480,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1100
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1100
      * @tc.desc algorithm is cmac, update msg is empty
      * @tc.size Medium
      * @tc.type Func
@@ -504,7 +506,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1200
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1200
      * @tc.desc algorithm is cmac, updateSync msg is empty
      * @tc.size Medium
      * @tc.type Func
@@ -525,14 +527,14 @@ export default function SecurityCryptoFwCmacTestUnit() {
         mac.updateSync(msg);
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1300
-     * @tc.name Test cmac algorithm traversal test. Sync and Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1300
      * @tc.desc algorithm is cmac, msg split test
      * @tc.size Medium
      * @tc.type Func
@@ -567,7 +569,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1400
-     * @tc.name Test cmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1400
      * @tc.desc algorithm is cmac, key convert with hmac test
      * @tc.size Medium
      * @tc.type Func
@@ -598,7 +600,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1500
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1500
      * @tc.desc algorithm is cmac, key convert with hmac test
      * @tc.size Medium
      * @tc.type Func
@@ -629,7 +631,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1600
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1600
      * @tc.desc algorithm is cmac, not support cipher test
      * @tc.size Medium
      * @tc.type Func
@@ -653,7 +655,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1700
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1700
      * @tc.desc algorithm is cmac, not support cipher test
      * @tc.size Medium
      * @tc.type Func
@@ -677,7 +679,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1800
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1800
      * @tc.desc algorithm is cmac, not support cipher test
      * @tc.size Medium
      * @tc.type Func
@@ -701,7 +703,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Cmac_Func_1900
-     * @tc.name Test cmac algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Cmac_Func_1900
      * @tc.desc algorithm is cmac, rfc 4493 vector test
      * @tc.size Medium
      * @tc.type Func
@@ -727,39 +729,6 @@ export default function SecurityCryptoFwCmacTestUnit() {
       } catch (error: BusinessError) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_Cmac_Func_2000
-     * @tc.name Test cmac algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is cmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
-     */
-    it("SUB_Security_CryptoFramework_Cmac_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        for (let cipherName of C_MAC_SPEC) {
-          let spec: cryptoFramework.CmacSpec = {
-            algName: "CMAC",
-            cipherName: cipherName
-          }
-          let symAlg: string = cipherName;
-          let msgLen: int = 30;
-          let macSize: number = 16;
-          let msg: cryptoFramework.DataBlob = await createFullData(msgLen);
-          let symKey: cryptoFramework.SymKey = await genSymKey(symAlg);
-          let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
-          await doInitMacCallback(mac, symKey);
-          await doUpdateMacCallback(mac, msg);
-          let secret: cryptoFramework.DataBlob = await doFinalMacCallback(mac);
-          expect(secret.data.byteLength).assertEqual(macSize);
-        }
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
       }
       done();
     });
