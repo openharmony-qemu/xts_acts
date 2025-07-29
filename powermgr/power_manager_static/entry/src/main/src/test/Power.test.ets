@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import ohos_power from '@ohos.power'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'PowerStaticTest';
 
 export default function PowerTest() {
