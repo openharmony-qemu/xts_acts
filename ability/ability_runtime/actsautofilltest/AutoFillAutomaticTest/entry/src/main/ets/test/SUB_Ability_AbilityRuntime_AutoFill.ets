@@ -64,7 +64,7 @@ export default function abilityTest() {
       let title_success = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
       await sleep(100);
       expect(title_success != null).assertTrue();
-      await title_success.click();
+      await title_success?.click();
 
       await sleep(2000);
       let success_btn = await driver.waitForComponent(ON.id('success_btn'), 3000);
@@ -84,7 +84,7 @@ export default function abilityTest() {
       let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
       await sleep(100);
       expect(title_success2 != null).assertTrue();
-      await title_success2.click();
+      await title_success2?.click();
       await sleep(1000);
 
       let login_btn = await driver.waitForComponent(ON.id('login_btn'), 1500);
@@ -134,7 +134,7 @@ export default function abilityTest() {
       let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
       await sleep(100);
       expect(title_success2 != null).assertTrue();
-      await title_success2.click();
+      await title_success2?.click();
       
       await sleep(1000);
       let login_btn = await driver.waitForComponent(ON.id('login_btn'), 1500);
