@@ -424,7 +424,7 @@ export default function uitestComponentTest() {
         expect(nextPage != null).assertTrue()
         if (nextPage != null) {
           let center = await nextPage.getBoundsCenter();
-          let test = await nextPage.longClick();
+          await nextPage.longClick();
           let newButton = await driver.findComponent(ON.text('longClick'));
           hilog.info(domain, tag, `testUiComponentLongClick_static newButton, ${JSON.stringify(newButton)} `);
           expect(newButton != null).assertTrue()
