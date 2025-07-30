@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog';
 import notificationManager from '@ohos.notificationManager'
 import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
@@ -33,7 +33,7 @@ export default function ActsNotificationRequestTest() {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)

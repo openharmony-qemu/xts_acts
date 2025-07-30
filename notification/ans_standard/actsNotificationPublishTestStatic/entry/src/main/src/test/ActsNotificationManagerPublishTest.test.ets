@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import image from '@ohos.multimedia.image';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const TEST_SUITE_NAME:string = 'testPublishInloveFail'

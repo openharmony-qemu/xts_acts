@@ -22,8 +22,7 @@ import {
   UIElementInfo,
   UiDirection,
   PointerMatrix,
-  DisplayRotation,
-  loadAndSetUpUiTest
+  DisplayRotation
 } from '@ohos.UiTest'
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -41,7 +40,7 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )

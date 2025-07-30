@@ -26,8 +26,7 @@ import {
   UIElementInfo,
   UiDirection,
   PointerMatrix,
-  DisplayRotation,
-  loadAndSetUpUiTest
+  DisplayRotation
 } from '@ohos.UiTest'
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
 import Utils from './Util.test';
@@ -46,7 +45,7 @@ export default function ActsDenyTest() {
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
