@@ -14,6 +14,8 @@
 */
 
 import timerTest from "./Timer.test"
+import consoleTest from "./Console.test"
 export default function testsuite() {
     timerTest();
+    consoleTest();
 }

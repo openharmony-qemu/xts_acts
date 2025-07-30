@@ -23,6 +23,10 @@ group("decmial_static") {
       "decimal003_static:ActsDecimal3StaticTest",
       "decimal004_static:ActsDecimal4StaticTest",
       "decimal005_static:ActsDecimal5StaticTest",
+      "decimal006_static:ActsDecimal6StaticTest",
+      "decimal007_static:ActsDecimal7StaticTest",
+      "decimal008_static:ActsDecimal8StaticTest",
+      "decimal009_static:ActsDecimal9StaticTest",
     ]
   }
 }
