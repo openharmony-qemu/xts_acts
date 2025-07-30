@@ -41,8 +41,8 @@ export default function ThermalTest() {
         try {
           thermal.registerThermalLevelCallback((level: thermal.ThermalLevel) => {
             hilog.info(domain, tag, `${TAG} level: ${JSON.stringify(level)}`);
-            expect(Number(level)).assertLargerOrEqual(thermal.ThermalLevel.COOL);
-            expect(Number(level)).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
+            expect(level as int).assertLargerOrEqual(thermal.ThermalLevel.COOL);
+            expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
             done();
           });
         } catch (e : BusinessError) {
@@ -84,15 +84,15 @@ export default function ThermalTest() {
      * @tc.type: Function
      * @tc.size: MediumTest
      */
-    it("testThermalTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testThermalTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testThermalTest_static_0300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
           let level: thermal.ThermalLevel = thermal.getLevel();
           hilog.info(domain, tag, `${TAG} level: ${JSON.stringify(level)}`);
-          expect(Number(level)).assertLargerOrEqual(thermal.ThermalLevel.COOL);
-          expect(Number(level)).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
+          expect(level as int).assertLargerOrEqual(thermal.ThermalLevel.COOL);
+          expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -114,9 +114,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.COOL;
+          let level: int = thermal.ThermalLevel.COOL;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(0);
+          expect(level).assertEqual(0);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -138,9 +138,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.NORMAL;
+          let level: int = thermal.ThermalLevel.NORMAL;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(1);
+          expect(level).assertEqual(1);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -162,9 +162,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.WARM;
+          let level: int = thermal.ThermalLevel.WARM;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(2);
+          expect(level).assertEqual(2);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -186,9 +186,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.HOT;
+          let level: int = thermal.ThermalLevel.HOT;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(3);
+          expect(level).assertEqual(3);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -210,9 +210,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.OVERHEATED;
+          let level: int = thermal.ThermalLevel.OVERHEATED;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(4);
+          expect(level).assertEqual(4);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -234,9 +234,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_0900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.WARNING;
+          let level: int = thermal.ThermalLevel.WARNING;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(5);
+          expect(level).assertEqual(5);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -258,9 +258,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_1000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.EMERGENCY;
+          let level: int = thermal.ThermalLevel.EMERGENCY;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(6);
+          expect(level).assertEqual(6);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -282,9 +282,9 @@ export default function ThermalTest() {
         let TAG: string = 'testThermalTest_static_1100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let level = thermal.ThermalLevel.ESCAPE;
+          let level: int = thermal.ThermalLevel.ESCAPE;
           hilog.info(domain, tag, `${TAG} level: ${level}`);
-          expect(Number(level)).assertEqual(7);
+          expect(level).assertEqual(7);
           done();
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -293,5 +293,4 @@ export default function ThermalTest() {
         }
       })
   })
-  hilog.info(domain, tag, '%{public}s', 'ThermalStaticTest end');
 }
