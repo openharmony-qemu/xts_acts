@@ -80,6 +80,13 @@ export default function abilityTest() {
       await pwd_input.inputText('n');
       await sleep(1000);
 
+      await sleep(2000);
+      let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+      await sleep(100);
+      expect(title_success2 != null).assertTrue();
+      await title_success2.click();
+      await sleep(1000);
+
       let login_btn = await driver.waitForComponent(ON.id('login_btn'), 1500);
       await sleep(100);
       expect(login_btn != null).assertTrue();
@@ -122,6 +129,13 @@ export default function abilityTest() {
       await sleep(100);
       expect(pwd_input != null).assertTrue();
       await pwd_input.inputText('n');
+
+      await sleep(2000);
+      let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+      await sleep(100);
+      expect(title_success2 != null).assertTrue();
+      await title_success2.click();
+      
       await sleep(1000);
       let login_btn = await driver.waitForComponent(ON.id('login_btn'), 1500);
       expect(login_btn != null).assertTrue();

@@ -144,6 +144,13 @@ export default function abilityTest() {
         await sleep(100);
         expect(pwdTextInputAgain != null).assertTrue();
         await pwdTextInputAgain.inputText('u');
+
+        await sleep(2000);
+        let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+        await sleep(100);
+        expect(title_success2 != null).assertTrue();
+        await title_success2?.click();
+
         await sleep(1000);
         let saveButton = await driver.waitForComponent(ON.id('save_btn'), 1000);
         await sleep(100);
