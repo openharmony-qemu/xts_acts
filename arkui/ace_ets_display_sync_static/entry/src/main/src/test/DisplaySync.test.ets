@@ -20,7 +20,7 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import displaySync from "@ohos.graphics.displaySync"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'DisplaySync';
 let bundleName = "com.open.harmony.displaysynctest.static";
 
