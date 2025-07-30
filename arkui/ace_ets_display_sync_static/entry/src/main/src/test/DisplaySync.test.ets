@@ -29,7 +29,6 @@ export default function displaySyncTest() {
     describe("displaySyncTest", (): void => {
         beforeAll(async () : Promise<void> => {
             hilog.info(domain, tag, "displaySyncTest loadup start!!!!!")
-            await Utils.loadAndSetUpUiTest();
             await Utils.msSleep(2000)
             hilog.info(domain, tag, "displaySyncTest loadup over!!!!!")
         })

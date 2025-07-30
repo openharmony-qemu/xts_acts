@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton,ResizeDirection, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, loadAndSetUpUiTest } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton,ResizeDirection, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为

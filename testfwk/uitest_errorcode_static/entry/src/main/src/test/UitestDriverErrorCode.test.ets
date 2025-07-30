@@ -26,7 +26,6 @@ export default function uitestDriverErrorTest() {
   describe('uitestDriverErrorTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverErrorTest loadup start!!!!!")
-      await Utils.loadAndSetUpUiTest();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "uitestDriverErrorTest loadup over!!!!!")
     })

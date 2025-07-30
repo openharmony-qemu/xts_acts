@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, ResizeDirection, loadAndSetUpUiTest } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, ResizeDirection } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -40,7 +40,6 @@ export default function uitestUiWindowTest() {
   describe('uitestUiWindowTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestUiWindowTest loadup start!!!!!")
-      await Utils.loadAndSetUpUiTest();
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestUiWindowTest loadup over!!!!!")
     })

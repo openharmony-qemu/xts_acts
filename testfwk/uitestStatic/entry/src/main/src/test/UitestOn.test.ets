@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, loadAndSetUpUiTest } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -39,7 +39,6 @@ export default function uitestOnTest() {
   describe('uitestOnTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestOnTest loadup start!!!!!")
-      await Utils.loadAndSetUpUiTest();
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestOnTest loadup over!!!!!")
     })
