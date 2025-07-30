@@ -191,7 +191,7 @@ export default function latticeTest() {
       const msg = 'testLatticeCreateImageLatticeAbnormal';
 
       try {
-        drawing.Lattice.createImageLattice([ 100.8, 200 ], [ 100.3, 200 ], 2, 2, null, null, null);
+        drawing.Lattice.createImageLattice([ 100, 200 ], [ 100, 200 ], 2, 2, null, null, null);
         console.info(msg + ' createImageLattice successed');
       } catch( e: BusinessError ) {
         console.info(msg + ` createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);

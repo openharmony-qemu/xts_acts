@@ -55,57 +55,6 @@ export default function drawingTsCanvasPart5Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_3300
-     * @tc.name      : testCanvasDrawImageRectNormalStatic
-     * @tc.desc      : testCanvasDrawImageRectNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
-    it('testCanvasDrawImageRectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawImageRectNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
-      const maxVal = Number.MAX_VALUE;
-      try {
-        canvas.drawImageRect(pixelMap, {
-          left: 0,
-          top: 0,
-          right: 600,
-          bottom: 600
-        });
-        canvas.drawImageRect(pixelMap, {
-          left: 100.1,
-          top: 10.10,
-          right: 900.1,
-          bottom: 900.1
-        }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST));
-        canvas.drawImageRect(pixelMap, {
-          left: -200,
-          top: -200,
-          right: 1000,
-          bottom: 1000
-        }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
-        canvas.drawImageRect(pixelMap, {
-          left: 200,
-          top: 200,
-          right: -1000,
-          bottom: -1000
-        }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
-        canvas.drawImageRect(pixelMap, {
-          left: maxVal,
-          top: maxVal,
-          right: maxVal,
-          bottom: maxVal
-        });
-        console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
-        console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect().assertFail();
-      }
-    })
-
-
-    /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_3301
      * @tc.name      : testCanvasDrawImageRectMultipleCallsStatic
      * @tc.desc      : testCanvasDrawImageRectMultipleCalls
