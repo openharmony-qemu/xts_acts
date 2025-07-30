@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { MessageManager,Callback } from '../../../MainAbility/common/MessageManager';
@@ -53,21 +53,25 @@ export default function richEditorApi3() {
      * @tc.type
     * @tc.size
      */
-    it('richEditorApi3_0100', 0, async function (done) {
+    it('richEditorApi3_0100', Level.LEVEL2, async function (done) {
       console.info('[richEditorApi3_0100] START');
       await CommonFunc.sleep(2000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      await driver.mouseClick({x:300, y:300}, MouseButton.MOUSE_BUTTON_LEFT)
+      let btn1 = await driver.findComponent(ON.id('richEditorApi3_btn1'));
+      await btn1.click();
       await CommonFunc.sleep(1000);
 
-      console.info("text1111");
-      let text1 = getInspectorByKey('richEditorApi3_text1');
-      console.info("text2222");
-
-      let Obj1 = JSON.parse(text1);
-      expect(Obj1.$attrs.content).assertEqual('222');
+      let btn2 = await driver.findComponent(ON.id('richEditorApi3_btn2'));
+      await btn2.click();
+      await CommonFunc.sleep(1000);
+      console.log('spanParagraphs'+AppStorage.get('getParagraphs_textAlign'))
+      console.log('spanParagraphs'+JSON.stringify(AppStorage.get('getParagraphs_size')))
+      expect(AppStorage.get('getParagraphs_textAlign')).assertEqual(0)
+      expect(JSON.stringify(AppStorage.get('getParagraphs_size'))).assertEqual('{"size":["16.00vp","0.00vp"]}')
+      AppStorage.delete('getParagraphs_textAlign')
+      AppStorage.delete('getParagraphs_size')
 
       console.info('[testRichEditor_0100] END');
       done();
