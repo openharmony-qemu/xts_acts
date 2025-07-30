@@ -38,6 +38,7 @@ struct Index {
         Text("AutoFill 演示应用")
           .fontSize(30)
           .fontWeight(FontWeight.Bold)
+          .id("AutoFill_title")
       }
       .margin({ bottom: 10 })
 

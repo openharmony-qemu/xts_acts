@@ -24,7 +24,7 @@ export default function FaShowOnLockTest() {
 
     let TAG = "";
     let TAG1 = "SUB_AA_OpenHarmony == FaShowOnLockTest : ";
-    let sleepTimeOne = 1000;
+    let sleepTimeOne = 2000;
     let sleepTimeTwo = 2000;
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let id = undefined;
