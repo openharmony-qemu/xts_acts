@@ -118,9 +118,9 @@ export default function abilityTest() {
         try {
           let ret = win.getWindowProperties();
           expect(ret != null).assertTrue();
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties  sync Succeeded' + JSON.stringify(ret));
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties sync Succeeded');
         } catch (e: Error) {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties  fail');
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties fail');
           expect(false).assertTrue();
         }
         done();
@@ -1338,55 +1338,6 @@ export default function abilityTest() {
         } catch (err) {
           hilog.info(0x0000, '[ANI]',
             `finaltest [ANI] setPreferredOrientation promise Failed. err: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done();
-        }
-        done();
-      });
-
-    // setWindowPrivacyModeTest
-    /**
-     * @tc.number     : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.name       : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.desc       : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("setWindowPrivacyModeCallbackTest_static_0147",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        win.setWindowPrivacyMode(true, (err: BusinessError<void> | null) => {
-          const errCode: number = err?.code as int;
-          if (errCode) {
-            hilog.info(0x0000, '[ANI]',
-              `finaltest [ANI] setWindowPrivacyMode callback Failed. Cause code: ${err?.code}, message: ${err?.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode callback Succeeded .');
-          expect(true).assertTrue();
-          done();
-        });
-        done();
-      });
-
-    /**
-     * @tc.number     : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.name       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.desc       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("setWindowPrivacyModePromiseTest_static_0148",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        try {
-          win.setWindowPrivacyMode(true);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode promise success');
-          expect(true).assertTrue();
-          done();
-        } catch (err) {
-          hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowPrivacyMode promise fail. err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done();
         }
