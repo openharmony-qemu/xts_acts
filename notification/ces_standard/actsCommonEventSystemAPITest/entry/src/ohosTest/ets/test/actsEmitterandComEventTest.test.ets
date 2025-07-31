@@ -48,7 +48,7 @@ let subscriber_b: commonEventManager.CommonEventSubscriber;
 
 export default function actsEmitterandComEventTest() {
   let TAG: string = 'testToc';
-  const DOMAIN_NUMBER: int = 0xFF00;
+  const DOMAIN_NUMBER: number = 0xFF00;
   describe('actsEmitterandComEventTest', () => {
     /**
      * @tc.number     : Sub_NotificationAns_Emitter_Basic_0001
