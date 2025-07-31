@@ -25,7 +25,7 @@ import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const TEST_SUITE_NAME:string = 'testPublishInloveFail'
-const DOMAIN_NUMBER: number = 0xFF00;
+const DOMAIN_NUMBER: int = 0xFF00;
 let bundle_name:string = "com.example.actsnotificationpublish.static"
 
 

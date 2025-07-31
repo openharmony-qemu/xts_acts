@@ -45,7 +45,7 @@ let subscriber_a: commonEventManager.CommonEventSubscriber;
 let subscriber_b: commonEventManager.CommonEventSubscriber;
 
 export default function ActsEmitterandComEventTest() {
-  const DOMAIN_NUMBER: number = 0xFF00;
+  const DOMAIN_NUMBER: int = 0xFF00;
   describe('actsEmitterandComEventTest', ():void => {
 
     /**
