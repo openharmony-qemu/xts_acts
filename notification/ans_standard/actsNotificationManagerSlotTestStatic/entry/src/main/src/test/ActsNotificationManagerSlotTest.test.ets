@@ -23,7 +23,7 @@ import Utils from './Util.test';
 import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain:number = 0x000
+let domain: int = 0x000
 let bundle_name:string = "com.example.actsnotificationmanagerslot.static"
 let testAbilityContext:common.UIAbilityContext;
 

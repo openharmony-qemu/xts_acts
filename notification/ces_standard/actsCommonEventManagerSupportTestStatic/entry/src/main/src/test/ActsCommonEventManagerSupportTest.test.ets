@@ -25,7 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundle_name: string = "com.example.actscommoneventmanagersupport"
 let testAbilityContext: common.UIAbilityContext;
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST ===>'
 
 export default function ActsCommonEventManagerSupportTest() {

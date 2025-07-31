@@ -19,7 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import Base from '@ohos.base';
 import { BusinessError } from '@ohos.base'
 
-const DOMAIN: number = 0x0000;
+const domain: int = 0x0000;
 
 export default function ActsNotificationVibrationSoundTest() {
     describe('ActsNotificationVibrationSoundTest', () => {

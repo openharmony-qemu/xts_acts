@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const TAG: string = 'NotificationActs';
 const TEST_SUITE_NAME: string = 'testemitterNotification';
 let bundle_name: string = "com.example.badgeemitter.static"
-let domain: number = 0x000
+let domain: int = 0x000
 let testAbilityContext: common.UIAbilityContext;
 
 export default function ActsNotificationEmitterTest() {

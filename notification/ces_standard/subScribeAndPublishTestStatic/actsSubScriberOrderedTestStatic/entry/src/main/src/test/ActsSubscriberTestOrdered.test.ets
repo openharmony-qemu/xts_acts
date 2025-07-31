@@ -24,7 +24,7 @@ import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundle_name:string = "com.example.actssubscribertestorder.static"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
 
 let publishCallback=(err: BusinessError | null) =>{
