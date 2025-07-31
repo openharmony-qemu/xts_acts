@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, loadAndSetUpUiTest } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import { BusinessError } from '@ohos.base';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode: string = "17000005";
@@ -41,7 +41,6 @@ export default function uitestDriverTest() {
   describe('uitestDriverTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!")
-      await Utils.loadAndSetUpUiTest();
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!")
     })

@@ -16,7 +16,6 @@ export default function uitestUiWindowErrorTest() {
   describe('UitestUiWindowErrorTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup start!!!!!")
-      await Utils.loadAndSetUpUiTest();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup over!!!!!")
     })

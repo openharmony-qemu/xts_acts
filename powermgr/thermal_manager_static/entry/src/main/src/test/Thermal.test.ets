@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import thermal from '@ohos.thermal'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'ThermalStaticTest';
 
 export default function ThermalTest() {

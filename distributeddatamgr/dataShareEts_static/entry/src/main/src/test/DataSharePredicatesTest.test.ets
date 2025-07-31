@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { ValueType, ValuesBucket} from '@ohos.data.ValuesBucket'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 const CREATE_TABLE_ALL_DATA_TYPE_SQL = "CREATE TABLE IF NOT EXISTS test "

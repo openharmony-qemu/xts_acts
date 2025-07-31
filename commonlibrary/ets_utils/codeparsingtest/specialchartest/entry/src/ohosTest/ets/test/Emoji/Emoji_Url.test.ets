@@ -3433,10 +3433,8 @@ export default function Url_Emoji_append_get() {
         let url1 = url.URL.parseURL(urlString1, 'https://www.example.com/test/test1');
         let url2 = url.URL.parseURL(urlString2, 'https://www.example.com/test/test1');
 
-        let temp1 = 'path2?emoji=🤼‍♂️';
-        let rstUrl1 = 'https://www.example.com/' + temp1;
-        let temp2 = '%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F/path2';
-        let rstUrl2 = 'https://www.example.com/' + temp2;
+        let rstUrl1 = 'https://www.example.com/path2?emoji=%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F';
+        let rstUrl2 = 'https://www.example.com/%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F/path2' ;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
       } catch (err) {
