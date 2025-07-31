@@ -18,43 +18,42 @@
 struct richEditorApi3 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller };
-  @State text1: string = '';
+  @State selection:string = ''
+  @State text1:string = '111'
+
 
   build() {
-    Column() {
-      RichEditor(this.options)
-        .onReady(() => {
+    Scroll() {
+      Column() {
+        RichEditor(this.options)
+          .onReady(() => {
+            this.controller.addTextSpan('sssssssss\n', {
+              style:
+              {
+                fontColor: Color.Orange,
+                fontSize: 200
+              },
+              gesture:
+              {
+                onClick: () => {
+                  this.text1 = "222"
+                }
+              },
+              paragraphStyle: {
+                textAlign: TextAlign.Start,
+                leadingMargin: 18
+              }
+            })
+          })
+          .borderWidth(1)
+          .borderColor(Color.Green)
+          .width("100%")
+          .height(400)
+          .key('RichEditor1')
 
-        })
-        .borderWidth(1)
-        .width('100%')
-        .height('50%')
-      Button('addTextSpan').onClick((event: ClickEvent) => {
-        this.controller.addTextSpan('1023456789\n',{
-          style:{
-            fontColor:Color.Pink,
-            fontSize:"32"
-          },
-          paragraphStyle:{
-            textAlign:TextAlign.Start,
-            leadingMargin:16
-          }
-        })
-      }).height('10%').id('richEditorApi3_btn1')
-      Button('get').onClick(() => {
-        let getParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
-        let textAlign = getParagraphs[0].style.textAlign
-        let size = getParagraphs[0].style.leadingMargin
-        AppStorage.setOrCreate('getParagraphs_textAlign',textAlign)
-        AppStorage.setOrCreate('getParagraphs_size',size)
-        this.controller.getParagraphs({ start: -1, end: -1 }).forEach((item) => {
-          this.text1  +=  JSON.stringify((item as RichEditorParagraphResult).style)
-        })
-      }).height('10%').id('richEditorApi3_btn2')
-
-      Text('' + this.text1).key('richEditorApi3_text1').height('10%').textAlign(TextAlign.Center)
+        Text('' + this.text1).key('richEditorApi3_text1')
+      }.borderWidth(1).borderColor(Color.Red)
     }
-    .width('100%').height('100%')
   }
-
 }
+
