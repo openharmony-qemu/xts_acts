@@ -24,10 +24,10 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actsnotificationpublish.static"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let wantAgentData : Object = {}
 
 let parameters1 : Record<String,Object> = {
@@ -66,7 +66,7 @@ export default function ActsNotificationPublishTest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(1000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )

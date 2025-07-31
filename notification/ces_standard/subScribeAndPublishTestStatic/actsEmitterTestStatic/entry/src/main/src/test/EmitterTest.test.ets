@@ -17,13 +17,13 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError, Callback } from '@ohos.base';
-import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle_name: string = "com.example.emittertest.static"
 let testAbilityContext: common.UIAbilityContext;
@@ -39,7 +39,7 @@ export default function EmitterTest() {
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)

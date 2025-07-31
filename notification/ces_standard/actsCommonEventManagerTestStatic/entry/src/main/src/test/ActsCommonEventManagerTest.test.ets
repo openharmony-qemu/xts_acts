@@ -20,11 +20,11 @@ import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../
 import common from '@ohos.app.ability.common';
 import {BusinessError} from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let bundle_name:string = "com.example.actscommoneventmanagertest.static"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
 
 let subscriber: commonEventManager.CommonEventSubscriber

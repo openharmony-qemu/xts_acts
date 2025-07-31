@@ -20,10 +20,10 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import { Component, Driver, ON, loadAndSetUpUiTest } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain:number = 0x000
+let domain: int = 0x000
 let bundle_name:string = "com.example.actsnotificationmanagerslot.static"
 let testAbilityContext:common.UIAbilityContext;
 
@@ -33,7 +33,7 @@ export default function ActsNotificationManagerSlotTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST START')
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      loadAndSetUpUiTest();
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b" + bundle_name)
