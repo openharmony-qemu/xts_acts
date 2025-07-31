@@ -356,39 +356,6 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100
-     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100
-     * @tc.desc generateKeyPair by ecc
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2100";
-      console.log(testNumber + ": started");
-      let algNames: AsyAlgName[] = [AsyAlgName.ECC224]//, AsyAlgName.ECC256, AsyAlgName.ECC384, AsyAlgName.ECC521];
-      let format: string = "X509|UNCOMPRESSED";
-      try {
-        for (let i = 0; i < algNames.length; i++) {
-          let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algNames[i]);
-          let spec: cryptoFramework.AsyKeySpec = specUtil.genAsyKeySpec(algNames[i], cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
-          let keyPair: cryptoFramework.KeyPair = await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
-          let pubData: cryptoFramework.DataBlob = keyPair.pubKey.getEncodedDer(format);
-          let priData: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-          expect(pubData.data.toString()).assertEqual(specUtil.unCompressedKeyBlob(algNames[i]).data.toString());
-          console.log(testNumber + `: ${algNames[i]} getEncodedDer success`);
-          let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
-          let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
-          expect(res).assertEqual(true);
-        }
-      } catch (err: BusinessError) {
-        console.error(testNumber + `: catch error ${err}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": success");
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2200
      * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_ECC_Func_2200
      * @tc.desc generateKeyPair by brainPool

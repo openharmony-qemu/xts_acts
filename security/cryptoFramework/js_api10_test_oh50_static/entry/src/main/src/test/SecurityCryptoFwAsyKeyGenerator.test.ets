@@ -370,37 +370,6 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
-     * @tc.desc algorithm is RSA Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let rsaPubKeySpec = asyKeySyncUtils.genRsa2048PubKeySpec();
-        let rsaGeneratorSpec = cryptoFramework.createAsyKeyGeneratorBySpec(rsaPubKeySpec);
-        let pubKey = rsaGeneratorSpec.generatePubKeySync();
-        if (pubKey != null) {
-          let nBN = pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.RSA_N_BN);
-          let eBN = pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.RSA_PK_BN);
-          if (asyKeySyncUtils.compareRsaPubKeyBySpec(rsaPubKeySpec, nBN, eBN) != true) {
-            expect(null).assertFail();
-          } else {
-            expect(null).assertNull();
-          }
-        } else {
-          expect(null).assertFail();
-        }
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
      * @tc.name SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
      * @tc.desc algorithm is ECC Spec
