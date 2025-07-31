@@ -304,34 +304,7 @@ export default function DisplayTest() {
                 done()
             });
         })
-        // /**
-        //  * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0230
-        //  * @tc.name			testGetCutoutInfo_Function_Promise
-        //  * @tc.desc			To test the function of getCutoutInfo
-        //  */
-        // it('testGetCutoutInfo_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        //     hilog.info(0x0000, '[ANI]','getCutoutInfo begin');
-        //     display.getDefaultDisplay().then((data: display.Display) => {
-        //         hilog.info(0x0000, '[ANI]','displayTest getCutoutInfo getDefaultDisplay id :' + JSON.stringify(dsp));
-        //         expect(dsp != null).assertTrue();
-        //         dsp.getCutoutInfo((err:BusinessError<void> | null, data:display.CutoutInfo| undefined) : void => {
-        //             hilog.info(0x0000, '[ANI]','Succeeded in getting cutoutInfo. data: ' + JSON.stringify(data));
-        //             if (err.code) {
-        //                 hilog.error(0x0000, '[ANI]','Failed to get cutoutInfo. Cause: ' + JSON.stringify(err));
-        //                 expect().assertFail();
-        //                 done();
-        //             } else {
-        //                 hilog.error(0x0000, '[ANI]','success to get cutoutInfo. Cause: ' + JSON.stringify(err));
-        //                 expect(data != null).assertTrue();
-        //                 done();
-        //             }
-        //         })
-        //     }, (err) => {
-        //         hilog.info(0x0000, '[ANI]','displayTest getgetCutoutInfo getDefaultDisplay failed, err :' + JSON.stringify(err));
-        //         expect().assertFail();
-        //         done();
-        //     })
-        // })
+        
 
         /**
          * @tc.number    : SUB_BASIC_WMS_FOLDSTATUS_0100
