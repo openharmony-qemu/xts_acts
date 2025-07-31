@@ -27,6 +27,10 @@ group("decmial_static") {
       "decimal007_static:ActsDecimal7StaticTest",
       "decimal008_static:ActsDecimal8StaticTest",
       "decimal009_static:ActsDecimal9StaticTest",
+      "decimal010_static:ActsDecimal10StaticTest",
+      "decimal011_static:ActsDecimal11StaticTest",
+      "decimal012_static:ActsDecimal12StaticTest",
+      "decimal013_static:ActsDecimal13StaticTest",
     ]
   }
 }
