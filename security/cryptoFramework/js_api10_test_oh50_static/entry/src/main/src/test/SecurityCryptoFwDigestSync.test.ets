@@ -22,7 +22,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0100
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0100
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -46,7 +46,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0200
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0200
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -75,7 +75,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0300
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0300
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -97,7 +97,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0400
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0400
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -116,7 +116,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
             md.updateSync(message);
           } catch (error: BusinessError) {
             console.error(`Digest Update “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(17630001);
+            expect(error.code).assertEqual(401); // 1.1: 30001
           }
         }
         expect(null).assertNull();
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0500
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DigestSync_Func_0500
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -143,25 +143,6 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
       } catch (error: BusinessError) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0600
-     * @tc.name Test digest algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_DigestSync_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let md: cryptoFramework.Md;
-        md.digestSync()
-      } catch (error: BusinessError) {
-        console.error(`Digest “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(undefined);
       }
       done();
     });

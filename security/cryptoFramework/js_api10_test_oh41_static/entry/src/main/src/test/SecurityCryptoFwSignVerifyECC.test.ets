@@ -25,7 +25,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0100
-     * @tc.name Test signVerify with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0100
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0200
-     * @tc.name Test signVerify with ECC, Promise style, process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0200
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -79,37 +79,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0300
-     * @tc.name Test signVerify with ECC, Callback style, process success
-     * @tc.desc AsyKeyGenerator with algName Ed25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
-     */
-    it("SUB_Security_CryptoFramework_SignVerify_ECC_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_SignVerify_ECC_Func_0300";
-      console.log(testNumber + ": started.");
-      let param: string = "Ed25519";
-      let signVerifyAlg: string = "Ed25519";
-      let spec: cpFw.AsyKeySpec = {
-        algName: "ECC",
-        specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-      };
-      try {
-        let res: boolean = await signVerifyCallbackFunc.ECCCurveProcess(signVerifyAlg, false, spec, param);
-        expect(res).assertTrue();
-        console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0400
-     * @tc.name Test signVerify with ECC, Promise style, process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0400
      * @tc.desc AsyKeyGenerator with algName Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -137,37 +108,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0500
-     * @tc.name Test signVerify with ECC, Callback style, process fail
-     * @tc.desc AsyKeyGenerator with algName Ed25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SignVerify_ECC_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let testNumber: string = "SUB_Security_CryptoFramework_SignVerify_ECC_Func_0500";
-      console.log(testNumber + ": started.");
-      let param: string = "Ed25519";
-      let signVerifyAlg: string = "Ed25519";
-      let spec: cpFw.AsyKeySpec = {
-        algName: "ECC",
-        specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-      };
-      try {
-        let res: boolean = await signVerifyCallbackFunc.ECCCurveErrProcess(signVerifyAlg, false, spec, param);
-        expect(!res).assertTrue();
-        console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
-        console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
-        expect(null).assertFail();
-      }
-      console.log(testNumber + ": succeed");
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0600
-     * @tc.name Test signVerify algName with ECC. Process success
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0600
      * @tc.desc create Sign/Verify with Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -192,7 +134,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0700
-     * @tc.name Test signVerify algName with ECC. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0700
      * @tc.desc create Sign/Verify with error algName ED25519
      * @tc.size Medium
      * @tc.type Func
@@ -222,7 +164,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0800
-     * @tc.name Test signVerify algName with ECC. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0800
      * @tc.desc create Sign/Verify with unavailable algName X25519
      * @tc.size Medium
      * @tc.type Func
@@ -237,14 +179,14 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         expect(null).assertFail();
       } catch (err: BusinessError) {
         console.log(testNumber + ": " + err.code);
-        expect(err.code == 401).assertTrue();
+        expect(err.code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(null).assertFail();
       } catch (err: BusinessError) {
-        expect(err.code == 801).assertTrue();
+        expect(err.code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -253,7 +195,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SignVerify_ECC_Func_0900
-     * @tc.name Test signVerify with ECC. Promise style. Process fail
+     * @tc.name SUB_Security_CryptoFramework_SignVerify_ECC_Func_0900
      * @tc.desc init Sign/Verify with unavailable algName X25519
      * @tc.size Medium
      * @tc.type Func

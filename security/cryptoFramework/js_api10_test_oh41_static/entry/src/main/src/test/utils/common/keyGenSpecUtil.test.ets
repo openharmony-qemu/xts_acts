@@ -1385,7 +1385,7 @@ export function genDHKeySpec(keyType: cpFw.AsyKeySpecType): cpFw.AsyKeySpec {
       return dhPriKeySpec;
     case cpFw.AsyKeySpecType.PUBLIC_KEY_SPEC:
       let dhPubKeySpec: cpFw.DHPubKeySpec = {
-        algName: "Ed25519",
+        algName: "DH",
         specType: cpFw.AsyKeySpecType.PUBLIC_KEY_SPEC,
         params: dhCommonSpec,
         pk: dhPk()

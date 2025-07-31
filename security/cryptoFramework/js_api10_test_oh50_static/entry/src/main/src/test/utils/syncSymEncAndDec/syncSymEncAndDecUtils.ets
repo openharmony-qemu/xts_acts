@@ -32,6 +32,22 @@ function genGcmOrCcmParamsSpec(iv: number[], aad: number[], tag: number[], algNa
   return gcmParamsSpec;
 }
 
+function genCcmParamsSpec(iv: number[], aad: number[], tag: number[], algName: string): cryptoFramework.CcmParamsSpec {
+  let dataIv = new Uint8Array(iv);
+  let ivBlob: cryptoFramework.DataBlob = { data: dataIv };
+  let dataAad = new Uint8Array(aad);
+  let aadBlob: cryptoFramework.DataBlob = { data: dataAad };
+  let dataTag = new Uint8Array(tag);
+  let tagBlob: cryptoFramework.DataBlob = { data: dataTag };
+  let gcmParamsSpec: cryptoFramework.CcmParamsSpec = {
+    iv: ivBlob,
+    aad: aadBlob,
+    authTag: tagBlob,
+    algName: algName
+  };
+  return gcmParamsSpec;
+}
+
 function genIvParamsSpec(iv: number[]): cryptoFramework.IvParamsSpec {
   let dataIv = new Uint8Array(iv);
   let ivBlob: cryptoFramework.DataBlob = { data: dataIv };
@@ -180,6 +196,8 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
     }
     let pSource = new Uint8Array([1, 2, 3, 4]);
     cipher.setCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR, pSource);
+    let pS: string | Uint8Array = cipher.getCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR);
+    console.log("##################### pS:" + pS);
     let encryptCipher = cipher.doFinalSync(data);
 
     return encryptCipher;
@@ -461,6 +479,7 @@ let SM4_GCM_VECTOR: sm4GcmVector[] = [
 
 export {
   genGcmOrCcmParamsSpec,
+  genCcmParamsSpec,
   genIvParamsSpec,
   createSymKeySync,
   createSymKeyPromise,

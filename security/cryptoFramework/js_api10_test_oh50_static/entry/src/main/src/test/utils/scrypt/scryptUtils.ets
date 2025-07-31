@@ -16,8 +16,8 @@ import { BusinessError } from '@ohos.base';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import { doScryptCallback } from '../common/commonUtils';
 
-let stressTimeout: number = 1000 * 3;
-let intervalTime: number = 1000;
+let stressTimeout: int = 1000 * 3;
+let intervalTime: int = 1000;
 let keyLens: int[] = [
   1, 16, 32, 64, 128, 256, 512, 1024, 3072, 4096, 8192
 ]
@@ -64,7 +64,7 @@ async function doScryptKdfCallback(kdf: cryptoFramework.Kdf,
   spec: cryptoFramework.ScryptSpec): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     kdf.generateSecret(spec, (err: BusinessError<void>|null, rawData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || rawData === undefined) {
+      if (err || rawData === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         resolve(rawData as cryptoFramework.DataBlob);

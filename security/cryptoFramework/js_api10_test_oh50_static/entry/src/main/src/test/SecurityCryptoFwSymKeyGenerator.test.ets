@@ -22,7 +22,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100
-     * @tc.name Test Generator Symmetric Key algName with AES128. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0100
      * @tc.desc algorithm is AES128
      * @tc.size Medium
      * @tc.type Func
@@ -48,7 +48,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200
-     * @tc.name Test Generator Symmetric Key algName with AES192. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0200
      * @tc.desc algorithm is AES192
      * @tc.size Medium
      * @tc.type Func
@@ -74,7 +74,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300
-     * @tc.name Test Generator Symmetric Key algName with AES256. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0300
      * @tc.desc algorithm is AES256
      * @tc.size Medium
      * @tc.type Func
@@ -100,7 +100,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400
-     * @tc.name Test Generator Symmetric Key algName with 3DES192. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0400
      * @tc.desc algorithm is 3DES192
      * @tc.size Medium
      * @tc.type Func
@@ -126,7 +126,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500
-     * @tc.name Test Generator Symmetric Key algName with SM4_128. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0500
      * @tc.desc algorithm is SM4_128
      * @tc.size Medium
      * @tc.type Func
@@ -152,7 +152,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SHA1. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0600
      * @tc.desc algorithm is HMAC|SHA1
      * @tc.size Medium
      * @tc.type Func
@@ -178,7 +178,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SHA224. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0700
      * @tc.desc algorithm is HMAC|SHA224
      * @tc.size Medium
      * @tc.type Func
@@ -204,7 +204,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SHA256. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0800
      * @tc.desc algorithm is HMAC|SHA256
      * @tc.size Medium
      * @tc.type Func
@@ -230,7 +230,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SHA384. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_0900
      * @tc.desc algorithm is HMAC|SHA384
      * @tc.size Medium
      * @tc.type Func
@@ -256,7 +256,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SHA512. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1000
      * @tc.desc algorithm is HMAC|SHA512
      * @tc.size Medium
      * @tc.type Func
@@ -282,7 +282,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100
-     * @tc.name Test Generator Symmetric Key algName with HMAC|SM3. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1100
      * @tc.desc algorithm is HMAC|SM3
      * @tc.size Medium
      * @tc.type Func
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200
-     * @tc.name Test Generator Symmetric Key algName with SM4_256. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1200
      * @tc.desc algorithm is SM4_256
      * @tc.size Medium
      * @tc.type Func
@@ -328,7 +328,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300
-     * @tc.name Test Generator Symmetric Key algName with AES128|AES192. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1300
      * @tc.desc algorithm is AES128|AES192
      * @tc.size Medium
      * @tc.type Func
@@ -350,7 +350,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400
-     * @tc.name Test Generator Symmetric Key algName with AES192|AES128. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1400
      * @tc.desc algorithm is AES192|AES128
      * @tc.size Medium
      * @tc.type Func
@@ -372,7 +372,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500
-     * @tc.name Test Generator Symmetric Key algName with HMAC. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1500
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func
@@ -400,7 +400,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600
-     * @tc.name Test Generator Symmetric Key algName with HMAC. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SymKeyGenerator_Func_1600
      * @tc.desc algorithm is HMAC
      * @tc.size Medium
      * @tc.type Func

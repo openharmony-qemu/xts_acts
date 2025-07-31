@@ -30,7 +30,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0100
-     * @tc.name Test digest algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0100
      * @tc.desc algorithm is digest
      * @tc.size Medium
      * @tc.type Func
@@ -61,7 +61,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0200
-     * @tc.name Test Hmac algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0200
      * @tc.desc algorithm is Hmac
      * @tc.size Medium
      * @tc.type Func
@@ -94,7 +94,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0300
-     * @tc.name Test pbkdf2 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0300
      * @tc.desc algorithm is pbkdf2
      * @tc.size Medium
      * @tc.type Func
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0400
-     * @tc.name Test hkdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0400
      * @tc.desc algorithm is hkdf
      * @tc.size Medium
      * @tc.type Func
@@ -164,7 +164,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0500
-     * @tc.name Test aes algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0500
      * @tc.desc algorithm is aes
      * @tc.size Medium
      * @tc.type Func
@@ -206,7 +206,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0600
-     * @tc.name Test aes algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0600
      * @tc.desc algorithm is aes
      * @tc.size Medium
      * @tc.type Func
@@ -263,7 +263,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0700
-     * @tc.name Test X25519 algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0700
      * @tc.desc algorithm is X25519
      * @tc.size Medium
      * @tc.type Func
@@ -291,14 +291,14 @@ export default function SecurityCryptoFwVectorTestUnit() {
             let peer_Spec: cryptoFramework.X25519KeyPairSpec = {
               algName: algName,
               specType: cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC,
-              sk: BigInt("0x" + peer_priKey),
-              pk: BigInt("0x" + peer_pubKey)
+              sk: BigInt(peer_priKey),
+              pk: BigInt(peer_pubKey)
             };
             let local_Spec: cryptoFramework.X25519KeyPairSpec = {
               algName: algName,
               specType: cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC,
-              sk: BigInt("0x" + local_priKey),
-              pk: BigInt("0x" + local_pubKey)
+              sk: BigInt(local_priKey),
+              pk: BigInt(local_pubKey)
             };
             let peer_generator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(peer_Spec);
             let peer_keyPair: cryptoFramework.KeyPair = await peer_generator.generateKeyPair();

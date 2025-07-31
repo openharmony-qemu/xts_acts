@@ -22,7 +22,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0100
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0100
      * @tc.desc algorithm is asy
      * @tc.size Medium
      * @tc.type Func
@@ -57,7 +57,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0200
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0200
      * @tc.desc algorithm is asy
      * @tc.size Medium
      * @tc.type Func
@@ -87,7 +87,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0201
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0201
      * @tc.desc algorithm is asy
      * @tc.size Medium
      * @tc.type Func
@@ -120,7 +120,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0300
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0300
      * @tc.desc algorithm is dsa
      * @tc.size Medium
      * @tc.type Func
@@ -152,7 +152,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0400
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0400
      * @tc.desc algorithm is dsa
      * @tc.size Medium
      * @tc.type Func
@@ -184,7 +184,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0500
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0500
      * @tc.desc algorithm is x25519
      * @tc.size Medium
      * @tc.type Func
@@ -213,7 +213,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0600
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0600
      * @tc.desc algorithm is x25519
      * @tc.size Medium
      * @tc.type Func
@@ -242,7 +242,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0700
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0700
      * @tc.desc algorithm is Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -271,7 +271,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0800
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0800
      * @tc.desc algorithm is Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -300,7 +300,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_0900
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_0900
      * @tc.desc algorithm is SM2
      * @tc.size Medium
      * @tc.type Func
@@ -332,7 +332,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1000
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1000
      * @tc.desc algorithm is SM2
      * @tc.size Medium
      * @tc.type Func
@@ -364,7 +364,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1100
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1100
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -396,7 +396,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1200
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1200
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -433,7 +433,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1300
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1300
      * @tc.desc algorithm is ECC256
      * @tc.size Medium
      * @tc.type Func
@@ -465,7 +465,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1400
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1400
      * @tc.desc algorithm is ECC521
      * @tc.size Medium
      * @tc.type Func
@@ -494,7 +494,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1500
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1500
      * @tc.desc algorithm is DSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -527,7 +527,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1600
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1600
      * @tc.desc algorithm is X25519
      * @tc.size Medium
      * @tc.type Func
@@ -553,7 +553,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1700
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1700
      * @tc.desc algorithm is X25519
      * @tc.size Medium
      * @tc.type Func
@@ -579,7 +579,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1800
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1800
      * @tc.desc algorithm is Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -605,7 +605,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_1900
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_1900
      * @tc.desc algorithm is Ed25519
      * @tc.size Medium
      * @tc.type Func
@@ -631,7 +631,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2000
-     * @tc.name Test asy algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2000
      * @tc.desc algorithm is OH_modp1536
      * @tc.size Medium
      * @tc.type Func
@@ -657,7 +657,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2100
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2100
      * @tc.desc algorithm is OH_modp1536
      * @tc.size Medium
      * @tc.type Func
@@ -683,7 +683,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2200
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2200
      * @tc.desc algorithm is ECC224
      * @tc.size Medium
      * @tc.type Func
@@ -709,7 +709,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2300
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2300
      * @tc.desc algorithm is ECC384
      * @tc.size Medium
      * @tc.type Func
@@ -735,7 +735,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2400
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2400
      * @tc.desc algorithm is ECC384
      * @tc.size Medium
      * @tc.type Func
@@ -761,7 +761,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2500
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2500
      * @tc.desc algorithm is brainpool_p160r1
      * @tc.size Medium
      * @tc.type Func
@@ -786,7 +786,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2600
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2600
      * @tc.desc algorithm is ECC384
      * @tc.size Medium
      * @tc.type Func
@@ -812,7 +812,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2700
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2700
      * @tc.desc algorithm is DSA1024
      * @tc.size Medium
      * @tc.type Func
@@ -838,7 +838,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2800
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2800
      * @tc.desc algorithm is DH
      * @tc.size Medium
      * @tc.type Func
@@ -864,7 +864,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_2900
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_2900
      * @tc.desc algorithm is SM2
      * @tc.size Medium
      * @tc.type Func
@@ -890,7 +890,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3000
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3000
      * @tc.desc algorithm is SM2
      * @tc.size Medium
      * @tc.type Func
@@ -916,7 +916,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3100
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3100
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -942,7 +942,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3200
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3200
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -968,7 +968,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3300
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3300
      * @tc.desc algorithm is ENC
      * @tc.size Medium
      * @tc.type Func
@@ -994,7 +994,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3400
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3400
      * @tc.desc algorithm is ENC
      * @tc.size Medium
      * @tc.type Func
@@ -1020,7 +1020,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3500
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3500
      * @tc.desc algorithm is PKCS12
      * @tc.size Medium
      * @tc.type Func
@@ -1047,7 +1047,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3600
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3600
      * @tc.desc algorithm is PKCS12
      * @tc.size Medium
      * @tc.type Func
@@ -1073,7 +1073,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3700
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3700
      * @tc.desc algorithm is PKCS7
      * @tc.size Medium
      * @tc.type Func
@@ -1099,7 +1099,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3800
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3800
      * @tc.desc algorithm is ECC256
      * @tc.size Medium
      * @tc.type Func
@@ -1124,7 +1124,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_3900
-     * @tc.name Test asy algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_3900
      * @tc.desc algorithm is ECC256
      * @tc.size Medium
      * @tc.type Func

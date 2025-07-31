@@ -22,7 +22,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0100
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0100
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func
@@ -45,7 +45,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0200
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0200
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func
@@ -72,7 +72,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0300
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0300
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func
@@ -93,7 +93,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0400
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0400
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func
@@ -115,7 +115,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0500
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0500
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func
@@ -138,7 +138,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0600
-     * @tc.name Test Md5. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Md5_Func_0600
      * @tc.desc algorithm is Md5
      * @tc.size Medium
      * @tc.type Func

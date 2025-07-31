@@ -30,12 +30,12 @@ let testAbilityContext:common.UIAbilityContext;
 
 async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let index1: number = Math.floor(Math.random() * 7);
@@ -47,28 +47,29 @@ async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doRSAEncodeDecodeByPasswdPromiseSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
 
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let index1: number = Math.floor(Math.random() * 7);
@@ -80,16 +81,17 @@ async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<bo
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doRSAEncodeDecodeByPasswdSyncSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -100,7 +102,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
     
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0100
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0100
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -137,7 +139,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0200
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0200
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -174,7 +176,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0300
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0300
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -211,7 +213,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0400
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0400
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -248,7 +250,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0500
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0500
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -285,7 +287,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0600
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0600
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -322,7 +324,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0700
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0700
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -359,7 +361,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0800
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0800
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -383,7 +385,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0900
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_0900
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -407,7 +409,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1000
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1000
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -431,7 +433,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1100
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1100
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -455,7 +457,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1200
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1200
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -479,7 +481,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1300
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1300
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -503,7 +505,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1400
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1400
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -527,7 +529,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1500
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1500
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -551,7 +553,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1600
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1600
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -598,7 +600,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1700
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1700
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -645,7 +647,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1800
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1800
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -692,7 +694,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1900
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_1900
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -739,7 +741,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2000
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2000
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -786,7 +788,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2100
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2100
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -833,7 +835,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2200
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2200
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -880,7 +882,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2300
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2300
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -902,7 +904,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2400
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2400
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -927,7 +929,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2500
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2500
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -949,7 +951,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2600
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2600
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -971,7 +973,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2700
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2700
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -993,7 +995,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2800
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2800
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -1015,7 +1017,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2900
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_2900
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -1037,7 +1039,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_3000
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_3000
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func
@@ -1058,7 +1060,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_3100
-     * @tc.name Test rsa algorithm traversal test. Sync/Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_RSAEncodeDecodeWithPasswd_Func_3100
      * @tc.desc algorithm is Sign and verify
      * @tc.size Medium
      * @tc.type Func

@@ -36,13 +36,13 @@ let testAbilityContext:common.UIAbilityContext;
 
 async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
   let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let keyPair: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -60,28 +60,29 @@ async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Prom
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyByDigestSpec “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
 
 async function doSignVerifyByDigestSpecCallbackStub(algName: string, dataLen: int): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
   while (!timeFlag) {
     try {
@@ -100,27 +101,28 @@ async function doSignVerifyByDigestSpecCallbackStub(algName: string, dataLen: in
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyByDigestSpecCallback “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   while (!timeFlag) {
     try {
       let keyPair_r: cryptoFramework.KeyPair = await createAsyKeyPromise(algName);
@@ -135,28 +137,29 @@ async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
         timeFlag = true;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doAgreementByDigestSpecStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
 
 async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, dataLen: int, blockSize: number): Promise<boolean> {
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  let intervalTime = 10000;
+  let timeoutId: number = 0;
+  let intervalTime = 1000;
   let ret: boolean = true;
-  setInterval(() => {
+  timeoutId = setInterval(() => {
     timeFlag = true;
-  }, 3600000 * 6 * 3);
+  }, 1000 * 3);
   let msg: cryptoFramework.DataBlob = await createFullData(dataLen);
   while (!timeFlag) {
     try {
@@ -202,16 +205,17 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
         }
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
-          // resolve()
+        setTimeout(() => {
+          resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doSignVerifyWithUpdateByDigestSpecCallbackStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
 
   return ret;
 }
@@ -425,128 +429,10 @@ async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
 export default function SecurityCryptoFwSECP256K1TestUnit() {
   describe("SecurityCryptoFwSECP256K1TestUnit", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0100
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let keyPair: cryptoFramework.KeyPair = await secp256k1.createAsyKeyPromise(algName);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let priKeyBlobDer: cryptoFramework.DataBlob = keyPair.priKey.getEncodedDer("PKCS8");
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyPromise(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let convKeyPairDer: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyPromise(algName, null, priKeyBlobDer);
-        let conPriKeyBlobDer: cryptoFramework.DataBlob = convKeyPairDer.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA512";
-        let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, keyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algName, keyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algName, convKeyPair.pubKey, keyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algName, keyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0200
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let algAgreeName: string = "ECC";
-        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
-        let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(secp256k1.secp256k1_pub, secp256k1.secp256k1_pri);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyPromise(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA256";
-        let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, keyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algAgreeName, keyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algAgreeName, convKeyPair.pubKey, keyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algAgreeName, keyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0300
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
-        let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(secp256k1.secp256k1_pub, secp256k1.secp256k1_pri);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyPromise(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA384";
-        let rawData: cryptoFramework.DataBlob = await secp256k1.doSignPromise(algSignName, keyPair, msgBlob);
-        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algSignName);
-        let result: string = await secp256k1.doVerifyInitCallback(verify, keyPair);
-        if (result === "init success") {
-          let verifyRes: boolean = await secp256k1.doVerifyVerifyCallback(verify, msgBlob, rawData);
-          expect(verifyRes).assertTrue();
-        } else {
-          expect(null).assertFail();
-        }
-        let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0400
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0400
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -579,7 +465,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0500
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0500
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -604,7 +490,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0600
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0600
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -629,7 +515,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0700
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0700
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -654,7 +540,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0800
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0800
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -680,7 +566,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_0900
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_0900
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -703,7 +589,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1000
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1000
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -726,7 +612,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1100
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1100
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -753,7 +639,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1200
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1200
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -778,7 +664,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1300
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1300
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -805,7 +691,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1400
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1400
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -834,7 +720,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1500
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1500
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -856,7 +742,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1600
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1600
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -879,7 +765,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1700
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1700
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -902,7 +788,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1800
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_1800
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -923,83 +809,8 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_1900
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let keyPair: cryptoFramework.KeyPair = secp256k1.createAsyKeySync(algName);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let priKeyBlobDer: cryptoFramework.DataBlob = keyPair.priKey.getEncodedDer("PKCS8");
-        let convKeyPair: cryptoFramework.KeyPair = secp256k1.convertAsyKeySync(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let convKeyPairDer: cryptoFramework.KeyPair = secp256k1.convertAsyKeySync(algName, null, priKeyBlobDer);
-        let conPriKeyBlobDer: cryptoFramework.DataBlob = convKeyPairDer.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA224";
-        let ret: boolean = secp256k1.doSignVerifySync(algSignName, keyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algName, keyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algName, convKeyPair.pubKey, keyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algName, keyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2000
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let pubKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pub_number)};
-        let priKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pri_number)};
-        let convKeyPair: cryptoFramework.KeyPair = secp256k1.convertAsyKeySync(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA224";
-        let ret: boolean = secp256k1.doSignVerifySync(algSignName, convKeyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algName, convKeyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algName, convKeyPair.pubKey, convKeyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algName, convKeyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2100
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2100
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1026,7 +837,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2200
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2200
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1052,46 +863,8 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2300
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let algAgreeName: string = "ECC";
-        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
-        let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(secp256k1.secp256k1_pub, secp256k1.secp256k1_pri);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let convKeyPair: cryptoFramework.KeyPair = secp256k1.convertAsyKeySync(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA256";
-        let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, keyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algAgreeName, keyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algAgreeName, convKeyPair.pubKey, keyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algAgreeName, keyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2400
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2400
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1116,7 +889,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2500
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2500
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1141,7 +914,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2600
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2600
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1166,7 +939,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2700
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2700
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1192,7 +965,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2800
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2800
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1219,7 +992,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_2900
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_2900
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1247,249 +1020,8 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3000
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let keyPair: cryptoFramework.KeyPair = await secp256k1.createAsyKeyCallback(algName);
-        let pubKeyBlob: cryptoFramework.DataBlob = keyPair.pubKey.getEncoded();
-        let priKeyBlob: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
-        let priKeyBlobDer: cryptoFramework.DataBlob = keyPair.priKey.getEncodedDer("PKCS8");
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let convKeyPairDer: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, null, priKeyBlobDer);
-        let conPriKeyBlobDer: cryptoFramework.DataBlob = convKeyPairDer.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA224";
-        let ret: boolean = secp256k1.doSignVerifySync(algSignName, keyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algName, keyPair.pubKey, convKeyPair.priKey);
-        let secret_b: cryptoFramework.DataBlob = secp256k1.doAgreementSync(algName, convKeyPair.pubKey, keyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algName, keyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_b);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3100
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let pubKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pub_number)};
-        let priKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pri_number)};
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, pubKeyBlob, priKeyBlob);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA224";
-        let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, convKeyPair, dataBlob);
-        let secret_a: cryptoFramework.DataBlob = await secp256k1.doAgreementPromise(algName, convKeyPair.pubKey, convKeyPair.priKey);
-        let secret_c: cryptoFramework.DataBlob = await secp256k1.doAgreementCallback(algName, convKeyPair.pubKey, convKeyPair.priKey);
-        ret= ret && commonUtils.compareDataBlob(secret_a, secret_c);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3200
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let priKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pri_number)};
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, null, priKeyBlob);
-        let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
-        let dataLen: int = 64;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA224";
-        let sign: cryptoFramework.Sign = cryptoFramework.createSign(algSignName);
-        let signRes: string = await secp256k1.doSignInitCallback(sign, convKeyPair);
-        if (signRes === "init success") {
-          expect(null).assertNull();
-        } else {
-          expect(null).assertTrue();
-        }
-        await secp256k1.doSignSignCallback(sign, dataBlob);
-        let ret: boolean = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3300
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let pubKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pub_number)};
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, pubKeyBlob, null);
-        let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
-        let algSignName: string = "ECC|SHA224";
-        let msgBlob: cryptoFramework.DataBlob = {data: new Uint8Array(secp256k1.msgData)};
-        let rawBlob: cryptoFramework.DataBlob = {data: new Uint8Array(secp256k1.rawData)}
-        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(algSignName);
-        let verifyRes: string = await secp256k1.doVerifyInitCallback(verify, convKeyPair);
-        if (verifyRes === "init success") {
-          expect(null).assertNull();
-        } else {
-          expect(null).assertTrue();
-        }
-        let ret: boolean = await secp256k1.doVerifyVerifyCallback(verify, msgBlob, rawBlob);
-        ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3400
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let dataLen: int = 64;
-        let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
-        let ret: boolean = (await taskpool.execute(doSignVerifyByDigestSpecCallback, algName, msgData)) as boolean;
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3500
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let dataLen: int = 60;
-        let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let blockSize: number = 8;
-        let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpecCallback, algName, msgBlob, blockSize)) as boolean;
-        expect(ret).assertTrue();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3600
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let dataLen: int = 64;
-        let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC_Secp256k1|SHA1";
-        let pubKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pub_number)};
-        let priKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.ECC_BrainPoolP192r1_pri_number)};
-        let keyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, pubKeyBlob, priKeyBlob);
-        let rawData: cryptoFramework.DataBlob = await secp256k1.doSignPromise(algSignName, keyPair, msgBlob);
-        let ret: boolean = await secp256k1.doVerifyPromise(algSignName, keyPair, msgBlob, rawData);
-        let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
-        await agreement.generateSecret(keyPair.priKey, keyPair.pubKey);
-        expect(ret).assertFalse();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3700
-     * @tc.name Test ECC secp256k1 algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
-     */
-    it("SUB_Security_CryptoFramework_SECP256K1_Func_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "ECC_Secp256k1";
-        let pubKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pub_number_r)};
-        let priKeyBlob: cryptoFramework.DataBlob = {data:new Uint8Array(secp256k1.secp256k1_pri_number)};
-        let convKeyPair: cryptoFramework.KeyPair = await secp256k1.convertAsyKeyCallback(algName, pubKeyBlob, priKeyBlob);
-        let dataLen: int = 10;
-        let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
-        let algSignName: string = "ECC|SHA256";
-        let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, convKeyPair, dataBlob);
-        expect(ret).assertFalse();
-      } catch (error: BusinessError) {
-        console.error(`“${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_3900
-     * @tc.name Test ECC secp256k1 algorithm traversal test. vector style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_3900
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func
@@ -1510,7 +1042,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_SECP256K1_Func_4000
-     * @tc.name Test ECC secp256k1 algorithm traversal test. demo style. Process success
+     * @tc.name SUB_Security_CryptoFramework_SECP256K1_Func_4000
      * @tc.desc algorithm is ECC
      * @tc.size Medium
      * @tc.type Func

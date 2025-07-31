@@ -21,7 +21,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0100
-     * @tc.name Test createKdf with normal parameter
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0100
      * @tc.desc Input parameter is PBKDF2|SM3
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -40,7 +40,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0200
-     * @tc.name Test createKdf with abnormal parameter
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0200
      * @tc.desc Test createKdf with abnormal parameter
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -79,7 +79,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0300
-     * @tc.name Test generateSecret with PBKDF2|SHA1, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0300
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -105,35 +105,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_0400
-     * @tc.name Test generateSecret with PBKDF2|SHA1, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 32;
-        let password: string = '123456';
-        let iterations: int = 10000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array(16),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA1", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_0400 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0500
-     * @tc.name Test generateSecret with PBKDF2|SHA224, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0500
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -159,35 +132,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_0600
-     * @tc.name Test generateSecret with PBKDF2|SHA224, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 32;
-        let password: string = 'abcdef';
-        let iterations: int = 20000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array(16),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA224", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_0600 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0700
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0700
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -213,35 +159,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_0800
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 15;
-        let password: string = 'abcdef';
-        let iterations: int = 20000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array(16),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_0800 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0900
-     * @tc.name Test generateSecret with PBKDF2|SHA384, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_0900
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -267,35 +186,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_1000
-     * @tc.name Test generateSecret with PBKDF2|SHA384, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 55;
-        let password: string = 'abcdef';
-        let iterations: int = 20000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array(16),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA384", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_1000 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1100
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_1100
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -321,35 +213,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_1200
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 55;
-        let password: string = 'abcdef';
-        let iterations: int = 20000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array([11, 12]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_1200 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1300
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_1300
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -375,35 +240,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_1400
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 35;
-        let password: string = 'abcdef';
-        let iterations: int = 20000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array([11, 12, 13]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_1400 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1500
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful two
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_1500
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -432,38 +270,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_1600
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 33;
-        let password: string = 'abcdef123456';
-        let iterations: int = 20000;
-        let preSpec: crypto.KdfSpec = {
-          algName: "PBKDF2",
-        }
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: preSpec.algName,
-          password: password,
-          salt: new Uint8Array([11, 12, 13, 0, 6]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_1600 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1700
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful two
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_1700
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -492,38 +300,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_1800
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 16;
-        let password: Uint8Array = new Uint8Array([10, 102, 13, 0, 63, 55]);
-        let iterations: int = 20000;
-        let preSpec: crypto.KdfSpec = {
-          algName: "PBKDF2",
-        }
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: preSpec.algName,
-          password: password,
-          salt: new Uint8Array([11, 12, 13, 0, 6]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
-        expect(retData.data != null).assertTrue();
-        expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_1800 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1900
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful two
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_1900
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -557,43 +335,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_2000
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let keySize: int = 16;
-        let password: string = "123";
-        let password2: Uint8Array = commons.stringTouInt8Array(password);
-        let iterations: int = 10000;
-        let dataSpec: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password,
-          salt: new Uint8Array([11, 12, 13, 0, 6]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let dataSpec2: crypto.PBKDF2Spec = {
-          algName: "PBKDF2",
-          password: password2,
-          salt: new Uint8Array([11, 12, 13, 0, 6]),
-          iterations: iterations,
-          keySize: keySize
-        };
-        let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
-        let retData2: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec2);
-        expect(commons.uInt8ArrayToString(retData.data)).assertEqual(commons.uInt8ArrayToString(retData2.data));
-      } catch (err: BusinessError) {
-        console.error(`Security_CryptoFramework_Pbkdf2_Func_2000 catch error: ${err}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2100
-     * @tc.name Test generateSecret with empty input
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2100
      * @tc.desc Test generateSecret with empty input
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -609,7 +352,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2200
-     * @tc.name Test generateSecret with PBKDF2|SHA1, with invalid KdfSpec algName
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2200
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -646,7 +389,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2300
-     * @tc.name Test generateSecret with PBKDF2|SHA1, with invalid KdfSpec algName
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2300
      * @tc.desc Use AsyncCallback Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -682,35 +425,8 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
-     * @tc.number Security_CryptoFramework_Pbkdf2_Func_2400
-     * @tc.name Test generateSecret with PBKDF2|SHA224, with invalid KdfSpec password
-     * @tc.desc Test generateSecret with PBKDF2|SHA224, with invalid KdfSpec password
-     */
-    it("Security_CryptoFramework_Pbkdf2_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let dataSpec: crypto.PBKDF2Spec = {
-        algName: "PBKDF2",
-        password: "",
-        salt: new Uint8Array([11, 12, 13]),
-        iterations: 20000,
-        keySize: 5
-      };
-      let kdfObj: crypto.Kdf = crypto.createKdf("PBKDF2|SHA224");
-      try {
-        await kdfObj.generateSecret(dataSpec);
-      } catch (err: BusinessError) {
-        expect(null).assertFail();
-      }
-      try {
-        await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
-      } catch (err: BusinessError) {
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2500
-     * @tc.name Test generateSecret with PBKDF2|SHA256, with invalid KdfSpec iterations
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2500
      * @tc.desc Use AsyncCallback Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -740,7 +456,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2600
-     * @tc.name Test generateSecret with PBKDF2|SHA256, with invalid KdfSpec iterations
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2600
      * @tc.desc Use Promise Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -770,7 +486,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2700
-     * @tc.name Test generateSecret with PBKDF2|SHA512, with invalid KdfSpec keySize
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2700
      * @tc.desc Use AsyncCallback Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -800,7 +516,7 @@ export default function cryptoPbkdf2JsTestUnit() {
 
     /**
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2800
-     * @tc.name Test generateSecret with PBKDF2|SHA512, with invalid KdfSpec keySize
+     * @tc.name Security_CryptoFramework_Pbkdf2_Func_2800
      * @tc.desc Use AsyncCallback Style
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

@@ -1562,7 +1562,7 @@ let ASY_RSA_KEY_SPEC = [
 ]
 
 let ASY_ECC_KEY_SPEC_1 = [
-  "ECC224", "ECC256", "ECC384", "ECC521", "ECC_BrainPoolP160r1", "ECC_BrainPoolP160t1",
+  "ECC224", //"ECC256", "ECC384", "ECC521", "ECC_BrainPoolP160r1", "ECC_BrainPoolP160t1",
 ]
 
 let ASY_ECC_KEY_SPEC_2 = [

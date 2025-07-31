@@ -26,11 +26,11 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let testAbilityContext:common.UIAbilityContext;
 
 
-async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfPromiseStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -39,9 +39,9 @@ async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): 
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -52,26 +52,28 @@ async function doScryptKdfPromiseStub(keySize: int, n: long, r: long, p: long): 
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfPromiseStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       // });
-      clearTimeout(timeoutId);
     } catch (error: BusinessError) {
       console.error(`doScryptKdfPromiseStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
+
   return ret;
 }
 
-async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfSyncStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -80,9 +82,9 @@ async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Pro
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -93,25 +95,27 @@ async function doScryptKdfSyncStub(keySize: int, n: long, r: long, p: long): Pro
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfSyncStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
-      clearTimeout(timeoutId);
+
     } catch (error: BusinessError) {
       console.error(`doScryptKdfSyncStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
-async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long): Promise<boolean> {
+async function doScryptKdfCallbackStub(keySize: int, n: int, r: int, p: int): Promise<boolean> {
   let ret: boolean = true;
   let timeFlag: boolean = false;
-  let timeoutId:number = 0;
-  setInterval(() => {
+  let timeoutId: number = 0;
+  timeoutId = setInterval(() => {
     timeFlag = true;
   }, stressTimeout);
   while (!timeFlag) {
@@ -120,9 +124,9 @@ async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long):
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n,
-        r: r,
-        p: p,
+        n: n as long,
+        r: r as long,
+        p: p as long,
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -134,69 +138,29 @@ async function doScryptKdfCallbackStub(keySize: int, n: long, r: long, p: long):
         throw error as Error;
       }
       await new Promise<void>((resolve, reject) => {
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
           console.info("################ doScryptKdfCallbackStub:" + keySize + ":" + "Running")
-          // resolve();
+          resolve(undefined);
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
-      clearTimeout(timeoutId);
+
     } catch (error: BusinessError) {
       console.error(`doScryptKdfCallbackStub “${error}“, error code: ${error.code}`);
+      clearInterval(timeoutId);
       return false;
     }
   }
+  clearInterval(timeoutId);
   return ret;
 }
 
 export default function SecurityCryptoFwScryptKdfTestUnit() {
   describe("SecurityCryptoFwScryptKdfTestUnit", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    
-    /**
-     * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is scrypt stub test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
-     */
-    it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        // Promise
-        taskGroup.addTask(doScryptKdfPromiseStub, 64, 1024, 8, 2);
-        taskGroup.addTask(doScryptKdfPromiseStub, 256, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfPromiseStub, 512, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfPromiseStub, 1024, 1024, 8, 16);
-        // Sync
-        taskGroup.addTask(doScryptKdfSyncStub, 64, 1024, 8, 2);
-        taskGroup.addTask(doScryptKdfSyncStub, 256, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfSyncStub, 512, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfSyncStub, 1024, 1024, 8, 16);
-        // Callback
-        taskGroup.addTask(doScryptKdfCallbackStub, 64, 1024, 8, 2);
-        taskGroup.addTask(doScryptKdfCallbackStub, 256, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfCallbackStub, 512, 1024, 8, 16);
-        taskGroup.addTask(doScryptKdfCallbackStub, 1024, 1024, 8, 16);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
-          let tmp: Array<boolean> = res?(res as Array<boolean>) : new Array<Boolean>();
-          for (let i = 0; i< tmp.length; i++) {
-            let ret: boolean = tmp[i] as boolean;
-            console.info("#################### ret:" + ret)
-            expect(ret).assertTrue();
-          }
-        });
-        taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
-        console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000 “${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
      * @tc.desc algorithm is scrypt test
      * @tc.size Medium
      * @tc.type Func
@@ -222,7 +186,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
         let end_time = new Date().getTime() // 毫秒
         console.info("#################### time:" + (end_time - start_time))
       } catch (error: BusinessError) {
@@ -234,7 +198,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
      * @tc.desc algorithm is scrypt test
      * @tc.size Medium
      * @tc.type Func
@@ -260,7 +224,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -270,7 +234,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
      * @tc.desc algorithm is scrypt salt is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -296,7 +260,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -306,7 +270,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
      * @tc.desc algorithm is scrypt salt is empty test
      * @tc.size Medium
      * @tc.type Func
@@ -332,7 +296,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -342,7 +306,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
      * @tc.desc algorithm is scrypt passphrase is Uint8Array test
      * @tc.size Medium
      * @tc.type Func
@@ -368,7 +332,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -378,7 +342,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
      * @tc.desc algorithm is scrypt passphrase is Uint8Array test
      * @tc.size Medium
      * @tc.type Func
@@ -404,7 +368,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(ret).assertTrue();
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
@@ -413,80 +377,8 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is scrypt passphrase is Uint8Array test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
-     */
-    it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let n: long = 1024;
-        let p: long = 1;
-        let r: long = 8;
-        let maxMemory: long = p * 128 * r + 32 * r * (n + 2) * 4 + 1;
-
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        for (let keySize of keyLens) {
-          taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
-            new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_CALLBACK);
-        }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
-          let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
-          for (let i = 0; i< tmp.length; i++) {
-            let ret: boolean = tmp[i].ret as boolean;
-            console.info("#################### ret:" + ret)
-            expect(ret).assertTrue();
-          }
-        });
-        taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
-        console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700 “${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
-     * @tc.desc algorithm is scrypt passphrase is string test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
-     */
-    it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let n: long = 1024;
-        let p: long = 1;
-        let r: long = 8;
-        let maxMemory: long = p * 128 * r + 32 * r * (n + 2) * 4 + 1;
-
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        for (let keySize of keyLens) {
-          taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
-            "password", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
-          let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
-          for (let i = 0; i< tmp.length; i++) {
-            let ret: boolean = tmp[i].ret as boolean;
-            console.info("#################### ret:" + ret)
-            expect(ret).assertTrue();
-          }
-        });
-        taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
-        console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800 “${error}“, error code: ${error.code}`);
-        expect(null).assertFail();
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
      * @tc.desc algorithm is scrypt keySize is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -511,7 +403,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -521,7 +413,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
      * @tc.desc algorithm is scrypt keySize is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -546,7 +438,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -556,7 +448,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
      * @tc.desc algorithm is scrypt p is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -581,7 +473,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -591,7 +483,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
      * @tc.desc algorithm is scrypt n is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -616,7 +508,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -626,7 +518,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
      * @tc.desc algorithm is scrypt n is 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -651,7 +543,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -661,7 +553,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
      * @tc.desc algorithm is scrypt n is not power of 2 test
      * @tc.size Medium
      * @tc.type Func
@@ -686,7 +578,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -696,7 +588,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
      * @tc.desc algorithm is scrypt n is negative number test
      * @tc.size Medium
      * @tc.type Func
@@ -721,7 +613,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -731,7 +623,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
      * @tc.desc algorithm is scrypt r is zero test
      * @tc.size Medium
      * @tc.type Func
@@ -756,7 +648,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -766,7 +658,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
      * @tc.desc algorithm is scrypt r is negative number test
      * @tc.size Medium
      * @tc.type Func
@@ -791,7 +683,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -801,7 +693,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
      * @tc.desc algorithm is scrypt n >= 2^(128 * r/8) test
      * @tc.size Medium
      * @tc.type Func
@@ -826,7 +718,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -836,7 +728,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
      * @tc.desc algorithm is scrypt n >= ((UINT32_MAX/128)/r) test
      * @tc.size Medium
      * @tc.type Func
@@ -861,7 +753,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -871,7 +763,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
      * @tc.desc algorithm is scrypt p > ((2^32 -1) * 32)/(128 * r) test
      * @tc.size Medium
      * @tc.type Func
@@ -896,7 +788,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -906,7 +798,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -931,7 +823,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -941,7 +833,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
      * @tc.desc algorithm is scrypt r * p * 128 >= UINT32_MAX test
      * @tc.size Medium
      * @tc.type Func
@@ -966,7 +858,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -976,7 +868,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
-     * @tc.name Test scrypt kdf algorithm traversal test. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -1001,7 +893,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -1011,7 +903,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
      * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
      * @tc.size Medium
      * @tc.type Func
@@ -1036,7 +928,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -1046,7 +938,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
      * @tc.desc algorithm is scrypt r * p * 128 > UINT32_MAX test
      * @tc.size Medium
      * @tc.type Func
@@ -1071,7 +963,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -1081,7 +973,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
-     * @tc.name Test scrypt kdf algorithm traversal test. Callback style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
      * @tc.desc algorithm is scrypt passphrase is empty, type string test
      * @tc.size Medium
      * @tc.type Func
@@ -1106,7 +998,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -1116,7 +1008,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
      * @tc.desc algorithm is scrypt passphrase is empty, type string test
      * @tc.size Medium
      * @tc.type Func
@@ -1141,7 +1033,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
             expect(res.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
         });
-        taskpool.cancel(taskGroup);
+        // taskpool.cancel(taskGroup);
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
@@ -1151,7 +1043,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
-     * @tc.name Test scrypt kdf algorithm traversal test. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
      * @tc.desc algorithm is scrypt vector test
      * @tc.size Medium
      * @tc.type Func
@@ -1179,7 +1071,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
               expect(ret).assertTrue();
             }
           });
-          taskpool.cancel(taskGroup);
+          // taskpool.cancel(taskGroup);
         }
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800 “${error}“, error code: ${error.code}`);

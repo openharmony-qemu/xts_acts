@@ -104,10 +104,9 @@ function decToHexString(data: cryptoFramework.DataBlob): string {
 
 function convertToUint8Array(str: string): number[] {
   let tmp: number[] = [];
-  let j: number = 0;
   for (let i = 0; i < str.length; i++) {
-    tmp[j] = Number("0x" + str.substring(i, i+2));
-    j++;
+    // tmp[j] = Number("0x" + str.substring(i, i+2));
+    tmp.push(Number("0x" + str.substring(i, i+2)));
     i++;
   }
 
@@ -117,7 +116,7 @@ function convertToUint8Array(str: string): number[] {
 function compareDataBlob(a: cryptoFramework.DataBlob, b: cryptoFramework.DataBlob): boolean {
   let buf1 = buffer.from(a.data);
   let buf2 = buffer.from(b.data);
-  if (buf1.compare(buf2, 0, a.data.byteLength, 0, b.data.byteLength) == 0) {
+  if (buf1.compare(buf2, 0, a.data.byteLength as int, 0, b.data.byteLength as int) == 0) {
     return true;
   } else {
     return false;
@@ -127,7 +126,7 @@ function compareDataBlob(a: cryptoFramework.DataBlob, b: cryptoFramework.DataBlo
 function compareNumber(a: number[], b: number[]): boolean {
   let buf1 = buffer.from(a);
   let buf2 = buffer.from(b);
-  if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
+  if (buf1.compare(buf2, 0, b.length as int, 0, a.length as int) == 0) {
     return true;
   } else {
     return false;
@@ -137,7 +136,7 @@ function compareNumber(a: number[], b: number[]): boolean {
 function compareString(a: string, b: string): boolean {
   let buf1 = buffer.from(a);
   let buf2 = buffer.from(b);
-  if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
+  if (buf1.compare(buf2, 0, b.length as int, 0, a.length as int) == 0) {
     return true;
   } else {
     return false;
@@ -173,7 +172,7 @@ async function doScryptCallback(kdf: cryptoFramework.Kdf,
   spec: cryptoFramework.ScryptSpec): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     kdf.generateSecret(spec, (err: BusinessError<void>|null, rawData: cryptoFramework.DataBlob|undefined) => {
-      if (err?.code != 0 || rawData === undefined) {
+      if (err || rawData === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         resolve(rawData as cryptoFramework.DataBlob);
