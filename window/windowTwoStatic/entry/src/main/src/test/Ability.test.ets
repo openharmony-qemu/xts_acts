@@ -534,7 +534,7 @@ export default function abilityTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-      it("createWindowCallbackTest_static_0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it("createWindowCallbackTest_static_0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let config: window.Configuration = {
         name: "test",
         windowType: window.WindowType.TYPE_DIALOG,
@@ -626,10 +626,8 @@ export default function abilityTest() {
 
     /**
      * @tc.number     : subWindowCloseTest_static_0235
-     * @tc.number     : subWindowCloseTest_static_0235
-     * @tc.number     : subWindowCloseTest_static_0235
-     * @tc.name       : createSubWindowPromiseTest_static_0234
-     * @tc.desc       : createSubWindowPromiseTest_static_0234
+     * @tc.name       : subWindowCloseTest_static_0235
+     * @tc.desc       : subWindowCloseTest_static_0235
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
