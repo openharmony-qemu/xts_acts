@@ -15,7 +15,7 @@ import * as specUtil from './utils/common/keyGenSpecUtil.test';
 import * as signVerifyPromiseFunc from './utils/signVerify/signVerifyAsyPromiseFunc.test';
 import * as signVerifyCallbackFunc from './utils/signVerify/signVerifyAsyCallbackFunc.test';
 import { stringToUint8Array } from './utils/common/commonUtils.test';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;
 
