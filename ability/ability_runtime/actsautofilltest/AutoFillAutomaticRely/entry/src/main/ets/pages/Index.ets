@@ -36,8 +36,9 @@ struct Index {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Start, alignItems: ItemAlign.Start }) {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
         Text("AutoFill 演示应用")
-          .fontSize(30)
+          .fontSize('1%')
           .fontWeight(FontWeight.Bold)
+          .id("AutoFill_title")
       }
       .margin({ bottom: 10 })
 
@@ -45,21 +46,21 @@ struct Index {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
         Text($r('app.string.username'))
           .margin(10)
-          .fontSize(18)
+          .fontSize('3%')
           .width('22%')
           .textAlign(TextAlign.Start)
           .fontColor(Color.Red)
 
         TextInput({ placeholder: "username", text: account.username })
           .type(InputType.USER_NAME)
-          .fontSize(16)
+          .fontSize('3%')
           .onChange((value: string) => {
             account.username = value;
           })
           .enableAutoFill(true)
           .id("username_input")
       }
-      .height(88)
+      .height('5%')
       .width('100%')
       .backgroundColor('#fff')
       .borderRadius(16)
@@ -69,14 +70,14 @@ struct Index {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
         Text($r('app.string.password'))
           .margin(10)
-          .fontSize(18)
+          .fontSize('3%')
           .width('22%')
           .textAlign(TextAlign.Start)
           .fontColor(Color.Red)
 
         TextInput({ placeholder: "password", text: account.password })
           .type(InputType.Password)
-          .fontSize(16)
+          .fontSize('3%')
           .onChange((value: string) => {
             account.password = value;
           })
@@ -84,7 +85,7 @@ struct Index {
           .id("password_input")
 
       }
-      .height(88)
+      .height('5%')
       .width('100%')
       .backgroundColor('#fff')
       .borderRadius(16)
@@ -94,20 +95,20 @@ struct Index {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
         Text($r('app.string.newPassword'))
           .margin(10)
-          .fontSize(18)
+          .fontSize('3%')
           .width('22%')
           .textAlign(TextAlign.Start)
 
         // must only contains characters and numbers, and be 8-20 digits long
         TextInput({ text: account.newPassword })
           .type(InputType.NEW_PASSWORD)
-          .fontSize(16)
+          .fontSize('3%')
           .enabled(true)
           .enableAutoFill(true)
           .passwordRules("/^(?=.* [a-z]) (?=.* [A-Z]) (?=.*d) [a-zA-Zd] {8,20}$/")
           .id("new_password_input")
       }
-      .height(88)
+      .height('5%')
       .width('100%')
       .backgroundColor('#fff')
       .borderRadius(16)
@@ -117,7 +118,7 @@ struct Index {
         Button("Save")
           .id("save_btn")
           .width('60%')
-          .fontSize(20)
+          .fontSize('3%')
           .fontColor(Color.White)
           .type(ButtonType.Capsule)
           .onClick(() => {
@@ -127,7 +128,7 @@ struct Index {
         Button("Login")
           .id("login_btn")
           .width('60%')
-          .fontSize(20)
+          .fontSize('3%')
           .fontColor(Color.White)
           .type(ButtonType.Capsule)
           .onClick(() => {

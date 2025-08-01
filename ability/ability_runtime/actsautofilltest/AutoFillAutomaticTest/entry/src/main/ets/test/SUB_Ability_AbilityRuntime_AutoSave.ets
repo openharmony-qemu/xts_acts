@@ -89,6 +89,13 @@ export default function abilityTest() {
         console.log("requestAutoSave catch error: ", JSON.stringify(error));
       }
 
+      await sleep(2000);
+      let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+      await sleep(100);
+      expect(title_success2 != null).assertTrue();
+      await title_success2?.click();
+      await sleep(1000);
+
       let save_btn = await driver.waitForComponent(ON.id('save_btn'), 2000);
       await sleep(100);
       expect(save_btn != null).assertTrue();
@@ -135,6 +142,13 @@ export default function abilityTest() {
       await sleep(100);
       expect(pwd_input != null).assertTrue();
       await pwd_input.inputText('n');
+
+      await sleep(2000);
+      let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+      await sleep(100);
+      expect(title_success2 != null).assertTrue();
+      await title_success2?.click();
+      
       await sleep(1000);
       let save_btn = await driver.waitForComponent(ON.id('save_btn'), 2000);
       await sleep(100);
@@ -168,6 +182,13 @@ export default function abilityTest() {
       await sleep(1000);
       let username_input = await driver.waitForComponent(ON.id('username_input'), 2500);
       expect(username_input != null).assertTrue();
+
+      await sleep(2000);
+      let title_success2 = await driver.waitForComponent(ON.id('AutoFill_title'), 3000);
+      await sleep(100);
+      expect(title_success2 != null).assertTrue();
+      await title_success2?.click();
+
       await sleep(1000);
       let save_btn = await driver.waitForComponent(ON.id('save_btn'), 1000);
       expect(save_btn != null).assertTrue();
