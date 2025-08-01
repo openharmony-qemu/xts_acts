@@ -29,6 +29,10 @@ import { BusinessError } from '@ohos.base';
 import TreeSet from '@ohos.util.TreeSet';
 import Utils from '../Util.test';
 
+class TestEntry {
+  public id: number = 0;
+}
+
 export default function TreeSetTest2() {
   describe("TreeSetTest2", (): void => {
     afterEach(() => {
@@ -88,31 +92,27 @@ export default function TreeSetTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testConstructor0003";
-    //   try {
-    //     class TestEntry {
-    //       public id: number = 0;
-    //     }
-    //
-    //     let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): boolean => {
-    //       return t1.id > t2.id;
-    //     });
-    //     let entry1: TestEntry = {
-    //       id: 0
-    //     };
-    //     let entry2: TestEntry = {
-    //       id: 1
-    //     }
-    //     ts1.add(entry1);
-    //     ts1.add(entry2);
-    //     let length = ts1.length
-    //     expect(length).assertEqual(2);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testConstructor0003";
+      try {
+        let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): double => {
+          return t1.id - t2.id;
+        });
+        let entry1: TestEntry = {
+          id: 0
+        };
+        let entry2: TestEntry = {
+          id: 1
+        }
+        ts1.add(entry1);
+        ts1.add(entry2);
+        let length = ts1.length
+        expect(length).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0400
@@ -122,30 +122,26 @@ export default function TreeSetTest2() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testConstructor0004";
-    //   try {
-    //     class TestEntry {
-    //       public id: number = 0;
-    //     }
-    //
-    //     let ts1: TreeSet<TestEntry> = new TreeSet();
-    //     let entry1: TestEntry = {
-    //       id: 0
-    //     };
-    //     let entry2: TestEntry = {
-    //       id: 1
-    //     }
-    //     ts1.add(entry1);
-    //     ts1.add(entry2);
-    //     let length = ts1.length
-    //     expect(length).assertEqual(1);
-    //     console.log("treeSet: ", ts1.length);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testConstructor0004";
+      try {
+        let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>();
+        let entry1: TestEntry = {
+          id: 0
+        };
+        let entry2: TestEntry = {
+          id: 1
+        }
+        ts1.add(entry1);
+        ts1.add(entry2);
+        let length = ts1.length
+        expect(length).assertEqual(1);
+        console.log("treeSet: ", ts1.length);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0500
@@ -997,44 +993,44 @@ export default function TreeSetTest2() {
     //     expect(err.code).assertEqual(401);
     //   }
     // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4500
-    //  * @tc.name       : testGetLowerValue0004
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetLowerValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0004";
-    //   try {
-    //     let treeSet: TreeSet<number> = new TreeSet<number>();
-    //     let result = treeSet.getLowerValue(123);
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4600
-    //  * @tc.name       : testGetLowerValue0005
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testGetLowerValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0005";
-    //   try {
-    //     let treeSet: TreeSet<number> = new TreeSet<number>();
-    //     let result = treeSet.getLowerValue(123);
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4500
+     * @tc.name       : testGetLowerValue0004
+     * @tc.desc       : Test the function of the interface getLowerValue.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testGetLowerValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testGetLowerValue0004";
+      try {
+        let treeSet: TreeSet<number> = new TreeSet<number>();
+        let result = treeSet.getLowerValue(123);
+        expect(result).assertEqual(undefined);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4600
+     * @tc.name       : testGetLowerValue0005
+     * @tc.desc       : Test the function of the interface getLowerValue.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testGetLowerValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testGetLowerValue0005";
+      try {
+        let treeSet: TreeSet<number> = new TreeSet<number>();
+        let result = treeSet.getLowerValue(123);
+        expect(result).assertEqual(undefined);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4700
      * @tc.name       : testGetLowerValue0006
@@ -2013,31 +2009,31 @@ export default function TreeSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8700
-    //  * @tc.name       : testTreeSetForEach0009
-    //  * @tc.desc       : Test the function of the interface forEach.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testTreeSetForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeSetForEach0009";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add('AAA');
-    //     treeSet.add('BBB');
-    //     treeSet.add('CCC');
-    //     treeSet.add('DDD');
-    //     treeSet.forEach((value, index, treeSet: TreeSet<string>): void => {
-    //       expect(treeSet.has(value)).assertTrue();
-    //     }, treeSet);
-    //     expect(treeSet.getFirstValue()).assertEqual('AAA');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8700
+     * @tc.name       : testTreeSetForEach0009
+     * @tc.desc       : Test the function of the interface forEach.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testTreeSetForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testTreeSetForEach0009";
+      try {
+        let treeSet: TreeSet<string> = new TreeSet<string>();
+        treeSet.add('AAA');
+        treeSet.add('BBB');
+        treeSet.add('CCC');
+        treeSet.add('DDD');
+        treeSet.forEach((value, index, treeSet: TreeSet<string>): void => {
+          expect(treeSet.has(value)).assertTrue();
+        });
+        expect(treeSet.getFirstValue()).assertEqual('AAA');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
   })
 }

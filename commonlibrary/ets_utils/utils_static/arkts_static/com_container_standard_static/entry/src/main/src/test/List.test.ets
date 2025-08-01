@@ -18,6 +18,7 @@ import ArraylistTest2 from "./ArrayList/ArrayList2.test";
 import HashMapTest1 from "./HashMap/HashMap1.test";
 import HashMapTest2 from "./HashMap/HashMap2.test";
 import HashSetTest1 from "./HashSet/HashSet1.test";
+import HashSetTest2 from "./HashSet/HashSet2.test";
 import LightWeightMapTest1 from "./LightWeightMap/LightWeightMap1.test";
 import LightWeightMapTest2 from "./LightWeightMap/LightWeightMap2.test";
 import LightWeightSetTest1 from "./LightWeightSet/LightWeightSet1.test";
@@ -40,6 +41,7 @@ export default function testsuite() {
   HashMapTest1();
   HashMapTest2();
   HashSetTest1();
+  HashSetTest2();
   LightWeightMapTest1();
   LightWeightMapTest2();
   LightWeightSetTest1();

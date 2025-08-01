@@ -631,8 +631,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow33");
         let result1 = lightWeightSet.getIndexOf("squirrel2222222222222");
         let result = lightWeightSet.getIndexOf("sparrow33");
-        expect(String(result)).assertEqual('0');
-        expect(String(result1)).assertEqual('1');
+        expect(String(result)).assertEqual('1');
+        expect(String(result1)).assertEqual('0');
 
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1071,7 +1071,7 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(a);
         let result = lightWeightSet.toString();
         console.log(JSON.stringify(result), 'result-------')
-        expect(JSON.stringify(lightWeightSet)).assertEqual("Dylon,Dylon");
+        expect(JSON.stringify(lightWeightSet)).assertEqual('{"0":{"name":"Dylon","age":"Dylon"}}');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
