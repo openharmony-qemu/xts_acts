@@ -48,10 +48,12 @@
       {
         "name": "ohos.permission.PRIVACY_WINDOW",
         "reason": "$string:module_desc",
-        "usedScene": [
-          "FormAbility"
-        ],
-        "when": "always"
+        "usedScene": {
+          "abilities": [
+            "FormAbility"
+          ],
+          "when": "always"
+        }
       }
     ]
   }
