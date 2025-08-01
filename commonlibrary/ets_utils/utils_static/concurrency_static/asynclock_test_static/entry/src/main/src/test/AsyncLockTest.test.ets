@@ -19,8 +19,8 @@ import {
   doubleExitSharedLockTest,
   pendingSharedRequestAfterGC,
   setDelayRequestAndCloseWorkerInstantlyTest
-} from '../testability/pages/LockTest';
-import { Sleep } from '../testability/pages/utils';
+} from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/LockTest';
+import { Sleep } from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/utils';
 
 export default function AsyncLockTest() {
   let printLog = 'AsyncLockTest:';

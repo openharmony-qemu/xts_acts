@@ -12,17 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const Sleep = (ms: int): Promise<int> => {
-  return new Promise<int>(resolve => {
-    setTimeout(() => {
-      resolve(1)
-    }, ms)
-  });
-}
 
-export function GetTime(): number {
-  return new Date().getTime();
-}
+import { GetTime, Sleep } from './utils';
+
 export function loadCase(): Promise<int> {
   let p: Promise<int> = new Promise<int>((resolve, reject) => {
     setTimeout(() => {
