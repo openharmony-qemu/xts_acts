@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, Level, Size, TestType, xit, afterEach } from "../../../hypium/index";
-import { Sleep } from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/utils';
+import { Sleep } from '../testability/pages/utils';
 import {
   exclusiveTask,
   exclusiveTimeTask,
@@ -27,7 +27,7 @@ import {
   sendableFunction,
   sharedTaskTime,
   sharedTimeTask
-} from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/arkTSUtilsCommon';
+} from '../testability/pages/arkTSUtilsCommon';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 

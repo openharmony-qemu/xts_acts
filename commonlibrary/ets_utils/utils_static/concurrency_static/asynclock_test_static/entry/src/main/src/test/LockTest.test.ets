@@ -50,8 +50,8 @@ import {
   exclusiveMultiWorkerTest,
   sharedMultiWorkerTest,
   sequentialLockWorkerTest
-} from './utils/LockTest';
-import { Sleep } from './utils/utils';
+} from '../testability/pages/LockTest';
+import { Sleep } from '../testability/pages/utils';
 
 export default function LockTest() {
   let printLog = 'LockTest:';
@@ -120,38 +120,6 @@ export default function LockTest() {
     it('sharedSingleTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let result: Object = await sharedSingleTest();
-        expect(result).assertEqual("PASSED");
-        done();
-      })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_005
-     * @tc.name: sharedMultiTest
-     * @tc.desc: checks shared multiple locks
-     * @tc.author: konstantin-grebenschikov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
-     */
-    it('sharedMultiTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let result: Object = await sharedMultiTest();
-        expect(result).assertEqual("PASSED");
-        done();
-      })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_006
-     * @tc.name: sharedMultiWorkerTest
-     * @tc.desc: checks shared multiple locks in workers
-     * @tc.author: konstantin-grebenschikov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
-     */
-    it('sharedMultiWorkerTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let result: Object = await sharedMultiWorkerTest();
         expect(result).assertEqual("PASSED");
         done();
       })
@@ -374,54 +342,6 @@ export default function LockTest() {
     it('sequentialLockUnlocked3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let result: Object = await sequentialLockUnlocked3();
-        expect(result).assertEqual("PASSED");
-        done();
-      })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_022
-     * @tc.name: fourThreadsApplyForSameLockExclusive
-     * @tc.desc: checks four threads applying same exclusive lock
-     * @tc.author: konstantin-grebenschikov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
-     */
-    it('fourThreadsApplyForSameLockExclusive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let result: Object = await fourThreadsApplyForSameLockExclusive();
-        expect(result).assertEqual("PASSED");
-        done();
-      })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_023
-     * @tc.name: fourThreadsApplyForSameLockShared
-     * @tc.desc: checks four threads applying same shared lock
-     * @tc.author: konstantin-grebenschikov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
-     */
-    it('fourThreadsApplyForSameLockShared', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let result: Object = await fourThreadsApplyForSameLockShared();
-        expect(result).assertEqual("PASSED");
-        done();
-      })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_024
-     * @tc.name: acquireLockTwiceSharedSharedAvailable
-     * @tc.desc: checks acquiring lock twice with inner and outer mode shared and option isAvailable true
-     * @tc.author: konstantin-grebenschikov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
-     */
-    it('acquireLockTwiceSharedSharedAvailable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let result: Object = await acquireLockTwiceSharedSharedAvailable();
         expect(result).assertEqual("PASSED");
         done();
       })

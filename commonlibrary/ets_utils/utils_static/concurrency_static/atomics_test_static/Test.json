@@ -1,26 +1,25 @@
 {
-    "description": "atomics test",
+    "description": "Configuration for hjunit demo Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "800000",
-        "shell-timeout": "800000",
-        "testcase-timeout": "800000",
+        "test-timeout": "180000",
         "bundle-name": "com.atomics.standard.static",
-		"module-name": "entry"
+        "module-name": "entry",
+        "shell-timeout": "600000",
+        "testcase-timeout": "180000"
     },
-    "kits": [
-        {
-            "test-file-name": [
-                "ActsAtomicsStaticTest.hap"
-            ],
-            "type": "AppInstallKit",
-            "cleanup-apps": true
-        },{
-            "type": "ShellKit",
-            "run-command": [
-                "power-shell wakeup",
-                "power-shell setmode 602"
-            ]
-        }
-    ]
+    "kits": [{
+        "test-file-name": [
+            "ActsAtomicsStaticTest.hap"
+        ],
+        "type": "AppInstallKit",
+        "cleanup-apps": true
+    },{
+        "type": "ShellKit",
+        "run-command": [
+            "power-shell wakeup",
+            "uinput -T -m 300 2700 280 200",
+            "power-shell setmode 602"
+        ]
+    }]
 }

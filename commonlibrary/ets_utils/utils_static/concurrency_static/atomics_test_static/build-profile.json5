@@ -1,28 +1,26 @@
-/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 {
   "app": {
     "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_xts_atomics_demo_FlGZCxOwDMMXwDb1MzH-lK0y9UevRBruM2IkvZuG4hs=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B423F37A19A789A6F12A32FEF53882721AE44D015051623D8543003FECA9CA999C2E98D84FEA959",
+          "profile": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_xts_atomics_demo_FlGZCxOwDMMXwDb1MzH-lK0y9UevRBruM2IkvZuG4hs=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_xts_atomics_demo_FlGZCxOwDMMXwDb1MzH-lK0y9UevRBruM2IkvZuG4hs=.p12",
+          "storePassword": "0000001B3FA2D15C7C18AB77E657D80C2A8DA6C27F35D95EBEF70AFE09187716E8C43CA05C4D06738DFC1C"
+        }
+      }
     ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": 14,
-        "compileSdkVersion": 20,
+        "compatibleSdkVersion": "20",
+        "compileSdkVersion": "20",
+        "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
