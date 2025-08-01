@@ -13117,8 +13117,8 @@ export default function bufferTest2() {
         console.log(`${TAG} res1: ${res1}`)
         const res2 = newBlob.type
         console.log(`${TAG} res2: ${res2}`);
-        expect(newBlob.size).assertEqual(5);
-        expect(newBlob.type).assertEqual('MIME');
+        expect(res1).assertEqual(2);
+        expect(res2).assertEqual('MIME');
         const content = await newBlob.text();
         console.log(`${TAG} content: ${content}`);
         expect(content).assertEqual('ab');
@@ -13146,7 +13146,8 @@ export default function bufferTest2() {
         console.log(`${TAG} res1: ${res1}`)
         const res2 = newBlob.type
         console.log(`${TAG} res2: ${res2}`);
-        expect(newBlob.size).assertEqual(5);
+        expect(res1).assertEqual(3);
+        expect(res2).assertEqual('');
         const content = await newBlob.text();
         console.log(`${TAG} content: ${content}`);
         expect(content).assertEqual('bcd');
@@ -13169,7 +13170,11 @@ export default function bufferTest2() {
       try {
         let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c', 'd', 'e']);
         const newBlob = blob.slice(1, 4, 'MIME');
-        expect(newBlob.size).assertEqual(5);
+        expect(newBlob.size).assertEqual(3);
+        expect(newBlob.type).assertEqual('MIME');
+        const content = await newBlob.text();
+        console.log(`${TAG} content: ${content}`);
+        expect(content).assertEqual('bcd');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

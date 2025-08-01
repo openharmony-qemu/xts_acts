@@ -6903,7 +6903,7 @@ export default function BufferTest1() {
       try {
         let blob: buffer.Blob = new buffer.Blob(['a', 'b', 'c']);
         let result = blob.slice(1);
-        expect(String(result.size)).assertEqual('3');
+        expect(String(result.size)).assertEqual('2');
       } catch (err: BusinessError) {
         console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
