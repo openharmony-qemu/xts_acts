@@ -1350,9 +1350,9 @@ export default function abilityTest() {
 
     // setWindowPrivacyModeTest
     /**
-     * @tc.number     : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.name       : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.desc       : setWindowPrivacyModeCallbackTest_static_0147
+     * @tc.number     : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.name       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.desc       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -1369,22 +1369,8 @@ export default function abilityTest() {
           }
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode callback Succeeded .');
           expect(true).assertTrue();
-          done();
         });
-        done();
-      });
-
-    /**
-     * @tc.number     : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.name       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.desc       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("setWindowPrivacyModePromiseTest_static_0148",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        win.setWindowPrivacyMode(true).then((): void => {
+        win.setWindowPrivacyMode(false).then((): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode promise success');
           expect(true).assertTrue();
           done();
