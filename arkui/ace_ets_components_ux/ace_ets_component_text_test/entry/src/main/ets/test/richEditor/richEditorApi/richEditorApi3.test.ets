@@ -59,7 +59,8 @@ export default function richEditorApi3() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      await driver.mouseClick({x:300, y:300}, MouseButton.MOUSE_BUTTON_LEFT)
+      let btn1 = await driver.findComponent(ON.id('RichEditor1'));
+      await btn1.click();
       await CommonFunc.sleep(1000);
 
       console.info("text1111");
