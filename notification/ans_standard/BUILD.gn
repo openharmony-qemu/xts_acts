@@ -42,6 +42,7 @@ group("ans_standard") {
       "actsNotificationSystemAPITestStatic:ActsNotificationSystemAPIStaticTest",
       "actsNotificationSystemLiveViewTest:ActsNotificationSystemLiveViewTest",
       "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
+      "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
     ]
