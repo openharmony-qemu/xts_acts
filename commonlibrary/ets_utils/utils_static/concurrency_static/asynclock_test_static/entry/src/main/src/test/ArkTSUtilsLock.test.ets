@@ -1,3 +1,742 @@
+/**
+ * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, it, expect, Level, Size, TestType, xit, afterEach } from "../../../hypium/index";
+import { Sleep } from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/utils';
+import {
+  exclusiveTask,
+  exclusiveTimeTask,
+  loadCase,
+  lockExclusiveTask,
+  locksTask,
+  locksTimeTask,
+  NumClass,
+  SendableClass,
+  sendableFunction,
+  sharedTaskTime,
+  sharedTimeTask
+} from '../../../../../../../../../concurrency_static/asynclock_test_static/entry/src/main/src/test/utils/arkTSUtilsCommon';
+import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog';
+
+class Person {
+  name: string;
+  age: number;
+  city: string;
+
+  constructor(name: string, age: number, city: string) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.city = city;
+  }
+}
+
+class BigIntPerson {
+  name: string;
+  age: number;
+  bigInt: number;
+
+  constructor(name: string, age: number, bigInt: number) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.bigInt = bigInt;
+  }
+}
+
+class Obj {
+  largeNumber: number;
+
+  constructor(largeNumber: number) {
+    super();
+    this.largeNumber = largeNumber;
+  }
+}
+
+export default function arkTSUtilsLockTest() {
+  describe('arkTSUtilsLockTest', (): void => {
+    afterEach(() => {
+      await Sleep(20);
+    })
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
+     * @tc.name      : testTaskLocksQueryAll_static_0001
+     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     *                 resulting in no information with length=0.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQueryAll_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQueryAll_static_0001';
+        try {
+          let states: AsyncLockState[] = AsyncLock.queryAll();
+          expect(states.length).assertEqual(0);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
+     * @tc.name      : testTaskLocksQueryAll_static_0002
+     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     *                 returning information on existing asynchronous locks and validating each item in the AsyncLockState results.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQueryAll_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQueryAll_static_0002';
+        try {
+          let states: AsyncLockState[] = AsyncLock.queryAll();
+          expect(Array.isArray(states)).assertTrue();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
+     * @tc.name      : testTaskLocksQueryAll_static_0003
+     * @tc.desc      : The queryAll operation of AsyncLock creates multiple asynchronous locks,
+     *                 performs a query, and validates each item in the AsyncLockState results.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQueryAll_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQueryAll_static_0003';
+        try {
+          AsyncLock.request("name1");
+          AsyncLock.request("name2");
+          AsyncLock.request("name3");
+          let states: AsyncLockState[] = AsyncLock.queryAll();
+          console.info(`${TAG} state.` + JSON.stringify(states));
+          expect(states.length).assertEqual(3);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
+     * @tc.name      : testTaskLocksConstructor_static_0001
+     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
+     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksConstructor_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksConstructor_static_0001';
+        try {
+          let lock = new AsyncLock();
+          expect(lock instanceof AsyncLock).assertTrue();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
+     * @tc.name      : testTaskLocksQuery_static_0001
+     * @tc.desc      : The request operation of AsyncLock has not been created before, resulting in an error.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQuery_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQuery_static_0001';
+        try {
+          const lockName = "";
+          AsyncLock.query(lockName);
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
+     * @tc.name      : testTaskLocksQuery_static_0005
+     * @tc.desc      : The query operation of AsyncLock has not been created before, error.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQuery_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQuery_static_0005';
+        try {
+          const lockName = "name";
+          AsyncLock.query(lockName);
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
+     * @tc.name      : testTaskLocksRequest_static_0001
+     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
+     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksRequest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksRequest_static_0001';
+        try {
+          const lockName = "";
+          let lock = AsyncLock.request(lockName);
+          expect(lock.name).assertEqual(lockName);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
+     * @tc.name      : testTaskLocksRequest_static_0002
+     * @tc.desc      : The request operation of AsyncLock has already been created earlier.
+     *                 Here, it is a lookup operation that returns an already existing asynchronous lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksRequest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksRequest_static_0002';
+        try {
+          const lockName = "";
+          AsyncLock.request(lockName);
+          let lock = AsyncLock.request(lockName);
+          expect(lock.name).assertEqual(lockName);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
+     * @tc.name      : testTaskLocksRequest_static_0003
+     * @tc.desc      : The request operation of AsyncLock has not been created before.
+     *                 Here, it is a creation operation that returns a newly created asynchronous lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksRequest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksRequest_static_0003';
+        try {
+          const lockName = "name";
+          let lock = AsyncLock.request(lockName);
+          expect(lock.name).assertEqual(lockName);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
+     * @tc.name      : testTaskLocksRequest_static_0004
+     * @tc.desc      : The request operation of AsyncLock has already been created before.
+     *                 Here, it is a lookup operation that returns an existing asynchronous lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksRequest_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksRequest_static_0004';
+        try {
+          const lockName = "name";
+          AsyncLock.request(lockName);
+          let lock = AsyncLock.request(lockName);
+          expect(lock.name).assertEqual(lockName);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
+     * @tc.name      : testTaskLocksRequest_static_0005
+     * @tc.desc      : The request operation of AsyncLock had already been created.
+     *                 When performing a lookup with a case-insensitive mismatch,
+     *                 it actually returns a newly created async lock.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksRequest_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksRequest_static_0005';
+        try {
+          const lockName = "name";
+          const newLockName = "Name";
+          AsyncLock.request(lockName);
+          let lock = AsyncLock.request(newLockName);
+          expect(lock.name).assertEqual(newLockName);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
+     * @tc.name      : testTaskLocksQuery_static_0002
+     * @tc.desc      : The request operation of AsyncLock has already been created.
+     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQuery_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQuery_static_0002';
+        try {
+          const lockName = "";
+          AsyncLock.request(lockName);
+          let state = AsyncLock.query(lockName);
+          console.info(`${TAG} state:  => ${JSON.stringify(state)}`);
+          console.info(`${TAG} state.held:  => ${JSON.stringify(state.held)}`);
+          console.info(`${TAG} state.pending:  => ${JSON.stringify(state.pending)}`);
+          expect(state && Array.isArray(state.held) && Array.isArray(state.pending)).assertTrue();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
+     * @tc.name      : testTaskLocksQuery_static_0003
+     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
+     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQuery_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQuery_static_0003';
+        try {
+          const lockName = "name";
+          AsyncLock.request(lockName);
+          let state = AsyncLock.query(lockName);
+          console.info(`${TAG} state:  => ${JSON.stringify(state)}`);
+          console.info(`${TAG} state.held:  => ${JSON.stringify(state.held)}`);
+          console.info(`${TAG} state.pending:  => ${JSON.stringify(state.pending)}`);
+          expect(state && Array.isArray(state.held) && Array.isArray(state.pending)).assertTrue();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1_static_000
+     * @tc.name      : testTaskLocksQuery_static_0004
+     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
+     *                 When performing a lookup with a case-insensitive mismatch, it results in an error.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('testTaskLocksQuery_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testTaskLocksQuery_static_0004';
+        try {
+          const lockName = "name";
+          const newLockName = "NAme";
+          AsyncLock.request(lockName);
+          AsyncLock.query(newLockName);
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
+     * @tc.name       : testLockAsync_static_0001
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0001";
+        try {
+          let lock = new AsyncLock();
+          AsyncLock.query(lock.name);
+          lock.lockAsync<void>(() => {
+          }, AsyncLockMode.SHARED);
+          expect(false).assertFail();
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: code =>  message => ${err.message}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
+     * @tc.name       : testLockAsync_static_0006
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0006";
+        try {
+          let result = '';
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = false;
+          options.signal = null;
+          options.timeout = 0;
+          let state1: boolean = false;
+          let state2: boolean = false;
+          lock.lockAsync(async () => {
+            result += 'A';
+            await Sleep(500);
+            state1 = true;
+          }, AsyncLockMode.EXCLUSIVE, options).catch((err: Error) => {
+            console.error(`${TAG} failed, error: ${err}`);
+          });
+          await Sleep(200);
+          lock.lockAsync(async () => {
+            result += 'B';
+            await Sleep(500);
+            state2 = true;
+          }, AsyncLockMode.SHARED, options).catch((err: Error) => {
+            console.error(`${TAG} failed, error: ${err}`);
+          });
+          while (!(state1 && state2)) {
+            await loadCase();
+          }
+          expect(result).assertEqual('AB');
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
+     * @tc.name       : testLockAsync_static_0007
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0007";
+        try {
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = true;
+          options.signal = null;
+          options.timeout = 0;
+          lock.lockAsync(async () => {
+            await Sleep(1000);
+          }, AsyncLockMode.EXCLUSIVE, options);
+          await lock.lockAsync(async () => {
+            await Sleep(1000);
+          }, AsyncLockMode.EXCLUSIVE, options);
+          expect(false).assertFail();
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
+     * @tc.name       : testLockAsync_static_0008
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0008";
+        try {
+          let result = '';
+          let sig: AbortSignal<String> = {
+            aborted: true, reason: 'Aborted'
+          };
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = false;
+          options.signal = sig;
+          options.timeout = 0;
+          lock.lockAsync(async () => {
+            result += 'A'
+            await Sleep(1000);
+          }, AsyncLockMode.SHARED, options);
+          lock.lockAsync(async () => {
+            result += 'B';
+            await Sleep(1000);
+          }, AsyncLockMode.SHARED, options);
+          expect(result).assertEqual('');
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
+     * @tc.name       : testLockAsync_static_0009
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0009";
+        try {
+          let result = '';
+          let sig: AbortSignal<String> = {
+            aborted: false, reason: 'Aborted'
+          };
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = true;
+          options.signal = sig;
+          options.timeout = 0;
+          let state1: boolean = false;
+          let state2: boolean = false;
+          lock.lockAsync(async () => {
+            result += 'A'
+            await Sleep(500);
+            state1 = true;
+          }, AsyncLockMode.SHARED, options);
+          await Sleep(200);
+          lock.lockAsync(async () => {
+            result += 'B';
+            await Sleep(500);
+            state2 = true;
+          }, AsyncLockMode.SHARED, options);
+          while (!(state1 && state2)) {
+            await loadCase();
+          }
+          expect(result).assertEqual('AB');
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2_static_000
+     * @tc.name       : testLockAsync_static_0010
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0010";
+        try {
+          let result = '';
+          let sig: AbortSignal<String> = {
+            aborted: true, reason: 'Aborted'
+          };
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = false;
+          options.signal = sig;
+          options.timeout = 0;
+          await lock.lockAsync(async () => {
+            result += 'A';
+            await Sleep(1500);
+          }, AsyncLockMode.EXCLUSIVE, options);
+          expect(false).assertFail();
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
+     * @tc.name       : testLockAsync_static_0011
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0011";
+        try {
+          let result = '';
+          let lock = new AsyncLock();
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = true;
+          options.signal = null;
+          options.timeout = 1000;
+          await lock.lockAsync(async () => {
+            result += 'A';
+            await new Promise<int>((resolve) => {
+              setTimeout(() => {
+                resolve(1)
+              }, 100)
+            });
+          }, AsyncLockMode.EXCLUSIVE, options);
+          expect(result).assertEqual('A');
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
+
+    /**
+     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
+     * @tc.name       : testLockAsync_static_0012
+     * @tc.desc       : Test the function of the interface LockAsync.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testLockAsync_static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testLockAsync_static_0012";
+        try {
+          let lock = new AsyncLock();
+          let sig: AbortSignal<String> = {
+            aborted: false, reason: 'Aborted'
+          };
+          let options = new AsyncLockOptions<string>();
+          options.isAvailable = false;
+          options.signal = sig;
+          options.timeout = 1000;
+          lock.lockAsync(async () => {
+            await new Promise<void>((resolve) => {
+              setTimeout(() => {
+                resolve(undefined)
+              }, 1100)
+            });
+          }, AsyncLockMode.EXCLUSIVE);
+          await lock.lockAsync(async () => {
+            await new Promise<void>((resolve) => {
+              setTimeout(() => {
+                resolve(undefined)
+              }, 1100)
+            });
+          }, AsyncLockMode.SHARED, options);
+          expect(false).assertFail();
+        } catch (err: Error) {
+          console.error(`${TAG} failed, error: ${err}`);
+        }
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
+     * @tc.name      : testLockAsync_static_0013
+     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testLockAsync_static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'testLockAsync_static_0013';
+        try {
+          let res: String = '';
+          let lock = new AsyncLock();
+          let state1: boolean = false;
+          let state2: boolean = false;
+          lock.lockAsync(
+            async () => {
+              res += 'l1开始-';
+              await Sleep(1000);
+            }, AsyncLockMode.SHARED
+          ).then<void>(() => {
+            res += 'l1结束-';
+            state1 = true;
+          })
+          await Sleep(200);
+          lock.lockAsync(
+            async () => {
+              res += 'l2开始-';
+              await Sleep(1000);
+            }, AsyncLockMode.SHARED
+          ).then<void>(() => {
+            res += 'l2结束';
+            state2 = true;
+          })
+          while (!(state1 && state2)) {
+            await loadCase();
+          }
+          expect(res).assertEqual('l1开始-l2开始-l1结束-l2结束')
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error}`);
+          expect(false).assertFail();
+        }
+        done()
+      })
 
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
