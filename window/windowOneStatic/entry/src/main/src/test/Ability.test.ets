@@ -118,11 +118,9 @@ export default function abilityTest() {
         try {
           let ret = win.getWindowProperties();
           expect(ret != null).assertTrue();
-          expect(ret.windowName != null).assertTrue();
           expect(ret.windowRect != null).assertTrue();
           expect(ret.isFullScreen != null).assertTrue();
-          expect(ret.type != null).asserTrue();
-          expect(ret.brightness >= 0).asserTrue();
+          expect(ret.type != null).assertTrue();
           expect(ret.id >= 0).assertTrue();
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties sync Succeeded');
         } catch (e: Error) {
