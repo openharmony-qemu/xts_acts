@@ -63,7 +63,7 @@ export default function ResmgrTest() {
     /* *
      * @tc.number  getStringValue_test_static_003
      * @tc.name    getStringValue_test_static_003
-     * @tc.desc    get the string in callback mode
+     * @tc.desc    get the string in callback mode.
      */
     it('getStringValue_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res?.getStringValue(0x01000000, (err: BusinessError<void> | null, value: string | undefined) => {
