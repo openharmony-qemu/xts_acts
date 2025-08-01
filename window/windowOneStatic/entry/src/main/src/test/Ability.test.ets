@@ -1357,7 +1357,7 @@ export default function abilityTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it("setWindowPrivacyModeCallbackTest_static_0147",
+    it("setWindowPrivacyModeCallbackAndPromiseTest_static_0147",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         win.setWindowPrivacyMode(true, (err: BusinessError<void> | null) => {
           const errCode: number = err?.code as int;
