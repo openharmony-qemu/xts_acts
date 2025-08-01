@@ -163,7 +163,7 @@ export default function KvStoreEtsTestStatic() {
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+    it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start getKvstore");
