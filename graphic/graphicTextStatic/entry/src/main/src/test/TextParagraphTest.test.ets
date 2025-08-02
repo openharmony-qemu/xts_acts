@@ -238,7 +238,7 @@ export default function TextParagraphTest() {
             tempHeight += item.height;
             preHeight = item.height;
             preBaseLine = item.baseline;
-            let runMetrics: Map<number, text.RunMetrics> = item.runMetrics;
+            let runMetrics: Map<int, text.RunMetrics> = item.runMetrics;
             runMetrics.forEach((value, key) => {
               let textStyle: text.TextStyle = value.textStyle;
               let fontMetrics: drawing.FontMetrics = value.fontMetrics;
@@ -331,7 +331,7 @@ export default function TextParagraphTest() {
             expect(lineMetrics?.lineNumber).assertEqual(2)
             expect(lineMetrics?.topHeight).assertEqual(832)
 
-            let runMetrics: Map<number, text.RunMetrics> | undefined = lineMetrics?.runMetrics;
+            let runMetrics: Map<int, text.RunMetrics> | undefined = lineMetrics?.runMetrics;
             if (runMetrics != undefined) {
               runMetrics.forEach((value, key) => {
                 let textStyle: text.TextStyle = value.textStyle;
