@@ -536,22 +536,28 @@ export default function abilityTest() {
      */
     it("createWindowCallbackTest_static_0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let config: window.Configuration = {
-        name: "test",
+        name: "testCreateWindow_DialogWindow_Callback",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: UIAbilityContext,
       }
-      window.createWindow(config, (err: BusinessError<void>|null, data: window.Window|undefined) => {
-        let errCode = err?.code;
+      try {
+        window.createWindow(config, (err: BusinessError<void>|null, data: window.Window|undefined) => {
+        const errCode: number = err?.code as int;
         if (errCode) {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] createWindow callback Failed. Cause code: ${err?.code}, message: ${err?.message}`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] createWindow callback Succeeded .');
+        hilog.info(0x0000, '[ANI]', `finaltest [ANI] createWindow Succeeded`);
+        win.destroyWindow();
         expect(true).assertTrue();
         done();
-      });
-      done();
+        });
+      } catch (err) {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] moveWindowTo fail: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+      }
     });
 
     /**
@@ -564,12 +570,13 @@ export default function abilityTest() {
      */
     it("createWindowPromiseTest_static_0232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let config: window.Configuration = {
-        name: "test2",
+        name: "testCreateWindow_DialogWindow_Promise",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: UIAbilityContext,
       }
       window.createWindow(config).then((): void => {
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] createWindow promise Succeeded');
+        win.destroyWindow();
         expect(true).assertTrue();
         done();
       }).catch((e:BusinessError ): void => {
@@ -577,7 +584,6 @@ export default function abilityTest() {
         expect(false).assertTrue();
         done();
       });
-      done();
     });
 
     /**
@@ -590,17 +596,17 @@ export default function abilityTest() {
      */
     it("createSubWindowCallbackTest_static_0233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       windowStage.createSubWindow('TestSubWindow', (err: BusinessError<void>|null, data: window.Window|undefined) => {
-        let errCode = err?.code;
+        const errCode: number = err?.code as int;
         if (errCode) {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] createSubWindow callback Failed. Cause code: ${err?.code}, message: ${err?.message}`);
           expect(false).assertTrue();
           done();
         }
-        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] createSubWindow callback Succeeded .');
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] createSubWindow callback Succeeded.');
+        win.destroyWindow();
         expect(true).assertTrue();
         done();
       });
-      done();
     });
 
     /**
@@ -618,10 +624,10 @@ export default function abilityTest() {
         done();
       }).catch((e: NullishType): void => {
         hilog.info(0x0000, '[ANI]', `finaltest [ANI] createSubWindow promise Failed. err: ${e}`);
+        win.destroyWindow();
         expect(false).assertTrue();
         done();
       });
-      done();
     });
 
     /**
@@ -636,29 +642,29 @@ export default function abilityTest() {
       let promise = windowStage.createSubWindow('TestSubWindow3');
       promise.then((data) => {
         let callback = (): void => {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose callback Succeeded');
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise Succeeded');
           expect(true).assertTrue();
           done();
         };
         let subWindowClose = data;
         subWindowClose.on('subWindowClose', callback);
         subWindowClose.off('subWindowClose', callback)
-        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose callback Succeeded');
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise Succeeded');
         expect(true).assertTrue();
         done();
       }).catch((e: NullishType) => {
         let err =e as BusinessError;
         if(err?.code == 801){
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose callback success. e.code: '+err?.code);
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise success. e.code: '+err?.code);
+          win.destroyWindow();
           expect(true).assertTrue();
           done();
         }else{
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose callback Failed. err: '+err);
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise Failed. err: '+err);
           expect(false).assertTrue();
           done();
         }
       });
-      done();
     });
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
