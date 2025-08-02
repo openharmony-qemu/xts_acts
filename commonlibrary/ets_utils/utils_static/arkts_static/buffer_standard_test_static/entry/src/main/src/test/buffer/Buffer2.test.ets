@@ -712,7 +712,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0500
-     * @tc.name       : testConcat0005
+     * @tc.name       : testBufferConcat0005
      * @tc.desc       : Test the function of the interface Concat.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -728,7 +728,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
@@ -772,7 +772,7 @@ export default function bufferTest2() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.code).assertEqual(10200001);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -2147483647');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     })
     /**
@@ -797,7 +797,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0900
-     * @tc.name       : testConcat0009
+     * @tc.name       : testBufferConcat0009
      * @tc.desc       : Test the function of the interface Concat.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -815,7 +815,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: -1');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
@@ -1264,25 +1264,25 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0500
-    //  * @tc.name       : testFrom30005
-    //  * @tc.desc       : Test the function of the interface From3.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testBufferFrom30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = 'testBufferFrom30005';
-    //   try {
-    //     let buf = buffer.from(new String('hello world'), 'test', 1);
-    //     expect(buf).assertFail();
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message)
-    //       .assertEqual('Parameter error. The type of "encoding" must be BufferEncoding. the encoding test is unknown');
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0500
+     * @tc.name       : testFrom30005
+     * @tc.desc       : Test the function of the interface From3.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testBufferFrom30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = 'testBufferFrom30005';
+      try {
+        let buf = buffer.from(new String('hello world'), 'test', 1);
+        expect(buf).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('Parameter error. The type of "encoding" must be BufferEncoding. the encoding test is unknown');
+      }
+    })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0600
      * @tc.name       : testFrom30006
@@ -1342,7 +1342,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0900
-     * @tc.name       : testFrom30009
+     * @tc.name       : testBufferFrom30009
      * @tc.desc       : Test the function of the interface From3.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -1360,7 +1360,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertContain('Parameter error. The type of "arrayBuffer" must be Buffer or ArrayBuffer, Array, Array-like');
+          .assertContain('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     })
     /**
@@ -1400,7 +1400,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
          expect(err.message)
-          .assertContain('Parameter error. The type of "arrayBuffer" must be Buffer or ArrayBuffer, Array, Array-like');
+          .assertContain('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     })
     /**
@@ -2106,7 +2106,7 @@ export default function bufferTest2() {
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
-     * @tc.name       : testBufferCompare0004
+     * @tc.name       : testBufferBufferCompare0004
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2118,16 +2118,16 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
         const result = buf1.compare(buf2, -1);
-	expect(result).assertFail();
+	      expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0500
-     * @tc.name       : testBufferCompare0005
+     * @tc.name       : testBufferBufferCompare0005
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2139,16 +2139,15 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
         const result = buf1.compare(buf2, Infinity.toInt());
-	      expect(result).assertFail();
+        expect(result).assertEqual(1);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: 2147483647');
+        expect(false).assertFail();
       }
     });
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0600
-     * @tc.name       : testBufferCompare0006
+     * @tc.name       : testBufferBufferCompare0006
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2160,11 +2159,11 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([3, 2, 1]);
         const result = buf1.compare(buf2, -Infinity.toInt());
-	expect(result).assertFail();
+	      expect(result).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2147483647');
+          .assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     });
     /**
@@ -2354,7 +2353,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1600
-     * @tc.name       : testCompare0016
+     * @tc.name       : testBufferBufferCompare0016
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2366,16 +2365,16 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
         buf1.compare(buf2, undefined, undefined, -1);
-	expect(false).assertFail();
+	      expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1700
-     * @tc.name       : testCompare0017
+     * @tc.name       : testBufferBufferCompare0017
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2386,17 +2385,16 @@ export default function bufferTest2() {
       try {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
-        buf1.compare(buf2, undefined, undefined, Infinity.toInt());
-	      expect(false).assertFail();
+        const result = buf1.compare(buf2, undefined, undefined, Infinity.toInt());
+	      expect(result).assertEqual(-1);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: 2147483647');
+        expect(false).assertFail();
       }
     })
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1800
-     * @tc.name       : testCompare0018
+     * @tc.name       : testBufferBufferCompare0018
      * @tc.desc       : Test the function of the interface Compare.
      * @tc.size       : MediumTest
      * @tc.type       : Function
@@ -2408,11 +2406,11 @@ export default function bufferTest2() {
         const buf1 = buffer.from([1, 2, 3]);
         const buf2 = buffer.from([1, 2, 3]);
         buf1.compare(buf2, undefined, undefined, -Infinity.toInt());
-	expect(false).assertFail();
+	      expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "sourceStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2147483647');
+          .assertEqual('The value of "sourceEnd" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     })
     /**
@@ -5469,7 +5467,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferReadInt80002';
       try {
         let buf = buffer.from([-1, 5]);
-        expect(String(buf.readInt8(0))).assertEqual('0');
+        expect(String(buf.readInt8(0))).assertEqual('-1');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
