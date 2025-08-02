@@ -583,7 +583,7 @@ export default function ActsEmitterandComEventTest() {
       let result = 0
 
       let callback1 = (eventData: emitter.GenericEventData<Sample>): void => {
-        let storage: Sample = eventData.data!;
+        let storage: Sample = eventData.data! as Sample;
         storage.printCount();
         console.info(Tag +' on GenericEventData');
       }
