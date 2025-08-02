@@ -21,7 +21,7 @@ import fileShare from '@ohos.fileshare';
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag'; 
 const FILE_CONTENT = 'hello world';
 
