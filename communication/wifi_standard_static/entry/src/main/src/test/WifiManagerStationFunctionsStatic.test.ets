@@ -83,7 +83,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo state result:" + changeInfo);
             }
             try{
@@ -310,7 +310,7 @@ export default function actsWifiManagerFunctionsTest() {
          */
         it("getSignalLevelTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                let level: number = wifiManager.getSignalLevel(0 ,0);
+                let level: int = wifiManager.getSignalLevel(0 ,0);
                 hilog.info(domain, tag, 'getSignalLevel success result:' + level);
                 expect(true).assertEqual(level >= 0 && level <= 4);
             } catch (err: BusinessError) {
@@ -448,7 +448,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo state result:" + changeInfo);
             }
             try{
@@ -486,7 +486,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("p2pDiscoveryChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDiscoveryChange:" + changeInfo);
             }
             try{
@@ -524,7 +524,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("p2pDiscoveryChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDiscoveryChange:" + changeInfo);
             }
             try{
@@ -714,7 +714,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiScanStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiScanStateChange:" + changeInfo);
             }
             try{
@@ -752,7 +752,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiScanStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiScanStateChange:" + changeInfo);
             }
             try{
@@ -790,7 +790,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiConnectionChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiConnectionChange:" + changeInfo);
             }
             try{
@@ -828,7 +828,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiConnectionChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiConnectionChange:" + changeInfo);
             }
             try{
@@ -1018,7 +1018,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("p2pStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo p2pStateChange:" + changeInfo);
             }
             try{
@@ -1056,7 +1056,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("p2pStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo p2pStateChange:" + changeInfo);
             }
             try{
@@ -1094,7 +1094,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("hotspotStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo hotspotStateChange:" + changeInfo);
             }
             try{
@@ -1132,7 +1132,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("hotspotStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo hotspotStateChange:" + changeInfo);
             }
             try{
@@ -1170,7 +1170,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiRssiChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiRssiChange:" + changeInfo);
             }
             try{
@@ -1208,7 +1208,7 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiRssiChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let onReceiveEvent:(changeInfo: number) => void = (changeInfo: number) => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
                 hilog.info(domain, tag, "onReceiveEvent changeInfo wifiRssiChange:" + changeInfo);
             }
             try{
