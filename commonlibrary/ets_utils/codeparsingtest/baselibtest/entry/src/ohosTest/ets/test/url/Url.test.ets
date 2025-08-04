@@ -1849,9 +1849,8 @@ export default function urlTest() {
         params.append('fod', "!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`{|}~");
         params.append('fod', 'Another special value: %^&*()_+|');
         params.append('fod', 'More special characters: ~`!@#$%^&*()-_=+');
-        let arr = Array.from<string>(params.values())
-        let str = arr.join(',');
-        expect(str).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
+        let resultValues = params.values();
+        expect(resultValues.toString()).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
           "{|}~,Another special value: %^&*()_+|,More special characters: " +
           "~`!@#$%^&*()-_=+");
       } catch (err) {
