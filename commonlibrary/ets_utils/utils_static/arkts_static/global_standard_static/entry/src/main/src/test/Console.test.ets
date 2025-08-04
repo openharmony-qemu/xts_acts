@@ -1407,7 +1407,7 @@ export default function ConsoleTest() {
         const str = '\0';
         console.time(str);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
@@ -1898,7 +1898,7 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeEnd(str);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
@@ -2419,7 +2419,7 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeLog(str);
         console.timeEnd(str);
-      } catch (err: BusinessError) {
+      } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
           .assertEqual('Parameter error. The input parameters are invalid, Timer or Counter name must be not null.');
