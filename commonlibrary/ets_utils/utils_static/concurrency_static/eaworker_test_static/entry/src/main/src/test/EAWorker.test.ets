@@ -17,6 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestT
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 
+type Literal = 'success' | 'failure' | 'pending';
 
 let EAWorkerTest001:boolean = false;
 function ThrowExceptionWorkerTest(): void {
@@ -2062,7 +2063,6 @@ export default function EAWorkerTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest055';
         const worker = new EAWorker();
-        type Literal = 'success' | 'failure' | 'pending';
         const inputLiteral: Literal = 'pending';
         try {
           const workerPromise = new Promise<Literal>((resolve, reject) => {

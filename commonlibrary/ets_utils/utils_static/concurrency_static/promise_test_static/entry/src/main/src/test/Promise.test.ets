@@ -31,6 +31,8 @@ interface User {
   username: string;
 }
 
+type funcType = () => number
+
 class Person {
   name: string;
 
@@ -747,7 +749,6 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         let result: number | undefined;
         try {
-          type funcType = () => number
           const getNumber = (): number => 10;
           const promise1: Promise<() => number> = Promise.reject<funcType>(new Error('10'));
           const numberFunction = await promise1;
