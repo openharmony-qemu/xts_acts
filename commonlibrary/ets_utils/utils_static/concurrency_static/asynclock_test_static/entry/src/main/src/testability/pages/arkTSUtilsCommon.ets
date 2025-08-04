@@ -1,18 +1,18 @@
 /**
  * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const Sleep = (ms: int): Promise<int> => {
+export const sleep = (ms: int): Promise<int> => {
   return new Promise<int>(resolve => {
     setTimeout(() => {
       resolve(1)
@@ -33,7 +33,7 @@ export function loadCase(): Promise<int> {
 }
 
 export async function sharedTaskTime(lockName: string): Promise<Array<Number>> {
-  let res = new Array<Number>();
+  let res: number[] = [];
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     console.error(`${lockName} time: ${new Date().getTime()}`);
@@ -47,7 +47,7 @@ export async function sharedTaskTime(lockName: string): Promise<Array<Number>> {
 }
 
 export async function exclusiveTask(lockName: string, str: string): Promise<string> {
-  let res = "";
+  let res = '';
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res += str;
@@ -57,7 +57,7 @@ export async function exclusiveTask(lockName: string, str: string): Promise<stri
 }
 
 export async function lockExclusiveTask(lock: AsyncLock, str: string): Promise<string> {
-  let res = "";
+  let res = '';
   await lock.lockAsync(async () => {
     res += str;
     await Sleep(500);
@@ -77,7 +77,7 @@ export async function sharedTimeTask(lockName: string): Promise<Array<Number>> {
 }
 
 export async function exclusiveTimeTask(lockName: string): Promise<Array<Number>> {
-  let res = new Array<Number>();
+  let res: Number[] = [];
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res.push(AsyncLockMode.EXCLUSIVE);
@@ -89,7 +89,7 @@ export async function exclusiveTimeTask(lockName: string): Promise<Array<Number>
 
 export async function locksTask(lock: AsyncLock,
   mode: AsyncLockMode): Promise<string> {
-  let res = "";
+  let res = '';
   await lock.lockAsync(async ()=> {
     res = mode == AsyncLockMode.SHARED ? 'A' : 'B';
     await Sleep(500);
@@ -99,7 +99,7 @@ export async function locksTask(lock: AsyncLock,
 
 export async function locksTimeTask(lock: AsyncLock,
   mode: AsyncLockMode): Promise<Array<number>> {
-  let res = new Array<number>();
+  let res: Number[] = [];
   await lock.lockAsync(async () => {
     res.push(GetTime());
     await Sleep(500);
@@ -128,10 +128,10 @@ export class NumClass {
 
 export class SendableClass {
   count_: number = 0;
-  static count: number = 1;
+  public static count: number = 1;
 
   static getPromiseCount(): Promise<number> {
-    let lock: AsyncLock = AsyncLock.request("lock");
+    let lock: AsyncLock = AsyncLock.request('lock');
     return lock.lockAsync(() => {
       return SendableClass.count;
     })
@@ -142,7 +142,7 @@ export class SendableClass {
   }
 
   async getCountAsync_(): Promise<number> {
-    let lock: AsyncLock = AsyncLock.request("lock");
+    let lock: AsyncLock = AsyncLock.request('lock');
     return lock.lockAsync(() => {
       return this.count_;
     })
@@ -153,7 +153,7 @@ export class SendableClass {
   }
 
   async setCount(count: number) {
-    let lock: AsyncLock = AsyncLock.request("lock");
+    let lock: AsyncLock = AsyncLock.request('lock');
     await lock.lockAsync(() => {
       this.count_ = count;
     })

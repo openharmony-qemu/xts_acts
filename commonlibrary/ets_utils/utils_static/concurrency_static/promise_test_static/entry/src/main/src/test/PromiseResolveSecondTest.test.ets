@@ -39,75 +39,7 @@ export default function PromiseResolveSecondTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-
-    // /**
-    //  * @tc.number SUB_PROMISE_RESOLVE_TEST_2900
-    //  * @tc.name PromiseResolveTest2900
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 2
-    //  */
-    // it('PromiseResolveTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (Done: () => void):Promise<void> => {
-    //     const caseName = 'PromiseResolveTest2900';
-    //     console.info(`${caseName} test start`);
-    //     let arr: number[] = [];
-    //     let successMessage: string = '';
-    //     let errorMessage: string = '';
-    //     let taskPromises: Promise<number>[] = [];
-    //     const asyncOperation = (value: number, delay: number) => {
-    //       return new Promise<number>((resolve) => {
-    //         setTimeout(() => {
-    //           arr.push(value);
-    //           resolve(value * 2);
-    //         },200);
-    //       });
-    //     };
-    //     const outerPromises = [
-    //       asyncOperation(1, 200),
-    //       asyncOperation(2, 300),
-    //       asyncOperation(3, 100)
-    //     ];
-    //     taskPromises.push(asyncOperation(1, 200));
-    //     taskPromises.push(asyncOperation(2, 300));
-    //     taskPromises.push(asyncOperation(3, 100));
-    //     Promise.resolve()
-    //       .then<number>(() => {
-    //         return Promise.race<number>(outerPromises);
-    //       })
-    //       .then((outerResult:number) => {
-    //         arr.push(4);
-    //         successMessage = `Outer Promise.race result: ${outerResult}`;
-    //         console.log(successMessage);
-    //         const innerPromises = [
-    //           asyncOperation(outerResult / 2 * 4, 150),
-    //           asyncOperation(outerResult / 2 * 5, 200),
-    //           asyncOperation(outerResult / 2 * 6, 180)
-    //         ];
-    //         return Promise.race(innerPromises);
-    //       })
-    //       .then<number>((innerResult:number):void => {
-    //         arr.push(5);
-    //         successMessage = `Inner Promise.race result: ${innerResult}`;
-    //         console.log(successMessage);
-    //       })
-    //       .catch((error: Error) :void=> {
-    //         arr.push(6);
-    //         errorMessage = `Error: ${error.message}`;
-    //         console.error(errorMessage);
-    //       });
-    //     arr.push(7);
-    //     await Promise.all(taskPromises);
-    //     await sleep(200);
-    //     expect(JSON.stringify(arr)).assertEqual('[7,3,4,3,1,1,12,5,2,2,18,15]');
-    //     expect(successMessage).assertEqual('Inner Promise.race result: 24');
-    //     console.info(`${caseName} test end`);
-    //     Done();
-    //   });
-
-
+    
     /**
      * @tc.number SUB_PROMISE_RESOLVE_TEST_3000
      * @tc.name PromiseResolveTest3000
