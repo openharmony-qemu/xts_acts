@@ -114,8 +114,8 @@ export function sendableFunction() {
 }
 
 export class NumClass {
-  a :number= 1;
-  static b:number = 1;
+  public a :number= 1;
+  public static b:number = 1;
 
   GetA():number {
     return this.a

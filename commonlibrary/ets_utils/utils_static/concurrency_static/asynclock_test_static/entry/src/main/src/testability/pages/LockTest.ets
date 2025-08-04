@@ -370,36 +370,7 @@ export function nestedDeadlockTest(): Promise<string> {
   }, AsyncLockMode.EXCLUSIVE, options);
   return check_negative('nestedDeadlockTest', p);
 }
-/*
-function twoThreadedDeadlockT2(lockNameL1: string, lockNameL2: string, flagBuf: Int32Array): Promise<void> {
-  let L2 = AsyncLock.request(lockNameL2);
-  return L2.lockAsync<void>(async (): Promise<void> => { // F2
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>T2 F2');
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '0->1');
-    Atomics.compareExchange(flagBuf, 0, 0, 1);
-    // now lock the second lock
-    let L1 = AsyncLock.request(lockNameL1);
-    await L1.lockAsync<void>((): void => {
-      // deadlock should happen, then T1 timeout exceeds and locks will unlock
-    }, AsyncLockMode.EXCLUSIVE);
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '<T2 F2');
-  }, AsyncLockMode.EXCLUSIVE);
-}
 
-function twoThreadedDeadlockT2(lockNameL1: string, lockNameL2: string, flagBuf: Int32Array): Promise<void> {
-  let L2 = AsyncLock.request(lockNameL2);
-  return L2.lockAsync<void>(async (): Promise<void> => { // F2
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>T2 F2');
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '0->1');
-    Atomics.compareExchange(flagBuf, 0, 0, 1);
-    // now lock the second lock
-    let L1 = AsyncLock.request(lockNameL1);
-    await L1.lockAsync<void>((): void => {
-      // deadlock should happen, then T1 timeout exceeds and locks will unlock
-    }, AsyncLockMode.EXCLUSIVE);
-    hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '<T2 F2');
-  }, AsyncLockMode.EXCLUSIVE);
-}*/
 // test entry point
 export function twoThreadedDeadlockTest(): Promise<string> {
   hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>twoThreadedDeadlockTest');
