@@ -38,7 +38,7 @@ export async function sharedTaskTime(lockName: string): Promise<Array<Number>> {
   await lock.lockAsync(async () => {
     console.error(`${lockName} time: ${new Date().getTime()}`);
     res.push(GetTime());
-    await Sleep(500);
+    await sleep(500);
   }, AsyncLockMode.SHARED).then(() => {
     console.error(`${lockName} time2: ${new Date().getTime()}`);
     res.push(GetTime());
@@ -51,7 +51,7 @@ export async function exclusiveTask(lockName: string, str: string): Promise<stri
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res += str;
-    await Sleep(500);
+    await sleep(500);
   }, AsyncLockMode.EXCLUSIVE);
   return res;
 }
@@ -60,18 +60,18 @@ export async function lockExclusiveTask(lock: AsyncLock, str: string): Promise<s
   let res = '';
   await lock.lockAsync(async () => {
     res += str;
-    await Sleep(500);
+    await sleep(500);
   }, AsyncLockMode.EXCLUSIVE);
   return res;
 }
 
 export async function sharedTimeTask(lockName: string): Promise<Array<Number>> {
-  let res = new Array<Number>();
+  let res: number[] = [];
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async () => {
     res.push(AsyncLockMode.SHARED);
     res.push(GetTime());
-    await Sleep(500);
+    await sleep(500);
   }, AsyncLockMode.SHARED);
   return res;
 }
@@ -82,7 +82,7 @@ export async function exclusiveTimeTask(lockName: string): Promise<Array<Number>
   await lock.lockAsync(async () => {
     res.push(AsyncLockMode.EXCLUSIVE);
     res.push(GetTime());
-    await Sleep(500);
+    await sleep(500);
   }, AsyncLockMode.EXCLUSIVE);
   return res;
 }
@@ -92,7 +92,7 @@ export async function locksTask(lock: AsyncLock,
   let res = '';
   await lock.lockAsync(async ()=> {
     res = mode == AsyncLockMode.SHARED ? 'A' : 'B';
-    await Sleep(500);
+    await sleep(500);
   }, mode);
   return res;
 }
@@ -102,7 +102,7 @@ export async function locksTimeTask(lock: AsyncLock,
   let res: Number[] = [];
   await lock.lockAsync(async () => {
     res.push(GetTime());
-    await Sleep(500);
+    await sleep(500);
   }, mode).then((): void => {
     res.push(GetTime());
   })
@@ -127,7 +127,7 @@ export class NumClass {
 }
 
 export class SendableClass {
-  count_: number = 0;
+  public count_: number = 0;
   public static count: number = 1;
 
   static getPromiseCount(): Promise<number> {

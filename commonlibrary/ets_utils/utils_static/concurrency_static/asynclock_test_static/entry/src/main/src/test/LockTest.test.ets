@@ -51,13 +51,13 @@ import {
   sharedMultiWorkerTest,
   sequentialLockWorkerTest
 } from '../testability/pages/LockTest';
-import { Sleep } from '../testability/pages/utils';
+import { sleep } from '../testability/pages/utils';
 
 export default function LockTest() {
   let printLog = 'LockTest:';
   describe('LockTest', (): void => {
     afterEach(() => {
-      await Sleep(20);
+      await sleep(20);
     })
 
     /**

@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { check, check_negative,Sleep } from './utils';
+import { check, check_negative,sleep } from './utils';
 
 function createUint(): Uint32Array {
   let sab = new ArrayBuffer(4);
@@ -497,7 +497,7 @@ export async function multipleWakeupTest(): Promise<string> {
     await Sleep(100)
   }
   let count = 10;
-  let promises: Array<Promise<void>> = new Array<Promise<void>>(count);
+   let promises: Promise<void>[] = new Array<Promise<void>>(count);
   let lock = AsyncLock.request(lockName);
   for (let i = 0; i < count; ++i) {
     promises[i] = lock.lockAsync<void>(async (): Promise<void> => {
@@ -1143,28 +1143,6 @@ export function doubleExitSharedLockTest(): Promise<string> {
     taskpool.execute(taskExecutor, flagBuf, 100),
   ]));
 }
-
-// test entry point
-// export function timeoutLockWithEnvDestroyedTest() {
-//   let workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
-//   let lockName = 'timeoutLockWithEnvDestroyedTest';
-//   let lock = AsyncLock.request(lockName);
-//   let p = lock.lockAsync(async (): Promise<void> => {
-//     await new Promise<void>(resolve => setTimeout(resolve, 2000));
-//   });
-//   let p0 = new Promise<void>((resolve, reject) => {
-//     workerInstance.postMessage({ test: lockName, lockName: lockName });
-//     workerInstance.onmessage = (e: MessageEvents) => {
-//       if (e.data === 'PASSED') {
-//         workerInstance.terminate();
-//         resolve(1);
-//       } else {
-//         reject(e.data);
-//       }
-//     };
-//   });
-//   return check(lockName, Promise.all([p, p0]));
-// }
 
 function lockAsyncPromise(mode?: AsyncLockMode): Promise<Promise<void>> {
   if (mode == undefined) {

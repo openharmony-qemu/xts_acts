@@ -20,13 +20,13 @@ import {
   pendingSharedRequestAfterGC,
   setDelayRequestAndCloseWorkerInstantlyTest
 } from '../testability/pages/LockTest';
-import { Sleep } from '../testability/pages/utils';
+import { sleep } from '../testability/pages/utils';
 
 export default function AsyncLockTest() {
   let printLog = 'AsyncLockTest:';
   describe('AsyncLockTest', (): void => {
     afterEach(() => {
-      await Sleep(20);
+      await sleep(20);
     })
 
     /**

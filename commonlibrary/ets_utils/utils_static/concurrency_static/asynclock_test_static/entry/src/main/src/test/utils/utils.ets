@@ -39,7 +39,7 @@ export function check_negative<T>(testName: string, p: Promise<T>): Promise<stri
   })
 }
 
-export const Sleep = (ms: int): Promise<int> => {
+export const sleep = (ms: int): Promise<int> => {
   return new Promise<int>(resolve => {
     setTimeout(() => {
       resolve(1)

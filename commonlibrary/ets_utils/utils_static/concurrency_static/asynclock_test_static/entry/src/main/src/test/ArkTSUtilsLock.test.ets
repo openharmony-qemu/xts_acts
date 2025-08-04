@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, Level, Size, TestType, xit, afterEach } from "../../../hypium/index";
-import { Sleep } from '../testability/pages/utils';
+import { sleep } from '../testability/pages/utils';
 import {
   exclusiveTask,
   exclusiveTimeTask,
@@ -69,7 +69,7 @@ class Obj {
 export default function arkTSUtilsLockTest() {
   describe('arkTSUtilsLockTest', (): void => {
     afterEach(() => {
-      await Sleep(20);
+      await sleep(20);
     })
     /**
      * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
@@ -448,15 +448,15 @@ export default function arkTSUtilsLockTest() {
           let state2: boolean = false;
           lock.lockAsync(async () => {
             result += 'A';
-            await Sleep(500);
+            await sleep(500);
             state1 = true;
           }, AsyncLockMode.EXCLUSIVE, options).catch((err: Error) => {
             console.error(`${TAG} failed, error: ${err}`);
           });
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             result += 'B';
-            await Sleep(500);
+            await sleep(500);
             state2 = true;
           }, AsyncLockMode.SHARED, options).catch((err: Error) => {
             console.error(`${TAG} failed, error: ${err}`);
@@ -490,10 +490,10 @@ export default function arkTSUtilsLockTest() {
           options.signal = null;
           options.timeout = 0;
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE, options);
           await lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(false).assertFail();
         } catch (err: Error) {
@@ -525,11 +525,11 @@ export default function arkTSUtilsLockTest() {
           options.timeout = 0;
           lock.lockAsync(async () => {
             result += 'A'
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           lock.lockAsync(async () => {
             result += 'B';
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           expect(result).assertEqual('');
         } catch (err: Error) {
@@ -564,13 +564,13 @@ export default function arkTSUtilsLockTest() {
           let state2: boolean = false;
           lock.lockAsync(async () => {
             result += 'A'
-            await Sleep(500);
+            await sleep(500);
             state1 = true;
           }, AsyncLockMode.SHARED, options);
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             result += 'B';
-            await Sleep(500);
+            await sleep(500);
             state2 = true;
           }, AsyncLockMode.SHARED, options);
           while (!(state1 && state2)) {
@@ -607,7 +607,7 @@ export default function arkTSUtilsLockTest() {
           options.timeout = 0;
           await lock.lockAsync(async () => {
             result += 'A';
-            await Sleep(1500);
+            await sleep(1500);
           }, AsyncLockMode.EXCLUSIVE, options);
           expect(false).assertFail();
         } catch (err: Error) {
@@ -711,17 +711,17 @@ export default function arkTSUtilsLockTest() {
           lock.lockAsync(
             async () => {
               res += 'l1开始-';
-              await Sleep(1000);
+              await sleep(1000);
             }, AsyncLockMode.SHARED
           ).then<void>(() => {
             res += 'l1结束-';
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(
             async () => {
               res += 'l2开始-';
-              await Sleep(1000);
+              await sleep(1000);
             }, AsyncLockMode.SHARED
           ).then<void>(() => {
             res += 'l2结束';
@@ -758,16 +758,16 @@ export default function arkTSUtilsLockTest() {
           lock.lockAsync(
             async () => {
               res += 'l1开始-';
-              await Sleep(500);
+              await sleep(500);
             }, AsyncLockMode.SHARED
           ).then(() => {
             res += 'l1结束-';
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             res += 'l2开始-';
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.EXCLUSIVE).then(() => {
             res += 'l2结束';
             state2 = true;
@@ -802,15 +802,15 @@ export default function arkTSUtilsLockTest() {
           let state2: boolean = false;
           lock.lockAsync(async () => {
             res += 'l1开始-';
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.EXCLUSIVE).then(() => {
             res += 'l1结束-';
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             res += 'l2开始-';
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.SHARED).then(() => {
             res += 'l2结束';
             state2 = true;
@@ -845,15 +845,15 @@ export default function arkTSUtilsLockTest() {
           let state2: boolean = false;
           lock.lockAsync(async () => {
             res += 'l1开始-';
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.EXCLUSIVE).then(() => {
             res += 'l1结束-';
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             res += 'l2开始-';
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.EXCLUSIVE).then(() => {
             res += 'l2结束';
             state2 = true;
@@ -907,7 +907,7 @@ export default function arkTSUtilsLockTest() {
           job1().catch((e: Error) => {
             console.error(`${TAG} job1 error: ${e}`);
           })
-          await Sleep(50);
+          await sleep(50);
           job2().catch((e: Error) => {
             console.error(`${TAG} job2 error: ${e}`);
           })
@@ -952,7 +952,7 @@ export default function arkTSUtilsLockTest() {
             A = res[1];
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           taskpool.execute(task2).then((value: NullishType) => {
             const res = value as Array<Number>;
             B = res[1];
@@ -995,7 +995,7 @@ export default function arkTSUtilsLockTest() {
             A = res[1];
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           taskpool.execute(task2).then((value: NullishType) => {
             const res = value as Array<Number>;
             B = res[1];
@@ -1034,7 +1034,7 @@ export default function arkTSUtilsLockTest() {
             res += (value as string);
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           taskpool.execute(task2).then((value: NullishType) => {
             res += (value as string);
             state2 = true;
@@ -1093,7 +1093,7 @@ export default function arkTSUtilsLockTest() {
           job1().catch((e: Error) => {
             console.error(`${TAG} job1 error: ${e}`);
           })
-          await Sleep(50);
+          await sleep(50);
           job2().catch((e: Error) => {
             console.error(`${TAG} job2 error: ${e}`);
           })
@@ -1166,7 +1166,7 @@ export default function arkTSUtilsLockTest() {
             res += (value as string);
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           taskpool.execute(task2).then((value: NullishType) => {
             res += (value as string);
             state2 = true;
@@ -1204,7 +1204,7 @@ export default function arkTSUtilsLockTest() {
             res += (value as string);
             state1 = true;
           })
-          await Sleep(200);
+          await sleep(200);
           taskpool.execute(task2).then((value: NullishType) => {
             res += (value as string);
             state2 = true;
@@ -1241,7 +1241,7 @@ export default function arkTSUtilsLockTest() {
             res += 'A'
             state1 = true;
           }, AsyncLockMode.SHARED);
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             console.log('shared1');
             res += 'B'
@@ -1277,15 +1277,15 @@ export default function arkTSUtilsLockTest() {
           lock.lockAsync(async () => {
             console.log('shared0');
             res += 'A'
-            await Sleep(500);
+            await sleep(500);
           }, AsyncLockMode.SHARED).then(() => {
             state1 = true;
           });
-          await Sleep(200);
+          await sleep(200);
           lock.lockAsync(async () => {
             console.log('exclusive0');
             res += 'B'
-            await Sleep(500);
+            await sleep(500);
             state2 = true;
           }, AsyncLockMode.EXCLUSIVE);
           while (!(state1 && state2)) {
@@ -1378,7 +1378,7 @@ export default function arkTSUtilsLockTest() {
           options.isAvailable = false;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.isAvailable);
           expect(options.isAvailable).assertEqual(false);
@@ -1406,7 +1406,7 @@ export default function arkTSUtilsLockTest() {
           options.signal = null;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.signal);
           expect(options.signal).assertEqual(null);
@@ -1437,7 +1437,7 @@ export default function arkTSUtilsLockTest() {
           options.signal = sig;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + JSON.stringify(options.signal));
           expect(JSON.stringify(options.signal)).assertEqual('{"aborted":true,"reason":"error"}');
@@ -1468,7 +1468,7 @@ export default function arkTSUtilsLockTest() {
           options.signal = sig;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + JSON.stringify(options.signal));
           expect(JSON.stringify(options.signal)).assertEqual('{"aborted":false,"reason":"error"}');
@@ -1496,7 +1496,7 @@ export default function arkTSUtilsLockTest() {
           options.timeout = 0;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.timeout);
           expect(options.timeout).assertEqual(0);
@@ -1524,7 +1524,7 @@ export default function arkTSUtilsLockTest() {
           options.timeout = 1000;
           lock.lockAsync(async () => {
             console.log('shared0');
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED, options);
           console.log(`${TAG} result:` + options.timeout);
           expect(options.timeout).assertEqual(1000);
@@ -1549,7 +1549,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           })
           let state = AsyncLock.query(TAG);
           let held: AsyncLockInfo[] = state.held;
@@ -1581,7 +1581,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.SHARED);
           let state = AsyncLock.query(TAG);
           let held: AsyncLockInfo[] = state.held;
@@ -1613,7 +1613,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           let state = AsyncLock.query(TAG);
           let held: AsyncLockInfo[] = state.held;
@@ -1645,7 +1645,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           let state = AsyncLock.query(TAG);
           let held: AsyncLockInfo[] = state.held;
@@ -1677,7 +1677,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           lock.lockAsync(async () => {
           }, AsyncLockMode.SHARED);
@@ -1711,7 +1711,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           lock.lockAsync(async () => {
           }, AsyncLockMode.SHARED);
@@ -1745,7 +1745,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           lock.lockAsync(async () => {
           }, AsyncLockMode.EXCLUSIVE);
@@ -1779,7 +1779,7 @@ export default function arkTSUtilsLockTest() {
         try {
           let lock = AsyncLock.request(TAG);
           lock.lockAsync(async () => {
-            await Sleep(1000);
+            await sleep(1000);
           }, AsyncLockMode.EXCLUSIVE);
           lock.lockAsync(async () => {
           }, AsyncLockMode.EXCLUSIVE);

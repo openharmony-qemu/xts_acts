@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { check, check_negative,Sleep } from './utils';
+import { check, check_negative,sleep } from './utils';
 
 function createUint(): Uint32Array {
   let sab = new ArrayBuffer(4);
@@ -494,7 +494,7 @@ export async function multipleWakeupTest(): Promise<string> {
   let p: Promise<NullishType> = taskpool.execute(lockJob, lockName, flagBuf) as Promise<NullishType>;
   // busy loop
   while (Atomics.load(flagBuf, 0) == 0) {
-    await Sleep(100)
+    await sleep(100)
   }
   let count = 10;
   let promises: Array<Promise<void>> = new Array<Promise<void>>(count);
@@ -642,7 +642,7 @@ export async function sequentialLockWorkerTest() {
       // busy loop
       hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>bloop');
       while (Atomics.load(flagBuf, 0) != 1) {
-        await Sleep(100)
+        await sleep(100)
       }
       hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '<bloop');
       let lockB = AsyncLock.request(lockNameB);
