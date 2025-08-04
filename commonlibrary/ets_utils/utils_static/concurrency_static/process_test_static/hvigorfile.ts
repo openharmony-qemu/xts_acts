@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
 export default {
     system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
