@@ -3107,7 +3107,7 @@ export default function Escape_Url() {
         let urlString2 = '/\\b/path2';
         let url1 = Url.URL.parseURL(urlString1, 'https://www.example.com/test/test1');
         let url2 = Url.URL.parseURL(urlString2, 'https://www.example.com/test/test1');
-        let temp1 = '%5Cb/path2';
+        let temp1 = '\\b/path2';
         let rstUrl1 = 'https://www.example.com/test/' + temp1;
         let rstUrl2 = 'https://b/path2';
         expect(url1.toString()).assertEqual(rstUrl1);
