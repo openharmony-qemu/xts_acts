@@ -20,6 +20,8 @@ import fileUri from '@ohos.file.fileuri';
 import fileShare from '@ohos.fileshare';
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import wantConstant from '@ohos.app.ability.wantConstant';
+
 
 let domain: int = 0x0000;
 let tag: string = 'testTag'; 
