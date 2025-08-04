@@ -23,7 +23,7 @@ import Want from "@ohos.app.ability.Want";
 import image from "@ohos.multimedia.image";
 import { BusinessError } from "@ohos.base"
 
-let domain: number = 0x0000; // The log tag 0x0000 acts as the business ID for the test framework.
+let domain: int = 0x0000; // The log tag 0x0000 acts as the business ID for the test framework.
 // The log identifier string is used as a tag to identify the test behavior under the current runner class.
 let tag: string = 'testTag';
 let error = undefined
@@ -43,17 +43,17 @@ const OPTS: image.InitializationOptions = {
 
 export default function systemPasteBoardTest() {
   describe("SystemPasteBoardTest", (): void => {
-    hilog.info(domain, tag, '%{public}s', 'SystemPasteBoardTest describe start');
+    console.info("----------SUB_Pasteboard_Local_SystemPasteboard_Static----------");
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0100
-     * @tc.name PasteBoardQJTest01
-     * @tc.desc set data than check the data type
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0010
+     * @tc.number    : Pasteboard_test_001
+     * @tc.desc      : set data than check the data type
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest01 start');
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0010----------');
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.clearData().then(async () => {
         let dataText: string = 'hello';
@@ -70,20 +70,20 @@ export default function systemPasteBoardTest() {
           }
         })
       })
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest01 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0010----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0200
-     * @tc.name PasteBoardQJTest02
-     * @tc.desc set data than check the data type
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0020
+     * @tc.number    : Pasteboard_test_002
+     * @tc.desc      : set data than check the data type
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest02 start');
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0020----------');
         let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
         await systemPb.clearData().then(async () => {
           let dataText: string = 'hello';
@@ -100,75 +100,75 @@ export default function systemPasteBoardTest() {
             }
           })
         })
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest02 end');
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0020----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0300
-     * @tc.name PasteBoardQJTest03
-     * @tc.desc Test setDataSync in systemPb
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0030
+     * @tc.number    : Pasteboard_test_003
+     * @tc.desc      : Test setDataSync in systemPb
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
      */
-    it("PasteBoardQJTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("SUB_Pasteboard_Local_SystemPasteboard_Static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest03 start');
-
-      let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, "file:///C:/Users/Documents/report.pdf");
-      let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      hilog.info(domain, tag, `${systemPb}`);
-      await systemPb.setData(pasteData).then<void, void>((): void => {
-      });
-      let result: pasteboard.PasteData = systemPb.getDataSync();
-      hilog.info(domain, tag, `Get the pasteboard from system PasteBoard success. Result: ${result}`);
-      expect(result.getRecord(0).uri).assertEqual("file:///C:/Users/Documents/report.pdf");
-
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest03 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0030----------');
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, "file:///C:/Users/Documents/report.pdf");
+        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        hilog.info(domain, tag, `${systemPb}`);
+        await systemPb.setData(pasteData).then<void, void>((): void => {
+        });
+        let result: pasteboard.PasteData = systemPb.getDataSync();
+        hilog.info(domain, tag, `Get the pasteboard from system PasteBoard success. Result: ${result}`);
+        expect(result.getRecord(0).uri).assertEqual("file:///C:/Users/Documents/report.pdf");
+      } catch (err: BusinessError) {
+        console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+        expect(err).assertEqual(null);
+      }
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0030----------');
       done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0400
-     * @tc.name PasteBoardQJTest04
-     * @tc.desc Test pasteBoard getDataSync
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0040
+     * @tc.number    : Pasteboard_test_004
+     * @tc.desc      : Test pasteBoard getDataSync
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest04 start');
-
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0040----------');
       let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, "file:///C:/Users/Documents/report.pdf");
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.setData(pasteData);
       try {
         let result: pasteboard.PasteData = systemPb.getDataSync();
         expect(result.getRecord(0).uri).assertEqual("file:///C:/Users/Documents/report.pdf");
-        hilog.info(domain, tag, '%{public}s', 'Succeeded in getting PasteData.');
+        hilog.info(domain, tag, '----------Succeeded in getting PasteData.');
         done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `catch error ${err.code}`);
         expect(err.code == 12900005).assertTrue();
         done();
       };
-
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest04 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0040----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0500
-     * @tc.name PasteBoardQJTest05
-     * @tc.desc get the pastedata from system pasteBoard success
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0050
+     * @tc.number    : Pasteboard_test_005
+     * @tc.desc      : get the pastedata from system pasteBoard success
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest05 start');
-
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0050----------');
       let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.setData(pasteData).then(async () => {
@@ -176,7 +176,7 @@ export default function systemPasteBoardTest() {
           let result: pasteboard.PasteData = systemPb.getDataSync();
           let recordCount: number = result.getRecordCount();
           expect(recordCount).assertEqual(1);
-          hilog.info(domain, tag, '%{public}s', 'Succeeded in getting recordCount.');
+          hilog.info(domain, tag, '----------Succeeded in getting recordCount.');
           done();
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `catch error ${err.code}`);
@@ -184,26 +184,25 @@ export default function systemPasteBoardTest() {
           done();
         };
       }).catch((err) => {
-        hilog.info(domain, tag, '%{public}s', 'System pasteBoard set pastedata error.');
+        hilog.info(domain, tag, '----------System pasteBoard set pastedata error.');
         expect().assertFail();
         done();
       })
 
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest05 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0050----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0600
-     * @tc.name PasteBoardQJTest06
-     * @tc.desc Test pasteBoard getDataSource
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0060
+     * @tc.number    : Pasteboard_test_006
+     * @tc.desc      : Test pasteBoard getDataSource
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "PasteBoardQJTest06 start");
-
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0060----------");
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.clearData().then(async () => {
         let dataText: string = 'hello';
@@ -221,21 +220,19 @@ export default function systemPasteBoardTest() {
           }
         })
       })
-
-      hilog.info(domain, tag, "PasteBoardQJTest06 end");
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0060----------");
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0700
-     * @tc.name PasteBoardQJTest07
-     * @tc.desc Test pasteBoard getDataSource
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0070
+     * @tc.number    : Pasteboard_test_007
+     * @tc.desc      : Test pasteBoard getDataSource
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'SUB_Pasteboard_getDataSource_ErrTest_0100 start');
-
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '----------SUB_Pasteboard_getDataSource_ErrTest_01000----------');
       let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'content');
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.setData(pasteData);
@@ -249,44 +246,47 @@ export default function systemPasteBoardTest() {
         expect(err.code == 12900005).assertTrue();
         done();
       };
-
-      hilog.info(domain, tag, 'PasteBoardQJTest07 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0070----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0800
-     * @tc.name PasteBoardQJTest08
-     * @tc.desc Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0080
+     * @tc.number    : Pasteboard_test_008
+     * @tc.desc      : Test pasteBoard progress single level path and no fileConflictOption
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'PasteBoardQJTest08 start')
-
-      let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'content');
-      let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      await systemPb.setData(pasteData);
-      let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
-      pasteData.setProperty(prop);
-      hilog.info(domain, tag, 'PasteDataProperty shareOption is: ' + prop.shareOption);
-      expect(prop.shareOption == 1).assertTrue();
-
-      hilog.info(domain, tag, 'PasteBoardQJTest08 end');
-      done();
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0080----------');
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'content');
+        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        await systemPb.setData(pasteData);
+        let prop: pasteboard.PasteDataProperty = pasteData.getProperty();
+        pasteData.setProperty(prop);
+        hilog.info(domain, tag, '----------PasteDataProperty shareOption is: ' + prop.shareOption);
+        expect(prop.shareOption == 1).assertTrue();
+      } catch (err: BusinessError) {
+        console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+        expect(err).assertEqual(null);
+      }
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0080----------');
+      done(); 
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_0900
-     * @tc.name PasteBoardQJTest09
-     * @tc.desc Clear the data in the system pasteBoard
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0090
+     * @tc.number    : Pasteboard_test_009
+     * @tc.desc      : Clear the data in the system pasteBoard
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "PasteBoardQJTest09 start");
-
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0090----------");
       let pasteData: pasteboard.PasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.setData(pasteData);
@@ -302,21 +302,19 @@ export default function systemPasteBoardTest() {
           done();
         }
       })
-
-      hilog.info(domain, tag, "PasteBoardQJTest09 end");
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0090----------");
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1000
-     * @tc.name PasteBoardQJTest10
-     * @tc.desc Put pastedata to system pasteBoard success
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0100
+     * @tc.number    : Pasteboard_test_010
+     * @tc.desc      : Put pastedata to system pasteBoard success
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "PasteBoardQJTest10 start");
-
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0100----------");
       let pasteData: pasteboard.PasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       await systemPb.setData(pasteData).then(async () => {
@@ -331,599 +329,694 @@ export default function systemPasteBoardTest() {
           done();
         }
       })
-
-      hilog.info(domain, tag, "PasteBoardQJTest10 end");
+      hilog.info(domain, tag, "----------SUB_Pasteboard_Local_SystemPasteboard_Static_0100----------");
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1100
-     * @tc.name PasteBoardQJTest11
-     * @tc.desc Clear the data in the system pasteBoard by promise
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0110
+     * @tc.number    : Pasteboard_test_011
+     * @tc.desc      : Clear the data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest11 start');
-
-      let pasteData: pasteboard.PasteData = pasteboard.createData('string', ARRAY_BUFFER);
-      let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      await systemPb.setData(pasteData);
-      await systemPb.clearData().then<void, void>((): void => {
-        hilog.info(0, 'testTag', `promise => test clearData`);
-      });
-      let bool_ret: boolean = systemPb.hasDataType('string');
-      expect(bool_ret == false).assertTrue();
-
-      hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest11 end');
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0110----------');
+      try {
+        let pasteData: pasteboard.PasteData = pasteboard.createData('string', ARRAY_BUFFER);
+        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+        await systemPb.setData(pasteData);
+        await systemPb.clearData().then<void, void>((): void => {
+          hilog.info(0, 'testTag', `promise => test clearData`);
+        });
+        let bool_ret: boolean = systemPb.hasDataType('string');
+        expect(bool_ret == false).assertTrue();
+      } catch (err: BusinessError) {
+        console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+        expect(err).assertEqual(null);
+      }
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0110----------');
       done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1200
-     * @tc.name PasteBoardQJTest12
-     * @tc.desc set data in the system pasteBoard by promise
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0120
+     * @tc.number    : Pasteboard_test_012
+     * @tc.desc      : set data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest12 start');
-
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0120----------');
+      try {
         let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
         let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
         await systemPb.setData(pasteData);
         let bool_ret: boolean = systemPb.hasDataType('text/want');
         expect(bool_ret == true).assertTrue();
-
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest12 end');
-        done();
+      } catch (err: BusinessError) {
+        console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+        expect(err).assertEqual(null);
+      }
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0120----------');
+      done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1300
-     * @tc.name PasteBoardQJTest13
-     * @tc.desc set data in the system pasteBoard by promise
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0130
+     * @tc.number    : Pasteboard_test_013
+     * @tc.desc      : set data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest13 start');
-
-        const pixelMap = image.createPixelMapSync(OPTS);
-        let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_ret: boolean = systemPb.hasDataType('pixelMap');
-        expect(bool_ret == true).assertTrue();
-
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest13 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1400
-     * @tc.name PasteBoardQJTest14
-     * @tc.desc set data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest14 start');
-
-        const pixelMap = image.createPixelMapSync(OPTS);
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        pasteData.addRecord("selfDefined", ARRAY_BUFFER);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        let bool_ret1: boolean = systemPb.hasDataType('selfDefined');
-        expect(bool_ret == true && bool_ret1 == true).assertTrue();
-
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest14 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1500
-     * @tc.name PasteBoardQJTest15
-     * @tc.desc set data in the system pasteBoard by callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest15 start');
-
-        const pixelMap = image.createPixelMapSync(OPTS);
-        let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
+        try {
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0130----------');
+          const pixelMap = image.createPixelMapSync(OPTS);
+          let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
           let bool_ret: boolean = systemPb.hasDataType('pixelMap');
           expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest15 end');
-          done();
-        })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0130----------');
+        done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1600
-     * @tc.name PasteBoardQJTest16
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0140
+     * @tc.number    : Pasteboard_test_014
+     * @tc.desc      : set data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest16 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
-          let bool_ret: boolean = systemPb.hasDataType('text/want');
-          expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest16 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0140----------');
+        try {
+          const pixelMap = image.createPixelMapSync(OPTS);
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          pasteData.addRecord("selfDefined", ARRAY_BUFFER);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          let bool_ret1: boolean = systemPb.hasDataType('selfDefined');
+          expect(bool_ret == true && bool_ret1 == true).assertTrue();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0140----------');
+        done();
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1700
-     * @tc.name PasteBoardQJTest17
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0150
+     * @tc.number    : Pasteboard_test_015
+     * @tc.desc      : set data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest17 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "content");
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
-          let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
-          expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest17 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0150----------');
+        try {
+          const pixelMap = image.createPixelMapSync(OPTS);
+          let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType('pixelMap');
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0150----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1800
-     * @tc.name PasteBoardQJTest18
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0160
+     * @tc.number    : Pasteboard_test_016
+     * @tc.desc      : set data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest18 start');
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0160----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType('text/want');
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+      hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0160----------');
+    })
 
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, "content");
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
-          let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
-          expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest18 end');
-          done();
-        })
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0170
+     * @tc.number    : Pasteboard_test_017
+     * @tc.desc      : set data in the system pasteBoard by callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0170----------');
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "content");
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0170----------');
+    })
+
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0180
+     * @tc.number    : Pasteboard_test_018
+     * @tc.desc      : set data in the system pasteBoard by callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0180----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, "content");
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0180----------');
       })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_1900
-     * @tc.name PasteBoardQJTest19
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0190
+     * @tc.number    : Pasteboard_test_019
+     * @tc.desc      : set data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest19 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
-          let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-          expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest19 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0190----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0190----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2000
-     * @tc.name PasteBoardQJTest20
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0200
+     * @tc.number    : Pasteboard_test_020
+     * @tc.desc      : set data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest20 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
-          let bool_ret: boolean = systemPb.hasDataType("selfDefined");
-          expect(bool_ret == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest20 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0200----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
+            let bool_ret: boolean = systemPb.hasDataType("selfDefined");
+            expect(bool_ret == true).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0200----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2100
-     * @tc.name PasteBoardQJTest21
-     * @tc.desc set data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0210
+     * @tc.number    : Pasteboard_test_021
+     * @tc.desc      : set data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest21 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
-        pasteData.addRecord("selfDefined1", ARRAY_BUFFER);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPb.setData(pasteData, () => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0210----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
+          pasteData.addRecord("selfDefined1", ARRAY_BUFFER);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          systemPb.setData(pasteData, () => {
           let bool_ret: boolean = systemPb.hasDataType("selfDefined");
           let bool_ret1: boolean = systemPb.hasDataType("selfDefined1");
           expect(bool_ret == true && bool_ret1 == true).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest21 end');
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0210----------');
           done();
         })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        
       })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2200
-     * @tc.name PasteBoardQJTest22
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0220
+     * @tc.number    : Pasteboard_test_022
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest22 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType("selfDefined");
-        systemPb.clearData(() => {
-          let bool_clear: boolean = systemPb.hasDataType("selfDefined");
-          expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest22 end');
-          done();
-        })
+        try {
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0220----------');
+          let pasteData: pasteboard.PasteData = pasteboard.createData("selfDefined", ARRAY_BUFFER);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType("selfDefined");
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType("selfDefined");
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0220----------');
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2300
-     * @tc.name PasteBoardQJTest23
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0230
+     * @tc.number    : Pasteboard_test_023
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest23 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        systemPb.clearData(() => {
-          let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-          expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest23 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0230----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0230----------');
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2400
-     * @tc.name PasteBoardQJTest24
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0240
+     * @tc.number    : Pasteboard_test_024
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest24 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
-        systemPb.clearData(() => {
-          let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
-          expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest24 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0240----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0240----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2500
-     * @tc.name PasteBoardQJTest25
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0250
+     * @tc.number    : Pasteboard_test_025
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest25 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
-        systemPb.clearData(() => {
-          let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
-          expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest25 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0250----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0250----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2600
-     * @tc.name PasteBoardQJTest26
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0260
+     * @tc.number    : Pasteboard_test_026
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest26 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType('text/want');
-        systemPb.clearData(() => {
-          let bool_clear: boolean = systemPb.hasDataType('text/want');
-          expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest26 end');
-          done();
-        })
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0260----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType('text/want');
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType('text/want');
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0260----------');
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2700
-     * @tc.name PasteBoardQJTest27
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0270
+     * @tc.number    : Pasteboard_test_027
+     * @tc.desc      : Clear data in the system pasteBoard by callback
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest27 start');
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0270----------');
+        try {
+          const pixelMap = image.createPixelMapSync(OPTS);
+          let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType('pixelMap');
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType('pixelMap');
+            expect(bool_set == true && bool_clear == false).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0270----------');
+    })
 
-        const pixelMap = image.createPixelMapSync(OPTS);
-        let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType('pixelMap');
-        systemPb.clearData(() => {
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0280
+     * @tc.number    : Pasteboard_test_028
+     * @tc.desc      : Clear data in the system pasteBoard by callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0280----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          pasteData.addRecord("selfDefined", ARRAY_BUFFER);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          let bool_set1: boolean = systemPb.hasDataType("selfDefined");
+          systemPb.clearData(() => {
+            let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+            let bool_clear1: boolean = systemPb.hasDataType("selfDefined");
+            expect(bool_set == true && bool_set1 && bool_clear == false && bool_clear1 == false).assertTrue();
+            done();
+          })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0280----------');
+    })
+
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0290
+     * @tc.number    : Pasteboard_test_029
+     * @tc.desc      : Clear data in the system pasteBoard by promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0290----------');
+        try {
+          const pixelMap = image.createPixelMapSync(OPTS);
+          let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType('pixelMap');
+          await systemPb.clearData();
           let bool_clear: boolean = systemPb.hasDataType('pixelMap');
           expect(bool_set == true && bool_clear == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest27 end');
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0290----------');
           done();
-        })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2800
-     * @tc.name PasteBoardQJTest28
-     * @tc.desc clear data in the system pasteBoard by callback
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0300
+     * @tc.number    : Pasteboard_test_030
+     * @tc.desc      : Clear data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest28 start');
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0300----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType('text/want');
+          await systemPb.clearData();
+          let bool_clear: boolean = systemPb.hasDataType('text/want');
+          expect(bool_set == true && bool_clear == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0300----------');
+          done();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+    })
 
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        pasteData.addRecord("selfDefined", ARRAY_BUFFER);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        let bool_set1: boolean = systemPb.hasDataType("selfDefined");
-        systemPb.clearData(() => {
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0310
+     * @tc.number    : Pasteboard_test_031
+     * @tc.desc      : Clear data in the system pasteBoard by promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0310----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
+          await systemPb.clearData();
+          let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
+          expect(bool_set == true && bool_clear == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0310----------');
+          done();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+    })
+
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0320
+     * @tc.number    : Pasteboard_test_032
+     * @tc.desc      : Clear data in the system pasteBoard by promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0320----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
+          await systemPb.clearData();
+          let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
+          expect(bool_set == true && bool_clear == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0320----------');
+          done();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
+    })
+
+    /**
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0330
+     * @tc.number    : Pasteboard_test_033
+     * @tc.desc      : Clear data in the system pasteBoard by promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0330----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          await systemPb.clearData();
           let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-          let bool_clear1: boolean = systemPb.hasDataType("selfDefined");
-          expect(bool_set == true && bool_set1 && bool_clear == false && bool_clear1 == false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest28 end');
+          expect(bool_set == true && bool_clear == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0330----------');
           done();
-        })
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_2900
-     * @tc.name PasteBoardQJTest29
-     * @tc.desc clear data in the system pasteBoard by promise
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0340
+     * @tc.number    : Pasteboard_test_034
+     * @tc.desc      : Clear data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest29 start');
-
-        const pixelMap = image.createPixelMapSync(OPTS);
-        let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType('pixelMap');
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType('pixelMap');
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest29 end');
-        done();
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0340----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData("selfdefined", ARRAY_BUFFER );
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType("selfdefined");
+          await systemPb.clearData();
+          let bool_clear: boolean = systemPb.hasDataType("selfdefined");
+          expect(bool_set == true && bool_clear == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0340----------');
+          done();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
 
     /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3000
-     * @tc.name PasteBoardQJTest30
-     * @tc.desc clear data in the system pasteBoard by promise
+     * @tc.name      : SUB_Pasteboard_Local_SystemPasteboard_Static_0350
+     * @tc.number    : Pasteboard_test_035
+     * @tc.desc      : Clear data in the system pasteBoard by promise
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('PasteBoardQJTest30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Pasteboard_Local_SystemPasteboard_Static_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest30 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType('text/want');
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType('text/want');
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest30 end');
-        done();
+        hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0350----------');
+        try {
+          let pasteData: pasteboard.PasteData = pasteboard.createData("selfdefined", ARRAY_BUFFER);
+          pasteData.addRecord(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
+          let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+          await systemPb.setData(pasteData);
+          let bool_set: boolean = systemPb.hasDataType("selfdefined");
+          let bool_set1: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          await systemPb.clearData();
+          let bool_clear: boolean = systemPb.hasDataType("selfdefined");
+          let bool_clear1: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
+          expect(bool_set == true && bool_set1 == true && bool_clear == false && bool_clear1 == false).assertTrue();
+          hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0350----------');
+          done();
+        } catch (err: BusinessError) {
+          console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
+          expect(err).assertEqual(null);
+        }
     })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3100
-     * @tc.name PasteBoardQJTest31
-     * @tc.desc clear data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest31 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest31 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3200
-     * @tc.name PasteBoardQJTest32
-     * @tc.desc clear data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest32 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_HTML);
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest32 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3300
-     * @tc.name PasteBoardQJTest33
-     * @tc.desc clear data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest33 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest33 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3400
-     * @tc.name PasteBoardQJTest34
-     * @tc.desc clear data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest34 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData("selfdefined", ARRAY_BUFFER );
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType("selfdefined");
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType("selfdefined");
-        expect(bool_set == true && bool_clear == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest34 end');
-        done();
-    })
-
-    /**
-     * @tc.number SUB_Pasteboard_Local_SystemPasteboardQJTest_3500
-     * @tc.name PasteBoardQJTest35
-     * @tc.desc clear data in the system pasteBoard by promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('PasteBoardQJTest35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest35 start');
-
-        let pasteData: pasteboard.PasteData = pasteboard.createData("selfdefined", ARRAY_BUFFER);
-        pasteData.addRecord(pasteboard.MIMETYPE_TEXT_URI, URITEXT);
-        let systemPb: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        await systemPb.setData(pasteData);
-        let bool_set: boolean = systemPb.hasDataType("selfdefined");
-        let bool_set1: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        await systemPb.clearData();
-        let bool_clear: boolean = systemPb.hasDataType("selfdefined");
-        let bool_clear1: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
-        expect(bool_set == true && bool_set1 == true && bool_clear == false && bool_clear1 == false).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'PasteBoardQJTest35 end');
-        done();
-    })
-
-    hilog.info(domain, tag, '%{public}s', 'SystemPasteBoardTest describe end');
+    console.info("----------SUB_Pasteboard_Local_SystemPasteboard_Static----------");
   })
 }

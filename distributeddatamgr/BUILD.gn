@@ -21,8 +21,7 @@ group("distributeddatamgr") {
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
-
-      # "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
+      "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
       "PasteboardTestStatic:ActsPasteboardStaticTest",
       "Pasteboardjsapitest:ActsPasteBoardETSApiTest",
       "Pasteboardnapitest:ActsPasteboardNapiEtsTest",
