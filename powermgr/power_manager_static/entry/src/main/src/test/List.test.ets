@@ -14,7 +14,8 @@
  */
 import PowerTest from "./Power.test";
 import RunningLockTest from "./RunningLock.test";
+
 export default function testsuite() {
-    PowerTest();
-    RunningLockTest();
+  PowerTest();
+  RunningLockTest();
 }
