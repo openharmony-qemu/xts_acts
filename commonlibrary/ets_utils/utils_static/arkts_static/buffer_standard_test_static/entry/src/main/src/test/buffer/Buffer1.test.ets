@@ -5275,14 +5275,14 @@ export default function BufferTest1() {
      */
     it("testFrom0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testFrom0009";
+      let foo = new Foo();
       try {
-        let foo = new Foo();
         const buf = buffer.from(foo, 'utf8', 0);
-        let str = buf.toString();
-        expect(String(str)).assertEqual("this is a test");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} err is ${err}`);
         expect(false).assertFail();
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message)
+          .assertEqual('Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like');
       }
     });
 
@@ -5309,50 +5309,50 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
-    //  * @tc.name: testFrom0013
-    //  * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0013";
-    //   let arrayBuffer = new ArrayBuffer(5);
-    //   let array = new Int8Array(arrayBuffer);
-    //   array[0] = 1;
-    //   array[1] = 2;
-    //   array[2] = 3;
-    //   array[3] = 4;
-    //   array[4] = 5;
-    //   try {
-    //     buffer.from(arrayBuffer, 6, 1);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(String(err.code)).assertEqual('10200001');
-    //   }
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
-    //  * @tc.name: testFrom0014
-    //  * @tc.desc: Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testFrom0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0014";
-    //   try {
-    //     let buf = new Uint8Array([97, 98]);
-    //     const buf1 = buffer.from(buf, -1);
-    //     let str = buf1.toString();
-    //     expect(str).assertEqual("ab");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
+     * @tc.name: testFrom0013
+     * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0013";
+      let arrayBuffer = new ArrayBuffer(5);
+      let array = new Int8Array(arrayBuffer);
+      array[0] = 1;
+      array[1] = 2;
+      array[2] = 3;
+      array[3] = 4;
+      array[4] = 5;
+      try {
+        buffer.from(arrayBuffer, 6, 1);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(String(err.code)).assertEqual('10200001');
+      }
+    });
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
+     * @tc.name: testFrom0014
+     * @tc.desc: Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it("testFrom0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0014";
+      try {
+        let buf = new Uint8Array([97, 98]);
+        const buf1 = buffer.from(buf);
+        let str = buf1.toString();
+        expect(str).assertEqual("ab");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1500
      * @tc.name: testFrom0015
