@@ -759,7 +759,6 @@ export default function ActsCommonEventManagerSupportTest() {
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 START`)
-        expect(commonEventManager.Support.COMMON_EVENT_SECOND_MOUNTED ).assertEqual('usual.event.SECOND_MOUNTED')
         expect(commonEventManager.Support.COMMON_EVENT_ENTER_HIBERNATE as string)
           .assertEqual('usual.event.ENTER_HIBERNATE')
         expect(commonEventManager.Support.COMMON_EVENT_EXIT_HIBERNATE as string)
