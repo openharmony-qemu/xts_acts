@@ -15,7 +15,9 @@
 
 import bluetoothConnectionTest from "./BluetoothConnectionStatic.test";
 import bluetoothProfilesTest from "./BluetoothProfilesStatic.test";
+import bluetoothA2dpTest from "./BluetoothA2dpStatic.test"
 export default function testsuite() {
   bluetoothConnectionTest();
   bluetoothProfilesTest();
+  bluetoothA2dpTest();
 }
