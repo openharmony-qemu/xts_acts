@@ -111,7 +111,7 @@ export default function systemPasteBoardTest() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_Pasteboard_Local_SystemPasteboard_Static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("SUB_Pasteboard_Local_SystemPasteboard_Static_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0030----------');
       try {

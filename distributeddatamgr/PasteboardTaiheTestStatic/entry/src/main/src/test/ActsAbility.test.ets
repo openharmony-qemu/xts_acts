@@ -171,7 +171,7 @@ export default function abilityTest() {
 
         /**
          * @tc.name      : SUB_PasteBoard_ETS_PasteDataRecord_Static_0060
-         * @tc.number    : PasteBoard_Pasteboard_0060
+         * @tc.number    : PasteDataRecord_Pasteboard_0060
          * @tc.desc      : Test pasteBoard variety createData Variety and getData
          * @tc.size      : MEDIUM
          * @tc.type      : Function
@@ -1069,7 +1069,7 @@ export default function abilityTest() {
          * @tc.type      : Function
          * @tc.level     : Level 2
          */
-        it("----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it("SUB_PasteBoard_ETS_SystemPasteboard_Static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0160----------");
             let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "pasteboard");
             let systemPasteBoard = pasteboard.getSystemPasteboard();
@@ -1122,7 +1122,7 @@ export default function abilityTest() {
          * @tc.type      : Function
          * @tc.level     : Level 2
          */
-        it("----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+        it("SUB_PasteBoard_ETS_SystemPasteboard_Static_0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0180----------");
             try{
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "");
@@ -1163,8 +1163,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0200
-         * @tc.name      : PasteBoard_SystemPasteboard_0200
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0200
+         * @tc.number    : PasteBoard_SystemPasteboard_0200
          * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1188,8 +1188,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0210
-         * @tc.name      : PasteBoard_SystemPasteboard_0210
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0210
+         * @tc.number    : PasteBoard_SystemPasteboard_0210
          * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_HTML type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1213,8 +1213,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0220
-         * @tc.name      : PasteBoard_SystemPasteboard_0220
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0220
+         * @tc.number    : PasteBoard_SystemPasteboard_0220
          * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_URI type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1238,8 +1238,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0230
-         * @tc.name      : PasteBoard_SystemPasteboard_0230
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0230
+         * @tc.number    : PasteBoard_SystemPasteboard_0230
          * @tc.desc      : setData Verify the properties of the MIMETYPE_PIXELMAP type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1273,8 +1273,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0240
-         * @tc.name      : PasteBoard_SystemPasteboard_0240
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0240
+         * @tc.number    : PasteBoard_SystemPasteboard_0240
          * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_WANT type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1298,8 +1298,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0250
-         * @tc.name      : PasteBoard_SystemPasteboard_0250
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0250
+         * @tc.number    : PasteBoard_SystemPasteboard_0250
          * @tc.desc      : setData Verify the properties of the Customize type
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -1323,8 +1323,8 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number    : SUB_PasteBoard_ETS_SystemPasteboard_Static_0260
-         * @tc.name      : PasteBoard_SystemPasteboard_0260
+         * @tc.name      : SUB_PasteBoard_ETS_SystemPasteboard_Static_0260
+         * @tc.number    : PasteBoard_SystemPasteboard_0260
          * @tc.desc      : setUnifiedData Verify the properties of the appRecordData type
          * @tc.size      : MediumTest
          * @tc.type      : Function
