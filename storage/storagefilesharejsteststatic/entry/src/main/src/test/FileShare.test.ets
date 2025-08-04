@@ -64,7 +64,6 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001: activatePermission success');
-          expect(true).assertTrue();
 
         } catch (e : Error) {
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 has failed for ' + e);
@@ -108,7 +107,6 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 success');
-          expect(true).assertTrue();
 
         } catch (e) {
           const err = e as BusinessError;
@@ -210,7 +208,6 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001: deactivatePermission success');
-          expect(true).assertTrue();
         } catch (e : Error) {
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 has failed for ' + e);
           let err = e as BusinessError;
@@ -253,7 +250,6 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 success');
-          expect(true).assertTrue();
         } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag,
@@ -341,7 +337,6 @@ export default function FileShare_test() {
           let bundleName = "com.demo.a";
           await fileShare.grantUriPermission(uri, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION);
           hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_000 success`);
-          expect(true).assertTrue();
         } catch (err) {
           const error = err as BusinessError;
           hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
@@ -370,9 +365,8 @@ export default function FileShare_test() {
               if (err?.code !== 0) {
                 hilog.info(domain, tag, "err.code: " + err?.code + ", err.message: " + err?.message);
                 expect(false).assertTrue();
-              } else {
-                expect(true).assertTrue();
-              }}
+              }
+              }
               );
               hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_003 success`);
             } catch (err) {
