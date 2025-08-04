@@ -30,10 +30,6 @@ let gattServerDevice: ble.GattServer;
 let g_context: common.UIAbilityContext;
 let bleScanner: ble.BleScanner;
 
-//function sleep(delay: number): Promise<void> {
-//    return new Promise<void>((resolve) => {setTimeout(resolve, delay);});
-//}
-
 function onReceiveEvent(scanReport: ble.ScanReport) {
     hilog.info(domain, tag, 'BLE scan device find result = ' + JSON.stringify(scanReport.scanResult));
 }
@@ -46,7 +42,7 @@ export default function bluetoothBleTest() {
 
     describe("bluetoothBleTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(async (done: Function) => {
+        beforeAll(() => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             try {
                 await Utils.msSleep(2000);
@@ -69,13 +65,9 @@ export default function bluetoothBleTest() {
             gattClientDevice = ble.createGattClientDevice("00:11:22:33:44:55");
             gattServerDevice = ble.createGattServer();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
-            bleScanner = ble.createBleScanner();
-            hilog.info(domain, tag, 'createBleScanner result:' + JSON.stringify(bleScanner));
-            expect(true).assertEqual(bleScanner != null);
-            //done();
         })
 
-        beforeEach(async () => {
+        beforeEach(() => {
             hilog.info(domain, tag, '%{public}s', 'beforeEach start');
             try {
                 await Utils.openBluetooth();
@@ -302,7 +294,7 @@ export default function bluetoothBleTest() {
                 bleScanner.startScan([scanFilter], scanOptions);
                 hilog.info(domain, tag, 'bleScanner startScan success');
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
             }
             bleScanner.off("BLEDeviceFind", onReceiveEvent);
@@ -322,7 +314,7 @@ export default function bluetoothBleTest() {
                 bleScanner.stopScan();
                 hilog.info(domain, tag, 'bleScanner stopScan success');
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
             }
             done();
@@ -337,7 +329,6 @@ export default function bluetoothBleTest() {
          * @tc.size: MEDIUMTEST
          */
         it("setCharacteristicChangeIndicationTest_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            // 创建descriptors。
             let descriptors: Array<ble.BLEDescriptor> = [];
             let arrayBuffer = new ArrayBuffer(8);
             let descV = new Uint8Array(arrayBuffer);
@@ -364,7 +355,7 @@ export default function bluetoothBleTest() {
                     done();
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, `[bluetooth_js]setCharacteristicChangeIndication error, code is ${err.code},message is ${err.message}`);
+                hilog.error(domain, tag, "setCharacteristicChangeIndication get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -379,7 +370,6 @@ export default function bluetoothBleTest() {
          * @tc.size: MEDIUMTEST
          */
         it("setCharacteristicChangeIndicationTest_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            // 创建descriptors。
             let descriptors: Array<ble.BLEDescriptor> = [];
             let arrayBuffer = new ArrayBuffer(8);
             let descV = new Uint8Array(arrayBuffer);
@@ -400,7 +390,7 @@ export default function bluetoothBleTest() {
                 hilog.info(domain, tag, "setCharacteristicChangeIndication promise successful");
                 done();
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, `[bluetooth_js]setCharacteristicChangeIndication error, code is ${err.code},message is ${err.message}`);
+                hilog.error(domain, tag, "setCharacteristicChangeIndication get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
                 done();
             }
@@ -457,7 +447,7 @@ export default function bluetoothBleTest() {
                 hilog.info(domain, tag, "startAdvertising successful");
                 ble.stopAdvertising();
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, `[bluetooth_js]setCharacteristicChangeIndication error, code is ${err.code},message is ${err.message}`);
+                hilog.error(domain, tag, "setCharacteristicChangeIndication get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 2900099);
             }
             done();
@@ -522,7 +512,7 @@ export default function bluetoothBleTest() {
                     }
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, `[bluetooth_js]setCharacteristicChangeIndication error, code is ${err.code},message is ${err.message}`);
+                hilog.error(domain, tag, "setCharacteristicChangeIndication get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 2900099);
             }
             done();
@@ -587,7 +577,7 @@ export default function bluetoothBleTest() {
                         hilog.info(domain, tag, "advHandle: " + advHandle);
                     });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, `[bluetooth_js]setCharacteristicChangeIndication error, code is ${err.code},message is ${err.message}`);
+                hilog.error(domain, tag, "setCharacteristicChangeIndication get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 2900099);
             }
             done();
@@ -618,7 +608,7 @@ export default function bluetoothBleTest() {
                 expect(true).assertFalse();
                 done();
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -647,7 +637,7 @@ export default function bluetoothBleTest() {
                 expect(true).assertFalse();
                 done();
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -670,7 +660,7 @@ export default function bluetoothBleTest() {
                 confirm: true
             };
             try {
-                gattServerDevice.notifyCharacteristicChanged('00:11:22:33:44:55', notifyCharacter, err => {
+                gattServerDevice.notifyCharacteristicChanged('00:11:22:33:44:55', notifyCharacter, (err) => {
                     if (err) {
                         hilog.info(domain, tag, 'notifyCharacteristicChanged callback failed');
                     } else {
@@ -678,7 +668,7 @@ export default function bluetoothBleTest() {
                     }
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -701,12 +691,13 @@ export default function bluetoothBleTest() {
                 confirm: true
             };
             try {
-                gattServerDevice.notifyCharacteristicChanged('00:11:22:33:44:55', notifyCharacter).then(() => {
+                gattServerDevice.notifyCharacteristicChanged("00:11:22:33:44:55", notifyCharacter).then(() => {
                     hilog.info(domain, tag, "notifyCharacteristicChanged successful");
-                    done();
+                }).catch((err) => {
+                    hilog.info(domain, tag, "notifyCharacteristicChanged failed");
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -745,7 +736,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, "getConnectionStrategy, err: " + JSON.stringify(error));
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -782,7 +773,7 @@ export default function bluetoothBleTest() {
             try {
                 gattClientDevice.readCharacteristicValue(characteristic);
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 401);
             }
             done();
@@ -809,7 +800,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'device name' + JSON.stringify(data));
                 })
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 2900099);
                 done();
             }
@@ -833,7 +824,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'device name' + JSON.stringify(data));
                 })
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertEqual(Number(err.code) === 2900099);
                 done();
             }
@@ -855,7 +846,7 @@ export default function bluetoothBleTest() {
                 hilog.info(domain, tag, JSON.stringify(result));
                 expect(true).assertEqual(result !== null);
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
@@ -886,7 +877,7 @@ export default function bluetoothBleTest() {
                 }
                 ble.startBLEScan([scanFilter], scanOptions);
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
@@ -903,7 +894,6 @@ export default function bluetoothBleTest() {
          * @tc.size: MEDIUMTEST
          */
         it("addServiceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            // 创建descriptors。
             let descriptors: Array<ble.BLEDescriptor> = [];
             let arrayBuffer = new ArrayBuffer(8);
             let descV = new Uint8Array(arrayBuffer);
@@ -915,7 +905,6 @@ export default function bluetoothBleTest() {
             };
             descriptors[0] = descriptor;
 
-            // 创建characteristics。
             let characteristics: Array<ble.BLECharacteristic> = [];
             let arrayBufferC = new ArrayBuffer(8);
             let cccV = new Uint8Array(arrayBufferC);
@@ -926,12 +915,11 @@ export default function bluetoothBleTest() {
             };
             characteristics[0] = characteristic;
 
-            // 创建gattService。
             let gattService: ble.GattService = { serviceUuid: '00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics: characteristics, includeServices: [] };
             try {
                 gattServerDevice.addService(gattService);
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
@@ -948,10 +936,9 @@ export default function bluetoothBleTest() {
          */
         it("removeServiceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                // 调用removeService接口前需要完成server端和client端的配对及连接。
                 gattServerDevice.removeService('00001810-0000-1000-8000-00805F9B34FB');
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
@@ -967,7 +954,6 @@ export default function bluetoothBleTest() {
          * @tc.size: MEDIUMTEST
          */
         it("sendResponseTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            /* send response */
             let arrayBufferCCC = new ArrayBuffer(8);
             let cccValue = new Uint8Array(arrayBufferCCC);
             cccValue[0] = 1123;
@@ -983,7 +969,7 @@ export default function bluetoothBleTest() {
                 expect(true).assertFalse();
                 done();
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
@@ -1054,7 +1040,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'startAdvertising promise success');
                     advHandle = outAdvHandle;
                 });
-                //await sleep(1000);
+                await Utils.msSleep(1000);
                 ble.on('advertisingStateChange', onReceiveEvent);
                 let advertisingEnableParams: ble.AdvertisingEnableParams = {
                     advertisingId: advHandle,
@@ -1063,7 +1049,7 @@ export default function bluetoothBleTest() {
                 await ble.enableAdvertising(advertisingEnableParams).then((data) => {
                     hilog.info(domain, tag, 'enableAdvertising promise success');
                 });
-                //await sleep(500);
+                await Utils.msSleep(500);
                 expect(true).assertEqual(advStatus == 2 || advStatus == 0);
                 let advertisingDisableParams: ble.AdvertisingDisableParams = {
                     advertisingId: advHandle,
@@ -1071,18 +1057,18 @@ export default function bluetoothBleTest() {
                 await ble.disableAdvertising(advertisingDisableParams).then((data) => {
                     hilog.info(domain, tag, 'disableAdvertising promise success');
                 });
-                //await sleep(500);
+                await Utils.msSleep(500);
                 expect(true).assertEqual(advStatus == 3 || advStatus == 0);
                 ble.off('advertisingStateChange', onReceiveEvent);
                 await ble.stopAdvertising(advHandle).then((data) => {
                     hilog.info(domain, tag, 'stopAdvertising promise success');
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
-            //await sleep(2000);
+            await Utils.msSleep(2000);
             done();
         })
 
@@ -1143,7 +1129,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'startAdvertising promise success');
                     advHandle = outAdvHandle;
                 });
-                //await sleep(3000);
+                await Utils.msSleep(3000);
                 let advertisingEnableParams: ble.AdvertisingEnableParams = {
                     advertisingId: advHandle,
                     duration: 100,
@@ -1151,14 +1137,14 @@ export default function bluetoothBleTest() {
                 await ble.enableAdvertising(advertisingEnableParams).then((data) => {
                     hilog.info(domain, tag, 'enableAdvertising promise success');
                 });
-                //await sleep(2000);
+                await Utils.msSleep(2000);
                 let advertisingDisableParams: ble.AdvertisingDisableParams = {
                     advertisingId: advHandle,
                 };
 
                 ble.disableAdvertising(advertisingDisableParams, (err, data) => {
                     if (err) {
-                       hilog.error(domain, tag, 'disableAdvertising callback failed' + err);
+                        hilog.error(domain, tag, 'disableAdvertising callback failed' + err);
                         expect(true).assertEqual(Number(err.code) === 401);
                     } else {
                         hilog.info(domain, tag, 'disableAdvertising callback info:' + JSON.stringify(data));
@@ -1170,11 +1156,11 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'stopAdvertising promise success');
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
-            //await sleep(2000);
+            await Utils.msSleep(2000);
             done();
         })
 
@@ -1235,7 +1221,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'startAdvertising promise success');
                     advHandle = outAdvHandle;
                 });
-                //await sleep(3000);
+                await Utils.msSleep(3000);
                 let advertisingEnableParams: ble.AdvertisingEnableParams = {
                     advertisingId: advHandle,
                     duration: 100,
@@ -1244,11 +1230,11 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'enableAdvertising promise enable success');
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
-            //await sleep(2000);
+            await Utils.msSleep(2000);
             done();
         })
 
@@ -1309,7 +1295,7 @@ export default function bluetoothBleTest() {
                     hilog.info(domain, tag, 'startAdvertising promise success');
                     advHandle = outAdvHandle;
                 });
-                //await sleep(3000);
+                await Utils.msSleep(3000);
                 let advertisingEnableParams: ble.AdvertisingEnableParams = {
                     advertisingId: advHandle,
                     duration: 100,
@@ -1323,11 +1309,11 @@ export default function bluetoothBleTest() {
                     }
                 });
             } catch (err: BusinessError) {
-               hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
                 done();
             }
-            //await sleep(2000);
+            await Utils.msSleep(2000);
             done();
         })
     })

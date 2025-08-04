@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size, Hypium } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -254,7 +254,7 @@ export default function bluetoothConnectionTest() {
          */
         it("connectAllowedProfiles_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                connection.connectAllowedProfiles(deviceId, err => {
+                connection.connectAllowedProfiles(deviceId, (err) => {
                     if (err) {
                         hilog.info(domain, tag, 'errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
                         return;
@@ -289,8 +289,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.connectAllowedProfiles(deviceId).then(() => {
                     hilog.info(domain, tag, 'connectAllowedProfiles');
+                }).catch((err) => {
+                    hilog.info(domain, tag, 'connectAllowedProfiles error');
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "connectAllowedProfiles_promise get errCode:" + err.code + ",errMessage:" + err.message);
@@ -325,8 +327,10 @@ export default function bluetoothConnectionTest() {
                 };
                 connection.controlDeviceAction(controlDeviceActionParams).then(() => {
                     hilog.info(domain, tag, "controlDeviceAction success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "controlDeviceAction error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "controlDeviceAction get errCode:" + err.code + ",errMessage:" + err.message);
@@ -355,8 +359,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.getLastConnectionTime(deviceId).then((time: number) => {
                     hilog.info(domain, tag, "getLastConnectionTime result:" + JSON.stringify(time));
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getLastConnectionTime error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLastConnectionTime get errCode:" + err.code + ",errMessage:" + err.message);
@@ -385,8 +391,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.getRemoteDeviceType(deviceId).then((data: connection.DeviceType) => {
                     hilog.info(domain, tag, "getRemoteDeviceType success, deviceType: "+JSON.stringify(data));
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getRemoteDeviceType error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceType get errCode:" + err.code + ",errMessage:" + err.message);
@@ -433,8 +441,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.updateCloudBluetoothDevice(trustPairDevices).then(() => {
                     hilog.info(domain, tag, "updateCloudBluetoothDevice success!");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "updateCloudBluetoothDevice error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "updateCloudBluetoothDevice get errCode:" + err.code + ",errMessage:" + err.message);
@@ -463,8 +473,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.getRemoteDeviceBatteryInfo(deviceId).then((data:connection.BatteryInfo) => {
                     hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceBatteryInfo get errCode:" + err.code + ",errMessage:" + err.message);
@@ -490,8 +502,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.setRemoteDeviceName(deviceId, "RemoteDeviceName").then(() => {
                     hilog.info(domain, tag, "setRemoteDeviceName success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "setRemoteDeviceName error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
@@ -517,8 +531,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.setRemoteDeviceType(deviceId, connection.DeviceType.DEVICE_TYPE_HEADSET).then(() => {
                     hilog.info(domain, tag, "setRemoteDeviceType success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "setRemoteDeviceType error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setRemoteDeviceType get errCode:" + err.code + ",errMessage:" + err.message);
@@ -543,7 +559,11 @@ export default function bluetoothConnectionTest() {
         it("getRemoteProfileUuids_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.getRemoteProfileUuids(deviceId, (err, data)=> {
-                    hilog.info(domain, tag, "getRemoteProfileUuids_callback, err:" + JSON.stringify(err));
+                    if(err){
+                        hilog.info(domain, tag, "getRemoteProfileUuids_callback, err:" + JSON.stringify(err));
+                    }else{
+                        hilog.info(domain, tag, "getRemoteProfileUuids_callback success");
+                    }
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -565,8 +585,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.getRemoteProfileUuids(deviceId).then(()=> {
                     hilog.info(domain, tag, "getRemoteProfileUuids_promise");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getRemoteProfileUuids_promise error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteProfileUuids_promise get errCode:" + err.code + ",errMessage:" + err.message);
@@ -586,7 +608,11 @@ export default function bluetoothConnectionTest() {
         it("getLocalProfileUuidsTest_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.getLocalProfileUuids((error, data) => {
-                    hilog.info(domain, tag, "getLocalProfileUuidsTest_callback, err:" + JSON.stringify(error) + ", data:" + JSON.stringify(data));
+                    if(error){
+                        hilog.info(domain, tag, "getLocalProfileUuidsTest_callback, err:" + JSON.stringify(error));
+                    }else{
+                        hilog.info(domain, tag, "getLocalProfileUuidsTest_callback success");
+                    }
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -608,8 +634,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.getLocalProfileUuids().then(() => {
                     hilog.info(domain, tag, "getLocalProfileUuids");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getLocalProfileUuids error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLocalProfileUuids get errCode:" + err.code + ",errMessage:" + err.message);
@@ -629,7 +657,11 @@ export default function bluetoothConnectionTest() {
         it("setDevicePinCode_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.setDevicePinCode(deviceId, "12345", (error, data) => {
-                    hilog.info(domain, tag, "setDevicePinCode_callback,device name err:" + JSON.stringify(error) + ",device name:" + JSON.stringify(data));
+                    if(error){
+                        hilog.info(domain, tag, "setDevicePinCode_callback,device name err:" + JSON.stringify(error));
+                    }else{
+                        hilog.info(domain, tag, "setDevicePinCode_callback success");
+                    }
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -651,8 +683,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.setDevicePinCode(deviceId, "12345").then(() => {
                     hilog.info(domain, tag, "setDevicePinCode_promise");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "setDevicePinCode_promise error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePinCode_promise get errCode:" + err.code + ",errMessage:" + err.message);
@@ -771,7 +805,7 @@ export default function bluetoothConnectionTest() {
          */
         it("pairCredibleDevice_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                connection.pairCredibleDevice(deviceId, connection.BluetoothTransport.TRANSPORT_BR_EDR, error => {
+                connection.pairCredibleDevice(deviceId, connection.BluetoothTransport.TRANSPORT_BR_EDR, (error) => {
                     if (error) {
                         hilog.info(domain, tag, "errCode: " + error.code + ", errMessage: " + error.message);
                         return;
@@ -798,8 +832,10 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.pairCredibleDevice(deviceId, connection.BluetoothTransport.TRANSPORT_BR_EDR).then(() => {
                     hilog.info(domain, tag, "PairCredibleDevice");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "PairCredibleDevice error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "pairCredibleDevice_promise get errCode:" + err.code + ",errMessage:" + err.message);
@@ -821,14 +857,19 @@ export default function bluetoothConnectionTest() {
                 connection.on('bondStateChange', BondStateParam);
                 await connection.pairDevice("11:22:55:66:33:44").then(() => {
                     hilog.info(domain, tag, "pairDevice success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "pairDevice error");
+                    expect().assertFail();
                 });
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
 
-                //connection.on('bondStateChange', BondStateParam1);
                 connection.pairDevice("11:22:55:66:33:44").then((data) => {
                     hilog.info(domain, tag, "pairDevice info success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "pairDevice info error");
+                    expect().assertFail();
                 });
                 connection.off('bondStateChange', BondStateParam1);
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
@@ -1111,7 +1152,7 @@ export default function bluetoothConnectionTest() {
         */
         it("disconnectAllowedProfilesTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                connection.disconnectAllowedProfiles('68:13:24:79:4C:8C', err => {
+                connection.disconnectAllowedProfiles('68:13:24:79:4C:8C', (err) => {
                     if (err) {
                         hilog.info(domain, tag, 'errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
                         return;

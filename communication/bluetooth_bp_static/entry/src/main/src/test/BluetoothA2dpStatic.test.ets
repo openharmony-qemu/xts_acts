@@ -146,7 +146,11 @@ export default function bluetoothA2dpTest() {
       try {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.isAbsoluteVolumeSupported(deviceId, (err, supported) => {
-          hilog.info(domain, tag, "device support absolute volume " + supported);
+          if(err){
+            hilog.info(domain, tag, "device support absolute volume error");
+          }else {
+            hilog.info(domain, tag, "device support absolute volume " + supported);
+          }
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -177,6 +181,9 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.isAbsoluteVolumeSupported(deviceId).then((supported) => {
           hilog.info(domain, tag, 'device support absolute volume ' + supported);
+        }).catch((err) => {
+          hilog.info(domain, tag, 'device support absolute volume error');
+          expect().assertFail();
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -206,7 +213,11 @@ export default function bluetoothA2dpTest() {
       try {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.isAbsoluteVolumeEnabled(deviceId, (err, enabled) => {
-          hilog.info(domain, tag, 'device absolute volume enable ' + enabled);
+          if(err){
+            hilog.info(domain, tag, 'device absolute volume enable error');
+          }else{
+            hilog.info(domain, tag, 'device absolute volume enable ' + enabled);
+          }
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -237,6 +248,8 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.isAbsoluteVolumeEnabled(deviceId).then((enabled) => {
           hilog.info(domain, tag, 'device absolute volume enable ' + enabled);
+        }).catch((err) => {
+          hilog.info(domain, tag, 'device absolute volume enable error');
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -268,6 +281,8 @@ export default function bluetoothA2dpTest() {
         a2dpSrc.enableAbsoluteVolume(deviceId, (err) => {
           if (err) {
             hilog.info(domain, tag, "enableAbsoluteVolume error");
+          }else{
+            hilog.info(domain, tag, "enableAbsoluteVolume success");
           }
         });
       } catch (err: BusinessError) {
@@ -299,8 +314,10 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.enableAbsoluteVolume(deviceId).then(() => {
           hilog.info(domain, tag, "enableAbsoluteVolume");
-        }
-        );
+        }).catch((err) => {
+          hilog.info(domain, tag, "enableAbsoluteVolume error");
+          expect().assertFail();
+        });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "enableAbsoluteVolume_promise get errCode:" + err.code + ",errMessage:" + err.message);
@@ -331,6 +348,8 @@ export default function bluetoothA2dpTest() {
         a2dpSrc.disableAbsoluteVolume(deviceId, (err) => {
           if (err) {
             hilog.info(domain, tag, "disableAbsoluteVolume error");
+          }else{
+            hilog.info(domain, tag, "disableAbsoluteVolume success");
           }
         });
       } catch (err: BusinessError) {
@@ -362,6 +381,8 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.disableAbsoluteVolume(deviceId).then(() => {
           hilog.info(domain, tag, "disableAbsoluteVolume");
+        }).catch((err) => {
+          hilog.info(domain, tag, "disableAbsoluteVolume error");
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -457,6 +478,8 @@ export default function bluetoothA2dpTest() {
         let durationNumber = 1000;
         a2dpSrc.disableAutoPlay(deviceId, durationNumber).then(() => {
           hilog.info(domain, tag, "disableAutoPlay");
+        }).catch((err) => {
+          hilog.info(domain, tag, "disableAutoPlay error");
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -487,6 +510,8 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.enableAutoPlay(deviceId).then(() => {
           hilog.info(domain, tag, "enableAutoPlay");
+        }).catch((err) => {
+          hilog.info(domain, tag, "enableAutoPlay error");
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -517,6 +542,8 @@ export default function bluetoothA2dpTest() {
         let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.getAutoPlayDisabledDuration(deviceId).then((data: number) => {
           hilog.info(domain, tag, 'number' + JSON.stringify(data));
+        }).catch((err) => {
+          hilog.info(domain, tag, "getAutoPlayDisabledDuration error");
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));

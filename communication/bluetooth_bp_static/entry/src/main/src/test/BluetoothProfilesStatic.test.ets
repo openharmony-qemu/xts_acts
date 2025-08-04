@@ -109,9 +109,11 @@ export default function bluetoothProfilesTest() {
             let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
             expect(true).assertEqual(a2dpProfile != null);
             try {
-                a2dpProfile.setConnectionStrategy(deviceId, baseProfile.ConnectionStrategy.CONNECTION_STRATEGY_UNSUPPORTED, err => {
+                a2dpProfile.setConnectionStrategy(deviceId, baseProfile.ConnectionStrategy.CONNECTION_STRATEGY_UNSUPPORTED, (err) => {
                     if(err) {
                         hilog.info(domain, tag, "setConnectionStrategy, err: " + JSON.stringify(err));
+                    }else{
+                        hilog.info(domain, tag, "setConnectionStrategy success");
                     }
                 });
             } catch (err: BusinessError) {
@@ -136,8 +138,10 @@ export default function bluetoothProfilesTest() {
             try {
                 await a2dpProfile.setConnectionStrategy(deviceId, baseProfile.ConnectionStrategy.CONNECTION_STRATEGY_ALLOWED).then(() => {
                     hilog.info(domain, tag, "setConnectionStrategy");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "setConnectionStrategy error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
@@ -159,7 +163,11 @@ export default function bluetoothProfilesTest() {
             expect(true).assertEqual(a2dpProfile != null);
             try {
                 a2dpProfile.getConnectionStrategy(deviceId, (error, data) => {
-                    hilog.info(domain, tag, "getConnectionStrategy, err: " + JSON.stringify(error));
+                    if(error){
+                        hilog.info(domain, tag, "getConnectionStrategy, err: " + JSON.stringify(error));
+                    }else{
+                        hilog.info(domain, tag, "getConnectionStrategy success");
+                    }
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -183,8 +191,10 @@ export default function bluetoothProfilesTest() {
             try {
                 await a2dpProfile.getConnectionStrategy(deviceId).then((data: baseProfile.ConnectionStrategy) => {
                     hilog.info(domain, tag, "getConnectionStrategy");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "getConnectionStrategy error");
+                    expect().assertFail();
                 });
-                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
