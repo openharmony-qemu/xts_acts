@@ -429,14 +429,14 @@ export default function TreeMapTest1() {
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    // it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   treeMap.set(2, "c");
-    //   let res = treeMap.remove(1);
-    //   expect(res).assertEqual("b");
-    // });
+    it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      let res = treeMap.remove(1);
+      expect(res).assertEqual("b");
+    });
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2400
