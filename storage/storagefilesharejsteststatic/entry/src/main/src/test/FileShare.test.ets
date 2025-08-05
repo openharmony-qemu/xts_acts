@@ -46,7 +46,7 @@ export default function FileShare_test() {
      */
     it('FileShare_activatePermission_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_001.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 START');
 
@@ -64,7 +64,7 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001: activatePermission success');
-
+          done();
         } catch (e : Error) {
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 has failed for ' + e);
           let err = e as BusinessError;
@@ -73,6 +73,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 END');
       });
@@ -90,7 +91,7 @@ export default function FileShare_test() {
      */
     it('FileShare_activatePermission_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_002.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 START');
 
@@ -107,7 +108,7 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 success');
-
+          done();
         } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag,
@@ -118,6 +119,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
 
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 END');
@@ -136,7 +138,7 @@ export default function FileShare_test() {
      */
     it('FileShare_activatePermission_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003_1.txt";
         const fileStr2: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003_2.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_003 START');
@@ -160,7 +162,7 @@ export default function FileShare_test() {
           await fileShare.activatePermission(policies);
           hilog.error(domain, tag, 'Unexpected success: activatePermission should have failed');
           expect(false).assertTrue();
-
+          done();
         } catch (err) {
           const error = err as BusinessError;
           hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
@@ -173,6 +175,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_003 END');
       });
@@ -190,7 +193,7 @@ export default function FileShare_test() {
      */
     it('FileShare_deactivatePermission_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_001.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 START');
 
@@ -208,6 +211,7 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001: deactivatePermission success');
+          done();
         } catch (e : Error) {
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 has failed for ' + e);
           let err = e as BusinessError;
@@ -216,6 +220,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 END');
       });
@@ -233,7 +238,7 @@ export default function FileShare_test() {
      */
     it('FileShare_deactivatePermission_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_002.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 START');
 
@@ -250,6 +255,7 @@ export default function FileShare_test() {
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
           hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 success');
+          done();
         } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag,
@@ -260,6 +266,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
 
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 END');
@@ -278,7 +285,7 @@ export default function FileShare_test() {
      */
     it('FileShare_deactivatePermission_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_003_1.txt";
         const fileStr2: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_003_2.txt";
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 START');
@@ -302,7 +309,7 @@ export default function FileShare_test() {
           await fileShare.deactivatePermission(policies);
           hilog.error(domain, tag, 'Unexpected success: deactivatePermission should have failed');
           expect(false).assertTrue();
-
+          done();
         } catch (err) {
           const error = err as BusinessError;
           hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
@@ -316,6 +323,7 @@ export default function FileShare_test() {
           } else {
             expect(false).assertTrue();
           }
+          done();
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 END');
       });
@@ -331,17 +339,19 @@ export default function FileShare_test() {
      */
     it('test_GrantUriPermission_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         try {
           let uri = "file://media/image/9";
           let bundleName = "com.demo.a";
           await fileShare.grantUriPermission(uri, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION);
           hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_000 success`);
+          done();
         } catch (err) {
           const error = err as BusinessError;
           hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
             error.code, error.message);
           expect(false).assertTrue();
+          done();
         }
       });
 
@@ -356,7 +366,7 @@ export default function FileShare_test() {
      */
     it('test_GrantUriPermission_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         try {
           let uri = "file://media/image/9";
           let bundleName = "com.demo.a";
@@ -369,11 +379,13 @@ export default function FileShare_test() {
               }
               );
               hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_003 success`);
+              done();
             } catch (err) {
             const error = err as BusinessError;
             hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
               error.code, error.message);
             expect(false).assertTrue();
+            done();
           }
         });
 
