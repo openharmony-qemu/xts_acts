@@ -44,5 +44,14 @@
         ]
       }
     ]
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.STORAGE_MANAGER",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "when": "always"
+        }
+      }
+    ]
   }
 }
