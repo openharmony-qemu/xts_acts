@@ -1,0 +1,70 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+{
+  "app": {
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "arkTSVersion": "1.2",
+        "compatibleSdkVersion": '20',
+        "compileSdkVersion": '20',
+        "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/lenovo/.ohos/config/openharmony/default_ace_ets_module_picker_nowear_api11_static_p4Y4O-ISqCC1sHyORpAIyAwlhlnzn-8_QF6szT3q8HM=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BA5FD2A8B051323A7AB739C975DF4C48F49252DEF7E84F1D77FA47D160B6E7DACEC58FD3C5E6ED5",
+          "profile": "C:/Users/lenovo/.ohos/config/openharmony/default_ace_ets_module_picker_nowear_api11_static_p4Y4O-ISqCC1sHyORpAIyAwlhlnzn-8_QF6szT3q8HM=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/lenovo/.ohos/config/openharmony/default_ace_ets_module_picker_nowear_api11_static_p4Y4O-ISqCC1sHyORpAIyAwlhlnzn-8_QF6szT3q8HM=.p12",
+          "storePassword": "0000001BB4C45033BE1E24C606E0F99388DE19B91986B933FAE21A61A39503F451566CD1566F4A8E4882A4"
+        }
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
