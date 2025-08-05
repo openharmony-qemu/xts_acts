@@ -21,7 +21,7 @@ import Utils from './Util.test';
 
 const TAG = 0x0000;
 
-function isUsbDevice(deviceId : number) {
+function isUsbDevice(deviceId : long) {
   return (deviceId & 0x00000000FFFFFFFF) === deviceManager.BusType.USB;
 }
 
@@ -293,6 +293,60 @@ export default function DeviceManagerTest() {
         } catch (error: BusinessError) {
           hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId003 catch err :' + JSON.stringify(error));
           expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
+          done();
+        }
+      })
+
+    /*
+     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0800
+     * @tc.name       : testBindDriverWithDeviceId002
+     * @tc.desc       : verify bindDriverWithDeviceId promise success
+     */
+    it("testBindDriverWithDeviceId002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:()=>void) : Promise<void> => {
+        hilog.info(TAG, 'testTag', '----------------------testBindDriverWithDeviceId002---------------------------');
+        if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        }
+        try {
+          let data: deviceManager.RemoteDeviceDriver = await deviceManager.bindDriverWithDeviceId(deviceId,
+            (err: BusinessError<void>|null, data: long|undefined) => {
+              hilog.info(TAG, 'testTag', 'unbindDriverWithDeviceId callback success');
+            });
+          expect(true).assertTrue();
+          hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
+          hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId002 catch err : ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /*
+     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0900
+     * @tc.name       : testUnbindDriverWithDeviceId001
+     * @tc.desc       : verify unbindDriverWithDeviceId promise success
+     */
+    it("testUnbindDriverWithDeviceId001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:()=>void) : Promise<void> => {
+        hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId001---------------------------');
+        if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        }
+        try {
+          await deviceManager.unbindDriverWithDeviceId(deviceId);
+          expect(true).assertTrue();
+          await Utils.msSleep(2000);
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId001 catch err :' + JSON.stringify(error));
+          expect(false).assertTrue();
           done();
         }
       })
