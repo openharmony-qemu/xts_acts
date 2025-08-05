@@ -390,6 +390,7 @@ export default function PromiseTest() {
           const testValue = 42;
           const promise1 = new Promise<number>((resolve, reject) => {
             const worker = new EAWorker();
+            worker.start()
             const job = worker.run<number>(() => {
               const processedValue = testValue * 2;
               reject(new Error("Worker intentionally rejected the promise"));

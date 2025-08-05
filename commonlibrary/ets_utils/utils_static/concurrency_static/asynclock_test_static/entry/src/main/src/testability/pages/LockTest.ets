@@ -111,6 +111,7 @@ export async function exclusiveMultiWorkerTest() {
   }
   let p1 = new Promise<void>((resolve, reject) => {
     let worker = new EAWorker()
+    worker.start()
     let job1 = worker.run<string>((): string => {
       let flag = ''
       let result: Promise<void> | null = null;
@@ -198,6 +199,7 @@ export async function sharedMultiWorkerTest() {
   let p1 = sharedMultiJob(lockName, 200, flagBuf, 0);
   let p2 = new Promise<void>((resolve, reject) => {
     let worker = new EAWorker()
+    worker.start()
     let job1 = worker.run<string>((): string => {
       let flag = ''
       let result: Promise<void> | null = null;
@@ -592,6 +594,7 @@ export async function sequentialLockWorkerTest() {
   let data:lockType_sequentialLockWorkerTest ={ test: 'sequentialLockWorkerTest', lockName: lockNameB, timeout: Number(100), flagBuf: flagBuf }
   let p1 = new Promise<void>((resolve) => {
     let worker = new EAWorker()
+    worker.start()
     let job1 = worker.run<string>((): string => {
       let flag = ''
       let result: Promise<void> | null = null;
@@ -1018,6 +1021,7 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
   let lock = AsyncLock.request(lockName);
   let p = new Promise<void>((resolve, reject) => {
     let data: lockType = { test: lockName, lockName: lockName, timeout: 3000 }
+    worker.start()
     let job = worker.run<string>((): string => {
       let flag = ''
       let result: Promise<void> | null = null;

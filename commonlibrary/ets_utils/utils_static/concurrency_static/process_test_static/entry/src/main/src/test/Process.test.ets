@@ -166,6 +166,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest005';
         console.info(`${TAG} test start`);
         let worker = new EAWorker()
+        worker.start()
         worker.run(() => {
           try {
             for (let i = 0; i < 100; i++) {
@@ -376,6 +377,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest013';
         console.info(`${TAG} test start`);
         let worker = new EAWorker()
+        worker.start()
         worker.run(() => {
           try {
             for (let i = 0; i < 100; i++) {
@@ -439,10 +441,12 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest015';
         console.info(`${TAG} test start`);
         const worker1 = new EAWorker();
+        worker1.start()
         const worker2 = new EAWorker();
+        worker2.start()
         let count = 0
         try {
-           worker1.run<void>(() => {
+          worker1.run<void>(() => {
             for (let i = 0; i < 100; i++) {
               const tid = StdProcess.tid();
               const processManager = new StdProcess.ProcessManager();
@@ -450,7 +454,7 @@ export default function ProcessTest() {
               count++;
             }
           }).Await();
-         worker2.run<void>(() => {
+          worker2.run<void>(() => {
             for (let i = 0; i < 100; i++) {
               const tid1 = StdProcess.tid();
               const processManager = new StdProcess.ProcessManager();
@@ -587,6 +591,7 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           const worker = new EAWorker();
+          worker.start()
           worker.run(() => {
             try {
               for (let i = 0; i < 100; i++) {
@@ -703,6 +708,7 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           const worker = new EAWorker();
+          worker.start()
           worker.run(() => {
             for (let i = 0; i < 100; i++) {
               const pathName = "PATH";
@@ -793,6 +799,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest027';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         let job = worker.run<void>((): void => {
           const workerTag = 'ProcessTest0103_Worker';
@@ -892,6 +899,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest030';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         let job = worker.run<void>((): void => {
           const workerTag = 'ProcessTest0107_Worker';
@@ -991,6 +999,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest033';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         let job = worker.run<void>((): void => {
           const workerTag = 'ProcessTest0107_Worker';
@@ -1089,6 +1098,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest036';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         try {
           let job = worker.run<void>((): void => {
@@ -1177,6 +1187,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest039';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         try {
           let job = worker.run<void>((): void => {
@@ -1278,6 +1289,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest042';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let count: number = 0;
         try {
           let job = worker.run<void>((): void => {
@@ -1379,6 +1391,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest045';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let previousCpuTime: number = 0;
         let currentCpuTime: number = 0;
         try {
@@ -1487,6 +1500,7 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest048';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let previousCpuTime: number = 0;
         let currentCpuTime: number = 0;
         try {

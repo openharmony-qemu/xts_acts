@@ -889,6 +889,7 @@ export default function arkTSUtilsLockTest() {
           let state2: boolean = false;
           let job1 = async () => {
             let eaw1 = new EAWorker()
+            worker.start()
             let result: Array<Number> = await eaw1.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await()
             l1_start = result[0];
             l1_end = result[1];
@@ -898,6 +899,7 @@ export default function arkTSUtilsLockTest() {
 
           let job2 = async () => {
             let eaw = new EAWorker()
+            worker.start()
             let result: Array<Number> = await eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await()
             l2_start = result[0];
             l2_end = result[1];
@@ -1072,6 +1074,7 @@ export default function arkTSUtilsLockTest() {
 
           let job1 = async () => {
             let eaw = new EAWorker()
+            worker.start()
             eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: NullishType) => {
               const res = value as Array<number>;
               l1_start = res[0];
@@ -1082,6 +1085,7 @@ export default function arkTSUtilsLockTest() {
           }
           let job2 = async () => {
             let eaw = new EAWorker()
+            worker.start()
             eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: NullishType) => {
               const res = value as Array<number>;
               l2_start = res[0];
