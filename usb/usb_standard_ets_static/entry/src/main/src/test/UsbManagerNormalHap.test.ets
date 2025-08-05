@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import usbMgr from '@ohos.usbManager';
 import { BusinessError } from '@ohos.base';
 
-const domain: number = 0x0000;
+const domain: int = 0x0000;
 const tag: string = 'testTag';
 const CAPACITY_NOT_SUPPORT_CODE: number = 801;
 const USB_REQUEST_DIR_TO_DEVICE_STR: string = '0';

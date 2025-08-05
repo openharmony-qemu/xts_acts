@@ -40,11 +40,11 @@ function devAccessoryFunc() {
   return false;
 }
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 function getTransfersParam(gPipe: UsbMgr.USBDevicePipe, flagsValue: UsbMgr.UsbTransferFlags,
-  endpointValue: number, typeValue: UsbMgr.UsbEndpointTransferType, timeOutValue: number) {
+  endpointValue: int, typeValue: UsbMgr.UsbEndpointTransferType, timeOutValue: int) {
   let transferParams: UsbMgr.UsbDataTransferParams = {
     devPipe: gPipe,
     flags: flagsValue,
@@ -215,7 +215,7 @@ export default function UsbBaseTest() {
             hilog.info(domain, tag, `testClaimInterface001 busNum = ${devicePipe.busNum}`);
             hilog.info(domain, tag, `testClaimInterface001 busNum = ${devicePipe.devAddress}`);
             hilog.info(domain, tag, 'testClaimInterface001 interfaces = %{public}s', JSON.stringify(interfaces));
-            let ret: number = UsbMgr.claimInterface(devicePipe, interfaces, false);
+            let ret: int = UsbMgr.claimInterface(devicePipe, interfaces, false);
             UsbMgr.releaseInterface(devicePipe, interfaces);
             hilog.info(domain, tag, `claimInterface = ${ret}`);
             expect(ret === 0).assertTrue();
@@ -320,7 +320,7 @@ export default function UsbBaseTest() {
             hilog.info(domain, tag, `testSetConfiguration001 busNum = ${devicePipe.devAddress}`);
             let config: UsbMgr.USBConfiguration = devices.configs[0];
             hilog.info(domain, tag, `testSetConfiguration001 busNum = ${config}`);
-            let ret: number = UsbMgr.setConfiguration(devicePipe, config);
+            let ret: int = UsbMgr.setConfiguration(devicePipe, config);
             hilog.info(domain, tag, `setConfiguration = ${ret}`);
             expect(ret === 0).assertTrue();
           } catch (err) {
@@ -484,7 +484,7 @@ export default function UsbBaseTest() {
       })
 
       /**
-      * @tc.number   : SUB_USB_HostManager_JS_Func_1200
+      * @tc.number   : SUB_USB_HostManager_JS_Func_1300
       * @tc.name     : testRemoveRight001
       * @tc.desc     : Positive test: removeRight.
       */

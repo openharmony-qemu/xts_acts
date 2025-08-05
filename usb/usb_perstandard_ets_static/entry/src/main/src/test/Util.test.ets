@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 export default class Utils{
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {

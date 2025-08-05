@@ -35,7 +35,7 @@ let isDevAccessoryFunc: boolean;
 let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
 let accessInfo: UsbMgr.USBAccessory;
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 const PARAM_NULLSTRING: string = "";
 
@@ -49,7 +49,7 @@ function devAccessoryFunc() {
 }
 
 function getTransfersParam(gPipe: UsbMgr.USBDevicePipe, flagsValue: UsbMgr.UsbTransferFlags,
-  endpointValue: number, typeValue: UsbMgr.UsbEndpointTransferType, timeOutValue: number) {
+  endpointValue: int, typeValue: UsbMgr.UsbEndpointTransferType, timeOutValue: int) {
   let transferParams: UsbMgr.UsbDataTransferParams = {
     devPipe: gPipe,
     flags: flagsValue,
@@ -289,10 +289,10 @@ export default function UsbTransferTest() {
             UsbMgr.requestRight(devicesList[0].name);
             hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
             let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
-            let timeout: number | undefined = 30;
+            let timeout: int | undefined = 30;
 
             hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
-            let ret = UsbMgr.usbControlTransfer(devicePipe, param, timeout).then((ret: number) => {
+            let ret = UsbMgr.usbControlTransfer(devicePipe, param, timeout).then((ret: int) => {
               hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
               expect(ret == 18).assertEqual(true);
             })
@@ -352,7 +352,7 @@ export default function UsbTransferTest() {
             } else {
               hilog.info(domain, tag, "没有有效的endpoint");
             }
-            let ret: number = UsbMgr.claimInterface(devicePipe, interfaces, true);
+            let ret: int = UsbMgr.claimInterface(devicePipe, interfaces, true);
             hilog.info(domain, tag, `bulkTransfer begin  = ${ret}`);
             if (ret == 0) {
               hilog.info(domain, tag, 'USB claim sucess');
@@ -360,9 +360,9 @@ export default function UsbTransferTest() {
 
               hilog.info(domain, tag, `test_bulkTransfer name = ${devicesList[0].name}`);
               hilog.info(domain, tag, `test_bulkTransfer buffer = ${bufferTransfer}`);
-              let timeout: number | undefined = 8000;
+              let timeout: int | undefined = 8000;
 
-              UsbMgr.bulkTransfer(devicePipe, endpoint, bufferTransfer, timeout).then((retVal: number) => {
+              UsbMgr.bulkTransfer(devicePipe, endpoint, bufferTransfer, timeout).then((retVal: int) => {
                 hilog.info(domain, tag, `test_bulkTransfer02 retVal = ${retVal}`);
                 expect(retVal == 128).assertTrue();
               });
