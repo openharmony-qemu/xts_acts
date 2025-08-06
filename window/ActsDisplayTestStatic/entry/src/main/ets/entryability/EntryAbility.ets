@@ -12,13 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import Want from '@ohos.app.ability.Want';
-import window from '@ohos.window';
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import hilog from '@ohos.hilog'
+import Utils from './Util.test';
+import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
-import hilog from '@ohos.hilog';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import window from '@ohos.window'
+import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
+import type { AsyncCallback, Callback} from '@ohos.base'
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 
 
@@ -38,10 +41,10 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
 
       try{
-        AppStorage.setOrCreate('windowStage',windowStage);
+        AppStorage.setOrCreate('windowStage',windowStage,Type.from<window.WindowStage>());
         let mainWindow = windowStage.getMainWindowSync();
 
-        AppStorage.setOrCreate('mainWindow',mainWindow);
+        AppStorage.setOrCreate('mainWindow',mainWindow,Type.from<window.Window>());
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+JSON.stringify(windowStage) + '  mainWindow'+JSON.stringify(mainWindow));
       }catch(e: Error){
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni'+e.message);
