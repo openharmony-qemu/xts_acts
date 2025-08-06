@@ -33,12 +33,6 @@ class Sample {
 }
 
 
-let myDate: Record<String, Object> = {
-  "id": "1",
-  "content": "c"
-}
-let eventData: emitter.EventData = { data: myDate }
-
 let subscriber:commonEventManager.CommonEventSubscriber; //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
 //有序公共事件
 let subscriber_a: commonEventManager.CommonEventSubscriber;
