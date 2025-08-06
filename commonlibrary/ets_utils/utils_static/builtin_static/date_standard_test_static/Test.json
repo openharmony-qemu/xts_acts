@@ -4,7 +4,6 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "testcase-timeout": "15000",
         "bundle-name": "date.standard.test.static",
         "module-name": "entry"
     },
