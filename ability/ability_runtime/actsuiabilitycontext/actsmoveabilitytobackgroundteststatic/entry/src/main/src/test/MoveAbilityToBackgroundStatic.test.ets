@@ -44,12 +44,12 @@ export default function moveAbilityToBackgroundTestStatic() {
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static")
         await Utils.msSleep(2000);
         hilog.info(domain, tag, 'start success');
-        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
         hilog.info(domain, tag, 'getcontext success, context: ' + context);
         context.moveAbilityToBackground().then(async () => {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
-          let result = AppStorage.get<string>("onBackground", Type.from<string>())
+          let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
           done();
         }).catch((err: BusinessError<void>): void => {
@@ -79,11 +79,11 @@ export default function moveAbilityToBackgroundTestStatic() {
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static")
         await Utils.msSleep(2000);
         hilog.info(domain, tag, 'start success');
-        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
         hilog.info(domain, tag, 'getcontext success, context: ' + context);
         context.moveAbilityToBackground().then(() => {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
-          let result = AppStorage.get<string>("onBackground", Type.from<string>())
+          let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
         }).catch((err: BusinessError<void>): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
