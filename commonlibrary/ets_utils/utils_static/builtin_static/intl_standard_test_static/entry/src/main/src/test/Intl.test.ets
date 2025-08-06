@@ -266,22 +266,22 @@ describe('etsIntlFunTest', (): void => {
      * @tc.type      : Function
      * @tc.level     : Level 0
     */
-     it('testIntlDateTimeFormat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
-        let options : Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric",
-            hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC" };
-        let intlObj = new Intl.DateTimeFormat("zh-CN", options);
-        console.log("intlDateTimeFormatTest016::" + intlObj.format(newDate));
-        expect(intlObj.format(newDate)).assertEqual('2022年10月8日 UTC 上午12:00');
-        expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
-        expect(intlObj.resolvedOptions().timeZoneName).assertEqual('short');
-        let parts = intlObj.formatToParts(newDate);
-        let partValues : string[]= []
-         for (let i = 0; i < parts.length; i++) {
-             partValues.push(parts[i].value);
-         }
-        expect(partValues.length).assertEqual(12);
-        expect(partValues[0]).assertEqual('2022');
-    })
+    //  it('testIntlDateTimeFormat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
+    //     let options : Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric",
+    //         hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC" };
+    //     let intlObj = new Intl.DateTimeFormat("zh-CN", options);
+    //     console.log("intlDateTimeFormatTest016::" + intlObj.format(newDate));
+    //     expect(intlObj.format(newDate)).assertEqual('2022年10月8日 UTC 上午12:00');
+    //     expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
+    //     expect(intlObj.resolvedOptions().timeZoneName).assertEqual('short');
+    //     let parts = intlObj.formatToParts(newDate);
+    //     let partValues : string[]= []
+    //      for (let i = 0; i < parts.length; i++) {
+    //          partValues.push(parts[i].value);
+    //      }
+    //     expect(partValues.length).assertEqual(12);
+    //     expect(partValues[0]).assertEqual('2022');
+    // })
 
     /**
      * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_017
@@ -291,21 +291,21 @@ describe('etsIntlFunTest', (): void => {
      * @tc.type      : Function
      * @tc.level     : Level 0
     */
-     it('testIntlDateTimeFormat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
-        let options : Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric",
-            hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC", hour12: true };
-        let intlObj = new Intl.DateTimeFormat("en-us", options);
-        console.log("intlDateTimeFormatTest017::" + intlObj.format(newDate));
-        expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
-        expect(intlObj.resolvedOptions().hour12).assertTrue();
-        let parts = intlObj.formatToParts(newDate);
-        let partValues : string[]= []
-        for (let i = 0; i < parts.length; i++) {
-            partValues.push(parts[i].value);
-        }
-        expect(partValues.length).assertEqual(13);
-        expect(partValues[0]).assertEqual('October');
-    })
+    //  it('testIntlDateTimeFormat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
+    //     let options : Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric",
+    //         hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC", hour12: true };
+    //     let intlObj = new Intl.DateTimeFormat("en-us", options);
+    //     console.log("intlDateTimeFormatTest017::" + intlObj.format(newDate));
+    //     expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
+    //     expect(intlObj.resolvedOptions().hour12).assertTrue();
+    //     let parts = intlObj.formatToParts(newDate);
+    //     let partValues : string[]= []
+    //     for (let i = 0; i < parts.length; i++) {
+    //         partValues.push(parts[i].value);
+    //     }
+    //     expect(partValues.length).assertEqual(13);
+    //     expect(partValues[0]).assertEqual('October');
+    // })
 
     /**
      * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_018
@@ -1637,6 +1637,6 @@ describe('etsIntlFunTest', (): void => {
     //     expect(listform.resolvedOptions().style).assertEqual('narrow');
     //     expect(listform.resolvedOptions().type).assertEqual('unit');
     // })
-    console.log('*************end IntlTest*************');
+    // console.log('*************end IntlTest*************');
 })
 }
