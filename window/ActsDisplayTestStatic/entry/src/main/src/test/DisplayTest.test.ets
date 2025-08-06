@@ -36,8 +36,8 @@ export default function DisplayTest() {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //console.log('windowTest context: ' + JSON.stringify(context))
             try {
-                windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
-                win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
+                windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                win = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 // let win = windowStage.getMainWindowSync();
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
