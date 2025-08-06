@@ -452,5 +452,55 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number: SUB_NetworkManager_VPN_GenerateVpnId_Promise_0200
+     * @tc.name: Test GenerateVpnId() interface
+     * @tc.desc: Function test
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_NetworkManager_VPN_GenerateVpnId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_GenerateVpnId_Promise_0100';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        vpnConnection.generateVpnId().then((data:string) => {
+          console.log(`${caseName} generateVpnId success ${JSON.stringify(data)}`);
+        });
+        console.log(`${caseName} generateVpnId success`);
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} generateVpnId fail ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number: SUB_NetworkManager_VPN_destroy_Promise_0300
+     * @tc.name: Test destroy(vpnId: string) interface
+     * @tc.desc: Function test
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_NetworkManager_VPN_destroy_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0300';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        let vpnId :string = "test";
+        vpnConnection.destroy(vpnId);
+        console.log(`${caseName} destroy success`);
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} destroy fail ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
   });
 }
