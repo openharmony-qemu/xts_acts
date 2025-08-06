@@ -18,7 +18,7 @@ import Utils from './Util.test';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window'
-import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -34,7 +34,7 @@ export default function DisplayTest() {
         //let isPCStatus: string = '';
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
-            //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
+            //console.log('windowTest context: ' + JSON.stringify(context))
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
@@ -47,12 +47,12 @@ export default function DisplayTest() {
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
 
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
-            //hilog.info(0x0000, '[ANI]',`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+            //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
             //isPCStatus == '' 非PC设备
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
-            //hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
+            //console.info(`beforeAll isPCStatus: `+ isPCStatus);
         })
 
         /**
@@ -473,11 +473,11 @@ export default function DisplayTest() {
          * @tc.level     : Level 3
          */
         it('testDisplayOffChange_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = 'testDisplayOffChange_RepeatOff_static_0100';
+            let caseName = 'testDisplayOffChange_RepeatOff_static_0100';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let callback: Callback<number> = (data: number) => {
-                hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
+                console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
                 display.on("change", callback);
@@ -579,12 +579,13 @@ export default function DisplayTest() {
                 let foldStatus:number =  display.getFoldStatus();
                 expect(foldStatus).assertLargerOrEqual(0);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]',tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
             }
         })
+
         /**
          * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
          * @tc.name   : testFoldAngleChange_On_Off_static_0100
@@ -1439,19 +1440,6 @@ export default function DisplayTest() {
                 }
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
