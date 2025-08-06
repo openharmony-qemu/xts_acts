@@ -6,6 +6,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
 
 
 class EntryAbility extends UIAbility {
@@ -26,6 +27,7 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+windowStage);
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
         try{
+          AppStorage.setOrCreate('context',this.context,Type.from<common.UIAbilityContext>());
           AppStorage.setOrCreate('windowStage',windowStage,Type.from<window.WindowStage>());
           let mainWindow = windowStage.getMainWindowSync();
 
