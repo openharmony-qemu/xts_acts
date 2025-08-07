@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ListScrollToItemInGroup() {
   const SUITE: string = 'ListScrollToItemInGroup'
-  const waitUiReadyMs: number = 2000;
+  const waitUiReadyMs = 2000;
 
   describe('ListScrollToItemInGroup', () => {
     beforeAll(() => {

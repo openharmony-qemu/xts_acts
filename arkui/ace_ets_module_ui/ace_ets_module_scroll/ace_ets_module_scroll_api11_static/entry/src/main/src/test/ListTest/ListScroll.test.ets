@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ListScrollTest() {
 
   const SUITE: string = 'ListScroll'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
   describe('ListScrollTest', () => {
 
     beforeAll(() => {

@@ -19,7 +19,7 @@ import formBindingData from '@ohos.app.form.formBindingData';
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formBindingDataTest() {

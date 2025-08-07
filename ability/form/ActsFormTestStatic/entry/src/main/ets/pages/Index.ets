@@ -25,7 +25,7 @@ import batteryInfo from '@ohos.batteryInfo';
 import formBindingData from '@ohos.app.form.formBindingData';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry
