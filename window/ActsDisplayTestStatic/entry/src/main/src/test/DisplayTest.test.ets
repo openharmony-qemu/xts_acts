@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import window from '@ohos.window'
 import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function DisplayTest() {
@@ -36,8 +36,8 @@ export default function DisplayTest() {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //console.log('windowTest context: ' + JSON.stringify(context))
             try {
-                windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
-                win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
+                win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
                 // let win = windowStage.getMainWindowSync();
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
