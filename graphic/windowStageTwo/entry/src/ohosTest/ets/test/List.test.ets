@@ -42,8 +42,8 @@ export default function testsuite() {
   windowModalTest();
   windowMaximizeTest();
   windowImmersiveTest();
-  windowPCTest();
   windowEventTest();
+  windowPCTest();
   windowControlsTest();
   windowKeyBorad()
   windowRotationTest();
