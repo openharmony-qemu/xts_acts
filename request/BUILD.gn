@@ -24,5 +24,7 @@ group("request") {
     "requestCacheDownloadTest:ActsRequestCacheDownloadAuthorTest",
     "requestSpecialTest:ActsRequestSpecialTest",
     "requestTestFANormalTest:ActsRequestFANormalTest",
+    "newRequestAuthorityTestStatic:ActsRequestAuthorityStaticTest",
+    "newRequestNormalTestStatic:ActsRequestNormalStaticTest",
   ]
 }
