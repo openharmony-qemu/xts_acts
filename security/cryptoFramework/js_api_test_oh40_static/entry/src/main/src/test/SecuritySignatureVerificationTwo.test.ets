@@ -216,7 +216,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             console.error(
               "AsyPromise signAndVerifyNormalProcess catch error: " + err
             );
-            expect(err.code).assertEqual(401);
+            expect((err as BusinessError).code).assertEqual(401);
           });
         done();
       }

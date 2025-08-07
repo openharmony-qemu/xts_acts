@@ -94,19 +94,19 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
      * @tc.type Func
      * @tc.level Level3
      */
-    it("SUB_Security_CryptoFramework_HMACSync_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let algName: string = "SHA256";
-        let key: cryptoFramework.SymKey;
-        let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
-        mac.initSync(key);
-        expect(null).assertTrue()
-      } catch (error: BusinessError) {
-        console.error(`HMAC “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
-      }
-      done();
-    });
+    // it("SUB_Security_CryptoFramework_HMACSync_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    //   try {
+    //     let algName: string = "SHA256";
+    //     let key: cryptoFramework.SymKey;
+    //     let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
+    //     mac.initSync(key);
+    //     expect(null).assertTrue()
+    //   } catch (error: BusinessError) {
+    //     console.error(`HMAC “${error}“, error code: ${error.code}`);
+    //     expect(error.code).assertEqual(401);
+    //   }
+    //   done();
+    // }); // arkts1.2 let undefined
 
     /**
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0400

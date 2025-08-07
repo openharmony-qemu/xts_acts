@@ -1362,7 +1362,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let cipherPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync(null);
-        expect(cipherPlainText1.data.length).assertEqual(0); // 1.2: null 落需求后回退
+        expect(cipherPlainText1.data.length).assertEqual(0); // arkts1.2: null/undefined
         expect(cipherPlainText2.data.length).assertEqual(0);
         let ret: boolean = commonUtils.compareDataBlob(authTag1.authTag, authTag2.authTag);
         expect(ret).assertTrue();

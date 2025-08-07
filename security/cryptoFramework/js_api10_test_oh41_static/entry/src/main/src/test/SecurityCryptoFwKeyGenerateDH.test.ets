@@ -158,7 +158,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0600
@@ -181,7 +181,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_0700
@@ -283,7 +283,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1100
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1200
@@ -358,7 +358,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1400
@@ -411,7 +411,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1600
@@ -438,7 +438,7 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
       }
       console.log(testNumber + ": succeed");
       done();
-    }); // appfreeze
+    });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_DH_Func_1700

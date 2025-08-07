@@ -365,10 +365,10 @@ export default function AsyGetKeySpecBySpecJsunit() {
         let rsaKeyPairSpec: cryptoFramework.RSAKeyPairSpec = genRsa2048KeyPairSpec();
         let rsaKeyGeneratorSpec: cryptoFramework.AsyKeyGeneratorBySpec =
           cryptoFramework.createAsyKeyGeneratorBySpec(rsaKeyPairSpec);
-        let rsaKeyPair: cryptoFramework.KeyPair;
-        rsaKeyGeneratorSpec.generateKeyPair().then((keyPair) => {
-          rsaKeyPair = keyPair;
-        });
+        let rsaKeyPair: cryptoFramework.KeyPair = await rsaKeyGeneratorSpec.generateKeyPair();
+        // rsaKeyGeneratorSpec.generateKeyPair().then((keyPair) => {
+        //   rsaKeyPair = keyPair;
+        // }); // arkts1.2 std.core.Null cannot be cast to xxx
         try {
           rsaKeyPair.pubKey.getAsyKeySpec(
             cryptoFramework.AsyKeySpecItem.DSA_P_BN
@@ -397,10 +397,10 @@ export default function AsyGetKeySpecBySpecJsunit() {
         let rsaKeyPairSpec: cryptoFramework.RSAKeyPairSpec = genRsa2048KeyPairSpec();
         let rsaKeyGeneratorSpec: cryptoFramework.AsyKeyGeneratorBySpec =
           cryptoFramework.createAsyKeyGeneratorBySpec(rsaKeyPairSpec);
-        let rsaKeyPair: cryptoFramework.KeyPair;
-        rsaKeyGeneratorSpec.generateKeyPair().then((keyPair) => {
-          rsaKeyPair = keyPair;
-        });
+        let rsaKeyPair: cryptoFramework.KeyPair = await rsaKeyGeneratorSpec.generateKeyPair();
+        // rsaKeyGeneratorSpec.generateKeyPair().then((keyPair) => {
+        //   rsaKeyPair = keyPair;
+        // }); // arkts1.2 std.core.Null cannot be cast to xxx
         try {
           rsaKeyPair.priKey.getAsyKeySpec(
             cryptoFramework.AsyKeySpecItem.DSA_P_BN

@@ -285,7 +285,7 @@ export default function SecuritySignatureVerificationJsunit() {
           });
         done();
       }
-    ); // appfreeze
+    );
 
     /**
      * @tc.number Security_CryptoFramework_SignatureVerification_Func_0900
