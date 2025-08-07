@@ -1193,6 +1193,8 @@ export default function EAWorkerTest() {
         let executedFlag = false;
         let worker = new EAWorker();
         let work2 = new EAWorker();
+        worker.start()
+        work2.start()
         try {
           const task = worker.run<void>(async () => {
             executedFlag = true;
@@ -1278,6 +1280,8 @@ export default function EAWorkerTest() {
         let executedFlag = false;
         let worker = new EAWorker();
         let work2 = new EAWorker();
+        worker.start()
+        work2.start()
         try {
           const task = worker.run<void>(async () => {
             executedFlag = true;
@@ -1322,6 +1326,7 @@ export default function EAWorkerTest() {
         let executedFlag = false;
         try {
           let worker: EAWorker | null = new EAWorker();
+          worker.start()
           worker.join();
           const task = worker.run<void>((): void => {
             executedFlag = true;
@@ -1347,6 +1352,7 @@ export default function EAWorkerTest() {
         const TAG: string = 'EAWorkerTest033';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         let executedFlag = false;
         worker.run<void>((): void => {
           executedFlag = true;
@@ -1382,6 +1388,7 @@ export default function EAWorkerTest() {
       const TAG: string = 'EAWorkerTest034';
       console.info(`${TAG} test start`);
       let worker = new EAWorker();
+      worker.start()
       let executedFlag = false;
       worker.run<void>((): void => {
         executedFlag = true;
@@ -1419,6 +1426,7 @@ export default function EAWorkerTest() {
         const TAG: string = 'EAWorkerTest035';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         try {
           let worker1 = worker.run<undefined>(EAWorkerTest).Await();
           expect(worker1).assertEqual(undefined);
@@ -1445,6 +1453,7 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         let joinCalledInTask = false;
         let worker = new EAWorker();
+        worker.start()
         try {
           const task = await worker.run<Promise<string>>(async (): Promise<string> => {
             worker.join();
@@ -1477,6 +1486,7 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         let joinCalledInTask = false;
         let worker = new EAWorker();
+        worker.start()
         try {
           const task = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
@@ -1508,6 +1518,7 @@ export default function EAWorkerTest() {
         const RUN_TIMES = 3;
         let successCount = 0;
         let worker: EAWorker | null = new EAWorker();
+        worker.start()
         try {
           for (let i = 0; i < RUN_TIMES; i++) {
             const result = await worker.run<Promise<string>>(async (): Promise<string> => {
@@ -1519,6 +1530,7 @@ export default function EAWorkerTest() {
           worker.join();
           worker = null;
           worker = new EAWorker();
+          worker.start()
           const finalResult = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             return `FINAL_TASK_SUCCESS`;
@@ -1552,6 +1564,7 @@ export default function EAWorkerTest() {
         const workerTest: string = '1';
         try {
           let worker = new EAWorker();
+          worker.start()
           let worker1 = worker.run<undefined>(EAWorkerTest).Await();
           worker.join();
           worker.join();
@@ -1580,6 +1593,7 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         try {
           let worker = new EAWorker();
+          worker.start()
           let workerThreadId: number = 0;
           const mainThreadId = StdProcess.tid;
           let worker1 = worker.run<undefined>((): undefined => {
@@ -1612,6 +1626,8 @@ export default function EAWorkerTest() {
         let executedFlag = false;
         let worker: EAWorker | null = new EAWorker();
         let work2 = new EAWorker();
+        worker.start()
+        work2.start()
         try {
           let worker1ThreadId: number;
           let worker2ThreadId: number;
@@ -1967,6 +1983,8 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         const mainWorker = new EAWorker();
         const childWorker = new EAWorker();
+        childWorker.start()
+        mainWorker.start()
         const arrayBuffer = new ArrayBuffer(1024);
         const array: Int32Array = new Int32Array(arrayBuffer);
         array[0] = 0;
@@ -1976,6 +1994,7 @@ export default function EAWorkerTest() {
           const mainPromise = new Promise<EAWorker>((resolve, reject) => {
             mainWorker.run(async (inputWorker: EAWorker): Promise<EAWorker> => {
               try {
+                inputWorker.start()
                 const childPromise = new Promise<Int32Array>((res, rej) => {
                   inputWorker.run(() => {
                     try {
@@ -1997,6 +2016,7 @@ export default function EAWorkerTest() {
           await mainPromise
             .then((returnedWorker: EAWorker) => {
               return new Promise<Int32Array>((resolve, reject) => {
+
                 returnedWorker.run(() => {
                   try {
                     array[1] = 3
