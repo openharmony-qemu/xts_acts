@@ -509,5 +509,50 @@ export default function UsbBaseTest() {
           done();
         }
       })
+
+    /**
+     * @tc.number   : SUB_USB_HostManager_JS_Func_1200
+     * @tc.name     : testGetRawDescriptor001
+     * @tc.desc     : Positive test: Get the original USB descriptor
+     */
+    it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'usb testGetRawDescriptor001 begin');
+      if (!isDeviceConnected) {
+        hilog.info(domain, tag, 'usb testGetRawDescriptor001 No device is connected');
+        expect(isDeviceConnected).assertFalse();
+        done();
+      } else {
+        let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
+        let devices: UsbMgr.USBDevice = gDeviceList[0];
+        let isHasRight: boolean = await UsbMgr.requestRight(devices.name);
+        let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
+        getPipe('testGetRawDescriptor001');
+        let descriptor = UsbMgr.getRawDescriptor(gPipe);
+        hilog.info(domain, tag, 'usb case testGetRawDescriptor001 ret: ' + JSON.stringify(descriptor));
+        expect(descriptor.length).assertLarger(0);
+        toClosePipe('testGetRawDescriptor001');
+      }
+    })
+
+    /**
+     * @tc.number   : SUB_USB_HostManager_JS_Func_1400
+     * @tc.name     : USBRequestTargetType001
+     * @tc.desc     : Positive test: enum USBRequestTargetType
+     */
+    it("USBRequestTargetType001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '----------------------USBRequestTargetType001---------------------------');
+      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE)).assertEqual('number');
+      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE)).assertEqual('number');
+      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT)).assertEqual('number');
+      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER)).assertEqual('number');
+      done();
+      hilog.info(domain, tag, '%{public}s', 'USBRequestTargetType001 end');
+    })
   })
 }
