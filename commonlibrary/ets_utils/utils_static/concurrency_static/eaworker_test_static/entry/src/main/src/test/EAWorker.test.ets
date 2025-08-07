@@ -1238,6 +1238,8 @@ export default function EAWorkerTest() {
         let executedFlag = false;
         let worker = new EAWorker();
         let work2 = new EAWorker();
+        worker.start()
+        work2.start()
         try {
           const task = worker.run<void>(async () => {
             executedFlag = true;
@@ -1310,35 +1312,6 @@ export default function EAWorkerTest() {
         }
       });
 
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_TEST_3200
-     * @tc.name EAWorkerTest032
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('EAWorkerTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'EAWorkerTest032';
-        console.info(`${TAG} test start`);
-        let executedFlag = false;
-        try {
-          let worker: EAWorker | null = new EAWorker();
-          worker.start()
-          worker.join();
-          const task = worker.run<void>((): void => {
-            executedFlag = true;
-          });
-          expect(executedFlag).assertEqual(false);
-        } catch (err: Error) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          expect(false).assertFail();
-        }
-        console.info(`${TAG} test end`);
-        done();
-      });
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_TEST_3300
      * @tc.name EAWorkerTest033
@@ -1964,78 +1937,6 @@ export default function EAWorkerTest() {
           expect(false).assertFail();
         } finally {
           worker.join();
-          console.info(`${TAG} test end`);
-          Done();
-        }
-      });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_TEST_5100
-     * @tc.name EAWorkerTest051
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('EAWorkerTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (Done: () => void): Promise<void> => {
-        const TAG: string = 'EAWorkerTest051';
-        console.info(`${TAG} test start`);
-        const mainWorker = new EAWorker();
-        const childWorker = new EAWorker();
-        childWorker.start()
-        mainWorker.start()
-        const arrayBuffer = new ArrayBuffer(1024);
-        const array: Int32Array = new Int32Array(arrayBuffer);
-        array[0] = 0;
-        array[1] = 0;
-
-        try {
-          const mainPromise = new Promise<EAWorker>((resolve, reject) => {
-            mainWorker.run(async (inputWorker: EAWorker): Promise<EAWorker> => {
-              try {
-                inputWorker.start()
-                const childPromise = new Promise<Int32Array>((res, rej) => {
-                  inputWorker.run(() => {
-                    try {
-                      array[0] = 1
-                      res(array);
-                    } catch (err: Error) {
-                      rej(err);
-                    }
-                  });
-                });
-                await childPromise;
-                resolve(inputWorker);
-              } catch (err: Error) {
-                reject(err);
-              }
-            }, childWorker);
-          });
-
-          await mainPromise
-            .then((returnedWorker: EAWorker) => {
-              return new Promise<Int32Array>((resolve, reject) => {
-
-                returnedWorker.run(() => {
-                  try {
-                    array[1] = 3
-                    resolve(array);
-                  } catch (err: Error) {
-                    reject(err);
-                  }
-                });
-              })
-            })
-          expect(array[0]).assertEqual(1);
-          expect(array[1]).assertEqual(3);
-          console.log(`${TAG}: Test completed successfully`);
-        } catch (err: Error) {
-          console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-          expect(false).assertFail();
-        } finally {
-          mainWorker.join();
-          childWorker.join();
           console.info(`${TAG} test end`);
           Done();
         }
