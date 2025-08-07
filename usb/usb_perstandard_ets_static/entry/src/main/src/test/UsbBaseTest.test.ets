@@ -515,7 +515,8 @@ export default function UsbBaseTest() {
      * @tc.name     : testGetRawDescriptor001
      * @tc.desc     : Positive test: Get the original USB descriptor
      */
-    it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'usb testGetRawDescriptor001 begin');
       if (!isDeviceConnected) {
         hilog.info(domain, tag, 'usb testGetRawDescriptor001 No device is connected');
