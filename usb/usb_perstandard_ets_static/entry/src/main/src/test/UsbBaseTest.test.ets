@@ -512,7 +512,7 @@ export default function UsbBaseTest() {
 
     /**
      * @tc.number   : SUB_USB_HostManager_JS_Func_1200
-     * @tc.name     : testGetRawDescriptor003
+     * @tc.name     : testGetRawDescriptor001
      * @tc.desc     : Positive test: Get the original USB descriptor
      */
     it('testGetRawDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
@@ -527,7 +527,7 @@ export default function UsbBaseTest() {
         let isHasRight: boolean = await UsbMgr.requestRight(devices.name);
         let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
         getPipe('testGetRawDescriptor001');
-        let descriptor = usbManager.getRawDescriptor(gPipe);
+        let descriptor = UsbMgr.getRawDescriptor(gPipe);
         hilog.info(domain, tag, 'usb case testGetRawDescriptor001 ret: ' + JSON.stringify(descriptor));
         expect(descriptor.length).assertLarger(0);
         toClosePipe('testGetRawDescriptor001');
