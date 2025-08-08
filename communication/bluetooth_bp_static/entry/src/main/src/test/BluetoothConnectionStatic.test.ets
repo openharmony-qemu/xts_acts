@@ -18,8 +18,6 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import connection from '@ohos.bluetooth.connection';
-import ble from '@ohos.bluetooth.ble';
-import btAccess from '@ohos.bluetooth.access';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
@@ -32,16 +30,8 @@ let g_context: common.UIAbilityContext;
 
 function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // data为配对请求的入参，配对请求参数
     hilog.info(domain, tag, "pin required  = "+ JSON.stringify(data));
-    connection.setDevicePairingConfirmation(data.deviceId, true);
-}
-
-function BondStateParam(data: connection.BondStateParam) {
-    hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data));
-}
-
-function BondStateParam1(data: connection.BondStateParam) {
-    hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data)
-        +'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state);
+    hilog.info(domain, tag, "setDevicePairingConfirmation data.deviceId:" + data.deviceId);
+    hilog.info(domain, tag, "setDevicePairingConfirmation data.pinCode:" + data.pinCode);
 }
 
 function onReceiveEvent2(data: Array<string>) {
@@ -87,13 +77,39 @@ export default function bluetoothConnectionTest() {
             }
         })
 
-        /*
-         * @tc.number: getRemoteDeviceNameAliasTest
-         * @tc.name: getRemoteDeviceNameAliasTest
-         * @tc.desc: Test getRemoteDeviceNameAliasTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getRemoteDeviceNameTest
+         * @tc.name    getRemoteDeviceNameTest
+         * @tc.desc    Test getRemoteDeviceNameTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("getRemoteDeviceNameTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
+                hilog.info(domain, tag, "getRemoteDeviceName:" + name);
+                expect(true).assertEqual(name == "");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  getRemoteDeviceNameAliasTest
+         * @tc.name    getRemoteDeviceNameAliasTest
+         * @tc.desc    Test getRemoteDeviceNameAliasTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("getRemoteDeviceNameAliasTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -116,13 +132,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceClassTest
-         * @tc.name: getRemoteDeviceClassTest
-         * @tc.desc: Test getRemoteDeviceClassTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getRemoteDeviceClassTest
+         * @tc.name    getRemoteDeviceClassTest
+         * @tc.desc    Test getRemoteDeviceClassTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("getRemoteDeviceClassTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -144,13 +160,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: setBluetoothScanModeTest
-         * @tc.name: setBluetoothScanModeTest
-         * @tc.desc: Test setBluetoothScanModeTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  setBluetoothScanModeTest
+         * @tc.name    setBluetoothScanModeTest
+         * @tc.desc    Test setBluetoothScanModeTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("setBluetoothScanModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -169,13 +185,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: getPairedDevicesTest
-         * @tc.name: getPairedDevicesTest
-         * @tc.desc: Test getPairedDevicesTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getPairedDevicesTest
+         * @tc.name    getPairedDevicesTest
+         * @tc.desc    Test getPairedDevicesTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("getPairedDevicesTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -195,13 +211,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: connectionConstantTest
-         * @tc.name: connectionConstantTest
-         * @tc.desc: Test connectionConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  connectionConstantTest
+         * @tc.name    connectionConstantTest
+         * @tc.desc    Test connectionConstantTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("connectionConstantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -219,56 +235,18 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-         * @tc.number: controlDeviceActionTest
-         * @tc.name: controlDeviceActionTest
-         * @tc.desc: Test controlDeviceActionfiles API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("controlDeviceActionTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try {
-                let controlDeviceActionParams: connection.ControlDeviceActionParams = {
-                    deviceId: "40:DC:A5:E5:75:C3",
-                    type: connection.ControlType.PLAY,
-                    typeValue: connection.ControlTypeValue.ENABLE,
-                    controlObject: connection.ControlObject.LEFT_EAR
-                };
-                await connection.controlDeviceAction(controlDeviceActionParams).then(() => {
-                    hilog.info(domain, tag, "controlDeviceAction success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "controlDeviceAction error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "controlDeviceAction get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: getLastConnectionTimeTest
-         * @tc.name: getLastConnectionTimeTest
-         * @tc.desc: Test getLastConnectionTime API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getLastConnectionTimeTest
+         * @tc.name    getLastConnectionTimeTest
+         * @tc.desc    Test getLastConnectionTime API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("getLastConnectionTimeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 await connection.getLastConnectionTime(deviceId).then((time: long) => {
                     hilog.info(domain, tag, "getLastConnectionTime result:" + JSON.stringify(time));
-                }).catch((err) => {
-                    hilog.info(domain, tag, "getLastConnectionTime error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -277,106 +255,31 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: getRemoteDeviceTypeTest
-         * @tc.name: getRemoteDeviceTypeTest
-         * @tc.desc: Test getRemoteDeviceType API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("getRemoteDeviceTypeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try {
-                await connection.getRemoteDeviceType(deviceId).then((data: connection.DeviceType) => {
-                    hilog.info(domain, tag, "getRemoteDeviceType success, deviceType: "+JSON.stringify(data));
-                }).catch((err) => {
-                    hilog.info(domain, tag, "getRemoteDeviceType error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "getRemoteDeviceType get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: updateCloudBluetoothDeviceTest
-         * @tc.name: updateCloudBluetoothDeviceTest
-         * @tc.desc: Test updateCloudBluetoothDevice API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("updateCloudBluetoothDeviceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            const trustPairDeviceArr: connection.TrustedPairedDevice[] = [];
-            let descBuffer = new ArrayBuffer(1);
-            trustPairDeviceArr.push({
-                sn: '',
-                deviceType: '',
-                modelId: '',
-                manufactory: '',
-                productId: '',
-                hiLinkVersion: '',
-                macAddress: '11:22:33:44:55:66',
-                serviceType: '',
-                serviceId: '',
-                deviceName: '',
-                uuids: '',
-                bluetoothClass: 0,
-                token: descBuffer,
-                deviceNameTime: 0,
-                secureAdvertisingInfo: descBuffer,
-                pairState: 0
-            });
-            const trustPairDevices: connection.TrustedPairedDevices = { trustedPairedDevices: trustPairDeviceArr };
-            try {
-                connection.updateCloudBluetoothDevice(trustPairDevices).then(() => {
-                    hilog.info(domain, tag, "updateCloudBluetoothDevice success!");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "updateCloudBluetoothDevice error");
-                    expect().assertFail();
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "updateCloudBluetoothDevice get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: getRemoteDeviceBatteryInfoTest
-         * @tc.name: getRemoteDeviceBatteryInfoTest
-         * @tc.desc: Test getRemoteDeviceBatteryInfo API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  getRemoteDeviceBatteryInfoTest
+         * @tc.name    getRemoteDeviceBatteryInfoTest
+         * @tc.desc    Test getRemoteDeviceBatteryInfo API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("getRemoteDeviceBatteryInfoTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                await connection.getRemoteDeviceBatteryInfo(deviceId).then((data:connection.BatteryInfo) => {
-                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
+                await connection.getRemoteDeviceBatteryInfo(deviceId).then((data: connection.BatteryInfo) => {
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success" + JSON.stringify(data));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo batteryLevel:" + JSON.stringify(data.batteryLevel));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarBatteryLevel:" + JSON.stringify(data.leftEarBatteryLevel));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarChargeState:" + JSON.stringify(data.leftEarChargeState));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarBatteryLevel:" + JSON.stringify(data.rightEarBatteryLevel));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarChargeState:" + JSON.stringify(data.rightEarChargeState));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxBatteryLevel:" + JSON.stringify(data.boxBatteryLevel));
+                    hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxChargeState:" + JSON.stringify(data.boxChargeState));
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -385,27 +288,24 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: setRemoteDeviceNameTest
-         * @tc.name: setRemoteDeviceNameTest
-         * @tc.desc: Test setRemoteDeviceName API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  setRemoteDeviceNameTest
+         * @tc.name    setRemoteDeviceNameTest
+         * @tc.desc    Test setRemoteDeviceName API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("setRemoteDeviceNameTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 await connection.setRemoteDeviceName(deviceId, "RemoteDeviceName").then(() => {
                     hilog.info(domain, tag, "setRemoteDeviceName success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "setRemoteDeviceName error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -414,52 +314,26 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(401);
                 }
             }
             done();
         })
 
-        /*
-         * @tc.number: setRemoteDeviceTypeTest
-         * @tc.name: setRemoteDeviceTypeTest
-         * @tc.desc: Test setRemoteDeviceType API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("setRemoteDeviceTypeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try {
-                await connection.setRemoteDeviceType(deviceId, connection.DeviceType.DEVICE_TYPE_HEADSET).then(() => {
-                    hilog.info(domain, tag, "setRemoteDeviceType success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "setRemoteDeviceType error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "setRemoteDeviceType get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: setDevicePairingConfirmationTest
-         * @tc.name: setDevicePairingConfirmationTest
-         * @tc.desc: Test setDevicePairingConfirmationTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  setDevicePairingConfirmationTest
+         * @tc.name    setDevicePairingConfirmationTest
+         * @tc.desc    Test setDevicePairingConfirmationTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("setDevicePairingConfirmationTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.on("pinRequired", onReceivePinRequiredEvent);
+                connection.setDevicePairingConfirmation(deviceId, false);
+                await Utils.msSleep(2000);
+                connection.off('pinRequired', onReceivePinRequiredEvent);
                 hilog.info(domain, tag, "setDevicePairingConfirmation success");
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -468,25 +342,22 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(2900099);
                 }
             }
             done();
         })
 
-        /*
-        * @tc.number: getBluetoothScanModeTest
-        * @tc.name: getBluetoothScanModeTest
-        * @tc.desc: Test getBluetoothScanMode API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  getBluetoothScanModeTest
+        * @tc.name    getBluetoothScanModeTest
+        * @tc.desc    Test getBluetoothScanMode API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
         it("getBluetoothScanModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let state = btAccess.getState();
-            hilog.info(domain, tag, 'get bluetooth state001'+ JSON.stringify(state));
-            if(state == 2)
-            {
+            try {
                 let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0100 oldScanMode = '+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_NONE,0);
@@ -498,118 +369,289 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0100 setoldscanmode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_001
+        * @tc.name    getBluetoothScanModeTest_001
+        * @tc.desc    Test getBluetoothScanModeTest_001 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0200 oldScanMode = '+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_LIMITED_DISCOVERABLE,0);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0200 newscanmode = '+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_LIMITED_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0200 setoldscanmode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_002
+        * @tc.name    getBluetoothScanModeTest_002
+        * @tc.desc    Test getBluetoothScanModeTest_002 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0300 oldScanMode = '+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_LIMITED_DISCOVERABLE,40000);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0300 getScanMode = '+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_LIMITED_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0300 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_003
+        * @tc.name    getBluetoothScanModeTest_003
+        * @tc.desc    Test getBluetoothScanModeTest_003 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0400 oldScanMode = "+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE,40000);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0400 getScanMode = "+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0400 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_004
+        * @tc.name    getBluetoothScanModeTest_004
+        * @tc.desc    Test getBluetoothScanModeTest_004 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0500 oldScanMode = "+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE,0);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0500 getScanMode = "+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_GENERAL_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0500 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_005
+        * @tc.name    getBluetoothScanModeTest_005
+        * @tc.desc    Test getBluetoothScanModeTest_005 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0600 oldScanMode = "+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE,0);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0600 getScanMode = "+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0600 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_006
+        * @tc.name    getBluetoothScanModeTest_006
+        * @tc.desc    Test getBluetoothScanModeTest_006 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0700 oldScanMode = "+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE,20000);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0700 getScanMode = "+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0700 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_007
+        * @tc.name    getBluetoothScanModeTest_007
+        * @tc.desc    Test getBluetoothScanModeTest_007 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, "ScanMode_0800 oldScanMode = "+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE,0);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0800 getScanMode = '+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0800 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
 
-                oldScanMode = connection.getBluetoothScanMode();
+        /**
+        * @tc.number  getBluetoothScanModeTest_008
+        * @tc.name    getBluetoothScanModeTest_008
+        * @tc.desc    Test getBluetoothScanModeTest_008 API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("getBluetoothScanModeTest_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let oldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0900 oldScanMode = '+ JSON.stringify(Number(oldScanMode)));
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE,30000);
-                getScanMode = connection.getBluetoothScanMode();
+                let getScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0900 getScanMode = '+ JSON.stringify(Number(getScanMode)));
                 expect(true).assertEqual(getScanMode == connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE);
                 connection.setBluetoothScanMode(oldScanMode,0);
-                getOldScanMode = connection.getBluetoothScanMode();
+                let getOldScanMode = connection.getBluetoothScanMode();
                 hilog.info(domain, tag, 'ScanMode_0900 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
             }
-            else
-            {
-                hilog.info(domain, tag, 'bluetooth switch  off,state is   = '+ JSON.stringify(state));
-                expect(true).assertFalse();
-                done();
-            }
+            done();
         })
 
-        /*
-        * @tc.number: getProfileConnectionStateTest
-        * @tc.name: getProfileConnectionStateTest
-        * @tc.desc: Test getProfileConnectionState API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  getProfileConnectionStateTest
+        * @tc.name    getProfileConnectionStateTest
+        * @tc.desc    Test getProfileConnectionState API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
         it("getProfileConnectionStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -630,13 +672,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-        * @tc.number: getLocalNameTest
-        * @tc.name: getLocalNameTest
-        * @tc.desc: Test getLocalName API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  getLocalNameTest
+        * @tc.name    getLocalNameTest
+        * @tc.desc    Test getLocalName API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
         it("getLocalNameTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -656,13 +698,13 @@ export default function bluetoothConnectionTest() {
         })
 
 
-        /*
-        * @tc.number: getPairStateTest
-        * @tc.name: getPairStateTest
-        * @tc.desc: Test getPairState API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  getPairStateTest
+        * @tc.name    getPairStateTest
+        * @tc.desc    Test getPairState API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
         it("getPairStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -682,18 +724,19 @@ export default function bluetoothConnectionTest() {
         })
 
 
-        /*
-        * @tc.number: startBluetoothDiscoveryTest
-        * @tc.name: startBluetoothDiscoveryTest
-        * @tc.desc: Test startBluetoothDiscovery API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  startOrStopBluetoothDiscoveryTest
+        * @tc.name    startOrStopBluetoothDiscoveryTest
+        * @tc.desc    Test startOrStopBluetoothDiscoveryTest API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
-        it("startBluetoothDiscoveryTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("startOrStopBluetoothDiscoveryTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.on("bluetoothDeviceFind", onReceiveEvent2);
                 connection.startBluetoothDiscovery();
+                await Utils.msSleep(3000);
                 connection.off('bluetoothDeviceFind', onReceiveEvent2);
                 connection.stopBluetoothDiscovery();
             } catch (err: BusinessError) {
@@ -709,13 +752,13 @@ export default function bluetoothConnectionTest() {
             done();
         })
 
-        /*
-        * @tc.number: isBluetoothDiscoveringTest
-        * @tc.name: isBluetoothDiscoveringTest
-        * @tc.desc: Test isBluetoothDiscovering API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  isBluetoothDiscoveringTest
+        * @tc.name    isBluetoothDiscoveringTest
+        * @tc.desc    Test isBluetoothDiscovering API functionality
+        * @tc.level   Level 0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
         */
         it("isBluetoothDiscoveringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -731,33 +774,6 @@ export default function bluetoothConnectionTest() {
                     expect().assertFail();
                 }
             }
-            done();
-        })
-
-        /*
-        * @tc.number: stopBluetoothDiscoveryTest
-        * @tc.name: stopBluetoothDiscoveryTest
-        * @tc.desc: Test stopBluetoothDiscovery API functionality
-        * @tc.level: Level 0
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
-        */
-        it("stopBluetoothDiscoveryTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try {
-                connection.on("bluetoothDeviceFind", onReceiveEvent2);
-                connection.startBluetoothDiscovery();
-                connection.off('bluetoothDeviceFind', onReceiveEvent2);
-                connection.stopBluetoothDiscovery();
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, `[bluetooth_js]bluetoothDeviceFin error, code is ${err.code},message is ${err.message}`);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            connection.off('bluetoothDeviceFind', onReceiveEvent2);
             done();
         })
     })

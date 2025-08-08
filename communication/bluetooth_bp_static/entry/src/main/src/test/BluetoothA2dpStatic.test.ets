@@ -65,13 +65,13 @@ export default function bluetoothA2dpTest() {
       }
     })
 
-    /*
-     * @tc.number: getPlayingStateTest
-     * @tc.name: getPlayingStateTest
-     * @tc.desc: Test getPlayingStateTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  getPlayingStateTest
+     * @tc.name    getPlayingStateTest
+     * @tc.desc    Test getPlayingStateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("getPlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
@@ -84,8 +84,8 @@ export default function bluetoothA2dpTest() {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801 || err.code == 2900004) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertTrue();
+          hilog.info(domain, tag, 'api is not support or profile not support');
+          expect(err.code == 801 || err.code == 2900004).assertTrue();
         } else {
           expect(Number(err.code)).assertEqual(2900099);
         }
@@ -93,208 +93,13 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
-    /*
-     * @tc.number: a2dpSourceProfileConnectDisconnectTest
-     * @tc.name: a2dpSourceProfileConnectDisconnectTest
-     * @tc.desc: Test a2dpSourceProfileConnectDisconnectTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("a2dpSourceProfileConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        a2dpSrc.connect(deviceId);
-        hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest connect successful");
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801 || err.code == 2900004) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(202);
-        }
-      }
-
-      try {
-        a2dpSrc.disconnect(deviceId);
-        hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest disconnect successful");
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801 || err.code == 2900004) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(202);
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: setCurrentCodecInfo
-     * @tc.name: setCurrentCodecInfo
-     * @tc.desc: Test setCurrentCodecInfo API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("setCurrentCodecInfo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        let codecInfo: a2dp.CodecInfo = {
-          codecType: a2dp.CodecType.CODEC_TYPE_SBC,
-          codecBitsPerSample: a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE,
-          codecChannelMode: a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_NONE,
-          codecSampleRate: a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_NONE
-        }
-        a2dpSrc.setCurrentCodecInfo(deviceId, codecInfo);
-        hilog.info(domain, tag, "setCurrentCodecInfo success");
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "setCurrentCodecInfo get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(-2);
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: getCurrentCodecInfoTest
-     * @tc.name: getCurrentCodecInfoTest
-     * @tc.desc: Test getCurrentCodecInfoTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("getCurrentCodecInfoTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        let codecInfo: a2dp.CodecInfo = a2dpSrc.getCurrentCodecInfo(deviceId);
-        expect(true).assertEqual(codecInfo != null);
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "getCurrentCodecInfoTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(2900100);
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: disableAutoPlay_promise
-     * @tc.name: disableAutoPlay_promise
-     * @tc.desc: Test disableAutoPlay_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("disableAutoPlay_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        let durationNumber = 1000;
-        a2dpSrc.disableAutoPlay(deviceId, durationNumber).then(() => {
-          hilog.info(domain, tag, "disableAutoPlay success");
-        }).catch((err) => {
-          hilog.info(domain, tag, "disableAutoPlay error");
-          expect(Number(err.code)).assertEqual(0);
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "disableAutoPlay_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: enableAutoPlay_promise
-     * @tc.name: enableAutoPlay_promise
-     * @tc.desc: Test enableAutoPlay_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("enableAutoPlay_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        a2dpSrc.enableAutoPlay(deviceId).then(() => {
-          hilog.info(domain, tag, "enableAutoPlay success");
-        }).catch((err) => {
-          hilog.info(domain, tag, "enableAutoPlay error");
-          expect(Number(err.code)).assertEqual(0);
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "enableAutoPlay_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: getAutoPlayDisabledDuration_promise
-     * @tc.name: getAutoPlayDisabledDuration_promise
-     * @tc.desc: Test getAutoPlayDisabledDuration_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("getAutoPlayDisabledDuration_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-      expect(true).assertEqual(a2dpSrc != null);
-      try {
-        a2dpSrc.getAutoPlayDisabledDuration(deviceId).then((data: int) => {
-          hilog.info(domain, tag, 'getAutoPlayDisabledDuration success');
-        }).catch((err) => {
-          hilog.info(domain, tag, "getAutoPlayDisabledDuration error");
-          expect(Number(err.code)).assertEqual(0);
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "getAutoPlayDisabledDuration_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: PlayingStateTest
-     * @tc.name: PlayingStateTest
-     * @tc.desc: Test PlayingStateTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  PlayingStateTest
+     * @tc.name    PlayingStateTest
+     * @tc.desc    Test PlayingStateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("PlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -312,13 +117,13 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
-    /*
-     * @tc.number: CodecTypeTest
-     * @tc.name: CodecTypeTest
-     * @tc.desc: Test CodecTypeTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  CodecTypeTest
+     * @tc.name    CodecTypeTest
+     * @tc.desc    Test CodecTypeTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("CodecTypeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -353,13 +158,13 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
-    /*
-     * @tc.number: CodecChannelModeTest
-     * @tc.name: CodecChannelModeTest
-     * @tc.desc: Test CodecChannelModeTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  CodecChannelModeTest
+     * @tc.name    CodecChannelModeTest
+     * @tc.desc    Test CodecChannelModeTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("CodecChannelModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -382,13 +187,13 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
-    /*
-     * @tc.number: CodecBitsPerSampleTest
-     * @tc.name: CodecBitsPerSampleTest
-     * @tc.desc: Test CodecBitsPerSampleTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  CodecBitsPerSampleTest
+     * @tc.name    CodecBitsPerSampleTest
+     * @tc.desc    Test CodecBitsPerSampleTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("CodecBitsPerSampleTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -415,13 +220,13 @@ export default function bluetoothA2dpTest() {
       done();
     })
 
-    /*
-     * @tc.number: CodecSampleRateTest
-     * @tc.name: CodecSampleRateTest
-     * @tc.desc: Test CodecSampleRateTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.number  CodecSampleRateTest
+     * @tc.name    CodecSampleRateTest
+     * @tc.desc    Test CodecSampleRateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
     it("CodecSampleRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {

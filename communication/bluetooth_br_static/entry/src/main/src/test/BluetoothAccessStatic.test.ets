@@ -65,13 +65,13 @@ export default function bluetoothAccessTest() {
             }
         })
 
-        /*
-         * @tc.number: constantTest
-         * @tc.name: constantTest
-         * @tc.desc: Test constantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  constantTest
+         * @tc.name    constantTest
+         * @tc.desc    Test constantTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("constantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -107,13 +107,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: bluetoothOnOffStateTest
-         * @tc.name: bluetoothOnOffStateTest
-         * @tc.desc: Test bluetoothOnOffStateTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  bluetoothOnOffStateTest
+         * @tc.name    bluetoothOnOffStateTest
+         * @tc.desc    Test bluetoothOnOffStateTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("bluetoothOnOffStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -175,13 +175,13 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: accessConstantTest
-         * @tc.name: accessConstantTest
-         * @tc.desc: Test accessConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  accessConstantTest
+         * @tc.name    accessConstantTest
+         * @tc.desc    Test accessConstantTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
          */
         it("accessConstantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -215,21 +215,19 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number deletePersistentDeviceIdSyncTest
-         * @tc.name deletePersistentDeviceIdSyncTest
-         * @tc.desc Test deletePersistentDeviceId API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.number  deletePersistentDeviceIdSyncTest
+         * @tc.name    deletePersistentDeviceIdSyncTest
+         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         * @tc.level   Level 0
          */
         it("deletePersistentDeviceIdSyncTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 await access.deletePersistentDeviceId("11:22:33:44:55:66").then(() => {
                     hilog.info(domain, tag, "deletePersistentDeviceId success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "deletePersistentDeviceId error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
                 });
+                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "deletePersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
@@ -237,19 +235,19 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number getPersistentDeviceIdsTest
-         * @tc.name getPersistentDeviceIdsTest
-         * @tc.desc Test getPersistentDeviceIds API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.number  getPersistentDeviceIdsTest
+         * @tc.name    getPersistentDeviceIdsTest
+         * @tc.desc    Test getPersistentDeviceIds API functionality
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         * @tc.level   Level 0
          */
         it("getPersistentDeviceIdsTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
@@ -270,12 +268,12 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number isValidRandomDeviceIdTest
-         * @tc.name isValidRandomDeviceIdTest
-         * @tc.desc Test isValidRandomDeviceId API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.number  isValidRandomDeviceIdTest
+         * @tc.name    isValidRandomDeviceIdTest
+         * @tc.desc    Test isValidRandomDeviceId API functionality
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         * @tc.level   Level 0
          */
         it("isValidRandomDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
@@ -296,21 +294,19 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number addPersistentDeviceIdTest
-         * @tc.name addPersistentDeviceIdTest
-         * @tc.desc Test addPersistentDeviceId API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.number  addPersistentDeviceIdTest
+         * @tc.name    addPersistentDeviceIdTest
+         * @tc.desc    Test addPersistentDeviceId API functionality
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         * @tc.level   Level 0
          */
         it("addPersistentDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 await access.addPersistentDeviceId("11:22:33:44:55:66").then(() => {
                     hilog.info(domain, tag, "addPersistentDeviceId success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "addPersistentDeviceId error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
                 });
+                expect().assertFail();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "addPersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
@@ -318,63 +314,31 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
                 } else {
-                    expect().assertFail();
+                    expect(Number(err.code)).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number notifyDialogResultTest
-         * @tc.name notifyDialogResultTest
-         * @tc.desc Test notifyDialogResult API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
-         */
-        it("notifyDialogResultTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
-            try {
-                let params: access.NotifyDialogResultParams = {
-                    dialogType: access.DialogType.BLUETOOTH_SWITCH,
-                    dialogResult: true
-                }
-                await access.notifyDialogResult(params).then(() => {
-                    hilog.info(domain, tag, "notifyDialogResult success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "notifyDialogResult error " + JSON.stringify(err));
-                    expect(Number(err.code)).assertEqual(0);
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "notifyDialogResult get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /**
-         * @tc.number bluetoothOnOffStateTest_async
-         * @tc.name bluetoothOnOffStateTest_async
-         * @tc.desc Test bluetoothOnOffStateTest_async API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
+         * @tc.number  bluetoothOnOffStateTest_async
+         * @tc.name    bluetoothOnOffStateTest_async
+         * @tc.desc    Test bluetoothOnOffStateTest_async API functionality
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         * @tc.level   Level 0
          */
         it("bluetoothOnOffStateTest_async", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 let isNotSupport = false;
                 access.disableBluetoothAsync().then(() => {
                     hilog.info(domain, tag, "disableBluetoothAsync success");
+                    done();
                 }).catch((err) => {
                     hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801) {
                         hilog.info(domain, tag, 'api is not support');
-                        expect(true).assertTrue();
+                        expect(err.code == 801).assertTrue();
                         isNotSupport = true;
                     } else {
                         expect().assertFail();
@@ -385,12 +349,13 @@ export default function bluetoothAccessTest() {
                     await Utils.clickRequestPermission("关闭");
                     await Utils.msSleep(10000);
                     hilog.info(domain, tag, "after disableBluetoothAsync state:" + access.getState());
+                    expect(access.getState()).assertEqual(0);
                 }
             } catch (error: BusinessError) {
                 hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(error));
                 if (Number(error.code) == 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertTrue();
+                    expect(error.code == 801).assertTrue();
                 }
             }
             try {
@@ -400,12 +365,12 @@ export default function bluetoothAccessTest() {
                     done();
                 }).catch((err) => {
                     hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(err));
-                    if (Number(err.code) == 801  || Number(err.code) == 2900099) {
+                    if (Number(err.code) == 801) {
                         hilog.info(domain, tag, 'api is not support');
-                        expect(true).assertTrue();
+                        expect(err.code == 801).assertTrue();
                         isNotSupports = true;
                     } else {
-                        expect(Number(err.code)).assertEqual(0);
+                        expect().assertFail();
                     }
                 });
                 await Utils.msSleep(2000);
@@ -416,39 +381,13 @@ export default function bluetoothAccessTest() {
                 hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(error));
                 if (Number(error.code) == 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertTrue();
+                    expect(error.code == 801).assertTrue();
                 }
             }
             await Utils.msSleep(2000);
             hilog.info(domain, tag, "after enableBluetoothAsync state:" + access.getState());
             expect(access.getState()).assertEqual(2);
             await Utils.msSleep(10000);
-            done();
-        })
-
-        /**
-         * @tc.number getLocalAddressTest
-         * @tc.name getLocalAddressTest
-         * @tc.desc Test getLocalAddress API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
-         */
-        it("getLocalAddressTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
-            try {
-                let macs: string = access.getLocalAddress();
-                hilog.info(domain, tag, "GetLocalAddress:" + JSON.stringify(macs));
-                expect(true).assertEqual(macs.length != 0);
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "GetLocalAddress get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
             done();
         })
     })

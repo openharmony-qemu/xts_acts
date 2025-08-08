@@ -55,9 +55,6 @@
           ],
           "when":"inuse"
         }
-      },
-      {
-        "name": 'ohos.permission.GET_BLUETOOTH_LOCAL_MAC',
       }
     ]
   }
