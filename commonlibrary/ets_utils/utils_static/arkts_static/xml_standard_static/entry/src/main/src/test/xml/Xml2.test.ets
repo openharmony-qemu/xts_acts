@@ -187,7 +187,7 @@ export default function xmlTest2() {
         let options: xml.ParseOptions = { supportDoctype: true, ignoreNameSpace: true, tagValueCallbackFunction: func6 }
         that.parseXml(options);
         expect().assertFail();
-      } catch (e : BusinessError | Error) {
+      } catch (e : BusinessError) {
         expect(e.toString()).assertEqual("BusinessError: The node name contains invalid characters: <");
         expect(e.code).assertEqual(401);
       }
