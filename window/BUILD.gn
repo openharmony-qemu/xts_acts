@@ -22,5 +22,6 @@ group("window") {
     "windowOneStatic:ActsWindowOneStaticTest",
     "windowTwoStatic:ActsWindowTwoStaticTest",
     "ActsDisplayTestStatic:ActsDisplayStaticTest",
+    "ActsWindowTestStatic:ActsWindowStaticTest",
   ]
 }

@@ -1,0 +1,437 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import hilog from '@ohos.hilog'
+import Utils from './Util.test';
+
+import display from '@ohos.display';
+import { BusinessError } from '@ohos.base';
+// import { MyCallback } from '../models/MyCallback';
+import window from '@ohos.window'
+import { UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import type { AsyncCallback, Callback} from '@ohos.base'
+import common from '@ohos.app.ability.common';
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+
+export default function WindowImmersiveTest() {
+
+    describe("WindowImmersiveTest", (): void => {
+        hilog.info(domain, tag, '%{public}s', 'WindowImmersiveTest describe start');
+        let windowStage: window.WindowStage;
+        let win: window.Window;
+        let context: common.UIAbilityContext;
+        // let session:UIExtensionContentSession;
+        //let isAutoWindow: string = '';
+        //let isPCStatus: string = '';
+        beforeAll(() => {
+            //context = AppStorage.get('context') as common.UIAbilityContext;
+            //console.log('windowTest context: ' + JSON.stringify(context))
+            try {
+                windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
+                win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
+                context = AppStorage.get<common.UIAbilityContext>('context',Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+                // let win = windowStage.getMainWindowSync();
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
+            }
+
+            hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
+            hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
+
+            //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+            //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+            //isPCStatus == '' 非PC设备
+            //isPCStatus == '1' PC设备状态栏dock未融合
+            //isPCStatus == '0' PC设备状态栏dock融合
+            //console.info(`beforeAll isPCStatus: `+ isPCStatus);
+        })
+
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+         * @tc.name      : testGetWindowAvoidArea_1300002_static_0300
+         * @tc.desc      : testGetWindowAvoidArea_1300002_static_0300
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testGetWindowAvoidArea_1300002_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetWindowAvoidArea_1300002_static_0300';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window = await windowStage.createSubWindow('testGetWindowAvoidArea_1300002_static_0200');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.destroyWindow();
+            try {
+                let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
+                let avoidArea:window.AvoidArea = win.getWindowAvoidArea(type);
+                expect().assertFail();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to getWindowAvoidArea. Cause: '+exception.code+'  ' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002)
+                done()
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0660
+         * @tc.name      : testGetWindowAvoidArea_Type_System_static_0400
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testGetWindowAvoidArea_Type_System_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetWindowAvoidArea_Type_System_static_0400';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidArea(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception: BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+                ;
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            }
+            ;
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0640
+         * @tc.name      : testGetWindowAvoidArea_Type_CutOut_static_0500
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testGetWindowAvoidArea_Type_CutOut_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetWindowAvoidArea_Type_CutOut_static_0500';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage.getMainWindowSync();
+                expect(tempWnd != null).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_CUTOUT;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidArea(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(!avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception: BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+                ;
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            }
+            ;
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0670
+         * @tc.name      : testGetWindowAvoidArea_Type_System_Gesture_static_0600
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testGetWindowAvoidArea_Type_System_Gesture_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetWindowAvoidArea_Type_System_Gesture_static_0600';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM_GESTURE;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidArea(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception: BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+                ;
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            }
+            ;
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0650
+         * @tc.name      : testGetWindowAvoidArea_Type_Keyboard_static_0700
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testGetWindowAvoidArea_Type_Keyboard_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetWindowAvoidArea_Type_Keyboard_static_0700';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            try {
+                let tempWnd: window.Window = windowStage.getMainWindowSync();
+                expect(!!tempWnd).assertTrue();
+                try {
+                    let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_KEYBOARD;
+                    let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidArea(type);
+                    hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect != null).assertTrue();
+                    expect(avoidArea.rightRect != null).assertTrue();
+                    expect(avoidArea.bottomRect != null).assertTrue();
+                    expect(avoidArea.leftRect != null).assertTrue();
+                    done();
+                } catch (exception: BusinessError) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+                ;
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            }
+            ;
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+         * @tc.name      : testGetWindowAvoidAreaTypeNavigationIndicator_static_0800
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeNavigationIndicator_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeNavigationIndicator_static_0800';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+                hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                expect(avoidArea.visible).assertTrue();
+                expect(avoidArea.topRect !== null).assertTrue();
+                expect(avoidArea.rightRect !== null).assertTrue();
+                expect(avoidArea.bottomRect !== null).assertTrue();
+                expect(avoidArea.leftRect !== null).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+         * @tc.name      : testGetWindowAvoidAreaTypeSystemInLandScape_static_0900
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeSystemInLandScape_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInLandScape_static_0900';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE, () => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in setting window orientation`);
+                    let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+                    hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect !== null).assertTrue();
+                    expect(avoidArea.rightRect !== null).assertTrue();
+                    expect(avoidArea.bottomRect !== null).assertTrue();
+                    expect(avoidArea.leftRect !== null).assertTrue();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+         * @tc.name      : testGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED, () => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in setting window orientation`);
+                    let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+                    hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect !== null).assertTrue();
+                    expect(avoidArea.rightRect !== null).assertTrue();
+                    expect(avoidArea.bottomRect !== null).assertTrue();
+                    expect(avoidArea.leftRect !== null).assertTrue();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+         * @tc.name      : testGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED, () => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in setting window orientation`);
+                    let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
+                    hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                    expect(avoidArea.visible).assertFalse();
+                    expect(avoidArea.topRect !== null).assertTrue();
+                    expect(avoidArea.rightRect !== null).assertTrue();
+                    expect(avoidArea.bottomRect !== null).assertTrue();
+                    expect(avoidArea.leftRect !== null).assertTrue();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+         * @tc.name      : testGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED, () => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in setting window orientation`);
+                    let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+                    hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                    expect(avoidArea.visible).assertTrue();
+                    expect(avoidArea.topRect !== null).assertTrue();
+                    expect(avoidArea.rightRect !== null).assertTrue();
+                    expect(avoidArea.bottomRect !== null).assertTrue();
+                    expect(avoidArea.leftRect !== null).assertTrue();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+         * @tc.name      : testGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300
+         * @tc.desc      : Obtain the area that the window content avoids
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'TestGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300';
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED, () => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in setting window orientation`);
+                    let avoidArea:window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
+                    hilog.info(0x0000, '[ANI]',`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+                    expect(avoidArea.visible).assertFalse();
+                    expect(avoidArea.topRect !== null).assertTrue();
+                    expect(avoidArea.rightRect !== null).assertTrue();
+                    expect(avoidArea.bottomRect !== null).assertTrue();
+                    expect(avoidArea.leftRect !== null).assertTrue();
+                    windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_MAXIMIZE_JS_API_0100
+         * @tc.name      : testMaximizePresentation_enum_static_0100
+         * @tc.desc      : Test the function value of RectChangeReason
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level0
+         */
+        it("testMaximizePresentation_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testMaximizePresentation_enum_static_0100";
+            hilog.info(0x0000, '[ANI]',msgStr + "begin");
+            try {
+                expect(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).assertEqual(0);
+                expect(window.MaximizePresentation.EXIT_IMMERSIVE).assertEqual(1);
+                expect(window.MaximizePresentation.ENTER_IMMERSIVE).assertEqual(2);
+                // expect(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER).assertEqual(3);
+                done();
+            } catch (error: BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to MaximizePresentation' + JSON.stringify(error));
+                expect().assertFail();
+                done();
+            }
+        })
+
+
+
+
+
+
+    })
+
+}
