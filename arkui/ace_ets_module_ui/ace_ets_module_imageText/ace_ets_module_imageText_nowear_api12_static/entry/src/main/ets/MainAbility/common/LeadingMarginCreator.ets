@@ -99,7 +99,7 @@ export default class LeadingMarginCreator {
     const centerCoordinate = 50
     const radius = 10
     this.clearCanvas()
-    newOffContext.ellipse(100 * (indentLevel + 1) - centerCoordinate * marginLevel, offsetLevel[fontSizeLevel],
+    newOffContext.ellipse(100 * (indentLevel + 1) - centerCoordinate * marginLevel, offsetLevel[fontSizeLevel.toInt()],
       radius * marginLevel, radius, 0, 0, 2 * Math.PI)
     newOffContext.fillStyle = '66FF0000'
     newOffContext.fill()

@@ -61,7 +61,7 @@ export class ThrowingIterable {
 
 export class ArrayItemIterator<T> {
   private items: Array<T>;
-  private index: number = 0;
+  private index: int = 0;
 
   constructor(items: Array<T>) {
     this.items = items;

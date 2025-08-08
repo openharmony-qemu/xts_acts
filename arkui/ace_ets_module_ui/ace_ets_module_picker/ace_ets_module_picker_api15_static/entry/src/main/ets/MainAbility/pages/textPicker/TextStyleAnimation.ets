@@ -35,7 +35,7 @@ struct TextPickerTextStyleAnimation {
       TextPicker({
         range: this.fruits,
         selected: this.select,
-        value: this.fruits[this.select]
+        value: this.fruits[this.select.toInt()]
       })
         .key('TextPickerAnimation')
         .disableTextStyleAnimation(this.textStyleAnimation)

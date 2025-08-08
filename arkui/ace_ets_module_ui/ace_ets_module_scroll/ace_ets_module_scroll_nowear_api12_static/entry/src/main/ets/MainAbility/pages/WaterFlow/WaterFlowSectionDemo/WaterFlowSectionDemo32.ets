@@ -86,7 +86,7 @@ struct WaterFlowSectionDemo32 {
           .key(`WaterFlowSectionDemo32_${item}`)
           .height(100)
           .width(100)
-          .backgroundColor(this.colors[item % 5])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number, index: number) => String(item))
       }
       .layoutDirection(FlexDirection.Row)

@@ -46,7 +46,7 @@ class MyDataInteger implements IDataSource<number> {
   }
 
   getData(index: double): Double {
-    return this.list[index]
+    return this.list[index.toInt()]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

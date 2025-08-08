@@ -566,7 +566,7 @@ export default function MessageTest2() {
           if (result.length == messages.length) {
             result.forEach((msg, index) => {
               console.error(`equals`);
-              expect(msg.equals(messages[index])).assertTrue();
+              expect(msg.equals(messages[index.toInt()])).assertTrue();
             });
           } else {
             expect().assertFail();
@@ -622,7 +622,7 @@ export default function MessageTest2() {
           }
           if (result.length == messages.length) {
             result.forEach((msg, index) => {
-              expect(msg.equals(messages[index])).assertTrue();
+              expect(msg.equals(messages[index.toInt()])).assertTrue();
             });
           } else {
             expect().assertFail();

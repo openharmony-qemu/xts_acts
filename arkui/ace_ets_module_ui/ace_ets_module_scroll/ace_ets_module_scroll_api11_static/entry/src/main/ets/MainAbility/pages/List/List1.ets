@@ -125,7 +125,7 @@ struct ListExample11 {
         })
         .onItemDragStart((event: ItemDragInfo, itemIndex: number): CustomBuilder => {
           this.bool1 = true
-          this.text = this.arr1[itemIndex]
+          this.text = this.arr1[itemIndex.toInt()]
           console.log('onItemDragStart, itemIndex:' + itemIndex);
           return this.pixelMapBuilder;
         })

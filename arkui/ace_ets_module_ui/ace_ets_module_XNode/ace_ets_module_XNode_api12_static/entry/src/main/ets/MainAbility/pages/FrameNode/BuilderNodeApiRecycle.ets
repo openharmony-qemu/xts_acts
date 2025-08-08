@@ -48,7 +48,7 @@ class MyDataSource implements IDataSource<string>{
     return this.dataArray.length;
   }
   public getData(index: number) {
-    return this.dataArray[index];
+    return this.dataArray[index.toInt()];
   }
   public pushData(data: string) {
     this.dataArray.push(data);

@@ -92,7 +92,7 @@ class MyNodeAdapter extends NodeAdapter {
   changeData(from: number, count: number): void {
     this.changed = !this.changed;
     for (let i = 0; i < count; i++) {
-      let index = i + from;
+      let index = i + from.toInt();
       this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + " r:" + this.reloadTimes;
     }
     this.reloadItem(from, count);

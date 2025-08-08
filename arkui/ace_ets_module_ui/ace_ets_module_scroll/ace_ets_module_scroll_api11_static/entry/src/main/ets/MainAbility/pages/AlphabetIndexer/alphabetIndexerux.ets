@@ -200,7 +200,7 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .alignStyle(IndexerAlign.Left)
@@ -208,15 +208,15 @@ struct AlphabetIndexerTestux {
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -237,22 +237,22 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -279,22 +279,22 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -321,22 +321,22 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -363,22 +363,22 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .popupFont({ size: 28, weight: FontWeight.Bold })
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -404,7 +404,7 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .alignStyle(IndexerAlign.Left)
@@ -412,15 +412,15 @@ struct AlphabetIndexerTestux {
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []
@@ -442,7 +442,7 @@ struct AlphabetIndexerTestux {
         .selectedBackgroundColor(0xBEBEBE)
         .itemSize(26)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' Selected!')
+          console.info(this.value[index.toInt()] + ' Selected!')
         })
         .usingPopup(true)
         .alignStyle(IndexerAlign.Left)
@@ -450,15 +450,15 @@ struct AlphabetIndexerTestux {
         .popupColor(0xFFA500)
         .popupBackground(0x32CD32)
         .onRequestPopupData((index: number): Array<string> => {
-          if (this.value[index] == 'A') {
+          if (this.value[index.toInt()] == 'A') {
             return this.arrayA
-          } else if (this.value[index] == 'B') {
+          } else if (this.value[index.toInt()] == 'B') {
             return this.arrayB
-          } else if (this.value[index] == 'C') {
+          } else if (this.value[index.toInt()] == 'C') {
             return this.arrayC
-          } else if (this.value[index] == 'L') {
+          } else if (this.value[index.toInt()] == 'L') {
             return this.arrayL
-          } else if (this.value[index] == 'T') {
+          } else if (this.value[index.toInt()] == 'T') {
             return this.arrayT
           } else {
             return []

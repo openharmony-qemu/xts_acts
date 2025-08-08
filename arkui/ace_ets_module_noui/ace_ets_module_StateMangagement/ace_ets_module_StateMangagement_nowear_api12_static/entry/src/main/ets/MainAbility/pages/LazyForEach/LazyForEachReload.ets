@@ -51,7 +51,7 @@ class WaterFlowDataSource implements IDataSource<string> {
   }
 
   getData(index: number): string {
-    return `${this.dataArray[index]}`
+    return `${this.dataArray[index.toInt()]}`
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -111,7 +111,7 @@ struct WaterFlowDemo {
           }
           .width('100%')
           .height('25%')
-          .backgroundColor(this.colors[Number(item)%5])
+          .backgroundColor(this.colors[Number(item).toInt() % 5])
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr')

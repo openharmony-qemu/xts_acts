@@ -193,7 +193,7 @@ struct UpDownTreeEventIndex {
   build() {
     Column() {
       if(this.isShow){
-        NodeContainer(this.myNodeControllerArray[this.index % this.myNodeControllerArray.length])
+        NodeContainer(this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length])
       }
 
       Button('bindAndUnbinde')
@@ -231,8 +231,8 @@ struct UpDownTreeEventIndex {
       Button('TestValue').height('10%')
         .id('getTestValue')
         .onClick((e: ClickEvent)=>{
-          if (this.myNodeControllerArray[this.index % this.myNodeControllerArray.length] != null) {
-            let node =this.myNodeControllerArray[this.index % this.myNodeControllerArray.length];
+          if (this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length] != null) {
+            let node =this.myNodeControllerArray[this.index.toInt() % this.myNodeControllerArray.length];
             this.attachValue = node.attachValue
             this.detachValue = node.detachValue
             this.bindValue = node.bindValue

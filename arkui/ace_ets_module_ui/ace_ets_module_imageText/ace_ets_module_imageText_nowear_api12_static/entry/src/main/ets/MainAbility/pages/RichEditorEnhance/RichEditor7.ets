@@ -24,7 +24,7 @@ struct RichEditor7 {
   @State enterTypeALl: EnterKeyType[] = [ EnterKeyType.Done, EnterKeyType.Go,  EnterKeyType.Search, EnterKeyType.Send, EnterKeyType.Next, EnterKeyType.PREVIOUS, EnterKeyType.NEW_LINE]
   @State enterTypeAllStr: string[] = ['Done', 'Go', 'Search', 'Send', 'Next', 'PREVIOUS', 'NEW_LINE']
   @State enterType: number = 0
-  @State enterKey: string = this.enterTypeALl[this.enterType].toString()
+  @State enterKey: string = this.enterTypeALl[this.enterType.toInt()].toString()
   @State IsShowCustomKeyboard: boolean = false
   @State IsCallKeepEditableState: boolean = false
   @State start: number = -1
@@ -109,7 +109,7 @@ struct RichEditor7 {
         }.width('100%')
 
         Row() {
-          Button('回车键类型: ' + this.enterTypeAllStr[this.enterType]).id('EnterType')
+          Button('回车键类型: ' + this.enterTypeAllStr[this.enterType.toInt()]).id('EnterType')
             .onClick((e: ClickEvent) => {
               this.enterType++
               if (this.enterType > (this.enterTypeALl.length - 1)) {
@@ -145,7 +145,7 @@ struct RichEditor7 {
           .border({ width: 1 })
           .borderWidth(1)
           .borderColor(Color.Red)
-          .enterKeyType(this.enterTypeALl[this.enterType])
+          .enterKeyType(this.enterTypeALl[this.enterType.toInt()])
           .onSubmit((enterKey: EnterKeyType, event: SubmitEvent): void => {
             this.enterKey = enterKey.toString();
 

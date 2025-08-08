@@ -59,7 +59,7 @@ struct listAnimationVisibleExample {
     Column() {
       Text('List: ' + this.lastViewIndex)
         .id('visible_last_index')
-      Button('设置显隐: ' + this.mViewShow[this.mViewShowIndex])
+      Button('设置显隐: ' + this.mViewShow[this.mViewShowIndex.toInt()])
         .id('list_visible_change')
         .onClick((e: ClickEvent) => {
           if (this.mViewShowIndex == 2) {
@@ -78,7 +78,7 @@ struct listAnimationVisibleExample {
           ListItem() {
             Text('Item:' + item + ', itemIndex:' + itemIndex)
               .width('100%')
-              .height(itemIndex % 3 == 0 ? this.mHeight[this.mHeightIndex] : this.mHeight[0])
+              .height(itemIndex % 3 == 0 ? this.mHeight[this.mHeightIndex.toInt()] : this.mHeight[0])
               .textAlign(TextAlign.Center)
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
@@ -91,7 +91,7 @@ struct listAnimationVisibleExample {
           })
           .borderColor(Color.Pink)
           .borderWidth(2)
-          .visibility(itemIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex] : Visibility.Visible)
+          .visibility(itemIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex.toInt()] : Visibility.Visible)
         }, (item: number, itemIndex: number) => item + itemIndex + '')
       }
       .width('90%')

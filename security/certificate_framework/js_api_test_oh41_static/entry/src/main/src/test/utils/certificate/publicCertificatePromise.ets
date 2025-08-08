@@ -421,7 +421,7 @@ async function checkGetRevokedCertWithCertX509CRLPromise(crlInstance: cert.X509C
 
 async function checkGetRevokedCertsX509CRLPromise(certType: string): Promise<void> {
   try {
-    let gIndex: number;
+    let gIndex: int;
     let revocation: string;
     let instance: cert.X509CRL = await createX509CRLInstancePromise(certType);
     let certs: cert.X509CRLEntry[] = await instance.getRevokedCerts();

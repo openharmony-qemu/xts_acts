@@ -1200,7 +1200,7 @@ export default function TaskPoolLibTest() {
           taskArray.push(task3);
         }
 
-        for (let i: number = 0; i < allCount; i += 3) {
+        for (let i = 0; i < allCount; i += 3) {
           let res1: NullishType = await taskpool.execute(taskArray[i], taskpool.Priority.HIGH);
           lowTime += (res1 as number - begin);
           let res2: NullishType = await taskpool.execute(taskArray[i + 1], taskpool.Priority.LOW);
@@ -1799,7 +1799,7 @@ export default function TaskPoolLibTest() {
         let arr: Array<number> = new Array<number>(1, 2, 3, 4);
         let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
         let arrayInt: Int32Array = new Int32Array(arrayBuffer);
-        for (let i: number = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
           arrayInt[i] = arr[i];
         }
         let task: taskpool.Task = new taskpool.Task(setCloneListTest, arrayInt);

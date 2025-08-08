@@ -71,7 +71,7 @@ struct sceneTypeFrame {
         .onClick((e: ClickEvent) => {
           this.scenes.forEach((scenes: SwiperDynamicSyncScene) => {
             if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {
-              this.frameRateValue = this.frameRateList[this.frameRateIndex][0][0]
+              this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][0]
               if (this.frameRateValue !== 6666) {
                 this.frameRate.expected = this.frameRateValue
                 scenes.setFrameRateRange(this.frameRate)
@@ -79,7 +79,7 @@ struct sceneTypeFrame {
               }
             }
             if (scenes.type == SwiperDynamicSyncSceneType.ANIMATION) {
-              this.frameRateValue = this.frameRateList[this.frameRateIndex][0][1]
+              this.frameRateValue = this.frameRateList[this.frameRateIndex.toInt()][0][1]
               if (this.frameRateValue !== 6666) {
                 this.frameRate.expected = this.frameRateValue
                 scenes.setFrameRateRange(this.frameRate)

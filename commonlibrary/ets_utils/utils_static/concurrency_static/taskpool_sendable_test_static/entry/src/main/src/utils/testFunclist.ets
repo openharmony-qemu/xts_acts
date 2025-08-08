@@ -55,7 +55,7 @@ export function setCloneListTest(arrayBuffer: number[]): Int32Array {
 
   let view: Int32Array = new Int32Array(arrayBuffer);
   let arr: number[] = [5, 6, 7, 8];
-  for (let i: number = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     view[i] = arr[i];
   }
   return view;

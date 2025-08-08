@@ -64,6 +64,6 @@ struct NavigationModel01 {
         this.currentIndex ++
         this.strText =  'doing' + `${ this.currentIndex }`
       })
-    }.width(this.Sizearr[this.FatherColumnWidthIndex]).height('100%').backgroundColor('#F1F3F5')
+    }.width(this.Sizearr[this.FatherColumnWidthIndex.toInt()]).height('100%').backgroundColor('#F1F3F5')
   }
 }

@@ -30,7 +30,7 @@ export function allocateAndBypassFunction<T>(input: T): T {
 export function fillAndBypass(containers: NumberContainerArray, value: number): number {
   // NOTE this can be used only after concurrent arrays become available
   let containerArray: NumberContainer[] = containers.data;
-  let container: NumberContainer = containerArray[value];
+  let container: NumberContainer = containerArray[value.toInt()];
   container.data = value;
   return container.data;
 }
