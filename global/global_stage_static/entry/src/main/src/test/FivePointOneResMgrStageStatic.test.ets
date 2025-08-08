@@ -126,7 +126,7 @@ export default function FivePointOne_resMgrStageTest() {
         expect(JSON.stringify(error.code) == '9001001').assertTrue();
       }
     })
-       
+
     /**
      * @tc.number   : resourceManager_test_getIntPluralStringByNameSync_static_0100
      * @tc.name     : resourceManager_test_getIntPluralStringByNameSync_static_0100
@@ -140,7 +140,7 @@ export default function FivePointOne_resMgrStageTest() {
       console.log('resourceManager_test_getIntPluralStringByNameSync_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
-    
+
     /**
      * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1010
      * @tc.name      : resourceManager_test_getIntPluralStringValueSync_static_1010
