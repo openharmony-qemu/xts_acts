@@ -98,7 +98,7 @@ export default function Array_Slice_Second_Test_static() {
 
     /**
      * @tc.number SUB_ARRAY_SLICE_SECOND_TEST_0300
-     * @tc.name Array_Slice_Second_Test_static_0200
+     * @tc.name Array_Slice_Second_Test_static_0300
      * @tc.desc test slice(self: FixedArray<double>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
