@@ -353,7 +353,10 @@ export default function requestPermissionOnSettingStaticTest() {
                     });
                   });
                   await Utils.msSleep(2000);
-                  clickRequest(driver3, '允许');
+                  if (!clickRequest(driver3, '允许')) {
+                    if (clickRequest(driver3, '允许写入'))
+                      clickRequest(driver2, '确定');
+                  }
                 });
                 await Utils.msSleep(2000);
                 clickRequest(driver2, '允许');
@@ -429,6 +432,8 @@ export default function requestPermissionOnSettingStaticTest() {
                   if(!clickRequest(driver5, '禁止')) {
                     if(!clickRequest(driver5, '不允许')) {
                       clickRequest(driver5, '取消');
+                    } else {
+                      clickRequest(driver5, '确定');
                     }
                   }
                 });
@@ -437,6 +442,8 @@ export default function requestPermissionOnSettingStaticTest() {
                 if(!clickRequest(driver4, '禁止')) {
                   if(!clickRequest(driver4, '不允许')) {
                     clickRequest(driver4, '取消');
+                  } else {
+                    clickRequest(driver4, '确定');
                   }
                 }
               });
@@ -445,6 +452,8 @@ export default function requestPermissionOnSettingStaticTest() {
               if(!clickRequest(driver3, '禁止')) {
                 if(!clickRequest(driver3, '不允许')) {
                   clickRequest(driver3, '取消');
+                } else {
+                  clickRequest(driver3, '确定');
                 }
               }
             });
@@ -453,6 +462,8 @@ export default function requestPermissionOnSettingStaticTest() {
             if(!clickRequest(driver2, '禁止')) {
               if(!clickRequest(driver2, '不允许')) {
                 clickRequest(driver2, '取消');
+              } else {
+                clickRequest(driver2, '确定');
               }
             }
           });
@@ -460,6 +471,8 @@ export default function requestPermissionOnSettingStaticTest() {
           if(!clickRequest(driver1, '禁止')) {
             if(!clickRequest(driver1, '不允许')) {
               clickRequest(driver1, '取消');
+            } else {
+              clickRequest(driver1, '确定');
             }
           }
         } catch (error: BusinessError<void>) {
@@ -510,7 +523,9 @@ export default function requestPermissionOnSettingStaticTest() {
             });
             await Utils.msSleep(2000);
             if (!clickRequest(driver2, '允许')) {
-              clickRequest(driver2, '仅使用期间允许');
+              if (clickRequest(driver2, '仅使用期间允许')) {
+                clickRequest(driver2, '确定');
+              }
             }
           });
           await Utils.msSleep(2000);
@@ -567,14 +582,20 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             });
             await Utils.msSleep(2000);
-            clickRequest(driver2, '允许');
+            if (clickRequest(driver2, '允许')) {
+              clickRequest(driver2, '确定');
+            }
             await Utils.msSleep(2000);
-            clickRequest(driver2, '允许');
+            if (clickRequest(driver2, '允许')) {
+              clickRequest(driver2, '确定');
+            }
           });
           await Utils.msSleep(2000);
-          clickRequest(driver1, '禁止');
-          await Utils.msSleep(2000);
-          clickRequest(driver1, '禁止');
+          if(!clickRequest(driver1, '禁止')) {
+            if(!clickRequest(driver1, '不允许')) {
+              clickRequest(driver1, '取消');
+            }
+          }
         } catch (error: BusinessError<void>) {
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 catch err" + JSON.stringify(error));
           expect(false).assertFail();
