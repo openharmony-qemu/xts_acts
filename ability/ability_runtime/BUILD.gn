@@ -50,6 +50,7 @@ group("ability_runtime") {
       "actschildprocessmanager:actschildprocessmanagertest",
       "actscleantemptest:cleantempfiles",
       "actscollaborateresulttest:actscollaborateresulttest",
+      "actscollaborateresultteststatic:actscollaborateresultstatictest",
       "actscontextmonitor:ActsContextMonitorTest",
       "actscompletionhandlertest:actscompletionhandlertest",
       "actscreatebundlecontexttest:ActsCreateBundleContextTest",
