@@ -80,6 +80,9 @@ export default function flexBasisTest() {
     },
     expectValue: {
       expectFlexBasis: '100.00vp',
+      expectAlignSelf: '',
+      expectSize: 0,
+      flexShrink: ''
       // expectSize: vp2px(100.00)
     }
   }, {
@@ -89,7 +92,9 @@ export default function flexBasisTest() {
     },
     expectValue: {
       expectFlexBasis: '200.00px',
-      expectSize: 200.00
+      expectAlignSelf: '',
+      expectSize: 200.00,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStringPercent',
@@ -97,6 +102,10 @@ export default function flexBasisTest() {
       flexBasis: '50%'
     },
     expectValue: {
+      expectFlexBasis: 'undefined',
+      expectAlignSelf: '',
+      expectSize: 200.00,
+      flexShrink: ''
       // expectSize: vp2px(120)
     }
   }]

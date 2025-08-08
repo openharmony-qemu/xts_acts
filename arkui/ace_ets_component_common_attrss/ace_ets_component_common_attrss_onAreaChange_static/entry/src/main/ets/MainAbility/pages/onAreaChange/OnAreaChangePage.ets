@@ -417,7 +417,8 @@ struct OnAreaChangePage {
           } else if (this.targetView == 'Badge') {
             Badge({
               // count: 50,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
+              value: 'undefined'
             } as BadgeParamWithString) {
               Button('message').backgroundColor(0x317aff)
             }

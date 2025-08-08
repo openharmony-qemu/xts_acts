@@ -112,7 +112,12 @@ export default function paddingTest() {
       padding: 100,
     },
     expectValue: {
-      padding: '100.00vp'
+      padding: '100.00vp',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0,
     }
   }, {
     describe: 'SetStringPx',
@@ -120,7 +125,12 @@ export default function paddingTest() {
       padding: '200px',
     },
     expectValue: {
-      padding: '200.00px'
+      padding: '200.00px',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0,
     }
   }, {
     describe: 'SetResource',
@@ -128,7 +138,12 @@ export default function paddingTest() {
       padding: $r('app.float.100vp'),
     },
     expectValue: {
-      padding: '100.00vp'
+      padding: '100.00vp',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0,
     }
   }, {
     describe: 'SetStringPercent',
@@ -136,7 +151,12 @@ export default function paddingTest() {
       padding: '20%',
     },
     expectValue: {
-      padding: '20.00%'
+      padding: '20.00%',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0,
     }
   }] as TestValue[]
 

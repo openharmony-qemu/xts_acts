@@ -89,7 +89,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.Auto
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Auto'
+      expectAlignSelf: 'ItemAlign.Auto',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStart',
@@ -103,7 +106,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.Start
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Start'
+      expectAlignSelf: 'ItemAlign.Start',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetCenter',
@@ -112,7 +118,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.Center
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Center'
+      expectAlignSelf: 'ItemAlign.Center',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetEnd',
@@ -121,7 +130,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.End
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.End'
+      expectAlignSelf: 'ItemAlign.End',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretch',
@@ -130,7 +142,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.Stretch
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetBaseLine',
@@ -139,7 +154,10 @@ export default function alignSelfGridRowTest() {
       alignSelf: ItemAlign.Baseline
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Baseline'
+      expectAlignSelf: 'ItemAlign.Baseline',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }]
 

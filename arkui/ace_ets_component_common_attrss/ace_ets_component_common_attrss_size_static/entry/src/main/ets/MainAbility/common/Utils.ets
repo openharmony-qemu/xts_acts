@@ -48,7 +48,7 @@ export class BasePageConfig {
   testValue: TestValue = new TestValue();
   caseTag: string = '';
   customParams?: Object;
-  viewObj?: ViewObj = {};
+  viewObj?: ViewObj;
 }
 
 export interface ViewObj {

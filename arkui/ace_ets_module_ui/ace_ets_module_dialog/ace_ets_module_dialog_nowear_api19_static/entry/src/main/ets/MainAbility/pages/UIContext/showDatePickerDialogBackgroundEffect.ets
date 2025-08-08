@@ -54,7 +54,7 @@ struct ShowDatePickerDialog2 {
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             backgroundEffect: {
-              // radius: undefined,
+              radius: 0,
               saturation: undefined,
               brightness: undefined,
               color: undefined,

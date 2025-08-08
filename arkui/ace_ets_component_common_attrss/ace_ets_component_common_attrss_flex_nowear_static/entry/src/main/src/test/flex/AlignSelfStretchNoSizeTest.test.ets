@@ -146,7 +146,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.Wrap
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchRowWrapReverse',
@@ -156,7 +159,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.WrapReverse
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchRowReverseWrap',
@@ -166,7 +172,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.Wrap
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchRowReverseWrapReverse',
@@ -176,7 +185,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.WrapReverse
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchColumnWrap',
@@ -186,7 +198,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.Wrap
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchColumnWrapReverse',
@@ -196,7 +211,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.WrapReverse
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchColumnReverseWrap',
@@ -206,7 +224,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.Wrap
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }, {
     describe: 'SetStretchColumnReverseWrapReverse',
@@ -216,7 +237,10 @@ export default function alignSelfStretchNoSizeTest() {
       wrap: FlexWrap.WrapReverse
     },
     expectValue: {
-      expectAlignSelf: 'ItemAlign.Stretch'
+      expectAlignSelf: 'ItemAlign.Stretch',
+      expectFlexBasis: '',
+      expectSize: 0,
+      flexShrink: ''
     }
   }]
 

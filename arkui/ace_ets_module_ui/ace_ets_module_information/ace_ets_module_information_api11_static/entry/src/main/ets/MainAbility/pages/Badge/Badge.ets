@@ -65,7 +65,8 @@ struct badge {
             // count: this.counts,
             position: BadgePosition.Right,
             // maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle
+            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
+            value: 'undefined'
           } as BadgeParamWithString) {
             Button('message')
               .onClick((e: ClickEvent) => {
@@ -82,7 +83,8 @@ struct badge {
             // count: this.counts,
             position: BadgePosition.RightTop,
             // maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: '16', badgeSize: '20', badgeColor: Color.Red } as BadgeStyle
+            style: { color: 0xFFFFFF, fontSize: '16', badgeSize: '20', badgeColor: Color.Red } as BadgeStyle,
+            value: 'undefined'
           } as BadgeParamWithString) {
             Button('message')
               .onClick((e: ClickEvent) => {
@@ -99,7 +101,8 @@ struct badge {
             // count: this.counts,
             position: BadgePosition.Left,
             // maxCount: 99,
-            style: { color: Color.Pink, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle
+            style: { color: Color.Pink, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
+            value: 'undefined'
           } as BadgeParamWithString) {
             Button('message')
               .onClick((e: ClickEvent) => {

@@ -51,6 +51,7 @@ struct ImageAnalyzer1 {
       XComponent({
         id: 'xcomponent',
         type: XComponentType.TEXTURE,
+        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.xComponentController
       } as XComponentParameters)
         .enableAnalyzer(true)
