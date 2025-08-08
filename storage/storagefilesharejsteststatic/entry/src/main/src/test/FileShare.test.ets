@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import fs from '@ohos.file.fs';
@@ -33,6 +33,9 @@ export default function FileShare_test() {
   describe("FileShare_test", (): void => {
     hilog.info(domain, tag, '%{public}s', 'FileShare_test start');
 
+    beforeAll(async (): Promise<void> => {
+      fs.mkdirSync("/data/storage/el2/base/haps/entry/files", true);
+    })
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0100
@@ -51,8 +54,7 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 START');
 
         try {
-          const uriObject = new fileUri.FileUri(fileStr);
-          const uri = uriObject.toString();
+          const uri = fileUri.getUriFromPath(fileStr);
           hilog.info(domain, tag, '%{public}s', `Created test file and closed. URI: ${uri}`);
           const fd = await fs.open(uri, fs.OpenMode.CREATE);
           await fs.close(fd);
@@ -96,8 +98,7 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 START');
 
         try {
-          const uriObject = new fileUri.FileUri(fileStr);
-          const uri = uriObject.toString();
+          const uri = fileUri.getUriFromPath(fileStr);
           hilog.info(domain, tag, '%{public}s', `Constructed URI: ${uri}`);
           const fd = await fs.open(uri, fs.OpenMode.CREATE);
           await fs.close(fd);
@@ -144,14 +145,12 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_003 START');
 
         try {
-          const uriObject1 = new fileUri.FileUri(fileStr1);
-          const uri1 = uriObject1.toString();
+          const uri1 = fileUri.getUriFromPath(fileStr1);
           const policyInfo1: fileShare.PolicyInfo = {
             uri: uri1,
             operationMode: fileShare.OperationMode.READ_MODE,
           };
-          const uriObject2 = new fileUri.FileUri(fileStr2);
-          const uri2 = uriObject2.toString();
+          const uri2 = fileUri.getUriFromPath(fileStr2);
           const fd = await fs.open(uri2, fs.OpenMode.CREATE);
           await fs.close(fd);
           const policyInfo2: fileShare.PolicyInfo = {
@@ -198,8 +197,7 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 START');
 
         try {
-          const uriObject = new fileUri.FileUri(fileStr);
-          const uri = uriObject.toString();
+          const uri = fileUri.getUriFromPath(fileStr);
           hilog.info(domain, tag, '%{public}s', `Created test file and closed. URI: ${uri}`);
           const fd = await fs.open(uri, fs.OpenMode.CREATE);
           await fs.close(fd);
@@ -243,8 +241,7 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 START');
 
         try {
-          const uriObject = new fileUri.FileUri(fileStr);
-          const uri = uriObject.toString();
+          const uri = fileUri.getUriFromPath(fileStr);
           hilog.info(domain, tag, '%{public}s', `Constructed URI: ${uri}`);
           const fd = await fs.open(uri, fs.OpenMode.CREATE);
           await fs.close(fd);
@@ -291,14 +288,12 @@ export default function FileShare_test() {
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 START');
 
         try {
-          const uriObject1 = new fileUri.FileUri(fileStr1);
-          const uri1 = uriObject1.toString();
+          const uri1 = fileUri.getUriFromPath(fileStr1);
           const policyInfo1: fileShare.PolicyInfo = {
             uri: uri1,
             operationMode: fileShare.OperationMode.READ_MODE,
           };
-          const uriObject2 = new fileUri.FileUri(fileStr2);
-          const uri2 = uriObject2.toString();
+          const uri2 = fileUri.getUriFromPath(fileStr2);
           const fd = await fs.open(uri2, fs.OpenMode.CREATE);
           await fs.close(fd);
           const policyInfo2: fileShare.PolicyInfo = {
