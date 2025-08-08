@@ -426,7 +426,137 @@ export default function WindowImmersiveTest() {
                 done();
             }
         })
-
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_LAYOUT_FULLSCREEN_API_0100
+         * @tc.name      : test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
+         * @tc.desc      : test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let CaseName:string = 'test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100';
+            let subWindow:window.Window = await windowStage.createSubWindow('test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100');
+            await subWindow.destroyWindow();
+            await Utils.msSleep(300);
+            let promise = subWindow.setWindowLayoutFullScreen(true);
+            promise.then(()=>{
+                hilog.info(0x0000, '[ANI]',CaseName + ' setWindowLayoutFullScreen success ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
+                hilog.error(0x0000, '[ANI]',CaseName + ' setWindowLayoutFullScreen failed,casued: err.code '+err.code +' ,err.message: '+err.message);
+                expect(err.code).assertEqual(1300002);
+                done();
+            })
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_ENABLE_API_0100
+         * @tc.name      : test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
+         * @tc.desc      : test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let CaseName:string = 'test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100';
+            let names: Array<'status' | 'navigation'> = [];
+            let subWindow:window.Window = await windowStage.createSubWindow('test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100');
+            await subWindow.destroyWindow();
+            await Utils.msSleep(300);
+            let promise = subWindow.setWindowSystemBarEnable(names);
+            promise.then(()=>{
+                hilog.info(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable success ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
+                hilog.error(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);
+                expect(err.code).assertEqual(1300002);
+                done();
+            })
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0100
+         * @tc.name      : testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100
+         * @tc.desc      : Set the properties of the navigation bar and status bar in the window in full screen mode
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window = await windowStage.createSubWindow('testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            await Utils.msSleep(300);
+            let SystemBarProperties: window.SystemBarProperties = {
+                statusBarColor: '#ff00ff',
+                navigationBarColor: '#00ff00',
+                statusBarContentColor: '#ffffff',
+                navigationBarContentColor: '#00ffff'
+            };
+            try {
+                (win as window.Window).setWindowSystemBarProperties(SystemBarProperties).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the system bar properties.');
+                    expect().assertFail();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002)
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002)
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0200
+         * @tc.name      : testSetWindowSystemBarProperties_Callback_static_0100
+         * @tc.desc      : Verify the scene where the colors of the status bar and navigation bar are set in RGB
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level4
+         */
+        it('testSetWindowSystemBarProperties_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testSetWindowSystemBarProperties_Callback_static_0100';
+            let msgStr:string = 'jsUnittest ' + caseName + ' ';
+            let commonRGBColorArr: Array<string> = ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)', 'rgb(255,255,255)', 'rgb(0,0,0)', 'rgb(249,0,230)', 'rgb(102,102,102)', 'rgb(255,247,0)'];
+            let mainWsync: window.Window = windowStage.getMainWindowSync();
+            expect(mainWsync != null).assertTrue();
+            await mainWsync.showWindow();
+            await Utils.msSleep(300);
+            await mainWsync.setWindowSystemBarEnable(['status', 'navigation']);
+            for (let i = 0; i < commonRGBColorArr.length; i++) {
+                hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 begin step:' + i);
+                let tempColor: string = commonRGBColorArr[i];
+                let systemBarProperties: window.SystemBarProperties = {
+                    statusBarColor: tempColor,
+                    isStatusBarLightIcon: true,
+                    statusBarContentColor: tempColor,
+                    navigationBarColor: tempColor,
+                    isNavigationBarLightIcon: false,
+                    navigationBarContentColor: tempColor,
+                };
+                await mainWsync.setWindowSystemBarProperties(systemBarProperties).then(() => {
+                    hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 success step:' + i);
+                    expect(true).assertTrue();
+                    if (i == commonRGBColorArr.length - 1) {
+                        hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 finished step:' + i);
+                        done()
+                    }
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error : ' + JSON.stringify(err));
+                    if (err.code == 801) {
+                        expect(true).assertTrue();
+                    } else {
+                        expect().assertFail()
+                    }
+                    done();
+                })
+            }
+        })
 
 
 
