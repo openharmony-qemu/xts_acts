@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Navigation/NavigationTitleTextModifier",
+    "MainAbility/pages/Navigation/NavigationCustomTitlePage",
+    "MainAbility/pages/Navigation/NavDestinationUIObserver"
+  ]
+}
