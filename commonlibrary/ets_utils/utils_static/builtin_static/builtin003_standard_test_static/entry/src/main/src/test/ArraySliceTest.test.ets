@@ -47,8 +47,8 @@ export default function Array_Slice_Test_static() {
     })
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0100
-     * @tc.name ARRAY_SLICE_TEST_0100
+     * @tc.number SUB_ARRAY_SLICE_TEST_0100
+     * @tc.name Array_Slice_Test_static_0100
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -71,8 +71,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0200
-     * @tc.name ARRAY_SLICE_TEST_0200
+     * @tc.number SUB_ARRAY_SLICE_TEST_0200
+     * @tc.name Array_Slice_Test_static_0200
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -97,8 +97,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0300
-     * @tc.name ARRAY_SLICE_TEST_0300
+     * @tc.number SUB_ARRAY_SLICE_TEST_0300
+     * @tc.name Array_Slice_Test_static_0300
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -119,8 +119,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0400
-     * @tc.name ARRAY_SLICE_TEST_0400
+     * @tc.number SUB_ARRAY_SLICE_TEST_0400
+     * @tc.name Array_Slice_Test_static_0400
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -141,8 +141,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0500
-     * @tc.name ARRAY_SLICE_TEST_0500
+     * @tc.number SUB_ARRAY_SLICE_TEST_0500
+     * @tc.name Array_Slice_Test_static_0500
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -163,8 +163,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0600
-     * @tc.name ARRAY_SLICE_TEST_0600
+     * @tc.number SUB_ARRAY_SLICE_TEST_0600
+     * @tc.name Array_Slice_Test_static_0600
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -186,8 +186,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0700
-     * @tc.name ARRAY_SLICE_TEST_0700
+     * @tc.number SUB_ARRAY_SLICE_TEST_0700
+     * @tc.name Array_Slice_Test_static_0700
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -211,8 +211,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0800
-     * @tc.name ARRAY_SLICE_TEST_0800
+     * @tc.number SUB_ARRAY_SLICE_TEST_0800
+     * @tc.name Array_Slice_Test_static_0800
      * @tc.desc test slice(self: FixedArray<boolean>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -233,8 +233,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_0900
-     * @tc.name ARRAY_SLICE_TEST_0900
+     * @tc.number SUB_ARRAY_SLICE_TEST_0900
+     * @tc.name Array_Slice_Test_static_0900
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -256,8 +256,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1000
-     * @tc.name ARRAY_SLICE_TEST_1000
+     * @tc.number SUB_ARRAY_SLICE_TEST_1000
+     * @tc.name Array_Slice_Test_static_1000
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -280,8 +280,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1100
-     * @tc.name ARRAY_SLICE_TEST_1100
+     * @tc.number SUB_ARRAY_SLICE_TEST_1100
+     * @tc.name Array_Slice_Test_static_1100
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -305,8 +305,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1200
-     * @tc.name ARRAY_SLICE_TEST_1200
+     * @tc.number SUB_ARRAY_SLICE_TEST_1200
+     * @tc.name Array_Slice_Test_static_1200
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -328,8 +328,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1300
-     * @tc.name ARRAY_SLICE_TEST_1300
+     * @tc.number SUB_ARRAY_SLICE_TEST_1300
+     * @tc.name Array_Slice_Test_static_1300
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -349,8 +349,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1400
-     * @tc.name ARRAY_SLICE_TEST_1400
+     * @tc.number SUB_ARRAY_SLICE_TEST_1400
+     * @tc.name Array_Slice_Test_static_1400
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -370,8 +370,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1500
-     * @tc.name ARRAY_SLICE_TEST_1500
+     * @tc.number SUB_ARRAY_SLICE_TEST_1500
+     * @tc.name Array_Slice_Test_static_1500
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -393,8 +393,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1600
-     * @tc.name ARRAY_SLICE_TEST_1600
+     * @tc.number SUB_ARRAY_SLICE_TEST_1600
+     * @tc.name Array_Slice_Test_static_1600
      * @tc.desc test slice(self: FixedArray<boolean>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -414,8 +414,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1700
-     * @tc.name ARRAY_SLICE_TEST_1700
+     * @tc.number SUB_ARRAY_SLICE_TEST_1700
+     * @tc.name Array_Slice_Test_static_1700
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -439,8 +439,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1800
-     * @tc.name ARRAY_SLICE_TEST_1800
+     * @tc.number SUB_ARRAY_SLICE_TEST_1800
+     * @tc.name Array_Slice_Test_static_1800
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -462,8 +462,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_1900
-     * @tc.name ARRAY_SLICE_TEST_1900
+     * @tc.number SUB_ARRAY_SLICE_TEST_1900
+     * @tc.name Array_Slice_Test_static_1900
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -486,8 +486,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2000
-     * @tc.name ARRAY_SLICE_TEST_2000
+     * @tc.number SUB_ARRAY_SLICE_TEST_2000
+     * @tc.name Array_Slice_Test_static_2000
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -508,8 +508,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2100
-     * @tc.name ARRAY_SLICE_TEST_2100
+     * @tc.number SUB_ARRAY_SLICE_TEST_2100
+     * @tc.name Array_Slice_Test_static_2100
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -530,8 +530,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2200
-     * @tc.name ARRAY_SLICE_TEST_2200
+     * @tc.number SUB_ARRAY_SLICE_TEST_2200
+     * @tc.name Array_Slice_Test_static_2200
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -554,8 +554,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2300
-     * @tc.name ARRAY_SLICE_TEST_2300
+     * @tc.number SUB_ARRAY_SLICE_TEST_2300
+     * @tc.name Array_Slice_Test_static_2300
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -579,8 +579,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2400
-     * @tc.name ARRAY_SLICE_TEST_2400
+     * @tc.number SUB_ARRAY_SLICE_TEST_2400
+     * @tc.name Array_Slice_Test_static_2400
      * @tc.desc test slice(self: FixedArray<boolean>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -604,8 +604,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2500
-     * @tc.name ARRAY_SLICE_TEST_2500
+     * @tc.number SUB_ARRAY_SLICE_TEST_2500
+     * @tc.name Array_Slice_Test_static_2500
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -628,8 +628,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2600
-     * @tc.name ARRAY_SLICE_TEST_2600
+     * @tc.number SUB_ARRAY_SLICE_TEST_2600
+     * @tc.name Array_Slice_Test_static_2600
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -654,8 +654,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2700
-     * @tc.name ARRAY_SLICE_TEST_2700
+     * @tc.number SUB_ARRAY_SLICE_TEST_2700
+     * @tc.name Array_Slice_Test_static_2700
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -675,8 +675,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2800
-     * @tc.name ARRAY_SLICE_TEST_2800
+     * @tc.number SUB_ARRAY_SLICE_TEST_2800
+     * @tc.name Array_Slice_Test_static_2800
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -699,8 +699,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_2900
-     * @tc.name ARRAY_SLICE_TEST_2900
+     * @tc.number SUB_ARRAY_SLICE_TEST_2900
+     * @tc.name Array_Slice_Test_static_2900
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -723,8 +723,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3000
-     * @tc.name ARRAY_SLICE_TEST_3000
+     * @tc.number SUB_ARRAY_SLICE_TEST_3000
+     * @tc.name Array_Slice_Test_static_3000
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -746,8 +746,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3100
-     * @tc.name ARRAY_SLICE_TEST_3100
+     * @tc.number SUB_ARRAY_SLICE_TEST_3100
+     * @tc.name Array_Slice_Test_static_3100
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -768,8 +768,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3200
-     * @tc.name ARRAY_SLICE_TEST_3200
+     * @tc.number SUB_ARRAY_SLICE_TEST_3200
+     * @tc.name Array_Slice_Test_static_3200
      * @tc.desc test slice(self: FixedArray<byte>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -789,8 +789,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3300
-     * @tc.name ARRAY_SLICE_TEST_3300
+     * @tc.number SUB_ARRAY_SLICE_TEST_3300
+     * @tc.name Array_Slice_Test_static_3300
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -813,8 +813,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3400
-     * @tc.name ARRAY_SLICE_TEST_3400
+     * @tc.number SUB_ARRAY_SLICE_TEST_3400
+     * @tc.name Array_Slice_Test_static_3400
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -840,8 +840,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3500
-     * @tc.name ARRAY_SLICE_TEST_3500
+     * @tc.number SUB_ARRAY_SLICE_TEST_3500
+     * @tc.name Array_Slice_Test_static_3500
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -861,8 +861,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3600
-     * @tc.name ARRAY_SLICE_TEST_3600
+     * @tc.number SUB_ARRAY_SLICE_TEST_3600
+     * @tc.name Array_Slice_Test_static_3600
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -884,8 +884,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3700
-     * @tc.name ARRAY_SLICE_TEST_3700
+     * @tc.number SUB_ARRAY_SLICE_TEST_3700
+     * @tc.name Array_Slice_Test_static_3700
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -906,8 +906,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3800
-     * @tc.name ARRAY_SLICE_TEST_3800
+     * @tc.number SUB_ARRAY_SLICE_TEST_3800
+     * @tc.name Array_Slice_Test_static_3800
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -928,8 +928,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_3900
-     * @tc.name ARRAY_SLICE_TEST_3900
+     * @tc.number SUB_ARRAY_SLICE_TEST_3900
+     * @tc.name Array_Slice_Test_static_3900
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -952,8 +952,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4000
-     * @tc.name ARRAY_SLICE_TEST_4000
+     * @tc.number SUB_ARRAY_SLICE_TEST_4000
+     * @tc.name Array_Slice_Test_static_4000
      * @tc.desc test slice(self: FixedArray<byte>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -975,8 +975,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4100
-     * @tc.name ARRAY_SLICE_TEST_4100
+     * @tc.number SUB_ARRAY_SLICE_TEST_4100
+     * @tc.name Array_Slice_Test_static_4100
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1001,8 +1001,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4200
-     * @tc.name ARRAY_SLICE_TEST_4200
+     * @tc.number SUB_ARRAY_SLICE_TEST_4200
+     * @tc.name Array_Slice_Test_static_4200
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1028,8 +1028,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4300
-     * @tc.name ARRAY_SLICE_TEST_4300
+     * @tc.number SUB_ARRAY_SLICE_TEST_4300
+     * @tc.name Array_Slice_Test_static_4300
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1051,8 +1051,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4400
-     * @tc.name ARRAY_SLICE_TEST_4400
+     * @tc.number SUB_ARRAY_SLICE_TEST_4400
+     * @tc.name Array_Slice_Test_static_4400
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1073,8 +1073,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4500
-     * @tc.name ARRAY_SLICE_TEST_4500
+     * @tc.number SUB_ARRAY_SLICE_TEST_4500
+     * @tc.name Array_Slice_Test_static_4500
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1098,8 +1098,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4600
-     * @tc.name ARRAY_SLICE_TEST_4600
+     * @tc.number SUB_ARRAY_SLICE_TEST_4600
+     * @tc.name Array_Slice_Test_static_4600
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1124,8 +1124,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4700
-     * @tc.name ARRAY_SLICE_TEST_4700
+     * @tc.number SUB_ARRAY_SLICE_TEST_4700
+     * @tc.name Array_Slice_Test_static_4700
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1147,8 +1147,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4800
-     * @tc.name ARRAY_SLICE_TEST_4800
+     * @tc.number SUB_ARRAY_SLICE_TEST_4800
+     * @tc.name Array_Slice_Test_static_4800
      * @tc.desc test slice(self: FixedArray<byte>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1170,8 +1170,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_4900
-     * @tc.name ARRAY_SLICE_TEST_4900
+     * @tc.number SUB_ARRAY_SLICE_TEST_4900
+     * @tc.name Array_Slice_Test_static_4900
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1193,8 +1193,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5000
-     * @tc.name ARRAY_SLICE_TEST_5000
+     * @tc.number SUB_ARRAY_SLICE_TEST_5000
+     * @tc.name Array_Slice_Test_static_5000
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1218,8 +1218,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5100
-     * @tc.name ARRAY_SLICE_TEST_5100
+     * @tc.number SUB_ARRAY_SLICE_TEST_5100
+     * @tc.name Array_Slice_Test_static_5100
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1240,8 +1240,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5200
-     * @tc.name ARRAY_SLICE_TEST_5200
+     * @tc.number SUB_ARRAY_SLICE_TEST_5200
+     * @tc.name Array_Slice_Test_static_5200
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1263,8 +1263,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5300
-     * @tc.name ARRAY_SLICE_TEST_5300
+     * @tc.number SUB_ARRAY_SLICE_TEST_5300
+     * @tc.name Array_Slice_Test_static_5300
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1287,8 +1287,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5400
-     * @tc.name ARRAY_SLICE_TEST_5400
+     * @tc.number SUB_ARRAY_SLICE_TEST_5400
+     * @tc.name Array_Slice_Test_static_5400
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1308,8 +1308,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5500
-     * @tc.name ARRAY_SLICE_TEST_5500
+     * @tc.number SUB_ARRAY_SLICE_TEST_5500
+     * @tc.name Array_Slice_Test_static_5500
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1334,8 +1334,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5600
-     * @tc.name ARRAY_SLICE_TEST_5600
+     * @tc.number SUB_ARRAY_SLICE_TEST_5600
+     * @tc.name Array_Slice_Test_static_5600
      * @tc.desc test slice(self: FixedArray<char>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1358,8 +1358,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5700
-     * @tc.name ARRAY_SLICE_TEST_5700
+     * @tc.number SUB_ARRAY_SLICE_TEST_5700
+     * @tc.name Array_Slice_Test_static_5700
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1385,8 +1385,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5800
-     * @tc.name ARRAY_SLICE_TEST_5800
+     * @tc.number SUB_ARRAY_SLICE_TEST_5800
+     * @tc.name Array_Slice_Test_static_5800
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1409,8 +1409,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_5900
-     * @tc.name ARRAY_SLICE_TEST_5900
+     * @tc.number SUB_ARRAY_SLICE_TEST_5900
+     * @tc.name Array_Slice_Test_static_5900
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1433,8 +1433,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6000
-     * @tc.name ARRAY_SLICE_TEST_6000
+     * @tc.number SUB_ARRAY_SLICE_TEST_6000
+     * @tc.name Array_Slice_Test_static_6000
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1455,8 +1455,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6100
-     * @tc.name ARRAY_SLICE_TEST_6100
+     * @tc.number SUB_ARRAY_SLICE_TEST_6100
+     * @tc.name Array_Slice_Test_static_6100
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1478,8 +1478,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6200
-     * @tc.name ARRAY_SLICE_TEST_6200
+     * @tc.number SUB_ARRAY_SLICE_TEST_6200
+     * @tc.name Array_Slice_Test_static_6200
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1499,8 +1499,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6300
-     * @tc.name ARRAY_SLICE_TEST_6300
+     * @tc.number SUB_ARRAY_SLICE_TEST_6300
+     * @tc.name Array_Slice_Test_static_6300
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1520,8 +1520,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6400
-     * @tc.name ARRAY_SLICE_TEST_6400
+     * @tc.number SUB_ARRAY_SLICE_TEST_6400
+     * @tc.name Array_Slice_Test_static_6400
      * @tc.desc test slice(self: FixedArray<char>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1544,8 +1544,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6500
-     * @tc.name ARRAY_SLICE_TEST_6500
+     * @tc.number SUB_ARRAY_SLICE_TEST_6500
+     * @tc.name Array_Slice_Test_static_6500
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1571,8 +1571,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6600
-     * @tc.name ARRAY_SLICE_TEST_6600
+     * @tc.number SUB_ARRAY_SLICE_TEST_6600
+     * @tc.name Array_Slice_Test_static_6600
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1596,8 +1596,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6700
-     * @tc.name ARRAY_SLICE_TEST_6700
+     * @tc.number SUB_ARRAY_SLICE_TEST_6700
+     * @tc.name Array_Slice_Test_static_6700
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1619,8 +1619,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6800
-     * @tc.name ARRAY_SLICE_TEST_6800
+     * @tc.number SUB_ARRAY_SLICE_TEST_6800
+     * @tc.name Array_Slice_Test_static_6800
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1641,8 +1641,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_6900
-     * @tc.name ARRAY_SLICE_TEST_6900
+     * @tc.number SUB_ARRAY_SLICE_TEST_6900
+     * @tc.name Array_Slice_Test_static_6900
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1665,8 +1665,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7000
-     * @tc.name ARRAY_SLICE_TEST_7000
+     * @tc.number SUB_ARRAY_SLICE_TEST_7000
+     * @tc.name Array_Slice_Test_static_7000
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1689,8 +1689,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7100
-     * @tc.name ARRAY_SLICE_TEST_7100
+     * @tc.number SUB_ARRAY_SLICE_TEST_7100
+     * @tc.name Array_Slice_Test_static_7100
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1716,8 +1716,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7200
-     * @tc.name ARRAY_SLICE_TEST_7200
+     * @tc.number SUB_ARRAY_SLICE_TEST_7200
+     * @tc.name Array_Slice_Test_static_7200
      * @tc.desc test slice(self: FixedArray<char>, start?: Number, end?: Number) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1739,8 +1739,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7300
-     * @tc.name ARRAY_SLICE_TEST_7300
+     * @tc.number SUB_ARRAY_SLICE_TEST_7300
+     * @tc.name Array_Slice_Test_static_7300
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1763,8 +1763,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7400
-     * @tc.name ARRAY_SLICE_TEST_7400
+     * @tc.number SUB_ARRAY_SLICE_TEST_7400
+     * @tc.name Array_Slice_Test_static_7400
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1789,8 +1789,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7500
-     * @tc.name ARRAY_SLICE_TEST_7500
+     * @tc.number SUB_ARRAY_SLICE_TEST_7500
+     * @tc.name Array_Slice_Test_static_7500
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1811,8 +1811,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7600
-     * @tc.name ARRAY_SLICE_TEST_7600
+     * @tc.number SUB_ARRAY_SLICE_TEST_7600
+     * @tc.name Array_Slice_Test_static_7600
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1835,8 +1835,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7700
-     * @tc.name ARRAY_SLICE_TEST_7700
+     * @tc.number SUB_ARRAY_SLICE_TEST_7700
+     * @tc.name Array_Slice_Test_static_7700
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1859,8 +1859,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7800
-     * @tc.name ARRAY_SLICE_TEST_7800
+     * @tc.number SUB_ARRAY_SLICE_TEST_7800
+     * @tc.name Array_Slice_Test_static_7800
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1882,8 +1882,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_7900
-     * @tc.name ARRAY_SLICE_TEST_7900
+     * @tc.number SUB_ARRAY_SLICE_TEST_7900
+     * @tc.name Array_Slice_Test_static_7900
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
@@ -1904,8 +1904,8 @@ export default function Array_Slice_Test_static() {
 
 
     /**
-     * @tc.number ARRAY_SLICE_TEST_8000
-     * @tc.name ARRAY_SLICE_TEST_8000
+     * @tc.number SUB_ARRAY_SLICE_TEST_8000
+     * @tc.name Array_Slice_Test_static_8000
      * @tc.desc test slice(self: FixedArray<double>, start: int) return value
      * @tc.size MediumTest
      * @tc.type Function
