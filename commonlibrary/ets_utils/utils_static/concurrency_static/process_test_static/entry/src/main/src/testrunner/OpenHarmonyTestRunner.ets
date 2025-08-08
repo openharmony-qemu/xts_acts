@@ -27,12 +27,12 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  onPrepare() {
+  public onPrepare: () => void = () => {
   
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  onRun() {
+  public onRun: () => void = () => {
   
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

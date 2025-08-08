@@ -32,12 +32,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
   }
 
-  onPrepare() {
+  public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  onRun() {
+  public onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
