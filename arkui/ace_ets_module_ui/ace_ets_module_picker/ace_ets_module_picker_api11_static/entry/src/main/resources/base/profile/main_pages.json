@@ -1,8 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/Rating/Rating",
-    "MainAbility/pages/Slider/Slider",
-    "MainAbility/pages/Toggle/Toggle"
-  ]
-}
