@@ -1072,7 +1072,7 @@ export default function ArrayToSplicedTest() {
 
     /**
      * @tc.number ARRAY_TO_SPLICED_TEST_4300
-     * @tc.name ArrayToSplicedTest4200
+     * @tc.name ArrayToSplicedTest4300
      * @tc.desc test toSpliced(self: FixedArray<byte>, start: int, delete: int, ...items: FixedArray<byte>) return value
      * @tc.size MediumTest
      * @tc.type Function

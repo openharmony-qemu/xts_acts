@@ -74,13 +74,13 @@ export default function Array_Slice_Second_Test_static() {
 
     /**
      * @tc.number SUB_ARRAY_SLICE_SECOND_TEST_0200
-     * @tc.name Array_Slice_Second_Test_static_0200
+     * @tc.name Array_Slice_Second_Test_0200
      * @tc.desc test slice(self: FixedArray<double>, start: int, end: int) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('Array_Slice_Second_Test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Array_Slice_Second_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Slice_Second_Test_static_0200';
         console.info(`${caseName}, test start`);

@@ -837,13 +837,13 @@ export default function ArrayToLocaleStringTest() {
 
     /**
      * @tc.number ARRAY_TO_LOCALE_STRING_TEST_3100
-     * @tc.name ArrayToLocaleStringTest2500
+     * @tc.name ArrayToLocaleStringTest3100
      * @tc.desc test toLocaleString(self: FixedArray<byte>, locales: Object, options: Object) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('ArrayToLocaleStringTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ArrayToLocaleStringTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3100';
         console.info(`${caseName}, test start`);
@@ -867,13 +867,13 @@ export default function ArrayToLocaleStringTest() {
 
     /**
      * @tc.number ARRAY_TO_LOCALE_STRING_TEST_3200
-     * @tc.name ArrayToLocaleStringTest2600
+     * @tc.name ArrayToLocaleStringTest3200
      * @tc.desc test toLocaleString(self: FixedArray<byte>, locales: Object, options: Object) return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('ArrayToLocaleStringTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ArrayToLocaleStringTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringTest3200';
         console.info(`${caseName}, test start`);

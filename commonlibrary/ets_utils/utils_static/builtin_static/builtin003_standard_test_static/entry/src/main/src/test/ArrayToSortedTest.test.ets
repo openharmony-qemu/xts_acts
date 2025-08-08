@@ -130,9 +130,9 @@ export default function ArrayToSortedTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('ArrayToSortedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ArrayToSortedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
-        const caseName = 'ArrayToSortedTest0400';
+        const caseName = 'ArrayToSortedTest0500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false];
         const result = toSorted(arr);
