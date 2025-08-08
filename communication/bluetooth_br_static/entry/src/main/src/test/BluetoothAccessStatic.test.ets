@@ -73,7 +73,7 @@ export default function bluetoothAccessTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("constantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let STATE_DISCONNECTED: constant.ProfileConnectionState = constant.ProfileConnectionState.STATE_DISCONNECTED;
                 hilog.info(domain, tag, "STATE_DISCONNECTED:" + STATE_DISCONNECTED);
@@ -115,7 +115,7 @@ export default function bluetoothAccessTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("bluetoothOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("bluetoothOnOffStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 access.disableBluetooth();
                 await Utils.clickRequestPermission("关闭");
@@ -183,7 +183,7 @@ export default function bluetoothAccessTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("accessConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("accessConstantTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let STATE_OFF: access.BluetoothState = access.BluetoothState.STATE_OFF;
                 hilog.info(domain, tag, "STATE_OFF:" + STATE_OFF);
@@ -215,29 +215,29 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number DeletePersistentDeviceIdSyncTest
-         * @tc.name DeletePersistentDeviceIdSyncTest
-         * @tc.desc Test DeletePersistentDeviceIdSync API functionality
+         * @tc.number deletePersistentDeviceIdSyncTest
+         * @tc.name deletePersistentDeviceIdSyncTest
+         * @tc.desc Test deletePersistentDeviceId API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("DeletePersistentDeviceIdSyncTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
+        it("deletePersistentDeviceIdSyncTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 await access.deletePersistentDeviceId("11:22:33:44:55:66").then(() => {
                     hilog.info(domain, tag, "deletePersistentDeviceId success");
                 }).catch((err) => {
-                    hilog.info(domain, tag, "deletePersistentDeviceId failed");
-                    expect().assertFail();
+                    hilog.info(domain, tag, "deletePersistentDeviceId error " + JSON.stringify(err));
+                    expect(Number(err.code)).assertEqual(0);
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "deletePersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
-                if (Number(err.code) == 801) {
-                    hilog.info(domain, tag, "deletePersistentDeviceId is not support");
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
-                }else {
-                    expect(true).assertEqual(err.code == 401);
+                } else {
+                    expect().assertFail();
                 }
             }
             done();
@@ -251,18 +251,18 @@ export default function bluetoothAccessTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("getPersistentDeviceIdsTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
+        it("getPersistentDeviceIdsTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 let macs: string[] = access.getPersistentDeviceIds();
-                hilog.info(domain, tag, "getPersistentDeviceIds:" + JSON.stringify(macs));
+                hilog.info(domain, tag, "getPersistentDeviceIds success");
                 expect(true).assertEqual(macs.length == 0);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPersistentDeviceIds get errCode:" + err.code + ",errMessage:" + err.message);
-                if (Number(err.code) == 801) {
-                    hilog.info(domain, tag, "getPersistentDeviceIds is not support");
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
-                }else {
+                } else {
                     expect().assertFail();
                 }
             }
@@ -270,25 +270,25 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number IsValidRandomDeviceIdTest
-         * @tc.name IsValidRandomDeviceIdTest
-         * @tc.desc Test IsValidRandomDeviceId API functionality
+         * @tc.number isValidRandomDeviceIdTest
+         * @tc.name isValidRandomDeviceIdTest
+         * @tc.desc Test isValidRandomDeviceId API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("IsValidRandomDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
+        it("isValidRandomDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 let isValidRandom = access.isValidRandomDeviceId("11:22:33:44:55:66");
-                hilog.info(domain, tag, "isValidRandomDeviceId:" + JSON.stringify(isValidRandom));
+                hilog.info(domain, tag, "isValidRandomDeviceId success");
                 expect(isValidRandom).assertFalse();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isValidRandomDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
-                    hilog.info(domain, tag, "isValidRandomDeviceId is not support");
+                    hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
-                }else {
+                } else {
                     expect().assertFail();
                 }
             }
@@ -296,167 +296,158 @@ export default function bluetoothAccessTest() {
         })
 
         /**
-         * @tc.number AddPersistentDeviceIdTest
-         * @tc.name AddPersistentDeviceIdTest
-         * @tc.desc Test AddPersistentDeviceId API functionality
+         * @tc.number addPersistentDeviceIdTest
+         * @tc.name addPersistentDeviceIdTest
+         * @tc.desc Test addPersistentDeviceId API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("AddPersistentDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
+        it("addPersistentDeviceIdTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 await access.addPersistentDeviceId("11:22:33:44:55:66").then(() => {
                     hilog.info(domain, tag, "addPersistentDeviceId success");
                 }).catch((err) => {
-                    hilog.info(domain, tag, "addPersistentDeviceId failed");
-                    expect().assertFail();
+                    hilog.info(domain, tag, "addPersistentDeviceId error " + JSON.stringify(err));
+                    expect(Number(err.code)).assertEqual(0);
                 });
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "addPersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
-                if (Number(err.code) == 801) {
-                    hilog.info(domain, tag, 'addPersistentDeviceId is not support');
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
-                }else {
-                    expect(true).assertEqual(err.code == 401);
+                } else {
+                    expect().assertFail();
                 }
             }
             done();
         })
 
         /**
-         * @tc.number DisableBluetoothTest
-         * @tc.name DisableBluetoothTest
-         * @tc.desc Test DisableBluetooth API functionality
+         * @tc.number notifyDialogResultTest
+         * @tc.name notifyDialogResultTest
+         * @tc.desc Test notifyDialogResult API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("DisableBluetoothTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
-            let state = access.getState();
-            hilog.info(domain, tag, "disableBluetooth, bluetooth state = "+ JSON.stringify(state));
-            if(state != access.BluetoothState.STATE_ON) {
-                access.enableBluetooth();
-                await Utils.msSleep(10000);
-                let openSt = access.getState();
-                hilog.info(domain, tag, "disableBluetooth, bluetooth enable state ="+ JSON.stringify(openSt));
-                expect(openSt).assertEqual(access.BluetoothState.STATE_ON);
-            } else {
-                hilog.info(domain, tag, "disableBluetooth, bluetooth state is ON");
-            }
+        it("notifyDialogResultTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
-                access.disableBluetooth();
-                await Utils.msSleep(10000);
+                let params: access.NotifyDialogResultParams = {
+                    dialogType: access.DialogType.BLUETOOTH_SWITCH,
+                    dialogResult: true
+                }
+                await access.notifyDialogResult(params).then(() => {
+                    hilog.info(domain, tag, "notifyDialogResult success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "notifyDialogResult error " + JSON.stringify(err));
+                    expect(Number(err.code)).assertEqual(0);
+                });
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, "disableBluetooth, get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "notifyDialogResult get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
             }
-            let closeSt = access.getState();
-            hilog.info(domain, tag, "disableBluetooth, bluetooth disable state ="+ JSON.stringify(closeSt));
-            expect(closeSt).assertEqual(access.BluetoothState.STATE_OFF);
             done();
         })
 
         /**
-         * @tc.number enableBluetoothTest
-         * @tc.name enableBluetoothTest
-         * @tc.desc Test enableBluetooth API functionality
+         * @tc.number bluetoothOnOffStateTest_async
+         * @tc.name bluetoothOnOffStateTest_async
+         * @tc.desc Test bluetoothOnOffStateTest_async API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("EnableBluetoothTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
-            let state = access.getState();
-            hilog.info(domain, tag, "enableBluetooth, bluetooth state = "+ JSON.stringify(state));
-            if(state != access.BluetoothState.STATE_OFF) {
-                access.disableBluetooth();
-                await Utils.msSleep(10000);
-                let closeSt = access.getState();
-                hilog.info(domain, tag, "enableBluetooth, bluetooth disable state ="+ JSON.stringify(closeSt));
-                expect(closeSt).assertEqual(access.BluetoothState.STATE_OFF);
-            } else {
-                hilog.info(domain, tag, "enableBluetooth, bluetooth state is OFF");
+        it("bluetoothOnOffStateTest_async", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
+            try {
+                let isNotSupport = false;
+                access.disableBluetoothAsync().then(() => {
+                    hilog.info(domain, tag, "disableBluetoothAsync success");
+                }).catch((err) => {
+                    hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(err));
+                    if (Number(err.code) == 801) {
+                        hilog.info(domain, tag, 'api is not support');
+                        expect(true).assertTrue();
+                        isNotSupport = true;
+                    } else {
+                        expect().assertFail();
+                    }
+                });
+                await Utils.msSleep(2000);
+                if (!isNotSupport) {
+                    await Utils.clickRequestPermission("关闭");
+                    await Utils.msSleep(10000);
+                    hilog.info(domain, tag, "after disableBluetoothAsync state:" + access.getState());
+                }
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(error));
+                if (Number(error.code) == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertTrue();
+                }
             }
             try {
-                access.enableBluetooth();
-                await Utils.msSleep(10000);
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "enableBluetooth, get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                let isNotSupports = false;
+                access.enableBluetoothAsync().then(() => {
+                    hilog.info(domain, tag, "enableBluetoothAsync success");
+                    done();
+                }).catch((err) => {
+                    hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(err));
+                    if (Number(err.code) == 801  || Number(err.code) == 2900099) {
+                        hilog.info(domain, tag, 'api is not support');
+                        expect(true).assertTrue();
+                        isNotSupports = true;
+                    } else {
+                        expect(Number(err.code)).assertEqual(0);
+                    }
+                });
+                await Utils.msSleep(2000);
+                if (!isNotSupports) {
+                    await Utils.clickRequestPermission("开启");
+                }
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(error));
+                if (Number(error.code) == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertTrue();
+                }
             }
-            let openSt = access.getState();
-            hilog.info(domain, tag, "enableBluetooth, bluetooth enable state ="+ JSON.stringify(openSt));
-            expect(openSt).assertEqual(access.BluetoothState.STATE_ON);
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, "after enableBluetoothAsync state:" + access.getState());
+            expect(access.getState()).assertEqual(2);
+            await Utils.msSleep(10000);
             done();
         })
 
         /**
-         * @tc.number GetLocalAddressTest
-         * @tc.name GetLocalAddressTest
-         * @tc.desc Test GetLocalAddress API functionality
+         * @tc.number getLocalAddressTest
+         * @tc.name getLocalAddressTest
+         * @tc.desc Test getLocalAddress API functionality
          * @tc.type Function
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it("getLocalAddressTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
+        it("getLocalAddressTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
             try {
                 let macs: string = access.getLocalAddress();
                 hilog.info(domain, tag, "GetLocalAddress:" + JSON.stringify(macs));
-                expect(true).assertEqual(macs.length == 0);
+                expect(true).assertEqual(macs.length != 0);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "GetLocalAddress get errCode:" + err.code + ",errMessage:" + err.message);
-                if (Number(err.code) == 801) {
-                    hilog.info(domain, tag, "GetLocalAddress is not support");
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
-                }else {
+                } else {
                     expect().assertFail();
                 }
-            }
-            done();
-        })
-
-        /**
-         * @tc.number FactoryReset_Callback
-         * @tc.name FactoryReset_Callback
-         * @tc.desc Test FactoryReset API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
-         */
-        it("FactoryReset_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
-            try {
-                access.factoryReset((err) => {
-                    if (err) {
-                        hilog.info(domain, tag, "factoryReset_callback error");
-                    }
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "errCode: " + err.code + ", errMessage: "+ err.message);
-                expect().assertFail();
-            }
-            done();
-        })
-
-        /**
-         * @tc.number FactoryReset_Promise
-         * @tc.name FactoryReset_Promise
-         * @tc.desc Test FactoryReset API functionality
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         * @tc.level Level 0
-         */
-        it("FactoryReset_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : () => void): Promise<void> =>  {
-            try {
-                await access.factoryReset().then(() => {
-                    hilog.info(domain, tag, "factoryReset_promise success");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "factoryReset_promise failed");
-                    expect().assertFail();
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "errCode: " + err.code + ", errMessage: "+ err.message);
-                expect().assertFail();
             }
             done();
         })

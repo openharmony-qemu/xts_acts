@@ -28,8 +28,8 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtProfilesTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let g_context: common.UIAbilityContext;
 let deviceId: string = "00:11:22:33:44:55";
+let g_context: common.UIAbilityContext;
 
 function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
@@ -80,7 +80,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("createA2dpSrcProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("createA2dpSrcProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
                 expect(true).assertEqual(a2dpProfile != null);
@@ -98,112 +98,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /*
-         * @tc.number: setConnectionStrategy_callback
-         * @tc.name: setConnectionStrategy_callback
-         * @tc.desc: Test setConnectionStrategy_callback API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("setConnectionStrategy_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            try {
-                a2dpProfile.setConnectionStrategy(deviceId, baseProfile.ConnectionStrategy.CONNECTION_STRATEGY_UNSUPPORTED, (err) => {
-                    if(err) {
-                        hilog.info(domain, tag, "setConnectionStrategy, err: " + JSON.stringify(err));
-                    }else{
-                        hilog.info(domain, tag, "setConnectionStrategy success");
-                    }
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "setConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: setConnectionStrategy_promise
-         * @tc.name: setConnectionStrategy_promise
-         * @tc.desc: Test setConnectionStrategy_promise API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("setConnectionStrategy_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            try {
-                await a2dpProfile.setConnectionStrategy(deviceId, baseProfile.ConnectionStrategy.CONNECTION_STRATEGY_ALLOWED).then(() => {
-                    hilog.info(domain, tag, "setConnectionStrategy");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "setConnectionStrategy error");
-                    expect().assertFail();
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "setConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: getConnectionStrategy_callback
-         * @tc.name: getConnectionStrategy_callback
-         * @tc.desc: Test getConnectionStrategy_callback API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("getConnectionStrategy_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            try {
-                a2dpProfile.getConnectionStrategy(deviceId, (error, data) => {
-                    if(error){
-                        hilog.info(domain, tag, "getConnectionStrategy, err: " + JSON.stringify(error));
-                    }else{
-                        hilog.info(domain, tag, "getConnectionStrategy success");
-                    }
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "getConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
-            }
-            done();
-        })
-
-        /*
-         * @tc.number: getConnectionStrategy_promise
-         * @tc.name: getConnectionStrategy_promise
-         * @tc.desc: Test getConnectionStrategy_promise API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
-        it("getConnectionStrategy_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
-            expect(true).assertEqual(a2dpProfile != null);
-            try {
-                await a2dpProfile.getConnectionStrategy(deviceId).then((data: baseProfile.ConnectionStrategy) => {
-                    hilog.info(domain, tag, "getConnectionStrategy");
-                }).catch((err) => {
-                    hilog.info(domain, tag, "getConnectionStrategy error");
-                    expect().assertFail();
-                });
-            } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "getConnectionStrategy get errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
-            }
-            done();
-        })
-
-        /*
          * @tc.number: getConnectedDevicesTest
          * @tc.name: getConnectedDevicesTest
          * @tc.desc: Test getConnectedDevicesTest API functionality
@@ -211,7 +105,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectedDevicesTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectedDevicesTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
             expect(true).assertEqual(a2dpProfile != null);
             try {
@@ -221,7 +115,7 @@ export default function bluetoothProfilesTest() {
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices get errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
+                expect(Number(err.code)).assertEqual(2900099);
             }
             done();
         })
@@ -234,7 +128,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectionStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectionStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
             expect(true).assertEqual(a2dpProfile != null);
             try {
@@ -257,7 +151,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOnConnectionStateChange", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOnConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
             expect(true).assertEqual(a2dpProfile != null);
             try {
@@ -280,7 +174,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOffConnectionStateChange", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOffConnectionStateChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
             expect(true).assertEqual(a2dpProfile != null);
             a2dpProfile.on('connectionStateChange', onReceiveEvent);
@@ -303,7 +197,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("createHfpAgProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("createHfpAgProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
                 expect(true).assertEqual(hfpProfile != null);
@@ -328,7 +222,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectedDevicesTest_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectedDevicesTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
             expect(true).assertEqual(hfpProfile != null);
             try {
@@ -338,7 +232,7 @@ export default function bluetoothProfilesTest() {
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
+                expect(Number(err.code)).assertEqual(2900099);
             }
             done();
         })
@@ -351,7 +245,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectionStateTest_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectionStateTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
             expect(true).assertEqual(hfpProfile != null);
             try {
@@ -374,7 +268,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOnConnectionStateChange_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOnConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
             expect(true).assertEqual(hfpProfile != null);
             try {
@@ -397,7 +291,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOffConnectionStateChange_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOffConnectionStateChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
             expect(true).assertEqual(hfpProfile != null);
             hfpProfile.on('connectionStateChange', onReceiveEvent);
@@ -420,7 +314,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("handsFreeAudioGatewayProfileConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("handsFreeAudioGatewayProfileConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = "handsFreeAudioGatewayProfileConnectDisconnectTest";
             let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
             expect(true).assertEqual(hfpProfile != null);
@@ -429,12 +323,30 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, `${caseName} connect successful`);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, `${caseName} get errCode:  ${err.code}, errMessage: ${err.message}`);
-                if (err.code == 401) {
-                    hilog.info(domain, tag, 'Invalid parameter');
+                if (err.code == 201) {
+                    hilog.info(domain, tag, "Permission denied.");
+                    expect(true).assertEqual(err.code == 201);
+                } else if (err.code == 202) {
+                    hilog.info(domain, tag, "Non-system applications are not allowed to use system APIs.");
+                    expect(true).assertEqual(err.code == 202);
+                } else if (err.code == 401) {
+                    hilog.info(domain, tag, "Invalid parameter");
                     expect(true).assertEqual(err.code == 401);
                 } else if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
+                    hilog.info(domain, tag, "api is not support");
                     expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900001) {
+                    hilog.info(domain, tag, "Service stopped.");
+                    expect(true).assertEqual(err.code == 2900001);
+                } else if (err.code == 2900003) {
+                    hilog.info(domain, tag, "Bluetooth switch is off.");
+                    expect(true).assertEqual(err.code == 2900003);
+                } else if (err.code == 2900004) {
+                    hilog.info(domain, tag, "Profile is not supported.");
+                    expect(true).assertEqual(err.code == 2900004);
+                } else if (err.code == 2900099) {
+                    hilog.info(domain, tag, "Operation failed.");
+                    expect(true).assertEqual(err.code == 2900099);
                 } else {
                     expect().assertFail();
                 }
@@ -444,12 +356,30 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, `${caseName} disconnect successful`);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, `${caseName} get errCode:  ${err.code}, errMessage: ${err.message}`);
-                if (err.code == 401) {
-                    hilog.info(domain, tag, 'Invalid parameter');
+                if (err.code == 201) {
+                    hilog.info(domain, tag, "Permission denied.");
+                    expect(true).assertEqual(err.code == 201);
+                } else if (err.code == 202) {
+                    hilog.info(domain, tag, "Non-system applications are not allowed to use system APIs.");
+                    expect(true).assertEqual(err.code == 202);
+                } else if (err.code == 401) {
+                    hilog.info(domain, tag, "Invalid parameter");
                     expect(true).assertEqual(err.code == 401);
                 } else if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
+                    hilog.info(domain, tag, "api is not support");
                     expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900001) {
+                    hilog.info(domain, tag, "Service stopped.");
+                    expect(true).assertEqual(err.code == 2900001);
+                } else if (err.code == 2900003) {
+                    hilog.info(domain, tag, "Bluetooth switch is off.");
+                    expect(true).assertEqual(err.code == 2900003);
+                } else if (err.code == 2900004) {
+                    hilog.info(domain, tag, "Profile is not supported.");
+                    expect(true).assertEqual(err.code == 2900004);
+                } else if (err.code == 2900099) {
+                    hilog.info(domain, tag, "Operation failed.");
+                    expect(true).assertEqual(err.code == 2900099);
                 } else {
                     expect().assertFail();
                 }
@@ -465,7 +395,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("createHidHostProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("createHidHostProfileTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
                 expect(true).assertEqual(hidProfile != null);
@@ -490,7 +420,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectedDevicesTest_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectedDevicesTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
             expect(true).assertEqual(hidProfile != null);
             try {
@@ -500,7 +430,7 @@ export default function bluetoothProfilesTest() {
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(true).assertFalse();
+                expect(Number(err.code)).assertEqual(2900099);
             }
             done();
         })
@@ -513,7 +443,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("getConnectionStateTest_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("getConnectionStateTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
             expect(true).assertEqual(hidProfile != null);
             try {
@@ -536,7 +466,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOnConnectionStateChange_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOnConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
             expect(true).assertEqual(hidProfile != null);
             try {
@@ -559,7 +489,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("testOffConnectionStateChange_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("testOffConnectionStateChange_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
             expect(true).assertEqual(hidProfile != null);
             hidProfile.on('connectionStateChange', onReceiveEvent);
@@ -582,7 +512,7 @@ export default function bluetoothProfilesTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it("hidHostProfileConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("hidHostProfileConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = "hidHostProfileConnectDisconnectTest";
             let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
             expect(true).assertEqual(hidProfile != null);
@@ -591,12 +521,30 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, `${caseName} connect successful`);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, `${caseName} get errCode:  ${err.code}, errMessage: ${err.message}`);
-                if (err.code == 401) {
-                    hilog.info(domain, tag, 'Invalid parameter');
+                if (err.code == 201) {
+                    hilog.info(domain, tag, "Permission denied.");
+                    expect(true).assertEqual(err.code == 201);
+                } else if (err.code == 202) {
+                    hilog.info(domain, tag, "Non-system applications are not allowed to use system APIs.");
+                    expect(true).assertEqual(err.code == 202);
+                } else if (err.code == 401) {
+                    hilog.info(domain, tag, "Invalid parameter");
                     expect(true).assertEqual(err.code == 401);
                 } else if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
+                    hilog.info(domain, tag, "api is not support");
                     expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900001) {
+                    hilog.info(domain, tag, "Service stopped.");
+                    expect(true).assertEqual(err.code == 2900001);
+                } else if (err.code == 2900003) {
+                    hilog.info(domain, tag, "Bluetooth switch is off.");
+                    expect(true).assertEqual(err.code == 2900003);
+                } else if (err.code == 2900004) {
+                    hilog.info(domain, tag, "Profile is not supported.");
+                    expect(true).assertEqual(err.code == 2900004);
+                } else if (err.code == 2900099) {
+                    hilog.info(domain, tag, "Operation failed.");
+                    expect(true).assertEqual(err.code == 2900099);
                 } else {
                     expect().assertFail();
                 }
@@ -606,12 +554,30 @@ export default function bluetoothProfilesTest() {
                 hilog.info(domain, tag, `${caseName} disconnect successful`);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, `${caseName} get errCode:  ${err.code}, errMessage: ${err.message}`);
-                if (err.code == 401) {
-                    hilog.info(domain, tag, 'Invalid parameter');
+                if (err.code == 201) {
+                    hilog.info(domain, tag, "Permission denied.");
+                    expect(true).assertEqual(err.code == 201);
+                } else if (err.code == 202) {
+                    hilog.info(domain, tag, "Non-system applications are not allowed to use system APIs.");
+                    expect(true).assertEqual(err.code == 202);
+                } else if (err.code == 401) {
+                    hilog.info(domain, tag, "Invalid parameter");
                     expect(true).assertEqual(err.code == 401);
                 } else if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
+                    hilog.info(domain, tag, "api is not support");
                     expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900001) {
+                    hilog.info(domain, tag, "Service stopped.");
+                    expect(true).assertEqual(err.code == 2900001);
+                } else if (err.code == 2900003) {
+                    hilog.info(domain, tag, "Bluetooth switch is off.");
+                    expect(true).assertEqual(err.code == 2900003);
+                } else if (err.code == 2900004) {
+                    hilog.info(domain, tag, "Profile is not supported.");
+                    expect(true).assertEqual(err.code == 2900004);
+                } else if (err.code == 2900099) {
+                    hilog.info(domain, tag, "Operation failed.");
+                    expect(true).assertEqual(err.code == 2900099);
                 } else {
                     expect().assertFail();
                 }

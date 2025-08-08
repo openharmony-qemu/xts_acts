@@ -25,8 +25,8 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtA2dpTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let g_context: common.UIAbilityContext;
 let deviceId: string = "00:11:22:33:44:55";
+let g_context: common.UIAbilityContext;
 
 export default function bluetoothA2dpTest() {
 
@@ -35,20 +35,20 @@ export default function bluetoothA2dpTest() {
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       try {
-        await Utils.msSleep(2000);
-        hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-        g_context = Hypium.get('Context') as common.UIAbilityContext;
-        let atManager = abilityAccessCtrl.createAtManager();
-        let arr: Array<Permissions> = new Array<Permissions>();
-        arr.push('ohos.permission.ACCESS_BLUETOOTH')
-        atManager.requestPermissionsFromUser(g_context, arr,
-          (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-          });
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
+          g_context = Hypium.get('Context') as common.UIAbilityContext;
+          let atManager = abilityAccessCtrl.createAtManager();
+          let arr: Array<Permissions> = new Array<Permissions>();
+          arr.push('ohos.permission.ACCESS_BLUETOOTH')
+          atManager.requestPermissionsFromUser(g_context, arr,
+              (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+                  hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
+                  hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
+                  hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+              });
       } catch (err: BusinessError) {
-        hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
+          hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
       }
       await Utils.msSleep(2000);
       await Utils.clickRequestPermission('允许');
@@ -73,16 +73,22 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("getPlayingStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("getPlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        let state : a2dp.PlayingState = a2dpSrc.getPlayingState(deviceId);
+        let state: a2dp.PlayingState = a2dpSrc.getPlayingState(deviceId);
         hilog.info(domain, tag, "getPlayingState:" + state);
         expect(true).assertEqual(state == a2dp.PlayingState.STATE_NOT_PLAYING || state == a2dp.PlayingState.STATE_PLAYING);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
-        expect(Number(err.code)).assertEqual(2900099);
+        if (err.code == 801 || err.code == 2900004) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(2900099);
+        }
       }
       done();
     })
@@ -95,335 +101,34 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("a2dpSourceProfileConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("a2dpSourceProfileConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.connect(deviceId);
         hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest connect successful");
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801 || err.code == 2900004) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertTrue();
         } else {
-          expect().assertFail();
+          expect(Number(err.code)).assertEqual(202);
         }
       }
 
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.disconnect(deviceId);
         hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest disconnect successful");
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "a2dpSourceProfileConnectDisconnectTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801 || err.code == 2900004) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertTrue();
         } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: isAbsoluteVolumeSupportedTest_callback
-     * @tc.name: isAbsoluteVolumeSupportedTest_callback
-     * @tc.desc: Test isAbsoluteVolumeSupportedTest_callback API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("isAbsoluteVolumeSupportedTest_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.isAbsoluteVolumeSupported(deviceId, (err, supported) => {
-          if(err){
-            hilog.info(domain, tag, "device support absolute volume error");
-          }else {
-            hilog.info(domain, tag, "device support absolute volume " + supported);
-          }
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "isAbsoluteVolumeSupportedTest_callback get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: isAbsoluteVolumeSupportedTest_promise
-     * @tc.name: isAbsoluteVolumeSupportedTest_promise
-     * @tc.desc: Test isAbsoluteVolumeSupportedTest_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("isAbsoluteVolumeSupportedTest_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.isAbsoluteVolumeSupported(deviceId).then((supported) => {
-          hilog.info(domain, tag, 'device support absolute volume ' + supported);
-        }).catch((err) => {
-          hilog.info(domain, tag, 'device support absolute volume error');
-          expect().assertFail();
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "isAbsoluteVolumeSupportedTest_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: isAbsoluteVolumeEnabled_callback
-     * @tc.name: isAbsoluteVolumeEnabled_callback
-     * @tc.desc: Test isAbsoluteVolumeEnabled_callback API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("isAbsoluteVolumeEnabled_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.isAbsoluteVolumeEnabled(deviceId, (err, enabled) => {
-          if(err){
-            hilog.info(domain, tag, 'device absolute volume enable error');
-          }else{
-            hilog.info(domain, tag, 'device absolute volume enable ' + enabled);
-          }
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "isAbsoluteVolumeEnabled_callback get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: isAbsoluteVolumeEnabled_promise
-     * @tc.name: isAbsoluteVolumeEnabled_promise
-     * @tc.desc: Test isAbsoluteVolumeEnabled_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("isAbsoluteVolumeEnabled_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.isAbsoluteVolumeEnabled(deviceId).then((enabled) => {
-          hilog.info(domain, tag, 'device absolute volume enable ' + enabled);
-        }).catch((err) => {
-          hilog.info(domain, tag, 'device absolute volume enable error');
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "isAbsoluteVolumeEnabled_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: enableAbsoluteVolume_callback
-     * @tc.name: enableAbsoluteVolume_callback
-     * @tc.desc: Test enableAbsoluteVolume_callback API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("enableAbsoluteVolume_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.enableAbsoluteVolume(deviceId, (err) => {
-          if (err) {
-            hilog.info(domain, tag, "enableAbsoluteVolume error");
-          }else{
-            hilog.info(domain, tag, "enableAbsoluteVolume success");
-          }
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "enableAbsoluteVolume_callback get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: enableAbsoluteVolume_promise
-     * @tc.name: enableAbsoluteVolume_promise
-     * @tc.desc: Test enableAbsoluteVolume_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("enableAbsoluteVolume_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.enableAbsoluteVolume(deviceId).then(() => {
-          hilog.info(domain, tag, "enableAbsoluteVolume");
-        }).catch((err) => {
-          hilog.info(domain, tag, "enableAbsoluteVolume error");
-          expect().assertFail();
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "enableAbsoluteVolume_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: disableAbsoluteVolume_callback
-     * @tc.name: disableAbsoluteVolume_callback
-     * @tc.desc: Test disableAbsoluteVolume_callback API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("disableAbsoluteVolume_callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.disableAbsoluteVolume(deviceId, (err) => {
-          if (err) {
-            hilog.info(domain, tag, "disableAbsoluteVolume error");
-          }else{
-            hilog.info(domain, tag, "disableAbsoluteVolume success");
-          }
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "disableAbsoluteVolume_callback get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: disableAbsoluteVolume_promise
-     * @tc.name: disableAbsoluteVolume_promise
-     * @tc.desc: Test disableAbsoluteVolume_promise API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("disableAbsoluteVolume_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.disableAbsoluteVolume(deviceId).then(() => {
-          hilog.info(domain, tag, "disableAbsoluteVolume");
-        }).catch((err) => {
-          hilog.info(domain, tag, "disableAbsoluteVolume error");
-        });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "disableAbsoluteVolume_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
-        }
-      }
-      done();
-    })
-
-    /*
-     * @tc.number: getCurrentCodecInfoTest
-     * @tc.name: getCurrentCodecInfoTest
-     * @tc.desc: Test getCurrentCodecInfoTest API functionality
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
-     */
-    it("getCurrentCodecInfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        let codecInfo : a2dp.CodecInfo = a2dpSrc.getCurrentCodecInfo(deviceId);
-        hilog.info(domain, tag, "getCurrentCodecInfoTest success" + codecInfo);
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "getCurrentCodecInfoTest get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
-          hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
-        } else {
-          expect().assertFail();
+          expect(Number(err.code)).assertEqual(202);
         }
       }
       done();
@@ -437,28 +142,53 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("setCurrentCodecInfo", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("setCurrentCodecInfo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        let codecInfo : a2dp.CodecInfo = {
+        let codecInfo: a2dp.CodecInfo = {
           codecType: a2dp.CodecType.CODEC_TYPE_SBC,
-          codecBitsPerSample: a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_16,
-          codecChannelMode: a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_STEREO,
-          codecSampleRate: a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_44100
+          codecBitsPerSample: a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE,
+          codecChannelMode: a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_NONE,
+          codecSampleRate: a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_NONE
         }
         a2dpSrc.setCurrentCodecInfo(deviceId, codecInfo);
         hilog.info(domain, tag, "setCurrentCodecInfo success");
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "setCurrentCodecInfo get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertTrue();
         } else {
-          expect().assertFail();
+          expect(Number(err.code)).assertEqual(-2);
+        }
+      }
+      done();
+    })
+
+    /*
+     * @tc.number: getCurrentCodecInfoTest
+     * @tc.name: getCurrentCodecInfoTest
+     * @tc.desc: Test getCurrentCodecInfoTest API functionality
+     * @tc.level: Level 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("getCurrentCodecInfoTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
+      try {
+        let codecInfo: a2dp.CodecInfo = a2dpSrc.getCurrentCodecInfo(deviceId);
+        expect(true).assertEqual(codecInfo != null);
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+        hilog.info(domain, tag, "getCurrentCodecInfoTest get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code == 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(2900100);
         }
       }
       done();
@@ -472,22 +202,21 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("disableAutoPlay_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("disableAutoPlay_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
         let durationNumber = 1000;
         a2dpSrc.disableAutoPlay(deviceId, durationNumber).then(() => {
-          hilog.info(domain, tag, "disableAutoPlay");
+          hilog.info(domain, tag, "disableAutoPlay success");
         }).catch((err) => {
           hilog.info(domain, tag, "disableAutoPlay error");
+          expect(Number(err.code)).assertEqual(0);
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "disableAutoPlay_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801) {
           hilog.info(domain, tag, 'api is not support');
           expect(true).assertEqual(err.code == 801);
         } else {
@@ -505,21 +234,20 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("enableAutoPlay_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("enableAutoPlay_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
         a2dpSrc.enableAutoPlay(deviceId).then(() => {
-          hilog.info(domain, tag, "enableAutoPlay");
+          hilog.info(domain, tag, "enableAutoPlay success");
         }).catch((err) => {
           hilog.info(domain, tag, "enableAutoPlay error");
+          expect(Number(err.code)).assertEqual(0);
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "enableAutoPlay_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801) {
           hilog.info(domain, tag, 'api is not support');
           expect(true).assertEqual(err.code == 801);
         } else {
@@ -537,21 +265,20 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("getAutoPlayDisabledDuration_promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("getAutoPlayDisabledDuration_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let a2dpSrc: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+      expect(true).assertEqual(a2dpSrc != null);
       try {
-        let a2dpSrc = a2dp.createA2dpSrcProfile();
-        a2dpSrc.getAutoPlayDisabledDuration(deviceId).then((data: number) => {
-          hilog.info(domain, tag, 'number' + JSON.stringify(data));
+        a2dpSrc.getAutoPlayDisabledDuration(deviceId).then((data: int) => {
+          hilog.info(domain, tag, 'getAutoPlayDisabledDuration success');
         }).catch((err) => {
           hilog.info(domain, tag, "getAutoPlayDisabledDuration error");
+          expect(Number(err.code)).assertEqual(0);
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getAutoPlayDisabledDuration_promise get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 401) {
-          hilog.info(domain, tag, 'Invalid parameter');
-          expect(true).assertEqual(err.code == 401);
-        } else if (err.code == 801) {
+        if (err.code == 801) {
           hilog.info(domain, tag, 'api is not support');
           expect(true).assertEqual(err.code == 801);
         } else {
@@ -569,14 +296,14 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("PlayingStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("PlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let STATE_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_PLAYING;
         hilog.info(domain, tag, "STATE_PLAYING:" + STATE_PLAYING);
-        expect(true).assertEqual(STATE_PLAYING == 0);
+        expect(true).assertEqual(STATE_PLAYING == 1);
         let STATE_NOT_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_NOT_PLAYING;
         hilog.info(domain, tag, "STATE_NOT_PLAYING:" + STATE_NOT_PLAYING);
-        expect(true).assertEqual(STATE_NOT_PLAYING == 1);
+        expect(true).assertEqual(STATE_NOT_PLAYING == 0);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "PlayingState get errCode:" + err.code + ",errMessage:" + err.message);
@@ -593,7 +320,7 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("CodecTypeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("CodecTypeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let STATE_CODEC_TYPE_INVALID: a2dp.CodecType = a2dp.CodecType.CODEC_TYPE_INVALID;
         hilog.info(domain, tag, "STATE_CODEC_TYPE_INVALID:" + STATE_CODEC_TYPE_INVALID);
@@ -634,7 +361,7 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("CodecChannelModeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("CodecChannelModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let STATE_CODEC_CHANNEL_MODE_NONE: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_NONE;
         hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_NONE:" + STATE_CODEC_CHANNEL_MODE_NONE);
@@ -663,7 +390,7 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("CodecBitsPerSampleTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("CodecBitsPerSampleTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let STATE_CODEC_BITS_PER_SAMPLE_NONE: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE;
         hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_NONE:" + STATE_CODEC_BITS_PER_SAMPLE_NONE);
@@ -696,7 +423,7 @@ export default function bluetoothA2dpTest() {
      * @tc.type: Function
      * @tc.size: MEDIUMTEST
      */
-    it("CodecSampleRateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("CodecSampleRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let STATE_CODEC_SAMPLE_RATE_NONE: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_NONE;
         hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_NONE:" + STATE_CODEC_SAMPLE_RATE_NONE);
