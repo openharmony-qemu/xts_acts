@@ -191,8 +191,8 @@ export default function userauthTest_API12() {
     */
     it('SUB_Security_IAM_authWidget_API_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "SUB_Security_IAM_authWidget_API_Static_0130 start");
-      let reuseDuration1:number[] = [-1, 300001, 0];
-      let reuseDuration2:number[] = [1, 5, userAuth.MAX_ALLOWABLE_REUSE_DURATION];
+      let reuseDuration1:int[] = [-1, 300001, 0];
+      let reuseDuration2:int[] = [1, 5, userAuth.MAX_ALLOWABLE_REUSE_DURATION];
       const widgetParam:userAuth.WidgetParam = {
         title: '请输入密码',
       };
