@@ -9,7 +9,7 @@ import { BusinessError } from "@ohos.base"
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export const CONTENT = "Hello World!";
+export const FILE_CONTENT = "Hello World!";
 
 export default function fileuriTest() {
   describe('fileuriTest', (): void => {
