@@ -1584,7 +1584,7 @@ export default function abilityTest() {
      */
     it("displayAddListenerTest_static_0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let callback1: Callback<number> = (data: number): void => {
+        let callback1: Callback<long> = (data: long): void => {
           hilog.info(0x0000, '[ANI]', 'Listening enabled. Data: ' + JSON.stringify(data));
         };
         try {
