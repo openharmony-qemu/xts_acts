@@ -33,7 +33,7 @@ export default function FileShare_test() {
   describe("FileShare_test", (): void => {
     hilog.info(domain, tag, '%{public}s', 'FileShare_test start');
 
-    beforeAll(async (): Promise<void> => {
+    beforeAll(() => {
       fs.mkdirSync("/data/storage/el2/base/haps/entry/files", true);
     })
 

@@ -15,7 +15,7 @@ export default function fileuriTest() {
   describe('fileuriTest', (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    beforeAll(async (): Promise<void> => {
+    beforeAll(() => {
       fs.mkdirSync("/data/storage/el2/base/haps/", true);
     })
 
