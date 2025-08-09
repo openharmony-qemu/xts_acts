@@ -66,13 +66,13 @@ export default function fileuriTest() {
 
     /**
      * @tc.number SUB_STORAGE_FileUri_Name_0000
-     * @tc.name test_Parameter_Name_000
+     * @tc.name test_Parameter_Name_static_000
      * @tc.desc Get the file name of uri.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('test_Parameter_Name_000',
+    it('test_Parameter_Name_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', "test_Parameter_Name_000 START");
@@ -106,13 +106,13 @@ export default function fileuriTest() {
 
     /**
      * @tc.number SUB_STORAGE_FileUri_Name_0001
-     * @tc.name test_Parameter_Name_001
+     * @tc.name test_Parameter_Name_static_001
      * @tc.desc Get the file name of uri.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('test_Parameter_Name_001',
+    it('test_Parameter_Name_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', "test_Parameter_Name_001 START");

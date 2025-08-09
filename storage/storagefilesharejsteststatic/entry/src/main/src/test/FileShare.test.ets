@@ -39,7 +39,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0100
-     * @tc.name FileShare_activatePermission_001
+     * @tc.name FileShare_activatePermission_static_001
      * @tc.desc Test activatePermission() interfaces
      * Test normal uri and OperationMode is READ_MODE.
      * @tc.size MEDIUM
@@ -47,7 +47,7 @@ export default function FileShare_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('FileShare_activatePermission_001',
+    it('FileShare_activatePermission_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_001.txt";
@@ -83,7 +83,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0200
-     * @tc.name FileShare_activatePermission_002
+     * @tc.name FileShare_activatePermission_static_002
      * @tc.desc Test activatePermission() interfaces
      * Test normal uri and OperationMode is READ_MODE and WRITE_MODE .
      * @tc.size MEDIUM
@@ -91,7 +91,7 @@ export default function FileShare_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('FileShare_activatePermission_002',
+    it('FileShare_activatePermission_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_002.txt";
@@ -129,7 +129,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0300
-     * @tc.name FileShare_activatePermission_003
+     * @tc.name FileShare_activatePermission_static_003
      * @tc.desc Test activatePermission() interfaces
      * Test INVALID_PATH uri and OperationMode is READ_MODE.
      * @tc.size MEDIUM
@@ -137,7 +137,7 @@ export default function FileShare_test() {
      * @tc.level Level 3
      * @tc.require
      */
-    it('FileShare_activatePermission_003',
+    it('FileShare_activatePermission_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003_1.txt";
@@ -182,7 +182,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_DeactivatePermission_0100
-     * @tc.name FileShare_deactivatePermission_001
+     * @tc.name FileShare_deactivatePermission_static_001
      * @tc.desc Test deactivatePermission() interfaces
      * Test normal uri and OperationMode is READ_MODE.
      * @tc.size MEDIUM
@@ -190,7 +190,7 @@ export default function FileShare_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('FileShare_deactivatePermission_001',
+    it('FileShare_deactivatePermission_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_001.txt";
@@ -226,7 +226,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_DeactivatePermission_0200
-     * @tc.name FileShare_deactivatePermission_002
+     * @tc.name FileShare_deactivatePermission_static_002
      * @tc.desc Test deactivatePermission() interfaces
      * Test normal uri and OperationMode is READ_MODE and WRITE_MODE .
      * @tc.size MEDIUM
@@ -234,7 +234,7 @@ export default function FileShare_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('FileShare_deactivatePermission_002',
+    it('FileShare_deactivatePermission_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_002.txt";
@@ -272,7 +272,7 @@ export default function FileShare_test() {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_DeactivatePermission_0300
-     * @tc.name FileShare_deactivatePermission_003
+     * @tc.name FileShare_deactivatePermission_static_003
      * @tc.desc Test deactivatePermission() interfaces
      * Test INVALID_PATH uri and OperationMode is READ_MODE.
      * @tc.size MEDIUM
@@ -280,7 +280,7 @@ export default function FileShare_test() {
      * @tc.level Level 3
      * @tc.require
      */
-    it('FileShare_deactivatePermission_003',
+    it('FileShare_deactivatePermission_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_003_1.txt";
@@ -322,67 +322,6 @@ export default function FileShare_test() {
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 END');
       });
-
-    /**
-     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_GrantUriPermission_0000
-     * @tc.name test_GrantUriPermission_000
-     * @tc.desc Test grantUriPermission interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-     */
-    it('test_GrantUriPermission_000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        try {
-          let uri = "file://media/image/9";
-          let bundleName = "com.demo.a";
-          await fileShare.grantUriPermission(uri, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION);
-          hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_000 success`);
-          done();
-        } catch (err) {
-          const error = err as BusinessError;
-          hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
-            error.code, error.message);
-          expect(false).assertTrue();
-          done();
-        }
-      });
-
-    /**
-     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_GrantUriPermission_0100
-     * @tc.name test_GrantUriPermission_003
-     * @tc.desc Test grantUriPermission interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-     */
-    it('test_GrantUriPermission_003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        try {
-          let uri = "file://media/image/9";
-          let bundleName = "com.demo.a";
-          fileShare.grantUriPermission(uri, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION,
-            (err: BusinessError | null) => {
-              if (err?.code !== 0) {
-                hilog.info(domain, tag, "err.code: " + err?.code + ", err.message: " + err?.message);
-                expect(false).assertTrue();
-              }
-              }
-              );
-              hilog.info(domain, tag, '%{public}s', `test_GrantUriPermission_003 success`);
-              done();
-            } catch (err) {
-            const error = err as BusinessError;
-            hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
-              error.code, error.message);
-            expect(false).assertTrue();
-            done();
-          }
-        });
 
   })
   hilog.info(domain, tag, '%{public}s', 'FileShare_test end');

@@ -17,7 +17,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0000
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_000
+     * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_000
      * @tc.desc Test getCurrentBundleStats() interfaces
      * Test getCurrentBundleStats().
      * @tc.size MEDIUM
@@ -25,7 +25,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_current_bundle_stats_async_000',
+    it('storage_statistics_test_get_current_bundle_stats_async_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_000 START');
@@ -52,7 +52,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0001
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_001
+     * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_001
      * @tc.desc Test getCurrentBundleStats() interfaces
      * Test getCurrentBundleStats(callback: AsyncCallback<BundleStats>).
      * @tc.size MEDIUM
@@ -60,7 +60,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_current_bundle_stats_async_001',
+    it('storage_statistics_test_get_current_bundle_stats_async_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_001 START');
@@ -92,7 +92,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0000
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_000
+     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_000
      * @tc.desc Test getUserStorageStats() interfaces
      * Test getUserStorageStats().
      * @tc.size MEDIUM
@@ -100,7 +100,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_user_storage_stats_async_000',
+    it('storage_statistics_test_get_user_storage_stats_async_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_000 START');
@@ -122,7 +122,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0001
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_001
+     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_001
      * @tc.desc Test getUserStorageStats() interfaces
      * Test getUserStorageStats(callback: AsyncCallback<StorageStats>).
      * @tc.size MEDIUM
@@ -130,7 +130,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_user_storage_stats_async_001',
+    it('storage_statistics_test_get_user_storage_stats_async_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_001 START');
@@ -163,7 +163,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0002
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_002
+     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_002
      * @tc.desc Test getCurrentBundleStats() interfaces
      * Test getCurrentBundleStats(userId: long).
      * @tc.size MEDIUM
@@ -171,7 +171,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_user_storage_stats_async_002',
+    it('storage_statistics_test_get_user_storage_stats_async_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_002 START');
@@ -194,7 +194,7 @@ export default function storageStatistics_test() {
 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0003
-     * @tc.name storage_statistics_test_get_user_storage_stats_async_003
+     * @tc.name storage_statistics_test_get_user_storage_stats_async_static_003
      * @tc.desc Test getUserStorageStats() interfaces
      * Test getUserStorageStats(userId: long, callback: AsyncCallback<StorageStats>).
      * @tc.size MEDIUM
@@ -202,7 +202,7 @@ export default function storageStatistics_test() {
      * @tc.level Level 0
      * @tc.require
      */
-    it('storage_statistics_test_get_user_storage_stats_async_003',
+    it('storage_statistics_test_get_user_storage_stats_async_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_003 START');
