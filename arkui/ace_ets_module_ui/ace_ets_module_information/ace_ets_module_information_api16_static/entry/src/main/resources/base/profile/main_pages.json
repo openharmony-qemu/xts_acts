@@ -1,0 +1,10 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/gauge/GaugePrivacySensitive",
+        "MainAbility/pages/textClock/TextClockDateTimeOptions",
+        "MainAbility/pages/dataPanel/DataPanelContentModifier",
+        "MainAbility/pages/progress/ProgressContentModifier",
+        "MainAbility/pages/textTimer/TextTimerTextShadow"
+    ]
+}
