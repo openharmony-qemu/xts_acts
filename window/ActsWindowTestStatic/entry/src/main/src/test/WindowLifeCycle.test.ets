@@ -24,8 +24,6 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage ,LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
-// import * as index2 from '../../ets/pages/index2'
-import * as LoadContentByName from '../../ets/pages/LoadContentByName';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -43,10 +41,9 @@ export default function WindowLifeCycleTest() {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
             try {
-                windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
-                win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
-                context = AppStorage.get<common.UIAbilityContext>('context',Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
-                // let win = windowStage.getMainWindowSync();
+                windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
 
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
