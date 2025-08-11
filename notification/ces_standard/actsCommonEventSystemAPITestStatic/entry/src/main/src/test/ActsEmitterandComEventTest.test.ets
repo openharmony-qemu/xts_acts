@@ -622,7 +622,7 @@ export default function ActsEmitterandComEventTest() {
     //   let onConsume_number : number = 0
     //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
     //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
+    //     let storage: Sample = eventData.data! as Sample;
     //     storage.printCount();
     //     onConsume_number += 1
     //   }
@@ -653,7 +653,7 @@ export default function ActsEmitterandComEventTest() {
     //
     //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
     //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
+    //     let storage: Sample = eventData.data! as Sample;
     //     storage.printCount();
     //     onConsume_number += 1
     //   }
@@ -683,7 +683,7 @@ export default function ActsEmitterandComEventTest() {
     //
     //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
     //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
+    //     let storage: Sample = eventData.data! as Sample;
     //     storage.printCount();
     //     onConsume_number += 1
     //   }
