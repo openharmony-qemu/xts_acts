@@ -19,6 +19,7 @@ group("customization") {
     deps = [
       "config_policy:ActsConfigPolicyTest",
       "enterprise_device_management:edm_test_grop",
+      "config_policy_static:ActsConfigPolicyStaticTest",
     ]
   }
 }

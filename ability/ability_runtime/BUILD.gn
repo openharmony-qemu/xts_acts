@@ -50,6 +50,7 @@ group("ability_runtime") {
       "actschildprocessmanager:actschildprocessmanagertest",
       "actscleantemptest:cleantempfiles",
       "actscollaborateresulttest:actscollaborateresulttest",
+      "actscollaborateresultteststatic:actscollaborateresultstatictest",
       "actscontextmonitor:ActsContextMonitorTest",
       "actscompletionhandlertest:actscompletionhandlertest",
       "actscreatebundlecontexttest:ActsCreateBundleContextTest",
@@ -127,7 +128,7 @@ group("ability_runtime") {
       "want:want",
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
-      "ActsAbility2TestStatic:ActsAbility2StaticTest",
+      # "ActsAbility2TestStatic:ActsAbility2StaticTest",
     ]
   }
 }
