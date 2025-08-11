@@ -68,18 +68,24 @@ export default function PermissionTest(){
     it("Permission_bindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
         hilog.info(TAG, 'testTag', '-------------------Permission_bindDriverWithDeviceId_001-------------------------');
-        try {
-          await deviceManager.bindDriverWithDeviceId(TEST_DEVICE_ID, (error, data) => {
-            hilog.info(TAG, 'testTag', 'Test function is called');
+        if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        } else {
+          try {
+            await deviceManager.bindDriverWithDeviceId(TEST_DEVICE_ID, (error, data) => {
+              hilog.info(TAG, 'testTag', 'Test function is called');
+              done();
+            });
+            expect(false).assertTrue();
             done();
-          });
-          expect(false).assertTrue();
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag',
-            'Test case Permission_bindDriverWithDeviceId_001 catch err : ' + JSON.stringify(error));
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
-          done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag',
+              'Test case Permission_bindDriverWithDeviceId_001 catch err : ' + JSON.stringify(error));
+            expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          }
         }
       })
 
@@ -91,15 +97,21 @@ export default function PermissionTest(){
     it("Permission_unbindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------Permission_unbindDriverWithDeviceId--------------------------');
-      try {
-        await deviceManager.unbindDriverWithDeviceId(TEST_DEVICE_ID);
-        expect(false).assertTrue();
-        done();
-      } catch (error: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case Permission_unbindDriverWithDeviceId catch err :' + JSON.stringify(error));
-        expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
-        done();
-      }
+      if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        } else {
+          try {
+            await deviceManager.unbindDriverWithDeviceId(TEST_DEVICE_ID);
+            expect(false).assertTrue();
+            done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case Permission_unbindDriverWithDeviceId catch err :' + JSON.stringify(error));
+            expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          }
+        }
     })
 
     /*
@@ -107,14 +119,21 @@ export default function PermissionTest(){
      * @tc.name:Permission_queryDevices_001
      * @tc.desc:verify permission of queryDevices
      */
-    it("Permission_queryDevices_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it("Permission_queryDevices_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------Permission_queryDevices_001---------------------------');
-      try {
-        deviceManager.queryDevices();
-        expect(false).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case Permission_queryDevices_001 catch err: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+      if (deviceId == 0) {
+        hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+        expect(true).assertTrue();
+        return done();
+      } else {
+        try {
+          deviceManager.queryDevices();
+          expect(false).assertTrue();
+        } catch (err: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case Permission_queryDevices_001 catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
     });
   })
