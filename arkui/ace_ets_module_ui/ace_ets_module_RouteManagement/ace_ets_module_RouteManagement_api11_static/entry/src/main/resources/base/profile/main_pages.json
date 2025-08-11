@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/State/RouterPushTwo",
+    "MainAbility/pages/back_router/DisableAlertBeforeBackPage",
+    "MainAbility/pages/back_router/EnableAlertBeforeBackPage"
+  ]
+}
