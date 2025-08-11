@@ -38,7 +38,7 @@ struct select1 {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = 0xCCCCCC as Color
+  @State fontColor: Color = Color.Grey
 
   // private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
   //   console.info("select page state change called:" + JSON.stringify(eventData));
