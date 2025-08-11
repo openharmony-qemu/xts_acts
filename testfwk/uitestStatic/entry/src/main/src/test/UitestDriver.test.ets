@@ -298,6 +298,53 @@ export default function uitestDriverTest() {
     })
 
     /*
+    * @tc.number: uitestDriverTest_0029
+    * @tc.name: test_penClick_function_displayId_static
+    * @tc.desc: penClick function test.
+    */
+    it('test_penClick_function_displayId_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, "test_penClick_function_displayId_static start!!!!")
+      let disPlay = display.getDefaultDisplaySync();
+      hilog.info(domain, tag, `test_penClick_function_displayId_static disPlay: ${JSON.stringify(disPlay)}`);
+      let driver = Driver.create();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      // 点击页面中的next page 按钮。
+      try {
+        let btnCom = await driver.findComponent(ON.text('next page'));
+        await driver.delayMs(waitUiReadyMs);
+        hilog.info(domain, tag, `test_penClick_function_displayId_static btnCom: ${JSON.stringify(btnCom)}`);
+        expect(btnCom != null).assertTrue();
+        if (btnCom != null) {
+          let btnPoint = await btnCom.getBoundsCenter();
+          hilog.info(domain, tag, `test_penClick_function_displayId_static btnPoint: ${JSON.stringify(btnPoint)}`);
+          await driver.penClick({
+            x: btnPoint.x,
+            y: btnPoint.y,
+            displayId: disPlay.id.toInt()
+          });
+          await driver.delayMs(waitUiReadyMs);
+        }
+        let strCom = await driver.findComponent(ON.text('back to index'));
+        await driver.delayMs(waitUiReadyMs);
+        expect(strCom != null).assertTrue();
+        if (strCom != null) {
+          let strText = await strCom.getText();
+          await driver.delayMs(waitUiReadyMs);
+          expect(strText).assertEqual('back to index');
+          await strCom.click();
+          await driver.delayMs(waitUiReadyMs);
+        }
+      } catch(error: Error) {
+        hilog.info(domain, tag, `test_penClick_function_displayId_static error, ${ JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        await stopApplication('com.uitestScene.acts');
+      }
+      hilog.info(domain, tag, "test_penClick_function_displayId_static over!!!!")
+    })
+
+    /*
     * @tc.number: uitestDriverTest_0071
     * @tc.name: testMouseScroll_default_static
     * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.

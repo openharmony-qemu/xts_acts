@@ -718,5 +718,39 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getHint_17000004_static end`);
     })
 
+    /*
+    * @tc.number: UitestComponentErrorTest_026
+    * @tc.name: test_inputTextMode_801_static
+    * @tc.desc: inputText 801 test.
+    */
+    it('test_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, test_inputTextMode_801_static start`);
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let button = await driver.findComponent(ON.type('TextInput'));
+        if (button == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            button = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        await driver.delayMs(waitUiReadyMs);
+        console.log(`${TestTag}, test_inputTextMode_801_static button: ${JSON.stringify(button)}`);
+        expect(button != null).assertTrue();
+        if (button != null) {
+          await button.inputText('123456', {
+            paste: true
+          });
+        }
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(CapabilityCode);
+      } finally {
+        await stopApplication('com.uitestScene.acts');
+      }
+      console.log(`${TestTag}, test_inputTextMode_801_static end`);
+    })
   })
 }
