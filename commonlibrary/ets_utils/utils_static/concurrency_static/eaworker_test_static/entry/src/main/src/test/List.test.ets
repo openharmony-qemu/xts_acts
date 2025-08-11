@@ -14,8 +14,11 @@
  */
 
 import workerTest from "./EAWorker.test";
-
+import NewEAWorkerTest from "./NewEAWorker.test";
+import NewEAWorkerTest2 from "./NewEAWorker2.test";
 
 export default function testsuite() {
-  workerTest()
+  workerTest();
+  NewEAWorkerTest();
+  NewEAWorkerTest2();
 }
