@@ -1,0 +1,9 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Badge/Badge",
+        "MainAbility/pages/Badge/BadgeIndex",
+        "MainAbility/pages/LoadingProgress/loadingProgress",
+	    "MainAbility/pages/Search/search"
+    ]
+}
