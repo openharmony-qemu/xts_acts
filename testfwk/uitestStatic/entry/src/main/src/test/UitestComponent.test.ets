@@ -110,9 +110,9 @@ export default function uitestComponentTest() {
           hilog.info(domain, tag, `testScrollToBottom_static msg, ${JSON.stringify(msg)} `);
         }
       } catch (error) {
-          error = error as Error;
-          hilog.info(domain, tag, `testScrollToBottom_static error, ${JSON.stringify(error)} `);
-          expect().assertFail();
+        error = error as Error;
+        hilog.info(domain, tag, `testScrollToBottom_static error, ${JSON.stringify(error)} `);
+        expect().assertFail();
       }
       hilog.info(domain, tag, "testScrollToBottom_static end !!!!!!!!!!!!!!!!!!!!!!!!!！");
       await stopApplication('com.uitestScene.acts');

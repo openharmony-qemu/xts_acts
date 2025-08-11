@@ -36,10 +36,12 @@ export default function abilityTest() {
         bundle.getBundleNameByUidSync(uid)
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
-        console.info("getBundleNameByUidSyncUnPermissionApi14 1 catch " + JSON.stringify(err));
-        expect(err.code).assertEqual(201);
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.info("getBundleNameByUidSyncUnPermissionApi14 1 catch " + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
       }
     })
 
@@ -57,10 +59,12 @@ export default function abilityTest() {
           console.info("getBundleNameByUidUnPermissionApi14 promise error " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         })
-      } catch (err: BusinessError) {
-        console.info("getBundleNameByUidUnPermissionApi14 1 catch " + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.info("getBundleNameByUidUnPermissionApi14 1 catch " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
       try {
         bundle.getBundleNameByUid(uid, (err: BusinessError | null, data: string | undefined) => {
@@ -70,10 +74,12 @@ export default function abilityTest() {
           expect(err?.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
-        console.info("getBundleNameByUidUnPermissionApi14 callback2 catch " + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.info("getBundleNameByUidUnPermissionApi14 callback2 catch " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -93,10 +99,12 @@ export default function abilityTest() {
           expect(err.code).assertEqual(201);
           done();
         })
-      } catch (err: BusinessError) {
-        console.info("getAppCloneIdentityUnPermissionApi14 1 catch " + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.info("getAppCloneIdentityUnPermissionApi14 1 catch " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
 

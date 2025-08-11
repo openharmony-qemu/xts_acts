@@ -143,7 +143,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
         }
       });
       hilog.info(0x0000, 'testTag', `connectServiceExtensionAbility  connectId is ${this.connectId}`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','connectServiceExtensionAbility Failed, code is '+ err.code);
     }
   }
@@ -166,7 +167,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
         }
       });
       hilog.info(0x0000, 'testTag', `testConnectAppServiceExtensionemptywant  connectId is ${this.connectId}`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','testConnectAppServiceExtensionemptywant Failed, code is '+ err.code);
     }
   }
@@ -192,7 +194,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
         }
       });
       hilog.info(0x0000, 'testTag', `testConnectAppServiceExtensionemptywant  connectId is ${this.connectId}`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','testConnectAppServiceExtensionemptywant Failed, code is '+ err.code);
     }
   }
@@ -218,7 +221,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
         }
       });
       hilog.info(0x0000, 'testTag', `testConnectAppServiceExtensionerrcode16000002 connectId is ${this.connectId}`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','testConnectAppServiceExtensionerrcode16000002 Failed, code is '+ err.code);
     }
   }
@@ -235,7 +239,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
           hilog.info(0x0000, 'testTag', `disconnectServiceExtensionAbility failed, code is ${err?.code}, message is ${err?.message}`);
         });
       hilog.info(0x0000, 'testTag', `testDisConnectServiceExtension end`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','disconnectServiceExtensionAbility Failed, code is '+ err.code);
     }
   }
@@ -252,7 +257,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
           hilog.info(0x0000, 'testTag', `disconnectServiceExtensionAbility failed, code is ${err?.code}, message is ${err?.message}`);
         });
       hilog.info(0x0000, 'testTag', `DisConnectAppServiceExtensionpromise16000050 end`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','DisConnectAppServiceExtensionpromise16000050 Failed, code is '+ err.code);
     }
   }
@@ -265,7 +271,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
         hilog.info(0x0000, 'testTag', `disconnectServiceExtensionAbility failed, code is ${err?.code}, message is ${err?.message}`);
       });
       hilog.info(0x0000, 'testTag', `DisConnectAppServiceExtensioncallback16000050 end`);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','DisConnectAppServiceExtensioncallback16000050 Failed, code is '+ err.code);
     }
   }
@@ -286,7 +293,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
           hilog.info(0x0000, 'testTag', `startAbility success`);
         }
       });
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag','startAbility Failed, code is '+ err.code);
     }
 

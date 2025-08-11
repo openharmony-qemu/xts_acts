@@ -1121,7 +1121,8 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap.setMemoryNameSync("PixelMapName Test");
           expect(true).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code == 62980286) {
             console.info('www data graphicImagePixelMap_static_4500 error code ' + JSON.stringify(err))
             expect(true).assertTrue();
@@ -1149,7 +1150,8 @@ export default function graphicImagePixelMap() {
         try {
           const flag = pixelMap.isStrideAlignment;
           expect(false).assertEqual(flag);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('www data graphicImagePixelMap_static_4600 error ' + JSON.stringify(err))
           expect().assertFail();
         }
@@ -1179,7 +1181,8 @@ export default function graphicImagePixelMap() {
             console.error('Failed to release graphicImagePixelMap_static_4700 object.');
             expect().assertFail();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('www data graphicImagePixelMap_static_4600 error ' + JSON.stringify(err))
           expect().assertFail();
         }
@@ -1206,7 +1209,8 @@ export default function graphicImagePixelMap() {
             console.info('Succeeded in releasing graphicImagePixelMap_static_4800 object.');
             expect(true).assertTrue();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('www data graphicImagePixelMap_static_4800 error ' + JSON.stringify(err))
           expect().assertFail();
         }
@@ -1230,7 +1234,8 @@ export default function graphicImagePixelMap() {
         try {
           const flag = pixelMap.isEditable;
           expect(true).assertEqual(flag);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('www data graphicImagePixelMap_static_6200 error ' + JSON.stringify(err))
           expect().assertFail();
         }
@@ -1888,7 +1893,8 @@ export default function graphicImagePixelMap() {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
           console.info('www data succeed in createPixelMapFromSurfaceSync');
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error('www data error createPixelMapSync' + JSON.stringify(err));
           expect(Number(err.code) == 401).assertTrue();
         }
@@ -1910,7 +1916,8 @@ export default function graphicImagePixelMap() {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId);
           console.info('www data succeed in createPixelMapFromSurfaceSync');
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error('www data error createPixelMapSync' + JSON.stringify(err));
           expect(Number(err.code) == 401).assertTrue();
         }
