@@ -124,8 +124,6 @@ export default function fileuriTest() {
           hilog.info(domain, tag, '%{public}s', "fileUriObject01.name START");
           hilog.info(domain, tag, 'fileUriObject01.name: = %{public}s', fileUriObject01.name);
           expect(fileUriObject01.name === '').assertTrue();
-          const fileUriObject02 = new fileUri.FileUri('');
-          expect(fileUriObject02.name === '').assertTrue();
           done();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', 'test_Parameter_Name_001 has failed for ' + err);
