@@ -989,13 +989,13 @@ export default function ResmgrTest() {
       })
 
       /* *
-      * @tc.number  SUB_GLOBAL_RESMGR_GETSYSTEMRESOURCEMANAGER_JS_static_0100
-      * @tc.name    getSystemResourceManager_test_static_0100
-      * @tc.desc    test getSystemResourceManager method
+      * @tc.number  SUB_GLOBAL_RESMGR_GETSYSRESOURCEMANAGER_JS_static_0100
+      * @tc.name    getSysResourceManager_test_static_0100
+      * @tc.desc    test getSysResourceManager method
       */
-      it('getSystemResourceManager_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let value = resourceManager.getSystemResourceManager();
-        hilog.info(0x0000, 'testTag', '%{public}s', 'getSystemResourceManager_test_static_0100 ' + value);
+      it('getSysResourceManager_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let value = resourceManager.getSysResourceManager();
+        hilog.info(0x0000, 'testTag', '%{public}s', 'getSysResourceManager_test_static_0100 ' + value);
         expect(value !== null).assertTrue();
         done();
       })
