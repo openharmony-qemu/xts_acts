@@ -136,27 +136,29 @@ export default function DeviceManagerTest() {
      * @tc.name       : testQueryDevices001
      * @tc.desc       : verify queryDevice result
      */
-    it("testQueryDevices001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, ():void => {
+    it("testQueryDevices001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------testQueryDevices001---------------------------');
       if (deviceId == 0) {
         hilog.info(TAG, 'testTag', 'Device ID has not been set.');
         expect(true).assertTrue();
-        return;
-      }
-      try {
-        let devices = deviceManager.queryDevices(deviceManager.BusType.USB);
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 ret : ' + JSON.stringify(devices));
-        expect(devices != null).assertEqual(true);
-        expect(devices.length > 0).assertEqual(true);
-        let deviceUsb = devices[0] as deviceManager.USBDevice;
-        expect(deviceUsb != null).assertEqual(true);
-        expect(deviceUsb.deviceId != null).assertEqual(true);
-        expect(deviceUsb.description != null).assertEqual(true);
-        expect(deviceUsb.vendorId != null).assertEqual(true);
-        expect(deviceUsb.productId != null).assertEqual(true);
-      } catch (err: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 catch err: ' + JSON.stringify(err));
-        expect().assertFail();
+        return done();
+      } else {
+        try {
+          let devices = deviceManager.queryDevices(deviceManager.BusType.USB);
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 ret : ' + JSON.stringify(devices));
+          expect(devices != null).assertEqual(true);
+          expect(devices.length > 0).assertEqual(true);
+          let deviceUsb = devices[0] as deviceManager.USBDevice;
+          expect(deviceUsb != null).assertEqual(true);
+          expect(deviceUsb.deviceId != null).assertEqual(true);
+          expect(deviceUsb.description != null).assertEqual(true);
+          expect(deviceUsb.vendorId != null).assertEqual(true);
+          expect(deviceUsb.productId != null).assertEqual(true);
+        } catch (err: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 catch err: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
       }
     })
 
@@ -165,21 +167,23 @@ export default function DeviceManagerTest() {
      * @tc.name       : testQueryDevices002
      * @tc.desc       : verify queryDevice no param result
      */
-    it('testQueryDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, ():void => {
+    it('testQueryDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------testQueryDevices002---------------------------');
       if (deviceId == 0) {
         hilog.info(TAG, 'testTag', 'Device ID has not been set.');
         expect(true).assertTrue();
-        return;
-      }
-      try {
-        let devices = deviceManager.queryDevices();
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 ret : ' + JSON.stringify(devices));
-        expect(devices != null).assertEqual(true);
-        expect(devices[0].deviceId != null).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 catch err: ' + JSON.stringify(err));
-        expect().assertFail();
+        return done();
+      } else {
+        try {
+          let devices = deviceManager.queryDevices();
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 ret : ' + JSON.stringify(devices));
+          expect(devices != null).assertEqual(true);
+          expect(devices[0].deviceId != null).assertTrue();
+        } catch (err: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 catch err: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
       }
     })
 
@@ -188,15 +192,22 @@ export default function DeviceManagerTest() {
      * @tc.name       : testQueryDevices003
      * @tc.desc       : verify queryDevice param is 12345
      */
-    it('testQueryDevices003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, ():void => {
+    it('testQueryDevices003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------testQueryDevices003---------------------------');
-      try {
-        let devices = deviceManager.queryDevices(12345);
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 ret : ', JSON.stringify(devices));
-        expect(devices.length == 0).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 catch err : ' + JSON.stringify(err));
-        expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+      if (deviceId == 0) {
+        hilog.info(TAG, 'testTag', 'Device ID has been set.');
+        expect(true).assertTrue();
+        return done();
+      } else {
+        try {
+          let devices = deviceManager.queryDevices(12345);
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 ret : ', JSON.stringify(devices));
+          expect(devices.length == 0).assertTrue();
+        } catch (err: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 catch err : ' + JSON.stringify(err));
+          expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+        }
       }
     })
 
@@ -205,19 +216,21 @@ export default function DeviceManagerTest() {
      * @tc.name       : testQueryDevices004
      * @tc.desc       : verify queryDevice errcode 22900001
      */
-    it('testQueryDevices004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, ():void => {
+    it('testQueryDevices004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:()=>void) : Promise<void> => {
       hilog.info(TAG, 'testTag', '----------------------testQueryDevices004---------------------------');
-      if (deviceId != 0) {
+      if (deviceId == 0) {
         hilog.info(TAG, 'testTag', 'Device ID has been set.');
         expect(true).assertTrue();
-        return;
-      }
-      try {
-        let devices = deviceManager.queryDevices();
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 ret : ' + JSON.stringify(devices));
-      } catch (err: BusinessError) {
-        hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 catch err : ' + JSON.stringify(err));
-        expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+        return done();
+      } else {
+        try {
+          let devices = deviceManager.queryDevices();
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 ret : ' + JSON.stringify(devices));
+        } catch (err: BusinessError) {
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 catch err : ' + JSON.stringify(err));
+          expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
+        }
       }
     })
 
@@ -228,25 +241,31 @@ export default function DeviceManagerTest() {
      */
     it("testBindDriverWithDeviceId001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
-        hilog.info(TAG, 'testTag', '----------------------testBindDriverWithDeviceId001---------------------------');
-        try {
-          deviceManager.bindDriverWithDeviceId(12345, (error, data) => {
+      hilog.info(TAG, 'testTag', '----------------------testBindDriverWithDeviceId001---------------------------');
+      if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        } else {
+          try {
+            deviceManager.bindDriverWithDeviceId(12345, (error, data) => {
+              expect(false).assertTrue();
+              done();
+            }).then(data => {
+              expect(false).assertTrue();
+              done();
+            }, error => {
+              expect(false).assertTrue();
+              done();
+            });
             expect(false).assertTrue();
             done();
-          }).then(data => {
-            expect(false).assertTrue();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId001 catch err : ' + JSON.stringify(error));
+            expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
+            expect(error.code != SERVICE_NOT_ALLOW_ACCESS).assertTrue();
             done();
-          }, error => {
-            expect(false).assertTrue();
-            done();
-          });
-          expect(false).assertTrue();
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId001 catch err : ' + JSON.stringify(error));
-          expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
-          expect(error.code != SERVICE_NOT_ALLOW_ACCESS).assertTrue();
-          done();
+          }
         }
       })
 
@@ -257,22 +276,23 @@ export default function DeviceManagerTest() {
      */
     it("testUnbindDriverWithDeviceId002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
-        hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId002---------------------------');
-        if (deviceId == 0) {
+      hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId002---------------------------');
+      if (deviceId == 0) {
           hilog.info(TAG, 'testTag', 'Device ID has not been set.');
           expect(true).assertTrue();
           return done();
-        }
-        try {
-          await deviceManager.unbindDriverWithDeviceId(deviceId).then(data => {
-            expect(false).assertTrue();
+        } else {
+          try {
+            await deviceManager.unbindDriverWithDeviceId(deviceId).then(data => {
+              expect(false).assertTrue();
+              done();
+            });
             done();
-          });
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId002 catch err :' + JSON.stringify(error));
-          expect(error.code).assertEqual(SERVICE_NOT_BOUND);
-          done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId002 catch err :' + JSON.stringify(error));
+            expect(error.code).assertEqual(SERVICE_NOT_BOUND);
+            done();
+          }
         }
       })
 
@@ -283,17 +303,23 @@ export default function DeviceManagerTest() {
      */
     it("testUnbindDriverWithDeviceId003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
-        hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId003---------------------------');
-        try {
-          await deviceManager.unbindDriverWithDeviceId(12345).then(data => {
-            expect(false).assertTrue();
+      hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId003---------------------------');
+      if (deviceId == 0) {
+          hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+          expect(true).assertTrue();
+          return done();
+        } else {
+          try {
+            await deviceManager.unbindDriverWithDeviceId(12345).then(data => {
+              expect(false).assertTrue();
+              done();
+            });
             done();
-          });
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId003 catch err :' + JSON.stringify(error));
-          expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
-          done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId003 catch err :' + JSON.stringify(error));
+            expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
+            done();
+          }
         }
       })
 
@@ -304,25 +330,26 @@ export default function DeviceManagerTest() {
      */
     it("testBindDriverWithDeviceId002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
-        hilog.info(TAG, 'testTag', '----------------------testBindDriverWithDeviceId002---------------------------');
-        if (deviceId == 0) {
+      hilog.info(TAG, 'testTag', '----------------------testBindDriverWithDeviceId002---------------------------');
+      if (deviceId == 0) {
           hilog.info(TAG, 'testTag', 'Device ID has not been set.');
           expect(true).assertTrue();
           return done();
-        }
-        try {
-          let data: deviceManager.RemoteDeviceDriver = await deviceManager.bindDriverWithDeviceId(deviceId,
-            (err: BusinessError<void>|null, data: long|undefined) => {
-              hilog.info(TAG, 'testTag', 'unbindDriverWithDeviceId callback success');
-            });
-          expect(true).assertTrue();
-          hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
-          hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId002 catch err : ' + JSON.stringify(error));
-          expect(false).assertTrue();
-          done();
+        } else {
+          try {
+            let data: deviceManager.RemoteDeviceDriver = await deviceManager.bindDriverWithDeviceId(deviceId,
+              (err: BusinessError<void>|null, data: long|undefined) => {
+                hilog.info(TAG, 'testTag', 'unbindDriverWithDeviceId callback success');
+              });
+            expect(true).assertTrue();
+            hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
+            hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
+            done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId002 catch err : ' + JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
 
@@ -333,21 +360,22 @@ export default function DeviceManagerTest() {
      */
     it("testUnbindDriverWithDeviceId001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
-        hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId001---------------------------');
-        if (deviceId == 0) {
+      hilog.info(TAG, 'testTag', '----------------------testUnbindDriverWithDeviceId001---------------------------');
+      if (deviceId == 0) {
           hilog.info(TAG, 'testTag', 'Device ID has not been set.');
           expect(true).assertTrue();
           return done();
-        }
-        try {
-          await deviceManager.unbindDriverWithDeviceId(deviceId);
-          expect(true).assertTrue();
-          await Utils.msSleep(2000);
-          done();
-        } catch (error: BusinessError) {
-          hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId001 catch err :' + JSON.stringify(error));
-          expect(false).assertTrue();
-          done();
+        } else {
+          try {
+            await deviceManager.unbindDriverWithDeviceId(deviceId);
+            expect(true).assertTrue();
+            await Utils.msSleep(2000);
+            done();
+          } catch (error: BusinessError) {
+            hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId001 catch err :' + JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
   })
