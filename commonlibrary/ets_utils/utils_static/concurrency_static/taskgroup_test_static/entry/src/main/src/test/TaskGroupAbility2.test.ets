@@ -540,56 +540,6 @@ export default function TaskGroupAbilityTest2() {
       done();
     })
 
-    // /**
-    //  * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_4400
-    //  * @tc.name taskPoolTaskGroupTask4400
-    //  * @tc.desc Create two tasks with union parameters and union return values, and execute them 10 times,error
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 2
-    //  */
-    // it('taskPoolTaskGroupTask4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //
-    //   // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-    //
-    //   let count: number = 0;
-    //   const promises: Array<Promise<void>> = new Array<Promise<void>>();
-    //   for (let i = 0; i < 1; i++) {
-    //     let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-    //     let union1: Union[] = ['hello1', 7, new Array<Number>(1, 2, 3)];
-    //     let union2: Union[] = ['hello2', 8, new Array<Number>(4, 5, 6)];
-    //     taskGroup.addTask(printUnion3, union1);
-    //     taskGroup.addTask(printUnion4, union2);
-    //     try {
-    //       const promise = taskpool.execute(taskGroup)
-    //         .then((num: Array<NullishType>) => {
-    //           Count3.count++
-    //           Count4.count++
-    //           console.info('======', Count3.count, Count4.count)
-    //         })
-    //         .catch((error: NullishType) => {
-    //           // expect((error as BusinessError).message).assertContain('Cannot read property split of undefined')
-    //           count++
-    //           //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
-    //         });
-    //       promises.push(promise);
-    //     } catch (e: BusinessError) {
-    //       console.error(`error message e: ${JSON.stringify(e)}`)
-    //     }
-    //   }
-    //   await Promise.all(promises);
-    //   await sleep(1000);
-    //   while (count < 1) {
-    //     await sleep(100)
-    //   }
-    //   expect(String(0)).assertEqual(String(Count3.count));
-    //   expect(String(0)).assertEqual(String(Count4.count));
-    //   expect(String(1)).assertEqual(String(count));
-    //   Count3.count = 0;
-    //   Count4.count = 0;
-    //   done();
-    // })
-
     /**
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_4500
      * @tc.name taskPoolTaskGroupTask4500
