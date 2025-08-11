@@ -39,10 +39,12 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
 
       try{
-        AppStorage.setOrCreate('windowStage',windowStage,Type.from<window.WindowStage>());
+        AppStorage.setOrCreate<window.WindowStage>('windowStage',windowStage,Type.from<window.WindowStage>());
         let mainWindow = windowStage.getMainWindowSync();
-        AppStorage.setOrCreate('context',this.context,Type.from<common.UIAbilityContext>());
-        AppStorage.setOrCreate('mainWindow',mainWindow,Type.from<window.Window>());
+
+        AppStorage.setOrCreate<window.Window>('mainWindow',mainWindow,Type.from<window.Window>());
+        hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+JSON.stringify(windowStage) + ' mainWindow' +JSON.stringify(mainWindow));
+        AppStorage.setOrCreate('context', this.context,Type.from<common.UIAbilityContext>());
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+JSON.stringify(windowStage) + '  mainWindow'+JSON.stringify(mainWindow));
       }catch(e: BusinessError){
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni'+e.message);
