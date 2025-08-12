@@ -675,7 +675,7 @@ export default function abilityTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it("onOffRotationChangeTest_static_0231",
+    it("onOffRotationChangeTest_static_0236",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let callback: window.RotationChangeCallback<window.RotationChangeInfo, window.RotationChangeResult | undefined> =
           (info: window.RotationChangeInfo): window.RotationChangeResult | undefined => {
