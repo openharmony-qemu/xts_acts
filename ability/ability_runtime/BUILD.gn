@@ -90,6 +90,7 @@ group("ability_runtime") {
       "actsstserviceabilityclientcase:ActsStServiceAbilityClientCaseTest",
       "actssupportfunction:actssupportfunction",
       "actssystemapitest:ActsSystemAPITest",
+      "actssystemapiteststatic:ActsSystemAPIStaticTest",
       "actssystemapitestappmanager:ActsSystemApiAppManagerTest",
       "actsturipermisssiontest:actsturipermisssiontest",
       "actsuiabilitycontext:actsuiabilitycontext",
