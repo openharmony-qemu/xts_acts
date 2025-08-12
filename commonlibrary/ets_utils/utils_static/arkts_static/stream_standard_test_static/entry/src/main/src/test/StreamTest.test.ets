@@ -241,7 +241,7 @@ class MyDuplexEnd001 extends stream.Duplex {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -264,7 +264,7 @@ class MyDuplex001 extends stream.Duplex {
     written_001 = chunk;
     callback.unsafeCall();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -275,8 +275,8 @@ class MyDuplex002 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     callback.unsafeCall();
   }
-  doRead(size: number): void {
-    let fn = (size: number) => {
+  doRead(size: int): void {
+    let fn = (size: int) => {
       expect(size).assertEqual(16384);
       this.push('duplex test');
       this.push(null);
@@ -290,7 +290,7 @@ class MyReadableProperties003 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     throw new Error('Simulated error');
   }
 }
@@ -299,7 +299,7 @@ class MyReadableProperties005 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
   }
 }
 
@@ -308,7 +308,7 @@ class MyReadableConstructorSetMethods001 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(null);
     dRCalled_ConstructorSetMethods001 = true;
   }
@@ -319,7 +319,7 @@ class MyReadableData002 extends stream.Readable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     let data = dataSource_Data002.shift();
     this.push(data as string);
   }
@@ -335,7 +335,7 @@ class MyReadableData003 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     const chunk: String|undefined = dataSource_Data003.shift();
     if (chunk !== undefined) {
       this.push(chunk);
@@ -354,7 +354,7 @@ class MyReadableData006 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('first');
     this.push('second');
     this.push(null);
@@ -370,7 +370,7 @@ class MyReadableData007 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(null);
   }
 }
@@ -384,7 +384,7 @@ class MyReadableData008 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('data');
     this.push(null);
   }
@@ -399,7 +399,7 @@ class MyReadableData010 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('data');
     this.push(null);
   }
@@ -414,7 +414,7 @@ class MyReadableData011 extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     setTimeout(() => {
       this.push('async');
       this.push(null);
@@ -427,7 +427,7 @@ class MyReadableEnded002 extends TestReadable {
     super()
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     expect(this.readableEnded).assertEqual(false);
     this.push('asd');
     expect(this.readableEnded).assertEqual(false);
@@ -442,7 +442,7 @@ class MyReadableHwm0Async001 extends stream.Readable {
     super()
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     setTimeout(() => {
       if (count_Hwm0Async001--) {
         this.push('a');
@@ -509,7 +509,7 @@ class MyTransform005 extends stream.Transform {
     super()
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     let data = dataSource_005.shift();
     this.push(data!);
   }
@@ -525,8 +525,8 @@ class MyTransform012 extends stream.Transform {
     callback.unsafeCall();
   }
 
-  doRead(size: number): void {
-    let fn = (size: number) => {
+  doRead(size: int): void {
+    let fn = (size: int) => {
       doReadCalled_012 = true;
     }
     let wrappedFn = mustCallSizeArgs(fn);
@@ -580,7 +580,7 @@ class MyReadablePipe003 extends TestReadable {
   constructor() {
     super();
   }
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('test data');
     this.push(null);
   }
@@ -604,7 +604,7 @@ class MyReadablePipe009 extends stream.Readable {
     super()
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push(null);
   }
 }
@@ -629,7 +629,7 @@ class Pipe015MyReadable extends stream.Readable {
     super(opt);
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('data1');
     this.push('data2');
     this.push(null);
@@ -655,7 +655,7 @@ class Pipe018MyReadable extends stream.Readable {
     super(opt)
   }
 
-  doRead(size: number): void {
+  doRead(size: int): void {
     this.push('data1');
     this.push('data2');
     this.push('data3');
@@ -1006,7 +1006,7 @@ class Encoding028_34 extends stream.Readable {
     super();
   }
 
-  doRead(size:number) {
+  doRead(size: int) {
   }
 }
 
@@ -1531,7 +1531,7 @@ export default function streamTest() {
       let writableStream = new MyWritableCbTwice002();
       writableStream.write('test');
       writableStream.on('error', mustCallOnError((error: Error) => {
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
         expect(error.name).assertEqual('BusinessError');
       }));
     });
@@ -1549,7 +1549,7 @@ export default function streamTest() {
       let writableStream = new MyWritableCbTwice003();
       writableStream.write('test');
       writableStream.on('error', mustCallOnError((error: Error) => {
-        expect(error.message).assertEqual('Callback called multiple times');
+        expect(error.message).assertEqual('Callback called multiple times.');
         expect(error.name).assertEqual('BusinessError');
       }));
     });
@@ -1569,11 +1569,11 @@ export default function streamTest() {
       writableStream.end();
       writableStream.write('test', 'utf8', mustCallOnError((error: Error) => {
         expect(ticked).assertEqual(true);
-        expect(error.message).assertEqual('write after end');
+        expect(error.message).assertEqual('Write after end.');
       }));
       ticked = true;
       writableStream.on('error', mustCallOnError((error: Error) => {
-        expect(error.message).assertEqual('write after end');
+        expect(error.message).assertEqual('Write after end.');
       }));
     });
 
@@ -1594,7 +1594,7 @@ export default function streamTest() {
       } catch (e: Error) {
         err = e;
       }
-      expect((err as BusinessError).message).assertEqual('Unknown encoding: test');
+      expect((err as BusinessError).message).assertEqual('Parameter error. The type of test must be string.');
     });
 
     // Check the StreamWritableWritevFinish.
@@ -1653,7 +1653,7 @@ export default function streamTest() {
       } catch (e: Error) {
         err = e;
       }
-      expect((err as BusinessError).message).assertEqual('The doWrite() method is not implemented');
+      expect((err as BusinessError).message).assertEqual('The doWrite() method is not implemented.');
     });
 
     // Check the StreamWritableEndedState.
@@ -2201,7 +2201,7 @@ export default function streamTest() {
       } catch (e: Error) {
         err = e;
       }
-      expect((err as BusinessError).message).assertEqual('Unknown encoding: abc');
+      expect((err as BusinessError).message).assertEqual('Parameter error. The type of abc must be string.');
     });
 
     // Check the StreamWritableInvalidDrain.
@@ -2287,20 +2287,20 @@ export default function streamTest() {
      * @tc.type: Function
      * @tc.level: Level 1
      */
-    // it('testStreamDuplex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let duplex = new MyDuplex001();
-    //   expect(duplex instanceof stream.Duplex).assertEqual(true);
-    //   let read: Object;
-    //   duplex.on('data', (obj: Object) => {
-    //     read = obj;
-    //   });
-    //   duplex.push('read');
-    //   duplex.end('written');
-    //   setTimeout(() => {
-    //     expect(read.toString()).assertEqual('read');
-    //     expect(written_001).assertEqual('written');
-    //   }, 0);
-    // });
+    it('testStreamDuplex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let duplex = new MyDuplex001();
+      expect(duplex instanceof stream.Duplex).assertEqual(true);
+      let read: Object;
+      duplex.on('data', (obj: Object) => {
+        read = obj;
+      });
+      duplex.push('read');
+      duplex.end('written');
+      setTimeout(() => {
+        expect(read.toString()).assertEqual('read');
+        expect(written_001).assertEqual('written');
+      }, 0);
+    });
 
     // Check the StreamDuplex.
     /**
@@ -2603,11 +2603,11 @@ export default function streamTest() {
       let readable = new MyReadableProperties005();
       let testData = 'Hello world!';
       readable.push(testData);
-      let chunk = readable.read((testData.length / 2) as int);
+      let chunk = readable.read((testData.length / 2).toInt());
       expect(chunk !== null).assertTrue();
       expect((chunk as string)!.length).assertEqual(testData.length / 2);
       expect(readable.readableLength).assertEqual(testData.length / 2);
-      let remainingChunk = readable.read((testData.length / 2 )as int) ;
+      let remainingChunk = readable.read((testData.length / 2).toInt());
       expect(remainingChunk !== null).assertTrue();
       expect((remainingChunk as string)!.length).assertEqual(testData.length / 2);
       expect(readable.readableLength).assertEqual(0);
@@ -3072,7 +3072,7 @@ export default function streamTest() {
       } catch (e: Error) {
         err = e;
       }
-      expect((err as BusinessError).message).assertEqual('The doTransform() method is not implemented');
+      expect((err as BusinessError).message).assertEqual('The doTransform() method is not implemented.');
     });
 
     // Check the StreamTransformFlushData.
@@ -3527,7 +3527,7 @@ export default function streamTest() {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       const stringdecoder = new StringDecoderReadable(enc);
       stringdecoder.push(input);
-      let res = stringdecoder.read((input.length)as int);
+      let res = stringdecoder.read(input.length.toInt());
       expect((res as Object).toString()).assertEqual('你好');
     });
 
@@ -4684,7 +4684,7 @@ class StringDecoderReadable extends stream.Readable {
   constructor(opt: stream.ReadableOptions) {
     super(opt);
   }
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -4742,7 +4742,7 @@ class TestReadable extends stream.Readable {
     super();
   }
 
-  doRead(size: number) {
+  doRead(size: int) {
   }
 }
 
@@ -4936,7 +4936,7 @@ function mustCallSizeArgs(fn: Function, times: number = 1) {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
-  let wrappedFn = (size: number): void => {
+  let wrappedFn = (size: int): void => {
     callCount++;
     fn.unsafeCall(size);
   }

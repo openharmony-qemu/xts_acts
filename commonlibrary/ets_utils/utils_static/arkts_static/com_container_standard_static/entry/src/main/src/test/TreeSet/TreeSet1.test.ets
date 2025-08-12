@@ -435,16 +435,16 @@ describe("TreeSetTest1", (): void => {
    * @tc.type       : Function
    * @tc.level      : Level 0
    */
-  // it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popFirst();
-  //   expect(res).assertEqual("a");
-  // });
+  it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popFirst();
+    expect(res).assertEqual("a");
+  });
 
   /**
    * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2500
@@ -468,16 +468,16 @@ describe("TreeSetTest1", (): void => {
    * @tc.type       : Function
    * @tc.level      : Level 0
    */
-  // it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popLast();
-  //   expect(String(res)).assertEqual("e");
-  // });
+  it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popLast();
+    expect(String(res)).assertEqual("e");
+  });
 
   /**
    * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2700
@@ -604,20 +604,20 @@ describe("TreeSetTest1", (): void => {
    * @tc.type       : Function
    * @tc.level      : Level 0
    */
-  // it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("g");
-  //   let res = treeSet.values();
-  //   expect(String(res.next().value)).assertEqual("a");
-  //   expect(String(res.next().value)).assertEqual("b");
-  //   expect(String(res.next().value)).assertEqual("c");
-  //   expect(String(res.next().value)).assertEqual("d");
-  //   expect(String(res.next().value)).assertEqual("g");
-  // });
+  it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("g");
+    let res = treeSet.values();
+    expect(String(res.next().value)).assertEqual("a");
+    expect(String(res.next().value)).assertEqual("b");
+    expect(String(res.next().value)).assertEqual("c");
+    expect(String(res.next().value)).assertEqual("d");
+    expect(String(res.next().value)).assertEqual("g");
+  });
 
   /**
    * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3500

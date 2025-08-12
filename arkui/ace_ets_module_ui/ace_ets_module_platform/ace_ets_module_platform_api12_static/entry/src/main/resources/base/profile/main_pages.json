@@ -1,0 +1,15 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/XComponent/getXComponentSurfaceRect",
+    "MainAbility/pages/XComponent/onSurfaceCreated",
+    "MainAbility/pages/XComponent/stopImageAnalyzer",
+    "MainAbility/pages/XComponent/setXComponentSurfaceRotation",
+    "MainAbility/pages/InputMethodList/inputMethodListTest",
+    "MainAbility/pages/EmbeddedComponent/extension",
+    "MainAbility/pages/EmbeddedComponent/onTerminated",
+    "MainAbility/pages/MovingPhotoView/MovingPhotoView",
+    "MainAbility/pages/Video/VideoTest2",
+    "MainAbility/pages/XComponent/surfaceRotationOptionsLock"
+  ]
+}

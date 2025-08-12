@@ -18,7 +18,7 @@ import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSessi
 
 // import PiPWindow from '@ohos.PiPWindow';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 
@@ -38,9 +38,9 @@ export default function abilityTest() {
       //context = AppStorage.get('context') as common.UIAbilityContext;
       //console.log('windowTest context: ' + JSON.stringify(context))
       try {
-        windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
-        win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
-        context = AppStorage.get<common.UIAbilityContext>('context',Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+        windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+        win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+        context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         // let win = windowStage.getMainWindowSync();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'xlxl getANI fail = ' + JSON.stringify(e));
@@ -118,9 +118,13 @@ export default function abilityTest() {
         try {
           let ret = win.getWindowProperties();
           expect(ret != null).assertTrue();
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties  sync Succeeded' + JSON.stringify(ret));
+          expect(ret.windowRect != null).assertTrue();
+          expect(ret.isFullScreen != null).assertTrue();
+          expect(ret.type != null).assertTrue();
+          expect(ret.id >= 0).assertTrue();
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties sync Succeeded');
         } catch (e: Error) {
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties  fail');
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] getWindowProperties fail');
           expect(false).assertTrue();
         }
         done();
@@ -1346,14 +1350,14 @@ export default function abilityTest() {
 
     // setWindowPrivacyModeTest
     /**
-     * @tc.number     : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.name       : setWindowPrivacyModeCallbackTest_static_0147
-     * @tc.desc       : setWindowPrivacyModeCallbackTest_static_0147
+     * @tc.number     : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.name       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
+     * @tc.desc       : setWindowPrivacyModeCallbackAndPromiseTest_static_0147
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it("setWindowPrivacyModeCallbackTest_static_0147",
+    it("setWindowPrivacyModeCallbackAndPromiseTest_static_0147",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         win.setWindowPrivacyMode(true, (err: BusinessError<void> | null) => {
           const errCode: number = err?.code as int;
@@ -1365,31 +1369,16 @@ export default function abilityTest() {
           }
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode callback Succeeded .');
           expect(true).assertTrue();
-          done();
         });
-        done();
-      });
-
-    /**
-     * @tc.number     : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.name       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.desc       : setWindowPrivacyModePromiseTest_static_0148
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("setWindowPrivacyModePromiseTest_static_0148",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        try {
-          win.setWindowPrivacyMode(true);
+        win.setWindowPrivacyMode(false).then((): void => {
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] setWindowPrivacyMode promise success');
           expect(true).assertTrue();
           done();
-        } catch (err) {
+        }).catch((err: NullishType): void => {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] setWindowPrivacyMode promise fail. err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done();
-        }
+        });
         done();
       });
 
@@ -1595,7 +1584,7 @@ export default function abilityTest() {
      */
     it("displayAddListenerTest_static_0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let callback1: Callback<number> = (data: number): void => {
+        let callback1: Callback<long> = (data: long): void => {
           hilog.info(0x0000, '[ANI]', 'Listening enabled. Data: ' + JSON.stringify(data));
         };
         try {
@@ -1610,7 +1599,114 @@ export default function abilityTest() {
         done();
       });
 
+    /**
+     * @tc.number     : keyboardHeightChange_static_0158
+     * @tc.name       : keyboardHeightChange_static_0158
+     * @tc.desc       : keyboardHeightChange_static_0158
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it("keyboardHeightChange_static_0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let callback: Callback<int> = (data: int): void => {
+        hilog.info(0x0000, '[ANI]', 'Listening change enabled. Data: ' + JSON.stringify(data));
+      };
 
+      try {
+        win.on("keyboardHeightChange", callback);
+        win.off("keyboardHeightChange", callback);
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardHeightChange callback success');
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardHeightChange callback Failed. message: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     : keyboardDidShow_static_0159
+     * @tc.name       : keyboardDidShow_static_0159
+     * @tc.desc       : keyboardDidShow_static_0159
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it("keyboardDidShow_static_0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let callback: Callback<window.KeyboardInfo> = (data: window.KeyboardInfo): void => {
+        hilog.info(0x0000, '[ANI]', 'Listening change enabled. Data: ' + JSON.stringify(data));
+      };
+
+      try {
+        win.on("keyboardDidShow", callback);
+        win.off("keyboardDidShow", callback);
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        if(err?.code == 801){
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidShow callback success');
+          expect(true).assertTrue();
+          done();
+        } else {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidShow callback Failed. errorcode: ${err.code}  message: ${err} `);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     : keyboardDidHide_static_0160
+     * @tc.name       : keyboardDidHide_static_0160
+     * @tc.desc       : keyboardDidHide_static_0160
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it("keyboardDidHide_static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let callback: Callback<window.KeyboardInfo> = (data: window.KeyboardInfo): void => {
+        hilog.info(0x0000, '[ANI]', 'Listening change enabled. Data: ' + JSON.stringify(data));
+      };
+      try {
+        win.on("keyboardDidHide", callback);
+        win.off("keyboardDidHide", callback);
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        if(err?.code == 801){
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] register keyboardDidHide callback success');
+          expect(true).assertTrue();
+          done();
+        } else {
+          hilog.error(0x0000, '[ANI]', `finaltest [ANI] register keyboardDidHide callback Failed. errorcode: ${err.code}  message: ${err} `);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     : keepKeyboardOnFocus_static_0160
+     * @tc.name       : keepKeyboardOnFocus_static_0160
+     * @tc.desc       : keepKeyboardOnFocus_static_0160
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it("keepKeyboardOnFocus_static_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        win.keepKeyboardOnFocus(false);
+        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] set keepKeyboardOnFocus success');
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        hilog.error(0x0000, '[ANI]', `finaltest [ANI] set keepKeyboardOnFocus Failed. message: ${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 

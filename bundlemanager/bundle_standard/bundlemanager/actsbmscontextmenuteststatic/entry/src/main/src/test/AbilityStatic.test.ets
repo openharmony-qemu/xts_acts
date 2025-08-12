@@ -1,0 +1,109 @@
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import bundle from '@ohos.bundle.bundleManager';
+import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog';
+import { AppCloneIdentity, BundleInfo } from 'bundleManager.BundleInfo';
+
+let uid = 101010101;
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+
+export default function abilityTest() {
+  describe('ActsAbilityTest', (): void => {
+
+    /*
+     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2400
+     * @tc.name: getBundleNameByUidSyncUnPermissionApi14
+     * @tc.desc: Test getBundleNameByUidSync unPermission for api14.
+     */
+    it('getBundleNameByUidSyncUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        bundle.getBundleNameByUidSync(uid)
+        expect().assertFail();
+        done();
+      } catch (err: BusinessError) {
+        console.info("getBundleNameByUidSyncUnPermissionApi14 1 catch " + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    })
+
+    /*
+     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2500
+     * @tc.name: getBundleNameByUidUnPermissionApi14
+     * @tc.desc: Test getBundleNameByUid unPermission for api14.
+     */
+    it('getBundleNameByUidUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        await bundle.getBundleNameByUid(uid).then((data: string) => {
+          console.info("getBundleNameByUidUnPermissionApi14 promise success " + data);
+          expect().assertFail();
+        }).catch((err: BusinessError): void => {
+          console.info("getBundleNameByUidUnPermissionApi14 promise error " + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+        })
+      } catch (err: BusinessError) {
+        console.info("getBundleNameByUidUnPermissionApi14 1 catch " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+      try {
+        bundle.getBundleNameByUid(uid, (err: BusinessError | null, data: string | undefined) => {
+          console.info("getBundleNameByUidUnPermissionApi14 callback2 success " + data);
+          console.info("getBundleNameByUidUnPermissionApi14 callback2 error " + JSON.stringify(err));
+          expect(data).assertUndefined();
+          expect(err?.code).assertEqual(201);
+          done();
+        });
+      } catch (err: BusinessError) {
+        console.info("getBundleNameByUidUnPermissionApi14 callback2 catch " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /*
+     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2600
+     * @tc.name: getAppCloneIdentityUnPermissionApi14
+     * @tc.desc: Test getAppCloneIdentity unPermission for api14.
+     */
+    it('getAppCloneIdentityUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        bundle.getAppCloneIdentity(uid).then((data: AppCloneIdentity) => {
+          console.info("getAppCloneIdentityUnPermissionApi14 success " + data);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError): void => {
+          console.info("getAppCloneIdentityUnPermissionApi14 promise " + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+          done();
+        })
+      } catch (err: BusinessError) {
+        console.info("getAppCloneIdentityUnPermissionApi14 1 catch " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number: Sub_Bms_Framework_getSignatureInfo_static_04
+     * @tc.name: Sub_Bms_Framework_getSignatureInfo_static_04
+     * @tc.desc: Test getSignatureInfo with error code
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level1
+     */
+    it('Sub_Bms_Framework_getSignatureInfo_static_04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
+      bundle.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA).then((data: BundleInfo) => {
+        let datas = bundle.getSignatureInfo(0);
+        expect().assertFail();
+        done();
+      }).catch((err: BusinessError): void => {
+        hilog.error(domain, tag, `Sub_Bms_Framework_getSignatureInfo_static_04 catch failed errCode:${err.code} message:${err.message}`);
+        expect(err.code).assertEqual(201);
+        done();
+      });
+    })
+  })
+}

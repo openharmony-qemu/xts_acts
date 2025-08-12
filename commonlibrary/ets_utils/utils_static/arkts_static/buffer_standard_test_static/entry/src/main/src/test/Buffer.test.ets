@@ -674,7 +674,7 @@ export default function BufferTest() {
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+        expect(err.message).assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
 
@@ -993,7 +993,7 @@ export default function BufferTest() {
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+        expect(err.message).assertEqual('The value of "targetStart" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
 
@@ -4479,15 +4479,8 @@ export default function BufferTest() {
      * @tc.level: Level 1
      */
     it("testfrom0783", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        const buf = buffer.from([10]);
-        expect(false).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.code).assertEqual('401');
-        expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, ' +
-          'Array-like. Received value is: number');
-      }
+      const buf = buffer.from([10]);
+      expect(buf.length).assertEqual(1);
     });
 
     /**
@@ -4790,14 +4783,8 @@ export default function BufferTest() {
      * @tc.level: Level 1
      */
     it("testFrom30110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        let buf1 = buffer.from('null');
-      } catch(err:BusinessError) {
-        let errStr = 'Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, Array-like, string, object. Received value is: null';
-        expect(String(err.code)).assertEqual('401');
-        expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual(errStr);
-      }
+      let buf1 = buffer.from('null');
+      expect(buf1.length).assertEqual(4);
     });
 
     /**
@@ -4809,14 +4796,8 @@ export default function BufferTest() {
      * @tc.level: Level 1
      */
     it("testFrom30120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        let buf1 = buffer.from('undefined');
-      } catch(err:BusinessError) {
-        let errStr = 'Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, Array-like, string, object. Received value is: undefined';
-        expect(String(err.code)).assertEqual('401');
-        expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual(errStr);
-      }
+      let buf1 = buffer.from('undefined');
+      expect(buf1.length).assertEqual(9);
     });
 
     /**
@@ -4847,7 +4828,7 @@ export default function BufferTest() {
         let buf1 = buffer.from(obj, 0, 5);
         expect(false).assertFail();
       } catch(err:BusinessError) {
-        let errStr = 'Parameter error. The type of "value" must be Buffer or ArrayBuffer, Array, Array-like. Received value is: Map';
+        let errStr = 'Parameter error. The type of "input" must be Buffer or ArrayBuffer, Array, Array-like';
         expect(String(err.code)).assertEqual('401');
         expect(err.name).assertEqual('BusinessError');
         expect(err.message).assertEqual(errStr);

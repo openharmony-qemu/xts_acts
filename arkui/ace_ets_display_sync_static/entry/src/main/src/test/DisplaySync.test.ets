@@ -20,7 +20,7 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import displaySync from "@ohos.graphics.displaySync"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'DisplaySync';
 let bundleName = "com.open.harmony.displaysynctest.static";
 
@@ -29,7 +29,6 @@ export default function displaySyncTest() {
     describe("displaySyncTest", (): void => {
         beforeAll(async () : Promise<void> => {
             hilog.info(domain, tag, "displaySyncTest loadup start!!!!!")
-            await Utils.loadAndSetUpUiTest();
             await Utils.msSleep(2000)
             hilog.info(domain, tag, "displaySyncTest loadup over!!!!!")
         })

@@ -24,6 +24,11 @@ class Temp1 {
   }
 }
 
+interface Person {
+  age: number;
+  name: string;
+}
+
 class Temp {
   age: number = 0
   name: string = ""
@@ -67,11 +72,6 @@ export default function ArkListTest() {
     it('testListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testListAdd0001';
       try {
-        interface Person {
-          age: number;
-          name: string;
-        }
-
         let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person> =
           new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person>();
 

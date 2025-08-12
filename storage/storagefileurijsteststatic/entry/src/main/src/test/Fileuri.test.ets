@@ -6,7 +6,7 @@ import fs from '@ohos.file.fs';
 import type wantConstant from '@ohos.app.ability.wantConstant';
 import { AsyncCallback } from "@ohos.base"
 import { BusinessError } from "@ohos.base"
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export const CONTENT = "Hello World!";

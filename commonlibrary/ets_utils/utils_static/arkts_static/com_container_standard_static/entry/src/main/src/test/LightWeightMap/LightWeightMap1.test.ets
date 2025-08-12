@@ -519,19 +519,19 @@ export default function LightWeightMapTest1() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it("testLightWeightMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, string>();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   lightWeightMap.set(3, "C");
-    //   lightWeightMap.set(4, "D");
-    //   lightWeightMap.set(5, "E");
-    //   lightWeightMap.clear();
-    //   let res = lightWeightMap.length;
-    //   expect(String(res)).assertEqual(0);
-    //   let isEmpty = lightWeightMap.isEmpty();
-    //   expect(String(isEmpty)).assertEqual('true');
-    // });
+    it("testLightWeightMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightMap = new LightWeightMap<number, string>();
+      lightWeightMap.set(1, "A");
+      lightWeightMap.set(2, "B");
+      lightWeightMap.set(3, "C");
+      lightWeightMap.set(4, "D");
+      lightWeightMap.set(5, "E");
+      lightWeightMap.clear();
+      let res = lightWeightMap.length;
+      expect(String(res)).assertEqual('0');
+      let isEmpty = lightWeightMap.isEmpty();
+      expect(String(isEmpty)).assertEqual('true');
+    });
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02500

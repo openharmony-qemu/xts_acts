@@ -1,0 +1,8 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Progress/Progress",
+        "MainAbility/pages/Progress/ProgressSec",
+        "MainAbility/pages/Progress/ProgressA"
+    ]
+}
