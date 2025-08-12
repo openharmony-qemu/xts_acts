@@ -14,20 +14,7 @@
  */
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_taskgroup_test_static_d0C_8ei4PX5vmK9YNhoW_tra2TTjiOjsxhy8PUW8pqo=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B222B9DD3314643273651836A72F1569097CCC46A67BB72E2AD7CC5A3010247BC3582C19E6420BC",
-          "profile": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_taskgroup_test_static_d0C_8ei4PX5vmK9YNhoW_tra2TTjiOjsxhy8PUW8pqo=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/geng_qinyuan/.ohos/config/openharmony/default_taskgroup_test_static_d0C_8ei4PX5vmK9YNhoW_tra2TTjiOjsxhy8PUW8pqo=.p12",
-          "storePassword": "0000001B81803D4243B065E2A9CFF6F4093320416A741E03067CECA10672D8E5BBC89EA3BC81455DF07144"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
