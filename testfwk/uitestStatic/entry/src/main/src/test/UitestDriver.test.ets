@@ -304,13 +304,13 @@ export default function uitestDriverTest() {
     */
     it('test_penClick_function_displayId_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penClick_function_displayId_static start!!!!")
-      let disPlay = display.getDefaultDisplaySync();
-      hilog.info(domain, tag, `test_penClick_function_displayId_static disPlay: ${JSON.stringify(disPlay)}`);
-      let driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      // 点击页面中的next page 按钮。
       try {
+        let disPlay = display.getDefaultDisplaySync();
+        hilog.info(domain, tag, `test_penClick_function_displayId_static disPlay: ${JSON.stringify(disPlay)}`);
+        let driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        // 点击页面中的next page 按钮。
         let btnCom = await driver.findComponent(ON.text('next page'));
         await driver.delayMs(waitUiReadyMs);
         hilog.info(domain, tag, `test_penClick_function_displayId_static btnCom: ${JSON.stringify(btnCom)}`);
@@ -343,6 +343,7 @@ export default function uitestDriverTest() {
       }
       hilog.info(domain, tag, "test_penClick_function_displayId_static over!!!!")
     })
+
 
     /*
     * @tc.number: uitestDriverTest_0071
