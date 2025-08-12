@@ -18,8 +18,8 @@ import hilog from '@ohos.hilog'
 import batteryStats from '@ohos.batteryStatistics'
 import { BusinessError } from '@ohos.base'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'BatteryStatisticsStaticTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'BatteryStatisticsTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function BatteryStatisticsTest() {
 
@@ -39,14 +39,14 @@ export default function BatteryStatisticsTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           batteryStats.getBatteryStats()
-            .then(() => {
+            .then((data: batteryStats.BatteryStatsInfo[]) => {
               hilog.error(domain, tag, `${TAG} getBatteryStats Failure`);
               expect().assertFail();
-              done;
+              done();
             })
-            .catch((error: Error): void => {
+            .catch((error: BusinessError): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
-              expect(error.message).assertContain('System permission is denied');
+              expect(error.code).assertEqual(202);
               done();
             });
         } catch (e: BusinessError) {
@@ -71,16 +71,16 @@ export default function BatteryStatisticsTest() {
         try {
           batteryStats.getBatteryStats(
             (error: BusinessError | null, data: Array<batteryStats.BatteryStatsInfo> | undefined) => {
-            if (error) {
-              hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
-              expect(error?.message).assertContain('System permission is denied');
-              done();
-            } else {
-              hilog.error(domain, tag, `${TAG} getBatteryStats Failure`);
-              expect().assertFail();
-              done;
-            }
-          })
+              if (error) {
+                hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                expect(error?.code).assertEqual(202);
+                done();
+              } else {
+                hilog.error(domain, tag, `${TAG} getBatteryStats Failure`);
+                expect().assertFail();
+                done();
+              }
+            })
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
@@ -101,7 +101,7 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let value = batteryStats.getAppPowerValue(10021);
+          let value: double = batteryStats.getAppPowerValue(10021);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -123,7 +123,7 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let percent = batteryStats.getAppPowerPercent(10021);
+          let percent: double = batteryStats.getAppPowerPercent(10021);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -145,7 +145,8 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let value = batteryStats.getHardwareUnitPowerValue(batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER);
+          let value: double =
+            batteryStats.getHardwareUnitPowerValue(batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -167,7 +168,8 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let percent = batteryStats.getHardwareUnitPowerPercent(batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI);
+          let percent: double =
+            batteryStats.getHardwareUnitPowerPercent(batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -189,9 +191,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_INVALID;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_INVALID;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-17);
+          expect(consumptionType).assertEqual(-17);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -199,7 +201,7 @@ export default function BatteryStatisticsTest() {
           done();
         }
       })
-    
+
     /**
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0080
      * @tc.name testBatteryStatisticsTest_static_0800
@@ -213,9 +215,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_APP;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_APP;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-16);
+          expect(consumptionType).assertEqual(-16);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -223,7 +225,7 @@ export default function BatteryStatisticsTest() {
           done();
         }
       })
-    
+
     /**
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0090
      * @tc.name testBatteryStatisticsTest_static_0900
@@ -237,9 +239,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_0900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_BLUETOOTH;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_BLUETOOTH;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-15);
+          expect(consumptionType).assertEqual(-15);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -247,7 +249,7 @@ export default function BatteryStatisticsTest() {
           done();
         }
       })
-    
+
     /**
      * @tc.number SUB_PowerSystem_BatteryStatistics_ETSTest_0100
      * @tc.name testBatteryStatisticsTest_static_1000
@@ -261,9 +263,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1000';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_IDLE;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_IDLE;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-14);
+          expect(consumptionType).assertEqual(-14);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -285,9 +287,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_PHONE;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_PHONE;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-13);
+          expect(consumptionType).assertEqual(-13);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -309,9 +311,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_RADIO;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_RADIO;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-12);
+          expect(consumptionType).assertEqual(-12);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -333,9 +335,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_SCREEN;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_SCREEN;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-11);
+          expect(consumptionType).assertEqual(-11);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -357,9 +359,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1400';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-10);
+          expect(consumptionType).assertEqual(-10);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -381,9 +383,9 @@ export default function BatteryStatisticsTest() {
         let TAG: string = 'testBatteryStatisticsTest_static_1500';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let consumptionType = batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI;
+          let consumptionType: number = batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI;
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
-          expect(new Number(consumptionType)).assertEqual(-9);
+          expect(consumptionType).assertEqual(-9);
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -391,6 +393,6 @@ export default function BatteryStatisticsTest() {
           done();
         }
       })
-    })
-    hilog.info(domain, tag, '%{public}s', 'BatteryStatisticsTest end');
+  })
+  hilog.info(domain, tag, '%{public}s', 'BatteryStatisticsTest end');
 }
