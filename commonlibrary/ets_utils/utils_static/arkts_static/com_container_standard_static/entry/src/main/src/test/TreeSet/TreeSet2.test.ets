@@ -2035,5 +2035,36 @@ export default function TreeSetTest2() {
       }
     });
 
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8800
+     * @tc.name       : testTreeSetForEach0010
+     * @tc.desc       : Test the function of the interface forEach.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testTreeSetForEach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testTreeSetForEach0010";
+      try {
+        let treeSet: TreeSet<string> = new TreeSet<string>();
+        treeSet.add('AAA');
+        treeSet.add('BBB');
+        treeSet.add('CCC');
+        treeSet.add('DDD');
+        let iter = treeSet.$_iterator();
+        let temp = iter.next();
+        let flag =0;
+        while (!temp.done) {
+          flag ++;
+          expect(treeSet.length).assertEqual(4)
+          temp = iter.next()
+        }
+        expect(flag).assertEqual(4);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
   })
 }

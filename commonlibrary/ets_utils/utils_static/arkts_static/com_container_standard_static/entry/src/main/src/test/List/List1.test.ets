@@ -1077,5 +1077,55 @@ export default function ArkListTest() {
         expect(false).assertFail();
       }
     });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_EQUAL_0100
+     * @tc.name      : testListEqual001
+     * @tc.desc      : Testing List constructor support dataType
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testListEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(2);
+        obj.add(4);
+        obj.add(5);
+        let result = list.equal(obj);
+        expect(result).assertEqual(true);
+      } catch (err: BusinessError) {
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_EQUAL_0200
+     * @tc.name      : testListEqual002
+     * @tc.desc      : Testing List constructor support dataType
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testListEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(1);
+        obj.add(2);
+        obj.add(3);
+        let result = list.equal(obj);
+        expect(result).assertEqual(false);
+      } catch (err: BusinessError) {
+        expect(false).assertFail();
+      }
+    });
   });
 }

@@ -28,6 +28,7 @@ import LinkedList from '@ohos.util.LinkedList';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
+import ArrayList from '@ohos.util.ArrayList';
 
 class Temp {
   age: number;
@@ -1154,6 +1155,59 @@ export default function LinkedListTest1() {
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200017)
       }
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0100
+     * @tc.name      : LinkedListRemovetest001
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.remove(2);
+      expect(result).assertEqual(true)
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0200
+     * @tc.name      : LinkedListRemovetest002
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.remove(10);
+      expect(result).assertEqual(false)
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0300
+     * @tc.name      : LinkedListRemovetest003
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      let result = linkedList.convertToArray();
+      let arrayList = new ArrayList<number>();
+      arrayList.add(2);
+      expect(result).assertEqual(arrayList);
     });
 
   });

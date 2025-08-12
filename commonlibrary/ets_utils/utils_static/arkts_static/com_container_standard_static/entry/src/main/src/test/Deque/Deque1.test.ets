@@ -478,9 +478,6 @@ export default function DequeTest() {
       const TAG = "tesGetLast0018";
       try {
         let deque: Deque<number | string | object> = new Deque<number | string | object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b = 'a';
         let c = 1;
@@ -525,12 +522,41 @@ export default function DequeTest() {
           expect(String(itemIndex)).assertEqual(String(itemIndex));
         })
         expect(JSON.stringify(deque)).assertEqual('{"0":{"name":"Dylon","age":"13"},"1":"a","2":1}')
-        // expect(JSON.stringify(res)).assertEqual("{}");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1900
+     * @tc.name       : tesGetLast0018
+     * @tc.desc       : Test the function of the interface isEmpty.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('tesForeach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "tesGetLast0019";
+      try {
+        let deque: Deque<number | string | object> = new Deque<number | string | object>();
+        let res: Deque<number | string | object> = new Deque<number | string | object>();
+        let a: C1 = new C1("Dylon", "13");
+        let b = 'a'
+        let c = 1
+        deque.insertEnd(a);
+        deque.insertEnd(b);
+        deque.insertEnd(c);
+        let iter = deque.$_iterator();
+        let temp = iter.next().value;
+        while (temp != undefined) {
+          temp = iter.next().value;
+          expect(String(temp)).assertEqual(String(temp));
+        }
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
   })
 }
