@@ -16,27 +16,26 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 import { TestRunner } from '@kit.TestKit';
 
+import hilog from '@ohos.hilog';
 
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
   public onPrepare: () => void = () => {
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
   }
 
-  public onRun: () => void = () => {
-
+   public onRun: () => void = () => {
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }
 }
