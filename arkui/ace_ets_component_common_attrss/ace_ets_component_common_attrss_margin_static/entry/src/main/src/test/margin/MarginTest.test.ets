@@ -61,7 +61,11 @@ export default function marginTest() {
   let setInit: GrowValue = {
     margin: {
       top: 0, right: 0, bottom: 0, left: 0
-    }
+    },
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
   }
   let getInit = '0.00vp';
   let childWidth = 100;
@@ -156,7 +160,11 @@ export default function marginTest() {
         right: 30,
         bottom: 30,
         left: 20
-      }
+      },
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
     },
     expectValue: {
       margin: {
@@ -177,7 +185,11 @@ export default function marginTest() {
     setValue: {
       margin: {
         top: 50
-      }
+      },
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
     },
     expectValue: {
       margin: {
@@ -198,7 +210,11 @@ export default function marginTest() {
     setValue: {
       margin: {
         right: 50
-      }
+      },
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
     },
     expectValue: {
       margin: {
@@ -219,7 +235,11 @@ export default function marginTest() {
     setValue: {
       margin: {
         bottom: 50
-      }
+      },
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
     },
     expectValue: {
       margin: {
@@ -240,7 +260,11 @@ export default function marginTest() {
     setValue: {
       margin: {
         left: 50
-      }
+      },
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
     },
     expectValue: {
       margin: {

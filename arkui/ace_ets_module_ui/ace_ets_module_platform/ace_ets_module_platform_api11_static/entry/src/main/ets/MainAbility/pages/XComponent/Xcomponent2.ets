@@ -26,6 +26,7 @@ struct componentType {
       XComponent({
         id: 'xcomponent1',
         type: XComponentType.SURFACE,
+        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_1')
         .onLoad((): void => {
@@ -39,7 +40,8 @@ struct componentType {
 
       XComponent({
         id: 'xcomponent2',
-        // type: XComponentType.COMPONENT,
+        type: XComponentType.TEXTURE,
+        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_2')
         .onLoad((): void => {
@@ -54,6 +56,7 @@ struct componentType {
       XComponent({
         id: 'xcomponent3',
         type: XComponentType.TEXTURE,
+        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_3')
         .onLoad((): void => {

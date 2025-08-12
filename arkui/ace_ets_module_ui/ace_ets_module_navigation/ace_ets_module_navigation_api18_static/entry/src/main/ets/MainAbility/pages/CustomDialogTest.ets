@@ -17,7 +17,7 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,CustomDialog,PickerTextStyle,SheetMode,CustomDialogControllerOptions,CustomDialogController,NavDestinationActiveReason, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack, CustomBuilder} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -35,7 +35,7 @@ export interface ClickItem {
 
 @CustomDialog
 struct DialogComponent {
-  controller: CustomDialogController = new CustomDialogController({} as CustomDialogControllerOptions)
+  controller: CustomDialogController = new CustomDialogController({builder: ((): void => {}) as CustomBuilder} as CustomDialogControllerOptions)
   cancel: () => void = () => {}
   pathStack: NavPathStack = new NavPathStack()
 

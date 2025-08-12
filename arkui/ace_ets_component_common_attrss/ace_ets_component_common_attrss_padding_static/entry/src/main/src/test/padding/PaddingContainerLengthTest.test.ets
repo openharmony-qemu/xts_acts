@@ -102,7 +102,12 @@ export default function paddingTest() {
       // top: vp2px(10),
       // right: vp2px(10),
       // bottom: vp2px(10),
-      // left: vp2px(10)
+      // left: vp2px(10),
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0
     }
   }, {
     describe: 'SetStringPx',
@@ -114,7 +119,8 @@ export default function paddingTest() {
       top: 100,
       right: 100,
       bottom: 100,
-      left: 100
+      left: 100,
+      parentWidthAfter: 0
     }
   }, {
     describe: 'SetResource',
@@ -127,6 +133,11 @@ export default function paddingTest() {
       // right: vp2px(10),
       // bottom: vp2px(10),
       // left: vp2px(10)
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0
     }
   }, {
     describe: 'SetStringPercent',
@@ -135,6 +146,11 @@ export default function paddingTest() {
     },
     expectValue: {
       padding: '10.00%',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      parentWidthAfter: 0
       // parentWidthAfter: vp2px(parentWidth) * 0.1
     }
   }] as TestValue[]

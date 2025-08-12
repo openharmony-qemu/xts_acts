@@ -76,7 +76,7 @@ struct ShowTextPickerDialog2 {
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
             backgroundEffect: {
-              // radius: undefined,
+              radius: 0,
               saturation: undefined,
               brightness: undefined,
               color: undefined,

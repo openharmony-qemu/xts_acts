@@ -72,7 +72,7 @@ struct ShowTimePickerDialog2 {
               }
             },
             backgroundEffect: {
-              // radius: undefined,
+              radius: 0,
               saturation: undefined,
               brightness: undefined,
               color: undefined,

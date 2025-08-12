@@ -30,7 +30,8 @@ struct XSlider12 {
     Row() {
       XComponent({
         id: 'xcomponent',
-        // type: XComponentType.NODE,
+        type: XComponentType.TEXTURE,
+        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.xComponentController
       } as XComponentParameters){
         Slider({

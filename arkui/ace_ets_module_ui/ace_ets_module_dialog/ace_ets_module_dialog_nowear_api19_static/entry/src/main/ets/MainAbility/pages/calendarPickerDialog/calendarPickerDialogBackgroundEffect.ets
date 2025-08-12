@@ -49,7 +49,7 @@ struct calendarPickerDialog2 {
           CalendarPickerDialog.show({
             selected: this.selectedDate,
             backgroundEffect: {
-              // radius: undefined,
+              radius: 0,
               saturation: undefined,
               brightness: undefined,
               color: undefined,

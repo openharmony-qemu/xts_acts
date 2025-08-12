@@ -44,6 +44,7 @@ struct SurfaceComponent {
           XComponent({
             id : 'xcomponentId',
             type : XComponentType.SURFACE,
+            nativeXComponentHandler: ((value0: long): void => {}),
             // libraryname:'nativerender'
           } as XComponentParameters)
             // .onLoad((xComponentContext:Object|undefined):void|undefined => {
