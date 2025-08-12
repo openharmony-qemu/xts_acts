@@ -415,8 +415,8 @@ export default function SecurityCipherJsunit() {
       };
       try {
         await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-          cipherGenerator.update(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-            if (err || data === undefined) { // success: error is null, failed: data is undefined
+          cipherGenerator.update(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|null|undefined) => {
+            if (err || data === undefined || data === null) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               resolve(data as cryptoFramework.DataBlob);
@@ -454,8 +454,8 @@ export default function SecurityCipherJsunit() {
       };
       try {
         await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-          cipherGenerator.doFinal(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-            if (err || data === undefined) { // success: error is null, failed: data is undefined
+          cipherGenerator.doFinal(input, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|null|undefined) => {
+            if (err || data === undefined || data === null) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               resolve(data as cryptoFramework.DataBlob);
@@ -475,8 +475,8 @@ export default function SecurityCipherJsunit() {
       }
       try {
         await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-          cipherGenerator.doFinal(null, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|undefined) => {
-            if (err || data === undefined) { // success: error is null, failed: data is undefined
+          cipherGenerator.doFinal(null, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|null|undefined) => {
+            if (err || data === undefined || data === null) { // success: error is null, failed: data is undefined
               reject(err as Error);
             } else {
               resolve(data as cryptoFramework.DataBlob);

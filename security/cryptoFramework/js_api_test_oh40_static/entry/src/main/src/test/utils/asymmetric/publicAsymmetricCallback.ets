@@ -99,8 +99,8 @@ async function initCipher(cipherGenerator: cryptoFramework.Cipher,
 async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher,
   mode: cryptoFramework.CryptoMode, dataBlob: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|undefined) => {
-      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|null|undefined) => {
+      if (err || finalData === undefined || finalData === null) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator doFinal failed. error is " +
             err +

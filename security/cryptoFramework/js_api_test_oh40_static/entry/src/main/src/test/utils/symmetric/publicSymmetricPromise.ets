@@ -116,11 +116,15 @@ async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: crypt
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator
       .update(plainText)
-      .then((updateData: cryptoFramework.DataBlob) => {
+      .then((updateData: cryptoFramework.DataBlob|null) => {
         console.log(
           "[Promise]cipherGenerator update success! mode is : " + mode
         );
-        resolve(updateData);
+        if (updateData === null) {
+          reject(new Error('[Promise]cipherGenerator update failed!'));
+        } else {
+          resolve(updateData);
+        }
       })
       .catch((err: Error) => {
         console.error(
