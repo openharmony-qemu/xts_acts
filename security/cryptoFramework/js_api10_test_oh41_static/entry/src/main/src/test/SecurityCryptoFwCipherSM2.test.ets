@@ -367,16 +367,16 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let testNumber = "this is a cipher text.";
         let encrypt = cryptoFramework.createCipher("SM2_256|SM3");
         let decrypt = cryptoFramework.createCipher("SM2_256|SM3");
-        await encrypt.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
+        await cipherPromiseFunc.initCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         let preText: cryptoFramework.DataBlob = {
           data: stringToUint8Array(testNumber)
         };
-        let preAsn1Data: cryptoFramework.DataBlob = await encrypt.doFinal(preText);
+        let preAsn1Data: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, preText);
         let cipherSpec: cryptoFramework.SM2CipherTextSpec = cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
         let postAsn1Data = cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(cipherSpec, "C1C3C2");
         expect(preAsn1Data.data.toString()).assertEqual(postAsn1Data.data.toString());
-        await decrypt.init(cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
-        let postText: cryptoFramework.DataBlob = await decrypt.doFinal(postAsn1Data);
+        await cipherPromiseFunc.initCipher(decrypt, cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
+        let postText: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(decrypt, cryptoFramework.CryptoMode.DECRYPT_MODE, postAsn1Data);
         expect(preText.data.toString()).assertEqual(postText.data.toString());
       } catch (err: BusinessError) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
@@ -494,11 +494,11 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await cryptoFramework.createAsyKeyGenerator("RSA1024").generateKeyPair();
         let testNumber = "this is a cipher text.";
         let encrypt = cryptoFramework.createCipher("RSA1024|PKCS1_OAEP|SHA256|MGF1_SHA256");
-        await encrypt.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
+        await cipherPromiseFunc.initCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         let preText: cryptoFramework.DataBlob = {
           data: stringToUint8Array(testNumber)
         };
-        let preAsn1Data: cryptoFramework.DataBlob = await encrypt.doFinal(preText);
+        let preAsn1Data: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, preText);
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
       } catch (err: BusinessError) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
@@ -522,11 +522,11 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await cryptoFramework.createAsyKeyGenerator("SM2_256").generateKeyPair();
         let testNumber = "this is a cipher text.";
         let encrypt = cryptoFramework.createCipher("SM2|SHA224");
-        await encrypt.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
+        await cipherPromiseFunc.initCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         let preText: cryptoFramework.DataBlob = {
           data: stringToUint8Array(testNumber)
         };
-        let preAsn1Data: cryptoFramework.DataBlob = await encrypt.doFinal(preText);
+        let preAsn1Data: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, preText);
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
       } catch (err: BusinessError) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
@@ -535,8 +535,5 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       console.log(testNumber + ": success");
       done();
     });
-
-
   })
-
 }

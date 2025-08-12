@@ -49,8 +49,8 @@ async function initCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoMod
 async function updateCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoMode,
   plainText: crypto.DataBlob): Promise<crypto.DataBlob> {
   return new Promise<crypto.DataBlob>((resolve, reject) => {
-    cipherGenerator.update(plainText, (err: BusinessError<void>|null, data: crypto.DataBlob|undefined) => {
-      if (err || data === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.update(plainText, (err: BusinessError<void>|null, data: crypto.DataBlob|null|undefined) => {
+      if (err || data === undefined || data === null) { // success: error is null, failed: data is undefined
         console.error(`[Callback]kdfGenerateSecret failed. error code is: ${err?.code}`);
         reject(err as Error);
       } else {
@@ -63,8 +63,8 @@ async function updateCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoM
 async function doFinalCipher(cipherGenerator: crypto.Cipher, mode: crypto.CryptoMode,
   dataBlob: crypto.DataBlob|null): Promise<crypto.DataBlob> {
   return new Promise<crypto.DataBlob>((resolve, reject) => {
-    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, data: crypto.DataBlob|undefined) => {
-      if (err || data === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, data: crypto.DataBlob|null|undefined) => {
+      if (err || data === undefined || data === null) { // success: error is null, failed: data is undefined
         console.error(`[Callback]kdfGenerateSecret failed. error code is: ${err?.code}`);
         reject(err as Error);
       } else {

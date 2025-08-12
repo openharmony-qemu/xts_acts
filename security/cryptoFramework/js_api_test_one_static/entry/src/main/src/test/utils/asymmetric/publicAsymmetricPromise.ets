@@ -91,18 +91,22 @@ async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher,
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator
       .doFinal(dataBlob)
-      .then((finalData: cryptoFramework.DataBlob) => {
+      .then((finalData: cryptoFramework.DataBlob|null) => {
         console.log(
           "[Promise]cipherGenerator doFinal success! mode is : " + mode
         );
         console.log(
           "[Promise]cipherGenerator doFinal success! dataBlob is : " + dataBlob
         );
-        resolve(finalData);
+        if (finalData === null) {
+          reject(new Error('[Promise]cipherGenerator doFinal failed!'));
+        } else {
+          resolve(finalData);
+        }
       })
       .catch((err: Error) => {
         console.log(
-          "[Promise]cipherGenerator doFinal faailed dataBlob is : " + dataBlob
+          "[Promise]cipherGenerator doFinal failed dataBlob is : " + dataBlob
         );
         console.error(
           "[Promise]cipherGenerator doFinal failed. error is " +

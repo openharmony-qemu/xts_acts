@@ -621,10 +621,9 @@ export default function SymmetricCryptographyJsunit() {
           })
           .catch((err: Error) => {
             console.error(
-              "Security_crypto_framework_Symmetric_Encryption_3DES_0600 catch error: " +
-              err.code
+              "Security_crypto_framework_Symmetric_Encryption_3DES_0600 catch error: " + err
             );
-            expect(err.code).assertEqual(17630001);
+            expect((err as BusinessError).code).assertEqual(17630001);
           });
         done();
       }

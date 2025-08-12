@@ -34,8 +34,8 @@ async function initCipher(cipherGenerator: cpFw.Cipher, mode: cpFw.CryptoMode, k
 
 async function doFinalCipher(cipherGenerator: cpFw.Cipher, mode: cpFw.CryptoMode, dataBlob: cpFw.DataBlob): Promise<cpFw.DataBlob> {
   return new Promise<cpFw.DataBlob>((resolve, reject) => {
-    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cpFw.DataBlob|undefined) => {
-      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.doFinal(dataBlob, (err: BusinessError<void>|null, finalData: cpFw.DataBlob|null|undefined) => {
+      if (err || finalData === undefined || finalData === null) { // success: error is null, failed: data is undefined
         console.error("[Callback]cipherGenerator doFinal failed. error is " + err + ". mode is " + mode);
         reject(err as Error);
       } else {
@@ -80,5 +80,7 @@ async function normalProcess(cipherAlgName: string, spec: cpFw.AsyKeySpec, param
 }
 
 export {
-  normalProcess
+  normalProcess,
+  initCipher,
+  doFinalCipher
 }

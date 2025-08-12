@@ -114,8 +114,8 @@ async function initCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryptoF
 async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryptoFramework.CryptoMode,
   plainText: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-    cipherGenerator.update(plainText, (err: BusinessError<void>|null, updateData: cryptoFramework.DataBlob|undefined) => {
-      if (err || updateData === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.update(plainText, (err: BusinessError<void>|null, updateData: cryptoFramework.DataBlob|null|undefined) => {
+      if (err || updateData === undefined || updateData === null) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator update failed. error is " +
             err +
@@ -136,8 +136,8 @@ async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: crypt
 async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryptoFramework.CryptoMode,
   plainText: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-    cipherGenerator.doFinal(plainText, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|undefined) => {
-      if (err || finalData === undefined) { // success: error is null, failed: data is undefined
+    cipherGenerator.doFinal(plainText, (err: BusinessError<void>|null, finalData: cryptoFramework.DataBlob|null|undefined) => {
+      if (err || finalData === undefined || finalData === null) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback]cipherGenerator doFinal failed. error is " +
             err +

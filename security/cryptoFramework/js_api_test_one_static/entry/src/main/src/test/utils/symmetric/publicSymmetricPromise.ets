@@ -116,11 +116,15 @@ async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: crypt
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator
       .update(plainText)
-      .then((updateData: cryptoFramework.DataBlob) => {
+      .then((updateData: cryptoFramework.DataBlob|null) => {
         console.log(
           "[Promise]cipherGenerator update success! mode is : " + mode
         );
-        resolve(updateData);
+        if (updateData === null) {
+          reject(new Error('[Promise]cipherGenerator update failed!'));
+        } else {
+          resolve(updateData);
+        }
       })
       .catch((err: Error) => {
         console.error(
@@ -135,15 +139,19 @@ async function updateCipher(cipherGenerator: cryptoFramework.Cipher, mode: crypt
 }
 
 async function doFinalCipher(cipherGenerator: cryptoFramework.Cipher, mode: cryptoFramework.CryptoMode,
-  dataBlob: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob|null> {
-  return new Promise<cryptoFramework.DataBlob|null>((resolve, reject) => {
+  dataBlob: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob> {
+  return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
     cipherGenerator
       .doFinal(dataBlob)
       .then((finalData: cryptoFramework.DataBlob|null) => {
         console.log(
           "[Promise]cipherGenerator doFinal success! mode is : " + mode
         );
-        resolve(finalData);
+        if (finalData === null) {
+          reject(new Error('[Promise]cipherGenerator doFinal failed!'));
+        } else {
+          resolve(finalData);
+        }
       })
       .catch((err: Error) => {
         console.error(
