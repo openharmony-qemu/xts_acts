@@ -70,7 +70,7 @@ export default function ActsNotificationPublishTest() {
       await Utils.msSleep(1000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name )
       await Utils.msSleep(1000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       wantAgent.getWantAgent(wantAgentInfo).then((data) => {
         wantAgentData = data;
       }).catch((err: BusinessError) :void => {

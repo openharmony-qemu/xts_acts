@@ -57,7 +57,7 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
     if (this.context) {
       hilog.info(0x0000, 'testTag EntryAbility', 'context ok: ' + JSON.stringify(this.context));
-      AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>());
+      AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context);
       hilog.info(0x0000, 'testTag EntryAbility', 'setOrCreate success ');
     } else {
       hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
