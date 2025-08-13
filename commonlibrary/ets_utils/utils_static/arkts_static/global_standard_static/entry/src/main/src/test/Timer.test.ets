@@ -382,7 +382,7 @@ export default function TimerTest() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0400
-     * @tc.name       : testClearInterval001
+     * @tc.name       : testTimer004
      * @tc.desc       : Test ClearInterval.
      * @tc.size       : MediumTest
      * @tc.type       : Function

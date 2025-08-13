@@ -529,15 +529,15 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1900
-     * @tc.name       : tesGetLast0018
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_2000
+     * @tc.name       : tesForeach0020
      * @tc.desc       : Test the function of the interface isEmpty.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('tesForeach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "tesGetLast0019";
+    it('tesForeach0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "tesForeach0020";
       try {
         let deque: Deque<number | string | object> = new Deque<number | string | object>();
         let res: Deque<number | string | object> = new Deque<number | string | object>();
