@@ -69,8 +69,8 @@ export default function displaySyncTest() {
         })
 
         /**
-         * @tc.number    : testSetExpectedFrameRateRange_static
-         * @tc.name      : testSetExpectedFrameRateRange_static
+         * @tc.number    : testSetExpectedFrameRateRange_static_0100
+         * @tc.name      : testSetExpectedFrameRateRange_static_0100
          * @tc.desc      : Test the function of SetExpectedFrameRateRange Promise
          * @tc.size      : MediumTest
          * @tc.type      : Function
@@ -225,8 +225,8 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDISPLAYSYNC_JS_API_006
-         * @tc.name      : testStop
+         * @tc.number    : testStop_static_0100
+         * @tc.name      : testStop_static_0100
          * @tc.desc      : Stop callback per frame
          * @tc.size      : MediumTest
          * @tc.type      : Function
