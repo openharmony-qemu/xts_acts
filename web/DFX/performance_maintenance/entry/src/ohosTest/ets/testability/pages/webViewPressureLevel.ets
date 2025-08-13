@@ -18,19 +18,25 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 
-
+const EVENT_ID_SET_SUITE_KEY = 126001;
 @Entry
 @Component
 struct WebComponent {
   webviewController: webview.WebviewController = new webview.WebviewController();
   @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -38,6 +44,7 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -46,32 +53,35 @@ struct WebComponent {
     Column() {
       Row() {
         Button('web click').key('webviewPressureLevelButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, this.emitKey, 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.emitKey, 1, 1000);
           console.info('key==>' + this.emitKey)
-          await Utils.sleep(2000)
           switch (this.emitKey) {
             case 'emitWebviewPressureLevelModerate': {
               webview.WebviewController.trimMemoryByPressureLevel(
                 webview.PressureLevel.MEMORY_PRESSURE_LEVEL_MODERATE)
-              await Utils.sleep(4000)
               if (webview.PressureLevel.MEMORY_PRESSURE_LEVEL_MODERATE === 1) {
                 console.log('MEMORY_PRESSURE_LEVEL is:' + webview.PressureLevel.MEMORY_PRESSURE_LEVEL_MODERATE);
-                Utils.emitEvent('success', 20001)
+                Utils.emitEvent('success', 126010)
               }
             }
             case 'emitWebviewPressureLevelCritical': {
               webview.WebviewController.trimMemoryByPressureLevel(
                 webview.PressureLevel.MEMORY_PRESSURE_LEVEL_CRITICAL)
-              await Utils.sleep(4000)
               if (webview.PressureLevel.MEMORY_PRESSURE_LEVEL_CRITICAL === 2) {
                 console.log('MEMORY_PRESSURE_LEVEL is:' + webview.PressureLevel.MEMORY_PRESSURE_LEVEL_CRITICAL);
-                Utils.emitEvent('success', 20002)
+                Utils.emitEvent('success', 126020)
               }
             }
           }
         })
       }
-      Web({ src: '', controller: this.webviewController})
+      Web({ src: $rawfile('index.html'), controller: this.webviewController})
         .optimizeParserBudget(true)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

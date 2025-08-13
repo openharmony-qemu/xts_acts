@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest'
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const EVENT_ID_SET_SUITE_KEY = 125001;
+let driver = Driver.create();
+
 export default function webAttributeTest() {
 
   describe('WebAttributeTest', () => {
@@ -34,7 +39,6 @@ export default function webAttributeTest() {
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -62,10 +66,9 @@ export default function webAttributeTest() {
     * @tc.level       : Level 0
     */
     it('testOnRenderExited001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnRenderExited", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnRenderExited001", RenderExitReason.ProcessCrashed, 60106, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnRenderExited", EVENT_ID_SET_SUITE_KEY)
+      Utils.registerEvent("testOnRenderExited001", RenderExitReason.ProcessCrashed, 125010, done);
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
     })
     /*
     * @tc.number     : SUB_WEB_RENDEREXITREASONPROCESSCRASHED_0100
@@ -76,10 +79,9 @@ export default function webAttributeTest() {
     * @tc.level      : Level 1
     */
     it('testRenderExitReasonProcessCrashed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitRenderExitReasonProcessCrashed", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRenderExitReasonProcessCrashed001", 2, 901, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitRenderExitReasonProcessCrashed", EVENT_ID_SET_SUITE_KEY)
+      Utils.registerEvent("testRenderExitReasonProcessCrashed001", 2, 125020, done);
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton");
     })
   })
 }

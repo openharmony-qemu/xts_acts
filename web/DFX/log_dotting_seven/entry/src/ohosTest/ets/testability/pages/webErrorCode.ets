@@ -39,6 +39,8 @@ class testObj {
   }
 }
 
+const EVENT_ID_SET_SUITE_KEY = 123101;
+
 @Entry
 @Component
 struct Index {
@@ -55,16 +57,19 @@ struct Index {
   @State isSslErrorHandlerComplete: number = 0;
   no_error: string = 'no error happened';
 
+  // @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,6 +78,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -82,6 +88,7 @@ struct Index {
     Column() {
       Row() {
         Button('WebErrorCode click').key('ErrorCodeTestSuiteButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'ErrorCodeTestSuiteButtonIsReceive', 1, 1000);
           console.info('key==>' + this.str);
           switch (this.str) {
             case 'testRegisterJavaScriptProxyFullParamsError001': {
@@ -99,13 +106,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100001', 2025042206);
+                  Utils.emitEvent('17100001', 123110);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 2025042206, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100001', 123110, this.str);
                 }
               }
               break;
@@ -117,13 +124,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100001', 2025042207);
+                  Utils.emitEvent('17100001', 123120);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 2025042207, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100001', 123120, this.str);
                 }
               }
               break;
@@ -135,13 +142,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100002', 2025042208);
+                  Utils.emitEvent('17100002', 123130);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100002', 2025042208, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100002', 123130, this.str);
                 }
               }
               break;
@@ -153,13 +160,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100003', 2025042209);
+                  Utils.emitEvent('17100003', 123140);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100003', 2025042209, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100003', 123140, this.str);
                 }
               }
               break;
@@ -167,11 +174,15 @@ struct Index {
             case 'testSslErrorHandler001': {
               try {
                 this.controller.loadUrl('https://expired.badssl.com');
+                console.log('=====>before waitForExist')
                 await waitForExist(()=>this.isSslErrorHandlerComplete, this.str, 1);
+                console.log('=====>after waitForExist')
                 let check = (v1:number, v2:number): boolean => {
                   return v1 == v2 ? true:false;
                 }
-                await waitForAssert(()=>this.isSslErrorHandlerComplete, check, 1, 2025042210, this.str);
+                console.log('=====>before waitForAssert')
+                await waitForAssert(()=>this.isSslErrorHandlerComplete, check, 1, 123150, this.str);
+                console.log('=====>after waitForAssert')
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -196,6 +207,7 @@ struct Index {
             console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
             console.log('onSslErrorEvent handler: ' + event.handler);
             if (event.handler) {
+              console.log('=====>event.handler')
               this.isSslErrorHandlerComplete = 1;
             }
           }

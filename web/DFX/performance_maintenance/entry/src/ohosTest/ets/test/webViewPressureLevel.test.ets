@@ -18,10 +18,16 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest'
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = ""
+
+const EVENT_ID_SET_SUITE_KEY = 126001;
+let driver = Driver.create();
+
 
 export default function ActsAceWebviewPressureLevel() {
   describe('ActsAceWebviewPressureLevel', () => {
@@ -32,14 +38,13 @@ export default function ActsAceWebviewPressureLevel() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewPressureLevel state success " + JSON.stringify(pages));
         if (!("webViewPressureLevel" == pages.name)) {
           console.info("get webViewPressureLevel state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
+          await driver.waitForComponent(ON.id("webviewPressureLevelButton"), 10000);
           console.info("push webViewPressureLevel state success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -54,29 +59,9 @@ export default function ActsAceWebviewPressureLevel() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       done();
     })
 
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
 
     /*
     *@tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0001
@@ -88,12 +73,12 @@ export default function ActsAceWebviewPressureLevel() {
     */
     it('testWebviewPressureLevelModerate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebviewPressureLevelModerate"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebviewPressureLevelModerate", "success", 20001,
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testWebviewPressureLevelModerate", "success", 126010,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webviewPressureLevelButton', 10, '');
+      Utils.waitAndClickComponent(driver, "webviewPressureLevelButton");
     })
 
 
@@ -107,12 +92,12 @@ export default function ActsAceWebviewPressureLevel() {
     */
     it('testWebviewPressureLevelCritical', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewPressureLevelCritical"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebviewPressureLevelCritical", "success", 20002,
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent("testWebviewPressureLevelCritical", "success", 126020,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webviewPressureLevelButton', 10, '');
+      Utils.waitAndClickComponent(driver, "webviewPressureLevelButton");
     })
   })
 }

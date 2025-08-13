@@ -19,6 +19,8 @@ import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
 import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
+const EVENT_ID_SET_SUITE_KEY = 123301;
+
 @Entry
 @Component
 struct Index {
@@ -34,16 +36,18 @@ struct Index {
   no_error: string = 'no error happened';
   message: webView.WebMessageExt = new webView.WebMessageExt();
 
+  @State isReceive: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +56,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,6 +66,7 @@ struct Index {
     Column() {
       Row() {
         Button('WebMessagePortErrorCode click').key('WebMessagePortErrorCodeButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'WebMessagePortErrorCodeButtonIsReceive', 1, 1000);
           console.info('key==>' + this.str);
           switch (this.str) {
             case 'testPostMessageEventExtError001': {
@@ -76,13 +82,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100010', 2025042204);
+                  Utils.emitEvent('17100010', 123310);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100010', 2025042204, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100010', 123310, this.str);
                 }
               }
               break;
@@ -95,13 +101,13 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100001', 2025042205);
+                  Utils.emitEvent('17100001', 123320);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
                   this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100001', 2025042205, this.str);
+                  await waitForAssert(()=>this.errorCode, check, '17100001', 123320, this.str);
                 }
               }
               break;
