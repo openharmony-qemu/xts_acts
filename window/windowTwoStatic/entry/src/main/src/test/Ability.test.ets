@@ -711,6 +711,7 @@ export default function abilityTest() {
         try {
           win.on('rotationChange', callback);
           win.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          win.setPreferredOrientation(window.Orientation.PORTRAIT);
           expect(true).assertTrue();
         } catch (err: BusinessError) {
           const errCode: number = err.code;
