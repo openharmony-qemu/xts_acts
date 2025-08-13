@@ -83,11 +83,11 @@ struct WebOnDataResubmitted {
           switch (this.str) {
             case "emitOnDataResubmitted": {
               try {
+                this.isPageEnd =-1;
                 await Utils.waitAndClickComponent(driver,'WebOnDataResubmittedTestWebView')
-                this.isPageEnd =-1;
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnDataResubmittedTestWebView', 1, 1000);
-                this.controller.refresh();
                 this.isPageEnd =-1;
+                this.controller.refresh();
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnDataResubmittedTestWebView', 1, 1000);
                 Utils.emitEvent(this.onDataResubmittedCalled, 127010)
               } catch (error) {
@@ -97,15 +97,15 @@ struct WebOnDataResubmitted {
             }
             case "emitDataResubmissionHandlerResend": {
               try {
-                this.controller.loadUrl("resource://rawfile/dataSubmit.html");
                 this.isPageEnd =-1;
+                this.controller.loadUrl("resource://rawfile/dataSubmit.html");
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnDataResubmittedTestWebView', 1, 1000);
                 this.title = ''
+                this.isPageEnd =-1;
                 await Utils.clickComponent('WebOnDataResubmittedTestWebView')
-                this.isPageEnd =-1;
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnDataResubmittedTestWebView', 1, 1000);
-                this.controller.refresh();
                 this.isPageEnd =-1;
+                this.controller.refresh();
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnDataResubmittedTestWebView', 1, 1000);
                 Utils.emitEvent(this.title, 127020)
               } catch (error) {
