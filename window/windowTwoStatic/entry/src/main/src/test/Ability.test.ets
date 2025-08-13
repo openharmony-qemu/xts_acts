@@ -710,6 +710,7 @@ export default function abilityTest() {
           };
         try {
           win.on('rotationChange', callback);
+          win.setPreferredOrientation(window.Orientation.LANDSCAPE);
           expect(true).assertTrue();
         } catch (err: BusinessError) {
           const errCode: number = err.code;
