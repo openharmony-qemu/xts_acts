@@ -131,7 +131,77 @@ export default function WindowOrientationTest() {
             }
         })
 
-
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
+         * @tc.name      : testSetPreferredOrientation_WinAbnormal_Promise_static_0100
+         * @tc.desc      : Set the display direction property of the window
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testSetPreferredOrientation_WinAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Promise_static_0100';
+            let msgStr:string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Promise');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            let orientation = window.Orientation.AUTO_ROTATION;
+            try {
+                (win as window.Window).setPreferredOrientation(orientation).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the window orientation.');
+                    expect().assertFail();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the window orientation. Cause: ' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300002);
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
+         * @tc.name      : testSetPreferredOrientation_WinAbnormal_Call_static_0200
+         * @tc.desc      : Set the display direction property of the window
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testSetPreferredOrientation_WinAbnormal_Call_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Call_static_0200';
+            let msgStr:string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Call');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            let orientation = window.Orientation.AUTO_ROTATION;
+            try {
+                (win as window.Window).setPreferredOrientation(orientation, (err: BusinessError<void>|null):void => {
+                    let errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300002)
+                        done()
+                        return;
+                    }
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting window orientation.');
+                    expect().assertFail();
+                    done()
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300002)
+                done()
+            }
+        })
 
 
 
