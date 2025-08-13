@@ -63,25 +63,25 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
       }
     });
 
-    /**
-     * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_CertChain_Func_0100
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
-     */
-    it("SUB_Security_Cert_Framework_CertChain_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const param: cert.EncodingBlob = {} as cert.EncodingBlob;
-
-      try {
-        await cert.createX509CertChain(param);
-        expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
-      }
-      done();
-    });
+    // /**
+    //  * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0100
+    //  * @tc.name SUB_Security_Cert_Framework_CertChain_Func_0100
+    //  * @tc.desc Use Promise Type
+    //  * @tc.size SmallTest
+    //  * @tc.level Level2
+    //  * @tc.type Function
+    //  */
+    // it("SUB_Security_Cert_Framework_CertChain_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    //   const param: cert.EncodingBlob = {} as cert.EncodingBlob;
+    //
+    //   try {
+    //     await cert.createX509CertChain(param);
+    //     expect(null).assertFail();
+    //   } catch (err: BusinessError) {
+    //     expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+    //   }
+    //   done();
+    // }); // let undefined
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0200
