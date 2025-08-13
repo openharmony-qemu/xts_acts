@@ -17,6 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 
+const EVENT_ID_SET_SUITE_KEY = 127101;
+
 @Entry
 @Component
 struct WebOnFirstContentfulPaint {
@@ -31,16 +33,20 @@ struct WebOnFirstContentfulPaint {
   @State vis: Visibility = Visibility.None
   @State onFirstContentfulPaintCalled: boolean = false;
 
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State onFirstContentfulPaint: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -49,6 +55,7 @@ struct WebOnFirstContentfulPaint {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,7 +68,7 @@ struct WebOnFirstContentfulPaint {
           switch (this.str) {
             case "emitOnFirstContentfulPaint001": {
               try {
-                Utils.emitEvent(this.onFirstContentfulPaintCalled, 520)
+                Utils.emitEvent(this.onFirstContentfulPaintCalled, 127110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -70,10 +77,10 @@ struct WebOnFirstContentfulPaint {
             case "emitOnFirstContentfulPaint002": {
               try {
                 this.vis = Visibility.Visible
-                await Utils.sleep(1000)
+                this.onFirstContentfulPaint = -1
                 this.controller.refresh()
-                await Utils.sleep(6000)
-                Utils.emitEvent(this.onFirstContentfulPaintCalled, 522)
+                await Utils.waitForExist(()=>this.onFirstContentfulPaint, 'WebOnDataResubmittedTestWebView', 1, 1000);
+                Utils.emitEvent(this.onFirstContentfulPaintCalled, 127120)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -84,6 +91,7 @@ struct WebOnFirstContentfulPaint {
       }
 
       Web({ src: 'https://openharmony.cn', controller: this.controller })
+        .key('WebOnFirstContentfulPaintTestWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .visibility(this.vis)
         .fileAccess(this.fileAccess)
@@ -98,6 +106,7 @@ struct WebOnFirstContentfulPaint {
             if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0) {
               this.onFirstContentfulPaintCalled = true
             }
+            this.onFirstContentfulPaint = 1
           }
         })
     }

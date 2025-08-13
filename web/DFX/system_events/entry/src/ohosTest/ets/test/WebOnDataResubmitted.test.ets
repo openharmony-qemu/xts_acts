@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const EVENT_ID_SET_SUITE_KEY = 127001;
+const driver = Driver.create();
+
 
 export default function webOnDataResubmitted() {
   describe('WebOnDataResubmittedTest', () => {
@@ -32,9 +37,8 @@ export default function webOnDataResubmitted() {
         console.info("get WebOnDataResubmitted state success " + JSON.stringify(pages));
         if (!("WebOnDataResubmitted" == pages.name)) {
           console.info("get WebOnDataResubmitted state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebOnDataResubmitted page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebOnDataResubmitted page success");
         }
       } catch (err) {
         console.error("push WebOnDataResubmitted page error: " + err);
@@ -47,15 +51,7 @@ export default function webOnDataResubmitted() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebOnDataResubmittedTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOnDataResubmittedTest afterEach end");
       done();
     })
 
@@ -68,10 +64,9 @@ export default function webOnDataResubmitted() {
     * @tc.level       : Level 0
     */
     it('testOnDataResubmitted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnDataResubmitted", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnDataResubmitted001", true, 60425, done);
-      sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+      Utils.emitEvent("emitOnDataResubmitted", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnDataResubmitted001", true, 127010, done);
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
     })
 
     /*
@@ -83,10 +78,9 @@ export default function webOnDataResubmitted() {
     * @tc.level       : Level 1
     */
     it('testDataResubmissionHandlerResend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitDataResubmissionHandlerResend", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDataResubmissionHandlerResend001", 'httpbin.org/posthttpbin.org/post', 60426, done);
-      sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+      Utils.emitEvent("emitDataResubmissionHandlerResend", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testDataResubmissionHandlerResend001", 'httpbin.org/posthttpbin.org/post', 127020, done);
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
     })
 
     /*
@@ -98,10 +92,9 @@ export default function webOnDataResubmitted() {
     * @tc.level       : Level 1
     */
     it('testDataResubmissionHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitDataResubmissionHandlerCancel", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'httpbin.org/post', 60428, done);
-      sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+      Utils.emitEvent("emitDataResubmissionHandlerCancel", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'httpbin.org/post', 127030, done);
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
     })
   })
 }
