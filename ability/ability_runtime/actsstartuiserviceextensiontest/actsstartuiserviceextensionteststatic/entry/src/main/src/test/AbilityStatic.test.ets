@@ -31,20 +31,27 @@ class CustomApplicationStateObserver implements appManager.ApplicationStateObser
   public appStateData?: appManager.AppStateData;
   public abilityStateData?: appManager.AbilityStateData;
   public processData?: appManager.ProcessData;
+  private RELY_BUNDLE_NAME: string = 'com.acts.startuiserviceextensionrely.static';
 
   onForegroundApplicationChanged(appStateData: appManager.AppStateData): void {
-    this.appStateData = appStateData;
-    hilog.info(domain, tag, `ApplicationStateObserver onForegroundApplicationChanged`);
+    if (this.RELY_BUNDLE_NAME === appStateData?.bundleName) {
+      this.appStateData = appStateData;
+      hilog.info(domain, tag, `ApplicationStateObserver onForegroundApplicationChanged`);
+    }
   }
 
   onAbilityStateChanged(abilityStateData: appManager.AbilityStateData): void {
-    this.abilityStateData = abilityStateData;
-    hilog.info(domain, tag, `ApplicationStateObserver onAbilityStateChanged`);
+    if (this.RELY_BUNDLE_NAME === abilityStateData?.bundleName) { 
+      this.abilityStateData = abilityStateData;
+      hilog.info(domain, tag, `ApplicationStateObserver onAbilityStateChanged`);
+    }
   }
 
   onProcessCreated(processData: appManager.ProcessData): void {
-    this.processData = processData;
-    hilog.info(domain, tag, `ApplicationStateObserver onProcessCreated`);
+    if (this.RELY_BUNDLE_NAME === processData?.bundleName) { 
+      this.processData = processData;
+      hilog.info(domain, tag, `ApplicationStateObserver onProcessCreated`);
+    }
   }
 
   onProcessDied(processData: appManager.ProcessData): void {
