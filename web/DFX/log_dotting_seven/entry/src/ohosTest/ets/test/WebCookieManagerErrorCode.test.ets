@@ -17,7 +17,7 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -40,6 +40,7 @@ export default function webCookieManagerErrorCode() {
         if (!("webCookieManagerErrorCode" == pages.name)) {
           console.info("get webCookieManagerErrorCode state success " + JSON.stringify(pages.name));
           await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebCookieManagerErrorCodeButton"), 10000);
           console.info("push webCookieManagerErrorCode page success ");
         }
       } catch (err) {

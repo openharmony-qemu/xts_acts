@@ -17,7 +17,7 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -39,6 +39,7 @@ export default function webErrorCode() {
         if (!('webErrorCode' == pages.name)) {
           console.info('get webErrorCode state success ' + JSON.stringify(pages.name));
           await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("ErrorCodeTestSuiteButton"), 10000);
           console.info('push webErrorCode page success ');
         }
       } catch (err) {
