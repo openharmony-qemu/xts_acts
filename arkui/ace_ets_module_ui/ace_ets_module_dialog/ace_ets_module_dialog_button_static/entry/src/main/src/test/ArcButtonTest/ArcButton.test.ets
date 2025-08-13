@@ -43,7 +43,7 @@ export default function ArcButtonTest() {
   describe('ArcButtonTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info(`${LOG_TAG} beforeAll start`);
-      await UtilsTest.startAbility('com.arkui.ace.dialog.saveButton.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
       console.info(`${LOG_TAG} beforeAll end`);
     });
     beforeEach(() => {
