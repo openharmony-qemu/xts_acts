@@ -63,14 +63,14 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
       }
     });
 
-    // /**
-    //  * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0100
-    //  * @tc.name SUB_Security_Cert_Framework_CertChain_Func_0100
-    //  * @tc.desc Use Promise Type
-    //  * @tc.size SmallTest
-    //  * @tc.level Level2
-    //  * @tc.type Function
-    //  */
+    /**
+     * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0100
+     * @tc.name SUB_Security_Cert_Framework_CertChain_Func_0100
+     * @tc.desc Use Promise Type
+     * @tc.size SmallTest
+     * @tc.level Level2
+     * @tc.type Function
+     */
     // it("SUB_Security_Cert_Framework_CertChain_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const param: cert.EncodingBlob = {} as cert.EncodingBlob;
     //
@@ -81,7 +81,7 @@ export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
     //     expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
     //   }
     //   done();
-    // }); // let undefined
+    // }); // arkts1.2 let undefined
 
     /**
      * @tc.number SUB_Security_Cert_Framework_CertChain_Func_0200
