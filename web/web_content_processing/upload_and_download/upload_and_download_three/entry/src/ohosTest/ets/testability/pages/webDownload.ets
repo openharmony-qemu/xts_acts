@@ -14,6 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { waitForExist } from '../../test/WaitTest.test';
 
 let loadedUrl: string;
 
@@ -55,13 +56,19 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 130390,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(130390)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -70,18 +77,19 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
   private jsObj: ESObject = {
     test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
+      Utils.emitEvent(res, 130410);
     },
     toString: (str: ESObject) => {
       console.info('ets toString:' + String(str));
     },
     register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
+      Utils.emitEvent(res, 130420);
       return 'web222';
     }
   }
@@ -92,10 +100,12 @@ struct Index {
       Row() {
         Button('web click').key('webcomponent').onClick(async () => {
           console.info('key==>' + this.str);
+          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnDownloadStart": {
               this.isDownloadStart = true;
-              await Utils.sleep(1000);
               this.controller.loadUrl({
                 url: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
               });
@@ -151,7 +161,7 @@ struct Index {
         })
         .onRenderExited((event) => {
           console.info('onRenderExited==>' + event?.renderExitReason);
-          Utils.emitEvent(event.renderExitReason, 106);
+          Utils.emitEvent(event.renderExitReason, 130430);
         })
         .onResourceLoad((event) => {
           console.info('onResourceLoad==>' + event.url);
@@ -161,7 +171,7 @@ struct Index {
           if (this.isProgressFinish) {
             console.info('isProgressFinish==>');
             if (this.progress == '100') {
-              Utils.emitEvent(this.progress, 114);
+              Utils.emitEvent(this.progress, 130440);
               this.isProgressFinish = false;
             }
           }
@@ -172,18 +182,19 @@ struct Index {
           this.newUrl = event.url;
         })
         .onFocus(() => {
-          Utils.emitEvent('requestFocus', 126);
+          Utils.emitEvent('requestFocus', 130450);
         })
         .onPageBegin((event) => {
           this.pageBegin = event.url;
         })
         .onPageEnd((event) => {
           this.pageEnd = event.url;
-          console.log('onPageEnd==>');
+          console.log('onPageEnd==>' + event.url);
           if (this.enterPageEnd) {
-            Utils.emitEvent(this.newScale, 97);
+            Utils.emitEvent(this.newScale, 130460);
             this.enterPageEnd = false;
           }
+          this.isPageEnd = 0;
         })
         .onConsole((event) => {
           this.console = event.message.getMessage();
@@ -191,10 +202,10 @@ struct Index {
           let msg = event.message.getMessage();
           console.log('html==>' + msg);
           if (this.mixedSwitch) {
-            Utils.emitEvent(msg, 186);
+            Utils.emitEvent(msg, 130470);
             this.mixedSwitch = false;
           } else if (this.mixedAllSwitch) {
-            Utils.emitEvent(level, 188);
+            Utils.emitEvent(level, 130480);
             this.mixedAllSwitch = false;
           }
           return false;
@@ -211,7 +222,7 @@ struct Index {
           this.errorReceive = event.request.getRequestUrl();
           console.log('onErrorReceive==>');
           if (this.cacheError) {
-            Utils.emitEvent('cacheError', 182);
+            Utils.emitEvent('cacheError', 130490);
             this.cacheError = false;
           }
         })
@@ -221,7 +232,7 @@ struct Index {
             this.httpErrorReceive = event.response.getResponseCode();
             if (this.httpErrorReceive > 400) {
               this.isLargeThan = true;
-              Utils.emitEvent(this.isLargeThan, 66);
+              Utils.emitEvent(this.isLargeThan, 130500);
             }
             this.isLargeThan = false;
             this.isHttpErrorReceive = false;
@@ -230,10 +241,11 @@ struct Index {
         .onTitleReceive((event) => {
           this.titleReceive = event.title;
         })
-        .onDownloadStart((event) => {
+        .onDownloadStart(async (event) => {
+          await waitForExist(()=>this.isDownloadStart ? 1: 0, this.str, 1);
           if (this.isDownloadStart) {
             console.info('isDownloadStart==>');
-            Utils.emitEvent(event.url, 68);
+            Utils.emitEvent(event.url, 130400);
             this.isDownloadStart = false;
           }
         })
@@ -241,19 +253,19 @@ struct Index {
           console.log('onScaleChange==>');
           this.newScale = event.newScale;
           if (this.scaleChange) {
-            Utils.emitEvent('onScaleChange', 98);
+            Utils.emitEvent('onScaleChange', 130510);
             this.scaleChange = false;
           }
         })
         .onPrompt((event) => {
           event.result.handlePromptConfirm('onPrompt ok');
-          Utils.emitEvent(event.message, 178);
+          Utils.emitEvent(event.message, 130520);
           return true;
         })
         .onGeolocationShow(() => {
           console.log('onGeolocationShow==>')
           if (this.geoShow) {
-            Utils.emitEvent('onGeolocationShow', 99);
+            Utils.emitEvent('onGeolocationShow', 130530);
             this.geoShow = false;
           }
         })

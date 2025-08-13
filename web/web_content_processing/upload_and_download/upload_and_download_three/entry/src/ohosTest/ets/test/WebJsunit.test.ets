@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -36,13 +37,11 @@ export default function webJsunit() {
         if (!("webDownload" == pages.name)) {
           console.info("get webJsunit state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webJsunit page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webJsunit page error: " + err);
       }
-      await Utils.sleep(2000);
       done()
     });
 
@@ -52,29 +51,12 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("web afterEach start");
       done();
     })
 
@@ -84,9 +66,9 @@ export default function webJsunit() {
      *tc.desic Triggered when starting to download
      */
     it('onDownloadStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitZoom";
-      Utils.registerEvent("onDownloadStart", "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe", 68, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent("emitOnDownloadStart", 130390);
+      Utils.registerEvent("emitOnDownloadStart", "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe", 130400, done);
+      await waitAndClickComponent("webcomponent");
     })
 
   })

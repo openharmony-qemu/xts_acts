@@ -20,6 +20,8 @@ import { webview } from '@kit.ArkWeb';
 import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent } from './WaitTest.test';
+import Utils from './Util';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -47,13 +49,11 @@ export default function SetDownloadDelegateSecond() {
     })
     afterEach(async () => {
       flg = false;
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(async () => {
-      await driver.delayMs(500)
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
@@ -67,24 +67,12 @@ export default function SetDownloadDelegateSecond() {
      * @tc.level Level 2
      */
     it('testWebView_onDownloadFailed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFailed_1001 start')
-      console.info('SUB_ACE_WEB_onDownloadFailed_1001 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate4", (data: number) => {
-        expect(data).assertEqual(webview.WebDownloadState.CANCELED)
-        console.info('SUB_ACE_WEB_onDownloadFailed_1001 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onDownloadFailed_1001 end')
-        done()
-      })
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate4"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
+      Utils.emitEvent("SetDownloadDelegate4", 130660);
+      Utils.registerEvent("SetDownloadDelegate4", webview.WebDownloadState.CANCELED, 130670, done);
+      await waitAndClickComponent("001");
       router.clear()
     })
 
@@ -96,28 +84,14 @@ export default function SetDownloadDelegateSecond() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getUrl1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2000 start')
-      console.info('SUB_ACE_WEB_getUrl_2000 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate5", (data: number) => {
-        flg = true
-        expect(data).assertEqual('https:' +
-          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0')
-        console.info('SUB_ACE_WEB_getUrl_2000 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2000 end')
-      })
+    it('testWebView_getUrl1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate5"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("SetDownloadDelegate5", 130660);
+      Utils.registerEvent("SetDownloadDelegate5", 'https:' +
+          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done);
+      await waitAndClickComponent("001");
       router.clear()
     })
 
@@ -129,28 +103,14 @@ export default function SetDownloadDelegateSecond() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getUrl1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2001 start')
-      console.info('SUB_ACE_WEB_getUrl_2001 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate5", (data: number) => {
-        flg = true
-        expect(data).assertEqual('https:' +
-          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0')
-        console.info('SUB_ACE_WEB_getUrl_2001 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2001 end')
-      })
+    it('testWebView_getUrl1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate5"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("SetDownloadDelegate51", 130660);
+      Utils.registerEvent("SetDownloadDelegate51", 'https:' +
+          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done);
+      await waitAndClickComponent("001");
       router.clear()
     })
 
@@ -162,27 +122,13 @@ export default function SetDownloadDelegateSecond() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_getUrl1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2002 start')
-      console.info('SUB_ACE_WEB_getUrl_2002 start')
-      await driver.delayMs(500)
-
-      LocalContext.context.eventHub.on("SetDownloadDelegate6", (data: number) => {
-        flg = true
-        expect(data).assertEqual(webview.WebDownloadState.PENDING)
-        console.info('SUB_ACE_WEB_getUrl_2002 end')
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_getUrl_2002 end')
-      })
+    it('testWebView_getUrl1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
         url: "testability/pages/SetDownloadDelegate6"
       })
-      await driver.delayMs(2000)
-      sendEventByKey('001', 10, '')
-      await driver.delayMs(2000)
-      sendEventByKey('002', 10, '')
-      await driver.delayMs(10000)
-      expect(flg).assertTrue()
+      Utils.emitEvent("SetDownloadDelegate6", 130660);
+      Utils.registerEvent("SetDownloadDelegate6", webview.WebDownloadState.PENDING, 130690, done);
+      await waitAndClickComponent("001");
       router.clear()
     })
   })
