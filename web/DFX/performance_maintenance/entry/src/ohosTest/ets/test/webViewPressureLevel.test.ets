@@ -18,7 +18,7 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON } from '@ohos.UiTest'
+import { Driver, ON } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -44,12 +44,12 @@ export default function ActsAceWebviewPressureLevel() {
         if (!("webViewPressureLevel" == pages.name)) {
           console.info("get webViewPressureLevel state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await driver.waitForComponent(ON.id("webviewPressureLevelButton"), 10000);
           console.info("push webViewPressureLevel state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewPressureLevel page error:" + err);
       }
+      await driver.waitForComponent(ON.id("webviewPressureLevelButton"), 10000);
       done()
     });
 
@@ -59,6 +59,7 @@ export default function ActsAceWebviewPressureLevel() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+      await driver.waitForComponent(ON.id("webviewPressureLevelButton"), 10000);
       done();
     })
 
