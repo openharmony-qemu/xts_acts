@@ -361,7 +361,85 @@ export default function WindowPropertiesTest() {
                 done();
             }
         })
+/**
+         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+         * @tc.name      : test_getWindowProperties_mainWindow_static_0100
+         * @tc.desc      : test_getWindowProperties_mainWindow_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('test_getWindowProperties_mainWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_getWindowProperties_mainWindow_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            try {
+                let mainWindow : window.Window= windowStage.getMainWindowSync();
+                await Utils.msSleep(300);
+                let properties:window.WindowProperties = mainWindow.getWindowProperties();
+                hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded in ogetWindowProperties info. Data: ` + JSON.stringify(properties));
+                expect(properties.windowRect.left).assertLargerOrEqual(0);
+                expect(properties.windowRect.top).assertLargerOrEqual(0);
+                expect(properties.windowRect.width).assertLarger(0);
+                expect(properties.windowRect.height).assertLarger(0);
+                expect(properties.drawableRect.left).assertLargerOrEqual(0);
+                expect(properties.drawableRect.top).assertLargerOrEqual(0);
+                expect(properties.drawableRect.width).assertLarger(0);
+                expect(properties.drawableRect.height).assertLarger(0);
+                expect(properties.isLayoutFullScreen).assertEqual(false);
+                expect(properties.focusable).assertEqual(true);
+                expect(properties.touchable).assertEqual(true);
+                expect(properties.brightness).assertEqual(-1);
+                expect(properties.isKeepScreenOn).assertEqual(false);
+                expect(properties.isPrivacyMode).assertEqual(false);
+                expect(properties.isTransparent).assertEqual(false);
+                expect(properties.isFullScreen).assertEqual(false);
+                expect(properties.id).assertLarger(0);
+                expect(properties.displayId).assertLargerOrEqual(0);
+                expect(properties.name != null ).assertTrue();
+                // expect(properties.dimBehindValue != null ).assertTrue();
+                // expect(properties.isRoundCorner != null ).assertTrue();
+                expect(properties.type != null ).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+                done();
 
+            }
+
+        });
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+         * @tc.name      : test_getWindowProperties_mainWindow_static_0200
+         * @tc.desc      : test_getWindowProperties_mainWindow_static_0200
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level4
+         */
+        it('test_getWindowProperties_mainWindow_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_getWindowProperties_mainWindow_static_0200';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let tempWnd: window.Window = await windowStage.createSubWindow('testLoadContent_Callback_static_0200');
+            await tempWnd.destroyWindow();
+            try {
+                tempWnd.getWindowProperties();
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getWindowProperties: ' + tempWnd);
+                expect(false).assertTrue()
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
+                if (exception.code == 1300002) {
+                    expect(true).assertTrue()
+                    done()
+                } else {
+                    expect().assertFail();
+                    done();
+                }
+            }
+        })
 
 
     })
