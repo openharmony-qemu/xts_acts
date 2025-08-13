@@ -13,11 +13,12 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_suite("ActsPreferenceStaticTest") {
-  test_hap = true
+# xts_acts_arkts1.2/distributeddatamgr/preferenceEts_static/ActsPreferenceStaticTest
+ohos_js_app_static_suite("ActsPreferenceStaticTest") {
+  #  test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsPreferenceStaticTest"
-    part_name = "preferences"
-    subsystem_name = "distributeddatamgr"
+  part_name = "preferences"
+  subsystem_name = "distributeddatamgr"
 }
