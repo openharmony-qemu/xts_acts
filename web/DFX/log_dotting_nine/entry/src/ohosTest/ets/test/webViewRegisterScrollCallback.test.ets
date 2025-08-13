@@ -17,11 +17,15 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@ohos.UiTest'
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = '';
 
-export default function webviewNApi() {
+const EVENT_ID_SET_SUITE_KEY = 124001;
+let driver = Driver.create();
+
+export default function webViewRegisterScrollCallbackTest() {
   describe('webViewRegisterScrollCallbackTest', async () => {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -43,17 +47,13 @@ export default function webviewNApi() {
      * @tc.level Level 0
      */
     it('SUB_ACE_WEB_testRegisterScrollCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('testRegisterScrollCallbackString', 10);
-      console.log('pggg' )
-      await Utils.sleep(1000);
-      Utils.registerBaseEvent('testRegisterScrollCallbackString', 1, 20250421, done,
+      Utils.emitEvent('testRegisterScrollCallbackString', EVENT_ID_SET_SUITE_KEY);
+      Utils.registerBaseEvent('testRegisterScrollCallbackString', 1, 124010, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      await Utils.sleep(1000);
-      sendEventByKey('RegisterScrollCallbackButton', 10, '');
+      Utils.waitAndClickComponent(driver, "RegisterScrollCallbackButton");
     });
   });
 }
