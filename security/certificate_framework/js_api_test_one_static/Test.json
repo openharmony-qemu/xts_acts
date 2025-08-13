@@ -5,7 +5,7 @@
         "test-timeout": "1200000",
         "shell-timeout": "900000",
         "testcase-timeout": "600000",
-        "bundle-name": "com.openharmony.certificateframework.static",
+        "bundle-name": "com.openharmony.certificateframework1.static",
         "module-name": "entry"
     },
     "kits": [

@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.openharmony.certificateframework.static",
+    "bundleName": "com.openharmony.certificateframework1.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
