@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/indexStatic";
+import { describe, beforeEach, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
