@@ -18,6 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents, waitAndClickComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -36,42 +37,26 @@ export default function webTwoJsunit() {
         if (!("webTwo" == pages.name)) {
           console.info("get webTwo state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webTwo page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
+      await waitForComponents("Web", 500);
       done()
     });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
+      await waitForComponents("Web", 500);
       done();
     })
     afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
+      console.info("web afterEach start");
       done();
     })
 
@@ -81,9 +66,9 @@ export default function webTwoJsunit() {
      *tc.desic Sets allow the Web access overview mode
      */
     it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitsetDownloadDelegate";
-      Utils.registerEvent("onDownloadFailed", true, 6, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.emitEvent("emitonDownloadFailed", 130540);
+      Utils.registerEvent("emitonDownloadFailed", true, 130550, done);
+      await waitAndClickComponent("webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_003                                                                                                                                                                   
@@ -91,9 +76,9 @@ export default function webTwoJsunit() {
      *tc.desic Sets allow the Web access overview mode
      */
     it('setDownloadDelegate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitresumeDownload";
-      Utils.registerEvent("setDownloadDelegate", true, 8, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.emitEvent("emitsetDownloadDelegate", 130540);
+      Utils.registerEvent("emitsetDownloadDelegate", true, 130560, done);
+      await waitAndClickComponent("webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_004                                                                                                                                                                 
@@ -101,9 +86,9 @@ export default function webTwoJsunit() {
      *tc.desic Sets allow the Web access overview mode
      */
     it('resumeDownload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitRegisterJavaScriptProxy";
-      Utils.registerEvent("resumeDownload", true, 12, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.emitEvent("emitresumeDownload", 130540);
+      Utils.registerEvent("emitresumeDownload", true, 130570, done);
+      await waitAndClickComponent("webcomponenttwo");
     })
 
   })

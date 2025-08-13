@@ -19,6 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import image from "@ohos.multimedia.image"
+import { waitForExist, waitForExist1 } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -38,13 +39,19 @@ struct OnWindowNew {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State arr: boolean = true;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 130590,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(130590)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +60,7 @@ struct OnWindowNew {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -62,11 +70,14 @@ struct OnWindowNew {
       Row() {
         Button("web click").key('onWindowNew').onClick(async () => {
           console.info("key==>" + this.str)
+          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitBlockNetWorkTrue": {
               try {
                 this.block = true;
-                await Utils.sleep(2000);
+                await waitForExist1(()=>true, this.str, 1, 2000);
                 this.controller.loadUrl('www.weibo.com');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -76,11 +87,11 @@ struct OnWindowNew {
             case "emitBlockNetWorkFalse": {
               try {
                 this.block = false;
-                await Utils.sleep(2000);
+                await waitForExist1(()=>true, this.str, 1, 2000);
                 this.controller.loadUrl('www.weibo.com');
                 let testTitle = this.controller.getTitle();
                 console.log(`testTitle is: ${testTitle}`);
-                Utils.emitEvent(testTitle, 7114)
+                Utils.emitEvent(testTitle, 130610)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -92,6 +103,7 @@ struct OnWindowNew {
       }
 
       Web({ src: $rawfile("onWindowNew.html"), controller: this.controller })
+        .id("Web")
         .multiWindowAccess(this.testMultiWindowAccess)
         .javaScriptAccess(this.javaScriptAccess)
         .allowWindowOpenMethod(this.testAllowWindowOpenMethod)
@@ -117,7 +129,7 @@ struct OnWindowNew {
           if (event) {
             let Url = event.request.getRequestUrl()
             console.log(`onWindowNew onErrorReceive Url is: ${Url}`);
-            Utils.emitEvent(Url, 7112);
+            Utils.emitEvent(Url, 130600);
           }
         })
         .fileAccess(this.fileAccess)
@@ -126,6 +138,10 @@ struct OnWindowNew {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }
