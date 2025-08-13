@@ -258,7 +258,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             console.info("################### cipherData.paramSpec.authTag:" + commonUtils.decToHexString({data:cipherData.paramSpec.authTag.data}))
             console.info("################### tag                         :" + tag)
             console.info("################### expectCipher                :" + expectCipher.data)
-            console.info("################### cipherData.data             :" + commonUtils.decToHexString({data:cipherData.data.data}))
+            // console.info("################### cipherData.data             :" + commonUtils.decToHexString({data:cipherData.data.data}))
             console.info("################### data.plainText              :" + data.plainText)
             console.info("################### plainText                   :" + plainText.data)
             let ret: boolean  = commonUtils.compareDataBlob(cipherData.data, expectCipher);

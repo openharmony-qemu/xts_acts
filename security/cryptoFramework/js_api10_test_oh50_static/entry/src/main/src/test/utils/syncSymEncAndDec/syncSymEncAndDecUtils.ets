@@ -64,7 +64,7 @@ interface dataSpec {
 }
 
 interface dataGcmOrCCMSpec {
-  data: cryptoFramework.DataBlob;
+  data: cryptoFramework.DataBlob|null;
   paramSpec: cryptoFramework.GcmParamsSpec|cryptoFramework.CcmParamsSpec
 }
 
@@ -80,7 +80,11 @@ function tagEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: c
     let updateOutput = cipher.updateSync(data);
     if (isEnc) {
       let authTag = cipher.doFinalSync(null);
-      paramsSpec.authTag = authTag;
+      if (authTag === null) {
+        throw new Error("[TEST] Tag Error");
+      } else {
+        paramsSpec.authTag = authTag;
+      }
     }
     return {data:updateOutput, paramSpec:paramsSpec} as dataGcmOrCCMSpec;
   } catch (error: BusinessError) {
@@ -99,7 +103,11 @@ function encryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryp
       cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
     }
     let updateOutput = cipher.doFinalSync(data);
-    return {data:updateOutput, paramSpec:paramsSpec} as dataSpec;
+    if (updateOutput === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      return {data:updateOutput, paramSpec:paramsSpec} as dataSpec;
+    }
   } catch (error: BusinessError) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
@@ -177,8 +185,11 @@ function encryptDecryptAsymMessageSync(algName: string, keyPair: cryptoFramework
       cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
     }
     let encryptCipher = cipher.doFinalSync(data);
-
-    return encryptCipher;
+    if (encryptCipher === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      return encryptCipher;
+    }
   } catch (error: BusinessError) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
@@ -200,7 +211,11 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
     console.log("##################### pS:" + pS);
     let encryptCipher = cipher.doFinalSync(data);
 
-    return encryptCipher;
+    if (encryptCipher === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      return encryptCipher;
+    }
   } catch (error: BusinessError) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
@@ -220,14 +235,21 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
     for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
       let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
       let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-      let encryptCipher: cryptoFramework.DataBlob = cipher.updateSync(doFinalText);
+      let encryptCipher = cipher.updateSync(doFinalText);
+      if (encryptCipher === null) {
+        throw new Error("[TEST] DoFinal Failed.");
+      }
       let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
       mergeText.set(cipherText1);
       mergeText.set(encryptCipher.data, cipherText1.length);
       cipherText1 = mergeText;
     }
     let authTag1 = cipher.doFinalSync(null);
-    paramSpec.authTag = authTag1;
+    if (authTag1 === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      paramSpec.authTag = authTag1;
+    }
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
   } catch (error: BusinessError) {
@@ -249,13 +271,19 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
     for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
       let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
       let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-      let encryptCipher: cryptoFramework.DataBlob = await cipher.update(doFinalText);
+      let encryptCipher = await cipher.update(doFinalText);
+      if (encryptCipher === null) {
+        throw new Error("[TEST] Update Failed.")
+      }
       let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
       mergeText.set(cipherText1);
       mergeText.set(encryptCipher.data, cipherText1.length);
       cipherText1 = mergeText;
     }
     let authTag1 = await cipher.doFinal(null);
+    if (authTag1 === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    }
     paramSpec.authTag = authTag1;
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
@@ -276,6 +304,9 @@ function gcmEncOrDecNullSync(algName: string, isEnc: boolean, symKey: cryptoFram
     }
     if (isEnc) {
       let authTag = cipher.doFinalSync(null);
+      if (authTag === null) {
+        throw new Error("[TEST] DoFinal Failed.");
+      }
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;
@@ -296,6 +327,9 @@ async function gcmEncOrDecNullPromise(algName: string, isEnc: boolean, symKey: c
     }
     if (isEnc) {
       let authTag = await cipher.doFinal(null);
+      if (authTag === null) {
+        throw new Error("[TEST] DoFinal Failed.");
+      }
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;

@@ -113,7 +113,10 @@ function convertToUint8Array(str: string): number[] {
   return tmp;
 }
 
-function compareDataBlob(a: cryptoFramework.DataBlob, b: cryptoFramework.DataBlob): boolean {
+function compareDataBlob(a: cryptoFramework.DataBlob|null, b: cryptoFramework.DataBlob|null): boolean {
+  if (a === null || b === null) {
+    return false;
+  }
   let buf1 = buffer.from(a.data);
   let buf2 = buffer.from(b.data);
   if (buf1.compare(buf2, 0, a.data.byteLength as int, 0, b.data.byteLength as int) == 0) {

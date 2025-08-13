@@ -197,7 +197,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let plainText: cryptoFramework.DataBlob = { data: new Uint8Array() } // new Uint8Array(buffer.from(message, 'utf-8').buffer) };
         cipher.updateSync(plainText);
         console.info("updateSync success");
-        gcmParams.authTag = cipher.doFinalSync(plainText);
+        cipher.doFinalSync(plainText);
         expect(null).assertFail();
       } catch (error: BusinessError) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0900 “${error}“, error code: ${error.code}`);

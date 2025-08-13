@@ -392,9 +392,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
               let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
-              let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, dataCipher.data, dataCipher.paramSpec);
-              let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
-              expect(ret).assertTrue();
+              if (dataCipher.data === null) {
+                throw new Error("[TEST] Data is null.")
+              } else {
+                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
+                expect(ret).assertTrue();
+              }
             }
           }
         }
@@ -441,9 +445,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
               let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
-              let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, dataCipher.data, dataCipher.paramSpec);
-              let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
-              expect(ret).assertTrue();
+              if (dataCipher.data === null) {
+                throw new Error("[TEST] Data is null.")
+              } else {
+                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
+                expect(ret).assertTrue();
+              }
             }
           }
         }
@@ -1042,6 +1050,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let tmp = data.data.subarray(16 * dataSize, 16 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
           let encryptCipher = cipher.doFinalSync(doFinalText);
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
           mergeText.set(cipherText1);
           mergeText.set(encryptCipher.data, cipherText1.length);
@@ -1052,6 +1063,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let tmp = data.data.subarray(32 * dataSize, 32 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
           let encryptCipher = cipher.doFinalSync(doFinalText);
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText = new Uint8Array(cipherText2.length + encryptCipher.data.length);
           mergeText.set(cipherText2);
           mergeText.set(encryptCipher.data, cipherText2.length);
@@ -1065,7 +1079,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < mergeCipher.data.byteLength / 256; dataSize++) {
           let tmp1 = mergeCipher.data.subarray(256 * dataSize, 256 * (dataSize + 1));
           let text1: cryptoFramework.DataBlob = { data:tmp1 };
-          let dataPlainText1: cryptoFramework.DataBlob = decCipher1.doFinalSync(text1);
+          let dataPlainText1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync(text1);
+          if (dataPlainText1 === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText1 = new Uint8Array(cipherPlainText1.length + dataPlainText1.data.length);
           mergeText1.set(cipherPlainText1);
           mergeText1.set(dataPlainText1.data, cipherPlainText1.length);
@@ -1074,7 +1091,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < mergeCipher2.data.byteLength / 256; dataSize++) {
           let tmp2 = mergeCipher2.data.subarray(256 * dataSize, 256 * (dataSize + 1));
           let text2: cryptoFramework.DataBlob = { data:tmp2 };
-          let dataPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync(text2);
+          let dataPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(text2);
+          if (dataPlainText2 === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText2 = new Uint8Array(cipherPlainText2.length + dataPlainText2.data.length);
           mergeText2.set(cipherPlainText2);
           mergeText2.set(dataPlainText2.data, cipherPlainText2.length);
@@ -1115,7 +1135,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < dataLen / 16; dataSize++) {
           let tmp = data.data.subarray(16 * dataSize, 16 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-          let encryptCipher: cryptoFramework.DataBlob = encCipher1.updateSync(doFinalText);
+          let encryptCipher: cryptoFramework.DataBlob|null = encCipher1.updateSync(doFinalText);
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
           mergeText.set(cipherText1);
           mergeText.set(encryptCipher.data, cipherText1.length);
@@ -1124,7 +1147,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < dataLen / 32; dataSize++) {
           let tmp = data.data.subarray(32 * dataSize, 32 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-          let encryptCipher: cryptoFramework.DataBlob = encCipher2.updateSync(doFinalText);
+          let encryptCipher: cryptoFramework.DataBlob|null = encCipher2.updateSync(doFinalText);
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           let mergeText = new Uint8Array(cipherText2.length + encryptCipher.data.length);
           mergeText.set(cipherText2);
           mergeText.set(encryptCipher.data, cipherText2.length);
@@ -1134,8 +1160,8 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         decCipher1.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
-        let cipherPlainText1: cryptoFramework.DataBlob = decCipher1.doFinalSync({data: cipherText1});
-        let cipherPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync({data: cipherText2});
+        let cipherPlainText1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync({data: cipherText1});
+        let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync({data: cipherText2});
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -1206,8 +1232,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < dataLen / 16; dataSize++) {
           let tmp = data.data.subarray(16 * dataSize, 16 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-          let encryptCipher: cryptoFramework.DataBlob = encCipher1.doFinalSync(doFinalText);
+          let encryptCipher: cryptoFramework.DataBlob|null = encCipher1.doFinalSync(doFinalText);
           // encCipherIndex1[dataSize] = encryptCipher.data.byteLength;
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           encCipherIndex1.push(encryptCipher.data.byteLength);
           let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
           mergeText.set(cipherText1);
@@ -1217,8 +1246,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         for(let dataSize = 0; dataSize < dataLen / 32; dataSize++) {
           let tmp = data.data.subarray(32 * dataSize, 32 * (dataSize + 1));
           let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-          let encryptCipher: cryptoFramework.DataBlob = encCipher2.doFinalSync(doFinalText);
+          let encryptCipher: cryptoFramework.DataBlob|null = encCipher2.doFinalSync(doFinalText);
           // encCipherIndex2[dataSize] = encryptCipher.data.byteLength;
+          if (encryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           encCipherIndex2.push(encryptCipher.data.byteLength);
           let mergeText = new Uint8Array(cipherText2.length + encryptCipher.data.length);
           mergeText.set(cipherText2);
@@ -1231,7 +1263,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
         for (let index = 0; index < encCipherIndex1.length; index++) {
           let tmp = cipherText1.subarray(encTotal1, encTotal1 + encCipherIndex1[index]);
-          let cipherPlain1: cryptoFramework.DataBlob = decCipher1.doFinalSync({data: tmp});
+          let cipherPlain1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync({data: tmp});
+          if (cipherPlain1 === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           encTotal1 = encTotal1 + encCipherIndex1[index];
           let mergeText = new Uint8Array(decText1.length + cipherPlain1.data.length);
           mergeText.set(decText1);
@@ -1240,7 +1275,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         }
         for (let index = 0; index < encCipherIndex2.length; index++) {
           let tmp = cipherText2.subarray(encTotal2, encTotal2 + encCipherIndex2[index]);
-          let cipherPlain2: cryptoFramework.DataBlob = decCipher2.doFinalSync({data: tmp});
+          let cipherPlain2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync({data: tmp});
+          if (cipherPlain2 === null) {
+            throw new Error("[TEST] Data is null.")
+          }
           encTotal2 = encTotal2 + encCipherIndex2[index];
           let mergeText = new Uint8Array(decText2.length + cipherPlain2.data.length);
           mergeText.set(decText2);
@@ -1280,13 +1318,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher1.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText1: cryptoFramework.DataBlob = decCipher1.doFinalSync(cipherData1.data);
+        let cipherPlainText1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync(cipherData1.data);
 
         let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync(cipherData2.data);
+        let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(cipherData2.data);
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -1320,13 +1358,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         await decCipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText1: cryptoFramework.DataBlob = await decCipher1.doFinal(cipherData1.data);
+        let cipherPlainText1: cryptoFramework.DataBlob|null = await decCipher1.doFinal(cipherData1.data);
 
         let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync(cipherData2.data);
+        let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(cipherData2.data);
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -1357,13 +1395,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let authTag1: cryptoFramework.GcmParamsSpec = await syncSymEncAndDecUtils.gcmEncOrDecNullPromise(encAlgName, true, symKey, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         await decCipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText1: cryptoFramework.DataBlob = await decCipher1.doFinal(null);
+        let cipherPlainText1: cryptoFramework.DataBlob|null = await decCipher1.doFinal(null);
         let authTag2: cryptoFramework.GcmParamsSpec = await syncSymEncAndDecUtils.gcmEncOrDecNullPromise(encAlgName, true, symKey, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
-        let cipherPlainText2: cryptoFramework.DataBlob = decCipher2.doFinalSync(null);
-        expect(cipherPlainText1.data.length).assertEqual(0); // arkts1.2: null/undefined
-        expect(cipherPlainText2.data.length).assertEqual(0);
+        let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(null);
+        // expect(cipherPlainText1.data.length).assertEqual(0); // arkts1.2: null/undefined
+        // expect(cipherPlainText2.data.length).assertEqual(0);
+        expect(cipherPlainText1).assertNull();
+        expect(cipherPlainText2).assertNull();
         let ret: boolean = commonUtils.compareDataBlob(authTag1.authTag, authTag2.authTag);
         expect(ret).assertTrue();
       } catch (error: BusinessError) {
@@ -1397,7 +1437,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
         cipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         await cipher1.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-        let cipherData: cryptoFramework.DataBlob = await cipher1.update(data);
+        let cipherData: cryptoFramework.DataBlob|null = await cipher1.update(data);
         try {
           await cipher1.doFinal(data);
           expect(null).assertFail();
@@ -1413,6 +1453,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         cipher2.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
         let cipherDataTmp = cipher2.doFinalSync(data);
+        if (cipherDataTmp === null) {
+          throw new Error("[TEST] DoFinal failed.")
+        }
         let authTag = cipherDataTmp.data.subarray(cipherDataTmp.data.byteLength - 16, cipherDataTmp.data.byteLength);
         let cipherData2: cryptoFramework.DataBlob = {data: cipherDataTmp.data.subarray(0, cipherDataTmp.data.byteLength - 16)}
         let ret: boolean = commonUtils.compareDataBlob(cipherData, cipherData2);
@@ -1481,8 +1524,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
         let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-        let cipherData: cryptoFramework.DataBlob = await cipher1.update(data);
+        let cipherData: cryptoFramework.DataBlob|null = await cipher1.update(data);
         let authTag = await cipher1.doFinal(null);
+        if (authTag === null) {
+          throw new Error("[TEST] DoFinal failed.")
+        }
         expect(authTag.data.byteLength).assertEqual(16);
         paramSpec.authTag = authTag;
         let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
@@ -1519,10 +1565,14 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
         let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-        let cipherData: cryptoFramework.DataBlob = await cipher1.update(data);
+        let cipherData: cryptoFramework.DataBlob|null = await cipher1.update(data);
         let authTag = await cipher1.doFinal(null);
-        expect(authTag.data.byteLength).assertEqual(16);
-        paramSpec.authTag = authTag;
+        if (authTag === null) {
+          throw new Error("[TEST] DoFinal failed.")
+        } else {
+          expect(authTag.data.byteLength).assertEqual(16);
+          paramSpec.authTag = authTag;
+        }
         let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let plainText = await cipher2.doFinal(cipherData);
@@ -1595,7 +1645,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyBlob);
           let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-          let cipherData: cryptoFramework.DataBlob = await cipher1.update(plainBlob);
+          let cipherData: cryptoFramework.DataBlob|null = await cipher1.update(plainBlob);
           let authTag = await cipher1.doFinal(null);
           let ret: boolean = commonUtils.compareDataBlob(cipherData, {data: new Uint8Array(vector.cipherText)});
           ret = ret && commonUtils.compareDataBlob(authTag, {data: new Uint8Array(vector.authTag)});
@@ -1637,7 +1687,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyBlob);
           let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
           cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
-          let cipherData: cryptoFramework.DataBlob = await cipher1.update(plainBlob);
+          let cipherData: cryptoFramework.DataBlob|null = await cipher1.update(plainBlob);
           let authTag = await cipher1.doFinal(null);
           let ret: boolean = commonUtils.compareDataBlob(cipherData, {data: new Uint8Array(vector.cipherText)});
           ret = ret && commonUtils.compareDataBlob(authTag, {data: new Uint8Array(vector.authTag)});

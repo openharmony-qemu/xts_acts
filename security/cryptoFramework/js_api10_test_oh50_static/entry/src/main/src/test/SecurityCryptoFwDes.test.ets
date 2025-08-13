@@ -919,10 +919,10 @@ export default function SecurityCryptoFwDESTestUnit() {
           let msg: cryptoFramework.DataBlob = await createData(msgLen);
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(alg);
           await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
-          let cipherText: cryptoFramework.DataBlob = encCipher.updateSync(msg);
+          let cipherText: cryptoFramework.DataBlob|null = encCipher.updateSync(msg);
           let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(alg);
           decCipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, spec);
-          let plainText: cryptoFramework.DataBlob = await decCipher.doFinal(cipherText);
+          let plainText: cryptoFramework.DataBlob|null = await decCipher.doFinal(cipherText);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
         } catch (error: BusinessError) {
@@ -1444,7 +1444,7 @@ export default function SecurityCryptoFwDESTestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(alg);
         await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
         await cipher.update(msg);
-        let cipherText: cryptoFramework.DataBlob = await cipher.doFinal(msg);
+        let cipherText: cryptoFramework.DataBlob|null = await cipher.doFinal(msg);
         let ret = compareDataBlob({data: new Uint8Array([139,176,93,43,125,148,131,111])}, cipherText);
         expect(ret).assertTrue();
         try {
@@ -1485,7 +1485,7 @@ export default function SecurityCryptoFwDESTestUnit() {
         let symKey: cryptoFramework.SymKey = await convertSymKey(algName, keyData, asyncType.TYPE_IS_PROMISE);
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(alg);
         await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
-        let cipherText: cryptoFramework.DataBlob = await cipher.doFinal(msg);
+        let cipherText: cryptoFramework.DataBlob|null = await cipher.doFinal(msg);
         let ret = compareDataBlob({data: new Uint8Array([139,176,93,43,125,148,131,111])}, cipherText);
         expect(ret).assertTrue();
         try {

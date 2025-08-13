@@ -228,7 +228,10 @@ function doEncryptSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.Sy
   spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob,
   isEncrypt: cryptoFramework.CryptoMode): cryptoFramework.DataBlob {
   cipher.initSync(isEncrypt, symKey, spec);
-  let cipherText: cryptoFramework.DataBlob = cipher.doFinalSync(data);
+  let cipherText: cryptoFramework.DataBlob|null = cipher.doFinalSync(data);
+  if (cipherText === null) {
+    throw new Error("[TEST] DoFinal Failed.");
+  }
 
   return cipherText;
 }
@@ -237,7 +240,10 @@ async function doEncryptPromise(cipher: cryptoFramework.Cipher, symKey:cryptoFra
   spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob,
   isEncrypt: cryptoFramework.CryptoMode): Promise<cryptoFramework.DataBlob> {
   await cipher.init(isEncrypt, symKey, spec);
-  let cipherText: cryptoFramework.DataBlob = await cipher.doFinal(data);
+  let cipherText: cryptoFramework.DataBlob|null = await cipher.doFinal(data);
+  if (cipherText === null) {
+    throw new Error("[TEST] DoFinal Failed.");
+  }
 
   return cipherText;
 }
@@ -258,8 +264,8 @@ async function initCallback(cipher: cryptoFramework.Cipher, symKey:cryptoFramewo
 async function finalCallback(cipher: cryptoFramework.Cipher,
   data: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
   return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
-    cipher.doFinal(data, (err: BusinessError<void>|null, cipherText: cryptoFramework.DataBlob|undefined) => {
-      if (err || cipherText === undefined) { // success: error is null, failed: data is undefined
+    cipher.doFinal(data, (err: BusinessError<void>|null, cipherText: cryptoFramework.DataBlob|null|undefined) => {
+      if (err || cipherText === undefined || cipherText === null) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
         resolve(cipherText as cryptoFramework.DataBlob);
@@ -308,7 +314,7 @@ async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFram
   for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
     let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-    let encryptCipher: cryptoFramework.DataBlob = await cipher.update(doFinalText);
+    let encryptCipher: cryptoFramework.DataBlob|null = await cipher.update(doFinalText);
     if (encryptCipher) {
       let mergeText = new Uint8Array(cipherText.length + encryptCipher.data.length);
       mergeText.set(cipherText);
@@ -316,7 +322,7 @@ async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFram
       cipherText = mergeText;
     }
   }
-  let finalText: cryptoFramework.DataBlob = await cipher.doFinal(null);
+  let finalText: cryptoFramework.DataBlob|null = await cipher.doFinal(null);
   if (finalText) {
     let mergeText = new Uint8Array(cipherText.length + finalText.data.length);
     mergeText.set(cipherText);
@@ -336,7 +342,7 @@ function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.Sym
   for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
     let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-    let encryptCipher: cryptoFramework.DataBlob = cipher.updateSync(doFinalText);
+    let encryptCipher: cryptoFramework.DataBlob|null = cipher.updateSync(doFinalText);
     if (encryptCipher) {
       let mergeText = new Uint8Array(cipherText.length + encryptCipher.data.length);
       mergeText.set(cipherText);
@@ -344,7 +350,7 @@ function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.Sym
       cipherText = mergeText;
     }
   }
-  let finalText: cryptoFramework.DataBlob = cipher.doFinalSync(null);
+  let finalText: cryptoFramework.DataBlob|null = cipher.doFinalSync(null);
   if (finalText) {
     let mergeText = new Uint8Array(cipherText.length + finalText.data.length);
     mergeText.set(cipherText);
