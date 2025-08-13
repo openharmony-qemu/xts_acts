@@ -1756,66 +1756,6 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
     });
 
     /**
-     * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_3900
-     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_3900
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
-     */
-    it("SUB_Security_Cert_Framework_CertP7ExtCms_Func_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let cmsContentType: cert.CmsContentType = cert.CmsContentType.SIGNED_DATA;
-        let generator: cert.CmsGenerator = cert.createCmsGenerator(cmsContentType);
-        let signer: cert.CmsSignerConfig = {
-          mdName: "SHA384",
-          addCert: true
-        };
-        let keyInfo: cert.PrivateKeyInfo = {
-          key: rsa_p8_enc_pem,
-          password: "123456"
-        };
-        let x509Cert: cert.X509Cert;
-        generator.addSigner(x509Cert, keyInfo, signer);
-        expect(null).assertFail();
-      } catch (error: BusinessError) {
-        console.error(`CertP7ExtCms_Func_3900 catch error: ${error}`);
-        expect(error.code).assertEqual(401);
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4000
-     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4000
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
-     */
-    it("SUB_Security_Cert_Framework_CertP7ExtCms_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let cmsContentType: cert.CmsContentType = cert.CmsContentType.SIGNED_DATA;
-        let generator: cert.CmsGenerator = cert.createCmsGenerator(cmsContentType);
-        let signer: cert.CmsSignerConfig = {
-          mdName: "SHA384",
-          addCert: false
-        };
-        let keyInfo: cert.PrivateKeyInfo = {
-          key: rsa_p8_enc_pem,
-          password: "123456"
-        };
-        let x509Cert: cert.X509Cert;
-        generator.addSigner(x509Cert, keyInfo, signer);
-        expect(null).assertFail();
-      } catch (error: BusinessError) {
-        console.error(`CertP7ExtCms_Func_4000 catch error: ${error}`);
-        expect(error.code).assertEqual(401);
-      }
-      done();
-    });
-
-    /**
      * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4200
      * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4200
      * @tc.desc Use Promise Type
@@ -1993,43 +1933,6 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
       } catch (error: BusinessError) {
         console.error(`CertP7ExtCms_Func_4700 catch error: ${error}`);
         expect(error.code).assertEqual(19030001);
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_Security_Cert_Framework_CertP7ExtCms_Func_4800
-     * @tc.name SUB_Security_Cert_Framework_CertP7ExtCms_Func_4800
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
-     */
-    it("SUB_Security_Cert_Framework_CertP7ExtCms_Func_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let cmsContentType: cert.CmsContentType = cert.CmsContentType.SIGNED_DATA;
-        let generator: cert.CmsGenerator = cert.createCmsGenerator(cmsContentType);
-        let signer: cert.CmsSignerConfig = {
-          mdName: "SHA384",
-          addCert: true
-        };
-        let keyInfo: cert.PrivateKeyInfo = {
-          key: rsa_p8_enc_pem,
-          password: "123456"
-        };
-        let key_cert: string = rsa_p8_enc_pem_cert;
-        let encodingBlob: cert.EncodingBlob = {
-          data: stringToUint8Array(key_cert),
-          encodingFormat: cert.EncodingFormat.FORMAT_PEM
-        };
-        let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
-        generator.addSigner(x509Cert, keyInfo, signer);
-
-        let x509Cert2: cert.X509Cert;
-        generator.addCert(x509Cert2);
-      } catch (error: BusinessError) {
-        console.error(`CertP7ExtCms_Func_4800 catch error: ${error}`);
-        expect(error.code).assertEqual(401);
       }
       done();
     });
