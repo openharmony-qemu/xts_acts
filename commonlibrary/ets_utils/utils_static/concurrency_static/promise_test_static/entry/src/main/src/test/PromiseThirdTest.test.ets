@@ -448,7 +448,8 @@ export default function PromiseThirdTest() {
             console.log('Promise Done');
             try {
               throw new Error('throw new Error');
-            } catch (error:Error) {
+            } catch (error) {
+              error = error as Error;
               reject(error);
             }
           }, 200);

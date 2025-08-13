@@ -154,7 +154,8 @@ function checkReject(promise: Promise<String>, rejection: String): boolean {
     await promise;
     return false;
   } catch (exception) {
-    return exception == rejection;
+    exception = exception as Error;
+    return exception.toString() == rejection;
   }
 }
 function checkResolve(promise: Promise<String>, resolution: String): boolean {

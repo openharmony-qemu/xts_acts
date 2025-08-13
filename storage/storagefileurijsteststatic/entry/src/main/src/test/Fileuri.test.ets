@@ -18,7 +18,8 @@ export default function fileuriTest() {
     beforeAll(() => {
       try {
         fs.mkdirSync("/data/storage/el2/base/haps/", true);
-      }catch(e: BusinessError) {
+      }catch(e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, `Fileuri test has failed for ${JSON.stringify(e)}`);
       }
     })
@@ -40,7 +41,8 @@ export default function fileuriTest() {
         hilog.info(domain, tag, "test_FileUri_GetUriFromPath_static_000 result: %{public}s", result);
         expect(uri != "").assertTrue();
         expect(uri == result).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, `test_FileUri_GetUriFromPath_static_000 has failed for ${JSON.stringify(e)}`);
         expect(false).assertTrue();
       }
@@ -62,7 +64,8 @@ export default function fileuriTest() {
         hilog.info(domain, tag, "test_FileUri_GetUriFromPath_static_001 result: %{public}s", result);
         expect(uri != "").assertTrue();
         expect(uri == result).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, `test_FileUri_GetUriFromPath_static_001 has failed for ${JSON.stringify(e)}`);
         expect(false).assertTrue();
       }

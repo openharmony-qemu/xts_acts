@@ -50,10 +50,12 @@ export default function RunningLockTest() {
               expect().assertFail();
               done();
             })
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -92,10 +94,12 @@ export default function RunningLockTest() {
               expect().assertFail();
               done();
             })
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -124,10 +128,12 @@ export default function RunningLockTest() {
                 done();
               }
             })
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -167,10 +173,12 @@ export default function RunningLockTest() {
                 done();
               }
             })
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -193,10 +201,12 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} runningLockType: ${runningLockType}`);
           expect(runningLockType).assertEqual(2);
           done();
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -217,10 +227,12 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -241,7 +253,8 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
-        } catch (e : Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.message).assertContain('No enum RunningLockType');
           done();
@@ -265,10 +278,12 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect().assertFail();
-          done();
+        } catch (e) {
+          if ( e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
         }
       })
 
@@ -289,7 +304,8 @@ export default function RunningLockTest() {
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
-        } catch (e : Error) {
+        } catch (e) {
+          e = e as Error;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.message).assertContain('No enum RunningLockType');
           done();

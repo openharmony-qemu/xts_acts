@@ -44,9 +44,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -62,9 +64,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<string>('a', 'b', 'c', 'd');
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -85,9 +89,11 @@ export default function ArrayTest() {
           ['d']
         );
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -105,9 +111,11 @@ export default function ArrayTest() {
           value: 'a'
         });
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -123,9 +131,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<boolean>(true, false);
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -141,9 +151,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<undefined>(undefined);
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -159,9 +171,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<null>(null);
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -177,9 +191,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<number | string | boolean>(2, 's', true);
         expect(String(array != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -197,9 +213,11 @@ export default function ArrayTest() {
         let array2 = new Array<number>(7, 8, 9);
         let concatArray = array1.concat(array2);
         expect(JSON.stringify(concatArray)).assertEqual('[4,5,6,7,8,9]');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -218,9 +236,11 @@ export default function ArrayTest() {
         let array2 = new Array<number>(7, 8, 9);
         let concatArray = array.concat(array1, array2);
         expect(JSON.stringify(concatArray)).assertEqual('[1,2,3,4,5,6,7,8,9]');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -238,9 +258,11 @@ export default function ArrayTest() {
         let array2D2: Array<Array<number>> = [[7, 8, 9], [10, 11, 12]];
         let concatArray: Array<Array<number>> = array2D1.concat(array2D2)
         expect(JSON.stringify(concatArray)).assertEqual('[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -257,9 +279,11 @@ export default function ArrayTest() {
         let array = new Array<number>(1, 2, 3);
         let concatArray = array.concat(array);
         expect(JSON.stringify(concatArray)).assertEqual('[1,2,3,1,2,3]');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -279,9 +303,11 @@ export default function ArrayTest() {
         let concatArray = array.concat(array1);
         let concatArray1 = concatArray.concat(array2);
         expect(JSON.stringify(concatArray1)).assertEqual('[1,2,3,4,5,6,7,8,9]');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -298,9 +324,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(0);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -317,9 +345,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(-0);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -336,9 +366,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(-2);
         expect(array1.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -355,9 +387,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(1.1);
         expect(array1.length).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -374,9 +408,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(Infinity);
         expect(array1.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -393,9 +429,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(-Infinity);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -412,9 +450,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(6);
         expect(array1.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -431,9 +471,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3, 4, 5);
         array1.shrinkTo(5);
         expect(array1.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -450,9 +492,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>();
         array1.shrinkTo(0);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -469,9 +513,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(2);
         expect(array1.length).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -490,9 +536,11 @@ export default function ArrayTest() {
         expect(array1.length).assertEqual(3);
         array1.shrinkTo(2);
         expect(array1.length).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -511,9 +559,11 @@ export default function ArrayTest() {
         expect(array1.length).assertEqual(5);
         array1.shrinkTo(5);
         expect(array1.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -532,9 +582,11 @@ export default function ArrayTest() {
         expect(array1.length).assertEqual(4);
         array1.shrinkTo(5);
         expect(array1.length).assertEqual(4);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -555,9 +607,11 @@ export default function ArrayTest() {
         array1.extendTo(5, 10);
         array1.shrinkTo(3);
         expect(array1.length).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -574,9 +628,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.MAX_SAFE_INTEGER);
         expect(array1.length).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -593,9 +649,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.MIN_SAFE_INTEGER);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -612,9 +670,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.MAX_VALUE);
         expect(array1.length).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -631,9 +691,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>();
         array1.shrinkTo(Number.MIN_VALUE);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -650,9 +712,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1);
         array1.shrinkTo(Number.MIN_VALUE);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -669,9 +733,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.MIN_VALUE);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -688,9 +754,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.NEGATIVE_INFINITY);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -707,9 +775,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.POSITIVE_INFINITY);
         expect(array1.length).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -726,9 +796,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>();
         array1.shrinkTo(Number.EPSILON);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -745,9 +817,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1);
         array1.shrinkTo(Number.EPSILON);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -764,9 +838,11 @@ export default function ArrayTest() {
         let array1 = new Array<number>(1, 2, 3);
         array1.shrinkTo(Number.EPSILON);
         expect(array1.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -783,9 +859,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(0, 0);
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -802,9 +880,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(-0, 0);
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -820,9 +900,11 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate003';
       try {
         let array = Array.create<number>(-5, 0);
-      } catch (err: Error) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -5');
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(err.message).assertEqual('size = -5');
+        }
       }
     });
 
@@ -839,9 +921,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(8.5, 0);
         expect(array.length).assertEqual(8);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -857,7 +941,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate005';
       try {
         let array = Array.create<number>(Infinity, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         expect(err.message).assertEqual('AllocateObject failed');
         console.error(`Expected error caught: ${err.message}`);
       }
@@ -876,7 +961,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate006';
       try {
         let array = Array.create<number>(-Infinity, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('size = -2147483648');
       }
@@ -894,7 +980,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate007';
       try {
         let array = Array.create<number>(Number.MAX_SAFE_INTEGER, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('AllocateObject failed');
       }
@@ -912,7 +999,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate008';
       try {
         let array = Array.create<number>(Number.MIN_SAFE_INTEGER, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('size = -2147483648');
       }
@@ -931,7 +1019,8 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(Number.MAX_VALUE, 0);
         expect(array.length).assertEqual(8);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('AllocateObject failed');
       }
@@ -950,9 +1039,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(Number.MIN_VALUE, 0);
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -969,9 +1060,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(Number.EPSILON, 0);
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -987,7 +1080,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate012';
       try {
         let array = Array.create<number>(Number.NEGATIVE_INFINITY, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('size = -2147483648');
       }
@@ -1005,7 +1099,8 @@ export default function ArrayTest() {
       const TAG: string = 'testArrayCreate013';
       try {
         let array = Array.create<number>(Number.POSITIVE_INFINITY, 0);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('AllocateObject failed');
       }
@@ -1024,9 +1119,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(4, 2);
         expect(array[2]).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1043,9 +1140,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<string>(4, 'a');
         expect(array[2]).assertEqual('a');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1062,9 +1161,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<boolean>(4, true);
         expect(array[2]).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1081,9 +1182,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<Array<number>>(4, new Array<number>(1, 2));
         expect(array[2][0]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1100,9 +1203,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<undefined>(4, undefined);
         expect(array[0]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1119,9 +1224,11 @@ export default function ArrayTest() {
       try {
         let array = Array.create<null>(4, null);
         expect(array[0]).assertEqual(null);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1139,9 +1246,11 @@ export default function ArrayTest() {
         let person = new Person(23);
         let array = Array.create<Person>(4, person);
         expect(array[0].age).assertEqual(23);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1160,9 +1269,11 @@ export default function ArrayTest() {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(0, 0)
         expect(array.length).assertEqual(4);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1180,9 +1291,11 @@ export default function ArrayTest() {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(-0, 0)
         expect(array.length).assertEqual(4);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1201,9 +1314,11 @@ export default function ArrayTest() {
         array.extendTo(7.2, 0)
         expect(array.length).assertEqual(7);
         expect(array[5]).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1220,7 +1335,8 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(Infinity, 0)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
@@ -1239,9 +1355,11 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(-Infinity, 0)
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1258,7 +1376,8 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(Number.MAX_SAFE_INTEGER, 0)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
@@ -1278,7 +1397,8 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(Number.MIN_SAFE_INTEGER, 0)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('idx = 4; length = 4');
       }
@@ -1297,7 +1417,8 @@ export default function ArrayTest() {
       try {
         let array = new Array<number>(1, 2, 3, 4);
         array.extendTo(Number.MAX_VALUE, 0)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
@@ -1317,9 +1438,11 @@ export default function ArrayTest() {
         let array = Array.create<number>(0, 0);
         array.extendTo(Number.MIN_VALUE, 0)
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1338,9 +1461,11 @@ export default function ArrayTest() {
         array.extendTo(Number.MIN_VALUE, 0)
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1359,9 +1484,11 @@ export default function ArrayTest() {
         array.extendTo(Number.MIN_VALUE, 'b')
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual('a');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1379,9 +1506,11 @@ export default function ArrayTest() {
         let array = Array.create<number>(6, 3);
         array.extendTo(Number.MIN_VALUE, 2)
         expect(array.length).assertEqual(6);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1399,9 +1528,11 @@ export default function ArrayTest() {
         let array = Array.create<number>(0, 0);
         array.extendTo(Number.EPSILON, 0)
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1420,9 +1551,11 @@ export default function ArrayTest() {
         array.extendTo(Number.EPSILON, 0)
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1441,9 +1574,11 @@ export default function ArrayTest() {
         array.extendTo(Number.EPSILON, 'b')
         expect(array.length).assertEqual(1);
         expect(array[0]).assertEqual('a');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1461,9 +1596,11 @@ export default function ArrayTest() {
         let array = Array.create<number>(6, 3);
         array.extendTo(Number.EPSILON, 2)
         expect(array.length).assertEqual(6);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1480,7 +1617,8 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(6, 3);
         array.extendTo(Number.NEGATIVE_INFINITY, 2)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('idx = 6; length = 6');
       }
@@ -1499,7 +1637,8 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(6, 3);
         array.extendTo(Number.POSITIVE_INFINITY, 2)
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('arrayLength must be <= int32 max');
       }
@@ -1519,9 +1658,11 @@ export default function ArrayTest() {
         let array = Array.create<number>(4, 1);
         array.extendTo(3, 0)
         expect(array.length).assertEqual(4);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1540,9 +1681,11 @@ export default function ArrayTest() {
         array.extendTo(4, 0)
         expect(array.length).assertEqual(4);
         expect(array[2]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1561,9 +1704,11 @@ export default function ArrayTest() {
         array.extendTo(2, 1)
         expect(array.length).assertEqual(2);
         expect(array[0]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1583,9 +1728,11 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(4);
         expect(array[1]).assertEqual(0);
         expect(array[3]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1605,9 +1752,11 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(4);
         expect(array[1]).assertEqual(2);
         expect(array[3]).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1627,9 +1776,11 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(4);
         expect(array[1]).assertEqual('a');
         expect(array[3]).assertEqual('b');
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1648,9 +1799,11 @@ export default function ArrayTest() {
         array.extendTo(4, true)
         expect(array.length).assertEqual(4);
         expect(array[3]).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1670,9 +1823,11 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(4);
         expect(array[1][1]).assertEqual(2);
         expect(array[2][1]).assertEqual(4);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1693,9 +1848,11 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(4);
         expect(array[1].age).assertEqual(23);
         expect(array[2].age).assertEqual(25);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1714,9 +1871,11 @@ export default function ArrayTest() {
         array.extendTo(4, undefined)
         expect(array.length).assertEqual(4);
         expect(array[2]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1735,9 +1894,11 @@ export default function ArrayTest() {
         array.extendTo(4, null)
         expect(array.length).assertEqual(4);
         expect(array[2]).assertEqual(null);
-      } catch (err: BusinessError) {
-        console.error(`Expected error caught: ${err.message}`);
-        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          console.error(`Expected error caught: ${err.message}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1759,9 +1920,11 @@ export default function ArrayTest() {
     //     expect(array.length).assertEqual(8);
     //     expect(array[5]).assertEqual(3);
     //     expect(array[7]).assertEqual('c');
-    //   } catch (err: BusinessError) {
-    //     console.error(`Expected error caught: ${err.message}`);
-    //     expect(false).assertFail();
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       console.error(`Expected error caught: ${err.message}`);
+    //       expect(false).assertFail();
+    //     }
     //   }
     // });
 
@@ -1782,9 +1945,11 @@ export default function ArrayTest() {
     //     array.extendTo(6, 'c')
     //     expect(array.length).assertEqual(6);
     //     expect(array[5]).assertEqual(3);
-    //   } catch (err: BusinessError) {
-    //     console.error(`Expected error caught: ${err.message}`);
-    //     expect(false).assertFail();
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       console.error(`Expected error caught: ${err.message}`);
+    //       expect(false).assertFail();
+    //     }
     //   }
     // });
 
@@ -1806,9 +1971,11 @@ export default function ArrayTest() {
     //     expect(array.length).assertEqual(6);
     //     expect(array[5]).assertEqual(3);
     //     expect(array[4]).assertEqual(3);
-    //   } catch (err: BusinessError) {
-    //     console.error(`Expected error caught: ${err.message}`);
-    //     expect(false).assertFail();
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       console.error(`Expected error caught: ${err.message}`);
+    //       expect(false).assertFail();
+    //     }
     //   }
     // });
   })

@@ -59,7 +59,8 @@ export default function uitestDriverTest() {
       try {
         let driver = Driver.create();
         await driver.wakeUpDisplay();
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         hilog.info(domain, tag, `testWakeUpDisplay_static error: ${ JSON.stringify(error) }`);
         expect().assertFail();
       }
@@ -288,7 +289,8 @@ export default function uitestDriverTest() {
           await strCom.click();
           await driver.delayMs(waitUiReadyMs);
         }
-      } catch(error: Error) {
+      } catch(error) {
+        error = error as Error;
         hilog.info(domain, tag, `test_penClick_function_static error, ${ JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
@@ -1213,7 +1215,8 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplaySize test, ${JSON.stringify(test)}`);
         expect(test.x != 0).assertTrue();
         expect(test.y != 0).assertTrue();
-      } catch (error : Error) {
+      } catch (error) {
+        error = error as Error;
         hilog.info(domain, tag, `testGetDisplaySize error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -1326,9 +1329,11 @@ export default function uitestDriverTest() {
         let mainPageCom1 = await driver.findComponent(ON.text('MainPage'));
         hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static mainPageCom1, ${JSON.stringify(mainPageCom1)}`);
         expect(mainPageCom1 != null).assertTrue();
-      } catch (error: BusinessError ) {
-        hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static error, ${JSON.stringify(error)}`);
-        expect(error.code == 17000005).assertTrue();
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static error, ${JSON.stringify(error)}`);
+          expect(error.code == 17000005).assertTrue();
+        }
       }
       hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static end`);
       await stopApplication('com.uitestScene.acts');
@@ -1352,9 +1357,11 @@ export default function uitestDriverTest() {
         let mainPageCom = await driver.findComponent(ON.text('MainPage'));
         await driver.delayMs(1000);
         expect(mainPageCom).assertNull();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static up, error is, ${JSON.stringify(error)}`);
-        expect(error.code == 17000005).assertTrue();
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static up, error is, ${JSON.stringify(error)}`);
+          expect(error.code == 17000005).assertTrue();
+        }
       }
       await driver.delayMs(1000);
       try {
@@ -1364,9 +1371,11 @@ export default function uitestDriverTest() {
         let mainPageCom = await driver.findComponent(ON.text('MainPage'));
         await driver.delayMs(1000);
         expect(mainPageCom).not().assertNull();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static down, error is, ${JSON.stringify(error)}`);
-        expect(error.code == 17000005).assertTrue();
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static down, error is, ${JSON.stringify(error)}`);
+          expect(error.code == 17000005).assertTrue();
+        }
       }
       await driver.delayMs(1000);
       await stopApplication('com.uitestScene.acts');

@@ -70,7 +70,8 @@ export function taskpoolTestFunc1(uid: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -89,7 +90,8 @@ export function taskpoolTestFunc2(uname: string): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -109,7 +111,8 @@ export function taskpoolTestFunc3(uid: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -129,7 +132,8 @@ export function taskpoolTestFunc4(uid: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -148,7 +152,8 @@ export function taskpoolTestFunc5(uname: string): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -168,7 +173,8 @@ export function taskpoolTestFunc6(uid: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -187,7 +193,8 @@ export function taskpoolTestFunc7(uname: string): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -207,7 +214,8 @@ export function taskpoolTestFunc8(uname: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -227,7 +235,8 @@ export function taskpoolTestFunc9(uname: number): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
@@ -246,7 +255,8 @@ export function taskpoolTestFunc10(uname: string): Promise<number> {
       } else {
         console.error(` taskpool call failed: invalid return type`);
       }
-    } catch (error: Error) {
+    } catch (error) {
+      error =  error as Error;
       console.error(` taskpool call exception: ${error.message}`);
     }
     resolve(taskSuccess);
