@@ -17,7 +17,7 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -38,6 +38,7 @@ export default function webOnFirstContentfulPaint() {
         if (!("WebOnFirstContentfulPaint" == pages.name)) {
           console.info("get WebOnFirstContentfulPaint state success " + JSON.stringify(pages.name));
           await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebOnFirstContentfulPaintButton"), 10000);
           console.info("push WebOnFirstContentfulPaint page success ");
         }
       } catch (err) {
