@@ -149,7 +149,7 @@ export default function WindowTitleTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
             await windowStage.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
-                .then((data) => {
+                .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
