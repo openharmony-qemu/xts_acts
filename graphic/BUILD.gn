@@ -33,6 +33,7 @@ group("graphic") {
       "graphicColorSpace:ActsColorSpaceManagerTest",
       "graphicColorSpaceStatic:ActsColorSpaceManagerStaticTest",
       "graphicDisplaySync:ActsGraphicDisplaySyncTest",
+      "graphicDisplaySyncStatic:ActsGraphicDisplaySyncStaticTest",
       "graphicDrawingFont:ActsGraphicDrawingFontTest",
       "graphicEGL:ActsGraphicEglTest",
       "graphicEffectKitStatic:ActsGraphicEffectKitStaticTest",
