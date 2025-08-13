@@ -515,7 +515,7 @@ export default function StackTest1() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1900
-     * @tc.name       : testStackForEach0018
+     * @tc.name       : testStackForEach0019
      * @tc.desc       : Testing Stack forEach by array.
      * @tc.size       : MediumTest
      * @tc.type       : Function

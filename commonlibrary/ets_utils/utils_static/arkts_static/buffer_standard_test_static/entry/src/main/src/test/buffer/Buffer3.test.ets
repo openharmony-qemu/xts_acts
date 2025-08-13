@@ -177,7 +177,7 @@ export default function bufferTest3() {
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_011
-     * @tc.name       : testBuffer3_01
+     * @tc.name       : testBuffer3_011
      * @tc.desc       : Test the buffer
      * @tc.size       : MediumTest
      * @tc.type       : Function
