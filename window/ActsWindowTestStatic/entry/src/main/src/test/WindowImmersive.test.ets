@@ -556,7 +556,45 @@ export default function WindowImmersiveTest() {
                 })
             }
         })
-
+/**
+         * @tc.number     : testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
+         * @tc.name       : testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
+         * @tc.desc       : testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testSetSpecificSystemBarEnabledPromiseErrCode1300002_SubWindow_Promise').then((data:window.Window) => {
+                subWin = data;
+                expect(!!subWin).assertTrue();
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                (subWin! as window.Window).setSpecificSystemBarEnabled('status', true, true).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setSpecificSystemBarEnabled.');
+                    expect().assertFail();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setSpecificSystemBarEnabled. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                });
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setSpecificSystemBarEnabled. Cause:' +
+                JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
 
 
 

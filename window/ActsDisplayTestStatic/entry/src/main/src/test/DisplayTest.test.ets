@@ -54,7 +54,41 @@ export default function DisplayTest() {
             //isPCStatus == '0' PC设备状态栏dock融合
             //console.info(`beforeAll isPCStatus: `+ isPCStatus);
         })
-
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
+         * @tc.name      : tesGetAllDisplays_Promise_static_0100
+         * @tc.desc      : Gets all current display objects
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level0
+         */
+        it('tesGetAllDisplays_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = 'tesGetAllDisplays_Promise_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+             display.getAllDisplays().then((data:Array<display.Display>) => {
+                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data: ' + JSON.stringify(data));
+                expect(data[0].id != null).assertTrue();
+                expect(data[0].refreshRate != null).assertTrue();
+                expect(data[0].width != null).assertTrue();
+                expect(data[0].height != null).assertTrue();
+                expect(data[0].rotation != null).assertTrue();
+                expect(data![0].orientation != null).assertTrue();
+                expect(data[0].densityDPI != null).assertTrue();
+                expect(data[0].name != null).assertTrue();
+                expect(data[0].alive).assertTrue();
+                expect(data[0].state != null).assertTrue();
+                expect(data[0].densityPixels != null).assertTrue();
+                expect(data[0].scaledDensity != null).assertTrue();
+                expect(data[0].xDPI != null).assertTrue();
+                // expect(data[0].yDPI != null).assertTrue();
+                done();
+            }).catch((err:BusinessError) :PromiseLike<void>|undefined => {
+                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            });
+        });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
          * @tc.name      : tesGetAllDisplays_Callback_static_0100
@@ -85,6 +119,7 @@ export default function DisplayTest() {
                 expect(data![0].width != null).assertTrue();
                 expect(data![0].height != null).assertTrue();
                 expect(data![0].rotation != null).assertTrue();
+                expect(data![0].orientation != null).assertTrue();
                 expect(data![0].densityDPI != null).assertTrue();
                 expect(data![0].name != null).assertTrue();
                 expect(data![0].alive).assertTrue();
