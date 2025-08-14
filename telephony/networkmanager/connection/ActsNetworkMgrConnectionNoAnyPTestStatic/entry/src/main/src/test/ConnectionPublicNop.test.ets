@@ -3,6 +3,14 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
 
+const PERMISSION_DENIED_CODE = 201
+const PARAMETER_ERROR_CODE = 401
+const SERVICE_EXCEPTION_CODE = 14500101
+const SERVICE_EXCEPTION_MSG = 'Service exception.'
+const PARAMETER_ERROR_MSG = 'The parameter invalid.'
+const SENSOR_NO_SUPPORT_CODE = 14500102
+const PERMISSION_DENIED_MSG = 'Permission denied.'
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'connectionTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -465,5 +473,377 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0100
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0100
+     * @tc.desc:Using the setAppNet (callback) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = "testNetworkMgrConnectionReportNetConnectedNop_static_0100";
+      hilog.info(domain, tag, `--------${caseName}----before----`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+          if (error?.code) {
+            hilog.error(domain, tag, `${caseName} Failed to get getDefaultNet default net. Code:${error?.code}, message:${error?.message}`);
+            if (error?.code === PERMISSION_DENIED_CODE) {
+              hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) 201:` + error?.code);
+              try {
+                if (data !== undefined) {
+                  connection.setAppNet(data, (err: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+                    hilog.info(domain, tag, "Succeeded to get testNetworkMgrConnectionReportNetConnectedNop_static_0100: " + JSON.stringify(data));
+                  });
+                }
+                done();
+              } catch (error) {
+                let e: BusinessError = error as BusinessError;
+                hilog.error(domain, tag, `${caseName} Failed setAppNet to get getDefaultNet default net. Code:${e.code}, message:${e.message}`);
+                done();
+              }
+              expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+              done();
+            } else {
+              hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) code = ${error?.code}`);
+              expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+              done();
+            }
+          } else {
+            hilog.info(domain, tag, "Succeeded to get data " + JSON.stringify(data));
+            expect(true).assertEqual(data === undefined);
+            done();
+          }
+        });
+      } catch (error) {
+        hilog.error(domain, tag, caseName + "error:" + JSON.stringify(error));
+        expect(true).assertTrue()
+        done()
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop0100----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0200
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0200
+     * @tc.desc:Using the setAppNet (then) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionReportNetConnectedNop_static_0200";
+      hilog.info(domain, tag, `-------${caseName}-----before----`);
+      try {
+        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+          if (error?.code) {
+            hilog.error(domain, tag, `${caseName} Failed to get getDefaultNet default net. Code:${error?.code}, message:${error?.message}`);
+            if (error?.code === PERMISSION_DENIED_CODE) {
+              hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) 201:` + error?.code);
+              try {
+                if (data !== undefined) {
+                  connection.setAppNet(data, (err: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+                    hilog.info(domain, tag, "Succeeded to get testNetworkMgrConnectionReportNetConnectedNop_static_0200: " + JSON.stringify(data));
+                  });
+                }
+                done();
+              } catch (error) {
+                let e: BusinessError = error as BusinessError;
+                hilog.error(domain, tag, `${caseName} Failed setAppNet to get getDefaultNet default net. Code:${e.code}, message:${e.message}`);
+                done();
+              }
+              expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+              done();
+            } else {
+              hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) code= ${error?.code}`);
+              expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+              done();
+            }
+          } else {
+            hilog.info(domain, tag, "Succeeded to get data " + JSON.stringify(data));
+            expect(true).assertEqual(data === undefined);
+            done();
+          }
+        });
+      } catch (error) {
+        hilog.error(domain, tag, caseName + "error:" + JSON.stringify(error));
+        expect(true).assertTrue()
+        done()
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0200----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0300
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0300
+     * @tc.desc:Using the addCustomDnsRule (callback) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0300----before----');
+      try {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"], (error: BusinessError<void>|null, data: undefined) => {
+          hilog.error(domain, tag, `${error?.code} error:${JSON.stringify(error)}`);
+          if (error?.code === PERMISSION_DENIED_CODE) {
+            expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          } else {
+            expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+            done();
+          }
+        });
+      } catch (err: Error) {
+        hilog.error(domain, tag, `${err.code} test failed err: ${JSON.stringify(err)}`);
+        done();
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0300----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0400
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0400
+     * @tc.desc:Using the addCustomDnsRule (then) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0400----before----');
+      try {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
+          hilog.error(domain, tag, `addCustomDnsRule testNetworkMgrConnectionReportNetConnectedNop_static_0400`);
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          if (err?.code === PERMISSION_DENIED_CODE) {
+            expect(err?.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          } else {
+            expect(err?.code).assertEqual(PARAMETER_ERROR_CODE);
+            done();
+          }
+          hilog.error(domain, tag, JSON.stringify(err));
+        });
+      } catch (err: Error) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, `test failed err: ${JSON.stringify(error)}`);
+        done();
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0400----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0500
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0500
+     * @tc.desc:Using the removeCustomDnsRule (callback) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0500----before----');
+      try {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
+          connection.removeCustomDnsRule("192.168.1.1", (error: BusinessError<void>|null, data: undefined) => {
+            if (error !== null) {
+              hilog.error(domain, tag, ` error: ${JSON.stringify(error)}`);
+            }
+            if (error?.code === PERMISSION_DENIED_CODE) {
+              expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+              done();
+            } else {
+              expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.error(domain, tag, `addCustomDnsRule removeCustomDnsRule error: ${JSON.stringify(err)} `);
+          if (err?.code === PERMISSION_DENIED_CODE) {
+            expect(err?.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          } else {
+            expect(err?.code).assertEqual(PARAMETER_ERROR_CODE);
+            done();
+          }
+        });
+      } catch (err: Error) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, `test failed err: ${JSON.stringify(error)}`);
+        if (error?.code === PERMISSION_DENIED_CODE) {
+          expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+          done();
+        } else {
+          expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+          done();
+        }
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0500----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0600
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0600
+     * @tc.desc:Using the removeCustomDnsRule (then) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0600----before----');
+      try {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
+          connection.removeCustomDnsRule("192.168.1.1").then(() => {
+            hilog.info(domain, tag, '--------removeCustomDnsRule-------');
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.error(domain, tag, ` error: ${JSON.stringify(err)} }`);
+            if (err?.code === PERMISSION_DENIED_CODE) {
+              expect(err?.code).assertEqual(PERMISSION_DENIED_CODE);
+              done();
+            } else {
+              expect(err?.code).assertEqual(PARAMETER_ERROR_CODE);
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.error(domain, tag, `addCustomDnsRule removeCustomDnsRule error: ${JSON.stringify(err)} `);
+          if (err?.code === PERMISSION_DENIED_CODE) {
+            expect(err?.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          } else {
+            expect(err?.code).assertEqual(PARAMETER_ERROR_CODE);
+            done();
+          }
+        });
+      } catch (err: Error) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, `test failed err: ${JSON.stringify(error)}`);
+        if (error?.code === PERMISSION_DENIED_CODE) {
+          expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+          done();
+        } else {
+          expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+          done();
+        }
+      }
+      hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0600----after----');
+    })
+
+    /*
+     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0700
+     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop_static_0700
+     * @tc.desc:Using the removeCustomDnsRule (then) method without permission
+     * @tc.level:Level 2
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it("testNetworkMgrConnectionReportNetConnectedNop_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = "testNetworkMgrConnectionReportNetConnectedNop_static_0700";
+      hilog.info(domain, tag, `-------${caseName}----before----`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
+          connection.clearCustomDnsRules((error: BusinessError<void>|null, data: undefined) => {
+            hilog.info(domain, tag, '--------removeCustomDnsRule-------');
+            if (error?.code === PERMISSION_DENIED_CODE) {
+              expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+              done();
+            } else {
+              expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+              done();
+            }
+          })
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.error(domain, tag, `addCustomDnsRule removeCustomDnsRule error: ${JSON.stringify(err)} `);
+          if (err?.code === PERMISSION_DENIED_CODE) {
+            expect(err?.code).assertEqual(PERMISSION_DENIED_CODE);
+            done();
+          } else {
+            expect(err?.code).assertEqual(PARAMETER_ERROR_CODE);
+            done();
+          }
+        });
+      } catch (err: Error) {
+        hilog.error(domain, tag, `test failed err: ${JSON.stringify(err)}`);
+        if (err.code === PERMISSION_DENIED_CODE) {
+          expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+          done();
+        } else {
+          expect(err.code).assertEqual(PARAMETER_ERROR_CODE);
+          done();
+        }
+      }
+      hilog.info(domain, tag, `-------${caseName}----after----`);
+    })
+
+    /**
+     * @tc.number : SUB_Telephony_Connection_getAddressesByNameNop_0100
+     * @tc.name   : testConnectionGetAddressesByNameNop_static_0100
+     * @tc.desc   : AddressesByName Permission denied
+     * @tc.level  : Level 3
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it("testConnectionGetAddressesByNameNop_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const caseName: string = 'testConnectionGetAddressesByNameNop_static_0100';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try{
+        connection.getAddressesByName("www.baidu.com", (error: BusinessError<void>|null, data: Array<connection.NetAddress>|undefined) => {
+          if (error) {
+            hilog.error(domain, tag, `${caseName} Failed to get addresses. Code:${error.code}, message:${error.message}`);
+            expect(true).assertEqual(error?.code === 201);
+          }else {
+            hilog.info(domain, tag, `${caseName} success to get addressta: ` + JSON.stringify(data));
+            expect(true).assertEqual(false);
+          }
+          done();
+        });
+      }catch (err){
+        hilog.error(domain, tag, `${caseName} --test end`);
+        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number : SUB_Telephony_Connection_getAddressesByNameNop_0200
+     * @tc.name   : testConnectionGetAddressesByNameNop_static_0200
+     * @tc.desc   : AddressesByName Permission denied
+     * @tc.level  : Level 3
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it("testConnectionGetAddressesByNameNop_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      const caseName: string = 'testConnectionGetAddressesByNameNop_static_0200';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try{
+        connection.getAddressesByName("www.baidu.com").then((data :connection.NetAddress[] )=>{
+          hilog.info(domain, tag, `${caseName} Succeeded to get data:`, JSON.stringify(data))
+        }).catch((error:Error)=>{
+          let err = error as BusinessError;
+          hilog.error(domain, tag, `${caseName} Failed to get addresses. Code:${err?.code}, message:${err?.message}`);
+          expect(true).assertEqual(err?.code === 201);
+          done();
+        })
+      }catch (err){
+        hilog.error(domain, tag, `${caseName} --test end`);
+        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
   })
 }
