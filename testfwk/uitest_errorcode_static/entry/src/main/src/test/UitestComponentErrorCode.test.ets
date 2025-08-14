@@ -705,7 +705,7 @@ export default function uitestComponentErrorTest() {
     })
 
     /*
-    * @tc.number: UitestComponentErrorTest_026
+    * @tc.number: UitestComponentErrorTest_036
     * @tc.name: test_inputTextMode_801_static
     * @tc.desc: inputText 801 test.
     */

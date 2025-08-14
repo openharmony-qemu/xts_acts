@@ -298,7 +298,7 @@ export default function uitestDriverTest() {
     })
 
     /*
-    * @tc.number: uitestDriverTest_0029
+    * @tc.number: uitestDriverTest_0089
     * @tc.name: test_penClick_function_displayId_static
     * @tc.desc: penClick function test.
     */
