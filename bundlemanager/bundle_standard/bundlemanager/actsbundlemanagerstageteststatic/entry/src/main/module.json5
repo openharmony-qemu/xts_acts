@@ -355,6 +355,14 @@
         "exported": true
       }
     ],
+    "querySchemes": [
+      "http",
+      "welink",
+      "SCHEME",
+      "matchscheme1",
+      "matchscheme2",
+      "Matchscheme3"
+    ],
     "requestPermissions": [
       {
         "name": "ohos.permission.GET_BUNDLE_INFO",
