@@ -2323,8 +2323,10 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static disPlay is: ${JSON.stringify(disPlay)}`);
         let s = await driver.getDisplaySize(disPlay.id.toInt())
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static s: ${JSON.stringify(s)}`);
+        hilog.info(domain, tag, `testGetDisplaySizeWithId_static s.displayId: ${JSON.stringify(s.displayId)}`);
         expect(s.x != 0).assertTrue()
         expect(s.y != 0).assertTrue()
+        expect(s.displayId == disPlay.id).assertTrue()
       }catch(error) {
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static error, ${JSON.stringify(error)}`);
         expect().assertFail();
