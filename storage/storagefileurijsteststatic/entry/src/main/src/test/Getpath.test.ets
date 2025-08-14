@@ -12,7 +12,7 @@ let tag: string = 'testTag';
 export const CONTENT = "Hello World!";
 
 export default function GetpathTest() {
-  describe('fileuriTest', (): void => {
+  describe('getpathTest', (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_FileUri_GetPath_0100
