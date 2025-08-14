@@ -23,9 +23,12 @@ group("concurrency_static") {
       "process_test_static:ActsProcessStaticTest",
       "promise_test_static:ActsPromiseStaticTest",
       "sequenceRunner_test_static:ActsSequenceRunnerStaticTest",
+      "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
       "taskDelayed_test_static:ActsTaskDelayedStaticTest",
       "taskgroup_test_static:ActsTaskgroupStaticTest",
       "taskpool_base_test_static:ActsTaskpoolBaseStaticTest",
+      "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
+      "timer_test_static:ActsTimerStaticTest",
     ]
 
   }
