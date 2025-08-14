@@ -23,6 +23,8 @@ group("sensors") {
       "sensor/sensor_cpp_standard:ActsSensorNdkTest",
       "sensor_standard:sensor_js_test",
       "sensor_standard_nop:sensor_js_nop_test",
+      "ace_sensor_standard_static:ActsSensorJSApiStaticTest",
+      "miscdevice_standardStatic:ActsMiscdeviceJSApiStaticTest",
     ]
   }
 }
