@@ -142,7 +142,7 @@ export default function Util2Test() {
       let base64Helper = new util.Base64Helper();
       let array = new Uint8Array([115, 49, 51]);
       let result = base64Helper.encodeSync(array);
-      expect(result).assertEqual("99,122,69,122");
+      expect(result.toString()).assertEqual("99,122,69,122");
     })
 
     /**
@@ -188,7 +188,7 @@ export default function Util2Test() {
       try {
         let result = base64Helper.encodeSync(array, util.Type.MIME);
         let arrayResult = new Uint8Array([99, 122, 69, 122]);
-        expect(result).assertEqual(arrayResult);
+        expect(result.toString()).assertEqual(arrayResult);
       } catch (e : BusinessError) {
         expect(e.code).assertEqual(401)
       }
