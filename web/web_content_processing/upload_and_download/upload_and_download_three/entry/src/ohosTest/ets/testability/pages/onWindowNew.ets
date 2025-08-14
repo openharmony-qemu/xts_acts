@@ -19,7 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import image from "@ohos.multimedia.image"
-import { waitForExist, waitForExist1 } from '../../test/WaitTest.test';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -69,7 +69,7 @@ struct OnWindowNew {
     Column() {
       Row() {
         Button("web click").key('onWindowNew').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           await waitForExist(()=>this.isPageEnd, this.str, 0);
           await waitForExist(()=>this.isReceive, this.str, 0);
           this.isReceive = -1;
@@ -77,8 +77,10 @@ struct OnWindowNew {
             case "emitBlockNetWorkTrue": {
               try {
                 this.block = true;
-                await waitForExist1(()=>true, this.str, 1, 2000);
-                this.controller.loadUrl('www.weibo.com');
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.controller.loadUrl('www.example.com');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -87,8 +89,12 @@ struct OnWindowNew {
             case "emitBlockNetWorkFalse": {
               try {
                 this.block = false;
-                await waitForExist1(()=>true, this.str, 1, 2000);
-                this.controller.loadUrl('www.weibo.com');
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                this.isPageEnd = -1;
+                this.controller.loadUrl('www.example.com');
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
                 let testTitle = this.controller.getTitle();
                 console.log(`testTitle is: ${testTitle}`);
                 Utils.emitEvent(testTitle, 130610)
@@ -103,7 +109,6 @@ struct OnWindowNew {
       }
 
       Web({ src: $rawfile("onWindowNew.html"), controller: this.controller })
-        .id("Web")
         .multiWindowAccess(this.testMultiWindowAccess)
         .javaScriptAccess(this.javaScriptAccess)
         .allowWindowOpenMethod(this.testAllowWindowOpenMethod)

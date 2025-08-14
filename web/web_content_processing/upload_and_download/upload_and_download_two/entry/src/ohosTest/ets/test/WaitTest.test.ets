@@ -17,8 +17,6 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let driver: Driver = Driver.create();
-
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
     setTimeout(() => {
@@ -127,12 +125,14 @@ export async function waitForExist<T> (
 }
 
 export async function waitForComponents(componentName:string, interval=10000) {
+  let driver: Driver = Driver.create();
   let component = await driver.waitForComponent(ON.id(componentName), interval);
-  console.info("waitForComponent", componentName, '==>');
+  console.info('waitForComponent', componentName, '==>');
   return component;
 }
 
 export async function waitAndClickComponent(componentId: string, interval=10000) {
+  let driver: Driver = Driver.create();
   let retryTimes: number = 0;
   let retry: boolean = true;
   while (retry && retryTimes <= 3) {

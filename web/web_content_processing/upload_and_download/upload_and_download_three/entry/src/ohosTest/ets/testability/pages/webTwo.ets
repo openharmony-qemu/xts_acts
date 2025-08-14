@@ -208,7 +208,7 @@ struct Second {
     Column() {
       Row() {
         Button("web click").key('webcomponenttwo').onClick(async () => {
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
           await waitForExist(()=>this.isPageEnd, this.str, 0);
           await waitForExist(()=>this.isReceive, this.str, 0);
           this.isReceive = -1;
@@ -280,7 +280,6 @@ struct Second {
 
       Web({ src: $rawfile('index.html'), controller: this.webviewCtl, incognitoMode: true })
         .fileAccess(true)
-        .id("Web")
         .javaScriptOnDocumentEnd(this.scripts)
         .enableNativeEmbedMode(false)
         .javaScriptAccess(true)

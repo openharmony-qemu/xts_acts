@@ -59,7 +59,7 @@ struct WebComponent {
       Button('getCurrentSpeed')
         .key('001')
         .onClick(async () => {
-          console.info("key==>" + this.emitKey);
+          console.info('key==>' + this.emitKey);
           await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
           await waitForExist(()=>this.isReceive, this.emitKey, 0);
           this.isReceive = -1;

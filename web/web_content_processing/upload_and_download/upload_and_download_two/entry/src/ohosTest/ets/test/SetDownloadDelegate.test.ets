@@ -21,6 +21,7 @@ import { LocalContext } from './GloablConfig';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Util';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -71,7 +72,10 @@ export default function SetDownloadDelegate() {
         url: "testability/pages/SetDownloadDelegate1"
       })
       Utils.emitEvent("SetDownloadDelegate1", 130620);
-      Utils.registerEvent("SetDownloadDelegate1", webview.WebDownloadState.CANCELED, 130630, done);
+      Utils.registerBaseEvent("SetDownloadDelegate1", webview.WebDownloadState.CANCELED, 130630, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
@@ -89,7 +93,10 @@ export default function SetDownloadDelegate() {
         url: "testability/pages/SetDownloadDelegate2"
       })
       Utils.emitEvent("SetDownloadDelegate2", 130620);
-      Utils.registerEvent("SetDownloadDelegate2", webview.WebDownloadState.CANCELED, 130640, done);
+      Utils.registerBaseEvent("SetDownloadDelegate2", webview.WebDownloadState.CANCELED, 130640, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
@@ -107,7 +114,10 @@ export default function SetDownloadDelegate() {
         url: "testability/pages/SetDownloadDelegate3"
       })
       Utils.emitEvent("SetDownloadDelegate3", 130620);
-      Utils.registerEvent("SetDownloadDelegate3", webview.WebDownloadState.IN_PROGRESS, 130650, done);
+      Utils.registerBaseEvent("SetDownloadDelegate3", webview.WebDownloadState.IN_PROGRESS, 130650, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
