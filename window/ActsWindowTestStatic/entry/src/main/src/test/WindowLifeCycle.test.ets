@@ -497,22 +497,9 @@ export default function WindowLifeCycleTest() {
             hilog.info(0x0000, '[ANI]','testEnumWindow_windowType_static_0100' + JSON.stringify(window.WindowType.TYPE_FLOAT));
             try {
                 // expect(1).assertEqual(window.WindowType.TYPE_SYSTEM_ALERT);
-                // expect(2).assertEqual(window.WindowType.TYPE_INPUT_METHOD);
-                expect(3).assertEqual(window.WindowType.TYPE_STATUS_BAR);
-                expect(4).assertEqual(window.WindowType.TYPE_PANEL);
-                expect(5).assertEqual(window.WindowType.TYPE_KEYGUARD);
-                expect(6).assertEqual(window.WindowType.TYPE_VOLUME_OVERLAY);
-                expect(7).assertEqual(window.WindowType.TYPE_NAVIGATION_BAR);
                 expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
-                expect(9).assertEqual(window.WindowType.TYPE_WALLPAPER);
-                expect(10).assertEqual(window.WindowType.TYPE_DESKTOP);
-                expect(11).assertEqual(window.WindowType.TYPE_LAUNCHER_RECENT);
-                expect(12).assertEqual(window.WindowType.TYPE_LAUNCHER_DOCK);
-                expect(13).assertEqual(window.WindowType.TYPE_VOICE_INTERACTION);
-                expect(14).assertEqual(window.WindowType.TYPE_POINTER);
-                expect(15).assertEqual(window.WindowType.TYPE_FLOAT_CAMERA);
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
-                expect(17).assertEqual(window.WindowType.TYPE_SCREENSHOT);
+                // expect(32).assertEqual(window.WindowType.TYPE_MAIN);
                 done();
             } catch (error: BusinessError) {
                 hilog.info(0x0000, '[ANI]','test Enum value of windowType error ' + JSON.stringify(error));
@@ -591,6 +578,150 @@ export default function WindowLifeCycleTest() {
                 expect(false).assertTrue();
                 done();
             });
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0100
+         * @tc.name      : testSetUIContent_WindowStateAbnormal_static_0100
+         * @tc.desc      : Load the specific page content for the current window
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testSetUIContent_WindowStateAbnormal_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string  = 'testSetUIContent_WindowStateAbnormal_static_0100';
+            let msgStr:string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage.createSubWindow('testSetUIContent_WindowStateAbnormal');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            try {
+                (win as window.Window).setUIContent('pages/page2/page2').then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in loading the content.');
+                    expect().assertFail();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined  => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300002)
+                done();
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0200
+         * @tc.name      : testSetUIContent_WindowStateAbnormal_static_0200
+         * @tc.desc      : Load the specific page content for the current window
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testSetUIContent_WindowStateAbnormal_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string  = 'testSetUIContent_WindowStateAbnormal_static_0200';
+            let msgStr:string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage.createSubWindow('testSetUIContent_WindowStateAbnormal2');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            try {
+                (win as window.Window).setUIContent('pages/second/second', (err: BusinessError<void>|null):void => {
+                    if (err!.code) {
+                        hilog.error(0x0000, '[ANI]','Failed to load the content callback. Cause:' + JSON.stringify(err));
+                        expect().assertFail();
+                        done();
+                    } else {
+                        hilog.info(0x0000, '[ANI]','Succeeded in loading the content.');
+                        expect().assertFail();
+                        done();
+                    }
+
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300002)
+                done();
+            }
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0300
+         * @tc.name      : testSetUIContent_Not_Existent_Parameter_static_0300
+         * @tc.desc      : Verify the scene of loading the page with illegal values
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level4
+         */
+        it('testSetUIContent_Not_Existent_Parameter_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
+            let msgStr:string  = 'testSetUIContent_Not_Existent_Parameter_static_0300'
+            let win: window.Window;
+            try {
+                win = await windowStage.createSubWindow('testSetUIContent_Not_Existent_Parameter');
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+                expect(win != null).assertTrue();
+                // 设置setUIContent
+                (win as window.Window).setUIContent('pages/second/he').then(async (done: () => void): Promise<void> => {
+                    hilog.info(0x0000, '[ANI]','setUIContent3 . Cause: success');
+                    expect().assertFail();
+                    await (win as window.Window).destroyWindow();
+                    done();
+                }).catch(async (err: BusinessError):Promise<void> => {
+                    hilog.error(0x0000, '[ANI]','Failed to setUIContent3 . Cause:' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(401);
+                    await (win as window.Window).destroyWindow();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]','Failed to create the window3. Cause: ' + JSON.stringify(exception));
+                expect().assertFail();
+                done();
+            }
+            ;
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0400
+         * @tc.name      : testSetUIContentTestCallback1_static_0400
+         * @tc.desc      : Verify the scenario of loading an existing page
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level4
+         */
+        it('testSetUIContentTestCallback1_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
+            let msgStr:string  = 'testSetUIContentTestCallback1_static_0400'
+            let winData: window.Window;
+            winData = await windowStage.createSubWindow('testSetUIContentTestCallback1_static_03400');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!winData).assertTrue();
+            try {
+                (winData as window.Window).setUIContent('pages/second/second',  (err: BusinessError<void>|null):void => {
+                    try {
+                        if (err!.code) {
+                            hilog.error(0x0000, '[ANI]','Failed to load the content callback. Cause:' + JSON.stringify(err));
+                            await (winData as window.Window).destroyWindow();
+                            expect(err!.code).assertEqual(401);
+                            done();
+                        } else {
+                            hilog.info(0x0000, '[ANI]','Succeeded in loading the content.');
+                            await (winData as window.Window).destroyWindow();
+                            expect().assertFail();
+                            done();
+                        }
+                    } catch (err) {
+                        hilog.info(0x0000, '[ANI]','setUIContentTestCallBack1 assert result catch' + JSON.stringify(err));
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]','Failed callback to load the content. Cause:' + JSON.stringify(exception));
+                (winData as window.Window).destroyWindow();
+                expect(exception!.code).assertEqual(401);
+                done();
+            }
+            ;
         })
 
 

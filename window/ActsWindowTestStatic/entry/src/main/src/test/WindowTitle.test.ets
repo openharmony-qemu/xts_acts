@@ -93,7 +93,112 @@ export default function WindowTitleTest() {
                 }
             }
         })
-
+        /**
+         * @tc.number     : testSetWindowDecorVisibleErrCode1300002_0100
+         * @tc.name       : testSetWindowDecorVisibleErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowDecorVisibleErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowDecorVisibleErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = "testSetWindowDecorVisibleErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window;
+            await windowStage.createSubWindow('testSetWindowDecorVisibleErrCode1300002_static_0100')
+                .then((data: window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.setWindowDecorVisible(true);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
+                if(e!.code == 1300002){
+                    done();
+                }else if(e!.code == 801){
+                    done();
+                }else {
+                    expect().assertFail();
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.number     : testSetWindowDecorHeightErrCode1300002_0100
+         * @tc.name       : testSetWindowDecorHeightErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowDecorHeightErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowDecorHeightErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetWindowDecorHeightErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window;
+            await windowStage.createSubWindow('testSetWindowDecorHeightErrCode1300002_static_0100')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.setWindowDecorHeight(1);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3200
+         * @tc.name      : test_setWindowDecorHeight_setDecorButtonStyle_static_0100
+         * @tc.desc      : test_setWindowDecorHeight_setDecorButtonStyle_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('test_setWindowDecorHeight_setDecorButtonStyle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setWindowDecorHeight_setDecorButtonStyle_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let windowClass: window.Window = await windowStage.getMainWindow();
+            try {
+                windowClass.setWindowDecorHeight(50);
+                hilog.info(0x0000, '[ANI]',msgStr+ `Succeeded in setting the height of window decor`);
+                expect(true).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
+                if(exception.code = 801){
+                    done();
+                }else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
 
 
 
