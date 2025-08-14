@@ -17,7 +17,6 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from 
 import { Driver, MatchPattern, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import serialManager from '@ohos.usbManager.serial';
-import json from '@ohos.util.json';
 import bundleManager from '@ohos.bundle.bundleManager';
 import buffer from '@ohos.buffer';
 const TAG: string = "[SerialTest]";
@@ -54,7 +53,7 @@ async function driveDecFn() {
     let driver = Driver.create();
     await sleep(1000);
     let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
-    console.info(TAG, 'driveDecFn button:', json.stringify(buttons));
+    console.info(TAG, 'driveDecFn button:', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
       await buttons[buttons.length - 1].click();
     }
@@ -123,7 +122,7 @@ export default function SerialBaseTest() {
           return Promise.resolve();
         }
         let portList: serialManager.SerialPort[] = serialManager.getPortList();
-        console.info(TAG, 'testGetPortList001 portList: ', json.stringify(portList));
+        console.info(TAG, 'testGetPortList001 portList: ', JSON.stringify(portList));
         if (portList && portList.length > 0) {
           openPortId = portList[0].portId;
           console.info(TAG, 'testGetPortList001 openPortId: ', openPortId);
@@ -251,7 +250,7 @@ export default function SerialBaseTest() {
         try {
           expect().assertFail();
         } catch (err) {
-          console.error(TAG, 'getPermission catch err:',json.stringify(err));
+          console.error(TAG, 'getPermission catch err:',JSON.stringify(err));
           expect().assertFail();
         }
       } catch (error) {
@@ -573,11 +572,11 @@ export default function SerialBaseTest() {
           expect(serialManager.hasSerialRight(openPortId)).assertFalse();
           done();
         } catch (err) {
-          console.error(TAG, 'cancelSerialRight catch err name: ', json.stringify(err));
+          console.error(TAG, 'cancelSerialRight catch err name: ', JSON.stringify(err));
           expect().assertFail();
         }
       } catch (err) {
-        console.error(TAG, 'testCancelSerialRight001 catch err code: ', json.stringify(err));
+        console.error(TAG, 'testCancelSerialRight001 catch err code: ', JSON.stringify(err));
         expect().assertFail();
       }
     })

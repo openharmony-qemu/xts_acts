@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import Utils from './Util.test';
 import buffer from '@ohos.buffer';
 import util from '@ohos.util';
-import JSON from '@ohos.util.json';
+
 
 export default function stringDecoderTest() {
   describe('StringDecoderTest', () => {
