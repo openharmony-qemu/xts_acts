@@ -87,23 +87,23 @@ export default function SerialSingleTest() {
      * @tc.desc     : read timeout.
      */
     it('testRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        hilog.info(domain, TAG, 'testRead001 start');
-        if (checkDevice() === false) {
-          done();
-          return Promise.resolve();
-        }
-
-        await Utils.msSleep(1000);
-        serialManager.open(openPortId);
-        await Utils.msSleep(1000);
-        let readBuffer: Uint8Array = new Uint8Array(8192);
-        await serialManager.read(openPortId, readBuffer, 10);
-        expect().assertFail();
-      } catch (error : BusinessError) {
-        hilog.error(domain, TAG, 'testRead001 catch err name: ', error);
-        expect(error.code).assertEqual(31400006);
+      hilog.info(domain, TAG, 'testRead001 start');
+      if (checkDevice() === false) {
         done();
+        return Promise.resolve();
+      } else {
+        try {
+          await Utils.msSleep(1000);
+          serialManager.open(openPortId);
+          await Utils.msSleep(1000);
+          let readBuffer: Uint8Array = new Uint8Array(8192);
+          await serialManager.read(openPortId, readBuffer, 10);
+          expect().assertFail();
+        } catch (error : BusinessError) {
+          hilog.error(domain, TAG, 'testRead001 catch err name: ', error);
+          expect(error.code).assertEqual(31400006);
+          done();
+        }
       }
     })
 
@@ -113,20 +113,21 @@ export default function SerialSingleTest() {
      * @tc.desc     : read timeout.
      */
     it('testReadSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        hilog.info(domain, TAG, 'testReadSync001 start');
-        if (checkDevice() === false) {
-          done();
-          return Promise.resolve();
-        }
-        let readSyncBuffer: Uint8Array = new Uint8Array(8192);
-        let length: int = serialManager.readSync(openPortId, readSyncBuffer, 10);
-        expect().assertFail();
-      } catch (error : BusinessError) {
-        hilog.error(domain, TAG, 'testReadSync001 catch err code: ', error.code, ', message: ', error.message);
-        expect(error.code).assertEqual(31400006);
-        serialManager.close(openPortId);
+      hilog.info(domain, TAG, 'testReadSync001 start');
+      if (checkDevice() === false) {
         done();
+        return Promise.resolve();
+      } else {
+        try {
+          let readSyncBuffer: Uint8Array = new Uint8Array(8192);
+          let length: int = serialManager.readSync(openPortId, readSyncBuffer, 10);
+          expect().assertFail();
+        } catch (error : BusinessError) {
+          hilog.error(domain, TAG, 'testReadSync001 catch err code: ', error.code, ', message: ', error.message);
+          expect(error.code).assertEqual(31400006);
+          serialManager.close(openPortId);
+          done();
+        }
       }
     })
   })
