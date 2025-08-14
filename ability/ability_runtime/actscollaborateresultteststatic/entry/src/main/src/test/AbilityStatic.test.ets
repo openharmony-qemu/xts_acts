@@ -68,26 +68,26 @@ export default function abilitystaticTest() {
       hilog.info(domain, tag, `${caseName} end`);
     })
 
-    // /**
-    //  * @tc.number: SUB_Ability_Ability_Runtime_onCollaborate_static_3100
-    //  * @tc.name  : SUB_Ability_Ability_Runtime_onCollaborate_static_3100
-    //  * @tc.desc  : wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE equal 0x00002000
-    //  * @tc.size  : MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level : Level 1
-    //  */
-    // it('SUB_Ability_Ability_Runtime_onCollaborate_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3100';
-    //   console.info(`${caseName} Begin`);
-    //   try {
-    //     expect(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '').assertEqual(String(0x00002000))
-    //     done();
-    //   } catch (err) {
-    //     console.info(`${caseName} failed: ${JSON.stringify(err)}`);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    //   console.info(`${caseName} end`);
-    // })
+    /**
+     * @tc.number: SUB_Ability_Ability_Runtime_onCollaborate_static_3100
+     * @tc.name  : SUB_Ability_Ability_Runtime_onCollaborate_static_3100
+     * @tc.desc  : wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE equal 0x00002000
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : Level 1
+     */
+    it('SUB_Ability_Ability_Runtime_onCollaborate_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3100';
+      console.info(`${caseName} Begin`);
+      try {
+        expect(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '').assertEqual(String(0x00002000))
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end`);
+    })
   })
 }

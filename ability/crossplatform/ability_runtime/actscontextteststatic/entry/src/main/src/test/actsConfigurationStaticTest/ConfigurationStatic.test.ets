@@ -300,9 +300,9 @@ export default function ConfigurationStatic() {
       hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.hasPointerDevice: ' + context.config.hasPointerDevice);
       expect(context.config.hasPointerDevice).not().assertUndefined();
       expect(context.config.hasPointerDevice).not().assertNull();
-      // hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontId: ' + context.config.fontId);
-      // expect(context.config.fontId).not().assertUndefined();
-      // expect(context.config.fontId).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontId: ' + context.config.fontId);
+      expect(context.config.fontId).not().assertUndefined();
+      expect(context.config.fontId).not().assertNull();
       hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontSizeScale: ' + context.config.fontSizeScale);
       expect(context.config.fontSizeScale).not().assertUndefined();
       expect(context.config.fontSizeScale).not().assertNull();
