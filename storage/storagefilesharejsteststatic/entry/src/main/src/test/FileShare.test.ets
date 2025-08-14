@@ -72,6 +72,9 @@ export default function FileShare_test() {
           let err = e as BusinessError;
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (error.code == 13900001) {
+            expect(error.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -117,6 +120,9 @@ export default function FileShare_test() {
             err.code, err.message);
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (error.code == 13900001) {
+            expect(error.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -215,6 +221,9 @@ export default function FileShare_test() {
           let err = e as BusinessError;
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (error.code == 13900001) {
+            expect(error.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -260,6 +269,9 @@ export default function FileShare_test() {
             err.code, err.message);
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (error.code == 13900001) {
+            expect(error.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
           }
