@@ -420,5 +420,246 @@ export default function ConnectionWithoutNetTest() {
       }
     });
 
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetConnected_0200
+     * @tc.name       : testNetConnectionReportNetConnected_static_0200
+     * @tc.desc       : Report to network management that the network is available
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it("testNetConnectionReportNetConnected_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetConnectionReportNetConnected_static_0200";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+            if (error?.code) {
+              hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
+              expect(true).assertEqual(error?.code === 2101006);
+              hilog.error(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: reportNetConnected: success`);
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          hilog.info(domain, tag, `${caseName} error`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetConnected_0300
+     * @tc.name       : testNetConnectionReportNetConnected_static_0300
+     * @tc.desc       : Report to network management that the network is available
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it("testNetConnectionReportNetConnected_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetConnectionReportNetConnected_static_0300";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.reportNetConnected(netHandle).then(() => {
+            hilog.info(domain, tag, `${caseName}: reportNetConnected: success`);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }).catch((error: Error) => {
+            hilog.error(domain, tag, `${caseName} error`);
+            expect(true).assertEqual(error?.code === 2101006);
+            hilog.error(domain, tag, `${caseName}---End`);
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(domain, tag, `${caseName} error`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetDisconnected_0200
+     * @tc.name       : testNetConnectionReportNetDisconnected_static_0200
+     * @tc.desc       : Report the network to network management as unavailable
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it("testNetConnectionReportNetDisconnected_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetConnectionReportNetDisconnected_static_0200";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.reportNetDisconnected(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+            if (error?.code) {
+              hilog.info(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(error)}`);
+              expect(true).assertEqual(error?.code === 2101006);
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: reportNetDisconnected: success`);
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          hilog.error(domain, tag, `${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.error(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetDisconnected_1100
+     * @tc.name       : testNetConnectionReportNetDisconnected_static_1100
+     * @tc.desc       : Report the network to network management as unavailable
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it("testNetConnectionReportNetDisconnected_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetConnectionReportNetDisconnected_static_1100";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.reportNetDisconnected(netHandle).then(() => {
+            hilog.info(domain, tag, `${caseName}: reportNetDisconnected: success`);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }).catch((error: Error) => {
+            hilog.error(domain, tag, `${caseName} reportNetDisconnected: err->${JSON.stringify(error)}`);
+            expect(true).assertEqual(error?.code === 2101006);
+            hilog.error(domain, tag, `${caseName}---End`);
+            done();
+          });
+        }).catch((error: Error) => {
+          hilog.info(domain, tag, `${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNet_0300
+     * @tc.name       : testNetworkMgrConnectionGetAppNet_static_0300
+     * @tc.desc       : Obtain network information bound to the app and use the callback method as an asynchronous method.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("testNetworkMgrConnectionGetAppNet_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetAppNet_static_0300";
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        connection.getAppNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+          if (error?.code) {
+            hilog.error(domain, tag, `${caseName} callback: err->${JSON.stringify(error)}`);
+            expect().assertFail();
+            hilog.error(domain, tag, `${caseName}---End`);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} callback: success data->${JSON.stringify(data)}`);
+            expect(true).assertEqual(data?.netId === 0);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNet_0700
+     * @tc.name       : testNetworkMgrConnectionGetAppNet_static_0700
+     * @tc.desc       : Obtain network information bound to the app and use the Promise method as an asynchronous method.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("testNetworkMgrConnectionGetAppNet_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetAppNet_static_0700";
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        connection.getAppNet().then((data: connection.NetHandle) => {
+          hilog.info(domain, tag, `${caseName} getAppNet: success data->${JSON.stringify(data)}`);
+          expect(true).assertEqual(data.netId === 0);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((error: Error) => {
+          hilog.error(domain, tag, `${caseName} getAppNet: err->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.error(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNetSync_0300
+     * @tc.name       : testNetworkMgrConnectionGetAppNetSync_static_0300
+     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("testNetworkMgrConnectionGetAppNetSync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionGetAppNetSync_static_0300";
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let netHandle = connection.getAppNetSync();
+        hilog.info(domain, tag, `${caseName} GetAppNetSync: success data->${JSON.stringify(netHandle)}`);
+        expect(true).assertEqual(netHandle.netId === 0);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        hilog.error(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
   })
 }
