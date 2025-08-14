@@ -366,33 +366,33 @@ export default function TimerTest() {
       done();
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
-    //  * @tc.name       : testTimer003
-    //  * @tc.desc       : Test clearTimeout.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearTimeout();
-    //   expect(true).assertTrue();
-    //   done();
-    // });
+     /**
+      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
+      * @tc.name       : testTimer003
+      * @tc.desc       : Test clearTimeout.
+      * @tc.size       : MediumTest
+      * @tc.type       : Function
+      * @tc.level      : Level 1
+      */
+     it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+       clearTimeout();
+       expect(true).assertTrue();
+       done();
+     });
 
     /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0400
-     * @tc.name       : testClearInterval001
+     * @tc.name       : testTimer004
      * @tc.desc       : Test ClearInterval.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    // it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearInterval();
-    //   expect(true).assertTrue();
-    //   done();
-    // });
+     it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+       clearInterval();
+       expect(true).assertTrue();
+       done();
+     });
 
   })
 }

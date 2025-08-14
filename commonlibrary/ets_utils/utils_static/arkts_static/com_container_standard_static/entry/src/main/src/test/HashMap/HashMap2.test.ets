@@ -1825,7 +1825,6 @@ export default function HashMapTest2() {
       const TAG = 'testHashMapSymbolIterator0001';
       try {
         const hashMap = new HashMap<number, number>();
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
           let temp: IteratorResult<[Number, Number]> = iter.next();
         while (!temp.done) {
@@ -1853,9 +1852,8 @@ export default function HashMapTest2() {
         hashMap.set(0, 0);
         hashMap.set(1, 1);
         hashMap.set(2, 2);
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
-          let temp: IteratorResult<[Number, Number]> = iter.next();
+        let temp: IteratorResult<[Number, Number]> = iter.next();
         let index = 0;
         while (!temp.done) {
           if (!temp.value) {
