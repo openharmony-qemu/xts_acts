@@ -1822,5 +1822,31 @@ export default function BitVectorTest() {
         let res3 = bitVector.has(1, 0, 9);
         expect(res3).assertEqual(false);
     });
+
+    /**
+     * @tc.number    : BITVECTOR_TEST_078
+     * @tc.name      : BitVector_test_Func_078
+     * @tc.desc      : test BitVector
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("BitVector_test_Func_078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let bitVector = new collections.BitVector(0);
+      bitVector.push(0);
+      bitVector.push(1);
+      bitVector.push(2);
+      bitVector.push(3);
+      bitVector.push(4);
+      let iter = bitVector.$_iterator();
+      let temp = iter.next();
+      let flag =0;
+      while (!temp.done) {
+        flag ++;
+        expect(bitVector.length).assertEqual(5);
+        temp = iter.next()
+      }
+      expect(flag).assertEqual(5);
+    });
   });
 }
