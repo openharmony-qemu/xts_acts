@@ -121,7 +121,7 @@ struct WebViewControllerDownloadTest {
       Row() {
         Button('WebViewControllerDownloadTestButton')
           .key('WebViewControllerDownloadTestButton').onClick(async () => {
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
           await waitForExist(()=>this.isPageEnd, this.str, 0);
           await waitForExist(()=>this.isReceive, this.str, 0);
           this.isReceive = -1;
@@ -453,11 +453,14 @@ struct WebViewControllerDownloadTest {
                 if (this.downloadingItem) {
                   this.downloadingItem.cancel()
                 }
-                await waitForExist(() => (this.failedDownloadSerializedData && this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
+                await waitForExist(() => (this.failedDownloadSerializedData && 
+                  this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
                 Utils.emitEvent(true, 130300)
-                await waitForExist(() => (this.failedDownloadSerializedData && this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
+                await waitForExist(() => (this.failedDownloadSerializedData && 
+                  this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
                 Utils.emitEvent(true, 130300)
-                await waitForExist(() => (this.failedDownloadSerializedData && this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
+                await waitForExist(() => (this.failedDownloadSerializedData && 
+                  this.failedDownloadSerializedData.length > 0) ? 1 : 0, this.str, 1);
                 Utils.emitEvent(true, 130300)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -474,7 +477,8 @@ struct WebViewControllerDownloadTest {
                 }
                 console.log('testDeserialize001 close')
                 for (let i = 0; i< 5; i++ ) {
-                  await waitForExist(() => (this.failedDownloadSerializedData && this.failedDownload) ? 1 : 0, this.str, 1);
+                  await waitForExist(() => (this.failedDownloadSerializedData && 
+                    this.failedDownload) ? 1 : 0, this.str, 1);
                   if (this.failedDownloadSerializedData && this.failedDownload) {
                     let deserialize = webView.WebDownloadItem.deserialize(this.failedDownloadSerializedData)
                     let same = this.failedDownload.getGuid() == deserialize.getGuid() &&
@@ -558,7 +562,7 @@ struct WebViewControllerDownloadTest {
             case 'testOnDownloadUpdated001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                await waitForExist(() => this.onDownloadUpdatedCalled ? 1 : 0, this.str, 1, 3000);
+                await waitForExist(() => this.onDownloadUpdatedCalled ? 1 : 0, this.str, 1);
                 Utils.emitEvent(this.onDownloadUpdatedCalled, 130330)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -633,7 +637,6 @@ struct WebViewControllerDownloadTest {
                   Utils.emitEvent(webView.WebDownloadState.IN_PROGRESS, 130110)
                 }
                 if ( this.currentDownloadState == webView.WebDownloadState.CANCELED) {
-                  console.log("取消取------------------------------------------" + this.currentDownloadState)
                   Utils.emitEvent(webView.WebDownloadState.CANCELED, 130130)
                 }
                 if ( this.currentDownloadState == webView.WebDownloadState.INTERRUPTED) {

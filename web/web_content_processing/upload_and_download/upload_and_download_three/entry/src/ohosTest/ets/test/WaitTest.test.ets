@@ -127,18 +127,18 @@ export async function waitForExist<T> (
 export async function waitForComponents(componentName:string, interval=10000) {
   let driver: Driver = Driver.create();
   let component = await driver.waitForComponent(ON.id(componentName), interval);
-  console.info("waitForComponent", componentName, '==>');
+  console.info('waitForComponent', componentName, '==>');
   return component;
 }
 
-export async function waitAndClickComponent(componentId: string) {
+export async function waitAndClickComponent(componentId: string, interval=10000) {
   let driver: Driver = Driver.create();
   let retryTimes: number = 0;
   let retry: boolean = true;
   while (retry && retryTimes <= 3) {
     retry = false;
     try {
-      const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+      const buttonComponent = await driver.waitForComponent(ON.id(componentId), interval);
       if (!buttonComponent) {
         console.error(`error: buttonConmponent is null.`);
         return;
@@ -155,46 +155,4 @@ export async function waitAndClickComponent(componentId: string) {
       }
     }
   }
-}
-
-export async function waitForExist1<T> (
-  stateGetter: () => T,
-  testsuite: string,
-  expectValue: string | number | null = null,
-  interval=3000,
-  tryTime=20
-):Promise<T>{
-  let nums = 0;
-  let isSuccess = false;
-  while (nums < tryTime) {
-    await sleep(interval);
-    const currentValue = await new Promise<T>((done) => {
-      setTimeout(()=>done(stateGetter()), 0);
-    })
-    console.log(testsuite + ' debug wait for exist' + nums + ' times, currentValue: ' + currentValue
-      + ',expectValue ' + expectValue)
-
-    if (expectValue == null) {
-      if (currentValue != null) {
-        console.log(testsuite + ' debug wait for success exist');
-        isSuccess = true;
-        return currentValue
-      }
-    } else {
-      if (currentValue == expectValue) {
-        console.log(testsuite + ' debug wait for success exist');
-        isSuccess = true;
-        return currentValue
-      }
-    }
-    nums++;
-  }
-  if (!isSuccess) {
-    console.log(testsuite + ' debug wait for failed')
-  }
-  const currentValue = await new Promise<T>((result) => {
-    setTimeout(() => result(stateGetter()), 0);
-  });
-  console.log(testsuite + ' debug wait for failed exist ' + currentValue);
-  return currentValue;
 }

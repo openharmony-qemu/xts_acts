@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitForComponents, waitAndClickComponent } from './WaitTest.test';
+import { waitAndClickComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitBlockNetWorkTrue";
@@ -41,7 +41,6 @@ export default function webViewOnWindowNewJsunit() {
       } catch (err) {
         console.error("push onWindowNew page error: " + err);
       }
-      await waitForComponents("Web", 1000);
       done()
     });
     beforeEach(async  (done: Function) =>{
@@ -51,7 +50,6 @@ export default function webViewOnWindowNewJsunit() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      await waitForComponents("Web", 1000);
       done();
     })
     afterEach(async  (done: Function) =>{
@@ -67,7 +65,7 @@ export default function webViewOnWindowNewJsunit() {
     */
     it('testBlockNetWorkTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkTrue", 130590);
-      let url = "http://www.weibo.com/";
+      let url = "http://www.example.com/";
       Utils.registerEvent("testBlockNetWorkTrue", url, 130600, done);
       await waitAndClickComponent("onWindowNew");
     })
@@ -78,7 +76,7 @@ export default function webViewOnWindowNewJsunit() {
     */
    it('testBlockNetWorkFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkFalse", 130590);
-      let title = "weibo.com";
+      let title = "Example Domain";
       Utils.registerEvent("testBlockNetWorkFalse", title, 130610, done);
       await waitAndClickComponent("onWindowNew");
     })

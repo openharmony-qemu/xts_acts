@@ -22,6 +22,7 @@ import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent } from './WaitTest.test';
 import Utils from './Util';
+import events_emitter from '@ohos.events.emitter';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -71,7 +72,10 @@ export default function SetDownloadDelegateSecond() {
         url: "testability/pages/SetDownloadDelegate4"
       })
       Utils.emitEvent("SetDownloadDelegate4", 130660);
-      Utils.registerEvent("SetDownloadDelegate4", webview.WebDownloadState.CANCELED, 130670, done);
+      Utils.registerBaseEvent("SetDownloadDelegate4", webview.WebDownloadState.CANCELED, 130670, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
@@ -89,8 +93,11 @@ export default function SetDownloadDelegateSecond() {
         url: "testability/pages/SetDownloadDelegate5"
       })
       Utils.emitEvent("SetDownloadDelegate5", 130660);
-      Utils.registerEvent("SetDownloadDelegate5", 'https:' +
-          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done);
+      Utils.registerBaseEvent("SetDownloadDelegate5", 'https:' +
+        '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
@@ -108,8 +115,11 @@ export default function SetDownloadDelegateSecond() {
         url: "testability/pages/SetDownloadDelegate5"
       })
       Utils.emitEvent("SetDownloadDelegate51", 130660);
-      Utils.registerEvent("SetDownloadDelegate51", 'https:' +
-          '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done);
+      Utils.registerBaseEvent("SetDownloadDelegate51", 'https:' +
+        '//mirrors.huaweicloud.com/npm-software/v6.14.16.tar.gz0', 130680, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
@@ -127,7 +137,10 @@ export default function SetDownloadDelegateSecond() {
         url: "testability/pages/SetDownloadDelegate6"
       })
       Utils.emitEvent("SetDownloadDelegate6", 130660);
-      Utils.registerEvent("SetDownloadDelegate6", webview.WebDownloadState.PENDING, 130690, done);
+      Utils.registerBaseEvent("SetDownloadDelegate6", webview.WebDownloadState.PENDING, 130690, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       await waitAndClickComponent("001");
       router.clear()
     })
