@@ -1980,3 +1980,1904 @@ export default function TaskPoolLibTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    it('TaskPoolTestClass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let i: number = 10;
+        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup1.addTask(AdditionDelay, 10.0);
+        taskGroup1.addTask(AdditionDelay, 20.0);
+        taskGroup1.addTask(AdditionDelay, 30.0);
+
+        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        taskGroup2.addTask(task1);
+        taskGroup2.addTask(task2);
+        taskGroup2.addTask(task3);
+        taskpool.execute(taskGroup1).then((): void => {
+          ++i;
+        });
+        taskpool.execute(taskGroup2);
+
+        try{
+          taskpool.cancel(taskGroup1);
+        }catch(e:Error){
+          console.info('TaskPoolTestClass078 cancel error')
+        }
+        expect(i).assertEqual(10)
+        done();
+      })
+
+    /**
+     * @tc.number    : TaskPoolTestClass079
+     * @tc.name      : Async Function Cancel taskGroup
+     * @tc.desc      : Cancel the taskGroup that have not been executed
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let i: number = 10;
+        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup1.addTask(AdditionDelay, 10.0);
+        taskGroup1.addTask(AdditionDelay, 20.0);
+        taskGroup1.addTask(AdditionDelay, 30.0);
+
+        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        taskGroup2.addTask(task1);
+        taskGroup2.addTask(task2);
+        taskGroup2.addTask(task3);
+        taskpool.execute(taskGroup1);
+        taskpool.execute(taskGroup2).then((): void => {
+          ++i;
+        });
+
+        taskpool.cancel(taskGroup2);
+        expect(i).assertEqual(10)
+        done();
+      })
+
+    /**
+     * @tc.number    : TaskPoolTestClass080
+     * @tc.name      : Async Function Cancel taskGroup
+     * @tc.desc      : Cancel the non-existent taskGroup
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskpool.cancel(taskGroup);
+        } catch (e: Error) {
+          expect(e.message)
+            .assertEqual('taskpool:: taskGroup is not executed or has been executed');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : TaskPoolTestClass081
+     * @tc.name      : Async Function Cancel taskGroup
+     * @tc.desc      : Cancel the executed taskGroup
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate: boolean = false;
+        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup1.addTask(printArgs, 10.0);
+        taskGroup1.addTask(printArgs, 20.0);
+        taskGroup1.addTask(printArgs, 30.0);
+
+        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(printArgs, 300.0);
+
+        taskGroup2.addTask(task1);
+        taskGroup2.addTask(task2);
+        taskGroup2.addTask(task3);
+
+        taskpool.execute(taskGroup1).then((): void => {
+          isTerminate = true;
+        });
+        taskpool.execute(taskGroup2);
+
+        while (!isTerminate) {
+          await waitWithPromiseCase();
+          ;
+        }
+
+        try {
+          taskpool.cancel(taskGroup1);
+        } catch (e: Error) {
+          expect(e.message)
+            .assertEqual('taskpool:: taskGroup is not executed or has been executed');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0082
+     * @tc.name      : TaskPoolTestClass082
+     * @tc.desc      : add setclonelist of task for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let arr: Array<number> = new Array<number>(1, 2, 3, 4);
+        let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
+        let arrayInt: Int32Array = new Int32Array(arrayBuffer);
+        for (let i: number = 0; i < arr.length; i++) {
+          arrayInt[i] = arr[i];
+        }
+        let task: taskpool.Task = new taskpool.Task(setCloneListTest, arrayInt);
+        // task.setCloneList([arrayBuffer]);
+        taskpool.execute(task).then((): void => {
+          expect(arrayInt[0]).assertEqual(1);
+        })
+        done()
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0083
+     * @tc.name      : TaskPoolTestClass083
+     * @tc.desc      : taskGroup cannot add groupTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup2.addTask(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add groupTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0084
+     * @tc.name      : TaskPoolTestClass084
+     * @tc.desc      : taskGroup cannot add seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.execute(task);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0085
+     * @tc.name      : TaskPoolTestClass085
+     * @tc.desc      : taskGroup cannot add seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.executeDelayed(100, task);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0086
+     * @tc.name      : TaskPoolTestClass086
+     * @tc.desc      : taskGroup cannot add seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0087
+     * @tc.name      : TaskPoolTestClass087
+     * @tc.desc      : dependent task not allowed
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          task1.addDependency(task2);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: dependent task not allowed.');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0088
+     * @tc.name      : TaskPoolTestClass088
+     * @tc.desc      : taskgroup
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task1);
+          taskpool.execute(taskGroup).then((res: number[]): void => {
+            expect(res[0]).assertEqual(100.0);
+          });
+          taskGroup.addTask(task2);
+          taskpool.execute(taskGroup).then((res: number[]): void => {
+            expect(res[1]).assertEqual(200.0);
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: executed taskGroup cannot addTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0089
+     * @tc.name      : TaskPoolTestClass089
+     * @tc.desc      : SequenceRunner cannot execute groupTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task).then((): void => {
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute groupTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0090
+     * @tc.name      : TaskPoolTestClass090
+     * @tc.desc      : SequenceRunner cannot execute seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.execute(task);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task).then((): void => {
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0091
+     * @tc.name      : TaskPoolTestClass091
+     * @tc.desc      : SequenceRunner cannot execute seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.executeDelayed(100, task);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task).then((): void => {
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0092
+     * @tc.name      : TaskPoolTestClass092
+     * @tc.desc      : dependent task not allowed
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          task1.addDependency(task2);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task1).then((): void => {
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0093
+     * @tc.name      : TaskPoolTestClass093
+     * @tc.desc      : SequenceRunner cannot execute seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner1: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner1.execute(task).then((): void => {
+          });
+          let runner2: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner2.execute(task).then((): void => {
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0094
+     * @tc.name      : TaskPoolTestClass094
+     * @tc.desc      : groupTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+          task.addDependency(task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0095
+     * @tc.name      : TaskPoolTestClass095
+     * @tc.desc      : groupTask cannot be relied on
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+          task1.addDependency(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot be relied on');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0096
+     * @tc.name      : TaskPoolTestClass096
+     * @tc.desc      : seqRunnerTask or executedTask cannot be relied on
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.execute(task2);
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0097
+     * @tc.name      : TaskPoolTestClass097
+     * @tc.desc      : seqRunnerTask or executedTask cannot be relied on
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.executeDelayed(100, task2);
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0098
+     * @tc.name      : TaskPoolTestClass098
+     * @tc.desc      : seqRunnerTask or executedTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.execute(task1);
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0099
+     * @tc.name      : TaskPoolTestClass099
+     * @tc.desc      : seqRunnerTask or executedTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.executeDelayed(100, task1);
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0100
+     * @tc.name      : TaskPoolTestClass100
+     * @tc.desc      : seqRunnerTask or executedTask cannot be relied on
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task2).then((): void => {
+          });
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0101
+     * @tc.name      : TaskPoolTestClass101
+     * @tc.desc      : seqRunnerTask or executedTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task1).then((): void => {
+          });
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0102
+     * @tc.name      : TaskPoolTestClass102
+     * @tc.desc      : groupTask cannot be relied on
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+          task1.addDependency(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot be relied on');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0103
+     * @tc.name      : TaskPoolTestClass103
+     * @tc.desc      : groupTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+          task.addDependency(task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0104
+     * @tc.name      : TaskPoolTestClass104
+     * @tc.desc      : seqRunnerTask cannot execute outside
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task1).then((): void => {
+          });
+          taskpool.execute(task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot execute outside');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0105
+     * @tc.name      : TaskPoolTestClass105
+     * @tc.desc      : groupTask cannot execute outside
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          taskpool.execute(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot execute outside');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0106
+     * @tc.name      : TaskPoolTestClass106
+     * @tc.desc      : seqRunnerTask cannot executeDelayed outside
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+          runner.execute(task1).then((): void => {
+          });
+          taskpool.executeDelayed(100, task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0107
+     * @tc.name      : TaskPoolTestClass107
+     * @tc.desc      : groupTask cannot executeDelayed outside
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup1.addTask(task);
+          taskpool.executeDelayed(100, task)
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: groupTask cannot executeDelayed outside');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0108
+     * @tc.name      : TaskPoolTestClass108
+     * @tc.desc      : cancel the executeDelay task
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let result: number = 0;
+        let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        taskpool.executeDelayed(1000, task).then((ret: number): void => {
+          result = ret;
+        })
+        let t = Date.now()
+        while ((Date.now() - t) < 500.0) {
+          continue;
+        }
+        taskpool.cancel(task)
+        expect(result).assertEqual(0);
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0109
+     * @tc.name      : TaskPoolTestClass109
+     * @tc.desc      : executedTask with dependency cannot executeDelayed again
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task1: taskpool.Task = new taskpool.Task(delaySum, 10.0, 20.0, 100.0)
+        let task2: taskpool.Task = new taskpool.Task(delaySum, 30.0, 40.0, 200.0)
+        task1.addDependency(task2);
+        taskpool.execute(task1).then((): void => {
+        })
+        taskpool.execute(task2).then((): void => {
+        })
+        try {
+          taskpool.execute(task1)
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: executedTask with dependency cannot execute again');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0110
+     * @tc.name      : TaskPoolTestClass110
+     * @tc.desc      : add name of task for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task('taskName', Sum, 10.0, 20.0);
+        try {
+          task.name = 'taskName1';
+        } catch (e: Error) {
+          expect(e.message).assertEqual('TypeError: Cannot set property when setter is undefined');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0111
+     * @tc.name      : TaskPoolTestClass111
+     * @tc.desc      : add name of task for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task('taskName', Sum, 10.0, 20.0);
+        expect(task.name).assertEqual('taskName');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0112
+     * @tc.name      : TaskPoolTestClass112
+     * @tc.desc      : add name of task for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0);
+        let name: string = task.name;
+        expect(name).assertEqual('Sum');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0113
+     * @tc.name      : TaskPoolTestClass113
+     * @tc.desc      : get name from taskInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(Sum, 10.0, 20.0)
+        taskpool.execute(task).then((): void => {
+          console.info('task1 success');
+        })
+        let start: number = new Date().getTime();
+        while (new Date().getTime() - start < 500.0) {
+          continue;
+        }
+        let taskpoolInfo = taskpool.getTaskPoolInfo();
+        let name = '';
+        for (let taskInfo of taskpoolInfo.taskInfos) {
+          name = taskInfo.name;
+        }
+        expect(name != '').assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0114
+     * @tc.name      : TaskPoolTestClass114
+     * @tc.desc      : get name from taskInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task('taskName', Sum, 10.0, 20.0)
+        taskpool.execute(task).then((): void => {
+          console.info('task1 success');
+        })
+        let start: number = new Date().getTime();
+        while (new Date().getTime() - start < 500.0) {
+          continue;
+        }
+        let taskpoolInfo = taskpool.getTaskPoolInfo();
+        let name = '';
+        for (let taskInfo of taskpoolInfo.taskInfos) {
+          name = taskInfo.name;
+        }
+        expect(name != '').assertTrue();
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0115
+    //  * @tc.name      : TaskPoolTestClass115
+    //  * @tc.desc      : Register a callback of onEnqueued
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let isTerminate1: boolean = false;
+    //     let task: taskpool.Task = new taskpool.Task(printArgs, 1);
+    //     let onEnqueuedStr = '';
+    //     task.onEnqueued((): void => {
+    //       onEnqueuedStr = 'onEnqueued';
+    //     })
+    //
+    //     let onStartExecutionStr = '';
+    //     task.onStartExecution((): void => {
+    //       onStartExecutionStr = 'onStartExecution';
+    //     })
+    //
+    //     let onExecutionSucceededStr = '';
+    //     task.onExecutionSucceeded((): void => {
+    //       onExecutionSucceededStr = 'onExecutionSucceeded';
+    //     })
+    //
+    //     taskpool.execute(task).then((): void => {
+    //       isTerminate1 = true;
+    //     });
+    //     while (!isTerminate1) {
+    //       await waitWithPromiseCase();
+    //     }
+    //     expect(onEnqueuedStr).assertEqual('onEnqueued');
+    //     expect(onStartExecutionStr).assertEqual('onStartExecution');
+    //     expect(onExecutionSucceededStr).assertEqual('onExecutionSucceeded');
+    //     done();
+    //   })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0116
+    //  * @tc.name      : TaskPoolTestClass116
+    //  * @tc.desc      : handle cancel task error
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let isTerminate1: boolean = false;
+    //     let isTerminate2: boolean = false;
+    //     let task1: taskpool.Task = new taskpool.Task(testCancelDelayed);
+    //     let task2: taskpool.Task = new taskpool.Task(testCancelDelayed);
+    //     try {
+    //       taskpool.cancel(task1);
+    //     } catch (e: Error) {
+    //       expect(e.message)
+    //         .assertEqual('taskpool:: task is not executed or has been executed');
+    //     }
+    //     try {
+    //       taskpool.execute(task2)
+    //     } catch (e: Error) {
+    //       isTerminate1 = true;
+    //       expect(e.message)
+    //         .assertEqual('taskpool:: task is not executed or has been executed');
+    //     }
+    //
+    //     taskpool.cancel(task2);
+    //     while (!isTerminate1) {
+    //       await waitWithPromiseCase();
+    //     }
+    //
+    //     taskpool.execute(task2).then((): void => {
+    //        isTerminate2 = true;
+    //     })
+    //     while (!isTerminate2) {
+    //       await waitWithPromiseCase();
+    //     }
+    //     try {
+    //       taskpool.cancel(task2);
+    //     } catch (e: Error) {
+    //       expect(e.message)
+    //         .assertEqual('taskpool:: task is not executed or has been executed');
+    //     }
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0117
+     * @tc.name      : TaskPoolTestClass117
+     * @tc.desc      : handle cancel task error
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate1: boolean = false;
+        let task: taskpool.Task = new taskpool.Task(printArgs)
+        taskpool.executeDelayed(1000, task).then((): void => {
+        }).catch((e: Error): void => {
+          isTerminate1 = true;
+          expect(e.message).assertEqual('taskpool:: task has been canceled');
+        })
+        taskpool.cancel(task);
+        while (!isTerminate1) {
+          await waitWithPromiseCase();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0118
+     * @tc.name      : TaskPoolTestClass118
+     * @tc.desc      : Register a callback of onExecutionFailed
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate1: boolean = false;
+        let task: taskpool.Task = new taskpool.Task(hashMapTest, 1.0);
+        task.onExecutionFailed((e: Error): void => {
+          expect(e.message)
+            .assertEqual('ClassCastError: std.core.Int cannot be cast to std.core.Double');
+        })
+
+        taskpool.execute(task).then((res: HashMap<string, number>): void => {
+        }).catch((e: Error): void => {
+          expect(e.message)
+            .assertEqual('ClassCastError: std.core.Int cannot be cast to std.core.Double');
+        })
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0119
+     * @tc.name      : TaskPoolTestClass119
+     * @tc.desc      : Register a callback of onEnqueued after execute
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate1: boolean = false;
+        let task: taskpool.Task = new taskpool.Task(printArgs, 1.0);
+
+        taskpool.execute(task).then((): void => {
+          isTerminate1 = true;
+        });
+
+        let onEnqueuedStr = '';
+        try {
+          task.onEnqueued((): void => {
+            onEnqueuedStr = 'onEnqueued';
+          })
+        } catch (e: Error) {
+          expect(e.message)
+            .assertEqual('taskpool:: The executed task does not support the registration of listeners.');
+        }
+        done();
+
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0120
+     * @tc.name      : TaskPoolTestClass120
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(delay);
+        expect(task.totalDuration < 5).assertTrue();
+        expect(task.cpuDuration < 5).assertTrue();
+        expect(task.ioDuration < 5).assertTrue();
+        let terminate: boolean = false;
+        taskpool.execute(task).then((): void => {
+          terminate = true;
+          expect(task.totalDuration > 0).assertTrue();
+          expect(task.ioDuration).assertEqual(0);
+          expect(task.totalDuration).assertEqual(task.cpuDuration);
+        })
+
+        let exeution: boolean = false;
+        while (!terminate) {
+          if (!exeution) {
+            expect(task.totalDuration < 5).assertTrue();
+            expect(task.ioDuration < 5).assertTrue();
+            exeution = true;
+          }
+          await waitWithPromiseCase();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0121
+     * @tc.name      : TaskPoolTestClass121
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let finalString: string = '';
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        task1.addDependency(task2);
+        let runner = new taskpool.SequenceRunner();
+        try {
+          runner.execute(task1).then((): void => {
+            finalString += 'a';
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
+          expect(task1.totalDuration < 5).assertTrue();
+          expect(task1.cpuDuration < 5).assertTrue();
+          expect(task1.ioDuration < 5).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0122
+     * @tc.name      : TaskPoolTestClass122
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(AdditionDelay, 500.0);
+        taskpool.execute(task);
+        let start = new Date().getTime();
+        while (new Date().getTime() - start < 100.0) {
+          continue;
+        }
+        taskpool.cancel(task);
+        expect(task.totalDuration < 5).assertTrue();
+        expect(task.cpuDuration < 5).assertTrue();
+        expect(task.ioDuration < 5).assertTrue();
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0123
+    //  * @tc.name      : TaskPoolTestClass123
+    //  * @tc.desc      : duration for taskpool
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let task: taskpool.Task = new taskpool.Task(randomTest, 100.0);
+    //     expect(task.totalDuration < 5).assertTrue();
+    //     expect(task.cpuDuration < 5).assertTrue();
+    //     expect(task.ioDuration < 5).assertTrue();
+    //     let terminate: boolean = false;
+    //     taskpool.execute(task).then((): void => {
+    //       terminate = true;
+    //       expect(task.totalDuration > 0).assertTrue();
+    //       expect(task.ioDuration > 0).assertTrue();
+    //       expect(task.cpuDuration > 0).assertTrue();
+    //       expect(task.totalDuration == task.ioDuration + task.cpuDuration).assertTrue();
+    //     })
+    //
+    //     let exeution: boolean = false;
+    //     while (!terminate) {
+    //       if (!exeution) {
+    //         expect(task.totalDuration < 5).assertTrue();
+    //         expect(task.ioDuration < 5).assertTrue();
+    //         exeution = true;
+    //       }
+    //       await waitWithPromiseCase();
+    //     }
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0124
+     * @tc.name      : TaskPoolTestClass124
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let finalString: string = '';
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        task1.addDependency(task2);
+        let runner = new taskpool.SequenceRunner();
+        try {
+          runner.execute(task1).then((): void => {
+            finalString += 'a';
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
+          expect(task1.totalDuration < 5).assertTrue();
+          expect(task1.cpuDuration < 5).assertTrue();
+          expect(task1.ioDuration < 5).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0125
+     * @tc.name      : TaskPoolTestClass125
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(AdditionDelay, 500.0);
+        taskpool.execute(task);
+        let start = new Date().getTime();
+        while (new Date().getTime() - start < 100.0) {
+          continue;
+        }
+        taskpool.cancel(task);
+        expect(task.totalDuration < 5).assertTrue();
+        expect(task.cpuDuration < 5).assertTrue();
+        expect(task.ioDuration < 5).assertTrue();
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0126
+    //  * @tc.name      : TaskPoolTestClass126
+    //  * @tc.desc      : duration for taskpool
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let task1: taskpool.Task = new taskpool.Task(delay, 100.0);
+    //     let task2: taskpool.Task = new taskpool.Task(delay, 200.0);
+    //     let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+    //     taskGroup.addTask(task1);
+    //     taskGroup.addTask(task2);
+    //     expect(task1.totalDuration < 5).assertTrue();
+    //     expect(task1.cpuDuration < 5).assertTrue();
+    //     expect(task1.ioDuration < 5).assertTrue();
+    //
+    //     let terminate: boolean = false;
+    //     taskpool.execute(taskGroup).then((res: Promise<number>): void => {
+    //       terminate = true;
+    //       expect(task1.totalDuration > 0).assertTrue();
+    //       expect(task1.ioDuration).assertEqual(0);
+    //       expect(task1.totalDuration).assertEqual(task1.cpuDuration);
+    //     });
+    //
+    //     let exeution: boolean = false;
+    //     while (!terminate) {
+    //       if (!exeution) {
+    //         expect(task1.totalDuration < 5).assertTrue();
+    //         expect(task1.ioDuration < 5).assertTrue();
+    //         exeution = true;
+    //       }
+    //       await waitWithPromiseCase();
+    //     }
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0127
+     * @tc.name      : TaskPoolTestClass127
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0);
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        try {
+          taskGroup.addTask(task1);
+          taskpool.execute(taskGroup).then((res: number[]): void => {
+            expect(res[0]).assertEqual(100.0);
+          });
+          taskGroup.addTask(task2);
+          taskpool.execute(taskGroup).then((res: number[]): void => {
+            expect(res[1]).assertEqual(200.0);
+          });
+        } catch (e: Error) {
+          expect(e.message).assertEqual('BusinessError: Parameter error. The input parameters are invalid, ' +
+            'taskpool:: executed taskGroup cannot addTask');
+          expect(task1.totalDuration < 5).assertTrue();
+          expect(task1.cpuDuration < 5).assertTrue();
+          expect(task1.ioDuration < 5).assertTrue();
+        }
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0128
+    //  * @tc.name      : TaskPoolTestClass128
+    //  * @tc.desc      : duration for taskpool
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let task: taskpool.Task = new taskpool.Task(randomTest, 100.0);
+    //     let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+    //     taskGroup.addTask(task);
+    //     expect(task.totalDuration < 5).assertTrue();
+    //     expect(task.cpuDuration < 5).assertTrue();
+    //     expect(task.ioDuration < 5).assertTrue();
+    //     let terminate: boolean = false;
+    //     taskpool.execute(taskGroup).then((): void => {
+    //       terminate = true;
+    //       expect(task.totalDuration > 0).assertTrue();
+    //       expect(task.ioDuration > 0).assertTrue();
+    //       expect(task.cpuDuration > 0).assertTrue();
+    //       expect(task.totalDuration == task.ioDuration + task.cpuDuration).assertTrue();
+    //     })
+    //
+    //     let exeution: boolean = false;
+    //     while (!terminate) {
+    //       if (!exeution) {
+    //         expect(task.totalDuration < 5).assertTrue();
+    //         expect(task.ioDuration < 5).assertTrue();
+    //         exeution = true;
+    //       }
+    //       await waitWithPromiseCase();
+    //     }
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0129
+     * @tc.name      : TaskPoolTestClass129
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let finalString: string = '';
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 500.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        let task3: taskpool.Task = new taskpool.Task(AdditionDelay, 100.0);
+        let task4: taskpool.Task = new taskpool.Task(WaitforRunner, finalString);
+
+        expect(task1.totalDuration >= 0).assertTrue();
+        expect(task1.cpuDuration >= 0).assertTrue();
+        expect(task1.ioDuration >= 0).assertTrue();
+
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        await runner.execute(task1).then((): void => {
+          finalString += 'a';
+        });
+        await runner.execute(task2).then((): void => {
+          finalString += 'b';
+        });
+        await runner.execute(task3).then((): void => {
+          finalString += 'c';
+        });
+
+        expect(task1.totalDuration >= 0).assertTrue();
+        expect(task1.cpuDuration >= 0).assertTrue();
+        expect(task1.ioDuration >= 0).assertTrue();
+
+        await runner.execute(task4);
+        expect(finalString).assertEqual('abc');
+        expect(task1.totalDuration > 0).assertTrue();
+        expect(task1.ioDuration).assertEqual(0);
+        expect(task1.totalDuration).assertEqual(task1.cpuDuration);
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0130
+    //  * @tc.name      : TaskPoolTestClass130
+    //  * @tc.desc      : duration for taskpool
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let finalString: string = '';
+    //     let task1: taskpool.Task = new taskpool.Task(randomTest, 500.0);
+    //     let task2: taskpool.Task = new taskpool.Task(randomTest, 300.0);
+    //     let task3: taskpool.Task = new taskpool.Task(randomTest, 100.0);
+    //     let task4: taskpool.Task = new taskpool.Task(WaitforRunner, finalString);
+    //
+    //     expect(task1.totalDuration >= 0).assertTrue();
+    //     expect(task1.cpuDuration >= 0).assertTrue();
+    //     expect(task1.ioDuration >= 0).assertTrue();
+    //
+    //     let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+    //     runner.execute(task1).then((): void => {
+    //       finalString += 'a';
+    //     });
+    //     runner.execute(task2).then((): void => {
+    //       finalString += 'b';
+    //     });
+    //     runner.execute(task3).then((): void => {
+    //       finalString += 'c';
+    //     });
+    //
+    //     expect(task1.totalDuration >= 0).assertTrue();
+    //     expect(task1.cpuDuration >= 0).assertTrue();
+    //     expect(task1.ioDuration >= 0).assertTrue();
+    //
+    //     await runner.execute(task4);
+    //     expect(finalString).assertEqual('abc');
+    //     expect(task1.ioDuration >= 0).assertTrue();
+    //     expect(task1.cpuDuration >= 0).assertTrue();
+    //     expect(task1.totalDuration == task1.ioDuration + task1.cpuDuration).assertTrue();
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0131
+     * @tc.name      : TaskPoolTestClass131
+     * @tc.desc      : duration for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        expect(task.totalDuration < 5).assertTrue();
+        expect(task.cpuDuration < 5).assertTrue();
+        expect(task.ioDuration < 5).assertTrue();
+        try {
+          runner.execute(task).then((ret: number): void => {
+          });
+          taskGroup.addTask(task);
+
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
+          expect(task.totalDuration < 5).assertTrue();
+          expect(task.cpuDuration < 5).assertTrue();
+          expect(task.ioDuration < 5).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0132
+     * @tc.name      : TaskPoolTestClass132
+     * @tc.desc      : handle cancel task error
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let isTerminate3: boolean = false;
+        let finalString: string = '';
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        taskpool.executeDelayed(500, task1, taskpool.Priority.HIGH).then((): void => {
+          finalString += 'a';
+          isTerminate1 = true;
+        });
+        taskpool.executeDelayed(1000, task1, taskpool.Priority.MEDIUM).then((): void => {
+          finalString += 'b';
+          isTerminate2 = true;
+        });
+        taskpool.executeDelayed(1500, task1, taskpool.Priority.LOW).then((): void => {
+          finalString += 'c';
+          isTerminate3 = true;
+        });
+        while (!isTerminate1 || !isTerminate2 || !isTerminate3) {
+          await waitWithPromiseCase();
+        }
+        expect(finalString).assertEqual('abc');
+        done();
+      })
+
+    // /**
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0133
+    //  * @tc.name      : TaskPoolTestClass133
+    //  * @tc.desc      : handle cancel task error
+    //  * @tc.size      : MediumTest
+    //  * @tc.type      : Function
+    //  * @tc.level     : Level 0
+    //  */
+    // it('TaskPoolTestClass133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void): Promise<void> => {
+    //     let isTerminate1: boolean = false;
+    //     let isTerminate2: boolean = false;
+    //     let isTerminate3: boolean = false;
+    //     let isTerminate4: boolean = false;
+    //     let finalString: string = '';
+    //     let task1: taskpool.Task = new taskpool.Task(dependend, 1);
+    //     let task2: taskpool.Task = new taskpool.Task(dependend, 2);
+    //     let task3: taskpool.Task = new taskpool.Task(dependend, 3);
+    //     let task4: taskpool.Task = new taskpool.Task(dependend, 4);
+    //     task4.addDependency(task1, task2, task3);
+    //     taskpool.execute(task1).then((): void => {
+    //       finalString += 'a';
+    //       isTerminate1 = true;
+    //     });
+    //     taskpool.execute(task2).then((): void => {
+    //       finalString += 'b';
+    //       isTerminate2 = true;
+    //     });
+    //     taskpool.execute(task3).then((): void => {
+    //       finalString += 'c';
+    //       isTerminate3 = true;
+    //     });
+    //     taskpool.execute(task4).then((): void => {
+    //       finalString += 'd';
+    //       isTerminate4 = true;
+    //     });
+    //     while (!isTerminate1 || !isTerminate2 || !isTerminate3 || !isTerminate4) {
+    //       await waitWithPromiseCase();
+    //     }
+    //     expect(finalString.charAt(3)).assertEqual('d');
+    //     done();
+    //   })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0134
+     * @tc.name      : TaskPoolTestClass134
+     * @tc.desc      : execute long task
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10.0, 20.0);
+        let result: NullishType = await taskpool.execute(task);
+        taskpool.terminateTask(task);
+        expect(result as number).assertEqual(30);
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0135
+     * @tc.name      : TaskPoolTestClass135
+     * @tc.desc      : the long task can only be executed once
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10.0, 20.0);
+        let result: NullishType = await taskpool.execute(task);
+        taskpool.terminateTask(task);
+        try {
+          taskpool.execute(task)
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: The long task can only be executed once');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0136
+     * @tc.name      : TaskPoolTestClass136
+     * @tc.desc      : task group does not support the long task
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10.0, 20.0);
+        let group = new taskpool.TaskGroup();
+        try {
+          group.addTask(task)
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: The interface does not support the long task');
+        }
+        done();
+      })
+
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0138
+     * @tc.name      : TaskPoolTestClass138
+     * @tc.desc      : taskpool support isDone interface
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isFinish: boolean = false;
+        let isDoneFlag: boolean = false;
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+
+        taskpool.execute(task1).then((): void => {
+          isFinish = true;
+        });
+        while (!isFinish) {
+          await waitWithPromiseCase();
+          ;
+        }
+        if (!task1.isDone()) {
+          taskpool.cancel(task1);
+          isDoneFlag = true;
+        }
+        expect(string(isDoneFlag)).assertEqual('false');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0139
+     * @tc.name      : TaskPoolTestClass139
+     * @tc.desc      : taskpool support isDone interface
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isDoneFlag: boolean = false;
+        let task1: taskpool.Task = new taskpool.Task(testCancelDelayed);
+        taskpool.execute(task1);
+        let t = Date.now()
+        while ((Date.now() - t) < 1000.0) {
+          continue;
+        }
+        taskpool.execute(task1);
+        taskpool.execute(task1);
+        if (!task1.isDone()) {
+          taskpool.cancel(task1);
+          isDoneFlag = true;
+        }
+        expect(string(isDoneFlag)).assertEqual('true');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0140
+     * @tc.name      : TaskPoolTestClass140
+     * @tc.desc      : taskpool error test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task: taskpool.Task = new taskpool.Task(errorTest)
+        taskpool.execute(task).then((res: NullishType): void => {
+          console.info('errTest res ' + res)
+        }).catch((e: Error): void => {
+          expect(e.message).assertContain('this is an error');
+        })
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0141
+     * @tc.name      : TaskPoolTestClass141
+     * @tc.desc      : addDependency for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let finalString: string = '';
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let isTerminate3: boolean = false;
+
+        let task1: taskpool.Task = new taskpool.Task(delaySum, 10.0, 20.0, 100.0)
+        let task2: taskpool.Task = new taskpool.Task(delaySum, 30.0, 40.0, 300.0)
+        let task3: taskpool.Task = new taskpool.Task(delaySum, 50.0, 60.0, 500.0)
+        task1.addDependency(task2);
+        task2.addDependency(task3);
+        taskpool.execute(task1, taskpool.Priority.IDLE).then((): void => {
+          finalString += 'a';
+          isTerminate1 = true;
+        })
+        taskpool.execute(task2, taskpool.Priority.IDLE).then((): void => {
+          finalString += 'b';
+          isTerminate2 = true;
+        })
+        taskpool.execute(task3).then((): void => {
+          finalString += 'c';
+          isTerminate3 = true;
+        })
+        while (!isTerminate3) {
+          await waitWithPromiseCase();
+        }
+        expect(finalString.charAt(0).toString()).assertEqual('c');
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0142
+     * @tc.name      : TaskPoolTestClass142
+     * @tc.desc      : removeDependency for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task1: taskpool.Task = new taskpool.Task(delaySum, 10.0, 20.0, 100.0)
+        let task2: taskpool.Task = new taskpool.Task(delaySum, 30.0, 40.0, 300.0)
+        let task3: taskpool.Task = new taskpool.Task(delaySum, 50.0, 60.0, 500.0)
+        task1.addDependency(task2);
+        task2.addDependency(task3);
+        taskpool.execute(task1, taskpool.Priority.IDLE);
+        taskpool.execute(task2, taskpool.Priority.IDLE);
+        taskpool.execute(task3, taskpool.Priority.IDLE);
+        taskpool.cancel(task1);
+        try {
+          task1.removeDependency(task2);
+        } catch (e: Error) {
+          expect(e.message)
+            .assertEqual('taskpool:: executedTask cannot removeDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0143
+     * @tc.name      : TaskPoolTestClass143
+     * @tc.desc      : removeDependency for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task1: taskpool.Task = new taskpool.Task(delaySum, 10.0, 20.0, 100.0)
+        let task2: taskpool.Task = new taskpool.Task(delaySum, 30.0, 40.0, 200.0)
+        let task3: taskpool.Task = new taskpool.Task(delaySum, 50.0, 60.0, 300.0)
+        task1.addDependency(task2);
+        task2.addDependency(task3);
+        taskpool.execute(task1, taskpool.Priority.IDLE).then((): void => {
+          console.info('task1 success');
+        })
+        taskpool.execute(task2, taskpool.Priority.IDLE).then((): void => {
+          console.info('task2 success');
+        })
+        taskpool.execute(task3, taskpool.Priority.IDLE).then((): void => {
+          console.info('task3 success');
+        })
+
+        try {
+          task2.removeDependency(task3);
+        } catch (e: Error) {
+          expect(e.message)
+            .assertEqual('taskpool:: executedTask cannot removeDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0144
+     * @tc.name      : TaskPoolTestClass144
+     * @tc.desc      : executedTask cannot addDependency
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          taskpool.executeDelayed(100, task1, taskpool.Priority.IDLE);
+          task1.addDependency(task2);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0145
+     * @tc.name      : TaskPoolTestClass145
+     * @tc.desc      : Cancel the executeDelayed for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let isTerminate1: boolean = false;
+        let task: taskpool.Task = new taskpool.Task(printArgs)
+        taskpool.executeDelayed(1000, task, taskpool.Priority.IDLE).then((): void => {
+        }).catch((e: Error): void => {
+          isTerminate1 = true;
+          expect(e.message).assertEqual('taskpool:: task has been canceled');
+        })
+        taskpool.cancel(task);
+        while (!isTerminate1) {
+          await waitWithPromiseCase();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0146
+     * @tc.name      : TaskPoolTestClass146
+     * @tc.desc      : SequenceRunner for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
+          runner.execute(task);
+          taskpool.executeDelayed(100, task, taskpool.Priority.IDLE);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0147
+     * @tc.name      : TaskPoolTestClass147
+     * @tc.desc      : SequenceRunner for taskpool
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        task1.addDependency(task2);
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
+        try {
+          runner.execute(task1);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0148
+     * @tc.name      : TaskPoolTestClass148
+     * @tc.desc      : taskGroup cannot add seqRunnerTask or executedTask
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+          let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
+          runner.execute(task);
+          let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+          taskGroup.addTask(task);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0149
+     * @tc.name      : TaskPoolTestClass149
+     * @tc.desc      : taskGroup cannot addTask
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 40.0);
+        let task2: taskpool.Task = new taskpool.Task(printArgs, 50.0);
+        try {
+          taskGroup.addTask(printArgs, 10.0);
+          taskGroup.addTask(printArgs, 20.0);
+          taskGroup.addTask(printArgs, 30.0);
+          taskpool.execute(taskGroup, taskpool.Priority.IDLE);
+          taskGroup.addTask(task1);
+          taskGroup.addTask(task2);
+          taskpool.execute(taskGroup, taskpool.Priority.IDLE);
+        } catch (e: Error) {
+          expect(e.message).assertEqual('taskpool:: executed taskGroup cannot addTask');
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0150
+     * @tc.name      : TaskPoolTestClass150
+     * @tc.desc      : Cancel the taskGroup in progress
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('TaskPoolTestClass150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let i: number = 10;
+        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup1.addTask(AdditionDelay, 10.0);
+        taskGroup1.addTask(AdditionDelay, 20.0);
+        taskGroup1.addTask(AdditionDelay, 30.0);
+
+        let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(AdditionDelay, 300.0);
+        taskGroup2.addTask(task1);
+        taskGroup2.addTask(task2);
+        taskGroup2.addTask(task3);
+        taskpool.execute(taskGroup1, taskpool.Priority.IDLE).then((): void => {
+          ++i;
+        });
+        taskpool.execute(taskGroup2, taskpool.Priority.IDLE);
+
+        taskpool.cancel(taskGroup1);
+        expect(i).assertEqual(10)
+        done();
+      })
+
+
