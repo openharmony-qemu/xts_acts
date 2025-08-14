@@ -412,7 +412,7 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+         * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0200
          * @tc.name      : test_getWindowProperties_mainWindow_static_0200
          * @tc.desc      : test_getWindowProperties_mainWindow_static_0200
          * @tc.size      : MediumTest
