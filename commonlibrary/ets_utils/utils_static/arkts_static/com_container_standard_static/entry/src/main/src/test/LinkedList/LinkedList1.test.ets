@@ -1205,10 +1205,8 @@ export default function LinkedListTest1() {
       let linkedList: LinkedList<number> = new LinkedList<number>();
       linkedList.add(2);
       let result = linkedList.convertToArray();
-      let arrayList = new ArrayList<number>();
-      arrayList.add(2);
-      expect(result).assertEqual(arrayList);
+      let array = [2];
+      expect(result.toString()).assertEqual(array.toString());
     });
-
   });
 }
