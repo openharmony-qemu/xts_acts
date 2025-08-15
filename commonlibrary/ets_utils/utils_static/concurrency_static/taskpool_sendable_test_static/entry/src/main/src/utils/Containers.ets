@@ -94,7 +94,7 @@ export class ArrayContainer {
 
 /**/
 export class NumberContainerArray {
-  data: Array<NumberContainer> = new Array<NumberContainer>(20);
+  public data: Array<NumberContainer> = new Array<NumberContainer>(20);
 }
 /*
 */
