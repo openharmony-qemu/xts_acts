@@ -17,7 +17,7 @@ import { Nested, NestedWithNullable } from './Nested'
 import { myValue } from './NumberInitializer';
 
 export class StringContainer {
-  data: string = 'Hello String in container';
+  public data: string = 'Hello String in container';
 }
 
 /*
