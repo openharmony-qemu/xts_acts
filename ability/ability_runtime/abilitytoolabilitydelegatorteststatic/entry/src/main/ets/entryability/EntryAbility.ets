@@ -50,12 +50,12 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>())
-    AppStorage.setOrCreate<boolean>('onForeground', true, Type.from<boolean>());
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    AppStorage.setOrCreate<boolean>('onForeground', true);
   }
 
   onBackground() {
     hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
-    AppStorage.setOrCreate<boolean>('onBackground', true, Type.from<boolean>());
+    AppStorage.setOrCreate<boolean>('onBackground', true);
   }
 }

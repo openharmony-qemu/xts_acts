@@ -55,7 +55,7 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onForeground');
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>())
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {

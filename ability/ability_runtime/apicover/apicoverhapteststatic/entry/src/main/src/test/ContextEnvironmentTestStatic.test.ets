@@ -54,7 +54,7 @@ export default function ContextEnvironmentStaticTest() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(2000);
-      const uIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      const uIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       applicationContext = uIAbilityContext.getApplicationContext();
       hilog.info(domain, tag, 'beforeAll end');
     })

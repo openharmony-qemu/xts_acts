@@ -46,9 +46,9 @@ export default function verificationStaticTest() {
      */
     it('SUB_AA_OpenHarmony_AbilityConstant_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0200 ==>';
-      let launchWant: Want = AppStorage.get<Want>("launchWant", Type.from<Want>()) as Want;
-      let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant", Type.from<Want>()) as Want;
-      let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage", Type.from<window.WindowStage>()) as window.WindowStage;
+      let launchWant: Want = AppStorage.get<Want>("launchWant") as Want;
+      let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant") as Want;
+      let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
       expect(launchWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
       expect(lastRequestWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
       expect(windowStage).not().assertNull();
@@ -68,7 +68,7 @@ export default function verificationStaticTest() {
         let label = 'test';
         let missionLabelUpdatedFlag = false;
         const context: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('UIAbilityContext', Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
         context.setMissionLabel(label).then(() => {
           hilog.info(domain, tag, 'setMissionLabel success');
           missionLabelUpdatedFlag = true;
@@ -94,7 +94,7 @@ export default function verificationStaticTest() {
         let label = 'test';
         let missionLabelUpdatedFlag = false;
         const context: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>('UIAbilityContext', Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
         context.setMissionLabel(label, (err: BusinessError<void> | null) => {
           if (err?.code == 0) {
             missionLabelUpdatedFlag = true;

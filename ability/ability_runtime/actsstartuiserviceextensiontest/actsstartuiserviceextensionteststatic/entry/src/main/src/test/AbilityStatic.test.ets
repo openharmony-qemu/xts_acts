@@ -83,7 +83,7 @@ export default function abilitystaticTest() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(2000);
-      uiAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+      uiAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       hilog.info(domain, tag, 'beforeAll end');
     })
 

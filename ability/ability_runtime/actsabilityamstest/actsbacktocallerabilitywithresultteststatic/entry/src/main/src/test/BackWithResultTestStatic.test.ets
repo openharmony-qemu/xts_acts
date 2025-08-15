@@ -55,7 +55,7 @@ export default function BackWithResultStaticTest() {
         want,
         resultCode
       };
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       try {
         context.backToCallerAbilityWithResult(abilityResult, requestCode).then(() => {
           hilog.info(domain, tag, 'backToCallerAbilityWithResult succeed');

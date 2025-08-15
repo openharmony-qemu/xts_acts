@@ -38,7 +38,7 @@ export default function actsStageContextTestStatic() {
         hilog.info(domain, tag, `ShellCmdResult exitCode:` + result.exitCode);
       })
       await Utils.msSleep(2000);
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, 'beforeAll end');
     })
 

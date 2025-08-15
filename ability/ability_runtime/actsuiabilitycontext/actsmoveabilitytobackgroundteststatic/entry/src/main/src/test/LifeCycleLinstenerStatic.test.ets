@@ -57,7 +57,7 @@ export default function LifeCycleLinstenerStaticTest() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(2000);
-      uiAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext', Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+      uiAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       applicationContext = uiAbilityContext.getApplicationContext();
       hilog.info(domain, tag, 'beforeAll end');
     })
@@ -130,7 +130,7 @@ export default function LifeCycleLinstenerStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
-          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
           await uiAbilityContext1.moveAbilityToBackground();
           await Utils.msSleep(2000);
 
@@ -182,7 +182,7 @@ export default function LifeCycleLinstenerStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
-          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
           await uiAbilityContext1.moveAbilityToBackground();
           await Utils.msSleep(2000);
 

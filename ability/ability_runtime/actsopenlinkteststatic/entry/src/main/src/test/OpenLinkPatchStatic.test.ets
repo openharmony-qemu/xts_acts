@@ -40,7 +40,7 @@ export default function openLinkPatchStaticTest() {
       hilog.info(domain, tag, 'beforeAll abilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.openlinktest.static")
       await Utils.msSleep(2000);
-      context= AppStorage.get<common.UIAbilityContext>("Context", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+      context= AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
       hilog.info(domain, tag, "Context: " + context);
       hilog.info(domain, tag, "beforeAll end");
     });

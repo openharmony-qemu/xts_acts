@@ -52,9 +52,9 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>())
-    AppStorage.setOrCreate<ConfigurationConstant.ColorMode>("colorMode", this.context.config.colorMode!, Type.from<ConfigurationConstant.ColorMode>());
-    AppStorage.setOrCreate<ConfigurationConstant.Direction>("direction", this.context.config.direction!, Type.from<ConfigurationConstant.Direction>());
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    AppStorage.setOrCreate<ConfigurationConstant.ColorMode>("colorMode", this.context.config.colorMode!);
+    AppStorage.setOrCreate<ConfigurationConstant.Direction>("direction", this.context.config.direction!);
   }
 
   onBackground() {

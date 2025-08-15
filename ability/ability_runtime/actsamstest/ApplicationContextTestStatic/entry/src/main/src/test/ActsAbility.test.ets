@@ -43,7 +43,7 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext', Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
     })
 
     /*

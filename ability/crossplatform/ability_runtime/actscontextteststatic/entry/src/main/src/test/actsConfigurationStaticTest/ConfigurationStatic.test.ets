@@ -36,7 +36,7 @@ export default function ConfigurationStatic() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.contexttest.static")
       await Utils.msSleep(2000);
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -51,7 +51,7 @@ export default function ConfigurationStatic() {
      */
     it('testColorModeStatic001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let colorMode = AppStorage.get<ConfigurationConstant.ColorMode>("colorMode", Type.from<ConfigurationConstant.ColorMode>());
+        let colorMode = AppStorage.get<ConfigurationConstant.ColorMode>("colorMode");
         hilog.info(domain, tag, '%{public}s', `testColorModeStatic001 colorMode:` + colorMode);
         if (colorMode == configurationConstant.ColorMode.COLOR_MODE_NOT_SET) {
           expect(context.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_NOT_SET);
@@ -83,7 +83,7 @@ export default function ConfigurationStatic() {
      */
     it('testDirectionStatic001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let direction = AppStorage.get<ConfigurationConstant.Direction>("direction", Type.from<ConfigurationConstant.Direction>());
+        let direction = AppStorage.get<ConfigurationConstant.Direction>("direction");
         hilog.info(domain, tag, '%{public}s', `testDirectionStatic001 direction:` + direction);
         if (direction == configurationConstant.Direction.DIRECTION_NOT_SET) {
           expect(context.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_NOT_SET);

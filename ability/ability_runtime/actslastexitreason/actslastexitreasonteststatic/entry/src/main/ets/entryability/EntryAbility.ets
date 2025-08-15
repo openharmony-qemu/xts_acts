@@ -25,10 +25,10 @@ class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
     hilog.info(0x0000, 'testTag EntryAbility', 'launchParam: ' + JSON.stringify(launchParam));
-    AppStorage.setOrCreate<AbilityConstant.LaunchParam>("launchParam",  launchParam, Type.from<AbilityConstant.LaunchParam>());
+    AppStorage.setOrCreate<AbilityConstant.LaunchParam>("launchParam",  launchParam);
     hilog.info(0x0000, 'testTag EntryAbility', 'launchParam.lastExitDetailInfo: ' + JSON.stringify(launchParam.lastExitDetailInfo));
     let Info = launchParam.lastExitDetailInfo as AbilityConstant.LastExitDetailInfo;
-    AppStorage.setOrCreate<AbilityConstant.LastExitDetailInfo>("lastExitDetailInfo", Info, Type.from<AbilityConstant.LastExitDetailInfo>());
+    AppStorage.setOrCreate<AbilityConstant.LastExitDetailInfo>("lastExitDetailInfo", Info);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

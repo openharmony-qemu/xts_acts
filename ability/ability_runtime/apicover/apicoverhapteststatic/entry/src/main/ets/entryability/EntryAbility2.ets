@@ -39,7 +39,7 @@ class EntryAbility2 extends UIAbility {
       hilog.info(0x0000, 'testTag EntryAbility2', 'onWindowStageCreate ok');
     });
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 windowStage' + windowStage);
-    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage, Type.from<window.WindowStage>())
+    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage)
   }
 
   onWindowStageDestroy() {
@@ -49,11 +49,11 @@ class EntryAbility2 extends UIAbility {
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 onForeground');
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 context' + this.context);
-    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context, Type.from<common.UIAbilityContext>())
+    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context)
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 launchWant' + this.launchWant);
-    AppStorage.setOrCreate<Want>('launchWant', this.launchWant, Type.from<Want>())
+    AppStorage.setOrCreate<Want>('launchWant', this.launchWant)
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 lastRequestWant' + this.lastRequestWant);
-    AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant, Type.from<Want>())
+    AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant)
   }
 
   onDestroy() {

@@ -118,7 +118,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //         await Utils.msSleep(2000);
     //
     //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //         await context.moveAbilityToBackground();
     //         await Utils.msSleep(2000);
     //
@@ -172,7 +172,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //         await Utils.msSleep(2000);
     //
     //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //         await context.moveAbilityToBackground();
     //         await Utils.msSleep(2000);
     //
@@ -234,7 +234,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //
     //
     //       hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //       const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //       const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //       await context.moveAbilityToBackground();
     //       await Utils.msSleep(2000);
     //
@@ -288,7 +288,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //         await Utils.msSleep(2000);
     //
     //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //         await context.moveAbilityToBackground();
     //         await Utils.msSleep(2000);
     //
@@ -345,7 +345,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //         await Utils.msSleep(2000);
     //
     //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //         await context.moveAbilityToBackground();
     //         await Utils.msSleep(2000);
     //
@@ -395,7 +395,7 @@ export default function AbilityDelegatorStageStaticTest() {
     //         await Utils.msSleep(2000);
     //
     //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
     //         await context.moveAbilityToBackground();
     //         await Utils.msSleep(2000);
     //
@@ -477,8 +477,8 @@ export default function AbilityDelegatorStageStaticTest() {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900';
         hilog.info(domain, tag, `${itName} start`);
         try {
-          AppStorage.setOrCreate<boolean>('onForeground', false, Type.from<boolean>());
-          AppStorage.setOrCreate<boolean>('onBackground', false, Type.from<boolean>());
+          AppStorage.setOrCreate<boolean>('onForeground', false);
+          AppStorage.setOrCreate<boolean>('onBackground', false);
 
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
@@ -490,7 +490,7 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
 
           hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
           context.moveAbilityToBackground();
           await Utils.msSleep(2000);
 
@@ -508,7 +508,7 @@ export default function AbilityDelegatorStageStaticTest() {
           })
           await Utils.msSleep(2000);
 
-          const isOnBackground = AppStorage.get<boolean>('onForeground', Type.from<boolean>()) as boolean;
+          const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
           expect(isOnBackground).assertTrue();
           done();
           hilog.info(domain, tag, `${itName} end`);
@@ -532,8 +532,8 @@ export default function AbilityDelegatorStageStaticTest() {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000';
         hilog.info(domain, tag, `${itName} start`);
         try {
-          AppStorage.setOrCreate<boolean>('onForeground', false, Type.from<boolean>());
-          AppStorage.setOrCreate<boolean>('onBackground', false, Type.from<boolean>());
+          AppStorage.setOrCreate<boolean>('onForeground', false);
+          AppStorage.setOrCreate<boolean>('onBackground', false);
 
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
@@ -545,7 +545,7 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
 
           hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext", Type.from<common.UIAbilityContext>()) as common.UIAbilityContext;
+          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
           await context.moveAbilityToBackground();
           await Utils.msSleep(2000);
 
@@ -554,7 +554,7 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} doAbilityForeground success`);
 
             await Utils.msSleep(2000);
-            const isOnBackground = AppStorage.get<boolean>('onForeground', Type.from<boolean>()) as boolean;
+            const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
             expect(isOnBackground).assertTrue();
             done();
             hilog.info(domain, tag, `${itName} end`);
@@ -586,8 +586,8 @@ export default function AbilityDelegatorStageStaticTest() {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500';
         hilog.info(domain, tag, `${itName} start`);
         try {
-          AppStorage.setOrCreate<boolean>('onForeground', false, Type.from<boolean>());
-          AppStorage.setOrCreate<boolean>('onBackground', false, Type.from<boolean>());
+          AppStorage.setOrCreate<boolean>('onForeground', false);
+          AppStorage.setOrCreate<boolean>('onBackground', false);
 
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
@@ -603,7 +603,7 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} doAbilityBackground success`);
             await Utils.msSleep(2000);
 
-            const isOnBackground = AppStorage.get<boolean>('onBackground', Type.from<boolean>()) as boolean;
+            const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
             expect(isOnBackground).assertTrue();
 
             done();
@@ -636,8 +636,8 @@ export default function AbilityDelegatorStageStaticTest() {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600';
         hilog.info(domain, tag, `${itName} start`);
         try {
-          AppStorage.setOrCreate<boolean>('onForeground', false, Type.from<boolean>());
-          AppStorage.setOrCreate<boolean>('onBackground', false, Type.from<boolean>());
+          AppStorage.setOrCreate<boolean>('onForeground', false);
+          AppStorage.setOrCreate<boolean>('onBackground', false);
 
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
@@ -662,7 +662,7 @@ export default function AbilityDelegatorStageStaticTest() {
           })
           await Utils.msSleep(2000);
 
-          const isOnBackground = AppStorage.get<boolean>('onBackground', Type.from<boolean>()) as boolean;
+          const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
           expect(isOnBackground).assertTrue();
         } catch (e: Error) {
           const err = e as BusinessError;
