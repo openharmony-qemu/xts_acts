@@ -13,17 +13,19 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 115280;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webViewControllerErrorCode() {
-
   describe('WebViewControllerErrorCodeTestSuite', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewControllerErrorCode',
@@ -35,12 +37,13 @@ export default function webViewControllerErrorCode() {
         if (!("webViewControllerErrorCode" == pages.name)) {
           console.info("get webViewControllerErrorCode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webViewControllerErrorCode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewControllerErrorCode page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebViewControllerErrorCodeButton"), 10000);
+      console.log("WebViewControllerErrorCodeButton webView");
       done()
     });
 
@@ -54,43 +57,6 @@ export default function webViewControllerErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerErrorCodeTestSuite afterEach end");
-      done();
-    })
-
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_RUNJAVASCRIPT_0100
-    * @tc.name       : testRunJavaScriptError001
-    * @tc.desc       : test runJavaScript error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
-    it('testRunJavaScriptError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRunJavaScriptError001", '17100001', 20305, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
-    })
-
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_RUNJAVASCRIPT_0200
-    * @tc.name       : testRunJavaScriptError002
-    * @tc.desc       : test runJavaScript error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
-    it('testRunJavaScriptError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRunJavaScriptError002", '17100001', 20306, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
-    })
-
     /*
    * @tc.number     : SUB_WEB_ERRORCODE_GETURL_0100
    * @tc.name       : testGetUrlError001
@@ -100,10 +66,9 @@ export default function webViewControllerErrorCode() {
    * @tc.level      : Level 2
    */
     it('testGetUrlError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetUrlError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetUrlError001", '17100001', 20260, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetUrlError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetUrlError001", '17100001', 115290, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -115,10 +80,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testPageUpError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testPageUpError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageUpError001", '17100001', 20265, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testPageUpError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPageUpError001", '17100001', 115300, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -130,10 +94,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testPageUpError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testPageUpError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageUpError002", '17100001', 20266, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testPageUpError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPageUpError002", '17100001', 115310, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -145,10 +108,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testPageDownError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testPageDownError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageDownError001", '17100001', 20270, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testPageDownError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPageDownError001", '17100001', 115320, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -160,10 +122,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testPageDownError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testPageDownError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageDownError002", '17100001', 20271, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testPageDownError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testPageDownError002", '17100001', 115330, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -175,10 +136,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginalUrlError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginalUrlError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginalUrlError001", '17100001', 20275, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginalUrlError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginalUrlError001", '17100001', 115340, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -190,10 +150,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetFaviconError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetFaviconError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetFaviconError001", '17100001', 20280, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetFaviconError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetFaviconError001", '17100001', 115350, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -205,10 +164,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetNetworkAvailableError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetNetworkAvailableError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetNetworkAvailableError001", '17100001', 20285, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetNetworkAvailableError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetNetworkAvailableError001", '17100001', 115360, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -220,10 +178,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetNetworkAvailableError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetNetworkAvailableError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetNetworkAvailableError002", '17100001', 20286, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetNetworkAvailableError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetNetworkAvailableError002", '17100001', 115370, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -235,10 +192,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testHasImageError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testHasImageError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testHasImageError001", '17100001', 20290, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testHasImageError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testHasImageError001", '17100001', 115380, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -250,10 +206,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testHasImageError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testHasImageError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testHasImageError002", '17100001', 20291, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testHasImageError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testHasImageError002", '17100001', 115390, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -265,10 +220,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetBackForwardEntriesError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetBackForwardEntriesError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetBackForwardEntriesError001", '17100001', 20295, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetBackForwardEntriesError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetBackForwardEntriesError001", '17100001', 115400, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -280,10 +234,37 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testScrollToError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollToError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollToError001", '17100001', 20300, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testScrollToError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testScrollToError001", '17100001', 115410, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
+    })
+
+    /*
+    * @tc.number     : SUB_WEB_ERRORCODE_RUNJAVASCRIPT_0100
+    * @tc.name       : testRunJavaScriptError001
+    * @tc.desc       : test runJavaScript error
+    * @tc.size       : MEDIUM
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testRunJavaScriptError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testRunJavaScriptError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRunJavaScriptError001", '17100001', 115420, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
+    })
+
+    /*
+    * @tc.number     : SUB_WEB_ERRORCODE_RUNJAVASCRIPT_0200
+    * @tc.name       : testRunJavaScriptError002
+    * @tc.desc       : test runJavaScript error
+    * @tc.size       : MEDIUM
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testRunJavaScriptError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testRunJavaScriptError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRunJavaScriptError002", '17100001', 115430, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -295,10 +276,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testRunJavaScriptExtError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptExtError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRunJavaScriptExtError001", '17100001', 20310, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testRunJavaScriptExtError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRunJavaScriptExtError001", '17100001', 115440, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -310,10 +290,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testRunJavaScriptExtError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptExtError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRunJavaScriptExtError002", '17100001', 20311, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testRunJavaScriptExtError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRunJavaScriptExtError002", '17100001', 115450, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -325,10 +304,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError001", '17100001', 20350, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError001", '17100001', 115460, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -340,10 +318,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError002", '17100001', 20351, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError002", '17100001', 115470, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -355,10 +332,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError003", '17100003', 20352, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError003", '17100003', 115480, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -370,10 +346,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError004", '17100003', 20353, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError004", '17100003', 115490, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -385,10 +360,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError005", '17100001', 20354, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError005", '17100001', 115500, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -400,10 +374,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError006", '17100001', 20355, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError006", '17100001', 115510, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -415,10 +388,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError007", '17100003', 20356, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError007", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError007", '17100003', 115520, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -430,10 +402,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testStoreWebArchiveError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchiveError008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchiveError008", '17100003', 20357, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testStoreWebArchiveError008", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveError008", '17100003', 115530, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
 
     /*
@@ -445,11 +416,9 @@ export default function webViewControllerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testRemoveCacheError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRemoveCacheError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRemoveCacheError001", '17100001', 20358, done);
-      sendEventByKey('WebViewControllerErrorCodeButton', 10, '');
+      Utils.emitEvent("testRemoveCacheError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testRemoveCacheError001", '17100001', 115540, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeButton");
     })
-
   })
 }

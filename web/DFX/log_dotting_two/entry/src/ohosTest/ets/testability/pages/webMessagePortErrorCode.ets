@@ -16,8 +16,9 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
+
+const EVENT_ID_SET_EMIT_KEY = 114940;
 
 @Entry
 @Component
@@ -30,18 +31,20 @@ struct Index {
   @State javaScriptAccess: boolean = true;
   @State ports: webView.WebMessagePort[] = [];
   @State webResult: string = ' ';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,19 +53,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -70,7 +62,10 @@ struct Index {
     Column() {
       Row() {
         Button("WebMessagePortErrorCode click").key('WebMessagePortErrorCodeButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebMessagePortErrorCodeButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'WebMessagePortErrorCodeButtonIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testCloseError001": {
@@ -79,11 +74,11 @@ struct Index {
                 this.controller.postMessage('__init_port__', [this.ports[0]], '*');
                 this.ports[1].close();
                 this.ports[1].postMessageEvent("post message from ets to html5");
-                Utils.emitEvent(this.no_error, 20360)
+                Utils.emitEvent(this.no_error, 114950)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20360)
+                Utils.emitEvent(String(e.code), 114950)
               }
               break;
             }
@@ -97,14 +92,14 @@ struct Index {
                 this.nativePort.onMessageEventExt((result) => {
                   try {
                     console.info(`The onMessageEventExt return value is: ${result}`)
-                    Utils.emitEvent(this.no_error, 20361)
+                    Utils.emitEvent(this.no_error, 114960)
                   } catch (resError) {
                     console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
-                    Utils.emitEvent(String(resError.code), 20361)
+                    Utils.emitEvent(String(resError.code), 114960)
                   }
                 });
               } catch (error) {
-                Utils.emitEvent(String(error.code), 20361)
+                Utils.emitEvent(String(error.code), 114960)
               }
               break;
             }
@@ -115,10 +110,10 @@ struct Index {
                 this.controller.postMessage('__init_port__', [this.ports[0]], '*');
                 this.ports[1].close()
                 this.ports[1].postMessageEvent("post message from ets to html5");
-                Utils.emitEvent(this.no_error, 20362)
+                Utils.emitEvent(this.no_error, 114970)
               } catch (resError) {
                 console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
-                Utils.emitEvent(String(resError.code), 20362)
+                Utils.emitEvent(String(resError.code), 114970)
               }
               break;
             }
@@ -132,31 +127,27 @@ struct Index {
                 this.nativePort.onMessageEvent((result) => {
                   try {
                     console.info(`The onMessageEvent return value is: ${result}`)
-                    Utils.emitEvent(this.no_error, 20363)
+                    Utils.emitEvent(this.no_error, 114980)
                   } catch (resError) {
                     console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
-                    Utils.emitEvent(String(resError.code), 20363)
+                    Utils.emitEvent(String(resError.code), 114980)
                   }
                 });
               } catch (error) {
-                Utils.emitEvent(String(error.code), 20363)
+                Utils.emitEvent(String(error.code), 114980)
               }
               break;
             }
-
           }
         })
       }
 
       Web({ src: $rawfile('onMessageEventExt.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
-
     }
   }
 }

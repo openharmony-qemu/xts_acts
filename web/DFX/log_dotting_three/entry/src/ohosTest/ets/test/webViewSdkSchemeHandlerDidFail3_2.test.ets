@@ -12,12 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 116460;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
@@ -25,29 +27,29 @@ let emitKey = ""
 
 export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
   describe('ActsAceWebViewSdkSchemeHandlerDidFail3_2', () => {
-      
+
     beforeAll(async (done: Function) => {
-        let options : router.RouterOptions = {
-            url: 'testability/pages/webViewSdkSchemeHandlerDidFail3',
+      let options : router.RouterOptions = {
+        url: 'testability/pages/webViewSdkSchemeHandlerDidFail3',
+      }
+
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages));
+        if (!("webViewSdkSchemeHandlerDidFail3" == pages.name)) {
+          console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info("push webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(result));
         }
-        
-        try {
-            await Utils.sleep(1000)
-            router.clear();
-            let pages = router.getState();
-            console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages));
-            if (!("webViewSdkSchemeHandlerDidFail3" == pages.name)) {
-                console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages.name));
-                let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
-                console.info("push webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(result));
-            }
-        } catch (err) {
-            console.error("push webViewSdkSchemeHandlerDidFail3 page error:" + err);
-        }
-        done()
+      } catch (err) {
+        console.error("push webViewSdkSchemeHandlerDidFail3 page error:" + err);
+      }
+      await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerDidFail3Button"), 10000);
+      console.log("waitForComponent webViewSdkSchemeHandlerDidFail3Button");
+      done()
     });
-    
+
     beforeEach(async (done: Function) => {
         config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
           console.info(`enable success`);
@@ -57,27 +59,6 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
         await Utils.sleep(2000);
         done();
     })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-
 
     /*
      * @tc.number      : SUB_ACE_WEB_WEBHOST_SDK_0324
@@ -89,9 +70,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative300"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative300", 'success', 11300, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative300", 'success', 116760, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -104,9 +88,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative301"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative301", 'success', 11301, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative301", 'success', 116770, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -119,9 +106,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative302"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative302", 'success', 11302, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative302", 'success', 116780, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -134,9 +124,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative303"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative303", 'success', 11303, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative303", 'success', 116790, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -149,9 +142,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative310"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative310", 'success', 11310, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative310", 'success', 116800, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -164,9 +160,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative311"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative311", 'success', 11311, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative311", 'success', 116810, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -179,9 +178,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative312"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative312", 'success', 11312, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative312", 'success', 116820, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -194,9 +196,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative320"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative320", 'success', 11320, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative320", 'success', 116830, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -209,9 +214,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative321', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative321"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative321", 'success', 11321, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative321", 'success', 116840, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -224,9 +232,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative322"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative322", 'success', 11322, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative322", 'success', 116850, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -239,9 +250,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative323"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative323", 'success', 11323, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative323", 'success', 116860, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -254,9 +268,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative324', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative324"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative324", 'success', 11324, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative324", 'success', 116870, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -269,9 +286,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative325"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative325", 'success', 11325, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative325", 'success', 116880, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -284,9 +304,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative327"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative327", 'success', 11327, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative327", 'success', 116890, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -299,9 +322,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative328"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative328", 'success', 11328, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative328", 'success', 116900, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -314,9 +340,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative329"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative329", 'success', 11329, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative329", 'success', 116910, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -329,9 +358,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative330"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative330", 'success', 11330, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative330", 'success', 116920, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -344,9 +376,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative331"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative331", 'success', 11331, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative331", 'success', 116930, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -359,9 +394,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative332"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative332", 'success', 11332, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative332", 'success', 116940, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -374,9 +412,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative333"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative333", 'success', 11333, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative333", 'success', 116950, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -389,9 +430,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative334"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative334", 'success', 11334, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative334", 'success', 116960, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -404,9 +448,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative336"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative336", 'success', 11336, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative336", 'success', 116970, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -419,9 +466,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative337"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative337", 'success', 11337, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative337", 'success', 116980, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -434,9 +484,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative338"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative338", 'success', 11338, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative338", 'success', 116990, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -449,9 +502,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative339"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative339", 'success', 11339, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative339", 'success', 117000, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -464,9 +520,12 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
      */
     it('testWebViewSdkSchemeHandlerDidFailNegative340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandlerDidFailNegative340"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative340", 'success', 11340, done);
-      sendEventByKey('webViewSdkSchemeHandlerDidFail3Button', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandlerDidFailNegative340", 'success', 117010, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandlerDidFail3Button", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
   })
 }

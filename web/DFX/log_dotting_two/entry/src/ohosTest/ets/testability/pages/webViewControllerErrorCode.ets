@@ -16,22 +16,10 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
 import image from "@ohos.multimedia.image";
 
-class testObj {
-  constructor() {
-  }
-
-  test(): string {
-    return "ArkUI Web Component";
-  }
-
-  toString(): void {
-    console.log('Web Component toString');
-  }
-}
+const EVENT_ID_SET_EMIT_KEY = 115280;
 
 @Entry
 @Component
@@ -49,10 +37,9 @@ struct Index {
   @State ports: webView.WebMessagePort[] = [];
   @State receivedFromHtml: string = 'Display received message send from HTML';
   updateContent: string = '<body><div><image src=resource://rawfile/test.png ' +
-  'alt="image -- end" width="500" height="250"></image></div></body>';
+    'alt="image -- end" width="500" height="250"></image></div></body>';
   @State msg1: string = '';
   @State msg2: string = '';
-  @State testObj: testObj = new testObj();
   @State name: string = 'objName';
   @State origin: string = "file:///";
   @State host: string = "www.spincast.org";
@@ -67,6 +54,8 @@ struct Index {
   @State message: string = "123";
   @State pixelMap: image.PixelMap | undefined = undefined;
   @State errorCode: string = '0';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   scheme1: webView.WebCustomScheme = { schemeName: "name1", isSupportCORS: true, isSupportFetch: true }
   scheme2: webView.WebCustomScheme = { schemeName: "name2", isSupportCORS: true, isSupportFetch: true }
   scheme3: webView.WebCustomScheme = { schemeName: "name3", isSupportCORS: true, isSupportFetch: true }
@@ -74,14 +63,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,19 +79,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -110,18 +88,20 @@ struct Index {
     Column() {
       Row() {
         Button("WebViewControllerErrorCode click").key('WebViewControllerErrorCodeButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerErrorCodeButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerErrorCodeButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
-
             case "testGetUrlError001": {
               try {
                 let url = this.controllerNull.getUrl();
                 console.log("url: " + url);
-                Utils.emitEvent(this.no_error, 20260)
+                Utils.emitEvent(this.no_error, 115290)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20260)
+                Utils.emitEvent(String(e.code), 115290)
               }
               break;
             }
@@ -129,11 +109,11 @@ struct Index {
             case "testPageUpError001": {
               try {
                 this.controllerNull.pageUp(true);
-                Utils.emitEvent(this.no_error, 20265)
+                Utils.emitEvent(this.no_error, 115300)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20265)
+                Utils.emitEvent(String(e.code), 115300)
               }
               break;
             }
@@ -141,11 +121,11 @@ struct Index {
             case "testPageUpError002": {
               try {
                 this.controllerNull.pageUp(false);
-                Utils.emitEvent(this.no_error, 20266)
+                Utils.emitEvent(this.no_error, 115310)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20266)
+                Utils.emitEvent(String(e.code), 115310)
               }
               break;
             }
@@ -153,11 +133,11 @@ struct Index {
             case "testPageDownError001": {
               try {
                 this.controllerNull.pageDown(true);
-                Utils.emitEvent(this.no_error, 20270)
+                Utils.emitEvent(this.no_error, 115320)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20270)
+                Utils.emitEvent(String(e.code), 115320)
               }
               break;
             }
@@ -165,11 +145,11 @@ struct Index {
             case "testPageDownError002": {
               try {
                 this.controllerNull.pageDown(false);
-                Utils.emitEvent(this.no_error, 20271)
+                Utils.emitEvent(this.no_error, 115330)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20271)
+                Utils.emitEvent(String(e.code), 115330)
               }
               break;
             }
@@ -178,11 +158,11 @@ struct Index {
               try {
                 let url = this.controllerNull.getOriginalUrl();
                 console.log("url: " + url);
-                Utils.emitEvent(this.no_error, 20275)
+                Utils.emitEvent(this.no_error, 115340)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20275)
+                Utils.emitEvent(String(e.code), 115340)
               }
               break;
             }
@@ -190,11 +170,11 @@ struct Index {
             case "testGetFaviconError001": {
               try {
                 this.pixelMap = this.controllerNull.getFavicon();
-                Utils.emitEvent(this.no_error, 20280)
+                Utils.emitEvent(this.no_error, 115350)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20280)
+                Utils.emitEvent(String(e.code), 115350)
               }
               break;
             }
@@ -202,11 +182,11 @@ struct Index {
             case "testSetNetworkAvailableError001": {
               try {
                 this.controllerNull.setNetworkAvailable(true);
-                Utils.emitEvent(this.no_error, 20285)
+                Utils.emitEvent(this.no_error, 115360)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20285)
+                Utils.emitEvent(String(e.code), 115360)
               }
               break;
             }
@@ -214,11 +194,11 @@ struct Index {
             case "testSetNetworkAvailableError002": {
               try {
                 this.controllerNull.setNetworkAvailable(false);
-                Utils.emitEvent(this.no_error, 20286)
+                Utils.emitEvent(this.no_error, 115370)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20286)
+                Utils.emitEvent(String(e.code), 115370)
               }
               break;
             }
@@ -228,16 +208,16 @@ struct Index {
                 this.controllerNull.hasImage((error, data) => {
                   if (error) {
                     console.info(`hasImage error: ` + JSON.stringify(error))
-                    Utils.emitEvent(String(error.code), 20290)
+                    Utils.emitEvent(String(error.code), 115380)
                     return;
                   }
                   console.info("hasImage: " + data);
-                  Utils.emitEvent(this.no_error, 20290)
+                  Utils.emitEvent(this.no_error, 115380)
                 });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20290)
+                Utils.emitEvent(String(e.code), 115380)
               }
               break;
             }
@@ -246,16 +226,16 @@ struct Index {
               try {
                 this.controllerNull.hasImage().then((data) => {
                   console.info('hasImage: ' + data);
-                  Utils.emitEvent(this.no_error, 20291)
+                  Utils.emitEvent(this.no_error, 115390)
                 })
                   .catch((error: business_error.BusinessError) => {
                     console.error("error: " + error);
-                    Utils.emitEvent(String(error.code), 20291)
+                    Utils.emitEvent(String(error.code), 115390)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20291)
+                Utils.emitEvent(String(e.code), 115390)
               }
               break;
             }
@@ -264,11 +244,11 @@ struct Index {
               try {
                 let list = this.controllerNull.getBackForwardEntries()
                 console.info('getBackForwardEntries: ' + list);
-                Utils.emitEvent(this.no_error, 20295)
+                Utils.emitEvent(this.no_error, 115400)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20295)
+                Utils.emitEvent(String(e.code), 115400)
               }
               break;
             }
@@ -276,11 +256,11 @@ struct Index {
             case "testScrollToError001": {
               try {
                 this.controllerNull.scrollTo(50, 50);
-                Utils.emitEvent(this.no_error, 20300)
+                Utils.emitEvent(this.no_error, 115410)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20300)
+                Utils.emitEvent(String(e.code), 115410)
               }
               break;
             }
@@ -292,19 +272,19 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run JavaScript error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 20305)
+                      Utils.emitEvent(String(error.code), 115420)
                       return;
                     }
                     if (result) {
                       this.webResult = result
                       console.info(`The test() return value is: ${result}`)
-                      Utils.emitEvent(this.no_error, 20305)
+                      Utils.emitEvent(this.no_error, 115420)
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20305)
+                Utils.emitEvent(String(e.code), 115420)
               }
               break;
             }
@@ -314,16 +294,16 @@ struct Index {
                 this.controllerNull.runJavaScript('test()')
                   .then((result) => {
                     console.log('result: ' + result);
-                    Utils.emitEvent(this.no_error, 20306)
+                    Utils.emitEvent(this.no_error, 115430)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.error("error: " + error);
-                    Utils.emitEvent(String(error.code), 20306)
+                    Utils.emitEvent(String(error.code), 115430)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20306)
+                Utils.emitEvent(String(e.code), 115430)
               }
               break;
             }
@@ -335,18 +315,18 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run JavaScript error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 20310)
+                      Utils.emitEvent(String(error.code), 115440)
                       return;
                     }
                     if (result) {
                       console.info(`The test() return value is: ${result}`)
-                      Utils.emitEvent(this.no_error, 20310)
+                      Utils.emitEvent(this.no_error, 115440)
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20310)
+                Utils.emitEvent(String(e.code), 115440)
               }
               break;
             }
@@ -356,16 +336,16 @@ struct Index {
                 this.controllerNull.runJavaScriptExt('test()')
                   .then((result) => {
                     console.log('result: ' + result);
-                    Utils.emitEvent(this.no_error, 20311)
+                    Utils.emitEvent(this.no_error, 115450)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.error("error: " + error);
-                    Utils.emitEvent(String(error.code), 20311)
+                    Utils.emitEvent(String(error.code), 115450)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20311)
+                Utils.emitEvent(String(e.code), 115450)
               }
               break;
             }
@@ -375,18 +355,18 @@ struct Index {
                 this.controllerNull.storeWebArchive("/data/storage/el2/base/", false, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
-                    Utils.emitEvent(String(error.code), 20350)
+                    Utils.emitEvent(String(error.code), 115460)
                     return;
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                   }
-                  Utils.emitEvent(this.no_error, 20350)
+                  Utils.emitEvent(this.no_error, 115460)
                 });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20350)
+                Utils.emitEvent(String(e.code), 115460)
               }
               break;
             }
@@ -396,18 +376,18 @@ struct Index {
                 this.controllerNull.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
-                    Utils.emitEvent(String(error.code), 20351)
+                    Utils.emitEvent(String(error.code), 115470)
                     return;
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                   }
-                  Utils.emitEvent(this.no_error, 20351)
+                  Utils.emitEvent(this.no_error, 115470)
                 });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20351)
+                Utils.emitEvent(String(e.code), 115470)
               }
               break;
             }
@@ -417,18 +397,18 @@ struct Index {
                 this.controller.storeWebArchive("/data/storage/el2/,/base/", false, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
-                    Utils.emitEvent(String(error.code), 20352)
+                    Utils.emitEvent(String(error.code), 115480)
                     return;
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                   }
-                  Utils.emitEvent(this.no_error, 20352)
+                  Utils.emitEvent(this.no_error, 115480)
                 });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20352)
+                Utils.emitEvent(String(e.code), 115480)
               }
               break;
             }
@@ -438,18 +418,18 @@ struct Index {
                 this.controller.storeWebArchive("/data/storage/el2/,/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
-                    Utils.emitEvent(String(error.code), 20353)
+                    Utils.emitEvent(String(error.code), 115490)
                     return;
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                   }
-                  Utils.emitEvent(this.no_error, 20353)
+                  Utils.emitEvent(this.no_error, 115490)
                 });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20353)
+                Utils.emitEvent(String(e.code), 115490)
               }
               break;
             }
@@ -461,16 +441,16 @@ struct Index {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
                     }
-                    Utils.emitEvent(this.no_error, 20354)
+                    Utils.emitEvent(this.no_error, 115500)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 20354)
+                    Utils.emitEvent(String(error.code), 115500)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20354)
+                Utils.emitEvent(String(e.code), 115500)
               }
               break;
             }
@@ -482,16 +462,16 @@ struct Index {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
                     }
-                    Utils.emitEvent(this.no_error, 20355)
+                    Utils.emitEvent(this.no_error, 115510)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 20355)
+                    Utils.emitEvent(String(error.code), 115510)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20355)
+                Utils.emitEvent(String(e.code), 115510)
               }
               break;
             }
@@ -503,16 +483,16 @@ struct Index {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
                     }
-                    Utils.emitEvent(this.no_error, 20356)
+                    Utils.emitEvent(this.no_error, 115520)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 20356)
+                    Utils.emitEvent(String(error.code), 115520)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20356)
+                Utils.emitEvent(String(e.code), 115520)
               }
               break;
             }
@@ -524,16 +504,16 @@ struct Index {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
                     }
-                    Utils.emitEvent(this.no_error, 20357)
+                    Utils.emitEvent(this.no_error, 115530)
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 20357)
+                    Utils.emitEvent(String(error.code), 115530)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20357)
+                Utils.emitEvent(String(e.code), 115530)
               }
               break;
             }
@@ -541,27 +521,20 @@ struct Index {
             case "testRemoveCacheError001": {
               try {
                 this.controllerNull.removeCache(false);
-                Utils.emitEvent(this.no_error, 20358)
+                Utils.emitEvent(this.no_error, 115540)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 20358)
+                Utils.emitEvent(String(e.code), 115540)
               }
               break;
             }
-
           }
         })
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onErrorReceive((event) => {
           if (event) {
             console.log('getErrorInfo:' + event.error.getErrorInfo())
@@ -578,17 +551,12 @@ struct Index {
             }
           }
         })
-        .onConsole((event) => {
-          if (event) {
-            this.level = event.message.getMessageLevel()
-            this.message = event.message.getMessage()
-            this.lineNumber = event.message.getLineNumber()
-            this.sourceID = event.message.getSourceId()
-          }
-          return false
-        })
         .zoomAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

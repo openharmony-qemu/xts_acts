@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 115070;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function webStorageErrorCode() {
         if (!("webStorageErrorCode" == pages.name)) {
           console.info("get webStorageErrorCode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webStorageErrorCode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webStorageErrorCode page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebStorageErrorCodeButton"), 10000);
+      console.log("WebStorageErrorCodeButton webView");
       done()
     });
 
@@ -54,13 +59,6 @@ export default function webStorageErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebStorageErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebStorageErrorCodeTestSuite afterEach end");
-      done();
-    })
-
     /*
     * @tc.number     : SUB_WEB_ERRORCODE_DELETEORIGIN_0100
     * @tc.name       : testDeleteOriginError001
@@ -70,10 +68,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testDeleteOriginError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testDeleteOriginError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteOriginError001", '17100011', 20030, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '')
+      Utils.emitEvent("testDeleteOriginError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteOriginError001", '17100011', 115080, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -85,10 +82,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testDeleteOriginError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testDeleteOriginError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteOriginError002", '17100011', 20031, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '')
+      Utils.emitEvent("testDeleteOriginError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteOriginError002", '17100011', 115090, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -100,10 +96,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testDeleteOriginError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testDeleteOriginError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteOriginError003", '17100011', 20032, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '')
+      Utils.emitEvent("testDeleteOriginError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteOriginError003", '17100011', 115100, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -115,10 +110,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testDeleteOriginError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testDeleteOriginError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteOriginError004", '17100011', 20033, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testDeleteOriginError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testDeleteOriginError004", '17100011', 115110, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -130,10 +124,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError001", '17100011', 20050, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError001", '17100011', 115120, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -145,10 +138,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError002", '17100011', 20051, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError002", '17100011', 115130, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -160,10 +152,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError003", '17100011', 20052, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError003", '17100011', 115140, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -175,10 +166,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError004", '17100011', 20053, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError004", '17100011', 115150, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -190,10 +180,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError005", '17100011', 20054, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError005", '17100011', 115160, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -205,10 +194,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError006", '17100011', 20055, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError006", '17100011', 115170, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -220,10 +208,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError007", '17100011', 20056, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError007", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError007", '17100011', 115180, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -235,10 +222,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginQuotaError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginQuotaError008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginQuotaError008", '17100011', 20057, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginQuotaError008", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginQuotaError008", '17100011', 115190, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -250,10 +236,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError001", '17100011', 20060, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError001", '17100011', 115200, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -265,10 +250,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError002", '17100011', 20061, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError002", '17100011', 115210, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -280,10 +264,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError003", '17100011', 20062, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError003", '17100011', 115220, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -295,10 +278,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError004", '17100011', 20063, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError004", '17100011', 115230, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -310,10 +292,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError005", '17100011', 20064, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError005", '17100011', 115240, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -325,10 +306,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError006", '17100011', 20065, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError006", '17100011', 115250, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -340,10 +320,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError007", '17100011', 20066, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError007", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError007", '17100011', 115260, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
 
     /*
@@ -355,11 +334,9 @@ export default function webStorageErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetOriginUsageError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetOriginUsageError008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetOriginUsageError008", '17100011', 20067, done);
-      sendEventByKey('WebStorageErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetOriginUsageError008", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetOriginUsageError008", '17100011', 115270, done);
+      await Utils.waitAndClickComponent(driver, "WebStorageErrorCodeButton");
     })
-
   })
 }

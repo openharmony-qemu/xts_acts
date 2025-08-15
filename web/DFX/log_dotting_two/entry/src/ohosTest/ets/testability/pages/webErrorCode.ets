@@ -23,6 +23,8 @@ import fs from '@ohos.file.fs';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
 
+const EVENT_ID_SET_EMIT_KEY = 114080;
+
 class testObj {
   constructor() {
   }
@@ -64,6 +66,8 @@ struct Index {
   @State factor: number = 1;
   @State errorCode: string = '0';
   @State userAgent: string = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   scheme1: webView.WebCustomScheme = { schemeName: "name1", isSupportCORS: true, isSupportFetch: true }
   scheme2: webView.WebCustomScheme = { schemeName: "name2", isSupportCORS: true, isSupportFetch: true }
   scheme3: webView.WebCustomScheme = { schemeName: "name3", isSupportCORS: true, isSupportFetch: true }
@@ -71,14 +75,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -87,6 +91,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -120,14 +125,17 @@ struct Index {
     Column() {
       Row() {
         Button("WebErrorCode click").key('ErrorCodeTestSuiteButton').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'ErrorCodeTestSuiteButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'ErrorCodeTestSuiteButtonIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
 
             case "emitSearchAllAsync": {
               try {
                 this.controllerNull.searchAllAsync(this.searchString);
               } catch (error) {
-                Utils.emitEvent(error.code, 1000)
+                Utils.emitEvent(error.code, 114090)
               }
               break;
             }
@@ -136,7 +144,7 @@ struct Index {
                 let userAgent = this.controllerNull.getUserAgent();
                 console.info("userAgent: " + userAgent);
               } catch (error) {
-                Utils.emitEvent(error.code, 1006)
+                Utils.emitEvent(error.code, 114100)
               }
               break;
             }
@@ -145,7 +153,7 @@ struct Index {
               try {
                 this.controllerNull.clearMatches();
               } catch (error) {
-                Utils.emitEvent(error.code, 1007)
+                Utils.emitEvent(error.code, 114110)
               }
               break;
             }
@@ -154,7 +162,7 @@ struct Index {
               try {
                 this.controllerNull.searchNext(true);
               } catch (error) {
-                Utils.emitEvent(error.code, 1009)
+                Utils.emitEvent(error.code, 114120)
               }
               break;
             }
@@ -163,7 +171,7 @@ struct Index {
               try {
                 this.controllerNull.clearSslCache();
               } catch (error) {
-                Utils.emitEvent(error.code, 1010)
+                Utils.emitEvent(error.code, 114130)
               }
               break;
             }
@@ -172,7 +180,7 @@ struct Index {
               try {
                 this.controllerNull.clearClientAuthenticationCache();
               } catch (error) {
-                Utils.emitEvent(error.code, 1011)
+                Utils.emitEvent(error.code, 114140)
               }
               break;
             }
@@ -181,7 +189,7 @@ struct Index {
               try {
                 this.controllerNull.zoomIn();
               } catch (error) {
-                Utils.emitEvent(error.code, 1012)
+                Utils.emitEvent(error.code, 114150)
               }
               break;
             }
@@ -190,7 +198,7 @@ struct Index {
               try {
                 this.controller.zoomIn();
               } catch (error) {
-                Utils.emitEvent(error.code, 1013)
+                Utils.emitEvent(error.code, 114160)
               }
               break;
             }
@@ -202,7 +210,7 @@ struct Index {
                 this.ports[1].close();
                 this.ports[1].postMessageEvent("post message from ets to html5");
               } catch (error) {
-                Utils.emitEvent(error.code, 1014)
+                Utils.emitEvent(error.code, 114170)
               }
               break;
             }
@@ -211,7 +219,7 @@ struct Index {
               try {
                 this.controllerNull.createWebMessagePorts();
               } catch (error) {
-                Utils.emitEvent(error.code, 1021)
+                Utils.emitEvent(error.code, 114180)
               }
               break;
             }
@@ -238,7 +246,7 @@ struct Index {
                 })
                 this.controllerNull.postMessage('__init_port__', [this.ports[0]], '*');
               } catch (error) {
-                Utils.emitEvent(error.code, 1022)
+                Utils.emitEvent(error.code, 114190)
               }
               break;
             }
@@ -247,7 +255,7 @@ struct Index {
               try {
                 this.controllerNull.requestFocus();
               } catch (error) {
-                Utils.emitEvent(error.code, 1023)
+                Utils.emitEvent(error.code, 114200)
               }
               break;
             }
@@ -256,7 +264,7 @@ struct Index {
               try {
                 this.controllerNull.refresh();
               } catch (error) {
-                Utils.emitEvent(error.code, 1024)
+                Utils.emitEvent(error.code, 114210)
               }
               break;
             }
@@ -269,7 +277,7 @@ struct Index {
                   "UTF-8"
                 );
               } catch (error) {
-                Utils.emitEvent(error.code, 1025)
+                Utils.emitEvent(error.code, 114220)
               }
               break;
             }
@@ -277,7 +285,7 @@ struct Index {
               try {
                 this.controllerNull.loadUrl('https://docs.openharmony.cn/');
               } catch (error) {
-                Utils.emitEvent(error.code, 1027)
+                Utils.emitEvent(error.code, 114230)
               }
               break;
             }
@@ -286,7 +294,7 @@ struct Index {
               try {
                 this.controllerNull.zoomOut();
               } catch (error) {
-                Utils.emitEvent(error.code, 1028)
+                Utils.emitEvent(error.code, 114240)
               }
               break;
             }
@@ -295,7 +303,7 @@ struct Index {
               try {
                 this.controllerNull.slideScroll(500, 500);
               } catch (error) {
-                Utils.emitEvent(error.code, 1033)
+                Utils.emitEvent(error.code, 114250)
               }
               break;
             }
@@ -303,7 +311,7 @@ struct Index {
               try {
                 this.controllerNull.scrollBy(50, 50);
               } catch (error) {
-                Utils.emitEvent(error.code, 1034)
+                Utils.emitEvent(error.code, 114260)
               }
               break;
             }
@@ -318,7 +326,7 @@ struct Index {
                   fs.closeSync(file.fd);
                 }
               } catch (error) {
-                Utils.emitEvent(error.code, 1035)
+                Utils.emitEvent(error.code, 114270)
               }
               break;
             }
@@ -326,7 +334,7 @@ struct Index {
               try {
                 this.controllerNull.restoreWebState(new Uint8Array(new ArrayBuffer(0)));
               } catch (error) {
-                Utils.emitEvent(error.code, 1036)
+                Utils.emitEvent(error.code, 114280)
               }
               break;
             }
@@ -334,7 +342,7 @@ struct Index {
               try {
                 this.controllerNull.stop();
               } catch (error) {
-                Utils.emitEvent(error.code, 1037)
+                Utils.emitEvent(error.code, 114290)
               }
               break;
             }
@@ -342,7 +350,7 @@ struct Index {
               try {
                 this.controllerNull.registerJavaScriptProxy(this.testObj, "objName", ["test", "toString"]);
               } catch (error) {
-                Utils.emitEvent(error.code, 1038)
+                Utils.emitEvent(error.code, 114300)
               }
               break;
             }
@@ -350,7 +358,7 @@ struct Index {
               try {
                 this.controllerNull.deleteJavaScriptRegister(this.name);
               } catch (error) {
-                Utils.emitEvent(error.code, 1039)
+                Utils.emitEvent(error.code, 114310)
               }
               break;
             }
@@ -359,7 +367,7 @@ struct Index {
                 this.controller.registerJavaScriptProxy(this.testObj, this.name, ["test", "toString"]);
                 this.controller.deleteJavaScriptRegister('objName01');
               } catch (error) {
-                Utils.emitEvent(error.code, 1040)
+                Utils.emitEvent(error.code, 114320)
               }
               break;
             }
@@ -368,7 +376,7 @@ struct Index {
                 let hitTestType = this.controllerNull.getHitTest();
                 console.log("hitTestType: " + hitTestType);
               } catch (error) {
-                Utils.emitEvent(error.code, 1041)
+                Utils.emitEvent(error.code, 114330)
               }
               break;
             }
@@ -377,7 +385,7 @@ struct Index {
                 let title = this.controllerNull.getTitle();
                 console.log("title: " + title);
               } catch (error) {
-                Utils.emitEvent(error.code, 1044)
+                Utils.emitEvent(error.code, 114340)
               }
               break;
             }
@@ -386,7 +394,7 @@ struct Index {
                 let title = this.controllerNull.getPageHeight();
                 console.log("title: " + title);
               } catch (error) {
-                Utils.emitEvent(error.code, 1045)
+                Utils.emitEvent(error.code, 114350)
               }
               break;
             }
@@ -394,7 +402,7 @@ struct Index {
               try {
                 this.controllerNull.getHitTestValue();
               } catch (error) {
-                Utils.emitEvent(error.code, 1046)
+                Utils.emitEvent(error.code, 114360)
               }
               break;
             }
@@ -403,7 +411,7 @@ struct Index {
                 let id = this.controllerNull.getWebId();
                 console.log("id: " + id);
               } catch (error) {
-                Utils.emitEvent(error.code, 1047)
+                Utils.emitEvent(error.code, 114370)
               }
               break;
             }
@@ -411,7 +419,7 @@ struct Index {
               try {
                 this.controllerNull.backOrForward(this.step);
               } catch (error) {
-                Utils.emitEvent(error.code, 1048)
+                Utils.emitEvent(error.code, 114380)
               }
               break;
             }
@@ -419,7 +427,7 @@ struct Index {
               try {
                 this.controllerNull.zoom(this.factor);
               } catch (error) {
-                Utils.emitEvent(error.code, 1049)
+                Utils.emitEvent(error.code, 114390)
               }
               break;
             }
@@ -427,7 +435,7 @@ struct Index {
               try {
                 this.controller.zoom(1);
               } catch (error) {
-                Utils.emitEvent(error.code, 1050)
+                Utils.emitEvent(error.code, 114400)
               }
               break;
             }
@@ -435,18 +443,18 @@ struct Index {
             // case "emitLoadUrl2": {
             //   try {
             //     this.controller.loadUrl($rawfile(''));
-            //     Utils.emitEvent(this.no_error, 1058)
+            //     Utils.emitEvent(this.no_error, 114410)
             //   } catch (error) {
-            //     Utils.emitEvent(error.code, 1058)
+            //     Utils.emitEvent(error.code, 114410)
             //   }
             //   break;
             // }
             case "emitLoadUrl3": {
               try {
                 this.controller.loadUrl('file://');
-                Utils.emitEvent(this.no_error, 1059)
+                Utils.emitEvent(this.no_error, 114420)
               } catch (error) {
-                Utils.emitEvent(error.code, 1059)
+                Utils.emitEvent(error.code, 114420)
               }
               break;
             }
@@ -458,7 +466,7 @@ struct Index {
                 this.ports[1].close();
                 this.ports[1].postMessageEvent("post message from ets to html5");
               } catch (error) {
-                Utils.emitEvent(error.code, 1064)
+                Utils.emitEvent(error.code, 114430)
               }
               break;
             }
@@ -467,7 +475,7 @@ struct Index {
               try {
                 this.controller.zoomOut();
               } catch (error) {
-                Utils.emitEvent(error.code, 1065)
+                Utils.emitEvent(error.code, 114440)
               }
               break;
             }
@@ -478,7 +486,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50002)
+                Utils.emitEvent(e.code, 114450)
               }
               break;
             }
@@ -489,7 +497,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50005)
+                Utils.emitEvent(e.code, 114460)
               }
               break;
             }
@@ -500,7 +508,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50008)
+                Utils.emitEvent(e.code, 114470)
               }
               break;
             }
@@ -511,7 +519,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50009)
+                Utils.emitEvent(e.code, 114480)
               }
               break;
             }
@@ -522,7 +530,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50010)
+                Utils.emitEvent(e.code, 114490)
               }
               break;
             }
@@ -533,7 +541,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50011)
+                Utils.emitEvent(e.code, 114500)
               }
               break;
             }
@@ -544,7 +552,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50012)
+                Utils.emitEvent(e.code, 114510)
               }
               break;
             }
@@ -555,7 +563,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50013)
+                Utils.emitEvent(e.code, 114520)
               }
               break;
             }
@@ -566,7 +574,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50015)
+                Utils.emitEvent(e.code, 114530)
               }
               break;
             }
@@ -577,7 +585,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50016)
+                Utils.emitEvent(e.code, 114540)
               }
               break;
             }
@@ -588,7 +596,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50018)
+                Utils.emitEvent(e.code, 114550)
               }
               break;
             }
@@ -600,7 +608,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50019)
+                Utils.emitEvent(e.code, 114560)
               }
               break;
             }
@@ -611,7 +619,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50023)
+                Utils.emitEvent(e.code, 114570)
               }
               break;
             }
@@ -623,7 +631,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 50024)
+                Utils.emitEvent(e.code, 114580)
               }
               break;
             }
@@ -631,10 +639,10 @@ struct Index {
             case "testPrepareForPageLoadError001": {
               try {
                 webView.WebviewController.prepareForPageLoad("https://www.huawei.com/cn/", true, 7);
-                Utils.emitEvent(this.no_error, 50025)
+                Utils.emitEvent(this.no_error, 114590)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 50025)
+                Utils.emitEvent(error.code, 114590)
               }
               break;
             }
@@ -642,10 +650,10 @@ struct Index {
             case "testPrepareForPageLoadError002": {
               try {
                 webView.WebviewController.prepareForPageLoad("华为", true, 6);
-                Utils.emitEvent(this.no_error, 50026)
+                Utils.emitEvent(this.no_error, 114600)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 50026)
+                Utils.emitEvent(error.code, 114600)
               }
               break;
             }
@@ -662,6 +670,10 @@ struct Index {
           controller: this.controller
         })
         .zoomAccess(false)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

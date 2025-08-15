@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 113550;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function webCookieManagerErrorCode() {
         if (!("webCookieManagerErrorCode" == pages.name)) {
           console.info("get webCookieManagerErrorCode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webCookieManagerErrorCode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webCookieManagerErrorCode page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebCookieManagerErrorCodeButton"), 10000);
+      console.log("waitForComponent WebCookieManagerErrorCodeButton");
       done()
     });
 
@@ -54,13 +59,6 @@ export default function webCookieManagerErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebCookieManagerErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebCookieManagerErrorCodeTestSuite afterEach end");
-      done();
-    })
-
     /*
      * @tc.number     : SUB_WEB_ERRORCODE_GETCOOKIE_0100
      * @tc.name       : testGetCookieError001
@@ -70,10 +68,9 @@ export default function webCookieManagerErrorCode() {
      * @tc.level      : Level 2
      */
     it('testGetCookieError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetCookieError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCookieError001", '17100002', 20070, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetCookieError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetCookieError001", '17100002', 113560, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -85,10 +82,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetCookieError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetCookieError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCookieError002", '17100002', 20071, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetCookieError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetCookieError002", '17100002', 113570, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -100,10 +96,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetCookieError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetCookieError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCookieError003", '17100002', 20072, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetCookieError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetCookieError003", '17100002', 113580, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -115,10 +110,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testGetCookieError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testGetCookieError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetCookieError004", '17100002', 20073, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testGetCookieError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testGetCookieError004", '17100002', 113590, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -130,10 +124,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetCookieError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetCookieError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetCookieError001", '17100002', 20080, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetCookieError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetCookieError001", '17100002', 113600, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -145,10 +138,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetCookieError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetCookieError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetCookieError002", '17100002', 20081, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetCookieError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetCookieError002", '17100002', 113610, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -160,10 +152,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetCookieError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetCookieError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetCookieError003", '17100002', 20082, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetCookieError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetCookieError003", '17100002', 113620, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -175,10 +166,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetCookieError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetCookieError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetCookieError004", '17100005', 20083, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetCookieError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetCookieError004", '17100005', 113630, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -190,10 +180,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testSetCookieError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetCookieError005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetCookieError005", '17100005', 20084, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetCookieError005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetCookieError005", '17100005', 113640, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -205,10 +194,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync001", '17100002', 5000, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookieSync001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookieSync001", '17100002', 113650, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -220,10 +208,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync002", '17100002', 5001, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookieSync002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookieSync002", '17100002', 113660, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -235,10 +222,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync003", '17100002', 5002, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookieSync003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookieSync003", '17100002', 113670, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -250,10 +236,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookieSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSync004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSync004", '17100002', 5003, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookieSync004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookieSync004", '17100002', 113680, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -265,10 +250,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie001", '17100002', 5004, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie001", '17100002', 113690, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -280,10 +264,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie002", '17100002', 5005, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie002", '17100002', 113700, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -295,10 +278,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie003", '17100002', 5006, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie003", '17100002', 113710, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -310,10 +292,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie004", '17100002', 5007, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie004", '17100002', 113720, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -325,10 +306,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie005", '17100002', 5008, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie005", '17100002', 113730, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -340,10 +320,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie006", '17100002', 5009, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie006", '17100002', 113740, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -355,10 +334,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie007", '17100002', 5010, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie007", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie007", '17100002', 113750, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -370,10 +348,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testFetchCookie008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testFetchCookie008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookie008", '17100002', 5011, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookie008", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testFetchCookie008", '17100002', 113760, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -385,10 +362,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSync001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSync001", '17100002', 5012, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSync001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookieSync001", '17100002', 113770, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -400,10 +376,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSync002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSync002", '17100002', 5013, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSync002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookieSync002", '17100002', 113780, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -415,10 +390,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSync003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSync003", '17100002', 5014, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSync003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookieSync003", '17100002', 113790, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -430,10 +404,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSync004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSync004", '17100002', 5015, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSync004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookieSync004", '17100002', 113800, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -445,10 +418,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSync005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSync005", '17100005', 5016, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSync005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookieSync005", '17100005', 113810, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -460,10 +432,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie001", '17100002', 5017, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie001", '17100002', 113820, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -475,10 +446,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie002", '17100002', 5018, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie002", '17100002', 113830, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -490,10 +460,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie003", '17100002', 5019, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie003", '17100002', 113840, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -505,10 +474,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie004", '17100002', 5020, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie004", '17100002', 113850, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -520,10 +488,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie005", '17100005', 5021, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie005", '17100005', 113860, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -535,10 +502,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie006", '17100002', 5022, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie006", '17100002', 113870, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -550,10 +516,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie007", '17100002', 5023, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie007", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie007", '17100002', 113880, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -565,10 +530,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie008", '17100002', 5024, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie008", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie008", '17100002', 113890, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -580,10 +544,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie009", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie009", '17100002', 5025, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie009", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie009", '17100002', 113900, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -595,11 +558,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 2
     */
     it('testConfigCookie010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testConfigCookie010", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookie010", '17100005', 5026, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookie010", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testConfigCookie010", '17100005', 113910, done);
+      await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
-
   })
 }

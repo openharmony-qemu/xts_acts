@@ -15,12 +15,12 @@
 import events_emitter from '@ohos.events.emitter'
 import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
-import { waitForAssert, waitForExist } from '../../test/WaitTest';
 import business_error, { BusinessError } from '@ohos.base'
 import { buffer } from '@kit.ArkTS';
 import { WebNetErrorList } from '@kit.ArkWeb';
 import { URL } from '../../test/Config';
 
+const EVENT_ID_SET_EMIT_KEY = 114610;
 
 @Entry
 @Component
@@ -38,18 +38,20 @@ struct webHttpBodyStreamTest {
   requests: webview.WebSchemeHandlerRequest[] = []
 
   htmlData: string = '<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>';
-
-  @State isComplete: number = -1;
-  @State testRead: number = -1;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   @State testBodyStreamError: number = -1;
-
 
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -57,22 +59,21 @@ struct webHttpBodyStreamTest {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 1;
           }
       }
   }
-
-
   
   build() {
       Column() {
           Row() {
             Button('web click').key('webView').onClick(async () => {
-              this.controller.refresh()
-              await Utils.sleep(2000)
+              await Utils.waitForExist(()=>this.isPageEnd, 'webViewIsPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isReceive, 'webViewIsReceive', 1, 1000);
               console.info('key==>' + this.emitKey)
+              this.isReceive = -1;
               switch (this.emitKey) {
                 case 'emitWebView_WebHttpBodyStream_READ': {
-                  await waitForExist(()=>this.isComplete, this.emitKey, 0);
                   try {
                     let postData = buffer.from(this.htmlData);
                     this.controller.postUrl(URL, postData.buffer);
@@ -80,10 +81,6 @@ struct webHttpBodyStreamTest {
                     console.error(`postUrl ErrorCode: ${(error as BusinessError).code},
                        postUrl Message: ${(error as BusinessError).message}`);
                   }
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.testRead, check, 0, 1555, this.emitKey);
                   break;
                 }
               }
@@ -142,7 +139,6 @@ struct webHttpBodyStreamTest {
                           stream.isInMemory());
                           stream.read(stream.getSize()).then((buffer) => {
                             console.log('[schemeHandler] onRequestStart postDataStream read:' + buffer.byteLength);
-                            this.testRead = 0
                             if (!stream) {
                               return;
                             }
@@ -151,6 +147,9 @@ struct webHttpBodyStreamTest {
                             console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
                             console.log('[schemeHandler] onRequestStart postDataStream position:' + 
                             stream.getPosition());
+                            if (this.emitKey === 'emitWebView_WebHttpBodyStream_READ') {
+                              Utils.emitEvent(0, 114620);
+                            }
                           }).catch((error: BusinessError) => {
                             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                           })
@@ -178,8 +177,9 @@ struct webHttpBodyStreamTest {
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
             })
-            .onPageEnd(()=> {
-              this.isComplete = 0;
+            .onPageEnd((event) => {
+              console.log('onPageEnd url:' + event.url);
+              this.isPageEnd = 1;
             })
       }
   }

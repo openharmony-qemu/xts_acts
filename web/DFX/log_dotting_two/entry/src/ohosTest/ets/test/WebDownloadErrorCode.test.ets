@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 113920;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function webDownloadErrorCode() {
         if (!("webDownloadErrorCode" == pages.name)) {
           console.info("get webDownloadErrorCode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webDownloadErrorCode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webDownloadErrorCode page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebDownloadErrorCodeButton"), 10000);
+      console.log("waitForComponent WebDownloadErrorCodeButton");
       done()
     });
 
@@ -51,15 +56,6 @@ export default function webDownloadErrorCode() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("webDownloadErrorCode beforeEach start");
-      await Utils.sleep(1000);
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebDownloadErrorCodeTestSuite afterEach start");
-      Utils.emitEvent('', 11)
-      await Utils.sleep(3000);
-      console.info("WebDownloadErrorCodeTestSuite afterEach end");
       done();
     })
 
@@ -72,10 +68,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testSetDownloadDelegate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testSetDownloadDelegate001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSetDownloadDelegate001", '17100001', 60000, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testSetDownloadDelegate001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetDownloadDelegate001", '17100001', 113930, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -87,10 +82,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload001", '17100001', 60010, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload001", '17100001', 113940, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -102,10 +96,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload002", '17100002', 60011, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload002", '17100002', 113950, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -117,10 +110,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload003", '17100002', 60012, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload003", '17100002', 113960, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -132,10 +124,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload004", '17100002', 60013, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload004", '17100002', 113970, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -147,10 +138,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload005", '17100002', 60014, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload005", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload005", '17100002', 113980, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -162,10 +152,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testStartDownload006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testStartDownload006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStartDownload006", '17100002', 60015, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testStartDownload006", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStartDownload006", '17100002', 113990, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -177,10 +166,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadPause001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadPause001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadPause001", '17100019', 60020, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadPause001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadPause001", '17100019', 114000, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -192,10 +180,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadPause002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadPause002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadPause002", '17100019', 60022, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadPause002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadPause002", '17100019', 114010, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -207,10 +194,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadPause003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadPause003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadPause003", '17100019', 60024, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadPause003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadPause003", '17100019', 114020, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -222,10 +208,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadResume001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadResume001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadResume001", '17100016', 60030, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadResume001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadResume001", '17100016', 114030, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -237,10 +222,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadResume002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadResume002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadResume002", '17100016', 60032, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadResume002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadResume002", '17100016', 114040, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -252,10 +236,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadResume003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadResume003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadResume003", '17100016', 60034, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadResume003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadResume003", '17100016', 114050, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -267,10 +250,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadResume004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadResume004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadResume004", '17100016', 60036, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadResume004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadResume004", '17100016', 114060, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
 
     /*
@@ -282,11 +264,9 @@ export default function webDownloadErrorCode() {
      * @tc.level      : Level 2
      */
     it('testWebDownloadManagerResumeDownload001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadManagerResumeDownload001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebDownloadManagerResumeDownload001", '17100018', 60040, done);
-      sendEventByKey('WebDownloadErrorCodeButton', 10, '');
+      Utils.emitEvent("testWebDownloadManagerResumeDownload001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebDownloadManagerResumeDownload001", '17100018', 114070, done);
+      await Utils.waitAndClickComponent(driver, "WebDownloadErrorCodeButton");
     })
-
   })
 }
