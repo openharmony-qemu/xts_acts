@@ -169,7 +169,7 @@ async function testRepeatsImpl(): Promise<string> {
   let sab = createUint32Array(size);
   let res: Uint32Array = sab;
 
-  Promise<NullishType>[] = new Array<Promise<NullishType>>();
+  let promises: Promise<NullishType>[] = new Array<Promise<NullishType>>();
   for (let idx: number = 0; idx < repeats; idx++) {
     let task = new taskpool.Task(indexSetter, sab, idx);
     let promise: Promise<NullishType> = taskpool.execute(task);
