@@ -35,20 +35,20 @@ export class ExtendedFromNested extends Nested {
   Sendable class can contain field of other sendable class
  */
 export class NestedSendableContainer {
-  data: Nested = new Nested();
+  public data: Nested = new Nested();
 }
 
 export class NullableNestedSendableContainer {
-  data: NestedWithNullable = new NestedWithNullable();
+  public data: NestedWithNullable = new NestedWithNullable();
 }
 
 
 export class NumberContainer {
-  data: number = 12345678;
+  public data: number = 12345678;
 }
 
 export class ValuedNumberContainer {
-  data: number;
+  public data: number;
   constructor(val: number) {
     this.data = val;
   }
