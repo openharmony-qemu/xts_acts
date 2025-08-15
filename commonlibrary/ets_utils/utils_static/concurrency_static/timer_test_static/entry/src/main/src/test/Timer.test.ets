@@ -295,42 +295,7 @@ export default function TimerTest1() {
       console.info(`${TAG} test end`);
       done();
     });
-
-    // /**
-    //  * @tc.number SUB_Timer_Test_0900
-    //  * @tc.name TimerTest009
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('TimerTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   const TAG: string = 'TimerTest009';
-    //   console.info(`${TAG} test start`);
-    //   try {
-    //     let executed = false;
-    //     const handler = () => {
-    //       executed = true;
-    //     };
-    //     const timer = setTimeout(handler, 2147483648);
-    //     expect(executed).assertFalse();
-    //     setTimeout(() => {
-    //       try {
-    //         clearTimeout(timer);
-    //         expect(executed).assertFalse();
-    //       } catch (err: Error) {
-    //         console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
-    //         expect(false).assertFail();
-    //       }
-    //     }, 50);
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   console.info(`${TAG} test end`);
-    //   done();
-    // });
-
+    
     /**
      * @tc.number SUB_Timer_Test_1000
      * @tc.name TimerTest010

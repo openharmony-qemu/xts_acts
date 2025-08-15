@@ -34,7 +34,7 @@ export class SimpleSendable {//implements lang.ISendable
 }
 
 class SendableArrayClass {
-  arr : number[]  = new Array<number>(100);
+  public arr : number[]  = new Array<number>(100);
 }
 
 function sendableArrayFunc() : number {

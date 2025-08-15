@@ -55,18 +55,18 @@ export class ValuedNumberContainer {
 }
 
 export class NullAndStringContainer {
-  data: string| null = 'Hello nullable string';
+  public data: string| null = 'Hello nullable string';
 }
 
 export class UndefinedAndStringContainer {
-  data: string| undefined = 'Hello undefined string';
+  public data: string| undefined = 'Hello undefined string';
 }
 
 type StringDef = string;
 
 
 export class StringDefContainer {
-  data: StringDef = 'Hello World';
+   public data: StringDef = 'Hello World';
 }
 
 
@@ -74,12 +74,12 @@ export class StringDefContainer {
   Create instance of sendable generic class, passing a sendable type as generic type
  */
 export class GenericSendable<T> {
-  field: T|undefined = undefined;
+  public field: T|undefined = undefined;
 }
 
 
 export class CollectionHolder {
-  e: Array<number> = [];
+  public e: Array<number> = [];
 }
 
 

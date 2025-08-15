@@ -94,7 +94,7 @@ export default function TaskPoolLibTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_001
-     * @tc.name      : Async Function use taskpool and worker
+     * @tc.name      : TaskPoolTestClass001
      * @tc.desc      : 
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1230,7 +1230,7 @@ export default function TaskPoolLibTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_061
-     * @tc.name      : Async function execute task
+     * @tc.name      : TaskPoolTestClass061
      * @tc.desc      : Execute async function task
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1363,7 +1363,7 @@ export default function TaskPoolLibTest() {
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_067
-     * @tc.name      : ATaskPoolTestClass067l
+     * @tc.name      : TaskPoolTestClass067
      * @tc.desc      : transfer ArrayBuffer with taskpool
      * @tc.size      : MEDIUM
      * @tc.type      : Function
