@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import json from '@ohos.util.json'
+
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
   ColumnOptions, Shape, Path, Flex, Builder, TextAlign, FontWeight, FlexAlign, ItemAlign} from '@ohos.arkui.component'
 
