@@ -67,7 +67,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.preferences");
       await Utils.msSleep(6000)
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
