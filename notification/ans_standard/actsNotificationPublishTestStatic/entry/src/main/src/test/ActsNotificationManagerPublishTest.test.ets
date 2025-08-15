@@ -34,6 +34,7 @@ export default function ActsNotificationManagerPublishTest() {
     let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_Publish_TEST ===>'
     hilog.info(DOMAIN_NUMBER, TAG, 'SUB_NOTIFICATION_ANS_MANAGER_Publish_TEST START')
     let testAbilityContext:common.UIAbilityContext;
+    testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
 
     /*
    * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_3200
