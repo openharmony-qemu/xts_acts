@@ -19,8 +19,9 @@ export function StrCat(value1: string, value2: string): string {
 }
 
 export class A {
-  a: number;
-  b: number;
+  public a: number;
+  public b: number;
+
   constructor() {
     this.a = 1;
     this.b = 2;
@@ -28,8 +29,9 @@ export class A {
 }
 
 export class B {
-  a: number;
-  b: number;
+  public a: number;
+  public b: number;
+
   constructor() {
     this.a = 3;
     this.b = 4;

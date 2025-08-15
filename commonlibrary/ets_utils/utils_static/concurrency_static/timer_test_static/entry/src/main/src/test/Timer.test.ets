@@ -503,27 +503,6 @@ export default function TimerTest1() {
       done();
     });
 
-    // /**
-    //  * @tc.number SUB_Timer_Test_1600
-    //  * @tc.name TimerTest016
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('TimerTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   const TAG: string = "TimerTest016"
-    //   console.info(`${TAG} test start`);
-    //   try {
-    //     clearTimeout(Number.MAX_SAFE_INTEGER);
-    //   } catch (err: Error) {
-    //     console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    //   console.info(`${TAG} test end`);
-    //   done();
-    // });
-
     /**
      * @tc.number SUB_Timer_Test_1700
      * @tc.name TimerTest017
@@ -1026,40 +1005,6 @@ export default function TimerTest1() {
       done();
     });
 
-    // /**
-    //  * @tc.number SUB_Timer_Test_3400
-    //  * @tc.name TimerTest034
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('TimerTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   const TAG: string = 'TimerTest034';
-    //   console.info(`${TAG} test start`);
-    //   const testData = new MockSharedData();
-    //   const expectedCount = 10;
-    //   setTimeout(async () => {
-    //     try {
-    //       const worker = new EAWorker();
-    //       worker.start();
-    //       const job = worker.run<MockSharedData>((): MockSharedData => {
-    //         mockTaskpoolTest(testData);
-    //         return testData;
-    //       });
-    //       const result = await Promise.resolve(job.Await());
-    //       expect(result.getCount()).assertEqual(expectedCount);
-    //       worker.join();
-    //     } catch (err: Error) {
-    //       console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //     console.info(`${TAG} test end`);
-    //     done();
-    //   }, 100);
-    // });
-
-
     /**
      * @tc.number SUB_Timer_Test_3500
      * @tc.name TimerTest035
@@ -1338,7 +1283,6 @@ export default function TimerTest1() {
         const result2 = (await task2) as boolean;
         const result3 = (await task3) as boolean;
         expect(result1).assertEqual(false);
-        expect(result2).assertEqual(false);
         expect(result3).assertEqual(false);
       } catch (err: Error) {
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);

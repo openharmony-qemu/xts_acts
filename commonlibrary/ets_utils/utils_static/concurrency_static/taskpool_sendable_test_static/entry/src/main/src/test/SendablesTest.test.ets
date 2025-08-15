@@ -105,52 +105,7 @@ export default function SendablesTest() {
           expect(result).assertEqual('PASSED');
           done();
         })
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_005
-    //      * @tc.name: testSendableSimpleSharedArrayBuffer
-    //      * @tc.desc: checks sendable SharedArrayBuffer
-    //      * @tc.author: maxim-khramov
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 1
-    //      */
-    //     it('testSendableSimpleSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //       let result: Object = await testSendableSimpleSharedArrayBuffer();
-    //       expect(result).assertEqual('PASSED');
-    //       done();
-    //     })
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_006
-    //      * @tc.name: testSendableSimpleSharedArrayBufferAndUndefined
-    //      * @tc.desc: checks sendable SharedArrayBuffer|undefined
-    //      * @tc.author: maxim-khramov
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 1
-    //      */
-    //     it('testSendableSimpleSharedArrayBufferAndUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //       let result: Object = await testSendableSimpleSharedArrayBufferAndUndefined();
-    //       expect(result).assertEqual('PASSED');
-    //       done();
-    //     })
-    //
-    //     /**
-    //      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_007
-    //      * @tc.name: testSendableSimpleSharedArrayBufferAndNull
-    //      * @tc.desc: checks sendable SharedArrayBuffer|null
-    //      * @tc.author: maxim-khramov
-    //      * @tc.size: MediumTest
-    //      * @tc.type: Function
-    //      * @tc.level: Level 1
-    //      */
-    //     it('testSendableSimpleSharedArrayBufferAndNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //       let result: Object = await testSendableSimpleSharedArrayBufferAndNull();
-    //       expect(result).assertEqual('PASSED');
-    //       done();
-    //     })
-    //
+
         /**
          * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_008
          * @tc.name: testSendableSimpleCombined0

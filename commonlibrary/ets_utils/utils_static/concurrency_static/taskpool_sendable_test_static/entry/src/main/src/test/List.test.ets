@@ -17,7 +17,7 @@ import SendablesTest from './SendablesTest.test'
 import SendablesTestWithAlloc from './SendablesTestWithAlloc.test'
 import TaskGroupTest from './TaskGroupTest.test'
 import TaskPoolTest from './TaskPoolTest.test'
-import TaskPoolLibTest from './taskpoolLib.test'
+import TaskPoolLibTest from './TaskPoolLibTest.test'
 import TaskPoolStateTest from './TaskPoolStateTest.test'
 import TaskpoolTestTask from './TaskpoolTestTask.test'
 

@@ -79,7 +79,7 @@ export class GenericSendable<T> {
 
 
 export class CollectionHolder {
-  e: Array<number> = new Array<number>();
+  e: Array<number> = [];
 }
 
 
@@ -99,5 +99,5 @@ export class NumberContainerArray {
 /*
 */
 export class OuterInitializerContainer {
-  value: number = myValue;
+  public value: number = myValue;
 }

@@ -50,10 +50,10 @@ export function transferAtomics(arg1: Int32Array): string {
   return res;
 }
 
-export function setCloneListTest(arrayBuffer: Array<number>): Int32Array {
+export function setCloneListTest(arrayBuffer: number[]): Int32Array {
 
   let view: Int32Array = new Int32Array(arrayBuffer);
-  let arr: Array<number> = new Array<number>(5, 6, 7, 8);
+  let arr: number[] = new Array<number>(5, 6, 7, 8);
   for (let i: number = 0; i < arr.length; i++) {
     view[i] = arr[i];
   }
@@ -107,8 +107,7 @@ export function testTaskPool(): void {
     for (let i: number = 1; i <= 10; i++) {
       taskpool.cancel(task1);
     }
-  }
-  catch(e: Error) {
+  }catch(e: Error) {
     console.info('taskpool catch error: ' + e);
   }
 }
@@ -127,9 +126,9 @@ export function Sum(value1: number, value2: number): number {
   return value1 + value2;
 }
 
-export function printArgsFunc(Sum: (a: number, b: number) => number, num1: number, num2: number): number {
+export function printArgsFunc(sum: (a: number, b: number) => number, num1: number, num2: number): number {
 
-  let result: number = Sum(num1, num2)
+  let result: number = sum(num1, num2)
   return result;
 }
 
@@ -149,10 +148,11 @@ export function delaySum(value1: number, value2: number, delay: number): number 
 
 export function Add(value1: boolean, value2: boolean): boolean {
 
-  if (value1 && value2)
+  if (value1 && value2){
     return true;
-  else
+    else
     return false;
+  }
 }
 
 export function funcStrCat(value1: string, value2: string, value3: string): string {
@@ -162,7 +162,8 @@ export function funcStrCat(value1: string, value2: string, value3: string): stri
 
 export function arraySum(arg1: Array<number>, arg2: Array<number>): Array<number> {
 
-  let value: Array<number> = new Array<number>();
+  let value: number[] = [];
+  let value: number[] = [];
   value[0] = arg1[0] + arg2[0];
   value[1] = arg1[1] + arg2[1];
   return value;
@@ -284,27 +285,10 @@ export function isConcurrentTest1(): void {
 
 export function isConcurrentTest2(): void {}
 
-// export async function sequenceRunnerTest(): Promise<string> {
-//
-//   let finalString = '';
-//   let t: Array<taskpool.Task> = new Array<taskpool.Task>();
-//   for (let i = 0; i < 100; i++) {
-//     t[i] = new taskpool.Task(printArgs, i);
-//   }
-//
-//   let runner:taskpool.SequenceRunner = new taskpool.SequenceRunner('runner16');
-//   for (let i = 0; i < 20; i++) {
-//     if (i % 2 == 1) {
-//       finalString += await (async () => runner.execute(t[i]))() + ',';//line:304
-//     }
-//   }
-//   return finalString;
-// }
-
 export async function sequenceRunnerTest(): Promise<string> {
 
   let finalString = '';
-  let t: Array<taskpool.Task> = new Array<taskpool.Task>();
+  let t: taskpool.Task[] = new Array<pool.Task>();
   for (let i = 0; i < 100; i++) {
     t[i] = new taskpool.Task(printArgs, i);
   }
@@ -322,7 +306,7 @@ export async function sequenceRunnerTest(): Promise<string> {
 export async function sequenceRunnerPriorityTest(): Promise<string> {
 
   let finalString = '';
-  let t: Array<taskpool.Task> = new Array<taskpool.Task>()
+  let t: taskpool.Task[] = [];
   for (let i = 0; i < 100; i++) {
     t[i] = new taskpool.Task(printArgs, i);
   }
@@ -360,29 +344,6 @@ export class CancelAndExecuteDelayed{
     })
   }
 }
-
-// export function errorManageTest(): void { //errorManager 是DFX的接口，1,2可能是没有的，删除
-//
-//   let oldObserver = (reason: Error, promise: Promise<string>): void => {
-//     console.log('This is oldObserver');
-//   };
-//   errorManager.on('unhandledRejection', oldObserver);  //errorManager 是DFX的接口，1,2可能是没有的，删除
-//   errorManager.off('unhandledRejection');
-//   let t = Date.now();
-//   while (Date.now() - t <= 1000){
-//   }
-//   new Promise<string>((res, rej): Promise<void> => {//line:380
-//     rej('rejError')
-//   }).then(() => {
-//     throw new Error('resError');
-//   }).catch(() => {
-//     throw new Error('catchError');
-//   });
-//   let observer = (reason: Error, promise: Promise<string>) => {
-//     console.log('This is observer, reject reason is ', reason);
-//   };
-//   errorManager.on('unhandledRejection', observer);
-// }
 
 export function dealHashMapTest(hashMap:HashMap<string, number>): HashMap<string, number> {
 
@@ -461,17 +422,6 @@ export function sendableClassTest(classT : SendableClassTest) : number {
   return num;
 }
 
-// export async function promiseTest(value: number): Promise<number> {
-//   let promise = Promise.resolve();
-//   await new Promise<number>((resolve) => {
-//     setTimeout(() => {
-//       resolve(1);
-//     }, 200);
-//   });
-//   promise.then(() => {});//line:477
-//   let num: number = multiplyFunc(value);
-//   return num;
-// }
 
 export async function promiseTest(value: number): Promise<number> {
   await new Promise<number>((resolve) => {
@@ -483,10 +433,3 @@ export async function promiseTest(value: number): Promise<number> {
   return multiplyFunc(value);
 }
 
-// export async function measureTest(): Promise<boolean> {
-//   let textWidth: number = MeasureText.measureText({
-//     textContent: 'Hello World',
-//     fontSize: '150px'
-//   });
-//   return textWidth != 0;
-// }

@@ -103,7 +103,9 @@ export function testSendableSimpleArrayBuffer(): Promise<string> {
 async function testSendableSimpleArrayBufferImpl(): Promise<string> {
   let input: ArrayBuffer = new ArrayBuffer(5);
   let srcView = new DataView(input);
-  for(let i = 0; i < 5; i++) srcView.setInt8(i, i);
+  for(let i = 0; i < 5; i++) {
+    srcView.setInt8(i, i);
+  }
 
   let job: BypassFunctionType<ArrayBuffer> = bypassFunction;
 

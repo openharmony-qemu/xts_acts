@@ -22,8 +22,8 @@ export function check<T>(testName: string, p: Promise<T>): Promise<string> {
       hilog.info(0x0000, testName, 'passed check for test');
       return 'PASSED';
     }, (e: NullishType) => {
-      const message = (e as BusinessError).message
-      const stack = (e as BusinessError).stack
+    const message = (e as BusinessError).message
+    const stack = (e as BusinessError).stack
     hilog.info(0x0000, testName, 'Test failed: ' + '\nError message: ' + message + '\nStack: \n' + stack);
     return 'FAILED: ' + '\nError message: ' + message + '\nStack: \n' + stack;
   })
@@ -36,28 +36,34 @@ export function check_negative<T>(testName: string, p: Promise<T>): Promise<stri
       hilog.info(0x0000, testName, 'Test failed: ' + 'Expected Error was not caught');
       return 'FAILED: ' + 'Expected Error was not caught'
     }, (e: NullishType) => {
-    hilog.info(0x0000, testName, '\nExpected Error message: ' + (e as BusinessError).message + '\nStack: \n' + (e as BusinessError).stack);
+    hilog.info(0x0000, testName,
+      '\nExpected Error message: ' + (e as BusinessError).message + '\nStack: \n' + (e as BusinessError).stack);
     return 'PASSED';
   })
 }
 
 export function compareBuffers(source: ArrayBuffer, target: ArrayBuffer): boolean {
-  if(source.byteLength != target.byteLength) return false;
+  if (source.byteLength != target.byteLength) {
+    return false;
+  }
 
   let srcView = new DataView(source, 0, source.byteLength);
   let trgView = new DataView(target, 0, target.byteLength);
 
-  for(let i = 0; i< srcView.byteLength; i++) {
-    if(srcView.getInt8(i) == trgView.getInt8(i)) continue;
-    return false;
+  for (let i = 0; i < srcView.byteLength; i++) {
+    if (srcView.getInt8(i) == trgView.getInt8(i)) {
+      continue;
+      return false;
+    }
   }
 
   return true;
 }
 
-export async function skipConditional(reasonToSkip: string, requiredToSkip: boolean, runIfNotSkip: () =>  Promise<string> ): Promise<string> {
+export async function skipConditional(reasonToSkip: string, requiredToSkip: boolean,
+  runIfNotSkip: () => Promise<string>): Promise<string> {
   // NOTE requiredToSkip allows simple reliable way to toggle skip on and off when experimenting and debugging
-  if(requiredToSkip) {
+  if (requiredToSkip) {
     hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', 'skip test case: ' + reasonToSkip);
     return 'PASSED';
   }

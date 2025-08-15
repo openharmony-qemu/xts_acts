@@ -14,8 +14,8 @@
  */
 
 class Ring {
-  buffer1: string = 'Twas brillig, and the slithy toves. Did gyre and gimble in the wabe: All mimsy were the borogoves, And the mome raths outgrabe.';
-  buffer2: string = 'Beware the Jabberwock, my son! The jaws that bite, the claws that catch! Beware the Jubjub bird, and shun The frumious Bandersnatch!';
+ private buffer1: string = 'Twas brillig, and the slithy toves. Did gyre and gimble in the wabe: All mimsy were the borogoves, And the mome raths outgrabe.';
+ private buffer2: string = 'Beware the Jabberwock, my son! The jaws that bite, the claws that catch! Beware the Jubjub bird, and shun The frumious Bandersnatch!';
 
   link: Ring|null;
 

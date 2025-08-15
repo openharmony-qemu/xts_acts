@@ -15,8 +15,8 @@
 
 
 export class SendableClass {
-  num: number;
-  para: undefined;
+  public num: number;
+  public para: undefined;
   constructor(num: number) {
     this.num = num;
   }
@@ -26,19 +26,19 @@ export class SendableClass {
 }
 
 export class SimpleSendable {//implements lang.ISendable
-  digit: number;
+  public digit: number;
 
   constructor(value: number) {
     this.digit = value;
   }
 }
 
-class sendableArrayClass {
-  arr : Array<number>  = new Array<number>(100);
+class SendableArrayClass {
+  arr : number[]  = new Array<number>(100);
 }
 
 function sendableArrayFunc() : number {
-  let arr : Array<number> = new Array<number>(100);
+  let arr : number[] = new Array<number>(100);
   return arr[0];
 }
 
@@ -59,24 +59,24 @@ export class SendableClassTest {
   }
 }
 
-function SendableFunctionTop(): number {
+function sendableFunctionTop(): number {
   let num = 100;
   return num;
 }
 
 class SendableClassTop {
-  num :number = 200;
+  public num :number = 200;
   say() {
     return this.num;
   }
 }
 
 export function sendableFunc(): number {
-  let num : number = SendableFunctionTop();
+  let num : number = sendableFunctionTop();
   const class1 = new SendableClassTop();
   num += class1.say();
   num += sendableArrayFunc();
-  let arr = new sendableArrayClass().arr;
+  let arr = new SendableArrayClass().arr;
   num += arr[0]
   return num;
 }

@@ -937,35 +937,6 @@ export default function TaskPoolLibTest() {
         done();
       })
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_042
-    //  * @tc.name      : TaskPoolTestClass042
-    //  * @tc.desc
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
-    //  */
-    // it('TaskPoolTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let isTerminate: boolean = false;
-    //     let result: Array<number> = new Array<number>(10);
-    //     taskpool.execute(arraySum, new Array<number>(1, 2), new Array<number>(3, 4))
-    //       .then((ret: Array<number>): void => {
-    //         result = ret;
-    //         isTerminate = true;
-    //       }).catch((e:Error)=>{
-    //       isTerminate = true;
-    //       console.info('======================TaskPoolTestClass042',e.message)
-    //     })
-    //
-    //     while (!isTerminate) {
-    //       await waitWithPromiseCase();
-    //     }
-    //     expect(result[0]).assertEqual(4);
-    //     expect(result[1]).assertEqual(6);
-    //     done();
-    //   })
-
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_043
      * @tc.name      : TaskPoolTestClass043
@@ -1372,38 +1343,6 @@ export default function TaskPoolLibTest() {
         done();
       })
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0057
-    //  * @tc.name      : TaskPoolTestClass057
-    //  * @tc.desc      : duration for taskpool
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
-    //  */
-    // it('TaskPoolTestClass057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let totalDuration: number = 0;
-    //     let cpuDuration: number = 0;
-    //     let ioDuration: number = 0;
-    //     let result: number = 101;
-    //
-    //     let task: taskpool.Task = new taskpool.Task(testString, 'hello');
-    //     let temp: NullishType = await taskpool.execute(task);
-    //     result = temp as number
-    //     hilog.info(0x0000, 'TaskPoolTestClass057', '%{public}s', '[cf]task.result:' + result);
-    //     expect(result < 100.0).assertTrue();
-    //     totalDuration = task.totalDuration;
-    //     cpuDuration = task.cpuDuration;
-    //     ioDuration = task.ioDuration;
-    //     hilog.info(0x0000, 'TaskPoolTestClass057', '%{public}s', '[cf]task.totalDuration:' + totalDuration);
-    //     expect(totalDuration != 0).assertTrue();
-    //     hilog.info(0x0000, 'TaskPoolTestClass057', '%{public}s', '[cf]task.cpuDuration:' + cpuDuration);
-    //     expect(cpuDuration != -1).assertTrue();
-    //     hilog.info(0x0000, 'TaskPoolTestClass057', '%{public}s', '[cf]task.ioDuration:' + ioDuration);
-    //     expect(ioDuration != 0).assertTrue();
-    //     done();
-    //   })
-
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0058
      * @tc.name      : TaskPoolTestClass058
@@ -1420,8 +1359,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass059
-     * @tc.name      : Async Function about priority task
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_059
+     * @tc.name      : TaskPoolTestClass059
      * @tc.desc      : Execute priority tasks
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1460,8 +1399,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass060
-     * @tc.name      : Async function execute task
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_060
+     * @tc.name      : TaskPoolTestClass060
      * @tc.desc      : Execute async function
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1491,8 +1430,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass062
-     * @tc.name      : Async function execute taskGroup
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_062
+     * @tc.name      : TaskPoolTestClass062
      * @tc.desc      : Execute async function
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1520,8 +1459,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass063
-     * @tc.name      : Async function execute taskGroup
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_063
+     * @tc.name      : TaskPoolTestClass063
      * @tc.desc      : Execute async function
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1552,8 +1491,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass064
-     * @tc.name      : SetTransferList for task
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_064
+     * @tc.name      : TaskPoolTestClass064
      * @tc.desc      : Set transfer list for the task
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1582,7 +1521,7 @@ export default function TaskPoolLibTest() {
       })
 
     // /**
-    //  * @tc.number    : TaskPoolTestClass065
+    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_065
     //  * @tc.name      : Async Function GetTaskPoolInfo
     //  * @tc.desc      : Get the taskPoolInfo
     //  * @tc.size      : MEDIUM
@@ -1656,8 +1595,8 @@ export default function TaskPoolLibTest() {
     // })
 
     /**
-     * @tc.number    : TaskPoolTestClass066
-     * @tc.name      : exeute task at taskpool thread
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_066
+     * @tc.name      : TaskPoolTestClass066
      * @tc.desc      : exeute task at taskpool thread
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1682,8 +1621,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass067
-     * @tc.name      : ArrayBuffer with taskpool
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_067
+     * @tc.name      : ATaskPoolTestClass067l
      * @tc.desc      : transfer ArrayBuffer with taskpool
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -1702,8 +1641,8 @@ export default function TaskPoolLibTest() {
       })
 
     /**
-     * @tc.number    : TaskPoolTestClass068
-     * @tc.name      : ArrayBuffer and Atomics  with taskpool
+     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_068
+     * @tc.name      : TaskPoolTestClass068
      * @tc.desc      : transfer ArrayBuffer and Atomics with taskpool
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -3174,45 +3113,6 @@ export default function TaskPoolLibTest() {
         done();
       })
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0126
-    //  * @tc.name      : TaskPoolTestClass126
-    //  * @tc.desc      : duration for taskpool
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
-    //  */
-    // it('TaskPoolTestClass126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let task1: taskpool.Task = new taskpool.Task(delay, 100.0);
-    //     let task2: taskpool.Task = new taskpool.Task(delay, 200.0);
-    //     let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-    //     taskGroup.addTask(task1);
-    //     taskGroup.addTask(task2);
-    //     expect(task1.totalDuration < 5).assertTrue();
-    //     expect(task1.cpuDuration < 5).assertTrue();
-    //     expect(task1.ioDuration < 5).assertTrue();
-    //
-    //     let terminate: boolean = false;
-    //     taskpool.execute(taskGroup).then((res: Promise<number>): void => {
-    //       terminate = true;
-    //       expect(task1.totalDuration > 0).assertTrue();
-    //       expect(task1.ioDuration).assertEqual(0);
-    //       expect(task1.totalDuration).assertEqual(task1.cpuDuration);
-    //     });
-    //
-    //     let exeution: boolean = false;
-    //     while (!terminate) {
-    //       if (!exeution) {
-    //         expect(task1.totalDuration < 5).assertTrue();
-    //         expect(task1.ioDuration < 5).assertTrue();
-    //         exeution = true;
-    //       }
-    //       await waitWithPromiseCase();
-    //     }
-    //     done();
-    //   })
-
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0127
      * @tc.name      : TaskPoolTestClass127
@@ -4517,34 +4417,6 @@ export default function TaskPoolLibTest() {
         done();
       })
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0174
-    //  * @tc.name      : TaskPoolTestClass174
-    //  * @tc.desc      : taskpool repeatedly calling Cancel and ExecuteDelayed, only last task can execute
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
-    //  */
-    // it('TaskPoolTestClass174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let num = 100;
-    //     let base1: CancelAndExecuteDelayed = new CancelAndExecuteDelayed(num);
-    //     base1.postRequest();
-    //     let i = 0;
-    //     let time = setInterval((): void => {
-    //       base1.postRequest();
-    //       i++;
-    //     }, 500);
-    //     setTimeout((): void => {
-    //       clearInterval(time);
-    //     }, 2000);
-    //     while (!base1.isTerminate) {
-    //       await waitWithPromiseCase();
-    //     }
-    //     expect(base1.i).assertEqual(1);
-    //     expect(base1.res).assertEqual(num);
-    //     done();
-    //   })
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0176

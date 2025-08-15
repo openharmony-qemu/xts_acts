@@ -14,10 +14,10 @@
  */
 
 export class Nested {
-  data: number = 12345678;
+  public data: number = 12345678;
 }
 
 export class NestedWithNullable {
-  data: string|null|undefined = undefined
+  public data: string | null | undefined = undefined
 }
 

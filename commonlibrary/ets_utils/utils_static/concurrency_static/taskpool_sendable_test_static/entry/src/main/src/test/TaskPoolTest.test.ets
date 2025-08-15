@@ -70,21 +70,6 @@ export default function TaskPoolTest() {
       done();
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_004
-    //  * @tc.name: testTwoTasksChained
-    //  * @tc.desc: checks task pool with two tasks chained
-    //  * @tc.author: oleg-ignatenko
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 2
-    //  */
-    // it('testTwoTasksChained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   let result: Object = await testTwoTasksChained();
-    //   expect(result).assertEqual('PASSED');
-    //   done();
-    // })
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_005
      * @tc.name: testManyTasksChained
