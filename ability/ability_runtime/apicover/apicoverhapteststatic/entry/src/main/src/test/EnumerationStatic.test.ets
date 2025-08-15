@@ -861,6 +861,58 @@ export default function EnumerationStaticTest() {
     })
 
     /*
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2500
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2500
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.DESTINATION_PLUGIN_ABILITY.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.pluginAbility').assertEqual(wantConstant.Params.DESTINATION_PLUGIN_ABILITY + '');
+      done();
+    })
+
+    /*
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2600
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2600
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.APP_LAUNCH_TRUSTLIST.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.appLaunchTrustList').assertEqual(wantConstant.Params.APP_LAUNCH_TRUSTLIST + '');
+      done();
+    })
+
+    /*
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2700
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2700
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.ATOMIC_SERVICE_SHARE_ROUTER.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.atomicservice.shareRouter').assertEqual(wantConstant.Params.ATOMIC_SERVICE_SHARE_ROUTER + '');
+      done();
+    })
+
+    /*
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2800
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2800
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Flags.FLAG_ABILITY_ON_COLLABORATE.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect(String(0x00002000)).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
+      done();
+    })
+
+    /*
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.size:   MediumTest
