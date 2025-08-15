@@ -35,17 +35,18 @@ class ConnectOptions implements common.ConnectOptions {
   public isFailed: boolean = false;
   public failedCode: number = -1;
 
-  onConnect(elementName: ElementName, remote: rpc.IRemoteObject) {
+  onConnect: (elementName: ElementName, remote: rpc.IRemoteObject) => void = (elementName: ElementName,
+    remote: rpc.IRemoteObject) => {
     hilog.info(0x0000, tag, 'ConnectOptions onConnect');
     this.isConnect = true;
   }
 
-  onDisconnect(elementName: ElementName) {
+  onDisconnect: (elementName: ElementName) => void = (elementName: ElementName) => {
     hilog.info(0x0000, tag, 'ConnectOptions onDisconnect');
     this.isDisConnect = true;
   }
 
-  onFailed(code: int) {
+  onFailed: (code: int) => void = (code: int) => {
     hilog.info(0x0000, tag, `ConnectOptions onFailed code: ${code}`);
     this.isFailed = true;
     this.failedCode = code;
