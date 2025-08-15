@@ -1,7 +1,4 @@
-// Copyright 2023 YourCompany. All rights reserved.
-// SPDX-License-Identifier: MIT
-
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import accessibility from '@ohos.accessibility'
@@ -27,7 +24,7 @@ export default function abilityTest() {
     * @tc.size    MEDIUMTEST
     * @tc.type    User
     * @tc.level   Level 1
-         */
+    */
     it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0100');
       let eventType : accessibility.EventType = 'accessibilityFocus';
