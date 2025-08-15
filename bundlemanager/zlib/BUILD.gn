@@ -27,7 +27,7 @@ group("zlib") {
       "actszlibtest:ActsZlibTest",
       "actsbmszlibchecksumteststatic:ActsBmsZlibChecksumStaticTest",
       "actsgzipdecompressionteststatic:ActsGzipDecompressionStaticTest",
-      "actszipfileandunzipfileteststatic:ActsZipFileAndUnzipFileStaticTest"
+      "actszipfileandunzipfileteststatic:ActsZipFileAndUnzipFileStaticTest",
       "actszlibinterfaceteststatic:ActsZlibInterfaceStaticTest",
     ]
   }
