@@ -108,7 +108,7 @@ import {
   VerticalAlign,
   
   AlignRuleOption,
-  // Point,
+
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
@@ -168,53 +168,47 @@ struct ConstraintSizePage {
     })
   }
 
-  // @Styles
-  // commonStyle(){
-  //   .constraintSize(this._constraintSize)
-  //   .width(this.childWidth)
-  //   .height(this.childHeight)
-  //   .key(this.componentKey)
-  // }
+
 
   build() {
     Row() {
       Column() {
         if (this.targetView == 'Button') {
-          Button('button1')/* .commonStyle() */
+          Button('button1')
         } else if (this.targetView == 'Text') {
-          Text('text1')/* .commonStyle() */
+          Text('text1')
         } else if (this.targetView == 'AlphabetIndexer') {
-          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })/* .commonStyle() */
+          AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
         } else if (this.targetView == 'Blank') {
-          Blank().backgroundColor(Color.Yellow)/* .commonStyle() */
+          Blank().backgroundColor(Color.Yellow)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox()/* .commonStyle() */
+          Checkbox()
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' })/* .commonStyle() */
+          CheckboxGroup({ group: 'checkboxGroup' })
         } else if (this.targetView == 'DataPanel') {
-          DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })/* .commonStyle() */
+          DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          })/* .commonStyle() */
+          })
         } else if (this.targetView == 'Divider') {
-          Divider()/* .commonStyle() */
+          Divider()
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            /* .commonStyle() */
+            
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon'))/* .commonStyle() */
+          Image($r('app.media.icon'))
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ])/* .commonStyle() */
+            ])
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress()/* .commonStyle() */
+          LoadingProgress()
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
@@ -222,32 +216,23 @@ struct ConstraintSizePage {
             loop: Number.MAX_VALUE,
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          })/* .commonStyle() */
+          })
         } else if (this.targetView == 'Navigation') {
-          // Navigation() {
-          // }/* .commonStyle() */
+
         } else if (this.targetView == 'Menu') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-          }.backgroundColor(Color.Yellow)/* .commonStyle() */
+          }.backgroundColor(Color.Yellow)
         } else if (this.targetView == 'NavRouter') {
-          // NavRouter() {
-          //   Row() {
-          //     Image($r('app.media.icon'))
-          //   }
-          //
-          //   NavDestination() {
-          //     Text('NavDestination').fontSize(10)
-          //   }
-          // }/* .commonStyle() */
+
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })/* .commonStyle() */
+          Progress({ value: 10, type: ProgressType.Eclipse })
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling')/* .commonStyle() */
+          QRCode('Running Marquee starts rolling')
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' })/* .commonStyle() */
+          Radio({ value: 'Radio1', group: 'radioGroup' })
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false })/* .commonStyle() */
+          Rating({ rating: 3.5, indicator: false })
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -255,12 +240,12 @@ struct ConstraintSizePage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Search') {
-          Search()/* .commonStyle() */
+          Search()
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa' },
-            { value: 'bbb' }])/* .commonStyle() */
+            { value: 'bbb' }])
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -269,7 +254,7 @@ struct ConstraintSizePage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            /* .commonStyle() */
+            
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -277,77 +262,69 @@ struct ConstraintSizePage {
                 Text('Page One')
               }
             }
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          })/* .commonStyle() */
+          })
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            /* .commonStyle() */
+            
         } else if (this.targetView == 'TextInput') {
-          TextInput({ placeholder: 'input your word...' })/* .commonStyle() */
+          TextInput({ placeholder: 'input your word...' })
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })/* .commonStyle() */
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            /* .commonStyle() */
+            
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          })/* .commonStyle() */
+          })
         } else if (this.targetView == 'Toggle') {
-          Toggle({ type: ToggleType.Switch, isOn: false })/* .commonStyle() */
+          Toggle({ type: ToggleType.Switch, isOn: false })
         } else if (this.targetView == 'Web') {
-          // Web({ src: 'www.example.com', controller: new WebController() })/* .commonStyle() */
+
         } else if (this.targetView == 'Circle') {
-          Circle()/* .commonStyle() */
+          Circle()
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()/* .commonStyle() */
+          Ellipse()
         } else if (this.targetView == 'Line') {
           Line()
-            /* .commonStyle() */
+            
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()/* .commonStyle() */
+          Polyline()
         } else if (this.targetView == 'Polygon') {
-          Polygon()/* .commonStyle() */
+          Polygon()
         } else if (this.targetView == 'Path') {
-          Path()/* .commonStyle() */
+          Path()
         } else if (this.targetView == 'Rect') {
-          Rect()/* .commonStyle() */
+          Rect()
         } else if (this.targetView == 'Shape') {
-          // Shape() {
-          //   Rect().width(100).height(50)
-          // }/* .commonStyle() */
+
         } else if (this.targetView == 'Badge') {
-          // Badge({
-          //   count: 50,
-          //   style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
-          // }) {
-          //   Button('message')
-          //     .width(100).height(50).backgroundColor(0x317aff)
-          // }/* .commonStyle() */
+   
         } else if (this.targetView == 'Column') {
           Column() {
             Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -358,7 +335,7 @@ struct ConstraintSizePage {
                 Row().width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -372,7 +349,7 @@ struct ConstraintSizePage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          /* .commonStyle() */
+          
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'GridItem') {
           Grid() {
@@ -382,11 +359,11 @@ struct ConstraintSizePage {
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
-            }.rowStart(1).rowEnd(4)/* .commonStyle() */
+            }.rowStart(1).rowEnd(4)
           }
         } else if (this.targetView == 'List') {
           List() {
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -394,7 +371,7 @@ struct ConstraintSizePage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }/* .commonStyle() */
+            }
           }
           .width(400)
           .height(400)
@@ -402,22 +379,18 @@ struct ConstraintSizePage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              /* .commonStyle() */
+              
           }.backgroundColor(Color.Pink)
           .width(400)
           .height(400)
         } else if (this.targetView == 'Navigator') {
-          // Navigator() {
-          //   Text('Go to back page').width('100%').height(20)
-          // }/* .commonStyle() */.backgroundColor(Color.Red)
+
         } else if (this.targetView == 'Panel') {
-          // Panel(true) {
-          //   Text('Text')
-          // }.backgroundColor(Color.Yellow)/* .commonStyle() */
+
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -429,13 +402,13 @@ struct ConstraintSizePage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               })
               .id('constraintSize')
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Row') {
-          Row()/* .commonStyle() */
+          Row()
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -447,7 +420,7 @@ struct ConstraintSizePage {
                   .textAlign(TextAlign.Center)
               }, (item: string) => item)
             }.width('100%')
-          }.scrollBar(BarState.On)/* .commonStyle() */
+          }.scrollBar(BarState.On)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -462,10 +435,10 @@ struct ConstraintSizePage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Stack') {
           Stack() {
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach(['1', '2', '3'], (item: string) => {
@@ -474,18 +447,18 @@ struct ConstraintSizePage {
           }
           .indicator(true)
           .backgroundColor(Color.White)
-          /* .commonStyle() */
+          
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Column().width('100%').height('100%').backgroundColor('#00CB87')
             }
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-            }.tabBar('Tabs1')/* .commonStyle() */
+            }.tabBar('Tabs1')
 
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
@@ -504,7 +477,7 @@ struct ConstraintSizePage {
                 }
               }
             }, (item: string) => item)
-          }/* .commonStyle() */
+          }
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -513,7 +486,7 @@ struct ConstraintSizePage {
               }
             }
             .backgroundColor(Color.Red)
-            /* .commonStyle() */
+            
           }
           .backgroundColor(Color.Yellow)
           .width(400)
@@ -526,7 +499,7 @@ struct ConstraintSizePage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            /* .commonStyle() */
+            
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -544,7 +517,7 @@ struct ConstraintSizePage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-              /* .commonStyle() */
+              
               .backgroundColor(Color.Yellow)
             }, (item: string) => item)
           }
@@ -560,7 +533,7 @@ struct ConstraintSizePage {
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }.rowStart(1).rowEnd(4)
-            /* .commonStyle() */
+            
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -570,7 +543,7 @@ struct ConstraintSizePage {
           Row() {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                /* .commonStyle() */
+                
             }.backgroundColor(Color.Yellow)
             .padding(0)
             .width(400)
@@ -583,7 +556,7 @@ struct ConstraintSizePage {
                 MenuItem({ content: 'MenuItem' } as MenuItemOptions).backgroundColor(Color.White).padding(0).margin(0)
               }
               .backgroundColor(Color.Pink)
-              /* .commonStyle() */
+              
               .padding(0)
               .margin(0)
             }

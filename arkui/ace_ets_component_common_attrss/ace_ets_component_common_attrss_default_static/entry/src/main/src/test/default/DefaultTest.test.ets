@@ -175,15 +175,7 @@ export default function defaultTest() {
       touchable: true
     }
   },
-    //    {
-    //    describe: 'ResponseRegion',
-    //    exceptView: ['RichText', 'Web'],
-    //    expectValue: {
-    //      responseRegion: {
-    //        x: '0.00vp', y: '0.00vp', width: '100.00%', height: '100.00%'
-    //      }
-    //    }
-    //  },
+
     {
       describe: 'HitTestBehavior',
       exceptView: ['RichText', 'Web'],

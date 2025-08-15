@@ -108,7 +108,7 @@ import {
   VerticalAlign,
   
   AlignRuleOption,
-  // Point,
+
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
@@ -169,23 +169,7 @@ struct DefaultFocusPage {
     })
   }
 
-  /**
-   * Set common style.
-   */
-  // @Styles
-  // commonStyle(){
-  //   .defaultFocus(this._defaultFocus)
-  //   .key(this.componentKey)
-  //   .onFocus(() => {
-  //     this.callback = 'onFocus'
-  //     console.info('[DefaultFocusPage] targetComponent onFocus called');
-  //   })
-  //   .onBlur(() => {
-  //     this.callback = 'onBlur'
-  //     console.info('[DefaultFocusPage] targetComponent onBlur called');
-  //   })
-  //   .focusable(true)
-  // }
+
 
   build() {
     Column() {
@@ -209,17 +193,17 @@ struct DefaultFocusPage {
           console.info('[DefaultFocusPage] targetComponent onBlur called');
         })
       if (this.targetView == 'Button') {
-        Button('Button').width(200).height(100)/* .commonStyle() */
+        Button('Button').width(200).height(100)
       } else if (this.targetView == 'TextInput') {
-        TextInput().width(200).height(100)/* .commonStyle() */
+        TextInput().width(200).height(100)
       } else if (this.targetView == 'TextArea') {
-        TextArea().width(200).height(100)/* .commonStyle() */
+        TextArea().width(200).height(100)
       } else if (this.targetView == 'Search') {
-        Search().width(200).height(100)/* .commonStyle() */
+        Search().width(200).height(100)
       } else if (this.targetView == 'Text') {
-        Text('Text').width(200).height(100)/* .commonStyle() */
+        Text('Text').width(200).height(100)
       } else if (this.targetView == 'Image') {
-        Image($r('app.media.icon')).width(200).height(100)/* .commonStyle() */
+        Image($r('app.media.icon')).width(200).height(100)
       } else if (this.targetView == 'List') {
         List() {
           ListItem() {
@@ -229,7 +213,7 @@ struct DefaultFocusPage {
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
           }
-        }.width(200).height(100).backgroundColor(Color.Blue)/* .commonStyle() */
+        }.width(200).height(100).backgroundColor(Color.Blue)
       } else if (this.targetView == 'Grid') {
         Grid() {
           GridItem() {
@@ -241,54 +225,54 @@ struct DefaultFocusPage {
               .textAlign(TextAlign.Center)
           }
         }
-        .width(200).height(100)/* .commonStyle() */
+        .width(200).height(100)
       } else if (this.targetView == 'Checkbox') {
-        Checkbox({ name: 'checkbox1' }).width(200).height(100)/* .commonStyle() */
+        Checkbox({ name: 'checkbox1' }).width(200).height(100)
       } else if (this.targetView == 'CheckboxGroup') {
-        CheckboxGroup().width(200).height(100)/* .commonStyle() */
+        CheckboxGroup().width(200).height(100)
       } else if (this.targetView == 'DatePicker') {
-        DatePicker({}).width(200).height(100)/* .commonStyle() */
+        DatePicker({}).width(200).height(100)
       } else if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .backgroundColor(Color.Blue).width(200).height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
         }.backgroundColor(Color.Yellow).width(200)
-        .height(300)/* .commonStyle() */
+        .height(300)
       } else if (this.targetView == 'MenuItem') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-            .width(200).height(300)/* .commonStyle() */
+            .width(200).height(300)
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'MenuItemGroup') {
         Menu() {
           MenuItemGroup({ header: 'MenuItemGroup' }) {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-          }.width(200).height(300)/* .commonStyle() */
+          }.width(200).height(300)
         }.backgroundColor(Color.Yellow).width(200).height(300)
       } else if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Rating') {
         Rating({ rating: 3.5 })
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Select') {
         Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
           { value: 'bbb', icon: '/common/public_icon.svg' }])
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Slider') {
         Slider()
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Stepper') {
         Stepper() {
           StepperItem() {
@@ -296,7 +280,7 @@ struct DefaultFocusPage {
               Text('Page One').focusable(true)
             }
           }
-        }/* .commonStyle() */
+        }
       } else if (this.targetView == 'StepperItem') {
         Stepper() {
           StepperItem() {
@@ -305,7 +289,7 @@ struct DefaultFocusPage {
                 .focusable(true)
             }
           }
-          /* .commonStyle() */
+          
           .backgroundColor(Color.Red)
           .width('100%')
           .height('100%')
@@ -314,26 +298,26 @@ struct DefaultFocusPage {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'TimePicker') {
-        TimePicker().width(200).height(300)/* .commonStyle() */
+        TimePicker().width(200).height(300)
       } else if (this.targetView == 'Toggle') {
         Toggle({ type: ToggleType.Switch }).width(200).height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Web') {
-        // Web({ src: '', controller: new WebController() })/* .commonStyle() */
+  
       } else if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: ['A', 'B', 'C', 'D'], selected: 0 })
           .width(200)
           .height(300)
-          /* .commonStyle() */
+          
       } else if (this.targetView == 'Column') {
         Column() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        /* .commonStyle() */
+        
       } else if (this.targetView == 'ColumnSplit') {
         ColumnSplit() {
           Text('1')
@@ -348,21 +332,21 @@ struct DefaultFocusPage {
             .backgroundColor(0xD2B48C)
             .textAlign(TextAlign.Center)
             .focusable(true)
-        }.width(200).height(300)/* .commonStyle() */
+        }.width(200).height(300)
       } else if (this.targetView == 'Counter') {
         Counter() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        /* .commonStyle() */
+        
       } else if (this.targetView == 'Flex') {
         Flex() {
           Button('Button')
         }
         .width(200)
         .height(300)
-        /* .commonStyle() */
+        
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,
@@ -373,7 +357,7 @@ struct DefaultFocusPage {
               Button('Button')
             }.width('100%').height('20vp')
           }
-          /* .commonStyle() */
+          
           .backgroundColor(Color.Yellow)
           .width('100%')
           .height('100%')
@@ -393,7 +377,7 @@ struct DefaultFocusPage {
                 }.width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-        }/* .commonStyle() */
+        }
       } else if (this.targetView == 'GridItem') {
         Grid() {
           GridItem() {
@@ -403,7 +387,7 @@ struct DefaultFocusPage {
               .width('100%')
               .height('100%')
               .textAlign(TextAlign.Center)
-          }.width(200).height(300)/* .commonStyle() */
+          }.width(200).height(300)
         }
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -418,7 +402,7 @@ struct DefaultFocusPage {
               .width('100%')
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
-          }/* .commonStyle() */
+          }
         }.width(200).height(300).listDirection(Axis.Vertical)
       } else if (this.targetView == 'ListItemGroup') {
         List({ space: 0, initialIndex: 0 }) {
@@ -430,7 +414,7 @@ struct DefaultFocusPage {
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
             }
-          }.backgroundColor(Color.Yellow)/* .commonStyle() */
+          }.backgroundColor(Color.Yellow)
         }
         .backgroundColor(Color.Pink)
         .width(300)
@@ -440,7 +424,7 @@ struct DefaultFocusPage {
         Row() {
           Button('Button')
         }
-        .backgroundColor(Color.Blue).width(200).height(300)/* .commonStyle() */
+        .backgroundColor(Color.Blue).width(200).height(300)
       } else if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('1')
@@ -455,7 +439,7 @@ struct DefaultFocusPage {
             .backgroundColor(0xD2B48C)
             .textAlign(TextAlign.Center)
             .focusable(true)
-        }.width(200).height(300)/* .commonStyle() */
+        }.width(200).height(300)
       } else if (this.targetView == 'Scroll') {
         Scroll(this.scroller) {
           Flex({ direction: FlexDirection.Column }) {
@@ -473,7 +457,7 @@ struct DefaultFocusPage {
               }
             }, (item: string) => item)
           }.margin({ right: 15 } as Margin)
-        }.width(200).height(300)/* .commonStyle() */
+        }.width(200).height(300)
       } else if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
@@ -490,12 +474,12 @@ struct DefaultFocusPage {
           Column() {
             Text('SideBarContainer content').fontSize(25)
           }.backgroundColor(Color.Orange)
-        }.width(200).height(300)/* .commonStyle() */
+        }.width(200).height(300)
       } else if (this.targetView == 'Stack') {
         Stack() {
           Button('Button')
         }
-        .backgroundColor(Color.Blue).width(200).height(300)/* .commonStyle() */
+        .backgroundColor(Color.Blue).width(200).height(300)
       } else if (this.targetView == 'Swiper') {
         Swiper() {
           ForEach(['1', '2', '3'], (item: string) => {
@@ -506,18 +490,18 @@ struct DefaultFocusPage {
         .backgroundColor(Color.White)
         .width(200)
         .height(300)
-        /* .commonStyle() */
+        
       } else if (this.targetView == 'Tabs') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
           }.tabBar('Tabs1')
-        }.backgroundColor(Color.Blue).width(200).height(300)/* .commonStyle() */
+        }.backgroundColor(Color.Blue).width(200).height(300)
       } else if (this.targetView == 'TabContent') {
         Tabs() {
           TabContent() {
             Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White).focusable(true)
-          }.tabBar('Tabs1')/* .commonStyle() */
+          }.tabBar('Tabs1')
         }.width(200).height(300)
       }
     }.width('100%').height('100%')

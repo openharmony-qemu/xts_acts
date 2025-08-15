@@ -129,12 +129,7 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        //  let result = await router.pushUrl({
-        //   url: obj.pageUrl,
-        //   params: {
-        //     view: obj
-        //   } as RouterParams
-        // });    
+  
         router.pushUrl({
           url: obj.pageUrl,
           params: {
@@ -142,7 +137,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        // console.info('push ' + obj.pageName + ' page result:' + JSON.stringify(result));
+        
         console.info('push ' + obj.pageName );
       }
     } catch (err) {
@@ -181,18 +176,7 @@ export default class Utils {
     } as RectValue
   }
 
-  // static getComponentRectByObj(obj: ESObject): RectValue {
-  //   console.info('[getInspectorByKey] current component is: ' + obj.$type);
-  //   let rectInfo: ESObject = JSON.parse('[' + obj.$rect + ']');
-  //   let rect_value: RectValue = {
-  //     left: Number(JSON.parse('[' + rectInfo[0] + ']')[0]),
-  //     top: Number(JSON.parse('[' + rectInfo[0] + ']')[1]),
-  //     right: Number(JSON.parse('[' + rectInfo[1] + ']')[0]),
-  //     bottom: Number(JSON.parse('[' + rectInfo[1] + ']')[1])
-  //   };
-  //   console.info(JSON.stringify(rect_value));
-  //   return rect_value;
-  // }
+
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);

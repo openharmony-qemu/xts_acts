@@ -30,27 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   parentWidth: number = 0;
-//   parentHeight: number = 0;
-//   parentComponentKey: string = '';
-// }
-//
-// class TestValue {
-//   describe: string = '';
-//   setValue: SetValue = new SetValue();
-//   expectValue: jsonx.JsonElement;
-// }
-//
-// class AlignItems {
-//   Row: VerticalAlign = VerticalAlign.Center;
-//   Column: HorizontalAlign = HorizontalAlign.Center;
-//   Flex: ItemAlign = ItemAlign.Auto;
-//   GridRow: ItemAlign = ItemAlign.Auto;
-// }
+
 
 class SetValue {
   defaultAlignItems: AlignItems = new AlignItems();
@@ -207,7 +187,7 @@ export default function alignSelfTest() {
           expect(rect.left).assertEqual(parentRect.left);
         } else if (data.testValue.describe == 'SetStretch') {
           //When alignSelf : ItemAlign.Stretch
-          // expect(Math.abs((rect.bottom - rect.top)- vp2px(parentHeight)) <= 1).assertTrue();
+          
         }
       } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn') {
         if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
@@ -228,7 +208,7 @@ export default function alignSelfTest() {
           expect(rect.right).assertEqual(parentRect.right);
         } else if (data.testValue.describe == 'SetStretch') {
           //When alignSelf : ItemAlign.Stretch
-          // expect(Math.abs((rect.right - rect.left)- vp2px(parentWidth)) <= 1).assertTrue();
+          
         }
       } else if (data.pageConfig.containerView == 'FlexRowReverse') {
         //Special parent component
@@ -250,7 +230,7 @@ export default function alignSelfTest() {
           expect(rect.right).assertEqual(parentRect.right);
         } else if (data.testValue.describe == 'SetStretch') {
           //When alignSelf : ItemAlign.Stretch
-          // expect(Math.abs((rect.bottom - rect.top)- vp2px(parentHeight)) <= 1).assertTrue();
+     
         }
       } else if (data.pageConfig.containerView == 'FlexColumnReverse') {
         //Special parent component
@@ -272,7 +252,7 @@ export default function alignSelfTest() {
           expect(rect.right).assertEqual(parentRect.right);
         } else if (data.testValue.describe == 'SetStretch') {
           //When alignSelf : ItemAlign.Stretch
-          // expect(Math.abs((rect.right - rect.left)- vp2px(parentWidth)) <= 1).assertTrue();
+          
         }
       }
     })

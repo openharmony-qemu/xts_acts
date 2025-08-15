@@ -60,33 +60,31 @@ export default function enabledTest() {
     'Divider',
     'Gauge',
     'Image',
-    //    'ImageAnimator',
+
     'LoadingProgress',
     'Marquee',
-    //    'Menu',
+
     'MenuItem',
-    //    'MenuItemGroup',
-    //    'Navigation',
+
     'NavRouter',
     'ScrollBar',
-    //    'RowSplit',
+
     'Row',
     'RelativeContainer',
     'Navigator',
-    //    'ListItemGroup',
+
     'GridItem',
-    //    'GridCol',
-    //    'ColumnSplit',
+
     'TextTimer',
     'Stepper',
     'StepperItem',
     'Flex',
-    //    'FlowItem',
+
     'Progress',
     'QRCode',
     'Radio',
     'Rating',
-    //    'Search',
+
     'Select',
     'Slider',
     'Text',
@@ -99,18 +97,17 @@ export default function enabledTest() {
     'Badge',
     'Column',
     'Counter',
-    //    'GridRow',
+
     'Grid',
     'List',
     'ListItem',
     'Panel',
     'Refresh',
     'Scroll',
-    //    'SideBarContainer',
+
     'Stack',
-    //    'Swiper',
+
     'Tabs',
-    //    'TabContent',
     'WaterFlow',
     'Circle',
     'Ellipse',

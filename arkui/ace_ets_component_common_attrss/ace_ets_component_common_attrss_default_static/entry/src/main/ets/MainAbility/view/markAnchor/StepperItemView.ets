@@ -32,23 +32,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-// @Styles
-// function itemStyle() {
-//   .width(336)
-//   .height(621)
-//   .margin({ top: 48, left: 12 } as Margin)
-//   .borderRadius(24)
-//   .backgroundColor('#FFFFFF')
-// }
-//
-// @Extend(Text)
-// function itemTextStyle() {
-//   .fontColor('#182431')
-//   .fontSize(36)
-//   .fontWeight(500)
-//   .opacity(0.4)
-//   .margin({ top: 82, bottom: 40 } as Margin)
-// }
+
 
 
 @Component
@@ -73,13 +57,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-            //.itemTextStyle()
+           
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }//.itemStyle()
+        }
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)
@@ -91,13 +75,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-            //.itemTextStyle()
+           
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }//.itemStyle()
+        }
       }
       .width(this.subassemblyWidth)
       .height(this.subassemblyHeight)

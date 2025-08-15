@@ -93,14 +93,6 @@ export default function defaultFlexTest() {
       flexGrow: 0
     }
   },
-    //    {
-    //    describe: 'FlexShrink',
-    //    exceptView: ['Blank'],
-    //    expectValue: {
-    //      flexShrinkRowColumn: 0,
-    //      flexShrinkFlex: 1
-    //    }
-    //  },
     {
       describe: 'AlignSelf',
       expectValue: {

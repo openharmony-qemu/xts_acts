@@ -39,14 +39,7 @@ export default function AlignRulesTest() {
   let parentHeight = 300;
   let subassemblyWidth = 100;
   let subassemblyHeight = 100;
-  // let subassemblyCenter: AlignRuleOption = {
-  //   center: {
-  //     anchor: '__container__', align: VerticalAlign.Center
-  //   },
-  //   middle: {
-  //     anchor: '__container__', align: HorizontalAlign.Center
-  //   }
-  // }
+
   //Page config, this param is required.
   let pageConfig: PageConfig = {
     testName: 'testAlignRules',
@@ -56,193 +49,13 @@ export default function AlignRulesTest() {
     parentHeight: parentHeight,
     subassemblyWidth: subassemblyWidth,
     subassemblyHeight: subassemblyHeight,
-    // subassemblyCenter: subassemblyCenter,
+    
     parentComponentKey: 'parentComponentKey',
     referenceComponentKey: 'referenceComponentKey'
   }
 
   //Test values, looped to create cases, this param is required.
-  let testValues: TestValue[] = [// {
-  //   describe: 'ParentAlignTopLeftJustifying',
-  //   setValue: {
-  //     left: {
-  //       anchor: '__container__', align: HorizontalAlign.Start
-  //     },
-  //     top: {
-  //       anchor: '__container__', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentAlignTopHorizontalCenter',
-  //   setValue: {
-  //     middle: {
-  //       anchor: '__container__', align: HorizontalAlign.Center
-  //     },
-  //     top: {
-  //       anchor: '__container__', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentAlignTopRightAlignment',
-  //   setValue: {
-  //     right: {
-  //       anchor: '__container__', align: HorizontalAlign.End
-  //     },
-  //     top: {
-  //       anchor: '__container__', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentVerticalCenterLeftJustifying',
-  //   setValue: {
-  //     left: {
-  //       anchor: '__container__', align: HorizontalAlign.Start
-  //     },
-  //     center: {
-  //       anchor: '__container__', align: VerticalAlign.Center
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentVerticalCenterHorizontally',
-  //   setValue: {
-  //     middle: {
-  //       anchor: '__container__', align: HorizontalAlign.Center
-  //     },
-  //     center: {
-  //       anchor: '__container__', align: VerticalAlign.Center
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentVerticalCenterRightAlignment',
-  //   setValue: {
-  //     right: {
-  //       anchor: '__container__', align: HorizontalAlign.End
-  //     },
-  //     center: {
-  //       anchor: '__container__', align: VerticalAlign.Center
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentAlignmentLeftJustifying',
-  //   setValue: {
-  //     left: {
-  //       anchor: '__container__', align: HorizontalAlign.Start
-  //     },
-  //     bottom: {
-  //       anchor: '__container__', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentAlignmentLeftJustifyingHorizontally',
-  //   setValue: {
-  //     middle: {
-  //       anchor: '__container__', align: HorizontalAlign.Center
-  //     },
-  //     bottom: {
-  //       anchor: '__container__', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }, {
-  //   describe: 'ParentAlignmentLeftJustifyingRightAlignment',
-  //   setValue: {
-  //     right: {
-  //       anchor: '__container__', align: HorizontalAlign.End
-  //     },
-  //     bottom: {
-  //       anchor: '__container__', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignTopLeftJustifying',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.Start
-  //     },
-  //     bottom: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignTopHorizontalCenter',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     bottom: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignTopRightAlignment',
-  //   setValue: {
-  //     left: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     bottom: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyVerticalCenterLeftJustifying',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.Start
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyVerticalCenterHorizontally',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyVerticalCenterRightAlignment',
-  //   setValue: {
-  //     left: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Top
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignmentLeftJustifying',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.Start
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignmentLeftJustifyingHorizontally',
-  //   setValue: {
-  //     right: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }, {
-  //   describe: 'SubassemblyAlignmentLeftJustifyingRightAlignment',
-  //   setValue: {
-  //     left: {
-  //       anchor: 'referenceComponentKey', align: HorizontalAlign.End
-  //     },
-  //     top: {
-  //       anchor: 'referenceComponentKey', align: VerticalAlign.Bottom
-  //     }
-  //   }
-  // }
+  let testValues: TestValue[] = [
   ]
 
   describe('AlignRulesTest', () => {
