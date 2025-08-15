@@ -1,3 +1,5 @@
+// 版权所有 (C) 2023 公司名称. 保留所有权利。
+// SPDX-License-Identifier: MIT
 {
   "files": [
     "**/*.ets"
