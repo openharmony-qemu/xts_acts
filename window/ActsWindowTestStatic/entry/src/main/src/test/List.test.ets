@@ -18,6 +18,8 @@ import WindowImmersiveTest from "./WindowImmersive.test";
 import WindowModalTest from "./WindowModal.test";
 import WindowTitleTest from "./WindowTitle.test";
 import WindowOrientationTest from "./WindowOrientation.test";
+import WindowPropertiesTest from "./WindowProperties.test";
+import WindowPCTest from "./WindowPC.test";
 export default function testsuite() {
   WindowLifeCycleTest();
   WindowImmersiveTest();
@@ -25,5 +27,7 @@ export default function testsuite() {
   WindowModalTest();
   WindowTitleTest();
   WindowOrientationTest();
+  WindowPropertiesTest();
+  WindowPCTest();
 
 }

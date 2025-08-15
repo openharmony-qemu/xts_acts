@@ -811,25 +811,29 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_4200
-     * @tc.name       : testSetAll042
-     * @tc.desc       : Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_4300
+     * @tc.name       : testIsEmpty043
+     * @tc.desc       : Test the function By TreeMap. Determine whether the TreeMap instance is empty. For example
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 0
      */
-    // it("testSetAll042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   try {
-    //     treeMap.setAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err: Error) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be TreeMap. Received value is: 1,2,3`);
-    //   }
-    // });
+    it("testIsEmpty043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      treeMap.set(3, "d");
+      treeMap.set(4, "g");
+      let iter = treeMap.$_iterator();
+      let temp = iter.next();
+      let flag = 0;
+      while (!temp.done) {
+        expect(treeMap.length).assertEqual(5);
+        flag++;
+        temp = iter.next();
+      }
+      expect(flag).assertEqual(5)
+    });
   });
 }

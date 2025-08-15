@@ -512,5 +512,30 @@ export default function StackTest1() {
         expect(false).assertFail()
       }
     });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1900
+     * @tc.name       : testStackForEach0019
+     * @tc.desc       : Testing Stack forEach by array.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testStackForEach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let stack: Stack<number> = new Stack<number>();
+        stack.push(1);
+        let iter = stack.$_iterator();
+        let temp = iter.next().value;
+        let flag = 0;
+        while (temp != undefined) {
+          temp = iter.next().value;
+          flag++;
+        }
+        expect(flag).assertEqual(1);
+      } catch (err: BusinessError) {
+        expect(false).assertFail()
+      }
+    });
   })
 }

@@ -19,6 +19,8 @@ group("ActsStartuiServiceExtension") {
     deps = [
       "actsstartuiserviceextensionrely:ActsStartUiServiceExtensionRely",
       "actsstartuiserviceextensiontest:ActsStartUiServiceExtensionTest",
+      "actsstartuiserviceextensionteststatic:ActsStartUiServiceExtensionStaticTest",
+      "actsstartuiserviceextensionrelystatic:ActsStartUiServiceExtensionStaticRely",
     ]
   }
 }

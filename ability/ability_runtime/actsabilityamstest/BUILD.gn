@@ -29,6 +29,7 @@ group("ActsAbilityAmsTest") {
       "actsapplicationstartabilitytest:ActsApplicationStartAbilityTest",
       "actsassistappatest:ActsAssistAppATest",
       "actsbacktocallerabilitywithresulttest:ActsBackToCallerAbilityWithResultTest",
+      "actsbacktocallerabilitywithresultteststatic:ActsBackToCallerAbilityWithResultStaticTest",
       "actscommoncomponentcalltest:ActsCommonComponentCallTest",
       "actsconnectservicetest:ActsConnectServiceTest",
       "actscreatemodulecontexttest:ActsCreateModuleContextErrorTest",
