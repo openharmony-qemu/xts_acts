@@ -54,7 +54,7 @@ export function transferAtomics(arg1: Int32Array): string {
 export function setCloneListTest(arrayBuffer: number[]): Int32Array {
 
   let view: Int32Array = new Int32Array(arrayBuffer);
-  let arr: number[] = new Array<number>(5, 6, 7, 8);
+  let arr: number[] = [5, 6, 7, 8];
   for (let i: number = 0; i < arr.length; i++) {
     view[i] = arr[i];
   }
@@ -249,15 +249,6 @@ export async function randomTest(): Promise<number> {
   return p;
 }
 
-// export async function waitWithPromiseCase(): Promise<number> {
-//
-//   return new Promise<number>((resolve): Promise<number> => {
-//     setTimeout(() => {
-//       resolve(1);
-//     }, 100);
-//   });
-// }
-
 export async function outerTaskFunc(params: string): Promise<string> {
 
   let t1 = Date.now();
@@ -289,7 +280,7 @@ export function isConcurrentTest2(): void {
 export async function sequenceRunnerTest(): Promise<string> {
 
   let finalString = '';
-  let t: taskpool.Task[] = new Array<Task>();
+  let t: taskpool.Task[] = [];
   for (let i = 0; i < 100; i++) {
     t[i] = new taskpool.Task(printArgs, i);
   }
@@ -323,7 +314,7 @@ export async function sequenceRunnerPriorityTest(): Promise<string> {
 }
 
 export class CancelAndExecuteDelayed {
-  private task: taskpool.Task;
+  public task: taskpool.Task;
   public res: number = 0;
   public i: number = 0;
   public isTerminate: boolean = false;

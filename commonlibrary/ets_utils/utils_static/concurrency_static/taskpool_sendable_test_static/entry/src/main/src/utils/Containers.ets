@@ -84,7 +84,7 @@ export class CollectionHolder {
 
 
 export class ArrayContainer {
-  data: Uint32Array;
+ public data: Uint32Array;
 
   constructor(size: int) {
     this.data = new Uint32Array(new ArrayBuffer(size * 4));

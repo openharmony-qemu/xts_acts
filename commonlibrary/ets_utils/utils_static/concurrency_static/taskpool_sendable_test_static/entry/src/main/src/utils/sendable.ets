@@ -52,7 +52,7 @@ export class SendableClassTest {
   constructor(func: FuncType) {
     this.func = func;
   }
-  func: FuncType;
+  public func: FuncType;
   foo() {
     let num : number = sendableArrayFunc();
     return num;
