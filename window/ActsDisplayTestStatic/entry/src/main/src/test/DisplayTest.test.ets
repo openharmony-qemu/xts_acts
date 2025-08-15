@@ -404,7 +404,7 @@ export default function DisplayTest() {
         it('testGetDisplayByIdSync_SyncFunction_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(0x0000, '[ANI]','testGetDisplayByIdSync_SyncFunction_static_0100 begin');
             try {
-                let displayId:number = display.getDefaultDisplaySync().id;
+                let displayId:long = display.getDefaultDisplaySync().id;
                 let dsp:display.Display = display.getDisplayByIdSync(displayId);
                 hilog.info(0x0000, '[ANI]','displayTest getDisplayByIdSyncTest1: ' + JSON.stringify(dsp));
                 expect(dsp.id != null).assertTrue();
@@ -472,7 +472,7 @@ export default function DisplayTest() {
             let caseName:string = 'testDisplayOffAdd_RepeatOff_static_0100';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let callback: Callback<number> = (data: number) => {
+            let callback: Callback<long> = (data: long) => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
@@ -511,7 +511,7 @@ export default function DisplayTest() {
             let caseName = 'testDisplayOffChange_RepeatOff_static_0100';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let callback: Callback<number> = (data: number) => {
+            let callback: Callback<long> = (data: long) => {
                 console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
@@ -550,7 +550,7 @@ export default function DisplayTest() {
             let caseName:string = 'testDisplayOffRemove_RepeatOff_static_0100';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let callback: Callback<number> = (data: number) => {
+            let callback: Callback<long> = (data: long) => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
