@@ -1228,7 +1228,7 @@ export default function TimerTest1() {
       console.info(`${TAG} test start`);
       let resultTimer: string = '';
       try {
-        const task = await taskpool.execute((): Promise<string> => {
+        await taskpool.execute((): Promise<string> => {
           return new Promise<string>((resolve) => {
             const timer = setTimeout(() => {
               resolve('timerFired');

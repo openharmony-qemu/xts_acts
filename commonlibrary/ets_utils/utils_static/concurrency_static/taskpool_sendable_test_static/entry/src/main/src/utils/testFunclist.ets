@@ -18,6 +18,7 @@ import { StrCat, A, B, printStrArgs, printArgs, multiplyFunc } from './exportFun
 import HashMap from '@ohos.util.HashMap';
 // import { errorManager } from '@kit.AbilityKit';
 import { SendableClass, SimpleSendable, SendableClassTest } from './sendable';
+
 // import { MeasureText } from '@kit.ArkUI';
 
 export async function currentFun(): Promise<void> {
@@ -107,7 +108,7 @@ export function testTaskPool(): void {
     for (let i: number = 1; i <= 10; i++) {
       taskpool.cancel(task1);
     }
-  }catch(e: Error) {
+  } catch (e: Error) {
     console.info('taskpool catch error: ' + e);
   }
 }
@@ -148,9 +149,9 @@ export function delaySum(value1: number, value2: number, delay: number): number 
 
 export function Add(value1: boolean, value2: boolean): boolean {
 
-  if (value1 && value2){
+  if (value1 && value2) {
     return true;
-    else
+  } else {
     return false;
   }
 }
@@ -162,7 +163,6 @@ export function funcStrCat(value1: string, value2: string, value3: string): stri
 
 export function arraySum(arg1: Array<number>, arg2: Array<number>): Array<number> {
 
-  let value: number[] = [];
   let value: number[] = [];
   value[0] = arg1[0] + arg2[0];
   value[1] = arg1[1] + arg2[1];
@@ -200,7 +200,7 @@ export function errorTest(): never {
   throw new Error('this is an error');
 }
 
-export function testCancelDelayed(a:string): string {
+export function testCancelDelayed(a: string): string {
 
   let t = Date.now()
   while ((Date.now() - t) < 1000) {
@@ -209,7 +209,7 @@ export function testCancelDelayed(a:string): string {
   return 'a';
 }
 
-export function dependend(params:number): void {
+export function dependend(params: number): void {
 
   if (params >= 100) {
     let t = Date.now();
@@ -219,7 +219,7 @@ export function dependend(params:number): void {
   }
 }
 
-export function hashMapTest(args:number): HashMap<string, number> {
+export function hashMapTest(args: number): HashMap<string, number> {
 
   let hashMap1: HashMap<string, number> = new HashMap<string, number>();
   hashMap1.set('a', 123);
@@ -240,7 +240,7 @@ export async function randomTest(): Promise<number> {
   while ((Date.now() - t) < 1000) {
     continue;
   }
-  let p: number = await new Promise<number>((resolve) => {  //return ???
+  let p: number = await new Promise<number>((resolve) => { //return ???
     setTimeout(() => {
       const randomNumber = Math.floor(Math.random() * 100);
       resolve(randomNumber);
@@ -258,7 +258,7 @@ export async function randomTest(): Promise<number> {
 //   });
 // }
 
-export async function outerTaskFunc(params:string): Promise<string> {
+export async function outerTaskFunc(params: string): Promise<string> {
 
   let t1 = Date.now();
   while ((Date.now() - t1) < 100) {
@@ -283,12 +283,13 @@ export function isConcurrentTest1(): void {
 
 }
 
-export function isConcurrentTest2(): void {}
+export function isConcurrentTest2(): void {
+}
 
 export async function sequenceRunnerTest(): Promise<string> {
 
   let finalString = '';
-  let t: taskpool.Task[] = new Array<pool.Task>();
+  let t: taskpool.Task[] = new Array<Task>();
   for (let i = 0; i < 100; i++) {
     t[i] = new taskpool.Task(printArgs, i);
   }
@@ -311,7 +312,7 @@ export async function sequenceRunnerPriorityTest(): Promise<string> {
     t[i] = new taskpool.Task(printArgs, i);
   }
 
-  let runner:taskpool.SequenceRunner = new taskpool.SequenceRunner('runner17');
+  let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner17');
   for (let i = 0; i < 20; i++) {
     if (i % 2 == 1) {
       const result = await runner.execute(t[i]);
@@ -321,11 +322,12 @@ export async function sequenceRunnerPriorityTest(): Promise<string> {
   return finalString;
 }
 
-export class CancelAndExecuteDelayed{
+export class CancelAndExecuteDelayed {
   private task: taskpool.Task;
-  public res:number = 0;
-  public i:number = 0;
-  public isTerminate:boolean = false;
+  public res: number = 0;
+  public i: number = 0;
+  public isTerminate: boolean = false;
+
   constructor(num: number) {
     this.task = new taskpool.Task(printArgs, num);
   }
@@ -336,7 +338,7 @@ export class CancelAndExecuteDelayed{
     } catch (e) {
     }
 
-    taskpool.executeDelayed(1000, this.task).then((value: NullishType) => {//line:361
+    taskpool.executeDelayed(1000, this.task).then((value: NullishType) => { //line:361
       this.i++;
       this.res += value as number;
       this.isTerminate = true;
@@ -345,23 +347,23 @@ export class CancelAndExecuteDelayed{
   }
 }
 
-export function dealHashMapTest(hashMap:HashMap<string, number>): HashMap<string, number> {
+export function dealHashMapTest(hashMap: HashMap<string, number>): HashMap<string, number> {
 
   hashMap.set('a', 123);
   return hashMap;
 }
 
-export function noUseConcurrentTest(arg:string): string {
+export function noUseConcurrentTest(arg: string): string {
   return arg;
 }
 
-export function sendDataTest(args:number): void {
+export function sendDataTest(args: number): void {
 
-  let res: number = args * 10 ;
+  let res: number = args * 10;
   taskpool.Task.sendData(res);
 }
 
-export function sendableClassTestFunc(class1: SendableClass, class2: SendableClass): number{
+export function sendableClassTestFunc(class1: SendableClass, class2: SendableClass): number {
 
   let num1 = class1.GetNum();
   let num2 = class2.GetNum();
@@ -370,7 +372,7 @@ export function sendableClassTestFunc(class1: SendableClass, class2: SendableCla
 
 export function Int8ArrayTestFunc(array: Int8Array): Int8Array {
 
-  array.set([0,1,2]);
+  array.set([0, 1, 2]);
   return array;
 }
 
@@ -382,7 +384,7 @@ export function SetTestFunc(set: Set<number>): Set<number> {
 
 export function MapTestFunc(map: Map<number, number>): Map<number, number> {
 
-  map.set(5,6);
+  map.set(5, 6);
   return map;
 }
 
@@ -393,7 +395,7 @@ export function simpleSendableClassTestFunc(class1: SimpleSendable, class2: Simp
 
 export function Uint8ClampedArrayTestFunc(array: Uint8ClampedArray): Uint8ClampedArray {
 
-  array.set([0,1,2]);
+  array.set([0, 1, 2]);
   return array;
 }
 
@@ -416,7 +418,7 @@ export function sendableFuncTest(func: () => number): number {
   return num;
 }
 
-export function sendableClassTest(classT : SendableClassTest) : number {
+export function sendableClassTest(classT: SendableClassTest): number {
   let num = classT.foo();
   num += classT.func();
   return num;
