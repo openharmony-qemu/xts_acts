@@ -12,11 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level  } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level  } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 114610;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,49 +34,28 @@ export default function webHttpBodyStreamTest() {
         }
 
         try {
-          await Utils.sleep(1000)
           router.clear();
           let pages = router.getState();
           console.info("get webHttpBodyStreamTest state success " + JSON.stringify(pages));
           if (!("webHttpBodyStreamTest" == pages.name)) {
             console.info("get webHttpBodyStreamTest state success " + JSON.stringify(pages.name));
             let result = await router.pushUrl(options);
-            await Utils.sleep(1000);
             console.info("push webHttpBodyStreamTest state success " + JSON.stringify(result));
           }
         } catch (err) {
           console.error("push webHttpBodyStreamTest page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webView"), 10000);
+        console.log("waitForComponent webView");
         done()
       });
 
       beforeEach(async (done: Function) => {
         config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-        console.info(`enable success`);
+          console.info(`enable success`);
         }).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-      })
-        await Utils.sleep(2000);
-        done();
-      })
-
-      afterEach(async (done: Function) => {
-        try {
-          let backData: events_emitter.EventData = {
-            data: {
-              "ACTION": emitKey
-            }
-          }
-          let backEvent: events_emitter.InnerEvent = {
-            eventId: 10,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("start send emitKey");
-          events_emitter.emit(backEvent, backData);
-        } catch (err) {
-          console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
+          console.error(`failed to enable, ${err}`);
+        })
         done();
       })
 
@@ -87,10 +69,9 @@ export default function webHttpBodyStreamTest() {
        */
       it('testWebView_WebHttpBodyStream_READ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_WebHttpBodyStream_READ"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_WebHttpBodyStream_READ", 0, 1555, done);
-        sendEventByKey('webView', 10, '');
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebView_WebHttpBodyStream_READ", 0, 114620, done);
+        await Utils.waitAndClickComponent(driver, "webView");
       })
-
  })
 }

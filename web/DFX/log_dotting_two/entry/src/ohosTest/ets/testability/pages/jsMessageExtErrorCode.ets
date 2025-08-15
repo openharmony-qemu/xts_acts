@@ -19,18 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
 
-class testObj {
-  constructor() {
-  }
-
-  test(): string {
-    return "ArkUI Web Component";
-  }
-
-  toString(): void {
-    console.log('Web Component toString');
-  }
-}
+const EVENT_ID_SET_EMIT_KEY = 113340;
 
 @Entry
 @Component
@@ -43,21 +32,22 @@ struct Index {
   @State webResult: string = ' ';
   @State javaScriptAccess: boolean = true;
   @State ports: webView.WebMessagePort[] = [];
-  @State testObj: testObj = new testObj();
   @State sourceID: string = "test";
   @State message: webView.WebMessageExt = new webView.WebMessageExt();
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -66,6 +56,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -86,9 +77,11 @@ struct Index {
     Column() {
       Row() {
         Button("JsMessageExtErrorCode click").key('JsMessageExtErrorCodeButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'JsMessageExtErrorCodeButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'JsMessageExtErrorCodeButtonIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
-
             case "testJsMessageExtGetStringError001": {
               try {
                 this.controller.runJavaScriptExt(
@@ -96,7 +89,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30400)
+                      Utils.emitEvent(String(error.code), 113350)
                       return;
                     }
                     if (result) {
@@ -104,19 +97,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getString()
-                        Utils.emitEvent(this.no_error, 30400)
+                        Utils.emitEvent(this.no_error, 113350)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30400)
+                        Utils.emitEvent(String(e.code), 113350)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30400)
+                Utils.emitEvent(String(e.code), 113350)
               }
               break;
             }
@@ -128,7 +121,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run JavaScript error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30401)
+                      Utils.emitEvent(String(error.code), 113360)
                       return;
                     }
                     if (result) {
@@ -136,19 +129,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getString()
-                        Utils.emitEvent(this.no_error, 30401)
+                        Utils.emitEvent(this.no_error, 113360)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30401)
+                        Utils.emitEvent(String(e.code), 113360)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30401)
+                Utils.emitEvent(String(e.code), 113360)
               }
               break;
             }
@@ -161,19 +154,19 @@ struct Index {
                     if (result) {
                       if (error) {
                         console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                        Utils.emitEvent(String(error.code), 30402)
+                        Utils.emitEvent(String(error.code), 113370)
                         return;
                       }
                       try {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getString()
-                        Utils.emitEvent(this.no_error, 30402)
+                        Utils.emitEvent(this.no_error, 113370)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30402)
+                        Utils.emitEvent(String(e.code), 113370)
                       }
                     }
                   });
@@ -181,7 +174,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30402)
+                Utils.emitEvent(String(e.code), 113370)
               }
               break;
             }
@@ -193,7 +186,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30403)
+                      Utils.emitEvent(String(error.code), 113380)
                       return;
                     }
                     if (result) {
@@ -201,19 +194,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getString()
-                        Utils.emitEvent(this.no_error, 30403)
+                        Utils.emitEvent(this.no_error, 113380)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30403)
+                        Utils.emitEvent(String(e.code), 113380)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30403)
+                Utils.emitEvent(String(e.code), 113380)
               }
               break;
             }
@@ -226,26 +219,26 @@ struct Index {
                     if (result) {
                       if (error) {
                         console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                        Utils.emitEvent(String(error.code), 30410)
+                        Utils.emitEvent(String(error.code), 113390)
                         return;
                       }
                       try {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getNumber()
-                        Utils.emitEvent(this.no_error, 30410)
+                        Utils.emitEvent(this.no_error, 113390)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30410)
+                        Utils.emitEvent(String(e.code), 113390)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30410)
+                Utils.emitEvent(String(e.code), 113390)
               }
               break;
             }
@@ -257,7 +250,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30411)
+                      Utils.emitEvent(String(error.code), 113400)
                       return;
                     }
                     if (result) {
@@ -265,19 +258,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getNumber()
-                        Utils.emitEvent(this.no_error, 30411)
+                        Utils.emitEvent(this.no_error, 113400)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30411)
+                        Utils.emitEvent(String(e.code), 113400)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30411)
+                Utils.emitEvent(String(e.code), 113400)
               }
               break;
             }
@@ -289,7 +282,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30412)
+                      Utils.emitEvent(String(error.code), 113410)
                       return;
                     }
                     if (result) {
@@ -297,19 +290,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getNumber()
-                        Utils.emitEvent(this.no_error, 30412)
+                        Utils.emitEvent(this.no_error, 113410)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30412)
+                        Utils.emitEvent(String(e.code), 113410)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30412)
+                Utils.emitEvent(String(e.code), 113410)
               }
               break;
             }
@@ -321,7 +314,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30413)
+                      Utils.emitEvent(String(error.code), 113420)
                       return;
                     }
                     if (result) {
@@ -329,12 +322,12 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getNumber()
-                        Utils.emitEvent(this.no_error, 30413)
+                        Utils.emitEvent(this.no_error, 113420)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30413)
+                        Utils.emitEvent(String(e.code), 113420)
                       }
                     }
                   });
@@ -342,7 +335,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30413)
+                Utils.emitEvent(String(e.code), 113420)
               }
               break;
             }
@@ -354,7 +347,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30420)
+                      Utils.emitEvent(String(error.code), 113430)
                       return;
                     }
                     if (result) {
@@ -362,19 +355,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getBoolean()
-                        Utils.emitEvent(this.no_error, 30420)
+                        Utils.emitEvent(this.no_error, 113430)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30420)
+                        Utils.emitEvent(String(e.code), 113430)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30420)
+                Utils.emitEvent(String(e.code), 113430)
               }
               break;
             }
@@ -386,7 +379,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30421)
+                      Utils.emitEvent(String(error.code), 113440)
                       return;
                     }
                     if (result) {
@@ -394,19 +387,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getBoolean()
-                        Utils.emitEvent(this.no_error, 30421)
+                        Utils.emitEvent(this.no_error, 113440)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30421)
+                        Utils.emitEvent(String(e.code), 113440)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30421)
+                Utils.emitEvent(String(e.code), 113440)
               }
               break;
             }
@@ -418,7 +411,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30422)
+                      Utils.emitEvent(String(error.code), 113450)
                       return;
                     }
                     if (result) {
@@ -426,19 +419,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getBoolean()
-                        Utils.emitEvent(this.no_error, 30422)
+                        Utils.emitEvent(this.no_error, 113450)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30422)
+                        Utils.emitEvent(String(e.code), 113450)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30422)
+                Utils.emitEvent(String(e.code), 113450)
               }
               break;
             }
@@ -449,7 +442,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30423)
+                      Utils.emitEvent(String(error.code), 113460)
                       return;
                     }
                     if (result) {
@@ -457,19 +450,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getBoolean()
-                        Utils.emitEvent(this.no_error, 30423)
+                        Utils.emitEvent(this.no_error, 113460)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30423)
+                        Utils.emitEvent(String(e.code), 113460)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30423)
+                Utils.emitEvent(String(e.code), 113460)
               }
               break;
             }
@@ -480,7 +473,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30430)
+                      Utils.emitEvent(String(error.code), 113470)
                       return;
                     }
                     if (result) {
@@ -488,19 +481,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
-                        Utils.emitEvent(this.no_error, 30430)
+                        Utils.emitEvent(this.no_error, 113470)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30430)
+                        Utils.emitEvent(String(e.code), 113470)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30430)
+                Utils.emitEvent(String(e.code), 113470)
               }
               break;
             }
@@ -512,7 +505,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30431)
+                      Utils.emitEvent(String(error.code), 113480)
                       return;
                     }
                     if (result) {
@@ -520,19 +513,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
-                        Utils.emitEvent(this.no_error, 30431)
+                        Utils.emitEvent(this.no_error, 113480)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30431)
+                        Utils.emitEvent(String(e.code), 113480)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30431)
+                Utils.emitEvent(String(e.code), 113480)
               }
               break;
             }
@@ -545,26 +538,26 @@ struct Index {
                     if (result) {
                       if (error) {
                         console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                        Utils.emitEvent(String(error.code), 30432)
+                        Utils.emitEvent(String(error.code), 113490)
                         return;
                       }
                       try {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
-                        Utils.emitEvent(this.no_error, 30432)
+                        Utils.emitEvent(this.no_error, 113490)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30432)
+                        Utils.emitEvent(String(e.code), 113490)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30432)
+                Utils.emitEvent(String(e.code), 113490)
               }
               break;
             }
@@ -576,7 +569,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30433)
+                      Utils.emitEvent(String(error.code), 113500)
                       return;
                     }
                     if (result) {
@@ -584,19 +577,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
-                        Utils.emitEvent(this.no_error, 30433)
+                        Utils.emitEvent(this.no_error, 113500)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30433)
+                        Utils.emitEvent(String(e.code), 113500)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30433)
+                Utils.emitEvent(String(e.code), 113500)
               }
               break;
             }
@@ -608,7 +601,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30440)
+                      Utils.emitEvent(String(error.code), 113510)
                       return;
                     }
                     if (result) {
@@ -616,19 +609,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArray()
-                        Utils.emitEvent(this.no_error, 30440)
+                        Utils.emitEvent(this.no_error, 113510)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30440)
+                        Utils.emitEvent(String(e.code), 113510)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30440)
+                Utils.emitEvent(String(e.code), 113510)
               }
               break;
             }
@@ -640,7 +633,7 @@ struct Index {
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 30441)
+                      Utils.emitEvent(String(error.code), 113520)
                       return;
                     }
                     if (result) {
@@ -648,19 +641,19 @@ struct Index {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArray()
-                        Utils.emitEvent(this.no_error, 30441)
+                        Utils.emitEvent(this.no_error, 113520)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30441)
+                        Utils.emitEvent(String(e.code), 113520)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30441)
+                Utils.emitEvent(String(e.code), 113520)
               }
               break;
             }
@@ -673,26 +666,26 @@ struct Index {
                     if (result) {
                       if (error) {
                         console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                        Utils.emitEvent(String(error.code), 30442)
+                        Utils.emitEvent(String(error.code), 113530)
                         return;
                       }
                       try {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArray()
-                        Utils.emitEvent(this.no_error, 30442)
+                        Utils.emitEvent(this.no_error, 113530)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30442)
+                        Utils.emitEvent(String(e.code), 113530)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30442)
+                Utils.emitEvent(String(e.code), 113530)
               }
               break;
             }
@@ -705,30 +698,29 @@ struct Index {
                     if (result) {
                       if (error) {
                         console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                        Utils.emitEvent(String(error.code), 30443)
+                        Utils.emitEvent(String(error.code), 113540)
                         return;
                       }
                       try {
                         let type = result.getType();
                         console.info(`get result :` + type)
                         result.getArray()
-                        Utils.emitEvent(this.no_error, 30443)
+                        Utils.emitEvent(this.no_error, 113540)
                       }
                       catch (resError) {
                         let e: business_error.BusinessError = resError as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        Utils.emitEvent(String(e.code), 30443)
+                        Utils.emitEvent(String(e.code), 113540)
                       }
                     }
                   });
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 30443)
+                Utils.emitEvent(String(e.code), 113540)
               }
               break;
             }
-
           }
         })
       }
@@ -740,6 +732,10 @@ struct Index {
           name: "backToEts",
           methodList: ["test", "toString"],
           controller: this.controller
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }
