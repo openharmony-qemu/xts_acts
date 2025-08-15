@@ -28,11 +28,11 @@ let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  onPrepare() {
+  public onPrepare: () => void = () => {
     hilog.info(0x0000, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
   }
 
-  onRun() {
+  public onRun: () => void = () => {
     hilog.info(0x0000, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
