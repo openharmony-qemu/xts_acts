@@ -13,35 +13,30 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router } from '@ohos.arkui.UIContext';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function OnResultPage() {
   describe('OnResultPage', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("OnResultPage beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnResultPage beforeEach start");
@@ -55,6 +50,7 @@ export default function OnResultPage() {
         console.info("get OnResultPage state pages:" + JSON.stringify(pages));
         if (!("OnResultPage" == pages.name)) {
           console.info("get OnResultPage pages.name:" + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -70,273 +66,281 @@ export default function OnResultPage() {
     });
 
 
-    /**
-     * @tc.number    OnResultPage_static_0100
-     * @tc.name      OnResultPage_static_0100
-     * @tc.desc      Test OnResult pop
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0100
+     * @tc.name     OnResultPage_static_0100
+     * @tc.desc     OnResultPage_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0100 START');
+it('OnResultPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0100 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn1 = await (driver.findComponent(ON.id('pushId')) as Promise<Component>);
-      await btn1.click()
-      console.info('[OnResultPage_static_0100] btn1 click');
+      let btn1 = await driver.findComponent(ON.id('pushId'));
+      await (btn1?.click() as Promise<void>)
+      console.info('[OnResultPage_0100] btn1 click');
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0100] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0100] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('popId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0100] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('popId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0100] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0100] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('test');
 
-      console.info('OnResultPage_static_0100 END');
+      console.info('OnResultPage_0100 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0200
-     * @tc.name      OnResultPage_static_0200
-     * @tc.desc      Test OnResult popToIndex
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0200
+     * @tc.name     OnResultPage_static_0200
+     * @tc.desc     OnResultPage_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0200 START');
+it('OnResultPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0200 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0200] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0200] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('popIndexId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0200] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('popIndexId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0200] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0200] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0200] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0200] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
 
-      console.info('OnResultPage_static_0200 END');
+      console.info('OnResultPage_0200 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0300
-     * @tc.name      OnResultPage_static_0300
-     * @tc.desc      Test OnResult popToName
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0300
+     * @tc.name     OnResultPage_static_0300
+     * @tc.desc     OnResultPage_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0300 START');
+it('OnResultPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0300 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0300] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0300] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('popNameId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0300] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('popNameId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0300] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0300] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0300] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0300] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0300] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('popToName');
 
-      console.info('OnResultPage_static_0300 END');
+      console.info('OnResultPage_0300 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0400
-     * @tc.name      OnResultPage_static_0400
-     * @tc.desc      Test OnResult undefined
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0400
+     * @tc.name     OnResultPage_static_0400
+     * @tc.desc     OnResultPage_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0400 START');
+it('OnResultPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0400 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0400] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0400] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('popUndefinedId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0400] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('popUndefinedId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0400] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0400] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0400] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0400] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0400] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
 
-      console.info('OnResultPage_static_0400 END');
+      console.info('OnResultPage_0400 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0500
-     * @tc.name      OnResultPage_static_0500
-     * @tc.desc      Test OnResult popToName
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0500
+     * @tc.name     OnResultPage_static_0500
+     * @tc.desc     OnResultPage_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0500',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0500 START');
+it('OnResultPage_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0500 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0500] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0500] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('popNullId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0500] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('popNullId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0500] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0500] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0500] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0500] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0500] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('null');
 
-      console.info('OnResultPage_static_0500 END');
+      console.info('OnResultPage_0500 END');
       done();
     });
 
 
-    /**
-     * @tc.number    OnResultPage_static_0600
-     * @tc.name      OnResultPage_static_0600
-     * @tc.desc      Test push dialog page pop
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0600
+     * @tc.name     OnResultPage_static_0600
+     * @tc.desc     OnResultPage_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0600',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0600 START');
+it('OnResultPage_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0600 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushDialogId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0600] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushDialogId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0600] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('dialogPopId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0600] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('dialogPopId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0600] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0600] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0600] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0600] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0600] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('test');
 
-      console.info('OnResultPage_static_0600 END');
+      console.info('OnResultPage_0600 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0700
-     * @tc.name      OnResultPage_static_0700
-     * @tc.desc      Test push dialog page popToIndex
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0700
+     * @tc.name     OnResultPage_static_0700
+     * @tc.desc     OnResultPage_static_0700
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0700',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0700 START');
+it('OnResultPage_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0700 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushDialogId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0700] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushDialogId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0700] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('dialogPopIndexId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0700] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('dialogPopIndexId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0700] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0700] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0700] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0700] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0700] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('popToIndex');
 
-      console.info('OnResultPage_static_0700 END');
+      console.info('OnResultPage_0700 END');
       done();
     });
 
-    /**
-     * @tc.number    OnResultPage_static_0800
-     * @tc.name      OnResultPage_static_0800
-     * @tc.desc      Test push dialog page popToName
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   OnResultPage_static_0800
+     * @tc.name     OnResultPage_static_0800
+     * @tc.desc     OnResultPage_static_0800
+     * @tc.level    Level.LEVEL0
      */
-    it('OnResultPage_static_0800',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('OnResultPage_static_0800 START');
+it('OnResultPage_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('OnResultPage_0800 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn2 = await (driver.findComponent(ON.id('pushDialogId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[OnResultPage_static_0800] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('pushDialogId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[OnResultPage_0800] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('dialogPopNameId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[OnResultPage_static_0800] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('dialogPopNameId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[OnResultPage_0800] btn3 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('infoId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[OnResultPage_static_0800] component obj is: ' + JSON.stringify(obj));
-      console.info('[OnResultPage_static_0800] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[OnResultPage_0800] component obj is: ' + JSON.stringify(obj));
+      console.info('[OnResultPage_0800] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('popToName');
 
-      console.info('OnResultPage_static_0800 END');
+      console.info('OnResultPage_0800 END');
       done();
     });
   })

@@ -19,8 +19,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from '@ohos.arkui.UIContext';
+
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -37,29 +36,6 @@ class EntryAbility extends UIAbility {
           hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
           return;
         }
-        let windowClass: window.Window | undefined = undefined;
-        windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
-          let errCode: number = err!.code;
-          if (errCode) {
-            console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-            return;
-          }
-          windowClass = data;
-          hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
-          try {
-            let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
-            let wRect: window.Rect | undefined = properties?.windowRect;
-            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
-            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
-            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
-          } catch (exception) {
-            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
-          }
-          // Obtain a UIContext instance.
-          if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
-          }
-        })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
     } catch (e: Error) {

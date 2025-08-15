@@ -15,8 +15,14 @@
 
 import SplitPlaceholder from './SplitPlaceholder.test'
 import UIContextNavDestinationUpdate from './UIContextNavDestinationUpdate.test'
+import HomePage from './HomePage.test'
+import StepperModifierPage from './StepperModifierPage.test'
+import StepperModifierTest from './StepperModifierTest.test'
 
 export default function testsuite() {
   SplitPlaceholder();
   UIContextNavDestinationUpdate();
+  HomePage()
+  StepperModifierPage()
+  StepperModifierTest()
 }

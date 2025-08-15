@@ -13,35 +13,30 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router } from '@ohos.arkui.UIContext';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function NavigationBindToScrollable() {
   describe('NavigationBindToScrollable', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("NavigationBindToScrollable beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("NavigationBindToScrollable beforeEach start");
@@ -55,6 +50,7 @@ export default function NavigationBindToScrollable() {
         console.info("get NavigationBindToScrollable state pages:" + JSON.stringify(pages));
         if (!("NavigationBindToScrollable" == pages.name)) {
           console.info("get NavigationBindToScrollable pages.name:" + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -70,46 +66,51 @@ export default function NavigationBindToScrollable() {
     });
 
 
-    /**
-     * @tc.number    NavigationBindToScrollable_static_0100
-     * @tc.name      NavigationBindToScrollable_static_0100
-     * @tc.desc      Test NavigationBindToScrollable
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   NavigationBindToScrollable_static_0100
+     * @tc.name     NavigationBindToScrollable_static_0100
+     * @tc.desc     NavigationBindToScrollable_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('NavigationBindToScrollable_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('NavigationBindToScrollable_static_0100 START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+it('NavigationBindToScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('NavigationBindToScrollable_0100 START');
 
-      let btn1 = await (driver.findComponent(ON.text('push pageOne')) as Promise<Component>);
-      await btn1.click()
-      console.info('[NavigationBindToScrollable_static_0100] click push pageOne');
-      await CommonFunc.sleep(1000);
+      try {
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
 
-      let navigation = await (driver.findComponent(ON.type('Navigation')) as Promise<Component>);
-      let rect = await navigation.getBounds();
-      let navigationWidth = rect.right;
-      console.info('[NavigationBindToScrollable_static_0100] navigationWidth is ', navigationWidth);
+        let btn1 = await driver.findComponent(ON.text('push pageOne'));
+        await (btn1?.click() as Promise<void>)
+        console.info('[NavigationBindToScrollable_0100] click push pageOne');
+        await CommonFunc.sleep(1000);
 
-      await driver.assertComponentExist(ON.type('TitleBar'));
-      if (navigationWidth < 1500) {
-        await driver.assertComponentExist(ON.type('ToolBar'));
-        console.info('[NavigationBindToScrollable_static_0100] ToolBar is exist');
-        await driver.delayMs(1000);
+        let navigation = await driver.findComponent(ON.type('Navigation'));
+        let rect = await (navigation?.getBounds() as Promise<Rect>);
+        let navigationWidth = rect.right;
+        console.info('[NavigationBindToScrollable_0100] navigationWidth is ', navigationWidth);
+
+        await driver.assertComponentExist(ON.type('TitleBar'));
+        if (navigationWidth < 1500) {
+          await driver.assertComponentExist(ON.type('ToolBar'));
+          console.info('[NavigationBindToScrollable_0100] ToolBar is exist');
+          await driver.delayMs(1000);
+        }
+
+        let scrollBar = await driver.findComponent(ON.type('List'));
+        await (scrollBar?.scrollToBottom() as Promise<void>);
+        await CommonFunc.sleep(5000);
+
+        await driver.assertComponentExist(ON.type('TitleBar'));
+        if (navigationWidth < 1500) {
+          await driver.assertComponentExist(ON.type('ToolBar'));
+          console.info('[NavigationBindToScrollable_0100] ToolBar is exist');
+          await driver.delayMs(1000);
+        }
+      }catch(error) {
+        expect().assertFail();
       }
-
-      let scrollBar = await (driver.findComponent(ON.type('List')) as Promise<Component>);
-      await scrollBar.scrollToBottom();
-      await CommonFunc.sleep(5000);
-
-      await driver.assertComponentExist(ON.type('TitleBar'));
-      if (navigationWidth < 1500) {
-        await driver.assertComponentExist(ON.type('ToolBar'));
-        console.info('[NavigationBindToScrollable_static_0100] ToolBar is exist');
-        await driver.delayMs(1000);
-      }
-
-      console.info('NavigationBindToScrollable_static_0100 END');
+      console.info('NavigationBindToScrollable_0100 END');
       done();
     });
 

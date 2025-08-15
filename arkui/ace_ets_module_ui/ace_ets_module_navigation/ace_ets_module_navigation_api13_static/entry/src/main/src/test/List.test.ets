@@ -12,22 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import BarStylePage from './Navigation/BarStylePage.test'
+import EntryOptionPage from './Navigation/EntryOptionPage.test'
+import EntryOptionPage2 from './Navigation/EntryOptionPage2.test'
+import HideToolBarNavPage from './Navigation/HideToolBarNavPage.test'
+import NavDestinationUIObserver from './Navigation/NavDestinationUIObserver.test'
+import NavigationCustomTitlePage from './Navigation/NavigationCustomTitlePage.test'
+import NavigationTitleTextModifier from './Navigation/NavigationTitleTextModifier.test'
+import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
 
-import getXComponentSurfaceRectJsunit from './XComponentTest/getXComponentSurfaceRect.test';
-import onSurfaceCreatedJsunit from './XComponentTest/onSurfaceCreated.test';
-import stopImageAnalyzerJsunit from './XComponentTest/stopImageAnalyzer.test';
-import setXComponentSurfaceRotationJsunit from './XComponentTest/setXComponentSurfaceRotation.test';
-import VideoTest2 from './VideoTest/VideoTest2.test';
-import SurfaceRotationOptionsLockTest from './XComponentTest/SurfaceRotationOptionsLock.test';
-import MovingPhotoView from './MovingPhotoView/MovingPhotoView.test.ets';
-import onTerminated from './EmbeddedComponentTest/onTerminated.test.ets';
+
 export default function testsuite() {
-  getXComponentSurfaceRectJsunit();
-  onSurfaceCreatedJsunit();
-  stopImageAnalyzerJsunit();
-  setXComponentSurfaceRotationJsunit();
-  VideoTest2();
-  SurfaceRotationOptionsLockTest();
-  MovingPhotoView();
-  onTerminated();
+  BarStylePage()
+  EntryOptionPage()
+  EntryOptionPage()
+  EntryOptionPage2()
+  HideToolBarNavPage()
+  NavDestinationUIObserver()
+  NavigationCustomTitlePage()
+  NavigationTitleTextModifier()
+  TitleOptionsToolOptions()
 }
