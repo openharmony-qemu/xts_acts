@@ -98,19 +98,34 @@ export default function userauthTest_API12() {
     */
     it('SUB_Security_IAM_Func_API12_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_IAM_Func_API12_Static_0100 start');
-      let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN]
-      for (let idx0 = 0; idx0 < authType.length; idx0++) {
-        let checkSupport = checkSupportOrNot(authType[idx0]);
-        if (checkSupport == 0) {
-          try {
-            hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 authtype:' + authType[idx0])
-            let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(authType[idx0]);
-            hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
-            hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-          } catch (e:BusinessError) {
-            hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'authType:' + authType[idx0] + 'e.code:' + e.code);
-            expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
-          }
+      if (!checkSupportOrNot(userAuth.UserAuthType.FACE)){
+        try {
+          let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
+        } catch (e:BusinessError) {
+          hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FACE' + 'e.code:' + e.code);
+          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
+        }
+      }
+      if (!checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT)){
+        try {
+          let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FINGERPRINT);
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
+        } catch (e:BusinessError) {
+          hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FINGERPRINT' +  'e.code:' + e.code);
+          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
+        }
+      }
+      if (!checkSupportOrNot(userAuth.UserAuthType.PIN)){
+        try {
+          let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.PIN);
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
+          hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
+        } catch (e:BusinessError) {
+          hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'PIN' + 'e.code:' + e.code);
+          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
       }
       done();
