@@ -56,7 +56,7 @@ export default function httpRequestOptionsTest() {
                                 "letter": "test",
                                 "characters": "测试文字",
                             }as Record<keys,string>,
-                            header: "content-type': 'application/json",
+                            header: {"content-type": "application/json"}as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -106,7 +106,7 @@ export default function httpRequestOptionsTest() {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'application/x-www-form-urlencoded",
+                            header: {"content-type": "application/x-www-form-urlencoded"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
@@ -154,7 +154,7 @@ export default function httpRequestOptionsTest() {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'text/xml",
+                            header: {"content-type" : "text/xml"}as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -204,7 +204,7 @@ export default function httpRequestOptionsTest() {
                                 "letter": "test",
                                 "characters": "测试文字",
                             }as Record<keys,string>,
-                            header: "content-type': 'application/json",
+                            header: {"content-type": "application/json"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -250,7 +250,7 @@ export default function httpRequestOptionsTest() {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'application/x-www-form-urlencoded",
+                            header: {"content-type": "application/x-www-form-urlencoded"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -296,7 +296,7 @@ export default function httpRequestOptionsTest() {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
                             extraData: 'testInformation测试',
-                            header: "content-type': 'text/xml",
+                            header: {"content-type": "text/xml"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -966,7 +966,7 @@ export default function httpRequestOptionsTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: ""
+                            header: {"":""} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1012,7 +1012,7 @@ export default function httpRequestOptionsTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: "xts-test’: ‘xts/test"
+                            header: {"xts-test": "xts/test"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1105,7 +1105,7 @@ export default function httpRequestOptionsTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: ""
+                            header: {"":""} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -1149,7 +1149,7 @@ export default function httpRequestOptionsTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequestOptions: http.HttpRequestOptions = {
-                            header: "xts-test’: ‘xts/test"
+                            header: {"xts-test": "xts/test"} as Record<string,string>
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
