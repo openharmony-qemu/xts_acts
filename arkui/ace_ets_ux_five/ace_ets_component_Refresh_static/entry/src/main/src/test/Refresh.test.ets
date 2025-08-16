@@ -26,7 +26,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
@@ -49,9 +49,7 @@ export default function RefreshTest() {
         console.info("get Index state success " + JSON.stringify(pages));
         if (!("Index" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          // console.info("push Index page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Index page error: " + err);

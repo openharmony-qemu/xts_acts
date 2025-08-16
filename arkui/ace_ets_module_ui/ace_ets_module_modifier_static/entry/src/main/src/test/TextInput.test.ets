@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -52,7 +52,7 @@ export default function textInput() {
         if (!("textInput" == pages.name)) {
           console.info("get textInput state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(2000);
+         await UtilsTest.msSleep(2000);
         }
       } catch (err) {
         console.error("push textInput page error: " + err);
@@ -381,7 +381,7 @@ export default function textInput() {
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0118] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      // expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FF123456');
+      
       expect(obj.getElement('$attrs').getString('fontColor') != null).assertTrue();
       console.info('textInputJsunit_static_0118 END');
       done();
@@ -526,7 +526,7 @@ export default function textInput() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('textInputKey1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textInputJsunit_static_0127 component is: " + JSON.stringify(objNew.getElement('$attrs')));

@@ -20,35 +20,35 @@ import {
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
-// import { GridModifier } from "@ohos.arkui.modifier";
+
 import { BusinessError } from '@ohos.base';
 
-// class CustomModifier extends GridModifier {
-//   applyNormalAttribute(instance: GridAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-// }
+
+
+
+
+
 
 @Entry
 @Component
 struct GridNestedScroll {
   scroller: Scroller = new Scroller()
   private numbers: String[] = new Array<string>('0', '1', '2', '3', '4', '5', '7', '8')
-  // @State customModifier: GridModifier = new CustomModifier()
-  //   .nestedScroll({
-  //     scrollForward: NestedScrollMode.PARALLEL,
-  //     scrollBackward: NestedScrollMode.PARALLEL,
-  //   })
+  
+  
+  
+  
+  
   @State selfScrollTime: number = 0
   @State parentScrollTime: number = 0
 
-  // @Styles
-  // listCard() {
-  //   .backgroundColor(Color.White)
-  //   .height(72)
-  //   .width("100%")
-  //   .borderRadius(12)
-  // }
+  
+  
+  
+  
+  
+  
+  
   build() {
     Column() {
       Button("NestedScrollOptionsScroll click")
@@ -98,26 +98,26 @@ struct GridNestedScroll {
             }, (day: string) => day)
           }
           .columnsTemplate('1fr 1fr 1fr 1fr')
-          // .attributeModifier(this.customModifier as CustomModifier)
+          
           .height('90%')
-          // .onScroll((xOffset: number, yOffset: number) => {
-          //   console.info("WebView onScroll x = " + xOffset)
-          //   console.info("WebView onScroll y = " + yOffset)
-          //   if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
-          //     this.selfScrollTime = Utils.getSystemTime()
-          //   }
-          // })
+          
+          
+          
+          
+          
+          
+          
 
           Column().width('100%').height('20%').backgroundColor(Color.Red)
 
         }.width('100%')
       }
-      // .onScroll((xOffset: number, yOffset: number) => {
-      //   console.info('ParentScroll:' + xOffset + ' ' + yOffset)
-      //   if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
-      //     this.parentScrollTime = Utils.getSystemTime()
-      //   }
-      // })
+      
+      
+      
+      
+      
+      
       .width('100%')
       .height('70%')
     }.key('ColumnSize')
