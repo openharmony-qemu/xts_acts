@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -47,10 +47,9 @@ export default function observeTabJsunit() {
         console.info("get observeTabJsunit state pages:" + JSON.stringify(pages));
         if (!("observeTab" == pages.name)) {
           console.info("get observeTabJsunit pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push observeTabJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push observeTabJsunit page error:" + err);
@@ -62,16 +61,15 @@ export default function observeTabJsunit() {
       console.info("observeTabJsunit after each called");
     });
 
-    /**
-     * @tc.number    observeTabJsunit_static_0100
-     * @tc.name      observeTabJsunit_static_0100
-     * @tc.desc      Switching information of TabContent page.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   observeTabJsunit_static_0100
+     * @tc.name     observeTabJsunit_static_0100
+     * @tc.desc     observeTabJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('observeTabJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[observeTabJsunit_static_0100] START');
+it('observeTabJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[observeTabJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('observer_tabOn'));
@@ -83,7 +81,7 @@ export default function observeTabJsunit() {
 
       let strJson3 = inspector.getInspectorByKey('tabs_tabContentId');
       let obj3 = JSON.parseJsonElement(strJson3);
-      console.info("[observeTabJsunit_static_0100] component obj3 is: " + JSON.stringify(obj3));
+      console.info("[observeTabJsunit_0100] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('tabContentId: tabContent02');
 	  
       await CommonFunc.sleep(1000);
@@ -91,7 +89,7 @@ export default function observeTabJsunit() {
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 	  
-      console.info('[observeTabJsunit_static_0100] END');
+      console.info('[observeTabJsunit_0100] END');
       done();
     });
   })

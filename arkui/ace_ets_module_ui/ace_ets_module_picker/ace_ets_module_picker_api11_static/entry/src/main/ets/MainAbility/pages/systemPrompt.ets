@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import prompt from '@system.prompt';
+import promptAction from '@ohos.promptAction'
 import { ShowDialogSuccessResponse, Button } from '@system.prompt';
 import { Entry, Component, Column, Text, Rating, Margin, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
@@ -29,21 +30,7 @@ struct promptExample {
       .fontSize(20)
       .margin({top: 20} as Margin)
       .onClick((e:ClickEvent)=>{
-        // prompt.showActionMenu({
-        //       title: 'Title Info',
-        //       buttons: [
-        //         {
-        //           text: this.text,
-        //           color: this.color,
-        //         } as Button,
-        //       ],
-        //       success: (tapIndex: number) => {
-        //         console.log('dialog success callback，click button : ' + tapIndex);
-        //       },
-        //       fail: (errMsg: string) => {
-        //         console.log('dialog fail callback' + errMsg);
-        //       },
-        //     });
+
       })
       Button('showDialog')
       .key('button2')
@@ -51,22 +38,7 @@ struct promptExample {
       .fontSize(20)
       .margin({top: 20} as Margin)
       .onClick((e:ClickEvent)=> {
-        // prompt.showDialog({
-        //   title: 'Title Info',
-        //   message: 'Message Info',
-        //   buttons: [
-        //     {
-        //       text: this.text,
-        //       color: this.color,
-        //     } as Button,
-        //   ],
-        //   success: (data: ShowDialogSuccessResponse) => {
-        //     console.log('dialog success callback，click button : ' + data.index);
-        //   },
-        //   cancel: () => {
-        //     console.log('dialog cancel callback');
-        //   },
-        // });
+
       })
       }
     }

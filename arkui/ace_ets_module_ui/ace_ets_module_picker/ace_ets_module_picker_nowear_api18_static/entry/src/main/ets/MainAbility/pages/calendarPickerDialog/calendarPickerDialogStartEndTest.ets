@@ -12,10 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, CalendarPickerDialog, ResourceColor, BlurStyle,ShadowStyle,
-  FlexWrap,Color} from '@ohos.arkui.component'
+import { Entry, Column, Component, ShadowOptions, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -24,28 +22,27 @@ struct CalendarPickerDialogExample {
     Column() {
       Button('Show CalendarPicker Dialog')
         .margin(20)
-        .onClick((e:ClickEvent) => {
-          CalendarPickerDialog.show({ start: new Date('2025-03-05'), end: new Date('2025-04-05') })
+        .onClick((e: ClickEvent) => {
+          CalendarPickerDialog.show({ start: new Date('2024-03-05'), end: new Date('2024-04-05') })
         }).id('CalendarPickerDialog01')
       Button('Show CalendarPicker Dialog')
         .margin(20)
-        .onClick((e:ClickEvent) => {
-          CalendarPickerDialog.show({ start: new Date('2025-05-05'), end: new Date('2025-04-05') })
+        .onClick((e: ClickEvent) => {
+          CalendarPickerDialog.show({ start: new Date('2024-05-05'), end: new Date('2024-04-05') })
         }).id('CalendarPickerDialog02')
       Button('Show CalendarPicker Dialog')
         .margin(20)
-        .onClick((e:ClickEvent) => {
-          // CalendarPickerDialog.show({ start: null, end: null })
+        .onClick((e: ClickEvent) => {
         }).id('CalendarPickerDialog03')
       Button('Show CalendarPicker Dialog')
         .margin(20)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           CalendarPickerDialog.show({ start: undefined, end: undefined })
         }).id('CalendarPickerDialog04')
       Button('Show CalendarPicker Dialog')
         .margin(20)
-        .onClick((e:ClickEvent) => {
-          CalendarPickerDialog.show({ start: new Date('2025-03-05'), end: new Date('2025-03-05') })
+        .onClick((e: ClickEvent) => {
+          CalendarPickerDialog.show({ start: new Date('2024-03-05'), end: new Date('2024-03-05') })
         }).id('CalendarPickerDialog05')
     }.width('100%').margin({ top: 50 } as Margin)
   }

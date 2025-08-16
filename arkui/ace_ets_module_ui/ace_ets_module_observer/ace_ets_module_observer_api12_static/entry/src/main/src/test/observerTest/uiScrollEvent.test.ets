@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -47,10 +47,9 @@ export default function uiScrollEvent() {
         console.info("get uiScrollEvent state pages:" + JSON.stringify(pages));
         if (!("uiScrollEvent" == pages.name)) {
           console.info("get uiScrollEvent pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push uiScrollEvent page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push uiScrollEvent page error:" + err);
@@ -62,15 +61,14 @@ export default function uiScrollEvent() {
       console.info("uiScrollEvent after each called");
     });
 
-    /**
-     * @tc.number    uiScrollEvent_001
-     * @tc.name      uiScrollEvent_static_0100
-     * @tc.desc      Monitor the start and end of scrolling events.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   uiScrollEvent_static_0100
+     * @tc.name     uiScrollEvent_static_0100
+     * @tc.desc     uiScrollEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('uiScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('uiScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('uiScrollEvent_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

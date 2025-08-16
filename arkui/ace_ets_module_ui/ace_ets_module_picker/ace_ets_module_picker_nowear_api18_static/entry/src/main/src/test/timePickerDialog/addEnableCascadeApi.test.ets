@@ -12,30 +12,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function enableCascadeTest() {
-
-  beforeAll(() => {
-    console.info("TimePickerDialogApienableCascade beforeAll start");
-    await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
-  });
-
   describe('TimePickerDialogApienableCascade', () => {
+    beforeAll(() => {
+      console.info("TimePickerDialogApienableCascade beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
+
     beforeEach(async () => {
       console.info('TimePickerDialogApienableCascade beforeEach start');
       let options: router.RouterOptions = {
@@ -49,9 +44,7 @@ export default function enableCascadeTest() {
         if (!('addEnableCascadeApi' == pages.name)) {
           console.info('get TimePickerDialogApienableCascade pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2500);
-          // console.info('push TimePickerDialogApienableCascade page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TimePickerDialogApienableCascade page error:' + err);
@@ -59,16 +52,14 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialogApienableCascade beforeEach end');
     });
 
-    /**
-     * @tc.number: TimePickerDialog_EnableCascade_001
-     * @tc.name  : TimePickerDialog_EnableCascade_001
-     * @tc.desc  : To test the enableCascade interface false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /*
+     * @tc.number   TimePickerDialog_EnableCascade_static_001
+     * @tc.name     TimePickerDialog_EnableCascade_static_001
+     * @tc.desc     TimePickerDialog_EnableCascade_static_001
+     * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog_EnableCascade_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_001';
+it('TimePickerDialog_EnableCascade_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tagName = 'TimePickerDialog_EnableCascade_static_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog1', 10, "")
@@ -76,8 +67,8 @@ export default function enableCascadeTest() {
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
       let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_001] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_001] obj1 is: " +
+      console.info("[TimePickerDialog_EnableCascade_static_001] obj1 is: " + timePicker);
+      console.info("[TimePickerDialog_EnableCascade_static_001] obj1 is: " +
       JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
       inspector.sendEventByKey('TimePickerDialog1', 10, "")
       expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(true);
@@ -86,16 +77,16 @@ export default function enableCascadeTest() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerDialog_EnableCascade_002
-     * @tc.name  : TimePickerDialog_EnableCascade_002
-     * @tc.desc  : To test the enableCascade interface false
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+
+    /*
+     * @tc.number   TimePickerDialog_EnableCascade_static_002
+     * @tc.name     TimePickerDialog_EnableCascade_static_002
+     * @tc.desc     TimePickerDialog_EnableCascade_static_002
+     * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog_EnableCascade_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_002';
+it('TimePickerDialog_EnableCascade_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tagName = 'TimePickerDialog_EnableCascade_static_002';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog2', 10, "")
@@ -103,8 +94,8 @@ export default function enableCascadeTest() {
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
       let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_002] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_002] obj1 is: " +
+      console.info("[TimePickerDialog_EnableCascade_static_002] obj1 is: " + timePicker);
+      console.info("[TimePickerDialog_EnableCascade_static_002] obj1 is: " +
       JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
       inspector.sendEventByKey('TimePickerDialog2', 10, "")
       expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);
@@ -113,16 +104,15 @@ export default function enableCascadeTest() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerDialog_EnableCascade_003
-     * @tc.name  : TimePickerDialog_EnableCascade_003
-     * @tc.desc  : To test the enableCascade interface null
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   TimePickerDialog_EnableCascade_static_003
+     * @tc.name     TimePickerDialog_EnableCascade_static_003
+     * @tc.desc     TimePickerDialog_EnableCascade_static_003
+     * @tc.level    Level.LEVEL1
      */
-    it('TimePickerDialog_EnableCascade_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_003';
+it('TimePickerDialog_EnableCascade_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tagName = 'TimePickerDialog_EnableCascade_static_003';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog3', 10, "")
@@ -130,8 +120,8 @@ export default function enableCascadeTest() {
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
       let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_003] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_003] obj1 is: " +
+      console.info("[TimePickerDialog_EnableCascade_static_003] obj1 is: " + timePicker);
+      console.info("[TimePickerDialog_EnableCascade_static_003] obj1 is: " +
       JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
       inspector.sendEventByKey('TimePickerDialog3', 10, "")
       expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);
@@ -140,16 +130,16 @@ export default function enableCascadeTest() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerDialog_EnableCascade_004
-     * @tc.name  : TimePickerDialog_EnableCascade_004
-     * @tc.desc  : To test the enableCascade interface undefined
-     * @tc.type
-     * @tc.size
-     */
+    
 
-    it('TimePickerDialog_EnableCascade_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_004';
+    /*
+     * @tc.number   TimePickerDialog_EnableCascade_static_004
+     * @tc.name     TimePickerDialog_EnableCascade_static_004
+     * @tc.desc     TimePickerDialog_EnableCascade_static_004
+     * @tc.level    Level.LEVEL1
+     */
+it('TimePickerDialog_EnableCascade_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tagName = 'TimePickerDialog_EnableCascade_static_004';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog4', 10, "")
@@ -157,8 +147,8 @@ export default function enableCascadeTest() {
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
       let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_004] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_004] obj1 is: " +
+      console.info("[TimePickerDialog_EnableCascade_static_004] obj1 is: " + timePicker);
+      console.info("[TimePickerDialog_EnableCascade_static_004] obj1 is: " +
       JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
       inspector.sendEventByKey('TimePickerDialog4', 10, "")
       expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);

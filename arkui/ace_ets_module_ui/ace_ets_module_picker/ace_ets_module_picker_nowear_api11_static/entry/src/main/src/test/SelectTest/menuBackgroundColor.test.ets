@@ -37,7 +37,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -45,6 +45,7 @@ export default function menuBackgroundColor() {
   describe('menuBackgroundColor', () => {
     beforeAll(() => {
       console.info("menuBackgroundColor beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -63,25 +64,26 @@ export default function menuBackgroundColor() {
         console.info("get menuBackgroundColor state pages:" + JSON.stringify(pages));
         if (!("menuBackgroundColor" == pages.name)) {
           console.info("get menuBackgroundColor pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push menuBackgroundColor page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push menuBackgroundColor page error: " + err);
         expect().assertFail();
       }
-      // done();
+      
     });
 
-    /**
-     * @tc.number SUB_ACE_menuBackgroundColor_static_0100
-     * @tc.name menuBackgroundColor_static_0100
-     * @tc.desc To test that the menuBackgroundColor decorator.
-     * @tc.level Level 2
+    
+    /*
+     * @tc.number   menuBackgroundColor_static_0100
+     * @tc.name     menuBackgroundColor_static_0100
+     * @tc.desc     menuBackgroundColor_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('menuBackgroundColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('menuBackgroundColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('menuBackgroundColor_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,10 +52,8 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
         console.info('get DialogDisableDateRangeAndMarkToday state pages:' + JSON.stringify(pages));
         if (!('dialogDisableDateRangeAndMarkToday' == pages.name)) {
           console.info('get DialogDisableDateRangeAndMarkToday pages.name:' + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
-          // console.info('push DialogDisableDateRangeAndMarkToday page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push DialogDisableDateRangeAndMarkToday page error:' + err);
@@ -63,15 +61,14 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       console.info('DialogDisableDateRangeAndMarkToday beforeEach end');
     });
 
-    /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_001
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_static_001
-     * @tc.desc  : Test the width of the disabledDateRange 2025-01-09-2025-01-10 and markToday true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   DialogDisableDateRangeAndMarkToday_static_001
+     * @tc.name     DialogDisableDateRangeAndMarkToday_static_001
+     * @tc.desc     DialogDisableDateRangeAndMarkToday_static_001
+     * @tc.level    Level.LEVEL1
      */
-    it('DialogDisableDateRangeAndMarkToday_static_001',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('DialogDisableDateRangeAndMarkToday_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DialogDialogDisableDateRangeAndMarkToday_001] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -102,15 +99,14 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       done();
     });
 
-    /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_002
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_static_002
-     * @tc.desc  : Test the width of the disabledDateRange 2025-01-09 and markToday false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   DialogDisableDateRangeAndMarkToday_static_002
+     * @tc.name     DialogDisableDateRangeAndMarkToday_static_002
+     * @tc.desc     DialogDisableDateRangeAndMarkToday_static_002
+     * @tc.level    Level.LEVEL1
      */
-    it('DialogDisableDateRangeAndMarkToday_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('DialogDisableDateRangeAndMarkToday_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DialogDisableDateRangeAndMarkToday_002] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -139,15 +135,14 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       done();
     });
 
-    /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_003
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_static_003
-     * @tc.desc  : Test the width of the disabledDateRange undefined and markToday null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   DialogDisableDateRangeAndMarkToday_static_003
+     * @tc.name     DialogDisableDateRangeAndMarkToday_static_003
+     * @tc.desc     DialogDisableDateRangeAndMarkToday_static_003
+     * @tc.level    Level.LEVEL1
      */
-    it('DialogDisableDateRangeAndMarkToday_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('DialogDisableDateRangeAndMarkToday_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DialogDisableDateRangeAndMarkToday_003] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -177,15 +172,14 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       done();
     });
 
-    /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_004
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_static_004
-     * @tc.desc  : Test the width of the disabledDateRange null and markToday undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   DialogDisableDateRangeAndMarkToday_static_004
+     * @tc.name     DialogDisableDateRangeAndMarkToday_static_004
+     * @tc.desc     DialogDisableDateRangeAndMarkToday_static_004
+     * @tc.level    Level.LEVEL1
      */
-    it('DialogDisableDateRangeAndMarkToday_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('DialogDisableDateRangeAndMarkToday_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DialogDisableDateRangeAndMarkToday_004] START');
       await Utils.sleep(2000);
       let driver = Driver.create();

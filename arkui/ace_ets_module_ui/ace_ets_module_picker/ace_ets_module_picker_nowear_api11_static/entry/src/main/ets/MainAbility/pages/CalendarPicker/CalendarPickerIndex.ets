@@ -47,31 +47,31 @@ struct CalendarPickerExample {
   } as PickerTextStyle
   private selectedDate: Date = new Date('2026-02-11')
 
-  // private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-  //   console.info("select page state change called:" + JSON.stringify(eventData));
-  //   if (eventData != null) {
-  //     if (eventData.data?.['textStyle'] != null) {
-  //       // this.textStyle = JSON.parse(eventData.data?.textStyle);
-  //       // this.textStyle = JSON.parse(eventData.data?.['textStyle']);
-  //       this.textStyle = eventData.data?.['textStyle'] as PickerTextStyle
-  //     }
-  //     if (eventData.data?.['edgeAlign'] != null) {
-  //       this.edgeAlign = eventData.data?.['edgeAlign'] as CalendarAlign;
-  //       console.info("eventData.data.edgeAlign:" + this.edgeAlign);
-  //     }
-  //   }
-  // }
-  //
-  // aboutToAppear() {
-  //   let stateChangeEvent: events_emitter.InnerEvent = {
-  //     eventId: 185,
-  //     priority: events_emitter.EventPriority.LOW
-  //   }
-  //   events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  //
-  //   hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-  //   hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-  // }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   build() {
     Column() {

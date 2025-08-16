@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Font, FontStyle } from '@ohos.arkui.component';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -37,6 +37,7 @@ export default function selectJsunit() {
   describe('appInfoTest_five_2', () => {
     beforeAll(() => {
       console.info("appInfoTest_five_2 beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -62,7 +63,7 @@ export default function selectJsunit() {
       } catch (err) {
         console.error("push select page error " + JSON.stringify(err));
       }
-      // done()
+      
     });
 
     afterEach(async (): Promise<void> => {
@@ -70,7 +71,13 @@ export default function selectJsunit() {
       console.info("select after each called");
     });
 
-    it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0100
+     * @tc.name     selectTest_static_0100
+     * @tc.desc     selectTest_static_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectTest_static_0100 START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('select');
@@ -81,7 +88,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0200
+     * @tc.name     selectTest_static_0200
+     * @tc.desc     selectTest_static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0200] START');
       await Utils.sleep(1000);
       try {
@@ -107,7 +120,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0300
+     * @tc.name     selectTest_static_0300
+     * @tc.desc     selectTest_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0300] START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('select');
@@ -125,7 +144,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0400
+     * @tc.name     selectTest_static_0400
+     * @tc.desc     selectTest_static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0400] START');
       await Utils.sleep(1000);
       let font: Font = {
@@ -165,7 +190,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0500
+     * @tc.name     selectTest_static_0500
+     * @tc.desc     selectTest_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0500] START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('select');
@@ -176,7 +207,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0600
+     * @tc.name     selectTest_static_0600
+     * @tc.desc     selectTest_static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0600] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -202,7 +239,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0700
+     * @tc.name     selectTest_static_0700
+     * @tc.desc     selectTest_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0700] START');
       await Utils.sleep(1000);
       try {
@@ -228,7 +271,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0800
+     * @tc.name     selectTest_static_0800
+     * @tc.desc     selectTest_static_0800
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0800] START');
       await Utils.sleep(1000);
       try {
@@ -254,7 +303,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_0900
+     * @tc.name     selectTest_static_0900
+     * @tc.desc     selectTest_static_0900
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_0900] START');
       await Utils.sleep(1000);
       try {
@@ -280,7 +335,13 @@ export default function selectJsunit() {
       done();
     });
 
-    it('selectTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   selectTest_static_1000
+     * @tc.name     selectTest_static_1000
+     * @tc.desc     selectTest_static_1000
+     * @tc.level    Level.LEVEL1
+     */
+it('selectTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[selectTest_static_1000] START');
       try {
         let eventData: events_emitter.EventData = {

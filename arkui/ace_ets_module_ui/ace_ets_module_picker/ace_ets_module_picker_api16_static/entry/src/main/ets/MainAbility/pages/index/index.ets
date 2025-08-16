@@ -16,7 +16,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-// import common2D from "@ohos.graphics.displaySync"
+
 
 @Entry
 @Component

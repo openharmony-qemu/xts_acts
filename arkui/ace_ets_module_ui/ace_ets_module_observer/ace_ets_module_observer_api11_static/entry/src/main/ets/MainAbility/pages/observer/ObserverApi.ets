@@ -17,13 +17,12 @@ import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
 import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct ObserverApiTest {
   @State text1 :string = '1'
   @State text2 :string = '2'
-  // private context = getContext(this) as common.UIAbilityContext
+  
   private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
 
 
@@ -83,8 +82,7 @@ struct ObserverApiTest {
       Button('pushToPageTwo')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          const routerInstance = AppStorage.get<Router>("router") as Router
-          routerInstance.pushUrl({url: "MainAbility/pages/observer/ObserverApi2"})
+          this.getUIContext().getRouter().pushUrl({url: "MainAbility/pages/observer/ObserverApi2"})
         })
         .id('ObserverApi_pushToPageTwo')
 

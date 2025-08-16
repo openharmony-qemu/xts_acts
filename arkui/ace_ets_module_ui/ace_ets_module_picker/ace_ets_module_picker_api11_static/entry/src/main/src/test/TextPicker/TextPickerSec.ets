@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,6 @@ export default function TextPickerSec() {
   describe('TextPickerSec', () => {
 
     beforeAll(() => {
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -80,11 +79,10 @@ export default function TextPickerSec() {
         console.info("get TextPickerSec state pages:" + JSON.stringify(pages));
         if (!("TextPickerSec" == pages.name)) {
           console.info("get TextPickerSec pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push TextPickerSec page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextPickerSec page error " + JSON.stringify(err));
@@ -92,11 +90,13 @@ export default function TextPickerSec() {
       await sleep(2)
     });
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0100
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0100
-     * @tc.desc Verify that the CanLoop property parameter of the TextPicker component can scrol
-     *               l through loops when it is true
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0100
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0100
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0100
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "true");
@@ -115,11 +115,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0200
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0200
-     * @tc.desc Verifying that the CanLoop property parameter of the TextPicker component cannot
-     *               scroll through loops when it is false
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0200
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0200
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0200
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "false");
@@ -138,11 +140,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0300
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0300
-     * @tc.desc Failed to set the default loopable scrolling when verifying the CanLoop property
-     *               parameter of the TextPicker component to null
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0300
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0300
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0300
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "null");
@@ -161,11 +165,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0400
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0400
-     * @tc.desc Failed to set the default loopable scrolling when verifying the CanLoop property
-     *               parameter of the TextPicker component to undefined
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0400
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0400
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0400
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "undefined");
@@ -184,11 +190,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0500
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0500
-     * @tc.desc When verifying that the canLoop property parameters of the TextPicker component are all normal
-     *               values, whether to cycle is based on the last normal value
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0500
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0500
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0500
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "true");
@@ -209,11 +217,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0600
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0600
-     * @tc.desc Verify whether the CanLoop property parameter of the TextPicker component is looped based on
-     *               the last normal value when it is abnormal first and then normal
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0600
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0600
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0600
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "null");
@@ -234,11 +244,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0700
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0700
-     * @tc.desc Verify whether the CanLoop property parameter of the TextPicker component returns
-     *               to the default value when it is normal first and then abnormal
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0700
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0700
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0700
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "false");
@@ -259,11 +271,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0800
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0800
-     * @tc.desc Failed to set the default loopable scrolling when verifying the CanLoop property
-     *               parameter of TextPicker component to ''
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0800
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0800
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0800
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "");
@@ -282,11 +296,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_0900
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_0900
-     * @tc.desc When verifying that the CanLoop property parameter of the TextPicker component is of type number 0
-     *               setting failed to default to loopable scrolling
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0900
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0900
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0900
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "0");
@@ -305,11 +321,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPicker_CanLoop_static_1000
-     * @tc.name ArkUX_Stage_TextPicker_CanLoop_static_1000
-     * @tc.desc Verify if the TextPicker component does not set the canLoop property, and whether the looping
-     *               scrolling is set to the default loopable scrolling
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_1000
+     * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_1000
+     * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_1000
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPicker_CanLoop_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -326,10 +344,13 @@ export default function TextPickerSec() {
       }
     })
 
-    /**
-     * @tc.number ArkUX_Stage_TextPickerDialog_CanLoop_0100
-     * @tc.name ArkUX_Stage_TextPickerDialog_CanLoop_0100
-     * @tc.desc TextPickerDialog component added CanLoop interface coverage
+
+
+    /*
+     * @tc.number   ArkUX_Stage_TextPickerDialog_CanLoop_0100
+     * @tc.name     ArkUX_Stage_TextPickerDialog_CanLoop_0100
+     * @tc.desc     ArkUX_Stage_TextPickerDialog_CanLoop_0100
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUX_Stage_TextPickerDialog_CanLoop_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {

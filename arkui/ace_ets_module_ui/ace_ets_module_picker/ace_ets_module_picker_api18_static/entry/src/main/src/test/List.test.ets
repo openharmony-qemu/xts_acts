@@ -12,15 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import datePickerMode from './datePicker/DatePickerMode.test';
+import TimePickerStartAndEnd from './timePicker/timePickerStartAndEnd.test';
+import enableHapticFeedback from './textPicker/enableHapticFeedback.test';
+import EnableHapticFeedbackTest from './datePicker/datePickerEnableHapticFeedback.test';
+import EnableHapticFeedbackModifierTest from './datePicker/datePickerEnableHapticFeedbackModifier.test';
+import textPickerSelectedAreaTest from './textPicker/textPickerSelectedArea.test';
+import timePickerSelectedAreaTest from './timePicker/timePickerSelectedArea.test';
+import timePickerLoopTest from './timePicker/timePickerLoop.test';
 
-
-import EnableHapticFeedbackModifierTest from './datePicker/datePickerEnableHapticFeedbackModifier.test'
-import datePickerMode from './datePicker/DatePickerMode.test'
-import EnableHapticFeedbackTest from './textPicker/enableHapticFeedback.test'
-import TimePickerStartAndEnd from './timePicker/timePickerStartAndEnd.test'
 export default function testsuite() {
-  EnableHapticFeedbackModifierTest()
-  datePickerMode()
-  EnableHapticFeedbackTest()
-  TimePickerStartAndEnd()
+    datePickerMode();
+    TimePickerStartAndEnd();
+    EnableHapticFeedbackTest();
+    EnableHapticFeedbackModifierTest();
+    textPickerSelectedAreaTest();
+    timePickerSelectedAreaTest();
+    enableHapticFeedback();
+    timePickerLoopTest();
 }

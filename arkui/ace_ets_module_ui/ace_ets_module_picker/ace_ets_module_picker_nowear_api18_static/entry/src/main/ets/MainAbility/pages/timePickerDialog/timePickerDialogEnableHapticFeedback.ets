@@ -12,11 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MessageManager, Callback } from '../../common/MessageManager';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,RowOptions,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap, Color, $r, ColumnOptions, TimePickerResult, TimePickerFormat} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, Component, $r, Button, ClickEvent, Row, RowOptions, TimePickerResult, FontWeight, Color } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct textPickerDialogExample {
@@ -26,7 +24,7 @@ struct textPickerDialogExample {
       Row({space:5} as RowOptions){
         Button('1')
           .id('TimePickerDialog1')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
               enableHapticFeedback:true,
@@ -43,7 +41,7 @@ struct textPickerDialogExample {
           })
         Button('2')
           .id('TimePickerDialog2')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
               enableHapticFeedback:false,
@@ -62,7 +60,7 @@ struct textPickerDialogExample {
       Row({space:5} as RowOptions){
         Button('3')
           .id('TimePickerDialog3')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
               enableHapticFeedback:undefined,
@@ -79,10 +77,9 @@ struct textPickerDialogExample {
           })
         Button('4')
           .id('TimePickerDialog4')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
-              // enableHapticFeedback:null,
               disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
@@ -96,6 +93,6 @@ struct textPickerDialogExample {
           })
       }
     }
-  
+
   }
 }

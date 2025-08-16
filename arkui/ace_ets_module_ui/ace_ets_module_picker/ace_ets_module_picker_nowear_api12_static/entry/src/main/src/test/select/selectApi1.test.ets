@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -51,10 +51,8 @@ export default function selectApi1() {
         console.info("get selectApi1 state pages:" + JSON.stringify(pages));
         if (!("selectApi1" == pages.name)) {
           console.info("get selectApi1 pages.name:" + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push selectApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push selectApi1 page error:" + err);
@@ -65,12 +63,14 @@ export default function selectApi1() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number selectApi1_static_0100
-     * @tc.name   selectApi1_static_0100
-     * @tc.desc
+    
+    /*
+     * @tc.number   selectApi1_static_0100
+     * @tc.name     selectApi1_static_0100
+     * @tc.desc     selectApi1_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('selectApi1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('selectApi1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectApi1_static_0100 START');
       await CommonFunc.sleep(1000);
 

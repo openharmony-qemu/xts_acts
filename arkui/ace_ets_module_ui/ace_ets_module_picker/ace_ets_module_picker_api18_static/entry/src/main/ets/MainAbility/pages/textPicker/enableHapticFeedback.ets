@@ -35,7 +35,7 @@ struct TextPickerPage {
     Column() {
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        
       })
         .id('textPicker1')
         .enableHapticFeedback(true)
@@ -53,7 +53,7 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        
       })
         .id('textPicker2')
         .enableHapticFeedback(false)
@@ -71,7 +71,7 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        
       })
         .id('textPicker3')
         .enableHapticFeedback(undefined)
@@ -89,10 +89,9 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        
       })
         .id('textPicker4')
-        // .enableHapticFeedback(null)
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
           if (typeof index === 'number') {

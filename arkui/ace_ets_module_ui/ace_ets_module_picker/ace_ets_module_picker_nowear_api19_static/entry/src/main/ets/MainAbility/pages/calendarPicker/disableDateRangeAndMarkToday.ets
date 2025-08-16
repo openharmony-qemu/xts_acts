@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import abilityManager from '@ohos.app.abilityManager'
-// import common from '@ohos.app.ability.common';
 
 import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Direction, Scroll, FontWeight, CalendarPicker,
@@ -29,15 +27,9 @@ struct CalendarPickerExample {
   @State startDate: Date = new Date('2025-01-01')
   @State endDate: Date = new Date('2025-02-28')
   @State directions: Direction = Direction.Ltr
-  // @State markToday: boolean | undefined | null = true;
   @State markToday: boolean | undefined = true;
   @State count1: number = 0
-  // @State disableDateRange: DateRange[] | null | undefined = [
-  //   { start: new Date('1970-01-01'), end: new Date('2024-11-10') },
-  //   { start: new Date('2025-01-16'), end: new Date('2025-01-01') },
-  //   { start: new Date('2025-01-03'), end: new Date('2025-01-06') },
-  //   { start: new Date('2025-01-09'), end: new Date('2025-01-10') },
-  // ]
+
 
   @State disableDateRange: DateRange[] | undefined = [
     { start: new Date('1970-01-01'), end: new Date('2024-11-10') } as DateRange,
@@ -73,7 +65,6 @@ struct CalendarPickerExample {
 
         Row() {
           Button('null').onClick((e: ClickEvent) => {
-            // this.disableDateRange = null
           }).height(30)
             .id('outlier-null')
         }
@@ -90,7 +81,6 @@ struct CalendarPickerExample {
         }
 
         Button('Today-null').onClick((e: ClickEvent) => {
-          // this.markToday = null
         }).height(30)
           .id('Today-null')
 

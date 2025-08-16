@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,25 +52,23 @@ export default function DensityInfoTest() {
         console.info("get DensityInfoTest state pages: " + JSON.stringify(pages));
         if (!("DensityInfo" == pages.name)) {
           console.info("get DensityInfoTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push DensityInfoTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DensityInfoTest page error: " + err);
         expect().assertFail();
       }
     });
-    /**
-     * @tc.number    DensityInfoTest_0100
-     * @tc.name      DensityInfoTest_static_0100
-     * @tc.desc      test the api of DensityInfo
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   DensityInfoTest_static_0100
+     * @tc.name     DensityInfoTest_static_0100
+     * @tc.desc     DensityInfoTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('DensityInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('DensityInfoTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DensityInfoTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

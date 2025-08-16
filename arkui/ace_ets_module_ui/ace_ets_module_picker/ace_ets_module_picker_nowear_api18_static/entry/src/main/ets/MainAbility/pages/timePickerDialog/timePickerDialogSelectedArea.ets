@@ -12,10 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MessageManager, Callback } from '../../common/MessageManager';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,TextAlign,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap, Color, $r, ColumnOptions, TimePickerResult, TimePickerFormat} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, Component, $r, Button, ClickEvent, Row, RowOptions, TimePickerResult, FontWeight, Color, Margin, TextAlign, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectTime{
@@ -35,7 +32,7 @@ struct TimePickerDialogSelectedAreaExample {
       Button('showTimePickerDialog ' + this.selectedFlag)
         .id('showTimePickerDialog')
         .margin(30)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.selectedFlag = ''
           this.getUIContext().showTimePickerDialog({
             selected: this.selectTime,

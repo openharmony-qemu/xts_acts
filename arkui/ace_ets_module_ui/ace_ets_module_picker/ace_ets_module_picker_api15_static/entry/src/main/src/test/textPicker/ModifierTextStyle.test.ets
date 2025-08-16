@@ -53,21 +53,21 @@ export default function ModifierTextStyleTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          // let result = await routerInstance.pushUrl(options)
-          // console.info('push ModifierTextStyleTest page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push ModifierTextStyleTest page error ' + JSON.stringify(err));
       }
     });
-    /* *
-    * @tc.number: ModifierTextStyleTest_static_0100
-    * @tc.name  : ModifierTextStyleTest_static_0100
-    * @tc.desc  : To test the minFontSize > maxFontSize, overflow = TextOverflow.Ellipsis
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    
+    
+    
+    /*
+     * @tc.number   ModifierTextStyleTest_static_0100
+     * @tc.name     ModifierTextStyleTest_static_0100
+     * @tc.desc     ModifierTextStyleTest_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it('ModifierTextStyleTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ModifierTextStyleTest_static_0100 start');
       let strJson = inspector.getInspectorByKey('modifierDefaultTextStyle');

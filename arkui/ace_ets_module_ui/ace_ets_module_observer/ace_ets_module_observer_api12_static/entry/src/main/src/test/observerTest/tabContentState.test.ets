@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -47,10 +47,9 @@ export default function tabContentState() {
         console.info("get tabContentState state pages:" + JSON.stringify(pages));
         if (!("tabContentState" == pages.name)) {
           console.info("get tabContentState pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push tabContentState page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabContentState page error:" + err);
@@ -62,15 +61,14 @@ export default function tabContentState() {
       console.info("tabContentState after each called");
     });
 
-    /**
-     * @tc.number    tabContentState_001
-     * @tc.name      tabContentState_static_001
-     * @tc.desc      TabContent state.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   tabContentState_static_001
+     * @tc.name     tabContentState_static_001
+     * @tc.desc     tabContentState_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('tabContentState_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabContentState_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabContentState_001] START');
       await CommonFunc.sleep(1000);
       let swiperTabs = CommonFunc.getComponentRectOnScreen('tabsId');

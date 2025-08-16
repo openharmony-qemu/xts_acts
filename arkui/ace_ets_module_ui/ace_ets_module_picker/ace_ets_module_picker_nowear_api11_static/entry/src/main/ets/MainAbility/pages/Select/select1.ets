@@ -40,30 +40,30 @@ struct select1 {
   } as Font
   @State fontColor: Color = 0xCCCCCC as Color
 
-  // private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-  //   console.info("select page state change called:" + JSON.stringify(eventData));
-  //   if (eventData != null) {
-  //     if (eventData.data?.['value'] != null) {
-  //       this.value = eventData.data?.['value'] as string;
-  //     }
-  //     if (eventData.data?.['font'] != null) {
-  //       // this.font = JSON.parse(eventData.data?.['font']) as Font;
-  //       this.font = eventData.data?.['font'] as Font;
-  //     }
-  //     if (eventData.data?.['fontColor'] != null) {
-  //       this.fontColor = eventData.data?.['fontColor'] as Color;
-  //     }
-  //   }
-  // };
-  //
-  // onPageShow() {
-  //   console.info('select page show called');
-  //   let stateChangeEvent: events_emitter.InnerEvent = {
-  //     eventId: 191,
-  //     priority: events_emitter.EventPriority.LOW
-  //   }
-  //   events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  // }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   build() {
     Column() {

@@ -29,7 +29,7 @@ export default class Utils {
 
   static getComponentRect(key: string) {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
+    let obj =
       JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =

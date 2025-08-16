@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r, ShadowOptions, ShadowType} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, ShadowOptions, ShadowStyle, Flex, FlexWrap } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TextPickerDialogShadow {
@@ -29,45 +29,37 @@ struct TextPickerDialogShadow {
   build() {
     Flex({wrap: FlexWrap.Wrap}) {
       Button('ShadowOptions')
-        .onClick((e:ClickEvent) => {
-          this.showDialog({
-            radius: 30,
-            type: ShadowType.COLOR,
-            color: Color.Red,
-            offsetX: 100,
-            offsetY: 100,
-            fill: true,
-          } as ShadowOptions)
+        .onClick((e: ClickEvent) => {
         })
         .id('shadowOptionID')
       Button('OUTER_DEFAULT_XS')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_DEFAULT_XS)
         })
         .id('OUTER_DEFAULT_XS_ID')
       Button('OUTER_DEFAULT_SM')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_DEFAULT_SM)
         })
         .id('OUTER_DEFAULT_SM_ID')
       Button('OUTER_DEFAULT_MD')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_DEFAULT_MD)
         })
         .id('OUTER_DEFAULT_MD_ID')
       Button('OUTER_DEFAULT_LG')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_DEFAULT_LG)
         })
         .id('OUTER_DEFAULT_LG_ID')
 
       Button('OUTER_FLOATING_SM')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_FLOATING_SM)
         })
         .id('OUTER_FLOATING_SM_ID')
       Button('OUTER_FLOATING_MD')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(ShadowStyle.OUTER_FLOATING_MD)
         })
         .id('OUTER_FLOATING_MD_ID')

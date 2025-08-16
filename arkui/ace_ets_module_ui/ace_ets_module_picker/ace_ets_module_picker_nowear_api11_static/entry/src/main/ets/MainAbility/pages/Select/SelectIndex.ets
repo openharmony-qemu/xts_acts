@@ -30,7 +30,8 @@ import {
   FontStyle,
   $r,
   OnSelectCallback,
-  Select
+  Select,
+  Margin
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import testsuite from '../../../../src/test/List.test';
@@ -50,36 +51,36 @@ struct SelectExample {
   @State arrowPosition: ArrowPosition = ArrowPosition.END
   @State spaceValueResource: Resource = $r('app.string.Test_Values')
 
-  // private stateChangCallBack: (eventData:events_emitter.EventData) => void  = (eventData: events_emitter.EventData) => {
-  //   console.info("selectTest stateChangCallBack before:" + JSON.stringify(eventData));
-  //   if (eventData != null) {
-  //     this.spaceValue = eventData.data?.["spaceValue"] as number ;
-  //     console.info("select page state change called after spaceValue:" + this.spaceValue);
-  //     this.arrowPosition = eventData.data?.["arrowPosition"] as ArrowPosition;
-  //     console.info("select page eventData:" + this.arrowPosition);
-  //     if (eventData.data?.["spaceValueString"] != null) {
-  //       this.spaceValueString = eventData.data?.["spaceValueString"] as string;
-  //       console.info("select page state change called after spaceValue:" + this.spaceValueString);
-  //     }
-  //     if (eventData.data?.["spaceValueResource"] != null) {
-  //       this.spaceValueResource = eventData.data?.["spaceValueResource"] as Resource;
-  //       console.info("select page state change called after spaceValue:" + this.spaceValueResource);
-  //     }
-  //   }
-  // }
-  // aboutToAppear() {
-  //   let stateChangeEvent: events_emitter.InnerEvent = {
-  //     eventId: 181,
-  //     priority: events_emitter.EventPriority.LOW
-  //   }
-  //   events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  //
-  //   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-  //   let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-  //   hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-  //   hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-  //   Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-  // }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   build() {
     Column() {
@@ -110,7 +111,7 @@ struct SelectExample {
         .space(this.spaceValue)
         .arrowPosition(this.arrowPosition)
 
-      // .margin({ bottom: 40 })
+      .margin({ bottom: 40 } as Margin)
 
       Select([{ value: 'aaa', icon: "/images/img.png" },
         { value: 'bbb', icon: "/images/img.png" },
@@ -138,7 +139,7 @@ struct SelectExample {
         } as OnSelectCallback)
         .space(this.spaceValueString)
         .arrowPosition(this.arrowPosition)
-      // .margin({ bottom: 40 })
+      .margin({ bottom: 40 } as Margin)
 
       Select([{ value: 'aaa', icon: "/images/img.png" },
         { value: 'bbb', icon: "/images/img.png" },

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,10 +52,9 @@ export default function idScrollEvent() {
         console.info("get idScrollEvent state pages:" + JSON.stringify(pages));
         if (!("idScrollEvent" == pages.name)) {
           console.info("get idScrollEvent pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push idScrollEvent page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push idScrollEvent page error:" + err);
@@ -63,15 +62,14 @@ export default function idScrollEvent() {
       console.info("idScrollEvent beforeEach end");
     });
 
-    /**
-     * @tc.number    idScrollEvent_001
-     * @tc.name      idScrollEvent_static_0100
-     * @tc.desc      Listen for the start and end of scrolling events.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   idScrollEvent_static_0100
+     * @tc.name     idScrollEvent_static_0100
+     * @tc.desc     idScrollEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('idScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('idScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[idScrollEvent_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -53,10 +53,9 @@ export default function ObserverApi() {
         console.info("get ObserverApi state success " + JSON.stringify(pages));
         if (!("ObserverApi" == pages.name)) {
           console.info("get ObserverApi state success " + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ObserverApi page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObserverApi page error: " + err);
@@ -68,13 +67,14 @@ export default function ObserverApi() {
       console.info("ObserverApi after each called");
     });
 
+    
     /*
-     * @tc.number      ObserverApi_001
-     * @tc.name        ObserverApi_static_001
-     * @tc.desc        Navigation RouterPageState test
-     * @tc.level       Level 2
+     * @tc.number   ObserverApi_static_001
+     * @tc.name     ObserverApi_static_001
+     * @tc.desc     ObserverApi_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverApi_001] START');
       await CommonFunc.sleep(1000);
 
@@ -127,13 +127,14 @@ export default function ObserverApi() {
     });
 
 
+    
     /*
-     * @tc.number      ObserverApi_002
-     * @tc.name        ObserverApi_static_002
-     * @tc.desc        Navigation RouterPageState2 test
-     * @tc.level       Level 2
+     * @tc.number   ObserverApi_static_002
+     * @tc.name     ObserverApi_static_002
+     * @tc.desc     ObserverApi_static_002
+     * @tc.level    Level.LEVEL0
      */
-    it('ObserverApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ObserverApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverApi_002] START');
       await CommonFunc.sleep(1000);
 

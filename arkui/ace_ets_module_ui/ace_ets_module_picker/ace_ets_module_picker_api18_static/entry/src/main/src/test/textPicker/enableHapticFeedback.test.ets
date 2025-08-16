@@ -51,9 +51,8 @@ export default function EnableHapticFeedbackTest() {
         if (!('enableHapticFeedback' == pages.name)) {
           console.info('get TextPickerAddApi pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
           await Utils.sleep(2500);
-          // console.info('push TextPickerAddApi page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TextPickerAddApi page error:' + err);
@@ -62,13 +61,14 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_static_001
-     * @tc.name  : TextPickerEnableHapticFeedback_static_001
-     * @tc.desc  : To test the enableHapticFeedback interface true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TextPickerEnableHapticFeedback_static_001
+     * @tc.name     TextPickerEnableHapticFeedback_static_001
+     * @tc.desc     TextPickerEnableHapticFeedback_static_001
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TextPickerEnableHapticFeedback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('textPicker1');
@@ -80,13 +80,14 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_static_002
-     * @tc.name  : TextPickerEnableHapticFeedback_static_002
-     * @tc.desc  : To test the enableHapticFeedback interface false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TextPickerEnableHapticFeedback_static_002
+     * @tc.name     TextPickerEnableHapticFeedback_static_002
+     * @tc.desc     TextPickerEnableHapticFeedback_static_002
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TextPickerEnableHapticFeedback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('textPicker2');
@@ -98,13 +99,14 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_static_003
-     * @tc.name  : TextPickerEnableHapticFeedback_static_003
-     * @tc.desc  : To test the enableHapticFeedback interface undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TextPickerEnableHapticFeedback_static_003
+     * @tc.name     TextPickerEnableHapticFeedback_static_003
+     * @tc.desc     TextPickerEnableHapticFeedback_static_003
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TextPickerEnableHapticFeedback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('textPicker3');
@@ -116,13 +118,14 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_static_004
-     * @tc.name  : TextPickerEnableHapticFeedback_static_004
-     * @tc.desc  : To test the enableHapticFeedback interface null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TextPickerEnableHapticFeedback_static_004
+     * @tc.name     TextPickerEnableHapticFeedback_static_004
+     * @tc.desc     TextPickerEnableHapticFeedback_static_004
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TextPickerEnableHapticFeedback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('textPicker4');
