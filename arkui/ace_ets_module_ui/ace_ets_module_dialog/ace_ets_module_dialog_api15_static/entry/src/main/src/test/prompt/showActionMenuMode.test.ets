@@ -82,15 +82,15 @@ export default function showActionMenuMode() {
 
 
 
-    /**
-     * @tc.number showActionMenuMode_static_0100
-     * @tc.name showActionMenuMode_static_0100
-     * @tc.desc set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0100
+     * @tc.name     showActionMenuMode_static_0100
+     * @tc.desc     showActionMenuMode_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -124,15 +124,15 @@ export default function showActionMenuMode() {
       done();
     });
 
-    /**
-     * @tc.number showActionMenuMode_static_0200
-     * @tc.name showActionMenuMode_static_0200
-     * @tc.desc set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0200
+     * @tc.name     showActionMenuMode_static_0200
+     * @tc.desc     showActionMenuMode_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -167,15 +167,15 @@ export default function showActionMenuMode() {
       done();
     });
 
-    /**
-     * @tc.number showActionMenuMode_static_0300
-     * @tc.name showActionMenuMode_static_0300
-     * @tc.desc set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0300
+     * @tc.name     showActionMenuMode_static_0300
+     * @tc.desc     showActionMenuMode_static_0300
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0300 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -210,15 +210,15 @@ export default function showActionMenuMode() {
       done();
     });
 
-    /**
-     * @tc.number showActionMenuMode_static_0400
-     * @tc.name showActionMenuMode_static_0400
-     * @tc.desc set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0400
+     * @tc.name     showActionMenuMode_static_0400
+     * @tc.desc     showActionMenuMode_static_0400
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0400 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -253,15 +253,15 @@ export default function showActionMenuMode() {
       done();
     });
 
-    /**
-     * @tc.number showActionMenuMode_static_0500
-     * @tc.name showActionMenuMode_static_0500
-     * @tc.desc set levelMode: undefined,levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0500
+     * @tc.name     showActionMenuMode_static_0500
+     * @tc.desc     showActionMenuMode_static_0500
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0500 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -294,15 +294,15 @@ export default function showActionMenuMode() {
       console.info('[showActionMenuMode_static_0500] END');
       done();
     });
-    /**
-     * @tc.number showActionMenuMode_static_0600
-     * @tc.name showActionMenuMode_static_0600
-     * @tc.desc set levelMode: null,levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   showActionMenuMode_static_0600
+     * @tc.name     showActionMenuMode_static_0600
+     * @tc.desc     showActionMenuMode_static_0600
+     * @tc.level    Level.LEVEL1
      */
-    it('showActionMenuMode_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('showActionMenuMode_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('showActionMenuMode_static_0600 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

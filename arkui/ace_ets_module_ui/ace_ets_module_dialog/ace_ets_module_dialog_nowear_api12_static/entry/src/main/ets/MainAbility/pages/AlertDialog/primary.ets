@@ -12,8 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ColumnOptions, AlertDialogParamWithOptions, DialogAlignment} from '@ohos.arkui.component' //AlertDialog,
+import {
+  AlertDialogParamWithOptions,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
+  Component,
+  DialogAlignment,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Row,
+  Text
+} from '@ohos.arkui.component' //AlertDialog,
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 
@@ -21,6 +37,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct primaryTest {
   uiContext: UIContext = this.getUIContext()
+
   aboutToDisappear() {
     this.getUIContext().getFocusController().activate(false)
   }
@@ -31,10 +48,10 @@ struct primaryTest {
       Button('primary1')
         .id('primary1')
         .height('8%')
-        .onClick((e:ClickEvent) => {
-          setTimeout(()=>{
+        .onClick((e: ClickEvent) => {
+          setTimeout(() => {
             this.getUIContext().getFocusController().activate(true)
-          },100)
+          }, 100)
           this.uiContext.showAlertDialog(
             {
               title: 'title',
@@ -44,17 +61,17 @@ struct primaryTest {
               alignment: DialogAlignment.Center,
               offset: { dx: 0, dy: -20 },
               gridCount: 3,
-              buttons:[
+              buttons: [
                 {
-                  value:'按钮1',
-                  action:()=>{
+                  value: '按钮1',
+                  action: () => {
                     console.log('button1')
                   },
-                  primary:true,
+                  primary: true,
                 },
                 {
-                  value:'按钮2',
-                  action:()=>{
+                  value: '按钮2',
+                  action: () => {
                     console.log('button1')
                   }
                 },
@@ -66,10 +83,10 @@ struct primaryTest {
       Button('primary2')
         .id('primary2')
         .height('8%')
-        .onClick((e:ClickEvent) => {
-           setTimeout(()=>{
+        .onClick((e: ClickEvent) => {
+          setTimeout(() => {
             this.getUIContext().getFocusController().activate(true)
-          },100)
+          }, 100)
           this.uiContext.showAlertDialog(
             {
               title: 'title',
@@ -79,17 +96,17 @@ struct primaryTest {
               alignment: DialogAlignment.Center,
               offset: { dx: 0, dy: -20 },
               gridCount: 3,
-              buttons:[
+              buttons: [
                 {
-                  value:'按钮1',
-                  action:()=>{
+                  value: '按钮1',
+                  action: () => {
                     console.log('button1')
                   },
-                  primary:false,
+                  primary: false,
                 },
                 {
-                  value:'按钮2',
-                  action:()=>{
+                  value: '按钮2',
+                  action: () => {
                     console.log('button1')
                   }
                 },

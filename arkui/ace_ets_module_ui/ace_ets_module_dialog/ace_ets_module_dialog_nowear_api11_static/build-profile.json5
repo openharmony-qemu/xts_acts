@@ -38,8 +38,7 @@
         "name": "release"
       }
     ],
-    "signingConfigs": [
-    ]
+    "signingConfigs": []
   },
   "modules": [
     {

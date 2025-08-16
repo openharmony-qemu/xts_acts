@@ -65,15 +65,15 @@ export default function menuBindMenuModifierTest() {
     });
 
 
-    /* *
-        * @tc.number: TimePickerOnChange_0001
-        * @tc.name  : TimePickerOnChange_001_001
-        * @tc.desc  : To test the enableCascade interface true
-        * @tc.level : Level 3
-        * @tc.type
-        * @tc.size
-        */
-    it('MenuBindMenu_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   MenuBindMenu_static_0001
+     * @tc.name     MenuBindMenu_static_0001
+     * @tc.desc     MenuBindMenu_static_0001
+     * @tc.level    Level.LEVEL2
+     */
+it('MenuBindMenu_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MenuBindMenu_static_0001 START');
       let driver: Driver = Driver.create();
       let btn1 = (await driver.findComponent(ON.id('btnModifier1')));

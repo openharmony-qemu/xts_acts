@@ -73,15 +73,15 @@ export default function alertDialogLevelOrder() {
       console.info("alertDialogLevelOrder after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_alertDialogLevelOrder_static_0100
-     * @tc.name alertDialogLevelOrder_static_0100
-     * @tc.desc To test the LevelOrder attribute of showAlertDialog,LevelOrder.clamp(100)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('alertDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   alertDialogLevelOrder_static_0100
+     * @tc.name     alertDialogLevelOrder_static_0100
+     * @tc.desc     alertDialogLevelOrder_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     */
+it('alertDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('alertDialogLevelOrder_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,15 +101,15 @@ export default function alertDialogLevelOrder() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_alertDialogLevelOrder_static_0200
-     * @tc.name alertDialogLevelOrder_static_0200
-     * @tc.desc To test the LevelOrder attribute of showAlertDialog,LevelOrder.clamp(100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('alertDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   alertDialogLevelOrder_static_0200
+     * @tc.name     alertDialogLevelOrder_static_0200
+     * @tc.desc     alertDialogLevelOrder_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     */
+it('alertDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('alertDialogLevelOrder_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -129,15 +129,15 @@ export default function alertDialogLevelOrder() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_alertDialogLevelOrder_static_0300
-     * @tc.name alertDialogLevelOrder_static_0300
-     * @tc.desc To test the LevelOrder attribute of showAlertDialog,LevelOrder.clamp(-100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('alertDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   alertDialogLevelOrder_static_0300
+     * @tc.name     alertDialogLevelOrder_static_0300
+     * @tc.desc     alertDialogLevelOrder_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('alertDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('alertDialogLevelOrder_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -156,15 +156,15 @@ export default function alertDialogLevelOrder() {
       console.info('alertDialogLevelOrder_static_0300 END');
       done();
     });
-    /**
-     * @tc.number SUB_ACE_alertDialogLevelOrder_static_0400
-     * @tc.name alertDialogLevelOrder_static_0400
-     * @tc.desc To test the LevelOrder attribute of showAlertDialog,LevelOrder.clamp(undefined)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('alertDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   alertDialogLevelOrder_static_0400
+     * @tc.name     alertDialogLevelOrder_static_0400
+     * @tc.desc     alertDialogLevelOrder_static_0400
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('alertDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('alertDialogLevelOrder_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

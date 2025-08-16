@@ -67,15 +67,15 @@ export default function bindSheetRadius() {
 
 
 
-    /**
-     * @tc.number    bindSheetRadius_static_0100
-     * @tc.name      bindSheetRadius_static_0100
-     * @tc.desc      set bindSheetRadius: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0100
+     * @tc.name     bindSheetRadius_static_0100
+     * @tc.desc     bindSheetRadius_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -106,15 +106,15 @@ export default function bindSheetRadius() {
       done();
     });
 
-    /**
-     * @tc.number    bindSheetRadius_static_0200
-     * @tc.name      bindSheetRadius_static_0200
-     * @tc.desc      set bindSheetRadius: 20vp
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0200
+     * @tc.name     bindSheetRadius_static_0200
+     * @tc.desc     bindSheetRadius_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0200 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();
@@ -144,15 +144,15 @@ export default function bindSheetRadius() {
       done();
     });
 
-    /**
-     * @tc.number    bindSheetRadius_static_0300
-     * @tc.name      bindSheetRadius_static_0300
-     * @tc.desc      set bindSheetRadius: 20fp
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0300
+     * @tc.name     bindSheetRadius_static_0300
+     * @tc.desc     bindSheetRadius_static_0300
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0300 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();
@@ -182,15 +182,15 @@ export default function bindSheetRadius() {
       done();
     });
 
-    /**
-     * @tc.number    bindSheetRadius_static_0400
-     * @tc.name      bindSheetRadius_static_0400
-     * @tc.desc      set bindSheetRadius: topLeft: '10px', topRight: '20vp',
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0400
+     * @tc.name     bindSheetRadius_static_0400
+     * @tc.desc     bindSheetRadius_static_0400
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0400 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();
@@ -220,15 +220,15 @@ export default function bindSheetRadius() {
       done();
     });
 
-    /**
-     * @tc.number    bindSheetRadius_static_0500
-     * @tc.name      bindSheetRadius_static_0500
-     * @tc.desc      set bindSheetRadius: topLeft: '100px', topRight: '0.00vp',
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0500
+     * @tc.name     bindSheetRadius_static_0500
+     * @tc.desc     bindSheetRadius_static_0500
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0500 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();
@@ -258,15 +258,15 @@ export default function bindSheetRadius() {
       done();
     });
 
-    /**
-     * @tc.number    bindSheetRadius_static_0600
-     * @tc.name      bindSheetRadius_static_0600
-     * @tc.desc      set bindSheetRadius: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0600
+     * @tc.name     bindSheetRadius_static_0600
+     * @tc.desc     bindSheetRadius_static_0600
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0600 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();
@@ -300,15 +300,15 @@ export default function bindSheetRadius() {
       console.info('[bindSheetRadius_static_0400] END');
       done();
     });
-    /**
-     * @tc.number    bindSheetRadius_static_0700
-     * @tc.name      bindSheetRadius_static_0700
-     * @tc.desc      set bindSheetRadius: null
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   bindSheetRadius_static_0700
+     * @tc.name     bindSheetRadius_static_0700
+     * @tc.desc     bindSheetRadius_static_0700
+     * @tc.level    Level.LEVEL1
      */
-    it('bindSheetRadius_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('bindSheetRadius_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('bindSheetRadius_static_0700 START');
       await CommonFunc.sleep(1000)
       let driver: Driver = Driver.create();

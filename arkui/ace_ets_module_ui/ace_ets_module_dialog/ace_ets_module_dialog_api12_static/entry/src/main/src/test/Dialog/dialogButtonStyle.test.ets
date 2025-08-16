@@ -71,15 +71,15 @@ export default function dialogButtonStyle() {
       console.info("dialogButtonStyle after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_dialogButtonStyle_static_0100
-     * @tc.name dialogButtonStyle_static_0100
-     * @tc.desc To test the dialogButtonStyle: DialogButtonStyle.DEFAULT
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('dialogButtonStyle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   dialogButtonStyle_static_0100
+     * @tc.name     dialogButtonStyle_static_0100
+     * @tc.desc     dialogButtonStyle_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('dialogButtonStyle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dialogButtonStyle_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

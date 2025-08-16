@@ -67,15 +67,15 @@ export default function buttonTypeTest() {
 
 
    
-    /**
-     * @tc.number    buttonTypeTest_static_0100
-     * @tc.name      buttonTypeTest_static_0100
-     * @tc.desc      set ButtonType: ButtonType.ROUNDED_RECTANGLE
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   buttonTypeTest_static_0100
+     * @tc.name     buttonTypeTest_static_0100
+     * @tc.desc     buttonTypeTest_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('buttonTypeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('buttonTypeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('buttonTypeTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let btn = inspector.getInspectorByKey('btn');

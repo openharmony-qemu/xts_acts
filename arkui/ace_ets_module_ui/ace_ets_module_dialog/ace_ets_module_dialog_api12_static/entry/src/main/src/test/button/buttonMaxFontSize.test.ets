@@ -62,15 +62,15 @@ export default function buttonMaxFontSize() {
         expect().assertFail();
       }
     });
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_static_0100
-    * @tc.name  : buttonMaxFontSize_static_0100
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('buttonMaxFontSize_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   buttonMaxFontSize_static_0100
+     * @tc.name     buttonMaxFontSize_static_0100
+     * @tc.desc     buttonMaxFontSize_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('buttonMaxFontSize_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('buttonMaxFontSize_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -83,15 +83,15 @@ export default function buttonMaxFontSize() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_static_0200
-    * @tc.name  : buttonMaxFontSize_static_0200
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('buttonMaxFontSize_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   buttonMaxFontSize_static_0200
+     * @tc.name     buttonMaxFontSize_static_0200
+     * @tc.desc     buttonMaxFontSize_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('buttonMaxFontSize_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('buttonMaxFontSize_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,15 +103,15 @@ export default function buttonMaxFontSize() {
       console.info('[buttonMaxFontSize_static_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_static_0300
-    * @tc.name  : buttonMaxFontSize_static_0300
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('buttonMaxFontSize_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   buttonMaxFontSize_static_0300
+     * @tc.name     buttonMaxFontSize_static_0300
+     * @tc.desc     buttonMaxFontSize_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('buttonMaxFontSize_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('buttonMaxFontSize_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

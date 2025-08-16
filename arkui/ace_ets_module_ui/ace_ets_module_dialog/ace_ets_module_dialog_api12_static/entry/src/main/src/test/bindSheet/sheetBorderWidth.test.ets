@@ -68,15 +68,15 @@ export default function sheetBorderWidth() {
       }
     });
 
-    /**
-     * @tc.number SUB_ACE_sheetBorderWidth_static_0100
-     * @tc.name sheetBorderWidth_static_0100
-     * @tc.desc To test the sheetBorderWidth:10
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('sheetBorderWidth_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   sheetBorderWidth_static_0100
+     * @tc.name     sheetBorderWidth_static_0100
+     * @tc.desc     sheetBorderWidth_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('sheetBorderWidth_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sheetBorderWidth_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,15 +106,15 @@ export default function sheetBorderWidth() {
     });
 
 
-    /**
-     * @tc.number SUB_ACE_sheetBorderWidth_static_0200
-     * @tc.name sheetBorderWidth_static_0200
-     * @tc.desc To test the sheetBorderWidth
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('sheetBorderWidth_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   sheetBorderWidth_static_0200
+     * @tc.name     sheetBorderWidth_static_0200
+     * @tc.desc     sheetBorderWidth_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('sheetBorderWidth_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sheetBorderWidth_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -143,15 +143,15 @@ export default function sheetBorderWidth() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_sheetBorderWidth_static_0300
-     * @tc.name sheetBorderWidth_static_0300
-     * @tc.desc To test the sheetBorderWidth:undefined
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('sheetBorderWidth_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   sheetBorderWidth_static_0300
+     * @tc.name     sheetBorderWidth_static_0300
+     * @tc.desc     sheetBorderWidth_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('sheetBorderWidth_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sheetBorderWidth_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

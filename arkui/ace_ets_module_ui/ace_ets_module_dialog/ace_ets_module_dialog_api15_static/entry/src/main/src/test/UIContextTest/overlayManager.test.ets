@@ -66,15 +66,15 @@ export default function overlayManager() {
 
 
 
-    /**
-     * @tc.number    overlayManager_static_0100
-     * @tc.name      overlayManager_static_0100
-     * @tc.desc      set renderRootOverlay: true
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   overlayManager_static_0100
+     * @tc.name     overlayManager_static_0100
+     * @tc.desc     overlayManager_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('overlayManager_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('overlayManager_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('overlayManager_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -92,15 +92,15 @@ export default function overlayManager() {
     });
 
 
-    /**
-     * @tc.number    overlayManager_static_0200
-     * @tc.name      overlayManager_static_0200
-     * @tc.desc      set renderRootOverlay: false
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   overlayManager_static_0200
+     * @tc.name     overlayManager_static_0200
+     * @tc.desc     overlayManager_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('overlayManager_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('overlayManager_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('overlayManager_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

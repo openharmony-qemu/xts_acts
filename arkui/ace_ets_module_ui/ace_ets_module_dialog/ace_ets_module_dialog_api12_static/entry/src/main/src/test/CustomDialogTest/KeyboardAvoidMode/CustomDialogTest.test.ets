@@ -65,15 +65,15 @@ export default function CustomDialogTest() {
 
 
 
-    /**
-     * @tc.number    CustomDialogTest_static_0100
-     * @tc.name      CustomDialogTest_static_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   CustomDialogTest_static_0100
+     * @tc.name     CustomDialogTest_static_0100
+     * @tc.desc     CustomDialogTest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('CustomDialogTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('CustomDialogTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -89,15 +89,15 @@ export default function CustomDialogTest() {
       done();
     });
 
-    /**
-     * @tc.number    CustomDialogTest_static_0200
-     * @tc.name      CustomDialogTest_static_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   CustomDialogTest_static_0200
+     * @tc.name     CustomDialogTest_static_0200
+     * @tc.desc     CustomDialogTest_static_0200
+     * @tc.level    Level.LEVEL2
      */
-    it('CustomDialogTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('CustomDialogTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogTest_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

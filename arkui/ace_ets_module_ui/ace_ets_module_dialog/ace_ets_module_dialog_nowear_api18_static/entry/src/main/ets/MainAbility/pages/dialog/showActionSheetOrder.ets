@@ -13,10 +13,29 @@
  * limitations under the License.
  */
 import { LevelOrder } from '@ohos.promptAction'
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, LevelOrder, ColumnOptions, RowOptions, DialogAlignment} from '@ohos.arkui.component'
+import {
+  Button,
+  ButtonType,
+  ClickEvent,
+  Column,
+  ColumnOptions,
+  Component,
+  DialogAlignment,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  LevelOrder,
+  Margin,
+  Row,
+  RowOptions,
+  Text
+} from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct showActionSheetOrder {
@@ -28,7 +47,7 @@ struct showActionSheetOrder {
         Button('100')
           .id('100')
           .height('8%')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -58,13 +77,12 @@ struct showActionSheetOrder {
         Button('undefined')
           .id('undefined')
           .height('8%')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
               autoCancel: true,
               isModal: false,
-              // levelOrder: LevelOrder.clamp(undefined),
               confirm: {
                 value: 'Confirm',
                 action: () => {
@@ -91,7 +109,7 @@ struct showActionSheetOrder {
         Button('100001')
           .id('100001')
           .height('8%')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -121,7 +139,7 @@ struct showActionSheetOrder {
         Button('-100001')
           .id('-100001')
           .height('8%')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -152,7 +170,7 @@ struct showActionSheetOrder {
 
       Button('get showActionSheetOrder')
         .id('myOrder')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           let showActionSheetOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showActionSheetOrder !== undefined) {
             AppStorage.setOrCreate<number>('showActionSheetOrder', showActionSheetOrder.getOrder())
