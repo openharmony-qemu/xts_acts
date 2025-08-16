@@ -509,7 +509,7 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 start');
       try {
         let systemDefinedRecord = new unifiedDataChannel.SystemDefinedRecord();
-        let systemDefinedRecordDetails: Record<String, Int | Long | Double | String | Uint8Array> | undefined = {
+        let systemDefinedRecordDetails: Record<String, Double | String | Uint8Array> = {
           'systemDefinedRecordDetailsString': 'systemDefinedRecordDetailsString',
           'systemDefinedRecordDetailsNumber': 10,
           'systemDefinedRecordDetailsUint8Array': new Uint8Array([1, 2, 3, 4, 5, 6, 7])
@@ -522,7 +522,7 @@ export default function UDMFApiTest() {
         systemDefinedForm.formName = "systemDefinedForm-formName";
         systemDefinedForm.bundleName = "systemDefinedForm-bundleName";
         systemDefinedForm.abilityName = "systemDefinedForm-abilityName";
-        let systemDefinedFormDetails: Record<String, Int | Long | Double | String | Uint8Array> | undefined = {
+        let systemDefinedFormDetails: Record<String, Double | String | Uint8Array> = {
           'systemDefinedFormString': 'systemDefinedFormString',
           'systemDefinedFormNumber': 10,
           'systemDefinedFormUint8Array': new Uint8Array([1, 2, 3, 4, 5, 6, 7])
@@ -536,7 +536,7 @@ export default function UDMFApiTest() {
         systemDefinedAppItem.appLabelId = "systemDefinedAppItem-appLabelId";
         systemDefinedAppItem.bundleName = "systemDefinedAppItem-bundleName";
         systemDefinedAppItem.abilityName = "systemDefinedAppItem-abilityName";
-        let systemDefinedAppItemDetails: Record<String, Int | Long | Double | String | Uint8Array> | undefined = {
+        let systemDefinedAppItemDetails: Record<String, Double | String | Uint8Array> = {
           'systemDefinedAppItemString': 'systemDefinedAppItemString',
           'systemDefinedAppItemNumber': 10,
           'systemDefinedAppItemUint8Array': new Uint8Array([1, 2, 3, 4, 5, 6, 7])
@@ -544,7 +544,7 @@ export default function UDMFApiTest() {
         systemDefinedAppItem.details = systemDefinedAppItemDetails;
 
         let systemDefinedPixelMap = new unifiedDataChannel.SystemDefinedPixelMap();
-        let systemDefinedPixelMapDetails: Record<String, Int | Long | Double | String | Uint8Array> | undefined = {
+        let systemDefinedPixelMapDetails: Record<String, Double | String | Uint8Array> = {
           'systemDefinedPixelMapString': 'systemDefinedPixelMapString',
           'systemDefinedPixelMapNumber': 10,
           'systemDefinedPixelMapUint8Array': new Uint8Array([1, 2, 3, 4, 5, 6, 7])
