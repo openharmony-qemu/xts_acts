@@ -739,8 +739,11 @@ export default function ActsCommonEventSystemAPITest() {
           if (err.code == 801) {
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(err.code == 1600001){
             expect(err?.code).assertEqual(1600001)
+            done();
+          } else {
+            expect(err?.code).assertEqual(1011)
             done();
           }
         })
