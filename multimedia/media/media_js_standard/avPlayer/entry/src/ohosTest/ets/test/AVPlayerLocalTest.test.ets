@@ -1478,8 +1478,14 @@ export default function AVPlayerLocalTest() {
         * @tc.level     : Level1
     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0101', Level.LEVEL0,async (done: Function) => {
-      if (fileDescriptor && subtitleFdSrc) {
-        testSubtitle3(fileDescriptor, subtitleFdSrc, avPlayer, done);
+      try {
+        if (fileDescriptor && subtitleFdSrc) {
+          testSubtitle3(fileDescriptor, subtitleFdSrc, avPlayer, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail()
+        done()
       }
     });
     /* *
@@ -1491,8 +1497,14 @@ export default function AVPlayerLocalTest() {
         * @tc.level     : Level1
     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0102', Level.LEVEL0,async (done: Function) => {
-      if (fileDescriptor && subtitleFdSrc) {
-        testSubtitle4(fileDescriptor, subtitleFdSrc, avPlayer, done);
+      try {
+        if (fileDescriptor && subtitleFdSrc) {
+          testSubtitle4(fileDescriptor, subtitleFdSrc, avPlayer, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail()
+        done()
       }
     });
     /* *
@@ -1504,8 +1516,14 @@ export default function AVPlayerLocalTest() {
         * @tc.level     : Level1
     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0103', Level.LEVEL0,async (done: Function) => {
-      if (fileDescriptor && subtitleFdSrc) {
-        testSubtitle5(fileDescriptor, subtitleFdSrc, avPlayer, done);
+      try {
+        if (fileDescriptor && subtitleFdSrc) {
+          testSubtitle5(fileDescriptor, subtitleFdSrc, avPlayer, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail()
+        done()
       }
     });
     /* *
