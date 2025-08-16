@@ -723,47 +723,7 @@ export default function ActsCommonEventSystemAPITest() {
     //   })
     // })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.desc: test function publishAsUser
-     */
-    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
-        notificationManager.openNotificationSettings(testAbilityContext).then(() => {
-          expect(true).assertTrue();
-          console.info(Tag + "Succeed to openNotificationSettings");
-        }).catch((err: BusinessError): void => {
-          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
-          if (err.code == 801) {
-            expect(true).assertTrue();
-            done();
-          } else if(err.code == 1600001){
-            expect(err?.code).assertEqual(1600001)
-            done();
-          } else {
-            expect(err?.code).assertEqual(1011)
-            done();
-          }
-        })
-        await Utils.msSleep(2000)
-        await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
-          console.info(Tag + "Succeed to openNotificationSettings");
-          expect(false).assertTrue();
-          done()
-        }).catch((err: BusinessError): void => {
-          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
-          if (err.code == 801) {
-            expect(true).assertTrue();
-            done();
-          } else {
-            expect(err?.code).assertEqual(1600018)
-            done()
-          }
-        });
-        await Utils.msSleep(2000)
-      })
+    
 
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
@@ -881,6 +841,49 @@ export default function ActsCommonEventSystemAPITest() {
           });
         }
 
+      })
+
+
+      /*
+     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.desc: test function publishAsUser
+     */
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
+        notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+          expect(true).assertTrue();
+          console.info(Tag + "Succeed to openNotificationSettings");
+        }).catch((err: BusinessError): void => {
+          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
+          if (err.code == 801) {
+            expect(true).assertTrue();
+            done();
+          } else if(err.code == 1600001){
+            expect(err?.code).assertEqual(1600001)
+            done();
+          } else {
+            expect(err?.code).assertEqual(1011)
+            done();
+          }
+        })
+        await Utils.msSleep(2000)
+        await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+          console.info(Tag + "Succeed to openNotificationSettings");
+          expect(false).assertTrue();
+          done()
+        }).catch((err: BusinessError): void => {
+          console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
+          if (err.code == 801) {
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect(err?.code).assertEqual(1600018)
+            done()
+          }
+        });
+        await Utils.msSleep(2000)
       })
 
 
