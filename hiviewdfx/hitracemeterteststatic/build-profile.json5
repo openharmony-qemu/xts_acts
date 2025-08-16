@@ -15,19 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracemeterteststatic_iRlRP_yIa0hbXFki7AZW5gsNNBSkGWyBi92lQ2EfUUk=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BD2CDDE8BCF991D58D5B8E517C7149BA611877990358B509A2A93B97A5EB432A6D843B8E9C68566",
-          "profile": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracemeterteststatic_iRlRP_yIa0hbXFki7AZW5gsNNBSkGWyBi92lQ2EfUUk=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracemeterteststatic_iRlRP_yIa0hbXFki7AZW5gsNNBSkGWyBi92lQ2EfUUk=.p12",
-          "storePassword": "0000001BE83D653BAFD745160FA757FAE503B964EF2223166F7523B2DB69DCFC95B73DD1F8944632617841"
-        }
-      }
     ],
     "products": [
       {

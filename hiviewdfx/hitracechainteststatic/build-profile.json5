@@ -15,19 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracechainteststatic_0Sd5PxEL68SmJTZldX7m4DUOLLO8Y7QsZ2iknOCgWUU=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B8EAC219D29D0602F0B96CEA146608294167302ADAE2C0776AED22E6CF32E968BC875329BB15315",
-          "profile": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracechainteststatic_0Sd5PxEL68SmJTZldX7m4DUOLLO8Y7QsZ2iknOCgWUU=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\g60049187\\.ohos\\config\\default_hitracechainteststatic_0Sd5PxEL68SmJTZldX7m4DUOLLO8Y7QsZ2iknOCgWUU=.p12",
-          "storePassword": "0000001B027167215729EEBF52402F8E7B72D74B5C089ECF8207E24B9BE012AC6351EDC0CA54FC0B646A39"
-        }
-      }
     ],
     "products": [
       {

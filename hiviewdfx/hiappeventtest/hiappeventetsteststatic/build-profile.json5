@@ -15,19 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\g60049187\\.ohos\\config\\default_hiappeventetsteststatic_Ga22TVE74S6e-F5GN8mmThOZTQHwk38BmV8k5v7xLwY=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B54A26B222EF631796184E6BCFFF2C88FFFE58AF23691FCEDC8AC1E4213F077BA85350FF3087304",
-          "profile": "C:\\Users\\g60049187\\.ohos\\config\\default_hiappeventetsteststatic_Ga22TVE74S6e-F5GN8mmThOZTQHwk38BmV8k5v7xLwY=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\g60049187\\.ohos\\config\\default_hiappeventetsteststatic_Ga22TVE74S6e-F5GN8mmThOZTQHwk38BmV8k5v7xLwY=.p12",
-          "storePassword": "0000001B4F2885B1CC57ED3F20A46512E5E0D88CB24C412D032F86E9C80FC6151144A7C910EB0493505A17"
-        }
-      }
     ],
     "products": [
       {
