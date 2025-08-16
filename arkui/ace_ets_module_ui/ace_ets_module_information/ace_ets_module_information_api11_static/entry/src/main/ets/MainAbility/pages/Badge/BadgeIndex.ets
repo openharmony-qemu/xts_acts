@@ -13,43 +13,19 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import hilog from '@ohos.hilog';
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Badge,
-  Button,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  BadgePosition,
-  ClickEvent,
-  BadgeStyle,
-  BadgeParamWithString,
-  Margin,
-  Image,
-  Color,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
+import { Hypium } from '../../../../../hypium/index';
+import hilog from '@ohos.hilog';
+import { Entry, Component, Column, Flex, Row, Image, FlexDirection, $r, ItemAlign, BadgeParamWithNumber, BadgeParamWithString, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, TextAlign, Margin} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct badgeTest {
 
   aboutToAppear(){
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
   }
@@ -58,12 +34,11 @@ struct badgeTest {
     Row() {
       Column() {
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red ,fontWeight: 0} as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red ,fontWeight: 0}
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -73,12 +48,11 @@ struct badgeTest {
             .key("ArkUX_Stage_Badge_FontWeight_0100")
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 400 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 400 }
+            } as BadgeParamWithNumber) {
               Text("test")
                 .width(100).height(50)
             }
@@ -87,7 +61,7 @@ struct badgeTest {
 
             Badge({
               value: 'new',
-              style: { badgeSize: 6, badgeColor: '#FA2A2D', fontWeight: 100 } as BadgeStyle,
+              style: { badgeSize: 6, badgeColor: '#FA2A2D', fontWeight: 100 }
             } as BadgeParamWithString) {
               Image($r("app.media.app_icon"))
                 .width(24)
@@ -97,12 +71,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "800" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "800" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -112,12 +85,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 200 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 200 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -127,12 +99,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 900 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 900 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -142,13 +113,12 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       fontWeight: FontWeight.Bolder} as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       fontWeight: FontWeight.Bolder}
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -158,12 +128,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 1000 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 1000 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -173,12 +142,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -188,12 +156,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: undefined} as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: undefined}
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -203,12 +170,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: -1 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: -1 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -218,12 +184,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -233,12 +198,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "adf@$5" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: "adf@$5" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -248,12 +212,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 500 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 500 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -263,12 +226,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: undefined }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -278,12 +240,11 @@ struct badgeTest {
             .width(100).height(50)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 600 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, fontWeight: 600 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -291,15 +252,13 @@ struct badgeTest {
             }
             .key("ArkUX_Stage_Badge_FontWeight_1600")
             .width(100).height(50)
-            // .layoutWeight(null)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red ,borderColor: 0x00ff00 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red ,borderColor: 0x00ff00 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -308,13 +267,12 @@ struct badgeTest {
             .key("ArkUX_Stage_Badge_BorderColor_0100").height(20)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: '#fffd0000' } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: '#fffd0000' }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -323,13 +281,12 @@ struct badgeTest {
             .key("ArkUX_Stage_Badge_BorderColor_0200").height(20)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: 'rgb(138,43,226)' } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: 'rgb(138,43,226)' }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -341,12 +298,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: Color.Pink } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: Color.Pink }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -358,13 +314,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: $r("app.color.badge_BorderColor") } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: $r("app.color.badge_BorderColor") }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -376,12 +331,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: "" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: "" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -394,12 +348,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -412,12 +365,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderColor: undefined }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -430,13 +382,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: Color.Pink} as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: Color.Pink}
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -448,13 +399,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: undefined }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -467,13 +417,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: 'bgr(138,43,226)' } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: 'bgr(138,43,226)' }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -486,13 +435,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderColor: 0x00ff00 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderColor: 0x00ff00 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -500,18 +448,16 @@ struct badgeTest {
             }
             .key("ArkUX_Stage_Badge_BorderColor_1200")
             .height(20)
-            // .backgroundColor(null)
             .margin({
               top: 10
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: 5 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: 5 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -523,12 +469,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "5px" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "5px" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -540,13 +485,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderWidth: $r("app.string.badge_Size_test") } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderWidth: $r("app.string.badge_Size_test") }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -558,12 +502,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -575,12 +518,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -592,12 +534,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: undefined }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -609,13 +550,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderWidth: "7fp" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderWidth: "7fp" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -627,13 +567,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red,
-                       borderWidth: undefined } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderWidth: undefined }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -645,12 +584,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "asdf%^7" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "asdf%^7" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -662,12 +600,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "5lpx" } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red, borderWidth: "5lpx" }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -681,12 +618,11 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red , borderWidth: 0 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red , borderWidth: 0 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -698,13 +634,12 @@ struct badgeTest {
             } as Margin)
 
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
               style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red ,
-                       borderWidth: 5 ,borderColor: "#FFFD0000", fontWeight: 600 } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+                       borderWidth: 5 ,borderColor: "#FFFD0000", fontWeight: 600 }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })
@@ -715,12 +650,11 @@ struct badgeTest {
               top: 10
             } as Margin)
             Badge({
-              // count: 1,
-              // maxCount: 99,
+              count: 1,
+              maxCount: 99,
               position: BadgePosition.RightTop,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
-              value: 'undefined'
-            } as BadgeParamWithString) {
+              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            } as BadgeParamWithNumber) {
               Button("test")
                 .onClick((event: ClickEvent) => {
                 })

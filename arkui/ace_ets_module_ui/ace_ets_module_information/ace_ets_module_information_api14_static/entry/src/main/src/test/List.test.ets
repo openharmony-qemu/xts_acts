@@ -12,8 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import badgeNode from './BadgeTest/badgeNode.test'
+import qrcodeNode from './QrcodeTest/qrcodeNode.test'
+import textclockNode from './TextClockTest/textclockNode.test'
+import texttimerNode from './TextTimerTest/texttimerNode.test'
 
-import BadgeNodeTest from './BadgeTest/badgeNode.test';
 export default function testsuite() {
-  BadgeNodeTest();
+  badgeNode()
+  qrcodeNode()
+  textclockNode()
+  texttimerNode()
 }

@@ -12,36 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 export default function ProgressMask() {
   describe('ProgressMask', () => {
     beforeAll(() => {
-      console.info("ProgressMask beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("ProgressMask beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("ProgressMask beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/progress/ProgressMask",
@@ -53,6 +47,7 @@ export default function ProgressMask() {
         console.info("get ProgressMask state pages: " + JSON.stringify(pages));
         if (!("ProgressMask" == pages.name)) {
           console.info("get ProgressMask state pages.name: " + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -62,44 +57,42 @@ export default function ProgressMask() {
       }
     });
 
-    /**
-     * @tc.number ProgressMask_static_0100
-     * @tc.name ProgressMask_static_0100
-     * @tc.desc frameNode: ProgressMaskToWindow
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   ProgressMask_static_0100
+     * @tc.name     ProgressMask_static_0100
+     * @tc.desc     ProgressMask_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('ProgressMask_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ProgressMask_static_0100 START');
+it('ProgressMask_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('ProgressMask_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProgressMaskImage');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProgressMask_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProgressMask_static_0100] mask obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProgressMask_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProgressMask_0100] mask obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('{"type":"ProgressMask","value":0,"total":100,"color":"#66000000","breathe":true}');
-      console.info('[ProgressMask_static_0100] END');
+      console.info('[ProgressMask_0100] END');
       done();
     });
 
-    /**
-     * @tc.number ProgressMask_static_0200
-     * @tc.name ProgressMask_static_0200
-     * @tc.desc frameNode: ProgressMaskToWindow
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   ProgressMask_static_0200
+     * @tc.name     ProgressMask_static_0200
+     * @tc.desc     ProgressMask_static_0200
+     * @tc.level    Level.LEVEL2
      */
-    it('ProgressMask_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ProgressMask_static_0200 START');
+it('ProgressMask_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('ProgressMask_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProgressMaskText');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProgressMask_static_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[ProgressMask_static_0200] content obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProgressMask_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[ProgressMask_0200] content obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual("enableBreathingAnimation success");
-      console.info('[ProgressMask_static_0200] END');
+      console.info('[ProgressMask_0200] END');
       done();
     });
 

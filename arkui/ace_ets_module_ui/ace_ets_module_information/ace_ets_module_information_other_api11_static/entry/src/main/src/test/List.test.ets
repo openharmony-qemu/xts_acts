@@ -12,12 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import progress from './ProgressTest/progress.test'
+import progress2 from './ProgressTest/progress2.test'
+import progress3 from './ProgressTest/progress3.test'
+import ProgressJsunit from './ProgressTest/ProgressJsunit.test'
+import progressSec from './ProgressTest/progressSec.test'
 
-import progressTest from './ProgressTest/progress.test';
-import progressJsunit from './ProgressTest/ProgressJsunit.test';
-import progressSecTest from './ProgressTest/progressSec.test';
 export default function testsuite() {
-  progressTest();
-  progressJsunit();
-  progressSecTest();
+  progress()
+  progress2()
+  progress3()
+  ProgressJsunit()
+  progressSec()
 }

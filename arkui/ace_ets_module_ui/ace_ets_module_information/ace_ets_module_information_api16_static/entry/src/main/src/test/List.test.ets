@@ -12,16 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import GaugePrivacySensitive from './gaugeTest/GaugePrivacySensitive.test';
-import TextClockDateTimeOptions from './textClockTest/TextClockDateTimeOptions.test';
-import ProgressContentModifier from './progressTest/ProgressContentModifier.test';
-import DataPanelContentModifier from './dataPanelTest/DataPanelContentModifier.test';
-import TextTimerTextShadow from './textTimerTest/TextTimerTextShadow.test';
-
+import DataPanelContentModifier from './dataPanelTest/DataPanelContentModifier.test'
+import GaugePrivacySensitive from './gaugeTest/GaugePrivacySensitive.test'
+import ProgressCapsuleRadius from './progressTest/ProgressCapsuleRadius.test'
+import ProgressContentModifier from './progressTest/ProgressContentModifier.test'
+import ProgressPrivacySensitive from './progressTest/ProgressPrivacySensitive.test'
+import TextClockDateTimeOptions from './textClockTest/TextClockDateTimeOptions.test'
+import TextTimerTextShadow from './textTimerTest/TextTimerTextShadow.test'
 export default function testsuite() {
-  GaugePrivacySensitive()
-  TextClockDateTimeOptions()
-  ProgressContentModifier()
   DataPanelContentModifier()
-  TextTimerTextShadow()
+  GaugePrivacySensitive()
+  ProgressCapsuleRadius()
+  ProgressContentModifier()
+  ProgressPrivacySensitive()
+  TextClockDateTimeOptions()
+  TextClockDateTimeOptions()
 }

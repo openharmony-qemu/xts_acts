@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,45 +13,37 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-// import config from '@ohos.accessibility.config';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
+
 import accessibility from '@ohos.accessibility';
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+
+let domain: Int = 0x0000;
+let tag = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function loadingProgressCircularJsunit() {
   describe('loadingProgressCircularTest', () => {
     beforeAll(() => {
-      console.info("loadingProgressCircularJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("loadingProgressCircularTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
-      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      //   console.info(`enable success`);
-      // }).catch((err: object) => {
-      //   console.error(`failed to enable, ${err}`);
-      // })
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/LoadingProgress/loadingProgress',
@@ -71,22 +63,24 @@ export default function loadingProgressCircularJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("loadingProgressCircular after each called");
     });
 
+    
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testloadingProgressCircular0011
-     * @tc.desic         aceloadingProgressCircularEtsTest0011
+     * @tc.number   testloadingProgressCircular_static_0011
+     * @tc.name     testloadingProgressCircular_static_0011
+     * @tc.desc     testloadingProgressCircular_static_0011
+     * @tc.level    Level.LEVEL0
      */
-    it('testloadingProgressCircular_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testloadingProgressCircular_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('loadingProgressCircular testloadingProgressCircular0010 START');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('CircularText');
+      let strJson = inspector.getInspectorByKey('CircularText');
       console.info("[testloadingProgressCircular0011] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('color')).assertEqual(undefined);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin')).assertEqual('5.00vp');
@@ -96,17 +90,19 @@ export default function loadingProgressCircularJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testloadingProgressCircular0001
-     * @tc.desic         aceloadingProgressCircularEtsTest0011
+     * @tc.number   testloadingProgressOrbital_static_0001
+     * @tc.name     testloadingProgressOrbital_static_0001
+     * @tc.desc     testloadingProgressOrbital_static_0001
+     * @tc.level    Level.LEVEL0
      */
-    it('testloadingProgressOrbital_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testloadingProgressOrbital_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('loadingProgressOrbital testloadingProgressCircular0001 START');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('OrbitalText');
+      let strJson = inspector.getInspectorByKey('OrbitalText');
       console.info("[testloadingProgressOrbital0001] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('color')).assertEqual(undefined);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin')).assertEqual('5.00vp');

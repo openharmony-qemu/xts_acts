@@ -12,37 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function TextClockDateTimeOptionsTest() {
   describe('TextClockDateTimeOptionsTest', () => {
     beforeAll(() => {
-      console.info("DataPanelContentModifierTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("TextClockDateTimeOptionsTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info('TextClockDateTimeOptionsTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/textClock/TextClockDateTimeOptions',
@@ -54,6 +51,7 @@ export default function TextClockDateTimeOptionsTest() {
         console.info('get TextClockDateTimeOptionsTest state pages:' + JSON.stringify(pages));
         if (!('TextClockDateTimeOptions' == pages.name)) {
           console.info('get TextClockDateTimeOptionsTest pages.name:' + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -62,40 +60,38 @@ export default function TextClockDateTimeOptionsTest() {
       }
       console.info('TextClockDateTimeOptionsTest beforeEach end');
     });
-    /* *
-    * @tc.number: TextClockDateTimeOptionsTest_static_001
-    * @tc.name  : TextClockDateTimeOptionsTest_static_001
-    * @tc.desc  : To test the dateTimeOptions numeric
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('TextClockDateTimeOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TextClockDateTimeOptionsTest_static_001 START');
+    
+    /*
+     * @tc.number   TextClockDateTimeOptionsTest_static_001
+     * @tc.name     TextClockDateTimeOptionsTest_static_001
+     * @tc.desc     TextClockDateTimeOptionsTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
+it('TextClockDateTimeOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('TextClockDateTimeOptionsTest_001 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('numeric');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextClockDateTimeOptionsTest_static_001 component obj is: ' + obj.getElement('$attrs').getString('dateTimeOptions'));
+      console.info('TextClockDateTimeOptionsTest_001 component obj is: ' + obj.getElement('$attrs').getString('dateTimeOptions'));
       expect(obj.getElement('$attrs').getString('dateTimeOptions')).assertEqual('{"hour":"numeric"}');
-      console.info('[TextClockDateTimeOptionsTest_static_001] END');
+      console.info('[TextClockDateTimeOptionsTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: TextClockDateTimeOptionsTest_static_002
-    * @tc.name  : TextClockDateTimeOptionsTest_static_002
-    * @tc.desc  : To test the dateTimeOptions 2-digit
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('TextClockDateTimeOptionsTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TextClockDateTimeOptionsTest_static_002 START');
+    
+    /*
+     * @tc.number   TextClockDateTimeOptionsTest_static_002
+     * @tc.name     TextClockDateTimeOptionsTest_static_002
+     * @tc.desc     TextClockDateTimeOptionsTest_static_002
+     * @tc.level    Level.LEVEL0
+     */
+it('TextClockDateTimeOptionsTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('TextClockDateTimeOptionsTest_002 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('digit');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextClockDateTimeOptionsTest_static_002 component obj is: ' + obj.getElement('$attrs').getString('dateTimeOptions'));
+      console.info('TextClockDateTimeOptionsTest_002 component obj is: ' + obj.getElement('$attrs').getString('dateTimeOptions'));
       expect(obj.getElement('$attrs').getString('dateTimeOptions')).assertEqual('{"hour":"2-digit"}');
-      console.info('[TextClockDateTimeOptionsTest_static_002] END');
+      console.info('[TextClockDateTimeOptionsTest_002] END');
       done();
     });
   })

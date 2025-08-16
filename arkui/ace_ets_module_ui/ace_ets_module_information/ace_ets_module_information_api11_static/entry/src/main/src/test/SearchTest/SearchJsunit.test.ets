@@ -12,47 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { CopyOptions } from '@ohos.arkui.component'
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
-// import config from '@ohos.accessibility.config';
+import { CopyOptions } from '@ohos.arkui.component'
+
 import accessibility from '@ohos.accessibility';
-// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function searchJsunit() {
   describe('searchJsunit', () => {
     beforeAll(() => {
-      console.info("searchJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("searchJsunit beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
+    beforeEach(async (): Promise<void> => {
     
-    beforeEach(async () => {
-      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      //   console.info(`enable success`);
-      // }).catch((err: object) => {
-      //   console.error(`failed to enable, ${err}`);
-      // })
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Search/search',
       }
@@ -71,12 +60,18 @@ export default function searchJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info("search after each called");
     });
 
-    it('testSearch_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   testSearch_static_001
+     * @tc.name     testSearch_static_001
+     * @tc.desc     testSearch_static_001
+     * @tc.level    Level.LEVEL0
+     */
+it('testSearch_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch001] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('search');
@@ -86,7 +81,13 @@ export default function searchJsunit() {
       done();
     });
 
-    it('testSearch_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   testSearch_static_002
+     * @tc.name     testSearch_static_002
+     * @tc.desc     testSearch_static_002
+     * @tc.level    Level.LEVEL0
+     */
+it('testSearch_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch002] START');
       await CommonFunc.sleep(1000);
       try {
@@ -94,7 +95,7 @@ export default function searchJsunit() {
           data: {
             "searchButton": "5"
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -112,12 +113,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch003
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length 19, get backend max length property
+     * @tc.number   testSearch_static_003
+     * @tc.name     testSearch_static_003
+     * @tc.desc     testSearch_static_003
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch003] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('search');
@@ -127,12 +130,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch004
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length 0, get backend max length property
+     * @tc.number   testSearch_static_004
+     * @tc.name     testSearch_static_004
+     * @tc.desc     testSearch_static_004
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch004] START');
       await CommonFunc.sleep(1000);
       try {
@@ -140,7 +145,7 @@ export default function searchJsunit() {
           data: {
             "maxLength": 0
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -158,12 +163,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch005
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length 0, get backend max length property
+     * @tc.number   testSearch_static_005
+     * @tc.name     testSearch_static_005
+     * @tc.desc     testSearch_static_005
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch005] START');
       await CommonFunc.sleep(1000);
       try {
@@ -171,7 +178,7 @@ export default function searchJsunit() {
           data: {
             "maxLength": 123
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -189,12 +196,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch006
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length 1000000, get backend max length property
+     * @tc.number   testSearch_static_006
+     * @tc.name     testSearch_static_006
+     * @tc.desc     testSearch_static_006
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch006] START');
       await CommonFunc.sleep(1000);
       try {
@@ -202,7 +211,7 @@ export default function searchJsunit() {
           data: {
             "maxLength": 1000000
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -220,12 +229,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch007
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length illeggal value, get backend max length property
+     * @tc.number   testSearch_static_007
+     * @tc.name     testSearch_static_007
+     * @tc.desc     testSearch_static_007
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch007] START');
       await CommonFunc.sleep(1000);
       try {
@@ -233,7 +244,7 @@ export default function searchJsunit() {
           data: {
             "maxLength": -1
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -251,12 +262,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch008
-     * @tc.name   :test maxLength interface
-     * @tc.desc   :set max length illeggal value, get backend max length property
+     * @tc.number   testSearch_static_008
+     * @tc.name     testSearch_static_008
+     * @tc.desc     testSearch_static_008
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch008] START');
       await CommonFunc.sleep(1000);
       try {
@@ -264,7 +277,7 @@ export default function searchJsunit() {
           data: {
             "maxLength": 1020300
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -282,12 +295,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch009
-     * @tc.name   :test copy options
-     * @tc.desc   :get default copy options
+     * @tc.number   testSearch_static_009
+     * @tc.name     testSearch_static_009
+     * @tc.desc     testSearch_static_009
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch009] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('search');
@@ -297,12 +312,14 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch0010
-     * @tc.name   :test copy options
-     * @tc.desc   :get default copy options
+     * @tc.number   testSearch_static_0010
+     * @tc.name     testSearch_static_0010
+     * @tc.desc     testSearch_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch0010] START');
       await CommonFunc.sleep(1000);
       try {
@@ -310,7 +327,7 @@ export default function searchJsunit() {
           data: {
             "copyOption": CopyOptions.InApp
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -328,20 +345,22 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch0011
-     * @tc.name   :test copy options
-     * @tc.desc   :get CopyOptions.CROSS_DEVICE
+     * @tc.number   testSearch_static_0011
+     * @tc.name     testSearch_static_0011
+     * @tc.desc     testSearch_static_0011
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch0011] START');
       await CommonFunc.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            // "copyOption": CopyOptions.CROSS_DEVICE
+            
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -359,31 +378,35 @@ export default function searchJsunit() {
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch099
-     * @tc.name   :test  getCaretOffset when null input
-     * @tc.desc   :expect caretOffset index 0 when text is null
+     * @tc.number   testSearch_static_099
+     * @tc.name     testSearch_static_099
+     * @tc.desc     testSearch_static_099
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_099', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_099', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch099] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
-      btn?.click();
+      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
-      let text = caretText?.getText();
+      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index0');
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch100
-     * @tc.name   :test getCaretOffset
-     * @tc.desc   :expect caretOffset index 9 when text length is 9
+     * @tc.number   testSearch_static_100
+     * @tc.name     testSearch_static_100
+     * @tc.desc     testSearch_static_100
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch100] START');
       await CommonFunc.sleep(1000);
       try {
@@ -391,7 +414,7 @@ export default function searchJsunit() {
           data: {
             "text": '123456789'
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -404,21 +427,23 @@ export default function searchJsunit() {
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
-      btn?.click();
+      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
-      let text = caretText?.getText();
+      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index9');
       done();
     });
 
+    
     /*
-     * @tc.number :testSearch101
-     * @tc.name   :test getCaretOffset when iput text exceed maxLength
-     * @tc.desc   :expect caretOffset index max length.
+     * @tc.number   testSearch_static_101
+     * @tc.name     testSearch_static_101
+     * @tc.desc     testSearch_static_101
+     * @tc.level    Level.LEVEL0
      */
-    it('testSearch_static_101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testSearch_static_101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSearch101] START');
       await CommonFunc.sleep(1000);
       try {
@@ -426,7 +451,7 @@ export default function searchJsunit() {
           data: {
             "text": '1234567890abc'
           } as Record<String,Object>
-        }
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 190,
           priority: events_emitter.EventPriority.LOW
@@ -439,11 +464,12 @@ export default function searchJsunit() {
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
-      btn?.click();
+      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
-      let text = caretText?.getText();
+      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      await CommonFunc.sleep(1000);
+      let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index10');
       done();
     });

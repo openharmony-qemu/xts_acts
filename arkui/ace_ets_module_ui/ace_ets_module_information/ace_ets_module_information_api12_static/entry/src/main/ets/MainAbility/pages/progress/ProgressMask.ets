@@ -12,24 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  Color,
-  ClickEvent,
-  PatternLock,
-  ProgressMask,
-  Image,
-  Padding,
-  ColumnOptions,
-} from '@ohos.arkui.component';
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
+import {Entry, Component, Column, ColumnOptions, Row, RowOptions, Progress, Text, Color, ProgressMask, Padding, Image, $r} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
