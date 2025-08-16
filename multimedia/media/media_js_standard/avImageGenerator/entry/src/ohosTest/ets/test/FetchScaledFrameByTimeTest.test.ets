@@ -95,19 +95,14 @@ async function fetchScaledFrameByTimeTest(testNum: string, done: Function, outSi
                 console.info(`${testNum} exceptedSize width: ${exceptedSize.width}, height: ${exceptedSize.height}`);
                 expect(imageInfo.size.width == exceptedSize.width).assertTrue()
                 expect(imageInfo.size.height == exceptedSize.height).assertTrue()
-
-                avImageGenerator.fetchScaledFrameByTime(timeUs, queryOption).then((pixelMap: image.PixelMap) => {
-                    expect(pixelMap != undefined).assertTrue()
-                    console.info(`${testNum} fetchScaledFrameByTime success`);
-                    let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-                    console.info(`${testNum} pixel_map size width: ${imageInfo.size.width}, height: ${imageInfo.size.height}`);
-                    avImageGenerator.release().then(() => {
-                        console.info(`Succeeded in releasing.`);
-                    }).catch((error: BusinessError) => {
-                        console.error(`Failed to release, error message:${error.message}`);
-                    });
-                    done()
-                })
+            })
+            avImageGenerator.fetchScaledFrameByTime(timeUs, queryOption).then((pixelMap: image.PixelMap) => {
+                expect(pixelMap != undefined).assertTrue()
+                console.info(`${testNum} fetchScaledFrameByTime success`);
+                let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+                console.info(`${testNum} pixel_map size width: ${imageInfo.size.width}, height: ${imageInfo.size.height}`);
+                
+                done()
             })
         } else {
             console.error(`${testNum}createAVImageGenerator fail, error message:${err.message}`);
