@@ -16,7 +16,6 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import configurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

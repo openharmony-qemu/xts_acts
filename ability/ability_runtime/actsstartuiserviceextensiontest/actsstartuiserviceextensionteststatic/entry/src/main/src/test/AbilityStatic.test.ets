@@ -73,7 +73,7 @@ class CustomApplicationStateObserver implements appManager.ApplicationStateObser
 
 export default function abilitystaticTest() {
   describe('ActsAbilityStaticTest', (): void => {
-    let uiAbilityContext: common.UIAbilityContext;
+    let testAbilityContext: common.UIAbilityContext;
     const BUNDLE_NAME: string = 'com.example.startuiserviceextensiontest.static';
     const RELY_BUNDLE_NAME: string = 'com.acts.startuiserviceextensionrely.static';
 
@@ -83,7 +83,7 @@ export default function abilitystaticTest() {
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(2000);
-      uiAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -102,6 +102,52 @@ export default function abilitystaticTest() {
       expect(wantConstant.Params.CREATE_APP_INSTANCE_KEY + '').assertEqual("ohos.extra.param.key.createAppInstance")
       expect(wantConstant.Params.CALLER_APP_CLONE_INDEX + '').assertEqual("ohos.param.callerAppCloneIndex")
       hilog.info(domain, tag, '====> [SUB_Ability_AbilityRuntime_WantConstant_Static_0100] end');
+      done();
+    })
+
+    /*
+    * @tc.number: SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
+    * @tc.name: SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
+    * @tc.desc: When app not support capability, an error code is returned.
+    * @tc.size: MediumTest
+    * @tc.type: Function
+    * @tc.level: Level 3
+    */
+    it('SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = "SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100";
+      console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100] start');
+      try {
+        testAbilityContext.getApplicationContext().getAllRunningInstanceKeys()
+      } catch (error) {
+        let code = (error as BusinessError).code;
+        let message = (error as BusinessError).message;
+        console.error(`getAllRunningInstanceKeys fail, code: ${code}, msg: ${message}`);
+        expect(code).assertEqual(16000078)
+      }
+      console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100] end');
+      done();
+    })
+
+    /*
+    * @tc.number: SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
+    * @tc.name: SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
+    * @tc.desc: When app not support capability, an error code is returned.
+    * @tc.size: MediumTest
+    * @tc.type: Function
+    * @tc.level: Level 3
+    */
+    it('SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = "SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100";
+      console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100] start');
+      try {
+        testAbilityContext.getApplicationContext().getCurrentInstanceKey()
+      } catch (error) {
+        let code = (error as BusinessError).code;
+        let message = (error as BusinessError).message;
+        console.error(`getAllRunningInstanceKeys fail, code: ${code}, msg: ${message}`);
+        expect(code).assertEqual(16000078)
+      }
+      console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100] end');
       done();
     })
 
@@ -127,7 +173,7 @@ export default function abilitystaticTest() {
             bundleName: `${RELY_BUNDLE_NAME}`,
             abilityName: 'EntryAbility'
           }
-          await uiAbilityContext.startAbility(want);
+          await testAbilityContext.startAbility(want);
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} AppStateData assert start`);
