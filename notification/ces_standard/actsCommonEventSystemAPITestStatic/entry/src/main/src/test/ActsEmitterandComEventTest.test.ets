@@ -33,12 +33,6 @@ class Sample {
 }
 
 
-let myDate: Record<String, Object> = {
-  "id": "1",
-  "content": "c"
-}
-let eventData: emitter.EventData = { data: myDate }
-
 let subscriber:commonEventManager.CommonEventSubscriber; //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
 //有序公共事件
 let subscriber_a: commonEventManager.CommonEventSubscriber;
@@ -226,7 +220,6 @@ export default function ActsEmitterandComEventTest() {
         done()
       })
 
-    //问题单号:DTS2025061412066
     /**
      * @tc.number     : Sub_NotificationAns_CommonEvent_Basic_Static_0002
      * @tc.name       : Sub_NotificationAns_CommonEvent_Basic_Static_0002
@@ -567,8 +560,7 @@ export default function ActsEmitterandComEventTest() {
       expect(onConsume_number).assertEqual(0)
       done()
     })
-
-    //问题单号：DTS2025051640226
+    
     /**
      * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0001
      * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0001
@@ -580,131 +572,131 @@ export default function ActsEmitterandComEventTest() {
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0001',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0001==>'
       //调用持续订阅指定事件接口
-      let result = 0
+      let result: number = 0
 
       let callback1 = (eventData: emitter.GenericEventData<Sample>): void => {
         let storage: Sample = eventData.data! as Sample;
         storage.printCount();
-        console.info(Tag +' on GenericEventData');
+        console.info(Tag +' on GenericEventData' + result);
+        result += 1
       }
-      emitter.on<Sample>("eventId", callback1);
+      emitter.on<Sample>("eventId111", callback1);
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
       emitter.emit<Sample>("eventId", eventData);
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag +' emitterEmit success');
       //等待5s
-      await Utils.msSleep(5000)
+      await Utils.msSleep(1000)
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag+ ' emitterEmit success 10s');
       //等待5分钟
-      await Utils.msSleep(5000)
+      await Utils.msSleep(1000)
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag+ ' emitterEmit success 10分钟');
-      await Utils.msSleep(3000)
+      await Utils.msSleep(1000)
       //调用取消订阅事件接口
       emitter.off("eventId111");
       console.info(Tag+ ' emitterOff success');
       //继续发事件
       emitter.emit<Sample>("eventId111", eventData);
-      await Utils.msSleep(2000)
+      await Utils.msSleep(1000)
       console.info(Tag+ ' emitterEmit success 取消后');
       expect(result).assertEqual(3)
       done()
     })
 
-    //
-    // //问题单号：DTS2025051640226
-    // /**
-    //  * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0002
-    //  * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0002
-    //  * @tc.desc       : Function test
-    //  * @tc.size       : Medium-sized test
-    //  * @tc.type       : Function test
-    //  * @tc.level      : Level 2
-    //  */
-    // it('Sub_Notification_Emitter_Publish_Sendable_Static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0002==>'
-    //   let onConsume_number : number = 0
-    //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
-    //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
-    //     storage.printCount();
-    //     onConsume_number += 1
-    //   }
-    //   emitter.once<Sample>("eventId222", callback);
-    //
-    //   //调用取消订阅事件接口
-    //   await Utils.msSleep(2000)
-    //   emitter.off("eventId222");
-    //   console.info(Tag +'emitterOff success');
-    //   await Utils.msSleep(100)
-    //   expect(onConsume_number).assertEqual(0)
-    //   done()
-    // })
-    //
-    // //问题单号：DTS2025051640226
-    // /**
-    //  * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0003
-    //  * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0003
-    //  * @tc.desc       : Function test
-    //  * @tc.size       : Medium-sized test
-    //  * @tc.type       : Function test
-    //  * @tc.level      : Level 2
-    //  */
-    // it('Sub_Notification_Emitter_Publish_Sendable_Static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0003==>'
-    //
-    //   let onConsume_number : number= 0
-    //
-    //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
-    //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
-    //     storage.printCount();
-    //     onConsume_number += 1
-    //   }
-    //   emitter.once<Sample>("eventId333", callback);
-    //   await Utils.msSleep(100)
-    //   emitter.emit<Sample>("eventId333", eventData);
-    //   console.info(Tag+ 'emitterEmit success');
-    //   await Utils.msSleep(1000)
-    //   expect(onConsume_number).assertEqual(1)
-    //   done()
-    // })
-    //
-    // //问题单号：DTS2025051640226
-    // /**
-    //  * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0004
-    //  * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0004
-    //  * @tc.desc       : Function test
-    //  * @tc.size       : Medium-sized test
-    //  * @tc.type       : Function test
-    //  * @tc.level      : Level 0
-    //  */
-    // it('Sub_Notification_Emitter_Publish_Sendable_Static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0004==>'
-    //
-    //   let onConsume_number : number = 0
-    //   let emit_number : number = 0
-    //
-    //   let callback = (eventData: emitter.GenericEventData<Sample>): void => {
-    //     console.info(Tag +' on GenericEventData');
-    //     let storage: Sample = eventData.data!;
-    //     storage.printCount();
-    //     onConsume_number += 1
-    //   }
-    //   emitter.once<Sample>("eventId444", callback);
-    //   await Utils.msSleep(100)
-    //   emitter.emit<Sample>("eventId444", eventData);
-    //   console.info(Tag+'emitterEmit success'+emit_number);
-    //   await Utils.msSleep(1000) //napi异步处理局限，极限情况下会出现订阅返回2次，加等待即可
-    //   emit_number += 1
-    //   emitter.emit<Sample>("eventId444", eventData);
-    //   console.info(Tag+'emitterEmit success'+emit_number);
-    //   await Utils.msSleep(100)
-    //   expect(onConsume_number).assertEqual(1)
-    //   done()
-    // })
+
+    /**
+     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.desc       : Function test
+     * @tc.size       : Medium-sized test
+     * @tc.type       : Function test
+     * @tc.level      : Level 2
+     */
+    it('Sub_Notification_Emitter_Publish_Sendable_Static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0002==>'
+      let onConsume_number : number = 0
+      let callback = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(Tag +' on GenericEventData');
+        let storage: Sample = eventData.data! as Sample;
+        storage.printCount();
+        onConsume_number += 1
+      }
+      emitter.once<Sample>("eventId222", callback);
+
+      //调用取消订阅事件接口
+      await Utils.msSleep(2000)
+      emitter.off("eventId222",callback);
+      console.info(Tag +'emitterOff success');
+      await Utils.msSleep(100)
+      expect(onConsume_number).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.desc       : Function test
+     * @tc.size       : Medium-sized test
+     * @tc.type       : Function test
+     * @tc.level      : Level 2
+     */
+    it('Sub_Notification_Emitter_Publish_Sendable_Static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0003==>'
+      let onConsume_number : number= 0
+
+      let callback = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(Tag +' on GenericEventData');
+        let storage: Sample = eventData.data! as Sample;
+        storage.printCount();
+        onConsume_number += 1
+      }
+      emitter.once<Sample>("eventId333", callback);
+      await Utils.msSleep(100)
+      let a = new Sample();
+      let eventData: emitter.GenericEventData<Sample> = {data:a};
+      emitter.emit<Sample>("eventId333", eventData);
+      console.info(Tag+ 'emitterEmit success');
+      await Utils.msSleep(1000)
+      expect(onConsume_number).assertEqual(1)
+      done()
+    })
+
+    /**
+     * @tc.number     : Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.name       : Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.desc       : Function test
+     * @tc.size       : Medium-sized test
+     * @tc.type       : Function test
+     * @tc.level      : Level 0
+     */
+    it('Sub_Notification_Emitter_Publish_Sendable_Static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0004==>'
+      let onConsume_number : number = 0
+      let emit_number : number = 0
+
+      let callback = (eventData: emitter.GenericEventData<Sample>): void => {
+        console.info(Tag +' on GenericEventData');
+        let storage: Sample = eventData.data! as Sample;
+        storage.printCount();
+        onConsume_number += 1
+      }
+      emitter.once<Sample>("eventId444", callback);
+      await Utils.msSleep(100)
+      let a = new Sample();
+      let eventData: emitter.GenericEventData<Sample> = {data:a};
+      emitter.emit<Sample>("eventId444", eventData);
+      console.info(Tag+'emitterEmit success'+emit_number);
+      await Utils.msSleep(1000) //napi异步处理局限，极限情况下会出现订阅返回2次，加等待即可
+      emit_number += 1
+      emitter.emit<Sample>("eventId444", eventData);
+      console.info(Tag+'emitterEmit success'+emit_number);
+      await Utils.msSleep(100)
+      expect(onConsume_number).assertEqual(1)
+      done()
+    })
 
   })
 }
