@@ -53,10 +53,10 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
     if (this.context.cacheDir) {
       hilog.info(0x0000, 'testTag EntryAbility', 'context.cacheDir: ' + this.context.cacheDir);
-      AppStorage.setOrCreate<string>("dir", this.context.cacheDir, Type.from<string>());
+      AppStorage.setOrCreate<string>("dir", this.context.cacheDir);
     } else {
       hilog.info(0x0000, 'testTag EntryAbility', 'context.cacheDir is undefined');
-      AppStorage.setOrCreate<string>("dir", "", Type.from<string>());
+      AppStorage.setOrCreate<string>("dir", "");
     }
   }
 

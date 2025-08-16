@@ -41,7 +41,7 @@ export default function ActsZlibTest() {
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.amsZipfileUnzipfileST.static");
       await Utils.msSleep(3000);
-      let dirAll = AppStorage.get<string>("dir", Type.from<string>());
+      let dirAll = AppStorage.get<string>("dir");
       if(dirAll) {
         dir = dirAll!;
       }
