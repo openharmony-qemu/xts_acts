@@ -15,6 +15,7 @@
 
 import fileIOAccess from "./Access.test";
 import fileIOClose from "./Close.test";
+import fileIOCopy from "./Copy.test";
 import fileIOCopyfile from "./CopyFile.test";
 import fileIOCreateStream from "./CreateStream.test";
 import fileIOCreateRandomAccessFile from "./CreateRandomAccessFile.test";
@@ -23,9 +24,11 @@ import fileIOFdatasync from "./Fdatasync.test";
 import fileIOFsync from "./Fsync.test";
 import fileIOGetxattr from "./Getxattr.test";
 import fileIOLstat from "./Lstat.test";
+import fileIOListfile from "./ListFile.test";
 import fileIOMkdir from "./Mkdir.test";
 import fileIOMkdir11 from "./Mkdir11.test";
 import fileIOMkdtemp from "./Mkdtemp.test";
+import fileIOMoveDir from "./MoveDir.test";
 import fileIORead from "./Read.test";
 import fileIOReadtext from './Readtext.test';
 import fileIOReadLines from './ReadLines.test';
@@ -58,6 +61,7 @@ import atomicFileTest from './class_atomicFile/AtomicFile.test';
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
+    fileIOCopy();
     fileIOCopyfile();
     fileIOCreateStream();
     fileIOCreateRandomAccessFile();
@@ -69,6 +73,7 @@ export default function testsuite() {
     fileIOMkdir();
     fileIOMkdir11();
     fileIOMkdtemp();
+    fileIOMoveDir();
     fileIORead();
     fileIOReadtext();
     fileIOReadLines();
@@ -85,6 +90,7 @@ export default function testsuite() {
     fileIOSymlink();
     fileIOWrite();
     fileIOLseek();
+    fileIOListfile();
 	  fileIOHash();
     fileIOStreamClose();
     fileIOStreamFlush();
