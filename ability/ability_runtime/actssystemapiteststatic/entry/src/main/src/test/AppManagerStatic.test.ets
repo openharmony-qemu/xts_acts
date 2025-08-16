@@ -288,6 +288,58 @@ export default function appManagerStaticTest() {
     });
 
     /*
+     * @tc.number : SUB_Ability_AbilityBase_AppManager_Static_1100
+     * @tc.name   : SUB_Ability_AbilityBase_AppManager_Static_1100
+     * @tc.desc   : Verify getAppMemorySize(promise).
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('SUB_Ability_AbilityBase_AppManager_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityBase_AppManager_Static_1100`;
+      hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1100 begin');
+      try {
+        appManager.getAppMemorySize().then((data: Int) => {
+          console.log(`The size of app memory is: ${JSON.stringify(data)}`);
+          // expect(typeof (data)).assertEqual("int");
+          expect(data).assertLarger(0);
+          done();
+        }).catch((err: BusinessError): void => {
+          expect().assertFail();
+          done();
+        })
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
+     * @tc.number : SUB_Ability_AbilityBase_AppManager_Static_1200
+     * @tc.name   : SUB_Ability_AbilityBase_AppManager_Static_1200
+     * @tc.desc   : Verify getAppMemorySize(callback).
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('SUB_Ability_AbilityBase_AppManager_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityBase_AppManager_Static_1200`;
+      hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1200 begin');
+      try {
+        appManager.getAppMemorySize((err: BusinessError| null, data: Int | undefined)=>{
+          // expect(typeof (data)).assertEqual("int");
+          expect(data).assertLarger(0);
+          done();
+        })
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, 'isRunningInStabilityTest error, err: ' + err?.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
      * @tc.number: System_API_Test_App_Manager_Static_0100
      * @tc.name: System_API_Test_App_Manager_Static_0100
      * @tc.desc: Test the third-party application without permission call appManager.on will be blocked

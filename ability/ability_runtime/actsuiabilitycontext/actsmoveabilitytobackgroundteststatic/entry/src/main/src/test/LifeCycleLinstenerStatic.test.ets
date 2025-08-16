@@ -63,6 +63,26 @@ export default function LifeCycleLinstenerStaticTest() {
     })
 
     /*
+     * @tc.number : SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.name   : SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.desc   : Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
+    it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100`;
+      console.log(`${tag}, it begin`);
+      try {
+        let appCloneIndex: Int = applicationContext.getCurrentAppCloneIndex();
+      } catch (err: BusinessError) {
+        console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
+        expect(err?.code).assertEqual(16000071);
+        done();
+      }
+    });
+
+    /*
     * @tc.number : SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
     * @tc.name   : SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
     * @tc.desc   : Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.

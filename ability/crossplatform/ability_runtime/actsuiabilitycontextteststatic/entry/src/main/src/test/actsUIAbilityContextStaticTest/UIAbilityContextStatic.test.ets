@@ -19,6 +19,11 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import contextConstant from '@ohos.app.ability.contextConstant';
+import AtomicServiceOptions from '@ohos.app.ability.AtomicServiceOptions'
+import { BusinessError } from '@ohos.base';
+import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
+import Want from '@ohos.app.ability.Want';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -159,6 +164,171 @@ export default function UIAbilityContextStatic() {
       }
     })
 
+    /**
+     * @tc.number    : ABILITY_TEST_CREATEAREAMODECONTEXT_0100
+     * @tc.name      : testCreateAreaModeContextStatic001
+     * @tc.desc      : test createAreaModeContext
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testCreateAreaModeContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL2)
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic001 moduleContext:" + JSON.stringify(moduleContext));
+          expect(moduleContext != null).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateAreaModeContextStatic001 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateAreaModeContextStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
 
+    /**
+     * @tc.number    : ABILITY_TEST_CREATEDISPLAYCONTEXT_0100
+     * @tc.name      : testCreateDisplayContextStatic001
+     * @tc.desc      : test createDisplayContext
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testCreateDisplayContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        if (context) {
+          let displayContext: common.Context = context.createDisplayContext(0)
+          hilog.info(domain, tag, "testCreateDisplayContextStatic001 displayContext:" + JSON.stringify(displayContext));
+          expect(displayContext != null).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, "testCreateDisplayContextStatic001 abilityContext err");
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `testCreateDisplayContextStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : ABILITY_TEST_OPENATOMICSERVICE_0100
+     * @tc.name      : testOpenAtomicServiceStatic001
+     * @tc.desc      : test Method of OpenAtomicService
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let options: AtomicServiceOptions = {
+          displayId: 0,
+        };
+        context.openAtomicService('', options)
+          .then((result: common.AbilityResult) => {
+            console.info('openAtomicService succeed');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError): void => {
+            console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000050);
+            done();
+          });
+      } catch (err) {
+        hilog.info(domain, tag, `testOpenAtomicServiceStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
+     * @tc.name      : testReportDrawnCompletedStatic001
+     * @tc.desc      : test Method of reportDrawnCompleted
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testReportDrawnCompletedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        context.reportDrawnCompleted((err) => {
+          if (err?.code) {
+            console.error(`reportDrawnCompleted failed, code is ${err?.code}, message is ${err?.message}`);
+            expect().assertFail();
+            done();
+          }
+          console.info('reportDrawnCompleted succeed');
+          expect(true).assertTrue();
+          done();
+        });
+      } catch (err) {
+        hilog.info(domain, tag, `testReportDrawnCompletedStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : ABILITY_TEST_SETCOLORMODE_0100
+     * @tc.name      : testsetColorModeStatic001
+     * @tc.desc      : test Method of setColorMode
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testsetColorModeStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, `testsetColorModeStatic001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.name      : ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.desc      : test terminateSelf(Callback)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('ABILITY_TEST_TERMINATESELF_CALLBACK_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let TAG = "ABILITY_TEST_TERMINATESELF_CALLBACK_0100";
+      try {
+        let want: Want = {
+          "bundleName": "com.example.uiabilitycontexttest.static",
+          "abilityName": "MainAbility",
+          "moduleName": "entry"
+        }
+        context.startAbility(want).then(() => {
+          hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start successful. ');
+        }).catch((error: BusinessError): void => {
+          hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
+        })
+        await Utils.msSleep(1000);
+        let AbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext
+        await Utils.msSleep(2000);
+        let isTerminating: boolean = AbilityContext.isTerminating();
+        hilog.info(0x0000, tag, '%{public}s', TAG + `ability state is ${isTerminating}`);
+        expect(isTerminating).assertTrue();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, '%{public}s', `testApplicationInfoCallback001 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

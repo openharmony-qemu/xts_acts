@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
+import ApplicationContextStatic from  "./actsApplicationContextStaticTest/ApplicationContextStatic.test"
 import ConfigurationStatic from "./actsConfigurationStaticTest/ConfigurationStatic.test";
 
 export default function testsuite() {
+    ApplicationContextStatic();
     ConfigurationStatic();
 }
