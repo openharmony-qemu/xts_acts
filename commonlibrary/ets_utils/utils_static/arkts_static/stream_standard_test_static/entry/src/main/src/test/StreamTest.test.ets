@@ -3505,10 +3505,8 @@ export default function streamTest() {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       const stringdecoder = new StringDecoderReadable();
       stringdecoder.push(input);
+      stringdecoder.setEncoding("utf-8");
       let res = stringdecoder.read(2);
-      let ss = stringdecoder.setEncoding("windows-1250")
-      res = stringdecoder.read(4);
-      expect(ss).assertEqual(false);
       expect((res as Object).toString()).assertEqual('你好');
     });
 
@@ -4057,7 +4055,7 @@ export default function streamTest() {
       let readable = new Encoding028_34()
       readable.push('test');
       let encoding = readable.setEncoding('gb2312');
-      expect(encoding).assertEqual(false);
+      expect(readable.readableEncoding).assertEqual('gb2312');
     });
 
     // Check the StreamEncoding.
@@ -4073,7 +4071,7 @@ export default function streamTest() {
       let readable = new Encoding028_34()
       readable.push('test');
       let encoding = readable.setEncoding('gbk');
-      expect(encoding).assertEqual(false);
+      expect(readable.readableEncoding).assertEqual('gbk');
     });
 
     // Check the StreamEncoding.
@@ -4089,7 +4087,7 @@ export default function streamTest() {
       let readable = new Encoding028_34()
       readable.push('test');
       let encoding = readable.setEncoding('gb18030');
-      expect(encoding).assertEqual(false);
+      expect(readable.readableEncoding).assertEqual('gb18030');
     });
 
     // Check the StreamWritable.
