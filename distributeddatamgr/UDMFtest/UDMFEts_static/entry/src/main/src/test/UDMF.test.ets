@@ -2342,7 +2342,7 @@ export default function UDMFApiTest() {
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_ATOMIC_SERVICE)).assertEqual(JSON.stringify("openharmony.atomic-service"));
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_PACKAGE)).assertEqual(JSON.stringify("openharmony.package"));
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_HAP)).assertEqual(JSON.stringify("openharmony.hap"));
-      xpect(JSON.stringify(UTD.UniformDataType.CSS)).assertEqual(JSON.stringify("general.css"));
+      expect(JSON.stringify(UTD.UniformDataType.CSS)).assertEqual(JSON.stringify("general.css"));
       expect(JSON.stringify(UTD.UniformDataType.TEX)).assertEqual(JSON.stringify("general.tex"));
       expect(JSON.stringify(UTD.UniformDataType.ASC_TEXT)).assertEqual(JSON.stringify("general.asc-text"));
       expect(JSON.stringify(UTD.UniformDataType.RICH_TEXT)).assertEqual(JSON.stringify("general.rich-text"));
