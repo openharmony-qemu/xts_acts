@@ -106,6 +106,13 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_hitTestBehavior_static:ActsAceEtsComponentCommonAttrsHitTestBehaviorStaticTest",
         "ace_ets_component_common_attrss_layoutWeight_static:ActsAceEtsComponentCommonAttrsLayoutWeightStaticTest",
         "ace_ets_component_common_attrss_margin_static:ActsAceEtsComponentCommonAttrsMarginStaticTest",
+        "ace_ets_component_common_attrss_onAppear_static:ActsAceEtsComponentCommonAttrsOnAppearStaticTest",
+        "ace_ets_component_common_attrss_onVisibleAreaChange_static:ActsAceEtsComponentCommonAttrsOnVisibleAreaChangeStaticTest",
+        "ace_ets_component_common_attrss_padding_static:ActsAceEtsComponentCommonAttrsPaddingStaticTest",
+        "ace_ets_component_common_attrss_responseRegion_static:ActsAceEtsComponentCommonAttrsResponseRegionStaticTest",
+        "ace_ets_component_common_attrss_size_static:ActsAceEtsComponentCommonAttrsSizeStaticTest",
+        "ace_ets_component_common_attrss_stateStyles_static:ActsAceEtsComponentCommonAttrsStateStylesStaticTest",
+        "ace_ets_component_common_attrss_tabIndex_static:ActsAceEtsComponentCommonAttrsTabIndexStaticTest",
       ]
     } else {
       deps = [
@@ -266,6 +273,15 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_hitTestBehavior_static:ActsAceEtsComponentCommonAttrsHitTestBehaviorStaticTest",
         "ace_ets_component_common_attrss_layoutWeight_static:ActsAceEtsComponentCommonAttrsLayoutWeightStaticTest",
         "ace_ets_component_common_attrss_margin_static:ActsAceEtsComponentCommonAttrsMarginStaticTest",
+        "ace_ets_component_common_attrss_onAppear_static:ActsAceEtsComponentCommonAttrsOnAppearStaticTest",
+        "ace_ets_component_common_attrss_onAreaChange_static:ActsAceEtsComponentCommonAttrsOnAreaChangeStaticTest",
+        "ace_ets_component_common_attrss_onVisibleAreaChange_static:ActsAceEtsComponentCommonAttrsOnVisibleAreaChangeStaticTest",
+        "ace_ets_component_common_attrss_padding_static:ActsAceEtsComponentCommonAttrsPaddingStaticTest",
+        "ace_ets_component_common_attrss_responseRegion_static:ActsAceEtsComponentCommonAttrsResponseRegionStaticTest",
+        "ace_ets_component_common_attrss_size_static:ActsAceEtsComponentCommonAttrsSizeStaticTest",
+        "ace_ets_component_common_attrss_stateStyles_static:ActsAceEtsComponentCommonAttrsStateStylesStaticTest",
+        "ace_ets_component_common_attrss_tabIndex_static:ActsAceEtsComponentCommonAttrsTabIndexStaticTest",
+        "ace_ets_component_common_attrss_visibility_static:ActsAceEtsComponentCommonAttrsVisibilityStaticTest",
       ]
     }
   }
