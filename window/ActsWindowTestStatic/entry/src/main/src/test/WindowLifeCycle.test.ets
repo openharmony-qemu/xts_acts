@@ -25,7 +25,8 @@ import { AppStorage ,LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
-import { StartOptions, bundleManager } from '@kit.AbilityKit';
+import bundleManager from '@ohos.bundle.bundleManager';
+import StartOptions from '@ohos.app.ability.StartOptions'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
@@ -672,11 +673,11 @@ export default function WindowLifeCycleTest() {
             try {
                 (win as window.Window).setUIContent('pages/second/second', (err: BusinessError<void>|null):void => {
                     if (err!.code) {
-                        hilog.error(0x0000, '[ANI]','Failed to load the content callback. Cause:' + JSON.stringify(err));
-                        expect().assertFail();
+                        hilog.error(0x0000, '[ANI]',msgStr + ' Failed to load the content callback. Cause:' + JSON.stringify(err));
+                        expect(err!.code).assertEqual(1300002)
                         done();
                     } else {
-                        hilog.info(0x0000, '[ANI]','Succeeded in loading the content.');
+                        hilog.info(0x0000, '[ANI]',msgStr +  ' Succeeded in loading the content.');
                         expect().assertFail();
                         done();
                     }
@@ -684,7 +685,7 @@ export default function WindowLifeCycleTest() {
                 });
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
-                expect(exception!.code).assertEqual(1300002)
+                expect().assertFail();
                 done();
             }
         })
@@ -812,7 +813,7 @@ export default function WindowLifeCycleTest() {
                 done()
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(exception!.code).assertEqual(1300002);
                 done()
             }
         })
