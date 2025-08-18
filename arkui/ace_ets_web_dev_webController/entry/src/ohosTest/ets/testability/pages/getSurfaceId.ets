@@ -33,9 +33,9 @@ struct getSurfaceId {
   urltrustList: string = "{\"UrlPermissionList\":[{\"host\":\"www.example.com\"}]}"
   urltrustListTwo: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"host\":\"www.test.com\", \"port\":80, \"path\":\"test\"}]}"
   urltrustListThree: string = "{\"UrlPermissionList\":[{\"scheme\":\"https\", \"host\":\"www.163.com\", \"port\":443, \"path\":\"test\"}]}"
-  urltrustListFour: string = "{\"UrlPermissionList\":[{\"scheme\":\"https\", \"host\":\"www.163.com\", \"port\":443, \"path\":\"test\"},{\"scheme\":\"http\", \"host\":\"www.163.com\", \"port\":80, \"path\":\"test\"}]}"
+  urltrustListFour: string = "{\"UrlPermissionList\":[{\"scheme\":\"https\", \"host\":\"www.example.com\", \"port\":443, \"path\":\"test\"},{\"scheme\":\"http\", \"host\":\"www.example.com\", \"port\":80, \"path\":\"test\"}]}"
   urltrustListFive: string = "{\"UrlPermissionList\":[{\"scheme\":\"http\", \"port\":80, \"path\":\"test\"}]}"
-  urltrustListSix: string = "{\"UrlPermissionList\":[{\"host\":\"www.baidu.com\"},{\"host\":\"www.163.com\", \"port\":80, \"path\":\"test\"}]}"
+  urltrustListSix: string = "{\"UrlPermissionList\":[{\"host\":\"www.baidu.com\"},{\"host\":\"www.example.com\", \"port\":80, \"path\":\"test\"}]}"
 
   
 
@@ -148,11 +148,11 @@ struct getSurfaceId {
                 await Utils.sleep(2000);
                 this.controller.setUrlTrustList(this.urltrustListFour);
                 await Utils.sleep(4000);
-                this.controller.loadUrl('http://www.163.com/test');
+                this.controller.loadUrl('http://www.example.com/test');
                 await Utils.sleep(20000);
                 this.checkResult = 5;
                 await Utils.sleep(10000);
-                this.controller.searchAllAsync('网易首页');
+                this.controller.searchAllAsync('Example Domain');
                 await Utils.sleep(2000);
                 this.controller.loadUrl('https://www.baidu.com');
                 await Utils.sleep(2000);
@@ -169,11 +169,11 @@ struct getSurfaceId {
                 await Utils.sleep(2000);
                 this.controller.setUrlTrustList(this.urltrustListFour);
                 await Utils.sleep(4000);
-                this.controller.loadUrl('https://www.163.com/test');
+                this.controller.loadUrl('https://www.example.com/test');
                 await Utils.sleep(20000);
                 this.checkResult = 6;
                 await Utils.sleep(10000);
-                this.controller.searchAllAsync('网易首页');
+                this.controller.searchAllAsync('Example Domain');
                 await Utils.sleep(2000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -263,11 +263,11 @@ struct getSurfaceId {
                 this.controller.clearMatches();
                 this.controller.setUrlTrustList(this.urltrustListSix);
                 await Utils.sleep(2000);
-                this.controller.loadUrl('www.163.com:80/test');
+                this.controller.loadUrl('www.example.com:80/test');
                 await Utils.sleep(2000);
                 this.checkResult = 10;
                 await Utils.sleep(3000);
-                this.controller.searchAllAsync('网易首页');
+                this.controller.searchAllAsync('Example Domain');
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
