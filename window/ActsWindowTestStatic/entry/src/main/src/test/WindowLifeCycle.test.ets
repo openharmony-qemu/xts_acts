@@ -789,8 +789,8 @@ export default function WindowLifeCycleTest() {
         });
         /**
          * @tc.number     : testIsWindowShowingErrCode1300006_0100
-         * @tc.name       : testIsWindowShowingErrCode1300006_static_0100
-         * @tc.desc       : testIsWindowShowingErrCode1300006_static_0100
+         * @tc.name       : testIsWindowShowingErrCode1300002_static_0100
+         * @tc.desc       : testIsWindowShowingErrCode1300002_static_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
@@ -818,18 +818,18 @@ export default function WindowLifeCycleTest() {
         })
         /**
          * @tc.number     : testOnNoInteractionDetectedErrCode1300002_0100
-         * @tc.name       : testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.name       : testOnNoInteractionDetectedErrCode1300002_static_0100
          * @tc.desc       : testOnNoInteractionDetectedErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOnNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3,async (done: () => void): Promise<void>   => {
-            let caseName:string = "testOnNoInteractionDetectedErrCode1300002_0100";
+        it('testOnNoInteractionDetectedErrCode1300002_static_0100', Level.LEVEL3,async (done: () => void): Promise<void>   => {
+            let caseName:string = "testOnNoInteractionDetectedErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOnNoInteractionDetectedErrCode1300002_SubWindow_Promise')
+            await windowStage.createSubWindow('testOnNoInteractionDetectedErrCode1300002_static_0100')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -854,18 +854,18 @@ export default function WindowLifeCycleTest() {
         })
         /**
          * @tc.number     : testOffNoInteractionDetectedErrCode1300002_0100
-         * @tc.name       : testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.name       : testOffNoInteractionDetectedErrCode1300002_static_0200
          * @tc.desc       : testOffNoInteractionDetectedErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOffNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void>   => {
-            let caseName:string = "testOffNoInteractionDetectedErrCode1300002_0100";
+        it('testOffNoInteractionDetectedErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void>   => {
+            let caseName:string = "testOffNoInteractionDetectedErrCode1300002_static_0200";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_0100')
+            await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_static_0200')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -890,14 +890,14 @@ export default function WindowLifeCycleTest() {
 
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
-         * @tc.name      : testNoInteractionDetected_on_Function_Callback
+         * @tc.name      : testNoInteractionDetected_on_Function_Callback_static_0300
          * @tc.desc      : window type noInteractionDetected
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level3
          */
-        it("testNoInteractionDetected_on_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void>  =>{
-            let msgStr:string = "testNoInteractionDetected_on_Function_Callback";
+        it("testNoInteractionDetected_on_Function_Callback_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "testNoInteractionDetected_on_Function_Callback_static_0300";
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
@@ -923,14 +923,14 @@ export default function WindowLifeCycleTest() {
 
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
-         * @tc.name      : tetestNoInteractionDetected_off_Function_Callback
+         * @tc.name      : tetestNoInteractionDetected_off_Function_Callback_static_0400
          * @tc.desc      : window type noInteractionDetected
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level3
          */
-        it("testNoInteractionDetected_off_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void>  =>{
-            let msgStr:string = "testNoInteractionDetected_off_Function_Callback";
+        it("tetestNoInteractionDetected_off_Function_Callback_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "tetestNoInteractionDetected_off_Function_Callback_static_0400";
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try{
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
@@ -957,14 +957,14 @@ export default function WindowLifeCycleTest() {
 
         /**
          * @tc.number     : testOnSubWindowCloseErrCode1300002_0100
-         * @tc.name       : testOnSubWindowCloseErrCode1300002_0100
+         * @tc.name       : testOnSubWindowCloseErrCode1300002_static_0100
          * @tc.desc       : testOnSubWindowCloseErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOnSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testOnSubWindowCloseErrCode1300002_0100";
+        it('testOnSubWindowCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSubWindowCloseErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window
@@ -993,18 +993,18 @@ export default function WindowLifeCycleTest() {
         })
         /**
          * @tc.number     : testOffSubWindowCloseErrCode1300002_0100
-         * @tc.name       : testOffSubWindowCloseErrCode1300002_0100
+         * @tc.name       : testOffSubWindowCloseErrCode1300002_static_0200
          * @tc.desc       : testOffSubWindowCloseErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testOffSubWindowCloseErrCode1300002_0100";
+        it('testOffSubWindowCloseErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffSubWindowCloseErrCode1300002_static_0200";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_0100')
+            await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_static_0200')
                 .then((data:window.Window)=>{
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -1030,14 +1030,14 @@ export default function WindowLifeCycleTest() {
 
         /**
          * @tc.number     : testOnSubWindowCloseErrCode1300004_0100
-         * @tc.name       : testOnSubWindowCloseErrCode1300004_0100
+         * @tc.name       : testOnSubWindowCloseErrCode1300004_static_0300
          * @tc.desc       : testOnSubWindowCloseErrCode1300004_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOnSubWindowCloseErrCode1300004_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testOnSubWindowCloseErrCode1300004_0100";
+        it('testOnSubWindowCloseErrCode1300004_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSubWindowCloseErrCode1300004_static_0300";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let mainWindow: window.Window
