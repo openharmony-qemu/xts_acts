@@ -44,7 +44,7 @@ export default function ActsNotificationRequestTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    //问题单号：DTS2025060627133
+    
     /**
      * @tc.number: Acts_NotificationRequest_Static_0100
      * @tc.name: Acts_NotificationRequest_Static_0100
@@ -163,7 +163,7 @@ export default function ActsNotificationRequestTest() {
           done();
         }
       })
-    //DTS2025060627133
+    
     /**
      * @tc.number: Acts_NotificationRequest_Static_0300
      * @tc.name: Acts_NotificationRequest_Static_0300
@@ -235,7 +235,7 @@ export default function ActsNotificationRequestTest() {
         }
       })
 
-    //DTS2025060627133
+    
     /**
      * @tc.number: Acts_NotificationRequest_Static_0400
      * @tc.name: Acts_NotificationRequest_Static_0400
@@ -287,7 +287,7 @@ export default function ActsNotificationRequestTest() {
         }
       })
 
-      //DTS2025060627133
+      
     /**
      * @tc.number: Acts_NotificationRequest_Static_0600
      * @tc.name: Acts_NotificationRequest_Static_0600

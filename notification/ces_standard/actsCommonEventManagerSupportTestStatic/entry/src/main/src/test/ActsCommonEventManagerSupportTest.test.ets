@@ -23,7 +23,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let bundle_name: string = "com.example.actscommoneventmanagersupport"
+let bundle_name: string = "com.example.actscommoneventmanagersupport.static"
 let testAbilityContext: common.UIAbilityContext;
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST ===>'
@@ -725,6 +725,47 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800
+     * @tc.desc      : default application changed common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DEFAULT_APPLICATION_CHANGED)
+        .assertEqual('usual.event.DEFAULT_APPLICATION_CHANGED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2800 END`)
+        done()
+    })
+
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900
+     * @tc.desc      : enter/exit kiosk mode common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900 START`)
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900` + JSON.stringify(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_ON))
+        expect(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_ON).assertEqual('usual.event.KIOSK_MODE_ON')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_OFF))
+        expect(commonEventManager.Support.COMMON_EVENT_KIOSK_MODE_OFF).assertEqual('usual.event.KIOSK_MODE_OFF')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_USER_LOCKING))
+        expect(commonEventManager.Support.COMMON_EVENT_USER_LOCKING).assertEqual('usual.event.USER_LOCKING')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_USER_LOCKED))
+        expect(commonEventManager.Support.COMMON_EVENT_USER_LOCKED).assertEqual('usual.event.USER_LOCKED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_DEFAULT_APPLICATION_CHANGED))
+        expect(commonEventManager.Support.COMMON_EVENT_DEFAULT_APPLICATION_CHANGED).assertEqual('usual.event.DEFAULT_APPLICATION_CHANGED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_SHORTCUT_CHANGED))
+        expect(commonEventManager.Support.COMMON_EVENT_SHORTCUT_CHANGED).assertEqual('usual.event.SHORTCUT_CHANGED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_CUSTOM_CONFIG_POLICY_UPDATED))
+        expect(commonEventManager.Support.COMMON_EVENT_CUSTOM_CONFIG_POLICY_UPDATED).assertEqual('usual.event.CUSTOM_CONFIG_POLICY_UPDATED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900`+ JSON.stringify(commonEventManager.Support.COMMON_EVENT_CUSTOM_ROAMING_REGION_UPDATED))
+        expect(commonEventManager.Support.COMMON_EVENT_CUSTOM_ROAMING_REGION_UPDATED).assertEqual('usual.event.CUSTOM_ROAMING_REGION_UPDATED')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2900 END`)
+        done()
+    })
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
@@ -733,14 +774,15 @@ export default function ActsCommonEventManagerSupportTest() {
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 START`)
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000 START`)
         expect(commonEventManager.Support.COMMON_EVENT_ENTER_HIBERNATE as string)
           .assertEqual('usual.event.ENTER_HIBERNATE')
         expect(commonEventManager.Support.COMMON_EVENT_EXIT_HIBERNATE as string)
           .assertEqual('usual.event.EXIT_HIBERNATE')
-        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_2700 END`)
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000 END`)
         done()
       })
+
 
   })
 }

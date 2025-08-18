@@ -664,7 +664,7 @@ export default function EmitterTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
      * @tc.desc      : emitter.on(''),emitter.emit(''),emitter.off('')
      */
-    //问题单号：DTS2025060627133
+    
     // it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async (done: () => void): Promise<void> => {
     //     let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600'
@@ -1194,7 +1194,7 @@ export default function EmitterTest() {
     //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
     //  * @tc.desc      : priority: emitter.EventPriority.HIGH
     //  */
-    //问题单号：DTS2025060627133
+    
     // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3000', Level.LEVEL2, async function (done) {
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
     //   let options = {
@@ -1214,7 +1214,7 @@ export default function EmitterTest() {
     //  * @tc.name      : verify on : getListenerCount(eventId: number|string): number
     //  * @tc.desc      : priority: emitter.EventPriority.HIGH
     //  */
-    //问题单号：DTS2025060627133
+    
     // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3100', Level.LEVEL2, async function (done) {
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3100 START`)
     //   let options = {
@@ -1234,7 +1234,7 @@ export default function EmitterTest() {
     //  * @tc.name      : SUB_NOTIFICATION_CES_EMITTER_TEST_3200
     //  * @tc.desc      : The parameter op in Emit is empty
     //  */
-    //问题单号：DTS2025060627133
+    
     // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3200 START`)
     //   eventData.data.id = '32'
@@ -1391,7 +1391,7 @@ export default function EmitterTest() {
     //  * @tc.name      : verify on : emit(eventId: string, options: Options, data?: EventData): void
     //  * @tc.desc      : emitter.EventPriority.IMMEDIATE
     //  */
-    //问题单号：DTS2025060627133
+    
     // it('SUB_NOTIFICATION_CES_EMITTER_TEST_3700', Level.LEVEL2, async function (done) {
     //   console.info(`${TAG} SUB_NOTIFICATION_CES_EMITTER_TEST_3700 START`)
     //   innerEvent.eventId = 37
