@@ -595,19 +595,19 @@ export default function WindowPropertiesTest() {
         })
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
-         * @tc.name      : testWindowOffWindowVisibilityChange_UnregisteredOff
+         * @tc.name      : testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
          * @tc.desc      : Enable this window to listen for status change events
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 3
          */
-        it('testWindowOffWindowVisibilityChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        it('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done: () => void): Promise<void> => {
-                let caseName: string = 'testWindowOffWindowVisibilityChange_UnregisteredOff';
+                let caseName: string = 'testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100';
                 let msgStr: string = 'jsUnittest ' + caseName + ' ';
                 hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
                 let win: window.Window
-                await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff')
+                await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100')
                     .then((data:window.Window)=>{
                         win = data;
                         expect(!!win).assertTrue();
@@ -634,18 +634,18 @@ export default function WindowPropertiesTest() {
             });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
-         * @tc.name      : testWindowOffWindowVisibilityChange_RepeatOff
+         * @tc.name      : testWindowOffWindowVisibilityChange_RepeatOff_static_0200
          * @tc.desc      : Enable this window to listen for status change events
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 3
          */
-        it('testWindowOffWindowVisibilityChange_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff';
+        it('testWindowOffWindowVisibilityChange_RepeatOff_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff_static_0200';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let win: window.Window
-            await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_RepeatOff')
+            await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_RepeatOff_static_0200')
                 .then((data:window.Window)=>{
                     win = data;
                     expect(!!win).assertTrue();
@@ -700,14 +700,14 @@ export default function WindowPropertiesTest() {
         });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
-         * @tc.name      : testWindowVisibilityChange_on_Function_Callback
+         * @tc.name      : testWindowVisibilityChange_on_Function_Callback_static_0100
          * @tc.desc      : window type windowVisibilityChange
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level3
          */
-        it("testWindowVisibilityChange_on_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let msgStr:string = "testWindowVisibilityChange_on_Function_Callback";
+        it("testWindowVisibilityChange_on_Function_Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testWindowVisibilityChange_on_Function_Callback_static_0100";
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
@@ -734,14 +734,14 @@ export default function WindowPropertiesTest() {
         });
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
-         * @tc.name      : testWindowVisibilityChange_off_Function_Callback
+         * @tc.name      : testWindowVisibilityChange_off_Function_Callback_static_0200
          * @tc.desc      : window type windowVisibilityChange
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level3
          */
-        it("testWindowVisibilityChange_off_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let msgStr:string = "testWindowVisibilityChange_off_Function_Callback";
+        it("testWindowVisibilityChange_off_Function_Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testWindowVisibilityChange_off_Function_Callback_static_0200";
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
@@ -766,14 +766,14 @@ export default function WindowPropertiesTest() {
         });
         /**
          * @tc.number     : testOnSystemDensityChangeErrCode1300002_0100
-         * @tc.name       : testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.name       : testOnSystemDensityChangeErrCode1300002_static_0100
          * @tc.desc       : testOnSystemDensityChangeErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOnSystemDensityChangeErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testOnSystemDensityChangeErrCode1300002_0100";
+        it('testOnSystemDensityChangeErrCode1300002_0100_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSystemDensityChangeErrCode1300002_0100_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
@@ -803,18 +803,18 @@ export default function WindowPropertiesTest() {
         })
         /**
          * @tc.number     : testOffSystemDensityChangeErrCode1300002_0100
-         * @tc.name       : testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.name       : testOffSystemDensityChangeErrCode1300002_static_0100
          * @tc.desc       : testOffSystemDensityChangeErrCode1300002_0100
          * @tc.size       : MediumTest
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOffSystemDensityChangeErrCode1300002_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
-            let caseName:string = "testOffSystemDensityChangeErrCode1300002_0100";
+        it('testOffSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffSystemDensityChangeErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_0100')
+            await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -841,14 +841,14 @@ export default function WindowPropertiesTest() {
 
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
-         * @tc.name      : testOnSetCustomDensity1
+         * @tc.name      : testOnSetCustomDensity1_static_0100
          * @tc.desc      : off systemDensityChange event
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level3
          */
-        it('testOffSetCustomDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
-            let caseName: string = 'testOffSetCustomDensity';
+        it('testOnSetCustomDensity1_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOnSetCustomDensity1_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let g_flag: number = 0
@@ -886,14 +886,14 @@ export default function WindowPropertiesTest() {
         // test on/off NoInteractionDetected
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
-         * @tc.name      : testNoInteractionDetected_OnMainWindow
+         * @tc.name      : testNoInteractionDetected_OnMainWindow_static_0100
          * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level2
          */
-        it('testNoInteractionDetected_OnMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testNoInteractionDetected_OnMainWindow';
+        it('testNoInteractionDetected_OnMainWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testNoInteractionDetected_OnMainWindow_static_0100';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let mainWin:window.Window = windowStage.getMainWindowSync();
