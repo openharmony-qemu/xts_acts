@@ -44,7 +44,6 @@ export default function WindowOrientationTest() {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-                // let win = windowStage.getMainWindowSync();
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
@@ -131,7 +130,8 @@ export default function WindowOrientationTest() {
                 done();
             }
         })
-        /**
+
+/**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
          * @tc.name      : testSetPreferredOrientation_WinAbnormal_Promise_static_0100
          * @tc.desc      : Set the display direction property of the window
@@ -202,7 +202,6 @@ export default function WindowOrientationTest() {
                 done()
             }
         })
-
 
 
 

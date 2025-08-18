@@ -138,7 +138,188 @@ export default function WindowPCTest() {
                 done();
             }
         })
+         /**
+         * @tc.number     : testMinimizeCallbackErrCode1300002_0100
+         * @tc.name       : testMinimizeCallbackErrCode1300002_static_0100
+         * @tc.desc       : testMinimizeCallbackErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testMinimizeCallbackErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testMinimizeCallbackErrCode1300002_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMinimizeCallbackErrCode1300002_SubWindow_Promise')
+                .then((data: window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.minimize((err: BusinessError<void>|null) :void => {
+                            const errCode: number = err!.code;
+                            if (errCode) {
+                                if(errCode == 801){
+                                    done();
+                                }else if (errCode == 1300002){
+                                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(err));
+                                    expect(err!.code).assertEqual(1300002);
+                                    done()
+                                    return;
+                                }
+                                else{
+                                    expect().assertFail();
+                                    done();
+                                }
+                            }
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
+                            expect().assertFail();
+                            done();
+                        });
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+                .catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
 
+        })
+        /**
+         * @tc.number     : testMinimizePromiseErrCode1300002_0100
+         * @tc.name       : testMinimizePromiseErrCode1300002_static_0100
+         * @tc.desc       : testMinimizePromiseErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testMinimizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testMinimizePromiseErrCode1300002_0100";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMinimizePromiseErrCode1300002_SubWindow_Promise')
+                .then((data: window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        (subWin! as window.Window).minimize().then(() => {
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
+                            expect().assertFail();
+                        }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause: ' + JSON.stringify(err));
+                            expect(err!.code).assertEqual(1300002);
+                        });
+                        done()
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+                .catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+
+        })
+
+        /**
+         * @tc.number     : testMaximizePromiseErrCode1300002_0100
+         * @tc.name       : testMaximizePromiseErrCode1300002_static_0100
+         * @tc.desc       : testMaximizePromiseErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testMaximizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testMaximizePromiseErrCode1300002_0100";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMaximizePromiseErrCode1300002_SubWindow_Promise')
+                .then((data: window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
+                            expect().assertFail();
+                        }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                            expect().assertFail();
+                        });
+                        done()
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                        expect(exception!.code).assertEqual(1300002);
+                        done()
+                    }
+                })
+                .catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+
+        })
+
+        /**
+         * @tc.number     : testMaximizePromiseErrCode1300004_0100
+         * @tc.name       : testMaximizePromiseErrCode1300004_static_0100
+         * @tc.desc       : testMaximizePromiseErrCode1300004_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testMaximizePromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testMaximizePromiseErrCode1300004_0100";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testMaximizePromiseErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            try {
+                win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
+                    await (win! as window.Window).destroyWindow();
+                    expect().assertFail();
+                    done()
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                    await (win! as window.Window).destroyWindow();
+                    expect().assertFail();
+                    done()
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300004);
+                await (win! as window.Window).destroyWindow();
+                done()
+            }
+        })
 
 
 

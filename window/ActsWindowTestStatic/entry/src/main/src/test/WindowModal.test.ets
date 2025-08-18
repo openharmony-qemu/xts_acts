@@ -44,7 +44,6 @@ export default function WindowModalTest() {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-                // let win = windowStage.getMainWindowSync();
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
