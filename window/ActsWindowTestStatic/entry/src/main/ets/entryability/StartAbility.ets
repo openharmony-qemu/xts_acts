@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { ConfigurationConstant} from '@kit.AbilityKit';
+import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
