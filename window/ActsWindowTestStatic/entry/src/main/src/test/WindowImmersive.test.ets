@@ -595,7 +595,85 @@ export default function WindowImmersiveTest() {
                 done()
             }
         })
+/**
+         * @tc.number     : testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.name       : testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.desc       : testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetImmersiveModeEnabledStateErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetImmersiveModeEnabledStateErrCode1300002_static_0100";
+            let msgStr : string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window ;
+            windowStage.createSubWindow('testSetImmersiveModeEnabledStateErrCode1300002_SubWindow_Promise')
+                .then((data : window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.setImmersiveModeEnabledState(true);
+                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling setImmersiveModeEnabledState.');
+                        expect().assertFail();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call setImmersiveModeEnabledState. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
 
+        })
+
+
+        /**
+         * @tc.number     : testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.name       : testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.desc       : testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetImmersiveModeEnabledStateErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetImmersiveModeEnabledStateErrCode1300004_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testSetImmersiveModeEnabledStateErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window ;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect().assertFail();
+                done()
+            }
+            try {
+                (win as window.Window).setImmersiveModeEnabledState(true);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling setImmersiveModeEnabledState.');
+                expect().assertFail();
+                await (win! as window.Window).destroyWindow();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set the call setImmersiveModeEnabledState. Cause:' +
+                JSON.stringify(exception));
+                expect(exception!.code).assertEqual(1300004);
+                await (win! as window.Window).destroyWindow();
+                done();
+            }
+        })
 
 
 
