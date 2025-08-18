@@ -45,7 +45,7 @@ struct SelectExample {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = 0xCCCCCC as Color
+  @State fontColor: Color = Color.Grey
   @State spaceValue: number = 8
   @State spaceValueString: string = '50.00vp'
   @State arrowPosition: ArrowPosition = ArrowPosition.END
