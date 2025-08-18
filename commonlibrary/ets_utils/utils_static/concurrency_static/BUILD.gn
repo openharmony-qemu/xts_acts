@@ -18,6 +18,7 @@ group("concurrency_static") {
   if (is_standard_system) {
     deps = [
       "asynclock_test_static:ActsAsyncLockStaticTest",
+      "atomics_test_static:ActsAtomicsStaticTest",
     ]
 
   }
