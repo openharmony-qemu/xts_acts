@@ -150,7 +150,7 @@ struct getSurfaceId {
                 this.controller.setUrlTrustList(this.urltrustListFour);
                 await Utils.sleep(4000);
                 this.controller.loadUrl('http://www.example.com/test');
-                await waitForExist(()=>this.isPageEnd, 'emitSetUrlTrustList0400_isPageEnd_163', 1, 1000)
+                await waitForExist(()=>this.isPageEnd, 'emitSetUrlTrustList0500_isPageEnd', 1, 1000)
                 this.isPageEnd = -1;
                 this.checkResult = 5;
                 this.controller.searchAllAsync('Example Domain');
@@ -171,7 +171,7 @@ struct getSurfaceId {
                 this.controller.setUrlTrustList(this.urltrustListFour);
                 await Utils.sleep(4000);
                 this.controller.loadUrl('https://www.example.com/test');
-                await waitForExist(()=>this.isPageEnd, 'emitSetUrlTrustList0600_isPageEnd_163', 1, 1000)
+                await waitForExist(()=>this.isPageEnd, 'emitSetUrlTrustList0600_isPageEnd', 1, 1000)
                 this.isPageEnd = -1;
                 this.checkResult = 6;
                 this.controller.searchAllAsync('Example Domain');
