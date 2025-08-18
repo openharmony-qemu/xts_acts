@@ -81,7 +81,7 @@ export default function DisplayTest() {
                 expect(data[0].densityPixels != null).assertTrue();
                 expect(data[0].scaledDensity != null).assertTrue();
                 expect(data[0].xDPI != null).assertTrue();
-                // expect(data[0].yDPI != null).assertTrue();
+                expect(data[0].yDPI != null).assertTrue();
                 done();
             }).catch((err:BusinessError) :PromiseLike<void>|undefined => {
                  hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
@@ -127,7 +127,7 @@ export default function DisplayTest() {
                 expect(data![0].densityPixels != null).assertTrue();
                 expect(data![0].scaledDensity != null).assertTrue();
                 expect(data![0].xDPI != null).assertTrue();
-                // expect(data![0].yDPI != null).assertTrue();
+                expect(data![0].yDPI != null).assertTrue();
                 // expect((data![0].screenShape == 0) || (data![0].screenShape == 1)).assertTrue();
                 done();
 
@@ -419,7 +419,7 @@ export default function DisplayTest() {
                 expect(dsp.densityPixels != null).assertTrue();
                 expect(dsp.scaledDensity !=null).assertTrue();
                 expect(dsp.xDPI != null).assertTrue();
-                // expect(dsp.yDPI != null).assertTrue();
+                expect(dsp.yDPI != null).assertTrue();
                 done();
             } catch (err:Error) {
                 hilog.error(0x0000, '[ANI]','getDisplayByIdSyncTest1 error ' + JSON.stringify(err));
