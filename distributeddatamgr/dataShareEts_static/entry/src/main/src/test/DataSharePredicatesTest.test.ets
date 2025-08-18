@@ -25,7 +25,6 @@ const CREATE_TABLE_ALL_DATA_TYPE_SQL = "CREATE TABLE IF NOT EXISTS test "
   + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
   + "name TEXT NOT NULL  , age INTEGER , salary REAL , blobType BLOB ) ;";
 
-let context: common.UIAbilityContext;
 let str: ValueType = "zhangSan";
 let num: ValueType = 18;
 let bool: ValueType = true;
