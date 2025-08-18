@@ -13,49 +13,41 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 function sleep(time: int) {
-  return new Promise<int>((resolve,reject) => {
+  return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
-      resolve(0)
-    }, time * 1000)
-  }).then(() => {
-    console.info(`sleep ${time} over...`)
+      resolve(0);
+    }, time * 1000);
   })
 }
 
 export default function progressJsunit() {
-
-
   describe('progressTest', () => {
     beforeAll(() => {
-      console.info("progressTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("progressTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Progress/ProgressA',
       }
@@ -66,6 +58,7 @@ export default function progressJsunit() {
         console.info("get Progress state success " + JSON.stringify(pages));
         if (!("Progress" == pages.name)) {
           console.info("get Progress state success " + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
         }
       } catch (err) {
@@ -74,39 +67,43 @@ export default function progressJsunit() {
       await sleep(2);
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await sleep(1);
       console.info("Progress after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0960
-     * @tc.name testGetProgressAttr_static_010
-     * @tc.desc aceEtsTest
+    
+    /*
+     * @tc.number   testGetProgressAttr_static_010
+     * @tc.name     testGetProgressAttr_static_010
+     * @tc.desc     testGetProgressAttr_static_010
+     * @tc.level    Level.LEVEL0
      */
-    it('testGetProgressAttr_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGetProgressAttr_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetProgressAttr START');
       let strJson = inspector.getInspectorByKey('progress');
       let obj = JSON.parseJsonElement(strJson);
       let objConstructor = JSON.parseJsonElement(obj.getElement('$attrs').getString('constructor'));
       console.log("progress constructor is " + objConstructor);
-      expect(obj.getElement('$attrs').getDouble('value')).assertEqual(3.000000.toFixed(6));
-      expect(obj.getString('$type')).assertEqual('Progress');
+      expect(obj.getElement('$attrs').getString('value')).assertEqual(3.000000.toFixed(6));
+      expect(obj.getElement('$type')).assertEqual('Progress');
       expect(obj.getElement('$attrs').getString('color')).assertEqual("#FF0000FF");
       expect(obj.getElement('$attrs').getString('width')).assertEqual("50.00vp");
       expect(obj.getElement('$attrs').getString('height')).assertEqual("70.00vp");
-      expect(objConstructor.getDouble('total')).assertEqual(40.000000.toFixed(6));
+      expect(objConstructor.getString('total')).assertEqual(40.000000.toFixed(6));
       expect(objConstructor.getString('type')).assertEqual("ProgressStyle.Linear");
       console.info('testGetProgressAttr END');
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr_static_020
-     * @tc.desc aceEtsTest
+    
+    /*
+     * @tc.number   testGetProgressAttr_static_020
+     * @tc.name     testGetProgressAttr_static_020
+     * @tc.desc     testGetProgressAttr_static_020
+     * @tc.level    Level.LEVEL0
      */
-    it('testGetProgressAttr_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGetProgressAttr_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetProgressAttr2 START');
       let strJson = inspector.getInspectorByKey('progress2');
       let obj = JSON.parseJsonElement(strJson);
@@ -118,12 +115,14 @@ export default function progressJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr_static_030
-     * @tc.desc aceEtsTest
+    
+    /*
+     * @tc.number   testGetProgressAttr_static_030
+     * @tc.name     testGetProgressAttr_static_030
+     * @tc.desc     testGetProgressAttr_static_030
+     * @tc.level    Level.LEVEL0
      */
-    it('testGetProgressAttr_static_030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGetProgressAttr_static_030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetProgressAttr3 START');
       let strJson = inspector.getInspectorByKey('progress3');
       let obj = JSON.parseJsonElement(strJson);
@@ -135,12 +134,14 @@ export default function progressJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr_static_040
-     * @tc.desc aceEtsTest
+    
+    /*
+     * @tc.number   testGetProgressAttr_static_040
+     * @tc.name     testGetProgressAttr_static_040
+     * @tc.desc     testGetProgressAttr_static_040
+     * @tc.level    Level.LEVEL0
      */
-    it('testGetProgressAttr_static_040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGetProgressAttr_static_040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetProgressAttr4 START');
       let strJson = inspector.getInspectorByKey('progress4');
       let obj = JSON.parseJsonElement(strJson);
@@ -152,12 +153,14 @@ export default function progressJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0970
-     * @tc.name testGetProgressAttr_static_050
-     * @tc.desc aceEtsTest
+    
+    /*
+     * @tc.number   testGetProgressAttr_static_050
+     * @tc.name     testGetProgressAttr_static_050
+     * @tc.desc     testGetProgressAttr_static_050
+     * @tc.level    Level.LEVEL0
      */
-    it('testGetProgressAttr_static_050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testGetProgressAttr_static_050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetProgressAttr5 START');
       let strJson = inspector.getInspectorByKey('progress5');
       let obj = JSON.parseJsonElement(strJson);

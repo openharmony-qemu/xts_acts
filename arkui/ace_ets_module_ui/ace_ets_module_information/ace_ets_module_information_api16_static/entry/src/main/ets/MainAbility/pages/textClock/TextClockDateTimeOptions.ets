@@ -12,19 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Column,
-  Row,
-  TextClock,
-  ColumnOptions,
-  HorizontalAlign,
-} from '@ohos.arkui.component';
+import { Column, Row, Text, Alignment, Color, FontStyle,Entry, Component, Padding, TextClock,
+  ColumnOptions, RowOptions, Button, ClickEvent, TextOverflow, FontWeight, FlexAlign, HorizontalAlign
+} from '@ohos.arkui.component'
 import {
   State,
+  MutableState,
+  stateOf,
+  observableProxy,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
 
 @Entry

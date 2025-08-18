@@ -12,36 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 export default function CONTENT_FIRST_APITest() {
   describe('CONTENT_FIRST_APITest', () => {
     beforeAll(() => {
-      console.info("CONTENT_FIRST_APITest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("CONTENT_FIRST_APITest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       console.info("CONTENT_FIRST_APITest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/AnimationMode_API/CONTENT_FIRST",
@@ -61,24 +55,23 @@ export default function CONTENT_FIRST_APITest() {
         expect().assertFail();
       }
     });
-    /**
-     * @tc.number CONTENT_FIRST
-     * @tc.name CONTENT_FIRST_APITest_static_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   CONTENT_FIRST_APITest_static_0100
+     * @tc.name     CONTENT_FIRST_APITest_static_0100
+     * @tc.desc     CONTENT_FIRST_APITest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('CONTENT_FIRST_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('CONTENT_FIRST_APITest_static_0100 START');
+it('CONTENT_FIRST_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('CONTENT_FIRST_APITest_0100 START');
       await CommonFunc.sleep(1000);
       let CONTENT_FIRST = inspector.getInspectorByKey('CONTENT_FIRST');
-      console.info("[CONTENT_FIRST_APITest_static_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attrs')));
-      console.info("[CONTENT_FIRST_APITest_static_0100] Tabs animationMode attrs2 is: " +
+      console.info("[CONTENT_FIRST_APITest_0100] Tabs animationMode attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attr')));
+      console.info("[CONTENT_FIRST_APITest_0100] Tabs animationMode attrs2 is: " +
       JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST)));
-      expect(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attrs').getString('animationMode')).assertEqual('AnimationMode.CONTENT_FIRST');
-      console.info('[CONTENT_FIRST_APITest_static_0100] END');
+      expect(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attr').getString('animationMode')).assertEqual('AnimationMode.CONTENT_FIRST');
+      console.info('[CONTENT_FIRST_APITest_0100] END');
       done();
     });
   })

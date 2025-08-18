@@ -12,37 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressContentModifierTest() {
   describe('ProgressContentModifierTest', () => {
     beforeAll(() => {
-      console.info("ProgressContentModifierTest beforeAll start");
-      UtilsTest.msSleep(4000)
-      UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility")
-      UtilsTest.msSleep(4000)
+      console.info("ProgressContentModifierTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info('ProgressContentModifierTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/progress/ProgressContentModifier',
@@ -54,31 +51,31 @@ export default function ProgressContentModifierTest() {
         console.info('get ProgressContentModifierTest state pages:' + JSON.stringify(pages));
         if (!('ProgressContentModifier' == pages.name)) {
           console.info('get ProgressContentModifierTest pages.name:' + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
-          Utils.sleep(2500);
+          await Utils.sleep(2500);
         }
       } catch (err) {
         console.error('push ProgressContentModifierTest page error:' + err);
       }
       console.info('ProgressContentModifierTest beforeEach end');
     });
-    /* *
-    * @tc.number: ProgressContentModifierTest_static_001
-    * @tc.name  : ProgressContentModifierTest_static_001
-    * @tc.desc  : To test the contentModifier
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('ProgressContentModifierTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProgressContentModifierTest_static_001 START');
-      Utils.sleep(1000);
+    
+    /*
+     * @tc.number   ProgressContentModifierTest_static_001
+     * @tc.name     ProgressContentModifierTest_static_001
+     * @tc.desc     ProgressContentModifierTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
+it('ProgressContentModifierTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProgressContentModifierTest_001 START');
+      await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProgressContentModifier_total');
       let obj = JSON.parseJsonElement(strJson);
-      Utils.sleep(1000);
-      console.info("[ProgressContentModifierTest_static_001] obj is: " + JSON.stringify(obj));
+      await Utils.sleep(1000);
+      console.info("[ProgressContentModifierTest_001] obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Current progress is：0/3');
-      console.info('[ProgressContentModifierTest_static_001] END');
+      console.info('[ProgressContentModifierTest_001] END');
       done();
     });
   })

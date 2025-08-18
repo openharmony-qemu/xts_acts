@@ -12,30 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Column,
-  Row,
-  TextClock,
-  ColumnOptions,
-  HorizontalAlign,
-  ShadowOptions,
-  Color,
-  TextTimer,
-} from '@ohos.arkui.component';
+import { Column, Row, Text, Alignment, Color, FontStyle,Entry, Component, Padding, TextClock, ShadowOptions, $r,
+  ColumnOptions, RowOptions, Button, ClickEvent, TextOverflow, FontWeight, FlexAlign, HorizontalAlign, TextTimer
+} from '@ohos.arkui.component'
 import {
   State,
+  MutableState,
+  stateOf,
+  observableProxy,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextTimerExample {
-  @State textShadows1: ShadowOptions | Array<ShadowOptions> = { radius: 10, color: Color.Red, offsetX: 10, offsetY: 0 } as ShadowOptions
-  @State textShadows2: ShadowOptions | Array<ShadowOptions> = { radius: -10, color: '#ff000000', offsetX: -10, offsetY: 0 } as ShadowOptions
-  @State textShadows3: ShadowOptions | Array<ShadowOptions> = { radius: 50, color: $r('app.color.pink'), offsetX: 0, offsetY: 10 } as ShadowOptions
+  @State textShadows1: ShadowOptions | Array<ShadowOptions> = { radius: 10, color: Color.Red, offsetX: 10, offsetY: 0 } as ShadowOptions | Array<ShadowOptions>
+  @State textShadows2: ShadowOptions | Array<ShadowOptions> = { radius: -10, color: '#ff000000', offsetX: -10, offsetY: 0 } as ShadowOptions | Array<ShadowOptions>
+  @State textShadows3: ShadowOptions | Array<ShadowOptions> = { radius: 50, color: $r('app.color.pink'), offsetX: 0, offsetY: 10 } as ShadowOptions | Array<ShadowOptions>
 
   build() {
     Column({ space: 8 } as ColumnOptions) {

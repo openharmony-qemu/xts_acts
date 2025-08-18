@@ -12,36 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 export default function ACTION_FIRST_APITest() {
   describe('ACTION_FIRST_APITest', () => {
     beforeAll(() => {
-      console.info("ACTION_FIRST_APITest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("ACTION_FIRST_APITest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("ACTION_FIRST_APITest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/AnimationMode_API/ACTION_FIRST",
@@ -61,22 +55,21 @@ export default function ACTION_FIRST_APITest() {
         expect().assertFail();
       }
     });
-    /**
-     * @tc.number ACTION_FIRST
-     * @tc.name ACTION_FIRST_APITest_static_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   ACTION_FIRST_APITest_static_0100
+     * @tc.name     ACTION_FIRST_APITest_static_0100
+     * @tc.desc     ACTION_FIRST_APITest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('ACTION_FIRST_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ACTION_FIRST_APITest_static_0100 START');
+it('ACTION_FIRST_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('ACTION_FIRST_APITest_0100 START');
       await CommonFunc.sleep(1000);
       let ACTION_FIRST = inspector.getInspectorByKey('ACTION_FIRST');
-      console.info("[ACTION_FIRST_APITest_static_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(ACTION_FIRST).getElement('$attrs')));
-      expect(JSON.parseJsonElement(ACTION_FIRST).getElement('$attrs').getString('animationMode')).assertEqual('AnimationMode.ACTION_FIRST');
-      console.info('[ACTION_FIRST_APITest_static_0100] END');
+      console.info("[ACTION_FIRST_APITest_0100] Tabs animationMode attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(ACTION_FIRST).getElement('$attr')));
+      expect(JSON.parseJsonElement(ACTION_FIRST).getElement('$attr').getString('animationMode')).assertEqual('AnimationMode.ACTION_FIRST');
+      console.info('[ACTION_FIRST_APITest_0100] END');
       done();
     });
   })

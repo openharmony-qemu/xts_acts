@@ -13,28 +13,8 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter'
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  CaretOffset,
-  CopyOptions,
-  SearchController,
-  Flex,
-  Color,
-  FontStyle,
-  Search,
-  Font,
-  Button,
-  ClickEvent,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
+import {Entry, Component, CopyOptions, SearchController, CaretOffset, FontStyle, Font, Column, Text, Search, SearchOptions, ClickEvent, Button, Color } from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -44,12 +24,12 @@ struct SearchExample {
   @State textFont:Font = {
           size: 10,
           weight: 10,
-          family: 'serif',
+          family: 'serif', 
           style: FontStyle.Normal
         } as Font
   @State searchButton:string = "10"
   @State maxLength: number = 19
-  @State copyOption:CopyOptions = CopyOptions.LocalDevice as CopyOptions
+  @State copyOption:CopyOptions = CopyOptions.LocalDevice
   controller: SearchController= new SearchController()
   controller2: SearchController= new SearchController()
   @State caretIndex : number = 9999
@@ -59,21 +39,21 @@ struct SearchExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("search page state change called:" + JSON.stringify(eventData));
     if (eventData != null) {
-      // if (eventData.data?.['textFont'] != null) {
-      //   this.textFont = eventData.data?.['textFont'] as Font;
-      // }
-      // if (eventData.data?.['searchButton'] != null) {
-      //   this.searchButton = eventData.data?.['searchButton'] as string;
-      // }
-      // if (eventData.data?.['text'] != null) {
-      //   this.text = eventData.data?.['text'] as string;
-      // }
-      // if (eventData.data?.['maxLength'] != null) {
-      //   this.maxLength = eventData.data?.['maxLength'] as number;
-      // }
-      // if (eventData.data?.['copyOption'] != null) {
-      //   this.copyOption = eventData.data?.['copyOption'] as CopyOptions;
-      // }
+      if (((eventData.data) as ESObject ).getProperty('textFont') != null) {
+        this.textFont = ((eventData.data) as ESObject ).getProperty('textFont').toStaticObject() as Font;
+      }
+      if (((eventData.data) as ESObject ).getProperty('searchButton') != null) {
+        this.searchButton = ((eventData.data) as ESObject ).getProperty('searchButton').toString();
+      }
+      if (((eventData.data) as ESObject ).getProperty('text') != null) {
+        this.text = ((eventData.data) as ESObject ).getProperty('text').toString();
+      }
+      if (((eventData.data) as ESObject ).getProperty('maxLength') != null) {
+        this.maxLength = ((eventData.data) as ESObject ).getProperty('maxLength').toNumber();
+      }
+      if (((eventData.data) as ESObject ).getProperty('copyOption') != null) {
+        this.copyOption = ((eventData.data) as ESObject ).getProperty('copyOption').toStaticObject() as CopyOptions;
+      }
     }
   }
 
@@ -90,7 +70,7 @@ struct SearchExample {
     Column() {
       Text(this.submitvalue)
       Text(this.changevalue)
-      Search({ value: '', placeholder: 'input content', controller: this.controller })
+      Search({ value: '', placeholder: 'input content', controller: this.controller } as SearchOptions)
         .searchButton('search')
         .textFont(this.textFont)
         .searchButton(this.searchButton)
@@ -104,14 +84,14 @@ struct SearchExample {
           family: 'serif',
           style: FontStyle.Normal
         })
-        .onSubmit((value: string) => {
+        .onSubmit((value: string):void => {
           this.submitvalue = value
         })
-        .onChange((value: string): void => {
+        .onChange((value: string):void => {
           this.changevalue = value
         })
 
-      Search({ value: this.text, placeholder: 'input content', controller: this.controller2 })
+      Search({ value: this.text, placeholder: 'input content', controller: this.controller2 } as SearchOptions)
         .textFont(this.textFont)
         .key('mySearch')
         .placeholderColor(Color.Red)
@@ -126,7 +106,7 @@ struct SearchExample {
       Button('caretoffset')
         .backgroundColor('#00FF00')
         .margin(15)
-        .onClick((event: ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           console.info('text length:' + this.text.length)
           this.controller2.caretPosition(this.text.length)
           this.positionInfo = this.controller2.getCaretOffset()

@@ -13,34 +13,31 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 export default function BadgeNodeTest() {
   describe('BadgeNodeTest', () => {
     beforeAll(() => {
-      console.info("BadgeNodeTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("BadgeNodeTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
-      console.info('BadgeNodeTest beforeEach start');
+    beforeEach(async (): Promise<void> => {
+      console.info('badgeNodeTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Badge/badgeNode',
       }
@@ -62,26 +59,25 @@ export default function BadgeNodeTest() {
       console.info('badgeNode beforeEach end');
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('badgeNode after each called');
     })
    
-    /**
-     * @tc.number    badgeNode0100
-     * @tc.name      badgeNode0100
-     * @tc.desc      frameNode: createNodebadgeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   badgeNode_static_0100
+     * @tc.name     badgeNode_static_0100
+     * @tc.desc     badgeNode_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('badgeNode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('badgeNode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       let tagName = 'badgeNode0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_ badge_001');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual("Badge");
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual("Badge");
       console.info('[' + tagName + '] END ===========================');
       done();
     });

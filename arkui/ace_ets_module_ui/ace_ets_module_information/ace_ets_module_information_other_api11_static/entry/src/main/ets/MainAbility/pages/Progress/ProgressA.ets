@@ -12,30 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  Flex,
-  Progress,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  ProgressStyle,
-  ClickEvent,
-  Color,
-  ProgressOptions,
-  ProgressType,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button, HorizontalAlign, Flex, FlexDirection, ItemAlign, FontWeight,
+  FlexAlign, Alignment, TextOverflow, ProgressType, RowOptions, ColumnOptions, Text, Progress, Margin, ProgressStyle
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct progress_testcase {
@@ -53,35 +33,35 @@ struct progress_testcase {
         Text(`Progress page`)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-        Progress({ value: 20, total: 40, type: ProgressType.Linear /*style: ProgressStyle.Linear*/ } as ProgressOptions)
+        Progress({ value: 20, total: 40, type: ProgressType.Linear } )
           .value(3)
           .color(Color.Blue)
           .width(50)
           .height(70)
           .key('progress')
 
-        Progress({ value: 20, total: 40, /*style: ProgressStyle.Eclipse*/ } as ProgressOptions)
+        Progress({ value: 20, total: 40, type: ProgressType.Eclipse } )
           .value(3)
           .color(Color.Blue)
           .width(50)
           .height(70)
           .key('progress2')
 
-        Progress({ value: 20, total: 40, /*style: ProgressStyle.Ring*/ } as ProgressOptions)
+        Progress({ value: 20, total: 40, type: ProgressType.Ring })
           .value(3)
           .color(Color.Blue)
           .width(50)
           .height(70)
           .key('progress3')
 
-        Progress({ value: 20, total: 40, /*style: ProgressStyle.ScaleRing*/ } as ProgressOptions)
+        Progress({ value: 20, total: 40, type: ProgressType.ScaleRing })
           .value(3)
           .color(Color.Blue)
           .width(50)
           .height(70)
           .key('progress4')
 
-        Progress({ value: 20, total: 40, /*style: ProgressStyle.Capsule*/ } as ProgressOptions)
+        Progress({ value: 20, total: 40, type: ProgressType.Capsule })
           .value(3)
           .color(Color.Blue)
           .width(50)
