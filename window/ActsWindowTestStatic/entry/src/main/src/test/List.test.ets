@@ -20,6 +20,7 @@ import WindowTitleTest from "./WindowTitle.test";
 import WindowOrientationTest from "./WindowOrientation.test";
 import WindowPropertiesTest from "./WindowProperties.test";
 import WindowPCTest from "./WindowPC.test";
+import WindowKeyBoardTest from "./WindowKeyBoard.test";
 export default function testsuite() {
   WindowLifeCycleTest();
   WindowImmersiveTest();
@@ -29,5 +30,5 @@ export default function testsuite() {
   WindowOrientationTest();
   WindowPropertiesTest();
   WindowPCTest();
-
+  WindowKeyBoardTest();
 }

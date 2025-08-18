@@ -24,9 +24,50 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage ,LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import Want from '@ohos.app.ability.Want';
+import { StartOptions, bundleManager } from '@kit.AbilityKit';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+    return new Promise<window.WindowStage>((resolve, reject) => {
+        let want: Want = {
+            bundleName: "com.example.actswindowtest.static",
+            abilityName: 'StartAbility'
+        };
+        if (options) {
+            context.startAbility(want, options).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        } else {
+            context.startAbility(want).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        }
+        await Utils.msSleep(1000)
+        let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        resolve(windowStageStart);
+    })
+}
+async function terminateAbility(caseName: string) {
+    let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    try {
+        if (pageContext !== null && pageContext !== undefined) {
+            console.log(`${caseName} terminateSelf begin`);
+        }
+        pageContext.terminateSelf().then(() => {
+            console.log(`${caseName} terminateSelf success`);
+        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+        });
+    } catch (e: BusinessError) {
+        console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+    }
+    await Utils.msSleep(1000)
+}
 export default function WindowLifeCycleTest() {
 
     describe("WindowLifeCycleTest", (): void => {
@@ -721,6 +762,753 @@ export default function WindowLifeCycleTest() {
                 done();
             }
             ;
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0200
+         * @tc.name      : test_findWindow_notExist_static_0100
+         * @tc.desc      : test_findWindow_notExist
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('test_findWindow_notExist_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'test_findWindow_notExist_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let tempWnd : window.Window;
+            try {
+                tempWnd = window.findWindow('aa');
+                hilog.info(0x0000, '[ANI]',msgStr + 'findWindow success');
+                expect(false).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + exception.code + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done();
+            };
+        });
+        /**
+         * @tc.number     : testIsWindowShowingErrCode1300006_0100
+         * @tc.name       : testIsWindowShowingErrCode1300006_static_0100
+         * @tc.desc       : testIsWindowShowingErrCode1300006_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testIsWindowShowingErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testIsWindowShowingErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testIsWindowShowingErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                let data = win.isWindowShowing();
+                hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
+                expect().assertFail();
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect().assertFail();
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.name       : testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.desc       : testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3,async (done: () => void): Promise<void>   => {
+            let caseName:string = "testOnNoInteractionDetectedErrCode1300002_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOnNoInteractionDetectedErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window)=>{
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.on("noInteractionDetected", 1, () => {
+                });
+                hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.name       : testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.desc       : testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void>   => {
+            let caseName:string = "testOffNoInteractionDetectedErrCode1300002_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOffNoInteractionDetectedErrCode1300002_0100')
+                .then((data:window.Window)=>{
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.off("noInteractionDetected");
+                hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
+         * @tc.name      : testNoInteractionDetected_on_Function_Callback
+         * @tc.desc      : window type noInteractionDetected
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testNoInteractionDetected_on_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "testNoInteractionDetected_on_Function_Callback";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try{
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass: window.Window = await window.getLastWindow(context);
+                windowClass.on('noInteractionDetected', 60, () => {
+                    hilog.info(0x0000, '[ANI]', msgStr +  'no interaction in 60s');
+                });
+                expect(true).assertTrue();
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +  'Failed to register callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
+         * @tc.name      : tetestNoInteractionDetected_off_Function_Callback
+         * @tc.desc      : window type noInteractionDetected
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testNoInteractionDetected_off_Function_Callback", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void>  =>{
+            let msgStr:string = "testNoInteractionDetected_off_Function_Callback";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try{
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass: window.Window = await window.getLastWindow(context);
+                windowClass.off('noInteractionDetected');
+                expect(true).assertTrue();
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr +  'Failed to unregister callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(error));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        })
+
+
+
+
+        /**
+         * @tc.number     : testOnSubWindowCloseErrCode1300002_0100
+         * @tc.name       : testOnSubWindowCloseErrCode1300002_0100
+         * @tc.desc       : testOnSubWindowCloseErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSubWindowCloseErrCode1300002_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOnSubWindowCloseErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window)=>{
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.on("subWindowClose", () => {
+                });
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOffSubWindowCloseErrCode1300002_0100
+         * @tc.name       : testOffSubWindowCloseErrCode1300002_0100
+         * @tc.desc       : testOffSubWindowCloseErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffSubWindowCloseErrCode1300002_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOffSubWindowCloseErrCode1300002_0100')
+                .then((data:window.Window)=>{
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.off("subWindowClose", () => {
+                });
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testOnSubWindowCloseErrCode1300004_0100
+         * @tc.name       : testOnSubWindowCloseErrCode1300004_0100
+         * @tc.desc       : testOnSubWindowCloseErrCode1300004_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnSubWindowCloseErrCode1300004_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSubWindowCloseErrCode1300004_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let mainWindow: window.Window
+            await windowStage.getMainWindow().then((data:window.Window) => {
+                mainWindow = data;
+                hilog.info(0x0000, '[ANI]',msgStr + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.error(0x0000, '[ANI]',msgStr+ ' ' + 'Failed in obtaining the main window. Cuase: ' + JSON.stringify(err));
+                done()
+            });
+            expect(!!mainWindow).assertTrue();
+            try {
+                mainWindow!.on('subWindowClose', () => {
+                });
+                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on_subWindowClose.');
+                expect().assertFail();
+                done();
+            } catch (exception:BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call on_subWindowClose. Cause:' + JSON.stringify(exception));
+                if (exception!.code == 801) {
+                    hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持on_subWindowClose能力.');
+                } else {
+                    expect(exception!.code).assertEqual(1300004);
+                }
+                done();
+            }
+        })
+        /**
+         * @tc.number     : testOnWindowWillCloseErrCode1300002_0100
+         * @tc.name       : testOnWindowWillCloseErrCode1300002_static_0100
+         * @tc.desc       : testOnWindowWillCloseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnWindowWillCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnWindowWillCloseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOnWindowWillCloseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.on('windowWillClose', () => {
+                    console.info(msgStr +  'on windowWillClose callback');
+                    return new Promise<boolean>((resolve, reject) => {
+                        // 是否关闭该窗口
+                        let result: boolean = true;
+                        resolve(result);
+                    });
+                });
+                hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
+                expect().assertFail();
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowWillClose. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testOffWindowWillCloseErrCode1300002_0100
+         * @tc.name       : testOffWindowWillCloseErrCode1300002_static_0100
+         * @tc.desc       : testOffWindowWillCloseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffWindowWillCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOffWindowWillCloseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOffWindowWillCloseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.off('windowWillClose');
+                hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
+                expect().assertFail();
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to off_windowWillClose. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+                  * @tc.number     : testCreateWindowCallbackErrCode1300006_0100
+                  * @tc.name       : testCreateWindowCallbackErrCode1300006_static_0100
+                  * @tc.desc       : testCreateWindowCallbackErrCode1300006_static_0100
+                  * @tc.size       : MediumTest
+                  * @tc.type       : Function
+                  * @tc.level      : Level 3
+                  */
+                it('testCreateWindowCallbackErrCode1300006_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+                    let caseName : string = "testCreateWindowCallbackErrCode1300006_static_0100";
+                    let msgStr : string = 'jsunittest ' + caseName + ' ';
+                    hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+                    let windowConfig: window.Configuration = {
+                        name: "testCreateWindowCallbackErrCode1300006_static_0100",
+                        windowType: window.WindowType.TYPE_DIALOG,
+                        ctx: undefined,
+                    };
+                    try {
+                        window.createWindow(windowConfig, (err: BusinessError<void>|null,data:window.Window|undefined):void => {
+                            const errCode: number = err!.code;
+                            if (errCode) {
+                                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(err));
+                                expect(err!.code).assertEqual(1300006);
+                                done()
+                                return;
+                            }
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling createWindow.');
+                            expect().assertFail();
+                            done();
+                        });
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+                /**
+                 * @tc.number     : testCreateWindowPromiseErrCode1300006_0100
+                 * @tc.name       : testCreateWindowPromiseErrCode1300006_static_0100
+                 * @tc.desc       : testCreateWindowPromiseErrCode1300006_static_0100
+                 * @tc.size       : MediumTest
+                 * @tc.type       : Function
+                 * @tc.level      : Level 3
+                 */
+                it('testCreateWindowPromiseErrCode1300006_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+                    let caseName : string = "testCreateWindowPromiseErrCode1300006_static_0100";
+                    let msgStr : string = 'jsunittest ' + caseName + ' ';
+                    hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+                    let windowConfig: window.Configuration = {
+                        name: "testCreateWindowPromiseErrCode1300006_static_0100",
+                        windowType: window.WindowType.TYPE_DIALOG,
+                        ctx: undefined,
+                    };
+                    try {
+                        window.createWindow(windowConfig).then((data:window.Window|undefined) => {
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling createWindow.');
+                            expect().assertFail();
+                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause: ' + JSON.stringify(err));
+                            expect(err!.code).assertEqual(1300006);
+                        });
+                        done()
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call createWindow. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+                /**
+                 * @tc.number     : testCreateWindowCallbackErrCode1300002_0200
+                 * @tc.name       : testCreateWindowCallbackErrCode1300002_static_0200
+                 * @tc.desc       : testCreateWindowCallbackErrCode1300002_static_0200
+                 * @tc.size       : MediumTest
+                 * @tc.type       : Function
+                 * @tc.level      : Level 3
+                 */
+                it('testCreateWindowCallbackErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+                    let caseName : string = "testCreateWindowCallbackErrCode1300002_static_0200";
+                    let msgStr : string = 'jsunittest ' + caseName + ' ';
+                    hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+                    let windowConfig: window.Configuration = {
+                        name: "testCreateWindowCallbackErrCode1300002_static_0200",
+                        windowType:window.WindowType.TYPE_FLOAT,
+                        ctx: context,
+                    };
+                    try {
+                        window.createWindow(windowConfig, (err: BusinessError<void>|null,data:window.Window|undefined):void => {
+                            const errCode: number = err!.code;
+                            if (errCode) {
+                                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(err));
+                                if (err!.code === 1300002) {
+                                    done();
+                                } else if(err!.code === 801){
+                                    done();
+                                }else {
+                                    expect().assertFail();
+                                    done();
+                                }
+                            }
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling createWindow.');
+                            expect(!!data).assertTrue();
+                            done();
+                        });
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+                /**
+                 * @tc.number     : testCreateWindowPromiseErrCode1300002_0200
+                 * @tc.name       : testCreateWindowPromiseErrCode1300002_static_0200
+                 * @tc.desc       : testCreateWindowPromiseErrCode1300002_static_0200
+                 * @tc.size       : MediumTest
+                 * @tc.type       : Function
+                 * @tc.level      : Level 3
+                 */
+                it('testCreateWindowPromiseErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+                    let caseName : string = "testCreateWindowPromiseErrCode1300002_static_0200";
+                    let msgStr : string = 'jsunittest ' + caseName + ' ';
+                    hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+                    let windowConfig: window.Configuration = {
+                        name: "testCreateWindowPromiseErrCode1300002_static_0200",
+                        windowType: window.WindowType.TYPE_FLOAT,
+                        ctx: context,
+                        displayId:0,
+                        parentId:0,
+                        decorEnabled:true,
+                        title:'123',
+                        // defaultDensityEnabled:true
+                    };
+                    try {
+                        window.createWindow(windowConfig).then((data:window.Window|undefined) => {
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling createWindow.');
+                            expect(!!data).assertTrue();
+                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause: ' + JSON.stringify(err));
+                            if (err!.code === 1300002) {
+                                done();
+                            } else if(err!.code === 801){
+                                done();
+                            }else {
+                                expect().assertFail();
+                                done();
+                            }
+                        });
+                        done()
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call createWindow. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
+                })
+
+        /**
+         * @tc.number    : testCreateSubWindow_Callback_static_0100
+         * @tc.name      : testCreateSubWindow_Callback_static_0100
+         * @tc.desc      : testCreateSubWindow_Callback_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testCreateSubWindow_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = 'testCreateSubWindow_Callback';
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let windowClass:window.Window;
+            try {
+                windowStage.createSubWindow('testCreateSubWindow_Callback',  (err: BusinessError<void>|null, data : window.Window|undefined):void => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect().assertFail();
+                        done();
+                    }
+                    // windowClass = data;
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+                    await data!.destroyWindow();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
+         * @tc.number    : testCreateSubWindow_Promise_static_0100
+         * @tc.name      : testCreateSubWindow_Promise_static_0100
+         * @tc.desc      : testCreateSubWindow_Promise_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testCreateSubWindow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string  = 'testCreateSubWindow_Promise';
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let windowClass:window.Window;
+            try {
+                await windowStage.createSubWindow('testCreateSubWindow_Promise').then((data : window.Window) => {
+                    windowClass = data;
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+                    await windowClass.destroyWindow();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                    expect().assertFail();
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                expect().assertFail();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number     : testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.name       : testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.desc       : testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnWindowStageEventErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnWindowStageEventErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = (res: window.WindowStageEventType) => {
+                };
+                windowStageStart.on("windowStageEvent", callback);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageEvent.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call on windowStageEvent. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number     : testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.name       : testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.desc       : testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffWindowStageEventErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOffWindowStageEventErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = (res: window.WindowStageEventType) => {
+                };
+                windowStageStart.off("windowStageEvent", callback);
+                hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageEvent.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageEvent. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number     : testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.name       : testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.desc       : testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnWindowStageCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnWindowStageCloseErrCode1300002_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart : window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.on("windowStageClose", callback);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageClose.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.name       : testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.desc       : testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOff_windowStageCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOff_windowStageCloseErrCode1300002_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart : window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.off("windowStageClose", callback);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageClose.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testGetWindowStatusErrCode1300002_static_0100
+         * @tc.name       : testGetWindowStatusErrCode1300002_static_0100
+         * @tc.desc       : testGetWindowStatusErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testGetWindowStatusErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testGetWindowStatusErrCode1300002_static_0100";
+            let msgStr : string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testGetWindowStatusErrCode1300002_static_0100')
+                .then((data : window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await data!.destroyWindow();
+                    try {
+                        let windowStatusType : window.WindowStatusType = data!.getWindowStatus();
+                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling getWindowStatus.');
+                        expect().assertFail();
+                        done()
+                    } catch (e: BusinessError) {
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call getWindowStatus. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+
         })
 
     })
