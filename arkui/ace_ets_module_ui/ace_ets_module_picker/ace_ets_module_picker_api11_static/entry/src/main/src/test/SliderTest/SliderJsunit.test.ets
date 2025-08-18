@@ -26,6 +26,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -43,7 +44,6 @@ export default function sliderJsunit() {
 
   describe('SliderTest', () => {
     beforeAll(() => {
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -60,9 +60,7 @@ export default function sliderJsunit() {
         console.info("get Slider state success " + JSON.stringify(pages));
         if (!("Slider" == pages.name)) {
           console.info("get Slider state success " + JSON.stringify(pages.name));
-          // let result = await slider.pushUrl(options);
           slider.pushUrl(options);
-          // console.info("push Slider page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Slider page error " + JSON.stringify(err));
@@ -74,10 +72,13 @@ export default function sliderJsunit() {
       await sleep(1);
       console.info("Slider after each called");
     });
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1060
-     * @tc.name testGetSliderAttr010_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testGetSliderAttr010_static
+     * @tc.name     testGetSliderAttr010_static
+     * @tc.desc     testGetSliderAttr010_static
+     * @tc.level    Level.LEVEL1
      */
     it('testGetSliderAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetSliderAttr1 START');
@@ -96,10 +97,13 @@ export default function sliderJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1070
-     * @tc.name testGetSlidetestGetSliderAttr020_staticrAttr020
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testGetSliderAttr020_static
+     * @tc.name     testGetSliderAttr020_static
+     * @tc.desc     testGetSliderAttr020_static
+     * @tc.level    Level.LEVEL1
      */
     it('testGetSliderAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetSliderAttr2 START');

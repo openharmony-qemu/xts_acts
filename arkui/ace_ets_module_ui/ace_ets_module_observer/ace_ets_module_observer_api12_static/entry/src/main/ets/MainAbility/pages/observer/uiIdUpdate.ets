@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { uiObserver } from '@kit.ArkUI';
+
 import  uiObserver from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
   TabsController, ForEach, Margin, Row, TabContent, Tabs} from '@ohos.arkui.component'

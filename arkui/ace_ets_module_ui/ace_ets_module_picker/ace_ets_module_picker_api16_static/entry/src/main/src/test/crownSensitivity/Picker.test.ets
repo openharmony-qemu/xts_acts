@@ -29,7 +29,7 @@ export default function Picker() {
     beforeAll(() => {
       console.info("Picker beforeEach start");
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -45,11 +45,11 @@ export default function Picker() {
         console.info("get Picker state pages:" + JSON.stringify(pages));
         if (!("Picker" == pages.name)) {
           console.info("get Picker pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push Picker page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push Picker page error:" + err);
@@ -66,16 +66,17 @@ export default function Picker() {
             console.info("afterAll case");
         });
 
-        /**
-         * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0100
-         * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0100.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
-         */
-        it('ArkUX_Stage_DatePicker_ComponentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+        
+        
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0100
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0100
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+          
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0100] START');
           let strJson = inspector.getInspectorByKey('picker01');
           let obj = JSON.parseJsonElement(strJson);
@@ -87,16 +88,17 @@ export default function Picker() {
           done();
         });
 
-        /**
-         * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0200
-         * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0200.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
-         */
-        it('ArkUX_Stage_DatePicker_ComponentTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+        
+        
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0200
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0200
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+          
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0200] START');
           let strJson = inspector.getInspectorByKey('picker02');
           let obj = JSON.parseJsonElement(strJson);
@@ -110,16 +112,17 @@ export default function Picker() {
           done();
         });
 
-        /**
-         * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0300
-         * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0300.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
-         */
-        it('ArkUX_Stage_DatePicker_ComponentTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+        
+        
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0300
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0300
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+          
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0300] START');
           let strJson = inspector.getInspectorByKey('picker03');
           let obj = JSON.parseJsonElement(strJson);
@@ -131,16 +134,17 @@ export default function Picker() {
           done();
         });
 
-        /**
-         * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0400
-         * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0400.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
-         */
-        it('ArkUX_Stage_DatePicker_ComponentTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+        
+        
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0400
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0400
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+          
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0400] START');
           let strJson = inspector.getInspectorByKey('picker04');
           let obj = JSON.parseJsonElement(strJson);
@@ -152,16 +156,17 @@ export default function Picker() {
           done();
         });
 
-        /**
-         * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0500
-         * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0500.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
-         */
-        it('ArkUX_Stage_DatePicker_ComponentTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+        
+        
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0500
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0500
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+          
           console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0500] START');
           let strJson = inspector.getInspectorByKey('picker05');
           let obj = JSON.parseJsonElement(strJson);
@@ -173,16 +178,17 @@ export default function Picker() {
           done();
         });
 
-      /**
-       * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0600
-       * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0600.
-       * @tc.desc  : verifyBaseFunction.
-       * @tc.size  : MediumTest
-       * @tc.type  : Function
-       * @tc.level : Level 0
-       */
-      it('ArkUX_Stage_DatePicker_ComponentTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        // Verify the functions of the ArcAlphabetIndexer component
+      
+      
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0600
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0600
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0600] START');
         let strJson = inspector.getInspectorByKey('picker06');
         let obj = JSON.parseJsonElement(strJson);
@@ -194,16 +200,17 @@ export default function Picker() {
         done();
       });
 
-      /**
-       * @tc.number: ArkUX_Stage_DatePicker_ComponentTest_static_0700
-       * @tc.name  : ArkUX_Stage_DatePicker_ComponentTest_static_0700.
-       * @tc.desc  : verifyBaseFunction.
-       * @tc.size  : MediumTest
-       * @tc.type  : Function
-       * @tc.level : Level 0
-       */
-      it('ArkUX_Stage_DatePicker_ComponentTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        // Verify the functions of the ArcAlphabetIndexer component
+      
+      
+
+/*
+     * @tc.number   ArkUX_Stage_DatePicker_ComponentTest_static_0700
+     * @tc.name     ArkUX_Stage_DatePicker_ComponentTest_static_0700
+     * @tc.desc     ArkUX_Stage_DatePicker_ComponentTest_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Stage_DatePicker_ComponentTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        
         console.info('[ArkUX_Stage_DatePicker_ComponentTest_static_0700] START');
         let strJson = inspector.getInspectorByKey('picker07');
         let obj = JSON.parseJsonElement(strJson);

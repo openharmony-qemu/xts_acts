@@ -14,11 +14,8 @@
  *
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap, Color, $r, ColumnOptions, TimePickerResult, FunctionKey} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, Component, Button, ClickEvent, Color, FontWeight, TimePickerResult } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -26,34 +23,24 @@ struct TimePickerPage {
   @State isMilitaryTime: boolean = false
   private selectedTime: Date = new Date('2022-07-22T10:00:00')
   @State hour: number = 10
-  @State minute: number= 0
+  @State minute: number = 0
   @State mode: boolean = true
   messageManager: MessageManager = new MessageManager()
   @State enableCascade: boolean | undefined | null = true
 
   onPageShow() {
     console.info('TimePicker onPageShow')
-    AppStorage.setOrCreate<MessageManager>("value",  this.messageManager);
-    // globalThis.value = {
-    //   name: 'messageManager', message: this.messageManager
-    //
-    // }
-    let callback: Callback = (message: Message) => {
+    let callback: Callback = (message: Message): void => {
       console.error('message = ' + message.name + '--' + message.value)
       if (message.name == 'isMilitaryTime') {
-        // this.isMilitaryTime = message.value as Boolean
       }
       if (message.name == 'selectedTime') {
-        // this.selectedTime = message.value as Date
       }
       if (message.name == 'hour') {
-        // this.hour = message.value as number
       }
       if (message.name == 'minute') {
-        // this.minute = message.value as number
       }
     }
-
     this.messageManager.registerCallback(callback)
   }
 
@@ -62,7 +49,7 @@ struct TimePickerPage {
       Button('TimePickerDialog1')
         .key('TimePickerDialog1')
         .margin(20)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showTimePickerDialog({
             selected: this.selectedTime,
             useMilitaryTime: this.isMilitaryTime,
@@ -99,7 +86,7 @@ struct TimePickerPage {
       Button('TimePickerDialog2')
         .key('TimePickerDialog2')
         .margin(20)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showTimePickerDialog({
             selected: this.selectedTime,
             useMilitaryTime: this.isMilitaryTime,
@@ -136,7 +123,7 @@ struct TimePickerPage {
       Button('TimePickerDialog3')
         .key('TimePickerDialog3')
         .margin(20)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showTimePickerDialog({
             selected: this.selectedTime,
             useMilitaryTime: this.isMilitaryTime,
@@ -149,7 +136,6 @@ struct TimePickerPage {
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
-            // enableCascade: null,
             onCancel: () => {
               console.info('TimePickerDialog:onCancel()')
             },
@@ -173,7 +159,7 @@ struct TimePickerPage {
       Button('TimePickerDialog4')
         .key('TimePickerDialog4')
         .margin(20)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showTimePickerDialog({
             selected: this.selectedTime,
             useMilitaryTime: this.isMilitaryTime,

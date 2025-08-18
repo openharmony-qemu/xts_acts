@@ -12,33 +12,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import {
   Entry,
+  Text,
+  TextAttribute,
   Column,
   Component,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  UserView,
+  Image,
+  ImageFit,
+  Scroller,
   Flex,
+  Margin,
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  Text,
-  Button,
   FontWeight,
   ButtonType,
   ClickEvent,
-  Margin
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+  Margin,
+  FontWeight
+} from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
+import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct Index {
   aboutToAppear() {
     try {
-      let router1 = this.getUIContext().getRouter();
-      AppStorage.setOrCreate<Router>('router', router1);
+      let router = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router);
     } catch (error: Error) {
       console.log('error ' + error);
     }
@@ -48,10 +57,12 @@ struct Index {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
-      Button("123") {
+        .fontWeight(FontWeight.Bold)
+      Button('Hello World2') {
         Text('next page')
           .fontSize(25)
-      }
+          .fontWeight(FontWeight.Bold)
+      }.type(ButtonType.Capsule)
       .margin({
         top: 20
       } as Margin)

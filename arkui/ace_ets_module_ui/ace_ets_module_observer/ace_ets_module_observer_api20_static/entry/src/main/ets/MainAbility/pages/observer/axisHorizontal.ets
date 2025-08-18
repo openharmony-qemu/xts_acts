@@ -12,19 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, Scroller, Axis, Scroll, ForEach, ScrollDirection, Color, TextAlign} from '@ohos.arkui.component'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-import observer from '@ohos.arkui.observer';
+import uiObserver from '@ohos.arkui.observer';
+import { Entry, Component, Scroller, Axis, Column, Text, Row, Button, ClickEvent, Margin, Scroll, ForEach, Color,
+  TextAlign, ScrollDirection ,
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct scrollAxisHorizontalIndex {
   scroller: Scroller = new Scroller();
-  options: observer.ObserverOptions = { id: 'axisHorizontal' } as observer.ObserverOptions;
-  private arr: Array<Double> = new Array<Double>(0, 1, 2, 3, 4, 5)
+  options: uiObserver.ObserverOptions = { id: 'axisHorizontal' } as uiObserver.ObserverOptions;
+  private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5)
   @State Id1: string = '0'
   @State axis1: Axis | undefined = undefined
 
@@ -35,33 +34,31 @@ struct scrollAxisHorizontalIndex {
         Text('axis: ' + this.axis1).id('scroll_axis_horizontal')
         Row() {
           Button('observer on')
-            .onClick((e:ClickEvent) => {
-              observer.on('scrollEvent', (info) => {
-                // console.info('scrollEventInfo', JSON.stringify(info));
-                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
+            .onClick((e: ClickEvent) => {
+              uiObserver.on('scrollEvent', (info: uiObserver.ScrollEventInfo) => {
+                console.info('scrollEventInfo', JSON.stringify(info));
+                
               });
             })
           Button('observer off')
-            .onClick((e:ClickEvent) => {
-              observer.off('scrollEvent');
+            .onClick((e: ClickEvent) => {
+              uiObserver.off('scrollEvent');
             })
         }
 
         Row() {
           Button('observerWithId on')
             .id('axisHorizontal_on')
-            .onClick((e:ClickEvent) => {
-              observer.on('scrollEvent', this.options, (info: observer.ScrollEventInfo) => {
+            .onClick((e: ClickEvent) => {
+              uiObserver.on('scrollEvent', this.options, (info: uiObserver.ScrollEventInfo) => {
                 this.Id1 = info.id
-                // this.axis1 = info.axis
-                // console.info('scrollEventInfo', JSON.stringify(info));
-                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
+                console.info('scrollEventInfo', JSON.stringify(info));
               });
             })
           Button('observerWithId off')
             .id('axisHorizontal_off')
-            .onClick((e:ClickEvent) => {
-              observer.off('scrollEvent', this.options);
+            .onClick((e: ClickEvent) => {
+              uiObserver.off('scrollEvent', this.options);
             })
         }
       }.margin({top:5} as Margin)
@@ -69,7 +66,7 @@ struct scrollAxisHorizontalIndex {
       Column() {
         Scroll(this.scroller) {
           Row() {
-            ForEach(this.arr, (item: Double, index:Double) => {
+            ForEach(this.arr, (item: int) => {
               Text(item.toString())
                 .width('30%')
                 .height('100%')
@@ -78,7 +75,7 @@ struct scrollAxisHorizontalIndex {
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
                 .margin({ right: 10 } as Margin)
-            }, (item: Double) => String(item))
+            })
           }.width('90%')
         }
         .id('axisHorizontal')

@@ -12,12 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Color, Font, TextAlign, CopyOptions } from '@ohos.arkui.component'
+
+import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
-  name: string = '';
-  value: string | Color | number | Boolean | Date  = '';
+  name: string = ''
+  value: string | number | TextCase | TextDecorationType | boolean | Resource = ''
 }
+
 export type Callback = (message: Message) => void
 
 export class MessageManager {
@@ -40,7 +42,7 @@ export class MessageManager {
   notify(message: Message, type?: string) {
     if (type == undefined) {
       if (this.callback !== undefined) {
-        this.callback?.(message);
+        this.callback!(message)
       }
       return
     }

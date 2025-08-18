@@ -28,7 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -36,6 +36,7 @@ export default function SelectAttr() {
   describe('SelectAttr', () => {
     beforeAll(() => {
       console.info("SelectAttr beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -54,15 +55,15 @@ export default function SelectAttr() {
         console.info("get SelectAttr state pages:" + JSON.stringify(pages));
         if (!("SelectAttr" == pages.name)) {
           console.info("get SelectAttr pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push SelectAttr page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push SelectAttr page error: " + err);
       }
-      // done()
+      
     });
 
     afterEach(async (): Promise<void> => {
@@ -71,13 +72,14 @@ export default function SelectAttr() {
     });
 
 
+    
     /*
-    * @tc.number      SelectAttr_static_001
-    * @tc.name        SelectAttr_static_001
-    * @tc.desc        SelectAttr OptionWidthMode.FIT_TRIGGER test
-    * @tc.level       Level 2
-    */
-    it('SelectAttr_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+     * @tc.number   SelectAttr_static_001
+     * @tc.name     SelectAttr_static_001
+     * @tc.desc     SelectAttr_static_001
+     * @tc.level    Level.LEVEL1
+     */
+it('SelectAttr_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SelectAttr_static_001] START');
       await Utils.sleep(1000);
 

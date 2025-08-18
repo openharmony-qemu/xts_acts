@@ -12,24 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function timePickerDialogSelectedAreaTest() {
   describe('timePickerDialogSelectedAreaTest', () => {
-
     beforeAll(() => {
       console.info("timePickerDialogSelectedAreaTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
@@ -48,33 +43,30 @@ export default function timePickerDialogSelectedAreaTest() {
         console.info('get timePickerDialogSelectedAreaTest state pages:' + JSON.stringify(pages));
         if (!('timePickerDialogSelectedArea' == pages.name)) {
           console.info('get timePickerDialogSelectedAreaTest pages.name:' + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
-          // console.info('push timePickerDialogSelectedAreaTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push timePickerDialogSelectedAreaTest page error:' + err);
       }
       console.info('timePickerDialogSelectedAreaTest beforeEach end');
     });
-    /* *
-    * @tc.number: timePickerDialogSelectedAreaTest_static_001
-    * @tc.name  : timePickerDialogSelectedAreaTest_static_001
-    * @tc.desc  : To test the onEnterSelectedArea event
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('timePickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   timePickerDialogSelectedAreaTest_static_001
+     * @tc.name     timePickerDialogSelectedAreaTest_static_001
+     * @tc.desc     timePickerDialogSelectedAreaTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
+it('timePickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('timePickerDialogSelectedAreaTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('showTimePickerDialog'));
-      await btn!.click()
+      btn?.click()
       await Utils.sleep(2000);
 
-      let timePickerDialog = await driver.findComponent(ON.id('colComponent')) as Component;
-      let rect = await timePickerDialog.getBounds();
+      let timePickerDialog = await driver.findComponent(ON.id('colComponent'));
+      let rect = await timePickerDialog!.getBounds();
       let top = rect.top;
       let left = rect.left;
       let right = rect.right;
@@ -93,14 +85,14 @@ export default function timePickerDialogSelectedAreaTest() {
       );
       await Utils.sleep(6000);
 
-      let btn1 = await driver.findComponent(ON.text('确定')) as Component;
+      let btn1 = await driver.findComponent(ON.text('确定'));
       await Utils.sleep(500);
-      await btn1!.click();
+      btn1?.click();
       await Utils.sleep(500);
 
       let textStr = await driver.findComponent(ON.id('textFlag'));
       let eText = await textStr!.getText();
-      console.info("[timePickerDialogSelectedAreaTest_static_001] text: " + eText);
+      console.info("[timePickerDialogSelectedAreaTest_static_001] text: " + JSON.stringify(eText));
       expect(eText).assertEqual('enter');
       console.info('[timePickerDialogSelectedAreaTest_static_001] END');
       done();

@@ -33,7 +33,7 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: int) {
+  static sendEvent(message: string, eventId: number) {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message

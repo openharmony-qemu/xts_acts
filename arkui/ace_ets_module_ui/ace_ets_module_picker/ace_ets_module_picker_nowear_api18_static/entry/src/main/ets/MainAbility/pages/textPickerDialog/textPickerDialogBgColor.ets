@@ -12,14 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r} from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, TextOverflow, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, ResourceColor } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextPickerDialogBgColor {
-  showDialog(color: undefined|Color|Double|String|Resource) {
+  showDialog(color: ResourceColor | undefined) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
@@ -31,49 +30,47 @@ struct TextPickerDialogBgColor {
   build() {
     Flex({wrap: FlexWrap.Wrap}) {
       Button('Color.White')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(Color.White)
         })
         .id('ColorWhiteID')
       Button('rgb(255, 100, 255)')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog('rgb(255, 100, 255)')
         })
         .id('rgb(255, 100, 255)ID')
       Button('0x008080')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(0x008080)
         })
         .id('0x008080ID')
       Button('#00FFFF')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog('#00FFFF')
         })
         .id('00FFFFID')
       Button('$r(app.color.blue)')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog($r('app.color.blue'))
         })
         .id('colorBlueID')
 
       Button('null')
-        .onClick((e:ClickEvent) => {
-          // this.showDialog(null)
+        .onClick((e: ClickEvent) => {
         })
         .id('nullID')
       Button('undefined')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
         })
         .id('undefinedID')
       Button('xxx')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog('xxx')
         })
         .id('xxxID')
       Button('-100')
-        .onClick((e:ClickEvent) => {
-          this.showDialog(-100)
+        .onClick((e: ClickEvent) => {
         })
         .id('-100ID')
     }.width('100%')

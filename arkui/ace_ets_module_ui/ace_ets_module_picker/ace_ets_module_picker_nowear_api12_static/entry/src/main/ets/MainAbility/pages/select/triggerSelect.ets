@@ -19,15 +19,6 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State } from '@ohos.arkui.stateManagement'
 
-// class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
-//   modifierText: string = ""
-//   constructor(text: string) {
-//     this.modifierText = text;
-//   }
-//   applyContent(): WrappedBuilder<[MenuItemConfiguration]> {
-//     return wrapBuilder(MenuItemBuilder)
-//   }
-// }
 
 @Builder
 function MenuItemBuilder(configuration: MenuItemConfiguration) {
@@ -36,18 +27,15 @@ function MenuItemBuilder(configuration: MenuItemConfiguration) {
     Blank()
     Image(configuration.icon as PixelMap|ImageContent|String|Resource).size({ width: 40, height: 40 })
     Blank(30)
-    // Text((configuration.contentModifier as MyMenuItemContentModifier).modifierText)
     Path()
       .width('100px')
       .height('150px')
-      // .commands('M40 0 L80 100 L0 100 Z')
       .fillOpacity(0)
       .stroke(Color.Black)
       .strokeWidth(3)
   }
   .onClick((e:ClickEvent) => {
     configuration.triggerSelect(configuration.index, configuration.value.toString())
-    // configuration.triggerSelect(configuration.index, configuration.value.valueOf().toString())  Property 'valueOf' does not exist on type 'Resource'
   })
 }
 
@@ -69,7 +57,6 @@ struct triggerSelectExample {
             console.info('Select index:' + index)
             console.info('Select text:' + text)
           })
-          // .menuItemContentModifier(new MyMenuItemContentModifier("我来自Modifier"))
           .id("SelectClick")
 
       }.alignItems(VerticalAlign.Center).height("50%")

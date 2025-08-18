@@ -16,7 +16,7 @@ import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
 import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct ObserverApi2Test {
@@ -37,8 +37,7 @@ struct ObserverApi2Test {
       Button('backToPageOne')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          const routerInstance = AppStorage.get<Router>("router") as Router
-          routerInstance.back({url: "MainAbility/pages/observer/ObserverApi"})
+          this.getUIContext().getRouter().back({url: "MainAbility/pages/observer/ObserverApi"})
         })
         .id('ObserverApi2_backToPageOne')
     }.width('100%')

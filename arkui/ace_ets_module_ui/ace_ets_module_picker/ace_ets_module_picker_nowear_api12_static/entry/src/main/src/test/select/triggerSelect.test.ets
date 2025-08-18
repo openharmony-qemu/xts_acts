@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -51,10 +51,8 @@ export default function triggerSelect() {
         console.info("get triggerSelect state pages: " + JSON.stringify(pages));
         if (!("triggerSelect" == pages.name)) {
           console.info("get triggerSelect state pages.name: " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push triggerSelect success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push triggerSelect page error: " + err);
@@ -62,15 +60,14 @@ export default function triggerSelect() {
       }
     });
     
-     /**
-     * @tc.number    SUB_ACE_triggerSelect_static_0100
-     * @tc.name      triggerSelect_static_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     
+    /*
+     * @tc.number   triggerSelect_static_0100
+     * @tc.name     triggerSelect_static_0100
+     * @tc.desc     triggerSelect_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('triggerSelect_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('triggerSelect_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('triggerSelect_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

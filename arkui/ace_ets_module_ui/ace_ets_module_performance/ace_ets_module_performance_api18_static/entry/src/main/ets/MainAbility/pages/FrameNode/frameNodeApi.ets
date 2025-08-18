@@ -18,7 +18,8 @@ import {
   Entry, Component, Builder,NodeContainer,
   Column, ColumnOptions, ImageAnalyzerType,
   Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,  ImageAnalyzerController, ImageBitmap,  ImageAnalyzerConfig,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas, WrappedBuilder, Padding, wrapBuilder,
+  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
+  WrappedBuilder, Padding, wrapBuilder, CustomBuilderT,
 } from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
@@ -37,18 +38,18 @@ function buttonBuilder(params: Params) {
 }
 
 class MyNodeController extends NodeController {
-  private buttonNode: BuilderNode<[Params]> | null = null
+  private buttonNode: BuilderNode<Params> | null = null
   private rootNode: FrameNode | null = null
-  // private wrapBuilder: WrappedBuilder<[Params]> = wrapBuilder<[Params]>(buttonBuilder)
-  makeNode(uiContext: UIContext): FrameNode {
+  private wrapBuilder = wrapBuilder<CustomBuilderT<Params>>(buttonBuilder)
+  makeNode(uiContext: UIContext): FrameNode|null {
     if (this.buttonNode == null) {
-      this.buttonNode = new BuilderNode<[Params]>(uiContext)
+      this.buttonNode = new BuilderNode<Params>(uiContext)
       this.rootNode = new FrameNode(uiContext)
       let child : FrameNode = new FrameNode(uiContext)
       this.rootNode?.appendChild(child)
-      // this.buttonNode?.build(this.wrapBuilder, { text : 'This is a Button' })
+      this.buttonNode?.build(this.wrapBuilder, { text : 'This is a Button' } as Params)
     }
-    return this.buttonNode!.getFrameNode()!;
+    return this.buttonNode!.getFrameNode();
   }
 
   onAttach(): void {

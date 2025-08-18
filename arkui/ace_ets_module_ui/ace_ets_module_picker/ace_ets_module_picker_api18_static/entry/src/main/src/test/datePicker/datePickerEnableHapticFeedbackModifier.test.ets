@@ -50,10 +50,9 @@ export default function EnableHapticFeedbackModifierTest() {
         console.info('get datePickerEnableHapticFeedbackModifier state pages:' + JSON.stringify(pages));
         if (!('datePickerEnableHapticFeedbackModifier' == pages.name)) {
           console.info('get datePickerEnableHapticFeedbackModifier pages.name:' + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
-          // console.info('push datePickerEnableHapticFeedbackModifier page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push datePickerEnableHapticFeedbackModifier page error:' + err);
@@ -61,13 +60,14 @@ export default function EnableHapticFeedbackModifierTest() {
       console.info('datePickerEnableHapticFeedbackModifier beforeEach end');
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedbackModifier_static_001
-     * @tc.name  : DatePickerEnableHapticFeedbackModifier_static_001
-     * @tc.desc  : To test the enableHapticFeedback Modifier interface true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   DatePickerEnableHapticFeedbackModifier_static_001
+     * @tc.name     DatePickerEnableHapticFeedbackModifier_static_001
+     * @tc.desc     DatePickerEnableHapticFeedbackModifier_static_001
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('DatePickerEnableHapticFeedbackModifier_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('datePicker5');
@@ -79,13 +79,14 @@ export default function EnableHapticFeedbackModifierTest() {
       done();
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedbackModifier_static_002
-     * @tc.name  : DatePickerEnableHapticFeedbackModifier_static_002
-     * @tc.desc  : To test the enableHapticFeedback Modifier interface false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   DatePickerEnableHapticFeedbackModifier_static_002
+     * @tc.name     DatePickerEnableHapticFeedbackModifier_static_002
+     * @tc.desc     DatePickerEnableHapticFeedbackModifier_static_002
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('DatePickerEnableHapticFeedbackModifier_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('datePicker6');
@@ -97,13 +98,14 @@ export default function EnableHapticFeedbackModifierTest() {
       done();
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedbackModifier_static_003
-     * @tc.name  : DatePickerEnableHapticFeedbackModifier_static_003
-     * @tc.desc  : To test the enableHapticFeedback Modifier interface undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   DatePickerEnableHapticFeedbackModifier_static_003
+     * @tc.name     DatePickerEnableHapticFeedbackModifier_static_003
+     * @tc.desc     DatePickerEnableHapticFeedbackModifier_static_003
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('DatePickerEnableHapticFeedbackModifier_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('datePicker7');
@@ -115,13 +117,14 @@ export default function EnableHapticFeedbackModifierTest() {
       done();
     });
     
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedback_004
-     * @tc.name  : DatePickerEnableHapticFeedback_004
-     * @tc.desc  : To test the enableHapticFeedback interface null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   DatePickerEnableHapticFeedbackModifier_static_004
+     * @tc.name     DatePickerEnableHapticFeedbackModifier_static_004
+     * @tc.desc     DatePickerEnableHapticFeedbackModifier_static_004
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('DatePickerEnableHapticFeedbackModifier_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('datePicker8');

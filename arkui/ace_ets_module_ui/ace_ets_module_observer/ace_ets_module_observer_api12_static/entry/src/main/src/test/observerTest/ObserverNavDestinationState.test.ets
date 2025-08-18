@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -53,10 +53,9 @@ export default function ObserverNavDestinationState() {
           console.info("get ObserverNavDestinationState state success " + JSON.stringify(pages));
           if (!("ObserverNavDestinationState" == pages.name)) {
             console.info("get ObserverNavDestinationState state success " + JSON.stringify(pages.name));
-            // let result = routerInstance.pushUrl(options);
+            
             routerInstance.pushUrl(options);
             await CommonFunc.sleep(2000);
-            // console.info("push ObserverNavDestinationState page success " + JSON.stringify(result));
           }
         } catch (err) {
           console.error("push ObserverNavDestinationState page error: " + err);
@@ -69,13 +68,14 @@ export default function ObserverNavDestinationState() {
       });
 
 
-      /**
-     * @tc.number    ObserverNavDestinationState_0100
-     * @tc.name      ObserverNavDestinationState_static_0100
-     * @tc.desc      Test Observer NavDestinationState
-     * @tc.level:    Level 2
+      
+    /*
+     * @tc.number   ObserverNavDestinationState_static_0100
+     * @tc.name     ObserverNavDestinationState_static_0100
+     * @tc.desc     ObserverNavDestinationState_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ObserverNavDestinationState_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ObserverNavDestinationState_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverNavDestinationState_0100] START');
       await CommonFunc.sleep(1000);
 

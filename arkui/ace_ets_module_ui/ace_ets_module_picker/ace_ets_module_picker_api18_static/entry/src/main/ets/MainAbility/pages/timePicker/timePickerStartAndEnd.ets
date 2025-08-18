@@ -38,12 +38,6 @@ struct TimePickerStartAndEnd {
       })
       .id('TimePicker2')
 
-      // TimePicker({
-      //   selected: this.selectedTime,
-      //   start: null,
-      //   end: null
-      // })
-      // .id('TimePicker3')
     }
   }
 }

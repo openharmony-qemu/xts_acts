@@ -12,14 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r} from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TextPickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle|undefined) {
+  showDialog(style: BlurStyle | undefined) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
@@ -30,89 +29,86 @@ struct TextPickerDialogBGBlurStyle {
   build() {
     Flex({wrap: FlexWrap.Wrap}) {
       Button('Thin')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.Thin)
         })
         .id('ThinID')
       Button('Regular')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.Regular)
         })
         .id('RegularID')
       Button('Thick')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.Thick)
         })
         .id('ThickID')
       Button('BACKGROUND_THIN')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.BACKGROUND_THIN)
         })
         .id('BACKGROUND_THIN_ID')
       Button('BACKGROUND_REGULAR')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.BACKGROUND_REGULAR)
         })
         .id('BACKGROUND_REGULAR_ID')
       Button('BACKGROUND_THICK')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.BACKGROUND_THICK)
         })
         .id('BACKGROUND_THICK_ID')
       Button('BACKGROUND_ULTRA_THICK')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.BACKGROUND_ULTRA_THICK)
         })
         .id('BACKGROUND_ULTRA_THICK_ID')
       Button('NONE')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.NONE)
         })
         .id('NONE_ID')
       Button('COMPONENT_ULTRA_THIN')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.COMPONENT_ULTRA_THIN)
         })
         .id('COMPONENT_ULTRA_THIN_ID')
       Button('COMPONENT_THIN')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.COMPONENT_THIN)
         })
         .id('COMPONENT_THIN_ID')
       Button('COMPONENT_REGULAR')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.COMPONENT_REGULAR)
         })
         .id('COMPONENT_REGULAR_ID')
 
       Button('COMPONENT_THICK')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.COMPONENT_THICK)
         })
         .id('COMPONENT_THICK_ID')
       Button('COMPONENT_ULTRA_THICK')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(BlurStyle.COMPONENT_ULTRA_THICK)
         })
         .id('COMPONENT_ULTRA_THICK_ID')
       Button('null')
-        .onClick((e:ClickEvent) => {
-          // this.showDialog(null)
+        .onClick((e: ClickEvent) => {
         })
         .id('nullID')
       Button('undefined')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.showDialog(undefined)
         })
         .id('undefinedID')
       Button('100')
-        .onClick((e:ClickEvent) => {
-          // this.showDialog(100)
+        .onClick((e: ClickEvent) => {
         })
         .id('100ID')
       Button('-100')
-        .onClick((e:ClickEvent) => {
-          // this.showDialog(-100)
+        .onClick((e: ClickEvent) => {
         })
         .id('-100ID')
     }.width('100%')

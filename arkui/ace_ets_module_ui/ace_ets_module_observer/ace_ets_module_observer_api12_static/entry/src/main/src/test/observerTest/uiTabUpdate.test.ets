@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -48,10 +48,9 @@ export default function uiTabUpdate() {
         console.info("get   state pages:" + JSON.stringify(pages));
         if (!("uiTabUpdate" == pages.name)) {
           console.info("get uiTabUpdate pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push uiTabUpdate page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push uiTabUpdate page error:" + err);
@@ -59,15 +58,14 @@ export default function uiTabUpdate() {
       console.info("uiTabUpdate beforeEach end");
     });
 
-    /**
-     * @tc.number    uiTabUpdate_001
-     * @tc.name      uiTabUpdate_static_0100
-     * @tc.desc      Monitor the switching events of TabContent pages.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   uiTabUpdate_static_0100
+     * @tc.name     uiTabUpdate_static_0100
+     * @tc.desc     uiTabUpdate_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('uiTabUpdate_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('uiTabUpdate_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[uiTabUpdate_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

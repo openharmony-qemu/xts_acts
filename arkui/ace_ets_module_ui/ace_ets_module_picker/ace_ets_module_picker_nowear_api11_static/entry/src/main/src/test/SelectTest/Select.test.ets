@@ -39,13 +39,14 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectTest() {
   describe('SelectTest', () => {
     beforeAll(() => {
+
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -63,21 +64,23 @@ export default function SelectTest() {
         console.info("get Select state success " + JSON.stringify(pages));
         if (!("Select" == pages.name)) {
           console.info("get Select state success " + JSON.stringify(pages.name));
-          // let result = await select.pushUrl(options);
+          
           select.pushUrl(options);
-          // console.info("push Select page success " + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push Select page error: " + err);
       }
     });
 
+    
     /*
-     *@tc.number ArkUX_Select_Visual_static_0030
-     *@tc.name   ArkUX_Select_Visual_static_0030
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
+     * @tc.number   ArkUX_Select_Visual_static_0030
+     * @tc.name     ArkUX_Select_Visual_static_0030
+     * @tc.desc     ArkUX_Select_Visual_static_0030
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Select_Visual_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Select_Visual_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Select_Visual_static_0030 START');
       setTimeout(() => {
         try {
@@ -98,12 +101,14 @@ export default function SelectTest() {
       }, 500);
     });
 
+    
     /*
-     *@tc.number ArkUX_Select_Visual_static_0040
-     *@tc.name   ArkUX_Select_Visual_static_0040
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
+     * @tc.number   ArkUX_Select_Visual_static_0040
+     * @tc.name     ArkUX_Select_Visual_static_0040
+     * @tc.desc     ArkUX_Select_Visual_static_0040
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Select_Visual_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Select_Visual_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Select_Visual_static_0040 START');
       setTimeout(() => {
         try {
@@ -124,12 +129,14 @@ export default function SelectTest() {
       }, 500);
     });
 
+    
     /*
-     *@tc.number ArkUX_Select_Visual_static_0050
-     *@tc.name   ArkUX_Select_Visual_static_0050
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
+     * @tc.number   ArkUX_Select_Visual_static_0050
+     * @tc.name     ArkUX_Select_Visual_static_0050
+     * @tc.desc     ArkUX_Select_Visual_static_0050
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Select_Visual_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Select_Visual_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Select_Visual_static_0050 START');
       setTimeout(() => {
         try {
@@ -150,12 +157,14 @@ export default function SelectTest() {
       }, 500);
     });
 
+    
     /*
-     *@tc.number ArkUX_Select_Visual_static_0060
-     *@tc.name   ArkUX_Select_Visual_static_0060
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
+     * @tc.number   ArkUX_Select_Visual_static_0060
+     * @tc.name     ArkUX_Select_Visual_static_0060
+     * @tc.desc     ArkUX_Select_Visual_static_0060
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Select_Visual_static_0060', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Select_Visual_static_0060', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Select_Visual_static_0060 START');
       setTimeout(() => {
         try {
@@ -176,12 +185,14 @@ export default function SelectTest() {
       }, 500);
     });
 
+    
     /*
-     *@tc.number ArkUX_Select_Visual_static_0070
-     *@tc.name   ArkUX_Select_Visual_static_0070
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
+     * @tc.number   ArkUX_Select_Visual_static_0070
+     * @tc.name     ArkUX_Select_Visual_static_0070
+     * @tc.desc     ArkUX_Select_Visual_static_0070
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Select_Visual_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Select_Visual_static_0070', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Select_Visual_static_0070 START');
       setTimeout(() => {
         try {

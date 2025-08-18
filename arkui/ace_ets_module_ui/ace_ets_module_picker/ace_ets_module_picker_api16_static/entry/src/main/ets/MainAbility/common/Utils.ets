@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' 
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView, TouchObject, TouchType } from '@ohos.arkui.component'  
+import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@internal.full.global";
 
@@ -76,8 +76,8 @@ export default class Utils {
       displayY: downY,
       windowX: downX,
       windowY: downY,
-      // screenX: downX,
-      // screenY: downY,
+      
+      
       type: TouchType.Down
     }
     console.info('down touch started: ' + JSON.stringify(downPoint))
@@ -95,8 +95,8 @@ export default class Utils {
         displayY: downY + (yStep * i),
         windowX: downX + (xStep * i),
         windowY: downY + (yStep * i),
-        // screenX: downX + (xStep * i),
-        // screenY: downY + (yStep * i),
+        
+        
         type: TouchType.Move,
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
@@ -118,8 +118,8 @@ export default class Utils {
       displayY: upY,
       windowX: upX,
       windowY: upY,
-      // screenX: upX,
-      // screenY: upY,
+      
+      
       type: TouchType.Up,
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))

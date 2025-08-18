@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -53,10 +53,8 @@ export default function ObserverPageId() {
         console.info("get ObserverPageId state success " + JSON.stringify(pages));
         if (!("ObserverPageId" == pages.name)) {
           console.info("get ObserverPageId state success " + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ObserverPageId page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObserverPageId page error: " + err);
@@ -69,13 +67,14 @@ export default function ObserverPageId() {
     });
 
 
-    /**
-     * @tc.number    ObserverPageId_0100
-     * @tc.name      ObserverPageId_static_0100
-     * @tc.desc      Test Observer RouterPageInfo pageId
-     * @tc.level:    Level 2
+    
+    /*
+     * @tc.number   ObserverPageId_static_0100
+     * @tc.name     ObserverPageId_static_0100
+     * @tc.desc     ObserverPageId_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ObserverPageId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ObserverPageId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverPageId_0100] START');
       await CommonFunc.sleep(1000);
 

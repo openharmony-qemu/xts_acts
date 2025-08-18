@@ -26,6 +26,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -44,7 +45,6 @@ export default function ratingJsunit() {
 
   describe('ratingTest', () => {
     beforeAll(() => {
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -62,9 +62,7 @@ export default function ratingJsunit() {
         console.info("get Rating state success " + JSON.stringify(pages));
         if (!("Rating" == pages.name)) {
           console.info("get Rating state success " + JSON.stringify(pages.name));
-          // let result = await rating.pushUrl(options);
           rating.pushUrl(options);
-          // console.info("push Rating page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Rating page error " + JSON.stringify(err));
@@ -77,10 +75,13 @@ export default function ratingJsunit() {
       console.info("Rating after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0990
-     * @tc.name testGetRatingAttr010_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testGetRatingAttr010_static
+     * @tc.name     testGetRatingAttr010_static
+     * @tc.desc     testGetRatingAttr010_static
+     * @tc.level    Level.LEVEL1
      */
     it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr1 START');
@@ -102,10 +103,13 @@ export default function ratingJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1000
-     * @tc.name testGetRatingAttr020_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testGetRatingAttr020_static
+     * @tc.name     testGetRatingAttr020_static
+     * @tc.desc     testGetRatingAttr020_static
+     * @tc.level    Level.LEVEL1
      */
     it('testGetRatingAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr2 START');

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,10 +13,20 @@
  * limitations under the License.
  */
 
-
-import triggerSelect from './select/triggerSelect.test'
 import selectApi1 from './select/selectApi1.test'
+import triggerSelect from './select/triggerSelect.test'
+import selectJsunit from './select/SelectJsunit.test'
+import timepickerJsunit from './TimePicker/TimePickerJsunit.test';
+import textpickerJsunit from './TextPicker/TextPickerJsunit.test';
+import calendarPickerJsunit from './CalendarPicker/CalendarPicker.test';
+import datePickerJsunit from './DatePicker/DatePicker.test';
+
 export default function testsuite() {
+  selectApi1();
   triggerSelect()
-  selectApi1()
+  selectJsunit()
+  timepickerJsunit()
+  textpickerJsunit()
+  calendarPickerJsunit()
+  datePickerJsunit()
 }

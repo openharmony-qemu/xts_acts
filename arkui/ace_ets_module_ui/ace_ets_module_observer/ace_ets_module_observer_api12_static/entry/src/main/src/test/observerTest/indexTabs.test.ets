@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,10 +51,9 @@ export default function indexTabs() {
         console.info("get indexTabs state pages:" + JSON.stringify(pages));
         if (!("indexTabs" == pages.name)) {
           console.info("get indexTabs pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push indexTabs page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push indexTabs page error:" + err);
@@ -62,15 +61,14 @@ export default function indexTabs() {
       console.info("indexTabs beforeEach end");
     });
 
-    /**
-     * @tc.number    indexTabs_001
-     * @tc.name      indexTabs_static_0100
-     * @tc.desc      Listen for switchover events on the TabContent page.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   indexTabs_static_0100
+     * @tc.name     indexTabs_static_0100
+     * @tc.desc     indexTabs_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('indexTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('indexTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[indexTabs_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

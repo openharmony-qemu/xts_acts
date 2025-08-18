@@ -20,8 +20,8 @@ let domain: int = 0x0000;
 let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
-  static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
+
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -35,7 +35,7 @@ class UtilsTest{
     try {
       if (!UtilsTest.isStartedAbility) {
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
-        hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+        hilog.info(domain, tag, `startAbility, success`);
         UtilsTest.isStartedAbility = true;
       }
       return true;

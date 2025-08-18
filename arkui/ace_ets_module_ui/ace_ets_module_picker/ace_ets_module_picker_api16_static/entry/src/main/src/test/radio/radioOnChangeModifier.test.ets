@@ -27,7 +27,7 @@ export default function radioOnChangeModifierTest() {
     beforeAll(() => {
       console.info("radioOnChangeModifierTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -43,11 +43,11 @@ export default function radioOnChangeModifierTest() {
         console.info("get radioOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("radioOnChangeModifier" == pages.name)) {
           console.info("get radioOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push radioOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push radioOnChangeModifierTest page error:" + err);
@@ -61,15 +61,16 @@ export default function radioOnChangeModifierTest() {
       console.info('radioOnChangeModifierTest after each called');
     })
    
-    /**
-     * @tc.number ArkUX_Modifier_Radio_OnChange_static_1001
-     * @tc.name ArkUX_Modifier_Radio_OnChange_static_1001
-     * @tc.desc OnChange callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    
+
+/*
+     * @tc.number   ArkUX_Modifier_Radio_OnChange_static_1001
+     * @tc.name     ArkUX_Modifier_Radio_OnChange_static_1001
+     * @tc.desc     ArkUX_Modifier_Radio_OnChange_static_1001
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Modifier_Radio_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Modifier_Radio_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('ArkUX_Modifier_CheckboxGroup_OnChange_1001 START');
         let driver = Driver.create();
         let checkbox = await driver.findComponent(ON.id('mRadio1'));
@@ -84,15 +85,16 @@ export default function radioOnChangeModifierTest() {
         done();
       });
   
-      /**
-       * @tc.number ArkUX_Modifier_Radio_OnChange_static_1002
-       * @tc.name ArkUX_Modifier_Radio_OnChange_static_1002
-       * @tc.desc OnChange callback
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level 0
-       */
-      it('ArkUX_Modifier_Radio_OnChange_static_1002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      
+
+/*
+     * @tc.number   ArkUX_Modifier_Radio_OnChange_static_1002
+     * @tc.name     ArkUX_Modifier_Radio_OnChange_static_1002
+     * @tc.desc     ArkUX_Modifier_Radio_OnChange_static_1002
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUX_Modifier_Radio_OnChange_static_1002', Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('ArkUX_Modifier_Radio_OnChange_static_1002 START');
         let driver = Driver.create();
         let checkbox = await driver.findComponent(ON.id('mRadio1'));

@@ -17,7 +17,7 @@ import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource = ''
+  value: string | number | TextCase | TextDecorationType | boolean | Resource | Array<string> = ''
 }
 
 export type Callback = (message: Message) => void

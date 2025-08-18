@@ -12,21 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r, TextPickerResult, TextAlign} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, Margin, TextAlign, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectedValue{
-  private select: Double = 0
-  set(val:Double){
+  private select: number = 2
+  set(val:number){
     this.select = val
   }
 }
 class SelectedArray{
-  private select: Array<Double> = []
-  set(val:Array<Double>){
+  private select: number[] = []
+  set(val:number[]){
     this.select = val
   }
 }
@@ -35,14 +32,14 @@ class SelectedArray{
 struct TextPickerDialogSelectedAreaExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
-  private select: number  = 0;
+  private select: number  = 0.0;
   @State selectedFlag: string = ''
   build() {
     Column() {
       Button('showTextPickerDialog ' + this.selectedFlag)
         .id('showTextPickerDialog')
         .margin(30)
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.selectedFlag = ''
           this.getUIContext().showTextPickerDialog({
             range: this.fruits,
@@ -52,7 +49,6 @@ struct TextPickerDialogSelectedAreaExample {
               let selectedVal = new SelectedValue()
               let selectedArr = new SelectedArray()
               if(value.index){
-                value.index instanceof Array?selectedArr.set(value.index as Array<Double>) : selectedVal.set(value.index as Double)
               }
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },

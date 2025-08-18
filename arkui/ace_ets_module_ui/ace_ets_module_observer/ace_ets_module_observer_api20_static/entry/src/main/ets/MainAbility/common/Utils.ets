@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import inspector from '@ohos.arkui.inspector'
+import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' 
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, UserView, TouchObject, TouchType } from '@ohos.arkui.component'  
+import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' 
+import inspector from '@ohos.arkui.inspector';
 import { sendTouchEvent } from "@internal.full.global";
+import common from '@ohos.app.ability.common';
 
 export default class Utils {
   static rect_left: number = 0;
@@ -41,25 +42,18 @@ export default class Utils {
     }
   }
 
-  static async sleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
+  static sleep(time: Int) {
+    return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
-        resolve(0)
-      }, count)
+        resolve("ok")
+      }, time)
+    }).then(() => {
+      console.info(`sleep ${time} over...`)
     })
   }
 
-  static async swipe(downX: number, downY: number, upX: number, upY: number, steps: number) {
-    console.info('start to swipe')
-    Utils.drags(downX, downY, upX, upY, steps, false)
-  }
 
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
-    console.info('start to drag')
-    Utils.drags(downX, downY, upX, upY, steps, true)
-  }
-
-  static async drags(downX: number, downY: number, upX: number, upY: number, steps: number, drag:boolean) {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;
@@ -88,7 +82,7 @@ export default class Utils {
     console.info('down touch started: ' + JSON.stringify(downPoint))
     sendTouchEvent(downPoint);
     console.info('start to move')
-    if (drag) {
+    if (true) {
       Utils.sleep(500)
     }
     for (let i = 1; i <= swipeSteps; i++) {
@@ -110,7 +104,7 @@ export default class Utils {
       Utils.sleep(5)
     }
     console.info('start to up')
-    if (drag) {
+    if (true) {
       Utils.sleep(100)
     }
     let upPoint: TouchObject = {

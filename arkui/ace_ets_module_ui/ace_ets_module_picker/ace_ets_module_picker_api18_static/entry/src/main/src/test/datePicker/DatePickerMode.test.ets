@@ -51,22 +51,22 @@ export default function datePickerMode() {
           console.info('get DatePicker state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await UtilsTest.msSleep(2000)
-          // let result = await routerInstance.pushUrl(options)
-          // console.info('push DatePickerMode page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push DatePicker page error ' + JSON.stringify(err));
       }
     });
 
-    /**
-    * @tc.number    DatePicker_static_0100
-    * @tc.name      DatePicker_static_0100
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0100
+     * @tc.name     DatePicker_static_0100
+     * @tc.desc     DatePicker_static_0100
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0100';
@@ -79,14 +79,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-    * @tc.number    DatePicker_static_0200
-    * @tc.name      DatePicker_static_0200
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0200
+     * @tc.name     DatePicker_static_0200
+     * @tc.desc     DatePicker_static_0200
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0200';
@@ -99,14 +100,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-    * @tc.number    DatePicker_static_0300
-    * @tc.name      DatePicker_static_0300
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0300
+     * @tc.name     DatePicker_static_0300
+     * @tc.desc     DatePicker_static_0300
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0300';
@@ -119,14 +121,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-    * @tc.number    DatePicker_static_0400
-    * @tc.name      DatePicker_static_0400
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0400
+     * @tc.name     DatePicker_static_0400
+     * @tc.desc     DatePicker_static_0400
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0400';
@@ -139,14 +142,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-    * @tc.number    DatePicker_static_0500
-    * @tc.name      DatePicker_static_0500
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0500
+     * @tc.name     DatePicker_static_0500
+     * @tc.desc     DatePicker_static_0500
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0500';
@@ -159,14 +163,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-   * @tc.number    DatePicker_static_0600
-   * @tc.name      DatePicker_static_0600
-   * @tc.desc      createDatePickerModeToWindow
-   * @tc.level:    Level 2
-   * @tc.type :
-   * @tc.size :
-   */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0600
+     * @tc.name     DatePicker_static_0600
+     * @tc.desc     DatePicker_static_0600
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0600';
@@ -179,14 +184,15 @@ export default function datePickerMode() {
       done();
     });
 
-    /**
-    * @tc.number    DatePicker_static_0700
-    * @tc.name      DatePicker_static_0700
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    
+    
+    
+    /*
+     * @tc.number   DatePicker_static_0700
+     * @tc.name     DatePicker_static_0700
+     * @tc.desc     DatePicker_static_0700
+     * @tc.level    Level.LEVEL1
+     */
     it('DatePicker_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0700';

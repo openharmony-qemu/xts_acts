@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,54 +60,9 @@ struct SliderExample {
 
   onPageShow() {
     console.info('slider onPageShow')
-    // globalThis.value = {
-    //   name: 'messageManager', message: this.messageManager
-    // }
+
     AppStorage.setOrCreate('messageManager', this.messageManager)
-    // let callback: Callback = (message: Message) => {
-    //   console.error('message = ' + message.name + "--" + message.value)
-    //   if (message.name == 'vInSetValueOne') {
-    //     this.vInSetValueOne = message.value
-    //   }
-    //   if (message.name == 'style') {
-    //     this.style = message.value
-    //   }
-    //   if (message.name == 'directionT') {
-    //     this.directionT = message.value
-    //   }
-    //   if (message.name == 'reverse') {
-    //     this.reverse = message.value
-    //   }
-    //   if (message.name == 'min') {
-    //     this.min = message.value
-    //   }
-    //   if (message.name == 'max') {
-    //     this.max = message.value
-    //   }
-    //   if (message.name == 'step') {
-    //     this.step = message.value
-    //   }
-    //   if (message.name == 'blockColor') {
-    //     this.blockColor = message.value
-    //   }
-    //   if (message.name == 'trackColor') {
-    //     this.trackColor = message.value
-    //   }
-    //   if (message.name == 'selectedColor') {
-    //     this.selectedColor = message.value
-    //   }
-    //   if (message.name == 'showSteps') {
-    //     this.showSteps = message.value
-    //   }
-    //   if (message.name == 'showTips') {
-    //     this.showTips = message.value
-    //   }
-    //   if (message.name == 'trackThickness') {
-    //     this.trackThickness = message.value
-    //   }
-    //
-    // }
-    // this.messageManager.registerCallback(callback)
+
   }
 
   build() {

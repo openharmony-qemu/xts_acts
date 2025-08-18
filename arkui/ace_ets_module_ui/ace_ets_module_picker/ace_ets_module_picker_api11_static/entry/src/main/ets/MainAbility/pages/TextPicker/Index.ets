@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,16 +46,17 @@ struct TextPickerExample {
   } as PickerTextStyle
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("select page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      // if (eventData.data?.['disappearTextStyle'] != null) {
-      //   this.disappearTextStyle = JSON.parseJsonElement(eventData.data?.['disappearTextStyle'] as string);
-      // }
-      // if (eventData.data?.['textStyle'] != null) {
-      //   this.textStyle = JSON.parseJsonElement(eventData.data?.['textStyle'] as string);
-      // }
-      // if (eventData.data?.['selectedTextStyle'] != null) {
-      //   this.selectedTextStyle = JSON.parseJsonElement(eventData.data?.['selectedTextStyle'] as string);
-      // }
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('disappearTextStyle') != null) {
+        this.disappearTextStyle = data.getProperty('disappearTextStyle').toStaticObject() as PickerTextStyle
+      }
+      if (data.getProperty('textStyle') != null) {
+        this.textStyle = data.getProperty('textStyle').toStaticObject() as PickerTextStyle;
+      }
+      if (data.getProperty('selectedTextStyle') != null) {
+        this.selectedTextStyle = data.getProperty('selectedTextStyle').toStaticObject() as PickerTextStyle;
+      }
     }
   }
 
@@ -70,7 +71,6 @@ struct TextPickerExample {
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    // Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 
   build() {

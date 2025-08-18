@@ -38,7 +38,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -46,6 +46,7 @@ export default function menuBackgroundBlurStyle() {
   describe('menuBackgroundBlurStyle', () => {
     beforeAll(() => {
       console.info("menuBackgroundBlurStyle beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -63,25 +64,26 @@ export default function menuBackgroundBlurStyle() {
         console.info("get menuBackgroundBlurStyle state pages:" + JSON.stringify(pages));
         if (!("menuBackgroundBlurStyle" == pages.name)) {
           console.info("get menuBackgroundBlurStyle pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push menuBackgroundBlurStyle page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push menuBackgroundBlurStyle page error: " + err);
         expect().assertFail();
       }
-      // done();
+      
     });
 
-    /**
-     * @tc.number SUB_ACE_menuBackgroundBlurStyle_static_0100
-     * @tc.name menuBackgroundBlurStyle_static_0100
-     * @tc.desc To test that the menuBackgroundBlurStyle decorator.
-     * @tc.level Level 2
+    
+    /*
+     * @tc.number   menuBackgroundBlurStyle_static_0100
+     * @tc.name     menuBackgroundBlurStyle_static_0100
+     * @tc.desc     menuBackgroundBlurStyle_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('menuBackgroundBlurStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('menuBackgroundBlurStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('menuBackgroundBlurStyle_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
