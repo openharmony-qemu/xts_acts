@@ -657,7 +657,10 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(100)
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
-      emitter.emit<Sample>("eventId333", eventData);
+      let options: emitter.Options = {
+        priority: emitter.EventPriority.IMMEDIATE
+      }
+      emitter.emit<Sample>("eventId333", options,eventData);
       console.info(Tag+ 'emitterEmit success');
       await Utils.msSleep(1000)
       expect(onConsume_number).assertEqual(1)
