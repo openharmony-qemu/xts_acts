@@ -787,6 +787,36 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.DISTRIBUTED)
               count = count + 25;
               break;
+            case 'service':
+              hilog.info(domain, tag, "service" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SERVICE)
+              count = count + 26;
+              break;
+            case 'dataShare':
+              hilog.info(domain, tag, "dataShare" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.DATA_SHARE)
+              count = count + 27;
+              break;
+            case 'callerInfoQuery':
+              hilog.info(domain, tag, "callerInfoQuery" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CALLER_INFO_QUERY)
+              count = count + 28;
+              break;
+            case 'appService':
+              hilog.info(domain, tag, "appService" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.APP_SERVICE)
+              count = count + 29;
+              break;
+            case 'liveForm':
+              hilog.info(domain, tag, "liveForm" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.LIVE_FORM)
+              count = count + 30;
+              break;
+            case 'unspecified':
+              hilog.info(domain, tag, "unspecified" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.UNSPECIFIED)
+              count = count + 31;
+              break;
           }
           hilog.info(domain, tag, "count" + JSON.stringify(count));
         }
