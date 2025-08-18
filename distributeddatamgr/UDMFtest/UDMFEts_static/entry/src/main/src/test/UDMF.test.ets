@@ -2417,7 +2417,7 @@ export default function UDMFApiTest() {
       expect(JSON.stringify(UTD.UniformDataType.OPENTYPE_FONT)).assertEqual(JSON.stringify("general.opentype-font"));
       expect(JSON.stringify(UTD.UniformDataType.POSTSCRIPT_FONT)).assertEqual(JSON.stringify("com.adobe.postscript-font"));
       expect(JSON.stringify(UTD.UniformDataType.POSTSCRIPT_PFB_FONT)).assertEqual(JSON.stringify("com.adobe.postscript-pfb-font"));
-      expect(JSON.stringify(UTD.UniformDataType.POSTSCRIPT_PFA_FONT)).assertEqual(JSON.stringify("general.markdown"));
+      expect(JSON.stringify(UTD.UniformDataType.POSTSCRIPT_PFA_FONT)).assertEqual(JSON.stringify("com.adobe.postscript-pfa-font"));
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_HDOC)).assertEqual(JSON.stringify("openharmony.hdoc"));
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_HINOTE)).assertEqual(JSON.stringify("openharmony.hinote"));
       expect(JSON.stringify(UTD.UniformDataType.OPENHARMONY_STYLED_STRING)).assertEqual(JSON.stringify("openharmony.styled-string"));
