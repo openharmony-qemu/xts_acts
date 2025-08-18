@@ -18,20 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, ItemAlign, FlexWrap, FlexDirection,
   VerticalAlign, HorizontalAlign, ConstraintSizeOptions } from '@ohos.arkui.component';
 
-// export class GrowValue {
-//   flexGrow: number;
-//   parentWidth: number;
-//   parentHeight: number;
-//   compareFlexGrow: number;
-//   flexShrink: number;
-//   compareFlexShrink: number;
-//   standardFlexShrink: number;
-//   flexBasis: number | string = '';
-//   alignSelf: ItemAlign = ItemAlign.Auto;
-//   defaultAlignItems: AlignItems = new AlignItems();
-//   wrap: FlexWrap = FlexWrap.NoWrap;
-//   direction: FlexDirection = FlexDirection.Row;
-// }
+
 
 export class AlignItems {
   Row: VerticalAlign = VerticalAlign.Center;

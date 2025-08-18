@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-// import { vp2px } from '@ohos.arkui.component';
+
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -29,21 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   parentWidth: number = 0;
-//   parentHeight: number = 0;
-//   targetWidth: number = 0;
-//   targetHeight: number = 0;
-// }
-//
-// class TestValue {
-//   describe: string = '';
-//   setValue: ESObject;
-//   expectValue: ESObject;
-// }
+
 
 export default function flexBasisTest() {
 
@@ -83,7 +69,7 @@ export default function flexBasisTest() {
       expectAlignSelf: '',
       expectSize: 0,
       flexShrink: ''
-      // expectSize: vp2px(100.00)
+
     }
   }, {
     describe: 'SetStringPx',
@@ -106,7 +92,7 @@ export default function flexBasisTest() {
       expectAlignSelf: '',
       expectSize: 200.00,
       flexShrink: ''
-      // expectSize: vp2px(120)
+
     }
   }]
 

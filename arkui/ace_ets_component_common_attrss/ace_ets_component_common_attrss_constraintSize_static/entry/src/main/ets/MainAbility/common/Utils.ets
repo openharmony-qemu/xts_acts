@@ -153,12 +153,7 @@ export default class Utils {
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        //  let result = await router.pushUrl({
-        //   url: obj.pageUrl,
-        //   params: {
-        //     view: obj
-        //   } as RouterParams
-        // });    
+  
         router.pushUrl({
           url: obj.pageUrl,
           params: {
@@ -166,7 +161,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        // console.info('push ' + obj.pageName + ' page result:' + JSON.stringify(result));
+        
         console.info('push ' + obj.pageName );
       }
     } catch (err) {
@@ -207,7 +202,7 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
+
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {

@@ -29,40 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   childHeight: number = 0;
-//   childWidth: number = 0;
-//   referenceComponentKey: string = '';
-// }
-//
-// class TestValue {
-//   describe: string = '';
-//   setValue: ESObject;
-//   expectValue: Size = {
-//     constraintSize: {
-//     minWidth: 0,
-//     maxWidth: Number.MAX_VALUE,
-//     minHeight: 0,
-//     maxHeight: Number.MAX_VALUE
-//   },
-//   width: 0,
-//   height: 0,
-//   };
-// }
-//
-// class Size {
-//   constraintSize: ConstraintSizeOptions = {
-//     minWidth: 0,
-//     maxWidth: Number.MAX_VALUE,
-//     minHeight: 0,
-//     maxHeight: Number.MAX_VALUE
-//   };
-//   width: number = 0;
-//   height: number = 0;
-// }
+
 
 export default function constraintSizeTest() {
   let supportView: Array<string> = new Array<string>(
@@ -81,17 +48,13 @@ export default function constraintSizeTest() {
     'Marquee',
     'Menu',
     'MenuItem',
-    //'MenuItemGroup',
     'Navigation',
     'NavRouter',
     'Progress',
     'QRCode',
     'Radio',
     'Rating',
-    //'ScrollBar',
-    //'Search',
     'Slider',
-    //'StepperItem',
     'Text',
     'TextArea',
     'TextClock',
@@ -104,22 +67,16 @@ export default function constraintSizeTest() {
     'Column',
     'Counter',
     'Flex',
-    //'GridCol',
-    //'GridRow',
     'Grid',
     'GridItem',
     'List',
     'ListItem',
     'Navigator',
-    //'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
-    //'Scroll',
-    //'SideBarContainer',
     'Stack',
     'Swiper',
-    //'Tabs',
     'Circle',
     'Ellipse',
     'Polyline',
@@ -154,8 +111,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-      // width: vp2px(200),
-      // height: vp2px(200)
+
     }
   }, {
     describe: 'SetStringPx',
@@ -169,8 +125,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00px', 'minHeight': '0.00px', 'maxWidth': '900.00px', 'maxHeight': '900.00px'
       },
-      // width: vp2px(200),
-      // height: vp2px(200)
+
     }
   }, {
     describe: 'SetStringPercent',
@@ -184,8 +139,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '100.00%', 'maxHeight': '100.00%'
       },
-      // width: vp2px(200),
-      // height: vp2px(200)
+
     }
   }, {
     describe: 'SetResource',
@@ -199,8 +153,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '0.00vp', 'minHeight': '0.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-      // width: vp2px(200),
-      // height: vp2px(200)
+
     }
   }, {
     describe: 'SetOrderMaxMinSetting',
@@ -214,8 +167,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '250.00vp', 'minHeight': '250.00vp', 'maxWidth': '300.00vp', 'maxHeight': '300.00vp'
       },
-      // width: vp2px(250),
-      // height: vp2px(250)
+
     }
   }, {
     describe: 'SetOrderSettingMaxMin',
@@ -229,8 +181,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '100.00vp', 'minHeight': '100.00vp', 'maxWidth': '150.00vp', 'maxHeight': '150.00vp'
       },
-      // width: vp2px(150),
-      // height: vp2px(150)
+
     }
   }, {
     describe: 'SetOrderMinMaxSetting',
@@ -244,8 +195,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '300.00vp', 'minHeight': '300.00vp', 'maxWidth': '250.00vp', 'maxHeight': '250.00vp'
       },
-      // width: vp2px(300),
-      // height: vp2px(300)
+
     }
   }, {
     describe: 'SetOrderSettingMinMax',
@@ -259,8 +209,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '150.00vp', 'minHeight': '150.00vp', 'maxWidth': '100.00vp', 'maxHeight': '100.00vp'
       },
-      // width: vp2px(150),
-      // height: vp2px(150)
+
     }
   }, {
     describe: 'SetOrderMinSettingMax',
@@ -274,8 +223,7 @@ export default function constraintSizeTest() {
       constraintSize: {
         'minWidth': '300.00vp', 'minHeight': '300.00vp', 'maxWidth': '100.00vp', 'maxHeight': '100.00vp'
       },
-      // width: vp2px(300),
-      // height: vp2px(300)
+
     }
   }]
 

@@ -113,13 +113,6 @@ export default class Utils {
       let pages = router.getState();
       let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      // if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-      //   console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-      //   console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-      //   console.info('targetView: ' + obj.targetView);
-      //   await Utils.back();
-      //   pages = router.getState();
-      // }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
@@ -174,7 +167,6 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);

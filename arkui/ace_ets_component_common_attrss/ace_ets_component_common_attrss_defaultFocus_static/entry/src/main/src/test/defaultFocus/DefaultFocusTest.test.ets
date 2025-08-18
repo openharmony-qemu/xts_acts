@@ -43,10 +43,10 @@ export default function DefaultFocusTest() {
     'Checkbox',
     'CheckboxGroup',
     'DatePicker',
-//    'ImageAnimator',
+
     'Menu',
     'MenuItem',
-//    'MenuItemGroup',
+
     'Radio',
     'Rating',
     'Slider',
@@ -55,21 +55,20 @@ export default function DefaultFocusTest() {
     'Toggle',
     'AlphabetIndexer',
     'Column',
-//    'ColumnSplit',
+
     'Counter',
     'Flex',
-//    'GridCol',
-//    'GridRow',
+
     'GridItem',
     'ListItem',
-//    'ListItemGroup',
+
     'Row',
-//    'RowSplit',
+
     'Scroll',
     'Stack',
     'Swiper',
     'Tabs',
-//    'TabContent'
+
   )
   //Page config, this param is required.
   let pageConfig: PageConfig = {
@@ -102,11 +101,6 @@ export default function DefaultFocusTest() {
 
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-
-      //Press the Tab key
-//      expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertEqual(true);
-//      await Utils.sleep(1000);
-//      console.info('[' + data.caseTag + '] Press Tab.');
 
       if ('SetTrue' == data.testValue.describe) {
         //Confirm if the focus is on the target component
