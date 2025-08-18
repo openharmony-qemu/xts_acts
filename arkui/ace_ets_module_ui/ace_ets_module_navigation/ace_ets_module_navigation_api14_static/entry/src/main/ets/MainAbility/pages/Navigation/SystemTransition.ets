@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,17 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import {
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Padding,Optional,Scroller,FontStyle,BarState,NavigationSystemTransitionType,animateTo,ScrollDirection,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
+  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,EdgeEffect, RouterPageInfo,TextInputController,CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+,NavPathStack} from '@ohos.arkui.component';
+import {
+  State,
+  Link,
+  Prop,Provide,Consume
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
-import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
-  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode, TextInputController, Stack, StackOptions,
-  Alignment, NavPathStack, Navigation, NavigationSystemTransitionType, NavPathInfo
-} from '@ohos.arkui.component'
-import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct SystemTransition {
-  @Provide({alias: 'pageInfos' }) pageInfos: NavPathStack = new NavPathStack()
+  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
 
   @Builder
   pageMap(name: string) {
@@ -34,20 +41,21 @@ struct SystemTransition {
   }
 
   build() {
-    Navigation(this.pageInfos) {
+    // Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Button('push pageOne').id('pageOneId').onClick((e: ClickEvent) => {
-          
+          // this.pageInfos.pushPath({name: 'pageOne'})
         })
         Button('push pageTwo').id('pageTwoId').onClick((e: ClickEvent) => {
+          // this.pageInfos.pushPath({name: 'pageTwo'})
         })
 
       }
       .width('100%')
       .height('100%')
-    }
-    .title('Title')
-    .navDestination(this.pageMap)
+    // }
+    // .title('Title')
+    // .navDestination(this.pageMap)
   }
 }
 

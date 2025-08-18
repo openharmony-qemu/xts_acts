@@ -12,13 +12,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+
+import {
+  Entry,
+  Text,
+  TextAttribute,
+  Column,
+  Component,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  UserView,
+  Image,
+  ImageFit,
+  Scroller,
+  Flex,
+  Margin,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  FontWeight,
+  ButtonType,
+  ClickEvent,
+  Margin,
+  FontWeight
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
-import common from '@ohos.app.ability.common';
-
 
 @Entry
 @Component
@@ -34,20 +54,14 @@ struct Index {
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('Hello World')
+    Flex({
+      direction: FlexDirection.Column,
+      alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center
+    }) {
+      Text('ACE ETS TEST')
         .fontSize(50)
-      Button(' ') {
-        Text('next page')
-          .fontSize(25)
-      }
-      .margin({
-        top: 20
-      } as Margin)
-      .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
-
-      })
+        .fontWeight(FontWeight.Bold)
     }
     .width('100%')
     .height('100%')

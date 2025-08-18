@@ -86,7 +86,7 @@ struct BasicSheet02 {
     {
       name: 'push pageOne',
       callback: () => {
-        
+        // this.pathStack.pushPath({name: 'pageOne'})
         this.pathStack.pushPath(new NavPathInfo('pageOne',null))
       },
       id: 'allSheetPushId'
@@ -115,7 +115,7 @@ struct BasicSheet02 {
       }.height('50%')
 
       CommonNavigation({pathStack: this.pathStack})
-        
+        // .bindContentCover(this.isShow, this.ModalBuilder)
 
     }
   }

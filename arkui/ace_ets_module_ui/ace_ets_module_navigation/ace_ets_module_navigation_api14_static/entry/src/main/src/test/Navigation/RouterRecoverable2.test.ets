@@ -13,25 +13,36 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import {
+  describe,
+  beforeAll,
+  expect,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  Level
+} from '../../../../hypium/index';
 import router from '@ohos.router';
-import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { Driver, ON,Component } from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import events_emitter from '@ohos.events.emitter'
+import { BusinessError } from '@ohos.base';
 export default function RouterRecoverable2() {
   describe('RouterRecoverable2', () => {
+    beforeAll(() => {
+
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("RouterRecoverable2 beforeEach start");
       let options: router.RouterOptions = {
@@ -44,7 +55,6 @@ export default function RouterRecoverable2() {
         console.info("get RouterRecoverable2 state pages:" + JSON.stringify(pages));
         if (!("RouterRecoverable2" == pages.name)) {
           console.info("get RouterRecoverable2 pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -60,33 +70,32 @@ export default function RouterRecoverable2() {
     });
 
 
-    
-    /*
-     * @tc.number   RouterRecoverable2_static_0100
-     * @tc.name     RouterRecoverable2_static_0100
-     * @tc.desc     RouterRecoverable2_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    RouterRecoverable2_static_0100
+     * @tc.name      RouterRecoverable2_static_0100
+     * @tc.desc      Test RouterRecoverable2
+     * @tc.level     Level 2
      */
-it('RouterRecoverable2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RouterRecoverable2_0100 START');
+    it('RouterRecoverable2_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('RouterRecoverable2_static_0100 START');
       await CommonFunc.sleep(200);
 
       let driver = Driver.create();
       await CommonFunc.sleep(200);
 
-      let btn1 = await driver.findComponent(ON.id('routerBtnId2'));
-      await (btn1?.click() as Promise<void>)
-      console.info('[RouterRecoverable2_0100] btn1 click');
+      let btn1 = await (driver.findComponent(ON.id('routerBtnId2')) as Promise<Component>);
+      await btn1.click()
+      console.info('[RouterRecoverable2_static_0100] btn1 click');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('RouterPage2Id');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[RouterRecoverable2_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[RouterRecoverable2_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[RouterRecoverable2_static_0100] component obj is: ' + JSON.stringify(obj));
+      console.info('[RouterRecoverable2_static_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('routerPage2');
 
       console.info('ReplaceDestination1_0100 END');
-      console.info('RouterRecoverable2_0100 END');
+      console.info('RouterRecoverable2_static_0100 END');
       done();
     });
   })

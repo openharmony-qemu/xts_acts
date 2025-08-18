@@ -41,7 +41,7 @@ export default function SplitPlaceholder() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -71,13 +71,14 @@ export default function SplitPlaceholder() {
     });
 
 
-        /*
-     * @tc.number   SplitPlaceholder_static_0100
-     * @tc.name     SplitPlaceholder_static_0100
-     * @tc.desc     SplitPlaceholder_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    SplitPlaceholder_static_0100
+     * @tc.name      SplitPlaceholder_static_0100
+     * @tc.desc      Test  SplitPlaceholder exist
+     * @tc.level     Level 0
      */
-it('SplitPlaceholder_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[SplitPlaceholder_static_0100] START');
+    it('SplitPlaceholder_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SplitPlaceholder_static_0100] START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -96,13 +97,14 @@ it('SplitPlaceholder_static_0100', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
-     * @tc.number   SplitPlaceholder_static_0200
-     * @tc.name     SplitPlaceholder_static_0200
-     * @tc.desc     SplitPlaceholder_static_0200
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    SplitPlaceholder_static_0200
+     * @tc.name      SplitPlaceholder_static_0200
+     * @tc.desc      Test set SplitPlaceholder null
+     * @tc.level     Level 0
      */
-it('SplitPlaceholder_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[SplitPlaceholder_static_0200] START');
+    it('SplitPlaceholder_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SplitPlaceholder_static_0200] START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -119,13 +121,14 @@ it('SplitPlaceholder_static_0200', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
-     * @tc.number   SplitPlaceholder_static_0300
-     * @tc.name     SplitPlaceholder_static_0300
-     * @tc.desc     SplitPlaceholder_static_0300
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    SplitPlaceholder_static_0300
+     * @tc.name      SplitPlaceholder_static_0300
+     * @tc.desc      Test set SplitPlaceholder undefined
+     * @tc.level     Level 0
      */
-it('SplitPlaceholder_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[SplitPlaceholder_static_0300] START');
+    it('SplitPlaceholder_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SplitPlaceholder_static_0300] START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -141,13 +144,14 @@ it('SplitPlaceholder_static_0300', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
-     * @tc.number   SplitPlaceholder_static_0400
-     * @tc.name     SplitPlaceholder_static_0400
-     * @tc.desc     SplitPlaceholder_static_0400
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    SplitPlaceholder_static_0400
+     * @tc.name      SplitPlaceholder_static_0400
+     * @tc.desc      Test set SplitPlaceholder 空节点
+     * @tc.level     Level 0
      */
-it('SplitPlaceholder_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[SplitPlaceholder_static_0400] START');
+    it('SplitPlaceholder_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SplitPlaceholder_static_0400] START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();
       await driver.delayMs(1000);

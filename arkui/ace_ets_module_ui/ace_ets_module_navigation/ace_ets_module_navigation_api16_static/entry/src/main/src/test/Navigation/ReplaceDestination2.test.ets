@@ -72,15 +72,13 @@ export default function ReplaceDestination2() {
     });
 
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination2_static_0100
-     * @tc.name     ReplaceDestination2_static_0100
-     * @tc.desc     ReplaceDestination2_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination2_static_0100
+     * @tc.name      ReplaceDestination2_static_0100
+     * @tc.desc      Test replaceDestination error code 100005
+     * @tc.level     Level 2
      */
-it('ReplaceDestination2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination2_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination2_static_0100 START');
       await CommonFunc.sleep(1000);
 

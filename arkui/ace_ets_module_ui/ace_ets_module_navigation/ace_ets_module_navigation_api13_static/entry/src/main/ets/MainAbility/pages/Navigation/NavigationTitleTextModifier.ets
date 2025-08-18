@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,13 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavDestinationInfo,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,ToggleType,NavigationTitleOptions,
+  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationCommonTitle,NavigationCommonTitle,
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,ShadowOptions,FontStyle, Date,FlexAlign,Padding,Toggle
+,NavPathStack} from '@ohos.arkui.component';
+import {
+  State,
+  Link,
+  Prop,Provide
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { LengthMetrics } from '@kit.ArkUI';
 import { TextModifier } from '@ohos.arkui.modifier';
-import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, ColumnOptions, ClickEvent, NavigationTitleMode, Text, Color,
-  NavigationMode, NavDestination, NavPathInfo, BarStyle, Stack, StackOptions, BlurStyle, Row, Image, Margin, Alignment, $r, Resource, Padding,
-  FontStyle, FontWeight, FlexAlign, Toggle, ShadowOptions, ToggleType, NavigationCommonTitle, NavigationTitleOptions
-} from '@ohos.arkui.component'
-import { State, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement'
+
 class MainTitleTextModifier extends TextModifier {
   applyNormalAttribute(instance: TextModifier): void {
       console.log(`testTag mainTitle use style1`);
@@ -45,15 +53,18 @@ class SubTitleTextModifier extends TextModifier {
 @Component
 struct NavigationTitleTextModifier {
   private navPathStack: NavPathStack = new NavPathStack();
-  
+  // 初始化标题栏起始端内间距
   @State paddingStart: LengthMetrics = LengthMetrics.vp(10);
+  // 初始化标题栏结束端内间距
   @State paddingEnd: LengthMetrics = LengthMetrics.vp(10);
+  // 主标题样式修改器
   @State mainTitleModifier: MainTitleTextModifier = new MainTitleTextModifier();
+  // 副标题样式修改器
   @State subTitleModifier: SubTitleTextModifier = new SubTitleTextModifier();
   @State applyModifier: boolean = false;
 
   build() {
-    Navigation( this.navPathStack ) {
+    Navigation(this.navPathStack) {
       Column() {
         Row() {
           Text(`apply Modifier`)

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,17 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import { Entry, Component, NavPathStack, Navigation, Column, Button, ColumnOptions, ClickEvent, BarStyle, Stack,
-  StackOptions, BlurStyle, Text, Color, Builder, Scroller, NavigationTitleMode, Scroll, ForEach, List, ListItem, Margin,
-  ScrollDirection, BarState, EdgeEffect, NavDestination, Row, $r,
-} from '@ohos.arkui.component'
-import { State, Provide, Consume, AppStorage} from '@ohos.arkui.stateManagement'
+import {
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Scroller,BarState,animateTo,ScrollDirection,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
+  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,EdgeEffect, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+,NavPathStack} from '@ohos.arkui.component';
+import {
+  State,
+  Link,
+  Prop,Provide,Consume
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { SymbolGlyphModifier } from "@ohos.arkui.modifier";
 @Entry
 @Component
 struct NavigationBindToNestedScrollable {
-  @Provide({alias: 'navPathStack'}) navPathStack: NavPathStack = new NavPathStack();
+  // @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
 
   @Builder
   myRouter(name:string, param?:Object) {
@@ -32,24 +38,24 @@ struct NavigationBindToNestedScrollable {
   }
 
   build() {
-    Navigation(this.navPathStack) {
+    // Navigation(this.navPathStack) {
       Column() {
         Button('push pageOne').onClick((e: ClickEvent)=>{
-          this.navPathStack.pushPathByName('PageOne', null)
+          // this.navPathStack.pushPathByName('PageOne', null)
         })
       }
-    }
-    .titleMode(NavigationTitleMode.Mini)
-    .title('一级页面')
-    .navDestination(this.myRouter)
+    // }
+    // .titleMode(NavigationTitleMode.Mini)
+    // .title('一级页面')
+    // .navDestination(this.myRouter)
   }
 }
 
 @Component
 export struct PageOne {
   @Consume('navPathStack') navPathStack:NavPathStack;
-  private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-  private arr1: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+  private arr1: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
   scroller: Scroller = new Scroller()
   scroller1: Scroller = new Scroller()
 
@@ -58,21 +64,21 @@ export struct PageOne {
       Row() {
         Scroll(this.scroller) {
           Column({space: 10} as ColumnOptions) {
-            ForEach(this.arr, (item: int) => {
+            ForEach(this.arr, (item: number) => {
               if (item == 0) {
                 List({space: 10, scroller: this.scroller1}) {
-                  ForEach(this.arr1, (item1: int) => {
+                  ForEach(this.arr1, (item1: number) => {
                     ListItem() {
                       Text('Child_item_' + item1).fontSize(16).backgroundColor(Color.Pink).width('90%').height(100)
                     }
-                  })
+                  }, (item1: number) => String(item1))
                 }
                 .height('70%')
                 .margin({right: '60%'} as Margin)
               } else {
                 Text('item_' + item).fontSize(16).backgroundColor(Color.Yellow).width('90%').height(100)
               }
-            })
+            }, (item: number) => String(item))
           }
         }
         .scrollable(ScrollDirection.Vertical)

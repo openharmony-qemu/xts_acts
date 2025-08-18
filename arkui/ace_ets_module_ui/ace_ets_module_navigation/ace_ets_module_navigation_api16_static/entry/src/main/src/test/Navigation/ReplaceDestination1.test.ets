@@ -72,15 +72,13 @@ export default function ReplaceDestination1Test() {
     });
 
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0100
-     * @tc.name     ReplaceDestination1_static_0100
-     * @tc.desc     ReplaceDestination1_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_0100
+     * @tc.name      ReplaceDestination1_static_0100
+     * @tc.desc      Test replaceDestination error code 100006
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_0100 START');
       await CommonFunc.sleep(500);
 
@@ -102,15 +100,13 @@ it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_static_0200
-     * @tc.name     ReplaceDestination1_static_static_0200
-     * @tc.desc     ReplaceDestination1_static_static_0200
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_static_0200
+     * @tc.name      ReplaceDestination1_static_static_0200
+     * @tc.desc      Test replaceDestination undefined error code 401
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_static_0200 START');
       await CommonFunc.sleep(500);
 
@@ -132,15 +128,13 @@ it('ReplaceDestination1_static_static_0200', Level.LEVEL0, async (done: () => vo
       done();
     });
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0300
-     * @tc.name     ReplaceDestination1_static_0300
-     * @tc.desc     ReplaceDestination1_static_0300
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_0300
+     * @tc.name      ReplaceDestination1_static_0300
+     * @tc.desc      Test replaceDestination undefined error code 401
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_0300 START');
       await CommonFunc.sleep(500);
 
@@ -162,15 +156,13 @@ it('ReplaceDestination1_static_0300', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0400
-     * @tc.name     ReplaceDestination1_static_0400
-     * @tc.desc     ReplaceDestination1_static_0400
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_0400
+     * @tc.name      ReplaceDestination1_static_0400
+     * @tc.desc      Test replaceDestination normal
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_0400 START');
       await CommonFunc.sleep(500);
 
@@ -192,15 +184,13 @@ it('ReplaceDestination1_static_0400', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0500
-     * @tc.name     ReplaceDestination1_static_0500
-     * @tc.desc     ReplaceDestination1_static_0500
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_0500
+     * @tc.name      ReplaceDestination1_static_0500
+     * @tc.desc      Test replaceDestination and LaunchMode.MOVE_TO_TOP_SINGLETON
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_0500',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_0500 START');
       await CommonFunc.sleep(500);
 
@@ -243,15 +233,13 @@ it('ReplaceDestination1_static_0500', Level.LEVEL0, async (done: () => void): Pr
     });
 
 
-    
-    
-/*
-     * @tc.number   ReplaceDestination1_static_0600
-     * @tc.name     ReplaceDestination1_static_0600
-     * @tc.desc     ReplaceDestination1_static_0600
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    ReplaceDestination1_static_0600
+     * @tc.name      ReplaceDestination1_static_0600
+     * @tc.desc      Test replaceDestination and LaunchMode.POP_TO_SINGLETON
+     * @tc.level     Level 2
      */
-it('ReplaceDestination1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ReplaceDestination1_static_0600',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ReplaceDestination1_static_0600 START');
       await CommonFunc.sleep(500);
 

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,16 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, NavPathStack, Navigation, Column, Button, ColumnOptions, ClickEvent, BarStyle, Stack,
-  StackOptions, BlurStyle, Text, Color, Builder, Scroller, NavigationTitleMode, Scroll, ForEach, List, ListItem, Margin,
-  ScrollDirection, BarState, EdgeEffect, NavDestination, ListOptions, Optional, HorizontalAlign, Image, Row, NavBarPosition,
-} from '@ohos.arkui.component'
-import { State, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement'
+import {
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Optional,Scroller,BarState,animateTo,ScrollDirection,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
+  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,EdgeEffect, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+,NavPathStack} from '@ohos.arkui.component';
+import {
+  State,
+  Link,
+  Prop,Provide,Consume
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationEnableDragBar {
-  @Provide({alias: 'pageInfos'}) pageInfos: NavPathStack = new NavPathStack()
-  private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
   @State currentIndex: number = 0
   @State enableDrag: Optional<boolean> = false;
 
@@ -60,7 +67,7 @@ struct NavigationEnableDragBar {
   }
 
   build() {
-    Navigation(this.pageInfos) {
+    // Navigation(this.pageInfos) {
       Column() {
         Scroll() {
           Column() {
@@ -81,23 +88,23 @@ struct NavigationEnableDragBar {
           }
         }
       }
-    }
-    .enableDragBar(this.enableDrag)
-    .id('navigatinId')
-    .navBarPosition(NavBarPosition.Start)
-    .navBarWidthRange([100, 500])
-    .titleMode(NavigationTitleMode.Mini)
-    .navBarWidth(250)
-    .minContentWidth(100)
-    .title(this.NavigationTitle)
-    .menus(this.NavigationMenus)
-    .hideTitleBar(false)
-    .hideToolBar(false)
-    .onTitleModeChange((titleModel: NavigationTitleMode) => {
-      console.info('titleMode' + titleModel)
-    })
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#F1F3F5')
+    // }
+    // .enableDragBar(this.enableDrag)
+    // .id('navigatinId')
+    // .navBarPosition(NavBarPosition.Start)
+    // .navBarWidthRange([100, 500])
+    // .titleMode(NavigationTitleMode.Mini)
+    // .navBarWidth(250)
+    // .minContentWidth(100)
+    // .title(this.NavigationTitle)
+    // .menus(this.NavigationMenus)
+    // .hideTitleBar(false)
+    // .hideToolBar(false)
+    // .onTitleModeChange((titleModel: NavigationTitleMode) => {
+    //   console.info('titleMode' + titleModel)
+    // })
+    // .width('100%')
+    // .height('100%')
+    // .backgroundColor('#F1F3F5')
   }
 }

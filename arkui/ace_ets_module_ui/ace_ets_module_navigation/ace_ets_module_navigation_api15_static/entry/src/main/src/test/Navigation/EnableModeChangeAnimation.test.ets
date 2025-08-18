@@ -13,30 +13,35 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import {
+  describe,
+  beforeAll,
+  expect,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  Level
+} from '../../../../hypium/index';
 import router from '@ohos.router';
-import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import {UtilsTest, startAbility, stopApplication} from "../Util.test"
-let domain: Int = 0x0000;
-let tag = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { Driver, ON,Component } from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import events_emitter from '@ohos.events.emitter'
+import { BusinessError } from '@ohos.base';
 export default function EnableModeChangeAnimation() {
   describe('EnableModeChangeAnimation', () => {
     beforeAll(() => {
-      console.info("EnableModeChangeAnimation beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info('EnableModeChangeAnimation beforeEach start');
@@ -50,13 +55,13 @@ export default function EnableModeChangeAnimation() {
         console.info('get EnableModeChangeAnimation state pages:' + JSON.stringify(pages));
         if (!('EnableModeChangeAnimation' == pages.name)) {
           console.info('get EnableModeChangeAnimation pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error('push EnableModeChangeAnimation page error:' + err);
       }
+      console.info('EnableModeChangeAnimation beforeEach end');
     });
 
     afterEach(async (): Promise<void> => {
@@ -65,83 +70,81 @@ export default function EnableModeChangeAnimation() {
     });
 
 
-    
-    /*
-     * @tc.number   EnableModeChangeAnimation_static_0100
-     * @tc.name     EnableModeChangeAnimation_static_0100
-     * @tc.desc     EnableModeChangeAnimation_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    EnableModeChangeAnimation_static_0100
+     * @tc.name      EnableModeChangeAnimation_static_0100
+     * @tc.desc      Test EnableModeChangeAnimation true
+     * @tc.level     Level 2
      */
-it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('EnableModeChangeAnimation_0100 START');
+    it('EnableModeChangeAnimation_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('EnableModeChangeAnimation_static_0100 START');
       await CommonFunc.sleep(200);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let enableTrueId = await driver.findComponent(ON.id('enableTrueId'));
-      await (enableTrueId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0100] enableTrueId click');
+      let enableTrueId = await (driver.findComponent(ON.id('enableTrueId')) as Promise<Component>);
+      await enableTrueId.click()
+      console.info('[EnableModeChangeAnimation_static_0100] enableTrueId click');
       await CommonFunc.sleep(200);
 	  
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let splitId = await (scrollBar?.scrollSearch(ON.id('splitId')) as Promise<Component>);
-      await (splitId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0100] splitId click');
+      let scrollBar = await (driver.findComponent(ON.type('Scroll')) as Promise<Component>);
+      let splitId = await (scrollBar.scrollSearch(ON.id('splitId')) as Promise<Component>);
+      await splitId.click()
+      console.info('[EnableModeChangeAnimation_static_0100] splitId click');
       await CommonFunc.sleep(200);
 
-      let stackId = await (scrollBar?.scrollSearch(ON.id('stackId')) as Promise<Component>);
-      await (stackId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0100] stackId click');
+      let stackId = await (scrollBar.scrollSearch(ON.id('stackId')) as Promise<Component>);
+      await stackId.click()
+      console.info('[EnableModeChangeAnimation_static_0100] stackId click');
       await CommonFunc.sleep(200);
 
       let strJson = inspector.getInspectorByKey('navigationId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[EnableModeChangeAnimation_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[EnableModeChangeAnimation_0100] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('enableModeChangeAnimation')));
-      expect(obj.getElement('$attrs').getString('enableModeChangeAnimation')).assertTrue();
+      console.info('[EnableModeChangeAnimation_static_0100] component obj is: ' + JSON.stringify(obj));
+      console.info('[EnableModeChangeAnimation_static_0100] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')));
+      expect(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')).assertTrue();
 
-      console.info('EnableModeChangeAnimation_0100 END');
+      console.info('EnableModeChangeAnimation_static_0100 END');
       done();
     });
 
-        
-    /*
-     * @tc.number   EnableModeChangeAnimation_static_0200
-     * @tc.name     EnableModeChangeAnimation_static_0200
-     * @tc.desc     EnableModeChangeAnimation_static_0200
-     * @tc.level    Level.LEVEL0
+        /**
+     * @tc.number    EnableModeChangeAnimation_static_0100
+     * @tc.name      EnableModeChangeAnimation_static_0100
+     * @tc.desc      Test EnableModeChangeAnimation false
+     * @tc.level     Level 2
      */
-it('EnableModeChangeAnimation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('EnableModeChangeAnimation_0200 START');
+    it('EnableModeChangeAnimation_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('EnableModeChangeAnimation_static_0200 START');
       await CommonFunc.sleep(200);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 	  
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let enableFalseId = await (scrollBar?.scrollSearch(ON.id('enableFalseId')) as Promise<Component>);
-      await (enableFalseId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0200] enableFalseId click');
+      let scrollBar = await (driver.findComponent(ON.type('Scroll')) as Promise<Component>);
+      let enableFalseId = await (scrollBar.scrollSearch(ON.id('enableFalseId')) as Promise<Component>);
+      await enableFalseId.click()
+      console.info('[EnableModeChangeAnimation_static_0200] enableFalseId click');
       await CommonFunc.sleep(200);
 
-      let splitId = await (scrollBar?.scrollSearch(ON.id('splitId')) as Promise<Component>);
-      await (splitId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0200] splitId click');
+      let splitId = await (scrollBar.scrollSearch(ON.id('splitId')) as Promise<Component>);
+      await splitId.click()
+      console.info('[EnableModeChangeAnimation_static_0200] splitId click');
       await CommonFunc.sleep(200);
 
-      let stackId = await (scrollBar?.scrollSearch(ON.id('stackId')) as Promise<Component>);
-      await (stackId?.click() as Promise<void>)
-      console.info('[EnableModeChangeAnimation_0200] stackId click');
+      let stackId = await (scrollBar.scrollSearch(ON.id('stackId')) as Promise<Component>);
+      await stackId.click()
+      console.info('[EnableModeChangeAnimation_static_0200] stackId click');
       await CommonFunc.sleep(200);
 
       let strJson = inspector.getInspectorByKey('navigationId');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[EnableModeChangeAnimation_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[EnableModeChangeAnimation_0200] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('enableModeChangeAnimation')));
-      expect(obj.getElement('$attrs').getString('enableModeChangeAnimation')).assertFalse();
+      console.info('[EnableModeChangeAnimation_static_0200] component obj is: ' + JSON.stringify(obj));
+      console.info('[EnableModeChangeAnimation_static_0200] enableModeChangeAnimation obj is: ' + JSON.stringify(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')));
+      expect(obj.getElement('$attrs').getBoolean('enableModeChangeAnimation')).assertFalse();
 
-      console.info('EnableModeChangeAnimation_0200 END');
+      console.info('EnableModeChangeAnimation_static_0200 END');
       done();
     });
 

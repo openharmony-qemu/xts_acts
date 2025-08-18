@@ -17,7 +17,7 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,CustomDialog,PickerTextStyle,SheetMode,CustomDialogControllerOptions,CustomDialogController,NavDestinationActiveReason, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack, CustomBuilder} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -35,7 +35,7 @@ export interface ClickItem {
 
 @CustomDialog
 struct DialogComponent {
-  controller: CustomDialogController| null = null
+  controller: CustomDialogController = new CustomDialogController({builder: ((): void => {}) as CustomBuilder} as CustomDialogControllerOptions)
   cancel: () => void = () => {}
   pathStack: NavPathStack = new NavPathStack()
 
@@ -56,7 +56,7 @@ struct DialogComponent {
   build() {
     Column() {
       Button('关闭弹窗CustomDialog').width(300).height(30).onClick((e: ClickEvent) => {
-        this.controller?.close();
+        this.controller.close();
       })
       .id('closeDialogId')
       Navigation(this.pathStack){}.navDestination(this.pageBuilder).title('CustomDialog')
@@ -79,7 +79,7 @@ struct CustomDialogTest {
    {
     name: 'push pageOne',
     callback: () => {
-      
+      // this.pathStack.pushPath({name: 'pageOne'})
       this.pathStack.pushPath(new NavPathInfo('pageOne',null))
     },
      id: 'dialogPushId'
