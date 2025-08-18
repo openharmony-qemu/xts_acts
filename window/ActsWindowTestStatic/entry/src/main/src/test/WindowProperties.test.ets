@@ -772,12 +772,12 @@ export default function WindowPropertiesTest() {
          * @tc.type       : Function
          * @tc.level      : Level 3
          */
-        it('testOnSystemDensityChangeErrCode1300002_0100_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = "testOnSystemDensityChangeErrCode1300002_0100_static_0100";
+        it('testOnSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSystemDensityChangeErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window
-            await windowStage.createSubWindow('testOnSystemDensityChangeErrCode1300002_SubWindow_Promise')
+            await windowStage.createSubWindow('testOnSystemDensityChangeErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
