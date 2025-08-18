@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,30 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Padding,Optional,Scroller,FontStyle,BarState,animateTo,ScrollDirection,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,EdgeEffect, RouterPageInfo,TextInputController,CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,Provide,Consume
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
+  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode, TextInputController, Stack, StackOptions,
+  Alignment, NavPathStack, Navigation, RouterPageInfo,
+} from '@ohos.arkui.component'
 import router from '@ohos.router';
-import { Router,UIContext } from '@ohos.arkui.UIContext';
-class InnerParams {
-  private data3: number[] | undefined
 
-  constructor(tuple?:number[]) {
+class InnerParams {
+  private data3: number[]
+
+  constructor(tuple:number[]) {
     this.data3 = tuple
   }
 }
 class RouterParams {
-  private data1: string = ''
-  private data2: InnerParams = new InnerParams()
+  private data1: string
+  private data2: InnerParams
 
   constructor(str:string, tuple:number[]) {
     this.data1 = str
@@ -46,9 +39,8 @@ class RouterParams {
 @Component
 struct RouterRecoverable {
   @State message: string = 'routerPage1';
-
   @State text1:   string = '这里显示栈信息'
-  // @State text2:   number|string = 0
+  @State text2:   int | Double|string = 0
   controller: TextInputController = new TextInputController()
   routerPageUpdateCallback(info: RouterPageInfo) {
     if(info){
@@ -63,9 +55,8 @@ struct RouterRecoverable {
         .width('80%')
         .height(40)
         .margin({ bottom: 10 } as Margin)
-        .onClick((e: ClickEvent)=>{
-          const routerInstance = AppStorage.get<Router>("router") as Router
-          routerInstance.pushUrl({
+        .onClick((e: ClickEvent) => {
+          this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Navigation/RouterPage2',
             params: new RouterParams('message' ,[123,456,789]),
             recoverable:true
@@ -76,9 +67,8 @@ struct RouterRecoverable {
         .width('80%')
         .height(40)
         .margin({ bottom: 10 } as Margin)
-        .onClick((e: ClickEvent)=>{
-          const routerInstance = AppStorage.get<Router>("router") as Router
-          routerInstance.pushUrl({
+        .onClick((e: ClickEvent) => {
+          this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Navigation/RouterPage2',
             params: new RouterParams('message' ,[123,456,789]),
             recoverable:false

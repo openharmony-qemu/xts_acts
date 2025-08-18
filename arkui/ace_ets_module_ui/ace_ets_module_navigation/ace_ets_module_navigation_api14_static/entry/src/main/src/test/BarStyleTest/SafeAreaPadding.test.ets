@@ -13,40 +13,31 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router,UIContext } from '@ohos.arkui.UIContext';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
-import common from '@ohos.app.ability.common';
-let domain: int = 0x0000;
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+import { vp2px } from '@ohos.arkui.component'
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
 export default function SafeAreaPadding() {
   describe('SafeAreaPadding', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("SafeAreaPadding beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("SafeAreaPadding beforeEach start");
@@ -60,6 +51,7 @@ export default function SafeAreaPadding() {
         console.info("get SafeAreaPadding state pages:" + JSON.stringify(pages));
         if (!("SafeAreaPadding" == pages.name)) {
           console.info("get SafeAreaPadding pages.name:" + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -75,21 +67,22 @@ export default function SafeAreaPadding() {
     });
 
 
-    /**
-     * @tc.number    SafeAreaPadding_static_0100
-     * @tc.name      SafeAreaPadding_static_0100
-     * @tc.desc      Test SafeAreaPadding
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SafeAreaPadding_static_0100
+     * @tc.name     SafeAreaPadding_static_0100
+     * @tc.desc     SafeAreaPadding_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SafeAreaPadding_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SafeAreaPadding_static_0100 START');
+it('SafeAreaPadding_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SafeAreaPadding_0100 START');
       await CommonFunc.sleep(1000);
       let navRect = CommonFunc.getComponentRect('BarStyle_SafeAreaPadding');
       console.info('navRect.top is' + navRect.top)
       let navContentRect = CommonFunc.getComponentRect('NavigationBarStyle_content2');
       console.info('navContentRect.top is' + navContentRect.top)
-      expect(Math.abs(Math.round(navRect.top - navContentRect.top))- uiContext.vp2px(112) <= 1).assertTrue();
-      console.info('SafeAreaPadding_static_0100 END');
+      expect(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- vp2px(112) <= 1).assertTrue();
+      console.info('SafeAreaPadding_0100 END');
       done();
     });
   })

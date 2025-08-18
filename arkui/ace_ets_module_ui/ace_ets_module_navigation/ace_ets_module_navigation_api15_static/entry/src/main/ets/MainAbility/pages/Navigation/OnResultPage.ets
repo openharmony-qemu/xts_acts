@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,22 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,Curve,PopInfo,NavigationSystemTransitionType,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,Provide,Consume
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, NavPathStack, Navigation, Column, Button, ColumnOptions, ClickEvent, BarStyle, Stack,
+  StackOptions, BlurStyle, Text, Color, Builder, Scroller, NavigationTitleMode, Scroll, ForEach, List, ListItem, Margin,
+  ScrollDirection, BarState, EdgeEffect, NavDestination, Row, $r, NavigationMode, NavigationOperation, NavDestinationTransition,
+  Curve, NavDestinationMode, NavPathInfo
+} from '@ohos.arkui.component'
+import { State, Provide, Consume, AppStorage} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct OnResultPage {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide({alias: 'pageInfos' }) pageInfos: NavPathStack = new NavPathStack()
 
   @Builder
   pageMap(name: string) {
@@ -41,18 +35,18 @@ struct OnResultPage {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Button('push pageOne').id('pushId').onClick((e: ClickEvent) => {
-          // this.pageInfos.pushPath({name: 'pageOne'} )
+          
         }).height('10%')
       }
       .width('100%')
       .height('100%')
-    // }
-    // .title('Title')
-    // .titleMode(NavigationTitleMode.Mini)
-    // .navDestination(this.pageMap)
+    }
+    .title('Title')
+    .titleMode(NavigationTitleMode.Mini)
+    .navDestination(this.pageMap)
   }
 }
 
@@ -64,12 +58,8 @@ struct PageOne1 {
     NavDestination() {
       Text(this.info).id('infoId').height('5%')
       Button('push pageTwo').id('pushTwoId').onClick((e: ClickEvent) => {
-        // this.pageInfos.pushPath({name: 'pageTwo'} )
-        this.pageInfos.pushPath(new NavPathInfo('pageTwo',null) )
       }).height('10%')
       Button('push pageDialog').id('pushDialogId').onClick((e: ClickEvent) => {
-        // this.pageInfos.pushPath({name: 'pageDialog'} )
-        this.pageInfos.pushPath(new NavPathInfo('pageDialog',null) )
       }).height('10%')
     }
     .title('pageOne')
@@ -97,7 +87,7 @@ struct PageTwo1 {
         this.pageInfos.popToName('pageOne', undefined)
       }).height('10%')
       Button('popToIndexNull').id('popNullId').onClick((e: ClickEvent) => {
-        // this.pageInfos.popToIndex(0, null)
+        
       }).height('10%')
     }
     .title('pageTwo')
