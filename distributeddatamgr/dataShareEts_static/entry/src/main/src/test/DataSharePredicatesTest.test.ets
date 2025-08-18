@@ -14,10 +14,8 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import common from "@ohos.app.ability.common";
 import data_dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement'
 import { ValueType, ValuesBucket} from '@ohos.data.ValuesBucket'
 
 let domain: int = 0x0000;
@@ -41,7 +39,6 @@ export default function dataSharePredicatesTest() {
   describe('dataSharePredicatesTest', (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll')
-      context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext
     })
 
     /**
