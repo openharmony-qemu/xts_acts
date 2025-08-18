@@ -26,6 +26,7 @@ group("telephone") {
     "simtest:ActsTelephonySimHasCardTest",
     "smstest:ActsTelephonySmsWithCardTest",
     "telephonyNDKTest:ActsTelephonyNdkTest",
-"ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest"
+"ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
+"ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
   ]
 }

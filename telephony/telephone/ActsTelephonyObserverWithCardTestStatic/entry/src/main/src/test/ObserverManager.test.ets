@@ -2,6 +2,13 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import observer from '@ohos.telephony.observer';
+import data from '@ohos.telephony.data';
+import radio from '@ohos.telephony.radio';
+
+class Value {
+  state: observer.DataConnectState = data.DataConnectState.DATA_STATE_UNKNOWN
+  network: observer.RatType = radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN
+};
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -41,16 +48,17 @@ export default function ObserverManagerTest() {
         observer.on('networkStateChange', {
           slotId: 3
         }, (data: observer.NetworkState) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
     /* *
@@ -66,18 +74,20 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         observer.on('networkStateChange', (data: observer.NetworkState) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         });
         observer.off("networkStateChange");
         ExpectTrue(true);
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
     /* *
@@ -93,18 +103,21 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.NetworkState) => void = (data: observer.NetworkState) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         }
         observer.on('networkStateChange', callback);
         observer.off("networkStateChange", callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
 
@@ -122,19 +135,22 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.NetworkState) => void = (data: observer.NetworkState) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         }
         observer.on('networkStateChange', callback);
         observer.off("networkStateChange", callback);
         observer.off("networkStateChange", callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
 
@@ -153,16 +169,17 @@ export default function ObserverManagerTest() {
         observer.on('cellularDataConnectionStateChange', {
           slotId: 3
         }, (data: observer.DataConnectionStateInfo) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
   
@@ -180,18 +197,21 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectionStateInfo) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         });
         observer.off("cellularDataConnectionStateChange");
         ExpectTrue(true);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
     /* *
@@ -207,18 +227,19 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
-          console.info(`testCellularDataConnectionStateChangeOff0200 data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
         };
         observer.on('cellularDataConnectionStateChange', callback);
         observer.off("cellularDataConnectionStateChange", callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
        /* *
@@ -234,19 +255,21 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data != null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         };
         observer.on('cellularDataConnectionStateChange', callback);
         observer.off("cellularDataConnectionStateChange", callback);
         observer.off("cellularDataConnectionStateChange", callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
 
@@ -265,16 +288,19 @@ export default function ObserverManagerTest() {
         observer.on('cellularDataFlowChange', {
           slotId: 0
         }, (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data == 0 || data == 4);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         });
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
 
@@ -293,16 +319,18 @@ export default function ObserverManagerTest() {
         observer.on('cellularDataFlowChange', {
           slotId: 3
         }, (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         });
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
 
@@ -319,17 +347,20 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         observer.on('cellularDataFlowChange', (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         });
         observer.off('cellularDataFlowChange');
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
     /* *
@@ -345,18 +376,21 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.DataFlowType) => void = (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         }
         observer.on('cellularDataFlowChange', callback);
         observer.off('cellularDataFlowChange', callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
  
@@ -373,19 +407,22 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let callback: (data: observer.DataFlowType) => void = (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
         }
         observer.on('cellularDataFlowChange', callback);
         observer.off('cellularDataFlowChange', callback);
         observer.off('cellularDataFlowChange', callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (error: BusinessError) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
-      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
     });
 
   })
