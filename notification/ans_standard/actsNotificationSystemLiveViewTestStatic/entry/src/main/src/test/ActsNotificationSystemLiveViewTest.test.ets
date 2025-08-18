@@ -34,7 +34,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     // * @tc.type: Function
     // * @tc.level Level 3
     // */
-    //问题单号：DTS2025060627133
+    
     // it(' Sub_Notification_Ans_Live_Publish_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForNull'
     //   const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -122,7 +122,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      * @tc.type: Function
      * @tc.level Level 2
      */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -207,7 +207,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     // * @tc.type: Function
     // * @tc.level Level 2
     // */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -266,7 +266,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      * @tc.type: Function
      * @tc.level Level 3
      */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -326,7 +326,7 @@ export default function ActsNotificationSystemLiveViewTest() {
      * @tc.type: Function
      * @tc.level Level 3
      */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -386,7 +386,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       * @tc.type: Function
       * @tc.level Level 3
       */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -446,7 +446,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationButtonNamesForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -507,7 +507,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -569,7 +569,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -630,7 +630,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -691,7 +691,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     // * @tc.type: Function
     // * @tc.level Level 3
     // */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -755,7 +755,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -819,7 +819,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -883,7 +883,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -947,7 +947,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -1012,7 +1012,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1077,7 +1077,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('Sub_Notification_Ans_Live_Publish_Static_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
     //   const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -1142,7 +1142,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1207,7 +1207,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     // it('testLiveNotificationProgressMaxvalueForNull', Level.LEVEL2, async (done : Function) => {
     //   const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForNull'
     //   let notificationRequest : notificationManager.NotificationRequest = {
@@ -1266,7 +1266,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1335,7 +1335,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     //* @tc.type: Function
     //* @tc.level Level 3
     //*/
-    //问题单号：DTS2025060627133
+    
     //  it('Sub_Notification_Ans_Live_Publish_Static_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
     //    const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForNull'
     //    let notificationRequest : notificationManager.NotificationRequest = {
@@ -1395,7 +1395,7 @@ export default function ActsNotificationSystemLiveViewTest() {
    * @tc.type: Function
    * @tc.level Level 3
    */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1465,7 +1465,7 @@ export default function ActsNotificationSystemLiveViewTest() {
   * @tc.type: Function
   * @tc.level Level 3
   */
-    //问题单号：DTS2025060627133
+    
     //   it('testLiveNotificationProgressisPercentageForNull', Level.LEVEL2, async (done : Function) => {
     //     const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForNull'
     //     let notificationRequest : notificationManager.NotificationRequest = {
@@ -1526,7 +1526,7 @@ export default function ActsNotificationSystemLiveViewTest() {
     * @tc.type: Function
     * @tc.level Level 3
     */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1722,7 +1722,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       * @tc.type: Function
       * @tc.level Level 3
       */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1861,7 +1861,7 @@ export default function ActsNotificationSystemLiveViewTest() {
  * @tc.type: Function
  * @tc.level Level 3
  */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4

@@ -180,7 +180,6 @@ export default function ActsNotificationEmitterTest() {
       }
     })
 
-    //DTS2025060627133
     /*
      * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
      * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
@@ -1502,7 +1501,7 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    //DTS2025060627133
+
     /*
      * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
      * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
@@ -1713,7 +1712,7 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    //DTS2025060627133
+
     /*
      * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
      * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
@@ -2857,7 +2856,7 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    //DTS2025060627133
+
     /*
      * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
      * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
