@@ -37,5 +37,8 @@ export class OpenHarmonyTestRunner implements TestRunner {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }
