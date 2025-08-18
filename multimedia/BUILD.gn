@@ -20,6 +20,7 @@ group("multimedia") {
   if (player_framework_support_screen_capture) {
     deps += [
       "media/media_js_standard/avScreenCaptureRecorder:av_screen_capture_recorder_js_hap",
+      "media/media_js_standard/avScreenCaptureRecorderStatic:av_screen_capture_recorder_js_static_hap",
       "media/media_js_standard/screenCapture_ndk_test:ActsNativeAVScreenCaptureTest",
     ]
   }

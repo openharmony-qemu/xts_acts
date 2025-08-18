@@ -19,6 +19,10 @@ import AVMetadata from './AVPlayerAVMetadata.test'
 import AVPlayerMediaSource from './AVPlayerMediaSource.test'
 import AVPlayerPostProcessorTest from './AVPlayerPostProcessorTest.test'
 import AVPlayerAudioEffectModeTest from './AVPlayerAudioEffectModeTest.test'
+import AVPlayerSelectTrackTest from './AVPlayerSelectTrackTest.test'
+import PreDownLoadTest from './PreDownLoadTest.test'
+import AVTransCoderTest from './Transcoder.test'
+import AVPlayerFlvFuncTest from './AVPlayerFlvFuncTest.test'
 
 export default function testsuite() {
   AvPlayerEnumTest();
@@ -27,4 +31,8 @@ export default function testsuite() {
   AVPlayerMediaSource();
   AVPlayerPostProcessorTest();
   AVPlayerAudioEffectModeTest();
+  AVPlayerSelectTrackTest();
+  PreDownLoadTest();
+  AVTransCoderTest();
+  AVPlayerFlvFuncTest();
 }

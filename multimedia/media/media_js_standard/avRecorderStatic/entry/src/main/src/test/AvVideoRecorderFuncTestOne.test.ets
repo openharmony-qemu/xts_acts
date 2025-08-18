@@ -207,7 +207,9 @@ export function avVideoRecorderTestOne() {
 
     const CREATE_CALLBACK_EVENT = 'createCallback';
     const SETONCALLBACK_EVENT = 'setAvRecorderCallback';
+    const SETOFFCALLBACK_EVENT = 'setOffAvRecorderCallback';
     const SETPHOTOASSETCALLBACK_EVENT = 'setPhotoAssetCallback';
+    const SETOFFPHOTOASSETCALLBACK_EVENT = 'setOffPhotoAssetCallback';
     const PREPARE_CALLBACK_EVENT = 'prepareCallback';
     const GETINPUTSURFACE_CALLBACK_EVENT = 'getInputSurfaceCallback';
     const INITCAMERA_EVENT = 'initCamera';
@@ -299,7 +301,6 @@ export function avVideoRecorderTestOne() {
       if (cameraOutputCapability?.videoProfiles) {
         console.info('initCamera 007');
         try {
-          let defaultDisplay: display.Display = display.getDefaultDisplaySync();
           let availableVideoProfileList: camera.VideoProfile[] = [];
           getVideoProfile(cameraOutputCapability.videoProfiles, 720, 1280,
             availableVideoProfileList, 0);
@@ -528,6 +529,10 @@ export function avVideoRecorderTestOne() {
       avRecorder.on('stateChange', (state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
+      // 录制监听回调函数
+      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+        console.info(TAG + 'audioCapturerChange');
+      });
       // 错误上报回调函数
       avRecorder.on('error', (err: BusinessError|null) => {
         try {
@@ -553,6 +558,11 @@ export function avVideoRecorderTestOne() {
       })
     }
 
+    let setOffPhotoAssetAvailableCallback = (avRecorder: media.AVRecorder, done: () => void) => {
+      console.info('set off photoAssetAvailable ');
+      avRecorder.off('photoAssetAvailable');
+      console.info('AVRecorder off photoAssetAvailable success');
+    }
     eventEmitter.on(CREATE_CALLBACK_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_CALLBACK_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<string, Object>;
@@ -632,6 +642,49 @@ export function avVideoRecorderTestOne() {
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
         console.info('setAvRecorderCallback failed and catch error is ' + error);
+      }
+    } as Callback<eventEmitter.EventData>);
+    let setOffAvRecorderCallback =async  (avRecorder: media.AVRecorder, done: Function) => {
+      await commonFun.sleep(1000)
+      // 关闭状态机变化回调函数
+      avRecorder.off('stateChange');
+      console.info('AVRecorder off stateChange success');
+      // 关闭错误上报回调函数
+      avRecorder.off('error');
+      console.info('AVRecorder off error success');
+    }
+    eventEmitter.on(SETOFFCALLBACK_EVENT, (eventData: eventEmitter.EventData) => {
+      console.log('SETOFFCALLBACK_EVENT eventData = ', JSON.stringify(eventData))
+      let data = eventData.data as Record<string, Object>;
+      let mySteps: string[] = data?.get('mySteps') as string[];
+      mySteps.shift();
+      let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
+      let done: () => void = data?.get("done") as (() => void)
+      let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
+      let recorderTime: number = data?.get("recorderTime") as number
+      await commonFun.sleep(1000)
+      try {
+        setOffAvRecorderCallback(avRecorder, done)
+        toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
+      } catch (error: Error) {
+        console.info('SETOFFCALLBACK_EVENT setOffAvRecorderCallback failed and catch error is ' + error.message);
+      }
+    } as Callback<eventEmitter.EventData>);
+    eventEmitter.on(SETOFFPHOTOASSETCALLBACK_EVENT, (eventData: eventEmitter.EventData) => {
+      console.log('SETOFFPHOTOASSETCALLBACK_EVENT eventData = ', JSON.stringify(eventData))
+      let data = eventData.data as Record<string, Object>;
+      let mySteps: string[] = data?.get('mySteps') as string[];
+      mySteps.shift();
+      let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
+      let done: () => void = data?.get("done") as (() => void)
+      let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
+      let recorderTime: number = data?.get("recorderTime") as number
+      await commonFun.sleep(1000)
+      try {
+        setOffPhotoAssetAvailableCallback(avRecorder, done)
+        toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
+      } catch (error:  Error) {
+        console.info('setOffAvRecorderCallback failed and catch error is ' + error.message);
       }
     } as Callback<eventEmitter.EventData>);
 
@@ -1082,6 +1135,7 @@ export function avVideoRecorderTestOne() {
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
       await commonFun.sleep(1000)
+      avRecorder.off('audioCapturerChange')
       avRecorder.release((err: BusinessError|null) => {
         console.info('case release called');
         if (err == null) {
@@ -10764,6 +10818,49 @@ export function avVideoRecorderTestOne() {
 
       eventEmitterFun(avRecorder, avConfigOnlyAac, recorderTime, mySteps, done);
       console.info(TAG + 'SUM_MULTIMEDIA_AVRECORDER_GET_CURRENT_CAPTURER_INFO_PROMISE_0100 end');
+      done();
+    })
+    /* *
+       * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
+       * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100
+       * @tc.desc      : AVRecorder	off_stateChange、off_error、off_audioCapturerChange、off_photoAssetAvailable
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_static_0100', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportCameraVideoProfiles) {
+        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
+        expect(true).assertTrue();
+        done();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_OFF_0100 start')
+      if (screen) {
+        AutoCreateConfig.fileGenerationMode = media.FileGenerationMode.AUTO_CREATE_CAMERA_SCENE;
+      }
+      checkDevice(AutoCreateConfig)
+      let mySteps = new Array<string>(
+        // init avRecorder
+        CREATE_CALLBACK_EVENT, SETONCALLBACK_EVENT, SETPHOTOASSETCALLBACK_EVENT, PREPARE_CALLBACK_EVENT,
+        // init camera
+        GETINPUTSURFACE_CALLBACK_EVENT, INITCAMERA_EVENT,
+        // start recorder
+        STARTCAMERA_EVENT, STARTRECORDER_CALLBACK_EVENT,
+        // pause recorder
+        PAUSERECORDER_CALLBACK_EVENT, STOPCAMERA_EVENT,
+        // off event
+        SETOFFCALLBACK_EVENT, SETOFFPHOTOASSETCALLBACK_EVENT,
+        // resume recorder
+        STARTCAMERA_EVENT, RESUMERECORDER_CALLBACK_EVENT,
+        // stop recorder
+        STOPRECORDER_CALLBACK_EVENT, STOPCAMERA_EVENT,
+        // release avRecorder and camera
+        RELEASECORDER_CALLBACK_EVENT, RELEASECAMERA_EVENT,
+        // end
+        END_EVENT
+      );
+      eventEmitterFun(avRecorder, AutoCreateConfig, recorderTime, mySteps, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_AUTO_CREATE_FILE_0100 end');
       done();
     })
   })

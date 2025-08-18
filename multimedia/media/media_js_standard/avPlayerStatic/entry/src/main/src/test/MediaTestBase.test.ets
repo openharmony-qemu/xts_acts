@@ -146,7 +146,7 @@ export default class MediaTestBase {
                    descriptionValue: Array<number>) {
     for (let i = 0; i < descriptionKey.length; i++) {
       let property: Object | undefined = actualDescription[descriptionKey[i]];
-      let tmpDescriptionValue: number = descriptionValue[i]
+      let tmpDescriptionValue: int = descriptionValue[i].toInt()
       console.info('case key is  ' + descriptionKey[i]);
       console.info('case actual value is  ' + property);
       console.info('case hope value is  ' + tmpDescriptionValue);

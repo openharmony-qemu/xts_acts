@@ -1710,6 +1710,24 @@ export default class Commmon {
     expect(result).assertEqual(false);
     await this.releaseDone(avRecorder, done)
   }
+  async avRecorderReliabilitTestCallback39(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
+    done: () => void) {
+    let avRecorderConfig: media.AVRecorderConfig;
+    let result = true;
+    avRecorder = await this.idle(avRecorder);
+    avRecorder.getAVRecorderConfig((err: BusinessError<void> | null, config: media.AVRecorderConfig | undefined) => {
+      console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback called');
+      if (err != null) {
+        console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback err is ' + err.message);
+        result = false;
+      } else {
+        console.info('avRecorderReliabilitTest39 getAVRecorderConfig callback config is ' + JSON.stringify(config));
+        avRecorderConfig = config!!;
+      }
+      expect(result).assertEqual(false);
+      await this.releaseDone(avRecorder, done)
+    });
+  }
 
   async getAVRecorderConfigTest40(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
