@@ -1,3 +1,8 @@
+// SPDX-License-Identifier: MIT
+/*
+ * Copyright (c) 2023 Your Company Name
+ * All rights reserved.
+ */
 {
   "apiType": "stageMode",
   "buildOption": {

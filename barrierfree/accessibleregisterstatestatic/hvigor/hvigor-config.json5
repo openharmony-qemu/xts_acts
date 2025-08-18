@@ -1,4 +1,5 @@
-// 版权所有 (C) 2023 公司名称. 保留所有权利。
+// Copyright 2023 YourCompany. All rights reserved.
+// SPDX-License-Identifier: MIT
 {
   "modelVersion": "6.0.0",
   "dependencies": {
