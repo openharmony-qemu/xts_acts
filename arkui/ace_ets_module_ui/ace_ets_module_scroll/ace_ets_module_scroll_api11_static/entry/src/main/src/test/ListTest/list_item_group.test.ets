@@ -1,0 +1,155 @@
+/**
+ * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http:
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import router from '@ohos.router';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test'
+import events_emitter from '@ohos.events.emitter';
+
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
+export default function list_item_groupJsunit() {
+  describe('list_item_groupJsunit', () => {
+    beforeAll(() => {
+
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
+
+    beforeEach(async (): Promise<void> => {
+      console.info("flex beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/List/list_item_group',
+      }
+      try {
+        const router = AppStorage.get<Router>("router") as Router
+        router.clear();
+        let pages = router.getState();
+        console.info("get list_item_group state success " + JSON.stringify(pages));
+        if (!("list_item" == pages.name)) {
+          console.info("get list_item_group state success " + JSON.stringify(pages.name));
+          router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+          
+        }
+      } catch (err) {
+        console.error("push list_item_group page error: " + err);
+      }
+    });
+
+    afterEach(async (): Promise<void> => {
+      await CommonFunc.sleep(1000);
+      console.info("list_item_group after each called");
+    });
+
+
+    /*
+     * @tc.number    testlist_item_group_static_0001
+     * @tc.name      testlist_item_group_static_0001
+     * @tc.desc      testlist_item_group_static_0001
+     * @tc.level     2
+     */
+    it('testlist_item_group_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('testcase testlist_item_group_static_0001 START');
+      await CommonFunc.sleep(2000);
+      let strJson: string = inspector.getInspectorByKey('Mon');
+      console.info("[testlist_item_group_static_0001] component state strJson:" + strJson);
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      console.info("[testlist_item_group_static_0001] editable value :" +
+      JSON.parseJsonElement(strJson).getElement('$type'));
+      done();
+    });
+
+
+    /*
+     * @tc.number    testlist_item_group_static_0002
+     * @tc.name      testlist_item_group_static_0002
+     * @tc.desc      testlist_item_group_static_0002
+     * @tc.level     2
+     */
+    it('testlist_item_group_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('testcase testlist_item_group_static_0002 START');
+      await CommonFunc.sleep(2000);
+      let strJson: string = inspector.getInspectorByKey('Tues');
+      console.info("[testlist_item_group_static_0002] component border strJson:" + strJson);
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      console.info("[testlist_item_group_static_0002] selectable value :" +
+      JSON.parseJsonElement(strJson).getElement('$type'));
+      done();
+    });
+
+
+    /*
+     * @tc.number    testlist_item_group_static_0003
+     * @tc.name      testlist_item_group_static_0003
+     * @tc.desc      testlist_item_group_static_0003
+     * @tc.level     2
+     */
+    it('testlist_item_group_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('testcase testlist_item_group_static_0003 START');
+      await CommonFunc.sleep(2000);
+      let strJson: string = inspector.getInspectorByKey('Wens');
+      console.info("[testlist_item_group_static_0003] component border strJson:" + strJson);
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('header') !== undefined).assertTrue();
+      console.info("[testlist_itemOnSelect0003] hear value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('header'));
+      done();
+    });
+
+
+    /*
+     * @tc.number    testlist_item_group_static_0004
+     * @tc.name      testlist_item_group_static_0004
+     * @tc.desc      testlist_item_group_static_0004
+     * @tc.level     2
+     */
+    it('testlist_item_group_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('testcase testlist_item_group_static_0004 START');
+      await CommonFunc.sleep(2000);
+      let strJson: string = inspector.getInspectorByKey('Thurs');
+      console.info("[testlist_item_group_static_0004] component border strJson:" + strJson);
+      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rooter') !== undefined).assertTrue();
+      console.info("[testlist_item_group_static_0004] hear value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rooter'));
+      done();
+    });
+  })
+}
