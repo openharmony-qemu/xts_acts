@@ -153,7 +153,7 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1300 END`);
       })
 
-    //问题单号：DTS2025060627133
+    
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
@@ -398,7 +398,7 @@ export default function ActsCommonEventSystemAPITest() {
         });
       })
 
-    //问题单号：DTS2025060627133
+    
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
@@ -458,7 +458,7 @@ export default function ActsCommonEventSystemAPITest() {
     //
     // })
 
-    //问题单号：DTS2025060627133
+    
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
@@ -540,7 +540,7 @@ export default function ActsCommonEventSystemAPITest() {
     //
     // })
 
-    //问题单号：DTS2025060627133
+    
     /*
      * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
      * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284

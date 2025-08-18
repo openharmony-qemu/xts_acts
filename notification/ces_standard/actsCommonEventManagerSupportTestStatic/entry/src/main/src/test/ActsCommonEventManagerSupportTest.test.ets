@@ -23,7 +23,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let bundle_name: string = "com.example.actscommoneventmanagersupport"
+let bundle_name: string = "com.example.actscommoneventmanagersupport.static"
 let testAbilityContext: common.UIAbilityContext;
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST ===>'
