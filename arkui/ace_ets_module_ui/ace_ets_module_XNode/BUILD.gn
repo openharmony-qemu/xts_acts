@@ -21,6 +21,11 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api15:ActsAceEtsModuleXNodeApi15Test",
       "ace_ets_module_XNode_api16:ActsAceEtsModuleXNodeApi16Test",
       "ace_ets_module_XNode_api20:ActsAceEtsModuleXNodeApi20Test",
+      "ace_ets_module_XNode_api12_static:ActsAceEtsModuleXNodeApi12StaticTest",
+      "ace_ets_module_XNode_api15_static:ActsAceEtsModuleXNodeApi15StaticTest",
+      "ace_ets_module_XNode_api16_static:ActsAceEtsModuleXNodeApi16StaticTest",
+      "ace_ets_module_XNode_api14_static:ActsAceEtsModuleXNodeApi14StaticTest",
+      "ace_ets_module_XNode_api18_static:ActsAceEtsModuleXNodeApi18StaticTest",
     ]
   } else {
     deps = [
@@ -31,6 +36,11 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api16:ActsAceEtsModuleXNodeApi16Test",
       "ace_ets_module_XNode_api18:ActsAceEtsModuleXNodeApi18Test",
       "ace_ets_module_XNode_api20:ActsAceEtsModuleXNodeApi20Test",
+      "ace_ets_module_XNode_api12_static:ActsAceEtsModuleXNodeApi12StaticTest",
+      "ace_ets_module_XNode_api15_static:ActsAceEtsModuleXNodeApi15StaticTest",
+      "ace_ets_module_XNode_api16_static:ActsAceEtsModuleXNodeApi16StaticTest",
+      "ace_ets_module_XNode_api14_static:ActsAceEtsModuleXNodeApi14StaticTest",
+      "ace_ets_module_XNode_api18_static:ActsAceEtsModuleXNodeApi18StaticTest",
     ]
   }
 }

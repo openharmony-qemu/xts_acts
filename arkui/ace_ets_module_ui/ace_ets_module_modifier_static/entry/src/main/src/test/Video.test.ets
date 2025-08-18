@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -32,8 +32,6 @@ import Utils from './Utils';
 export default function videoJsunit() {
   describe('videoTest', () => {
     beforeAll(() => {
-      console.info("scrollNestedScroll beforeEach start");
-
       await UtilsTest.msSleep(4000);
       await startAbility("com.open.harmony.acetest.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -51,7 +49,7 @@ export default function videoJsunit() {
         if (!("video" == pages.name)) {
           console.info("get video state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(1000);
+         await UtilsTest.msSleep(1000);
         }
       } catch (err) {
         console.error("push video page error: " + err);
@@ -71,7 +69,7 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0001 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(false);
+      
       expect(objNew.getElement('$attrs').getString('muted')).assertEqual(undefined);
       console.info('videoTest_static_0001 END');
       done();
@@ -90,7 +88,7 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0002 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual(false);
+      
       expect(objNew.getElement('$attrs').getString('autoPlay')).assertEqual(undefined);
       console.info('videoTest_static_0002 END');
       done();
@@ -109,7 +107,7 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0003 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('controls')).assertEqual(true);
+      
       expect(objNew.getElement('$attrs').getString('controls')).assertEqual(undefined);
       console.info('videoTest_static_0003 END');
       done();
@@ -128,7 +126,7 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0004 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('loop')).assertEqual(false);
+      
       expect(objNew.getElement('$attrs').getString('loop')).assertEqual(undefined);
       console.info('videoTest_static_0004 END');
       done();
@@ -147,7 +145,7 @@ export default function videoJsunit() {
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0005 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual(ImageFit.Cover);
+      
       expect(objNew.getElement('$attrs').getString('objectFit')).assertEqual(undefined);
       console.info('videoTest_static_0005 END');
       done();
@@ -166,11 +164,11 @@ export default function videoJsunit() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('video');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("videoTest_static_0006 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('muted')).assertEqual(true);
+      
       expect(objNew.getElement('$attrs').getString('muted')).assertEqual(undefined);
       console.info('videoTest_static_0006 END');
       done();

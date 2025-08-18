@@ -1,0 +1,98 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,SharedTransitionEffectType,List,NavPathStack, Position,ListItem,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,px2vp,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter'
+interface EventD {
+  duration?: number
+  delay?: number
+  type?: SharedTransitionEffectType
+}
+@Entry
+@Component
+struct SharedTransition7Example {
+  @State active: boolean = false
+  @State duration: number = 1000
+  @State delay: number = 0
+  @State type: SharedTransitionEffectType = SharedTransitionEffectType.Static
+
+  build() {
+    List() {
+      ListItem() {
+        Row() {
+          
+            Navigation({}) {
+            Image($r('app.media.icon')).width(50).height(50)
+              .sharedTransition('sharedImage1', { duration: this.duration, delay: this.delay, type: this.type })
+          }
+          .key('Navigator')
+          .padding({ left: 10 } as Padding)
+          .onClick((e: ClickEvent) => {
+            this.active = true
+            console.info('SharedTransition current action state is: ' + this.active);
+            try {
+              let backData: events_emitter.EventData = {
+                data: {
+                  "duration": this.duration,
+                  "delay": this.delay,
+                  "type": this.type
+                } as Record<string,Object>
+              }
+              let backEvent: events_emitter.InnerEvent = {
+                eventId: 193,
+                priority: events_emitter.EventPriority.LOW
+              }
+              console.info("SharedTransition start to emit action state")
+              events_emitter.emit(backEvent, backData)
+            } catch (err) {
+              console.info("SharedTransition emit action state err: " + JSON.stringify((err as Error)?.message))
+            }
+          })
+
+          Text('SharedTransition').width(80).height(80).textAlign(TextAlign.Center)
+        }
+      }
+    }
+  }
+
+  onPageShow() {
+    console.info('sharedTransition page show called');
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 194,
+      priority: events_emitter.EventPriority.LOW
+    }
+    
+  }
+
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info("sharedTransition page state change called:" + JSON.stringify(eventData));
+      if ((eventData.data as EventD)?.duration != null) {
+        this.duration = (eventData.data as EventD)?.duration ?? 1000;
+      }
+      if ((eventData.data as EventD)?.delay != null) {
+        this.delay = (eventData.data as EventD)?.delay ?? 0;
+      }
+      if ((eventData.data as EventD)?.type != null) {
+        this.type = (eventData.data as EventD)?.type ?? SharedTransitionEffectType.Static;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -817,7 +817,7 @@ export default function common1Jsunit() {
       let strJsonNew = inspector.getInspectorByKey('testbutton');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("[Common1Static043] component Common1Static043 is: " + JSON.stringify(objNew.getElement('$attrs').getElement('clickEffect')));
-      // let clickEffect = JSON.parseJsonElement(objNew.getElement('$attrs').getElement('clickEffect'));
+      
       expect(objNew.getElement('$attrs').getElement('clickEffect').getString('level')).assertEqual("2");
       expect(objNew.getElement('$attrs').getElement('clickEffect').getString('scale')).assertEqual("1.000000");
       done();

@@ -41,16 +41,9 @@ struct Index {
     Column({ space: 15 } as ColumnOptions) {
       Button('DARK')
         .onClick((e: ClickEvent) => {
-          // uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_DARK).then(() => {
-          // }).catch((error: BusinessError) => {
-          //   console.error('Set dark-mode failed ')
-          // })
         })
       Button('LIGHT')
         .onClick((e: ClickEvent) => {
-          // uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_LIGHT, (error: BusinessError) => {
-          //   console.error('Set light-mode failed ')
-          // })
         })
 
            Column() {

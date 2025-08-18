@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -78,7 +78,7 @@ export default function listNestedScrollJsunit() {
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      // await driver.swipe(Math.round(x), Math.round(y + vp2px(60)), Math.round(x), Math.round(y - vp2px(60)));
+      
       console.info('[ArkUI_Stage_listNestedScrollStatic01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

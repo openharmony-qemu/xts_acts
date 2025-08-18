@@ -18,31 +18,31 @@ import {
   Link,
   Prop
 } from '@ohos.arkui.stateManagement';
-// import { GridColModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends GridColModifier {
-//   applyGridColAttribute(instance: GridColAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.order(2)
-//   }
-// }
+
+
+
+
+
+
+
+
+
+
+
 
 @Entry
 @Component
 struct GridColExample {
   @State bgColors: Color[] = new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown)
-  // @State customModifier: GridColModifier = new CustomModifier()
-  //   .order(1)
-  //   .gridColOffset(1)
-  //   .span(10)
+  
+  
+  
+  
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        
       }).key("changeButton")
 
       Column() {
@@ -60,7 +60,7 @@ struct GridColExample {
             .borderColor(color)
             .borderWidth(2)
             .backgroundColor(color)
-            // .attributeModifier(this.customModifier as CustomModifier)
+            
             .key('gridCol')
           })
         }.width("100%").height("100%");

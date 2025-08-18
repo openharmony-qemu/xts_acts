@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -51,7 +51,7 @@ export default function textAreaJsunit() {
         if (!("textArea" == pages.name)) {
           console.info("get textArea state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(1000);
+         await UtilsTest.msSleep(1000);
         }
       } catch (err) {
         console.error("push textArea page error: " + err);
@@ -89,7 +89,7 @@ export default function textAreaJsunit() {
       let strJsonNew = inspector.getInspectorByKey('textArea');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_003 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      // expect(objNew.getElement('$attrs').getString('fontColor')).assertEqual("#FF123456");
+      
       expect(objNew.getElement('$attrs').getString('fontColor') != null).assertTrue();
       console.info('textAreaTest_static_003 END');
       done();
@@ -379,9 +379,9 @@ export default function textAreaJsunit() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('textArea'); //测试组件的key名称
+      let strJsonNew = inspector.getInspectorByKey('textArea'); 
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_001 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
       expect(objNew.getElement('$attrs').getString('fontStyle')).assertEqual("FontStyle.Normal");
