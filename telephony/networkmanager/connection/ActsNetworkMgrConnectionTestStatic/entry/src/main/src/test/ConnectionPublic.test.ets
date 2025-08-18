@@ -3849,7 +3849,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 0;
-          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data: undefined) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data) => {
             if (error) {
               hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
               ExpectTrue(error?.code === 2101006);
@@ -3885,7 +3885,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 50;
-          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data: undefined) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data) => {
             if (error) {
               hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
               ExpectTrue(error?.code === 2101006);
@@ -3920,7 +3920,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data: undefined) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data) => {
             if (error?.code) {
               hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
               ExpectFail();
@@ -3955,7 +3955,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 9999;
-          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data: undefined) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void> | null, data) => {
             if (error) {
               hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
               ExpectTrue(error?.code === 2101006);
@@ -4195,7 +4195,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data) => {
             if (err?.code) {
               hilog.error(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(netHandle)}`);
               ExpectFail();
@@ -4236,7 +4236,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 0;
-          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data) => {
             if (err) {
               hilog.error(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(err)}`);
               ExpectTrue(err?.code === 2101006);
@@ -4277,7 +4277,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 50;
-          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data) => {
             if (err) {
               hilog.error(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(err)}`);
               ExpectTrue(err?.code === 2101006);
@@ -4317,7 +4317,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data) => {
             if (err?.code) {
               hilog.error(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(err)}`);
               ExpectFail();
@@ -4357,7 +4357,7 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 9999;
-          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (err: BusinessError<void>|null, data) => {
             if (err) {
               hilog.error(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(err)}`);
               ExpectTrue(err?.code === 2101006);
@@ -4773,7 +4773,7 @@ export default function ConnectionPublicTest() {
             done();
           } else {
             if(netHandle !== undefined){
-              connection.setAppNet(netHandle, (err: BusinessError<void>|null, data: undefined) => {
+              connection.setAppNet(netHandle, (err: BusinessError<void>|null, data) => {
                 hilog.info(domain, tag, `${caseName} SetAppNet: err->${JSON.stringify(err)}`);
                 if (err?.code) {
                   hilog.error(domain, tag, `${caseName} SetAppNet: err->${JSON.stringify(err)}`);
@@ -4820,7 +4820,7 @@ export default function ConnectionPublicTest() {
             done();
           } else {
             if(netHandle !== undefined){
-              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data) => {
                 hilog.info(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
                 if (error?.code) {
                   hilog.error(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
@@ -4867,7 +4867,7 @@ export default function ConnectionPublicTest() {
             done();
           } else {
             if(netHandle !== undefined){
-              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data) => {
                 hilog.info(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
                 if (error?.code) {
                   hilog.error(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
@@ -4914,7 +4914,7 @@ export default function ConnectionPublicTest() {
             done();
           } else {
             if(netHandle !== undefined){
-              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data) => {
                 if (error?.code) {
                   hilog.error(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
                   ExpectTrue(error?.code === 2100001);
@@ -4960,7 +4960,7 @@ export default function ConnectionPublicTest() {
             done();
           } else {
             if(netHandle !== undefined){
-              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+              connection.setAppNet(netHandle, (error: BusinessError<void>|null, data) => {
                 if (error?.code) {
                   hilog.error(domain, tag, `${caseName} SetAppNet: error->${JSON.stringify(error)}`);
                   ExpectFail();
@@ -6313,7 +6313,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule_static_0100';
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
-        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"], (error: BusinessError<void>|null, data: undefined) => {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"], (error: BusinessError<void>|null, data) => {
           hilog.error(domain, tag, `${caseName} error：${JSON.stringify(error)}`);
           if (error?.code) {
             ExpectFail();
@@ -6345,7 +6345,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule_static_0400';
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
-        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then((data: undefined) => {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then((data) => {
           hilog.error(domain, tag, `${caseName}`);
           ExpectTrue(true);
           hilog.info(domain, tag, `${caseName}---End`);
@@ -6377,7 +6377,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
         connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
-          connection.removeCustomDnsRule("192.168.1.1").then((data: undefined) => {
+          connection.removeCustomDnsRule("192.168.1.1").then((data) => {
             hilog.error(domain, tag, `${caseName} error`);
             ExpectTrue(true);
             hilog.error(domain, tag, `${caseName}---End`);
@@ -6415,7 +6415,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
         connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
-          connection.clearCustomDnsRules((error: BusinessError<void>|null, data: undefined) => {
+          connection.clearCustomDnsRules((error: BusinessError<void>|null, data) => {
             hilog.info(domain, tag, `${caseName} error：${JSON.stringify(error)}`);
             if (error?.code) {
               ExpectFail();
@@ -6454,7 +6454,7 @@ export default function ConnectionPublicTest() {
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
         connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
-          connection.clearCustomDnsRules().then((data: undefined) => {
+          connection.clearCustomDnsRules().then((data) => {
             hilog.info(domain, tag, `${caseName}`);
             ExpectTrue(true);
             hilog.info(domain, tag, `${caseName}---End`);

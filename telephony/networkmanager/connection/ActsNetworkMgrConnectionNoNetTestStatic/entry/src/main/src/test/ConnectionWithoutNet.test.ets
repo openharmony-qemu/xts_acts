@@ -433,7 +433,7 @@ export default function ConnectionWithoutNetTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-          connection.reportNetConnected(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetConnected(netHandle, (error: BusinessError<void>|null, data) => {
             if (error?.code) {
               hilog.error(domain, tag, `${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
               expect(true).assertEqual(error?.code === 2101006);
@@ -477,8 +477,9 @@ export default function ConnectionWithoutNetTest() {
             hilog.info(domain, tag, `${caseName}---End`);
             done();
           }).catch((error: Error) => {
-            hilog.error(domain, tag, `${caseName} error`);
-            expect(true).assertEqual(error?.code === 2101006);
+            let err = error as BusinessError;
+            hilog.error(domain, tag, `${caseName} error: ${JSON.stringify(err)}`);
+            expect(true).assertEqual(err?.code === 2101006);
             hilog.error(domain, tag, `${caseName}---End`);
             done();
           });
@@ -509,7 +510,7 @@ export default function ConnectionWithoutNetTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-          connection.reportNetDisconnected(netHandle, (error: BusinessError<void>|null, data: undefined) => {
+          connection.reportNetDisconnected(netHandle, (error: BusinessError<void>|null, data) => {
             if (error?.code) {
               hilog.info(domain, tag, `${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(error)}`);
               expect(true).assertEqual(error?.code === 2101006);
@@ -553,8 +554,9 @@ export default function ConnectionWithoutNetTest() {
             hilog.info(domain, tag, `${caseName}---End`);
             done();
           }).catch((error: Error) => {
-            hilog.error(domain, tag, `${caseName} reportNetDisconnected: err->${JSON.stringify(error)}`);
-            expect(true).assertEqual(error?.code === 2101006);
+            let err = error as BusinessError;
+            hilog.error(domain, tag, `${caseName} reportNetDisconnected: err->${JSON.stringify(err)}`);
+            expect(true).assertEqual(err?.code === 2101006);
             hilog.error(domain, tag, `${caseName}---End`);
             done();
           });

@@ -486,15 +486,19 @@ export default function ConnectionPublicNopTest() {
       let caseName: string = "testNetworkMgrConnectionReportNetConnectedNop_static_0100";
       hilog.info(domain, tag, `--------${caseName}----before----`);
       try {
-        connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+        connection.getDefaultNet((error: BusinessError<void>|null, netHandle: connection.NetHandle|undefined) => {
           if (error?.code) {
             hilog.error(domain, tag, `${caseName} Failed to get getDefaultNet default net. Code:${error?.code}, message:${error?.message}`);
             if (error?.code === PERMISSION_DENIED_CODE) {
               hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) 201:` + error?.code);
               try {
-                if (data !== undefined) {
-                  connection.setAppNet(data, (err: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
-                    hilog.info(domain, tag, "Succeeded to get testNetworkMgrConnectionReportNetConnectedNop_static_0100: " + JSON.stringify(data));
+                if (netHandle !== undefined) {
+                  connection.setAppNet(netHandle, (err, data) => {
+                    if (err) {
+                      hilog.error(domain, tag, "testNetworkMgrConnectionReportNetConnectedNop_static_0100 Failed: " + JSON.stringify(err));
+                    } else {
+                      hilog.info(domain, tag, "testNetworkMgrConnectionReportNetConnectedNop_static_0100 Succeeded");
+                    }
                   });
                 }
                 done();
@@ -511,8 +515,8 @@ export default function ConnectionPublicNopTest() {
               done();
             }
           } else {
-            hilog.info(domain, tag, "Succeeded to get data " + JSON.stringify(data));
-            expect(true).assertEqual(data === undefined);
+            hilog.info(domain, tag, "Succeeded to get data " + JSON.stringify(netHandle));
+            expect(true).assertEqual(netHandle === undefined);
             done();
           }
         });
@@ -544,7 +548,7 @@ export default function ConnectionPublicNopTest() {
               hilog.error(domain, tag, `${caseName} Failed to if(error.code === PERMISSION_DENIED_CODE) 201:` + error?.code);
               try {
                 if (data !== undefined) {
-                  connection.setAppNet(data, (err: BusinessError<void>|null, data: connection.NetHandle|undefined) => {
+                  connection.setAppNet(data, (err: BusinessError<void>|null, data) => {
                     hilog.info(domain, tag, "Succeeded to get testNetworkMgrConnectionReportNetConnectedNop_static_0200: " + JSON.stringify(data));
                   });
                 }
@@ -587,7 +591,7 @@ export default function ConnectionPublicNopTest() {
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0300----before----');
       try {
-        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"], (error: BusinessError<void>|null, data: undefined) => {
+        connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"], (error: BusinessError<void>|null, data) => {
           hilog.error(domain, tag, `${error?.code} error:${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
             expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
@@ -650,7 +654,7 @@ export default function ConnectionPublicNopTest() {
       hilog.info(domain, tag, '--------testNetworkMgrConnectionReportNetConnectedNop_static_0500----before----');
       try {
         connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
-          connection.removeCustomDnsRule("192.168.1.1", (error: BusinessError<void>|null, data: undefined) => {
+          connection.removeCustomDnsRule("192.168.1.1", (error: BusinessError<void>|null, data) => {
             if (error !== null) {
               hilog.error(domain, tag, ` error: ${JSON.stringify(error)}`);
             }
@@ -752,7 +756,7 @@ export default function ConnectionPublicNopTest() {
       hilog.info(domain, tag, `-------${caseName}----before----`);
       try {
         connection.addCustomDnsRule("192.168.1.1", ["255.255.255.0", "127.0.0.1"]).then(() => {
-          connection.clearCustomDnsRules((error: BusinessError<void>|null, data: undefined) => {
+          connection.clearCustomDnsRules((error: BusinessError<void>|null, data) => {
             hilog.info(domain, tag, '--------removeCustomDnsRule-------');
             if (error?.code === PERMISSION_DENIED_CODE) {
               expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
