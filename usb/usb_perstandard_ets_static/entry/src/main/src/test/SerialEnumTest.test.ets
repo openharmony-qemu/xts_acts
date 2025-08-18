@@ -17,7 +17,6 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from 
 import { Driver, MatchPattern, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import serialManager from '@ohos.usbManager.serial';
-import json from '@ohos.util.json';
 import bundleManager from '@ohos.bundle.bundleManager';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog'
@@ -39,7 +38,7 @@ async function driveDecFn() {
     let driver = Driver.create();
     await sleep(1000);
     let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
-    console.info(TAG, 'driveDecFn button:', json.stringify(buttons));
+    console.info(TAG, 'driveDecFn button:', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
       await buttons[buttons.length - 1].click();
     }

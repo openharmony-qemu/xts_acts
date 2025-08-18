@@ -18,7 +18,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAU
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';
-import json from '@ohos.util.json';
 import resourceManager from '@ohos.resourceManager';
 import common from '@ohos.app.ability.common';
 import { initialize } from './AbilityContextHelper.test';
@@ -326,7 +325,7 @@ export default function imageExifGetModifyTest() {
     //创建imageSource，批量读取exif信息，读取到的值与预期值对比,返回结果 True/false
     //testTag 用例编号
     //keys: 需要读取的字段列表，例 [image.PropertyKey.IMAGE_LENGTH, image.PropertyKey.IMAGE_WIDTH]
-    //compareData: 预期读取到的值，使用json序列化后的结果
+    //compareData: 预期读取到的值，使用JSON序列化后的结果
     //fileName: 文件名,例: test_exif_v2.jpg
     //type:创建imageSource的方式，取值: uri、fd、buffer,rawfile,incremental 默认fd
     const testGetImageProperties = async (
@@ -425,7 +424,7 @@ export default function imageExifGetModifyTest() {
         if (compareData == undefined) {
           hilog.info(0x0000, testTag,
             `testGetPromise error %{public}s %{public}s fileName: %{public}s result: %{public}s`,
-            testTag, fileName, json.stringify(data))
+            testTag, fileName, JSON.stringify(data))
         } else {
           keys.forEach((item: image.PropertyKey) => {
             console.info(testTag + "data: " + data[item]);
@@ -433,12 +432,12 @@ export default function imageExifGetModifyTest() {
             checkResult = data[item] == compareData[item];
             console.info(testTag + "checkResult: " + checkResult);
           })
-          // checkResult = json.stringify(data) == compareData
+          // checkResult = JSON.stringify(data) == compareData
         }
         if (!checkResult) {
           hilog.info(0x0000, testTag,
             `testGetPromise error %{public}s %{public}s fileName: %{public}s result: %{public}s`,
-            testTag, fileName, json.stringify(data))
+            testTag, fileName, JSON.stringify(data))
         }
         await imageSourceApi.release();
         if (imageSourceApiGet != undefined) {
@@ -504,7 +503,7 @@ export default function imageExifGetModifyTest() {
       if(checkResult){
         let imageSourceApiGet = await getImageSource(fileName, type)
         const data = await imageSourceApiGet.getImageProperties(keys)
-        checkResult = json.stringify(data) == compareData
+        checkResult = JSON.stringify(data) == compareData
         if (imageSourceApiGet != undefined) {
           await imageSourceApiGet.release();
         }
@@ -20762,7 +20761,7 @@ export default function imageExifGetModifyTest() {
         expect(result).assertTrue()
         done()
       } catch (e) {
-        hilog.info(0x0000, testTag, `modifyImageProperty error ` +  json.stringify(e));
+        hilog.info(0x0000, testTag, `modifyImageProperty error ` +  JSON.stringify(e));
         expect().assertFail();
         done();
       }
@@ -20801,7 +20800,7 @@ export default function imageExifGetModifyTest() {
           {name: "webp", fileName: "test_exif_empty2.webp"}]
         let result = true
         const createImageSourceTypes = ["fd", "uri"]
-        // const compareData = json.stringify(values)
+        // const compareData = JSON.stringify(values)
         for(let k=0; k<createImageSourceTypes.length; k++) {
           for (let i = 0; i < filesList.length; i++) {
             const testType = createImageSourceTypes[k]
@@ -20813,7 +20812,7 @@ export default function imageExifGetModifyTest() {
         expect(result).assertTrue()
         done()
       } catch (e) {
-        hilog.info(0x0000, testTag, `modifyImageProperty error ` +  json.stringify(e));
+        hilog.info(0x0000, testTag, `modifyImageProperty error ` +  JSON.stringify(e));
         expect().assertFail();
         done();
       }
