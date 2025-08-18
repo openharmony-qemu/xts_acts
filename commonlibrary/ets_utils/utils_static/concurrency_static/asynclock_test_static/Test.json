@@ -6,7 +6,7 @@
         "shell-timeout": "800000",
         "testcase-timeout": "15000",
         "bundle-name": "com.asynclock.standard.static",
-        "module-name": "entry",
+        "module-name": "entry"
     },
     "kits": [{
         "test-file-name": [
