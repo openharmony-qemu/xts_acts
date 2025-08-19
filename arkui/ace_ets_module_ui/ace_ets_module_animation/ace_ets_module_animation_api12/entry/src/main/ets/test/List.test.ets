@@ -27,7 +27,7 @@ import SimpleAnimatorOptionsPage from './SimpleAnimatorOptionsPage.test'
 import Blur from './Blur.test'
 import ParticlePage from './Particle.test'
 import ParticleModifierTest from './ParticleModifierTest.test'
-
+import ParticleShapePage from './ParticleShapePage.test'
 
 export default function testsuite() {
   AnimatorResultTest()
@@ -43,5 +43,6 @@ export default function testsuite() {
   SimpleAnimatorOptionsPage();
   Blur();
   ParticlePage();
-  ParticleModifierTest()
+  ParticleModifierTest();
+  ParticleShapePage();
 }
