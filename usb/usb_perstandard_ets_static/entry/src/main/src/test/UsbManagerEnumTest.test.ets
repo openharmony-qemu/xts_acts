@@ -23,8 +23,6 @@ import Utils from './Util.test';
 import UsbMgr from '@ohos.usbManager';
 import bundleManager from '@ohos.bundle.bundleManager';
 
-let isDeviceConnected: boolean;
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
