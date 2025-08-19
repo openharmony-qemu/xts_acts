@@ -37,7 +37,7 @@ import { TextStyle, StyledString } from 'arkui.component.styledString'
 import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
 
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function FivePointOne_resMgrStageTest() {
