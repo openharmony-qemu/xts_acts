@@ -33,7 +33,7 @@ const KEY_TEST_UINT8ARRAY_ELEMENT = 'key_test_uint8array';
 const KEY_TEST_OBJECT_ELEMENT = 'key_test_object';
 const KEY_TEST_INT_ARRAY_ELEMENT = 'key_test_int_array';
 const KEY_TEST_NUMBER_ARRAY_ELEMENT = 'key_test_number_array';
-
+const MAX_KEY_LENGTH = 'X'.repeat(1024);
 const NAME = 'test_preferences';
 const NAME1 = "getPreferencesTest";
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
@@ -1084,6 +1084,64 @@ export default function preferenceTest() {
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
       } catch (err : BusinessError) {
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name testPreferencesOnMultiprocessErrPromiseTest0001
+     * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3100
+     * @tc.desc GetAllPromise promise interface test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testPreferencesOnMultiprocessErrPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 start");
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+        const testObserver = (key : string): void => {
+          hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 key:" + key);
+          expect(null).assertFail();
+          done();
+        }
+        for (let index = 0; index < 80; index++) {
+          mPreferences.on('multiProcessChange', testObserver);
+          mPreferences.off('multiProcessChange', testObserver);
+        }
+        await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
+        mPreferences.flushSync();
+        await Utils.msSleep(1000);
+        done();
+      } catch (err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 :" + err.code + err.message );
+        expect(err.code).assertEqual(15500019);
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name testPreferencesMxaKeyLengthPromiseTest0001
+     * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
+     * @tc.desc MxaKeyLength promise interface test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+     it('testPreferencesMxaKeyLengthPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try{
+        await mPreferences.clear();
+        await mPreferences.put(MAX_KEY_LENGTH, "abc");
+        const ret = mPreferences.get(MAX_KEY_LENGTH, "default");
+        expect(ret).assertEqual("abc");
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
         expect().assertFail();
         done();
       }
