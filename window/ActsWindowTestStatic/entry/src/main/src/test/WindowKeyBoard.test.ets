@@ -82,7 +82,8 @@ export default function WindowKeyBoardTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
                 tempWnd.on('keyboardDidShow', (keyboardInfo: window.KeyboardInfo) => {
-                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
+                    hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.beginRect));
+                    hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.endRect));
                 });
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect().assertFail();
