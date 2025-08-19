@@ -1,7 +1,0 @@
-{
-    "module": {
-        "name": "hypium",
-        "type": "har",
-        "deviceTypes": ["default"]
-    }
-}
