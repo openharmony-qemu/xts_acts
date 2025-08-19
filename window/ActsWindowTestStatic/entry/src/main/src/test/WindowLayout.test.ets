@@ -699,6 +699,7 @@ export default function WindowLayoutTest() {
                 await Utils.msSleep(1000);
                 subWindowClass.on('windowRectChange', (data : window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
+                    hilog.info(0x0000, '[ANI]',`${caseName}: Succeeded window reason changes. reason: ${JSON.stringify(data.reason)}`);
                     expect(data!.rect.left).assertEqual(300);
                     expect(data!.rect.top).assertEqual(300);
                     subWindowClass.off('windowRectChange');
@@ -721,7 +722,38 @@ export default function WindowLayoutTest() {
                 }
             }
         })
-
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
+         * @tc.name      : testOnRectChangeOptionsResizeSubWindow_static_0100
+         * @tc.desc      : Test the function value of testRectChangeOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testOnRectChangeOptionsResizeSubWindow_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "TestOnRectChangeOptionsResizeSubWindow_static_0100";
+            try {
+                let subWindowClass:window.Window = await windowStage.createSubWindow("TestOnRectChangeOptionsResizeSubWindow_static_0100");
+                hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in creating the sub window.`);
+                await subWindowClass.setUIContent('pages/index2');
+                await subWindowClass.showWindow();
+                await Utils.msSleep(1000);
+                subWindowClass.on('windowSizeChange', (data:window.Size) => {
+                    hilog.info(0x0000, '[ANI]',`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
+                    expect(data.width).assertEqual(500);
+                    expect(data.height).assertEqual(500);
+                    subWindowClass.off('windowSizeChange');
+                    await subWindowClass.destroyWindow();
+                    done();
+                });
+                await subWindowClass.resize(500, 500);
+                hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in changing the sub window size.`);
+            } catch (error: BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done();
+            }
+        })
 
 
 
