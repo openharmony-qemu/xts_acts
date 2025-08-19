@@ -9,23 +9,6 @@ import Utils from './Util.test';
 import UsbMgr from '@ohos.usbManager';
 import bundleManager from '@ohos.bundle.bundleManager';
 
-let isDeviceConnected: boolean;
-let config: UsbMgr.USBConfiguration;
-let accessory: UsbMgr.USBAccessory;
-let param: UsbMgr.USBDeviceRequestParams;
-let isDevAccessoryFunc: boolean;
-let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
-let accessInfo: UsbMgr.USBAccessory;
-
-function devAccessoryFunc() {
-  if (accList.length > 0) {
-    hilog.info(domain, tag, "This USB device is accessory function");
-    return true;
-  }
-  hilog.info(domain, tag, "This USB device is accessory function");
-  return false;
-}
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -47,9 +30,7 @@ function getTransfersParam(gPipe: UsbMgr.USBDevicePipe, flagsValue: UsbMgr.UsbTr
   return transferParams;
 }
 
-function deviceConnected() {
-  let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
-  let devices: UsbMgr.USBDevice = gDeviceList[0];
+function deviceConnected(gDeviceList: Array<Readonly<UsbMgr.USBDevice>>) {
   if (gDeviceList.length > 0) {
     hilog.info(domain, tag, "Test USB device is connected");
     return true;
@@ -80,6 +61,8 @@ export default function UsbBaseTest() {
 
   describe("UsbBaseTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
+    let isDeviceConnected: boolean = false;
+    let devices: UsbMgr.USBDevice;
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -97,25 +80,12 @@ export default function UsbBaseTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
 
       let gDeviceList: Array<Readonly<UsbMgr.USBDevice>> = UsbMgr.getDevices();
-      let devices: UsbMgr.USBDevice = gDeviceList[0];
-      gDeviceList = UsbMgr.getDevices();
-      hilog.info(domain, tag, '获取设备信息: %{public}s', JSON.stringify(gDeviceList));
-
-      isDeviceConnected = deviceConnected();
+      isDeviceConnected = deviceConnected(gDeviceList);
       if (isDeviceConnected) {
         devices = gDeviceList[0];
-        let hasRight = UsbMgr.hasRight(devices.name);
-        if (!hasRight) {
-          hilog.info(domain, tag, `beforeAll: usb requestRight start`);
-        }
+        hilog.info(domain, tag, '获取设备信息: %{public}s', JSON.stringify(gDeviceList));
       }
-
-      isDevAccessoryFunc = devAccessoryFunc();
-      if (isDevAccessoryFunc) {
-        accList = UsbMgr.getAccessoryList();
-        accessInfo = accList[0];
-        hilog.info(domain, tag, 'beforeAll ret : ', JSON.stringify(accList));
-      }
+      hilog.info(domain, tag, 'devices empty');
     })
     /**
      * @tc.number   : SUB_USB_HostManager_JS_Func_0100
