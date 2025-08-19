@@ -203,7 +203,208 @@ export default function WindowOrientationTest() {
             }
         })
 
+        /**
+         * @tc.number    : SUB_BASIC_WMS_RotationChange_0200
+         * @tc.name      : test_RotationChange_static_0100
+         * @tc.desc      : test_RotationChange_0200
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('test_RotationChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_RotationChange_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_0200');
+            await subWindowClass.destroyWindow();
+            try {
+                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
+                subWindowClass.on('rotationChange', rotationCallback);
+                done();
+            } catch (err:BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
+                expect(err!.code).assertEqual(1300002);
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_RotationChange_0400
+         * @tc.name      : test_RotationChange_static_0200
+         * @tc.desc      : test_RotationChange_static_0200
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('test_RotationChange_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_RotationChange_static_0200';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_0200');
+            await subWindowClass.destroyWindow();
+            try {
+                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
+                    let rotationResult: window.RotationChangeResult = {
+                        rectType: window.RectType.RELATIVE_TO_SCREEN,
+                        windowRect: {
+                            left: 0,
+                            top: 0,
+                            width: 0,
+                            height: 0,
+                        }
+                    };
+                    hilog.info(0x0000, '[ANI]',`${caseName} :rotationCallback rotationInfo: ${JSON.stringify(rotationInfo)}`);
+                    if (rotationInfo.type === window.RotationChangeType.WINDOW_WILL_ROTATE) {
+                        rotationResult.rectType = window.RectType.RELATIVE_TO_SCREEN;
+                        rotationResult.windowRect = {
+                            left: 200,
+                            top: 200,
+                            width: 100,
+                            height: 100,
+                        }
 
+                        hilog.error(0x0000, '[ANI]',`${caseName} rotationInfo 1: ${JSON.stringify(rotationInfo)}`);
+                        hilog.error(0x0000, '[ANI]',`${caseName} rotationResult 1: ${JSON.stringify(rotationResult)}`)
+                        let displayInfo = display.getDefaultDisplaySync();
+                        hilog.error(0x0000, '[ANI]',`${caseName} :display.getDefaultDisplaySync. info: ${JSON.stringify(displayInfo)}`);
+                        Utils.msSleep(2000)
+                        let subWindowProperties1 = subWindowClass.getWindowProperties()
+                        hilog.error(0x0000, '[ANI]',`${caseName} :subWindowProperties1.windowRect 1: ${JSON.stringify(subWindowProperties1.windowRect)}`);
+                        expect(rotationInfo.orientation).assertEqual(3)
+                        expect(rotationInfo.displayId).assertEqual(displayInfo.id)
+                        expect(rotationInfo.displayRect.left).assertEqual(0)
+                        expect(rotationInfo.displayRect.top).assertEqual(0)
+                        expect(rotationInfo.displayRect.width).assertEqual(displayInfo.width);
+                        expect(rotationInfo.displayRect.height).assertEqual(displayInfo.height);
+                        expect(rotationResult.rectType).assertEqual(window.RectType.RELATIVE_TO_SCREEN);
+                        expect(rotationResult.windowRect.left).assertEqual(200)
+                        expect(rotationResult.windowRect.top).assertEqual(200)
+                        expect(rotationResult.windowRect.width).assertEqual(100);
+                        expect(rotationResult.windowRect.height).assertEqual(100);
+                        return rotationResult;
+                    } else {
+                        rotationResult.rectType = window.RectType.RELATIVE_TO_PARENT_WINDOW;
+                        rotationResult.windowRect = {
+                            left: 500,
+                            top: 500,
+                            width: 150,
+                            height: 150
+                        }
+                        hilog.error(0x0000, '[ANI]',`${caseName} rotationInfo2: ${JSON.stringify(rotationInfo)}`);
+                        hilog.error(0x0000, '[ANI]',`${caseName} rotationResult2: ${JSON.stringify(rotationResult)}`)
+                        expect(rotationInfo.type).assertEqual(window.RotationChangeType.WINDOW_DID_ROTATE)
+                        let displayInfo = display.getDefaultDisplaySync();
+                        hilog.error(0x0000, '[ANI]',`${caseName} :display.getDefaultDisplaySync . info 2: ${JSON.stringify(displayInfo)}`);
+                        let subWindowProperties2 = subWindowClass.getWindowProperties()
+                        hilog.error(0x0000, '[ANI]',`${caseName} :subWindowProperties2.windowRect 2: ${JSON.stringify(subWindowProperties2.windowRect)}`);
+                        expect(rotationInfo.orientation).assertEqual(3);
+                        expect(rotationInfo.displayId).assertEqual(displayInfo.id);
+                        expect(rotationInfo.displayRect.left).assertEqual(0)
+                        expect(rotationInfo.displayRect.top).assertEqual(0)
+                        expect(rotationInfo.displayRect.width).assertEqual(displayInfo.width);
+                        expect(rotationInfo.displayRect.height).assertEqual(displayInfo.height);
+                        return rotationResult;
+                    }
+                };
+                subWindowClass.off('rotationChange', rotationCallback);
+                done();
+            } catch (err:BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
+                expect(err!.code).assertEqual(1300002);
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_RotationChange_801_0100
+         * @tc.name      : test_RotationChange_801_static_0300
+         * @tc.desc      : test_RotationChange_801_static_0300
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 1
+         */
+        it('test_RotationChange_801_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_RotationChange_801_static_0300';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0300');
+            try {
+                await subWindowClass.setUIContent('pages/index2');
+                await subWindowClass.showWindow();
+                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult  => {
+                }
+                subWindowClass.on('rotationChange', rotationCallback);
+                subWindowClass.off('rotationChange', rotationCallback);
+                hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
+                await subWindowClass.destroyWindow()
+                expect().assertTrue();
+                done();
+            } catch (err:BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
+                await subWindowClass.destroyWindow()
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect().assertFail();
+                    done();
+                }
+            }
+
+
+        });
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_RotationChange_801_0200
+         * @tc.name      : test_RotationChange_801_static_0400
+         * @tc.desc      : test_RotationChange_801_static_0400
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 1
+         */
+        it('test_RotationChange_801_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_RotationChange_801_static_0400';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+
+            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0400');
+            try {
+                await subWindowClass.setUIContent('pages/index2');
+                await subWindowClass.showWindow();
+                subWindowClass.off('rotationChange');
+                hilog.info(0x0000, '[ANI]',`${caseName} :off rotationChange success. `);
+                await subWindowClass.destroyWindow()
+                expect(true).assertTrue();
+                done();
+            } catch (err:BusinessError) {
+                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
+                await subWindowClass.destroyWindow()
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect().assertFail();
+                    done();
+                }
+            }
+
+
+        });
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_RotationChange_Type_0100
+         * @tc.name      : test_RotationChangeType_static_0100
+         * @tc.desc      : test_RotationChangeType_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 1
+         */
+        it('test_RotationChangeType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_RotationChangeType_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            expect(window.RotationChangeType.WINDOW_WILL_ROTATE).assertEqual(0);
+            expect(window.RotationChangeType.WINDOW_DID_ROTATE).assertEqual(1);
+            expect(window.RectType.RELATIVE_TO_SCREEN).assertEqual(0);
+            expect(window.RectType.RELATIVE_TO_PARENT_WINDOW).assertEqual(1);
+            done();
+        });
 
 
 
