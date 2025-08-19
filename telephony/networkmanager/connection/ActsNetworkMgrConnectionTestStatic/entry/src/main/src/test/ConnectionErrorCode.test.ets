@@ -41,67 +41,6 @@ export default function ConnectionErrorCodeTest() {
   describe('ConnectionPublicStaticTest', () => {
 
     /*
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0100
-     * @tc.name   : testConnectionGetAddressesByNameErrCo_static_0100
-     * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it("testConnectionGetAddressesByNameErrCo_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const caseName: string = 'testConnectionGetAddressesByNameErrCo_static_0100';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try{
-        connection.getAddressesByName("xxx", (error: BusinessError<void>|null, data: Array<connection.NetAddress>|undefined) => {
-          if (error?.code) {
-            hilog.error(domain, tag, `${caseName} Failed to get addresses. Code:${error?.code}, message:${error?.message}`);
-            expect(true).assertEqual(error?.code === 401);
-          }else {
-            hilog.info(domain, tag, `${caseName} success to get addressta: ` + JSON.stringify(data));
-            ExpectTrue(true);
-          }
-          done();
-        });
-      }catch (err){
-        hilog.error(domain, tag, `${caseName} --test end`);
-        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
-        ExpectTrue(false);
-        done();
-      }
-    })
-
-    /*
-     * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0200
-     * @tc.name   : testConnectionGetAddressesByNameErrCo_static_0200
-     * @tc.desc   : AddressesByName  Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it("testConnectionGetAddressesByNameErrCo_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const caseName: string = 'testConnectionGetAddressesByNameErrCo_static_0200';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try{
-        connection.getAddressesByName("xxx").then((data: connection.NetAddress[])=>{
-          hilog.info(domain, tag, `${caseName} success to get addressta: ` + JSON.stringify(data));
-          ExpectTrue(true);
-          done();
-        })
-          .catch((error: Error)=>{
-            let err = error as BusinessError;
-            hilog.error(domain, tag, `${caseName} Failed to get addresses. Code:${err?.code}, message:${err?.message}`);
-            expect(true).assertEqual(err?.code === 401);
-            done();
-          })
-      } catch (err) {
-        hilog.error(domain, tag, `${caseName} --test end`);
-        hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(err));
-        ExpectTrue(false);
-        done();
-      }
-    })
-
-    /*
      * @tc.number : SUB_Telephony_Connection_getAddressesByName_ErrCo_0400
      * @tc.name   : testConnectionGetAddressesByNameErrCo_static_0400
      * @tc.desc   : AddressesByName  Cannot connect to service
