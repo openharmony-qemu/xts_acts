@@ -321,7 +321,7 @@ export default function WindowOrientationTest() {
          * @tc.type      : Function
          * @tc.level     : Level 1
          */
-        it('test_RotationChange_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('test_RotationChange_801_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_801_static_0300';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
