@@ -21,7 +21,7 @@ import { BundleVersion } from '@ohos.application.BackupExtensionAbility';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export class BackupExt extends BackupExtensionAbility {

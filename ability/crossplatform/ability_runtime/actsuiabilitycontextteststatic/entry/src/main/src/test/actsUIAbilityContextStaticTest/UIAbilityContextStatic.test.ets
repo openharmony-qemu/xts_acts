@@ -25,7 +25,7 @@ import { BusinessError } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 

@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function abilityTest() {

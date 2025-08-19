@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { ProcessInformation } from 'application.ProcessInformation'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let abilityContext: common.UIAbilityContext
 
