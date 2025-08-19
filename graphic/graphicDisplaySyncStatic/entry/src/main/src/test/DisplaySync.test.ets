@@ -324,10 +324,10 @@ export default function displaySyncTest() {
                     console.error(msg + 'www data success in testDisplaySyncErrorCode_0100:');
                     expect().assertFail();
                     done();
-                } catch (err) {
+                } catch (err: BusinessError) {
                     console.error(msg + 'www data Failed to onoff. Cause:' + JSON.stringify(err));
-                    // console.error(msg + 'Failed to onoff. Cause:' + err.code);
-                    // expect(err.code == 401).assertTrue();
+                    console.error(msg + 'Failed to onoff. Cause:' + err.code);
+                    expect(err.code == 401).assertTrue();
                     done();
                 }
             })
