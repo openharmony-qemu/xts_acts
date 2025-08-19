@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -296,6 +296,54 @@ export default function uitestDriverTest() {
       }
       hilog.info(domain, tag, "testPenClick over!!!!")
     })
+
+    /*
+    * @tc.number: uitestDriverTest_0089
+    * @tc.name: test_penClick_function_displayId_static
+    * @tc.desc: penClick function test.
+    */
+    it('test_penClick_function_displayId_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, "test_penClick_function_displayId_static start!!!!")
+      try {
+        let disPlay = display.getDefaultDisplaySync();
+        hilog.info(domain, tag, `test_penClick_function_displayId_static disPlay: ${JSON.stringify(disPlay)}`);
+        let driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        // 点击页面中的next page 按钮。
+        let btnCom = await driver.findComponent(ON.text('next page'));
+        await driver.delayMs(waitUiReadyMs);
+        hilog.info(domain, tag, `test_penClick_function_displayId_static btnCom: ${JSON.stringify(btnCom)}`);
+        expect(btnCom != null).assertTrue();
+        if (btnCom != null) {
+          let btnPoint = await btnCom.getBoundsCenter();
+          hilog.info(domain, tag, `test_penClick_function_displayId_static btnPoint: ${JSON.stringify(btnPoint)}`);
+          await driver.penClick({
+            x: btnPoint.x,
+            y: btnPoint.y,
+            displayId: disPlay.id.toInt()
+          });
+          await driver.delayMs(waitUiReadyMs);
+        }
+        let strCom = await driver.findComponent(ON.text('back to index'));
+        await driver.delayMs(waitUiReadyMs);
+        expect(strCom != null).assertTrue();
+        if (strCom != null) {
+          let strText = await strCom.getText();
+          await driver.delayMs(waitUiReadyMs);
+          expect(strText).assertEqual('back to index');
+          await strCom.click();
+          await driver.delayMs(waitUiReadyMs);
+        }
+      } catch(error: Error) {
+        hilog.info(domain, tag, `test_penClick_function_displayId_static error, ${ JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        await stopApplication('com.uitestScene.acts');
+      }
+      hilog.info(domain, tag, "test_penClick_function_displayId_static over!!!!")
+    })
+
 
     /*
     * @tc.number: uitestDriverTest_0071
@@ -2275,8 +2323,10 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static disPlay is: ${JSON.stringify(disPlay)}`);
         let s = await driver.getDisplaySize(disPlay.id.toInt())
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static s: ${JSON.stringify(s)}`);
+        hilog.info(domain, tag, `testGetDisplaySizeWithId_static s.displayId: ${JSON.stringify(s.displayId)}`);
         expect(s.x != 0).assertTrue()
         expect(s.y != 0).assertTrue()
+        expect(s.displayId == disPlay.id).assertTrue()
       }catch(error) {
         hilog.info(domain, tag, `testGetDisplaySizeWithId_static error, ${JSON.stringify(error)}`);
         expect().assertFail();

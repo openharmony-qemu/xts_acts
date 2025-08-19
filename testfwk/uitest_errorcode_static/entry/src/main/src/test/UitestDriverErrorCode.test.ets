@@ -104,5 +104,23 @@ export default function uitestDriverErrorTest() {
       }
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
     })
+
+    /*
+     * @tc.number: uitestDriverErrorTest_005
+     * @tc.name: test_driver_pressHome_static
+     * @tc.desc: pressHome 17000007 test.
+     */
+    it("test_driver_pressHome_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_pressHome_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.pressHome(-1);
+        expect().assertFail();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_pressHome_static error is, ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_pressHome_static end`);
+    })
   })
 }
