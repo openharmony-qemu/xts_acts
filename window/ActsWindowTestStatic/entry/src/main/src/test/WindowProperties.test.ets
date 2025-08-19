@@ -250,7 +250,7 @@ export default function WindowPropertiesTest() {
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
             try {
-                await (win as window.Window).setWindowColorSpace(window.ColorSpace.WIDE_GAMUT).then(() => {
+                await (win as window.Window).setWindowColorSpace(window.ColorSpace.DEFAULT).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting window colorspace.');
                     expect().assertFail();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
@@ -1138,6 +1138,33 @@ export default function WindowPropertiesTest() {
                 done()
             }
         })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+         * @tc.name      : testStatusBarContentColor_static_0100
+         * @tc.desc      : test_statusBarContentColor_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testStatusBarContentColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_statusBarContentColor_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            try {
+                let a: window.SystemBarStyle = {
+                    statusBarContentColor: '#ffffff'
+                }
+                hilog.info(0x0000, '[ANI]',msgStr + 'a:'+ JSON.stringify(a));
+                expect(true).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr +
+                    `Failed to call statusBarContentColor. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        });
 
 
     })
