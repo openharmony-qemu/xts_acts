@@ -1,0 +1,151 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ **     http://www.apache.org/licenses/LICENSE-2.0
+ **
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import inspector from '@ohos.arkui.inspector';
+import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  BarState,
+  Blank,
+  Button,
+  Checkbox,
+  Color,
+  Column,
+  Component,
+  Entry,
+  FontWeight,
+  Image,
+  Menu,
+  Radio,
+  Row,
+  ScrollBar,
+  ScrollBarDirection,
+  Scroller,
+  Text,
+  Toggle,
+  ToggleType,
+  TouchEvent
+} from '@ohos.arkui.component'
+
+@Entry
+@Component
+struct assemblyCallback {
+  @State message: string = 'Blank';
+  listener11: inspector.ComponentObserver = inspector.createComponentObserver('11')
+  listener12: inspector.ComponentObserver = inspector.createComponentObserver('12')
+  listener13: inspector.ComponentObserver = inspector.createComponentObserver('13')
+  listener14: inspector.ComponentObserver = inspector.createComponentObserver('14')
+  listener15: inspector.ComponentObserver = inspector.createComponentObserver('15')
+  listener16: inspector.ComponentObserver = inspector.createComponentObserver('16')
+  private scroller: Scroller = new Scroller();
+
+  build() {
+    Row() {
+      Text('Bluetooth').fontSize(18)
+      Blank()
+      Button('')
+      Checkbox()
+      Toggle({ type: ToggleType.Switch })
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Text('Bluetooth').fontSize(18)
+        Button('').key("11")
+        Checkbox().key("12")
+        Image('').key("13")
+        Menu().key("14")
+        Radio({ value: 'Radio1', group: 'radioGroup' }).key("15")
+        ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }).key("16")
+        Toggle({ type: ToggleType.Switch })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+
+  aboutToAppear() {
+    let layout11: () => void = () => {
+      console.log("skButton, layout")
+    }
+
+    let draw11: () => void = () => {
+      console.log("skButton, draw")
+    }
+
+    let layout12: () => void = () => {
+      console.log("skCheckbox, layout")
+    }
+
+    let draw12: () => void = () => {
+      console.log("skCheckbox, draw")
+    }
+
+    let layout13: () => void = () => {
+      console.log("skImage, layout")
+    }
+
+    let draw13: () => void = () => {
+      console.log("skImage, draw")
+    }
+
+    let layout14: () => void = () => {
+      console.log("skMenu, layout")
+    }
+
+    let draw14: () => void = () => {
+      console.log("skMenu, draw")
+    }
+
+    let layout15: () => void = () => {
+      console.log("skRadio, layout")
+    }
+
+    let draw15: () => void = () => {
+      console.log("skRadio, draw")
+    }
+
+    let layout16: () => void = () => {
+      console.log("skScrollBar, layout")
+    }
+
+    let draw16: () => void = () => {
+      console.log("skScrollBar, draw")
+    }
+    let Func11layout = layout11
+    let Func11draw = draw11
+    this.listener11.on('layout', Func11layout)
+    this.listener11.on('draw', Func11draw)
+    let Func12layout = layout12
+    let Func12draw = draw12
+    this.listener12.on('layout', Func12layout)
+    this.listener12.on('draw', Func12draw)
+    let Func13layout = layout13
+    let Func13draw = draw13
+    this.listener13.on('layout', Func13layout)
+    this.listener13.on('draw', Func13draw)
+    let Func14layout = layout14
+    let Func14draw = draw14
+    this.listener14.on('layout', Func14layout)
+    this.listener14.on('draw', Func14draw)
+    let Func15layout = layout15
+    let Func15draw = draw15
+    this.listener15.on('layout', Func15layout)
+    this.listener15.on('draw', Func15draw)
+    let Func16layout = layout16
+    let Func16draw = draw16
+    this.listener16.on('layout', Func16layout)
+    this.listener16.on('draw', Func16draw)
+  }
+}
