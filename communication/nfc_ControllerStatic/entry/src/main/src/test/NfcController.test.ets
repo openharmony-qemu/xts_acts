@@ -83,6 +83,20 @@ export default function nfcControllerTest() {
             done();
         })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
+         * @tc.name STATE_ON
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            expect(controller.NfcState.STATE_ON).assertEqual(3);
+            done();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
