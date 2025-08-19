@@ -1293,23 +1293,26 @@ export default function taskPoolTest() {
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest034';
         console.info(`${TAG} test start`);
-        let executedFlag = false;
+        let executedFlag1 = false;
+        let executedFlag2 = false;
         try {
           const worker = new EAWorker();
           worker.start();
           const workerPromise = taskpool.execute(async (worker: EAWorker): Promise<EAWorker> => {
             worker.run<void>((): void => {
-              executedFlag = true;
-            });
+              executedFlag1 = true;
+            }).Await();
             return worker;
           }, worker);
           await workerPromise.then((returnedWorker: EAWorker): void => {
             returnedWorker.run<EAWorker>((): EAWorker => {
-              executedFlag = true;
+              executedFlag2 = true;
               return returnedWorker;
-            });
+            }).Await();
           })
-          expect(executedFlag).assertEqual(true);
+          worker.join()
+          expect(executedFlag1).assertEqual(true);
+          expect(executedFlag2).assertEqual(true);
         } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
