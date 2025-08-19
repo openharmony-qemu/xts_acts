@@ -1645,7 +1645,7 @@ export default function graphicImagePixelMap() {
           size: { height: 4, width: 6 },
           alphaType: image.AlphaType.UNPREMUL
         }
-        let pixelMap: image.PixelMap | undefined = undefined;
+        let pixelMap: image.PixelMap;
         image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
           console.error("www data 11111111");
           pixelMap = srcPixelMap;
