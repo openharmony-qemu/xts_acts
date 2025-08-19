@@ -19,7 +19,8 @@ import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Utils, startAbility, stopApplication } from './Util.test';
-import displaySync from "@ohos.graphics.displaySync"
+import displaySync from "@ohos.graphics.displaySync";
+import { BusinessError } from '@ohos.base';
 import { ExpectedFrameRateRange } from '@ohos.arkui.component';
 let domain: int = 0x0000;
 let tag: string = 'DisplaySync';
@@ -324,10 +325,10 @@ export default function displaySyncTest() {
                     console.error(msg + 'www data success in testDisplaySyncErrorCode_0100:');
                     expect().assertFail();
                     done();
-                } catch (err) {
+                } catch (err: BusinessError) {
                     console.error(msg + 'www data Failed to onoff. Cause:' + JSON.stringify(err));
-                    // console.error(msg + 'Failed to onoff. Cause:' + err.code);
-                    // expect(err.code == 401).assertTrue();
+                    console.error(msg + 'Failed to onoff. Cause:' + err.code);
+                    expect(err.code == 401).assertTrue();
                     done();
                 }
             })
