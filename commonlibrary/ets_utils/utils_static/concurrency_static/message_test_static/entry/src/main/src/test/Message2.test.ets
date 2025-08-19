@@ -2216,43 +2216,6 @@ export default function MessageTest2() {
         }
       })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0208
-    //  * @tc.name RemoveCallbacksTest002
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveCallbacksTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let worker = new EAWorker();
-    //     const TAG: string = 'MessageTest061';
-    //     let flag: boolean = false;
-    //     let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //       await Sleep(1000);
-    //       flag = true;
-    //     }, worker);
-    //     let p = () => {
-    //       let a = 1;
-    //     }
-    //     worker.start();
-    //     try {
-    //       let msg = new concurrency.Message(handler)
-    //       handler.sendMessage(msg);
-    //       expect(handler.removeCallbacks(p)).assertEqual(false);
-    //       expect(handler.removeCallbacks(p)).assertEqual(false);
-    //       while (!flag) {
-    //         await Utils.msSleep(100);
-    //       }
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //     } finally {
-    //       worker.join();
-    //       done();
-    //     }
-    //   });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0209
      * @tc.name RemoveCallbacksTest003
@@ -2290,44 +2253,6 @@ export default function MessageTest2() {
           done();
         }
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0210
-    //  * @tc.name RemoveCallbacksTest004
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveCallbacksTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     let worker = new EAWorker();
-    //     const TAG: string = 'MessageTest063';
-    // let flag: boolean = false;
-    //     let handler: concurrency.MessageHandler;
-    //     let p = () => {
-    //       let a = 1;
-    //     }
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    // await Sleep(1000);
-    // flag = true;
-    //       }, worker);
-    // let msg = new concurrency.Message(handler)
-    // handler.sendMessage(msg);
-    //       handler.post(p);
-    //       expect(handler.removeCallbacks(p)).assertEqual(true);
-    //       expect(handler.removeCallbacks(p)).assertEqual(false);
-    // while (!flag) {
-    //   await Utils.msSleep(100);
-    // }
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //     } finally {
-    //       worker.join();
-    //       done();
-    //     }
-    //   });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0211
@@ -2368,49 +2293,6 @@ export default function MessageTest2() {
         }
       });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0212
-    //  * @tc.name RemoveCallbacksTest006
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveCallbacksTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'MessageTest065';
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    // let flag: boolean = false;
-    //     let p = () => {
-    //       let a = 1;
-    //     }
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    // await Sleep(1000);
-    // flag = true;
-    //       }, worker);
-    //       handler.post(p);
-    //       handler.post(p);
-    //       expect(handler.removeCallbacks(p)).assertEqual(true);
-    //       const end = Date.now() + 1000;
-    //       while (Date.now() < end) {
-    //     }
-    // let msg = new concurrency.Message(handler)
-    // handler.sendMessage(msg);
-    //       handler.hasCallbacks(p);
-    //       expect(handler.removeCallbacks(p)).assertEqual(false);
-    // while (!flag) {
-    //   await Utils.msSleep(100);
-    // }
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //     } finally {
-    //       worker.join();
-    //       done();
-    //     }
-    //   });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0213
      * @tc.name RemoveCallbacksTest007
@@ -2445,41 +2327,5 @@ export default function MessageTest2() {
           done();
         }
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0214
-    //  * @tc.name RemoveCallbacksTest008
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveCallbacksTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'MessageTest067';
-    //     let handler: concurrency.MessageHandler;
-    // let flag: boolean = false;
-    //     let worker = new EAWorker();
-    //     let p = () => {
-    //       let a = 1;
-    //     }
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    // await Sleep(1000);
-    // flag = true;
-    //       }, worker);
-    //       handler.sendMessage(new concurrency.Message(p, handler));
-    //       expect(handler.removeCallbacks(p)).assertEqual(true);
-    //       expect(handler.removeCallbacks(p)).assertEqual(false);
-    // while (!flag) {
-    //   await Utils.msSleep(100);
-    // }
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //     } finally {
-    //       worker.join();
-    //       done();
-    //     }
-    //   });
   });
 }

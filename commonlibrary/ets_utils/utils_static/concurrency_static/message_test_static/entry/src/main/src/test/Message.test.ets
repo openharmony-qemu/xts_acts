@@ -1003,38 +1003,6 @@ export default function MessageTest() {
         }
       });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0123
-    //  * @tc.name RemoveMessages003
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages003';
-    //     console.info(`${TAG} test start`);
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, handler)
-    //       handler.sendMessage(message);
-    //       handler.removeMessages(1);
-    //       expect(handler.removeMessages(1)).assertEqual(false);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join()
-    //       done();
-    //     }
-    //   });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0124
      * @tc.name RemoveMessages004
@@ -1070,39 +1038,6 @@ export default function MessageTest() {
         }
       });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0125
-    //  * @tc.name RemoveMessages005
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages005';
-    //     console.info(`${TAG} test start`);
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, handler)
-    //       message.sendToTarget();
-    //       handler.removeMessages(1);
-    //       expect(handler.removeMessages(1)).assertEqual(false);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join();
-    //       console.info(`${TAG} test end`);
-    //       done();
-    //     }
-    //   });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0126
      * @tc.name RemoveMessages006
@@ -1137,39 +1072,6 @@ export default function MessageTest() {
           done();
         }
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0127
-    //  * @tc.name RemoveMessages007
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages007';
-    //     console.info(`${TAG} test start`);
-    //     let messageObject = new MessageObject(10);
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, messageObject, handler)
-    //       handler.sendMessage(message);
-    //       expect(handler.removeMessages(1)).assertEqual(true);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join();
-    //       console.info(`${TAG} test end`);
-    //       done();
-    //     }
-    //   });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0128
@@ -1209,39 +1111,6 @@ export default function MessageTest() {
           done();
         }
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0129
-    //  * @tc.name RemoveMessages009
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages009';
-    //     console.info(`${TAG} test start`);
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     let messageObject = new MessageObject(10);
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, messageObject, handler)
-    //       message.sendToTarget();
-    //       expect(handler.removeMessages(1)).assertEqual(true);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join();
-    //       console.info(`${TAG} test end`);
-    //       done();
-    //     }
-    //   });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0130
@@ -1542,40 +1411,6 @@ export default function MessageTest() {
         }
       });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0138
-    //  * @tc.name RemoveMessages018
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages018';
-    //     console.info(`${TAG} test start`);
-    //     let handler: concurrency.MessageHandler;
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     let messageObject = new MessageObject(10);
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, messageObject, handler);
-    //       handler.sendMessage(message);
-    //       handler.removeMessages(1, messageObject);
-    //       expect(handler.removeMessages(1, messageObject)).assertEqual(false);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join();
-    //       console.info(`${TAG} test end`);
-    //       done();
-    //     }
-    //   });
-
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0139
      * @tc.name RemoveMessages019
@@ -1611,40 +1446,6 @@ export default function MessageTest() {
           done();
         }
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0140
-    //  * @tc.name RemoveMessages020
-    //  * @tc.desc test
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 0
-    //  */
-    // it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const TAG: string = 'RemoveMessages020';
-    //     console.info(`${TAG} test start`);
-    //     let handler: concurrency.MessageHandler;
-    //     let messageObject = new MessageObject(10);
-    //     let worker = new EAWorker();
-    //     worker.start();
-    //     try {
-    //       handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-    //         await Sleep(5000);
-    //       }, worker);
-    //       let message = new concurrency.Message(1, messageObject, handler);
-    //       message.sendToTarget();
-    //       handler.removeMessages(1, messageObject);
-    //       expect(handler.removeMessages(1, messageObject)).assertEqual(false);
-    //     } catch (error: Error) {
-    //       console.error(`${TAG} error.message => ${error.message}`);
-    //       expect(false).assertFail();
-    //     } finally {
-    //       worker.join();
-    //       console.info(`${TAG} test end`);
-    //       done();
-    //     }
-    //   });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_Test_0141
