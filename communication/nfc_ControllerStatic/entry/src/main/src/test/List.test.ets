@@ -15,7 +15,9 @@
 
 import abilityTest from "./Ability.test";
 import nfcControllerTest from "./NfcController.test";
+import nfcTagTest from "./NfcTag.test";
 export default function testsuite() {
   abilityTest();
   nfcControllerTest();
+  nfcTagTest();
 }
