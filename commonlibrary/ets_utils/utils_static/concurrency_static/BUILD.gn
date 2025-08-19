@@ -22,6 +22,7 @@ group("concurrency_static") {
       "eaworker_test_static:ActsEAWorkerStaticTest",
       "process_test_static:ActsProcessStaticTest",
       "promise_test_static:ActsPromiseStaticTest",
+      "promise_second_test_static:ActsPromiseSecondStaticTest",
       "sequenceRunner_test_static:ActsSequenceRunnerStaticTest",
       "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
       "taskDelayed_test_static:ActsTaskDelayedStaticTest",
