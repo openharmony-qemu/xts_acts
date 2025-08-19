@@ -22,7 +22,6 @@ import tag from '@ohos.nfc.tag';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-// import tag from '@ohos.nfc.tag';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,TestType,Size} from '../../../hypium/index';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag1: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -45,7 +44,7 @@ export default function nfcTagTest() {
         hilog.info(domain, tag1, '%{public}s', 'describe start11');
 
         /**
-         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
+         * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
          * @tc.name MIFARE_CLASSIC
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
@@ -53,7 +52,7 @@ export default function nfcTagTest() {
          * @tc.level Level 1
          */
 
-        it('SUB_COMMUNICATION_NFC_Cont_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('SUB_COMMUNICATION_NFC_Tag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             expect(tag.NfcForumType.MIFARE_CLASSIC).assertEqual(3);
             done();
         })
