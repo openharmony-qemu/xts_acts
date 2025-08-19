@@ -134,7 +134,7 @@ struct ParticleShapePage {
           noiseAmplitude: 5
         }])
       }
-    }.width("100%").height("100%").align(Alignment.Center).justifyContent(FlexAlign.Center)
+    }.width('100%').height('100%').align(Alignment.Center).justifyContent(FlexAlign.Center)
 
   }
 }
