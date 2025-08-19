@@ -61,7 +61,8 @@ export default function SharedArrayBufferApiTest() {
           int8Array[0] = 99;
           expect(slicedInt8Array[0]).assertEqual(0);
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {
@@ -92,7 +93,8 @@ export default function SharedArrayBufferApiTest() {
           const int8Array = new Int8Array(slice1);
           expect(int8Array.length).assertEqual(0);
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {
@@ -123,7 +125,8 @@ export default function SharedArrayBufferApiTest() {
           const int8Array = new Int8Array(slice1);
           expect(int8Array.length).assertEqual(0);
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {
@@ -160,7 +163,8 @@ export default function SharedArrayBufferApiTest() {
           int8Array[15] = 99;
           expect(slicedInt8Array[0]).assertEqual(42);
 
-        } catch (error: Error) {
+        } catch (error) {
+          error = error as Error;
           console.error(`${caseName} Test failed: ${error}`);
           expect(false).assertTrue();
         } finally {

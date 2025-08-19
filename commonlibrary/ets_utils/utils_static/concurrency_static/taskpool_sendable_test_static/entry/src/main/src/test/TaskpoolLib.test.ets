@@ -967,7 +967,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
             finalString += 'a';
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
         }
         done();
@@ -1080,7 +1081,8 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task3);
           task1.addDependency(task5);
           task3.addDependency(task6);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: There is a circular dependency');
         }
         done();
@@ -1113,7 +1115,8 @@ export default function TaskPoolLibTest() {
 
         try {
           task2.removeDependency(task3);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: executedTask cannot removeDependency');
         }
@@ -1477,7 +1480,8 @@ export default function TaskPoolLibTest() {
         }
         try {
           taskpool.cancel(task4);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: task is not executed or has been executed')
           flag = true
         }
@@ -1511,7 +1515,8 @@ export default function TaskPoolLibTest() {
 
           taskpool.execute(task1);
           taskpool.cancel(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -1544,7 +1549,8 @@ export default function TaskPoolLibTest() {
           }
 
           taskpool.cancel(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -1570,7 +1576,8 @@ export default function TaskPoolLibTest() {
           taskpool.execute(task2);
 
           taskpool.cancel(task3);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -1603,7 +1610,8 @@ export default function TaskPoolLibTest() {
 
           taskpool.cancel(task3);
           taskpool.cancel(task3);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -1645,7 +1653,8 @@ export default function TaskPoolLibTest() {
           taskpool.cancel(task4);
           taskpool.cancel(task3);
           taskpool.cancel(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -1682,7 +1691,8 @@ export default function TaskPoolLibTest() {
 
         try{
           taskpool.cancel(taskGroup1);
-        }catch(e:Error){
+        }catch(e){
+          e = e as Error;
           console.info('TaskPoolTestClass078 cancel error')
         }
         expect(i).assertEqual(10)
@@ -1735,7 +1745,8 @@ export default function TaskPoolLibTest() {
         try {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskpool.cancel(taskGroup);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: taskGroup is not executed or has been executed');
         }
@@ -1779,7 +1790,8 @@ export default function TaskPoolLibTest() {
 
         try {
           taskpool.cancel(taskGroup1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: taskGroup is not executed or has been executed');
         }
@@ -1826,7 +1838,8 @@ export default function TaskPoolLibTest() {
           taskGroup1.addTask(task);
           let taskGroup2: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup2.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add groupTask');
         }
         done();
@@ -1847,7 +1860,8 @@ export default function TaskPoolLibTest() {
           taskpool.execute(task);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
         }
         done();
@@ -1868,7 +1882,8 @@ export default function TaskPoolLibTest() {
           taskpool.executeDelayed(100, task);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
         }
         done();
@@ -1890,7 +1905,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
         }
         done();
@@ -1912,7 +1928,8 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: dependent task not allowed.');
         }
         done();
@@ -1940,7 +1957,8 @@ export default function TaskPoolLibTest() {
           taskpool.execute(taskGroup).then((res: number[]): void => {
             expect(res[1]).assertEqual(200.0);
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: executed taskGroup cannot addTask');
         }
         done();
@@ -1963,7 +1981,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           runner.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute groupTask');
         }
         done();
@@ -1985,7 +2004,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           runner.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -2007,7 +2027,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           runner.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -2030,7 +2051,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           runner.execute(task1).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
         }
         done();
@@ -2054,7 +2076,8 @@ export default function TaskPoolLibTest() {
           let runner2: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           runner2.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -2076,7 +2099,8 @@ export default function TaskPoolLibTest() {
           taskGroup1.addTask(task);
           let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
           task.addDependency(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot addDependency');
         }
         done();
@@ -2098,7 +2122,8 @@ export default function TaskPoolLibTest() {
           taskGroup1.addTask(task);
           let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
           task1.addDependency(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot be relied on');
         }
         done();
@@ -2119,7 +2144,8 @@ export default function TaskPoolLibTest() {
           let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.execute(task2);
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
         }
         done();
@@ -2140,7 +2166,8 @@ export default function TaskPoolLibTest() {
           let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.executeDelayed(100, task2);
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
         }
         done();
@@ -2161,7 +2188,8 @@ export default function TaskPoolLibTest() {
           let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.execute(task1);
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
         }
         done();
@@ -2182,7 +2210,8 @@ export default function TaskPoolLibTest() {
           let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.executeDelayed(100, task1);
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
         }
         done();
@@ -2205,7 +2234,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task2).then((): void => {
           });
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
         }
         done();
@@ -2228,7 +2258,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
           });
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
         }
         done();
@@ -2250,7 +2281,8 @@ export default function TaskPoolLibTest() {
           taskGroup1.addTask(task);
           let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
           task1.addDependency(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot be relied on');
         }
         done();
@@ -2272,7 +2304,8 @@ export default function TaskPoolLibTest() {
           taskGroup1.addTask(task);
           let task1: taskpool.Task = new taskpool.Task(printArgs, 200.0);
           task.addDependency(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot addDependency');
         }
         done();
@@ -2294,7 +2327,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
           });
           taskpool.execute(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot execute outside');
         }
         done();
@@ -2315,7 +2349,8 @@ export default function TaskPoolLibTest() {
           let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup1.addTask(task);
           taskpool.execute(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot execute outside');
         }
         done();
@@ -2337,7 +2372,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
           });
           taskpool.executeDelayed(100, task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
         }
         done();
@@ -2358,7 +2394,8 @@ export default function TaskPoolLibTest() {
           let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup1.addTask(task);
           taskpool.executeDelayed(100, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: groupTask cannot executeDelayed outside');
         }
         done();
@@ -2407,7 +2444,8 @@ export default function TaskPoolLibTest() {
         })
         try {
           taskpool.execute(task1)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: executedTask with dependency cannot execute again');
         }
         done();
@@ -2426,7 +2464,8 @@ export default function TaskPoolLibTest() {
         let task: taskpool.Task = new taskpool.Task('taskName', Sum, 10.0, 20.0);
         try {
           task.name = 'taskName1';
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('TypeError: Cannot set property when setter is undefined');
         }
         done();
@@ -2588,7 +2627,8 @@ export default function TaskPoolLibTest() {
           task.onEnqueued((): void => {
             onEnqueuedStr = 'onEnqueued';
           })
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The executed task does not support the registration of listeners.');
         }
@@ -2649,7 +2689,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
             finalString += 'a';
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
           expect(task1.totalDuration < 5).assertTrue();
           expect(task1.cpuDuration < 5).assertTrue();
@@ -2700,7 +2741,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task1).then((): void => {
             finalString += 'a';
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
           expect(task1.totalDuration < 5).assertTrue();
           expect(task1.cpuDuration < 5).assertTrue();
@@ -2754,7 +2796,8 @@ export default function TaskPoolLibTest() {
           taskpool.execute(taskGroup).then((res: number[]): void => {
             expect(res[1]).assertEqual(200.0);
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('BusinessError: Parameter error. The input parameters are invalid, ' +
             'taskpool:: executed taskGroup cannot addTask');
           expect(task1.totalDuration < 5).assertTrue();
@@ -2828,7 +2871,8 @@ export default function TaskPoolLibTest() {
           });
           taskGroup.addTask(task);
 
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
           expect(task.totalDuration < 5).assertTrue();
           expect(task.cpuDuration < 5).assertTrue();
@@ -2903,7 +2947,8 @@ export default function TaskPoolLibTest() {
         taskpool.terminateTask(task);
         try {
           taskpool.execute(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: The long task can only be executed once');
         }
         done();
@@ -2923,7 +2968,8 @@ export default function TaskPoolLibTest() {
         let group = new taskpool.TaskGroup();
         try {
           group.addTask(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: The interface does not support the long task');
         }
         done();
@@ -3065,7 +3111,8 @@ export default function TaskPoolLibTest() {
         taskpool.cancel(task1);
         try {
           task1.removeDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: executedTask cannot removeDependency');
         }
@@ -3099,7 +3146,8 @@ export default function TaskPoolLibTest() {
 
         try {
           task2.removeDependency(task3);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: executedTask cannot removeDependency');
         }
@@ -3121,7 +3169,8 @@ export default function TaskPoolLibTest() {
           let task2: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.executeDelayed(100, task1, taskpool.Priority.IDLE);
           task1.addDependency(task2);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
         }
         done();
@@ -3166,7 +3215,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
           runner.execute(task);
           taskpool.executeDelayed(100, task, taskpool.Priority.IDLE);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
         }
         done();
@@ -3188,7 +3238,8 @@ export default function TaskPoolLibTest() {
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
         try {
           runner.execute(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
         }
         done();
@@ -3210,7 +3261,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
         }
         done();
@@ -3237,7 +3289,8 @@ export default function TaskPoolLibTest() {
           taskGroup.addTask(task1);
           taskGroup.addTask(task2);
           taskpool.execute(taskGroup, taskpool.Priority.IDLE);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: executed taskGroup cannot addTask');
         }
         done();
@@ -3306,7 +3359,8 @@ export default function TaskPoolLibTest() {
         setTimeout((): void => {
           try {
             taskpool.cancel(taskGroup1);
-          } catch (e: Error) {
+          } catch (e) {
+            e = e as Error;
             console.log('TaskPoolTestClass151 cancel error:' + e)
           }
         }, 500);
@@ -3330,7 +3384,8 @@ export default function TaskPoolLibTest() {
         try {
           runner1.execute(task);
           runner2.execute(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -3354,7 +3409,8 @@ export default function TaskPoolLibTest() {
           runner1.execute(task);
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: taskGroup cannot add seqRunnerTask or executedTask');
         }
         done();
@@ -3376,7 +3432,8 @@ export default function TaskPoolLibTest() {
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner8', taskpool.Priority.LOW);
         try {
           runner.execute(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner dependent task not allowed.');
         }
         done();
@@ -3398,7 +3455,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task).then((): void => {
           });
           taskpool.executeDelayed(100, task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
         }
         done();
@@ -3421,7 +3479,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner10');
           runner.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -3444,7 +3503,8 @@ export default function TaskPoolLibTest() {
           let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner11');
           runner.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -3468,7 +3528,8 @@ export default function TaskPoolLibTest() {
           let runner2: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner12');
           runner2.execute(task).then((): void => {
           });
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
         done();
@@ -3491,7 +3552,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task).then((): void => {
           });
           taskpool.execute(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot execute outside');
         }
         done();
@@ -3514,7 +3576,8 @@ export default function TaskPoolLibTest() {
           runner.execute(task).then((): void => {
           });
           taskpool.executeDelayed(100, task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
         }
         done();
@@ -3540,7 +3603,8 @@ export default function TaskPoolLibTest() {
           let runner2: taskpool.SequenceRunner = new taskpool.SequenceRunner('runner15');
           runner2.execute(task2).then((res: number): void => {
           })
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask cannot executeDelayed outside');
         }
         done();
@@ -3561,7 +3625,8 @@ export default function TaskPoolLibTest() {
         taskpool.executePeriodically(100, task)
         try {
           taskpool.execute(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: The periodic task cannot be executed again, taskpool:: the periodicTask cannot execute again');
         }
@@ -3583,7 +3648,8 @@ export default function TaskPoolLibTest() {
         taskpool.executePeriodically(100, task)
         try {
           taskpool.executeDelayed(100, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: the periodicTask cannot executeDelayed');
         }
@@ -3606,7 +3672,8 @@ export default function TaskPoolLibTest() {
         try {
           let task1 = new taskpool.Task(dependend, 300.0);
           task.addDependency(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
         }
         taskpool.cancel(task);
@@ -3628,7 +3695,8 @@ export default function TaskPoolLibTest() {
         try {
           let task1 = new taskpool.Task(dependend, 300.0);
           task1.addDependency(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
         }
         taskpool.cancel(task);
@@ -3650,7 +3718,8 @@ export default function TaskPoolLibTest() {
         try {
           let taskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The interface does not support the periodicTask');
         }
@@ -3673,7 +3742,8 @@ export default function TaskPoolLibTest() {
         try {
           let runner = new taskpool.SequenceRunner()
           runner.execute(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
@@ -3696,7 +3766,8 @@ export default function TaskPoolLibTest() {
         try {
           let runner = new taskpool.SequenceRunner()
           runner.execute(task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: sequenceRunner cannot execute seqRunnerTask or executedTask');
         }
@@ -3718,7 +3789,8 @@ export default function TaskPoolLibTest() {
         taskpool.executePeriodically(100, task)
         try {
           taskpool.executePeriodically(1000, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3735,7 +3807,8 @@ export default function TaskPoolLibTest() {
         }
         try {
           taskpool.executePeriodically(1000, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3756,7 +3829,8 @@ export default function TaskPoolLibTest() {
         taskpool.execute(task)
         try {
           taskpool.executePeriodically(100, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3766,7 +3840,8 @@ export default function TaskPoolLibTest() {
         taskGroup.addTask(task1)
         try {
           taskpool.executePeriodically(100, task1)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3776,7 +3851,8 @@ export default function TaskPoolLibTest() {
         runner.execute(task2)
         try {
           taskpool.executePeriodically(100, task2)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3786,12 +3862,14 @@ export default function TaskPoolLibTest() {
         task3.addDependency(task4)
         try {
           taskpool.executePeriodically(100, task3)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: the task with dependency cannot executePeriodically');
         }
         try {
           taskpool.executePeriodically(100, task4)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: the task with dependency cannot executePeriodically');
         }
 
@@ -3799,7 +3877,8 @@ export default function TaskPoolLibTest() {
         taskpool.executeDelayed(1000, task5)
         try {
           taskpool.executePeriodically(100, task5)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: The concurrent task has been executed and cannot be executed periodically');
         }
@@ -3824,7 +3903,8 @@ export default function TaskPoolLibTest() {
         })
         try {
           await taskpool.executeDelayed(500, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('std.core.Int cannot be cast to std.core.Double');
         }
@@ -3846,7 +3926,8 @@ export default function TaskPoolLibTest() {
         let task: taskpool.Task = new taskpool.Task(dealHashMapTest, hashMap);
         try {
           taskpool.executeDelayed(500, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: An exception occurred during serialization, taskpool: failed to serialize arguments.');
         }
@@ -3866,7 +3947,8 @@ export default function TaskPoolLibTest() {
         let task: taskpool.Task = new taskpool.Task(noUseConcurrentTest, 'a');
         try {
           taskpool.executeDelayed(500, task)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: The function is not marked as concurrent, taskpool: failed to serialize function.');
         }
@@ -3886,7 +3968,8 @@ export default function TaskPoolLibTest() {
         try {
           let task = new taskpool.Task(printArgs, isConcurrentTest2);
           taskpool.executePeriodically(10, task, taskpool.Priority.HIGH)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: An exception occurred during serialization, taskpool: failed to serialize arguments.');
         }
@@ -3906,7 +3989,8 @@ export default function TaskPoolLibTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(isConcurrentTest2);
           taskpool.executePeriodically(10, task, taskpool.Priority.HIGH)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: The function is not marked as concurrent, taskpool: failed to serialize function.');
         }
@@ -3926,7 +4010,8 @@ export default function TaskPoolLibTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.executePeriodically(-10, task, taskpool.Priority.HIGH)
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: The period value is less than zero');
         }
         done();
@@ -4033,7 +4118,8 @@ export default function TaskPoolLibTest() {
         try {
           let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
           taskpool.executeDelayed(-100, task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: The delayTime is less than zero');
         }
         done();
@@ -4052,7 +4138,8 @@ export default function TaskPoolLibTest() {
         try {
           let task = new taskpool.Task(dependend, 200.0);
           taskpool.executePeriodically(-100, task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message).assertEqual('taskpool:: The period value is less than zero');
         }
         done();
@@ -4072,7 +4159,8 @@ export default function TaskPoolLibTest() {
         let task: taskpool.Task = new taskpool.Task(setCloneListTest, arrayBuffer);
         try {
           // task.setCloneList([new Uint8Array(arrayBuffer)]);//line:4173
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('BusinessError: An ArrayBuffer cannot be set as both a transfer list and a clone list');
         }
@@ -4274,7 +4362,8 @@ export default function TaskPoolLibTest() {
             isTerminate1 = true;
             ret1 = res;
           })
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           console.error(`TaskPoolTestClass198 execute: Code: ${e.code}, message: ${e.message}`);
         }
         while (!isTerminate1) {
@@ -4302,7 +4391,8 @@ export default function TaskPoolLibTest() {
         taskGroup.addTask(task2);
         try {
           await taskpool.execute(taskGroup);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           console.log(e.message)
           expect(e.message).assertContain('this is an error');
         }
@@ -4323,7 +4413,8 @@ export default function TaskPoolLibTest() {
         await taskpool.execute(task);
         try {
           taskpool.cancel(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -4489,7 +4580,8 @@ export default function TaskPoolLibTest() {
             continue;
           }
           taskpool.cancel(task1);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }
@@ -4511,7 +4603,8 @@ export default function TaskPoolLibTest() {
         let task = new taskpool.Task(fun, str);
         try {
           taskpool.cancel(task);
-        } catch (e: Error) {
+        } catch (e) {
+          e = e as Error;
           expect(e.message)
             .assertEqual('taskpool:: task is not executed or has been executed');
         }

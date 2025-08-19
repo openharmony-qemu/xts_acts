@@ -152,7 +152,8 @@ struct NavigationExample {
               }
               console.info("navigationContent1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
+              err = err as Error;
               console.info("navigationContent1 emit action state err: " + JSON.stringify(err.message))
             }
           })

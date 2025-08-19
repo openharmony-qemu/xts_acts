@@ -43,7 +43,8 @@ struct Index {
         colorValues.set(key, checkColor?.toString().toUpperCase());
       });
       AppStorage.setOrCreate<Map <string, undefined|string>>(colorValuesKey, colorValues);
-    } catch (error: Error) {
+    } catch (error) {
+      error = error as Error;
       console.log('error ' + error);
     }
   }
