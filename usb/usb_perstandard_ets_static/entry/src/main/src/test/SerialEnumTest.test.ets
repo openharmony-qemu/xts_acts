@@ -32,21 +32,6 @@ function sleep(count:int) : Promise<int> {
   })
 }
 
-async function driveDecFn() {
-  console.info('**************driveDecFn**************');
-  try {
-    let driver = Driver.create();
-    await sleep(1000);
-    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
-    console.info(TAG, 'driveDecFn button:', JSON.stringify(buttons));
-    if (buttons && buttons.length > 0) {
-      await buttons[buttons.length - 1].click();
-    }
-  } catch (error) {
-    console.info(TAG, 'driveDecFn error: ' + error);
-  }
-}
-
 function checkDevice() {
   let portList: serialManager.SerialPort[] = serialManager.getPortList();
   if (portList && portList.length > 0) {
