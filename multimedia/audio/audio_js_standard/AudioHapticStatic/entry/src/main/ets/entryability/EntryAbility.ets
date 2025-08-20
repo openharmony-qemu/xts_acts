@@ -4,11 +4,13 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate start');
+    AppStorage.setOrCreate('context', this.context);
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate end');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
