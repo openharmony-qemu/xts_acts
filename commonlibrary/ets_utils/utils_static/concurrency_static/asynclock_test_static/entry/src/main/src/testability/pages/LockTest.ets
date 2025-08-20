@@ -158,7 +158,7 @@ async function sharedMultiJob(lockName: string, timeout: number, flagBuf: Int32A
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync<void>(async (): Promise<void> => {
     hilog.info(0x0000, 'sharedMultiJob', 'lock.lockAsync '+idx);
-    flagBuf[idx] = 1;
+    flagBuf[idx.toInt()] = 1;
     await Promise.resolve(1);
     let prevSet = true;
     for (let i = 0; i < idx; ++i) {
@@ -172,7 +172,7 @@ async function sharedMultiJob(lockName: string, timeout: number, flagBuf: Int32A
       hilog.info(0x0000, 'sharedMultiJob', 'throw error '+idx);
       throw new Error('Expected callback overlap');
     }
-    flagBuf[idx] = 0;
+    flagBuf[idx.toInt()] = 0;
   }, AsyncLockMode.SHARED);
 }
 
@@ -966,7 +966,7 @@ async function exclusiveMultiWorkerJob(lockName: string, timeout: number,
 async function sharedMultiWorkerJob(lockName: string, timeout: number, flagBuf: Int32Array, idx: number) {
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync<void>(async () => {
-    flagBuf[idx] = 1;
+    flagBuf[idx.toInt()] = 1;
     await Promise.resolve(1);
     let prevSet = true;
     for (let i = 0; i < idx; ++i) {
@@ -977,7 +977,7 @@ async function sharedMultiWorkerJob(lockName: string, timeout: number, flagBuf: 
     if (!prevSet) {
       throw new Error('Expected callback overlap');
     }
-    flagBuf[idx] = 0;
+    flagBuf[idx.toInt()] = 0;
   }, AsyncLockMode.SHARED);
 }
 
@@ -1079,12 +1079,12 @@ async function mainExecutor(index: number, flagBuf: Int32Array, timeout: int): P
   let lockName = 'doubleExitSharedLockTest';
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async (): Promise<void> => {
-    flagBuf[index] = 1;
+    flagBuf[index.toInt()] = 1;
     if (flagBuf[2] != 0) {
       throw new Error('Unexpected set flag at index 2');
     }
     await Promise.resolve(1);
-    flagBuf[index] = 0;
+    flagBuf[index.toInt()] = 0;
   }, AsyncLockMode.SHARED);
 }
 

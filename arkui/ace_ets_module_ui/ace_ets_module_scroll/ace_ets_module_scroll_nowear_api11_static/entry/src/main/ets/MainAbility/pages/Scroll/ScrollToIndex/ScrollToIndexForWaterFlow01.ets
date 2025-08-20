@@ -82,7 +82,7 @@ struct ScrollToIndexForWaterFlow01 {
               }
             })
             .width('100%')
-            .height(this.itemHeightArray[item % 100])
+            .height(this.itemHeightArray[item.toInt() % 100])
           })
         }
         .columnsGap(10)

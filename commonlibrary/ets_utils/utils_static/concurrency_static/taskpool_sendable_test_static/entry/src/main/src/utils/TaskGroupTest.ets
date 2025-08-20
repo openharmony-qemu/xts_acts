@@ -85,7 +85,7 @@ async function testRepeatsImpl(): Promise<string> {
 
   await (p);
 
-  for (let idx: number = 0; idx < repeats; idx++) {
+  for (let idx = 0; idx < repeats; idx++) {
     let res: number = sab[idx];
     if (idx != res) {
       throw new Error('Test failed Expected at index ' + idx + ' value ' + idx + ', but was ' + res);

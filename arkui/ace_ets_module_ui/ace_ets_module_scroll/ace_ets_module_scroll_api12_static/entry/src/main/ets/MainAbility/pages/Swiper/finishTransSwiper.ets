@@ -63,10 +63,10 @@ struct finishTransitionSwiperAnimated {
             .fontSize(50)
             .textAlign(TextAlign.Center)
             .backgroundColor(backgroundColor)
-            .opacity(this.opacityList[index])
-            .scale({ x: this.scaleList[index], y: this.scaleList[index] })
-            .translate({ x: this.translateList[index] })
-            .zIndex(this.zIndexList[index])
+            .opacity(this.opacityList[index.toInt()])
+            .scale({ x: this.scaleList[index.toInt()], y: this.scaleList[index.toInt()] })
+            .translate({ x: this.translateList[index.toInt()] })
+            .zIndex(this.zIndexList[index.toInt()])
         })
       }
       .width('90%')
@@ -79,27 +79,27 @@ struct finishTransitionSwiperAnimated {
         transition: (proxy: SwiperContentTransitionProxy) => {
           if (proxy.position <= proxy.index % this.DISPLAY_COUNT ||
             proxy.position >= this.DISPLAY_COUNT + proxy.index % this.DISPLAY_COUNT) {
-            this.opacityList[proxy.index] = 1.0
-            this.scaleList[proxy.index] = 1.0
-            this.translateList[proxy.index] = 0.0
-            this.zIndexList[proxy.index] = 0
+            this.opacityList[proxy.index.toInt()] = 1.0
+            this.scaleList[proxy.index.toInt()] = 1.0
+            this.translateList[proxy.index.toInt()] = 0.0
+            this.zIndexList[proxy.index.toInt()] = 0
             this.selectedIndex = proxy.selectedIndex
             proxy.finishTransition()
           } else {
             if (proxy.index % this.DISPLAY_COUNT === 0) {
-              this.opacityList[proxy.index] = 1 - proxy.position / this.DISPLAY_COUNT
-              this.scaleList[proxy.index] =
+              this.opacityList[proxy.index.toInt()] = 1 - proxy.position / this.DISPLAY_COUNT
+              this.scaleList[proxy.index.toInt()] =
                 this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT)
-              this.translateList[proxy.index] =
-                -proxy.position * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0
+              this.translateList[proxy.index.toInt()] = -proxy.position * proxy.mainAxisLength +
+                (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
             } else {
-              this.opacityList[proxy.index] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT
-              this.scaleList[proxy.index] =
+              this.opacityList[proxy.index.toInt()] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT
+              this.scaleList[proxy.index.toInt()] =
                 this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - (proxy.position - 1) / this.DISPLAY_COUNT)
-              this.translateList[proxy.index] = -(proxy.position - 1) * proxy.mainAxisLength -
-                (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0
+              this.translateList[proxy.index.toInt()] = -(proxy.position - 1) * proxy.mainAxisLength -
+                (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
             }
-            this.zIndexList[proxy.index] = -1
+            this.zIndexList[proxy.index.toInt()] = -1
             proxy.finishTransition()
           }
         }

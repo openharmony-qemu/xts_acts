@@ -71,7 +71,7 @@ async function testManyTasksImpl(): Promise<string> {
     let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
     res = await (promiseCurr);
   }
-  for (let idx: number = 0; idx < stressCount; idx++) {
+  for (let idx = 0; idx < stressCount; idx++) {
     if (idx != (((res as Uint32Array)[idx]) as number)) {
       throw new Error('Test failed Expected at index ' + idx + ' value ' + idx + ', but was ' + (res as Uint32Array)[idx]);
     }
@@ -89,7 +89,7 @@ async function testTwoTasksChainedImpl(): Promise<string> {
   let taskCurr: NullishType = new taskpool.Task(taskpoolExecuteChained, sab, Number(0), Number(2));
   let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
   await (promiseCurr);
-  for (let idx: number = 0; idx < 2; idx++) {
+  for (let idx = 0; idx < 2; idx++) {
     let res:number = sab[idx]
     if (idx != res) {
       throw new Error('Test failed Expected at index ' + idx + ' value ' + idx + ', but was ' + res);
@@ -110,7 +110,7 @@ async function testManyTasksChainedImpl(): Promise<string> {
   let taskCurr = new taskpool.Task(taskpoolExecuteChained, sab, Number(0), stressCount);
   let promiseCurr: Promise<NullishType> = taskpool.execute(taskCurr);
   await (promiseCurr);
-  for (let idx: number = 0; idx < stressCount; idx++) {
+  for (let idx = 0; idx < stressCount; idx++) {
     let res:number = sab[idx]
     if (idx != res) {
       throw new Error('Test failed Expected at index ' + idx + ' value ' + idx + ', but was ' + res);
@@ -178,7 +178,7 @@ async function testRepeatsImpl(): Promise<string> {
 
   await Promise.all(promises);
 
-  for (let idx: number = 0; idx < repeats; idx++) {
+  for (let idx = 0; idx < repeats; idx++) {
     if (idx != ((res[idx]) as number)) {
       throw new Error('Test failed Expected at index ' + idx + ' value ' + idx + ', but was ' + res[idx]);
     }

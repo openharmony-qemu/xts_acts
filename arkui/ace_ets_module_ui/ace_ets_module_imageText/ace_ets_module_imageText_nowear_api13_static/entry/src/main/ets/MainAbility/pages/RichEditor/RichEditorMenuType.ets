@@ -192,7 +192,7 @@ struct RichEditorMenuType1 {
             'color': style.fontColor,
             'size': style.fontSize,
             'style': style.fontStyle,
-            'weight': this.fontWeightTable[style.fontWeight],
+            'weight': this.fontWeightTable[style.fontWeight.toInt()],
             'fontFamily': style.fontFamily,
             'decorationType': style.decoration.type,
             'decorationColor': style.decoration.color
@@ -425,22 +425,22 @@ struct RichEditorMenuType1 {
           .onTouch((event?: TouchEvent | undefined) => {
             if(event != undefined){
               if (event.type === TouchType.Down) {
-                this.iconBgColor[index as number] = $r('sys.color.ohos_id_color_click_effect')
+                this.iconBgColor[index!.toInt()] = $r('sys.color.ohos_id_color_click_effect')
               }
               if (event.type === TouchType.Up) {
-                this.iconBgColor[index as number] = this.colorTransparent
+                this.iconBgColor[index!.toInt()] = this.colorTransparent
               }
             }
           })
           .onHover((isHover?: boolean, event?: HoverEvent) => {
             this.iconBgColor.forEach((icon:ResourceColor, index1) => {
-              this.iconBgColor[index1] = this.colorTransparent
+              this.iconBgColor[index1.toInt()] = this.colorTransparent
             })
             if(isHover != undefined) {
-              this.iconBgColor[index as number] = $r('sys.color.ohos_id_color_hover')
+              this.iconBgColor[index!.toInt()] = $r('sys.color.ohos_id_color_hover')
             }
           })
-          .backgroundColor(this.iconBgColor[index as number])
+          .backgroundColor(this.iconBgColor[index!.toInt()])
         })
       }
     }

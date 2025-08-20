@@ -85,7 +85,7 @@ struct WaterFlowSectionDemo30 {
           .key(`WaterFlowSectionDemo30_${item}`)
           .width('100%')
           .height(100)
-          .backgroundColor(this.colors[item % 5])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number, index: number) => String(item))
       }
       .columnsTemplate('1fr')

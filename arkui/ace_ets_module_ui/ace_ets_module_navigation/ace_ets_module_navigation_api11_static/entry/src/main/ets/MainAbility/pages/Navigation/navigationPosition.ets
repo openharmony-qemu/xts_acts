@@ -104,7 +104,7 @@ struct navigationPosition {
         .margin({ top: 12, left: 12 } as Margin)
       }
       .key('navigationPosition')
-      .navBarPosition(this.navBarPosition[this.navBarPositionIndex])
+      .navBarPosition(this.navBarPosition[this.navBarPositionIndex.toInt()])
       .hideNavBar(this.hideNavBar)
       .hideTitleBar(true)
       .hideToolBar(true)

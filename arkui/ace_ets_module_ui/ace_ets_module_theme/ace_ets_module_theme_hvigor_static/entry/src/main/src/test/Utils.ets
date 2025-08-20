@@ -28,7 +28,7 @@ export function sleep(count:int) : Promise<int> {
 
 export function fillMap<T>(map: Map<string, T>, keys: string[], values: T[]) {
   keys.forEach((item, index) => {
-    const value: T = values[index];
+    const value: T = values[index.toInt()];
     map.set(item, value);
   })
 }

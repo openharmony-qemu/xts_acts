@@ -74,7 +74,7 @@ struct ListIndexExample {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(this.itemBackgroundColorArr[item] ? 0x68B4FF : 0xFFFFFF)
+              .backgroundColor(this.itemBackgroundColorArr[item.toInt()] ? 0x68B4FF : 0xFFFFFF)
           }
         }, (item: number) => item.toString())
       }
@@ -91,7 +91,7 @@ struct ListIndexExample {
             if (event.fingerList[0] != undefined && event.fingerList[0].localX != undefined &&
               event.fingerList[0].localY != undefined) {
               this.listIndex = this.scroller.getItemIndex(event.fingerList[0].localX, event.fingerList[0].localY)
-              this.itemBackgroundColorArr[this.listIndex] = true;
+              this.itemBackgroundColorArr[this.listIndex.toInt()] = true;
             }
           })
       )

@@ -107,7 +107,7 @@ struct WordListSample {
                   this.listScroller.scrollToItemInGroup(
                     this.wordsGroup.indexOf(item),
                     item.words.indexOf(word), true,
-                    this.scrollAlignStyle[this.wordsGroup.indexOf(item)])
+                    this.scrollAlignStyle[this.wordsGroup.indexOf(item).toInt()])
                 })
                 .key('Btn_' + this.wordsGroup.indexOf(item) + '_' + item.words.indexOf(word))
             }

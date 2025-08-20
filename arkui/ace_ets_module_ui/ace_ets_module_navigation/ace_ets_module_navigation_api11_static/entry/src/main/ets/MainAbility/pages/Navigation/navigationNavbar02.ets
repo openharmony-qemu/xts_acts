@@ -105,9 +105,9 @@ struct navigationNavbar02 {
       }
       .key('navigationNavbar')
       .minContentWidth(this.minContentWidth)
-      .mode(this.navMode[this.navModeIndex])
+      .mode(this.navMode[this.navModeIndex.toInt()])
       .navBarWidth(this.navBarWidth)
-      // .navBarPosition(this.navBarPosition[this.navBarPositionIndex])
+      // .navBarPosition(this.navBarPosition[this.navBarPositionIndex.toInt()])
       .hideNavBar(this.hideNavBar)
       .hideTitleBar(true)
       .hideToolBar(true)

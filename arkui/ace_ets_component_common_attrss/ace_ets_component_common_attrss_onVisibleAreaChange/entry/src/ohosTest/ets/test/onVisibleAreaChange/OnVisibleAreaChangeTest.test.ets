@@ -239,7 +239,7 @@ export default function onVisibleAreaChangeTest() {
 
 async function checkNormalLeaveResults(data: ESObject, compareTextObj: ESObject, ratiosRightNum: number) {
   console.info('[' + data.caseTag + '] checkNormalLeaveResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
@@ -260,7 +260,7 @@ async function checkNormalLeaveResults(data: ESObject, compareTextObj: ESObject,
 
 async function checkNormalEnterResults(data: ESObject, compareTextObj: ESObject, ratiosLeftNum: number) {
   console.info('[' + data.caseTag + '] checkNormalEnterResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
@@ -281,7 +281,7 @@ async function checkNormalEnterResults(data: ESObject, compareTextObj: ESObject,
 
 async function checkAbnormalResults(data: ESObject, compareTextObj: ESObject) {
   console.info('[' + data.caseTag + '] checkAbnormalResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
       console.info('[' + data.caseTag + '] JSON.parse(compareTextObj[num]).currentRatio:' +
