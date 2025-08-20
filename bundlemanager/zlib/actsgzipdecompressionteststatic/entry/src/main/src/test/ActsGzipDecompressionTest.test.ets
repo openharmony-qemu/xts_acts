@@ -2185,7 +2185,7 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzopen(allFilePath, "wb");
         try {
           await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then((len) => {
-            expect(len).assertEqual(0);
+            expect(len).assertEqual(22);
           })
         } catch (errData: BusinessError<void>) {
           hilog.error(domain, tag, `Test_gzprintf_normal_0100 errCode:${errData.code}  message:${errData.message}`);
