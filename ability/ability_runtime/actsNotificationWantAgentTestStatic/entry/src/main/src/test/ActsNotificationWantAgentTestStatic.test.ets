@@ -486,5 +486,51 @@ export default function ActsNotificationWantAgentStaticTest() {
       hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_Static_5100 END')
     })
 
+    /*
+     * @tc.number    : Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.name      : Sub_Notification_Ans_WantAgent_Create_Static_5150
+     * @tc.desc      : function trigger(agent: WantAgent, triggerInfo: TriggerInfo): void,Triggers a WantAgent
+     */
+    it('Sub_Notification_Ans_WantAgent_Create_Static_5150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, `Sub_Notification_Ans_WantAgent_Create_Static_5150 START`)
+      WantAgentInfo.actionType = wantAgent.OperationType.START_ABILITY;
+      WantAgentInfo.actionFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG];
+      wantAgent.getWantAgent(WantAgentInfo, (err: BusinessError<void> | null, data: _WantAgent | undefined) => {
+        if (err?.code !== 0) {
+          hilog.info(domain, tag, `getWantAgent, code: ${JSON.stringify(err?.code)}, message: ${JSON.stringify(err?.message)}`);
+          expect().assertFail();
+          done()
+        } else {
+          let wantAgentData: _WantAgent = data as _WantAgent
+          let triggerInfo: wantAgent.TriggerInfo = {
+            code: 0,
+            want: {
+              deviceId: "deviceId",
+              bundleName: "com.example.actsnotificationwantagent.static",
+              abilityName: "EntryAbility",
+              action: "action1",
+              entities: ["entity1"],
+              type: "MIMETYPE",
+              uri: "key={true,true,false}",
+              parameters: parameters,
+            } as Want,
+            permission: '',
+            startOptions: undefined,
+            extraInfo: Info,
+            extraInfos: Infos
+          }
+          try {
+            wantAgent.trigger(wantAgentData, triggerInfo)
+            expect(true).assertTrue()
+            done();
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, `err: code ${err.code}, message ${err.message}`);
+            expect().assertFail()
+            done();
+          }
+        }
+      })
+      hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_Static_5150 END')
+    })
   })
 }

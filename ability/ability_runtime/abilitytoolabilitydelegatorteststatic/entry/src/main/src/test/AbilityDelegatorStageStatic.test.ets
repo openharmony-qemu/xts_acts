@@ -420,6 +420,64 @@ export default function AbilityDelegatorStageStaticTest() {
     //   })
 
     /**
+     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.name      : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.desc      : test waitAbilityMonitor(promise)
+     * @tc.size      : MediumTest
+     * @tc.level     : Level 3
+     * @tc.type      : Function
+     */
+    // it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701',
+    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    //   async (done: () => void): Promise<void> => {
+    //     const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701';
+    //     hilog.info(domain, tag, `${itName} start`);
+    //     try {
+    //       let isOnBackground: boolean = false;
+    //       let onAbilityBackgroundCallback = (ability: UIAbility) => {
+    //         hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+    //         isOnBackground = true;
+    //       }
+    //       const monitorAbilityName = 'EntryAbility'
+    //       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+    //         moduleName: 'entry',
+    //         abilityName: `${monitorAbilityName}`,
+    //         onAbilityBackground: onAbilityBackgroundCallback
+    //       };
+    //       hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
+    //       abilityDelegator.waitAbilityMonitor(monitor).then(() => {
+    //         hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+    //
+    //         hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+    //         await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+    //         await Utils.msSleep(2000);
+    //
+    //         hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+    //         const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    //         await context.moveAbilityToBackground();
+    //         await Utils.msSleep(2000);
+    //
+    //         expect(isOnBackground).assertTrue();
+    //
+    //         done();
+    //         hilog.info(domain, tag, `${itName} end`);
+    //       }).catch((e: Error) => {
+    //         const err = e as BusinessError;
+    //         hilog.info(domain, tag, `${itName} waitAbilityMonitor promise fail error code: ${err?.code} msg: ${err?.message}`);
+    //         expect().assertFail();
+    //         done();
+    //         hilog.info(domain, tag, `${itName} end`);
+    //       })
+    //
+    //     } catch (err: BusinessError) {
+    //       hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+    //       expect().assertFail();
+    //       done();
+    //       hilog.info(domain, tag, `${itName} end`);
+    //     }
+    //   })
+
+    /**
      * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
      * @tc.name      : SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
      * @tc.desc      : test getCurrentTopAbility(callback) and getAbilityState

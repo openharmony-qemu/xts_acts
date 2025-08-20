@@ -106,5 +106,32 @@ export default function actsStageContextTestStatic() {
         done()
       }
     });
+
+    /*
+     * @tc.number    : ACTS_StageContext_Static_1700
+     * @tc.name      : ACTS_StageContext_Static_1700
+     * @tc.desc      : test CreateModuleContext with invalid param to verify the errcode 401
+     */
+    it("ACTS_StageContext_Static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'ACTS_StageContext_Static_1700 begin');
+      let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      try {
+        application.createModuleContext(context, 'entrytest').then((Context: common.Context) => {
+          hilog.info(domain, tag, 'createContext success');
+          hilog.info(domain, tag, 'createContext applicationInfo.name: ' + `${Context.applicationInfo.name}`);
+          expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
+          done();
+        }).catch((error : BusinessError): void => {
+          hilog.info(domain, tag, 'err: createContext fail');
+          expect(error.code).assertEqual(401);
+          done()
+        })
+      } catch (paramError: Error) {
+        let code: number = (paramError as BusinessError).code;
+        hilog.info(domain, tag, 'createContext fail');
+        expect().assertFail();
+        done()
+      }
+    });
   })
 }
