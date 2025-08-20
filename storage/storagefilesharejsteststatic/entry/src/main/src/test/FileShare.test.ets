@@ -34,7 +34,11 @@ export default function FileShare_test() {
     hilog.info(domain, tag, '%{public}s', 'FileShare_test start');
 
     beforeAll(() => {
-      fs.mkdirSync("/data/storage/el2/base/haps/entry/files", true);
+      try {
+        fs.mkdirSync("/data/storage/el2/base/haps/entry/files", true);
+      }catch(e: BusinessError) {
+        hilog.info(domain, tag, `FileShare test has failed for ${JSON.stringify(e)}`);
+      }
     })
 
     /**

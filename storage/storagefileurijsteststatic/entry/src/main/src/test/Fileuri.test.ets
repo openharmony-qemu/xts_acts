@@ -16,7 +16,11 @@ export default function fileuriTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     beforeAll(() => {
-      fs.mkdirSync("/data/storage/el2/base/haps/", true);
+      try {
+        fs.mkdirSync("/data/storage/el2/base/haps/", true);
+      }catch(e: BusinessError) {
+        hilog.info(domain, tag, `Fileuri test has failed for ${JSON.stringify(e)}`);
+      }
     })
 
     /**
