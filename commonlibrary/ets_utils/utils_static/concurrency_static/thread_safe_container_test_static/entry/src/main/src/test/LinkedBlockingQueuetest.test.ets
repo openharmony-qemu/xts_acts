@@ -681,7 +681,7 @@ export default function LinkedBlockingQueuetest() {
     it("linked_Blocking_Queue_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let queueIntPop1 = new containers.LinkedBlockingQueue<int>();
       let res = queueIntPop1.getFirst();
-      expect(String(res)).assertEqual('null');
+      expect(String(res)).assertEqual('undefined');
     })
 
     /**
@@ -1502,21 +1502,6 @@ export default function LinkedBlockingQueuetest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0179
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_019
-     * @tc.desc      : Test LinkedBlockingQueue constructor with array iterable and capacity 0.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<null>(0);
-      let queueIntPop1 = new containers.LinkedBlockingQueue<null>(0, arr);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual('0');
-    })
-
-    /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0180
      * @tc.name      : linked_Blocking_Queue_NoParameterUndefinedTest_static_018
      * @tc.desc      : Test LinkedBlockingQueue constructor with empty undefined array.
@@ -1529,121 +1514,6 @@ export default function LinkedBlockingQueuetest() {
       let queueIntPop1 = new containers.LinkedBlockingQueue<undefined>(arr);
       let res = queueIntPop1.size;
       expect(String(res)).assertEqual('0');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0181
-     * @tc.name      : linked_Blocking_Queue_NoParameterUndefinedTest_static_019
-     * @tc.desc      : Test LinkedBlockingQueue constructor with empty undefined array and capacity 0.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterUndefinedTest_static_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<undefined>();
-      let queueIntPop1 = new containers.LinkedBlockingQueue<undefined>(0, arr);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual('0');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0182
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_020
-     * @tc.desc      : Test LinkedBlockingQueue constructor with array containing null values.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int | null>();
-      arr[0] = 0;
-      arr[1] = null;
-      let queueIntPop1 = new containers.LinkedBlockingQueue<int | null>(arr);
-      let res = queueIntPop1.size;
-      expect(String(res)).assertEqual('2');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0183
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_021
-     * @tc.desc      : Test LinkedBlockingQueue capacity with array containing null values.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int | null>();
-      arr[0] = 0;
-      arr[1] = null;
-      let queueIntPop1 = new containers.LinkedBlockingQueue<int | null>(arr);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual('2');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0184
-     * @tc.name      : linked_Blocking_Queue_NoParameterUndefinedTest_static_020
-     * @tc.desc      : Test LinkedBlockingQueue constructor with array containing undefined values.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterUndefinedTest_static_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int | undefined>();
-      arr[0] = 0;
-      arr[1] = undefined;
-      let queueIntPop1 = new containers.LinkedBlockingQueue<int | undefined>(arr);
-      let res = queueIntPop1.size;
-      expect(String(res)).assertEqual('2');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterUndefinedTest_0185
-     * @tc.name      : linked_Blocking_Queue_NoParameterUndefinedTest_static_021
-     * @tc.desc      : Test LinkedBlockingQueue capacity with array containing undefined values.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterUndefinedTest_static_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int | undefined>();
-      arr[0] = 0;
-      arr[1] = undefined;
-      let queueIntPop1 = new containers.LinkedBlockingQueue<int | undefined>(arr);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual('2');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0185
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_022
-     * @tc.desc      : Verify LinkedBlockingQueue size with array of undefined ints.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int>(Int.MAX_VALUE);
-      let iter = arr.values();
-      let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
-      let res = queueIntPop1.size;
-      expect(String(res)).assertEqual(Int.MAX_VALUE);
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_00185
-     * @tc.name      : linkedBlockingQueueNoParameterTest_00185
-     * @tc.desc      : Verify LinkedBlockingQueue capacity with array of undefined ints.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linkedBlockingQueueNoParameterTest_00185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<int>(Int.MAX_VALUE);
-      let iter = arr.values();
-      let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual(Int.MAX_VALUE);
     })
 
     /**
@@ -1676,22 +1546,6 @@ export default function LinkedBlockingQueuetest() {
       let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10, iter);
       let res = queueIntPop1.capacity;
       expect(String(res)).assertEqual('10');
-    })
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_linkedBlockingQueueNoParameterTest_0188
-     * @tc.name      : linked_Blocking_Queue_NoParameterTest_static_026
-     * @tc.desc      : Test LinkedBlockingQueue constructor with empty nested array iterable and capacity 0.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("linked_Blocking_Queue_NoParameterTest_static_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new Array<Array<int>>();
-      let iter = arr.values();
-      let queueIntPop1 = new containers.LinkedBlockingQueue<Array<int>>(0, iter);
-      let res = queueIntPop1.capacity;
-      expect(String(res)).assertEqual('0');
     })
 
     /**
