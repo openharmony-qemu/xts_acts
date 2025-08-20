@@ -72,7 +72,7 @@ export default function FivePointOne_resMgrStageTest() {
      * @tc.level    : Level 2
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getIntPluralStringValueSync(0x0100000f, 2, 2, 'test');
+      let value = res.getIntPluralStringValueSync(0x01000036, 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringValueSync_static_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
