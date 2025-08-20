@@ -35,7 +35,6 @@ struct WebOnFirstContentfulPaint {
 
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
-  @State onFirstContentfulPaint: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -65,6 +64,8 @@ struct WebOnFirstContentfulPaint {
       Row() {
         Button("web click").key('WebOnFirstContentfulPaintButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          // await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitOnFirstContentfulPaint001": {
               try {
@@ -77,9 +78,9 @@ struct WebOnFirstContentfulPaint {
             case "emitOnFirstContentfulPaint002": {
               try {
                 this.vis = Visibility.Visible
-                this.onFirstContentfulPaint = -1
+                this.isPageEnd = -1
                 this.controller.refresh()
-                await Utils.waitForExist(()=>this.onFirstContentfulPaint, 'WebOnDataResubmittedTestWebView', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent(this.onFirstContentfulPaintCalled, 127120)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -91,7 +92,6 @@ struct WebOnFirstContentfulPaint {
       }
 
       Web({ src: 'https://openharmony.cn', controller: this.controller })
-        .key('WebOnFirstContentfulPaintTestWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .visibility(this.vis)
         .fileAccess(this.fileAccess)
@@ -106,8 +106,11 @@ struct WebOnFirstContentfulPaint {
             if (event.firstContentfulPaintMs > 0 && event.navigationStartTick > 0) {
               this.onFirstContentfulPaintCalled = true
             }
-            this.onFirstContentfulPaint = 1
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }
