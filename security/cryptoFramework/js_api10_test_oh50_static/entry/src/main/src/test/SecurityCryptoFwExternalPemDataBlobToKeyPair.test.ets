@@ -46,7 +46,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       let algName: string = "";
       try {
         for(let data of externalPemData) {
-          algName = data.algName;
+          algName = (data.algName) as string;
           let keyPair: cryptoFramework.KeyPair;
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           for (let pemData of data.keyPair) {
@@ -81,7 +81,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       let algName: string = "";
       try {
         for(let data of externalPemData) {
-          algName = data.algName;
+          algName = (data.algName) as string;
           let keyPair: cryptoFramework.KeyPair;
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           for (let pemData of data.keyPair) {
@@ -148,7 +148,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = generator.convertPemKeySync(pemData.pubKey, pemData.priKey);
@@ -180,7 +180,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
@@ -328,7 +328,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
@@ -360,7 +360,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = generator.convertPemKeySync(pemData.pubKey, pemData.priKey);
@@ -392,7 +392,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = generator.convertPemKeySync(pemData.pubKey, pemData.priKey);
@@ -424,7 +424,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair;
         for (let pemData of data) {
           if (pemData.algName) {
-            algName = pemData.algName;
+            algName = (pemData.algName) as string;
           }
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
           keyPair = await generator.convertPemKey(pemData.pubKey, pemData.priKey);
@@ -553,7 +553,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
@@ -579,7 +579,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -605,7 +605,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -631,7 +631,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
@@ -657,7 +657,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
@@ -683,7 +683,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -709,7 +709,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -735,7 +735,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -761,7 +761,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -787,7 +787,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -812,7 +812,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(data.pubKey, data.priKey);
@@ -838,7 +838,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -864,7 +864,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -890,7 +890,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -916,7 +916,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -942,7 +942,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -968,7 +968,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -994,7 +994,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1020,7 +1020,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1046,7 +1046,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1073,7 +1073,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1099,7 +1099,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1125,7 +1125,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
@@ -1150,7 +1150,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let dataMap: DataBlobMap = new DataBlobMap(false);
         let data = dataMap.getData(algName);
         if (data.algName) {
-          algName = data.algName;
+          algName = (data.algName) as string;
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
