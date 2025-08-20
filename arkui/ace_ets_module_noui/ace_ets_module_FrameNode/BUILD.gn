@@ -16,11 +16,16 @@ group("ActsAceEtsModuleFrameNodeTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps =
-        [ "ace_ets_module_FrameNode_api12:ActsAceEtsModuleFrameNodeApi12Test" ]
+        [
+          "ace_ets_module_FrameNode_api12:ActsAceEtsModuleFrameNodeApi12Test",
+          "ace_ets_module_FrameNode_api12_static:ActsAceEtsModuleFrameNodeApi12StaticTest",
+        ]
   } else {
     deps = [
       "ace_ets_module_FrameNode_NoWear_api12:ActsAceEtsModuleFrameNodeNoWearApi12Test",
+      "ace_ets_module_FrameNode_NoWear_api12_static:ActsAceEtsModuleFrameNodeNoWearApi12StaticTest",
       "ace_ets_module_FrameNode_api12:ActsAceEtsModuleFrameNodeApi12Test",
+      "ace_ets_module_FrameNode_api12_static:ActsAceEtsModuleFrameNodeApi12StaticTest",
     ]
   }
 }
