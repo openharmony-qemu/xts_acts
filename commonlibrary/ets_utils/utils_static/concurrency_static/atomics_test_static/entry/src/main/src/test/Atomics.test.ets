@@ -366,6 +366,9 @@ export default function AtomicsTest() {
           });
           const waitPromise = new Promise<string>((resolve, reject) => {
             const startTime = Date.now();
+            while(Date.now() - startTime < 200){
+
+            }
             const result = Atomics.wait(array, 0, 0n, 1000);
             if (result === 'not-equal') {
               resolve('wait success');
@@ -784,6 +787,9 @@ export default function AtomicsTest() {
           });
           const waitPromise = new Promise<string>((resolve, reject) => {
             const startTime = Date.now();
+            while(Date.now() - startTime < 200){
+
+            }
             const result = Atomics.wait(array, 0, 0);
             if (result === 'not-equal') {
               resolve('wait success');
@@ -804,7 +810,6 @@ export default function AtomicsTest() {
           Done();
         }
       });
-
 
     /**
      * @tc.number SUB_Atomics_Test_1700
