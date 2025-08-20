@@ -16,8 +16,12 @@
 import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 let emitKey = "emitOnActivateContent";
 
+const driver = Driver.create();
 export default function webWaitForAttachedTest() {
 
 
@@ -34,7 +38,6 @@ export default function webWaitForAttachedTest() {
         if (!("onActivateContent" == pages.name)) {
           console.info("get onActivateContent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push onActivateContent page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,12 +51,6 @@ export default function webWaitForAttachedTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("onActivateContent afterEach start");
-      await Utils.sleep(2000);
-      console.info("onActivateContent afterEach end");
-      done();
-    })
 
     /*
     * @tc.number      : SUB_WEB_ONACTIVATECONTENTBUTTON_0100
@@ -65,10 +62,12 @@ export default function webWaitForAttachedTest() {
     */
 
     it('emitOnActivateContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnActivateContent", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("emitOnActivateContent", true, 20250619, done);
-      sendEventByKey('onActivateContentButton', 10, '');
+      Utils.emitEvent("emitOnActivateContent", 141301)
+      let isReturn = false;
+      Utils.registerEvent("emitOnActivateContent", true, 141310, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("onActivateContentButton",driver)
+      await waitForExist(()=>isReturn, "emitOnActivateContent", true,1000);
+      done();
     })
   })
 }

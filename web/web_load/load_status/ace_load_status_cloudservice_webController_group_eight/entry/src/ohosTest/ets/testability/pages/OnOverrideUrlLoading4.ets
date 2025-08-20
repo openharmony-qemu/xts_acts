@@ -16,11 +16,17 @@
 import { webview } from '@kit.ArkWeb';
 import { LocalContext } from '../../test/GloablConfig';
 
+
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  @State flg: boolean  = false;
 
+  aboutToAppear(): void {
+    LocalContext.context.eventHub.emit('onOverrideUrlLoading0004')
+    this.flg = true
+  }
   build(){
     Column() {
       Web({ src: 'resource://rawfile/iframeLoad.html', controller: this.controller })
