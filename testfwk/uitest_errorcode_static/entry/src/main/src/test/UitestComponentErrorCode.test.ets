@@ -709,7 +709,7 @@ export default function uitestComponentErrorTest() {
     * @tc.name: test_inputTextMode_801_static
     * @tc.desc: inputText 801 test.
     */
-    it('test_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('test_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_inputTextMode_801_static start`);
       try {
         const driver = Driver.create();
