@@ -54,8 +54,8 @@ async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise
     try {
       let index1: number = Math.floor(Math.random() * 7);
       let index2: number = Math.floor(Math.random() * 4);
-      let algName: string = rsaSpec[index1];
-      let cipherName: string = cipherSpec[index2];
+      let algName: string = rsaSpec[index1.toInt()];
+      let cipherName: string = cipherSpec[index2.toInt()];
       ret = await rsaDecodedBySpecPromiseTest(algName, cipherName, format);
       if (!ret) {
         timeFlag = true;
@@ -88,8 +88,8 @@ async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<bo
     try {
       let index1: number = Math.floor(Math.random() * 7);
       let index2: number = Math.floor(Math.random() * 4);
-      let algName: string = rsaSpec[index1];
-      let cipherName: string = cipherSpec[index2];
+      let algName: string = rsaSpec[index1.toInt()];
+      let cipherName: string = cipherSpec[index2.toInt()];
       ret = await rsaDecodedBySpecSyncTest(algName, cipherName, format);
       if (!ret) {
         timeFlag = true;
