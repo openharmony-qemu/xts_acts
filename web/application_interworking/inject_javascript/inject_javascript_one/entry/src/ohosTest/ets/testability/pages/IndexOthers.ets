@@ -41,7 +41,7 @@ class TestObj {
 
   asyncTestBool(testBol: boolean): void{
     console.log('Web Component boolean' + testBol);
-    Utils.emitEvent(testBol, 2025062501);
+    Utils.emitEvent(testBol, 172130);
   }
 }
 
@@ -51,7 +51,7 @@ class WebObj {
 
   webTest(): string{
     console.log('Web test');
-    Utils.emitEvent(true, 2025062502);
+    Utils.emitEvent(true, 172140);
     return 'Web test';
   }
 
@@ -66,7 +66,7 @@ class AsyncObj {
 
   asyncTest(): void{
     console.log('Async test');
-    Utils.emitEvent(true, 2025062503);
+    Utils.emitEvent(true, 172150);
   }
 
   asyncString(testStr: string): void{
@@ -87,14 +87,14 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 26,
+      eventId: 172120,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(26)
+    events_emitter.off(172120)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

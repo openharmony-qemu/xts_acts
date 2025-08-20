@@ -17,6 +17,7 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -31,19 +32,18 @@ export default function webViewApiOne() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages));
             if (!("webViewJsBridgeLastJsProxyCallingFrameUrl" == pages.name)) {
                 console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewJsBridgeLastJsProxyCallingFrameUrl page error:" + err);
         }
+        await waitForComponent("webViewJsBridgeLastJsProxyCallingFrameUrl");
         done()
     });
     
@@ -53,28 +53,10 @@ export default function webViewApiOne() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       done();
     })
     
-    afterEach(async (done: Function) => {
-        try {
-            let backData: emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : emitter.InnerEvent = {
-                eventId: 10,
-                priority: emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
+    afterEach(() => {
     })
 
 
@@ -87,9 +69,8 @@ export default function webViewApiOne() {
     * @tc.level       : Level 1
     */
     it('testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let emitKey = "emitJsBridgeGetLastJavascriptProxyCallingFrameUrl";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerBaseEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 1277,
+      Utils.emitEvent("emitJsBridgeGetLastJavascriptProxyCallingFrameUrl", 172290)
+      Utils.registerBaseEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 172300,
         done, (backData: emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

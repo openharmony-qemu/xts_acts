@@ -17,6 +17,7 @@ import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level }
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +36,12 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
         if (!("WebJavaScriptOnDocumentEndTest" == pages.name)) {
           console.info("get WebJavaScriptOnDocumentEndTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebJavaScriptOnDocumentEndTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebJavaScriptOnDocumentEndTest page error: " + err);
       }
+       await waitForComponent("WebJavaScriptOnDocumentEndTestButton");
       done()
     });
 
@@ -50,14 +51,12 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebJavaScriptOnDocumentEndTest beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebJavaScriptOnDocumentEndTest afterEach start");
-      await Utils.sleep(2000);
       console.info("WebJavaScriptOnDocumentEndTest afterEach end");
       done();
     })
@@ -71,9 +70,8 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
     * @tc.level      : Level 2
     */
     it('testWebJavaScriptOnDocumentEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebJavaScriptOnDocumentEnd001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebJavaScriptOnDocumentEnd001", true, 2025040805, done);
+      Utils.emitEvent("emitWebJavaScriptOnDocumentEnd001", 173050)
+      Utils.registerEvent("testWebJavaScriptOnDocumentEnd001", true, 173060, done);
       sendEventByKey('WebJavaScriptOnDocumentEndTestButton', 10, '');
     })
 

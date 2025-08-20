@@ -15,6 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -23,17 +24,19 @@ struct webAttribute {
   @State str: string = "emitUserAgent"
   @State console: string = ""
   @State javaScriptAccess: boolean = true
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172160,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(172160)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +45,7 @@ struct webAttribute {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -50,21 +54,27 @@ struct webAttribute {
     Column() {
       Row() {
         Button("WebAttribute click").key('WebAttributeButton').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "testJavaScriptAccess001": {
               try {
                 this.javaScriptAccess = false
-                await Utils.sleep(2000);
                 this.controller.runJavaScript({ script: "jsAccess()" })
-                await Utils.sleep(2000);
-                if (this.console !== "web111") {
+                const result = await waitForExist(
+                    () => this.console !== "web111" ? "ready" : null,
+                    this.str,
+                    "ready"
+                  );
+                if (result === "ready") {
                   let javaScriptAccessCalled = true
-                  Utils.emitEvent(javaScriptAccessCalled, 32019)
+                  Utils.emitEvent(javaScriptAccessCalled, 172170)
                 }
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 32019)
+                Utils.emitEvent(String(error.code), 172170)
               }
               break;
             }
@@ -74,6 +84,12 @@ struct webAttribute {
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebAttribute onPageEnd url:' + event.url);
+           }
+        })
     }
   }
 }

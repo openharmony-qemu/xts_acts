@@ -38,7 +38,6 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
         if (!("WebRegisterAsyncThreadJavaScriptProxy" == pages.name)) {
           console.info("get WebRegisterAsyncThreadJavaScriptProxy state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebRegisterAsyncThreadJavaScriptProxy page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -55,15 +54,7 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
        }).catch((err: object) => {
          console.error(`failed to enable, ${err}`);
        })
-      await Utils.sleep(2000);
       console.info("WebRegisterAsyncThreadJavaScriptProxy beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebRegisterAsyncThreadJavaScriptProxy afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebRegisterAsyncThreadJavaScriptProxy afterEach end");
       done();
     })
 
@@ -76,8 +67,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 2
     */
     it('testRegisterAsyncThreadJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy001", 611)
-        Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy001", true, 2025061101, done,
+        Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy001", 172850)
+        Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy001", true, 172860, done,
           (backData: events_emitter.EventData, expected: Object) => {
             expect(backData?.data?.ACTION).assertEqual(expected);
           });
@@ -93,8 +84,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 2
     */
     it('testRegisterAsyncThreadJavaScriptProxy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy002", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy002", true, 2025061102, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy002", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy002", true, 172870, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -111,8 +102,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 0
     */
     it('testRegisterAsyncThreadJavaScriptProxy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy003", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy003", true, 2025061103, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy003", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy003", true, 172880, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -128,8 +119,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 0
     */
     it('testRegisterAsyncThreadJavaScriptProxy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy004", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy004", true, 2025061104, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy004", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy004", true, 172890, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -145,8 +136,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 2
     */
     it('testRegisterAsyncThreadJavaScriptProxy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy005", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy005", true, 2025061105, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy005", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy005", true, 172900, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -161,8 +152,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 1
     */
     it('testRegisterAsyncThreadJavaScriptProxy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy006", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy006", true, 2025061106, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy006", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy006", true, 172910, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -179,8 +170,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 2
     */
     it('testRegisterAsyncThreadJavaScriptProxy007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy007", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy007", true, 2025061107, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy007", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy007", true, 172920, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -196,8 +187,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 0
     */
     it('testRegisterAsyncThreadJavaScriptProxy008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy008", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy008", true, 2025061108, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy008", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy008", true, 172930, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -213,8 +204,8 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     * @tc.level      : Level 2
     */
     it('testRegisterAsyncThreadJavaScriptProxy009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy009", 611)
-      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy009", true, 2025061109, done,
+      Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy009", 172850)
+      Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy009", true, 172940, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

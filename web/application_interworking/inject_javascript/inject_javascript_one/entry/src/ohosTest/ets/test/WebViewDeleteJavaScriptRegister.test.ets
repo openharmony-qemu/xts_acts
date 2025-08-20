@@ -20,6 +20,7 @@ import router from '@ohos.router';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,19 +34,18 @@ export default function ActsAceDeleteJavaScriptRegister() {
         url: 'testability/pages/WebviewDeleteJavaScriptRegister',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
         if (!("webviewDeleteJavaScriptRegister" == pages.name)) {
           console.info("get index state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push index state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push index page error:" + err);
       }
+      await waitForComponent("deleteJavaScriptRegister_withOutRefresh");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -54,31 +54,8 @@ export default function ActsAceDeleteJavaScriptRegister() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(500);
       done();
     });
-
-    afterEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": ''
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
 
     /**
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0001
@@ -89,16 +66,14 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.level Level 0
      */
     it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 10072, done,
+      Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 172420, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('deleteWithoutRefresh', 10)
-      await Utils.sleep(100)
+      Utils.emitEvent('deleteWithoutRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withOutRefresh', 10, '');
-      setTimeout(() => {
-        sendEventByKey('runJavaScript', 10, '');
-      }, 500)
+      sendEventByKey('runJavaScript', 10, '');
+
     });
 
     /**
@@ -111,17 +86,15 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0002",
-        '"ReferenceError: testObjName is not defined"', 10073,
+        '"ReferenceError: testObjName is not defined"', 172430,
         done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('deleteWithRefresh', 10)
-      await Utils.sleep(100)
+      Utils.emitEvent('deleteWithRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withRefresh', 10, '');
-      setTimeout(() => {
-        sendEventByKey('runJavaScript', 10, '');
-      }, 1000)
+      sendEventByKey('runJavaScript', 10, '');
+
     });
 
 
@@ -135,10 +108,11 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0003",
-        '17100008Failed to delete JavaScriptProxy because it does not exist.', 10074, done,
+        '17100008Failed to delete JavaScriptProxy because it does not exist.', 172440, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
+        Utils.emitEvent('name_err', 172410)
       sendEventByKey('deleteJavaScriptRegister_name_err', 10, '');
     });
 
@@ -153,10 +127,11 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0004",
-        "401BusinessError 401: Parameter error. The type of 'name' must be string.", 10075, done,
+        "401BusinessError 401: Parameter error. The type of 'name' must be string.", 172450, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
+        Utils.emitEvent('name_null', 172410)
       sendEventByKey('deleteJavaScriptRegister_name_null', 10, '');
     });
   });
