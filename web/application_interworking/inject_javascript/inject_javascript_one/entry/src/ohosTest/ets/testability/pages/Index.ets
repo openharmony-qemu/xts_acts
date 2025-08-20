@@ -18,6 +18,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { JSON } from '@kit.ArkTS';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 class TestObj {
   constructor(){
@@ -88,13 +89,19 @@ struct Index {
   @State src: string | Resource = $rawfile('index1.html')
   @State header: string = 'https'
   @State body: string = '://www.example.com'
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow(): void{
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172000,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(172000);
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -103,6 +110,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -112,11 +120,13 @@ struct Index {
       Row() {
         Button('Web')
           .key('001')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
             try {
               this.controller1.registerJavaScriptProxy(this.testObject, 'objName', ['test', 'toString', 'testNumber'],
                 ['asyncTestBool']);
-              this.controller.refresh();
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript(
                 'test()',
                 (error, result) => {
@@ -130,7 +140,7 @@ struct Index {
                   }
                 });
             } catch (e) {
-              Utils.emitEvent(e.code + e.massage, 1001)
+              Utils.emitEvent(e.code + e.massage, 172010)
               console.error('err.code' + e.code)
             }
           })
@@ -141,7 +151,9 @@ struct Index {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, null, ['test', 'toString', 'testNumber'],
                 ['asyncTestBool']);
-              this.controller.refresh();
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript(
                 'test()',
                 (error, result) => {
@@ -155,7 +167,7 @@ struct Index {
                   }
                 });
             } catch (e) {
-              Utils.emitEvent(e.code + e.massage, 1002)
+              Utils.emitEvent(e.code + e.massage, 172020)
               console.error('err.code' + e.code)
             }
           })
@@ -164,12 +176,13 @@ struct Index {
       Row() {
         Button('TestObj')
           .key('003')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'TestObj', ['test', 'toString', 'testNumber'],
                 ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -178,27 +191,28 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1003)
+                      Utils.emitEvent('true', 172030)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
+
             } catch (e) {
-              Utils.emitEvent(e.code + e.massage, 1003)
+              Utils.emitEvent(e.code + e.massage, 172030)
               console.error('err.code' + e.code)
             }
           })
 
         Button('100')
           .key('004')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
             try {
               this.controller.registerJavaScriptProxy(this.testObject,
                 'qwasedrftgzcxvcbsdhsiueyhjjnmiokjnhgfrtyhujetrioknagbvcgrethjkiujnbhytgbfgyuhfbshtyueijhnbgtyujhgbnag',
                 ['test', 'toString', 'testNumber'], ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -207,14 +221,14 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1004)
+                      Utils.emitEvent('true', 172040)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
+ 
             } catch (e) {
-              Utils.emitEvent(e.code, 1004)
+              Utils.emitEvent(e.code, 172040)
               console.error('err.code=' + e.code)
             }
           })
@@ -223,11 +237,12 @@ struct Index {
       Row() {
         Button('method null')
           .key('005')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', null, ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'test()',
                   (error, result) => {
@@ -240,9 +255,8 @@ struct Index {
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
-              Utils.emitEvent(e.code + e.massage, 1005)
+              Utils.emitEvent(e.code + e.massage, 172050)
               console.error('err.code=' + e.code)
             }
           })
@@ -252,8 +266,9 @@ struct Index {
           .onClick(async (event: ClickEvent) => {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['test'], ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {
@@ -262,12 +277,12 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1006)
+                      Utils.emitEvent('true', 172060)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
+
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -280,8 +295,9 @@ struct Index {
           .onClick(async (event: ClickEvent) => {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['fake'], ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'fakeTest()',
                   (error, result) => {
@@ -291,11 +307,10 @@ struct Index {
                     }
                     if (result) {
                       this.webResult = result;
-                      Utils.emitEvent('true', 1007)
+                      Utils.emitEvent('true', 172070)
                       console.info(`The method return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -307,8 +322,9 @@ struct Index {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['test', 'toString', 'testNumber'],
                 ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {
@@ -317,12 +333,11 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1008)
+                      Utils.emitEvent('true', 172080)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -336,8 +351,9 @@ struct Index {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['test', 'toString', 'testNumber'],
                 ['asyncTestBool']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'asyncTest()',
                   (error, result) => {
@@ -346,12 +362,11 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1009)
+                      Utils.emitEvent('true', 172090)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -363,8 +378,9 @@ struct Index {
             try {
               this.controller.registerJavaScriptProxy(this.asyncTestObj, 'objAsyncName', [],
                 ['asyncString', 'asyncTest']);
-              this.controller.refresh();
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'asyncTest()',
                   (error, result) => {
@@ -373,12 +389,11 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1010)
+                      Utils.emitEvent('true', 172100)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -392,9 +407,9 @@ struct Index {
             try {
               this.controller.registerJavaScriptProxy(this.testObject, 'objName', ['test', 'toString', 'testNumber'],
                 ['asyncTestBool', 'test', 'toString']);
-              this.controller.refresh();
-
-              setTimeout(() => {
+              this.isPageEnd = -1;
+              this.controller.refresh()
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.runJavaScript(
                   'objTest()',
                   (error, result) => {
@@ -403,12 +418,11 @@ struct Index {
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent('true', 1011)
+                      Utils.emitEvent('true', 172110)
                       this.webResult = result;
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              }, 300)
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -417,6 +431,12 @@ struct Index {
 
       Web({ src: this.src, controller: this.controller, incognitoMode: this.incognitoMode })
         .javaScriptAccess(true)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('onPageEnd url:' + event.url);
+           }
+        })
     }
   }
 }

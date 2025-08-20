@@ -32,17 +32,19 @@ struct WebRunJavaScriptOnDocumentEndTest {
   @State isComplete: number = -1;
   private jsEnd: string =
     'console.log("push new js on run end called")';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 173090,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(173090)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -51,6 +53,7 @@ struct WebRunJavaScriptOnDocumentEndTest {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -61,7 +64,9 @@ struct WebRunJavaScriptOnDocumentEndTest {
         Button('WebRunJavaScriptOnDocumentEndTestButton click')
           .key('WebRunJavaScriptOnDocumentEndTestButton')
           .onClick(async () => {
-            await Utils.sleep(2000);
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             switch (this.emitKey) {
               case 'emitWebRunJavaScriptOnDocumentEnd001': {
@@ -75,12 +80,12 @@ struct WebRunJavaScriptOnDocumentEndTest {
                       console.info('emitWebRunJavaScriptOnDocumentEnd001 getResult() return result: ' + result);
                       resultData = result;
                     }
-                  })
+                  });
+                resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnDocumentEnd001', null);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
-                await Utils.sleep(2000);
-                Utils.emitEvent(resultData,2025022101);
+                Utils.emitEvent(resultData,173100);
                 break;
               }
               case 'emitWebRunJavaScriptOnDocumentEnd002': {
@@ -90,8 +95,12 @@ struct WebRunJavaScriptOnDocumentEndTest {
                          { script: "testValue = 'msg2'", scriptRules: ['*'] }
                       ];
                    try {
+                     this.isPageEnd = -1;
                      this.controller.loadUrl($rawfile('runJavaScriptOnDocumentEnd.html'));
-                     await Utils.sleep(2000);
+                     await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                     this.isPageEnd = -1;
+                      this.controller.refresh();
+                      await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                      this.controller.runJavaScript('getTestValue()', (error, result) => {
                        if (error) {
                          console.info('emitWebRunJavaScriptOnDocumentEnd002 getTestValue() return error: ' + error)
@@ -100,12 +109,12 @@ struct WebRunJavaScriptOnDocumentEndTest {
                          console.info('emitWebRunJavaScriptOnDocumentEnd002 getTestValue() return result: ' + result)
                          resultData = result;
                        }
-                     })
+                     });
+                     resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnDocumentEnd002', null);
                    } catch (error) {
                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                    }
-                  await Utils.sleep(2000);
-                  Utils.emitEvent(resultData,2025022102);
+                  Utils.emitEvent(resultData,173110);
                   break;
               }
               case 'emitWebRunJavaScriptOnDocumentEnd003': {
@@ -114,7 +123,7 @@ struct WebRunJavaScriptOnDocumentEndTest {
                   let check = (v1:Array<string>, v2:boolean): boolean => {
                     return v1.includes('push new js on run end called')
                   }
-                  await waitForAssert(()=>this.message, check, true, 2025040802, this.emitKey);
+                  await waitForAssert(()=>this.message, check, true, 173120, this.emitKey);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -133,6 +142,7 @@ struct WebRunJavaScriptOnDocumentEndTest {
         })
         .onPageEnd((event) => {
           if (event) {
+            this.isPageEnd = 0;
             this.isComplete = 0;
             console.log('runJavaScriptOnDocumentEnd isComplete==>'+this.isComplete);
             console.log('runJavaScriptOnDocumentEnd onPageEnd url:' + event.url);

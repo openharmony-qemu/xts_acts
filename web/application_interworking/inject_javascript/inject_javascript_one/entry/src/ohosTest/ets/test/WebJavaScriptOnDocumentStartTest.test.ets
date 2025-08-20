@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +36,12 @@ export default function webJavaScriptOnDocumentStartTest() {
         if (!("WebJavaScriptOnDocumentStartTest" == pages.name)) {
           console.info("get WebJavaScriptOnDocumentStartTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebJavaScriptOnDocumentStartTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebJavaScriptOnDocumentStartTest page error: " + err);
       }
+      await waitForComponent("WebJavaScriptOnDocumentStartTestButton");
       done()
     });
 
@@ -50,7 +51,6 @@ export default function webJavaScriptOnDocumentStartTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebJavaScriptOnDocumentStartTest beforeEach start");
       done();
     })
@@ -64,9 +64,8 @@ export default function webJavaScriptOnDocumentStartTest() {
     * @tc.level      : Level 1
     */
     it('testJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testJavaScriptOnDocumentStart001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJavaScriptOnDocumentStart001", '"Red"', 4500, done);
+      Utils.emitEvent("testJavaScriptOnDocumentStart001", 172210)
+      Utils.registerEvent("testJavaScriptOnDocumentStart001", '"Red"', 172220, done);
       sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
     })
 
@@ -79,9 +78,8 @@ export default function webJavaScriptOnDocumentStartTest() {
     * @tc.level      : Level 1
     */
     it('testJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testJavaScriptOnDocumentStart002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 4501, done);
+      Utils.emitEvent("testJavaScriptOnDocumentStart002", 172210)
+      Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 172230, done);
       sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
     })
 

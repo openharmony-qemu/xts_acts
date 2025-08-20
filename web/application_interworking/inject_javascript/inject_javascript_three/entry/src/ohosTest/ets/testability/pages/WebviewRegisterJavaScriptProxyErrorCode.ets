@@ -55,17 +55,18 @@ struct Index {
   @State isSslErrorHandlerComplete: number = 0;
   @State isReceive: number = -1;
   no_error: string = 'no error happened';
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 14,
+      eventId: 173210,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(14)
+    events_emitter.off(173210)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -86,6 +87,7 @@ struct Index {
         Button('WebErrorCode click').key('WebviewRegisterJavaScriptProxyErrorCodeButton').onClick(async () => {
           console.info('key==>' + this.str);
           await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case 'emitWebviewRegisterJavaScriptProxyObjectNull': {
               try {
@@ -102,11 +104,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051301);
+                  Utils.emitEvent('401', 173220);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051301);
+                  Utils.emitEvent(this.errorCode, 173220);
                 }
               }
               break;
@@ -126,11 +128,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051302);
+                  Utils.emitEvent('401', 173230);
                 } else {
                   this.errorCode = String(e.code);
-                  console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051302);
+                  console.log('errorCode===>' + this.errorCode); 
+                  Utils.emitEvent(this.errorCode, 173230);
                 }
               }
               break;
@@ -150,11 +152,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051303);
+                  Utils.emitEvent('401', 173240);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051303);
+                  Utils.emitEvent(this.errorCode, 173240);
                 }
               }
               break;
@@ -174,11 +176,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051304);
+                  Utils.emitEvent('401', 173250);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051304);
+                  Utils.emitEvent(this.errorCode, 173250);
                 }
               }
               break;
@@ -198,11 +200,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051305);
+                  Utils.emitEvent('401', 173260);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051305);
+                  Utils.emitEvent(this.errorCode, 173260);
                 }
               }
               break;
@@ -222,11 +224,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051306);
+                  Utils.emitEvent('401', 173270);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051306);
+                  Utils.emitEvent(this.errorCode, 173270);
                 }
               }
               break;
@@ -246,11 +248,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051307);
+                  Utils.emitEvent('401', 173280);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051307);
+                  Utils.emitEvent(this.errorCode, 173280);
                 }
               }
               break;
@@ -270,11 +272,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051308);
+                  Utils.emitEvent('401', 173290);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051308);
+                  Utils.emitEvent(this.errorCode, 173290);
                 }
               }
               break;
@@ -292,11 +294,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051309);
+                  Utils.emitEvent('401', 173300);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051309);
+                  Utils.emitEvent(this.errorCode, 173300);
                 }
               }
               break;
@@ -314,11 +316,11 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('401', 2025051310);
+                  Utils.emitEvent('401', 173310);
                 } else {
                   this.errorCode = String(e.code);
                   console.log('errorCode===>' + this.errorCode);
-                  Utils.emitEvent(this.errorCode, 2025051310);
+                  Utils.emitEvent(this.errorCode, 173310);
                 }
               }
               break;

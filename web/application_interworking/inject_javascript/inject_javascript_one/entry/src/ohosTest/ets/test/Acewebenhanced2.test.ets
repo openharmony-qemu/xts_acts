@@ -21,10 +21,10 @@ import { webview } from '@kit.ArkWeb';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-let driver = Driver.create();
 
 export default function AceWeb() {
 
@@ -46,8 +46,7 @@ export default function AceWeb() {
       } catch (err) {
         console.error("push IndexOthers page error: " + err);
       }
-      await driver.waitForComponent(ON.id("registerJavaScriptProxyAsyncMethodListButton"),10000);
-      console.log("waitForComponent registerJavaScriptProxyAsyncMethodListButton==>");
+      await waitForComponent("registerJavaScriptProxyAsyncMethodListButton");
       done()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -84,8 +83,8 @@ export default function AceWeb() {
      * @tc.level Level 0
      */
     it("testAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitAsyncMethodList0100", 26);
-      Utils.registerBaseEvent("testAsyncMethodList0100", true, 2025062501, done,
+      Utils.emitEvent("emitAsyncMethodList0100", 172120);
+      Utils.registerBaseEvent("testAsyncMethodList0100", true, 172130, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -101,8 +100,8 @@ export default function AceWeb() {
      * @tc.level Level 0
      */
     it("testAsyncMethodList0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitAsyncMethodList0200", 26);
-      Utils.registerBaseEvent("testAsyncMethodList0200", true, 2025062502, done,
+      Utils.emitEvent("emitAsyncMethodList0200", 172120);
+      Utils.registerBaseEvent("testAsyncMethodList0200", true, 172140, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -118,8 +117,8 @@ export default function AceWeb() {
      * @tc.level Level 0
      */
     it("testRegisterJavaScriptProxyAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitRegisterJavaScriptProxyAsyncMethodList0100", 26);
-      Utils.registerBaseEvent("testRegisterJavaScriptProxyAsyncMethodList0100", true, 2025062503, done,
+      Utils.emitEvent("emitRegisterJavaScriptProxyAsyncMethodList0100", 172120);
+      Utils.registerBaseEvent("testRegisterJavaScriptProxyAsyncMethodList0100", true, 172150, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

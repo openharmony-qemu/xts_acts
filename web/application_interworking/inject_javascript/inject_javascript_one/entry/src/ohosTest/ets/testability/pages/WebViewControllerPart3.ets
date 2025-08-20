@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 class TestObj {
   constructor() {
@@ -40,17 +41,18 @@ struct WebViewControllerPart3 {
   testObj: TestObj = new TestObj()
   @State registerJavaScriptProxyFlag: boolean = false;
   @State console: string = ""
-
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 172310,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(172310)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -62,6 +64,7 @@ struct WebViewControllerPart3 {
         if (this.controller) {
           this.controller.loadUrl("resource://rawfile/index.html");
           this.controller.clearHistory()
+          this.isReceive = 0;
         }
       }
     }
@@ -75,7 +78,7 @@ struct WebViewControllerPart3 {
     },
     register: (res: object) => {
       if (this.registerJavaScriptProxyFlag == true) {
-        Utils.emitEvent(String(res), 100075);
+        Utils.emitEvent(String(res), 172330);
       }
       return "web222"
     }
@@ -85,17 +88,22 @@ struct WebViewControllerPart3 {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str)
           switch (this.str) {
             case "javaScriptProxy": {
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/proxy.html")
-              await Utils.sleep(2000)
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("htmlTest()", async (error, result) => {
                 console.log("error" + error)
                 if (result == '"ArkUI Web Component"') {
-                  Utils.emitEvent(true, 1271);
+                  Utils.emitEvent(true, 172320);
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
-                  await Utils.sleep(2000)
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
                 }
               })
               break;
@@ -103,11 +111,13 @@ struct WebViewControllerPart3 {
             
             case "testRegisterJavaScriptProxy001": {
               this.registerJavaScriptProxyFlag = true
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'))
-              await Utils.sleep(3000)
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.registerJavaScriptProxy(this.jsObj, "objName", ["test", "toString", "register"]);
+              this.isPageEnd = -1;
               this.controller.refresh()
-              await Utils.sleep(3000)
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("proxy()", (error) => {
                 if (error) {
                   console.info('requestPosition() return error: ' + error)
@@ -119,22 +129,24 @@ struct WebViewControllerPart3 {
             case "testDeleteJavaScriptRegister001": {
               this.registerJavaScriptProxyFlag = false
               this.controller.registerJavaScriptProxy(this.jsObj, "objName", ["test", "toString", "register"]);
+              this.isPageEnd = -1;
               this.controller.refresh()
-              await Utils.sleep(3000)
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.deleteJavaScriptRegister("objName")
+              this.isPageEnd = -1;
               this.controller.refresh()
-              await Utils.sleep(3000)
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("registerTest()", (error) => {
                 if (error) {
                   console.info('requestPosition() return error: ' + error)
                 }
               })
-              await Utils.sleep(3000)
+          
               if (this.console !== "web222") {
-                Utils.emitEvent(true, 100076)
+                Utils.emitEvent(true, 172340)
               }
               else {
-                Utils.emitEvent(false, 100076)
+                Utils.emitEvent(false, 172340)
               }
               break;
             }
@@ -155,6 +167,12 @@ struct WebViewControllerPart3 {
             this.console = event.message.getMessage()
           }
           return false
+        })
+        .onPageEnd((event) => {
+        if (event) {
+            this.isPageEnd = 0;
+            console.log(' WebViewController onPageEnd url:' + event.url);
+           }
         })
     }
   }

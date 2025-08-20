@@ -16,6 +16,7 @@ import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 class TestClass {
   constructor(){
@@ -38,6 +39,32 @@ struct Index {
   @State str: string = 'SchemeMissed';
   @State permission: string =
     '{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "e","host": "f", "port": "", "path": "" } ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
+
+  onPageShow(){
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 172460,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(172460)
+  }
+
+  
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.str = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   InitJavaScriptProxyTest(permission: string){
     if (permission != '') {
@@ -61,10 +88,15 @@ struct Index {
     Column() {
       Row() {
         Button('0013')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "e","host": "f", "port": "", "path": "" } ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
-              this.webviewController.runJavaScript(
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
                   if (error) {
@@ -72,18 +104,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10058)
+                    Utils.emitEvent(result, 172470)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0013')
 
         Button('0014')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "e","host": "f", "port": "", "path": ""}, { "scheme": "j","host": "f", "port": "", "path": ""}], "methodList": [{ "methodName": "test", "urlPermissionList": [] }] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -92,20 +128,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10059)
+                    Utils.emitEvent(result, 172480)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0014')
       }
 
       Row() {
         Button('0015')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "X&X","port": "", "path": "" } ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -114,18 +154,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10060)
+                    Utils.emitEvent(result, 172490)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0015')
 
         Button('0016')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile","port":"X&X","path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -134,20 +178,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10061)
+                    Utils.emitEvent(result, 172500)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0016')
       }
 
       Row() {
         Button('0017')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -156,18 +204,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10062)
+                    Utils.emitEvent(result, 172510)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0017')
 
         Button('0018')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "X&X", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -176,20 +228,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10063)
+                    Utils.emitEvent(result, 172520)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0018')
       }
 
       Row() {
         Button('0019')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -198,18 +254,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10064)
+                    Utils.emitEvent(result, 172530)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0019')
 
         Button('0020')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": "X&X"} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -218,18 +278,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10065)
+                    Utils.emitEvent(result, 172540)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0020')
 
         Button('0021')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -238,20 +302,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10066)
+                    Utils.emitEvent(result, 172550)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0021')
       }
 
       Row() {
         Button('0022')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [{ "scheme": "X&X", "host": "X&X", "port": "X&X", "path": "X&X" }] } ] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -260,18 +328,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10067)
+                    Utils.emitEvent(result, 172560)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0022')
 
         Button('0023')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "X&X", "host": "X&X", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }] }] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -280,20 +352,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10068)
+                    Utils.emitEvent(result, 172570)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0023')
       }
 
       Row() {
         Button('0024')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }] }] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -302,18 +378,22 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10069)
+                    Utils.emitEvent(result, 172580)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0024')
 
         Button('0025')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info("key==>" + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }, { "scheme": "X&X", "host": "X&X", "port": "", "path": "" }] }, { "methodName": "test2", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }, { "scheme": "X&X", "host": "X&X", "port": "", "path": "" }] }] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -322,20 +402,24 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10070)
+                    Utils.emitEvent(result, 172590)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0025')
       }
 
       Row() {
         Button('0026')
-          .onClick((event: ClickEvent) => {
+          .onClick(async (event: ClickEvent) => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('key==>' + this.str)
+            this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" },{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [] }] } }')
-            setTimeout(() => {
+            await waitForExist(() => this.isPageEnd, this.str, 0);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -344,16 +428,21 @@ struct Index {
                     return;
                   }
                   if (result) {
-                    Utils.emitEvent(result, 10071)
+                    Utils.emitEvent(result, 172600)
                   }
                 }
               )
-            }, 300)
           })
           .key('testWebView_registerJavaScriptProxy_0026')
       }
 
       Web({ src: $rawfile('index2.html'), controller: this.webviewController })
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('WebController onPageEnd url:' + event.url);
+           }
+        })
     }
   }
 }

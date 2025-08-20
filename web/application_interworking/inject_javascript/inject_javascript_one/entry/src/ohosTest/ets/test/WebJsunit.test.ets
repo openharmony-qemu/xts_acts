@@ -16,6 +16,7 @@ import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitRegisterJavaScriptProxy";
@@ -28,29 +29,11 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
+      await waitForComponent("webcomponent");
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
+    afterEach(() => {
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_058
@@ -58,8 +41,8 @@ export default function webJsunit() {
      *tc.desic Registers the JavaScript object and method list
      */
     it('registerJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitDeleteJavaScriptRegister";
-      Utils.registerEvent("registerJavaScriptProxy", "backToEts", 86, done);
+      Utils.emitEvent("emitRegisterJavaScriptProxy", 172240)
+      Utils.registerEvent("registerJavaScriptProxy", "backToEts", 172250, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /*
@@ -68,8 +51,8 @@ export default function webJsunit() {
      *tc.desic Deletes a registered JavaScript object with given name
      */
     it('deleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitDeleteJavaScriptRegister";
-      Utils.registerEvent("deleteJavaScriptRegister", true, 87, done);
+      Utils.emitEvent("emitDeleteJavaScriptRegister", 172240)
+      Utils.registerEvent("deleteJavaScriptRegister", true, 172260, done);
       sendEventByKey('webcomponent', 10, '');
     })
   })
