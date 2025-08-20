@@ -18,11 +18,13 @@ import Utils from '../../test/Utils';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { waitForExist } from '../../test/WaitTest.test';
+import { webview } from '@kit.ArkWeb';
 
 @Entry
 @Component
 struct webResourceResponseGet {
-  controller: WebController = new WebController();
+  controller: webview.WebviewController = new webview.WebviewController();
   heads: Header[] = new Array()
   @State webdata: string = "<!DOCTYPE html>\n" +
     "<html>\n" +
@@ -59,17 +61,20 @@ struct webResourceResponseGet {
   @State getResponseMimeTypeValue: string = ''
   @State getReasonMessageValue: string = ''
   @State getResponseCodeValue: number = 10000
+  @State isReceive: number = -1;
+  @State isEnd: number = -1;
+  @State HttpErrorEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141511,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141511)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -78,6 +83,7 @@ struct webResourceResponseGet {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -93,19 +99,20 @@ struct webResourceResponseGet {
     Column() {
       Row() {
         Button("WebResourceResponseGet click").key('WebResourceResponseGetButton').onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isEnd, this.str, 0);
+          await waitForExist(()=>this.HttpErrorEnd, this.str, 0);
+          this.isReceive = -1
           console.info("key==>" + this.str)
           switch (this.str) {
 
             case "testGetRequestHeader001": {
               try {
-                this.getRequestHeaderValue = 0
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
                 if (this.getRequestHeaderValue > 0) {
-                  Utils.emitEvent(true, 35010);
+                  Utils.emitEvent(true, 141520);
                   return
                 }
-                Utils.emitEvent(false, 35010);
+                Utils.emitEvent(false, 141520);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -114,10 +121,7 @@ struct webResourceResponseGet {
 
             case "testGetRequestUrl001": {
               try {
-                this.getRequestUrlValue = ' '
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getRequestUrlValue, 35011);
+                Utils.emitEvent(this.getRequestUrlValue, 141530);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -126,10 +130,7 @@ struct webResourceResponseGet {
 
             case "testIsRequestGesture001": {
               try {
-                this.isRequestGestureValue = true
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.isRequestGestureValue, 35012);
+                Utils.emitEvent(this.isRequestGestureValue, 141540);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -138,12 +139,7 @@ struct webResourceResponseGet {
 
             case "testIsMainFrame001": {
               try {
-                this.controller.clearHistory()
-                await Utils.sleep(2000);
-                this.isMainFrameValue = false
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.isMainFrameValue, 35013);
+                Utils.emitEvent(this.isMainFrameValue, 141550);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -152,10 +148,7 @@ struct webResourceResponseGet {
 
             case "testIsRedirect001": {
               try {
-                this.isRedirectValue = false
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.isRedirectValue, 35014);
+                Utils.emitEvent(this.isRedirectValue, 141560);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -164,10 +157,7 @@ struct webResourceResponseGet {
 
             case "testGetRequestMethod001": {
               try {
-                this.isRedirectValue = false
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getRequestMethodValue, 35015);
+                Utils.emitEvent(this.getRequestMethodValue, 141570);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -176,10 +166,7 @@ struct webResourceResponseGet {
 
             case "testGetResponseData001": {
               try {
-                this.getResponseDataValue = ''
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getResponseDataValue, 35016);
+                Utils.emitEvent(this.getResponseDataValue, 141580);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -188,10 +175,7 @@ struct webResourceResponseGet {
 
             case "testGetResponseEncoding001": {
               try {
-                this.getResponseEncodingValue = ''
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getResponseEncodingValue, 35017);
+                Utils.emitEvent(this.getResponseEncodingValue, 141590);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -200,10 +184,7 @@ struct webResourceResponseGet {
 
             case "testGetResponseMimeType001": {
               try {
-                this.getResponseMimeTypeValue = ''
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getResponseMimeTypeValue, 35018);
+                Utils.emitEvent(this.getResponseMimeTypeValue, 141600);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -212,10 +193,7 @@ struct webResourceResponseGet {
 
             case "testGetReasonMessage001": {
               try {
-                this.getReasonMessageValue = ''
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getReasonMessageValue, 35019);
+                Utils.emitEvent(this.getReasonMessageValue, 141610);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -224,14 +202,11 @@ struct webResourceResponseGet {
 
             case "testGetResponseHeader001": {
               try {
-                this.getResponseHeaderValue = 0
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
                 if (this.getResponseHeaderValue > 0) {
-                  Utils.emitEvent(true, 35020);
+                  Utils.emitEvent(true, 141620);
                   return;
                 }
-                Utils.emitEvent(false, 35020);
+                Utils.emitEvent(false, 141620);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -240,10 +215,7 @@ struct webResourceResponseGet {
 
             case "testGetResponseCode001": {
               try {
-                this.getResponseCodeValue = 0
-                this.controller.loadUrl({ url: 'https://gitee.com/openharmony/123' });
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.getResponseCodeValue, 35021);
+                Utils.emitEvent(this.getResponseCodeValue, 141630);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -256,7 +228,7 @@ struct webResourceResponseGet {
       }
 
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: 'https://www.example.com/404', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -264,43 +236,42 @@ struct webResourceResponseGet {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd(()=>{
+          this.isEnd = 0;
+        })
         .onHttpErrorReceive((event) => {
           if (event) {
-            console.log('GetRequest url:' + event.request.getRequestUrl());
+            if (event.request.getRequestUrl() != "https://www.example.com/404") {
+              return;
+            }
             this.getRequestUrlValue = event.request.getRequestUrl()
-            console.log('GetRequest isMainFrame:' + event.request.isMainFrame());
+            console.log('GetRequest url:' + this.getRequestUrlValue);
             this.isMainFrameValue = event.request.isMainFrame()
-            console.log('GetRequest isRedirect:' + event.request.isRedirect());
+            console.log('GetRequest isMainFrame:' + this.isMainFrameValue);
             this.isRedirectValue = event.request.isRedirect()
-            console.log('GetRequest isRequestGesture:' + event.request.isRequestGesture());
+            console.log('GetRequest isRedirect:' + this.isRedirectValue);
             this.isRequestGestureValue = event.request.isRequestGesture()
-            console.log('GetRequest getRequestMethod:' + event.request.getRequestMethod());
+            console.log('GetRequest isRequestGesture:' + this.isRequestGestureValue);
             this.getRequestMethodValue = event.request.getRequestMethod()
-            console.log('GetRequest getResponseData:' + JSON.stringify(event.response.getResponseData()));
+            console.log('GetRequest getRequestMethod:' + this.getRequestMethodValue);
             this.getResponseDataValue = JSON.stringify(event.response.getResponseData())
-            console.log('GetRequest getResponseEncoding:' + event.response.getResponseEncoding());
+            console.log('GetRequest getResponseData:' + this.getResponseDataValue);
             this.getResponseEncodingValue = event.response.getResponseEncoding()
-            console.log('GetRequest getResponseMimeType:' + event.response.getResponseMimeType());
+            console.log('GetRequest getResponseEncoding:' +  this.getResponseEncodingValue);
             this.getResponseMimeTypeValue = event.response.getResponseMimeType()
-            console.log('GetRequest getResponseCode:' + event.response.getResponseCode());
+            console.log('GetRequest getResponseMimeType:' +  this.getResponseMimeTypeValue);
             this.getResponseCodeValue = event.response.getResponseCode()
+            console.log('GetRequest getResponseCode:' + this.getResponseCodeValue);
             console.log("GetRequest this.title result is :" + this.title);
-            console.log('GetRequest getReasonMessage:' + event.response.getReasonMessage());
             this.getReasonMessageValue = event.response.getReasonMessage()
+            console.log('GetRequest getReasonMessage:' + this.getReasonMessageValue);
             let result = event.request.getRequestHeader()
             this.getRequestHeaderValue = result.length
             console.log('GetRequest The request header result size is ' + result.length)
-            for (let i of result) {
-              console.log('GetRequest The request header key is : ' + i.headerKey +
-                ' , value is : ' + i.headerValue);
-            }
             let respHeader = event.response.getResponseHeader()
             this.getResponseHeaderValue = respHeader.length
             console.log('GetRequest The response header result size is ' + respHeader.length)
-            for (let i of respHeader) {
-              console.log('GetRequest The response header key is : ' + i.headerKey +
-                ' , value is : ' + i.headerValue);
-            }
+            this.HttpErrorEnd = 0;
           }
         })
         .onTitleReceive((event) => {

@@ -16,6 +16,7 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -36,17 +37,18 @@ struct WebOnHttpErrorReceive {
     "</body>\n" +
     "</html>"
   @State title: string = "test";
+  @State isReceive:number = -1
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141701,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141701)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -55,6 +57,7 @@ struct WebOnHttpErrorReceive {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0
       }
     }
   }
@@ -65,14 +68,16 @@ struct WebOnHttpErrorReceive {
         Button("WebOnHttpErrorReceiveTestButton")
           .key('WebOnHttpErrorReceiveTestButton')
           .onClick(async () => {
+            await waitForExist(()=>this.isReceive, this.str, 0);
+            this.isReceive = -1
             console.info("key==>" + this.str)
             switch (this.str) {
               case "testOnHttpErrorReceive002": {
                 try {
                   this.responseCode = 204
                   this.controller.loadUrl("resource://rawfile/index.html")
-                  await Utils.sleep(2000);
-                  Utils.emitEvent(this.httpErrorReceive, 60600);
+                  await waitForExist(()=>this.httpErrorReceive, this.str, 0);
+                  Utils.emitEvent(this.httpErrorReceive, 141710);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -82,8 +87,8 @@ struct WebOnHttpErrorReceive {
                 try {
                   this.responseCode = 301
                   this.controller.loadUrl("resource://rawfile/index.html")
-                  await Utils.sleep(2000);
-                  Utils.emitEvent(this.httpErrorReceive, 60602);
+                  await waitForExist(()=>this.httpErrorReceive, this.str, 0);
+                  Utils.emitEvent(this.httpErrorReceive, 141720);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -93,8 +98,8 @@ struct WebOnHttpErrorReceive {
                 try {
                   this.responseCode = 500
                   this.controller.loadUrl("resource://rawfile/index.html")
-                  await Utils.sleep(2000);
-                  Utils.emitEvent(this.httpErrorReceive, 60604);
+                  await waitForExist(()=>this.httpErrorReceive, this.str, 500);
+                  Utils.emitEvent(this.httpErrorReceive, 141730);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }

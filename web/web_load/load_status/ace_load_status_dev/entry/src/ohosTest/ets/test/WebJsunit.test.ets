@@ -16,11 +16,14 @@ import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 let emitKey = "emitOnPageBegin";
-
+const driver = Driver.create();
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
     beforeEach(async (done: Function) => {
@@ -29,28 +32,7 @@ export default function webJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -59,9 +41,14 @@ export default function webJsunit() {
      *tc.desic Triggered when the page loading progress changes
      */
     it('onPageBegin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnPageEnd";
-      Utils.registerContainEvent("onPageBegin", "index.html", 59, done);
-      sendEventByKey('webcomponent', 10, '');
+
+      emitKey = "emitOnPageBegin";
+      Utils.emitEvent(emitKey,141321)
+      let isReturn = false;
+      Utils.registerContainEvent("onPageBegin", "index.html", 141330, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webcomponent',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_039
@@ -69,9 +56,13 @@ export default function webJsunit() {
      *tc.desic Triggered at the begin of web page loading
      */
     it('onPageEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnResourceLoad";
-      Utils.registerContainEvent("onPageEnd", "index.html", 60, done);
-      sendEventByKey('webcomponent', 10, '');
+      emitKey = "emitOnPageEnd";
+      Utils.emitEvent(emitKey,141321)
+      let isReturn = false;
+      Utils.registerContainEvent("onPageEnd", "index.html", 141340, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webcomponent',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_005
@@ -79,9 +70,13 @@ export default function webJsunit() {
      *tc.desic Triggered when the url loading
      */
     it('onResourceLoad', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitStop";
-      Utils.registerContainEvent("onResourceLoad", "second.html", 108, done);
-      sendEventByKey('webcomponent', 10, '');
+      emitKey = "emitOnResourceLoad";
+      Utils.emitEvent(emitKey,141321)
+      let isReturn = false;
+      Utils.registerContainEvent("onResourceLoad", "second.html", 141350, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webcomponent',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_055
@@ -90,8 +85,12 @@ export default function webJsunit() {
      */
     it('stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStop";
-      Utils.registerEvent("stop", true, 83, done);
-      sendEventByKey('webcomponent', 10, '');
+      Utils.emitEvent(emitKey,141321)
+      let isReturn = false;
+      Utils.registerEvent("stop", true, 141360, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('webcomponent',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
   })
 }

@@ -17,9 +17,12 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const driver = Driver.create();
 export default function webAttributeTest() {
 
   describe('WebAttributeTest', () => {
@@ -35,7 +38,6 @@ export default function webAttributeTest() {
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -54,12 +56,6 @@ export default function webAttributeTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebAttributeTest afterEach end");
-      done();
-    })
 
     /*
     * @tc.number      : SUB_WEB_ONPAGEEND_0100
@@ -70,10 +66,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 0
     */
     it('testOnPageEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnPageEnd001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnPageEnd001", "resource://rawfile/second.html", 70007, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnPageEnd001", 141401)
+      let isReturn = false;
+      Utils.registerEvent("testOnPageEnd001", "resource://rawfile/second.html", 141410, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebAttributeTestButton",driver)
+      await waitForExist(()=>isReturn, "emitOnPageEnd001", true,1000);
+      done();
     })
 
     /*
@@ -85,10 +83,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnPageEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPageEnd002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnPageEnd002", "resource://rawfile/iframe.html", 70008, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnPageEnd002", 141401)
+      let isReturn = false;
+      Utils.registerEvent("testOnPageEnd002", "resource://rawfile/iframe.html", 141420, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebAttributeTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnPageEnd002", true,1000);
+      done();
     })
 
     /*
@@ -100,10 +100,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnPageBegin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPageBegin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnPageBegin001", "resource://rawfile/second.html", 70009, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnPageBegin001", 141401)
+      let isReturn = false;
+      Utils.registerEvent("testOnPageBegin001", "resource://rawfile/second.html", 141430, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebAttributeTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnPageBegin001", true,1000);
+      done();
     })
 
     /*
@@ -115,10 +117,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnPageBegin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPageBegin002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnPageBegin002", "resource://rawfile/iframe.html", 70010, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnPageBegin002", 141401)
+      let isReturn = false;
+      Utils.registerEvent("testOnPageBegin002", "resource://rawfile/iframe.html", 141440, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebAttributeTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnPageBegin002", true,1000);
+      done();
     })
 
     /*
@@ -130,10 +134,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnProgressChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnProgressChange001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnProgressChange001", "100", 700012, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnProgressChange001", 141401)
+      let isReturn = false;
+      Utils.registerEvent("testOnProgressChange001", "100", 141450, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebAttributeTestButton",driver)
+      await waitForExist(()=>isReturn, "testOnProgressChange001", true,1000);
+      done();
     })
   })
 }
