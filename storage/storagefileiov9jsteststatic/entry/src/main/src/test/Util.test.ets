@@ -48,15 +48,10 @@ export default class Utils{
     return new Promise<boolean>((resolve, reject) => {
       try {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE)
-        hilog.info(domain, tag, '%{public}s', 'fw001prepareFile111');
-        // fs.truncateSync(file.fd)
-        hilog.info(domain, tag, '%{public}s', 'fw001prepareFile123456');
+        fs.truncateSync(file.fd)
         fs.writeSync(file.fd, content)
-        hilog.info(domain, tag, '%{public}s', 'fw001prepareFile222');
         fs.fsyncSync(file.fd)
-        hilog.info(domain, tag, '%{public}s', 'fw001prepareFile333');
         fs.closeSync(file)
-        hilog.info(domain, tag, '%{public}s', 'fw001prepareFile444');
         resolve(true);
       }
       catch (e: BusinessError) {
