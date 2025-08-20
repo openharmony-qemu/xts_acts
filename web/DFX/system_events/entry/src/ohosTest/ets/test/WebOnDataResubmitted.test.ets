@@ -38,8 +38,8 @@ export default function webOnDataResubmitted() {
         if (!("WebOnDataResubmitted" == pages.name)) {
           console.info("get WebOnDataResubmitted state success " + JSON.stringify(pages.name));
           await router.pushUrl(options);
-          await driver.waitForComponent(ON.id("WebOnDataResubmittedTestButton"), 10000);
           console.info("push WebOnDataResubmitted page success");
+          await driver.waitForComponent(ON.id("WebOnDataResubmittedTestButton"), 10000);
         }
       } catch (err) {
         console.error("push WebOnDataResubmitted page error: " + err);
@@ -49,7 +49,7 @@ export default function webOnDataResubmitted() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
@@ -66,8 +66,11 @@ export default function webOnDataResubmitted() {
     */
     it('testOnDataResubmitted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnDataResubmitted", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnDataResubmitted001", true, 127010, done);
-      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
+      let isReturn = false;
+      Utils.registerEvent("testOnDataResubmitted001", true, 127010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testOnDataResubmitted001");
+      await Utils.waitForExist(() => isReturn, "testOnDataResubmitted001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -80,8 +83,11 @@ export default function webOnDataResubmitted() {
     */
     it('testDataResubmissionHandlerResend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerResend", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testDataResubmissionHandlerResend001", 'httpbin.org/posthttpbin.org/post', 127020, done);
-      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
+      let isReturn = false;
+      Utils.registerEvent("testDataResubmissionHandlerResend001", 'httpbin.org/posthttpbin.org/post', 127020, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerResend001");
+      await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -94,8 +100,11 @@ export default function webOnDataResubmitted() {
     */
     it('testDataResubmissionHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerCancel", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'httpbin.org/post', 127030, done);
-      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton");
+      let isReturn = false;
+      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'httpbin.org/post', 127030, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerCancel001");
+      await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }
