@@ -42,7 +42,7 @@ struct StackChildAlignment {
     Row() {
       Column() {
         Stack({
-          alignContent: this.stackAlignArr[this.stackAlignIndex]
+          alignContent: this.stackAlignArr[this.stackAlignIndex.toInt()]
         }) {
           Text('TOP_START')
             .width(60)
@@ -96,17 +96,17 @@ struct StackChildAlignment {
           
         }.width(190).height(190).backgroundColor(Color.Grey)
         
-        .direction(this.directionArr[this.directionIndex])
+        .direction(this.directionArr[this.directionIndex.toInt()])
 
         Row() {
-          Button('stackAlign: ' + this.stackAlignArr[this.stackAlignIndex])
+          Button('stackAlign: ' + this.stackAlignArr[this.stackAlignIndex.toInt()])
             .width(95)
             .height(25)
             .fontSize(10)
             .onClick((e: ClickEvent) => {
               this.stackAlignIndex = ++this.stackAlignIndex % this.stackAlignArr.length;
             })
-          Button('Direction: ' + this.directionArr[this.directionIndex])
+          Button('Direction: ' + this.directionArr[this.directionIndex.toInt()])
             .width(95)
             .height(25)
             .fontSize(10)

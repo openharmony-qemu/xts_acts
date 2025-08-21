@@ -125,7 +125,7 @@ struct ButtonAlign {
 
         Button('OVER')
           .id('GetAlignButton1')
-          .direction(this.isDirection[this.isDirectionIndex])
+          .direction(this.isDirection[this.isDirectionIndex.toInt()])
           .width(120)
           .height(90)
           .backgroundColor(0x317aff)

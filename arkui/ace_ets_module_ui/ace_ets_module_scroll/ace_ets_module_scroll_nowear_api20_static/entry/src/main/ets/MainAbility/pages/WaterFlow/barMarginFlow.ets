@@ -63,7 +63,7 @@ struct scrollBarMarginWaterFlow {
               .borderRadius(10)
           }
           .width('80%')
-          .backgroundColor(this.colors[item % 5])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number) => item.toString())
       }
       .id('flow_bar_margin')

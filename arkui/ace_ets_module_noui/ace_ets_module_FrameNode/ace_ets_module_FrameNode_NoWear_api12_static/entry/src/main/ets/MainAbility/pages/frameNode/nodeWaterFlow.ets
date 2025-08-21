@@ -63,8 +63,8 @@ class MyNodeController extends NodeController {
       let flowItem = typeNode.createNode(uiContext, 'FlowItem')
       flowItem.initialize().id('flowItem_node')
         .width('100%')
-        .height(this.itemHeightArray[i % 100])
-        .backgroundColor(this.colors[i % 5])
+        .height(this.itemHeightArray[i.toInt() % 100])
+        .backgroundColor(this.colors[i.toInt() % 5])
 
     }
 

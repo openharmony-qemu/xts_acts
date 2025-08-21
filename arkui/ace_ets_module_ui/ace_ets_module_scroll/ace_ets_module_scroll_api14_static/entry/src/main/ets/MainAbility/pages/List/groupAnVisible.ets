@@ -80,7 +80,7 @@ struct groupAnimationVisibleExample {
 
   build() {
     Column() {
-      Button('group设置显隐: ' + this.mViewShow[this.mViewShowIndex])
+      Button('group设置显隐: ' + this.mViewShow[this.mViewShowIndex.toInt()])
         .id('group_visible_change')
         .onClick((e: ClickEvent) => {
           if (this.mViewShowIndex == 2) {
@@ -88,7 +88,7 @@ struct groupAnimationVisibleExample {
           }
           this.mViewShowIndex++
         })
-      Button('listItem设置显隐: ' + this.mViewShow1[this.mViewShowIndex1])
+      Button('listItem设置显隐: ' + this.mViewShow1[this.mViewShowIndex1.toInt()])
         .id('listItem_visible_change')
         .onClick((e: ClickEvent) => {
           if (this.mViewShowIndex1 == 2) {
@@ -122,10 +122,10 @@ struct groupAnimationVisibleExample {
               .onDisAppear(() => {
                 console.info('LIST_TEST:Group:' + item0 + ', onDisAppear:' + item)
               })
-              .height(itemIndex % 2 == 0 ? this.mHeight[this.mHeightIndex] : this.mHeight[0])
+              .height(itemIndex % 2 == 0 ? this.mHeight[this.mHeightIndex.toInt()] : this.mHeight[0])
               .borderColor(Color.Pink)
               .borderWidth(2)
-              .visibility(itemIndex % 2 == 0 ? this.mViewShow1[this.mViewShowIndex1] : Visibility.Visible)
+              .visibility(itemIndex % 2 == 0 ? this.mViewShow1[this.mViewShowIndex1.toInt()] : Visibility.Visible)
             }, (item: string, itemIndex: number) => item + itemIndex)
           }
           .onAppear(() => {
@@ -142,7 +142,7 @@ struct groupAnimationVisibleExample {
           })
           .borderColor(Color.Green)
           .borderWidth(2)
-          .visibility(groupIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex] : Visibility.Visible)
+          .visibility(groupIndex % 3 == 0 ? this.mViewShow[this.mViewShowIndex.toInt()] : Visibility.Visible)
         }, (item0: DataBean, groupIndex: number) => groupIndex.toString())
       }
       .width('100%')

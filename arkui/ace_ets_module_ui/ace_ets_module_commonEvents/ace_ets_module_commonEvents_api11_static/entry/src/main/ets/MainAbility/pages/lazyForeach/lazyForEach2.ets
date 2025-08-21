@@ -117,7 +117,7 @@ class MyDataSource extends BasicDataSource {
   }
 
   public getData(index: number): string {
-    return this.dataArray[index]
+    return this.dataArray[index.toInt()]
   }
 
   public addData(index: number, data: string): void {
@@ -143,21 +143,21 @@ class MyDataSource extends BasicDataSource {
 
   public moveData(index1: number, index2: number): void {
     if (index1 < index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i < index2; i++) {
+      let temp = this.dataArray[index1.toInt()]
+      for (let i = index1.toInt(); i < index2; i++) {
         this.dataArray[i] = this.dataArray[i+1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[index2.toInt()] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])
       }
     } else if (index1 > index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i > index2; i--) {
+      let temp = this.dataArray[index1.toInt()]
+      for (let i = index1.toInt(); i > index2; i--) {
         this.dataArray[i] = this.dataArray[i-1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[index2.toInt()] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])
@@ -177,7 +177,7 @@ class MyDataSource extends BasicDataSource {
   }
 
   public changeData(index: number): void {
-    this.dataArray[index] = 'apple'
+    this.dataArray[index.toInt()] = 'apple'
     let datatest = this.dataArray.length
     console.info('lenghth = ' + datatest)
     for (let i = 0; i < datatest; i++) {

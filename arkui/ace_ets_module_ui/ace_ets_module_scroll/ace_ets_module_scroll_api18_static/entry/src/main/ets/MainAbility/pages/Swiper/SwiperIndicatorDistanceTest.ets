@@ -63,7 +63,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: number): number {
-    return this.list[index]
+    return this.list[index.toInt()]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -210,11 +210,11 @@ struct SwiperExample {
           Row({ space: 2 } as RowOptions) {
             Button('Space:' + this.spaceIndex).onClick((e: ClickEvent) => {
               this.spaceIndex = (this.spaceIndex + 1) % this.spacePool.length;
-              this.space = this.spacePool[this.spaceIndex];
+              this.space = this.spacePool[this.spaceIndex.toInt()];
             }).id('Space').width('25%').height('5%')
             Button('Bottom:' + this.bottomIndex).onClick((e: ClickEvent) => {
               this.bottomIndex = (this.bottomIndex + 1) % this.bottomPool.length;
-              this.bottom = this.bottomPool[this.bottomIndex];
+              this.bottom = this.bottomPool[this.bottomIndex.toInt()];
             }).id('Bottom').width('25%').height('5%')
           }
         }

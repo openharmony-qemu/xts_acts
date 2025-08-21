@@ -79,8 +79,8 @@ struct WaterFlow1 {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item % 100])
-          .backgroundColor(this.colors[item % 5])
+          .height(this.itemHeightArray[item.toInt() % 100])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number, index: number) => String(item))
       }
       .rowsTemplate('1fr 1fr 1fr')

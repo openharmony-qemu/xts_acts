@@ -25,7 +25,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   public getData(index: number): number {
-    return this.dataArray[index]
+    return this.dataArray[index.toInt()]
   }
 
   notifyDataReload(): void {

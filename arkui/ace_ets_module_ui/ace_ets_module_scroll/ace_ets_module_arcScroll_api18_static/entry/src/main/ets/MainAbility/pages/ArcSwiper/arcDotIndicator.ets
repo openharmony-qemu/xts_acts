@@ -42,7 +42,7 @@ class MyDataSource implements IDataSource<Color> {
   }
 
   getData(index: number): Color {
-    return this.list[index]
+    return this.list[index.toInt()]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

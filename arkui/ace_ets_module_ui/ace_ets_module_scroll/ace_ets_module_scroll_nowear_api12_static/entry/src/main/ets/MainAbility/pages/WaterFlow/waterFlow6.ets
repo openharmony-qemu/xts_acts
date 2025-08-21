@@ -62,7 +62,7 @@ struct WaterFlowEventDemo {
     rowsGap: 10,
     margin: this.sectionMargin,
     onGetItemMainSizeByIndex: (index: number) => {
-      return this.itemHeightArray[index % 100]
+      return this.itemHeightArray[index.toInt() % 100]
     }
   } as SectionOptions
   twoColumnSection: SectionOptions = {
@@ -76,7 +76,7 @@ struct WaterFlowEventDemo {
     itemsCount: 20,
     crossCount: 2,
     onGetItemMainSizeByIndex: (index: number) => {
-      return this.itemHeightArray[index % 100]
+      return this.itemHeightArray[index.toInt() % 100]
     }
   } as SectionOptions
 
@@ -138,7 +138,7 @@ struct WaterFlowEventDemo {
           .width('100%')
           
           
-          .backgroundColor(this.colors[item % 5])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number, index: number) => String(item))
       }
       .id('water_event')

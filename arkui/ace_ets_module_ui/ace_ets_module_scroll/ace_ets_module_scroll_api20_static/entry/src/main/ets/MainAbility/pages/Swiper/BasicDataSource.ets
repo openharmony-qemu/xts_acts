@@ -92,7 +92,7 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public getData(index: number): string {
-    return this.dataArray[index];
+    return this.dataArray[index.toInt()];
   }
 
   
@@ -114,21 +114,21 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public moveData(from: number, to: number) {
-    let temp = this.dataArray[from];
-    this.dataArray[from] = this.dataArray[to];
-    this.dataArray[to] = temp;
+    let temp = this.dataArray[from.toInt()];
+    this.dataArray[from.toInt()] = this.dataArray[to.toInt()];
+    this.dataArray[to.toInt()] = temp;
     this.notifyDataMove(from, to);
   }
 
   public changeData(index: number, data: string) {
-    this.dataArray[index] = data;
+    this.dataArray[index.toInt()] = data;
     this.notifyDataChange(index);
   }
 
   
   public reloadData(data: string) {
     this.dataArray.forEach((value, index) => {
-      this.dataArray[index] = value + data;
+      this.dataArray[index.toInt()] = value + data;
     });
     this.notifyDataReload();
   }

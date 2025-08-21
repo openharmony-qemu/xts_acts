@@ -54,7 +54,7 @@ export default function getSupportedPhotoFormatsTest() {
         const testNum = 'get_supported_photo_formats_static_000';
         try {
           let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
-          for (let i: number = 0; i < result.length; i++) {
+          for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
           expect(result).assertContain("jpg");
@@ -79,7 +79,7 @@ export default function getSupportedPhotoFormatsTest() {
         let testNum = 'get_supported_photo_formats_static_001';
         try {
           let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
-          for (let i: number = 0; i < result.length; i++) {
+          for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
           expect(result).assertContain("mp4");
@@ -105,7 +105,7 @@ export default function getSupportedPhotoFormatsTest() {
         try {
           let result: Array<string> =
             await phAccessHelper.getSupportedPhotoFormats(1000 as photoAccessHelper.PhotoType);
-          for (let i: number = 0; i < result.length; i++) {
+          for (let i = 0; i < result.length; i++) {
             expect(videoArray).assertContain(result[i]);
             expect(imageArray).assertContain(result[i]);
           }
