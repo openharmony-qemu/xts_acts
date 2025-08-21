@@ -20,7 +20,7 @@ import formInfo from '@ohos.app.form.formInfo';
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formInfoTest() {

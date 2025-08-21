@@ -22,7 +22,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function BindMenuTest() {
 
   const SUITE: string = 'BindMenu'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('BindMenuTest', () => {
 

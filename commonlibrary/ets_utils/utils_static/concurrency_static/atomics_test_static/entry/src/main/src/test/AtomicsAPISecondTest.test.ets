@@ -163,7 +163,7 @@ export default function AtomicsAPISecondTest() {
         const resultMaxInt: boolean = Atomics.isLockFree(MAX_INT);
         expect(resultMaxInt).assertFalse();
         
-        const resultMaxIntPlus1: boolean = Atomics.isLockFree(MAX_INT + 1);
+        const resultMaxIntPlus1: boolean = Atomics.isLockFree(Int.MIN_VALUE);
         expect(resultMaxIntPlus1).assertFalse();
         
       } catch (error) {

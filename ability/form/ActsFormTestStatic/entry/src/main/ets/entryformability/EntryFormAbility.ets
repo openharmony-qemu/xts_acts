@@ -22,7 +22,7 @@ import { Configuration } from '@ohos.app.ability.Configuration';
 import CommonEventManager from '@ohos.commonEventManager';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag EntryFormAbility';
 
 function onAcquireFormStateCallback(want: Want): formInfo.FormState {

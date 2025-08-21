@@ -952,7 +952,7 @@ export default function builtinsByteSecondPrototypebTest() {
     it('builtinsByteSecondPrototypebTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest4900'
-        const value:number = 65;
+        const value: int = 65;
         const byte1 = new Byte(value);
         expect(byte1.toShort()).assertEqual(Byte.toShort(value));
         console.info(`${caseName}, test end`);
@@ -1096,7 +1096,7 @@ export default function builtinsByteSecondPrototypebTest() {
     it('builtinsByteSecondPrototypebTest05700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest5700'
-        const value:number = 42;
+        const value: int = 42;
         const byte1 = new Byte(value);
         const result = byte1.toString();
         expect(result).assertEqual(value.toString());

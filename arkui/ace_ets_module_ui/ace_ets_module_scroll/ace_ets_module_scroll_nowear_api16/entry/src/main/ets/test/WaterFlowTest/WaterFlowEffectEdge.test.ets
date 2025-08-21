@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function WaterFlowEffectEdge() {
   const SUITE: string = 'WaterFlowEffectEdge'
-  const waitUiReadyMs: number = 1500
+  const waitUiReadyMs = 1500
 
   describe('WaterFlowEffectEdge', () => {
     beforeEach(async (done: Function) => {
