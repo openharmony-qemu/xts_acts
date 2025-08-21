@@ -640,17 +640,17 @@ export default function KvStoreEtsTestStatic() {
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
         let deviceId : string = "000000000000000000";
-        await store.get(deviceId, 'key').then((data: boolean | string | number | Uint8Array) => {
+        store.get(deviceId, 'key').then((data: boolean | string | number | Uint8Array) => {
           hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 get success");
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch((err:Error) => {
           hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${e.code},ms=${e.message}`);
           expect(e.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
-        hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 catch e=${e.code},ms=${e.message}`);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 catch e=" + e);
         expect(null).assertFail();
         done();
       }
@@ -683,7 +683,7 @@ export default function KvStoreEtsTestStatic() {
           });
         });
       } catch (e) {
-        hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 catch e=${e.code},ms=${e.message}`);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 catch e=" + e);
         expect(null).assertFail();
         done();
       }
