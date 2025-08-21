@@ -97,6 +97,51 @@ export default function nfcControllerTest() {
             done();
         })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0400
+         * @tc.name on
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let recvNfcStateNotifyFunc: (changeInfo:controller.NfcState) => void = (changeInfo:controller.NfcState) => {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state -> ' + changeInfo);
+            };
+
+            try {
+                controller.on('nfcStateChange', recvNfcStateNotifyFunc);
+            } catch (err: BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state ->' + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0500
+         * @tc.name off
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let recvNfcStateNotifyFunc: (changeInfo:controller.NfcState) => void = (changeInfo:controller.NfcState) => {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state -> ' + changeInfo);
+            };
+
+            try {
+                controller.off('nfcStateChange', recvNfcStateNotifyFunc);
+            } catch (err: BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state ->' + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
