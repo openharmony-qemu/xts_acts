@@ -19,12 +19,13 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import business_error from '@ohos.base'
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  @State str: string = "emitStoreWebArchiveCallback";
+  @State str: string = "";
   @State webId: number = 0;
   @State webResult: string = ' ';
   @State proResult: string = ' ';
@@ -38,21 +39,28 @@ struct Index {
   @State imageAccess: boolean = true
   @State onlineImageAccess: boolean = true
   @State databaseAccess: boolean = true
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132180,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
+  onPageHide() {
+    events_emitter.off(132180)
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -60,12 +68,15 @@ struct Index {
   build() {
     Column() {
       Row() {
-        Button("web test").key('webcomponent02').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("web test").key('webcomponent02').onClick(async () => {
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitStoreWebArchiveCallback": {
               try {
-                console.info("testoooooooooooooooooooooooooooooooooooo");
+                console.info('testoooooooooooooooooooooooooooooooooooo');
                 this.controller.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
@@ -74,7 +85,7 @@ struct Index {
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                     this.webFilename = filename
-                    Utils.emitEvent(this.webFilename, 130)
+                    Utils.emitEvent(this.webFilename, 132190)
                   }
                 });
               } catch (error) {
@@ -84,7 +95,7 @@ struct Index {
             }
             case "emitStoreWebArchiveCallbackFalse": {
               try {
-                console.info("testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                console.info('testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
                 this.controller.storeWebArchive("/data/storage/el2/base/index.html.mht", false, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
@@ -93,7 +104,7 @@ struct Index {
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
                     this.webFilename = filename
-                    Utils.emitEvent(this.webFilename, 132)
+                    Utils.emitEvent(this.webFilename, 132200)
                   }
                 });
               } catch (error) {
@@ -103,12 +114,12 @@ struct Index {
             }
             case "emitStoreWebArchivePromise": {
               try {
-                console.info("testBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-                this.controller.storeWebArchive("/data/storage/el2/base/", true)
+                console.info('testBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
+                this.controller.storeWebArchive("/data/storage/el1/base/", true)
                   .then(filename => {
                     if (filename != null) {
                       this.webFilename = filename
-                      Utils.emitEvent(this.webFilename, 134)
+                      Utils.emitEvent(this.webFilename, 132210)
                       console.info(`save web archive success: ${filename}`)
                     }
                   })
@@ -122,12 +133,12 @@ struct Index {
             }
             case "emitStoreWebArchivePromiseFlase": {
               try {
-                console.info("testCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-                this.controller.storeWebArchive("/data/storage/el2/base/index.html-2.mht", false)
+                console.info('testCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC');
+                this.controller.storeWebArchive("/data/storage/el1/base/index.html-2.mht", false)
                   .then(filename => {
                     if (filename != null) {
                       this.webFilename = filename
-                      Utils.emitEvent(this.webFilename, 136)
+                      Utils.emitEvent(this.webFilename, 132220)
                       console.info(`save web archive success: ${filename}`)
                     }
                   })
@@ -151,6 +162,10 @@ struct Index {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }
