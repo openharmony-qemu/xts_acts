@@ -73,6 +73,7 @@ export default function colorSpaceManagerTest() {
           expect('23').assertEqual(colorSpaceManager.ColorSpace.LINEAR_P3 + '');
           expect('24').assertEqual(colorSpaceManager.ColorSpace.LINEAR_SRGB + '');
           expect('25').assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT2020 + '');
+          expect('26').assertEqual(colorSpaceManager.ColorSpace.H_LOG + '');
           expect('24').assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT709 + '');
           expect('4').assertEqual(colorSpaceManager.ColorSpace.DISPLAY_SRGB + '');
           expect('3').assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_SRGB + '');
@@ -318,6 +319,31 @@ export default function colorSpaceManagerTest() {
         expect(colorSpace != null).assertTrue();
         let colorSpaceName = colorSpace.getColorSpaceName();
         expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.BT601_EBU);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.desc: color space API ArkTS1.2
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_011 begin');
+      try {
+        let csManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.H_LOG);
+        expect(csManager != null).assertTrue();
+        let colorSpaceName = csManager.getColorSpaceName();
+        console.info("the name is " + colorSpaceName);
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.H_LOG);
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
