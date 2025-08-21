@@ -500,113 +500,7 @@ export default function WindowLayoutTest() {
                 }
             }
         })
-        /**
-         * @tc.number    : test_startMoving_ErrorCode_1300002
-         * @tc.name      : test_startMoving_ErrorCode_1300002_static_0100
-         * @tc.desc      : test_startMoving_ErrorCode_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
-        it('test_startMoving_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let CaseName:string = 'test_startMoving_ErrorCode_1300002_static_0100';
-            let subWindow = await windowStage.createSubWindow('test_startMoving_ErrorCode_1300002_static_0100');
-            await Utils.msSleep(200);
-            await subWindow.destroyWindow();
-            try {
-                let promise = subWindow.startMoving(100,50);
-                promise.then(()=>{
-                    hilog.info(0x0000, '[ANI]',CaseName + ' startMoving success ');
-                    expect(false).assertTrue();
-                    done();
-                }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
-                    hilog.error(0x0000, '[ANI]',CaseName + ' startMoving failed,casued: err.code '+err.code +' ,err.message: '+err.message);
-                    expect(false).assertTrue();
-                    done();
-                })
-            }catch (err:BusinessError) {
-                hilog.error(0x0000, '[ANI]',CaseName + ' failed,casued: err.code '+err.code +' ,err.message: '+err.message);
-                expect(err!.code).assertEqual(1300002);
-                done();
-            }
-        })
-        /**
-         * @tc.number    : SUB_BASIC_WMS_START_MOVING_0100
-         * @tc.name      : test_startMoving_mainWindow_static_0200
-         * @tc.desc      : test_startMoving_mainWindow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
-         */
-        it('test_startMoving_mainWindow_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test_startMoving_mainWindow_static_0200';
-            let msgStr: string = 'jsUnittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            try {
-                let mainWindow = windowStage.getMainWindowSync();
-                let promise = mainWindow.startMoving(100, 50)
-                promise.then(() => {
-                    hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded startMoving ` );
-                    expect(true).assertTrue();
-                    done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
-                    if(err!.code == 801){
-                        done();
-                    }else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            } catch (err: BusinessError) {
-                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
-                expect().assertFail();
-                done();
-
-            }
-
-        });
-        /**
-         * @tc.number     : testStartMovingPromiseErrCode1300002_0100
-         * @tc.name       : testStartMovingPromiseErrCode1300002_static_0300
-         * @tc.desc       : testStartMovingPromiseErrCode1300002_0100
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 3
-         */
-        it('testStartMovingPromiseErrCode1300002_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testStartMovingPromiseErrCode1300002_static_0300";
-            let msgStr: string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let subWin: window.Window;
-            windowStage.createSubWindow('testStartMovingPromiseErrCode1300002_SubWindow_Promise')
-                .then((data: window.Window) => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
-                    done()
-                });
-            await (subWin! as window.Window).destroyWindow();
-            await Utils.msSleep(200);
-            try {
-                (subWin! as window.Window).startMoving().then( () => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling startMoving.');
-                    expect().assertFail();
-                }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
-                    expect().assertFail();
-                });
-                done()
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                expect(exception!.code).assertEqual(1300002);
-                done()
-            }
-        })
+        
         /**
          * @tc.number     : testOnWindowHighlightChangeErrCode1300002_0100
          * @tc.name       : testOnWindowHighlightChangeErrCode1300002_static_0100
@@ -754,7 +648,68 @@ export default function WindowLayoutTest() {
                 done();
             }
         })
-
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0100
+         * @tc.name      : testRectChangeOptions_off_static_0100
+         * @tc.desc      : Test the function value of testRectChangeOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testRectChangeOptions_off_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let msgStr:string = "testRectChangeOptions_off_static_0100";
+            hilog.info(0x0000, '[ANI]',msgStr + "begin");
+            try {
+                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
+                await windowClass.destroyWindow();
+                windowClass.off('windowRectChange');
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
+                expect(false).assertTrue();
+                done();
+            } catch (error: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                if (error!.code === 801) {
+                    hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
+                    done();
+                } else  {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                    expect(error!.code).assertEqual(1300002);
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWRECTCJANGE_JS_API_0200
+         * @tc.name      : testRectChangeOptions_on_static_0200
+         * @tc.desc      : Test the function value of testRectChangeOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testRectChangeOptions_on_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let msgStr:string = "testRectChangeOptions_on_static_0200";
+            hilog.info(0x0000, '[ANI]',msgStr + "begin");
+            try {
+                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_on_static_0200");
+                await windowClass.destroyWindow();
+                windowClass.on('windowRectChange', (data: window.RectChangeOptions) => {
+                    hilog.info(0x0000, '[ANI]',`Succeeded window rect changes. Data: ` + JSON.stringify(data));
+                });
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
+                expect(false).assertTrue();
+                done();
+            } catch (error: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                if (error!.code === 801) {
+                    hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
+                    done();
+                } else  {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
+                    expect(error!.code).assertEqual(1300002);
+                    done();
+                }
+            }
+        })
 
 
 
