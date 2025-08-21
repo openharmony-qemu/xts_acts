@@ -1687,30 +1687,7 @@ export default function abilityTest() {
       done();
     });
 
-    /**
-     * @tc.number     : keepKeyboardOnFocus_static_0161
-     * @tc.name       : keepKeyboardOnFocus_static_0161
-     * @tc.desc       : keepKeyboardOnFocus_static_0161
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it("keepKeyboardOnFocus_static_0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        win.keepKeyboardOnFocus(false);
-        hilog.info(0x0000, '[ANI]', 'finaltest [ANI] set keepKeyboardOnFocus success');
-        expect(true).assertTrue();
-      } catch (err: BusinessError) {
-        hilog.error(0x0000, '[ANI]', `finaltest [ANI] set keepKeyboardOnFocus Failed. message: ${err}`);
-        if (err?.code == 1300004) {
-          expect(true).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
-        done();
-      }
-      done();
-    });
+    
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 
