@@ -39,16 +39,16 @@ export default function InputDeviceTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0100
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0100
-     * @tc.desc: Test KeyboardType.
+     * @tc.number: SUB_MMI_Input_Api_IptDev_KeyboardType_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_KeyboardType_0100
+     * @tc.desc: Test inputDevice KeyboardType.
      * @tc.level 2
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("SUB_MMI_Input_Api_InputDevice_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("SUB_MMI_Input_Api_IptDev_KeyboardType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_InputDevice_0100";
+        let caseName = "SUB_MMI_Input_Api_IptDev_KeyboardType_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           ExpectTrue(inputDevice.KeyboardType.NONE == 0);
@@ -58,7 +58,7 @@ export default function InputDeviceTest() {
           ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
           ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -67,26 +67,156 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0200
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0200
+     * @tc.number: SUB_MMI_Input_Api_IptDev_FunctionKey_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_FunctionKey_0100
      * @tc.desc: Test FunctionKey.
      * @tc.level 2
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("SUB_MMI_Input_Api_InputDevice_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("SUB_MMI_Input_Api_IptDev_FunctionKey_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_InputDevice_0200";
+        let caseName = "SUB_MMI_Input_Api_IptDev_FunctionKey_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
       });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100
+     * @tc.desc: Test callback getDeviceInfo interface to get information about a specified input device.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100";
+      try {
+        inputDevice.getDeviceInfo(1, (error: BusinessError<void>|null, deviceData: inputDevice.InputDeviceData|undefined):void => {
+          if (error) {
+            hilog.info(domain, tag, `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            ExpectFalse(true);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            hilog.info(domain, tag, `deviceData: ${typeof(deviceData)}`);
+            ExpectTrue(typeof(deviceData) == 'object');
+            done();
+          }
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag,`${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200
+     * @tc.name: SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200
+     * @tc.desc: Test promise getDeviceInfo interface to get information about a specified input device.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200";
+      try {
+        inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
+          hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          ExpectTrue(typeof(deviceData) == 'object');
+          done();
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_getDeviceList_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_getDeviceList_0100
+     * @tc.desc: Test callback getDeviceList interface to get the ID list of all input devices.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceList_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceList_0100";
+      try {
+        inputDevice.getDeviceList((error: BusinessError<void>|null, ids: Array<Double>|undefined):void => {
+          if (error) {
+            hilog.info(domain, tag, `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            ExpectFalse(true);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
+            ExpectTrue(Array.isArray(ids));
+            done();
+          }
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_getDeviceList_0200
+     * @tc.name: SUB_MMI_Input_Api_IptDev_getDeviceList_0200
+     * @tc.desc: Test promise getDeviceList interface to get the ID list of all input devices.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_getDeviceList_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceList_0200";
+      try {
+        inputDevice.getDeviceList().then((ids: Array<Number>) => {
+          hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
+          ExpectTrue(Array.isArray(ids));
+          done();
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        ExpectFalse(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100
+     * @tc.name: SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100
+     * @tc.desc: Test inputDevice on interface
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputDeviceOn_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, `InputDevice_on_test enter`);
+      let isPhysicalKeyboardExist = 0;
+      try {
+        inputDevice.on("change", (data): void => {
+          hilog.info(domain, tag, `InputDevice_on_test type: ${data.type}, deviceId: ${data.deviceId}`);
+          isPhysicalKeyboardExist++;
+          ExpectTrue(isPhysicalKeyboardExist == 1);
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag, `InputDevice_on_test error`);
+        ExpectFalse(true);
+      }
+      done();
+      hilog.info(domain, tag, `InputDevice_on_test exit`);
+    })
   })
 }
