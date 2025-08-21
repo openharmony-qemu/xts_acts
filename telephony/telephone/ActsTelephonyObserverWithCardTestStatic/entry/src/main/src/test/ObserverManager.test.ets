@@ -19,10 +19,6 @@ import observer from '@ohos.telephony.observer';
 import data from '@ohos.telephony.data';
 import radio from '@ohos.telephony.radio';
 
-class Value {
-  state: observer.DataConnectState = data.DataConnectState.DATA_STATE_UNKNOWN
-  network: observer.RatType = radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN
-};
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -184,6 +180,8 @@ export default function ObserverManagerTest() {
           slotId: 3
         }, (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          hilog.info(domain, tag, '%{public}s', caseName +': data.state ->'+JSON.stringify(data.state));
+          hilog.info(domain, tag, '%{public}s', caseName +': data.network ->'+JSON.stringify(data.network));
           ExpectTrue(false);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
