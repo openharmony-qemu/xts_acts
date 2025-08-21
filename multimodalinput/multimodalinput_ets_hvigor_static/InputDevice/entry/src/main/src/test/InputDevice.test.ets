@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import inputDevice from '@ohos.multimodalInput.inputDevice'
-import { describe, it, expect, TestType, Size, Level} from "../../../hypium/index"
+import inputDevice from '@ohos.multimodalInput.inputDevice';
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
 import { BusinessError } from "@ohos.base"
 import hilog from '@ohos.hilog'
 
@@ -37,26 +37,56 @@ export default function InputDeviceTest() {
         console.info("expectInfo", `test failed`);
       }
     }
-    
+
     /**
-     * @tc.number: SUB_MMI_Input_Api_KeyboardType_0100
-     * @tc.name: SUB_MMI_Input_Api_KeyboardType_0100
-     * @tc.desc: Test KeyboardType NONE.
+     * @tc.number: SUB_MMI_Input_Api_InputDevice_0100
+     * @tc.name: SUB_MMI_Input_Api_InputDevice_0100
+     * @tc.desc: Test KeyboardType.
      * @tc.level 2
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("SUB_MMI_Input_Api_KeyboardType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName = "SUB_MMI_Input_Api_KeyboardType_0100";
-      try {
-        console.info(`${caseName} success, NONE value ${JSON.stringify(inputDevice.KeyboardType.NONE)}`);
-        ExpectTrue(inputDevice.KeyboardType.NONE == 0);
-        done();
-      } catch (error: Error) {
-        console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectFalse(true);
-        done();
-      }
-    });
+    it("SUB_MMI_Input_Api_InputDevice_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_InputDevice_0100";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          ExpectTrue(inputDevice.KeyboardType.NONE == 0);
+          ExpectTrue(inputDevice.KeyboardType.UNKNOWN == 1);
+          ExpectTrue(inputDevice.KeyboardType.ALPHABETIC_KEYBOARD == 2);
+          ExpectTrue(inputDevice.KeyboardType.DIGITAL_KEYBOARD == 3);
+          ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
+          ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
+          done();
+        } catch (error: Error) {
+          console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_InputDevice_0200
+     * @tc.name: SUB_MMI_Input_Api_InputDevice_0200
+     * @tc.desc: Test FunctionKey.
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it("SUB_MMI_Input_Api_InputDevice_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_InputDevice_0200";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
+          done();
+        } catch (error: Error) {
+          console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
   })
 }
