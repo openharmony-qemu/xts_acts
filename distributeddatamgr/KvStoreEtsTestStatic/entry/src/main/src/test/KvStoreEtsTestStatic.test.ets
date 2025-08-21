@@ -628,6 +628,68 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
+     * @tc.name       : KvStoreTest019
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
+     * @tc.desc       : //DeviceKVStore get(did, key)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 start ");
+      try {
+        let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
+        let deviceId : string = "000000000000000000";
+        await store.get(deviceId, 'key').then((data: boolean | string | number | Uint8Array) => {
+          hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 get success");
+          expect(null).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${e.code},ms=${e.message}`);
+          expect(e.code).assertEqual(15100004);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 catch e=${e.code},ms=${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name       : KvStoreTest020
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
+     * @tc.desc       : //DeviceKVStore get(did,key)  callback
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 start ");
+      let deviceId : string = "000000000000000000";
+      try {
+        kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
+          store?.get(deviceId, 'key', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+            if (err != undefined) {
+              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${e.code},ms=${e.message}`);
+              expect(e.code).assertEqual(15100004);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 get success");
+              expect(null).assertFail();
+              done();
+            }
+
+          });
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 catch e=${e.code},ms=${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name       : KvStoreTest021
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
      * @tc.desc       : //Schema.constructor, FieldNode.constructor, Query.constructor
