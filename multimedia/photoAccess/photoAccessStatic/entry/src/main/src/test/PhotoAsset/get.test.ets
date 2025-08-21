@@ -21,7 +21,7 @@ import {
   photoFetchOption,
   getFileAsset,
   getAssetId,
-  isNum,
+  isBigInt,
   getBurstKey,
   getPermission,
   driveFn,
@@ -40,7 +40,7 @@ export default function getTest() {
     const fileNameList = ["getTest.jpg", "getTest.mp4"];
 
     let checkPhotoKeysValue = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
-      key: string, value: string | number): Promise<void> => {
+      key: string, value: photoAccessHelper.MemberType | bigint): Promise<void> => {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
         hilog.info(domain, tag, `${testNum} key: ${key}, value: ${value}, asset.key: ${asset.get(key)}`);
@@ -52,7 +52,7 @@ export default function getTest() {
           expect(isIncludes).assertTrue();
         } else if (key === 'date_added' || key === 'date_modified' || key === 'date_taken' ||
           key === 'date_added_ms' || key === 'date_modified_ms' || key === 'date_taken_ms') {
-          expect(isNum(asset.get(key))).assertTrue();
+          expect(isBigInt(asset.get(key))).assertTrue();
         } else {
           expect(asset.get(key)).assertEqual(value);
         }
@@ -121,12 +121,17 @@ export default function getTest() {
     }
 
     const checkPhotoKeysDateTime =
-      async (done: () => void, testNum: string, expectDateMs: number, actualDateMs: number): Promise<void> => {
+      async (done: () => void, testNum: string, expectDateMs: photoAccessHelper.MemberType,
+        actualDateMs: photoAccessHelper.MemberType): Promise<void> => {
         try {
           hilog.info(domain, tag, `${testNum} :: expectDateMs is ${expectDateMs}, actualDateMs is ${actualDateMs}`);
-          let lowRange = 0.998 * expectDateMs;
-          let topRange = 1.002 * expectDateMs;
-          if (lowRange <= actualDateMs && actualDateMs <= topRange) {
+          let expectDateMsLong = expectDateMs as int;
+          hilog.info(domain, tag, `${testNum} :: expectDateMs as int success`);
+          let actualDateMsLong = actualDateMs as int;
+          hilog.info(domain, tag, `${testNum} :: actualDateMs as int success`);
+          let lowRange = 0.998 * expectDateMsLong * 1000;
+          let topRange = 1.002 * expectDateMsLong * 1000;
+          if (lowRange <= actualDateMsLong && actualDateMsLong <= topRange) {
             hilog.info(domain, tag, `${testNum} :: ${actualDateMs} is between ${lowRange} and ${topRange} .`);
             done();
           } else {
@@ -181,7 +186,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.PHOTO_TYPE;
-        const value: number = photoAccessHelper.PhotoType.IMAGE;
+        const value: int = photoAccessHelper.PhotoType.IMAGE;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -220,7 +225,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_ADDED;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -240,7 +245,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -260,7 +265,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DURATION;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -280,7 +285,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.WIDTH;
-        const value: number = 1279;
+        const value: int = 1279;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -300,7 +305,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.HEIGHT;
-        const value: number = 1706;
+        const value: int = 1706;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -320,7 +325,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_TAKEN;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -340,7 +345,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.ORIENTATION;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -360,7 +365,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.FAVORITE;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -380,7 +385,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.SIZE;
-        const value: number = 348113;
+        const value: bigint = 348113n;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -420,7 +425,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.POSITION;
-        const value: number = 1;
+        const value: int = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -460,7 +465,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.PHOTO_TYPE;
-        const value: number = photoAccessHelper.PhotoType.VIDEO;
+        const value: int = photoAccessHelper.PhotoType.VIDEO;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -499,7 +504,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_ADDED;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -519,7 +524,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -539,7 +544,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DURATION;
-        const value: number = 10100;
+        const value: int = 10100;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -559,7 +564,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.WIDTH;
-        const value: number = 1280;
+        const value: int = 1280;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -579,7 +584,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.HEIGHT;
-        const value: number = 720;
+        const value: int = 720;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -599,7 +604,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DATE_TAKEN;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -619,7 +624,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.ORIENTATION;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -639,7 +644,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.FAVORITE;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -659,7 +664,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.SIZE;
-        const value: number = 4853005;
+        const value: bigint = 4853005n;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -699,7 +704,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.POSITION;
-        const value: number = 1;
+        const value: int = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -722,11 +727,11 @@ export default function getTest() {
         const dateAdded: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_ADDED);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_ADDED is ${dateAdded}`);
         const key: string = photoAccessHelper.PhotoKeys.DATE_ADDED_MS;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateAddedMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_ADDED_MS is ${dateAddedMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateAdded as number * 1000), dateAddedMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateAdded, dateAddedMs);
         done();
       });
 
@@ -749,11 +754,11 @@ export default function getTest() {
         const dateAdded: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_ADDED);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_ADDED is ${dateAdded}`);
         const key: string = photoAccessHelper.PhotoKeys.DATE_ADDED_MS;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateAddedMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_ADDED_MS is ${dateAddedMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateAdded as number * 1000), dateAddedMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateAdded, dateAddedMs);
         done();
       });
 
@@ -776,12 +781,12 @@ export default function getTest() {
         const dateModified: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_MODIFIED);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_MODIFIED is ${dateModified}`);
         const key: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateModifiedMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag,
           `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS is ${dateModifiedMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateModified as number * 1000), dateModifiedMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateModified, dateModifiedMs);
         done();
       });
 
@@ -804,12 +809,12 @@ export default function getTest() {
         const dateModified: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_MODIFIED);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_MODIFIED is ${dateModified}`);
         const key: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS;
-        const value: number = 1;
+        const value: long = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateModifiedMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag,
           `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS is ${dateModifiedMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateModified as number * 1000), dateModifiedMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateModified, dateModifiedMs);
         done();
       });
 
@@ -830,7 +835,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.DYNAMIC_RANGE_TYPE;
-        const value: number = 0;
+        const value: int = 0;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -850,7 +855,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.COVER_POSITION;
-        const value: number = 0;
+        const value: bigint = 0n;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -870,7 +875,7 @@ export default function getTest() {
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         const key: string = photoAccessHelper.PhotoKeys.COVER_POSITION;
-        const value: number = 0;
+        const value: bigint = 0n;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
       });
 
@@ -1083,14 +1088,14 @@ export default function getTest() {
         const fetchOps = photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         let asset = await getFileAsset(testNum, fetchOps);
-        const dateTaken: photoAccessHelper.MemberType | undefined = asset?.get(photoAccessHelper.PhotoKeys.DATE_TAKEN);
+        const dateTaken: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_TAKEN);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_TAKEN is ${dateTaken}`);
         const key = photoAccessHelper.PhotoKeys.DATE_TAKEN_MS;
         const value = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateTakenMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_TAKEN_MS is ${dateTakenMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateTaken as number * 1000), dateTakenMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateTaken, dateTakenMs);
         done();
       });
 
@@ -1109,14 +1114,14 @@ export default function getTest() {
         const fetchOps = photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         await checkProvisionAsset(done, testNum, displayName);
         let asset = await getFileAsset(testNum, fetchOps);
-        const dateTaken: photoAccessHelper.MemberType | undefined = asset?.get(photoAccessHelper.PhotoKeys.DATE_TAKEN);
+        const dateTaken: photoAccessHelper.MemberType = asset.get(photoAccessHelper.PhotoKeys.DATE_TAKEN);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_TAKEN is ${dateTaken}`);
         const key = photoAccessHelper.PhotoKeys.DATE_TAKEN_MS;
         const value = 1;
         await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
         const dateTakenMs: photoAccessHelper.MemberType = asset.get(key);
         hilog.info(domain, tag, `${testNum} :: asset photoAccessHelper.PhotoKeys.DATE_TAKEN_MS is ${dateTakenMs}`);
-        await checkPhotoKeysDateTime(done, testNum, (dateTaken as number * 1000), dateTakenMs as number);
+        await checkPhotoKeysDateTime(done, testNum, dateTaken, dateTakenMs);
         done();
       });
 

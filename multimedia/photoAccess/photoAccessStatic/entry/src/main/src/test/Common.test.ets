@@ -140,8 +140,8 @@ export function photoFetchOption(testNum: string, key: string, value: string | n
   return ops;
 }
 
-export function isNum(value: photoAccessHelper.MemberType): boolean {
-  return typeof value === 'number';
+export function isBigInt(value: photoAccessHelper.MemberType): boolean {
+  return (typeof value).toString() === 'bigint';
 }
 
 export function getAssetId(uri: string): string {

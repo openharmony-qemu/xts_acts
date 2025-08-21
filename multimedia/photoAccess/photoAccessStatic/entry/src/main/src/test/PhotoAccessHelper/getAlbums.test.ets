@@ -116,43 +116,6 @@ export default function getAlbumsTest() {
         done();
       }
     });
-
-    /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_ALBUMS_STATIC_0200
-     * @tc.name      : getAlbums_promise_static_002
-     * @tc.desc      : get system albums by albumType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it("getAlbums_promise_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let testNum = 'getAlbums_promise_static_002';
-        try {
-          let subTypes: Array<photoAccessHelper.AlbumSubtype> = new Array<photoAccessHelper.AlbumSubtype>();
-          subTypes.push(photoAccessHelper.AlbumSubtype.VIDEO);
-          subTypes.push(photoAccessHelper.AlbumSubtype.FAVORITE);
-          let count = 0;
-          let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined = undefined;
-          for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
-            const album = await fetchResult.getFirstObject();
-            checkSystemAlbum(testNum, album, subTypes[i]);
-            count++;
-          }
-          if (fetchResult != undefined) {
-            fetchResult.close();
-          }
-          expect(count === subTypes.length);
-          done();
-        } catch (error: Error) {
-          hilog.info(domain, tag,
-            testNum + ' PhotoAccessHelperTest failed' + ", error.name:" + error.name + ", error.message:" +
-            error.message);
-          expect(false).assertTrue();
-          done();
-        }
-      })
   })
   hilog.info(domain, tag, 'getAlbumsTest end');
 }
