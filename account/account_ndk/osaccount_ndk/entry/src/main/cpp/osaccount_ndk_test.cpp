@@ -16,7 +16,7 @@
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "BasicServicesKit/os_account.h"
-#include "BasicServicesKit//os_account_common.h"
+#include "BasicServicesKit/os_account_common.h"
 #include <js_native_api_types.h>
 
 namespace {

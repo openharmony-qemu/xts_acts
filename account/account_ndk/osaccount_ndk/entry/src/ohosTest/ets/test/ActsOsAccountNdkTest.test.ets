@@ -83,6 +83,7 @@ export default function ActsOsAccountNdkTest() {
         done()
       } catch (err) {
         console.error("====>SUB_Account_OsAccount_GetName_0300 catch err: " + err)
+        expect(false).assertEqual(OS_ACCOUNT_ERR_INVALID_PARAMETER);
       }
     })
   })
