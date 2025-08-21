@@ -441,29 +441,6 @@ export function printArgs5(arg: number): number {
 
   return arg;
 }
-//
-// /**
-//  * 延时
-//  * @param args
-//  * @returns
-//  */
-// @Concurrent
-// export function printArgs6(arg: number): number {
-//   console.info('printArgs: ' + arg);
-//
-//   // 延时2s
-//   let t: number = Date.now();
-//   while (Date.now() - t < 2000) {
-//     continue;
-//   }
-//
-//   if (taskpool.Task.isCanceled()) {
-//     console.info('==== task has been canceled after 2s sleep.');
-//     return arg + 1;
-//   }
-//
-//   return arg;
-// }
 
 /**
  * setTimeout-error
