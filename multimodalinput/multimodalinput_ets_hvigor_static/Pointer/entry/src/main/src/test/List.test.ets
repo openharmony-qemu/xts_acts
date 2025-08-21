@@ -14,6 +14,15 @@
  */
 
 import MultimodalInputPointerTest from "./Pointer.test";
+import MultimodalKeyEventTest from "./MultimodalKeyEvent.test";
+import MultimodalMouseEventTest from "./MultimodalMouseEvent.test";
+import MultimodalTouchEventTest from "./MultimodalTouchEvent.test";
+import MultimodalGestureEventTest from "./MultimodalGestureEvent.test";
+
 export default function testsuite() {
     MultimodalInputPointerTest();
+    MultimodalTouchEventTest();
+    MultimodalKeyEventTest();
+    MultimodalMouseEventTest();
+    MultimodalGestureEventTest();
 }
