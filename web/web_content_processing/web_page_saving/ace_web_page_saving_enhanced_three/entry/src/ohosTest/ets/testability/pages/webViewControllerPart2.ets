@@ -19,6 +19,8 @@ import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
 import business_error from '@ohos.base'
+import { waitForExist } from '../../test/WaitTest.test';
+
 
 @Entry
 @Component
@@ -42,17 +44,19 @@ struct webViewControllerPart2 {
   @State numberOfMatches: number = 0
   @State searchNext: boolean = false
   no_error: string = "no error happened"
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132040,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132040)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,18 +65,19 @@ struct webViewControllerPart2 {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
   private jsObj: JsProxyObject = {
     test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
+      Utils.emitEvent(String(res), 132120);
     },
     toString: (str: string) => {
       console.info("ets toString:" + String(str));
     },
     register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
+      Utils.emitEvent(String(res), 132130);
       return "web222"
     }
   }
@@ -81,17 +86,21 @@ struct webViewControllerPart2 {
     Column() {
       Row() {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testSearchAllAsync001": {
               try {
                 this.numberOfMatches = 0
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/searchAllAsync.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.searchAllAsync('Hello World');
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.numberOfMatches, 37012)
+                await waitForExist(() => this.numberOfMatches, this.str, 2);
+                Utils.emitEvent(this.numberOfMatches, 132050)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -101,14 +110,18 @@ struct webViewControllerPart2 {
             case "testSearchNext001": {
               try {
                 this.numberOfMatches = 0
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/searchAllAsync.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+
                 this.controller.searchAllAsync('Hello World');
-                await Utils.sleep(2000);
+                await waitForExist(() => this.searchNext ? 1 : 0, this.str, 1);
+
                 this.searchNext = false
                 this.controller.searchNext(true)
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.searchNext, 100080)
+                await waitForExist(() => this.searchNext ? 1 : 0, this.str, 1);
+
+                Utils.emitEvent(this.searchNext, 132060)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -118,14 +131,18 @@ struct webViewControllerPart2 {
             case "testSearchNext002": {
               try {
                 this.numberOfMatches = 0
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/searchAllAsync.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+
                 this.controller.searchAllAsync('Hello World');
-                await Utils.sleep(2000);
+                await waitForExist(() => this.searchNext ? 1 : 0, this.str, 1);
+
                 this.searchNext = false
                 this.controller.searchNext(false)
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.searchNext, 100081)
+                await waitForExist(() => this.searchNext ? 1 : 0, this.str, 1);
+
+                Utils.emitEvent(this.searchNext, 132070)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -134,8 +151,9 @@ struct webViewControllerPart2 {
 
             case "testStoreWebArchive001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/index.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
@@ -143,7 +161,7 @@ struct webViewControllerPart2 {
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
-                    Utils.emitEvent(filename, 37013)
+                    Utils.emitEvent(filename, 132080)
                   }
                 });
               } catch (error) {
@@ -154,13 +172,14 @@ struct webViewControllerPart2 {
 
             case "testStoreWebArchive002": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/second.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.storeWebArchive("/data/storage/el2/base/", true)
                   .then(filename => {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
-                      Utils.emitEvent(filename, 37014)
+                      Utils.emitEvent(filename, 132090)
                     }
                   })
                   .catch((error: business_error.BusinessError) => {
@@ -174,8 +193,9 @@ struct webViewControllerPart2 {
 
             case "testStoreWebArchive003": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/index.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.storeWebArchive("/data/storage/el2/base/index.html.mht", false, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
@@ -183,7 +203,7 @@ struct webViewControllerPart2 {
                   }
                   if (filename != null) {
                     console.info(`save web archive success: ${filename}`)
-                    Utils.emitEvent(filename, 37015)
+                    Utils.emitEvent(filename, 132100)
                   }
                 });
               } catch (error) {
@@ -194,13 +214,14 @@ struct webViewControllerPart2 {
 
             case "testStoreWebArchive004": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/index.html");
-                await Utils.sleep(2000);
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.storeWebArchive("/data/storage/el2/base/index.html.mht", false)
                   .then(filename => {
                     if (filename != null) {
                       console.info(`save web archive success: ${filename}`)
-                      Utils.emitEvent(filename, 37016)
+                      Utils.emitEvent(filename, 132110)
                     }
                   })
                   .catch((error: business_error.BusinessError) => {
@@ -233,6 +254,10 @@ struct webViewControllerPart2 {
             this.numberOfMatches = ret.numberOfMatches
             this.searchNext = true
           }
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
         })
     }
   }

@@ -21,6 +21,7 @@ import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import image from "@ohos.multimedia.image"
 import business_error from '@ohos.base'
+import { waitForExist } from '../../test/WaitTest.test';
 
 
 class testObj {
@@ -79,13 +80,19 @@ struct Index {
   @State checkEleResult3: string = "";
   @State cookieResult: string = "";
   @State testObjtest: testObj = new testObj();
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132140,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(132140)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -94,6 +101,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -112,13 +120,13 @@ struct Index {
 
   private jsObj: ESObject = {
     test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
+      Utils.emitEvent(res, 132160);
     },
     toString: (str: ESObject) => {
       console.info("ets toString:" + String(str));
     },
     register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
+      Utils.emitEvent(res, 132170);
       return "web222"
     }
   }
@@ -137,12 +145,16 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitGetFaviconAgain": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('secondCopy.html'))
-                await Utils.sleep(3000)
+                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.pixelmap = this.controller.getFavicon();
                 this.pixelmap.getImageInfo().then(imageInfo => {
                   if (imageInfo == undefined) {
@@ -150,7 +162,7 @@ struct Index {
                   }
                   console.log("the result of pixelmap: " + JSON.stringify(imageInfo));
                   if (Object.getOwnPropertyNames(imageInfo).length > 1) {
-                    Utils.emitEvent(true, 116)
+                    Utils.emitEvent(true, 132150)
                   }
                 })
               } catch (error) {
@@ -171,6 +183,10 @@ struct Index {
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
         .overScrollMode(OverScrollMode.NEVER)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
 
       Web({ src: $rawfile('indexTwo.html'), controller: this.controllerTwo })
         .id('2')
@@ -182,6 +198,10 @@ struct Index {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent2)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
 
       Web({ src: $rawfile('indexThree.html'), controller: this.controllerThree })
         .id('3')
@@ -195,6 +215,10 @@ struct Index {
         .userAgent(this.userAgentAll)
         .userAgent(this.userAgent)
         .userAgent(this.userAgent2)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

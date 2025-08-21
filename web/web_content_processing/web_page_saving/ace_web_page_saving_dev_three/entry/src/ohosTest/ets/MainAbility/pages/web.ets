@@ -21,6 +21,7 @@ import web_webview from '@ohos.web.webview';
 import fileio from '@ohos.fileio';
 import prompt from '@system.prompt';
 import cert from '@ohos.security.cert';
+import { waitForExist } from '../../test/WaitTest.test';
 
 let loadedUrl: string;
 
@@ -75,9 +76,11 @@ struct Index {
   ports: web_webview.WebMessagePort[] | null = null;
   nativePort: web_webview.WebMessagePort | null = null;
   @State webMessResult: string = ""
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   testObj: ESObject = {
     testOne: (data: ESObject): ESObject => {
-      Utils.emitEvent(data, 13)
+      Utils.emitEvent(data, 131990)
       return data;
     },
     toString: () => {
@@ -87,11 +90,16 @@ struct Index {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
+      eventId: 131970,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
+
+  onPageHide() {
+    events_emitter.off(131970)
+  }
+
 
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("web page valueChangeCallBack");
@@ -99,6 +107,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -124,7 +133,10 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitStoreWebArchive": {
               try {
@@ -134,7 +146,7 @@ struct Index {
                     return;
                   }
                   if (filename != null) {
-                    Utils.emitEvent(filename, 29);
+                    Utils.emitEvent(filename, 131980);
                   }
                 });
               } catch (error) {
@@ -165,6 +177,10 @@ struct Index {
         .horizontalScrollBarAccess(true)
         .verticalScrollBarAccess(true)
         .pinchSmooth(true)
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

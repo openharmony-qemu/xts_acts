@@ -13,10 +13,13 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitAndClickComponent } from './WaitTest.test';
+import events_emitter from '@ohos.events.emitter';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,7 +38,6 @@ export default function webViewControllerPart2() {
         if (!("webViewControllerPart2" == pages.name)) {
           console.info("get webViewControllerPart2 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webViewControllerPart2 page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,10 +49,9 @@ export default function webViewControllerPart2() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewControllerPart2 beforeEach start");
       done();
     })
@@ -65,10 +66,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 0
     */
     it('testSearchAllAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testSearchAllAsync001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSearchAllAsync001", 2, 37012, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testSearchAllAsync001", 132040)
+      Utils.registerBaseEvent("testSearchAllAsync001", 2, 132050, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -80,10 +83,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testSearchNext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSearchNext001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSearchNext001", true, 100080, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testSearchNext001", 132040)
+      Utils.registerBaseEvent("testSearchNext001", true, 132060, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -95,10 +100,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testSearchNext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSearchNext002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSearchNext002", true, 100081, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testSearchNext002", 132040)
+      Utils.registerBaseEvent("testSearchNext002", true, 132070, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -110,10 +117,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testStoreWebArchive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchive001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchive001", "/data/storage/el2/base/index.html.mht", 37013, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testStoreWebArchive001", 132040)
+      Utils.registerBaseEvent("testStoreWebArchive001", "/data/storage/el2/base/index.html.mht", 132080, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -125,10 +134,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testStoreWebArchive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchive002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchive002", "/data/storage/el2/base/second.html.mht", 37014, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testStoreWebArchive002", 132040)
+      Utils.registerBaseEvent("testStoreWebArchive002", "/data/storage/el2/base/second.html.mht", 132090, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -140,10 +151,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testStoreWebArchive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchive003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchive003", "/data/storage/el2/base/index.html.mht", 37015, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testStoreWebArchive003", 132040)
+      Utils.registerBaseEvent("testStoreWebArchive003", "/data/storage/el2/base/index.html.mht", 132100, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
 
     /*
@@ -155,12 +168,12 @@ export default function webViewControllerPart2() {
     * @tc.level      : Level 1
     */
     it('testStoreWebArchive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testStoreWebArchive004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testStoreWebArchive004", "/data/storage/el2/base/index.html.mht", 37016, done);
-      sendEventByKey('WebViewControllerPart2Button', 10, '');
+      Utils.emitEvent("testStoreWebArchive004", 132040)
+      Utils.registerBaseEvent("testStoreWebArchive004", "/data/storage/el2/base/index.html.mht", 132110, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent("WebViewControllerPart2Button");
     })
-
-
   })
 }

@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error, { BusinessError } from '@ohos.base';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -58,17 +59,19 @@ struct webController {
   @State registerJavaScriptProxyFlag: boolean = false
   @State zoomAccess: boolean = false
   @State requestFocus: boolean = false
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132000,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132000)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -78,6 +81,7 @@ struct webController {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.titleReceive = '';
+        this.isReceive = 0;
       }
     }
   }
@@ -90,7 +94,7 @@ struct webController {
     },
     register: (res: object) => {
       if (this.registerJavaScriptProxyFlag == true) {
-        Utils.emitEvent(String(res), 31008);
+        Utils.emitEvent(String(res), 132030);
       }
       return "web222"
     }
@@ -100,22 +104,30 @@ struct webController {
     Column() {
       Row() {
         Button("WebController click").key('WebControllerButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str);
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testDomStorageAccess001": {
               try {
                 this.domStorageAccess = false
-                await Utils.sleep(2000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
-                await Utils.sleep(3000)
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+
                 this.controller.runJavaScript({ script: "getDomResult()", callback: (res) => {
                   console.info("getDomResult==>" + res)
-                  Utils.emitEvent(res, 33025)
+                  Utils.emitEvent(res, 132010)
                 } })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 33025)
+                Utils.emitEvent(String(error.code), 132010)
               }
 
               break;
@@ -124,16 +136,21 @@ struct webController {
             case "testDomStorageAccess002": {
               try {
                 this.domStorageAccess = true
-                await Utils.sleep(2000)
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
-                await Utils.sleep(3000)
+                await waitForExist(()=>this.isPageEnd, this.str, 0);
+
                 this.controller.runJavaScript({ script: "getDomResult()", callback: (res) => {
                   console.info("getDomResult==>" + res)
-                  Utils.emitEvent(res, 33026)
+                  Utils.emitEvent(res, 132020)
                 } })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 33026)
+                Utils.emitEvent(String(error.code), 132020)
               }
               break;
             }
@@ -178,6 +195,10 @@ struct webController {
           name: "backToEts",
           methodList: ["test", "toString"],
           controller: this.controller
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
         })
     }
   }
