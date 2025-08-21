@@ -1,0 +1,82 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import events_emitter from '@ohos.events.emitter';
+
+import {
+  Button,
+  ButtonType,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  Scroll,
+  Scroller,
+  Text,
+  TextAlign
+} from '@ohos.arkui.component'
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+
+
+@Entry
+@Component
+struct ScrollEnablePaging {
+  scroller: Scroller = new Scroller()
+  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
+
+  build() {
+    Column() {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('100%')
+              .height("20%")
+              .backgroundColor(0xFFFFFF)
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .onClick((e: ClickEvent) => {
+                try {
+                  let backData: events_emitter.EventData = {
+                    data: {
+                      "itemNumber": item,
+                    } as Record<string, Object>
+                  }
+                  let backEvent: events_emitter.InnerEvent = {
+                    eventId: 79002,
+                    priority: events_emitter.EventPriority.LOW
+                  }
+                  console.info("scroll NestedScrollOptionsScroll start to emit action state");
+                  events_emitter.emit(backEvent, backData);
+                } catch (err: Error) {
+                  console.info("scroll NestedScrollOptionsScroll emit action state err: " + JSON.stringify(err));
+                }
+              })
+          }, (item: number) => item.toString())
+        }.width('100%')
+      }
+
+      .key("ScrollTest")
+    }.width('100%')
+    .height("100%")
+  }
+}

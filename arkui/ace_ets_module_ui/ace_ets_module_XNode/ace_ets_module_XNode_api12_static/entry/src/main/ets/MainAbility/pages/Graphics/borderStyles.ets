@@ -1,0 +1,98 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import {
+  BorderStyle,
+  Builder,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  NodeContainer,
+  Row,
+  Text,
+} from '@ohos.arkui.component'
+import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement';
+import { UIContext } from '@ohos.arkui.UIContext';
+import { borderStyles, FrameNode, NodeController, RenderNode } from '@ohos.arkui.node';
+
+let borderStyleValue = renderNode.borderColor;
+const renderNode = new RenderNode();
+renderNode.frame = {
+  x: 0,
+  y: 0,
+  width: 150,
+  height: 150
+};
+renderNode.backgroundColor = 0XFF00FF00;
+renderNode.borderWidth = {
+  left: 8,
+  top: 8,
+  right: 8,
+  bottom: 8
+};
+renderNode.borderColor = {
+  left: 0xFF0000FF,
+  top: 0xFF0000FF,
+  right: 0xFF0000FF,
+  bottom: 0xFF0000FF
+};
+renderNode.borderStyle = borderStyles(BorderStyle.Dotted);
+
+
+class MyNodeController extends NodeController {
+  private rootNode: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new FrameNode(uiContext);
+
+    const rootRenderNode = this.rootNode!.getRenderNode();
+    if (rootRenderNode !== null) {
+      rootRenderNode!.appendChild(renderNode);
+    }
+
+    return this.rootNode;
+  }
+}
+
+@Entry
+@Component
+struct borderStylesExample {
+  @State borderStyleValue: number = 0
+  private myNodeController: MyNodeController = new MyNodeController();
+
+  build() {
+    Column() {
+      NodeContainer(this.myNodeController)
+      Text('borderStyleValue:' + this.borderStyleValue).margin(10).id("borderStylesValue")
+      Button('click borderStyleValue')
+        .id("borderStylesClick")
+        .onClick((e: ClickEvent) => {
+
+          renderNode.borderStyle = borderStyles(BorderStyle.Dotted)
+          renderNode.invalidate()
+          this.borderStyleValue = renderNode.borderStyle.left
+        })
+    }
+  }
+}

@@ -16,5 +16,7 @@ group("ActsAceEtsModuleVideoTest") {
   deps = [
     "ace_ets_module_video_api12:ActsAceEtsModuleVideoApi12Test",
     "ace_ets_module_video_api15:ActsAceEtsModuleVideoApi15Test",
+    "ace_ets_module_video_api12_static:ActsAceEtsModuleVideoApi12StaticTest",
+    "ace_ets_module_video_api15_static:ActsAceEtsModuleVideoApi15StaticTest",
   ]
 }
