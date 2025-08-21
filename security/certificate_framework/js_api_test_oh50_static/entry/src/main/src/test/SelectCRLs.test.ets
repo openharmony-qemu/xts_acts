@@ -129,7 +129,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
-        maxCRL: BigInt('10')
+        maxCRL: BigInt(10)
       };
       try {
         const crls = await crlFunc.checkSelectCRLs(PEM, [1, 2], param, IS_PROMISE);
