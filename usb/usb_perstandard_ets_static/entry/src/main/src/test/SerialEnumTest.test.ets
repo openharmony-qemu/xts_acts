@@ -17,7 +17,6 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from 
 import { Driver, MatchPattern, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import serialManager from '@ohos.usbManager.serial';
-import json from '@ohos.util.json';
 import bundleManager from '@ohos.bundle.bundleManager';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog'
@@ -31,21 +30,6 @@ function sleep(count:int) : Promise<int> {
       resolve(0)
     }, count)
   })
-}
-
-async function driveDecFn() {
-  console.info('**************driveDecFn**************');
-  try {
-    let driver = Driver.create();
-    await sleep(1000);
-    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
-    console.info(TAG, 'driveDecFn button:', json.stringify(buttons));
-    if (buttons && buttons.length > 0) {
-      await buttons[buttons.length - 1].click();
-    }
-  } catch (error) {
-    console.info(TAG, 'driveDecFn error: ' + error);
-  }
 }
 
 function checkDevice() {
