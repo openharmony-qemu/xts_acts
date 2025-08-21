@@ -136,7 +136,7 @@ export default function MultimodalInputPointerTest() {
         let caseName = "SUB_MMI_Input_Api_Pointer_PointerStyle_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(pointer.PointerStyle.Default == 0);
+          ExpectTrue(pointer.PointerStyle.DEFAULT == 0);
           ExpectTrue(pointer.PointerStyle.EAST == 1);
           ExpectTrue(pointer.PointerStyle.WEST == 2);
           ExpectTrue(pointer.PointerStyle.SOUTH == 3);
