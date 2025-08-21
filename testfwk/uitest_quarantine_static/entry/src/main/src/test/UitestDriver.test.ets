@@ -186,7 +186,7 @@ export default function uitestDriverTest() {
      * @tc.name: testDisplayRotation_static
      * @tc.desc: get the rotation of the device display and set it.
      */
-    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs)
