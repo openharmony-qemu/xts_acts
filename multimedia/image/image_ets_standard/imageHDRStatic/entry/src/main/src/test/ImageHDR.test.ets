@@ -26,9 +26,8 @@ export default function imageHDR() {
     let isSupportHdr: Boolean;
 
     let filePath: string;
-    let globalpixelmap: image.PixelMap
-    let globalimageSource: image.ImageSource;
-    let globalpacker: image.ImagePacker;
+    let globalpixelmap: image.PixelMap | undefined = undefined;
+    let globalimageSource: image.ImageSource | undefined = undefined;
 
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -54,7 +53,7 @@ export default function imageHDR() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -62,17 +61,9 @@ export default function imageHDR() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
-        }
-      }
-      if (globalpacker != undefined) {
-        console.info('globalpacker release start');
-        try {
-          await globalpacker.release();
-        } catch (error) {
-          console.info('globalpacker release fail');
         }
       }
       console.info('afterEach case');
