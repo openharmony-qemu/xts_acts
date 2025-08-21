@@ -228,6 +228,18 @@ export default function bluetoothBleTest() {
                 let WRITE_NO_RESPONSE: ble.GattWriteType = ble.GattWriteType.WRITE_NO_RESPONSE;
                 hilog.info(domain, tag, "WRITE_NO_RESPONSE:" + WRITE_NO_RESPONSE);
                 expect(true).assertEqual(WRITE_NO_RESPONSE == 2);
+                let STARTED: ble.AdvertisingState = ble.AdvertisingState.STARTED;
+                hilog.info(domain, tag, "STARTED:" + STARTED);
+                expect(true).assertEqual(STARTED == 1);
+                let ENABLED: ble.AdvertisingState = ble.AdvertisingState.ENABLED;
+                hilog.info(domain, tag, "ENABLED:" + ENABLED);
+                expect(true).assertEqual(ENABLED == 2);
+                let DISABLED: ble.AdvertisingState = ble.AdvertisingState.DISABLED;
+                hilog.info(domain, tag, "DISABLED:" + DISABLED);
+                expect(true).assertEqual(DISABLED == 3);
+                let STOPPED: ble.AdvertisingState = ble.AdvertisingState.STOPPED;
+                hilog.info(domain, tag, "STOPPED:" + STOPPED);
+                expect(true).assertEqual(STOPPED == 4);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "bleConstantTest get errCode:" + err.code + ",errMessage:" + err.message);
