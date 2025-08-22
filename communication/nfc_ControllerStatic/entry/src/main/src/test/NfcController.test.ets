@@ -22,7 +22,6 @@ import controller from '@ohos.nfc.controller';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-// import tag from '@ohos.nfc.tag';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,TestType,Size} from '../../../hypium/index';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -64,6 +63,7 @@ export default function nfcControllerTest() {
             await Utils.msSleep(2000)
             done();
         })
+
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0200
          * @tc.name getNfcState
@@ -144,6 +144,7 @@ export default function nfcControllerTest() {
             }
             done();
         })
+        
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
