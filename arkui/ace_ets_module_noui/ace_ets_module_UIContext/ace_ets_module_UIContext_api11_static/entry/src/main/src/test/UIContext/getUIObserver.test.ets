@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import router from '@ohos.router';
+import { AtomicServiceBar, KeyboardAvoidMode, Router, UIContext } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import {
+  Component,
+  DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
+  ResizeDirection,
+  UiWindow,
+  WindowMode
+} from '@ohos.UiTest';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector'
+
+interface optionsObj {
+  uri: string
+}
+
+export default function getUIObserver() {
+  describe('getUIObserver', () => {
+    beforeEach(async (): Promise<void> => {
+      console.info("getUIObserver beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/UIContext/getUIObserver',
+      }
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages: router.RouterState = routerInstance.getState();
+        console.info("get getUIObserver state pages:" + JSON.stringify(pages));
+        if (!("getUIObserver" == pages.name)) {
+          console.info("get getUIObserver pages.name:" + '');
+
+
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
+
+        }
+      } catch (err) {
+        console.error("push getUIObserver page error:" + err);
+      }
+      console.info("getUIObserver beforeEach end");
+    });
+
+
+    /*
+     * @tc.number   getUIObserver_static_0100
+     * @tc.name     getUIObserver_static_0100
+     * @tc.desc     getUIObserver_static_0100
+     * @tc.level    Level.LEVEL0
+     */
+    it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('getUIObserver_0100 START');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('lanYa_id'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJson: string = inspector.getInspectorByKey('showFlag_id');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[getUIObserver_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[getUIObserver_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('30');
+      console.info('[getUIObserver_0100] END');
+      done();
+    });
+  })
+}
+
