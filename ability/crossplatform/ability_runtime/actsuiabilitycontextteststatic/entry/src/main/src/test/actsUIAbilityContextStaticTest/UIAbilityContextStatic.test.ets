@@ -24,6 +24,7 @@ import AtomicServiceOptions from '@ohos.app.ability.AtomicServiceOptions'
 import { BusinessError } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
+import wantConstant from '@ohos.app.ability.wantConstant';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -229,7 +230,10 @@ export default function UIAbilityContextStatic() {
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let options: AtomicServiceOptions = {
-          displayId: 0,
+          flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
+          parameters: {
+            "demo.result": 123456
+          } as Record<string, Object>
         };
         context.openAtomicService('', options)
           .then((result: common.AbilityResult) => {

@@ -27,6 +27,7 @@ group("ability_runtime") {
       "abilitymontior:ActsAbilityMonitorTest",
       "abilitymontiorstatic:ActsAbilityMonitorStaticTest",
       "abilitymultiinstance:abilitymultiinstance",
+      "abilitystagecontextteststatic:AbilityStageContextStaticTest",
       "abilitystagemonitor:abilitystagemonitor",
       "abilitytoolabilitydelegatortest:abilitytoolabilitydelegatortest",
       "abilitytoolabilitydelegatorteststatic:ActsAbilityToolAbilityDelegatorStaticTest",

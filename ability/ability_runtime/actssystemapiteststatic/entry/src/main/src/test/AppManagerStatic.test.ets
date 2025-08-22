@@ -67,26 +67,26 @@ export default function appManagerStaticTest() {
       * @tc.desc: Test the third-party application without permission call killProcessesByBundleName will be blocked
       * @tc.level 3
       */
-    // it('System_API_Test_App_Manager_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   let bundleName = "com.example.systemapitest.static";
-    //   try {
-    //     appManager.killProcessesByBundleName(bundleName, false).then(() => {
-    //       hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
-    //       expect().assertFail();
-    //       done();
-    //     }).catch((err: BusinessError): void => {
-    //       hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-    //       expect(err.code).assertEqual(16000050);
-    //       done();
-    //     });
-    //   } catch (paramError: BusinessError) {
-    //     let code = (paramError as BusinessError).code;
-    //     let message = (paramError as BusinessError).message;
-    //     hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 [appManager] error: ${code}, ${message}`);
-    //     expect(paramError.code).assertEqual(16000050);
-    //     done();
-    //   }
-    // });
+    it('System_API_Test_App_Manager_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let bundleName = "com.example.systemapitest.static";
+      try {
+        appManager.killProcessesByBundleName(bundleName, false).then(() => {
+          hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError): void => {
+          hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(16000050);
+          done();
+        });
+      } catch (paramError: BusinessError) {
+        let code = (paramError as BusinessError).code;
+        let message = (paramError as BusinessError).message;
+        hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 [appManager] error: ${code}, ${message}`);
+        expect(paramError.code).assertEqual(16000050);
+        done();
+      }
+    });
 
    /**
      * @tc.number: System_API_Test_App_Manager_Static_1800
@@ -218,25 +218,25 @@ export default function appManagerStaticTest() {
      * @tc.size   : MediumTest
      * @tc.level  : 3
      */
-    // it('SUB_Ability_AbilityBase_AppManager_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
-    //   let tag = `SUB_Ability_AbilityBase_AppManager_Static_0500`;
-    //   hilog.info(domain, tag, `SUB_Ability_AbilityBase_AppManager_Static_0500 begin`);
-    //   try {
-    //     appManager.isAppRunning('com.example.systemapitest.static').then((data: boolean)=>{
-    //       hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
-    //       expect(data).assertFalse();
-    //       done();
-    //     }).catch((err: BusinessError): void=>{
-    //       hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
-    //       expect(err?.code).assertEqual(201);
-    //       done();
-    //     });
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // });
+    it('SUB_Ability_AbilityBase_AppManager_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityBase_AppManager_Static_0500`;
+      hilog.info(domain, tag, `SUB_Ability_AbilityBase_AppManager_Static_0500 begin`);
+      try {
+        appManager.isAppRunning('com.example.systemapitest.static').then((data: boolean)=>{
+          hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
+          expect(data).assertFalse();
+          done();
+        }).catch((err: BusinessError): void=>{
+          hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
+          expect(err?.code).assertEqual(201);
+          done();
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /*
      * @tc.number : SUB_Ability_AbilityBase_AppManager_Static_0900

@@ -59,33 +59,33 @@ export default function openLinkStaticTest() {
       hilog.info(domain, tag, "beforeAll end");
     });
 
-    // /*
-    //  * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0100
-    //  * @tc.name   : AbilityRuntime_OpenLink_static_0100
-    //  * @tc.desc   : The input parameter 'link' is empty，Call the openLink interface through context,and catch parameter invalid exception
-    //  * @tc.type   : Function
-    //  * @tc.size   : MediumTest
-    //  * @tc.level  : 0
-    //  */
-    // it('AbilityRuntime_OpenLink_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0100`;
-    //   hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0100 begin');
-    //   try {
-    //     context.openLink("").then(() => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open link successful`);
-    //       expect().assertFail();
-    //       done();
-    //     }).catch((error: BusinessError): void => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open link err: ` + error.code + error.message);
-    //       expect(error.code).assertEqual(invalidParamErrNo);
-    //       done();
-    //     })
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open fail: ` + err.code + err.message);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // });
+    /*
+     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0100
+     * @tc.name   : AbilityRuntime_OpenLink_static_0100
+     * @tc.desc   : The input parameter 'link' is empty，Call the openLink interface through context,and catch parameter invalid exception
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
+    it('AbilityRuntime_OpenLink_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0100`;
+      hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0100 begin');
+      try {
+        context.openLink("").then(() => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open link successful`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError): void => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open link err: ` + error.code + error.message);
+          expect(error.code).assertEqual(invalidParamErrNo);
+          done();
+        })
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open fail: ` + err.code + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /*
      * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0300
@@ -142,34 +142,34 @@ export default function openLinkStaticTest() {
       }
     });
 
-    // /*
-    //  * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0500
-    //  * @tc.name   : AbilityRuntime_OpenLink_static_0500
-    //  * @tc.desc   : The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
-    //  * @tc.type   : Function
-    //  * @tc.size   : MediumTest
-    //  * @tc.level  : 0
-    //  */
-    // it('AbilityRuntime_OpenLink_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0500`;
-    //   hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0500 begin');
-    //   await Utils.msSleep(1000);
-    //   try {
-    //     context.openLink(link, trueParamOptions).then(() => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open link successful`);
-    //       expect().assertFail();
-    //       done();
-    //     }).catch((error: BusinessError): void => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open link err: ` + error.code + error.message);
-    //       expect(error.code).assertEqual(componentNotExistErrNo);
-    //       done();
-    //     })
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open fail : ` + err.code + err.message);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // });
+    /*
+     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0500
+     * @tc.name   : AbilityRuntime_OpenLink_static_0500
+     * @tc.desc   : The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 0
+     */
+    it('AbilityRuntime_OpenLink_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0500`;
+      hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0500 begin');
+      await Utils.msSleep(1000);
+      try {
+        context.openLink(link, trueParamOptions).then(() => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open link successful`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError): void => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open link err: ` + error.code + error.message);
+          expect(error.code).assertEqual(componentNotExistErrNo);
+          done();
+        })
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open fail : ` + err.code + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /*
      * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0600
@@ -260,41 +260,41 @@ export default function openLinkStaticTest() {
       }
     });
 
-    // /*
-    // * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0900
-    // * @tc.name   : AbilityRuntime_OpenLink_static_0900
-    // * @tc.desc   : The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
-    // * @tc.type   : Function
-    // * @tc.size   : MediumTest
-    // * @tc.level  : 0
-    // */
-    // it('AbilityRuntime_OpenLink_static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0900`;
-    //   hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0900 begin');
-    //   await Utils.msSleep(1000);
-    //   try {
-    //     context.openLink(link, trueParamOptions, (err: BusinessError<void> | null, result: common.AbilityResult | undefined) => {
-    //       if (result !== undefined) {
-    //         hilog.info(domain, tag, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
-    //         hilog.info(domain, tag, `openLink callback result data: ${JSON.stringify(result.want)}`);
-    //         expect(result!.resultCode).assertEqual(resultCode);
-    //       }
-    //       done();
-    //     }).then(() => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open link successful`);
-    //       expect().assertFail();
-    //       done();
-    //     }).catch((error: BusinessError): void => {
-    //       hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open link err: ` + error.code + error.message);
-    //       expect(error.code).assertEqual(componentNotExistErrNo);
-    //       done();
-    //     })
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open fail : ` + err.code + err.message);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    // });
+    /*
+    * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_0900
+    * @tc.name   : AbilityRuntime_OpenLink_static_0900
+    * @tc.desc   : The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
+    * @tc.type   : Function
+    * @tc.size   : MediumTest
+    * @tc.level  : 0
+    */
+    it('AbilityRuntime_OpenLink_static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0900`;
+      hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0900 begin');
+      await Utils.msSleep(1000);
+      try {
+        context.openLink(link, trueParamOptions, (err: BusinessError<void> | null, result: common.AbilityResult | undefined) => {
+          if (result !== undefined) {
+            hilog.info(domain, tag, `openLink callback result: ${JSON.stringify(result.resultCode)}`);
+            hilog.info(domain, tag, `openLink callback result data: ${JSON.stringify(result.want)}`);
+            expect(result!.resultCode).assertEqual(resultCode);
+          }
+          done();
+        }).then(() => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open link successful`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError): void => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open link err: ` + error.code + error.message);
+          expect(error.code).assertEqual(componentNotExistErrNo);
+          done();
+        })
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open fail : ` + err.code + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /*
      * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_static_1000

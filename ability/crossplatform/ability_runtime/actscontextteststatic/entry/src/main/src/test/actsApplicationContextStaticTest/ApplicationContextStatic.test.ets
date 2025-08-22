@@ -32,7 +32,7 @@ export default function ApplicationContextStatic() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.contexttest.static.static")
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.contexttest.static")
       await Utils.msSleep(2000);
       abilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, tag, 'beforeAll end');
