@@ -29,6 +29,7 @@ const TAG = "CameraSecureSessionTest: ";
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.SecureSession;
+let isCameraSessionCreated: boolean = false;
 let mPhotoSurface: string;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
@@ -203,7 +204,7 @@ export default function cameraSecureSessionTest() {
     return true;
   }
 
-  let createSecureSessionInstance = (idx: int = -1) => {
+  let createSecureSessionInstance = () => {
     console.info('Enter createSecureSessionInstance');
 
     try {
@@ -211,6 +212,7 @@ export default function cameraSecureSessionTest() {
     } catch (error:BusinessError) {
       console.info('createSecureSessionInstance FAILED');
     }
+    isCameraSessionCreated = true;
 
     if (isEmpty03(mCameraSession)) {
       console.info(TAG + "createSecureSessionInstance FAILED");
@@ -218,41 +220,16 @@ export default function cameraSecureSessionTest() {
     }
 
     mCameraSession.beginConfig();
-    if (idx != -1) {
-      try {
-        await createInput(idx);
-        await createOutput(idx);
-
-        console.info(TAG + "Start to addInput");
-
-
-        await Utils.msSleep(1);
-
-        if (!isEmpty04(mCameraInput)) {
-          console.info(TAG + "Start to addInput");
-          mCameraSession.addInput(mCameraInput);
-        }
-
-        if (!isEmpty07(mPreviewOutput)) {
-          console.info(TAG + "Start to addOutput mPreviewOutput");
-          mCameraSession.addOutput(mPreviewOutput);
-        }
-
-        await Utils.msSleep(1);
-
-        await mCameraSession.commitConfig();
-      } catch (error:BusinessError) {
-        console.info(TAG + "test Failed");
-      }
-    }
-
     console.info('Exit createSecureSessionInstance');
-
     return true;
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    if (isCameraSessionCreated) {
+      console.info(TAG + "Enter releaseCameraSessionInstance");
+      await mCameraSession.release();
+      isCameraSessionCreated = false;
+    }
   }
 
   let releaseInput = async (): Promise<boolean> => {
@@ -364,6 +341,7 @@ export default function cameraSecureSessionTest() {
 
     afterEach(() => {
       console.info('afterEach case');
+      Utils.msSleep(500);
     })
 
     afterAll(() => {
@@ -409,6 +387,7 @@ export default function cameraSecureSessionTest() {
                 done();
               }
               await releaseInput();
+              await releaseCameraSessionInstance();
               await Utils.msSleep(1000);
             }
           }
@@ -456,6 +435,52 @@ export default function cameraSecureSessionTest() {
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100 ends here");
       done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
+     * @tc.desc      : Test secure session addSecureOutput
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100--------------");
+      if (mCameraNum < 2) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100 Pass with NoCamera Support Secure Session");
+        expect(true).assertTrue();
+        done();
+      } else {
+        createSecureSessionInstance();
+        await createInput(1);
+        await createOutput(1);
+
+        if (!isEmpty04(mCameraInput)) {
+          console.info(TAG + "Start to addInput");
+          mCameraSession.addInput(mCameraInput);
+        }
+
+        if (!isEmpty07(mPreviewOutput)) {
+          console.info(TAG + "Start to addOutput mPreviewOutput");
+          mCameraSession.addOutput(mPreviewOutput);
+        }
+
+        console.info(TAG + "Start to addSecureOutput");
+        try {
+          mCameraSession.addSecureOutput(mPreviewOutput);
+          console.info(TAG + "Success to addSecureOutput mPreviewOutput");
+          expect(true).assertTrue()
+        } catch (err: BusinessError) {
+          console.info(TAG + "Failed to addSecureOutput mPreviewOutput, error code: " + err.code);
+          expect().assertFail()
+        }
+        await mCameraSession.commitConfig();
+        console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100--------------");
+        await Utils.msSleep(1000);
+        await releaseCameraSessionInstance()
+      }
+      done()
     })
   })
 }

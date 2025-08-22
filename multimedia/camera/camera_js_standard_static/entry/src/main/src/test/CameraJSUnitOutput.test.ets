@@ -277,6 +277,7 @@ let createOutput = (index: int, mode: cameraObj.SceneMode) => {
       }
     }
     if (equalFlag) {
+      hilog.info(domain, tag, 'createOutput find valid video profile' + JSON.stringify(cameraOutputCap.videoProfiles[k]));
       previewOutput = cameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
       videoProfilesArray = cameraOutputCap.videoProfiles;
       videoProfilesArray[0] = cameraOutputCap.videoProfiles[k];
@@ -3244,5 +3245,235 @@ export default function cameraJSUnitOutput() {
       await cameraSession.release();
       done();
      });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100
+     * @tc.name      : preview output set frame rate
+     * @tc.desc      : preview output set frame rate
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100--------------");
+      let appContext: Context = Hypium.get("Context") as Context;
+      cameraManager = cameraObj.getCameraManager(appContext);
+      let camerasArray = cameraManager.getSupportedCameras();
+      if (isEmpty01(cameraManager)) {
+          console.info(tag + "mCameraManager == null || undefined");
+          expect().assertFail();
+      }
+      let captureSession = cameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession)) {
+          console.info(tag + "captureSession == null || undefined");
+          expect().assertFail();
+      }
+      console.info("SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100 camera:" + camerasArray[0].cameraId);
+      let cameraOutputCap = getSupportedOutputCapabilityInPromise(camerasArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty09(cameraOutputCap)) {
+          console.info(tag + "Entering cameraOutputCap == null || undefined");
+          expect().assertFail();
+      }
+      let cameraInput = cameraManager.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput)) {
+          console.info(tag + "Entering cameraInput == null || undefined");
+          expect().assertFail();
+      }
+      let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
+      expect(isEmpty16(previewProfiles)).assertFalse();
+      previewOutput = cameraManager.createPreviewOutput(previewProfiles, surfaceId)
+      await cameraInput.open();
+      captureSession.beginConfig();
+      if (!isEmpty04(cameraInput)) {
+          console.info(tag + "Start to addInput");
+          captureSession.addInput(cameraInput);
+      }
+      if (!isEmpty07(previewOutput)) {
+          console.info(tag + "Start to addOutput previewOutput");
+          captureSession.addOutput(previewOutput);
+      }
+      await captureSession.commitConfig();
+      try {
+        // 获取支持的帧率范围
+        let supportedFrameRates = previewOutput.getSupportedFrameRates()
+        console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
+        await Utils.msSleep(1000);
+
+        previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
+        console.info(`videoOutput set FrameRate success`)
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`videoOutput set FrameRate failed: ` + err.code)
+        expect().assertFail();
+      }
+      await captureSession.release();
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100 PASS");
+      await Utils.msSleep(1000);
+      done();
+    })
+
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200
+     * @tc.name      : preview output set frame rate with errorCode 7400101
+     * @tc.desc      : preview output set frame rate with errorCode 7400101
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200--------------");
+      let appContext: Context = Hypium.get("Context") as Context;
+      cameraManager = cameraObj.getCameraManager(appContext);
+      let camerasArray = cameraManager.getSupportedCameras();
+      if (isEmpty01(cameraManager)) {
+          console.info(tag + "mCameraManager == null || undefined");
+          expect().assertFail();
+      }
+      let captureSession = cameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession)) {
+          console.info(tag + "captureSession == null || undefined");
+          expect().assertFail();
+      }
+      console.info("SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200 camera:" + camerasArray[0].cameraId);
+      let cameraOutputCap = getSupportedOutputCapabilityInPromise(camerasArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty09(cameraOutputCap)) {
+          console.info(tag + "Entering cameraOutputCap == null || undefined");
+          expect().assertFail();
+      }
+      let cameraInput = cameraManager.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput)) {
+          console.info(tag + "Entering cameraInput == null || undefined");
+          expect().assertFail();
+      }
+      let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
+      expect(isEmpty16(previewProfiles)).assertFalse();
+      previewOutput = cameraManager.createPreviewOutput(previewProfiles, surfaceId)
+      await cameraInput.open();
+      captureSession.beginConfig();
+      if (!isEmpty04(cameraInput)) {
+          console.info(tag + "Start to addInput");
+          captureSession.addInput(cameraInput);
+      }
+      if (!isEmpty07(previewOutput)) {
+          console.info(tag + "Start to addOutput previewOutput");
+          captureSession.addOutput(previewOutput);
+      }
+      await captureSession.commitConfig();
+      try {
+        // 获取支持的帧率范围
+        let supportedFrameRates = previewOutput.getSupportedFrameRates()
+        console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
+        await Utils.msSleep(1000);
+
+        previewOutput.setFrameRate(-1, -1);
+        console.info(`previewOutput set FrameRate success`)
+        expect(true).assertFalse();
+      } catch (err: BusinessError) {
+        console.info(`previewOutput set FrameRate failed: ` + err.code)
+        expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+      }
+      await captureSession.release();
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200 PASS");
+      await Utils.msSleep(1000);
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300
+     * @tc.name      : preview output set frame rate with errorCode 7400110
+     * @tc.desc      : preview output set frame rate with errorCode 7400110
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300--------------");
+      // 创建相机
+      getCameraDevices()
+      // 创建输出流
+      createOutput(0, cameraObj.SceneMode.NORMAL_VIDEO)
+      // 配置录制参数, 获取 videoSurfaceId
+      await getVideoSurface();
+      console.info('videoSurfaceId: ' + videoSurfaceId)
+      // 创建2个VideoOutput对象
+      let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+      let videoProfileValid = cameraOutputCap.videoProfiles.find((videoProfile: cameraObj.Profile) => {
+        return Math.abs((cameraOutputCap.previewProfiles[0].size.width / cameraOutputCap.previewProfiles[0].size.height) - (videoProfile.size.width / videoProfile.size.height)) < Number.EPSILON;
+      });
+      videoOutput = cameraManager.createVideoOutput(videoProfileValid!, videoSurfaceId!);
+      let videoOutput2 = cameraManager.createVideoOutput(videoProfileValid!, videoSurfaceId!);
+      //创建会话
+      createPhotoSession(cameraObj.SceneMode.NORMAL_VIDEO)
+      // 配置会话
+      await createInput(0);
+      if (cameraInput != null && cameraInput != undefined) {
+        cameraSession.addInput(cameraInput);
+      }
+      if (previewOutput != null && previewOutput != undefined) {
+        cameraSession.addOutput(previewOutput);
+      }
+      if (videoOutput != null && videoOutput != undefined) {
+        cameraSession.addOutput(videoOutput);
+      }
+      if (videoOutput2 != null && videoOutput2 != undefined) {
+        cameraSession.addOutput(videoOutput2);
+      }
+      try {
+        await cameraSession.commitConfig();
+      } catch (err: BusinessError) {
+        console.info("Skipping As The Device is Not Supported");
+        expect(true).assertTrue()
+        done()
+      }
+      cameraSession.start();
+
+      // 获取支持的帧率范围
+      let supportedFrameRates = previewOutput.getSupportedFrameRates()
+      console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
+      await Utils.msSleep(1000);
+
+      try {
+        previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
+        console.info(`previewOutput set FrameRate success`)
+        expect(true).assertFalse();
+      } catch (err: BusinessError) {
+        console.info(`previewOutput set FrameRate failed: ` + err.code)
+        expect(err.code == cameraObj.CameraErrorCode.UNRESOLVED_CONFLICTS_WITH_CURRENT_CONFIGURATIONS).assertTrue();
+      }
+      await cameraSession.release();
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300 PASS");
+      await Utils.msSleep(1000);
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_GET_ACTIVE_PROFILE_STATIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_GET_ACTIVE_PROFILE_STATIC_0100
+     * @tc.desc      : preview output getActiveProfile
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_GET_ACTIVE_PROFILE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_GET_ACTIVE_PROFILE_STATIC_0100--------------");
+      // 创建相机
+      getCameraDevices()
+
+      //创建输出流
+      createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+
+      // 获取激活的配置
+      try {
+        let activeProfile = previewOutput.getActiveProfile()
+        console.info(`get activeProfile success: ${JSON.stringify(activeProfile)}`)
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`get activeProfile failed: ${JSON.stringify(err.code)}`)
+        expect().assertFail()
+      }
+      await Utils.msSleep(1000);
+      done();
+    })
   })
 }

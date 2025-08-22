@@ -37,6 +37,7 @@ import cameraVideoMirrorTest from './CameraVideoMirrorTest.test.ets'
 import cameraVideoQualityPrioritizationTest from './CameraVideoQualityPrioritizationTest.test.ets'
 import cameraNoPermissionErrorCodeTest from './CameraNoPermissionErrorCodeTest.test.ets'
 import cameraConcurrentTest from './CameraConcurrentTest.test.ets'
+import cameraPhotoSessionTest from './CameraPhotoSessionTest.test.ets'
 
 export default function testsuite() {
   cameraNoPermissionErrorCodeTest();
@@ -65,4 +66,5 @@ export default function testsuite() {
   cameraVideoMirrorTest();
   cameraVideoQualityPrioritizationTest();
   cameraConcurrentTest();
+  cameraPhotoSessionTest();
 }
