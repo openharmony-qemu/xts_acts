@@ -71,7 +71,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -98,7 +102,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test start`);
           done();
         }
@@ -126,7 +134,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -154,7 +166,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -192,7 +208,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker1.join();
+          try {
+            worker1.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -248,7 +268,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker!.join();
+          try {
+            worker!.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -267,6 +291,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest008';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start();
         try {
           worker.quit();
           let workerId1: int | undefined = worker.getWorkerId();
@@ -275,7 +300,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -294,6 +323,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest009';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start();
         try {
           worker.quitSafely();
           let workerId1: int | undefined = worker.getWorkerId();
@@ -302,7 +332,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -329,7 +363,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -358,7 +396,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -385,7 +427,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -411,7 +457,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -437,7 +487,53 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0114
+     * @tc.name GetNameTest004
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("GetNameTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'GetNameTest004';
+        console.info(`${TAG} test start`);
+        const testValue =
+          '!\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEF GHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~' +
+            '!!\"\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~\\\\b\\0\\💇\\开\\x24\\v\\t\\r\\n\\f\\b💇 === \\ud83d\\udc87' +
+            '!!\"\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~\\\\b\\0\\💇\\开\\x24\\v\\t\\r\\n\\f\\b' +
+            '%20!%22#$%25&\'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~' +
+            '%20!%22%23%24%25%26\'()*%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D' +
+            ' !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEF GHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~' +
+            '!!\"\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~\\\\b\\0\\💇\\开\\x24\\v\\t\\r\\n\\f\\b💇 === \\ud83d\\udc87' +
+            '!!\"\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~\\\\b\\0\\💇\\开\\x24\\v\\t\\r\\n\\f\\b' +
+            '%20!%22#$%25&\'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abq';
+        const worker =
+          new EAWorker(testValue);
+        try {
+          let workName1 = worker.getName();
+          expect(workName1)
+            .assertEqual(testValue);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -464,7 +560,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -491,7 +591,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -534,6 +638,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'GetNameTest008';
         console.info(`${TAG} test start`);
         const worker = new EAWorker('testName');
+        worker.start();
         try {
           worker.quit();
           let workName1 = worker.getName();
@@ -542,7 +647,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -561,6 +670,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'GetNameTest009';
         console.info(`${TAG} test start`);
         const worker = new EAWorker('testName');
+        worker.start();
         try {
           worker.quitSafely();
           let workName1 = worker.getName();
@@ -569,7 +679,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -621,7 +735,104 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(error.message).assertContain('Worker already started');
         } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0122
+     * @tc.name StartTest003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("StartTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'StartTest003';
+        console.info(`${TAG} test start`);
+        const worker = new EAWorker();
+        try {
+          worker.quit();
+          worker.start();
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(error.message).assertContain('Cannot stop worker before start');
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0123
+     * @tc.name StartTest004
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("StartTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'StartTest004';
+        console.info(`${TAG} test start`);
+        const worker = new EAWorker();
+        try {
+          worker.quitSafely();
+          worker.start();
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(error.message).assertContain('Cannot stop worker before start');
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0124
+     * @tc.name StartTest005
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("StartTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'StartTest005';
+        console.info(`${TAG} test start`);
+        const worker = new EAWorker();
+        try {
           worker.join();
+          worker.start();
+          expect(false).assertFail();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(error.message).assertContain('Cannot stop worker before start');
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -649,7 +860,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(error.message).assertContain('Can not run task when worker is not started');
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -677,7 +892,44 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(error.message).assertContain('Can not run task when worker is not started');
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0127
+     * @tc.name StartTest008
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('StartTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'StartTest008';
+        console.info(`${TAG} test start`);
+        let worker: EAWorker = new EAWorker();
+        try {
+          let task = (): void => {
+            worker.start()
+          }
+          worker.postTask(task)
+          expect(false).assertFail()
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(error.message).assertContain('Can not post task when worker is not started');
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -704,7 +956,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -731,7 +987,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -759,7 +1019,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -785,7 +1049,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -812,7 +1080,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -842,7 +1114,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -860,6 +1136,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'IsAlive004';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
+        worker.start();
         try {
           worker.quit();
           let workAlive = worker.isAlive();
@@ -868,7 +1145,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -887,6 +1168,7 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'IsAlive005';
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
+        worker.start();
         try {
           worker.quitSafely();
           let workAlive = worker.isAlive();
@@ -895,7 +1177,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -922,7 +1208,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -950,7 +1240,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -981,7 +1275,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1009,7 +1307,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1076,7 +1378,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker!.join();
+          try {
+            worker!.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1105,7 +1411,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1148,7 +1458,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1185,7 +1499,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1213,7 +1531,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1275,7 +1597,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1321,7 +1647,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1407,7 +1737,86 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0152
+     * @tc.name QuitTest003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('QuitTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'QuitTest003';
+        console.info(`${TAG} test start`);
+        let fired: boolean = false;
+        const worker = new EAWorker();
+        worker.start();
+        try {
+          worker.postTask(() => {
+            setTimeout(() => {
+              fired = true;
+            }, 100);
+          });
+          worker.quit();
+          await Utils.msSleep(3000);
+          expect(fired).assertFalse();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0153
+     * @tc.name QuitTest004
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('QuitTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'QuitTest004';
+        console.info(`${TAG} test start`);
+        let doneFlag: boolean = false;
+        const worker: EAWorker = new EAWorker(TAG, () => {
+          setTimeout(() => {
+            doneFlag = true;
+          }, 1000)
+        });
+        worker.start();
+        try {
+          worker.quit();
+          await Utils.msSleep(1000);
+          expect(doneFlag).assertFalse();
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1457,7 +1866,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1492,7 +1905,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1525,7 +1942,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1557,7 +1978,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1591,7 +2016,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1627,7 +2056,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1661,7 +2094,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1696,7 +2133,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1760,7 +2201,11 @@ export default function NewEAWorkerTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
