@@ -3839,7 +3839,7 @@ export default function abilityTest() {
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE__0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3868,7 +3868,7 @@ export default function abilityTest() {
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE__0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
