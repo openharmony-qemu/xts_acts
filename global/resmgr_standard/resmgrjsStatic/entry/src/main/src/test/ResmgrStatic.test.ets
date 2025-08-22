@@ -167,7 +167,7 @@ export default function ResmgrTest() {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.code' + error.code);
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.message' + error.message);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
         done();
       })
     })
@@ -191,7 +191,7 @@ export default function ResmgrTest() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_010 promise catch');
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_010 error.code' + error.code);
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_010 error.message' + error.message);
-        expect(JSON.stringify(error.code) == '9001002').assertTrue();
+        expect(error.code).assertEqual(9001002);
         done();
       })
     })
@@ -212,7 +212,7 @@ export default function ResmgrTest() {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_011 error.code' + error.code);
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_011 error.message' + error.message);
-        expect(JSON.stringify(error.code) == '9001006').assertTrue();
+        expect(error.code).assertEqual(9001006);
         done();
       })
     })
@@ -434,11 +434,29 @@ export default function ResmgrTest() {
       * @tc.desc    test getDeviceCapability method in callback mode
       */
       it('getDeviceCapability_test_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        res?.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
-          expect(dc !== null).assertTrue();
-          console.log('getDeviceCapability_test_static_008 ' + dc);
+        try {
+          res.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
+            if (dc.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
+              console.log('getDeviceCapability_test_static_008 DEVICE_TYPE_PHONE');
+            }
+            console.log('getDeviceCapability_test_static_008 442' + JSON.stringify(dc));
+            if (dc.screenDensity == resourceManager.ScreenDensity.SCREEN_LDPI) {
+              console.log('getDeviceCapability_test_static_008 SCREEN_LDPI');
+            }
+            expect(dc !== null).assertTrue();
+            console.log('getDeviceCapability_test_static_008 ' + JSON.stringify(dc));
+            done();
+          })
+            .catch(error =>{
+              console.log('getDeviceCapability_test_static_008 error0: ' + JSON.stringify(error));
+              expect().assertFail();
+              done();
+            })
+        } catch(error) {
+          console.log('getDeviceCapability_test_static_008 error1: ' + JSON.stringify(error));
+          expect().assertFail();
           done();
-        })
+        }
       })
 
       /* *
@@ -1606,7 +1624,7 @@ export default function ResmgrTest() {
           let error = err as BusinessError
           console.log('addResource_test_static_002 err.code' + error.code);
           console.log('addResource_test_static_002 err.message' + error.message);
-          expect(JSON.stringify(error.code)).assertEqual('9001010');
+          expect(error.code).assertEqual(9001010);
           expect(error.message).assertEqual('Invalid overlay path');
           done();
         }
@@ -1624,7 +1642,7 @@ export default function ResmgrTest() {
           let error = err as BusinessError
           console.log('removeResource_test_static_002 err.code' + error.code);
           console.log('removeResource_test_static_002 err.message' + error.message);
-          expect(JSON.stringify(error.code)).assertEqual('9001010');
+          expect(error.code).assertEqual(9001010);
           expect(error.message).assertEqual('Invalid overlay path');
           done();
         }
@@ -2274,6 +2292,40 @@ export default function ResmgrTest() {
         }
         done();
       })
+
+      /* *
+      * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
+      * @tc.name    test getDeviceCapability method in callback mode
+      * @tc.desc    get the device capability in callback mode
+      */
+      it('getScreenDensity_test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+          res.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
+            if (error) {
+              console.log('getScreenDensity_test_static_001 errorCode: ' + error.code +'errorMessage:'+ error.message);
+              expect().assertFail();
+              done();
+              return
+            }
+            if (dc) {
+              if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_SDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_SDPI');
+              }else if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_MDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_MDPI');
+              }else if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_LDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_LDPI');
+              }else if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_XLDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_XLDPI');
+              }else if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_XXLDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_XXLDPI');
+              }else if(dc.screenDensity == resourceManager.ScreenDensity.SCREEN_XXXLDPI){
+                console.log('getScreenDensity_test_static_001 SCREEN_XXXLDPI');
+              }
+            }
+            expect(dc !== null).assertTrue();
+            console.log('getScreenDensity_test_static_001 ' + JSON.stringify(dc));
+            done();
+          })
+        })
 
       console.log('*************end ResmgrTest*************');
     })
