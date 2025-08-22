@@ -646,7 +646,7 @@ export default function KvStoreEtsTestStatic() {
           done();
         }).catch((err:Error) => {
           hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${err.code},ms=${err.message}`);
-          expect(e.code).assertEqual(15100004);
+          expect(err.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
@@ -672,7 +672,7 @@ export default function KvStoreEtsTestStatic() {
           store?.get(deviceId, 'key', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
             if (err != undefined) {
               hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${err.code},ms=${err.message}`);
-              expect(e.code).assertEqual(15100004);
+              expect(err.code).assertEqual(15100004);
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 get success");
