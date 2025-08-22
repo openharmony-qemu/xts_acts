@@ -77,7 +77,7 @@ struct Index {
             case "emitStoreWebArchiveCallback": {
               try {
                 console.info('testoooooooooooooooooooooooooooooooooooo');
-                this.controller.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
+                this.controller.storeWebArchive("/data/storage/el3/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
                     return;
@@ -96,7 +96,7 @@ struct Index {
             case "emitStoreWebArchiveCallbackFalse": {
               try {
                 console.info('testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-                this.controller.storeWebArchive("/data/storage/el2/base/index.html.mht", false, (error, filename) => {
+                this.controller.storeWebArchive("/data/storage/el3/base/index.html.mht", false, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error))
                     return;

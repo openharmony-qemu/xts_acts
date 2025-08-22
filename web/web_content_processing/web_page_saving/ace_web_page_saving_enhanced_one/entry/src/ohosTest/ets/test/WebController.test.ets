@@ -17,7 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } f
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitForComponents } from './WaitTest.test';
+import { waitAndClickComponent } from './WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
@@ -43,7 +43,6 @@ export default function webController() {
       } catch (err) {
         console.error("push webController page error: " + err);
       }
-      await waitForComponents('webcomponent');
       done()
     });
 
@@ -73,7 +72,7 @@ export default function webController() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebControllerButton', 10, '');
+      await waitAndClickComponent('WebControllerButton');
     })
 
     /*
@@ -90,7 +89,7 @@ export default function webController() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebControllerButton', 10, '');
+      await waitAndClickComponent('WebControllerButton');
     })
   })
 }

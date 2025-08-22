@@ -46,7 +46,7 @@ export default function storeWebArchive() {
     beforeEach(async  (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
@@ -59,14 +59,14 @@ export default function storeWebArchive() {
     })
 
 
-      /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
-     *tc.name testStoreWebArchiveCallback
-     *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is ture.
-     */
+    /*
+   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_003
+   *tc.name testStoreWebArchiveCallback
+   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is ture.
+   */
     it('testStoreWebArchiveCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchiveCallback", 132180);
-      Utils.registerBaseEvent("testStoreWebArchiveCallback","/data/storage/el2/base/index.html.mht",
+      Utils.registerBaseEvent("testStoreWebArchiveCallback","/data/storage/el3/base/index.html.mht",
         132190, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -74,14 +74,14 @@ export default function storeWebArchive() {
       sendEventByKey('webcomponent02',10,'');
     })
 
-      /*
-     *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
-     *tc.name testStoreWebArchiveCallbackFalse
-     *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is false.
-     */
+    /*
+   *tc.number SUB_ACE_BASIC_ETS_STOREWEBARCHIVE_API_004
+   *tc.name testStoreWebArchiveCallbackFalse
+   *tc.desic test storeWebArchive interface when choose Callback mode and autoName parameter is false.
+   */
     it('testStoreWebArchiveCallbackFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitStoreWebArchiveCallbackFalse", 132180);
-      Utils.registerBaseEvent("testStoreWebArchiveCallbackFalse","/data/storage/el2/base/index.html.mht",
+      Utils.registerBaseEvent("testStoreWebArchiveCallbackFalse","/data/storage/el3/base/index.html.mht",
         132200, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);

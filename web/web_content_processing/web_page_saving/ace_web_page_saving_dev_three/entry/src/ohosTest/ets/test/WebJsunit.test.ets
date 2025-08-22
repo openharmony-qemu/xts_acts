@@ -45,7 +45,7 @@ export default function webJsunit() {
      */
     it('StoreWebArchive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStoreWebArchive", 131970)
-      Utils.registerBaseEvent("StoreWebArchive", "/data/storage/el2/base/index.mht", 131980, done,
+      Utils.registerBaseEvent("StoreWebArchive", "/data/storage/el1/base/index.mht", 131980, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
