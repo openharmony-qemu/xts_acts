@@ -639,8 +639,9 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 start ");
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 getKVStore ");
         let deviceId : string = "000000000000000000";
-        store.get(deviceId, 'key').then((data: boolean | string | number | Uint8Array) => {
+        store.get(deviceId, 'keyno').then((data: boolean | string | number | Uint8Array) => {
           hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 get success");
           expect(null).assertFail();
           done();
@@ -669,7 +670,7 @@ export default function KvStoreEtsTestStatic() {
       let deviceId : string = "000000000000000000";
       try {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
-          store?.get(deviceId, 'key', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+          store?.get(deviceId, 'keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
             if (err != undefined) {
               hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${err.code},ms=${err.message}`);
               expect(err.code).assertEqual(15100004);
