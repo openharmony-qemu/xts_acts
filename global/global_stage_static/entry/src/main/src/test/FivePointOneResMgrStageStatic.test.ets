@@ -105,7 +105,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringValueSync_static_0970 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -123,7 +123,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_0990 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
        
@@ -257,7 +257,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1130 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
@@ -275,7 +275,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1140 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
