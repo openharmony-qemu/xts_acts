@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitForComponents } from './WaitTest.test';
+import { waitAndClickComponent } from './WaitTest.test';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -40,7 +40,6 @@ export default function storeWebArchive() {
       } catch (err) {
         console.error("push storeWebArchive page error: " + err);
       }
-      await waitForComponents('webcomponent02');
       done()
     })
     beforeEach(async  (done: Function) => {
@@ -71,7 +70,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webcomponent02',10,'');
+      await waitAndClickComponent('webcomponent02');
     })
 
     /*
@@ -86,7 +85,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webcomponent02',10,'');
+      await waitAndClickComponent('webcomponent02');
     })
 
     /*
@@ -101,7 +100,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webcomponent02',10,'');
+      await waitAndClickComponent('webcomponent02');
     })
 
     /*
@@ -116,7 +115,7 @@ export default function storeWebArchive() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webcomponent02',10,'');
+      await waitAndClickComponent('webcomponent02');
     })
   })
 }

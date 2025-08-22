@@ -17,7 +17,7 @@ import { describe, beforeEach, afterEach, it, expect , TestType, Size, Level } f
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitForComponents } from './WaitTest.test';
+import { waitAndClickComponent } from './WaitTest.test';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -31,7 +31,6 @@ export default function webViewControllerJsunit() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      await waitForComponents('webcomponent');
       done();
     })
     afterEach(async  (done: Function) =>{
@@ -50,7 +49,7 @@ export default function webViewControllerJsunit() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webcomponent',10,'');
+      await waitAndClickComponent('webcomponent');
     })
   })
 }
