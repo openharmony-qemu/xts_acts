@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webViewSetConnectionTimeout",
-    "testability/pages/webViewOnNavigationEntryCommitted"
+    "testability/pages/webViewOnNavigationEntryCommitted",
+    "testability/pages/webViewSetConnectionAboutToAppearTimeout"
   ]
 }
