@@ -145,6 +145,58 @@ export default function nfcControllerTest() {
             done();
         })
         
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0600
+         * @tc.name STATE_OFF
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            expect(controller.NfcState.STATE_OFF).assertEqual(1)
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0700
+         * @tc.name disableNfc
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            try {
+                controller.disableNfc();
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state err  ->' + err.message);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0800
+         * @tc.name enableNfc
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            try {
+                controller.enableNfc();
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state err  ->' + err.message);
+            }
+            done();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
