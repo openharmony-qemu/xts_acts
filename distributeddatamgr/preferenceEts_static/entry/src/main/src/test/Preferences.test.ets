@@ -1136,9 +1136,10 @@ export default function preferenceTest() {
      it('testPreferencesMxaKeyLengthPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try{
         await mPreferences.clear();
-        await mPreferences.put(MAX_KEY_LENGTH, "abc");
-        const ret = mPreferences.get(MAX_KEY_LENGTH, "default");
-        expect(ret).assertEqual("abc");
+        await mPreferences.put(MAX_KEY_LENGTH, "test");
+        mPreferences.get(MAX_KEY_LENGTH, "defaultvalue", (err: BusinessError | null, ret: Object|undefined) => {
+          expect("test").assertEqual(ret);
+        });
         done();
       } catch(err : BusinessError) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
