@@ -597,7 +597,8 @@ export default function ActsGzipDecompressionTest() {
         hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_9900 Start=====");
         let gzip = zlib.createGZipSync();
         try {
-          await gzip.gzdopen(1, 'wb');
+          let file = fileIo.openSync(allFilePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+          await gzip.gzdopen(file.fd, 'wb');
           let writeBufferWithData = new ArrayBuffer(16);
           let uint8View = new Uint8Array(writeBufferWithData);
           for (let i = 0; i < uint8View.length; i++) {
