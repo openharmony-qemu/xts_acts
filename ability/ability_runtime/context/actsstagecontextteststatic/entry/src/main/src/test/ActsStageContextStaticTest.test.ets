@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
@@ -28,6 +28,26 @@ let context:common.UIAbilityContext;
 
 export default function actsStageContextTestStatic() {
   describe('ActsStageContextStaticTest', () => {
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    let callback1 = () => {
+      hilog.info(domain, tag, '===callback1 called');
+      count1++;
+    }
+    let callback2 = () => {
+      hilog.info(domain, tag, '===callback2 called');
+      count2++;
+    }
+    let callback3 = ()=> {
+      hilog.info(domain, tag, '===callback3 called');
+      count3++;
+    }
+    beforeEach(() => {
+      count1 = 0;
+      count2 = 0;
+      count3 = 0;
+    })
 
     beforeAll(() => {
       hilog.info(domain, tag, 'beforeAll start');
@@ -39,6 +59,7 @@ export default function actsStageContextTestStatic() {
       })
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      hilog.info(domain, tag, `context: ${!!context}`);
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -133,5 +154,185 @@ export default function actsStageContextTestStatic() {
         done()
       }
     });
+    
+    /*
+    * @tc.number    : ACTS_StageContext_Static_0900
+    * @tc.name      : ACTS_StageContext_Static_0900
+    * @tc.desc      : test EventHub test multiple callbacks
+    */
+    it('ACTS_StageContext_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_0900';
+      hilog.info(domain, tag, `${itName} start`);
+      const eventHub = context.eventHub;
+      try {
+        eventHub.on('event1', callback1);
+        eventHub.on('event1', callback2);
+        eventHub.on('event1', callback3);
+        eventHub.emit('event1');
+        expect(`${count1}`).assertEqual('1');
+        expect(`${count2}`).assertEqual('1');
+        expect(`${count3}`).assertEqual('1')
+        eventHub.off('event1', callback2);
+        eventHub.emit('event1', '');
+        expect(`${count1}`).assertEqual('2');
+        expect(`${count2}`).assertEqual('1');
+        expect(`${count3}`).assertEqual('2');
+        eventHub.off('event1');
+        eventHub.emit('event1');
+        expect(`${count1}`).assertEqual('2');
+        expect(`${count2}`).assertEqual('1');
+        expect(`${count3}`).assertEqual('2');
+      } catch(err: BusinessError) {
+        hilog.info(domain, tag, `${itName} error code: ${err.code}, msg: ${err.message}`);
+      }
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /*
+    * @tc.number    : ACTS_StageContext_Static_1000
+    * @tc.name      : ACTS_StageContext_Static_1000
+    * @tc.desc      : test EventHub test different events
+    */
+    it('ACTS_StageContext_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_1000';
+      const eventHub = context.eventHub;
+      hilog.info(domain, tag, `${itName} eventHub: ${!!eventHub}`);
+      eventHub.on('event1', callback1);
+      eventHub.on('event2', callback2);
+      eventHub.emit('event1');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('0');
+      eventHub.emit('event2');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('1');
+      eventHub.off('event1');
+      eventHub.emit('event1');
+      eventHub.emit('event2');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('2');
+      eventHub.off('event2');
+      eventHub.emit('event1');
+      eventHub.emit('event2');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('2');
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /*
+    * @tc.number    : ACTS_StageContext_Static_1100
+    * @tc.name      : ACTS_StageContext_Static_1100
+    * @tc.desc      : test EventHub test repeat on/off
+    */
+    it('ACTS_StageContext_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_1100';
+      hilog.info(domain, tag, `${itName} start`);
+      const eventHub = context.eventHub;
+      eventHub.on('event1', callback1);
+      eventHub.on('event1', callback1);
+      eventHub.emit('event1');
+      expect(`${count1}`).assertEqual('1');
+      eventHub.off('event1', callback1);
+      eventHub.emit('event1');
+      expect(`${count1}`).assertEqual('1');
+      eventHub.off('event1', callback1);
+      eventHub.emit('event1');
+      expect(`${count1}`).assertEqual('1');
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /*
+    * @tc.number    : ACTS_StageContext_Static_1200
+    * @tc.name      : ACTS_StageContext_Static_1200
+    * @tc.desc      : test EventHub test call off() in callback
+    */
+    it('ACTS_StageContext_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_1200';
+      hilog.info(domain, tag, `${itName} start`);
+      const eventHub = context.eventHub;
+      let count = 0;
+      let func = () => {
+        let callback: () => void;
+        callback = () => {
+          count++;
+          hilog.info(domain, tag, `${itName} callback: ${!!callback}`);
+          eventHub.off('event1', callback);
+        }
+        eventHub.on('event1', callback);
+      }
+      func();
+      func();
+      func();
+      func();
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('4');
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('4');
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /*
+    * @tc.number    : ACTS_StageContext_Static_1300
+    * @tc.name      : ACTS_StageContext_Static_1300
+    * @tc.desc      : test EventHub test call off() in callback
+    */
+    it('ACTS_StageContext_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_1300';
+      hilog.info(domain, tag, `${itName} start`);
+      const eventHub = context.eventHub;
+      let count = 0;
+      let func = () => {
+        let callback = () => {
+          count++;
+          eventHub.off('event1');
+        }
+        eventHub.on('event1', callback);
+      }
+      func();
+      func();
+      func();
+      func();
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('4');
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('4');
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /*
+    * @tc.number    : ACTS_StageContext_Static_1400
+    * @tc.name      : ACTS_StageContext_Static_1400
+    * @tc.desc      : test EventHub test call on/off in callback
+    */
+    it('ACTS_StageContext_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_StageContext_Static_1400';
+      hilog.info(domain, tag, `${itName} start`);
+      const eventHub = context.eventHub;
+      let count = 0;
+      let func = () => {
+        let callback = () => {
+          count++;
+          eventHub.off('event1', callback1);
+          eventHub.on('event1', callback2);
+        }
+        eventHub.on('event1', callback);
+      }
+      func();
+      eventHub.on('event1', callback1);
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('1');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('0');
+      eventHub.emit('event1');
+      expect(`${count}`).assertEqual('2');
+      expect(`${count1}`).assertEqual('1');
+      expect(`${count2}`).assertEqual('1');
+      done();
+      hilog.info(domain, tag, `${itName} end`);
+    })
   })
 }
