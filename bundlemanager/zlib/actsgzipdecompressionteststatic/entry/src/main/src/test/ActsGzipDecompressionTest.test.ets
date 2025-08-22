@@ -683,6 +683,14 @@ export default function ActsGzipDecompressionTest() {
         let gzip = zlib.createGZipSync();
         try {
           await gzip.gzopen(allFilePath, "wb");
+          let writeBufferWithData = new ArrayBuffer(16);
+          let uint8View = new Uint8Array(writeBufferWithData);
+          for (let i = 0; i < uint8View.length; i++) {
+            uint8View[i] = i;
+          }
+          let writeNum = await gzip.gzwrite(writeBufferWithData, 16)
+          expect(writeNum).assertEqual(16);
+          done();
         } catch (errData: BusinessError) {
           hilog.error(domain, tag,
             `GzipDecompressionAbilityTest_static_4900 gzopen failed with errCode:${errData.code}  message:${errData.message}`);
