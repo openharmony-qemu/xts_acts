@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import wifiManager from '@ohos.wifiManager';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function actsWifiManagerFunctionsTest() {
@@ -51,12 +51,48 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI_SEC_TYPE_PSK: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK;
                 hilog.info(domain, tag, "WIFI_SEC_TYPE_PSK:" + WIFI_SEC_TYPE_PSK);
                 expect(true).assertEqual(WIFI_SEC_TYPE_PSK == 3);
+                let WIFI_SEC_TYPE_INVALID: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_INVALID:" + WIFI_SEC_TYPE_INVALID);
+                expect(true).assertEqual(WIFI_SEC_TYPE_INVALID == 0);
+                let WIFI_SEC_TYPE_WEP: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WEP:" + WIFI_SEC_TYPE_WEP);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WEP == 2);
+                let WIFI_SEC_TYPE_EAP: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_EAP:" + WIFI_SEC_TYPE_EAP);
+                expect(true).assertEqual(WIFI_SEC_TYPE_EAP == 5);
+                let WIFI_SEC_TYPE_EAP_SUITE_B: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_EAP_SUITE_B;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_EAP_SUITE_B:" + WIFI_SEC_TYPE_EAP_SUITE_B);
+                expect(true).assertEqual(WIFI_SEC_TYPE_EAP_SUITE_B == 6);
+                let WIFI_SEC_TYPE_OWE: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OWE;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_OWE:" + WIFI_SEC_TYPE_OWE);
+                expect(true).assertEqual(WIFI_SEC_TYPE_OWE == 7);
+                let WIFI_SEC_TYPE_WAPI_CERT: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_CERT;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WAPI_CERT:" + WIFI_SEC_TYPE_WAPI_CERT);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WAPI_CERT == 8);
+                let WIFI_SEC_TYPE_WAPI_PSK: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_PSK;
+                hilog.info(domain, tag, "WIFI_SEC_TYPE_WAPI_PSK:" + WIFI_SEC_TYPE_WAPI_PSK);
+                expect(true).assertEqual(WIFI_SEC_TYPE_WAPI_PSK == 9);
                 let DEVICE_CONNECTED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.CONNECTED;
                 hilog.info(domain, tag, "DEVICE_CONNECTED:" + DEVICE_CONNECTED);
                 expect(true).assertEqual(DEVICE_CONNECTED == 0);
+                let DEVICE_INVITED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.INVITED;
+                hilog.info(domain, tag, "DEVICE_INVITED:" + DEVICE_INVITED);
+                expect(true).assertEqual(DEVICE_INVITED == 1);
+                let DEVICE_FAILED: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.FAILED;
+                hilog.info(domain, tag, "DEVICE_FAILED:" + DEVICE_FAILED);
+                expect(true).assertEqual(DEVICE_FAILED == 2);
+                let DEVICE_AVAILABLE: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.AVAILABLE;
+                hilog.info(domain, tag, "DEVICE_AVAILABLE:" + DEVICE_AVAILABLE);
+                expect(true).assertEqual(DEVICE_AVAILABLE == 3);
+                let DEVICE_UNAVAILABLE: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.UNAVAILABLE;
+                hilog.info(domain, tag, "DEVICE_UNAVAILABLE:" + DEVICE_UNAVAILABLE);
+                expect(true).assertEqual(DEVICE_UNAVAILABLE == 4);
                 let P2PCONN_CONNECTED: wifiManager.P2pConnectState = wifiManager.P2pConnectState.CONNECTED;
                 hilog.info(domain, tag, "P2PCONN_CONNECTED:" + P2PCONN_CONNECTED);
                 expect(true).assertEqual(P2PCONN_CONNECTED == 1);
+                let P2PCONN_DISCONNECTED: wifiManager.P2pConnectState = wifiManager.P2pConnectState.DISCONNECTED;
+                hilog.info(domain, tag, "P2PCONN_DISCONNECTED:" + P2PCONN_DISCONNECTED);
+                expect(true).assertEqual(P2PCONN_DISCONNECTED == 0);
                 let CONN_CONNECTED: wifiManager.ConnState = wifiManager.ConnState.CONNECTED;
                 hilog.info(domain, tag, "CONN_CONNECTED:" + CONN_CONNECTED);
                 expect(true).assertEqual(CONN_CONNECTED == 4);
@@ -66,6 +102,15 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI6_PLUS: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI6_PLUS;
                 hilog.info(domain, tag, "WIFI6_PLUS:" + WIFI6_PLUS);
                 expect(true).assertEqual(WIFI6_PLUS == 3);
+                let DEFAULT: wifiManager.WifiCategory = wifiManager.WifiCategory.DEFAULT;
+                hilog.info(domain, tag, "DEFAULT:" + DEFAULT);
+                expect(true).assertEqual(DEFAULT == 1);
+                let WIFI7: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI7;
+                hilog.info(domain, tag, "WIFI7:" + WIFI7);
+                expect(true).assertEqual(WIFI7 == 4);
+                let WIFI7_PLUS: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI7_PLUS;
+                hilog.info(domain, tag, "WIFI7_PLUS:" + WIFI7_PLUS);
+                expect(true).assertEqual(WIFI7_PLUS == 5);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "constant get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant get errCode:" + err.code + ",errMessage:" + err.message);
@@ -83,10 +128,23 @@ export default function actsWifiManagerFunctionsTest() {
          * @tc.size: MEDIUMTEST
          */
         it("wifiOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo state result:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
             try{
                 wifiManager.disableWifi();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "disableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -95,13 +153,12 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
-            await Utils.msSleep(2000);
+            await Utils.msSleep(5000);
             try{
                 let state = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + state);
                 expect(state).assertFalse();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -113,7 +170,6 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 wifiManager.enableWifi();
             }catch(err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "enableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -122,13 +178,12 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
-            await Utils.msSleep(2000);
+            await Utils.msSleep(5000);
             try {
                 let states = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + states);
                 expect(states).assertTrue();
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -137,6 +192,18 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
+            try{
+                wifiManager.off('wifiStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(2000);
             done();
         })
 
@@ -178,6 +245,7 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 let info: wifiManager.IpInfo = wifiManager.getIpInfo();
                 hilog.info(domain, tag, "getIpInfo:" + JSON.stringify(info));
+                hilog.info(domain, tag, "getIpInfo ipAddress:" + JSON.stringify(info.ipAddress));
                 expect(true).assertEqual(info != null);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -265,6 +333,7 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 let info: wifiManager.Ipv6Info = wifiManager.getIpv6Info();
                 hilog.info(domain, tag, "getIpv6Info:" + JSON.stringify(info));
+                hilog.info(domain, tag, "getIpv6Info linkIpv6Address:" + JSON.stringify(info.linkIpv6Address));
                 expect(true).assertEqual(info != null);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -289,7 +358,7 @@ export default function actsWifiManagerFunctionsTest() {
          */
         it("getSignalLevelTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                let level: number = wifiManager.getSignalLevel(0 ,0);
+                let level: int = wifiManager.getSignalLevel(0 ,0);
                 hilog.info(domain, tag, 'getSignalLevel success result:' + level);
                 expect(true).assertEqual(level >= 0 && level <= 4);
             } catch (err: BusinessError) {
@@ -352,18 +421,12 @@ export default function actsWifiManagerFunctionsTest() {
                 try {
                     if (err != null) {
                         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
+                        hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err?.code + ",errMessage:" + err?.message);
                         if (err?.code == 801) {
                             hilog.info(domain, tag, 'api is not support');
                             expect(true).assertEqual(err?.code == 801);
                             done();
-                        }
-                        if (err?.code == 0) {
-                            hilog.info(domain, tag, 'getLinkedInfo use success');
-                            expect(true).assertEqual(err?.code == 0);
-                            done();
-                        }
-                        else {
+                        } else {
                             expect().assertFail();
                             done();
                         }
@@ -408,6 +471,14 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, 'getLinkedInfoSync success result ssid:' + infoSync.ssid);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result bssid:' + infoSync.bssid);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result connState:' + infoSync.connState);
+                expect(true).assertEqual(infoSync.connState == wifiManager.ConnState.SCANNING ||
+                    infoSync.connState == wifiManager.ConnState.CONNECTING ||
+                    infoSync.connState == wifiManager.ConnState.AUTHENTICATING ||
+                    infoSync.connState == wifiManager.ConnState.OBTAINING_IPADDR ||
+                    infoSync.connState == wifiManager.ConnState.CONNECTED ||
+                    infoSync.connState == wifiManager.ConnState.DISCONNECTING ||
+                    infoSync.connState == wifiManager.ConnState.DISCONNECTED ||
+                    infoSync.connState == wifiManager.ConnState.UNKNOWN)
                 hilog.info(domain, tag, 'getLinkedInfoSync success result macAddress:' + infoSync.macAddress);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result band:' + infoSync.band);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result supportedWifiCategory:' + infoSync.supportedWifiCategory);
@@ -423,5 +494,818 @@ export default function actsWifiManagerFunctionsTest() {
             }
             done();
         })
+
+        /*
+         * @tc.number: wifiStateChangeTest
+         * @tc.name: wifiStateChangeTest
+         * @tc.desc: Test wifiStateChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo state result:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiStateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pDiscoveryChangeTest
+         * @tc.name: p2pDiscoveryChangeTest
+         * @tc.desc: Test p2pDiscoveryChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pDiscoveryChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDiscoveryChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pDiscoveryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDiscoveryChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pDiscoveryChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDiscoveryChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pDiscoveryChangeTest2
+         * @tc.name: p2pDiscoveryChangeTest2
+         * @tc.desc: Test p2pDiscoveryChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pDiscoveryChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDiscoveryChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pDiscoveryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDiscoveryChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pDiscoveryChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDiscoveryChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pPersistentGroupChangeTest
+         * @tc.name: p2pPersistentGroupChangeTest
+         * @tc.desc: Test p2pPersistentGroupChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pPersistentGroupChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent = () => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pPersistentGroupChange");
+            }
+            try{
+                wifiManager.on('p2pPersistentGroupChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPersistentGroupChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pPersistentGroupChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPersistentGroupChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pPersistentGroupChangeTest2
+         * @tc.name: p2pPersistentGroupChangeTest2
+         * @tc.desc: Test p2pPersistentGroupChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pPersistentGroupChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent = () => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pPersistentGroupChange");
+            }
+            try{
+                wifiManager.on('p2pPersistentGroupChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPersistentGroupChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pPersistentGroupChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPersistentGroupChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pPeerDeviceChangeTest
+         * @tc.name: p2pPeerDeviceChangeTest
+         * @tc.desc: Test p2pPeerDeviceChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pPeerDeviceChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice[]) => void = (changeInfo: wifiManager.WifiP2pDevice[]) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pPeerDeviceChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pPeerDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPeerDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pPeerDeviceChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPeerDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pPeerDeviceChangeTest2
+         * @tc.name: p2pPeerDeviceChangeTest2
+         * @tc.desc: Test p2pPeerDeviceChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pPeerDeviceChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice[]) => void = (changeInfo: wifiManager.WifiP2pDevice[]) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pPeerDeviceChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pPeerDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPeerDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pPeerDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pPeerDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiScanStateChangeTest
+         * @tc.name: wifiScanStateChangeTest
+         * @tc.desc: Test wifiScanStateChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiScanStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiScanStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiScanStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiScanStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiScanStateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiScanStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiScanStateChangeTest2
+         * @tc.name: wifiScanStateChangeTest2
+         * @tc.desc: Test wifiScanStateChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiScanStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiScanStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiScanStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiScanStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiScanStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiScanStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiConnectionChangeTest
+         * @tc.name: wifiConnectionChangeTest
+         * @tc.desc: Test wifiConnectionChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiConnectionChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiConnectionChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiConnectionChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiConnectionChangeTest2
+         * @tc.name: wifiConnectionChangeTest2
+         * @tc.desc: Test wifiConnectionChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiConnectionChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiConnectionChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pDeviceChangeTest
+         * @tc.name: p2pDeviceChangeTest
+         * @tc.desc: Test p2pDeviceChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pDeviceChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice) => void = (changeInfo: wifiManager.WifiP2pDevice) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange deviceName:" + changeInfo.deviceName);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange deviceAddress:" + changeInfo.deviceAddress);
+                if (changeInfo.deviceAddressType != null) {
+                    hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange deviceAddressType:" + changeInfo?.deviceAddressType);
+                    expect(true).assertEqual(changeInfo.deviceAddressType == wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS ||
+                        changeInfo.deviceAddressType == wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS);
+                }
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange primaryDeviceType:" + changeInfo.primaryDeviceType);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange deviceStatus:" + changeInfo.deviceStatus);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange groupCapabilities:" + changeInfo.groupCapabilities);
+            }
+            try{
+                wifiManager.on('p2pDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pDeviceChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pDeviceChangeTest2
+         * @tc.name: p2pDeviceChangeTest2
+         * @tc.desc: Test p2pDeviceChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pDeviceChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pDevice) => void = (changeInfo: wifiManager.WifiP2pDevice) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pDeviceChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pDeviceChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pConnectionChangeTest
+         * @tc.name: p2pConnectionChangeTest
+         * @tc.desc: Test p2pConnectionChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pConnectionChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pLinkedInfo) => void = (changeInfo: wifiManager.WifiP2pLinkedInfo) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pConnectionChange:" + changeInfo);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pConnectionChange connectState:" + changeInfo.connectState);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pConnectionChange isGroupOwner:" + changeInfo.isGroupOwner);
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pConnectionChange groupOwnerAddr:" + changeInfo.groupOwnerAddr);
+            }
+            try{
+                wifiManager.on('p2pConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pConnectionChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pConnectionChangeTest2
+         * @tc.name: p2pConnectionChangeTest2
+         * @tc.desc: Test p2pConnectionChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pConnectionChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: wifiManager.WifiP2pLinkedInfo) => void = (changeInfo: wifiManager.WifiP2pLinkedInfo) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pConnectionChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pConnectionChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pStateChangeTest
+         * @tc.name: p2pStateChangeTest
+         * @tc.desc: Test p2pStateChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pStateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: p2pStateChangeTest2
+         * @tc.name: p2pStateChangeTest2
+         * @tc.desc: Test p2pStateChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("p2pStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo p2pStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('p2pStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('p2pStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "p2pStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: hotspotStateChangeTest
+         * @tc.name: hotspotStateChangeTest
+         * @tc.desc: Test hotspotStateChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("hotspotStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo hotspotStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('hotspotStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "hotspotStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('hotspotStateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "hotspotStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: hotspotStateChangeTest2
+         * @tc.name: hotspotStateChangeTest2
+         * @tc.desc: Test hotspotStateChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("hotspotStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo hotspotStateChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('hotspotStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "hotspotStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('hotspotStateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "hotspotStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiRssiChangeTest
+         * @tc.name: wifiRssiChangeTest
+         * @tc.desc: Test wifiRssiChangeTest API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiRssiChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiRssiChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiRssiChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiRssiChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiRssiChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiRssiChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /*
+         * @tc.number: wifiRssiChangeTest2
+         * @tc.name: wifiRssiChangeTest2
+         * @tc.desc: Test wifiRssiChangeTest2 API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it("wifiRssiChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: int) => void = (changeInfo: int) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo wifiRssiChange:" + changeInfo);
+            }
+            try{
+                wifiManager.on('wifiRssiChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiRssiChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                wifiManager.off('wifiRssiChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "wifiRssiChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+
     })
 }

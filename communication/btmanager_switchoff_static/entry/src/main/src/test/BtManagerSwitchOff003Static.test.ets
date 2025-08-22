@@ -24,7 +24,7 @@ import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtErrCode2900003Tag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let gattClientDevice: ble.GattClientDevice;
 let gattServerDevice: ble.GattServer;
@@ -48,6 +48,7 @@ export default function btManagerError003Test() {
                         hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+                        hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
                     });
             } catch (err: BusinessError) {
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
