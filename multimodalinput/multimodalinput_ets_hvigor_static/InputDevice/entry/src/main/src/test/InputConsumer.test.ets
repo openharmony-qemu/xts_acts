@@ -108,9 +108,7 @@ export default function InputConsumerTest() {
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-            console.info(`${caseName} Subscribe failed, error.code: ${error.code}`);
-            console.info(`${caseName} Subscribe failed, error111222: ${error?.code}`);
-            ExpectTrue(error?.code == 401 || error?.code == 801);
+            ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
         } catch (error: BusinessError) {
