@@ -16,6 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
 
@@ -28,17 +29,20 @@ struct WebViewEnumAndFontLibrary {
   @State count: string = ""
   @State javaScriptAccess: boolean = true
   @State databaseAccess: boolean = true
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isRunJSEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170400,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170400)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,6 +51,8 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        console.info("isReceive :" + this.isReceive);
+        this.isReceive = 0;
       }
     }
   }
@@ -55,36 +61,64 @@ struct WebViewEnumAndFontLibrary {
     Column() {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isReceive, 'buttonEnumAndFontLibraryIsReceive', 0);
+         await waitForExist(()=>this.isPageEnd, 'buttonEnumAndFontLibraryIsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitMessageLevelDebug": {
-              this.controller.runJavaScript("getMessageLevelDebug()")
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.count.toString(), 601)
+              this.isRunJSEnd= -1;
+              this.controller.runJavaScript("getMessageLevelDebug()").then((result) => {
+                console.info('wait for JS end,result: ' + result);
+                this.isRunJSEnd= 0;
+              })
+              await waitForExist(()=>this.isRunJSEnd,this.str+'isRunJSEnd', 0);
+              //await Utils.sleep(2000);
+              Utils.emitEvent(this.count.toString(), 170410)
               break;
             }
             case "emitMessageLevelInfo": {
-              this.controller.runJavaScript("getMessageLevelInfo()")
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.count.toString(), 602)
+              this.isRunJSEnd= -1;
+              this.controller.runJavaScript("getMessageLevelInfo()").then((result) => {
+                console.info('wait for JS end,result: ' + result);
+                this.isRunJSEnd= 0;
+              })
+              await waitForExist(()=>this.isRunJSEnd,this.str+'isRunJSEnd', 0);
+              //await Utils.sleep(2000);
+              Utils.emitEvent(this.count.toString(), 170420)
               break;
             }
             case "emitMessageLevelWarn": {
-              this.controller.runJavaScript("getMessageLevelWarn()")
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.count.toString(), 603)
+              this.isRunJSEnd= -1;
+              this.controller.runJavaScript("getMessageLevelWarn()").then((result) => {
+                console.info('wait for JS end,result: ' + result);
+                this.isRunJSEnd= 0;
+              })
+              await waitForExist(()=>this.isRunJSEnd,this.str+'isRunJSEnd', 0);
+              //await Utils.sleep(2000);
+              Utils.emitEvent(this.count.toString(), 170430)
               break;
             }
             case "emitMessageLevelError": {
-              this.controller.runJavaScript("getMessageLevelError()")
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.count.toString(), 604)
+              this.isRunJSEnd= -1;
+              this.controller.runJavaScript("getMessageLevelError()").then((result) => {
+                console.info('wait for JS end,result: ' + result);
+                this.isRunJSEnd= 0;
+              })
+              await waitForExist(()=>this.isRunJSEnd,this.str+'isRunJSEnd', 0);
+              //await Utils.sleep(2000);
+              Utils.emitEvent(this.count.toString(), 170440)
               break;
             }
             case "emitMessageLevelLog": {
-              this.controller.runJavaScript("getMessageLevelLog()")
-              await Utils.sleep(2000);
-              Utils.emitEvent(this.count.toString(), 605)
+              this.isRunJSEnd= -1;
+              this.controller.runJavaScript("getMessageLevelLog()").then((result) => {
+                console.info('wait for JS end,result: ' + result);
+                this.isRunJSEnd= 0;
+              })
+              await waitForExist(()=>this.isRunJSEnd,this.str+'isRunJSEnd', 0);
+              //await Utils.sleep(2000);
+              Utils.emitEvent(this.count.toString(), 170450)
               break;
             }
           }
@@ -110,6 +144,9 @@ struct WebViewEnumAndFontLibrary {
         .domStorageAccess(false)
         .onlineImageAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }

@@ -17,7 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces.d';
-import { waitForAssert } from '../../test/WaitTest'
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -31,17 +31,19 @@ struct webMessageExt {
   @State ports: webView.WebMessagePort[] = [];
   @State listeningPort: number = 0
   @State listeningFlag: number = 0
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170290,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170290)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -50,6 +52,7 @@ struct webMessageExt {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -70,7 +73,10 @@ struct webMessageExt {
     Column() {
       Row() {
         Button('webMessageExt click').key('WebMessageExtButton').onClick(async () => {
-          console.info('key==>' + this.str)
+          await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
+          await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case 'testWebMessageExtSetStringErrorCode001': {
               let resultValue: string = '0'
@@ -98,7 +104,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032101, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170300, this.str);
 
               break;
             }
@@ -125,7 +131,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032102, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170310, this.str);
 
               break;
             }
@@ -153,7 +159,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032103, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170320, this.str);
 
               break;
             }
@@ -181,7 +187,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032104, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170330, this.str);
 
               break;
             }
@@ -210,7 +216,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032105, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170340, this.str);
 
               break;
             }
@@ -246,7 +252,7 @@ struct webMessageExt {
               let check = (v1: string, v2: string): boolean => {
                 return v1 === v2 ? true:false;
               }
-              await waitForAssert(() =>resultValue, check, '17100014', 2025032106, this.str);
+              await waitForAssert(() =>resultValue, check, '17100014', 170350, this.str);
 
               break;
             }
@@ -264,6 +270,8 @@ struct webMessageExt {
           controller: this.controller
         })
         .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 0;
           if (event) {
             this.ports = this.controller.createWebMessagePorts(true);
             this.controller.postMessage('init_web_messageport', [this.ports[1]], '*');

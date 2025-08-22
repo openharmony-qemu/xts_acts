@@ -36,14 +36,14 @@ struct WebMessagePortIsExtentionTypeTest {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170360,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170360)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -83,7 +83,7 @@ struct WebMessagePortIsExtentionTypeTest {
                 this.message.setArrayBuffer(buffer);
                 this.ports[0].postMessageEventExt(this.message);
               } catch (error) {
-                Utils.emitEvent(error.code, 100100)
+                Utils.emitEvent(error.code, 170370)
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
