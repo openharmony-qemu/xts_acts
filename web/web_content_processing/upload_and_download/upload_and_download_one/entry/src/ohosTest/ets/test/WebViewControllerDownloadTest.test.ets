@@ -19,7 +19,7 @@ import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitForComponents } from './WaitTest.test';
+import { waitAndClickComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -41,7 +41,6 @@ export default function webViewControllerDownloadTest() {
       } catch (err) {
         console.error("push WebViewControllerDownloadTest page error: " + err);
       }
-      await waitForComponents("WebViewControllerDownloadTestButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -75,7 +74,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -92,7 +91,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -109,7 +108,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -126,7 +125,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -143,7 +142,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -160,7 +159,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -177,7 +176,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
 
@@ -195,7 +194,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -212,7 +211,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -229,7 +228,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -246,7 +245,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -263,7 +262,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -280,7 +279,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -297,7 +296,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -314,7 +313,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -331,7 +330,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -348,7 +347,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -365,7 +364,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -382,7 +381,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -399,7 +398,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -416,7 +415,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -433,7 +432,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -450,7 +449,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
 
@@ -468,7 +467,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -485,7 +484,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -502,7 +501,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
 
     /*
@@ -519,7 +518,7 @@ export default function webViewControllerDownloadTest() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebViewControllerDownloadTestButton', 10, '');
+      await waitAndClickComponent('WebViewControllerDownloadTestButton');
     })
   })
 }
