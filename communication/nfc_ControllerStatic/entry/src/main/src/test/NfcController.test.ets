@@ -174,6 +174,7 @@ export default function nfcControllerTest() {
                 expect(true).assertTrue();
             } catch(err:BusinessError) {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state err  ->' + err.message);
+                expect().assertFail();
             }
             done();
         })
@@ -193,6 +194,7 @@ export default function nfcControllerTest() {
                 expect(true).assertTrue();
             } catch(err:BusinessError) {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] controller4 nfc state receive state err  ->' + err.message);
+                expect().assertFail();
             }
             done();
         })
