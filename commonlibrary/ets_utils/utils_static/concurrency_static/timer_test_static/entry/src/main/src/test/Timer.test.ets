@@ -860,13 +860,13 @@ export default function TimerTest1() {
         const intervalId = setInterval(async () => {
           const start: number = Math.floor(Date.now());
           executionCount++;
-          await Utils.msSleep(executionTime);
+          await Utils.msSleep(executionTime.toInt());
           const currentEnd: number = Math.floor(Date.now());
           if (lastExecutionEnd > 0 && (currentEnd - lastExecutionEnd) > intervalPeriod + 5) {
             isContinuousExecution = false;
           }
           lastExecutionEnd = currentEnd;
-        }, intervalPeriod);
+        }, intervalPeriod.toInt());
 
         setTimeout(() => {
           try {

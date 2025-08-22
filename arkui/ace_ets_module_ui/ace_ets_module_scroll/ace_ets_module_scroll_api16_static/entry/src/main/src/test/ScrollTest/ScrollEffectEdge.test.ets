@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 
 export default function ScrollEffectEdge() {
   const SUITE: string = 'ScrollEffectEdge'
-  const waitUiReadyMs: number = 1500
+  const waitUiReadyMs = 1500
 
   describe('ScrollEffectEdge', () => {
 

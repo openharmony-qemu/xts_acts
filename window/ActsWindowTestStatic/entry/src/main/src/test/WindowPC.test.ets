@@ -80,28 +80,30 @@ export default function WindowPCTest() {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        (subWin! as window.Window).recover().then(async () => {
+                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
+                            expect().assertFail();
+                        }).catch((err: BusinessError):Promise<void>  => {
+                            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
+                            expect(err!.code).assertEqual(1300002);
+                        });
+                        done()
+                    } catch (exception: BusinessError) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call recover. Cause:' + JSON.stringify(exception));
+                        expect().assertFail();
+                        done()
+                    }
                 })
                 .catch((err: BusinessError):Promise<void> => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect().assertFail();
                     done()
                 });
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                (subWin! as window.Window).recover().then(async () => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
-                    expect().assertFail();
-                }).catch((err: BusinessError):Promise<void>  => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
-                    expect(err!.code).assertEqual(1300002);
-                });
-                done()
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call recover. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
-                done()
-            }
+
         })
+
         /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
          * @tc.name      : testRecover_static_0100

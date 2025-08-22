@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag EntryAbility';
 
 class EntryAbility extends UIAbility {

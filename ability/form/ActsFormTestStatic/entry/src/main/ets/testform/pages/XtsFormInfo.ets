@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import formInfo from '@ohos.app.form.formInfo';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry

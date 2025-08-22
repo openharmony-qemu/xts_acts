@@ -1669,7 +1669,8 @@ export default function LinkedBlockingQueuetest() {
      */
     it("setCapacityWithTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        const queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(2147483647 + 1);
+        let intMax = 2147483647;
+        const queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(intMax + 1);
         const actualCapacity = queue.capacity;
         expect(String(actualCapacity)).assertEqual(String(Integer.MAX_VALUE));
         for (let i:int = 0; i < 100; i++) {

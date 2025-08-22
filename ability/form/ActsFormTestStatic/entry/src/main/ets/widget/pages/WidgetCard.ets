@@ -17,7 +17,7 @@ import { Text, Component, Entry } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry

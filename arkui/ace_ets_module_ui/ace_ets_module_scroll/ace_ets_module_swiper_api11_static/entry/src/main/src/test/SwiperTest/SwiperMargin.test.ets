@@ -58,7 +58,7 @@ const uiContext = new UIContext();
 export default function SwiperMarginTest() {
 
   const SUITE: string = 'SwiperMargin'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
   describe('SwiperMarginTest', () => {
     beforeAll(() => {
       console.info("SwiperMarginTest beforeAll start");

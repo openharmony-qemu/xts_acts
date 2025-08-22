@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function TextAreaCallbackTest() {
 
   const SUITE: string = 'TextAreaCallback'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('TextAreaCallbackTest', () => {
 

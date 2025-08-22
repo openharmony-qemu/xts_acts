@@ -117,7 +117,7 @@ async function setBoolean(type: string, displayArrow: undefined | null | string 
 }
 
 const SUITE: string = 'SwiperSec'
-const waitUiReadyMs: number = 500;
+const waitUiReadyMs = 500;
 
 export default function swiperSecTest() {
 

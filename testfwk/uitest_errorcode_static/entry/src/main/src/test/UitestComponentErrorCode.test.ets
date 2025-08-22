@@ -4,7 +4,7 @@ import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
 
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs : int = 1000;
 const TestTag = 'UitestComponentErrorTest';
 const AsyncErrorCode = 17000002;
 const InvisibleErrorCode = 17000004;

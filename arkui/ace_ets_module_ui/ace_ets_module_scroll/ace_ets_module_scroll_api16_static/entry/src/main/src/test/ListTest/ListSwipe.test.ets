@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function ListSwipeTest() {
   const SUITE: string = 'ListSwipe'
-  const waitUiReadyMs: number = 1500
+  const waitUiReadyMs = 1500
 
 
   describe('ListSwipeTest', () => {
