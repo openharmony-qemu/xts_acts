@@ -777,7 +777,7 @@ export default function KvStoreEtsTestStatic() {
 
       /**
    * @tc.name       : KvStoreTest022
-   * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
+   * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
    * @tc.desc       : //SingleKVStore get(key)
    * @tc.size       : MediumTest
    * @tc.type       : Function
@@ -806,7 +806,7 @@ export default function KvStoreEtsTestStatic() {
     
     /**
      * @tc.name       : KvStoreTest023
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
      * @tc.desc       : //SingleKVStore get(key)  callback
      * @tc.size       : MediumTest
      * @tc.type       : Function
