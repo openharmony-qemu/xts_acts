@@ -15,14 +15,14 @@
 import hilog from '@ohos.hilog';
 import notificationManager from '@ohos.notificationManager'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
-import Base from '@ohos.base';
 import { BusinessError } from '@ohos.base'
 
 const DOMAIN: number = 0x0000;
+let TAG: string  = 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST ===>'
 
 export default function ActsNotificationVibrationSoundTest() {
   describe('ActsNotificationVibrationSoundTest', () => {
-    let TAG = 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST ===>'
+    
     hilog.info(0x0000, TAG, 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST START')
 
     /*

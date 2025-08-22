@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onForeground');
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context, Type.from<common.UIAbilityContext>())
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {
