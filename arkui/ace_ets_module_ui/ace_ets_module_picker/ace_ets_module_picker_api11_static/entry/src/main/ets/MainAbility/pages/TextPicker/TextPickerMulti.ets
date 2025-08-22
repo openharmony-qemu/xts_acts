@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,27 +84,6 @@ struct TextPickerMultiTest {
           .onChange((value: string | string[], index: number | number[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))
           })
-        // TextPicker({ range: this.cascade })
-        //   .key('textpicker_7')
-        //   .selectedIndex([null, 1, 1])
-        //   .width('300')
-        //   .onChange((value: string | string[], index: number | number[]):void => {
-        //     console.info('Picker item changed1, value: ' + JSON.stringify(value))
-        //   })
-        // TextPicker({ range: this.cascade })
-        //   .key('textpicker_8')
-        //   .selectedIndex([1, undefined, 1])
-        //   .width('300')
-        //   .onChange((value: string | string[], index: number | number[]):void => {
-        //     console.info('Picker item changed1, value: ' + JSON.stringify(value))
-        //   })
-        // TextPicker({ range: this.cascade })
-        //   .key('textpicker_9')
-        //   .selectedIndex([1, 1, fakeNumber('')])
-        //   .width('300')
-        //   .onChange((value: string | string[], index: number | number[]):void => {
-        //     console.info('Picker item changed1, value: ' + JSON.stringify(value))
-        //   })
         TextPicker({ range: this.cascade, selected: [1, 0,] })
           .key('textpicker_10')
           .width('300')

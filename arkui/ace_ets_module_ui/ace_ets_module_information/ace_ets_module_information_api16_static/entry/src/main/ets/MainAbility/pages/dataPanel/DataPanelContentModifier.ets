@@ -12,36 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  Builder,
-  DataPanelConfiguration,
-  Alignment,
-  Margin,
-  RelativeContainer,
-  Rect,
-  ForEach,
-  Padding,
-  Line,
-  DataPanel,
-  DataPanelType,
-} from '@ohos.arkui.component';
+import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alignment, Margin, ContentModifier, WrappedBuilder, wrapBuilder, CustomBuilderT,
+  Entry, Component, DataPanel, DataPanelType, Padding, RelativeContainer, Rect
+} from '@ohos.arkui.component'
 import {
   State,
   Prop,
+  MutableState,
+  stateOf,
+  observableProxy,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
+
+
 @Builder
 function buildDataPanel(config: DataPanelConfiguration) {
   Column() {
     Column() {
       ForEach(config.values, (item: number, index: number) => {
         ChildItem({ item: item, index: index, max: config.maxValue })
-      }, (item: number) => '' + item)
+      })
     }.padding(10)
 
     Column() {
@@ -49,20 +39,19 @@ function buildDataPanel(config: DataPanelConfiguration) {
     }.padding({ left: 20, right: 20 } as Padding)
 
     Row() {
-      Text('Length=' + config.values.length + '    ').margin({ left: 10 } as Margin).align(Alignment.Start)
+      Text('Length=' + config.values.length + '    ').margin({ left: 10 } as Margin ).align(Alignment.Start)
       Text('Max=' + config.maxValue).margin({ left: 10 } as Margin).align(Alignment.Start).id('DataPanelContentModifier_max')
     }
   }
 }
 
-// class DataPanelBuilder implements ContentModifier<DataPanelConfiguration> {
-//   constructor() {
-//   }
-//
-//   applyContent(): WrappedBuilder<[DataPanelConfiguration]> {
-//     return wrapBuilder(buildDataPanel)
-//   }
-// }
+class DataPanelBuilder implements ContentModifier<DataPanelConfiguration> {
+  constructor() {
+  }
+  applyContent(): WrappedBuilder<CustomBuilderT<DataPanelConfiguration>> {
+    return wrapBuilder(buildDataPanel)
+  }
+}
 
 @Entry
 @Component
@@ -76,7 +65,7 @@ struct DataPanelBuilderExample {
           .height(260)
           .constraintSize({ maxWidth: '100%' })
           .padding({ top: 10 } as Padding)
-          // .contentModifier(new DataPanelBuilder())
+          .contentModifier(new DataPanelBuilder())
       }.margin(15).backgroundColor('#fff5f5f5')
     }
   }
@@ -101,7 +90,7 @@ struct ChildItem {
         Rect()
           .height(25)
           .width(this.item * 600 / this.max)
-          .foregroundColor(this.colorArray[this.index])
+          .foregroundColor(this.colorArray[this.index.toInt()])
           .radius(5)
           .align(Alignment.Start)
         Text(' ' + this.item)

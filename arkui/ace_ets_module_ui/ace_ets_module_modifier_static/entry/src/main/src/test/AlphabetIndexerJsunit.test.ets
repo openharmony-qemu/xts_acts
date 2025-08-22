@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -34,12 +34,12 @@ export default function alphabetIndexerJsunit() {
   describe('alphabetIndexerTest', () => {
     beforeAll(() => {
       console.info("alphabetIndexerTest beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await startAbility("com.open.harmony.acetest.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
-    
+
     beforeEach(async () => {
       console.info("alphabetIndexerJsunit beforeEach start");
       const alphabetIndexer = AppStorage.get<Router>("router") as Router
@@ -341,7 +341,7 @@ export default function alphabetIndexerJsunit() {
 
       console.info('ArkUI_AlphabetIndexer_static_0118 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('alphabetIndexerTest2');

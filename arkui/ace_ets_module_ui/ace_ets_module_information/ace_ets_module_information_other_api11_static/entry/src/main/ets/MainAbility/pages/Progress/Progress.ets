@@ -12,31 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  ProgressMask,
-  List,
-  ListItem,
-  Image,
-  Button,
-  ClickEvent,
-  Color,
-  HorizontalAlign,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
+import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button, HorizontalAlign
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct progressTest {
-  @State progress: ProgressMask = new ProgressMask(10.0, 100.0, 0x01006CDE);
+  @State progress: ProgressMask = new ProgressMask(10.0, 100.0, 0x01006CDE) ;
   @State progress_default: ProgressMask = new ProgressMask(10.0, 100.0, $r('sys.color.ohos_id_color_mask_regular'));
 
 
@@ -163,14 +146,14 @@ struct progressTest {
                 .key("ArkUX_Stage_Progress_updateColor_Button_1100")
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateColor_Button_1100 onClick');
-                  // this.progress.updateColor(null);
+                  
                 })
                 .fontSize(6).height('6%').padding(2)
               Button("updateColor_1200")
                 .key("ArkUX_Stage_Progress_updateColor_Button_1200")
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateColor_Button_1200 onClick');
-                  // this.progress.updateColor(undefined);
+                  
                 })
                 .fontSize(6).height('6%').padding(2)
             }
@@ -198,7 +181,6 @@ struct progressTest {
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateColor_Button_1500 onClick');
                   this.progress.updateColor("rgba(0,108,222,70)");
-                  // this.progress.updateColor(undefined);
                 })
                 .fontSize(6).height('6%').padding(2)
             }
@@ -236,7 +218,6 @@ struct progressTest {
                 .key("ArkUX_Stage_Progress_updateProgress_Button_0500")
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateProgress_Button_0500 onClick');
-                  // this.progress.updateProgress(null);
                 })
                 .fontSize(6).height('6%').padding(2)
             }
@@ -248,7 +229,6 @@ struct progressTest {
                 .key("ArkUX_Stage_Progress_updateProgress_Button_0600")
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateProgress_Button_0600 onClick');
-                  // this.progress.updateProgress(undefined);
                 })
                 .fontSize(6).height('6%').padding(2)
               Button("updateProgress_0700")
@@ -276,7 +256,6 @@ struct progressTest {
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateProgress_Button_1000 onClick');
                   this.progress.updateProgress(4);
-                  // this.progress.updateProgress(null);
                 })
                 .fontSize(6).height('6%').padding(2)
               Button("updateProgress_1100")

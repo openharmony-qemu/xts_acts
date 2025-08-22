@@ -53,9 +53,9 @@ export default function OnNewParamPage() {
         if (!("OnNewParamPage" == pages.name)) {
           console.info("get OnNewParamPage pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
           await CommonFunc.sleep(2000);
-          // console.info("push OnNewParamPage page result:" + JSON.stringify(result));
+
         }
       } catch (err) {
         console.error("push OnNewParamPage page error:" + err);

@@ -42,7 +42,7 @@ export default function scrollNestedScrollJsunit() {
 
     beforeAll(() => {
       console.info("scrollNestedScroll beforeEach start");
-      
+
       await UtilsTest.msSleep(4000);
       await startAbility("com.open.harmony.acetest.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -60,11 +60,11 @@ export default function scrollNestedScrollJsunit() {
         console.info("get scrollNestedScroll state pages:" + JSON.stringify(pages));
         if (pages == null || !("scrollNestedScroll" == pages.name)) {
           console.info("get scrollNestedScroll pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push scrollNestedScroll page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push scrollNestedScroll page error:" + err);
@@ -82,13 +82,13 @@ export default function scrollNestedScrollJsunit() {
      */
     it('ArkUI_Stage_scrollNestedScroll_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] START');
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
       let webRect = Utils.getComponentRect('ColumnSize');
       console.info(`ArkUI_Stage_scrollNestedScroll_static_01 get webRect is:` + JSON.stringify(webRect));
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      // await driver.swipe(Math.round(x), Math.round(y + uiContext.vp2px(60)), Math.round(x), Math.round(y - uiContext.vp2px(60)));
+      
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

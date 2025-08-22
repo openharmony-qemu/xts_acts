@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, CalendarAlign } from '@ohos.arkui.component';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -38,6 +38,7 @@ export default function calendarpicker() {
   describe('ActsAceCalendarPickerTest', () => {
     beforeAll(() => {
       console.info("ActsAceCalendarPickerTest beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -53,25 +54,27 @@ export default function calendarpicker() {
         console.info("get CalendarPickerIndex state pages:" + JSON.stringify(pages));
         if (!("CalendarPickerIndex" == pages.name)) {
           console.info("get CalendarPickerIndex pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CalendarPickerIndex page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push CalendarPicker page error " + JSON.stringify(err));
       }
       await Utils.sleep(2000);
       console.info("CalendarPicker beforeEach start");
-      // done();
+      
     })
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0100
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0100
-     * @tc.desc         get the default value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0100
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0100
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_textStyle_static_0100] Color:" +
@@ -85,12 +88,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0200
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0200
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0200
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0200
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: '#ff0000', font: {
           size: '1px', weight: '700'
@@ -128,12 +133,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0300
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0300
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0300
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0300
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0300
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: Color.Green, font: {
           size: 30, weight: 450
@@ -170,12 +177,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0400
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0400
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0400
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0400
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0400
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: '#80808g', font: {
           size: -1, weight: 1000
@@ -215,12 +224,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0500
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0500
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0500
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0500
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0500
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: 'xxx', font: {
           size: 'xxx', weight: FontWeight.Bold
@@ -260,12 +271,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0600
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0600
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0600
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0600
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0600
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '20vp', weight: 900
@@ -298,12 +311,14 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_static_0700
-     * @tc.name         ArkUI_Stage_CalendarPicker_textStyle_static_0700
-     * @tc.desc         set textStyle then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0700
+     * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0700
+     * @tc.desc     ArkUI_Stage_CalendarPicker_textStyle_static_0700
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_textStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_textStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: CalendarPickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '15lpx', weight: 90
@@ -336,29 +351,33 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100] edgeAlign:" +
       obj.getElement('$attrs').getElement('edgeAlign'));
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.END');
+      
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType")).assertEqual('CalendarAlign.END');
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -383,18 +402,19 @@ export default function calendarpicker() {
       obj.getElement('$attrs').getElement('edgeAlign'));
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.CENTER');
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"))
         .assertEqual('CalendarAlign.CENTER');
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -416,19 +436,20 @@ export default function calendarpicker() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
-      // console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.offset.dx:" + obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx'));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.START');
+      console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.offset.dx:" + obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx'));
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"))
         .assertEqual('CalendarAlign.START');
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -451,55 +472,59 @@ export default function calendarpicker() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.END');
+      
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType")).assertEqual('CalendarAlign.END');
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
-     * @tc.desc         set EdgeAlign then get the value
+    
+     /*
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
+     * @tc.level    Level.LEVEL1
      */
-    // it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   try {
-    //     let eventData: events_emitter.EventData = {
-    //       data: {
-    //         "edgeAlign": null
-    //       }as Record<String,Object>
-    //     }
-    //     let innerEvent: events_emitter.InnerEvent = {
-    //       eventId: 185,
-    //       priority: events_emitter.EventPriority.LOW
-    //     }
-    //     console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500] start to publish emit");
-    //     events_emitter.emit(innerEvent, eventData);
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500] change component data error: " + (err as Error).message);
-    //   }
-    //   await Utils.sleep(3000);
-    //   let strJson = inspector.getInspectorByKey('CalendarPicker');
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.END');
-    //   expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType")).assertEqual('CalendarAlign.END');
-    //   done();
-    // });
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600] edgeAlign.offset.dx:" +
       obj.getElement('$attrs').getElement('edgeAlign').getElement("offset").getString('dx'));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.START');
-      // expect(obj.$attrs.edgeAlign.offset.dx).assertEqual('5.00vp');
-      // expect(obj.$attrs.edgeAlign.offset.dy).assertEqual('5.00vp');
+      
+      
+      
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"))
         .assertEqual('CalendarAlign.START');
       expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString("dx"))
@@ -509,21 +534,23 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700] edgeAlign.offset.dx:" +
       obj.getElement('$attrs').getElement('edgeAlign').getElement("offset").getString("dx"));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.CENTER');
-      // expect(obj.$attrs.edgeAlign.offset.dx).assertEqual('-10.00vp');
-      // expect(obj.$attrs.edgeAlign.offset.dy).assertEqual('0.00vp');
+      
+      
+      
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"))
         .assertEqual('CalendarAlign.CENTER');
       expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString("dx"))
@@ -533,21 +560,23 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
-     * @tc.name         ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
-     * @tc.desc         set EdgeAlign then get the value
+     * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
+     * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
+     * @tc.desc     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('$attrs').getElement('edgeAlign').getString("alignType"));
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800] edgeAlign.offset.dx:" +
       obj.getElement('$attrs').getElement('edgeAlign').getElement("offset").getString("dx"));
-      // expect(obj.$attrs.edgeAlign.alignType).assertEqual('CalendarAlign.END');
-      // expect(obj.$attrs.edgeAlign.offset.dx).assertEqual('-20.00vp');
-      // expect(obj.$attrs.edgeAlign.offset.dy).assertEqual('-10.00vp');
+      
+      
+      
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType")).assertEqual('CalendarAlign.END');
       expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString("dx"))
         .assertEqual('-20.00vp');
@@ -556,17 +585,19 @@ export default function calendarpicker() {
       done();
     });
 
+    
     /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_hintRadius_static_0100
-     * @tc.name         ArkUI_Stage_CalendarPicker_hintRadius_static_0100
-     * @tc.desc         get the property of the hintRadius
+     * @tc.number   ArkUI_Stage_CalendarPicker_hintRadius_static_0100
+     * @tc.name     ArkUI_Stage_CalendarPicker_hintRadius_static_0100
+     * @tc.desc     ArkUI_Stage_CalendarPicker_hintRadius_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_CalendarPicker_hintRadius_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_CalendarPicker_hintRadius_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      // console.info("[ArkUI_Stage_CalendarPicker_hintRadius_static_0100] hintRadius:" + obj.getElement('$attrs').hintRadius);
-      // expect(obj.$attrs.hintRadius).assertEqual(undefined);
-      // expect(obj.getElement('$attrs').getString("hintRadius")).assertEqual(undefined);
+      
+      
+      
       done();
     });
 

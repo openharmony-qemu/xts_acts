@@ -55,7 +55,6 @@ class EntryAbility extends UIAbility {
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
-          // Obtain a UIContext instance.
           if (windowClass !== null) {
             AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }

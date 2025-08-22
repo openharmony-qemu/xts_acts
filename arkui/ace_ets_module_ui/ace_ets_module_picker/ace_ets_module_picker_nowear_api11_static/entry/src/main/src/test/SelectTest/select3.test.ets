@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
@@ -47,10 +47,10 @@ export default function selectOnSelectJsunit() {
         console.info("get select state pages:" + JSON.stringify(pages));
         if (!("select3" == pages.name)) {
           console.info("get select pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push select page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push select page error: " + err);
@@ -62,38 +62,42 @@ export default function selectOnSelectJsunit() {
       console.info("selectOnSelect after each called");
     });
 
+    
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testselectOnSelect0001_static
-     * @tc.desic         aceselectOnSelectEtsTest0001
+     * @tc.number   testselectOnSelect_static_0001
+     * @tc.name     testselectOnSelect_static_0001
+     * @tc.desc     testselectOnSelect_static_0001
+     * @tc.level    Level.LEVEL1
      */
-    it('testselectOnSelect0001_static', Level.LEVEL1, async () => {
-      console.info('selectOnSelect testselectOnSelect0001_static START');
+it('testselectOnSelect_static_0001', Level.LEVEL1, async () => {
+      console.info('selectOnSelect testselectOnSelect_static_0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Select');
-      console.info("[testselectOnSelect0001_static] component width strJson:" + strJson);
+      console.info("[testselectOnSelect_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$type')).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')).assertEqual("2");
-      console.info("[testselectOnSelect0001_static] selected value :" +
+      console.info("[testselectOnSelect_static_0001] selected value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected'));
 
     });
 
+    
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testselectOnSelect0002_static
-     * @tc.desic         aceselectOnSelectEtsTest0002
+     * @tc.number   testselectOnSelect_static_0002
+     * @tc.name     testselectOnSelect_static_0002
+     * @tc.desc     testselectOnSelect_static_0002
+     * @tc.level    Level.LEVEL1
      */
-    it('testselectOnSelect0002_static', Level.LEVEL1, async () => {
-      console.info('selectOnSelect testselectOnSelect0002_static START');
+it('testselectOnSelect_static_0002', Level.LEVEL1, async () => {
+      console.info('selectOnSelect testselectOnSelect_static_0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Select');
-      console.info("[testselectOnSelect0002_static] component height strJson:" + strJson);
+      console.info("[testselectOnSelect_static_0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$type')).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual("TTT");
-      console.info("[testselectOnSelect0002_static] height value :" +
+      console.info("[testselectOnSelect_static_0002] height value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
 
     });

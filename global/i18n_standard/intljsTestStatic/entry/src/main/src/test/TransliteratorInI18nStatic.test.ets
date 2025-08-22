@@ -87,7 +87,6 @@ export default function TransliteratorIni18nTest() {
     it('transliterator_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0200 ' + 'start');
       let value = i18n.Transliterator.getInstance('a');
-      console.log('transliterator_test_static_0200 ' + value);
       expect(value !== null).assertTrue();
     })
 

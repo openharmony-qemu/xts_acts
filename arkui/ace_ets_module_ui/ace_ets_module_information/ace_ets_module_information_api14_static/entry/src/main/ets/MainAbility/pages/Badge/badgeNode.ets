@@ -12,38 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, Button,  $r, Entry, Component, Column, ColumnOptions, NodeContainer,
+  Text, Badge, Image, $r, ColumnOptions
+} from '@ohos.arkui.component'
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-import { UIContext } from '@ohos.arkui.UIContext';
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  CustomSpan,
-  BadgeParamWithNumber,
-  BadgeParamWithString,
-  Color,
-  ColumnOptions,
-  NodeContainer,
-  Badge,
-  HorizontalAlign,
-  Image,
-  List,
-  Stack,
-  GridRow,
-  GridCol,
-  Flex,
-  RelativeContainer,
-  Divider,
-  Blank
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
-
 let data1: BadgeParamWithNumber = {
   count: 201,
   maxCount: 200,
@@ -68,23 +41,8 @@ class MyNodeController extends NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createNode(uiContext, 'Column')
     let row = typeNode.createNode(uiContext, 'Row')
-    // col.initialize({ space: 10 }).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-
-    // let badgeNumber = typeNode.createNode(uiContext, 'Badge')
-    // badgeNumber.initialize(data1).width(20).key('key_ badge_001')
-    // let imageNumber = typeNode.createNode(uiContext, 'Image')
-    // imageNumber.initialize($r('app.media.icon')).width(100)
-    // badgeNumber.appendChild(imageNumber)
-    //
-    // let badgeString = typeNode.createNode(uiContext, 'Badge')
-    // badgeString.initialize(data2)
-    // let imageString = typeNode.createNode(uiContext, 'Image')
-    // imageString.initialize($r('app.media.icon')).width(100)
-    // badgeString.appendChild(imageString)
-
-
-    // col.appendChild(badgeNumber)
-    // col.appendChild(badgeString)
+    col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
+   
     node.appendChild(col)
     node.appendChild(row)
     return node

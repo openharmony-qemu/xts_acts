@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import axisHorizontal from './observerTest/axisHorizontal.test'
+import axisVertical from './observerTest/axisVertical.test'
+
 
 export default function testsuite() {
   axisHorizontal()
+  axisVertical()
 }

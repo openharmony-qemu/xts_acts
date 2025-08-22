@@ -53,7 +53,6 @@ export default function StepperJsunit11() {
         if (!("stepper" == pages.name)) {
           console.info("get stepper state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // await routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
       } catch (err) {
@@ -94,17 +93,11 @@ export default function StepperJsunit11() {
       console.info("stepperTest_static_0200 component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('0');
       try {
-        // let eventData: events_emitter.EventData = {
-        //   data: {
-        //     "currentIndex": 1,
-        //   } as
-        // }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 202,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("stepperTest_static_0200 start to publish emit");
-        // events_emitter.emit(indexEvent, eventData);
       } catch (err) {
         console.log("stepperTest_static_0200 change component data error: " + (err as BusinessError).message);
       }
@@ -128,9 +121,6 @@ export default function StepperJsunit11() {
       globalMessage!.notify({
         name: 'index', value: -558038585
       })
-      // globalThis.value.message.notify({
-      //   name: 'index', value: -558038585
-      // })
       await Utils.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('stepper');
       console.info("stepperTest_static_0400 component objNew is: " + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('index'));
@@ -170,17 +160,12 @@ export default function StepperJsunit11() {
       console.info("stepperTest_static_0300 component strJson:" + strJson);
       console.info("stepperTest_static_0300 component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       try {
-        // let eventData: events_emitter.EventData = {
-        //   data: {
-        //     "currentIndex": 11111111,
-        //   }
-        // }
+
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 909,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("stepperTest_static_0300 start to publish emit");
-        // events_emitter.emit(indexEvent, eventData);
       } catch (err) {
         console.log("stepperTest_static_0300 change component data error: " + (err as BusinessError).message);
       }

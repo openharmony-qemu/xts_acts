@@ -33,20 +33,10 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: int) {
-    // let eventData: events_emitter.EventData = {
-    //   data: {
-    //     "msg": message
-    //   }
-    // }
-    // let event: events_emitter.InnerEvent = {
-    //   eventId: eventId,
-    //   priority: events_emitter.EventPriority.LOW
-    // }
-    // events_emitter.emit(event, eventData)
+  static sendEvent(message: string, eventId: number) {
+   
   }
 
-  //获取组件所占矩形区域坐标
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;

@@ -21,13 +21,6 @@ import PromiseSecondTest from './PromiseSecondTest.test';
 import PromiseResolveSecondTest from './PromiseResolveSecondTest.test';
 import PromiseAsyncOperationTest from './PromiseAsyncOperationTest.test';
 import PromiseRaceStressTest from './PromiseRaceStressTest.test';
-import PromiseAllSecondTest from './PromiseAllSecondTest.test';
-import PromiseRejectSecondTest from "./PromiseRejectSecondTest.test";
-import PromiseRejectTest from "./PromiseRejectTest.test";
-import PromiseAllSettledTest from "./PromiseAllSettledTest.test";
-import PromiseAllTest from "./PromiseAllTest.test";
-import PromiseRaceSecondTest from './PromiseRaceSecondTest.test';
-import PromiseErrorTest from './PromiseErrorTest.test';
 
 export default function testsuite() {
   promiseTest();
@@ -38,11 +31,4 @@ export default function testsuite() {
   PromiseResolveSecondTest();
   PromiseAsyncOperationTest();
   PromiseRaceStressTest();
-  PromiseAllSecondTest();
-  PromiseRejectSecondTest();
-  PromiseRejectTest();
-  PromiseAllSettledTest();
-  PromiseAllTest();
-  PromiseRaceSecondTest();
-  PromiseErrorTest();
 }

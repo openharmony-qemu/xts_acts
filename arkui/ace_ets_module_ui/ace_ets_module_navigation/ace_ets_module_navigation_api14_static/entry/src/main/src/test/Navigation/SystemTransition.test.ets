@@ -13,36 +13,26 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router } from '@ohos.arkui.UIContext';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
+
 export default function SystemTransition() {
   describe('SystemTransition', () => {
-    beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info('SystemTransition beforeEach start');
       let options: router.RouterOptions = {
@@ -55,6 +45,7 @@ export default function SystemTransition() {
         console.info('get SystemTransition state pages:' + JSON.stringify(pages));
         if (!('SystemTransition' == pages.name)) {
           console.info('get SystemTransition pages.name:' + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(1000);
         }
@@ -70,47 +61,48 @@ export default function SystemTransition() {
     });
 
 
-    /**
-     * @tc.number    SystemTransition_static_0100
-     * @tc.name      SystemTransition_static_0100
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.TITLE and NavigationSystemTransitionType.CONTENT
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SystemTransition_static_0100
+     * @tc.name     SystemTransition_static_0100
+     * @tc.desc     SystemTransition_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SystemTransition_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SystemTransition_static_0100 START');
+it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SystemTransition_0100 START');
       await CommonFunc.sleep(200);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let btn1 = await (driver.findComponent(ON.id('pageOneId')) as Promise<Component>);
-      await btn1.click()
-      console.info('[SystemTransition_static_0100] btn1 click');
+      let btn1 = await driver.findComponent(ON.id('pageOneId'));
+      await (btn1?.click() as Promise<void>)
+      console.info('[SystemTransition_0100] btn1 click');
       await CommonFunc.sleep(200);
 
       let strJson1 = inspector.getInspectorByKey('pageOne');
       let obj1 = JSON.parseJsonElement(strJson1);
-      console.info('[SystemTransition_static_0100] component page one obj is: ' + JSON.stringify(obj1));
-      console.info('[SystemTransition_static_0100] content page one obj is: ' + JSON.stringify(obj1.getElement('$attrs').getString('content')));
+      console.info('[SystemTransition_0100] component page one obj is: ' + JSON.stringify(obj1));
+      console.info('[SystemTransition_0100] content page one obj is: ' + JSON.stringify(obj1.getElement('$attrs').getString('content')));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('This is page one');
 
-      let btn2 = await (driver.findComponent(ON.id('popId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[SystemTransition_static_0100] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('popId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[SystemTransition_0100] btn2 click');
       await CommonFunc.sleep(200);
 
-      let btn3 = await (driver.findComponent(ON.id('pageTwoId')) as Promise<Component>);
-      await btn3.click()
-      console.info('[SystemTransition_static_0100] btn3 click');
+      let btn3 = await driver.findComponent(ON.id('pageTwoId'));
+      await (btn3?.click() as Promise<void>)
+      console.info('[SystemTransition_0100] btn3 click');
       await CommonFunc.sleep(200);
 
       let strJson2 = inspector.getInspectorByKey('pageTwo');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[SystemTransition_static_0100] component page two obj is: ' + JSON.stringify(obj2));
-      console.info('[SystemTransition_static_0100] content page two obj is: ' + JSON.stringify(obj2.getElement('$attrs').getString('content')));
+      console.info('[SystemTransition_0100] component page two obj is: ' + JSON.stringify(obj2));
+      console.info('[SystemTransition_0100] content page two obj is: ' + JSON.stringify(obj2.getElement('$attrs').getString('content')));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('This is page two');
 
-      console.info('SystemTransition_static_0100 END');
+      console.info('SystemTransition_0100 END');
       done();
     });
 

@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
-let domain: int = 0x0000;
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 let emitKey = "emitUserAgent";
@@ -35,6 +35,7 @@ export default function selectmenuTest() {
   describe('ActsSelectMenuTest', () => {
     beforeAll(() => {
       console.info("ActsSelectMenuTest beforeEach start");
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -52,23 +53,25 @@ export default function selectmenuTest() {
         console.info("get SelectMenu state pages:" + JSON.stringify(pages));
         if (!("SelectMenu" == pages.name)) {
           console.info("get SelectMenu pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push SelectMenu page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push SelectMenu page error " + JSON.stringify(err));
       }
-      // done()
+      
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
-     * @tc.name ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Start
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 start");
       setTimeout(() => {
         try {
@@ -87,12 +90,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Center
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 start");
       setTimeout(() => {
         try {
@@ -111,12 +116,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.End
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 start");
       setTimeout(() => {
         try {
@@ -135,12 +142,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Start,{dx:10,dy:10}
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0400 start");
       setTimeout(() => {
         try {
@@ -163,12 +172,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.Center,{dx:-10,dy:0}
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0500 start");
       setTimeout(() => {
         try {
@@ -191,12 +202,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.END,{dx:-20,dy:-50}
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0600 start");
       setTimeout(() => {
         try {
@@ -219,12 +232,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.END,{dx:0,dy:0}
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0700 start");
       setTimeout(() => {
         try {
@@ -247,12 +262,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
-     * @tc.desc set MenuAlign property parameter to null
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0800 start");
       setTimeout(() => {
         try {
@@ -275,12 +292,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
-     * @tc.desc set MenuAlign property parameter to undefined
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0900 start");
       setTimeout(() => {
         try {
@@ -303,12 +322,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
-     * @tc.desc set MenuAlign property parameter to 'getElement('$menuAlign')'
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1000 start");
       setTimeout(() => {
         try {
@@ -331,12 +352,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
-     * @tc.desc set MenuAlign property parameter to ''
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1100 start");
       setTimeout(() => {
         try {
@@ -359,13 +382,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.CENTER
-     *               and set MenuAlign property parameter to MenuAlignType.END again
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1200 start");
       setTimeout(() => {
         try {
@@ -388,13 +412,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
-     * @tc.desc set MenuAlign property parameter to MenuAlignType.CENTER
-     *               and set MenuAlign property parameter to null
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1300 start");
       setTimeout(() => {
         try {
@@ -417,13 +442,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
-     * @tc.desc set MenuAlign property parameter to null
-     *               and set MenuAlign property parameter to MenuAlignType.CENTER,{dx:-5,dy:-5}
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1400 start");
       setTimeout(() => {
         try {
@@ -446,12 +472,14 @@ export default function selectmenuTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
-     * @tc.name   ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
-     * @tc.desc menuAlign property parameter not set to obtain default value
+    
+    /*
+     * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
+     * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
+     * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
+     * @tc.level    Level.LEVEL1
      */
-    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_1500 start");
       setTimeout(() => {
         try {

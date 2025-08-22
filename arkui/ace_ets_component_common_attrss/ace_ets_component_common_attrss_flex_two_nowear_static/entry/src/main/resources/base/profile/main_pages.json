@@ -1,0 +1,32 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/image/imageAdvanced/image01",
+    "MainAbility/pages/image/imageAdvanced/image02",
+    "MainAbility/pages/image/imageAdvanced/image03",
+    "MainAbility/pages/image/imageAdvanced/image04",
+    "MainAbility/pages/image/imageAdvanced/image05",
+    "MainAbility/pages/image/imageAdvanced/image06",
+    "MainAbility/pages/image/imageAdvanced/image07",
+    "MainAbility/pages/image/imageAdvanced/image08",
+    "MainAbility/pages/image/imageAdvanced/image09",
+    "MainAbility/pages/image/imageAdvanced/image10",
+    "MainAbility/pages/image/imageAdvanced/image14",
+    "MainAbility/pages/image/imageAdvanced/image15",
+    "MainAbility/pages/image/imageAdvanced/image16",
+    "MainAbility/pages/image/imageAdvanced/imageAltBase64",
+    "MainAbility/pages/image/imageAdvanced/imageBase64",
+    "MainAbility/pages/image/aboutToRecycleiamge",
+    "MainAbility/pages/image/Image",
+    "MainAbility/pages/image/image55",
+    "MainAbility/pages/image/ImageApi",
+    "MainAbility/pages/image/ImageAttr",
+    "MainAbility/pages/image/imageFit",
+    "MainAbility/pages/image/imageObscuredTest",
+    "MainAbility/pages/image/imageOne",
+    "MainAbility/pages/image/imageThree",
+    "MainAbility/pages/image/imageTwo",
+    "MainAbility/pages/image/ohosMatrix4",
+    "MainAbility/pages/image/shapeClipping"
+  ]
+}

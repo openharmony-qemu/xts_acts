@@ -16,14 +16,14 @@ struct PortraitPage {
       Stack({alignContent: Alignment.Center}) {
         Column({space: '10vp'} as ColumnOptions) {
           Button('push LANDSCAPE page').onClick((e:ClickEvent) => {
-            // this.stack?.pushPath({name: 'landscape'})
+
           })
             .id('landscapeId').margin({bottom: '10vp'} as Margin)
           Button('getPortraitPage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getPortraitPage displayClass is ', displayClass?.orientation)
-            // AppStorage.setOrCreate<Orientation>('testOrientation', displayClass?.orientation); Orientation未导出
+
           }).id('getPortraitPage')
         }
       }.width('100%').height('100%')
@@ -48,14 +48,14 @@ struct LandscapePage {
       Stack({alignContent: Alignment.Center}) {
         Column({space: '10vp'}  as ColumnOptions) {
           Button('push UnspecifiedPage page').onClick((e:ClickEvent) => {
-            // this.stack?.pushPath({ name: 'UNSPECIFIED' })
+
           })
             .id('unspecifiedId')
           Button('getLandscapePage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getLandscapePage displayClass is ', displayClass?.orientation)
-            // // AppStorage.setOrCreate('testOrientation', displayClass?.orientation);
+
           }).id('getLandscapePage')
         }
       }.width('100%').height('100%')
@@ -79,13 +79,13 @@ struct UnspecifiedPage {
       Stack({alignContent: Alignment.Center}) {
         Column({space: '10vp'}  as ColumnOptions) {
           Button('push PORTRAIT_INVERTED page').onClick((e:ClickEvent) => {
-            // this.stack?.pushPath({ name: 'PORTRAIT_INVERTED' })
+
           })
             .id('portraitInvertedId')
           Button('getUnspecifiedPage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
-            // AppStorage.setOrCreate('testOrientation', displayClass?.orientation);
+
           }).id('getUnspecifiedPage')
         }
       }.width('100%').height('100%')
@@ -109,14 +109,14 @@ struct PortraitInvertedPage {
       Stack({alignContent: Alignment.Center}) {
         Column({space: '10vp'}  as ColumnOptions) {
           Button('push LANDSCAPE_INVERTED page').onClick((e:ClickEvent) => {
-            // this.stack?.pushPath({ name: 'LANDSCAPE_INVERTED' })
+
           })
             .id('lanscapeInvertedId')
           Button('getPortraitInvertedPage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getPortraitInvertedPage displayClass is ', displayClass?.orientation)
-            // AppStorage.setOrCreate('testOrientation', displayClass?.orientation);
+
           }).id('getPortraitInvertedPage')
         }
       }.width('100%').height('100%')
@@ -140,14 +140,14 @@ struct LandscapInvertedPage {
       Stack({alignContent: Alignment.Center}) {
         Column({space: '10vp'} as ColumnOptions) {
           Button('push PORTRAIT page').onClick((e:ClickEvent) => {
-            // this.stack?.pushPath({ name: 'portrait' })
+
           })
             .id('portraitId')
           Button('getLandscapInvertedPage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getLandscapInvertedPage displayClass is ', displayClass?.orientation)
-            // AppStorage.setOrCreate('testOrientation', displayClass?.orientation);
+
           }).id('getLandscapInvertedPage')
         }
       }.width('100%').height('100%')
@@ -169,7 +169,7 @@ struct PreferredOrientation {
   private stack: NavPathStack = new NavPathStack();
 
   aboutToAppear(): void {
-    // this.stack.pushPath({name: 'portrait'})
+
   }
 
   @Builder

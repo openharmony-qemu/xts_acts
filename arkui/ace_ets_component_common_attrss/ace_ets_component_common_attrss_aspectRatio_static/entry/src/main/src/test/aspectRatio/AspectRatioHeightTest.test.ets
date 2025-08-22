@@ -125,7 +125,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      // heightValue: vp2px(100),
+
       aspectRatio: 2.0
     }
   }, {
@@ -136,7 +136,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      // heightValue: vp2px(100),
+
       aspectRatio: 0.5
     }
   }]

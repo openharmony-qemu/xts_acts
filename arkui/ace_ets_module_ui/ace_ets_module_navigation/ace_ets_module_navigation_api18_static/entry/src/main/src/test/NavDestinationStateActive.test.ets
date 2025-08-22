@@ -42,7 +42,7 @@ export default function NavDestinationStateActive() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.platform.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -72,13 +72,15 @@ export default function NavDestinationStateActive() {
     });
 
 
-    /**
-     * @tc.number    NavDestinationStateActive_static_0100
-     * @tc.name      NavDestinationStateActive_static_0100
-     * @tc.desc      Test NavDestinationState ON_ACTIVE
-     * @tc.level     Level 0
+    
+    
+/*
+     * @tc.number   NavDestinationStateActive_static_0100
+     * @tc.name     NavDestinationStateActive_static_0100
+     * @tc.desc     NavDestinationStateActive_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('NavDestinationStateActive_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavDestinationStateActive_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationStateActive_static_0100 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -96,13 +98,15 @@ export default function NavDestinationStateActive() {
       done();
     });
 
-    /**
-     * @tc.number    NavDestinationStateActive_static_0200
-     * @tc.name      NavDestinationStateActive_static_0200
-     * @tc.desc      Test NavDestinationState ON_INACTIVE
-     * @tc.level     Level 0
+    
+    
+/*
+     * @tc.number   NavDestinationStateActive_static_0200
+     * @tc.name     NavDestinationStateActive_static_0200
+     * @tc.desc     NavDestinationStateActive_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('NavDestinationStateActive_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavDestinationStateActive_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationStateActive_static_0200 START');
       let driver = Driver.create();
       await driver.delayMs(1000);

@@ -29,7 +29,7 @@ import { Callback } from '@ohos.base'
 @Entry
 @Component
 struct PathStackPage {
-  // @Provide('mainPathStack') stack: NavPathStack = new NavPathStack();
+  @Provide({alias:'mainPathStack'}) stack: NavPathStack = new NavPathStack();
 
   @Builder
   MyPageMap(name: string) {
@@ -42,7 +42,7 @@ struct PathStackPage {
 
 
   build() {
-    // Navigation(this.stack) {
+    Navigation(this.stack) {
       Button('pushStack').onClick((e: ClickEvent) => {
         let curPathStack: Array<NavPathInfo> = new Array<NavPathInfo>();
 
@@ -53,15 +53,15 @@ struct PathStackPage {
           console.log('pop setPathStack pageTwo' + JSON.stringify(popupInfo.info))
         }
         curPathStack.push(new NavPathInfo('navPathPageOne', 'setPathStack pageOne', popCallbackOne, false), new NavPathInfo('navPathPageTwo', 'setPathStack pageTwo', popCallbackTwo, true));
-        // this.stack.setPathStack(curPathStack, true);
+        this.stack.setPathStack(curPathStack, true);
       })
         .id('pushId')
 
-    // }
-    // .width('100%')
-    // .height('100%')
-    // .title('MainPage')
-    // .navDestination(this.MyPageMap)
+    }
+    .width('100%')
+    .height('100%')
+    .title('MainPage')
+    .navDestination(this.MyPageMap)
   }
 }
 

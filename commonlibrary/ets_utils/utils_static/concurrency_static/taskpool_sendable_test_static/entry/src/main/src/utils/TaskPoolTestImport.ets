@@ -20,7 +20,7 @@ export function createUint32Array(size: number): Uint32Array {
 }
 
 export function indexSetter(data: Uint32Array, index: number): Uint32Array {
-  data[index] = index;
+  data[index.toInt()] = index;
   return data;
 }
 
@@ -31,7 +31,7 @@ export async function indexSetterWithTimeout(data: Uint32Array, index: number, m
     }, 100);
   });
   await waitPromise;
-  data[index] = index;
+  data[index.toInt()] = index;
   return data;
 }
 

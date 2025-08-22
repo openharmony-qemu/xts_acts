@@ -41,7 +41,7 @@ export default function PathStackPage() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.platform.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -71,13 +71,15 @@ export default function PathStackPage() {
     });
 
 
-    /**
-     * @tc.number    PathStackPage_static_0100
-     * @tc.name      PathStackPage_static_0100
-     * @tc.desc      Test navDestinationId、setPathStack、getPathStack
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   PathStackPage_static_0100
+     * @tc.name     PathStackPage_static_0100
+     * @tc.desc     PathStackPage_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('PathStackPage_static_0100', Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('PathStackPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PathStackPage_static_0100 START');
       await CommonFunc.sleep(500);
       let driver = Driver.create();

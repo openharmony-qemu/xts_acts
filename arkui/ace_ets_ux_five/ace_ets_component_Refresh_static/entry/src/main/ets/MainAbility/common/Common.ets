@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector';
@@ -32,6 +31,7 @@ export default class CommonFunc {
   static rect_right: number = 0;
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
+
 
   static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -72,19 +72,6 @@ export default class CommonFunc {
       "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
-
-  // static setScreenOrientation(orientation: screen.Orientation) {
-  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
-  //     console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
-  //     return data[0] as screen.Screen;
-  //   }).then((screenClass: screen.Screen) => {
-  //     return screenClass.setOrientation(orientation);
-  //   }).then(() => {
-  //     console.log('Succeeded in setting the vertical orientation.');
-  //   }).catch((err: Error) => {
-  //     console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
-  //   });
-  // }
 }
 
 

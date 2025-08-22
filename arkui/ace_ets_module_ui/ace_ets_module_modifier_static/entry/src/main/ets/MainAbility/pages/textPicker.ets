@@ -19,33 +19,33 @@ import {
   Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-// import { TextPickerModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends TextPickerModifier {
-//   applyNormalAttribute(instance: TextPickerAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.canLoop(true)
-//   }
-// }
+
+
+
+
+
+
+
+
+
+
+
 
 @Entry
 @Component
 struct TextPickerExample {
-  // @State customModifier: TextPickerModifier = new CustomModifier()
-  //   .canLoop(false)
-  //   .disappearTextStyle({ color: "#FF000000", font: { size: 8, weight: FontWeight.Lighter } })
-  //   .selectedTextStyle({ color: "#FF0000FF", font: { size: '20px', weight: FontWeight.Bold } })
-  //   .textStyle({ color: '#FFFF0000', font: { size: '10px', weight: FontWeight.Normal } })
-  //   .selectedIndex(2)
-  //   .defaultPickerItemHeight('60px')
+  
+  
+  
+  
+  
+  
+  
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        
       }).key("changeButton")
 
       TextPicker({ range: ['peach1', 'peach2', 'peach3', 'peach4'] })
@@ -53,7 +53,7 @@ struct TextPickerExample {
         .key('textPickerDefault1')
 
       TextPicker({ range: ['peach1', 'peach2', 'peach3', 'peach4'] })
-        // .attributeModifier(this.customModifier as CustomModifier)
+        
         .key('textPicker')
     }
   }

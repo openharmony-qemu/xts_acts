@@ -108,7 +108,7 @@ import {
   VerticalAlign,
   
   AlignRuleOption,
-  // Point,
+
   GridColColumnOption,
   GridColOptions,
   ColumnOptions,
@@ -177,75 +177,59 @@ struct AlignSelfPage {
     })
   }
 
-  // @Styles
-  // commonStyle(){
-  //   .margin(0)
-  //   .alignSelf(this._alignSelf)
-  //   .width(200)
-  //   .height(200)
-  //   .key(this.componentKey)
-  //   .backgroundColor(Color.Pink)
-  // }
+
 
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })/* .commonStyle() */
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
     } else if (this.targetView == 'Button') {
-      Button('button1')/* .commonStyle() */
+      Button('button1')
     } else if (this.targetView == 'Checkbox') {
-      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })/* .commonStyle() */
+      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
     } else if (this.targetView == 'CheckboxGroup') {
-      CheckboxGroup({ group: 'checkboxGroup' })/* .commonStyle() */
+      CheckboxGroup({ group: 'checkboxGroup' })
     } else if (this.targetView == 'DataPanel') {
-      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle })/* .commonStyle() */
+      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle })
     } else if (this.targetView == 'DatePicker') {
       DatePicker({
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: new Date()
-      })/* .commonStyle() */
+      })
     } else if (this.targetView == 'Divider') {
-      Divider().strokeWidth(8).vertical(true)/* .commonStyle() */
+      Divider().strokeWidth(8).vertical(true)
     } else if (this.targetView == 'Gauge') {
-      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]])/* .commonStyle() */
+      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]])
     } else if (this.targetView == 'Image') {
-      Image($r('app.media.icon'))/* .commonStyle() */
+      Image($r('app.media.icon'))
     } else if (this.targetView == 'ImageAnimator') {
-      ImageAnimator().images([{ src: $r('app.media.icon') }])/* .commonStyle() */
+      ImageAnimator().images([{ src: $r('app.media.icon') }])
     } else if (this.targetView == 'LoadingProgress') {
-      LoadingProgress().color(Color.Blue)/* .commonStyle() */
+      LoadingProgress().color(Color.Blue)
     } else if (this.targetView == 'Marquee') {
       Marquee({ start: true, step: 50, src: 'Running Marquee starts rolling' })
-        .fontWeight(700).fontColor(Color.White).fontSize(48)/* .commonStyle() */
+        .fontWeight(700).fontColor(Color.White).fontSize(48)
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Navigation') {
-      // Navigation()/* .commonStyle() */
+
     } else if (this.targetView == 'NavRouter') {
-      // NavRouter() {
-      //   Row() {
-      //     Image($r('app.media.icon'))
-      //   }
-      //
-      //   NavDestination() {
-      //     Text('NavDestination').fontSize(10)
-      //   }
-      // }/* .commonStyle() */
+
     } else if (this.targetView == 'Progress') {
-      Progress({ value: 50, type: ProgressType.Linear })/* .commonStyle() */
+      Progress({ value: 50, type: ProgressType.Linear })
     } else if (this.targetView == 'QRCode') {
-      QRCode('QRCode').color(0xF7CE00)/* .commonStyle() */
+      QRCode('QRCode').color(0xF7CE00)
     } else if (this.targetView == 'Radio') {
-      Radio({ value: 'Radio1', group: 'radioGroup' })/* .commonStyle() */
+      Radio({ value: 'Radio1', group: 'radioGroup' })
     } else if (this.targetView == 'Rating') {
-      Rating({ rating: 4 }).stars(5)/* .commonStyle() */
+      Rating({ rating: 4 }).stars(5)
     } else if (this.targetView == 'ScrollBar') {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
-      }.width(20)/* .commonStyle() */
+      }.width(20)
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem() {
@@ -253,51 +237,46 @@ struct AlignSelfPage {
             Text('Page One')
           }
         }
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Select') {
       Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
-        { value: 'bbb', icon: '/common/public_icon.svg' }])/* .commonStyle() */
+        { value: 'bbb', icon: '/common/public_icon.svg' }])
     } else if (this.targetView == 'Slider') {
       Slider({ value: 50, style: SliderStyle.OutSet, direction: Axis.Vertical })
         .blockColor('#191970')
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Text') {
-      Text('text').fontColor(Color.White).fontSize(30)/* .commonStyle() */
+      Text('text').fontColor(Color.White).fontSize(30)
     } else if (this.targetView == 'TextArea') {
-      TextArea({ placeholder: 'TextArea', })/* .commonStyle() */
+      TextArea({ placeholder: 'TextArea', })
     } else if (this.targetView == 'TextClock') {
-      TextClock({ timeZoneOffset: -8 }).format('hms')/* .commonStyle() */
+      TextClock({ timeZoneOffset: -8 }).format('hms')
     } else if (this.targetView == 'TextInput') {
-      TextInput({ placeholder: 'TextInput' })/* .commonStyle() */
+      TextInput({ placeholder: 'TextInput' })
     } else if (this.targetView == 'TextPicker') {
-      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 })/* .commonStyle() */
+      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 })
     } else if (this.targetView == 'TextTimer') {
-      TextTimer({ count: 30000 })/* .commonStyle() */
+      TextTimer({ count: 30000 })
     } else if (this.targetView == 'TimePicker') {
-      TimePicker()/* .commonStyle() */
+      TimePicker()
     } else if (this.targetView == 'Toggle') {
-      Toggle({ type: ToggleType.Switch })/* .commonStyle() */
+      Toggle({ type: ToggleType.Switch })
     } else if (this.targetView == 'Badge') {
-      // Badge({
-      //   value: '',
-      //   style: { badgeSize: 6, badgeColor: Color.Red }
-      // }) {
-      //   Button('BadgeContent')
-      // }/* .commonStyle() */
+
     } else if (this.targetView == 'Column') {
-      Column()/* .commonStyle() */
+      Column()
     } else if (this.targetView == 'Counter') {
       Counter() {
         Text('1')
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Flex') {
-      Flex()/* .commonStyle() */
+      Flex()
     } else if (this.targetView == 'GridRow') {
       GridRow({
         columns: 1,
@@ -306,7 +285,7 @@ struct AlignSelfPage {
         GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } as GridColOptions) {
           Row().width('100%').height('20vp')
         }
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Grid') {
       Grid() {
         GridItem() {
@@ -316,7 +295,7 @@ struct AlignSelfPage {
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'List') {
       List({ space: 20, initialIndex: 0 }) {
         ListItem() {
@@ -326,12 +305,9 @@ struct AlignSelfPage {
         }
       }
       .listDirection(Axis.Vertical)
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'Navigator') {
-      // Navigator({ target: 'MainAbility/pages/index/Index' }) {
-      //   Text('Navigator Go to index page')
-      //     .width('100%').textAlign(TextAlign.Center)
-      // }/* .commonStyle() */
+
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()
@@ -341,22 +317,16 @@ struct AlignSelfPage {
             top: { anchor: '__container__', align: VerticalAlign.Top },
             left: { anchor: '__container__', align: HorizontalAlign.Start }
           })
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Row') {
-      Row()/* .commonStyle() */
+      Row()
     } else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      // /* .commonStyle() */
+
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)
       }
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
@@ -367,7 +337,7 @@ struct AlignSelfPage {
         }.width('100%')
       }
       .scrollBar(BarState.On)
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
@@ -380,23 +350,23 @@ struct AlignSelfPage {
         Column() {
           Text('SideBarContainer content').fontSize(25)
         }
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Stack') {
       Stack() {
         Text('Stack').fontColor(Color.White)
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Swiper') {
       Swiper() {
         Text('Swiper').width('90%').height(160)
       }
       .indicator(true)
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'Tabs') {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
         FlowItem() {
@@ -404,65 +374,56 @@ struct AlignSelfPage {
             Text('WaterFlow').fontSize(12).height('16')
           }
         }
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Circle') {
-      Circle({ width: 150, height: 150 })/* .commonStyle() */
+      Circle({ width: 150, height: 150 })
     } else if (this.targetView == 'Ellipse') {
-      Ellipse({ width: 150, height: 80 })/* .commonStyle() */
+      Ellipse({ width: 150, height: 80 })
     } else if (this.targetView == 'Line') {
       Line()
         .startPoint([0, 0])
         .endPoint([50, 100])
         .stroke(Color.Black)
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Polyline') {
       Polyline({ width: 100, height: 100 })
         .points([[0, 0], [20, 60], [100, 100]])
         .fillOpacity(0)
         .stroke(Color.Blue)
         .strokeWidth(3)
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Polygon') {
       Polygon()
         .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
         .fill(Color.Red)
         .fillOpacity(0.6)
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Path') {
       Path()
         .commands('M0 100 A30 20 20 0 0 200 100 Z')
         .fillOpacity(0)
         .stroke(Color.Black)
         .strokeWidth(3)
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Rect') {
       Rect({ width: '90%', height: 80 } as RectOptions)
         .radius(20)
         .fill(Color.Pink)
         .stroke(Color.Transparent)
-        /* .commonStyle() */
+        
     } else if (this.targetView == 'Shape') {
-      // Shape() {
-      //   Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
-      // }
-      // .viewPort({ x: -20, y: -5, width: 310, height: 90 })
-      // .fill(0x317AF7)
-      // .stroke(0xEE8443)
-      // .strokeWidth(10)
-      // .strokeLineJoin(LineJoinStyle.Miter)
-      // .strokeMiterLimit(5)
-      // /* .commonStyle() */
+
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(20).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      /* .commonStyle() */
+      
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
         Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-      }/* .commonStyle() */
+      }
     } else if (this.targetView == 'Blank') {
-      Blank()/* .commonStyle() */
+      Blank()
     }
   }
 
@@ -473,7 +434,7 @@ struct AlignSelfPage {
         GridRow({ columns: 3 }) {
           GridCol({ span: 1 }) {
             Row().width('20vp').height('20vp')
-          }/* .commonStyle() */
+          }
 
           GridCol({ span: 1 }) {
             Row().width('20vp').height('20vp')

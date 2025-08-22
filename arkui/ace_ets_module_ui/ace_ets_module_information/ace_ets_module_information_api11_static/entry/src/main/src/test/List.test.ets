@@ -12,14 +12,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import badgeTest from './BadgeTest/badge';
-import badgeJsunit from './BadgeTest/BadgeJsunit.test';
-import loadingProgressCircularJsunit from './LoadingProgressTest/loadingProgress.test';
-import searchJsunit from './SearchTest/SearchJsunit.test';
+import advancedCounter from './advancedCounterTest/advancedCounter'
+import badge from './BadgeTest/badge'
+import Badge3Jsunit from './BadgeTest/Badge3Jsunit.test'
+import BadgeJsunit from './BadgeTest/BadgeJsunit.test'
+import CounterComponentTest from './CounterTest/CounterApiTest/CounterComponentTest.test'
+import CounterEnable from './CounterTest/CounterEnable.test'
+import CounterJsunit from './CounterTest/CounterJsunit.test'
+import datalPanelUIJsunit from './DataPanelTest/datalPanelUIJsunit.test'
+import datapanel from './DataPanelTest/datapanel'
+import DataPanelJsunit from './DataPanelTest/DataPanelJsunit.test'
+import gauge1 from './gaugeTest/gauge1.test'
+import gauge3Jsunit from './gaugeTest/gauge3Jsunit.test'
+import GaugeJsunit from './gaugeTest/GaugeJsunit.test'
+import gaugeux from './gaugeTest/gaugeux.test'
+import loadingProgress from './LoadingProgressTest/loadingProgress.test'
+import PatternLockJsunit from './patternLockTest/PatternLockJsunit.test'
+import QrCode3Jsunit from './QrcodeTest/QrCode3Jsunit.test'
+import QrcodeJsunit from './QrcodeTest/QrcodeJsunit.test'
+import QRCodeUIJsunit from './QrcodeTest/QRCodeUIJsunit.test'
+import SearchJsunit from './SearchTest/SearchJsunit.test'
 export default function testsuite() {
-  badgeTest();
-  badgeJsunit();
-  loadingProgressCircularJsunit();
-  searchJsunit();
+  advancedCounter()
+  badge()
+  Badge3Jsunit()
+  BadgeJsunit()
+  CounterComponentTest()
+  CounterEnable()
+  CounterJsunit()
+  datalPanelUIJsunit()
+  datapanel()
+  DataPanelJsunit()
+  gauge1()
+  gauge3Jsunit()
+  GaugeJsunit()
+  gaugeux()
+  loadingProgress()
+  PatternLockJsunit()
+  QrCode3Jsunit()
+  QrcodeJsunit()
+  QRCodeUIJsunit()
+  SearchJsunit()
 }

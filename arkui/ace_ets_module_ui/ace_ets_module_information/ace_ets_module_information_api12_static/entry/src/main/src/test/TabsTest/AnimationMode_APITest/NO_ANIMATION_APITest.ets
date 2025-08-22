@@ -12,36 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 export default function NO_ANIMATION_APITest() {
   describe('NO_ANIMATION_APITest', () => {
     beforeAll(() => {
-      console.info("NO_ANIMATION_APITest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("NO_ANIMATION_APITest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       console.info("NO_ANIMATION_APITest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/AnimationMode_API/NO_ANIMATION",
@@ -53,6 +47,7 @@ export default function NO_ANIMATION_APITest() {
         console.info("get NO_ANIMATION_APITest state pages: " + JSON.stringify(pages));
         if (!("ListMainChildren" == pages.name)) {
           console.info("get NO_ANIMATION_APITest state pages.name: " + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -61,22 +56,21 @@ export default function NO_ANIMATION_APITest() {
         expect().assertFail();
       }
     });
-    /**
-     * @tc.number NO_ANIMATION
-     * @tc.name NO_ANIMATION_APITest_static_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   NO_ANIMATION_APITest_static_0100
+     * @tc.name     NO_ANIMATION_APITest_static_0100
+     * @tc.desc     NO_ANIMATION_APITest_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('NO_ANIMATION_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('NO_ANIMATION_APITest_static_0100 START');
+it('NO_ANIMATION_APITest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('NO_ANIMATION_APITest_0100 START');
       await CommonFunc.sleep(1000);
       let NO_ANIMATION = inspector.getInspectorByKey('NO_ANIMATION');
-      console.info("[NO_ANIMATION_APITest_static_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(NO_ANIMATION).getElement('$attrs')));
-      expect(JSON.parseJsonElement(NO_ANIMATION).getElement('$attrs').getString('animationMode')).assertEqual('AnimationMode.NO_ANIMATION');
-      console.info('[NO_ANIMATION_APITest_static_0100] END');
+      console.info("[NO_ANIMATION_APITest_0100] Tabs animationMode attrs is: " +
+      JSON.stringify(JSON.parseJsonElement(NO_ANIMATION).getElement('$attr')));
+      expect(JSON.parseJsonElement(NO_ANIMATION).getElement('$attr').getString('animationMode')).assertEqual('AnimationMode.NO_ANIMATION');
+      console.info('[NO_ANIMATION_APITest_0100] END');
       done();
     });
   })

@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct ReplaceDestination1 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide({alias:'pageInfos'}) pageInfos: NavPathStack = new NavPathStack()
   @State code100006: string = '';
 
   @Builder
@@ -44,64 +44,64 @@ struct ReplaceDestination1 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Text(this.code100006).id('id06').height('5%')
         Button('push pageTwo').id('pageOneId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination({name: 'pageTwo'})
-          //   .then(() => {
-          //     console.log('[replaceDestination pageOne] success')
-          //   })
-          //   .catch((error: BusinessError) => {
-          //     this.code100006 = error.code + '';
-          //     console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
-          //   })
+          this.pageInfos.replaceDestination(new NavPathInfo('pageTwo',null))
+            .then(() => {
+              console.log('[replaceDestination pageOne] success')
+            })
+            .catch((error: Error) => {
+              this.code100006 = error.code + '';
+              console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
+            })
         }).height('10%')
 
         Button('push undefined').id('undefinedId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination(undefined)
-          //   .then(() => {
-          //     console.log('[replaceDestination pageOne] success')
-          //   })
-          //   .catch((error: BusinessError) => {
-          //     this.code100006 = error.code + '';
-          //     console.log(`[replaceDestination undefined] failed, error code ${error.code}`)
-          //   })
+          this.pageInfos.replaceDestination(new NavPathInfo('',null))
+            .then(() => {
+              console.log('[replaceDestination pageOne] success')
+            })
+            .catch((error: Error) => {
+              this.code100006 = error.code + '';
+              console.log(`[replaceDestination undefined] failed, error code ${error.code}`)
+            })
         }).height('10%')
 
         Button('push null').id('nullId').onClick((e: ClickEvent) => {
           console.log(`[replaceDestination null`)
-          // this.pageInfos.replaceDestination(null)
-          //   .then(() => {
-          //     console.log('[replaceDestination pageOne] success')
-          //   })
-          //   .catch((error: BusinessError) => {
-          //     this.code100006 = error.code + '';
-          //     console.log(`[replaceDestination null] failed, error code ${error.code}`)
-          //   })
+          this.pageInfos.replaceDestination(new NavPathInfo('',null))
+            .then(() => {
+              console.log('[replaceDestination pageOne] success')
+            })
+            .catch((error: Error) => {
+              this.code100006 = error.code + '';
+              console.log(`[replaceDestination null] failed, error code ${error.code}`)
+            })
         }).height('10%')
 
         Button('replace pageOne').id('replaceId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination({name: 'pageOne'} )
-          //   .then(() => {
-          //     console.log('[replaceDestination pageOne] success')
-          //   })
-          //   .catch((error: BusinessError) => {
-          //     this.code100006 = error.code + '';
-          //     console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
-          //   })
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null))
+            .then(() => {
+              console.log('[replaceDestination pageOne] success')
+            })
+            .catch((error: Error) => {
+              this.code100006 = error.code + '';
+              console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
+            })
         }).height('10%')
 
         Button('push pageOne').id('pushId').onClick((e: ClickEvent) => {
-          // this.pageInfos.pushPath({name: 'pageOne'} )
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',null) )
         }).height('10%')
       }
       .width('100%')
       .height('100%')
-    // }
-    // .title('Title')
-    // .titleMode(NavigationTitleMode.Mini)
-    // .navDestination(this.pageMap)
+    }
+    .title('Title')
+    .titleMode(NavigationTitleMode.Mini)
+    .navDestination(this.pageMap)
   }
 }
 
@@ -113,7 +113,6 @@ struct PageOne {
     NavDestination() {
       Text(String(this.stacks)).id('stackId').height('5%')
       Button('push pageThree').id('pushThreeId').onClick((e: ClickEvent) => {
-        // this.pageInfos.pushPath({name: 'pageThree'} )
         this.pageInfos.pushPath(new NavPathInfo('pageThree',null) )
       }).height('10%')
       Button('clear').id('clearId').onClick((e: ClickEvent) => {
@@ -136,7 +135,7 @@ struct PageThree {
     NavDestination() {
       Text('This is page three')
       Button('push pageFour').id('pushFourId').onClick((e: ClickEvent) => {
-        // this.pageInfos.pushPath({name: 'pageFour'}, {launchMode: LaunchMode.STANDARD} )
+        
         this.pageInfos.pushPath(new NavPathInfo('pageFour',null),{launchMode: LaunchMode.STANDARD} )
       }).height('10%')
     }
@@ -155,11 +154,11 @@ struct PageFour {
     NavDestination() {
       Column({space: '5vp'} as ColumnOptions) {
         Button('LaunchModeMoveTOTopSingleton').id('moveId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination({ name: 'pageOne' }, { launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true })
+          
           this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
         }).height('10%')
         Button('LaunchModePopToSingleton').id('popId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination({ name: 'pageOne' }, { launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined })
+          
           this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
         }).height('10%')
       }

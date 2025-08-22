@@ -12,31 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Badge,
-  Button,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  BadgePosition,
-  ClickEvent,
-  BadgeStyle,
-  BadgeParamWithString,
-  Color,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Flex, BadgeParamWithNumber, FlexDirection, Scroll, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -62,12 +39,11 @@ struct badge {
             .fontSize(50)
             .fontWeight(FontWeight.Bold)
           Badge({
-            // count: this.counts,
+            count: this.counts,
             position: BadgePosition.Right,
-            // maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
-            value: 'undefined'
-          } as BadgeParamWithString) {
+            maxCount: 99,
+            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+          } as BadgeParamWithNumber) {
             Button('message')
               .onClick((e: ClickEvent) => {
                 this.counts++
@@ -80,12 +56,11 @@ struct badge {
 
           Text("BadgePosition.RightTop").fontSize(16)
           Badge({
-            // count: this.counts,
+            count: this.counts,
             position: BadgePosition.RightTop,
-            // maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: '16', badgeSize: '20', badgeColor: Color.Red } as BadgeStyle,
-            value: 'undefined'
-          } as BadgeParamWithString) {
+            maxCount: 99,
+            style: { color: 0xFFFFFF, fontSize: '16', badgeSize: '20', badgeColor: Color.Red }
+          } as BadgeParamWithNumber) {
             Button('message')
               .onClick((e: ClickEvent) => {
                 this.counts++
@@ -98,12 +73,11 @@ struct badge {
 
           Text("BadgePosition.Left").fontSize(16)
           Badge({
-            // count: this.counts,
+            count: this.counts,
             position: BadgePosition.Left,
-            // maxCount: 99,
-            style: { color: Color.Pink, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
-            value: 'undefined'
-          } as BadgeParamWithString) {
+            maxCount: 99,
+            style: { color: Color.Pink, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+          } as BadgeParamWithNumber) {
             Button('message')
               .onClick((e: ClickEvent) => {
                 this.counts++

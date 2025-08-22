@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,23 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavDestinationInfo,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationCommonTitle,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, ColumnOptions, ClickEvent, NavigationTitleMode, Text, Color,
+  NavigationMode, NavDestination, NavPathInfo, BarStyle, Stack, StackOptions, BlurStyle, Row, Image, Margin, Alignment, $r, Resource,
+  NavigationCustomTitle, NavDestinationCustomTitle
+} from '@ohos.arkui.component'
+import { State, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct NavigationCustomTitlePage {
-  // @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
+  @Provide({alias: 'navPathStack' }) navPathStack: NavPathStack = new NavPathStack();
   @Builder
   pageMap(name: string) {
     if (name == 'navDes') {
@@ -43,22 +36,22 @@ struct NavigationCustomTitlePage {
     }
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
-       AppStorage.setOrCreate<number>('customTitle', 14);
+       AppStorage.setOrCreate('customTitle', 14);
     })
   }
 
   build() {
-    // Navigation(this.navPathStack){
-    //   Column() {
-    //     Button('push').onClick((e: ClickEvent) => {
-    //       this.navPathStack.pushPathByName('navDes', null);
-    //     })
-    //   }
-    // }
-    // .title({builder: this.NavigationTitle, height: '50%'})
-    // .titleMode(NavigationTitleMode.Mini)
-    // .mode(NavigationMode.Stack)
-    // .navDestination(this.pageMap)
+    Navigation(this.navPathStack){
+      Column() {
+        Button('push').onClick((e: ClickEvent) => {
+          this.navPathStack.pushPathByName('navDes', null);
+        })
+      }
+    }
+    .title({builder: this.NavigationTitle, height: '50%'} as NavigationCustomTitle)
+    .titleMode(NavigationTitleMode.Mini)
+    .mode(NavigationMode.Stack)
+    .navDestination(this.pageMap)
   }
 }
 
@@ -74,7 +67,7 @@ struct PageNavDestination {
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
        this.num = 15;
-       AppStorage.setOrCreate<number>('customNavTitle', 15);
+       AppStorage.setOrCreate('customNavTitle', 15);
     })
   }
 
@@ -82,6 +75,6 @@ struct PageNavDestination {
     NavDestination(){
       Text(this.num + '');
     }
-    // .title({builder: this.NavDesTitle, height: '50%'} as NavDestinationCommonTitle)
+    .title({builder: this.NavDesTitle, height: '50%'} as NavDestinationCustomTitle)
   }
 }

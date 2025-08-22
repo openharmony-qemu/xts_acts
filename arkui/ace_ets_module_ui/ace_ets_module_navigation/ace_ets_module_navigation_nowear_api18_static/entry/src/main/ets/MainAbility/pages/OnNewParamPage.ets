@@ -19,7 +19,7 @@ class NavParam {
 @Component
 struct OnNewParamPage {
   @Provide stack: NavPathStack = new NavPathStack()
-  // @Provide('paramString') paramString: string = ''
+
 
   @Builder
   pageMap(name: string) {
@@ -61,12 +61,12 @@ struct OnNewParamPage {
   build() {
     Column() {
       Column() {
-        // Text(this.paramString).id('paramId').height('10%')
+  
       }
       Navigation(this.stack) {
         Button('pushPath pageOne')
           .onClick((e:ClickEvent) => {
-            // this.stack.pushPath({name: 'pageOne'})
+  
           })
           .id('pushId')
           .height('10%')
@@ -104,7 +104,7 @@ struct lifeCyclePush {
 
   aboutToAppear(): void {
     if (this.pushLifeCycle === 'aboutToAppear' && this.targetName !== '__NA__') {
-      // this.stack.pushPath({name: this.targetName, param: new NavParam('aboutToAppear ' + this.targetName + ' ' + this.launchModeToString(this.targetLaunchMode))}, {launchMode: this.targetLaunchMode})
+
     }
   }
 
@@ -149,25 +149,25 @@ struct NavBody {
     Column() {
       Button('STANDARD')
         .onClick((e:ClickEvent) => {
-          // this.stack.pushPath({name: 'pageOne', param: new NavParam('push pageOne STANDARD')}, {launchMode: LaunchMode.STANDARD})
+
         })
         .id('standardId')
         .height('10%')
       Button('NEW_INSTANCE')
         .onClick((e:ClickEvent) => {
-          // this.stack.pushPath({name: 'pageOne', param: new NavParam('push pageOne NEW_INSTANCE')}, {launchMode: LaunchMode.NEW_INSTANCE})
+
         })
         .id('instanceId')
         .height('10%')
       Button('MOVE_TO_TOP_SINGLETON')
         .onClick((e:ClickEvent) => {
-          // this.stack.pushPath({name: 'pageOne', param: new NavParam('MOVE_TO_TOP_SINGLETON')}, {launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON})
+
         })
         .id('moveId')
         .height('10%')
       Button('POP_TO_SINGLETON')
         .onClick((e:ClickEvent) => {
-          // this.stack.pushDestination({name: 'pageOne', param: 10 }, {launchMode: LaunchMode.POP_TO_SINGLETON})
+ 
         })
         .id('popId')
         .height('10%')

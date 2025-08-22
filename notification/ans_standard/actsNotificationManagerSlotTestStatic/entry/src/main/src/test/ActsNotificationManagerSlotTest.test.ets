@@ -295,7 +295,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1200
      * @tc.desc      : Get the UNKNOWN_TYPE type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1200 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1200 START')
@@ -324,7 +324,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1300
      * @tc.desc      : Get the SOCIAL_COMMUNICATION type slot without add
      */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1300 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1300 START')
@@ -353,7 +353,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1400
      * @tc.desc      : Get the SERVICE_INFORMATION type slot without add
      */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1400 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1400 START')
@@ -382,7 +382,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1500
      * @tc.desc      : Get the CONTENT_INFORMATION type slot without add
      */
-    //问题单号：DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1500 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_1500 START')
@@ -411,7 +411,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1600
      * @tc.desc      : Get the OTHER_TYPES type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1600 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1600 START')
@@ -436,7 +436,7 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
 
-    //问题单号:DTS2025060627133
+    
     /*
      * @tc.number    : Sub_Notification_Ans_Slot_GetSlot_Static_1700
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1700
@@ -463,7 +463,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1800
      * @tc.desc      : Get the SOCIAL_COMMUNICATION type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1800 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1800 START')
@@ -484,7 +484,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_1900
      * @tc.desc      : Get the SERVICE_INFORMATION type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1900',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1900 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_1900 START')
@@ -506,7 +506,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_2000
      * @tc.desc      : Get the CONTENT_INFORMATION type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2000 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_2000 START')
@@ -527,7 +527,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_GetSlot_Static_2100
      * @tc.desc      : Get the OTHER_TYPES type slot without add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2100 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_2100 START')
@@ -1229,7 +1229,7 @@ export default function ActsNotificationManagerSlotTest() {
      * @tc.name      : Sub_Notification_Ans_Slot_CreateSlot_Static_1700
      * @tc.desc      : Get the Different type slot after add
      */
-    //问题单号:DTS2025060627133
+    
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1700 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1700 START')
@@ -1566,7 +1566,7 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
 
-    //DTS2025060627133
+    
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900
      * @tc.name      : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900
@@ -1587,7 +1587,7 @@ export default function ActsNotificationManagerSlotTest() {
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_4900 END')
     // })
 
-    //DTS2025060627133
+    
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5000
      * @tc.name      : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5000
@@ -1608,7 +1608,7 @@ export default function ActsNotificationManagerSlotTest() {
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5000 END')
     // })
 
-    //DTS2025060627133
+    
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5100
      * @tc.name      : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5100
@@ -1629,7 +1629,7 @@ export default function ActsNotificationManagerSlotTest() {
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5100 END')
     // })
 
-    //DTS2025060627133
+    
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200
      * @tc.name      : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200
@@ -1650,7 +1650,7 @@ export default function ActsNotificationManagerSlotTest() {
     //   console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5200 END')
     // })
 
-    //DTS2025060627133
+    
     /*
      * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5300
      * @tc.name      : SUB_NOTIFICATION_ANS_MANAGER_SLOT_TEST_Static_5300

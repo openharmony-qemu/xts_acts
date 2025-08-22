@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -51,7 +51,7 @@ export default function textJsunit() {
         if (!("text" == pages.name)) {
           console.info("get text state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(1000);
+         await UtilsTest.msSleep(1000);
         }
       } catch (err) {
         console.error("push text page error: " + err);
@@ -474,7 +474,7 @@ export default function textJsunit() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('text1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textTest_static_0011 component is: " + JSON.stringify(objNew.getElement('$attrs')));

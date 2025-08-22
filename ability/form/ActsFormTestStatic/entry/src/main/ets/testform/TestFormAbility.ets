@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag TestFormAbility';
 
 class TestFormAbility extends UIAbility {

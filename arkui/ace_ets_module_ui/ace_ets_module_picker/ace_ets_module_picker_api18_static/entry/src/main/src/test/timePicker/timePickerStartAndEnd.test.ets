@@ -51,9 +51,8 @@ export default function TimePickerStartAndEnd() {
         if (!('timePickerStartAndEnd' == pages.name)) {
           console.info('get TimePickerAddApi pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
           await Utils.sleep(2500);
-          // console.info('push TimePickerAddApi page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TimePickerAddApi page error:' + err);
@@ -61,13 +60,14 @@ export default function TimePickerStartAndEnd() {
       console.info('TimePickerAddApi beforeEach end');
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_001
-     * @tc.name  : TimePickerStartAndEnd_static_001
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_001
+     * @tc.name     TimePickerStartAndEnd_static_001
+     * @tc.desc     TimePickerStartAndEnd_static_001
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
@@ -79,13 +79,14 @@ export default function TimePickerStartAndEnd() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_002
-     * @tc.name  : TimePickerStartAndEnd_static_002
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_002
+     * @tc.name     TimePickerStartAndEnd_static_002
+     * @tc.desc     TimePickerStartAndEnd_static_002
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker');
@@ -97,13 +98,14 @@ export default function TimePickerStartAndEnd() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_003
-     * @tc.name  : TimePickerStartAndEnd_static_003
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_003
+     * @tc.name     TimePickerStartAndEnd_static_003
+     * @tc.desc     TimePickerStartAndEnd_static_003
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
@@ -115,13 +117,14 @@ export default function TimePickerStartAndEnd() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_004
-     * @tc.name  : TimePickerStartAndEnd_static_004
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_004
+     * @tc.name     TimePickerStartAndEnd_static_004
+     * @tc.desc     TimePickerStartAndEnd_static_004
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker2');
@@ -133,13 +136,14 @@ export default function TimePickerStartAndEnd() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_005
-     * @tc.name  : TimePickerStartAndEnd_static_005
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_005
+     * @tc.name     TimePickerStartAndEnd_static_005
+     * @tc.desc     TimePickerStartAndEnd_static_005
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');
@@ -151,13 +155,14 @@ export default function TimePickerStartAndEnd() {
       done();
     });
 
-    /**
-     * @tc.number: TimePickerStartAndEnd_static_006
-     * @tc.name  : TimePickerStartAndEnd_static_006
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    
+    
+    
+    /*
+     * @tc.number   TimePickerStartAndEnd_static_006
+     * @tc.name     TimePickerStartAndEnd_static_006
+     * @tc.desc     TimePickerStartAndEnd_static_006
+     * @tc.level    Level.LEVEL1
      */
     it('TimePickerStartAndEnd_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('TimePicker3');

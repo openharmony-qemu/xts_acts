@@ -122,9 +122,9 @@ export default function AtomicsAPITest() {
         expect(oldValue5).assertEqual(10);
         expect(typedArray[4]).assertEqual(-2147483639);
         
-        const oldValue6 = Atomics.add(typedArray, 5, MAX_INT + 1);
+        const oldValue6 = Atomics.add(typedArray, 5, Int.MIN_VALUE);
         expect(oldValue6).assertEqual(10);
-        expect(typedArray[5]).assertEqual(-2147483638);
+        expect(typedArray[5]).assertEqual(Int.MIN_VALUE);
         
       } catch (error) {
         console.error(`${caseName} Test failed: ${error}`);

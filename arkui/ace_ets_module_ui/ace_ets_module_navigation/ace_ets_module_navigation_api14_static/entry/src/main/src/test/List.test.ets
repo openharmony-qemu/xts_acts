@@ -12,28 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import SafeAreaPadding from './BarStyleTest/SafeAreaPadding.test'
-// import MultiNavigationTest from './MultiNavigation/MultiNavigationTest.test'
-import NavigationEnableDragBar from './EnableDragBarTest/NavigationEnableDragBar.test'
-import NavigationBindToScrollable from './BindToScrollable/NavigationBindToScrollable.test'
 import NavigationBindToNestedScrollable from './BindToScrollable/NavigationBindToNestedScrollable.test'
+import NavigationBindToScrollable from './BindToScrollable/NavigationBindToScrollable.test'
+import NavigationEnableDragBar from './EnableDragBarTest/NavigationEnableDragBar.test'
+import MultiNavigationTest from './MultiNavigation/MultiNavigationTest.test'
+import MultiEntry from './MultiNavigation/MultiEntry.test'
 import Recoverable from './Navigation/Recoverable.test'
-import SystemTransition from './Navigation/SystemTransition.test'
 import RouterRecoverable from './Navigation/RouterRecoverable.test'
 import RouterRecoverable2 from './Navigation/RouterRecoverable2.test'
+import SystemTransition from './Navigation/SystemTransition.test'
 import SystemTransition2 from './Navigation/SystemTransition2.test'
-// import MultiEntry from './MultiNavigation/MultiEntry.test'
+
 
 export default function testsuite() {
-  SafeAreaPadding();
-  // MultiNavigationTest();
-  NavigationEnableDragBar();
-  NavigationBindToScrollable();
-  NavigationBindToNestedScrollable();
-  Recoverable();
-  SystemTransition();
-  RouterRecoverable();
-  SystemTransition2();
-  // MultiEntry();
+  SafeAreaPadding()
+  NavigationBindToNestedScrollable()
+  NavigationBindToScrollable()
+  NavigationEnableDragBar()
+  MultiNavigationTest()
+  MultiEntry()
+  Recoverable()
+  RouterRecoverable()
+  RouterRecoverable2()
+  SystemTransition()
+  SystemTransition2()
+
+
 }

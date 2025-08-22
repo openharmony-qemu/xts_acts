@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -53,7 +53,7 @@ export default function textpickerJsunit() {
         if (!("textPicker" == pages.name)) {
           console.info("get textpicker state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(2000);
+         await UtilsTest.msSleep(2000);
         }
       } catch (err) {
         console.error("push textpicker page error: " + err);
@@ -169,7 +169,7 @@ export default function textpickerJsunit() {
       let strJson1 = inspector.getInspectorByKey('textPickerDefault1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ArkUI_textpicker_static_001] obj1:" + JSON.stringify(obj1.getElement('$attrs')));
-      //得到json值与 设置不一致，与原生json返回做对比验证
+      
       expect(JSON.stringify(obj.getElement('$attrs').getString('selectedIndex'))).assertEqual(JSON.stringify(obj1.getElement('$attrs').getString('selectedIndex')));
       done();
     });
@@ -187,7 +187,7 @@ export default function textpickerJsunit() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await Utils.sleep(2000)
+     await UtilsTest.msSleep(2000)
       let strJson = inspector.getInspectorByKey('textPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_textpicker_static_011] obj:" + JSON.stringify(obj.getElement('$attrs')));

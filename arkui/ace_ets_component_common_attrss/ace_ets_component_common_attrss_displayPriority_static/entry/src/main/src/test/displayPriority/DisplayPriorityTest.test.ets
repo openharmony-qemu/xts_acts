@@ -136,15 +136,7 @@ export default function displayPriorityTest() {
       displayPriority: 4.0
     }
   },
-    //    {
-    //    describe: 'SetDecimal',
-    //    setValue: {
-    //      displayPriority: 2.9,
-    //    },
-    //    expectValue: {
-    //      displayPriority: 2.0
-    //    }
-    //  },
+
     {
       describe: 'SetPriority',
       setValue: {
@@ -190,8 +182,7 @@ export default function displayPriorityTest() {
           console.info('[' + data.caseTag + '] compareTwoButtonRect.right is:' + compareTwoButtonRect.right);
           expect(data.viewObj!.getElement('$attrs').getString('displayPriority')).assertEqual(data.testValue.expectValue.displayPriority);
           expect(compareTwoButtonRect.left).assertEqual(parentRect.left);
-          // expect(Math.abs((compareTwoButtonRect.right - compareTwoButtonRect.left)- uiContext.vp2px(compareTwoButtonWidth)) <= 1).assertTrue();
-        } else if (data.testValue.describe == 'SetPriority') {
+          } else if (data.testValue.describe == 'SetPriority') {
           //Check whether the position of the reference component is correct
           let compareOneButtonComponent = Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
           console.info('[' + data.caseTag + '] data.testValue.describe is:' + data.testValue.describe);
@@ -205,8 +196,7 @@ export default function displayPriorityTest() {
           expect(compareOneButtonComponent.getElement('$attrs').getString('displayPriority'))
             .assertEqual(data.testValue.expectValue.compareOneButtonDisplayPriority);
           expect(compareTwoButtonRect.left).assertEqual(parentRect.left);
-          // expect(Math.abs((compareTwoButtonRect.right - compareTwoButtonRect.left)- uiContext.vp2px(compareTwoButtonWidth)) <= 1).assertTrue();
-        } else {
+         } else {
           console.info('[' + data.caseTag + '] data.testValue.describe is error:' + data.testValue.describe);
         }
       } else if (data.pageConfig.containerView == 'Column') {
@@ -231,7 +221,7 @@ export default function displayPriorityTest() {
           console.info('[' + data.caseTag + '] compareTwoButtonRect.bottom is:' + compareTwoButtonRect.bottom);
           expect(data.viewObj!.getElement('$attrs').getString('displayPriority')).assertEqual(data.testValue.expectValue.displayPriority);
           expect(compareTwoButtonRect.top).assertEqual(parentRect.top);
-          // expect(Math.abs((compareTwoButtonRect.bottom - compareTwoButtonRect.top)- uiContext.vp2px(compareTwoButtonHeight)) <= 1).assertTrue();
+
         } else if (data.testValue.describe == 'SetPriority') {
           //Check whether the position of the reference component is correct
           let compareOneButtonComponent = Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
@@ -246,7 +236,7 @@ export default function displayPriorityTest() {
             .assertEqual(data.testValue.expectValue.compareOneButtonDisplayPriority);
           expect(data.viewObj!.getElement('$attrs').getString('displayPriority')).assertEqual(data.testValue.expectValue.displayPriority);
           expect(compareTwoButtonRect.top).assertEqual(parentRect.top);
-          // expect(Math.abs((compareTwoButtonRect.bottom - compareTwoButtonRect.top)- uiContext.vp2px(compareTwoButtonHeight)) <= 1).assertTrue();
+
         } else {
           console.info('[' + data.caseTag + '] data.testValue.describe is error:' + data.testValue.describe);
         }

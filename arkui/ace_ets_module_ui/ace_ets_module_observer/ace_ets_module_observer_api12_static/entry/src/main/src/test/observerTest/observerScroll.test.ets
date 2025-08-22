@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,25 +50,23 @@ export default function observerScrollTest() {
         console.info("get observerScrollTest state pages: " + JSON.stringify(pages));
         if (!("observerScroll" == pages.name)) {
           console.info("get observerScrollTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push observerScrollTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push observerScrollTest page error: " + err);
         expect().assertFail();
       }
     });
-    /**
-     * @tc.number    ListScroll
-     * @tc.name      observerScrollTest_static_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   observerScrollTest_static_0100
+     * @tc.name     observerScrollTest_static_0100
+     * @tc.desc     observerScrollTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('observerScrollTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('observerScrollTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('observerScrollTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

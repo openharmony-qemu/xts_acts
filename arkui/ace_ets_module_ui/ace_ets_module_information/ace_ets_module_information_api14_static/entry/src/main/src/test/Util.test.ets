@@ -1,13 +1,14 @@
+
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let domain: Int= 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'ActsAceEtsModuleLayoutApi18StaticTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: Int = 0x0000;
+let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
+  static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
-
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -32,7 +33,6 @@ class UtilsTest{
     }
   }
 }
-
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);

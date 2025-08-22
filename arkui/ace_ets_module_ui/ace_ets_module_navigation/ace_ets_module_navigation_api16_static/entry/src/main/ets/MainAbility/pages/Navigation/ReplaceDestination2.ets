@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct ReplaceDestination2 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Consume('pageInfos') pageInfos: NavPathStack = new NavPathStack()
   @State code100005: string = '';
 
   @Builder
@@ -40,24 +40,24 @@ struct ReplaceDestination2 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    
       Column({space: '5vp'} as ColumnOptions) {
         Text(this.code100005).id('id05')
         Button('push pageOne').id('pageTwoId').onClick((e: ClickEvent) => {
-          // this.pageInfos.replaceDestination({name: 'pageOne'})
-          //   .then(() => {
-          //     console.log('[replaceDestination pageOne] success')
-          //   })
-          //   .catch((error: BusinessError) => {
-          //     this.code100005 = error.code + '';
-          //     console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
-          //   })
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null))
+            .then(() => {
+              console.log('[replaceDestination pageOne] success')
+            })
+            .catch((error: Error) => {
+              this.code100005 = error.code + '';
+              console.log(`[replaceDestination pageOne] failed, error code ${error.code}`)
+            })
         })
       }
       .width('100%')
       .height('100%')
-    // }
-    // .title('Title')
+    
+    
   }
 }
 

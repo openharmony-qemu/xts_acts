@@ -51,10 +51,10 @@ export default function stepperInterface006() {
         console.info("get stepperInterface006 state success " + JSON.stringify(pages));
         if (!("stepperInterface006" == pages.name)) {
           console.info("get stepperInterface006 state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
+
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          // console.info("push stepperInterface006 page success " + JSON.stringify(result));
+
         }
       } catch (err) {
         console.error("push stepperInterface006 page error: " + err);

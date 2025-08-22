@@ -27,6 +27,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -44,7 +45,6 @@ export default function toggleJsunit() {
 
   describe('toggleTest', () => {
     beforeAll(() => {
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -59,13 +59,11 @@ export default function toggleJsunit() {
         url: 'MainAbility/pages/Toggle/Toggle',
       };
       try {
-        const toggle = AppStorage.get<Router>("router") as Router
-        let pages:router.RouterState = toggle.getState();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        let pages:router.RouterState = routerInstance.getState();
         console.info("[toggleTest] current page is: " + JSON.stringify(pages.name));
         if (!('Toggle' == pages.name)) {
-          // let result = await toggle.pushUrl(options);
-          toggle.pushUrl(options);
-          // console.info("push toggle page success " + JSON.stringify(result));
+          routerInstance.pushUrl(options);
         }
       } catch (err) {
         console.info("push toggle page page error " + JSON.stringify(err));
@@ -83,10 +81,13 @@ export default function toggleJsunit() {
       await sleep(1)
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1640
-     * @tc.name testToggle010_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle010_static
+     * @tc.name     testToggle010_static
+     * @tc.desc     testToggle010_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle010 START');
@@ -102,10 +103,13 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1650
-     * @tc.name testToggle020_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle020_static
+     * @tc.name     testToggle020_static
+     * @tc.desc     testToggle020_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle020 START');
@@ -119,10 +123,13 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1660
-     * @tc.name testToggle030_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle030_static
+     * @tc.name     testToggle030_static
+     * @tc.desc     testToggle030_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle030_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle030 START');
@@ -136,10 +143,13 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1670
-     * @tc.name testToggle040_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle040_static
+     * @tc.name     testToggle040_static
+     * @tc.desc     testToggle040_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle040_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle040 START');
@@ -153,10 +163,13 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1680
-     * @tc.name testToggle050_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle050_static
+     * @tc.name     testToggle050_static
+     * @tc.desc     testToggle050_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle050_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle050 START');
@@ -170,10 +183,13 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1690
-     * @tc.name testToggle060_static
-     * @tc.desc aceEtsTest
+
+
+    /*
+     * @tc.number   testToggle060_static
+     * @tc.name     testToggle060_static
+     * @tc.desc     testToggle060_static
+     * @tc.level    Level.LEVEL1
      */
     it('testToggle060_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle060 START');

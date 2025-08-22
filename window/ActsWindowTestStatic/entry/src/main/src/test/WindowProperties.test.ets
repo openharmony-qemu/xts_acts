@@ -250,7 +250,7 @@ export default function WindowPropertiesTest() {
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
             try {
-                await (win as window.Window).setWindowColorSpace(window.ColorSpace.WIDE_GAMUT).then(() => {
+                await (win as window.Window).setWindowColorSpace(window.ColorSpace.DEFAULT).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting window colorspace.');
                     expect().assertFail();
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
@@ -440,6 +440,731 @@ export default function WindowPropertiesTest() {
                 }
             }
         })
+        /**
+         * @tc.number     : testOnDisplayIdChangeErrCode1300002_0100
+         * @tc.name       : testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.desc       : testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOnDisplayIdChangeErrCode1300002_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.on('displayIdChange', (id) => {
+                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
+                });
+                hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
+                expect().assertFail();
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect(exception.code == 1300002 || exception.code == 801).assertTrue();
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number     : testOffDisplayIdChangeErrCode1300002_0100
+         * @tc.name       : testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.desc       : testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOffDisplayIdChangeErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOffDisplayIdChangeErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.off('displayIdChange', (id) => {
+                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
+                });
+                hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
+                expect().assertFail();
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect(exception.code == 1300002 || exception.code == 801).assertTrue();
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.name       : testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc       : testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnWindowVisibilityChangeErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOnWindowVisibilityChangeErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.on("windowVisibilityChange", (res: boolean) => {
+                });
+                hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.name       : testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc       : testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffWindowVisibilityChangeErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let subWin: window.Window
+            windowStage.createSubWindow('testOnWindowVisibilityChangeErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await (subWin! as window.Window).destroyWindow();
+                    try {
+                        subWin!.off("windowVisibilityChange", (res: boolean) => {
+                        });
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
+                        expect().assertFail();
+                        done()
+                    } catch (e:BusinessError) {
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect(err!.code).assertEqual(1300002);
+                    done()
+                });
+
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
+         * @tc.name      : testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
+         * @tc.desc      : Enable this window to listen for status change events
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100';
+                let msgStr: string = 'jsUnittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+                let win: window.Window
+                await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100')
+                    .then((data:window.Window)=>{
+                        win = data;
+                        expect(!!win).assertTrue();
+                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    })
+                    .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(0x0000, '[ANI]',
+                            msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                        expect().assertFail();
+                        done();
+                    });
+                try {
+                    (win as window.Window).off('windowVisibilityChange');
+                    await (win as window.Window).destroyWindow();
+                    expect(true).assertTrue();
+                    done();
+                } catch (exception:BusinessError) {
+                    await (win as window.Window).destroyWindow();
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' +
+                    JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                }
+            });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
+         * @tc.name      : testWindowOffWindowVisibilityChange_RepeatOff_static_0200
+         * @tc.desc      : Enable this window to listen for status change events
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testWindowOffWindowVisibilityChange_RepeatOff_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff_static_0200';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let win: window.Window
+            await windowStage.createSubWindow('testWindowOffWindowVisibilityChange_RepeatOff_static_0200')
+                .then((data:window.Window)=>{
+                    win = data;
+                    expect(!!win).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err:BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',
+                        msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done();
+                });
+            try {
+                (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
+                });
+            } catch (exception:BusinessError) {
+                if (exception!.code != 801) {
+                    hilog.error(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                    expect(exception.code).assertEqual(801);
+                    // done();
+                }
+            }
+            try {
+                (win as window.Window).off('windowVisibilityChange');
+            } catch (exception:BusinessError) {
+                if (exception!.code != 801) {
+                    hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                    expect(exception!.code).assertEqual(801);
+                    // done();
+                }
+            }
+            try {
+                (win as window.Window).off('windowVisibilityChange');
+                await (win as window.Window).destroyWindow();
+                done();
+            } catch (exception:BusinessError) {
+                await (win as window.Window).destroyWindow();
+                console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
+                expect().assertFail();
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
+         * @tc.name      : testWindowVisibilityChange_on_Function_Callback_static_0100
+         * @tc.desc      : window type windowVisibilityChange
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testWindowVisibilityChange_on_Function_Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testWindowVisibilityChange_on_Function_Callback_static_0100";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try {
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass:window.Window = await windowStage.getMainWindow();
+                windowClass.on('windowVisibilityChange', (flag:boolean) => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
+                });
+                expect(true).assertTrue();
+                windowClass.off('windowVisibilityChange');
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(error));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
+         * @tc.name      : testWindowVisibilityChange_off_Function_Callback_static_0200
+         * @tc.desc      : window type windowVisibilityChange
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testWindowVisibilityChange_off_Function_Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testWindowVisibilityChange_off_Function_Callback_static_0200";
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try {
+                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+                let windowClass:window.Window = await windowStage.getMainWindow();
+                windowClass.off('windowVisibilityChange');
+                hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
+                expect(true).assertTrue();
+                done();
+            } catch (error:BusinessError) {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                if (error!.code != 801) {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]','Failed to unreegister callback. Cause: ' + JSON.stringify(error));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                    expect(error!.code).assertEqual(801);
+                    done();
+                }
+            }
+        });
+        /**
+         * @tc.number     : testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.name       : testOnSystemDensityChangeErrCode1300002_static_0100
+         * @tc.desc       : testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOnSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testOnSystemDensityChangeErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOnSystemDensityChangeErrCode1300002_static_0100')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.on("systemDensityChange", (res: number) => {
+                });
+                hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr +'Failed to call on systemDensityChange. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.name       : testOffSystemDensityChangeErrCode1300002_static_0100
+         * @tc.desc       : testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testOffSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName:string = "testOffSystemDensityChangeErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window
+            await windowStage.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect().assertFail();
+                    done()
+                });
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.off("systemDensityChange", (res: number) => {
+                });
+                hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
+                expect().assertFail();
+                done()
+            } catch (e:BusinessError) {
+                hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
+         * @tc.name      : testOnSetCustomDensity1_static_0100
+         * @tc.desc      : off systemDensityChange event
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testOnSetCustomDensity1_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOnSetCustomDensity1_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let g_flag: number = 0
+            let windowClass:window.Window = await windowStage.getMainWindow();
+            const callback1 = (density: Double) => {
+                hilog.info(0x0000, '[ANI]','System density changed, density=' + JSON.stringify(density));
+                g_flag += 1
+                expect(density).assertEqual(2);
+            }
+            const callback2 = (density: Double) => {
+                hilog.info(0x0000, '[ANI]','System density changed, density=' + JSON.stringify(density));
+                g_flag += 1
+                expect(density).assertEqual(2);
+            }
+            try {
+                windowClass.on("systemDensityChange", callback1);
+                windowClass.on("systemDensityChange", callback2);
+                hilog.info(0x0000, '[ANI]', msgStr +`Succeeded on systemDensityChange twice.`);
+                windowClass.off("systemDensityChange");
+                hilog.info(0x0000, '[ANI]', msgStr + `off all systemDensityChange success`);
+            } catch (exception:BusinessError) {
+                hilog.error(0x0000, '[ANI]', msgStr +`Failed to on systemDensityChange. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception!.code == 801) {
+                    hilog.info(0x0000, '[ANI]', msgStr +`Current device not support API:setCustomDensity`);
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+            done();
+        });
+
+
+        // test on/off NoInteractionDetected
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
+         * @tc.name      : testNoInteractionDetected_OnMainWindow_static_0100
+         * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testNoInteractionDetected_OnMainWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testNoInteractionDetected_OnMainWindow_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let mainWin:window.Window = windowStage.getMainWindowSync();
+            expect(!!mainWin).assertTrue();
+            try {
+                mainWin.on('noInteractionDetected', 1, () => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'no interaction in 10s');
+                    mainWin.off('noInteractionDetected');
+                    done();
+                });
+                hilog.info(0x0000, '[ANI]', msgStr +  ' register noInteractionDetected successed');
+            } catch (exception:BusinessError) {
+                if (exception!.code != 801) {
+                    hilog.error(0x0000, '[ANI]', msgStr + `Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
+                    expect().assertFail();
+                    done();
+                } else {
+                    hilog.info(0x0000, '[ANI]', msgStr + JSON.stringify(exception));
+                    hilog.info(0x0000, '[ANI]', msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
+                    expect(exception!.code).assertEqual(801);
+                    done();
+                }
+            }
+            await  Utils.msSleep(800)
+            await  Utils.msSleep(800)
+        })
+
+        /**
+         * @tc.number     : testSetWindowFocusableErrCode1300002_0100
+         * @tc.name       : testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowFocusableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetWindowFocusableErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSetWindowFocusableErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.setWindowFocusable(true, (err: BusinessError | null) => {
+                    hilog.info(domain, tag,msgStr + 'window setWindowFocusable callback err ：' + JSON.stringify(err));
+                    expect(err?.code).assertEqual(1300002);
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowFocusable. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testSetWindowFocusablePromiseErrCode1300002_0100
+         * @tc.name       : testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowFocusablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetWindowFocusablePromiseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSetWindowFocusablePromiseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                await tempWnd.setWindowFocusable(true);
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowFocusable promise. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testSetWindowTouchableErrCode1300002_0100
+         * @tc.name       : testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowTouchableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetWindowTouchableErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSetWindowTouchableErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.setWindowTouchable(true, (err: BusinessError | null) => {
+                    hilog.info(domain, tag,msgStr + 'window setWindowFocusable callback err ：' + JSON.stringify(err));
+                    expect(err?.code).assertEqual(1300002);
+                    done();
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowTouchable. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testSetWindowTouchablePromiseErrCode1300002_0100
+         * @tc.name       : testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.desc       : testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSetWindowTouchablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSetWindowTouchablePromiseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSetWindowTouchablePromiseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                await tempWnd.setWindowTouchable(true);
+                expect().assertFail();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowTouchable promise. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number     : testSnapshotErrCode1300002_0100
+         * @tc.name       : testSnapshotErrCode1300002_static_0100
+         * @tc.desc       : testSnapshotErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSnapshotErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSnapshotErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSnapshotErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.snapshot((err: BusinessError | null, data) => {
+                    hilog.info(domain, tag,msgStr + 'window snapshot callback err ：' + JSON.stringify(err));
+                    expect(err?.code).assertEqual(1300002);
+                    done();
+                });
+                hilog.info(domain, tag,msgStr + 'window after snapshot');
+                expect().assertFail();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to snapshot. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number     : testSnapshotPromiseErrCode1300002_0100
+         * @tc.name       : testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.desc       : testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testSnapshotPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testSnapshotPromiseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testSnapshotPromiseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                await tempWnd.snapshot();
+                hilog.info(domain, tag,msgStr + 'window after snapshot ');
+                expect().assertFail();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to snapshot. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+
+        /**
+         * @tc.number    : SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+         * @tc.name      : testStatusBarContentColor_static_0100
+         * @tc.desc      : test_statusBarContentColor_static_0100
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level2
+         */
+        it('testStatusBarContentColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_statusBarContentColor_static_0100';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            try {
+                let a: window.SystemBarStyle = {
+                    statusBarContentColor: '#ffffff'
+                }
+                hilog.info(0x0000, '[ANI]',msgStr + 'a:'+ JSON.stringify(a));
+                expect(true).assertTrue();
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(0x0000, '[ANI]',msgStr +
+                    `Failed to call statusBarContentColor. Cause code: ${exception!.code}, message: ${exception!.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        });
 
 
     })

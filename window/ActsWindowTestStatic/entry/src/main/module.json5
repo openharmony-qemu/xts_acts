@@ -42,7 +42,23 @@
             ]
           }
         ]
+      },
+      {
+        "name": "StartAbility",
+        "srcEntry": "./ets/entryability/StartAbility.ets",
+        "description": "$string:EntryAbility_label",
+        "icon": "$media:layered_image",
+        "label":"$string:EntryAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "portrait",
       }
+    ],
+    "requestPermissions": [
+      {"name": "ohos.permission.PRIVACY_WINDOW"},
+      {"name": "ohos.permission.SYSTEM_FLOAT_WINDOW"}
     ]
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,38 +31,41 @@ struct Index {
 
   private valueChangeCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("key==> page valueChangeCallBack");
-    // if (eventData.data?.['type'] == "TextPicker" && eventData.data?.['text'] == "true") {
-    //   this.flag = true
-    //   this.canLoop = true
-    //   console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
-    //   console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
-    //   console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-    // }
-    // if (eventData.data?.['type'] == "TextPicker" && eventData.data?.['text'] == "false") {
-    //   this.canLoop = false
-    //   this.flag = true
-    //   console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
-    //   console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
-    //   console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-    // }
-    // if (eventData.data?.['type'] == "TextPicker" && eventData.data?.['text'] == "") {
-    //   this.flag = true
-    // }
-    // if (eventData.data?.['type'] == "TextPicker" && eventData.data?.['text'] == "0") {
-    //   this.flag = false
-    // }
-    // if (eventData.data?.['type'] == "TextPickerErr" && eventData.data?.['text'] == "null") {
-    //   console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-    //   console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
-    //   this.flag = false
-    //   this.errFlag = true
-    // }
-    // if (eventData.data?.['type'] == "TextPickerErr" && eventData.data?.['text'] == "undefined") {
-    //   console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-    //   console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
-    //   this.flag = false
-    //   this.errFlag = false
-    // }
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as ESObject //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "true") {
+        this.flag = true
+        this.canLoop = true
+        console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
+        console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
+        console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      }
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "false") {
+        this.canLoop = false
+        this.flag = true
+        console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
+        console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
+        console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      }
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "") {
+        this.flag = true
+      }
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "0") {
+        this.flag = false
+      }
+      if (data.getProperty('type').toString() == "TextPickerErr" && data.getProperty('text').toString() == "null") {
+        console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+        console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
+        this.flag = false
+        this.errFlag = true
+      }
+      if (data.getProperty('type').toString() == "TextPickerErr" && data.getProperty('text').toString() == "undefined") {
+        console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+        console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
+        this.flag = false
+        this.errFlag = false
+      }
+    }
   }
 
   aboutToAppear() {
@@ -85,16 +88,8 @@ struct Index {
       Column() {
         Image("../../../resources/base/media/icon.png")
           .height(50)
-        // TextPicker({ range: this.fruits, selected: this.select })
-        //   .key("TextPicker")
-        //   .margin({ bottom: 10 } as Margin)
-        //   .canLoop(this.flag ? this.canLoop : (this.errFlag ? null : undefined))
-        //   .onChange((value: string|string[], index: number|number[]):void => {
-        //     console.info('Picker item changed, value: ' + value + ', index: ' + index)
-        //   })
         TextPicker({ range: this.fruits, selected: this.select2 })
           .key("TextPickerErr")
-          //.canLoop(fakeBoolean(this.flag ? "" : 0))
           .onChange((value: string|string[], index: number|number[]):void => {
             console.info('Picker item changed, value: ' + value + ', index: ' + index)
           })
@@ -109,21 +104,7 @@ struct Index {
           .backgroundColor("#ff5e7a80")
           .margin(20)
           .onClick((e:ClickEvent) => {
-            // TextPickerDialog.show({
-            //   range: this.fruits2,
-            //   selected: this.select4,
-            //   canLoop: true,
-            //   onAccept: (value: TextPickerResult) => {
-            //     this.select4 = value.index
-            //     console.info("TextPickerDialog:onAccept()" + JSON.stringify(value))
-            //   },
-            //   onCancel: () => {
-            //     console.info("TextPickerDialog:onCancel()")
-            //   },
-            //   onChange: (value: TextPickerResult) => {
-            //     console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
-            //   }
-            // })
+
           })
       }
       .width('100%')

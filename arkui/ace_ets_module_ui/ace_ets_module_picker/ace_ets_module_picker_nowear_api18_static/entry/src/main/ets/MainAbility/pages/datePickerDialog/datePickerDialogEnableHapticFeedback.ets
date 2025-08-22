@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r} from '@ohos.arkui.component'
+import { Entry, Column, Component, DatePickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -26,7 +25,7 @@ struct DatePickerExample {
       Button('1')
         .margin(20)
         .id('DatePickerDialog1')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
@@ -37,7 +36,7 @@ struct DatePickerExample {
       Button('2')
         .margin(20)
         .id('DatePickerDialog2')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
@@ -48,7 +47,7 @@ struct DatePickerExample {
       Button('3')
         .margin(20)
         .id('DatePickerDialog3')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
@@ -59,12 +58,11 @@ struct DatePickerExample {
       Button('4')
         .margin(20)
         .id('DatePickerDialog4')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
-            // enableHapticFeedback: null,
           })
         })
     }.width('100%')

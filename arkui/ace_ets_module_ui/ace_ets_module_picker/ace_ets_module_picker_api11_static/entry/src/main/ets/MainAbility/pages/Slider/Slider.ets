@@ -70,8 +70,6 @@ struct slider {
           .blockColor('#FFFF0000')
           .selectedColor('#FF0000FF')
           .trackColor('#FF808080')
-          // .minLabel('0')
-          // .maxLabel('100')
           .showTips(false)
           .showSteps(false)
           .onChange((value: number, mode: SliderChangeMode): void => {

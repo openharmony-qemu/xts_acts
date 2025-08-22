@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import CommonEventManager from '@ohos.commonEventManager';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry

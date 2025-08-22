@@ -105,15 +105,11 @@ struct StepperExample {
   }
 
   onPageShow() {
-    // globalThis.value = {
-    //   name:'messageManager',message:this.messageManager
-    // }
     AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager)
 
     let callback = (message: Message) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'index') {
-        // this.currentIndex = message.value as double
       }
     }
     this.messageManager.registerCallback(callback)
@@ -146,15 +142,5 @@ struct StepperExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("stepper page stateChangCallBack" + JSON.stringify(eventData));
-    // if (eventData != null) {
-    //   console.info("stepper page state change called:" + JSON.stringify(eventData));
-    //   if (eventData.data?.currentIndex != null) {
-    //     this.currentIndex = eventData.data.currentIndex;
-    //     console.info("stepper page.." + this.currentIndex);
-    //   }
-    //   if (eventData.data?.disabled != null) {
-    //     this.disabled = eventData.data.disabled;
-    //   }
-    // }
   }
 }

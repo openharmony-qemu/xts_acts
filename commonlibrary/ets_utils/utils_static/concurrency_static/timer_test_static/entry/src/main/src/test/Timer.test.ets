@@ -860,13 +860,13 @@ export default function TimerTest1() {
         const intervalId = setInterval(async () => {
           const start: number = Math.floor(Date.now());
           executionCount++;
-          await Utils.msSleep(executionTime);
+          await Utils.msSleep(executionTime.toInt());
           const currentEnd: number = Math.floor(Date.now());
           if (lastExecutionEnd > 0 && (currentEnd - lastExecutionEnd) > intervalPeriod + 5) {
             isContinuousExecution = false;
           }
           lastExecutionEnd = currentEnd;
-        }, intervalPeriod);
+        }, intervalPeriod.toInt());
 
         setTimeout(() => {
           try {
@@ -900,12 +900,9 @@ export default function TimerTest1() {
       const TAG: string = "TimerTest031";
       console.info(`${TAG} test start`);
       try {
-        // clearInterval();
-        // clearInterval(null);
-        // clearInterval(undefined);
+        clearInterval();
         clearInterval(-1);
         clearInterval(0);
-        // clearInterval(1.1);
       } catch (err: Error) {
         console.error(`${TAG} catch error: code1 =>  message => ${err.message}`);
         expect(false).assertFail();
@@ -913,7 +910,6 @@ export default function TimerTest1() {
       console.info(`${TAG} test end`);
       done();
     });
-
     /**
      * @tc.number SUB_Timer_Test_3200
      * @tc.name TimerTest032

@@ -14,22 +14,7 @@
  */
 
 import { LengthUnit, LengthMetrics } from '@ohos.arkui.node'
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  Color,
-  ClickEvent,
-  PatternLockController,
-  PatternLock,
-  CircleStyleOptions,
-} from '@ohos.arkui.component';
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
+import {Entry, Component, Column, PatternLock, PatternLockController, } from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -52,8 +37,8 @@ struct PatternLockActivateCircleStyleTest1 {
           color: '#FF90EE90',
           radius: new LengthMetrics(16, LengthUnit.VP),
           enableWaveEffect: true
-        } as CircleStyleOptions)
-        .onDotConnect((index: number): void => {
+        })
+        .onDotConnect((index: number) => {
           console.log('onDotConnect index: ' + index)
         })
         .id('PatternLock_activateCircleStyle')

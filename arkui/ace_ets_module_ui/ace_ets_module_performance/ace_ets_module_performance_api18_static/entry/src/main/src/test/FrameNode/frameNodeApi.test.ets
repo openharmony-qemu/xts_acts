@@ -42,11 +42,11 @@ export default function frameNodeApi() {
         console.info("get frameNodeApi state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupOnChangeModifier" == pages.name)) {
           console.info("get frameNodeApi pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push frameNodeApi page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push frameNodeApi page error:" + err);
@@ -59,13 +59,16 @@ export default function frameNodeApi() {
       console.info("frameNodeApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Performance_001
-     * @tc.desc      frameNodeApi_static_0100
-     * @tc.level     Level 3
-     * @tc.type
+    
+    
+
+/*
+     * @tc.number   frameNodeApi_static_0100
+     * @tc.name     frameNodeApi_static_0100
+     * @tc.desc     frameNodeApi_static_0100
+     * @tc.level    Level.LEVEL3
      */
-    it('frameNodeApi_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('frameNodeApi_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('frameNodeApi_static_0100 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('frameNodeApi_Bind'));

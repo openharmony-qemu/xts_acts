@@ -42,7 +42,7 @@ export default function OnActivePage() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.platform.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -72,13 +72,15 @@ export default function OnActivePage() {
     });
 
 
-    /**
-     * @tc.number    OnActivePage_static_0100
-     * @tc.name      OnActivePage_static_0100
-     * @tc.desc      Test NavDestinationActiveReason.OVERLAY in onActive and onInactive
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   OnActivePage_static_0100
+     * @tc.name     OnActivePage_static_0100
+     * @tc.desc     OnActivePage_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('OnActivePage_static_0100',  Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('OnActivePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnActivePage_static_0100 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -116,13 +118,15 @@ export default function OnActivePage() {
       done();
     });
 
-    /**
-     * @tc.number    OnActivePage_static_0200
-     * @tc.name      OnActivePage_static_0200
-     * @tc.desc      Test NavDestinationActiveReason.TRANSITION in onActive and onInactive
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   OnActivePage_static_0200
+     * @tc.name     OnActivePage_static_0200
+     * @tc.desc     OnActivePage_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('OnActivePage_static_0200',  Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('OnActivePage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnActivePage_static_0200 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -155,13 +159,15 @@ export default function OnActivePage() {
       done();
     });
 
-    /**
-     * @tc.number    OnActivePage_static_0300
-     * @tc.name      OnActivePage_static_0300
-     * @tc.desc      Test NavDestinationActiveReason.DIALOG in onActive and onInactive
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   OnActivePage_static_0300
+     * @tc.name     OnActivePage_static_0300
+     * @tc.desc     OnActivePage_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('OnActivePage_static_0300',  Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('OnActivePage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnActivePage_static_0300 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -200,13 +206,15 @@ export default function OnActivePage() {
       done();
     });
 
-    /**
-     * @tc.number    OnActivePage_static_0400
-     * @tc.name      OnActivePage_static_0400
-     * @tc.desc      Test NavDestinationActiveReason.SHEET in onActive and onInactive
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   OnActivePage_static_0400
+     * @tc.name     OnActivePage_static_0400
+     * @tc.desc     OnActivePage_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('OnActivePage_static_0400',  Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('OnActivePage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnActivePage_static_0400 START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -235,13 +243,15 @@ export default function OnActivePage() {
       done();
     });
 
-    /**
-     * @tc.number    OnActivePage_static_0500
-     * @tc.name      OnActivePage_static_0500
-     * @tc.desc      Test NavDestinationActiveReason.CONTENT_COVER in onActive and onInactive
-     * @tc.level     Level 2
+    
+    
+/*
+     * @tc.number   OnActivePage_static_0500
+     * @tc.name     OnActivePage_static_0500
+     * @tc.desc     OnActivePage_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('OnActivePage_static_0500',  Level.LEVEL0,  async (done: () => void): Promise<void> => {
+it('OnActivePage_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('OnActivePage_static_0500 START');
       let driver = Driver.create();
       await driver.delayMs(1000);

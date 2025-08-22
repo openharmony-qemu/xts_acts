@@ -18,15 +18,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State } from '@ohos.arkui.stateManagement'
 import { ColorMetrics } from '@ohos.arkui.node';
 
-// class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
-//   modifierText: string = ""
-//   constructor(text: string) {
-//     this.modifierText = text;
-//   }
-//   applyContent(): WrappedBuilder<[MenuItemConfiguration]> {
-//     return wrapBuilder(MenuItemBuilder)
-//   }
-// }
 
 @Builder
 function MenuItemBuilder(configuration: MenuItemConfiguration) {
@@ -36,7 +27,6 @@ function MenuItemBuilder(configuration: MenuItemConfiguration) {
   .id('selectApi1_row')
   .onClick((e:ClickEvent) => {
     configuration.triggerSelect(configuration.index, configuration.value.toString())
-    // configuration.triggerSelect(configuration.index, configuration.value.valueOf().toString()) Property 'valueOf' does not exist on type 'Resource'
   })
 }
 
@@ -56,7 +46,6 @@ struct selectApi1 {
           .focusBox({
             strokeColor:ColorMetrics.rgba(255,0,0)
           })
-          // .menuItemContentModifier(new MyMenuItemContentModifier("我来自Modifier"))
           .id('selectApi1_Select')
 
       }.alignItems(VerticalAlign.Center).height("50%")

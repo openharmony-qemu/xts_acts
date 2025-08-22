@@ -12,48 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  Margin,
-  Padding,
-  Scroll,
-  Button,
-  Gauge,
-  TextOverflow,
-  FontWeight,
-  TextAlign,
-  ClickEvent,
-  Color,
-  ColumnOptions,
-} from '@ohos.arkui.component';
+import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alignment, Margin, ContentModifier, WrappedBuilder, Color, Scroll, TextAlign,
+  Entry, Component, DataPanel, DataPanelType, Padding, RelativeContainer, Rect, ColumnOptions, Button, ClickEvent, Gauge, TextOverflow, FontWeight,
+} from '@ohos.arkui.component'
 import {
   State,
+  MutableState,
+  stateOf,
+  observableProxy,
+  AppStorage
 } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct GaugePrivacySensitive {
-  @State isSensitive: boolean | undefined  = true
+  
+  @State isSensitive: boolean | undefined = true
   build() {
     Scroll() {
       Column({ space: 15 } as ColumnOptions) {
         Row() {
-          Button('TRUE').id('trueFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+          Button('TRUE').id('trueFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
             this.isSensitive = true
           })
-          Button('FALSE').id('falseFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+          Button('FALSE').id('falseFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
             this.isSensitive = false
           })
-          Button('UNDEFINED').id('undefinedFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+          Button('UNDEFINED').id('undefinedFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
             this.isSensitive = undefined
           })
-          Button('NULL').id('nullFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
-            // this.isSensitive = null
+          Button('NULL').id('nullFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
+            
           })
         }
         Row() {

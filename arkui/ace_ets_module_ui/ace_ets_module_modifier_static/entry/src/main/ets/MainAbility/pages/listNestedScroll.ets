@@ -20,35 +20,35 @@ import {
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
-// import { ListModifier } from "@ohos.arkui.modifier";
+
 import { BusinessError } from '@ohos.base';
 
-// class CustomModifier extends ListModifier {
-//   applyNormalAttribute(instance: ListAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-// }
+
+
+
+
+
 
 @Entry
 @Component
 struct ListNestedScroll {
   scroller: Scroller = new Scroller()
-  // @State customModifier: ListModifier = new CustomModifier()
-  //   .nestedScroll({
-  //     scrollForward: NestedScrollMode.PARALLEL,
-  //     scrollBackward: NestedScrollMode.PARALLEL,
-  //   })
+  
+  
+  
+  
+  
   @State selfScrollTime: number = 0
   @State parentScrollTime: number = 0
   private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
-  // @Styles
-  // listCard() {
-  //   .backgroundColor(Color.White)
-  //   .height(72)
-  //   .width("100%")
-  //   .borderRadius(12)
-  // }
+  
+  
+  
+  
+  
+  
+  
   build() {
     Column() {
       Button("NestedScrollOptionsScroll click")
@@ -88,27 +88,27 @@ struct ListNestedScroll {
                 Text("item" + item)
                   .fontSize(16)
               }
-              // .listCard()
+              
             }, (item: number) => String(item))
           }
-          // .attributeModifier(this.customModifier as CustomModifier)
+          
           .height('90%')
-          // .onScroll((xOffset: number, yOffset: number) => {
-          //   console.info("WebView onScroll x = " + xOffset)
-          //   console.info("WebView onScroll y = " + yOffset)
-          //   if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
-          //     this.selfScrollTime = Utils.getSystemTime()
-          //   }
-          // })
+          
+          
+          
+          
+          
+          
+          
           Column().width('100%').height('20%').backgroundColor(Color.Red)
         }.width('100%')
       }
-      // .onScroll((xOffset: number, yOffset: number) => {
-      //   console.info('ParentScroll:' + xOffset + ' ' + yOffset)
-      //   if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
-      //     this.parentScrollTime = Utils.getSystemTime()
-      //   }
-      // })
+      
+      
+      
+      
+      
+      
       .width('100%')
       .height('70%')
     }.key('ColumnSize')

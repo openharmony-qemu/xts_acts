@@ -70,16 +70,7 @@ struct DisplayPriorityPage {
     })
   }
 
-  /*
-   * Set common style.
-   */
-  // @Styles
-  // commonStyle(){
-  //   .width(this.targetWidth)
-  //   .height(this.targetHeight)
-  //   .displayPriority(this._displayPriority)
-  //   .key(this.componentKey)
-  // }
+
 
   @Builder
   buildTargetView() {
@@ -92,52 +83,52 @@ struct DisplayPriorityPage {
     if (this.targetView == 'AlphabetIndexer') {
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Blank') {
       Blank()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Button') {
-      Button('button')//.commonStyle()
+      Button('button')
     } else if (this.targetView == 'Checkbox') {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
         .backgroundColor(Color.Pink)
         .margin(0)
-        //.commonStyle()
+        
     } else if (this.targetView == 'CheckboxGroup') {
       CheckboxGroup({ group: 'checkboxGroup' })
         .margin(0)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'DataPanel') {
       DataPanel({ values: [25] })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'DatePicker') {
       DatePicker()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Divider') {
       Divider()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Gauge') {
       Gauge({ value: 75 })
         .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Image') {
       Image($r('app.media.icon'))
-        //.commonStyle()
+        
     } else if (this.targetView == 'ImageAnimator') {
       ImageAnimator()
         .images([{ src: $r('app.media.icon') }])
-        //.commonStyle()
+        
     } else if (this.targetView == 'LoadingProgress') {
       LoadingProgress()
         .color(Color.Blue)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Marquee') {
       Marquee({
         start: true,
@@ -145,104 +136,104 @@ struct DisplayPriorityPage {
       })
         .fontSize(15)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'Navigation') {
       Navigation(new NavPathStack())
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'NavRouter') {
-      // NavRouter().backgroundColor(Color.Pink)//.commonStyle()
+      
     } else if (this.targetView == 'Progress') {
       Progress({ value: 20 })
         .border({ width: 2 })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'QRCode') {
       QRCode(this.src)
         .border({ width: 2 })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Radio') {
       Radio({ value: 'Radio1', group: 'radioGroup' })
         .backgroundColor(Color.Pink)
         .margin(0)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Rating') {
       Rating()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'ScrollBar') {
       ScrollBar({ scroller: this.scroller }) {
         Text('1')
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'Search') {
       Search()
         .backgroundColor(Color.Pink)
         .margin(0)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Select') {
       Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }])
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Slider') {
       Slider()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem()
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'Text') {
       Text('text')
         .fontSize(15)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TextArea') {
       TextArea()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TextClock') {
       TextClock()
         .fontSize(15)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TextInput') {
       TextInput()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TextPicker') {
       TextPicker({ range: this.value })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TextTimer') {
       TextTimer({ controller: this.textTimerController })
         .fontSize(15)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'TimePicker') {
       TimePicker()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Toggle') {
       Toggle({ type: ToggleType.Switch })
         .backgroundColor(Color.Pink)
         .margin(0)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Badge') {
       Badge({
         value: '',
         style: { badgeSize: 6, badgeColor: '#FA2A2D' } as BadgeStyle
       } as BadgeParamWithString) {
         Text('1')
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'Column') {
       Column()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
@@ -250,21 +241,21 @@ struct DisplayPriorityPage {
         Text('3').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .backgroundColor(Color.Pink)
-      //.commonStyle()
+      
     } else if (this.targetView == 'Counter') {
       Counter()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Flex') {
       Flex()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'GridRow') {
       GridRow() {
         GridCol() {
           Text('GridCol')
         }.backgroundColor(Color.Pink)
-      }//.commonStyle()
+      }
     } else if (this.targetView == 'Grid') {
       Grid() {
         GridItem() {
@@ -272,37 +263,35 @@ struct DisplayPriorityPage {
         }
       }
       .backgroundColor(Color.Pink)
-      //.commonStyle()
+      
     } else if (this.targetView == 'List') {
       List()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Navigator') {
-      // Navigator({ target: '' }).backgroundColor(Color.Pink)//.commonStyle()
+      
     } else if (this.targetView == 'Panel') {
-      // Panel(true)
-      //   .backgroundMask(Color.Pink)
-      //  //.commonStyle()
+
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: false })
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Text('1')
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'Row') {
       Row()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
         Text('Text')
-      }//.commonStyle()
+      }
     } else if (this.targetView == 'Scroll') {
       Scroll(this.scroller) {
         Text('1')
-      }.backgroundColor(Color.Pink)//.commonStyle()
+      }.backgroundColor(Color.Pink)
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
@@ -310,11 +299,11 @@ struct DisplayPriorityPage {
         }.backgroundColor(Color.Orange)
       }
       .backgroundColor(Color.Pink)
-      //.commonStyle()
+      
     } else if (this.targetView == 'Stack') {
       Stack()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Swiper') {
       Swiper() {
         ForEach([1, 2, 3], (item: Int, index: number) => {
@@ -323,29 +312,29 @@ struct DisplayPriorityPage {
       }
       .indicator(true)
       .backgroundColor(Color.Pink)
-      //.commonStyle()
+      
     } else if (this.targetView == 'Tabs') {
       Tabs()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Circle') {
       Circle()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Ellipse') {
       Ellipse()
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Line') {
       Line()
         .backgroundColor(Color.Pink)
         .startPoint([0, 0])
         .endPoint([50, 100])
-        //.commonStyle()
+        
     } else if (this.targetView == 'Polyline') {
       Polyline()
         .points([[0, 0], [20, 60], [100, 100]])
@@ -353,7 +342,7 @@ struct DisplayPriorityPage {
         .stroke(Color.Blue)
         .strokeWidth(3)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Polygon') {
       Polygon()
         .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
@@ -361,7 +350,7 @@ struct DisplayPriorityPage {
         .strokeWidth(5)
         .stroke(Color.Blue)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Path') {
       Path()
         .commands('M100 0 L200 240 L0 240 Z')
@@ -369,18 +358,16 @@ struct DisplayPriorityPage {
         .stroke(Color.Black)
         .strokeWidth(3)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Rect') {
       Rect()
         .fillOpacity(0)
         .stroke(Color.Red)
         .strokeWidth(3)
         .backgroundColor(Color.Pink)
-        //.commonStyle()
+        
     } else if (this.targetView == 'Shape') {
-      // Shape()
-      //  .backgroundColor(Color.Pink)
-     //   //.commonStyle()
+
     }
     Button('compareTwoButton')
       .displayPriority(this.compareTwoButtonDisplayPriority)

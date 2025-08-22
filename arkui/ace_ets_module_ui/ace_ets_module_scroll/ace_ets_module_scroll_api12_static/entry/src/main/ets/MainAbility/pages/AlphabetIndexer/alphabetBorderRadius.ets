@@ -1,0 +1,149 @@
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import {
+  Entry,
+  Component,
+  Row,
+  List,
+  ListItem,
+  Text,
+  Stack,
+  Alignment,
+  ForEach,
+  AlphabetIndexer,
+  Button,
+  TextAlign,
+  FontWeight,
+  IndexerAlign,
+  ClickEvent
+} from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement';
+
+@Entry
+@Component
+struct AlphabetIndexerBorderRadius {
+  private arrayA: string[] = ['安']
+  private arrayB: string[] = ['卜', '白', '包', '毕', '丙']
+  private arrayC: string[] = ['曹', '成', '陈', '催']
+  private arrayL: string[] = ['刘', '李', '楼', '梁', '雷', '吕', '柳', '卢']
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+    'H', 'I', 'J', 'K', 'L', 'M', 'N']
+  private value2: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+    'H', 'I', 'J', 'K', 'L', 'M', 'N', 'AlphabetIndexerPopupItemBorderRadius']
+  @State indexerHeight: number = 30
+
+  build() {
+    Stack({ alignContent: Alignment.Start }) {
+      Row() {
+        List({ space: 20, initialIndex: 0 }) {
+          ForEach(this.arrayA, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayB, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayC, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayL, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+        }
+        .width('50%')
+        .height('100%')
+
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+          .id('alphabet_borderRadius')
+          .usingPopup(true)
+          .selectedFont({ size: 16, weight: FontWeight.Bolder })
+          .popupFont({ size: 30, weight: FontWeight.Bolder })
+          .itemSize(28)
+          .alignStyle(IndexerAlign.Left)
+          .popupItemBorderRadius(10)
+          .itemBorderRadius(10)
+          .enableHapticFeedback(true)
+          .onSelect((index: number): void => {
+            console.info(this.value[index.toInt()] + ' Selected!')
+          })
+          .onRequestPopupData((index: number): string[] => {
+            if (this.value[index.toInt()] == 'A') {
+              return this.arrayA 
+            } else if (this.value[index.toInt()] == 'B') {
+              return this.arrayB
+            } else if (this.value[index.toInt()] == 'C') {
+              return this.arrayC
+            } else if (this.value[index.toInt()] == 'L') {
+              return this.arrayL
+            } else {
+              return [''] 
+            }
+          })
+          .onPopupSelect((index: number): void => {
+            console.info('onPopupSelected:' + index)
+          })
+
+        AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+          .id('alphabet_borderRadius2')
+          .width('auto')
+          .itemBorderRadius(16)
+          .height(this.indexerHeight)
+
+        AlphabetIndexer({ arrayValue: this.value2, selected: 0 })
+          .id('alphabet_borderRadius3')
+          .width('auto')
+          .itemBorderRadius(24)
+          .height(this.indexerHeight)
+
+      }
+      .width('100%')
+      .height('100%')
+
+      Row() {
+        Button('click')
+          .id('layout_indexer')
+          .onClick((e: ClickEvent) => {
+            this.indexerHeight = 450
+          })
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ import formProvider from "@ohos.app.form.formProvider";
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag formProviderTest';
 
 export default function formProviderTest() {

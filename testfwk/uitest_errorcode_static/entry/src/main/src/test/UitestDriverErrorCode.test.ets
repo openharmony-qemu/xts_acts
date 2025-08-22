@@ -7,7 +7,7 @@ import { Utils, startAbility, stopApplication } from './Util.test';
 let domain = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs : int = 1000;
 const TestTag = 'UitestDriverErrorTest';
 const AsyncErrorCode = 17000002;
 const ParameterErrorCode = 17000007;
@@ -103,6 +103,24 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
+    })
+
+    /*
+     * @tc.number: uitestDriverErrorTest_005
+     * @tc.name: test_driver_pressHome_static
+     * @tc.desc: pressHome 17000007 test.
+     */
+    it("test_driver_pressHome_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_pressHome_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.pressHome(-1);
+        expect().assertFail();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_pressHome_static error is, ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_pressHome_static end`);
     })
   })
 }

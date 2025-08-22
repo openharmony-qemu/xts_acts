@@ -12,33 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  Color,
-  ClickEvent,
-  PatternLock,
-  ProgressMask,
-  Image,
-  Padding,
-  TabsController,
-  Builder,
-  Divider,
-  Button,
-  Tabs,
-  TabContent,
-  Margin,
-  BarPosition,
-  AnimationMode,
-  BarMode,
-} from '@ohos.arkui.component';
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
+import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Color, ProgressMask, Padding, Image, $r,Button, ClickEvent, Margin, Builder, TabsController,
+  Divider, Tabs, TabContent, BarPosition, AnimationMode, BarMode, CustomBuilder} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -73,21 +49,7 @@ struct TabsExample_ACTION_FIRST {
           console.info('ACTION_FIRST-----' + JSON.stringify(a))
         }).margin(20)
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-        TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#00CB87')
-        }/*.tabBar(this.tabBuilder(0, 'green'))*/
-
-        TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#007DFF')
-        }/*.tabBar(this.tabBuilder(1, 'blue'))*/
-
-        TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#FFBF00')
-        }/*.tabBar(this.tabBuilder(2, 'yellow'))*/
-
-        TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#E67C92')
-        }/*.tabBar(this.tabBuilder(3, 'pink'))*/
+     
       }
       .animationMode(AnimationMode.ACTION_FIRST)
       .id('ACTION_FIRST')
@@ -96,7 +58,7 @@ struct TabsExample_ACTION_FIRST {
       .barWidth(360)
       .barHeight(56)
       .animationDuration(400)
-      .onChange((index: number): void => {
+      .onChange((index: number) => {
         this.currentIndex = index
       })
       .width(360)

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-// import { vp2px } from '@ohos.arkui.component';
+
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -30,32 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   parentWidth: number = 0;
-//   parentHeight: number = 0;
-//   parentComponentKey: string = '';
-// }
-//
-// class TestValue {
-//   describe: string = '';
-//   setValue: SetValue = new SetValue();
-//   expectValue: jsonx.JsonElement;
-// }
-//
-// class AlignItems {
-//   Row: VerticalAlign = VerticalAlign.Center;
-//   Column: HorizontalAlign = HorizontalAlign.Center;
-//   Flex: ItemAlign = ItemAlign.Auto;
-//   GridRow: ItemAlign = ItemAlign.Auto;
-// }
-//
-// class SetValue {
-//   defaultAlignItems: AlignItems = new AlignItems();
-//   alignSelf: ItemAlign = ItemAlign.Auto;
-// }
+
 
 export default function alignSelfGridRowTest() {
 
@@ -202,7 +177,7 @@ export default function alignSelfGridRowTest() {
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetStretch') {
         //When alignSelf : ItemAlign.Stretch
-        // expect(rect.bottom - rect.top).assertEqual(vp2px(parentHeight));
+
       }
     })
   })

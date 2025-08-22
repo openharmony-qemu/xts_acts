@@ -12,37 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
-import { EnterKeyType } from '@ohos.arkui.component'
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function TextTimerTextShadowTest() {
   describe('TextTimerTextShadowTest', () => {
     beforeAll(() => {
-      console.info("TextTimerTextShadowTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("TextTimerTextShadowTest beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info('TextTimerTextShadowTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/textTimer/TextTimerTextShadow',
@@ -54,6 +51,7 @@ export default function TextTimerTextShadowTest() {
         console.info('get TextTimerTextShadowTest state pages:' + JSON.stringify(pages));
         if (!('TextTimerTextShadow' == pages.name)) {
           console.info('get TextTimerTextShadowTest pages.name:' + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -62,67 +60,64 @@ export default function TextTimerTextShadowTest() {
       }
       console.info('TextTimerTextShadowTest beforeEach end');
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_static_001
-    * @tc.name  : TextTimerTextShadowTest_static_001
-    * @tc.desc  : To test the TextShadow { radius: 10, color: Color.Red, offsetX: 10, offsetY: 0 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('TextTimerTextShadowTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TextTimerTextShadowTest_static_001 START');
+    
+    /*
+     * @tc.number   TextTimerTextShadowTest_static_001
+     * @tc.name     TextTimerTextShadowTest_static_001
+     * @tc.desc     TextTimerTextShadowTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
+it('TextTimerTextShadowTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('TextTimerTextShadowTest_001 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_static_001 component obj is: ' + obj.getElement('$attrs').getElement('textShadow'));
+      console.info('TextTimerTextShadowTest_001 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual('0.000000');
-      console.info('[TextTimerTextShadowTest_static_001] END');
+      console.info('[TextTimerTextShadowTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_static_002
-    * @tc.name  : TextTimerTextShadowTest_static_002
-    * @tc.desc  : To test the TextShadow { radius: -10, color: '#ff00ff00', offsetX: -10, offsetY: 0 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('TextTimerTextShadowTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TextTimerTextShadowTest_static_002 START');
+    
+    /*
+     * @tc.number   TextTimerTextShadowTest_static_002
+     * @tc.name     TextTimerTextShadowTest_static_002
+     * @tc.desc     TextTimerTextShadowTest_static_002
+     * @tc.level    Level.LEVEL0
+     */
+it('TextTimerTextShadowTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('TextTimerTextShadowTest_002 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_static_002 component obj is: ' + obj.getElement('$attrs').getElement('textShadow'));
+      console.info('TextTimerTextShadowTest_002 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('0.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('-10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual('0.000000');
-      console.info('[TextTimerTextShadowTest_static_002] END');
+      console.info('[TextTimerTextShadowTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_static_003
-    * @tc.name  : TextTimerTextShadowTest_static_003
-    * @tc.desc  : To test the TextShadow { radius: 50, color: $r('app.getString('color').pink'), offsetX: 0, offsetY: 10 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
-    it('TextTimerTextShadowTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TextTimerTextShadowTest_static_003 START');
+    
+    /*
+     * @tc.number   TextTimerTextShadowTest_static_003
+     * @tc.name     TextTimerTextShadowTest_static_003
+     * @tc.desc     TextTimerTextShadowTest_static_003
+     * @tc.level    Level.LEVEL0
+     */
+it('TextTimerTextShadowTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('TextTimerTextShadowTest_003 START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer3');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_static_003 component obj is: ' + obj.getElement('$attrs').getElement('textShadow'));
+      console.info('TextTimerTextShadowTest_003 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('50.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FFFF00FF');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('0.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual('10.000000');
-      console.info('[TextTimerTextShadowTest_static_003] END');
+      console.info('[TextTimerTextShadowTest_003] END');
       done();
     });
   })

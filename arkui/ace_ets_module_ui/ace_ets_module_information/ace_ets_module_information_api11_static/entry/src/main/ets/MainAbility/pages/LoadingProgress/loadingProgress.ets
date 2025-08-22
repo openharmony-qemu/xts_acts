@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,30 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  LoadingProgressStyle,
-  Flex,
-  LoadingProgress,
-  Color,
-  TextAlign,
-  TextOverflow,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
-import Log from '../../common/Log';
 
+import Log from '../../common/Log';
+import { Entry, Component, Column, LoadingProgressStyle, FlexDirection, ItemAlign, FlexAlign, Flex, FlexOptions, Text, Alignment, TextAlign, TextOverflow, LoadingProgress, Color} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
 const TAG = 'ets_apiLack_add';
 
 @Entry
@@ -53,7 +33,7 @@ struct LoadingProgressCircular {
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center } as FlexOptions) {
 
       Text("loadingProgress-Circular")
         .width(100)

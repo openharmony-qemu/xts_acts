@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,26 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,Curve,PopInfo,NavigationSystemTransitionType,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,Provide,Consume
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+
+import { Entry, Component, NavPathStack, Navigation, Column, Button, ColumnOptions, ClickEvent, BarStyle, Stack,
+  StackOptions, BlurStyle, Text, Color, Builder, Scroller, NavigationTitleMode, Scroll, ForEach, List, ListItem, Margin,
+  ScrollDirection, BarState, EdgeEffect, NavDestination, Row, $r, NavigationMode, NavigationOperation, NavDestinationTransition,
+  Curve,
+} from '@ohos.arkui.component'
+import { State, Provide, Consume, AppStorage} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct EnableModeChangeAnimation {
   @State navigationMode: NavigationMode = NavigationMode.Auto;
   @State hideNavBar: boolean = false;
   @State enableModeAnimationValue: boolean | undefined = false;
+
   build() {
-    Navigation({}) {
+    Navigation() {
       Scroll() {
         Column({ space: '5vp' } as ColumnOptions) {
           Button('enableModeChangeAnimation：true')

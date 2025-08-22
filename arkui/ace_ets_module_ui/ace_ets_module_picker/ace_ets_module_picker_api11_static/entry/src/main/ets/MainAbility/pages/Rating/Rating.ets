@@ -33,11 +33,7 @@ import {
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,FlexAlign,Rating
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,
-} from '@ohos.arkui.stateManagement';
+import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component

@@ -27,7 +27,7 @@ export default function CheckboxGroupOnChangeModifierTest() {
     beforeAll(() => {
       console.info("CheckboxGroupOnChangeModifierTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -43,11 +43,11 @@ export default function CheckboxGroupOnChangeModifierTest() {
         console.info("get CheckboxGroupOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupOnChangeModifier" == pages.name)) {
           console.info("get CheckboxGroupOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CheckboxGroupOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push CheckboxGroupOnChangeModifierTest page error:" + err);
@@ -60,15 +60,16 @@ export default function CheckboxGroupOnChangeModifierTest() {
       console.info('checkboxGroupOnChangeModifier after each called');
     })
    
-   /**
-     * @tc.number ArkUX_Modifier_CheckboxGroup_OnChange_static_1001
-     * @tc.name ArkUX_Modifier_CheckboxGroup_OnChange_static_1001
-     * @tc.desc OnChange callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+   
+   
+
+/*
+     * @tc.number   ArkUX_Modifier_CheckboxGroup_OnChange_static_1001
+     * @tc.name     ArkUX_Modifier_CheckboxGroup_OnChange_static_1001
+     * @tc.desc     ArkUX_Modifier_CheckboxGroup_OnChange_static_1001
+     * @tc.level    Level.LEVEL1
      */
-   it('ArkUX_Modifier_CheckboxGroup_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Modifier_CheckboxGroup_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
     console.info('ArkUX_Modifier_CheckboxGroup_OnChange_static_1001 START');
     let driver = Driver.create();
     let checkbox = await driver.findComponent(ON.id('checkbosGroupOnchange'));

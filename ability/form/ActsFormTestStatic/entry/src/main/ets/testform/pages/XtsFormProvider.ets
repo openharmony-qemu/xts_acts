@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog';
 import formProvider from '@ohos.app.form.formProvider';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 @Entry

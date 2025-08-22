@@ -12,15 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r, ColumnOptions, TextPickerResult, TextOverflow} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, TextOverflow } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TextPickerDialogDefaultTextStyleExample {
-  private select: Int|Double|Array<Double> = 0
+  private select: number | number[] = 0.0
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
   @State v: string = '';
 
@@ -29,11 +27,11 @@ struct TextPickerDialogDefaultTextStyleExample {
       Column({ space: 5 } as ColumnOptions) {
         Button('minFontSize:18 maxFontSize:28')
           .id('btn1')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               // 建议使用 this.getUIContext().showTextPickerDialog()接口
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               value: this.v,
               defaultPickerItemHeight: 40,
               disableTextStyleAnimation: true,
@@ -71,11 +69,11 @@ struct TextPickerDialogDefaultTextStyleExample {
           })
         Button('minFontSize:28 maxFontSize:18')
           .id('btn2')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               // 建议使用 this.getUIContext().showTextPickerDialog()接口
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               value: this.v,
               defaultPickerItemHeight: 40,
               disableTextStyleAnimation: true,
@@ -113,11 +111,11 @@ struct TextPickerDialogDefaultTextStyleExample {
           })
         Button('minFontSize:undefined maxFontSize:undefined')
           .id('btn3')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               // 建议使用 this.getUIContext().showTextPickerDialog()接口
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               value: this.v,
               defaultPickerItemHeight: 40,
               disableTextStyleAnimation: true,
@@ -155,11 +153,11 @@ struct TextPickerDialogDefaultTextStyleExample {
           })
         Button('minFontSize:null maxFontSize:null')
           .id('btn4')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               // 建议使用 this.getUIContext().showTextPickerDialog()接口
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               value: this.v,
               defaultPickerItemHeight: 40,
               disableTextStyleAnimation: true,

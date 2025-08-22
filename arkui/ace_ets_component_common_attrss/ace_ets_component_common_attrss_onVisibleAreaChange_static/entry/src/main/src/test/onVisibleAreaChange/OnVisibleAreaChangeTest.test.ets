@@ -218,7 +218,7 @@ CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageCo
 
 async function checkNormalLeaveResults(data: BasePageConfig, compareTextObj: string[], ratiosRightNum: number) {
   console.info('[' + data.caseTag + '] checkNormalLeaveResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
       let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
@@ -240,7 +240,7 @@ async function checkNormalLeaveResults(data: BasePageConfig, compareTextObj: str
 
 async function checkNormalEnterResults(data: BasePageConfig, compareTextObj: string[], ratiosLeftNum: number) {
   console.info('[' + data.caseTag + '] checkNormalEnterResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);
@@ -262,7 +262,7 @@ async function checkNormalEnterResults(data: BasePageConfig, compareTextObj: str
 
 async function checkAbnormalResults(data: BasePageConfig, compareTextObj: string[]) {
   console.info('[' + data.caseTag + '] checkAbnormalResults');
-  for (let num: number = 0; num <= compareTextObj.length; num++) {
+  for (let num = 0; num <= compareTextObj.length; num++) {
     if (compareTextObj[num]) {
       let compareText: CurrentRatio = JSON.parse<Object>(compareTextObj[num],Type.of(new String() as Object)) as CurrentRatio
       console.info('[' + data.caseTag + '] compareTextObj[' + num + ']:' + compareTextObj[num]);

@@ -13,35 +13,30 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router } from '@ohos.arkui.UIContext';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { Driver, ON,Component } from '@ohos.UiTest';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+let domain: Int = 0x0000;
+let tag = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function SystemTransition() {
   describe('SystemTransition', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      console.info("SystemTransition beforeEach start");
+      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info('SystemTransition beforeEach start');
@@ -55,6 +50,7 @@ export default function SystemTransition() {
         console.info('get SystemTransition state pages:' + JSON.stringify(pages));
         if (!('SystemTransition' == pages.name)) {
           console.info('get SystemTransition pages.name:' + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(1000);
         }
@@ -70,87 +66,90 @@ export default function SystemTransition() {
     });
 
 
-    /**
-     * @tc.number    SystemTransition_static_0100
-     * @tc.name      SystemTransition_static_0100
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.FADE
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SystemTransition_static_0100
+     * @tc.name     SystemTransition_static_0100
+     * @tc.desc     SystemTransition_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SystemTransition_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SystemTransition_static_0100 START');
+it('SystemTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SystemTransition_0100 START');
       await CommonFunc.sleep(200);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let btn1 = await (driver.findComponent(ON.id('btnOneId')) as Promise<Component>);
-      await btn1.click()
-      console.info('[SystemTransition_static_0100] btn1 click');
+      let btn1 = await driver.findComponent(ON.id('btnOneId'));
+      await (btn1?.click() as Promise<void>)
+      console.info('[SystemTransition_0100] btn1 click');
       await CommonFunc.sleep(200);
 
 
       let strJson = inspector.getInspectorByKey('text1Id');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[SystemTransition_static_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[SystemTransition_static_0100] systemTransition obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[SystemTransition_0100] component obj is: ' + JSON.stringify(obj));
+      console.info('[SystemTransition_0100] systemTransition obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('one');
 
-      let popBtn = await (driver.findComponent(ON.id('pop1Id')) as Promise<Component>);
-      await popBtn.click()
-      console.info('[SystemTransition_static_0100] popBtn click');
+      let popBtn = await driver.findComponent(ON.id('pop1Id'));
+      await (popBtn?.click() as Promise<void>)
+      console.info('[SystemTransition_0100] popBtn click');
 
-      console.info('SystemTransition_static_0100 END');
+      console.info('SystemTransition_0100 END');
       done();
     });
 
-    /**
-     * @tc.number    SystemTransition_static_0200
-     * @tc.name      SystemTransition_static_0200
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.EXPLODE
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SystemTransition_static_0200
+     * @tc.name     SystemTransition_static_0200
+     * @tc.desc     SystemTransition_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SystemTransition_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SystemTransition_static_0200 START');
+it('SystemTransition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SystemTransition_0200 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let btn2 = await (driver.findComponent(ON.id('btnTwoId')) as Promise<Component>);
-      await btn2.click()
-      console.info('[SystemTransition_static_0200] btn2 click');
+      let btn2 = await driver.findComponent(ON.id('btnTwoId'));
+      await (btn2?.click() as Promise<void>)
+      console.info('[SystemTransition_0200] btn2 click');
       await CommonFunc.sleep(200);
 
 
       let strJson = inspector.getInspectorByKey('text2Id');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[SystemTransition_static_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[SystemTransition_static_0200] systemTransition obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info('[SystemTransition_0200] component obj is: ' + JSON.stringify(obj));
+      console.info('[SystemTransition_0200] systemTransition obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('two');
 
-      let popBtn = await (driver.findComponent(ON.id('pop2Id')) as Promise<Component>);
-      await popBtn.click()
-      console.info('[SystemTransition_static_0200] popBtn click');
+      let popBtn = await driver.findComponent(ON.id('pop2Id'));
+      await (popBtn?.click() as Promise<void>)
+      console.info('[SystemTransition_0200] popBtn click');
 
-      console.info('SystemTransition_static_0200 END');
+      console.info('SystemTransition_0200 END');
       done();
     });
 
-    /**
-     * @tc.number    SystemTransition_0300
-     * @tc.name      SystemTransition_0300
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_RIGHT
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SystemTransition_static_0300
+     * @tc.name     SystemTransition_static_0300
+     * @tc.desc     SystemTransition_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('SystemTransition_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SystemTransition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0300 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let btn2 = await (driver.findComponent(ON.id('btnThreeId')) as Promise<Component>);
-      await btn2.click()
+      let btn2 = await driver.findComponent(ON.id('btnThreeId'));
+      await (btn2?.click() as Promise<void>)
       console.info('[SystemTransition_0300] btn2 click');
       await CommonFunc.sleep(200);
 
@@ -160,8 +159,8 @@ export default function SystemTransition() {
       console.info('[SystemTransition_0300] systemTransition obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('three');
 
-      let popBtn = await (driver.findComponent(ON.id('pop3Id')) as Promise<Component>);
-      await popBtn.click()
+      let popBtn = await driver.findComponent(ON.id('pop3Id'));
+      await (popBtn?.click() as Promise<void>)
       console.info('[SystemTransition_0300] popBtn click');
       await CommonFunc.sleep(200);
 
@@ -169,21 +168,22 @@ export default function SystemTransition() {
       done();
     });
 
-    /**
-     * @tc.number    SystemTransition_0400
-     * @tc.name      SystemTransition_0400
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_BOTTOM
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   SystemTransition_static_0400
+     * @tc.name     SystemTransition_static_0400
+     * @tc.desc     SystemTransition_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('SystemTransition_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SystemTransition_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SystemTransition_0400 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
 
-      let btn2 = await (driver.findComponent(ON.id('btnFourId')) as Promise<Component>);
-      await btn2.click()
+      let btn2 = await driver.findComponent(ON.id('btnFourId'));
+      await (btn2?.click() as Promise<void>)
       console.info('[SystemTransition_0400] btn2 click');
       await CommonFunc.sleep(200);
 

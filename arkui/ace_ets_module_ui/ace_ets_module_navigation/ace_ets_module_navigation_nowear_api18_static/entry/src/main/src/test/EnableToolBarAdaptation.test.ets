@@ -53,9 +53,9 @@ export default function EnableToolBarAdaptation() {
         if (!('EnableToolBarAdaptation' == pages.name)) {
           console.info('get EnableToolBarAdaptation pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
           await CommonFunc.sleep(2000);
-          // console.info('push EnableToolBarAdaptation page result:' + JSON.stringify(result));
+
         }
       } catch (err) {
         console.error('push EnableToolBarAdaptation page error:' + err);
@@ -139,44 +139,48 @@ export default function EnableToolBarAdaptation() {
      * @tc.level     Level 2
      */
     it('EnableToolBarAdaptation_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('EnableToolBarAdaptation_static_0300 START');
-      await CommonFunc.sleep(500);
+      try {
+        console.info('EnableToolBarAdaptation_static_0300 START');
+        await CommonFunc.sleep(500);
 
-      let driver = Driver.create();
-      await driver.delayMs(500);
+        let driver = Driver.create();
+        await driver.delayMs(500);
 
-      await driver.assertComponentExist(ON.type('ToolBar'));
-      await driver.delayMs(500);
+        await driver.assertComponentExist(ON.type('ToolBar'));
+        await driver.delayMs(500);
 
-      let landscapeBtn: Component = await driver.findComponent(ON.id('landscapeId')) as Component;
-      await landscapeBtn.click();
-      console.info('[EnableToolBarAdaptation_static_0300] landscapeBtn click');
-      await driver.delayMs(1000);
+        let landscapeBtn: Component = await driver.findComponent(ON.id('landscapeId')) as Component;
+        await landscapeBtn.click();
+        console.info('[EnableToolBarAdaptation_static_0300] landscapeBtn click');
+        await driver.delayMs(1000);
 
-      await driver.assertComponentExist(ON.type('ToolBar'));
-      console.info('[EnableToolBarAdaptation_static_0300] ROTATION_90 ToolBar exist');
-      await driver.delayMs(500);
+        await driver.assertComponentExist(ON.type('ToolBar'));
+        console.info('[EnableToolBarAdaptation_static_0300] ROTATION_90 ToolBar exist');
+        await driver.delayMs(500);
 
-      let btn1: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
-      await btn1.click();
-      console.info('[EnableToolBarAdaptation_static_0300] btn1 click');
-      await driver.delayMs(500);
+        let btn1: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
+        await btn1.click();
+        console.info('[EnableToolBarAdaptation_static_0300] btn1 click');
+        await driver.delayMs(500);
 
-      await driver.assertComponentExist(ON.type('ToolBar'));
-      console.info('[EnableToolBarAdaptation_static_0300] navDestination ToolBar exist');
+        await driver.assertComponentExist(ON.type('ToolBar'));
+        console.info('[EnableToolBarAdaptation_static_0300] navDestination ToolBar exist');
 
-      await driver.delayMs(500);
-      let btn3: Component = await driver.findComponent(ON.id('popId')) as Component;
-      await btn3.click();
-      console.info('[EnableToolBarAdaptation_static_0300] btn3 click');
-      await driver.delayMs(1000);
+        await driver.delayMs(500);
+        let btn3: Component = await driver.findComponent(ON.id('popId')) as Component;
+        await btn3.click();
+        console.info('[EnableToolBarAdaptation_static_0300] btn3 click');
+        await driver.delayMs(1000);
 
-      let portraitBtn: Component = await driver.findComponent(ON.id('portraitId')) as Component;
-      await portraitBtn.click();
-      console.info('[EnableToolBarAdaptation_static_0300] portraitBtn click');
-      await driver.delayMs(1000);
-      console.info('EnableToolBarAdaptation_static_0300 END');
-      done();
+        let portraitBtn: Component = await driver.findComponent(ON.id('portraitId')) as Component;
+        await portraitBtn.click();
+        console.info('[EnableToolBarAdaptation_static_0300] portraitBtn click');
+        await driver.delayMs(1000);
+        console.info('EnableToolBarAdaptation_static_0300 END');
+        done();
+      }catch(error){
+        expect().assertFail();
+      }
     });
 
     /**

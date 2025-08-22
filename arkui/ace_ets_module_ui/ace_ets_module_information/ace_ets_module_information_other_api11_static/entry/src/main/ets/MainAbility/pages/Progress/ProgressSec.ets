@@ -12,36 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Text,
-  Row,
-  Column,
-  ColumnOptions,
-  FontWeight,
-  FontStyle,
-  ClickEvent,
-  Progress,
-  ProgressStatus,
-  LinearGradient,
-  Color,
-  ProgressOptions,
-  ProgressType,
-  Resource,
-  CapsuleStyleOptions,
-  RingStyleOptions,
-  Font,
-} from '@ohos.arkui.component';
-import {
-  State
-} from '@ohos.arkui.stateManagement'
+
 import events_emitter from '@ohos.events.emitter';
 import { MessageManager, Message, Callback } from '../../common/MessageManager';
-// import { Callback } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+
+import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button,
+  HorizontalAlign, Flex, FlexDirection, ItemAlign, FontWeight,FlexAlign, Alignment, TextOverflow, ProgressType,
+  RowOptions, ColumnOptions, Text, Progress, Margin, ProgressStyle, Resource, ProgressStatus, LinearGradient, FontStyle,
+  CapsuleStyleOptions, RingStyleOptions
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router, Context } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -89,7 +70,7 @@ struct progressSecTest {
   @State progress_ring_color_linear_resource: LinearGradient = new LinearGradient([{
     color: $r('sys.color.ohos_id_color_connected'),
     offset: 0
-  }, { color: $r('sys.color.ohos_id_color_background'), offset: 1 }])
+  }, { color: $r('sys.color.ohos_id_color_background'), offset: 1 }]) as LinearGradient
   @State progress_ring_color_linear_null: LinearGradient | null = null
   @State progress_ring_color_linear_undefined: LinearGradient | undefined = undefined
   @State progress_ring_enableScanEffect_boolean: boolean = false
@@ -98,66 +79,69 @@ struct progressSecTest {
   @State progress_linear_enableSmoothEffect_boolean: boolean = false
   @State progress_scaleRing_enableSmoothEffect_boolean: boolean = false
   @State progress_eclipse_enableSmoothEffect_boolean: boolean = false
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("progress page state change called:" + JSON.stringify(eventData));
-    // console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback " +
-    //   eventData.data?.['progress_capsule_borderWidth_resource']);
-    //
-    // this.progress_capsule_borderWidth_number = eventData.data?.['progress_capsule_borderWidth_number'] as number;
-    // this.progress_capsule_borderWidth_string = eventData.data?.['progress_capsule_borderWidth_string'] as string;
-    // this.progress_capsule_borderWidth_resource = eventData.data?.['progress_capsule_borderWidth_resource'] as Resource;
-    // console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 " +
-    //   this.progress_capsule_borderWidth_resource);
-    // this.progress_capsule_borderColor_number = eventData.data?.['progress_capsule_borderColor_number'] as number;
-    // this.progress_capsule_borderColor_string = eventData.data?.['progress_capsule_borderColor_string'] as string;
-    // // this.progress_capsule_borderColor_color = eventData.data?.['progress_capsule_borderColor_color'] as Color;
-    // this.progress_capsule_borderColor_resource = eventData.data?.['progress_capsule_borderColor_resource'] as Resource;
-    // this.progress_capsule_fontSize_number = eventData.data?.['progress_capsule_fontSize_number'] as number;
-    // this.progress_capsule_fontSize_string = eventData.data?.['progress_capsule_fontSize_string'] as string;
-    // this.progress_capsule_fontSize_resource = eventData.data?.['progress_capsule_fontSize_resource'] as Resource;
-    // this.progress_capsule_fontWeight_number = eventData.data?.['progress_capsule_fontWeight_number'] as number;
-    // this.progress_capsule_fontWeight_string = eventData.data?.['progress_capsule_fontWeight_string'] as string;
-    // // this.progress_capsule_fontWeight_fontWeight = eventData.data?.['progress_capsule_fontWeight_fontWeight'] as FontWeight;
-    // // this.progress_capsule_fontStyle_fontStyle = eventData.data?.['progress_capsule_fontStyle_fontStyle'] as FontStyle;
-    // this.progress_capsule_fontColor_number = eventData.data?.['progress_capsule_fontColor_number'] as number;
-    // this.progress_capsule_fontColor_string = eventData.data?.['progress_capsule_fontColor_string'] as string;
-    // // this.progress_capsule_fontColor_color = eventData.data?.['progress_capsule_fontColor_color'] as Color;
-    // this.progress_capsule_fontColor_resource = eventData.data?.['progress_capsule_fontColor_resource'] as Resource;
-    // this.progress_capsule_content_string = eventData.data?.['progress_capsule_content_string'] as string;
-    // this.progress_capsule_enableScanEffect_boolean = eventData.data?.['progress_capsule_enableScanEffect_boolean'] as boolean;
-    // this.progress_capsule_showDefaultPercentage_boolean =
-    //   eventData.data?.['progress_capsule_showDefaultPercentage_boolean'] as boolean;
-    // this.progress_capsule_enableSmoothEffect_boolean = eventData.data?.['progress_capsule_enableSmoothEffect_boolean'] as boolean;
-    //
-    // this.progress_ring_strokeWidth_number = eventData.data?.['progress_ring_strokeWidth_number'] as number;
-    // this.progress_ring_strokeWidth_string = eventData.data?.['progress_ring_strokeWidth_string'] as string;
-    // this.progress_ring_strokeWidth_resource = eventData.data?.['progress_ring_strokeWidth_resource'] as Resource;
-    // this.progress_ring_shadow_bool = eventData.data?.['progress_ring_shadow_bool'] as boolean;
-    // // this.progress_ring_status_progressStatus = eventData.data?.['progress_ring_status_progressStatus'] as ProgressStatus;
-    // this.progress_ring_color_purity = eventData.data?.['progress_ring_color_purity'] as number;
-    // this.progress_ring_color_linear_number = eventData.data?.['progress_ring_color_linear_number'] as LinearGradient;
-    // this.progress_ring_color_linear_string = eventData.data?.['progress_ring_color_linear_string'] as LinearGradient;
-    // this.progress_ring_color_linear_color = eventData.data?.['progress_ring_color_linear_color'] as LinearGradient;
-    // this.progress_ring_color_linear_resource = eventData.data?.['progress_ring_color_linear_resource'] as LinearGradient;
-    // this.progress_ring_color_linear_null = eventData.data?.['progress_ring_color_linear_null'] as LinearGradient;
-    // this.progress_ring_color_linear_undefined = eventData.data?.['progress_ring_color_linear_undefined'] as LinearGradient;
-    // this.progress_ring_enableScanEffect_boolean = eventData.data?.['progress_ring_enableScanEffect_boolean'] as boolean;
-    // this.progress_ring_enableSmoothEffect_boolean = eventData.data?.['progress_ring_enableSmoothEffect_boolean'] as boolean;
-    //
-    // this.progress_linear_enableScanEffect_boolean = eventData.data?.['progress_linear_enableScanEffect_boolean'] as boolean;
-    // this.progress_linear_enableSmoothEffect_boolean = eventData.data?.['progress_linear_enableSmoothEffect_boolean'] as boolean;
-    //
-    // this.progress_scaleRing_enableSmoothEffect_boolean = eventData.data?.['progress_scaleRing_enableSmoothEffect_boolean'] as boolean;
-    // this.progress_eclipse_enableSmoothEffect_boolean = eventData.data?.['progress_eclipse_enableSmoothEffect_boolean'] as boolean;
-  }
-  messageManager: MessageManager = new MessageManager()
 
+
+  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+    console.info("progress page state change called:" + JSON.stringify(eventData));
+    console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback " +
+      ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource'));
+
+    this.progress_capsule_borderWidth_number = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_number').toNumber();
+    this.progress_capsule_borderWidth_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_string').toString();
+    this.progress_capsule_borderWidth_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource').toStaticObject() as Resource;
+    console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 " + this.progress_capsule_borderWidth_resource);
+    this.progress_capsule_borderColor_number = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_number').toNumber();
+    this.progress_capsule_borderColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_string').toString();
+    this.progress_capsule_borderColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_color').toStaticObject() as Color;
+    this.progress_capsule_borderColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_resource').toStaticObject() as Resource;
+    this.progress_capsule_fontSize_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_number').toNumber();
+    this.progress_capsule_fontSize_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_string').toString();
+    this.progress_capsule_fontSize_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_resource').toStaticObject() as Resource;
+    this.progress_capsule_fontWeight_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber();
+    this.progress_capsule_fontWeight_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_string').toString();
+    this.progress_capsule_fontWeight_fontWeight = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_fontWeight').toStaticObject() as FontWeight;
+    this.progress_capsule_fontStyle_fontStyle = ((eventData.data) as ESObject).getProperty('progress_capsule_fontStyle_fontStyle').toStaticObject() as FontStyle;
+    this.progress_capsule_fontColor_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_number').toNumber();
+    this.progress_capsule_fontColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_string').toString();
+    this.progress_capsule_fontColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_color').toStaticObject() as Color;
+    this.progress_capsule_fontColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_resource').toStaticObject() as Resource;
+    this.progress_capsule_content_string = ((eventData.data) as ESObject).getProperty('progress_capsule_content_string').toString();
+    this.progress_capsule_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_capsule_enableScanEffect_boolean').toBoolean();
+    this.progress_capsule_showDefaultPercentage_boolean =
+      ((eventData.data) as ESObject).getProperty('progress_capsule_showDefaultPercentage_boolean').toBoolean();
+    this.progress_capsule_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_capsule_enableSmoothEffect_boolean').toBoolean();
+
+    this.progress_ring_strokeWidth_number = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_number').toNumber();
+    this.progress_ring_strokeWidth_string = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_string').toString();
+    this.progress_ring_strokeWidth_resource = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_resource').toStaticObject() as Resource;
+    this.progress_ring_shadow_bool = ((eventData.data) as ESObject).getProperty('progress_ring_shadow_bool').toBoolean();
+    this.progress_ring_status_progressStatus = ((eventData.data) as ESObject).getProperty('progress_ring_status_progressStatus').toStaticObject() as ProgressStatus;
+    this.progress_ring_color_purity = ((eventData.data) as ESObject).getProperty('progress_ring_color_purity').toNumber();
+    this.progress_ring_color_linear_number = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_number').toStaticObject() as LinearGradient;
+    this.progress_ring_color_linear_string = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_string').toStaticObject() as LinearGradient;
+    this.progress_ring_color_linear_color = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_color').toStaticObject() as LinearGradient;
+    this.progress_ring_color_linear_resource = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_resource').toStaticObject() as LinearGradient;
+    this.progress_ring_color_linear_null = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_null').toStaticObject() as LinearGradient;
+    this.progress_ring_color_linear_undefined = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_undefined').toStaticObject() as LinearGradient;
+    this.progress_ring_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_ring_enableScanEffect_boolean').toBoolean();
+    this.progress_ring_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_ring_enableSmoothEffect_boolean').toBoolean();
+
+    this.progress_linear_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_linear_enableScanEffect_boolean').toBoolean();
+    this.progress_linear_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_linear_enableSmoothEffect_boolean').toBoolean();
+
+    this.progress_scaleRing_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_scaleRing_enableSmoothEffect_boolean').toBoolean();
+    this.progress_eclipse_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_eclipse_enableSmoothEffect_boolean').toBoolean();
+  }
+
+
+  messageManager: MessageManager<object> = new MessageManager<object>()
   onPageShow() {
     console.info('divider onPageShow')
-    // globalThis.value = {
-    //   name: 'messageManager', message: this.messageManager
-    // }
-    let callback: Callback = (message: Message) => {
+  
+    AppStorage.setOrCreate<Context>('context', this.getUIContext().getHostContext()!)
+    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+
+    let callback: Callback<object> = (message: Message<object>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'progress_capsule_borderWidth_resource') {
         this.progress_capsule_borderWidth_resource = message.value as Resource
@@ -174,25 +158,23 @@ struct progressSecTest {
       if (message.name == 'progress_ring_strokeWidth_resource') {
         this.progress_ring_strokeWidth_resource = message.value as Resource
       }
-      // if (message.name == 'progress_ring_color_linear_number') {
-      //   this.progress_ring_color_linear_number = message.value
-      // }
-      // if (message.name == 'progress_ring_color_linear_string') {
-      //   this.progress_ring_color_linear_string = message.value
-      // }
-      // if (message.name == 'progress_ring_color_linear_color') {
-      //   this.progress_ring_color_linear_color = message.value
-      // }
-      // if (message.name == 'progress_ring_color_linear_resource') {
-      //   this.progress_ring_color_linear_resource = message.value
-      // }
+      if (message.name == 'progress_ring_color_linear_number') {
+        this.progress_ring_color_linear_number = message.value as LinearGradient
+      }
+      if (message.name == 'progress_ring_color_linear_string') {
+        this.progress_ring_color_linear_string = message.value as LinearGradient
+      }
+      if (message.name == 'progress_ring_color_linear_color') {
+        this.progress_ring_color_linear_color = message.value as LinearGradient
+      }
+      if (message.name == 'progress_ring_color_linear_resource') {
+        this.progress_ring_color_linear_resource = message.value as LinearGradient
+      }
     }
     this.messageManager.registerCallback(callback)
   }
 
   aboutToAppear() {
-    let getUIContext = this.getUIContext();
-    AppStorage.setOrCreate<UIContext>('getUIContext', getUIContext);
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 183,
       priority: events_emitter.EventPriority.LOW
@@ -202,10 +184,10 @@ struct progressSecTest {
 
   build() {
     Column() {
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_default_default')
         .backgroundColor($r('sys.color.ohos_id_color_background'))
         .color($r('sys.color.ohos_id_color_emphasize'))
@@ -214,19 +196,19 @@ struct progressSecTest {
           borderColor: $r('sys.color.ohos_id_color_emphasize'),
           font: {
             size: $r('sys.float.ohos_id_text_size_button3'),
-          } as Font,
+          },
           fontColor: $r('sys.color.ohos_id_color_text_primary'),
         } as CapsuleStyleOptions)
         .padding($r('sys.float.ohos_id_alpha_content_fourth'))
         .margin($r('sys.float.ohos_id_alpha_highlight_bg'))
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_showDefaultPercentage_default')
         .style({
           showDefaultPercentage: true
         } as CapsuleStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_number')
         .style({
           borderWidth: this.progress_capsule_borderWidth_number,
@@ -235,15 +217,14 @@ struct progressSecTest {
             size: this.progress_capsule_fontSize_number,
             weight: this.progress_capsule_fontWeight_number,
             style: this.progress_capsule_fontStyle_fontStyle
-          } as Font,
+          },
           fontColor: this.progress_capsule_fontColor_number,
-          // content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean,
           enableSmoothEffect: this.progress_capsule_enableSmoothEffect_boolean
         } as CapsuleStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_string')
         .style({
           borderWidth: this.progress_capsule_borderWidth_string,
@@ -252,14 +233,13 @@ struct progressSecTest {
             size: this.progress_capsule_fontSize_string,
             weight: this.progress_capsule_fontWeight_string,
             style: this.progress_capsule_fontStyle_fontStyle
-          } as Font,
+          },
           fontColor: this.progress_capsule_fontColor_string,
-          // content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_enum')
         .style({
           borderWidth: this.progress_capsule_borderWidth_number,
@@ -270,12 +250,11 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_color,
-          // content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_resource')
         .style({
           borderWidth: this.progress_capsule_borderWidth_resource,
@@ -286,12 +265,11 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_resource,
-          // content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_resource_judge')
         .style({
           borderWidth: $r('sys.float.ohos_id_text_margin_vertical'),
@@ -302,28 +280,27 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: $r('sys.color.ohos_id_color_connected'),
-          // content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
 
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_default_default')
         .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_default_default_color_begin')
         .color($r('sys.color.ohos_id_color_ring_progress_begin'))
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_default_default_color_end')
         .color($r('sys.color.ohos_id_color_ring_progress_end'))
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_number')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -334,7 +311,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_purity)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_string')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_string,
@@ -344,7 +321,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_purity)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_resource')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_resource,
@@ -354,7 +331,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_purity)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_resource_judge')
         .style({
           strokeWidth: $r('sys.float.ohos_id_text_margin_vertical'),
@@ -365,7 +342,7 @@ struct progressSecTest {
         .color($r('sys.color.ohos_id_color_background'))
         .backgroundColor($r('sys.color.ohos_id_color_connected'))
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_number')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -374,7 +351,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_linear_number)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_string')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -383,7 +360,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_linear_string)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_color')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -392,7 +369,7 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_linear_color)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_resource')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -401,16 +378,15 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_linear_resource)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_null')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
           shadow: this.progress_ring_shadow_bool,
           status: this.progress_ring_status_progressStatus
         } as RingStyleOptions)
-        // .color(this.progress_ring_color_linear_null)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Ring } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_undefined')
         .style({
           strokeWidth: this.progress_ring_strokeWidth_number,
@@ -419,137 +395,133 @@ struct progressSecTest {
         } as RingStyleOptions)
         .color(this.progress_ring_color_linear_undefined)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_number')
         .color(this.progress_ring_color_purity)
         .style({
           enableScanEffect: this.progress_linear_enableScanEffect_boolean,
           enableSmoothEffect: this.progress_linear_enableSmoothEffect_boolean
-        } as CapsuleStyleOptions)
+        } as RingStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_number')
         .color(this.progress_ring_color_linear_number)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_string')
         .color(this.progress_ring_color_linear_string)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_color')
         .color(this.progress_ring_color_linear_color)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_resource')
         .color(this.progress_ring_color_linear_resource)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_null')
-        // .color(this.progress_ring_color_linear_null)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Linear } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_undefined')
         .color(this.progress_ring_color_linear_undefined)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_number')
         .color(this.progress_ring_color_purity)
         .style({
           enableSmoothEffect: this.progress_eclipse_enableSmoothEffect_boolean
-        } as CapsuleStyleOptions)
+        } as RingStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_number')
         .color(this.progress_ring_color_linear_number)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_string')
         .color(this.progress_ring_color_linear_string)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_color')
         .color(this.progress_ring_color_linear_color)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_resource')
         .color(this.progress_ring_color_linear_resource)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_null')
-        // .color(this.progress_ring_color_linear_null)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Eclipse } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_undefined')
         .color(this.progress_ring_color_linear_undefined)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_number')
         .color(this.progress_ring_color_purity)
         .style({
           enableSmoothEffect: this.progress_scaleRing_enableSmoothEffect_boolean
-        } as CapsuleStyleOptions)
+        } as RingStyleOptions)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_number')
         .color(this.progress_ring_color_linear_number)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_string')
         .color(this.progress_ring_color_linear_string)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_color')
         .color(this.progress_ring_color_linear_color)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_resource')
         .color(this.progress_ring_color_linear_resource)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_null')
-        // .color(this.progress_ring_color_linear_null)
 
-      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_undefined')
         .color(this.progress_ring_color_linear_undefined)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_default')
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_number')
         .color(this.progress_ring_color_purity)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_number')
         .color(this.progress_ring_color_linear_number)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_string')
         .color(this.progress_ring_color_linear_string)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_color')
         .color(this.progress_ring_color_linear_color)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_resource')
         .color(this.progress_ring_color_linear_resource)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_null')
-        // .color(this.progress_ring_color_linear_null)
 
-      Progress({ value: 60, total: 100, type: ProgressType.Capsule } as ProgressOptions)
+      Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_undefined')
         .color(this.progress_ring_color_linear_undefined)
     }

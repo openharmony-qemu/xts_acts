@@ -53,10 +53,10 @@ function PlaceholderPage3() {
 @Entry
 @Component
 struct SplitPlaceholder {
-  // @Provide('navPathStack') navPathStack: NavPathStack = new NavPathStack();
-  // placeholder = new ComponentContent(this.getUIContext(),wrapBuilder(PlaceholderPage))
-  // placeholder2 = new ComponentContent<undefined>(this.getUIContext(),wrapBuilder<[undefined]>(PlaceholderPage2))
-  // placeholder3 = new ComponentContent<undefined>(this.getUIContext(),wrapBuilder<[undefined]>(PlaceholderPage3))
+  
+  
+  
+  
 
   @State menuItems: Array<NavigationMenuItem> = [
     {
@@ -96,7 +96,7 @@ struct SplitPlaceholder {
     }
   ] as Array<ToolbarItem>
   @State message :string = ''
-  // @State splitPlaceholder:(ComponentContent<Object>|undefined|null) [] = [this.placeholder, this.placeholder2, this.placeholder3, null, undefined]
+  
   @State splitPlaceholderIndex:number = 0
   @State navBarPosition:NavBarPosition[] =[NavBarPosition.Start,NavBarPosition.End]
   @State NavBarPositionString:string[] =['Start','End']
@@ -113,7 +113,7 @@ struct SplitPlaceholder {
   @State enableModeIndex:number = 0
 
   build() {
-    // Navigation(this.navPathStack) {
+    
       Scroll() {
         Column({space:10} as ColumnOptions) {
           Button('splitPlaceholder', { stateEffect: true, type: ButtonType.Capsule })
@@ -163,18 +163,18 @@ struct SplitPlaceholder {
 
         }
       }
-    // }
-    // .enableModeChangeAnimation(this.enableMode[this.enableModeIndex])
-    // .enableDragBar(this.enableDragBar[this.enableDragBarIndex])
-    // .hideNavBar(this.hideNavBar[this.hideNavBarIndex])
-    // .navBarPosition(this.navBarPosition[this.navBarPositionIndex])
-    // .backButtonIcon(new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')))
-    // .titleMode(NavigationTitleMode.Mini)
-    // .menus(this.menuItems)
-    // .toolbarConfiguration(this.toolItems)
-    // .title('一级页面')
-    // .splitPlaceholder(this.splitPlaceholder[this.splitPlaceholderIndex])
-    // .mode(NavigationMode.Split)
-    // .navBarWidthRange(['50%',undefined])
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   }
 }

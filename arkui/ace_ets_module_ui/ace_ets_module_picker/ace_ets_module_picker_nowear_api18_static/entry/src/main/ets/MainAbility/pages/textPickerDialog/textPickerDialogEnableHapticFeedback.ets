@@ -12,15 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, DatePickerDialog, ResourceColor, BlurStyle, ShadowStyle,Resource,
-  FlexWrap,Color, $r, TextPickerResult, RowOptions} from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, FontWeight } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct pickerDialogExample {
-  private select: Double|Array<Double> = 0 as Double|Array<Double>
+  private select: number | number[] = 0.0
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
   @State v: string = '';
   build(){
@@ -28,17 +26,17 @@ struct pickerDialogExample {
       Row({space:5} as RowOptions) {
         Button('1')
           .id('TextPickerDialog1')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               canLoop:true,
               enableHapticFeedback:true,
               disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TextPickerResult) => {
-                this.select = value.index as Double|Array<Double>;
+                this.select = value.index;
                 this.v = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },
@@ -65,17 +63,17 @@ struct pickerDialogExample {
 
         Button('2')
           .id('TextPickerDialog2')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               canLoop:true,
               enableHapticFeedback:false,
               disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TextPickerResult) => {
-                this.select = value.index as Double|Array<Double>;
+                this.select = value.index;
                 this.v = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },
@@ -104,17 +102,17 @@ struct pickerDialogExample {
       Row({space:5} as RowOptions) {
         Button('3')
         .id('TextPickerDialog3')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           this.getUIContext().showTextPickerDialog({
             range: this.fruits,
-            // selected: this.select,
+            selected: this.select,
             canLoop:true,
             enableHapticFeedback:undefined,
             disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
             textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TextPickerResult) => {
-              this.select = value.index as Double|Array<Double>;
+              this.select = value.index;
               this.v = value.value as string;
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
             },
@@ -141,17 +139,17 @@ struct pickerDialogExample {
 
         Button('4')
           .id('TextPickerDialog4')
-          .onClick((e:ClickEvent) => {
+          .onClick((e: ClickEvent) => {
             this.getUIContext().showTextPickerDialog({
               range: this.fruits,
-              // selected: this.select,
+              selected: this.select,
               canLoop:true,
               // enableHapticFeedback:null,
               disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TextPickerResult) => {
-                this.select = value.index as Double|Array<Double>;
+                this.select = value.index;
                 this.v = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },

@@ -21,6 +21,7 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { px2vp } from '@ohos.arkui.component'
 const uiContext = new UIContext();
 function getRectCenterVp(rect: string) {
   let regexp: RegExp = new RegExp('\\[', 'g');
@@ -36,7 +37,7 @@ export default function textPickerOnChangeModifierTest() {
     beforeAll(() => {
       console.info("textPickerOnChangeModifierTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -52,11 +53,11 @@ export default function textPickerOnChangeModifierTest() {
         console.info("get textPickerOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("textPickerOnChangeModifier" == pages.name)) {
           console.info("get textPickerOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push textPickerOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push textPickerOnChangeModifierTest page error:" + err);
@@ -65,15 +66,16 @@ export default function textPickerOnChangeModifierTest() {
     }); 
 
   
-    /* *
-    * @tc.number: TextPicker_OnChange_Modifier_static_001
-    * @tc.name  : TextPicker_OnChange_Modifier_static_001
-    * @tc.desc  : To test the OnChange
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
-    it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    
+
+/*
+     * @tc.number   TextPicker_OnChange_Modifier_static_001
+     * @tc.name     TextPicker_OnChange_Modifier_static_001
+     * @tc.desc     TextPicker_OnChange_Modifier_static_001
+     * @tc.level    Level.LEVEL1
+     */
+it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('TextPicker_OnChange_Modifier_static_001 START');
         let driver = Driver.create();
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
@@ -96,15 +98,16 @@ export default function textPickerOnChangeModifierTest() {
         done();
       });
   
-      /* *
-      * @tc.number: TextPicker_OnChange_Modifier_static_002
-      * @tc.name  : TextPicker_OnChange_Modifier_static_002
-      * @tc.desc  : To test the OnChange
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
-      it('TextPicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      
+
+/*
+     * @tc.number   TextPicker_OnChange_Modifier_static_002
+     * @tc.name     TextPicker_OnChange_Modifier_static_002
+     * @tc.desc     TextPicker_OnChange_Modifier_static_002
+     * @tc.level    Level.LEVEL1
+     */
+it('TextPicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('TextPicker_OnChange_Modifier_static_002 START');
         let driver = Driver.create();
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));

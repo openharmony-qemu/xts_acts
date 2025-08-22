@@ -27,7 +27,6 @@ import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 @Entry
 @Component
 struct EnableToolBarAdaptation {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
   @State isEnable: boolean = false;
   @State showText: boolean = false;
 
@@ -50,7 +49,6 @@ struct EnableToolBarAdaptation {
 
   build() {
     Navigation(new NavPathStack()) {
-    // Navigation(this.pageInfos) { 原代码
       Column({space: '5vp'} as ColumnOptions) {
         Button('Landscape')
           .fontColor(Color.Black)
@@ -77,7 +75,7 @@ struct EnableToolBarAdaptation {
           this.showText = !this.showText
         }).height('10%')
         Button('push one').id('pushOneId').onClick((e:ClickEvent) => {
-          // this.pageInfos.pushPath({name: 'pageOne'})
+          
         }).height('10%')
       }
     }

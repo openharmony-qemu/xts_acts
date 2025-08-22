@@ -1,0 +1,89 @@
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { typeNode, FrameNode, NodeController } from '@ohos.arkui.node';
+import { WaterFlowDataSource } from './WaterFlowDataSource'
+import { Entry, Component, Column, $r, Color, Margin, NodeContainer, Scroller, Padding, WaterFlowLayoutMode } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
+
+class MyNodeController extends NodeController {
+  minSize: number = 80
+  maxSize: number = 180
+  colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  scroller: Scroller = new Scroller()
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
+  dataCount: number = this.dataSource.totalCount()
+  private itemWidthArray: number[] = []
+  private itemHeightArray: number[] = []
+
+  // 计算FlowItem宽/高
+  getSize() {
+    let ret = Math.floor(Math.random() * this.maxSize)
+    return (ret > this.minSize ? ret : this.minSize)
+  }
+
+  // 设置FlowItem宽/高数组
+  setItemSizeArray() {
+    for (let i = 0; i < 100; i++) {
+      this.itemWidthArray.push(this.getSize())
+      this.itemHeightArray.push(this.getSize())
+    }
+  }
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.setItemSizeArray()
+    console.log('WaterFlow makeNode')
+
+    let node = new FrameNode(uiContext);
+    node.commonAttribute
+      .width('80%')
+      .height('70%')
+    let col = typeNode.createNode(uiContext, 'Column')
+    col.initialize()
+      .width('100%')
+      .height('100%')
+      .borderWidth(1)
+    node.appendChild(col)
+
+
+    for (let i = 0; i < this.dataSource.totalCount(); i++) {
+
+      let flowItem = typeNode.createNode(uiContext, 'FlowItem')
+      flowItem.initialize().id('flowItem_node')
+        .width('100%')
+        .height(this.itemHeightArray[i.toInt() % 100])
+        .backgroundColor(this.colors[i.toInt() % 5])
+
+    }
+
+    return node;
+  }
+}
+
+@Entry
+@Component
+struct nodeWaterFlow {
+  private nodeController: MyNodeController = new MyNodeController();
+
+  build() {
+    Column() {
+      NodeContainer(this.nodeController)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding({ top: 5 } as Padding)
+  }
+}

@@ -357,7 +357,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0020', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100002c, "format string", 1.234568E+16);
+      let value_one = resMgr.getStringSync(0x0100002a, "format string", 1.234568E+16);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0020 value_one:' + value_one);
       expect(value_one).assertEqual('12345680000000000');
@@ -373,7 +373,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0030', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000029, "format string", 10.01);
+      let value_one = resMgr.getStringSync(0x01000022, "format string", 10.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0030 value_one:' + value_one);
       expect(value_one).assertEqual('10');
@@ -389,7 +389,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0040', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100001c, "format string", 1.234568e-08);
+      let value_one = resMgr.getStringSync(0x01000015, "format string", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0040 value_one:' + value_one);
       expect(value_one).assertEqual('0');
@@ -421,7 +421,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0060', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000025, "format string", 12, "TestTest");
+      let value_one = resMgr.getStringSync(0x0100001e, "format string", 12, "TestTest");
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0060 value_one:' + value_one);
       expect(value_one).assertEqual('TestTest');
@@ -453,7 +453,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0080', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000017, "format string", 12, "TestTest", 1.234568E+16);
+      let value_one = resMgr.getStringSync(0x01000010, "format string", 12, "TestTest", 1.234568E+16);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0080 value_one:' + value_one);
       expect(value_one).assertEqual('12345680000000000');
@@ -485,7 +485,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0100', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000027, "format string", 12, "TestTest", 1.234568e-08);
+      let value_one = resMgr.getStringSync(0x01000020, "format string", 12, "TestTest", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0100 value_one:' + value_one);
       expect(value_one).assertEqual('0');
@@ -501,7 +501,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0110', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000019, 12);
+      let value_one = resMgr.getStringSync(0x01000012, 12);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0110 value_one:' + value_one);
       expect(value_one).assertEqual('%d');
@@ -533,7 +533,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0130', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000023, 12.01);
+      let value_one = resMgr.getStringSync(0x01000021, 12.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0130 value_one:' + value_one);
       expect(value_one).assertEqual('%%f');
@@ -549,7 +549,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0140', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100001d,
+      let value_one = resMgr.getStringSync(0x01000016,
         "format string", 10, "测试测试", 98.78);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0140 value_one:' + value_one);
@@ -567,7 +567,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0150', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100001a,
+      let value_one = resMgr.getStringSync(0x01000013,
         "format string", 1.234568E+16, "TestTest", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0150 value_one:' + value_one);
@@ -616,7 +616,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0180', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000018, "format string", 30, "测试测试", 98.78, 1.234568E+16, "TestTest",
+      let value_one = resMgr.getStringSync(0x01000011, "format string", 30, "测试测试", 98.78, 1.234568E+16, "TestTest",
         1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0180 value_one:' + value_one);
@@ -633,7 +633,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0190', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100001c, 40);
+      let value_one = resMgr.getStringSync(0x0100001a, 40);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0190 value_one:' + value_one);
       expect(value_one).assertEqual('40 40');
@@ -649,7 +649,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0200', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x01000026, 40);
+      let value_one = resMgr.getStringSync(0x01000024, 40);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0200 value_one:' + value_one);
       expect(value_one).assertEqual('%40 40');
@@ -665,7 +665,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getStringSync_static_0210', Level.LEVEL2, () => {
       let resMgr = res;
-      let value_one = resMgr.getStringSync(0x0100002e, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08);
+      let value_one = resMgr.getStringSync(0x01000027, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0210 value_one:' + value_one);
       expect(value_one).assertEqual('50 12345680000000000 测试测试 TestTest 98.78 0');
@@ -682,7 +682,7 @@ export default function globalStageTest() {
     it('resourceManager_test_getStringSync_static_0220', Level.LEVEL2, () => {
       let resMgr = res;
       let value_one =
-        resMgr.getStringSync(0x01000030, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08, 15,
+        resMgr.getStringSync(0x01000029, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08, 15,
           "format string", 15.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0220 value_one:' + value_one);
@@ -770,7 +770,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('resourceManager_test_getSymbol_static_0020', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbol(0xF0003);
+      let value = res.getSymbol(0x01000042);
       console.log('resourceManager_test_getSymbol_static_0020:' + value);
       expect(value == 983043).assertTrue();
     })
@@ -911,7 +911,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('resourceManager_test_getSymbol_static_0190', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbol(0xF0001);
+      let value = res.getSymbol(0x0100003f);
       console.log('resourceManager_test_getSymbol_static_0190:' + value);
       expect(value == 983041).assertTrue();
     })
@@ -2381,11 +2381,10 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let res: resourceManager.ResourceManager;
         res.getDrawableDescriptor(0x01234567)
       } catch (err: BusinessError) {
         console.log('getDrawableDescriptor_stage_test_static_0200 error code:' + err.code);
-        expect(err.code).assertEqual('9001001');
+        expect(err.code).assertEqual(9001001);
       }
     })
 
@@ -2485,11 +2484,10 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptorByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let res: resourceManager.ResourceManager;
         res.getDrawableDescriptorByName('test_stringLoopA', 0, 1)
       } catch (err: BusinessError) {
         console.log('getDrawableDescriptorByName_test_static_0100 error code:' + err.code);
-        expect(err.code).assertEqual('9001003');
+        expect(err.code).assertEqual(9001003);
       }
     })
 
@@ -2608,7 +2606,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('getMediaContentSync_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
-      let value: Uint8Array = res.getMediaContentSync(0x01000018, 0);
+      let value: Uint8Array = res.getMediaContentSync(0x01000043, 0);
       console.log('getMediaContentSync_test_static_0500 1' + value);
       expect(value !== null).assertTrue();
     })
@@ -2622,7 +2620,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('getMediaContentBase64Sync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: string = res.getMediaContentBase64Sync(0x01000018, 0);
+      let value: string = res.getMediaContentBase64Sync(0x01000043, 0);
       console.log('getMediaContentBase64Sync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })
@@ -2724,7 +2722,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('getMediaByNameSync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: Uint8Array = res.getMediaByNameSync('icon', 0);
+      let value: Uint8Array = res.getMediaByNameSync('background', 0);
       console.log('getMediaByNameSync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })
@@ -2756,7 +2754,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('getMediaBase64ByNameSync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: string = res.getMediaBase64ByNameSync('icon', 0);
+      let value: string = res.getMediaBase64ByNameSync('background', 0);
       console.log('getMediaBase64ByNameSync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })

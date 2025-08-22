@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,6 @@ export default function textpickermultiTest() {
   describe('ActsTextPickerTest', () => {
 
     beforeAll(() => {
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -58,21 +57,23 @@ export default function textpickermultiTest() {
         console.info("get TextPickerMulti state pages:" + JSON.stringify(pages));
         if (!("TextPickerMulti" == pages.name)) {
           console.info("get TextPickerMulti pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push TextPickerMulti page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextPickerMulti page error " + JSON.stringify(err));
       }
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0100
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0100
-     * @tc.desc Set the range parameter to multiple columns
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0100
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0100
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0100
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0100 start");
@@ -92,10 +93,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0200
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0200
-     * @tc.desc Set the range parameter to multiple columns linkage
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0200
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0200
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0200
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0200 start");
@@ -120,10 +124,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0300
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0300
-     * @tc.desc Set the selected parameter to [1, 1, 2]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0300
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0300
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0300
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0300 start");
@@ -144,10 +151,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0400
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0400
-     * @tc.desc Set the value parameter to  ["辽宁省", "大连市","中山区"]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0400
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0400
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0400
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0400 start");
@@ -168,10 +178,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0500
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0500
-     * @tc.desc Set the selectedIndex parameter to  [2, 1, 2]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0500
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0500
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0500
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0500 start");
@@ -192,10 +205,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0600
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0600
-     * @tc.desc Simultaneously setting the selectedIndex selected value parameter
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0600
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0600
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0600
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0600 start");
@@ -216,10 +232,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0700
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0700
-     * @tc.desc Set the selectedIndex parameter to  [null, 1, 1]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0700
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0700
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0700
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0700 start");
@@ -240,10 +259,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0800
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0800
-     * @tc.desc Set the selectedIndex parameter to  [1, undefined, 1]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0800
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0800
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0800
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0800 start");
@@ -264,10 +286,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_0900
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_0900
-     * @tc.desc Set the selectedIndex parameter to  [1, 1, '']
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0900
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0900
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0900
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0900 start");
@@ -288,10 +313,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_1000
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_1000
-     * @tc.desc Set the selected parameter to  [1, 0, ]
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_1000
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_1000
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_1000
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_1000 start");
@@ -312,10 +340,13 @@ export default function textpickermultiTest() {
       }, 500)
     });
 
-    /**
-     * @tc.number ArkUXII_Stage_TextPicker_Options_static_1100
-     * @tc.name ArkUXII_Stage_TextPicker_Options_static_1100
-     * @tc.desc Set the value parameter to  ['辽宁省', '大连市', '']
+
+
+    /*
+     * @tc.number   ArkUXII_Stage_TextPicker_Options_static_1100
+     * @tc.name     ArkUXII_Stage_TextPicker_Options_static_1100
+     * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_1100
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_1100 start");

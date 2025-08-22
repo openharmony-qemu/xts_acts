@@ -53,9 +53,7 @@ export default function PreferredOrientation() {
         if (!('PreferredOrientation' == pages.name)) {
           console.info('get PreferredOrientation pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info('push PreferredOrientation page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push PreferredOrientation page error:' + err);

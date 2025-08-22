@@ -32,7 +32,7 @@ let abilityFlags8 = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_SKILL;
 
 let userId = 100;
 let want: Want = {
-  bundleName: "ohos.acts.bms.getabilityinfo.test.static",
+  bundleName: "com.example.orientationtest.static",
   abilityName: "EntryAbility"
 };
 

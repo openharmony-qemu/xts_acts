@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,10 +52,9 @@ export default function ObserverNavDestinationId() {
         console.info("get ObserverNavDestinationId state success " + JSON.stringify(pages));
         if (!("ObserverNavDestinationId" == pages.name)) {
           console.info("get ObserverNavDestinationId state success " + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ObserverNavDestinationId page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObserverNavDestinationId page error: " + err);
@@ -68,13 +67,14 @@ export default function ObserverNavDestinationId() {
     });
 
 
-    /**
-     * @tc.number    ObserverNavDestinationId_0100
-     * @tc.name      ObserverNavDestinationId_static_0100
-     * @tc.desc      Test Observer NavDestinationInfo navDestinationId
-     * @tc.level:    Level 2
+    
+    /*
+     * @tc.number   ObserverNavDestinationId_static_0100
+     * @tc.name     ObserverNavDestinationId_static_0100
+     * @tc.desc     ObserverNavDestinationId_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ObserverNavDestinationId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ObserverNavDestinationId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ObserverNavDestinationId_0100] START');
       await CommonFunc.sleep(1000);
 

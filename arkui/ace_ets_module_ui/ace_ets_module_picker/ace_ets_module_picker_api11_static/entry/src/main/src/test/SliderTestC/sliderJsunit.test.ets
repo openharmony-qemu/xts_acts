@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function sliderJsunitSliderTest() {
     describe("sliderJsunitSliderTestSliderTest", () => {
 
         beforeAll(() => {
-            
+            await UtilsTest.loadAndSetUpUiTest();
             await UtilsTest.msSleep(4000)
             await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
             await UtilsTest.msSleep(4000)
@@ -61,48 +61,33 @@ export default function sliderJsunitSliderTest() {
                 let pages:router.RouterState = router.getState();
                 console.info("[sliderJsunitSliderTest] current page is: " + JSON.stringify(pages.name));
                 if (!('slider' == pages.name)) {
-                    // let result = await toggle.pushUrl(options);
+
                     router.pushUrl(options);
-                    // console.info("push toggle page success " + JSON.stringify(result));
                 }
             } catch (err:Error) {
                 console.info("push sliderJsunitSliderTest page page error " + JSON.stringify(err));
             }
             await sleep(2);
         })
-        /**
-         * @tc.number    sliderJsunitSliderTest_0100
-         * @tc.name      sliderJsunitSliderTest_static_0100
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0100",
             Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                console.info("sliderJsunitSliderTest_0100 START")
+                console.info("sliderJsunitSliderTest_static_0100 START")
                 await CommonFunc.sleep(1000)
                 // get the slider component with no parameter and test attribute
                 let strJson = inspector.getInspectorByKey("sliderConstructor2")
                 let obj = JSON.parseJsonElement(strJson)
                 console.info(
-                    "sliderJsunitSliderTest_0100 component obj is: " +
+                    "sliderJsunitSliderTest_static_0100 component obj is: " +
                         obj.getElement('$attrs').getString('style')
                 )
                 expect(obj.getElement('$attrs').getString('style')).assertEqual("SliderStyle.OutSet")
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0200
-         * @tc.name      sliderJsunitSliderTest_static_0200
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0200",
             Level.LEVEL0,
@@ -141,14 +126,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0300
-         * @tc.name      sliderJsunitSliderTest_static_0300
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0300",
             Level.LEVEL0,
@@ -183,14 +161,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0400
-         * @tc.name      sliderJsunitSliderTest_static_0400
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0400",
             Level.LEVEL0,
@@ -238,14 +209,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0500
-         * @tc.name      sliderJsunitSliderTest_static_0500
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0500",
             Level.LEVEL0,
@@ -286,14 +250,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0600
-         * @tc.name      sliderJsunitSliderTest_static_0600
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0600",
             Level.LEVEL0,
@@ -341,14 +298,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0700
-         * @tc.name      sliderJsunitSliderTest_static_0700
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0700",
             Level.LEVEL0,
@@ -413,14 +363,7 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0800
-         * @tc.name      sliderJsunitSliderTest_static_0800
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0800",
             Level.LEVEL0,
@@ -488,19 +431,12 @@ export default function sliderJsunitSliderTest() {
                 done()
             }
         )
-        /**
-         * @tc.number    sliderJsunitSliderTest_static_0900
-         * @tc.name      sliderJsunitSliderTest_static_0900
-         * @tc.desc      api
-         * @tc.level:    Level 0
-         * @tc.type :
-         * @tc.size :
-         */
+
         it(
             "sliderJsunitSliderTest_static_0900",
             Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                console.info("[sliderJsunitSliderTest_static_0900] START")
+                console.info("[sliderJsunitSliderTest_static_0800] START")
                 // modify the constructor attribute of slider dynamically
                 const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
                 messageManager.notify({
