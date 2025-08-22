@@ -63,7 +63,7 @@ export default function CapiPostAsyncUITask() {
      * @tc.number ArkUIPostAsyncUITask_001
      * @tc.name ArkUIPostAsyncUITask_001
      * @tc.desc Test ArkUIPostAsyncUITask
-     * @tc.level: Level 2
+     * @tc.level: Level 1
      */
     it('ArkUIPostAsyncUITask_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostAsyncUITask_001] START'); 

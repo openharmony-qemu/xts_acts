@@ -64,7 +64,7 @@ export default function CapiPostUITaskAndWait() {
      * @tc.number ArkUIPostUITaskAndWait_001
      * @tc.name ArkUIPostUITaskAndWait_001
      * @tc.desc Test ArkUIPostUITaskAndWait
-     * @tc.level: Level 2
+     * @tc.level: Level 1
      */
     it('ArkUIPostUITaskAndWait_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostUITaskAndWait_001] START'); 
