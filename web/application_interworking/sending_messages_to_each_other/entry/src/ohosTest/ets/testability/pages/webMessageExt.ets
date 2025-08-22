@@ -21,6 +21,7 @@ import business_error from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -34,17 +35,19 @@ struct webMessageExt {
   @State ports: webView.WebMessagePort[] = [];
   @State listening_port: number = 0
   @State listening_flag: number = 0
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170010,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170010)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,9 +56,11 @@ struct webMessageExt {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
+
   private jsObj: JsProxyObject = {
     test: (res: object) => {
       Utils.emitEvent(String(res), 102);
@@ -79,10 +84,13 @@ struct webMessageExt {
     Column() {
       Row() {
         Button("webMessageExt click").key('WebMessageExtButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
+          await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "testWebMessageExGetType001": {
-              this.listening_port = 20260
+              this.listening_port = 170020
               this.listening_flag = 1
               this.controller.runJavaScript(
                 'postStringToApp()',
@@ -99,7 +107,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExGetType002": {
-              this.listening_port = 20261
+              this.listening_port = 170030
               this.listening_flag = 2
               this.controller.runJavaScript(
                 'postNumberToApp()',
@@ -116,7 +124,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExGetType003": {
-              this.listening_port = 20262
+              this.listening_port = 170040
               this.listening_flag = 3
               this.controller.runJavaScript(
                 'postBooleanToApp()',
@@ -133,7 +141,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExGetType004": {
-              this.listening_port = 20263
+              this.listening_port = 170050
               this.listening_flag = 4
               this.controller.runJavaScript(
                 'postArrayBufferToApp()',
@@ -150,7 +158,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExGetType005": {
-              this.listening_port = 20264
+              this.listening_port = 170060
               this.listening_flag = 5
               this.controller.runJavaScript(
                 'postArrayToApp()',
@@ -167,7 +175,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExGetType006": {
-              this.listening_port = 20265
+              this.listening_port = 170070
               this.listening_flag = 6
               this.controller.runJavaScript(
                 'postErrorToApp()',
@@ -186,7 +194,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType001": {
               try {
                 console.info(`webView.WebMessageType.NOT_SUPPORT :` + webView.WebMessageType.NOT_SUPPORT)
-                Utils.emitEvent(webView.WebMessageType.NOT_SUPPORT, 30000)
+                Utils.emitEvent(webView.WebMessageType.NOT_SUPPORT, 170080)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -197,7 +205,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType002": {
               try {
                 console.info(`webView.WebMessageType.STRING :` + webView.WebMessageType.STRING)
-                Utils.emitEvent(webView.WebMessageType.STRING, 30001)
+                Utils.emitEvent(webView.WebMessageType.STRING, 170090)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -208,7 +216,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType003": {
               try {
                 console.info(`webView.WebMessageType.NUMBER :` + webView.WebMessageType.NUMBER)
-                Utils.emitEvent(webView.WebMessageType.NUMBER, 30002)
+                Utils.emitEvent(webView.WebMessageType.NUMBER, 170100)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -219,7 +227,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType004": {
               try {
                 console.info(`webView.WebMessageType.BOOLEAN :` + webView.WebMessageType.BOOLEAN)
-                Utils.emitEvent(webView.WebMessageType.BOOLEAN, 30003)
+                Utils.emitEvent(webView.WebMessageType.BOOLEAN, 170110)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -230,7 +238,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType005": {
               try {
                 console.info(`webView.WebMessageType.ARRAY_BUFFER :` + webView.WebMessageType.ARRAY_BUFFER)
-                Utils.emitEvent(webView.WebMessageType.ARRAY_BUFFER, 30004)
+                Utils.emitEvent(webView.WebMessageType.ARRAY_BUFFER, 170120)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -241,7 +249,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType006": {
               try {
                 console.info(`webView.WebMessageType.ARRAY :` + webView.WebMessageType.ARRAY)
-                Utils.emitEvent(webView.WebMessageType.ARRAY, 30005)
+                Utils.emitEvent(webView.WebMessageType.ARRAY, 170130)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -252,7 +260,7 @@ struct webMessageExt {
             case "testWebMessageExtWebMessageType007": {
               try {
                 console.info(`webView.WebMessageType.ERROR :` + webView.WebMessageType.ERROR)
-                Utils.emitEvent(webView.WebMessageType.ERROR, 30006)
+                Utils.emitEvent(webView.WebMessageType.ERROR, 170140)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -261,7 +269,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetString001": {
-              this.listening_port = 100020
+              this.listening_port = 170150
               this.listening_flag = 10
               this.controller.runJavaScript(
                 'postStringToApp()',
@@ -278,7 +286,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetNumber001": {
-              this.listening_port = 100021
+              this.listening_port = 170160
               this.listening_flag = 11
               this.controller.runJavaScript(
                 'postNumberToApp()',
@@ -296,7 +304,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetBoolean001": {
-              this.listening_port = 100022
+              this.listening_port = 170170
               this.listening_flag = 12
               this.controller.runJavaScript(
                 'postBooleanToApp()',
@@ -313,7 +321,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetBoolean002": {
-              this.listening_port = 100023
+              this.listening_port = 170180
               this.listening_flag = 13
               this.controller.runJavaScript(
                 'postBooleanFalseToApp()',
@@ -330,7 +338,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetArrayBuffer001": {
-              this.listening_port = 100024
+              this.listening_port = 170190
               this.listening_flag = 14
               this.controller.runJavaScript(
                 'postArrayBufferToApp()',
@@ -347,7 +355,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetArray001": {
-              this.listening_port = 100025
+              this.listening_port = 170200
               this.listening_flag = 15
               this.controller.runJavaScript(
                 'postArrayToApp()',
@@ -364,7 +372,7 @@ struct webMessageExt {
             }
 
             case "testWebMessageExtGetError001": {
-              this.listening_port = 100026
+              this.listening_port = 170210
               this.listening_flag = 16
               this.controller.runJavaScript(
                 'postErrorToApp()',
@@ -393,11 +401,11 @@ struct webMessageExt {
                     console.log(`The postStringToHtml() return value is: ${error}`);
                   }
                   console.log(`The postStringToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100027)
+                  Utils.emitEvent(result, 170220)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100027)
+                Utils.emitEvent(error.code, 170220)
               }
               break;
             }
@@ -415,11 +423,11 @@ struct webMessageExt {
                     console.log(`The postNumberToHtml() return value is: ${error}`);
                   }
                   console.log(`The postNumberToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100028)
+                  Utils.emitEvent(result, 170230)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100028)
+                Utils.emitEvent(error.code, 170230)
               }
               break;
             }
@@ -437,11 +445,11 @@ struct webMessageExt {
                     console.log(`The postBooleanToHtml() return value is: ${error}`);
                   }
                   console.log(`The postBooleanToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100029)
+                  Utils.emitEvent(result, 170240)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100029)
+                Utils.emitEvent(error.code, 170240)
               }
               break;
             }
@@ -459,11 +467,11 @@ struct webMessageExt {
                     console.log(`The postBooleanFalseToHtml() return value is: ${error}`);
                   }
                   console.log(`The postBooleanFalseToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100030)
+                  Utils.emitEvent(result, 170250)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100030)
+                Utils.emitEvent(error.code, 170250)
               }
               break;
             }
@@ -482,11 +490,11 @@ struct webMessageExt {
                     console.log(`The postArrayBufferToHtml() return value is: ${error}`);
                   }
                   console.log(`The postArrayBufferToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100031)
+                  Utils.emitEvent(result, 170260)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100031)
+                Utils.emitEvent(error.code, 170260)
               }
               break;
             }
@@ -505,11 +513,11 @@ struct webMessageExt {
                     console.log(`The postArrayBufferToHtml() return value is: ${error}`);
                   }
                   console.log(`The postArrayBufferToHtml() return value is: ${result}`);
-                  Utils.emitEvent(result, 100032)
+                  Utils.emitEvent(result, 170270)
                 })
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100032)
+                Utils.emitEvent(error.code, 170270)
               }
               break;
             }
@@ -534,12 +542,12 @@ struct webMessageExt {
                       console.log(`The postErrorToHtml() return value is: ${error}`);
                     }
                     console.log(`The postErrorToHtml() return value is: ${result}`);
-                    Utils.emitEvent(result, 100033)
+                    Utils.emitEvent(result, 170280)
                   })
                 }
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100033)
+                Utils.emitEvent(error.code, 170280)
               }
               break;
             }
@@ -557,6 +565,8 @@ struct webMessageExt {
           controller: this.controller
         })
         .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 0;
           if (event) {
             this.ports = this.controller.createWebMessagePorts(true);
             this.controller.postMessage("init_web_messageport", [this.ports[1]], "*");
