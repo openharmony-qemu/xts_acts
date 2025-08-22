@@ -2341,6 +2341,30 @@ export default function btManagerError003Test() {
             })
 
         /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1400
+         * @tc.name SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1400
+         * @tc.desc test getConnectedBLEDevices profile bt use api21
+         * @tc.type Function
+         * @tc.size MediumTest
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let bleDevices = ble.getConnectedBLEDevices(ble.BleProfile.GATT);
+                    console.info('getConnectedBLEDevices BleProfile result:' + JSON.stringify(bleDevices));
+                    expect(true).assertFalse();
+                  } catch (e) {
+                    console.error( `getConnectedBLEDevices BleProfile error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(true).assertEqual(Number(e.code) == 2900003);
+                  }
+            } else {
+                expect(true).assertTrue();
+            }
+              done();
+            })
+
+        /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1000
          * @tc.name SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1000
          * @tc.desc test disable bt use api

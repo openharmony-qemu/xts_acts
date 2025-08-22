@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import wifiMg from '@ohos.wifiManager';
+import wifi from '@ohos.wifi';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 function sleep(delay:number): Promise<void> {
@@ -330,6 +331,77 @@ export default function wifiSta() {
                 wifiMg.enableWifi();
                 await sleep(2000);
                 let state3 = wifiMg.isWifiActive();
+                console.info("isWifiActive result:" + state3);
+                expect(state3).assertTrue();
+                console.info("enableWifi success.");
+	        }catch(error){
+		        console.error("failed:" + JSON.stringify(error));
+                if (error.code == 801) {
+                    console.info('[wifi_js]api is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+	        }
+	        done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_WiFi_XTS_StartScan_0001
+         * @tc.name SUB_Communication_WiFi_XTS_StartScan_0001
+         * @tc.desc Test startScan Sync API21 functionality
+         * @tc.type Function
+         * @tc.size MediumTest
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_WiFi_XTS_StartScan_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            try {
+                wifiMg.startScan();
+                console.info("wifi startScan success!");
+	        } catch(error) {
+		        console.error("wifi startScan get failed:" + JSON.stringify(error));
+                if (Number(error.code) == 801) {
+                    console.info('[wifi_js]api is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+	        }
+	        done();
+        })
+
+        /**
+         * @tc.number Communication_WiFi_XTS_IsWifiActive_0001
+         * @tc.name Communication_WiFi_XTS_IsWifiActive_0001
+         * @tc.desc Test isWifiActive Sync API functionality result
+         * @tc.size MEDIUMTEST
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('Communication_WiFi_XTS_IsWifiActive_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            try {
+		        let status = wifi.isWifiActive();
+                console.info("isWifiActive result:" + status);
+                if(!status) {
+                    console.info("wifi is close,enableWifi start.");
+                    wifiMg.enableWifi();
+                    await sleep(2000);
+                    let state1 = wifi.isWifiActive();
+                    console.info("isWifiActive result:" + state1);
+                    expect(state1).assertTrue();
+                    console.info("enableWifi success.");
+                }
+                console.info("wifi is open,disableWifi start.");
+                wifiMg.disableWifi();
+                await sleep(2000);
+                let state2 = wifi.isWifiActive();
+                console.info("isWifiActive result:" + state2);
+                expect(state2).assertFalse();
+                console.info("disableWifi success.");
+                console.info("wifi is close,enableWifi start.");
+                wifiMg.enableWifi();
+                await sleep(2000);
+                let state3 = wifi.isWifiActive();
                 console.info("isWifiActive result:" + state3);
                 expect(state3).assertTrue();
                 console.info("enableWifi success.");
