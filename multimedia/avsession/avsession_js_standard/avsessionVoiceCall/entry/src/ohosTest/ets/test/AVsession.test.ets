@@ -43,6 +43,7 @@ export default function abilityTest() {
     let event:KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
     let event1: string = 'aaa'
     let customdata: Record<string,string> = {'customData': 'appdata'}
+    let eventName = 'dynamic_lyric'
 
 
     let invalidSession = async (validFunc:Function) => {
@@ -3581,7 +3582,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : 123 }, (err: BusinessError) => {
+      await session.dispatchSessionEvent(eventName, {lyric : 123 }, (err: BusinessError) => {
                 if (err) {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
@@ -3601,7 +3602,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : true }, (err: BusinessError) => {
+      await session.dispatchSessionEvent(eventName, {lyric : true }, (err: BusinessError) => {
                 if (err) {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
@@ -3621,7 +3622,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : [123,'123'] }, (err: BusinessError) => {
+      await session.dispatchSessionEvent(eventName, {lyric : [123,'123'] }, (err: BusinessError) => {
                 if (err) {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
@@ -3641,7 +3642,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : 123 }).then(() => {
+      await session.dispatchSessionEvent(eventName, {lyric : 123 }).then(() => {
                 console.info('dispatchSessionEvent successfully');
             }).catch((err: BusinessError) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -3662,7 +3663,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : true }).then(() => {
+      await session.dispatchSessionEvent(eventName, {lyric : true }).then(() => {
                 console.info('dispatchSessionEvent successfully');
             }).catch((err: BusinessError) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -3683,7 +3684,7 @@ export default function abilityTest() {
 
     it('SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
-      await avSession.dispatchSessionEvent(eventName, {lyric : [123,'123'] }).then(() => {
+      await session.dispatchSessionEvent(eventName, {lyric : [123,'123'] }).then(() => {
                 console.info('dispatchSessionEvent successfully');
             }).catch((err: BusinessError) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -3728,10 +3729,10 @@ export default function abilityTest() {
       controller.destroy();
       await controller.isActive().then((isActive: boolean) => {
         console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
-        expect(err.code).assertEqual(6600103);
+        expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        expect(err.code).assertEqual(6600103);
       });
       done();
     })
@@ -3821,24 +3822,24 @@ export default function abilityTest() {
       controller.destroy();
       await controller.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
         console.info(`getAVPlaybackState : SUCCESS `);
-        expect(err.code).assertEqual(6600103);
+        expect(false).assertTrue();
       }).catch((err: BusinessError) => {
         console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        expect(err.code).assertEqual(6600103);
       });
       done();
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0500
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0500
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0500
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0500
     * @tc.desc      : Testing call setAVMetadata(callback) set album- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE__0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE__0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3859,15 +3860,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0600
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0600
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0600
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0600
     * @tc.desc      : Testing call setAVMetadata(callback) set artist- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE__0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE__0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3888,15 +3889,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0700
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0700
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0700
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0700
     * @tc.desc      : Testing call setAVMetadata(callback) set author- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3917,15 +3918,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0800
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0800
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0800
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0800
     * @tc.desc      : Testing call setAVMetadata(callback) set avQueueId- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3946,15 +3947,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0900
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0900
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0900
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0900
     * @tc.desc      : Testing call setAVMetadata(callback) set composer- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -3975,15 +3976,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1000
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1000
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1000
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1000
     * @tc.desc      : Testing call setAVMetadata(callback) set description- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4005,15 +4006,15 @@ export default function abilityTest() {
 
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1100
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1100
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1100
     * @tc.desc      : Testing call setAVMetadata(callback) set lyric- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4034,15 +4035,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1200
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1200
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1200
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1200
     * @tc.desc      : Testing call setAVMetadata(callback) set mediaImage- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4063,15 +4064,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1300
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1300
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1300
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1300
     * @tc.desc      : Testing call setAVMetadata(callback) set nextAssetId- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4092,15 +4093,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1400
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1400
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1400
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1400
     * @tc.desc      : Testing call setAVMetadata(callback) set subtitle- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4121,15 +4122,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1500
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1500
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1500
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1500
     * @tc.desc      : Testing call setAVMetadata(callback) set writer- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4150,15 +4151,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1600
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1600
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1600
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1600
     * @tc.desc      : Testing call setAVMetadata(callback) set previousAssetId- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4179,15 +4180,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1700
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1700
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1700
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1700
     * @tc.desc      : Testing call setAVMetadata(callback) set avQueueName- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4208,15 +4209,15 @@ export default function abilityTest() {
     })
 
    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1800
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1800
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1800
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1800
     * @tc.desc      : Testing call setAVMetadata(callback) set avQueueImage- exceed max length
     * @tc.size      : MediumTest
     * @tc.type      : Fault Tolerance
     * @tc.level     : Level4
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_ERRORCODE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
@@ -4603,10 +4604,10 @@ export default function abilityTest() {
       await controller.getAVMetadata((err: BusinessError, metadata: avSession.AVMetadata) => {
           if (err) {
             console.error(`GetAVMetadata BusinessError: code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(6600103);
           } else {
             console.info(`GetAVMetadata : SUCCESS : assetId : ${metadata.assetId}`);
-            expect(err.code).assertEqual(6600103);
+            expect(false).assertTrue();
           }
         });
       done();
