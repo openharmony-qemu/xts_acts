@@ -140,7 +140,7 @@ struct Index {
           switch (this.str) {
             case "emitStoreWebArchive": {
               try {
-                this.controller.storeWebArchive("/data/storage/el2/base/", true, (error, filename) => {
+                this.controller.storeWebArchive("/data/storage/el1/base/", true, (error, filename) => {
                   if (error) {
                     console.info(`save web archive error: ` + JSON.stringify(error));
                     return;
