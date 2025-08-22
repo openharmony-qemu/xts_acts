@@ -12,32 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import CalendarPickerDialog from './calendarPickerDialogTest/CalendarPickerDialog.test'
+import CalendarPickerDialog from './calendarPickerDialogTest/CalendarPickerDialog.test'
+import calendarJsunit from './calendarPickerDialogTest/CalendarJsunit.test';
 import DatePickerDialog from './datePickerDialogTest/DatePickerDialog.test'
 import TextPickerDialog from './textPickerDialogTest/TextPickerDialog.test'
 import TimePickerDialog from './timePickerDialogTest/TimePickerDialog.test'
-// import calendarJsunit from './calendarPickerDialogTest/CalendarJsunit.test';
-// import textPickerJsunit from './textPickerDialogTest/TextPickerJsunit.test';
-// import CalendarDialogAJsunit from './Dialog/CalendarDialogJsunit.test.ets';
-// import DatePickerDialogAJsunit from './Dialog/DatePickerDialogJsunit.test.ets';
-// import TextPickerDialogAJsunit from './Dialog/TextPickerDialogJsunit.test.ets';
-// import TimePickerDialogAJsunit from './Dialog/TimePickerDialogJsunit.test.ets';
-// import DatePickerDialogJsunit from './datePickerDialogTest/DatePickerDialogJsunit.test.ets';
-// import TextPickerDialogJsunit from './textPickerDialogTest/TextPickerDialogJsunit.test.ets';
-// import TimePickerDialogJsunit from './timePickerDialogTest/TimePickerDialogJsunit.test.ets';
+import textPickerJsunit from './textPickerDialogTest/TextPickerJsunit.test';
+import DatePickerDialogJsunit from './datePickerDialogTest/DatePickerDialogJsunit.test';
+import TextPickerDialogJsunit from './textPickerDialogTest/TextPickerDialogJsunit.test';
+import TimePickerDialogJsunit from './timePickerDialogTest/TimePickerDialogJsunit.test';
 
 export default function testsuite() {
-    // CalendarPickerDialog();
-    DatePickerDialog();
-    TextPickerDialog();
-    TimePickerDialog();
-    // calendarJsunit()
-    // textPickerJsunit()
-    // CalendarDialogAJsunit();
-    // DatePickerDialogAJsunit();
-    // TextPickerDialogAJsunit();
-    // TimePickerDialogAJsunit();
-    // DatePickerDialogJsunit();
-    // TextPickerDialogJsunit();
-    // TimePickerDialogJsunit();
+  CalendarPickerDialog();
+  calendarJsunit()
+  DatePickerDialog();
+  TextPickerDialog();
+  TimePickerDialog();
+  textPickerJsunit()
+  DatePickerDialogJsunit();
+  TextPickerDialogJsunit();
+  TimePickerDialogJsunit();
 }

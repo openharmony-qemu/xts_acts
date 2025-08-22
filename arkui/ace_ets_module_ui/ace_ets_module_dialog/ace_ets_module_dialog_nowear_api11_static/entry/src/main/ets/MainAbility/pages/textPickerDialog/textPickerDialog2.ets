@@ -13,50 +13,87 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
+  $$,
+  $r,
+  ActionSheetOptions,
+  AdaptiveColor,
+  AlertDialogParamWithButtons,
+  BackgroundBlurStyleOptions,
+  BlurStyle,
+  BlurStyleActivePolicy,
+  Builder,
   Button,
-  ClickEvent,TimePickerDialog,TimePickerResult,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  ControlSize,
+  CustomDialogController,
+  CustomDialogControllerOptions,
+  DialogAlignment,
+  Divider,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlexOptions,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  ListItem,
+  LocalizedBorderRadiuses,
+  Margin,
+  Menu,
+  MenuElement,
+  MenuItem,
+  MenuItemOptions,
+  Rectangle,
+  ResourceStr,
+  Row,
+  RowOptions,
+  Scroll,
+  Scroller,
+  SheetOptions,
+  Text,
+  TextAlign,
+  TextInput,
+  TextInputController,
+  TextPickerResult,
+  ThemeColorMode,
+  TimePickerDialog,
+  TimePickerResult
 } from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  Prop,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
+import { Link, ObjectLink, Observed, Prop, State, } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TextPickerDialog22Example {
-  @State select: number | Array<number> | Int = 1;
-  private fruits: Array<string> = ['apple1', 'orange2', 'peach3', 'grape4'] as Array<string>;
+  @State select: number | number[] = 1.0;
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'] as string[];
 
   build() {
     Flex({
       direction: FlexDirection.Column, alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center
     }) {
-      Button("TextPickerDialog").key('textPickerDialog').onClick(() : void => {
-        // TextPickerDialog.show({
-        //   range: this.fruits,
-        //   selected: this.select,
-        //   defaultPickerItemHeight: 20,
-        //   onAccept: (value: TextPickerResult) => {
-        //     console.info("TextPickerDialog:onAccept()" + JSON.stringify(value))
-        //     this.select = value.index
-        //   },
-        //   onCancel: () => {
-        //     console.info("TextPickerDialog:onCancel()")
-        //   },
-        //   onChange: (value: TextPickerResult) => {
-        //     console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
-        //   }
-        // })
+      Button("TextPickerDialog").key('textPickerDialog').onClick((): void => {
+        this.getUIContext().showTextPickerDialog({
+          range: this.fruits,
+          selected: this.select,
+          defaultPickerItemHeight: 20,
+          onAccept: (value: TextPickerResult) => {
+            console.info("TextPickerDialog:onAccept()" + JSON.stringify(value))
+            this.select = value.index
+          },
+          onCancel: () => {
+            console.info("TextPickerDialog:onCancel()")
+          },
+          onChange: (value: TextPickerResult) => {
+            console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
+          }
+        })
       })
     }
   }

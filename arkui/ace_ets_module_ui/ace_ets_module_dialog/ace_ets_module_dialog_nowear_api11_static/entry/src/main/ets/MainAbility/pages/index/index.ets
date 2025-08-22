@@ -18,23 +18,56 @@ import { Hypium } from '../../../../../hypium';
 import testsuite from '../../../../src/test/List.test'
 
 import {
-  Entry,
-  Column,
-  Component,
+  $$,
+  $r,
+  ActionSheetOptions,
+  AdaptiveColor,
+  AlertDialogParamWithButtons,
+  BackgroundBlurStyleOptions,
+  BlurStyle,
+  BlurStyleActivePolicy,
+  Builder,
   Button,
+  ButtonType,
   ClickEvent,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  ControlSize,
+  CustomDialogController,
+  CustomDialogControllerOptions,
+  DialogAlignment,
+  Divider,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlexOptions,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  ListItem,
+  LocalizedBorderRadiuses,
+  Margin,
+  Menu,
+  MenuElement,
+  MenuItem,
+  MenuItemOptions,
+  Rectangle,
+  ResourceStr,
+  Row,
+  RowOptions,
+  Scroll,
+  Scroller,
+  SheetOptions,
+  Text,
+  TextAlign,
+  TextInput,
+  TextInputController,
+  ThemeColorMode
 } from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  Prop,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
+import { Link, ObjectLink, Observed, Prop, State, } from '@ohos.arkui.stateManagement'
 
 
 @Entry
@@ -62,7 +95,7 @@ struct Index {
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick(() : void => {
+      .onClick((): void => {
       })
     }
     .width('100%')

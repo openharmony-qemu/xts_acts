@@ -13,9 +13,14 @@
  * limitations under the License.
  */
 
-
-import calendarPickerDialogBackgroundEffectTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundEffect.test'
-import calendarPickerDialogBlurStyleOptionsTest from './calendarPickerDialogTest/calendarPickerDialogBlurStyleOptions.test'
+import actionSheetBackgroundEffectTest from './actionSheetTest/actionSheetBackgroundEffect.test'
+import actionSheetBlurStyleOptionsTest from './actionSheetTest/actionSheetBlurStyleOptions.test'
+import calendarPickerDialogBackgroundEffectTest
+  from './calendarPickerDialogTest/calendarPickerDialogBackgroundEffect.test'
+import calendarPickerDialogBlurStyleOptionsTest
+  from './calendarPickerDialogTest/calendarPickerDialogBlurStyleOptions.test'
+import datePickerDialogBackgroundEffectTest from './datePickerDialogTest/datePickerDialogBackgroundEffect.test'
+import datePickerDialogBlurStyleOptionsTest from './datePickerDialogTest/datePickerDialogBlurStyleOptions.test'
 import showActionSheetBackgroundEffectTest from './UIContextTest/showActionSheetBackgroundEffect.test'
 import showActionSheetBlurStyleOptionsTest from './UIContextTest/showActionSheetBlurStyleOptions.test'
 import showDatePickerDialogBackgroundEffectTest from './UIContextTest/showDatePickerDialogBackgroundEffect.test'
@@ -24,10 +29,18 @@ import showTextPickerDialogBackgroundEffectTest from './UIContextTest/showTextPi
 import showTextPickerDialogBlurStyleOptionsTest from './UIContextTest/showTextPickerDialogBlurStyleOptions.test'
 import showTimePickerDialogBackgroundEffectTest from './UIContextTest/showTimePickerDialogBackgroundEffect.test'
 import showTimePickerDialogBlurStyleOptionsTest from './UIContextTest/showTimePickerDialogBlurStyleOptions.test'
+import textPickerDialogBackgroundEffectTest from './textPickerDialogTest/textPickerDialogBackgroundEffect.test'
+import textPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/textPickerDialogBlurStyleOptions.test'
+import timePickerDialogBackgroundEffectTest from './timePickerDialogTest/timePickerDialogBackgroundEffect.test'
+import timePickerDialogBlurStyleOptionsTest from './timePickerDialogTest/timePickerDialogBlurStyleOptions.test'
 
 export default function testsuite() {
+  actionSheetBackgroundEffectTest()
+  actionSheetBlurStyleOptionsTest()
   calendarPickerDialogBackgroundEffectTest()
   calendarPickerDialogBlurStyleOptionsTest()
+  datePickerDialogBackgroundEffectTest()
+  datePickerDialogBlurStyleOptionsTest()
   showActionSheetBackgroundEffectTest()
   showActionSheetBlurStyleOptionsTest()
   showDatePickerDialogBackgroundEffectTest()
@@ -36,4 +49,8 @@ export default function testsuite() {
   showTextPickerDialogBlurStyleOptionsTest()
   showTimePickerDialogBackgroundEffectTest()
   showTimePickerDialogBlurStyleOptionsTest()
+  textPickerDialogBackgroundEffectTest()
+  textPickerDialogBlurStyleOptionsTest()
+  timePickerDialogBackgroundEffectTest()
+  timePickerDialogBlurStyleOptionsTest()
 }

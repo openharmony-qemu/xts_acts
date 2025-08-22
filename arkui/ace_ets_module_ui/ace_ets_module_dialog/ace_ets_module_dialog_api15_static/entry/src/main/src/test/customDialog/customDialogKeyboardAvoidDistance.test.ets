@@ -66,15 +66,15 @@ export default function customDialogKeyboardAvoidDistance() {
     });
 
 
-    /**
-     * @tc.number    CustomDialogKeyboardAvoidDistance_static_0100
-     * @tc.name      CustomDialogKeyboardAvoidDistance_static_0100
-     * @tc.desc      set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   CustomDialogKeyboardAvoidDistance_static_0100
+     * @tc.name     CustomDialogKeyboardAvoidDistance_static_0100
+     * @tc.desc     CustomDialogKeyboardAvoidDistance_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('CustomDialogKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomDialogKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('CustomDialogKeyboardAvoidDistance_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -111,15 +111,15 @@ export default function customDialogKeyboardAvoidDistance() {
       done();
     });
 
-    /**
-     * @tc.number    CustomDialogKeyboardAvoidDistance_static_0200
-     * @tc.name      CustomDialogKeyboardAvoidDistance_static_0200
-     * @tc.desc      set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+     
+/*
+     * @tc.number   CustomDialogKeyboardAvoidDistance_static_0200
+     * @tc.name     CustomDialogKeyboardAvoidDistance_static_0200
+     * @tc.desc     CustomDialogKeyboardAvoidDistance_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-     it('CustomDialogKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomDialogKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('CustomDialogKeyboardAvoidDistance_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

@@ -12,17 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import TextPickerDialog from './TextPickerDialogTest/TextPickerDialog.test.ets';
+import DatePickerDialog from './DatePickerDialogTest/DatePickerDialog.test.ets';
+import TimePickerDialog from './TimePickerDialogTest/TimePickerDialog.test.ets';
+import CalendarPickerDialog from './CalendarPickerDialogTest/CalendarPickerDialog.test.ets';
+import CalendarDialogCallback from './CalendarPickerDialogTest/CalendarDialogCallback.test.ets';
+import DatePickerDialogCallback from './DatePickerDialogTest/DatePickerDialogCallback.test.ets';
+import TextPickerDialogCallback from './TextPickerDialogTest/TextPickerDialogCallback.test.ets';
+import TimePickerDialogCallback from './TimePickerDialogTest/TimePickerDialogCallback.test.ets';
+import TimePickerDialog_Accept_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialog_Accept_Test.test.ets';
+import TimePickerDialog_Cancel_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialog_Cancel_Test.test.ets';
+import TextPickerDialog_Accept_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialog_Accept_Test.test.ets';
+import TextPickerDialog_Cancel_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialog_Cancel_Test.test.ets';
 import ButtonStyle from './CalendarPickerDialogTest/ButtonStyle.test';
 import DateButtonStyle from './DatePickerDialogTest/DateButtonStyle.test';
+import PopupOptionsTest from './PopupTest/PopupApiTest/PopupApiTest.test';
 import DismissReasonTest from './PopupTest/DismissReason.test';
-import TimePickerDialog_Accept_Test from './TimePickerDialogTest/ButtonStyleTest/TimePickerDialog_Accept_Test.test.ets';
-import TextPickerDialog_Accept_Test from './TextPickerDialogTest/ButtonStyleTest/TextPickerDialog_Accept_Test.test.ets';
 import DateTimeOptions from './TimePickerDialogTest/DateTimeOptions.test';
 
+import primary from './AlertDialogTest/primary.test';
+
 export default function testsuite() {
+  primary()
+  TextPickerDialog();
+  DatePickerDialog();
+  TimePickerDialog();
+  CalendarPickerDialog();
+  CalendarDialogCallback();
+  DatePickerDialogCallback();
+  TextPickerDialogCallback();
+  TimePickerDialogCallback();
   TimePickerDialog_Accept_Test();
+  TimePickerDialog_Cancel_Test();
   TextPickerDialog_Accept_Test();
+  TextPickerDialog_Cancel_Test();
+  PopupOptionsTest()
   ButtonStyle();
   DateButtonStyle();
   DismissReasonTest();

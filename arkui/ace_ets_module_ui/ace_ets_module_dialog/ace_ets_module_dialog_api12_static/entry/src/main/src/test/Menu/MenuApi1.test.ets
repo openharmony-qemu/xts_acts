@@ -68,12 +68,15 @@ export default function MenuApi1() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number MenuApi1_static_0100
-     * @tc.name   MenuApi1_static_0100
-     * @tc.desc
+    
+    
+/*
+     * @tc.number   MenuApi1_static_0100
+     * @tc.name     MenuApi1_static_0100
+     * @tc.desc     MenuApi1_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('MenuApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('MenuApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MenuApi1_static_0100 START');
       await CommonFunc.sleep(1000);
 

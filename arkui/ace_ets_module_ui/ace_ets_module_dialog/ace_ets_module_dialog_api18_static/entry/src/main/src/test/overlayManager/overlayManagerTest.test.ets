@@ -75,15 +75,15 @@ export default function overlayManagerTest() {
       console.info("customDialogLevelOrder after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_overlayManagerTest_static_0100
-     * @tc.name overlayManagerTest_static_0100
-     * @tc.desc To test LevelOrder.clamp,addComponentContentWithOrder,getBottomOrder,getTopOrder
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   overlayManagerTest_static_0100
+     * @tc.name     overlayManagerTest_static_0100
+     * @tc.desc     overlayManagerTest_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('overlayManagerTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

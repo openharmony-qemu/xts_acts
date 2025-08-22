@@ -66,7 +66,14 @@ export default function CustomDialogLifeTest() {
 
 
 
-    it('CustomDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    
+/*
+     * @tc.number   CustomDialogLife_static_0001
+     * @tc.name     CustomDialogLife_static_0001
+     * @tc.desc     CustomDialogLife_static_0001
+     * @tc.level    Level.LEVEL2
+     */
+it('CustomDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogLife_static_0101 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('CustomDialog',10,"")

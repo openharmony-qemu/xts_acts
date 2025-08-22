@@ -69,15 +69,15 @@ export default function UpdateCustomDialogTest() {
       console.info("UpdateCustomDialogTest after each called");
     });
 
-    /**
-     * @tc.number    UpdateCustomDialogTest
-     * @tc.name      UpdateCustomDialogTest_static_001
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+    
+    
+/*
+     * @tc.number   UpdateCustomDialogTest_static_001
+     * @tc.name     UpdateCustomDialogTest_static_001
+     * @tc.desc     UpdateCustomDialogTest_static_001
+     * @tc.level    Level.LEVEL2
      */
-    it('UpdateCustomDialogTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('UpdateCustomDialogTest_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[UpdateCustomDialogTest_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

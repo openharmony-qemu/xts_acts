@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
-import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
+import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,7 +25,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../../Util.test';
-import {MessageManager,Callback} from '../../../../ets/MainAbility/common/MessageManager';
+import { Callback, MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+
 let tag: string = 'testTag';
 
 export default function TextPickerDialog_Accept_Test() {
@@ -49,10 +50,8 @@ export default function TextPickerDialog_Accept_Test() {
         console.info("get TextPickerDialog_Accept_Test state pages:" + JSON.stringify(pages));
         if (!("Text_accept" == pages.name)) {
           console.info("get TextPickerDialog_Accept_Test pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push TextPickerDialog_Accept_Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextPickerDialog_Accept_Test page error:" + err);
@@ -65,13 +64,12 @@ export default function TextPickerDialog_Accept_Test() {
       console.info("TextPickerDialog_Accept_Test after each called");
     });
 
-    /**
-     * @tc.number    TextPickerDialog_Accept_Test
-     * @tc.name      TextPickerDialog_Accept_Test_static_001
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+
+    /*
+     * @tc.number   TextPickerDialog_Accept_Test_static_001
+     * @tc.name     TextPickerDialog_Accept_Test_static_001
+     * @tc.desc     TextPickerDialog_Accept_Test_static_001
+     * @tc.level    Level.LEVEL3
      */
     it('TextPickerDialog_Accept_Test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[TextPickerDialog_Accept_Test_static_001] START');
@@ -85,8 +83,10 @@ export default function TextPickerDialog_Accept_Test() {
       await row!.click();
       await CommonFunc.sleep(2000);
       let acceptButtonStyle_Text = inspector.getInspectorByKey('acceptButtonStyle_Text');
-      console.info('acceptButtonStyle_Text attrs-----' + JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs'));
-      expect(JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs').getString('content')).assertEqual('acceptButtonStyle_Text');
+      console.info('acceptButtonStyle_Text attrs-----' +
+      JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs'));
+      expect(JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs').getString('content'))
+        .assertEqual('acceptButtonStyle_Text');
       console.info('[TextPickerDialog_Accept_Test_static_001] END');
       done();
     });

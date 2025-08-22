@@ -75,15 +75,15 @@ export default function isVisible() {
       console.info("customDialogLevelOrder after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_isVisible_static_0100
-     * @tc.name isVisible_static_0100
-     * @tc.desc To test PopupStateChangeParam isVisible
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('isVisible_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   isVisible_static_0100
+     * @tc.name     isVisible_static_0100
+     * @tc.desc     isVisible_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('isVisible_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('isVisible_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

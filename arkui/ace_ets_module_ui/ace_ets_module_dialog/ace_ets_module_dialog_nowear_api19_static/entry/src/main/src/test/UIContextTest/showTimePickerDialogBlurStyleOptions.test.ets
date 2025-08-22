@@ -12,22 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
+import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
+
+let domain: Int = 0x0000;
 let tag: string = 'testTag';
 
 export default function showTimePickerDialogBlurStyleOptionsTest() {
@@ -50,117 +50,208 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
       console.info("get ShowTimePickerDialogBlurStyleOptionsTest state pages: " + JSON.stringify(pages));
       if (!("showTimePickerDialogBlurStyleOptions" == pages.name)) {
         console.info("get ShowTimePickerDialogBlurStyleOptionsTest state pages.name: " + JSON.stringify(pages.name));
-        // let result = await routerInstance.pushUrl(options);
+
         routerInstance.pushUrl(options);
         await Utils.sleep(2000);
-        // console.info("push ShowTimePickerDialogBlurStyleOptionsTest success: " + JSON.stringify(result));
       }
     });
 
-    /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_static_0100
-     * @tc.name      showTimePickerDialogBlurStyleOptions_static_0100
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_static_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
-    it('showTimePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let tagName = 'showTimePickerDialogBlurStyleOptions';
-      console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options001')) as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
-      let dialog = obj1.getArray('$children')[1]
-      let date1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0])
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if(uniRenderFlag == 'false' ){
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getDouble('inactiveColor')).assertEqual(1.0);
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
-      }else{
-        console.info("[showTimePickerDialogBlurStyleOptions_static_0100] $attrs.options is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Average');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getDouble('inactiveColor')).assertEqual(0);
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.Light');
-        expect(JSON.parseJsonElement(date1).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#FFFFC0CB');
-      }
-      let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
-      console.info('[' + tagName + '] END ===========================');
-      done();
-    });
 
-    /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_static_0200
-     * @tc.name      showTimePickerDialogBlurStyleOptions_static_0200
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_static_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /*
+     * @tc.number   showTimePickerDialogBlurStyleOptions_static_0100
+     * @tc.name     showTimePickerDialogBlurStyleOptions_static_0100
+     * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('showTimePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let tagName = 'showTimePickerDialogBlurStyleOptions_static_0200';
-      console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options002')) as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
-      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
-      let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
-      console.info("[showTimePickerDialogBlurStyleOptions_static_0200] $attrs.options is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getDouble('inactiveColor')).assertEqual(1.0);
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
-      let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
-      console.info('[' + tagName + '] END ===========================');
-      done();
-    });
+    it('showTimePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let tagName = 'showTimePickerDialogBlurStyleOptions';
+        console.info('[' + tagName + '] START============================');
+        await Utils.sleep(1000);
+        let driver: Driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options001')) as Component;
+        await btn!.click();
+        await Utils.sleep(1000);
+        let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(2000);
+        let dialog = obj1.getArray('$children')[1]
+        let date1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0])
+        let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
+        if (uniRenderFlag == 'false') {
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('inactiveColor')).assertEqual(1.0);
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('colorMode')).assertEqual('ThemeColorMode.System');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('inactiveColor')).assertEqual('#00000000');
+        } else {
+          console.info("[showTimePickerDialogBlurStyleOptions_static_0100] $attrs.options is: " +
+          JSON.stringifyJsonElement(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')));
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('policy')).assertEqual('BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('adaptiveColor')).assertEqual('AdaptiveColor.Average');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('inactiveColor')).assertEqual(0);
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('colorMode')).assertEqual('ThemeColorMode.Light');
+          expect(JSON.parseJsonElement(date1)
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('inactiveColor')).assertEqual('#FFFFC0CB');
+        }
+        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
+        await btn1!.click();
+        await Utils.sleep(1000);
+        console.info('[' + tagName + '] END ===========================');
+        done();
+      });
 
-    /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_static_0300
-     * @tc.name      showTimePickerDialogBlurStyleOptions_static_0300
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_static_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+
+    /*
+     * @tc.number   showTimePickerDialogBlurStyleOptions_static_0200
+     * @tc.name     showTimePickerDialogBlurStyleOptions_static_0200
+     * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('showTimePickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let tagName = 'showTimePickerDialogBlurStyleOptions_static_0300';
-      console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options003')) as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
-      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
-      let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
-      console.info("[showTimePickerDialogBlurStyleOptions_static_0300] $attrs.options is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getDouble('inactiveColor')).assertEqual(1.0);
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
-      expect(JSON.parseJsonElement(date).getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
-      let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
-      console.info('[' + tagName + '] END ===========================');
-      done();
-    });
+    it('showTimePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let tagName = 'showTimePickerDialogBlurStyleOptions_static_0200';
+        console.info('[' + tagName + '] START============================');
+        await Utils.sleep(1000);
+        let driver: Driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options002')) as Component;
+        await btn!.click();
+        await Utils.sleep(1000);
+        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(2000);
+        let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
+        console.info("[showTimePickerDialogBlurStyleOptions_static_0200] $attrs.options is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')));
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getDouble('inactiveColor')).assertEqual(1.0);
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('colorMode')).assertEqual('ThemeColorMode.System');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('inactiveColor')).assertEqual('#00000000');
+        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
+        await btn1!.click();
+        await Utils.sleep(1000);
+        console.info('[' + tagName + '] END ===========================');
+        done();
+      });
+
+
+    /*
+     * @tc.number   showTimePickerDialogBlurStyleOptions_static_0300
+     * @tc.name     showTimePickerDialogBlurStyleOptions_static_0300
+     * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+     */
+    it('showTimePickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let tagName = 'showTimePickerDialogBlurStyleOptions_static_0300';
+        console.info('[' + tagName + '] START============================');
+        await Utils.sleep(1000);
+        let driver: Driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('ShowTimePickerDialog_Options003')) as Component;
+        await btn!.click();
+        await Utils.sleep(1000);
+        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(2000);
+        let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
+        console.info("[showTimePickerDialogBlurStyleOptions_static_0300] $attrs.options is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')));
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getDouble('inactiveColor')).assertEqual(1.0);
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('colorMode')).assertEqual('ThemeColorMode.System');
+        expect(JSON.parseJsonElement(date)
+          .getElement('$attrs')
+          .getElement('backgroundBlurStyle')
+          .getElement('options')
+          .getString('inactiveColor')).assertEqual('#00000000');
+        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
+        await btn1!.click();
+        await Utils.sleep(1000);
+        console.info('[' + tagName + '] END ===========================');
+        done();
+      });
   })
 }

@@ -75,15 +75,15 @@ export default function customDialogLevelOrder() {
       console.info("customDialogLevelOrder after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_customDialogLevelOrder_static_0100
-     * @tc.name customDialogLevelOrder_static_0100
-     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(100)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('customDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   customDialogLevelOrder_static_0100
+     * @tc.name     customDialogLevelOrder_static_0100
+     * @tc.desc     customDialogLevelOrder_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('customDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('customDialogLevelOrder_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,15 +103,15 @@ export default function customDialogLevelOrder() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_customDialogLevelOrder_static_0200
-     * @tc.name customDialogLevelOrder_static_0200
-     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('customDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   customDialogLevelOrder_static_0200
+     * @tc.name     customDialogLevelOrder_static_0200
+     * @tc.desc     customDialogLevelOrder_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('customDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('customDialogLevelOrder_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,15 +131,15 @@ export default function customDialogLevelOrder() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_customDialogLevelOrder_static_0300
-     * @tc.name customDialogLevelOrder_static_0300
-     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(-100001)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('customDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   customDialogLevelOrder_static_0300
+     * @tc.name     customDialogLevelOrder_static_0300
+     * @tc.desc     customDialogLevelOrder_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('customDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('customDialogLevelOrder_static_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -158,15 +158,15 @@ export default function customDialogLevelOrder() {
       console.info('customDialogLevelOrder_static_0300 END');
       done();
     });
-    /**
-     * @tc.number SUB_ACE_customDialogLevelOrder_static_0400
-     * @tc.name customDialogLevelOrder_static_0400
-     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(undefined)
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('customDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   customDialogLevelOrder_static_0400
+     * @tc.name     customDialogLevelOrder_static_0400
+     * @tc.desc     customDialogLevelOrder_static_0400
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 
+     */
+it('customDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: () => void): Promise<void> => {
       console.info('customDialogLevelOrder_static_0400 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -66,15 +66,15 @@ export default function promptActionKeyboardAvoidDistance() {
     });
 
 
-    /**
-     * @tc.number    PromptActionKeyboardAvoidDistance_static_0100
-     * @tc.name      PromptActionKeyboardAvoidDistance_static_0100
-     * @tc.desc      set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   PromptActionKeyboardAvoidDistance_static_0100
+     * @tc.name     PromptActionKeyboardAvoidDistance_static_0100
+     * @tc.desc     PromptActionKeyboardAvoidDistance_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('PromptActionKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('PromptActionKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('PromptActionKeyboardAvoidDistance_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -111,15 +111,15 @@ export default function promptActionKeyboardAvoidDistance() {
       done();
     });
 
-    /**
-     * @tc.number    PromptActionKeyboardAvoidDistance_static_0200
-     * @tc.name      PromptActionKeyboardAvoidDistance_static_0200
-     * @tc.desc      set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+    
+/*
+     * @tc.number   PromptActionKeyboardAvoidDistance_static_0200
+     * @tc.name     PromptActionKeyboardAvoidDistance_static_0200
+     * @tc.desc     PromptActionKeyboardAvoidDistance_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('PromptActionKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('PromptActionKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('PromptActionKeyboardAvoidDistance_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -156,15 +156,15 @@ export default function promptActionKeyboardAvoidDistance() {
       done();
     });
 
-    /**
-     * @tc.number    PromptActionKeyboardAvoidDistance_static_0300
-     * @tc.name      PromptActionKeyboardAvoidDistance_static_0300
-     * @tc.desc      set keyboardAvoidDistance:null,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    
+     
+/*
+     * @tc.number   PromptActionKeyboardAvoidDistance_static_0300
+     * @tc.name     PromptActionKeyboardAvoidDistance_static_0300
+     * @tc.desc     PromptActionKeyboardAvoidDistance_static_0300
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-     it('PromptActionKeyboardAvoidDistance_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('PromptActionKeyboardAvoidDistance_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('PromptActionKeyboardAvoidDistance_static_0300 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

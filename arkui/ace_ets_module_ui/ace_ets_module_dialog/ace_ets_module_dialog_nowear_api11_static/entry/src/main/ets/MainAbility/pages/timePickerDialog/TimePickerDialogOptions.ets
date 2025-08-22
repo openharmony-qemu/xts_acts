@@ -13,51 +13,90 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
+  $$,
+  $r,
+  ActionSheetOptions,
+  AdaptiveColor,
+  AlertDialogParamWithButtons,
+  BackgroundBlurStyleOptions,
+  BlurStyle,
+  BlurStyleActivePolicy,
+  Builder,
   Button,
-  ClickEvent,TimePickerDialog,TimePickerResult,TimePickerResult,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  ControlSize,
+  CustomDialogController,
+  CustomDialogControllerOptions,
+  DialogAlignment,
+  Divider,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlexOptions,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  ListItem,
+  LocalizedBorderRadiuses,
+  Margin,
+  Menu,
+  MenuElement,
+  MenuItem,
+  MenuItemOptions,
+  Rectangle,
+  ResourceStr,
+  Row,
+  RowOptions,
+  Scroll,
+  Scroller,
+  SheetOptions,
+  Text,
+  TextAlign,
+  TextInput,
+  TextInputController,
+  ThemeColorMode,
+  TimePickerDialog,
+  TimePickerResult
 } from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  Prop,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
+import { Link, ObjectLink, Observed, Prop, State, } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct TimePickerDialogOptions111 {
   private selectTime: Date = new Date('2020-12-25T08:30:00')
 
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Button('TimePickerDialog')
         .margin(20)
-        .onClick(() : void => {
-          // TimePickerDialog.show({
-          //   selected: this.selectTime,
-          //   alignment: DialogAlignment.TopStart,
-          //   offset: { dx: 10, dy: 100 },
-          //   maskRect: { x: 0, y: 90, width: 1000, height: 250  },
-          //   onAccept: (value: TimePickerResult)=> {
-          //     this.selectTime.setHours(value.hour, value.minute)
-          //     console.info("TimePickerDialog: onAccept()" + JSON.stringify(value))
-          //   },
-          //   onCancel:()=> {
-          //     console.info("TimePickerDialog: onCancel()")
-          //   },
-          //   onChange: (value: TimePickerResult)=> {
-          //     console.info("TimePickerDialog: onChange()" + JSON.stringify(value))
-          //   }
-          // })
+        .onClick((): void => {
+          this.getUIContext().showTimePickerDialog({
+            selected: this.selectTime,
+            alignment: DialogAlignment.TopStart,
+            offset: { dx: 10, dy: 100 },
+            maskRect: {
+              x: 0,
+              y: 90,
+              width: 1000,
+              height: 250
+            },
+            onAccept: (value: TimePickerResult) => {
+              this.selectTime.setHours(value.hour, value.minute)
+              console.info("TimePickerDialog: onAccept()" + JSON.stringify(value))
+            },
+            onCancel: () => {
+              console.info("TimePickerDialog: onCancel()")
+            },
+            onChange: (value: TimePickerResult) => {
+              console.info("TimePickerDialog: onChange()" + JSON.stringify(value))
+            }
+          })
         }).key('TimePickerDialog')
     }.width('100%')
   }

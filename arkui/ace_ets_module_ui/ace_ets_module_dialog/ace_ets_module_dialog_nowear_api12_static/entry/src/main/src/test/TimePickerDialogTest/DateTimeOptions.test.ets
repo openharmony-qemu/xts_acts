@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -25,7 +25,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+
 let tag: string = 'testTag';
 
 export default function DateTimeOptions() {
@@ -49,22 +50,22 @@ export default function DateTimeOptions() {
         console.info("get DateTimeOptions state pages: " + JSON.stringify(pages));
         if (!("DateTimeOptions" == pages.name)) {
           console.info("get DateTimeOptions state pages.name: " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push DateTimeOptions success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DateTimeOptions page error: " + err);
         expect().assertFail();
       }
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : DateTimeOptions_static_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+
+    /*
+     * @tc.number   DateTimeOptions_static_0100
+     * @tc.name     DateTimeOptions_static_0100
+     * @tc.desc     DateTimeOptions_static_0100
+     * @tc.level    Level.LEVEL2
+     */
     it('DateTimeOptions_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DateTimeOptions_static_0100 START');
       let driver = Driver.create()
@@ -79,8 +80,10 @@ export default function DateTimeOptions() {
       let strJson = inspector.getInspectorByKey('DateTimeOptionsValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[DateTimeOptions_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit"} / false');
+      console.info("[DateTimeOptions_static_0100] title: " +
+      JSON.stringify(obj.getElement('$attrs').getString('content')));
+      expect(obj.getElement('$attrs').getString('content'))
+        .assertEqual('{"hour":"numeric","minute":"2-digit"} / false');
       console.info('[DateTimeOptions_static_0100] END');
       done();
     });

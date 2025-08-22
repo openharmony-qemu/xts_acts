@@ -72,15 +72,15 @@ export default function CustomDialogBorderColor() {
       console.info("CustomDialogBorderColor after each called");
     });
 
-/**
-     * @tc.number SUB_ACE_CustomDialogBorderColor_static_0100
-     * @tc.name CustomDialogBorderColor_static_0100
-     * @tc.desc To test the CustomDialogBorderColor:Color.blue
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('CustomDialogBorderColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+
+    
+/*
+     * @tc.number   CustomDialogBorderColor_static_0100
+     * @tc.name     CustomDialogBorderColor_static_0100
+     * @tc.desc     CustomDialogBorderColor_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('CustomDialogBorderColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomDialogBorderColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -104,15 +104,15 @@ export default function CustomDialogBorderColor() {
     });
 
 
-    /**
-     * @tc.number SUB_ACE_CustomDialogBorderColor_static_0200
-     * @tc.name CustomDialogBorderColor_static_0200
-     * @tc.desc To test the CustomDialogBorderColor:#FF6582F8
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
-    it('CustomDialogBorderColor_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    
+/*
+     * @tc.number   CustomDialogBorderColor_static_0200
+     * @tc.name     CustomDialogBorderColor_static_0200
+     * @tc.desc     CustomDialogBorderColor_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+it('CustomDialogBorderColor_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomDialogBorderColor_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
