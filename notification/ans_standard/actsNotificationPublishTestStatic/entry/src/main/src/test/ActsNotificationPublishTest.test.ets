@@ -221,6 +221,7 @@ export default function ActsNotificationPublishTest() {
         autoDeletedTime: 500,
         wantAgent: wantAgentData,
         extendInfo: extendInfo1,
+        extraInfo: extendInfo1
       }
 
       notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
@@ -277,6 +278,7 @@ export default function ActsNotificationPublishTest() {
         autoDeletedTime: 500,
         wantAgent: wantAgentData,
         extendInfo: extendInfo1,
+        extraInfo: extendInfo1
       }
 
       notificationManager.publish(notificationRequest).then(() => {
