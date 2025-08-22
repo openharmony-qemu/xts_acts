@@ -645,7 +645,7 @@ export default function KvStoreEtsTestStatic() {
           expect(null).assertFail();
           done();
         }).catch((err:Error) => {
-          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${e.code},ms=${e.message}`);
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${err.code},ms=${err.message}`);
           expect(e.code).assertEqual(15100004);
           done();
         });
@@ -671,7 +671,7 @@ export default function KvStoreEtsTestStatic() {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
           store?.get(deviceId, 'key', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
             if (err != undefined) {
-              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${e.code},ms=${e.message}`);
+              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${err.code},ms=${err.message}`);
               expect(e.code).assertEqual(15100004);
               done();
             } else {
