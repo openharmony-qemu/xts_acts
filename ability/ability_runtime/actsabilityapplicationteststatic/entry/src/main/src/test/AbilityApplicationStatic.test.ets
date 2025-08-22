@@ -41,6 +41,7 @@ export default function AbilityApplicationStaticTest() {
           expect(applicationContext.cloudFileDir).assertEqual('/data/storage/el2/cloud');
           expect(applicationContext.distributedFilesDir).assertEqual('/data/storage/el2/distributedfiles');
           expect(applicationContext.processName).assertEqual(PROCESS_NAME);
+          expect(typeof (applicationContext.resourceDir) == 'string').assertTrue();
           hilog.info(domain, tag, `${caseName} end.`)
           done();
         } catch (err: Error) {

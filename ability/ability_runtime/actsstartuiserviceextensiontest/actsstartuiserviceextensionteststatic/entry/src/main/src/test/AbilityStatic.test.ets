@@ -152,6 +152,34 @@ export default function abilitystaticTest() {
     })
 
     /*
+     * @tc.number : SUB_Ability_AbilityRuntime_AppManager_Static_0100
+     * @tc.name   : SUB_Ability_AbilityRuntime_AppManager_Static_0100
+     * @tc.desc   : Call the interface to return whether the current application is running
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityRuntime_AppManager_Static_0100`;
+      hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0100 begin`);
+      try {
+        appManager.isAppRunning('com.example.systemapitest.static', 1001).then((data: boolean)=>{
+          hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError): void=>{
+          hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
+          expect(err?.code).assertEqual(16000073);
+          done();
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_Static_0200
     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_Static_0200
     * @tc.desc: Registering an Application Status Listener.

@@ -250,6 +250,34 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
+     * @tc.number    : ABILITY_TEST_OPENATOMICSERVICE_0200
+     * @tc.name      : testOpenAtomicServiceStatic002
+     * @tc.desc      : test Method of OpenAtomicService
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        context.openAtomicService('')
+          .then((result: common.AbilityResult) => {
+            console.info('openAtomicService succeed');
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError): void => {
+            console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000050);
+            done();
+          });
+      } catch (err) {
+        hilog.info(domain, tag, `testOpenAtomicServiceStatic002 fail: ` + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.number    : ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
      * @tc.name      : testReportDrawnCompletedStatic001
      * @tc.desc      : test Method of reportDrawnCompleted
