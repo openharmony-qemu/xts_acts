@@ -1118,7 +1118,7 @@ export default function bufferTest2() {
         const buf1 = buffer.from('test');
         const buf2 = buffer.from(buf1);
         expect(buf2.toString()).assertEqual('test');
-        buf1[0] = 'T'.charCodeAt(0);
+        buf1[0] = 'T'.charCodeAt(0).toInt();
         expect(buf2.toString()).assertEqual('test');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
