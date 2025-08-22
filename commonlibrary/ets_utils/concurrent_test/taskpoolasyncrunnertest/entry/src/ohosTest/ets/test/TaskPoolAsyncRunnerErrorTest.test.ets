@@ -81,7 +81,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0100: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs3, 2);
@@ -122,7 +122,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0200: start`);
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         Count1.count = 0;
         Count2.count = 0;
         for (let i = 0; i < 10; i++) {
@@ -167,7 +167,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -231,7 +231,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
-          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
           task1.onStartExecution(() => {
             try {
               console.info('taskpool: onStartExecution')
@@ -289,7 +289,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs3, 2);
@@ -353,7 +353,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
-          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
           task1.onExecutionSucceeded(() => {
             try {
               console.info('taskpool: onExecutionSucceeded')
@@ -414,7 +414,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(sendData1, 1);
           let task2: taskpool.Task = new taskpool.Task(sendData1, 2);
-          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+          let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
           task1.onReceiveData((data: number) => {
             try {
               console.info('taskpool: data is: ' + data);
@@ -472,7 +472,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0800: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 2);
@@ -527,7 +527,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0900: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs3, 2);
@@ -586,7 +586,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1000: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs3, 2);
@@ -646,7 +646,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1100: start`);
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
 
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock1);
@@ -695,7 +695,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1200: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock3);
           let task2: taskpool.Task = new taskpool.Task(printArgsLock3);
@@ -743,7 +743,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1300: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock5);
           let task2: taskpool.Task = new taskpool.Task(printArgsLock5);
@@ -791,7 +791,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1400: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock7);
           let task2: taskpool.Task = new taskpool.Task(printArgsLock7);
@@ -839,7 +839,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1500: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise1);
           let task2: taskpool.Task = new taskpool.Task(printArgsPromise1);
@@ -886,7 +886,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1600: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise3);
           let task2: taskpool.Task = new taskpool.Task(printArgsPromise3);
@@ -933,7 +933,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1700: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise5);
           let task2: taskpool.Task = new taskpool.Task(printArgsPromise5);
@@ -980,7 +980,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1800: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise7);
           let task2: taskpool.Task = new taskpool.Task(printArgsPromise7);
@@ -1027,7 +1027,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1900: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsSettimeout1);
           let task2: taskpool.Task = new taskpool.Task(printArgsSettimeout1);
@@ -1074,7 +1074,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2000: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsSettimeout3);
           let task2: taskpool.Task = new taskpool.Task(printArgsSettimeout3);
@@ -1121,7 +1121,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2500: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -1176,7 +1176,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2600: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -1231,7 +1231,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2700: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgsTaskpool, 2);
@@ -1274,7 +1274,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2800: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgsTaskpool1, 1);
@@ -1313,7 +1313,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2900: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool2, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgsTaskpool2, 2);
@@ -1356,7 +1356,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest3000: start`);
         Count1.count = 0;
         Count2.count = 0;
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgsTaskpool3, 1);

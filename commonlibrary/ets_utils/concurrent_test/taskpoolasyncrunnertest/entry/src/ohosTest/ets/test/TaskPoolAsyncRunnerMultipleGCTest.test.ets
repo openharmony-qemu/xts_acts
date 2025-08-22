@@ -38,7 +38,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(2000);
+      await sleep(500);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -56,7 +56,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
     it('taskPoolAsyncRunnerMultipleGCTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleGCTest0100';
       console.info(`${caseName} test start`);
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
       for (let j = 0; j < 10; j++) {
         await sleep(10);
@@ -96,7 +96,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
     it('taskPoolAsyncRunnerMultipleGCTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleGCTest0200';
       console.info(`${caseName} test start`);
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
       let priority: Array<taskpool.Priority> = [
         taskpool.Priority.HIGH,

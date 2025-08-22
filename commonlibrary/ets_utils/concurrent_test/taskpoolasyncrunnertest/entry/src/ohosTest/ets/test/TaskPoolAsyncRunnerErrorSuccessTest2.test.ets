@@ -59,7 +59,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     it('taskPoolAsyncRunnerErrorSuccessTest1025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerErrorSuccessTest1025: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {
@@ -98,7 +98,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     it('taskPoolAsyncRunnerErrorSuccessTest1026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerErrorSuccessTest1026: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {
@@ -142,7 +142,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     it('taskPoolAsyncRunnerErrorSuccessTest1027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerErrorSuccessTest1027: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {
@@ -178,7 +178,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     it('taskPoolAsyncRunnerErrorSuccessTest1028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerErrorSuccessTest1028: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {
@@ -214,7 +214,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     it('taskPoolAsyncRunnerErrorSuccessTest1029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerErrorSuccessTest1029: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {
@@ -249,7 +249,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0
         let count2: number = 0
         for (let i = 0; i < 10; i++) {

@@ -109,7 +109,7 @@ export default function taskPoolAsyncRunnerAbility() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(2000);
+      await sleep(500);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -133,7 +133,7 @@ export default function taskPoolAsyncRunnerAbility() {
         Count2.count = 0;
         CountStr1.count = '';
         CountStr2.count = '';
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printStr1, str1);
           let task2: taskpool.Task = new taskpool.Task(printStr2, str2);
@@ -177,7 +177,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0200: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const str3: string = 'q3';
         const str4: string = 'q4';
         Count3.count = 0;
@@ -237,7 +237,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0300: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const num1: number = 1;
         const num2: number = 2;
         Count1.count = 0;
@@ -275,7 +275,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0400: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const num1: number = 1;
         const num2: number = 2
         let count: number = 0;
@@ -330,7 +330,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0500: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         CountBol1.count = false;
         CountBol2.count = true;
         for (let i = 0; i < 10; i++) {
@@ -367,7 +367,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0600: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -422,7 +422,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0700: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         CountBigint1.count = 0n;
         CountBigint2.count = 0n;
         for (let i = 0; i < 10; i++) {
@@ -459,7 +459,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0800: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -515,7 +515,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0900: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printUndefined1, Object(undefined));
           let task2: taskpool.Task = new taskpool.Task(printUndefined2, Object(undefined));
@@ -549,7 +549,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1000: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -605,7 +605,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1100: begin');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         Count1.count = 0;
         Count2.count = 0;
         for (let i = 0; i < 10; i++) {
@@ -646,7 +646,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1200: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -703,7 +703,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1300: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const Array1: Array<number> = [1, 2, 3];
         const Array2: Array<number> = [4, 5, 6];
         Count1.count = 0;
@@ -740,7 +740,7 @@ export default function taskPoolAsyncRunnerAbility() {
      */
     it('taskPoolAsyncRunnerAbility1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const Array1: Array<number> = [1, 2, 3];
         const Array2: Array<number> = [4, 5, 6];
         let count: number = 0;
@@ -796,7 +796,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1500: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const map1: Map<string, number> = new Map([['Test1', 1]]);
         const map2: Map<string, number> = new Map([['Test2', 2]]);
         Count1.count = 0;
@@ -836,7 +836,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1600: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const map1: Map<string, number> = new Map([['Test1', 1]]);
         const map2: Map<string, number> = new Map([['Test2', 2]]);
         let count: number = 0;
@@ -890,7 +890,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1700: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const set1: Set<number> = new Set([1, 2, 3]);
         const set2: Set<number> = new Set([4, 5, 6]);
         Count1.count = 0;
@@ -930,7 +930,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log('taskPoolAsyncRunnerAbility1800: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const set1: Set<number> = new Set([1, 2, 3]);
         const set2: Set<number> = new Set([4, 5, 6]);
         let count: number = 0;
@@ -985,7 +985,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1900: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int8Array1 = new Int8Array([1, 2, 3]);
         const int8Array2 = new Int8Array([4, 5, 6]);
         Count1.count = 0;
@@ -1025,7 +1025,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2000: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int8Array1 = new Int8Array([1, 2, 3]);
         const int8Array2 = new Int8Array([4, 5, 6]);
         let count: number = 0;
@@ -1082,7 +1082,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2100: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint8Array1 = new Uint8Array([1, 2, 3]);
         const uint8Array2 = new Uint8Array([4, 5, 6]);
         Count1.count = 0;
@@ -1122,7 +1122,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2200: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint8Array1 = new Uint8Array([1, 2, 3]);
         const uint8Array2 = new Uint8Array([4, 5, 6]);
         let count: number = 0;
@@ -1177,7 +1177,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2300: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int16Array1 = new Int16Array([1, 2, 3]);
         const int16Array2 = new Int16Array([4, 5, 6]);
         Count1.count = 0;
@@ -1217,7 +1217,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2400: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int16Array1 = new Int16Array([1, 2, 3]);
         const int16Array2 = new Int16Array([4, 5, 6]);
         let count: number = 0;
@@ -1272,7 +1272,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2500: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint16Array1 = new Uint16Array([1, 2, 3]);
         const uint16Array2 = new Uint16Array([4, 5, 6]);
         Count1.count = 0;
@@ -1312,7 +1312,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2600: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint16Array1 = new Uint16Array([1, 2, 3]);
         const uint16Array2 = new Uint16Array([4, 5, 6]);
         let count: number = 0;
@@ -1367,7 +1367,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2700: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int32Array1 = new Int32Array([1, 2, 3]);
         const int32Array2 = new Int32Array([4, 5, 6]);
         Count1.count = 0;
@@ -1407,7 +1407,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2800: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int32Array1 = new Int32Array([1, 2, 3]);
         const int32Array2 = new Int32Array([4, 5, 6]);
         let count: number = 0;
@@ -1462,7 +1462,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility2900: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint32Array1 = new Uint32Array([1, 2, 3]);
         const uint32Array2 = new Uint32Array([4, 5, 6]);
         Count1.count = 0;
@@ -1502,7 +1502,7 @@ export default function taskPoolAsyncRunnerAbility() {
     it('taskPoolAsyncRunnerAbility3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility3000: start');
-        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+        let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint32Array1 = new Uint32Array([1, 2, 3]);
         const uint32Array2 = new Uint32Array([4, 5, 6]);
         let count: number = 0;

@@ -65,7 +65,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
       for (let i = 0; i < 10; i++) {
@@ -101,7 +101,7 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       await sleep(1000)
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
 
@@ -141,7 +141,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
 
@@ -177,7 +177,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
 
@@ -213,7 +213,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
       for (let i = 0; i < 10; i++) {
@@ -251,7 +251,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
       for (let i = 0; i < 10; i++) {
@@ -286,7 +286,7 @@ export default function taskPoolAsyncRunnerActTest() {
      * @tc.level Level 2
      */
     it('taskPoolAsyncRunnerActTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       Count1.count = 0;
       Count2.count = 0;
       for (let i = 0; i < 10; i++) {

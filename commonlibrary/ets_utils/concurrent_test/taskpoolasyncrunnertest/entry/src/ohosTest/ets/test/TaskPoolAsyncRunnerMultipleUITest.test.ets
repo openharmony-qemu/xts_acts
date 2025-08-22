@@ -58,7 +58,7 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
     it('taskPoolAsyncRunnerMultipleUITest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleUITest0100';
       console.info(`${caseName} test start`);
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(multipleUITask1);
@@ -98,7 +98,7 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
     it('taskPoolAsyncRunnerMultipleUITest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleUITest0200';
       console.info(`${caseName} test start`);
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5, 5);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(multipleUITask3);
