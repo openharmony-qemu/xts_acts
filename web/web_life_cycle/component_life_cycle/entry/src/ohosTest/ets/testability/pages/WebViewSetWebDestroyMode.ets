@@ -13,8 +13,7 @@
  * limitations under the License.
  */
 import { webview } from '@kit.ArkWeb';
-import router from '@ohos.router';
-import { waitForExist} from '../../test/WaitTest.test';
+import { waitForExist } from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 
@@ -22,25 +21,31 @@ import Utils from '../../test/Utils';
 @Component
 struct WebComponent {
   aboutToAppear(): void {
-    if(this.flag) {
+    if (this.flag) {
       webview.WebviewController.setWebDestroyMode(webview.WebDestroyMode.FAST_MODE)
     } else {
       webview.WebviewController.setWebDestroyMode(webview.WebDestroyMode.NORMAL_MODE)
     }
   }
+
   @State webviewController: webview.WebviewController = new webview.WebviewController();
-  @State flag:Boolean = true
-  @State setWebDestroyModeArr:String[] = ['webview.WebDestroyMode.FAST_MODE','webview.WebDestroyMode.NORMAL_MODE']
+  @State flag: Boolean = true
+  @State setWebDestroyModeArr: String[] = ['webview.WebDestroyMode.FAST_MODE', 'webview.WebDestroyMode.NORMAL_MODE']
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State url: string = '';
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+      eventId: 138550,
+      priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(138550)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,32 +57,32 @@ struct WebComponent {
       }
     }
   }
+
   build() {
     Column() {
       Row() {
         Button('web click')
           .key('webViewSetWebDestroyModeKey')
           .onClick(async () => {
-            await waitForExist(()=>this.isReceive, this.emitKey, 0);
+            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitwebViewSetWebDestroyMode001': {
-                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
-                Utils.emitEvent(this.setWebDestroyModeArr[0],20250820)
+                Utils.emitEvent(this.setWebDestroyModeArr[0], 138560)
                 break;
               }
-
               case 'emitwebViewSetWebDestroyMode002': {
-                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
-                Utils.emitEvent(this.setWebDestroyModeArr[1],20250821)
+                Utils.emitEvent(this.setWebDestroyModeArr[1], 138570)
                 break;
               }
             }
           })
       }
+
       Row() {
-        Web({ src: "www.163.com", controller: this.webviewController })
+        Web({ src: 'www.example.com', controller: this.webviewController })
           .onPageEnd((event) => {
             console.log('onPageEnd url：' + event.url);
             this.isPageEnd = 0;
