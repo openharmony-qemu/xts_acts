@@ -227,6 +227,7 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_padding_static:ActsAceEtsComponentCommonAttrsPaddingStaticTest",
         "ace_ets_component_common_attrss_onVisibleAreaChange_static:ActsAceEtsComponentCommonAttrsOnVisibleAreaChangeStaticTest",
         "ace_ets_component_common_attrss_onAreaChange_static:ActsAceEtsComponentCommonAttrsOnAreaChangeStaticTest",
+        "ace_ets_component_common_attrss_onAppear_static:ActsAceEtsComponentCommonAttrsOnAppearStaticTest",
         "ace_ets_component_common_attrss_flex_two_nowear_static:ActsAceEtsComponentCommonflexTwoNowearStaticTest",
         "ace_ets_component_common_attrss_flex_two01_static:ActsAceEtsComponentCommonflexTwo01StaticTest",
         "ace_ets_component_common_attrss_flex002_static:ActsAceEtsComponentCommonflex002StaticTest",
