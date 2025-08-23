@@ -658,15 +658,15 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_IptDev_off_0200
-     * @tc.name: SUB_MMI_Input_Api_IptDev_off_0200
+     * @tc.number: SUB_MMI_Input_Api_IptDev_off_0300
+     * @tc.name: SUB_MMI_Input_Api_IptDev_off_0300
      * @tc.desc: Test callback on and off interfaces to cancel the hot swap event for the specified input device.
      * @tc.level 3
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("SUB_MMI_Input_Api_IptDev_off_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let caseName = "SUB_MMI_Input_Api_IptDev_off_0200";
+    it("SUB_MMI_Input_Api_IptDev_off_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_off_0300";
       try {
         const callback = null;
         inputDevice.off("change", callback);
