@@ -45,7 +45,7 @@ export default function nfcTagTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
-         * @tc.name MIFARE_CLASSIC
+         * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0100
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
