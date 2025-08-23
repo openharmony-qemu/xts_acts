@@ -448,12 +448,10 @@ export default function ResmgrTest() {
             done();
           })
             .catch(error =>{
-              console.log('getDeviceCapability_test_static_008 error0: ' + JSON.stringify(error));
               expect().assertFail();
               done();
             })
         } catch(error) {
-          console.log('getDeviceCapability_test_static_008 error1: ' + JSON.stringify(error));
           expect().assertFail();
           done();
         }
@@ -2295,7 +2293,7 @@ export default function ResmgrTest() {
 
       /* *
       * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
-      * @tc.name    test getDeviceCapability method in callback mode
+      * @tc.name    getScreenDensity_test_static_001
       * @tc.desc    get the device capability in callback mode
       */
       it('getScreenDensity_test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
