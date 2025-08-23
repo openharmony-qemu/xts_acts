@@ -17,7 +17,7 @@ group("bundlemanager") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsabilitybmsenumteststatic:ActsAbilityBMSEnumStaticTest"
+      "actsabilitybmsenumteststatic:ActsAbilityBMSEnumStaticTest",
       "actsbmsaccesstokentest:ActsBmsAccessTokenTest",
       "actsbmsatomicserviceetstest:actsbmsatomicserviceetstest",
       "actsbmscontextmenutest:ActsBmsContextmenuTest",
