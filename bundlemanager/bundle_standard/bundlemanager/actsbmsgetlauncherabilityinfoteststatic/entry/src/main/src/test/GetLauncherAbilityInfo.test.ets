@@ -30,6 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testtag';
 const BUNDLE_NAME2 = 'ohos.acts.bms.getlauncherabilityinfo.test.static';
 const TEST_SUITE_NAME = 'launcherBundleManagerTest'
+const PARAM_0: int = 0;
 
 export default function actsGetLauncherAbilityInfoTest() {
 
