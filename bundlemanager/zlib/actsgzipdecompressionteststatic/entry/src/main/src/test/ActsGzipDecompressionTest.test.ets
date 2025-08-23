@@ -1008,51 +1008,6 @@ export default function ActsGzipDecompressionTest() {
       })
 
     /**
-     * @tc.number     : GzipDecompressionAbilityTest_static_8900
-     * @tc.name       : GzipDecompressionAbilityTest_static_8900
-     * @tc.desc       : test gzflush correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('GzipDecompressionAbilityTest_static_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_8900 Start=====");
-        let gzip = zlib.createGZipSync();
-        await gzip.gzopen(allFilePath, "wb");
-        try {
-          await gzip.gzflush(zlib.CompressFlushMode.NO_FLUSH).then((num) => {
-            expect(num).assertEqual(zlib.ReturnStatus.OK);
-            done();
-          })
-          await gzip.gzflush(zlib.CompressFlushMode.PARTIAL_FLUSH).then((num) => {
-            expect(num).assertEqual(zlib.ReturnStatus.OK);
-            done();
-          })
-          await gzip.gzflush(zlib.CompressFlushMode.SYNC_FLUSH).then((num) => {
-            expect(num).assertEqual(zlib.ReturnStatus.OK);
-            done();
-          })
-          await gzip.gzflush(zlib.CompressFlushMode.FULL_FLUSH).then((num) => {
-            expect(num).assertEqual(zlib.ReturnStatus.OK);
-            done();
-          })
-          await gzip.gzflush(zlib.CompressFlushMode.FINISH).then((num) => {
-            expect(num).assertEqual(zlib.ReturnStatus.OK);
-            done();
-          })
-        } catch (errData: BusinessError) {
-          hilog.error(domain, tag,
-            `GzipDecompressionAbilityTest_static_8900 gzflush failed with errCode:${errData.code}  message:${errData.message}`);
-          expect().assertFail();
-          done();
-        }
-        await gzip.gzclose();
-        done();
-        hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_8900 End=====");
-      });
-
-    /**
      * @tc.number     : GzipDecompressionAbilityTest_static_static_9000
      * @tc.name       : GzipDecompressionAbilityTest_static_static_9000
      * @tc.desc       : test gzflush error code 17800004
@@ -1114,6 +1069,43 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_1900 End=====");
       })
+
+    /**
+     * @tc.number     : GzipDecompressionAbilityTest_static_2300
+     * @tc.name       : GzipDecompressionAbilityTest_static_2300
+     * @tc.desc       : test gzfwrite error code 401
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('GzipDecompressionAbilityTest_static_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag,"=====GzipDecompressionAbilityTest_static_2300 Start=====");
+      let gzip = zlib.createGZipSync();
+      await gzip.gzopen(allFilePath, "wb");
+      let bufferWithData = new ArrayBuffer(16);
+      let uint8View = new Uint8Array(bufferWithData);
+      for (let i = 0; i < uint8View.length; i++) {
+        uint8View[i] = i;
+      }
+      try {
+        await gzip.gzfwrite(bufferWithData, -1, 8).then(() => {
+          expect().assertFail();
+        });
+      } catch (errData: BusinessError) {
+        expect(errData.code).assertEqual(401);
+      }
+
+      try {
+        await gzip.gzfwrite(bufferWithData, 2, -1).then(() => {
+          expect().assertFail();
+        });
+      } catch (errData: BusinessError) {
+        expect(errData.code).assertEqual(401);
+      }
+      await gzip.gzclose();
+      done();
+      hilog.info(domain, tag,"=====GzipDecompressionAbilityTest_static_2300 End=====");
+    })
 
     /**
      * @tc.number     : GzipDecompressionAbilityTest_static_2400
@@ -1198,6 +1190,39 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_3100 End=====");
       })
+
+    /**
+     * @tc.number     : GzipDecompressionAbilityTest_static_3300
+     * @tc.name       : GzipDecompressionAbilityTest_static_3300
+     * @tc.desc       : test gzfread error code 401
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('GzipDecompressionAbilityTest_static_3300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag,"=====GzipDecompressionAbilityTest_static_3300 Start=====");
+      let gzip = zlib.createGZipSync();
+      await gzip.gzopen(allFilePath, "rb");
+      let bufferWithData = new ArrayBuffer(16);
+      try {
+        await gzip.gzfread(bufferWithData, -1, 8).then(() => {
+          expect().assertFail();
+        });
+      } catch (errData: BusinessError) {
+        expect(errData.code).assertEqual(401);
+      }
+
+      try {
+        await gzip.gzfread(bufferWithData, 2, -1).then(() => {
+          expect().assertFail();
+        });
+      } catch (errData: BusinessError) {
+        expect(errData.code).assertEqual(401);
+      }
+      await gzip.gzclose();
+      done();
+      hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_3300 End=====");
+    })
 
     /**
      * @tc.number     : GzipDecompressionAbilityTest_static_3600
@@ -1622,6 +1647,58 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzclose();
         done();
         hilog.info(domain, tag, "=====Test_gzungetc_normal_0100 End=====");
+      })
+      
+    /**
+     * @tc.number     : Test_gzungetc_0200
+     * @tc.name       : Test_gzungetc_0200
+     * @tc.desc       : test gzungetc error code
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_gzungetc_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====Test_gzungetc_0200 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "wb");
+        try {
+          await gzip.gzungetc(-1).then(() => {
+            expect().assertFail();
+          });
+        } catch (errData: BusinessError<void>) {
+          hilog.error(domain, tag, `Test_gzungetc_0200 errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(401);
+        }
+        await gzip.gzclose();
+        done();
+        hilog.info(domain, tag, "=====Test_gzungetc_0200 End=====");
+      })
+      
+    /**
+     * @tc.number     : Test_gzungetc_0300
+     * @tc.name       : Test_gzungetc_0300
+     * @tc.desc       : test gzungetc error code
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_gzungetc_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====Test_gzungetc_0300 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "wb");
+        try {
+          await gzip.gzungetc(256).then(() => {
+            expect().assertFail();
+          });
+        } catch (errData: BusinessError<void>) {
+          hilog.error(domain, tag, `Test_gzungetc_0300 errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(401);
+        }
+        await gzip.gzclose();
+        done();
+        hilog.info(domain, tag, "=====Test_gzungetc_0300 End=====");
       })
 
     /**
@@ -2119,6 +2196,58 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====Test_gzputc_0400 End=====");
       })
+      
+    /**
+     * @tc.number     : Test_gzputc_0500
+     * @tc.name       : Test_gzputc_0500
+     * @tc.desc       : test gzputc error code
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_gzputc_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====Test_gzputc_0500 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "rb");
+        try {
+          await gzip.gzputc(-1).then(() => {
+            expect().assertFail();
+          });
+        } catch (errData: BusinessError<void>) {
+          hilog.error(domain, tag, `Test_gzputc_0500 errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(401);
+        }
+        await gzip.gzclose();
+        done();
+        hilog.info(domain, tag, "=====Test_gzputc_0500 End=====");
+      })
+      
+    /**
+     * @tc.number     : Test_gzputc_0600
+     * @tc.name       : Test_gzputc_0600
+     * @tc.desc       : test gzputc error code
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_gzputc_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====Test_gzputc_0600 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "rb");
+        try {
+          await gzip.gzputc(256).then(() => {
+            expect().assertFail();
+          });
+        } catch (errData: BusinessError<void>) {
+          hilog.error(domain, tag, `Test_gzputc_0600 errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(401);
+        }
+        await gzip.gzclose();
+        done();
+        hilog.info(domain, tag, "=====Test_gzputc_0600 End=====");
+      })
 
     /**
      * @tc.number     : Test_gzprintf_normal_0100
@@ -2145,6 +2274,30 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====Test_gzprintf_normal_0100 End=====");
       })
+
+    /**
+     * @tc.number     : Test_gzprintf_0100
+     * @tc.name       : Test_gzprintf_0100
+     * @tc.desc       : test gzprintf error code
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_gzprintf_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "=====Test_gzprintf_0100 Start=====");
+      let gzip = zlib.createGZipSync();
+      await gzip.gzopen(allFilePath, "rb");
+      try {
+        await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then(() => {
+          expect().assertFail();
+        });
+      } catch (errData: BusinessError<void>) {
+        expect(errData.code).assertEqual(17800004);
+      }
+      await gzip.gzclose();
+      done();
+      hilog.info(domain, tag, "=====Test_gzprintf_0100 End=====");
+    })
 
     /**
      * @tc.number     : Test_gzoffset_normal_0100
@@ -2279,5 +2432,60 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====Test_gzgets_0200 End=====");
       })
+
+    /**
+     * @tc.number     : GzipDecompressionAbilityTest_static_8900
+     * @tc.name       : GzipDecompressionAbilityTest_static_8900
+     * @tc.desc       : test gzflush correct return value
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('GzipDecompressionAbilityTest_static_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_8900 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "wb");
+        try {
+          await gzip.gzflush(zlib.CompressFlushMode.NO_FLUSH).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.PARTIAL_FLUSH).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.SYNC_FLUSH).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.FULL_FLUSH).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.FINISH).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.TREES).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            done();
+          })
+          await gzip.gzflush(zlib.CompressFlushMode.BLOCK).then((num) => {
+            expect(num).assertEqual(zlib.ReturnStatus.OK);
+            expect(zlib.ReturnStatus.STREAM_END).assertEqual(1);
+            expect(zlib.ReturnStatus.NEED_DICT).assertEqual(2);
+            done();
+          })
+        } catch (errData: BusinessError) {
+          hilog.error(domain, tag,
+            `GzipDecompressionAbilityTest_static_8900 gzflush failed with errCode:${errData.code}  message:${errData.message}`);
+          expect().assertFail();
+          done();
+        }
+        await gzip.gzclose();
+        done();
+        hilog.info(domain, tag, "=====GzipDecompressionAbilityTest_static_8900 End=====");
+      });
   })
 }

@@ -120,5 +120,26 @@ export default function abilityTest() {
         done();
       });
     })
+
+    /**
+     * @tc.number: Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.name: Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.desc: Test getAbilityInfo with error code
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level1
+     */
+    it('Sub_Bms_Framework_getAbilityInfo_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let uri = "https://www.example.com";
+      let abilityFlags = bundle.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
+      bundle.getAbilityInfo(uri, abilityFlags).then((data: Array<bundle.AbilityInfo>) => {
+        expect().assertFail();
+        done();
+      }).catch((err: BusinessError): void => {
+        hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_01 catch failed errCode:${err.code} message:${err.message}`);
+        expect(err.code).assertEqual(201);
+        done();
+      });
+    })
   })
 }
