@@ -84,7 +84,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
-         * @tc.name SUB_COMMUNICATION_Cont_static_0300
+         * @tc.name _COMMUNICATION_NFC_Cont_static_0300
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -167,7 +167,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0700
-         * @tc.name heck whether the NFC function is disabled
+         * @tc.name Check whether the NFC function is disabled
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
