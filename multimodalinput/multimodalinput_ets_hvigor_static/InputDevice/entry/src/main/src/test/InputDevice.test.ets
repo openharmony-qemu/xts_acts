@@ -58,7 +58,7 @@ export default function InputDeviceTest() {
           ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
           ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -81,7 +81,7 @@ export default function InputDeviceTest() {
         try {
           ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
