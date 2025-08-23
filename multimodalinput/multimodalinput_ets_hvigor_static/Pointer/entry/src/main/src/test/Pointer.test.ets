@@ -58,10 +58,10 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(ifSetPointerStyleSuccess == 1);
             done();
           });
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          ExpectFalse(error.code == 401 || true);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -87,10 +87,10 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(ifSetPointerStyleSuccess == 1);
             done();
           });
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          ExpectFalse(error.code == 401 || true);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -115,9 +115,9 @@ export default function MultimodalInputPointerTest() {
           ifSetPointerStyleSyncSuccess++;
           ExpectTrue(ifSetPointerStyleSyncSuccess == 1);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          ExpectFalse(error.code == 401 || true);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -182,7 +182,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PointerStyle.RUNNING == 43);
           ExpectTrue(pointer.PointerStyle.MIDDLE_BTN_EAST_WEST == 44);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -206,7 +206,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PrimaryButton.LEFT == 0);
           ExpectTrue(pointer.PrimaryButton.RIGHT == 1);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -231,7 +231,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
           done();
-        } catch (error: Error) {
+        } catch (error: BusinessError) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

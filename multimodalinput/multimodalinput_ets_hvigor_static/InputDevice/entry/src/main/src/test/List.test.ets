@@ -14,6 +14,8 @@
  */
 
 import InputDeviceTest from "./InputDevice.test";
+import InputConsumerTest from "./InputConsumer.test";
 export default function testsuite() {
     InputDeviceTest();
+    InputConsumerTest();
 }
