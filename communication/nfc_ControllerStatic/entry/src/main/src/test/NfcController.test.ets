@@ -84,7 +84,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
-         * @tc.name STATE_ON
+         * @tc.name SUB_COMMUNICATION_Cont_static_0300
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -98,7 +98,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0400
-         * @tc.name on
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_0400
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -123,7 +123,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0500
-         * @tc.name off
+         * @tc.name CheckWhetherNFCFunctionIsEnabled
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -148,7 +148,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0600
-         * @tc.name STATE_OFF
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_0600
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -167,7 +167,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0700
-         * @tc.name disableNfc
+         * @tc.name heck whether the NFC function is disabled
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -199,7 +199,7 @@ export default function nfcControllerTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0800
-         * @tc.name enableNfc
+         * @tc.name EnableNfc
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
