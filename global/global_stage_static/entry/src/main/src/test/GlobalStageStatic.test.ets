@@ -704,7 +704,7 @@ export default function globalStageTest() {
       } catch (error: BusinessError) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0230' + error.code + error.message);
-        expect(JSON.stringify(error.code)).assertEqual('9001007');
+        expect(error.code).assertEqual(9001007);
       }
     })
 
@@ -723,7 +723,7 @@ export default function globalStageTest() {
       } catch (error: BusinessError) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0260' + error.code + error.message);
-        expect(JSON.stringify(error.code)).assertEqual('9001007');
+        expect(error.code).assertEqual(9001007);
       }
     })
 
@@ -742,7 +742,7 @@ export default function globalStageTest() {
       } catch (error: BusinessError) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0290' + error.code + error.message);
-        expect(JSON.stringify(error.code)).assertEqual(9001007);
+        expect(error.code).assertEqual(9001007);
       }
     })
 
@@ -791,7 +791,7 @@ export default function globalStageTest() {
         let error = err as BusinessError
         console.log('resourceManager_test_getSymbol_static_0040_errorCode' + error.code);
         console.log('resourceManager_test_getSymbol_static_0040_errorMessage' + error.message);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -1412,7 +1412,7 @@ export default function globalStageTest() {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.code' + error.code);
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.message' + error.message);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
         done();
       })
     })
@@ -1495,7 +1495,7 @@ export default function globalStageTest() {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.code' + error.code);
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.message' + error.message);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
         done();
       })
     })
@@ -2366,7 +2366,7 @@ export default function globalStageTest() {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContent_test_static_0200 error code:' + error.code);
-        expect(JSON.stringify(error.code)).assertEqual('9001005');
+        expect(error.code).assertEqual(9001005);
         done();
       })
     })
@@ -2523,7 +2523,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getRawFdSync_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001005').assertTrue();
+        expect(error.code).assertEqual(9001005);
       }
     })
 
@@ -2541,7 +2541,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getRawFileListSync_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001005').assertTrue();
+        expect(error.code).assertEqual(9001005);
       }
     })
 
@@ -2576,7 +2576,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaContentSync_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -2639,7 +2639,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaContentBase64Sync_test_static_0300 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -2674,7 +2674,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getStringArrayValueSync_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -2741,7 +2741,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaByNameSync_test_static_0200 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
@@ -2773,7 +2773,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaBase64ByNameSync_test_static_0200 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
@@ -2791,7 +2791,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('getStringArrayByNameSync_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
@@ -2857,7 +2857,7 @@ export default function globalStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('isRawDir_test_static_0100 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001005').assertTrue();
+        expect(error.code).assertEqual(9001005);
       }
     })
 
