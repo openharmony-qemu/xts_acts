@@ -194,6 +194,32 @@ export default function fscreateReadStream() {
           expect(false).assertTrue();
         }
     });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1400
+     * @tc.name fileIO_test_create_ReadStream_static_014
+     * @tc.desc Test the createWriteStream() interface of class Stream.
+     * ReadStream reads files.Seek
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_create_ReadStream_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_014');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(5);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_014 curOff: ' + curOff);
+        expect(curOff == 5).assertTrue();
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_create_stream end');
   })
 }

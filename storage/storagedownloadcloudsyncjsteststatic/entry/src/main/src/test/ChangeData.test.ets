@@ -47,6 +47,7 @@ export default function changeDatetest() {
           hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_001 changedata:' + changeData.isDirectory);
         }
         cloudSync.registerChange(uri, false, onCallback1);
+        cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_001 has failed for ' + e.message + ', code: ' + e.code)
@@ -72,6 +73,7 @@ export default function changeDatetest() {
           hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_002 changedata:' + changeData.isDirectory);
         }
         cloudSync.registerChange(uri, false, onCallback1);
+        cloudSync.unregisterChange(uri);
         fs.rmdirSync(dpath);
         expect(false).assertTrue();
       } catch (e: BusinessError) {
@@ -104,6 +106,7 @@ export default function changeDatetest() {
           }
         }
         cloudSync.registerChange(uri, false, onCallback1);
+        cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_003 has failed for ' + e.message + ', code: ' + e.code);
