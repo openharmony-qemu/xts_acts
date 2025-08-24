@@ -387,6 +387,31 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1300
+     * @tc.name fileIO_truncate_async_static_013
+     * @tc.desc Test the truncate() interface. Promise.
+     * Is a directory.
+     * @tc.size MEDIUM
+     * @tc.type Functoin
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('fileIO_truncate_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_truncate_async_static_013');
+      try {
+        fs.mkdirSync(fpath);
+        let truncateLen = 5;
+        await fs.truncate(fpath);
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.rmdirSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_013 has failed for' + JSON.stringify(e));
+        expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0000
      * @tc.name fileIO_test_truncate_sync_static_000
      * @tc.desc Test the truncateSync() interface.
@@ -573,5 +598,4 @@ export default function fileIOTruncate() {
     });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_truncate end');
-
 }

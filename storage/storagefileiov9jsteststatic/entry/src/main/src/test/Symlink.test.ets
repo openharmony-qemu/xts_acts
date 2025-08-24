@@ -79,7 +79,36 @@ export default function fileIOSymlink() {
       }
     });
 
+    /**
+     * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0200
+     * @tc.name fileIO_test_symlink_async_static_002
+     * @tc.desc Test SymlinkAsync interfaces.
+     * Create a symbolic link to verify normal function.
+     * @tc.size MEDIUM
+     * @tc.type Functoin
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('fileIO_test_symlink_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_002');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        fs.symlink(fpath,  fpath + 'link3', (err: BusinessError | null) => {
+          if (err) {
+            fs.unlinkSync(fpath);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_002 error: message: ' + err.message );
+            expect(err.message == 'Permission denied').assertTrue();
+            done();
+          }
+          expect(true).assertTrue();
+          done();
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_symlink end');
-
 }

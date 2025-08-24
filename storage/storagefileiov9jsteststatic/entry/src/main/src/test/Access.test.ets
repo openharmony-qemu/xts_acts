@@ -462,5 +462,35 @@ export default function fileIOAccess() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1000
+     * @tc.name test_FileIO_Access_Async_Static_010
+     * @tc.desc Test access() interface.
+     * Test that the file is exist, AccessFlagType.LOCAL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('test_FileIO_Access_Async_Static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_010');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = await fs.access(fpath, fs.AccessModeType.EXIST, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_010 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
   });
 }
