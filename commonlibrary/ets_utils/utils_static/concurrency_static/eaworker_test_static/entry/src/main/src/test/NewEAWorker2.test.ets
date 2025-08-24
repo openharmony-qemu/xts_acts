@@ -425,10 +425,10 @@ export default function NewEAWorkerTes2() {
         try {
           const jobs: Array<Job<void>> = [];
           for (let i = 0; i < 5; i++) {
-            const job = worker.run((): void => {
+            const job = worker.run<void>((): void => {
               count++;
             });
-            jobs.push(job as Job<void>);
+            jobs.push(job);
           }
           jobs.forEach(j => j.Await());
           expect(count).assertEqual(5);
