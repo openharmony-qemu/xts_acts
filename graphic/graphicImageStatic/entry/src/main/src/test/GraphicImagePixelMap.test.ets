@@ -1772,7 +1772,7 @@ export default function graphicImagePixelMap() {
         expect(1.1).assertEqual(staticMetadata.whitePointX);
         expect(7.2).assertEqual(GainmapChannel1.gainmapMin);
         expect(8.3).assertEqual(GainmapChannel2.gamma);
-        expect(5.12).assertEqual(HdrGainmapMetadata.alternateHeadroom);
+        expect(5.2).assertEqual(HdrGainmapMetadata.alternateHeadroom);
         done();
       })
 
