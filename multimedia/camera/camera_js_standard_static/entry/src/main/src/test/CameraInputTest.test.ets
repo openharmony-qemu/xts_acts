@@ -187,7 +187,7 @@ let isEmpty08 = (data: BusinessError) => {
     await mCameraSession.release();
   }
 
-  let createInput = async (idx: number): Promise<boolean> => {
+  let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
 
     if (isEmpty02(mCameraDevicesArray)) {
@@ -242,7 +242,7 @@ let isEmpty08 = (data: BusinessError) => {
      console.log(TAG + 'Exit getPhotoReceiverSurface')
    }
 
-  let createOutput = (idx: number) => {
+  let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
     let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
@@ -286,7 +286,7 @@ let isEmpty08 = (data: BusinessError) => {
     return true;
   }
 
-  let startCameraSession = async (idx: number): Promise<boolean> => {
+  let startCameraSession = async (idx: int): Promise<boolean> => {
     console.info(TAG + "Enter startCameraSession");
 
     beginCameraSessionConfig();

@@ -124,7 +124,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     await mCameraSession.release();
   }
 
-  let createInput = async (idx: number): Promise<boolean> => {
+  let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
@@ -141,7 +141,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     return true;
   }
 
-  let createOutput = (idx: number) => {
+  let createOutput = (idx: int) => {
     console.info('Enter createOutput');
     let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_PHOTO);
     if (!isEmpty05(cameraOutputCap)) {

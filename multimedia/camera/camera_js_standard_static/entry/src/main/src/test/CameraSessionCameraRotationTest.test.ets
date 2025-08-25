@@ -234,7 +234,7 @@ export default function cameraSessionCameraRotationTest() {
     await mCameraSession.release();
   }
 
-  let createInput = async (idx: number): Promise<boolean>  => {
+  let createInput = async (idx: int): Promise<boolean>  => {
     console.info('Enter createInput');
 
     if (mCameraDevicesArray == undefined) {
@@ -275,7 +275,7 @@ export default function cameraSessionCameraRotationTest() {
     return true;
   }
 
-  let createOutput = async (idx: number, mode: cameraObj.SceneMode): Promise<boolean> => {
+  let createOutput = async (idx: int, mode: cameraObj.SceneMode): Promise<boolean> => {
     console.info('Enter createOutput');
     let height:int = 0;
     let width:int = 0;
@@ -407,7 +407,7 @@ export default function cameraSessionCameraRotationTest() {
     return true;
   }
 
-  let startCameraSession = async (idx: number, mode: cameraObj.SceneMode): Promise<boolean> => {
+  let startCameraSession = async (idx: int, mode: cameraObj.SceneMode): Promise<boolean> => {
     console.info(TAG + "Enter startCameraSession");
 
     await createInput(idx);

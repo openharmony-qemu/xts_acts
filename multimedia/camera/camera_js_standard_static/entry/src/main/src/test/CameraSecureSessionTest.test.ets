@@ -150,7 +150,7 @@ export default function cameraSecureSessionTest() {
     return true;
   }
 
-  let createInput = async (idx: number): Promise<boolean> => {
+  let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
 
     if (isEmpty02(mCameraDevicesArray)) {
@@ -176,7 +176,7 @@ export default function cameraSecureSessionTest() {
     return true;
   }
 
-  let createOutput = async (idx: number): Promise<boolean> => {
+  let createOutput = async (idx: int): Promise<boolean> => {
     console.info('Enter createOutput');
     let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
       cameraObj.SceneMode.SECURE_PHOTO);
@@ -257,7 +257,7 @@ export default function cameraSecureSessionTest() {
     return true;
   }
 
-  let startCameraSession = async (idx: number): Promise<boolean> => {
+  let startCameraSession = async (idx: int): Promise<boolean> => {
     console.info(TAG + "Enter startCameraSession");
 
     await createInput(idx);

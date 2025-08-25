@@ -215,7 +215,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     await mCameraSession.release();
   }
 
-  let createInput = async (idx: number): Promise<boolean> => {
+  let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
 
     if (mCameraDevicesArray == undefined) {
@@ -253,7 +253,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     return true;
   }
 
-  let createOutput = (idx: number) => {
+  let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
     let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
@@ -341,7 +341,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     return true;
   }
 
-  let startCameraSession = async (idx: number): Promise<boolean> => {
+  let startCameraSession = async (idx: int): Promise<boolean> => {
     console.info(TAG + "Enter startCameraSession");
 
     await createInput(idx);
