@@ -17,6 +17,7 @@ group("webLifeCycle") {
     deps = [
       "component_life_cycle:ActsWebComponentLifeCycleTest",
       "declarative_creation:ActsWebDeclarativeCreationTest",
+      "declarative_creation_static:ActsWebDeclarativeCreationStaticTest",
       "rendering_process_sharing:ActsWebRenderingProcessSharingTest",
     ]
   }
