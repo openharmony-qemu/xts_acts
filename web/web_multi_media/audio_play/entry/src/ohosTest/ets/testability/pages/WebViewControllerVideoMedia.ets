@@ -33,14 +33,14 @@ struct WebViewControllerVideoMedia {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132260,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132260)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -87,9 +87,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 77011)
+                  Utils.emitEvent(this.backStateArr[3], 132270)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77011)
+                  Utils.emitEvent(this.backStateArr[this.res], 132270)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -118,9 +118,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[0], 77012)
+                  Utils.emitEvent(this.backStateArr[0], 132280)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77012)
+                  Utils.emitEvent(this.backStateArr[this.res], 132280)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -153,9 +153,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 77013)
+                  Utils.emitEvent(this.backStateArr[3], 132290)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77013)
+                  Utils.emitEvent(this.backStateArr[this.res], 132290)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -188,9 +188,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 77014)
+                  Utils.emitEvent(this.backStateArr[2], 132300)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77014)
+                  Utils.emitEvent(this.backStateArr[this.res], 132300)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -223,9 +223,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 77015)
+                  Utils.emitEvent(this.backStateArr[2], 132310)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77015)
+                  Utils.emitEvent(this.backStateArr[this.res], 132310)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -257,9 +257,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 77016)
+                  Utils.emitEvent(this.backStateArr[3], 132320)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77016)
+                  Utils.emitEvent(this.backStateArr[this.res], 132320)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -293,9 +293,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 77017)
+                  Utils.emitEvent(this.backStateArr[3], 132330)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77017)
+                  Utils.emitEvent(this.backStateArr[this.res], 132330)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -328,9 +328,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 77018)
+                  Utils.emitEvent(this.backStateArr[3], 132340)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 77018)
+                  Utils.emitEvent(this.backStateArr[this.res], 132340)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -363,9 +363,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 78011)
+                  Utils.emitEvent(this.backStateArr[1], 132350)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78011)
+                  Utils.emitEvent(this.backStateArr[this.res], 132350)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -394,9 +394,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[0], 78012)
+                  Utils.emitEvent(this.backStateArr[0], 132360)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78012)
+                  Utils.emitEvent(this.backStateArr[this.res], 132360)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -427,9 +427,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 78013)
+                  Utils.emitEvent(this.backStateArr[1], 132370)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78013)
+                  Utils.emitEvent(this.backStateArr[this.res], 132370)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -462,9 +462,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 78014)
+                  Utils.emitEvent(this.backStateArr[2], 132380)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78014)
+                  Utils.emitEvent(this.backStateArr[this.res], 132380)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -497,9 +497,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 78015)
+                  Utils.emitEvent(this.backStateArr[3], 132390)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78015)
+                  Utils.emitEvent(this.backStateArr[this.res], 132390)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -533,9 +533,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 78016)
+                  Utils.emitEvent(this.backStateArr[1], 132400)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78016)
+                  Utils.emitEvent(this.backStateArr[this.res], 132400)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -570,9 +570,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 78017)
+                  Utils.emitEvent(this.backStateArr[1], 132410)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 78017)
+                  Utils.emitEvent(this.backStateArr[this.res], 132410)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -603,9 +603,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79011)
+                  Utils.emitEvent(this.backStateArr[2], 132420)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79011)
+                  Utils.emitEvent(this.backStateArr[this.res], 132420)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -634,9 +634,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79012)
+                  Utils.emitEvent(this.backStateArr[2], 132430)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79012)
+                  Utils.emitEvent(this.backStateArr[this.res], 132430)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -669,9 +669,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79013)
+                  Utils.emitEvent(this.backStateArr[2], 132440)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79013)
+                  Utils.emitEvent(this.backStateArr[this.res], 132440)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -704,9 +704,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79014)
+                  Utils.emitEvent(this.backStateArr[2], 132450)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79014)
+                  Utils.emitEvent(this.backStateArr[this.res], 132450)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -739,9 +739,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79015)
+                  Utils.emitEvent(this.backStateArr[2], 132460)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79015)
+                  Utils.emitEvent(this.backStateArr[this.res], 132460)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -773,9 +773,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79016)
+                  Utils.emitEvent(this.backStateArr[2], 132470)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79016)
+                  Utils.emitEvent(this.backStateArr[this.res], 132470)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -809,9 +809,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79017)
+                  Utils.emitEvent(this.backStateArr[2], 132480)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79017)
+                  Utils.emitEvent(this.backStateArr[this.res], 132480)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -844,9 +844,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 79018)
+                  Utils.emitEvent(this.backStateArr[2], 132490)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 79018)
+                  Utils.emitEvent(this.backStateArr[this.res], 132490)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -873,9 +873,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[0], 8101)
+                  Utils.emitEvent(this.backStateArr[0], 132500)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8101)
+                  Utils.emitEvent(this.backStateArr[this.res], 132500)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -904,9 +904,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 8102)
+                  Utils.emitEvent(this.backStateArr[1], 132510)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8102)
+                  Utils.emitEvent(this.backStateArr[this.res], 132510)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -937,9 +937,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 8103)
+                  Utils.emitEvent(this.backStateArr[2], 132520)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8103)
+                  Utils.emitEvent(this.backStateArr[this.res], 132520)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -970,9 +970,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 8104)
+                  Utils.emitEvent(this.backStateArr[2], 132530)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8104)
+                  Utils.emitEvent(this.backStateArr[this.res], 132530)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1003,9 +1003,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[3], 8105)
+                  Utils.emitEvent(this.backStateArr[3], 132540)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8105)
+                  Utils.emitEvent(this.backStateArr[this.res], 132540)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1037,7 +1037,7 @@ struct WebViewControllerVideoMedia {
                 const intervalId = setInterval(() => {
                   this.controller.runJavaScript("isVideoFullScreen()", (err, isFull) => {
                     num1 = Number.parseInt(isFull);
-                    console.info("key==>isFull_8106):" + isFull)
+                    console.info("key==>isFull_132550):" + isFull)
                     if ((num1 == 0) && (this.res == 3)) {
                       back_res = true;
                       clearInterval(intervalId)
@@ -1051,9 +1051,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(true, 8106)
+                  Utils.emitEvent(true, 132550)
                 } else {
-                  Utils.emitEvent(back_res, 8106)
+                  Utils.emitEvent(back_res, 132550)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1080,9 +1080,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[0], 8107)
+                  Utils.emitEvent(this.backStateArr[0], 132560)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8107)
+                  Utils.emitEvent(this.backStateArr[this.res], 132560)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1111,9 +1111,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 8108)
+                  Utils.emitEvent(this.backStateArr[1], 132570)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8108)
+                  Utils.emitEvent(this.backStateArr[this.res], 132570)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1143,9 +1143,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 8109)
+                  Utils.emitEvent(this.backStateArr[1], 132580)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8109)
+                  Utils.emitEvent(this.backStateArr[this.res], 132580)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1177,9 +1177,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[1], 8110)
+                  Utils.emitEvent(this.backStateArr[1], 132590)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8110)
+                  Utils.emitEvent(this.backStateArr[this.res], 132590)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1212,9 +1212,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 8111)
+                  Utils.emitEvent(this.backStateArr[2], 132600)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8111)
+                  Utils.emitEvent(this.backStateArr[this.res], 132600)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -1246,9 +1246,9 @@ struct WebViewControllerVideoMedia {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.backStateArr[2], 8112)
+                  Utils.emitEvent(this.backStateArr[2], 132610)
                 } else {
-                  Utils.emitEvent(this.backStateArr[this.res], 8112)
+                  Utils.emitEvent(this.backStateArr[this.res], 132610)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

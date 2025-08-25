@@ -68,8 +68,8 @@ export default function webOnAudioStateChanged() {
     * @tc.level       : Level 2
     */
     it('testOnAudioStateChanged001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitAudioStatePlay", 10)
-      Utils.registerBaseEvent("testOnAudioStateChanged001", "true_true_", 60501, done,
+      Utils.emitEvent("emitAudioStatePlay", 132650)
+      Utils.registerBaseEvent("testOnAudioStateChanged001", "true_true_", 132660, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -85,8 +85,8 @@ export default function webOnAudioStateChanged() {
     * @tc.level       : Level 2
     */
     it('testOnAudioStateChanged002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitAudioStatePause", 10)
-      Utils.registerBaseEvent("testOnAudioStateChanged002", "true_false_false_", 60503, done,
+      Utils.emitEvent("emitAudioStatePause", 132650)
+      Utils.registerBaseEvent("testOnAudioStateChanged002", "true_false_false_", 132670, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

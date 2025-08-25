@@ -41,14 +41,14 @@ struct webViewSetAudioMuted {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132620,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132620)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -83,7 +83,7 @@ struct webViewSetAudioMuted {
                 })
                 await waitForExist(() => this.mutedResult, this.str, 'true');
                 await waitForExist(() => this.checkResult, this.str, '"muted"');
-                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 405)
+                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 132630)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -102,7 +102,7 @@ struct webViewSetAudioMuted {
                 })
                 await waitForExist(() => this.mutedResult, this.str, 'false');
                 await waitForExist(() => this.checkResult, this.str, '"unmuted"');
-                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 406)
+                Utils.emitEvent(this.mutedResult + '_' + this.checkResult, 132640)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
