@@ -72,25 +72,20 @@ struct SelectPage {
         this.selectFont = message.value as Font
       }
       if (message.name == 'fontColor') {
-        this.fontColor = message.value as Color
       }
       if (message.name == 'selectedOptionBgColor') {
-        this.selectedOptionBgColor = message.value as Color
       }
       if (message.name == 'selectedOptionFont') {
         this.selectedOptionFont = message.value as Font
       }
       if (message.name == 'selectedOptionFontColor') {
-        this.selectedOptionFontColor = message.value as Color
       }
       if (message.name == 'optionBgColor') {
-        this.optionBgColor = message.value as Color
       }
       if (message.name == 'optionFont') {
         this.optionFont = message.value as Font
       }
       if (message.name == 'optionFontColor') {
-        this.optionFontColor = message.value as Color
       }
     }
     this.messageManager.registerCallback(callback)

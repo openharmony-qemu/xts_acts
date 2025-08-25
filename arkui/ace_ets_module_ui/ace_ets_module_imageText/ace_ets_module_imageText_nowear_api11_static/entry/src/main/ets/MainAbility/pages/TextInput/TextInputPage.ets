@@ -79,7 +79,6 @@ struct TextInputPage {
         this.type = message.value as InputType
       }
       if (message.name == 'placeholderColor') {
-        this.placeholderColor = message.value as Color
       }
       if (message.name == 'placeholderFont') {
         this.placeholderFont = message.value as Font
@@ -88,7 +87,6 @@ struct TextInputPage {
         this.enterKeyType = message.value as EnterKeyType
       }
       if (message.name == 'caretColor') {
-        this.caretColor = message.value  as Color
       }
       if (message.name == 'maxLength') {
         this.maxLength = message.value as number

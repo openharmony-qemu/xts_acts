@@ -23,7 +23,7 @@ import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.bas
 struct flexDirectionExample {
   @State sWidth: string = '20%'
   @State sHeight: number = 40
-  @State sBackgroundColor: Color = 0xD2B48C as Color
+  @State sBackgroundColor: Color = Color.Brown
 
   build() {
     Column() {

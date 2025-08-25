@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Color, Font, TextAlign, CopyOptions } from '@ohos.arkui.component'
+import { Font, TextAlign, CopyOptions } from '@ohos.arkui.component'
 
 export class Message {
   name: string = '';
-  value: string | Color | Font | TextAlign | CopyOptions | Number | Boolean = '';
+  value: string | Font | TextAlign | CopyOptions | Number | Boolean = '';
 }
 export type Callback = (message: Message) => void
 
