@@ -35,6 +35,7 @@ import SecurityCryptoFwScryptKdfTestUnit from './SecurityCryptoFwScryptKdf.test'
 import SecurityCryptoFwErrCodeTestUnit from './SecurityCryptoErrCode.test'
 import SecurityCryptoFwSM2TestUnit from './SecurityCryptoFwSM2Signature.test'
 import SecurityCryptoFwDESTestUnit from './SecurityCryptoFwDes.test'
+import SecurityCryptoFwRandomTestUnit from './SecurityCryptoFwRandom.test'
 
 
 export default function testsuite() {
@@ -60,4 +61,5 @@ export default function testsuite() {
   SecurityCryptoFwErrCodeTestUnit();
   SecurityCryptoFwSM2TestUnit();
   SecurityCryptoFwDESTestUnit();
+  SecurityCryptoFwRandomTestUnit();
 }
