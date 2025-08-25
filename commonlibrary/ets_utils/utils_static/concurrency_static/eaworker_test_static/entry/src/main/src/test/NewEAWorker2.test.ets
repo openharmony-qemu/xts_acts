@@ -51,6 +51,50 @@ export default function NewEAWorkerTes2() {
     })
 
     /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0164
+     * @tc.name QuitSafelyTest003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('QuitSafelyTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'QuitSafelyTest003';
+        console.info(`${TAG} test start`);
+        let count = 0;
+        const worker = new EAWorker();
+        worker.start();
+        try {
+          const taskCount = 10;
+          let completedTasks = 0;
+          for (let i = 0; i < taskCount; i++) {
+            worker.postTask(() => {
+              count++;
+              completedTasks++;
+              if (completedTasks === 5) {
+                worker.quitSafely();
+              }
+            });
+          }
+          await Utils.msSleep(1000);
+          expect(count).assertEqual(5);
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+
+    /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0165
      * @tc.name QuitSafelyTest004
      * @tc.desc test
@@ -77,7 +121,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -116,7 +164,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} end`);
           done();
         }
@@ -168,12 +220,64 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} end`);
           done();
         }
       }
     );
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0168
+     * @tc.name QuitSafelyTest007
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('QuitSafelyTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'QuitSafelyTest007';
+        console.info(`${TAG} test start`);
+        const worker = new EAWorker();
+        worker.start();
+        try {
+          expect(worker.isAlive()).assertTrue();
+          worker.postTask(() => {
+            setTimeout(() => {
+            }, 100);
+          });
+          await Utils.msSleep(200);
+          worker.quitSafely();
+          expect(worker.isAlive()).assertFalse();
+          let secondQuitThrows = false;
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            secondQuitThrows = true;
+          }
+          console.info(`${TAG} isAlive：${worker.isAlive()}`);
+          console.info(`${TAG} secondQuitThrows：${secondQuitThrows}`);
+          if (!worker.isAlive()) {
+            expect(secondQuitThrows).assertFalse();
+          }
+        } catch (error: Error) {
+          console.error(`${TAG} catch error: ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0169
@@ -201,7 +305,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -280,7 +388,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -322,7 +434,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -361,7 +477,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -399,7 +519,11 @@ export default function NewEAWorkerTes2() {
           expect(false).assertFail();
         } finally {
           if (worker.isAlive()) {
-            worker.join();
+            try {
+              worker.quit();
+            } catch (error: Error) {
+              console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+            }
           }
           console.info(`${TAG} test end`);
           done();
@@ -438,7 +562,11 @@ export default function NewEAWorkerTes2() {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -608,7 +736,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          eaw1.join();
+          try {
+            eaw1.quit();
+          } catch (error: Error) {
+            console.warn(`setUncaughtExceptionHandlerTest003 catch quit error: code =>  message => ${error.message}`);
+          }
           console.info('test end');
           done();
         }
@@ -639,7 +771,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          eaw2.join();
+          try {
+            eaw2.quit();
+          } catch (error: Error) {
+            console.warn(`setUncaughtExceptionHandlerTest004 catch quit error: code =>  message => ${error.message}`);
+          }
           console.info('test end');
           done();
         }
@@ -665,7 +801,89 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(error.message).assertContain('This is an uncaught exception!');
         } finally {
-          eaw3.join();
+          try {
+            eaw3.quit();
+          } catch (error: Error) {
+            console.warn(`setUncaughtExceptionHandlerTest005 catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0183
+     * @tc.name setUncaughtExceptionHandlerTest006
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("setUncaughtExceptionHandlerTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const eaw4 = new EAWorker();
+        try {
+          eaw4.start();
+          setTimeout(() => {
+          }, 1000)
+          eaw4.setUncaughtExceptionHandler((error: Error) => {
+          });
+          await new Promise<void>((resolve, reject) => {
+            try {
+              eaw4.postTask(() => {
+                throw new Error("1111")
+              })
+              // 加个resolve
+              resolve(undefined);
+            } catch (error: Error) {
+              reject(error);
+            }
+          })
+        } catch (error: Error) {
+          expect(error.message).assertContain('Worker function exception');
+        } finally {
+          try {
+            eaw4.quit();
+          } catch (error: Error) {
+            console.warn(`setUncaughtExceptionHandlerTest006 catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0184
+     * @tc.name setUncaughtExceptionHandlerTest007
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("setUncaughtExceptionHandlerTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const eaw5 = new EAWorker();
+        try {
+          eaw5.start();
+          eaw5.setUncaughtExceptionHandler((error: Error) => {
+          });
+          eaw5.postTask(() => {
+            setTimeout(() => {
+              try {
+                throw new Error('This is an uncaught exception!');
+              } catch (error: Error) {
+                console.log('setUncaughtExceptionHandler_007--set-err', error.message)
+              }
+            }, 500)
+          });
+        } catch (error: Error) {
+          expect(error.message).assertContain('Worker function exception');
+        } finally {
+          try {
+            eaw5.quit();
+          } catch (error: Error) {
+            console.warn(`setUncaughtExceptionHandlerTest007 catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`test end`);
           done();
         }
@@ -695,7 +913,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          getUnCaught1.join();
+          try {
+            getUnCaught1.quit();
+          } catch (error: Error) {
+            console.warn(`getUncaughtExceptionHandlerTest001 catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`test end`);
           done();
         }
@@ -750,7 +972,11 @@ export default function NewEAWorkerTes2() {
           console.error(`catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          getUnCaught3.join();
+          try {
+            getUnCaught3.quit();
+          } catch (error: Error) {
+            console.warn(`getUncaughtExceptionHandlerTest003 catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`test end`);
           done();
         }
@@ -1032,13 +1258,15 @@ export default function NewEAWorkerTes2() {
             current = EAWorker.current()
           });
           worker.start();
-          await Utils.msSleep(1000);
+          const end = Date.now() + 100;
+          while (Date.now() < end) {
+          }
           let currentValue = current!.getPriority()
           expect(currentValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
           current!.join();
         } catch (error: Error) {
-          expect(false).assertFail()
           console.error(`catch error: code =>  message => ${error.message}`);
+          expect(false).assertFail()
         } finally {
           console.info(`test end`);
           done();
@@ -1477,7 +1705,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest008 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1507,7 +1739,37 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest009 catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0216
+     * @tc.name PostTaskTest011
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("PostTaskTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let flag: boolean = false
+        try {
+          EAWorker.main().postTask(() => {
+            setTimeout(() => {
+              flag = true;
+            }, 1000)
+          })
+          await Utils.msSleep(3000);
+          expect(flag).assertTrue()
+        } catch (error: Error) {
+          expect(false).assertFail();
+        } finally {
           done();
         }
       });
@@ -1539,7 +1801,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest012 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1572,7 +1838,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest013 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1605,7 +1875,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest014 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1647,7 +1921,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest015 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1681,7 +1959,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest016 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1720,7 +2002,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest017 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1755,7 +2041,130 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail()
         } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest018 catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0224
+     * @tc.name PostTaskTest019
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("PostTaskTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let flag: boolean = false;
+        let value: string = '';
+        const worker = new EAWorker();
+        try {
+          worker.start();
+          worker.postTask(() => {
+            worker.setUncaughtExceptionHandler((error: Error) => {
+              value = error.message
+            })
+            worker.run<void>(() => {
+              throw new Error('Worker function exception');
+            });
+            const end = Date.now() + 1000;
+            while (Date.now() < end) {
+            }
+            flag = true;
+          })
+          while (!flag) {
+            await Utils.msSleep(100);
+          }
+          expect(value).assertContain('Worker function exception') //assertCon
+        } catch (error: Error) {
+          expect(false).assertFail()
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest019 catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0225
+     * @tc.name PostTaskTest020
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("PostTaskTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let flag: boolean = false
+        const worker = new EAWorker();
+        try {
+          await new Promise<number>((resolve) => {
+            worker.start();
+            resolve(1)
+          }).then(() => {
+            worker.postTask(() => {
+              worker.setUncaughtExceptionHandler((error: Error) => {
+              });
+              worker.run<void>(() => {
+                flag = true;
+                expect(flag).assertTrue();
+              }).Await();
+              const end = Date.now() + 1000;
+              while (Date.now() < end) {
+              }
+            })
+          })
+        } catch (error: Error) {
+          expect(false).assertFail()
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest020 catch quit error: code =>  message => ${error.message}`);
+          }
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_New_Test_0227
+     * @tc.name PostTaskTest022
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("PostTaskTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let flag: boolean = false
+        const worker = new EAWorker();
+        try {
+          worker.start();
+          worker.postTask(() => {
+            setTimeout(() => {
+              flag = true;
+            }, 1000)
+          })
+          await Utils.msSleep(2000);
+          expect(flag).assertTrue();
           worker.join();
+        } catch (error: Error) {
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest022 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1819,7 +2228,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest024 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1854,7 +2267,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest025 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1909,7 +2326,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest026 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });
@@ -1941,7 +2362,11 @@ export default function NewEAWorkerTes2() {
         } catch (error: Error) {
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`PostTaskTest026 catch quit error: code =>  message => ${error.message}`);
+          }
           done();
         }
       });

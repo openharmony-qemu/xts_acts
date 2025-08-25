@@ -83,7 +83,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -137,7 +141,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -176,7 +184,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -214,7 +226,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -258,7 +274,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -305,7 +325,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -354,7 +378,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.quitSafely();
+          try {
+            worker.quitSafely();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quitSafely error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -391,7 +419,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -434,7 +466,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -472,7 +508,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -512,7 +552,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -545,7 +589,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -622,7 +670,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -666,7 +718,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -706,7 +762,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -751,7 +811,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -796,7 +860,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -841,7 +909,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -886,7 +958,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -927,7 +1003,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -962,7 +1042,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
           done();
         }
@@ -997,8 +1081,44 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`)
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0123
+     * @tc.name RemoveMessages003
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages003';
+        console.info(`${TAG} test start`);
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(2000);
+          }, worker);
+          let message = new concurrency.Message(1, handler)
+          handler.sendMessage(message);
+          handler.removeMessages(1);
+          expect(handler.removeMessages(1)).assertEqual(false);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          worker.join()
           done();
         }
       });
@@ -1032,7 +1152,48 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0125
+     * @tc.name RemoveMessages005
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages005';
+        console.info(`${TAG} test start`);
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(2000);
+          }, worker);
+          let message = new concurrency.Message(1, handler)
+          message.sendToTarget();
+          handler.removeMessages(1);
+          expect(handler.removeMessages(1)).assertEqual(false);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1067,7 +1228,48 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0127
+     * @tc.name RemoveMessages007
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages007';
+        console.info(`${TAG} test start`);
+        let messageObject = new MessageObject(10);
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(2000);
+          }, worker);
+          let message = new concurrency.Message(1, messageObject, handler)
+          handler.sendMessage(message);
+          expect(handler.removeMessages(1)).assertEqual(true);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1097,6 +1299,7 @@ export default function MessageTest() {
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           handler.sendMessage(message);
+          await Sleep(1200);
           handler.removeMessages(1);
           expect(handler.removeMessages(1)).assertEqual(false);
           while (!flag) {
@@ -1106,7 +1309,48 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0129
+     * @tc.name RemoveMessages009
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages009';
+        console.info(`${TAG} test start`);
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        let messageObject = new MessageObject(10);
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(2000);
+          }, worker);
+          let message = new concurrency.Message(1, messageObject, handler)
+          message.sendToTarget();
+          expect(handler.removeMessages(1)).assertEqual(true);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1136,6 +1380,7 @@ export default function MessageTest() {
           }, worker);
           let message = new concurrency.Message(1, messageObject, handler)
           message.sendToTarget();
+          await Utils.msSleep(1300);
           handler.removeMessages(1);
           expect(handler.removeMessages(1)).assertEqual(false);
           while (!flag) {
@@ -1145,7 +1390,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1180,7 +1429,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1218,7 +1471,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1257,7 +1514,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1295,7 +1556,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1334,7 +1599,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1369,7 +1638,11 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1405,7 +1678,49 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0138
+     * @tc.name RemoveMessages018
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages018';
+        console.info(`${TAG} test start`);
+        let handler: concurrency.MessageHandler;
+        let worker = new EAWorker();
+        worker.start();
+        let messageObject = new MessageObject(10);
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(5000);
+          }, worker);
+          let message = new concurrency.Message(1, messageObject, handler);
+          handler.sendMessage(message);
+          handler.removeMessages(1, messageObject);
+          expect(handler.removeMessages(1, messageObject)).assertEqual(false);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1441,7 +1756,49 @@ export default function MessageTest() {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
+          console.info(`${TAG} test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_MessageHandler_TEST_0140
+     * @tc.name RemoveMessages020
+     * @tc.desc test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG: string = 'RemoveMessages020';
+        console.info(`${TAG} test start`);
+        let handler: concurrency.MessageHandler;
+        let messageObject = new MessageObject(10);
+        let worker = new EAWorker();
+        worker.start();
+        try {
+          handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            await Sleep(5000);
+          }, worker);
+          let message = new concurrency.Message(1, messageObject, handler);
+          message.sendToTarget();
+          handler.removeMessages(1, messageObject);
+          expect(handler.removeMessages(1, messageObject)).assertEqual(false);
+        } catch (error: Error) {
+          console.error(`${TAG} error.message => ${error.message}`);
+          expect(false).assertFail();
+        } finally {
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1469,12 +1826,16 @@ export default function MessageTest() {
             flag = true;
           }, worker);
           let message = new concurrency.Message(handler);
-          expect(handler.hasMessages(0)).assertEqual(false); 
+          expect(handler.hasMessages(0)).assertEqual(false);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1511,7 +1872,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1548,7 +1913,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1585,7 +1954,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1622,7 +1995,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1659,7 +2036,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1697,7 +2078,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1735,7 +2120,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1773,7 +2162,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1811,7 +2204,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1849,7 +2246,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
@@ -1887,7 +2288,11 @@ export default function MessageTest() {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          try {
+            worker.quit();
+          } catch (error: Error) {
+            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
+          }
           console.info(`${TAG} test end`);
           done();
         }
