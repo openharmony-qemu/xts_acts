@@ -36,14 +36,14 @@ struct WebOnAudioStateChanged {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132650,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132650)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -99,7 +99,7 @@ struct WebOnAudioStateChanged {
                   console.log(`The controller.pause1() emitAudioStatePause2 return value is: ${result}`);
                 }
               })
-              Utils.emitEvent(this.statusResult, 60501)
+              Utils.emitEvent(this.statusResult, 132660)
               break;
             }
             case "emitAudioStatePause": {
@@ -136,7 +136,7 @@ struct WebOnAudioStateChanged {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               await waitForExist(() => this.statusResult, this.str, 'true_false_false_');
-              Utils.emitEvent(this.statusResult, 60503)
+              Utils.emitEvent(this.statusResult, 132670)
               break;
             }
           }

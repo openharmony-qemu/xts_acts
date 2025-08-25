@@ -62,8 +62,8 @@ export default function webViewSetAudioMuted() {
      *tc.desc test interface of setaudiomuted with muted true
      */
     it('testSetAudioMuted',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      Utils.emitEvent("emitSetAudioMuted", 10)
-      Utils.registerBaseEvent("testSetAudioMuted", 'true_"muted"', 405, done,
+      Utils.emitEvent("emitSetAudioMuted", 132620)
+      Utils.registerBaseEvent("testSetAudioMuted", 'true_"muted"', 132630, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -75,8 +75,8 @@ export default function webViewSetAudioMuted() {
      *tc.desc test interface of setaudiomuted with muted false
      */
     it('testSetAudioDisMuted',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      Utils.emitEvent("emitSetAudioDisMuted", 10)
-      Utils.registerBaseEvent("testSetAudioDisMuted", 'false_"unmuted"', 406, done,
+      Utils.emitEvent("emitSetAudioDisMuted", 132620)
+      Utils.registerBaseEvent("testSetAudioDisMuted", 'false_"unmuted"', 132640, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
