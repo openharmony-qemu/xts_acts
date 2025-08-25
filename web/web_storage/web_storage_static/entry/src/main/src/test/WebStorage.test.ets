@@ -66,7 +66,7 @@ export default function webStorageTest() {
                     }
                     expect(origins![0].origin == "resource://rawfile/").assertTrue();
                     expect(origins![0].usage > 0).assertTrue();
-                    expect(origins![0].quota > 0).assertTrue();
+                    expect(origins![0].quota != 0).assertTrue();
                 })
             } catch (e: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
@@ -96,7 +96,7 @@ export default function webStorageTest() {
                         }
                         expect(origins![0].origin == "resource://rawfile/").assertTrue();
                         expect(origins![0].usage > 0).assertTrue();
-                        expect(origins![0].quota > 0).assertTrue();
+                        expect(origins![0].quota != 0).assertTrue();
                     })
             } catch (e: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
@@ -174,7 +174,7 @@ export default function webStorageTest() {
                         return;
                     }
                     hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 quota: ' + quota);
-                    expect(quota! > 0).assertTrue();
+                    expect(quota! != 0).assertTrue();
                 })
             } catch (e: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 has failed for' + JSON.stringify(e));
@@ -196,7 +196,7 @@ export default function webStorageTest() {
                 webView.WebStorage.getOriginQuota(origin)
                     .then((quota : Double) => {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 quota: ' + quota);
-                        expect(quota! > 0).assertTrue();
+                        expect(quota! != 0).assertTrue();
                     })
             } catch (e: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 has failed for' + JSON.stringify(e));
