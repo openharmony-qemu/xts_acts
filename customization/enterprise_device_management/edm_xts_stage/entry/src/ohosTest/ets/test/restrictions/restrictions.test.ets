@@ -59,6 +59,7 @@ const LABEL_SUDO = "sudo";
 const LABEL_TELEPHONY_CALL = "telephoneCall";
 const LABEL_BACKUP_AND_RESTORE = "backupAndRestore";
 const LABEL_PRIVATE_SPACE = "privateSpace";
+const LABLE_APP_CLONE = "appClone"
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1390,6 +1391,27 @@ function testSetDisallowedPolicy() {
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_PRIVATE_SPACE, false);
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_PRIVATE_SPACE)).assertFalse();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0164
+   * @tc.name      : test_set_disallowed_policy_0164
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0164", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABLE_APP_CLONE, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_APP_CLONE)).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
