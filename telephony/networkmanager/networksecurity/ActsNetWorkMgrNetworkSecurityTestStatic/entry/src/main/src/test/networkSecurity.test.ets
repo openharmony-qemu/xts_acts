@@ -3,6 +3,8 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import networkSecurity from '@ohos.net.networkSecurity';
+import fs from '@ohos.file.fs';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -23,6 +25,41 @@ const ExpectTrue = (n: boolean) => {
     }
 }
 
+function getRawFileContentWrapper(filePath: string): Promise<Uint8Array | undefined> {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    let context = abilityDelegator.getAppContext();
+    return new Promise<Uint8Array | undefined>((resolve, reject) => {
+        context.resourceManager.getRawFileContent(filePath, (error, model_buffer) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(model_buffer);
+            }
+        });
+    });
+}
+
+let derPath: string;
+
+async function writeFile(path: string) {
+    let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
+    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    let context = abilityDelegator.getAppContext();
+    derPath = context.filesDir + '/' + path;
+    hilog.info(domain, tag, '%{public}s', ':derPath-> '+derPath);
+    try {
+        const model_buffer = await getRawFileContentWrapper(path);
+        if (!model_buffer) {
+            throw new Error("model_buffer is undefined!");
+        }
+        hilog.info(domain, tag, `[rawfile_copy_to_sandbox]${model_buffer} ${model_buffer.toString()} `);
+        let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+        fs.writeSync(file.fd, model_buffer.buffer);
+        fs.closeSync(file);
+    } catch (error) {
+        hilog.info(domain, tag, `[rawfile_copy_to_sandbox] ${derPath} is copy failed, error:${error}`);
+    }
+}
 
 export default function networkSecurityTest() {
     const perSuccess: string = '-----BEGIN CERTIFICATE-----\nMIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBHMjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQq2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5WztCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQvIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4NeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NGFdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ918rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTepLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTflMrY=\n-----END CERTIFICATE-----';
@@ -146,6 +183,90 @@ export default function networkSecurityTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
+        /**
+         * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0400
+         * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0400
+         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testNetworkMgrNetworkSecurityCertVerification_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0400';
+            hilog.info(domain, tag, `${caseName} --- start`);
+            try {
+                await writeFile('der_cacert.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                networkSecurity.certVerification(cert, caCert).then((result: int) => {
+                    hilog.info(domain, tag, `${caseName}: Certificate verification result: ${result}`);
+                    ExpectTrue(result === 0);
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, `${caseName} Certificate verification failed: ${JSON.stringify(err)}`);
+                    ExpectFail();
+                    done();
+                });
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, `${caseName}  catch error is: `, JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} --- end`);
+        });
+
+
+		/**
+		 * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0600
+		 * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0600
+		 * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+		 * @tc.size      : MediumTest
+		 * @tc.type      : Function
+		 * @tc.level     : Level 3
+		 */
+        it('testNetworkMgrNetworkSecurityCertVerification_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0600';
+            hilog.info(domain, tag, `${caseName} --- start`);
+            try {
+                await writeFile('last.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                networkSecurity.certVerification(cert, caCert).then((result: int) => {
+                    hilog.info(domain, tag, `${caseName} Certificate verification result:`, result);
+                    ExpectFail();
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.error(domain, tag, `${caseName} Certificate verification failed: ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code === 2305010);
+                    done();
+                });
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, `${caseName} catch error is: `, JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} --- end`);
+        });
 
         /**
          * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0700
@@ -183,6 +304,48 @@ export default function networkSecurityTest() {
                 done();
             }
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
+		 * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerification_0800
+		 * @tc.name      : testNetworkMgrNetworkSecurityCertVerification_static_0800
+		 * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+		 * @tc.size      : MediumTest
+		 * @tc.type      : Function
+		 * @tc.level     : Level 3
+		 */
+        it('testNetworkMgrNetworkSecurityCertVerification_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_0800';
+            hilog.info(domain, tag, `${caseName} --- start`);
+            try {
+                await writeFile('mycert.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                networkSecurity.certVerification(cert, caCert).then((result: int) => {
+                    hilog.info(domain, tag, `${caseName} Certificate verification result:`, result);
+                    ExpectFail();
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.error(domain, tag, `${caseName} Certificate verification failed: ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code === 2305009);
+                    done();
+                });
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, `${caseName} catch error is:`, JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, `${caseName} --- end`);
         });
 
         /**
@@ -338,6 +501,92 @@ export default function networkSecurityTest() {
         });
 
         /**
+         * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0400
+         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0400
+         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0400';
+            hilog.info(domain, tag, '%{public}s'+ ' start');
+            try {
+                await writeFile('der_cacert.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                try {
+                    let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+                    hilog.info(domain, tag, `${caseName}: Sync Certificate verification result: ${resultSync}`);
+                    ExpectTrue(resultSync === 0);
+                    done();
+                } catch (error: Error) {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, `${caseName} Sync Certificate verification failed: ${JSON.stringify(err)}`);
+                    ExpectFail();
+                    done();
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
+         * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0600
+         * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0600
+         * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 3
+         */
+        it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0600';
+            hilog.info(domain, tag, '%{public}s'+ ' start');
+            try {
+                await writeFile('last.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                try {
+                    let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+                    hilog.info(domain, tag, `${caseName}: Sync lastCA verification result: ${resultSync}`);
+                    ExpectTrue(resultSync === 2305010);
+                    done();
+                } catch (error: Error) {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, `${caseName} Sync lastCA verification failed: ${JSON.stringify(err)}`);
+                    ExpectFail();
+                    done();
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
          * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0700
          * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0700
          * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
@@ -364,6 +613,49 @@ export default function networkSecurityTest() {
                     done();
                 } catch (err: BusinessError) {
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectFail();
+                    done();
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
+		 * @tc.number    : SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0800
+		 * @tc.name      : testNetworkMgrNetworkSecurityCertVerificationSync_static_0800
+		 * @tc.desc      : Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+		 * @tc.size      : MediumTest
+		 * @tc.type      : Function
+		 * @tc.level     : Level 3
+		 */
+        it('testNetworkMgrNetworkSecurityCertVerificationSync_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_0800';
+            hilog.info(domain, tag, '%{public}s'+ ' start');
+            try {
+                await writeFile('mycert.der')
+                let file = fs.openSync(derPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                let buffer = new ArrayBuffer(4096);
+                fs.readSync(file.fd, buffer);
+                const cert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                const caCert: networkSecurity.CertBlob = {
+                    type: networkSecurity.CertType.CERT_TYPE_DER,
+                    data: buffer,
+                };
+                try {
+                    let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+                    hilog.info(domain, tag, `${caseName}: Sync mycert verification result: ${resultSync}`);
+                    ExpectTrue(resultSync === 2305009);
+                    done();
+                } catch (error: Error) {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, `${caseName} Sync mycert verification failed: ${JSON.stringify(err)}`);
                     ExpectFail();
                     done();
                 }
@@ -405,6 +697,54 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
+         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_IsCleartextPermitted_1000
+         * @tc.name      : testNetworkMgrNetworkSecurityIsCleartextPermitted_static_1000
+         * @tc.desc      : Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('testNetworkMgrNetworkSecurityIsCleartextPermitted_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermitted_static_1000';
+            hilog.info(domain, tag, `${caseName}  start`);
+            try {
+                let resultSync: boolean = networkSecurity.isCleartextPermitted();
+                hilog.info(domain, tag, '%{public}s', caseName +': isCleartextPermitted Result: -> '+resultSync);
+                ExpectTrue(resultSync);
+                done();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
+                ExpectFail();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        });
+
+        /**
+         * @@tc.number    : SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1100
+         * @tc.name      : testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_1100
+         * @tc.desc      : Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_1100';
+            hilog.info(domain, tag, `${caseName}  start`);
+            try {
+                let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName("passport.baidu.com");
+                hilog.info(domain, tag, '%{public}s', caseName +': isCleartextPermittedByHostName Result: -> '+resultSync);
+                ExpectTrue(resultSync);
+                done();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
