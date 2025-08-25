@@ -21,7 +21,7 @@
 #include <unistd.h>
 
 namespace {
-auto SleepTime = 3;
+auto g_sleepTime = 3;
 static const Location_RequestConfig *requestConfig = OH_Location_CreateRequestConfig();
 }
 
