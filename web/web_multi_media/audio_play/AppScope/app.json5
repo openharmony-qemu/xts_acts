@@ -15,7 +15,7 @@
 {
   "app": {
     "bundleName": "com.open.harmony.actsaudioplaytest",
-    "vendor": "huawei",
+    "vendor": "arkweb_example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
     "icon": "$media:app_icon",
