@@ -108,23 +108,23 @@ export default function ActsLocation20Test() {
     )
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StopLocating_Test_0100
-     * @tc.name    : testLocationKitOH_Location_StopLocatingTest0100
+     * @tc.number  : SUB_LocationKit_OH_Location_StopLocating_Test_0101
+     * @tc.name    : testLocationKitOH_Location_StopLocatingTest0101
      * @tc.desc    : test OH_Location_StopLocating.
      * @tc.level   : Level1
      * @tc.size    : MediumTest
      * @tc.type    : Function
      */
-    it('testLocationKitOH_Location_StopLocatingTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLocationKitOH_Location_StopLocatingTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 start====");
+          console.info("====>testLocationKitOH_Location_StopLocatingTest0101 start====");
           let result = locationcapi20.OH_Location_StopLocating1();
-          console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 result: " + result);
+          console.info("====>testLocationKitOH_Location_StopLocatingTest0101 result: " + result);
           expect(0).assertEqual(result);
           done()
         } catch (err) {
-          console.error("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 catch err: " + err);
+          console.error("====>testLocationKitOH_Location_StopLocatingTest0101 catch err: " + err);
           expect(false).assertEqual(OS_LOCATION_ERR_OK);
           done()
         }
