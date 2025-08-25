@@ -646,8 +646,9 @@ export default function KvStoreEtsTestStatic() {
           expect(null).assertFail();
           done();
         }).catch((err:Error) => {
-          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail err=${err.code},ms=${err.message}`);
-          expect(err.code).assertEqual(15100004);
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail error=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
@@ -675,8 +676,9 @@ export default function KvStoreEtsTestStatic() {
           expect(null).assertFail();
           done();
         }).catch((err:Error) => {
-          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest0191 fail err=${err.code},ms=${err.message}`);
-          expect(err.code).assertEqual(15100004);
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest0191 fail error=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
@@ -773,9 +775,8 @@ export default function KvStoreEtsTestStatic() {
         done();
       }
     })
-
-
-      /**
+    
+  /**
    * @tc.name       : KvStoreTest022
    * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
    * @tc.desc       : //SingleKVStore get(key)
@@ -793,8 +794,9 @@ export default function KvStoreEtsTestStatic() {
           expect(null).assertFail();
           done();
         }).catch((err:Error) => {
-          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest022 fail err=${err.code},ms=${err.message}`);
-          expect(err.code).assertEqual(15100004);
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest022 fail err=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
