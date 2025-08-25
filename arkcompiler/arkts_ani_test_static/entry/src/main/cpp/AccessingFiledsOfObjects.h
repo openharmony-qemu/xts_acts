@@ -595,16 +595,16 @@ ani_int test_Object_SetField_Double([[maybe_unused]] ani_env *env, [[maybe_unuse
 
 ani_int test_Object_SetField_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_class cls = {};
-    ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
-    ani_field field;
-    ASSERT_EQ(env->Class_FindField(cls, "stringValue", &field), ANI_OK);
-    ani_string testField;
-    std::string name = "stringValue";
-    env->String_NewUTF8(name.c_str(), name.size(), &testField);
-    ASSERT_EQ(env->Object_SetField_Ref(obj, field, testField), ANI_OK);
-    return ANI_TRUE;
+    ani_class cls = {};
+    ani_object obj = {};
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+
+    ani_field field;
+    ASSERT_EQ(env->Class_FindField(cls, "stringValue", &field), ANI_OK);
+
+    ani_ref value;
+    ASSERT_EQ(env->Object_SetField_Ref(obj, field, value), ANI_OK);
+    return ANI_TRUE;
 }
 
 ani_int test_Object_GetFieldByName_Boolean([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
