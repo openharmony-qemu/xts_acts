@@ -42,7 +42,7 @@ struct webViewSetConnectionAboutToAppearTimeout {
             this.controller.refresh()
           })
       }
-      Web({ src: 'https://www.weibo111xxxbbb.com', controller: this.controller })
+      Web({ src: 'www.weibo111xxxbbb.com', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
