@@ -47,8 +47,8 @@ type CB = () => void;
 
 export default function MessageTest() {
   describe('MessageTest', (): void => {
-    console.info("##########start SecurityRandomJsunit##########");
-    afterEach(() => {
+    afterEach(async () => {
+      await Utils.msSleep(100);
     })
 
     /**
