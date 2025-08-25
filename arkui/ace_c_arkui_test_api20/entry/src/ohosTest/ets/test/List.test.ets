@@ -32,6 +32,7 @@ import SwiperCNodeTest from './swiper/SwiperCNodeTest.test'
 import WaterFlowTypeNodeTest from './waterFlow/WaterFlowTypeNodeTest.test'
 import WaterFlowCNodeTest from './waterFlow/WaterFlowCNodeTest.test'
 import BindControllerTest from './BindController/BindController.test'
+import scrollScrollBarMarginTest from './scroll/ScrollScrollBarMarginTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -54,4 +55,5 @@ export default function testsuite() {
   WaterFlowTypeNodeTest();
   WaterFlowCNodeTest();
   BindControllerTest();
+  scrollScrollBarMarginTest();
 }
