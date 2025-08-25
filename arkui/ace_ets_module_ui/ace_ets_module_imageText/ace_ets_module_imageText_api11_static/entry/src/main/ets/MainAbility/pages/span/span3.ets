@@ -45,7 +45,7 @@ struct Span3Example {
     { type: TextDecorationType.None, color: Color.Red } as DecorationStyleInterface
   @State textCaseValue: TextCase = TextCase.Normal
   @State fontSizeValue: number = 40
-  @State fontColorValue: Color = 0xCCCCCC as Color
+  @State fontColorValue: Color = Color.Brown
   private stateChangCallBack: (eventData: events_emitter.EventData) => void =
     (eventData: events_emitter.EventData): void => {
       console.info("span page state change called:" + JSON.stringify(eventData));

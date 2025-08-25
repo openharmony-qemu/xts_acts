@@ -65,7 +65,6 @@ struct ScrollBarPage {
         this.state = message.value as BarState
       }
       if (message.name == 'backgroundColor') {
-        this.backColor = message.value as Color
       }
       if (message.name == 'ScrollDirection') {
         this.ScrollDirection = message.value as ScrollDirection

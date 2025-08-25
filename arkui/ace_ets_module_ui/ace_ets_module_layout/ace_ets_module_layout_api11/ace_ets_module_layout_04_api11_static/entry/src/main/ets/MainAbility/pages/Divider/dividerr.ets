@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 @Entry
 @Component
 struct DividerExample2 {
-  @State color: Color = 0xCCCCCC as Color
+  @State color: Color = Color.Brown;
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
       Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)

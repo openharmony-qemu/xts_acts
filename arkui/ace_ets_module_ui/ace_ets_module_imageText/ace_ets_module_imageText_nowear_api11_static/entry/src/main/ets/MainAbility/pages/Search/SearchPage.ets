@@ -87,7 +87,6 @@ struct SearchPage {
         this.searchButton = message.value as String
       }
       if (message.name == 'placeholderColor') {
-        this.placeholderColor = message.value as Color
       }
       if (message.name == 'placeholderFont') {
         this.placeholderFont = message.value as Font
