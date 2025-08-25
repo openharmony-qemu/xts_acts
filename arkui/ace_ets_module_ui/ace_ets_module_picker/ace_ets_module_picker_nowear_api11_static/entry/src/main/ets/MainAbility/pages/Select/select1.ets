@@ -38,7 +38,7 @@ struct select1 {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = 0xCCCCCC as Color
+  @State fontColor: Color = Color.Grey
 
   
   
