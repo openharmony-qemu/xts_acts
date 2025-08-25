@@ -13,10 +13,13 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import events_emitter from '@ohos.events.emitter';
+import { waitAndClickComponent } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,7 +36,6 @@ export default function webOnAudioStateChanged() {
         if (!("WebOnAudioStateChanged" == pages.name)) {
           console.info("get WebOnAudioStateChanged state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnAudioStateChanged page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,14 +49,12 @@ export default function webOnAudioStateChanged() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebOnAudioStateChangedTest afterEach start");
-      await Utils.sleep(1000);
       console.info("WebOnAudioStateChangedTest afterEach end");
       done();
     })
@@ -69,9 +69,11 @@ export default function webOnAudioStateChanged() {
     */
     it('testOnAudioStateChanged001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitAudioStatePlay", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnAudioStateChanged001", "true_true_", 60501, done);
-      sendEventByKey('WebOnAudioStateChangedTestButton', 10, '');
+      Utils.registerBaseEvent("testOnAudioStateChanged001", "true_true_", 60501, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent('WebOnAudioStateChangedTestButton');
     })
 
     /*
@@ -84,9 +86,11 @@ export default function webOnAudioStateChanged() {
     */
     it('testOnAudioStateChanged002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitAudioStatePause", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnAudioStateChanged002", "true_false_false_", 60503, done);
-      sendEventByKey('WebOnAudioStateChangedTestButton', 10, '');
+      Utils.registerBaseEvent("testOnAudioStateChanged002", "true_false_false_", 60503, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent('WebOnAudioStateChangedTestButton');
     })
   })
 }
