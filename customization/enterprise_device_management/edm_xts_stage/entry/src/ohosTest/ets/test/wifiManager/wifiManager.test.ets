@@ -1179,7 +1179,7 @@ function testAddAllowedWifiList() {
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
-  it("test_add_allowed_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
+  it("test_add_allowed_wifi_list_00013", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let wifiAccessInfos1: Array<wifiManager.WifiAccessInfo> = [
