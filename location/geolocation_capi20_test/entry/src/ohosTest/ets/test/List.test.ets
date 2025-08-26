@@ -18,7 +18,7 @@ import ActsLocation20Test from './ActsLocation20Test.test'
 import ActsLocationSwitchTest from './ActsLocationSwitchTest.test'
 
 export default function testsuite() {
-  ActsLocationSwitchTest()
   ActsLocationCApi20Test()
+  ActsLocationSwitchTest()
   ActsLocation20Test()
 }
