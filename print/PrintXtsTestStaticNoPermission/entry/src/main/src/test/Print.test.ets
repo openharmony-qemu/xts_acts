@@ -357,6 +357,130 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_1300 end');
     });
 
+  /**
+   * @tc.number print_function_1400
+   * @tc.name print_function_1400
+   * @tc.desc check print function with context without permission (promise)
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 0
+   */
+  it('print_function_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'print_function_1400 start');
+    try {
+      const fileList = ['file://data/print/test.pdf'];
+      const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      const context = abilityDelegator.getAppContext();
+
+      print.print(fileList, context).then(() => {
+        hilog.error(domain, tag, 'print_function_1400 should have failed');
+        expect().assertFail();
+        done();
+      }).catch((err: Error) => {
+        const error = err as BusinessError;
+        hilog.info(domain, tag, 'print_function_1400 errorCode = %{public}d', err.code);
+        expect(error.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      const error = err as BusinessError;
+      hilog.error(domain, tag, 'print_function_1400 unexpected error: %{public}s', error.message);
+      expect().assertFail();
+      done();
+    }
+    hilog.info(domain, tag, '%{public}s', 'print_function_1400 end');
+  });
+
+  /**
+   * @tc.number print_function_1500
+   * @tc.name print_function_1500
+   * @tc.desc check print function with context without permission (callback)
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 0
+   */
+  it('print_function_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'print_function_1500 start');
+    try {
+      const fileList = ['file://data/print/test.pdf'];
+      const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      const context = abilityDelegator.getAppContext();
+
+      print.print(fileList, context, (err: BusinessError<void>|null, printTask: print.PrintTask | undefined) => {
+        if (err != null) {
+          hilog.info(domain, tag, 'print_function_1500 errorCode = %{public}d', err.code);
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      });
+    } catch (err) {
+      const error = err as BusinessError;
+      hilog.error(domain, tag, 'print_function_1500 unexpected error: %{public}s', error.message);
+      expect().assertFail();
+      done();
+    }
+    hilog.info(domain, tag, '%{public}s', 'print_function_1500 end');
+  });
+
+  /**
+   * @tc.number print_function_1600
+   * @tc.name print_function_1600
+   * @tc.desc check print function without permission (promise)
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 0
+   */
+  it('print_function_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'print_function_1600 start');
+    try {
+      const fileList = ['file://data/print/test.pdf'];
+      print.print(fileList).then(() => {
+        hilog.error(domain, tag, 'print_function_1600 should have failed');
+        expect().assertFail();
+        done();
+      }).catch((error: Error) => {
+        const err = error as BusinessError;
+        hilog.info(domain, tag, 'print_function_1600 errorCode = %{public}d', err.code);
+        expect(err.code).assertEqual(201);
+        done();
+      });
+    } catch (err) {
+      const error = err as BusinessError;
+      hilog.error(domain, tag, 'print_function_1600 unexpected error: %{public}s', error.message);
+      expect().assertFail();
+      done();
+    }
+    hilog.info(domain, tag, '%{public}s', 'print_function_1600 end');
+  });
+
+  /**
+   * @tc.number print_function_1700
+   * @tc.name print_function_1700
+   * @tc.desc check print function without permission (callback)
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 0
+   */
+  it('print_function_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    hilog.info(domain, tag, '%{public}s', 'print_function_1700 start');
+    try {
+      const fileList = ['file://data/print/test.pdf'];
+      print.print(fileList, (err: BusinessError<void>|null, printTask: print.PrintTask | undefined) => {
+        if (err != null) {
+          hilog.info(domain, tag, 'print_function_1700 errorCode = %{public}d', err.code);
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      });
+    } catch (err) {
+      const error = err as BusinessError;
+      hilog.error(domain, tag, 'print_function_1700 unexpected error: %{public}s', error.message);
+      expect().assertFail();
+      done();
+    }
+    hilog.info(domain, tag, '%{public}s', 'print_function_1700 end');
+  });
+
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });
 }

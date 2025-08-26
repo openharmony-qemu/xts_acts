@@ -2230,7 +2230,7 @@ export default function printTest() {
         }).catch((err: Error) => {
           let error = err as BusinessError;
           hilog.info(domain, tag, 'print_function_6100 errorCode = %{public}d', error.code);
-          expect(error.code).assertEqual(201);
+          expect(error.code).assertEqual(401);
           done();
         });
       } catch (err) {
@@ -2258,7 +2258,7 @@ export default function printTest() {
         }).catch((err: Error) => {
           let error = err as BusinessError;
           hilog.info(domain, tag, 'print_function_6200 errorCode = %{public}d', error.code);
-          expect(error.code).assertEqual(201);
+          expect(error.code).assertEqual(401);
           done();
         });
       } catch (err) {
@@ -2293,7 +2293,7 @@ export default function printTest() {
         }).catch((err: Error) => {
           let error = err as BusinessError;
           hilog.info(domain, tag, 'print_function_6300 errorCode = %{public}d', error.code);
-          expect(error.code).assertEqual(201);
+          expect(error.code).assertEqual(401);
           done();
         });
       } catch (err) {
@@ -2484,6 +2484,323 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_6900 end');
     });
 
-  hilog.info(domain, tag, '%{public}s', 'printTest end');
+    /**
+     * @tc.number print_function_7000
+     * @tc.name print_function_7000
+     * @tc.desc test print function
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7000 start');
+      try {
+        let info: print.PrinterInformation = {
+          printerId: 'printerId',
+          printerName : 'printerName',
+          printerStatus : print.PrinterStatus.PRINTER_IDLE,
+          description : 'description',
+          capability : {
+            supportedPageSizes : [
+              {
+                id : 'id',
+                name : 'name',
+                width : 1,
+                height : 2,
+              }
+            ],
+            supportedColorModes : [
+                print.PrintColorMode.COLOR_MODE_MONOCHROME
+            ],
+            supportedDuplexModes : [
+              print.PrintDuplexMode.DUPLEX_MODE_NONE
+            ],
+            supportedMediaTypes : ['1', '2'],
+            supportedQualities : [
+              print.PrintQuality.QUALITY_DRAFT
+            ],
+            supportedOrientations : [
+              print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT
+            ],
+            options : 'options'
+          },
+          uri: 'uri',
+          printerMake : 'printerMake',
+          preferences : {
+            defaultDuplexMode : print.PrintDuplexMode.DUPLEX_MODE_NONE,
+            defaultPrintQuality : print.PrintQuality.QUALITY_DRAFT,
+            defaultMediaType : 'defaultMediaType',
+            defaultPageSizeId : 'defaultPageSizeId',
+            defaultOrientation : print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+            borderless : false,
+            options : 'options'
+          },
+          alias : 'alias',
+          options : 'options'
+        }
+        print.addPrinterToDiscovery(info).then(() => {
+          hilog.info(domain, tag, '%{public}s', 'print_function_7000 success');
+          done();
+        }).catch((err: Object | null | undefined) => {
+          let error = err as BusinessError;
+          hilog.error(domain, tag, 'print_function_7000 error, %{public}s', JSON.stringify(error));
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_7000 error');
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_DRIVER_EXCEPTION = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION);
+      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_DRIVER_MISSING = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING);
+      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_INTERRUPT = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT);
+      hilog.info(domain, tag, 'PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE = %{public}s', print.PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE);
+      hilog.info(domain, tag, 'PRINTER_EVENT_LAST_USED_PRINTER_CHANGED = %{public}s', print.PrinterEvent.PRINTER_EVENT_LAST_USED_PRINTER_CHANGED);
+      hilog.info(domain, tag, '%{public}s', 'print_function_7000 end');
+    });
+
+
+    /**
+     * @tc.number print_function_7100
+     * @tc.name print_function_7100
+     * @tc.desc check the print function
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7100', Level.LEVEL0, () => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7100 start');
+      try {
+        const fileList = new Array<string>();
+        fileList.push('file://data/print/a.png');
+        fileList.push('file://data/print/b.png');
+        hilog.info(domain, tag, 'begin test print');
+        print.print(fileList, (err: BusinessError<void>|null, printTask: print.PrintTask | undefined) => {
+          hilog.info(domain, tag, '%{public}s', 'enter print callback');
+          if (printTask != undefined) {
+            try {
+              printTask.on('block', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on block');
+              })
+              printTask.on('succeed', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on succeed');
+              })
+              printTask.on('fail', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on fail');
+              })
+              printTask.on('cancel', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask on cancel');
+              })
+              printTask.off('block', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off block');
+              })
+              printTask.off('succeed', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off succeed');
+              })
+              printTask.off('fail', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off fail');
+              })
+              printTask.off('cancel', () => {
+                hilog.info(domain, tag, '%{public}s', 'enter printTask off cancel');
+              })
+            } catch(err) {
+              let error = err as BusinessError;
+              expect(error.code).assertEqual(401);
+            }
+          }
+        })
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_7100 error');
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7100 end');
+    })
+
+    /**
+     * @tc.number print_function_7200
+     * @tc.name print_function_7200
+     * @tc.desc check the enum api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7200 start');
+      try {
+        let info : print.PrinterInformation = {
+          printerId : "printerIdTest",
+          printerName : "printerNameTest",
+          printerStatus : print.PrinterStatus.PRINTER_BUSY,
+        };
+        print.updatePrinterInDiscovery(info).then(() => {
+          hilog.info(domain, tag, 'print_function_7200 success');
+          done();
+        }).catch((err: Object | null | undefined) => {
+          let error = err as BusinessError;
+          hilog.error(domain, tag, 'print_function_7200 error, %{public}s', JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        hilog.error(domain, tag, 'print_function_7200 error');
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7200 end');
+    })
+
+    /**
+     * @tc.number print_function_7300
+     * @tc.name print_function_7300
+     * @tc.desc check removePrinterFromDiscovery api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7300 start');
+      try {
+        let printerId: string = 'printerIdTest';
+        print.removePrinterFromDiscovery(printerId).then(() => {
+          hilog.info(domain, tag, 'print_function_7300 success');
+          done();
+        }).catch((err: Error) => {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, 'print_function_7300 errorCode = %{public}d', error.code);
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_7300 error');
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7300 end');
+    });
+
+    /**
+     * @tc.number print_function_7400
+     * @tc.name print_function_7400
+     * @tc.desc check getPrinterInformationById api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7400 start');
+      try {
+        let printerId: string = '';
+        print.getPrinterInformationById(printerId).then((info: print.PrinterInformation) => {
+          hilog.info(domain, tag, 'print_function_7400 success, info: %{public}s', JSON.stringify(info));
+          done();
+        }).catch((err: Error) => {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, 'print_function_7400 errorCode = %{public}d', error.code);
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_7400 error');
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7400 end');
+    });
+
+    /**
+     * @tc.number print_function_7500
+     * @tc.name print_function_7500
+     * @tc.desc check on printerChange api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7500', Level.LEVEL0, (): void => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7500 start');
+
+      try {
+        let type: string = 'printerChange';
+        let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
+          hilog.info(domain, tag, 'print_function_7500 callback, event: %{public}d, printerId: %{public}s',
+            event, printerInformation.printerId);
+        };
+        print.on(type, callback);
+        hilog.info(domain, tag, 'print_function_7500 success');
+      } catch (err) {
+        const error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_7500 error');
+        expect(error.code).assertEqual(401);
+      }
+
+      hilog.info(domain, tag, '%{public}s', 'print_function_7500 end');
+    });
+
+    /**
+     * @tc.number print_function_7600
+     * @tc.name print_function_7600
+     * @tc.desc check off printerChange api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7600', Level.LEVEL0, (): void => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7600 start');
+
+      try {
+        let type: string = 'printerChange';
+        let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
+          hilog.info(domain, tag, 'print_function_7600 callback, event: %{public}d, printerId: %{public}s',
+            event, printerInformation.printerId);
+        };
+        print.off(type, callback);
+        hilog.info(domain, tag, 'print_function_7600 success');
+      } catch (err) {
+        const error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_7600 error');
+        expect(error.code).assertEqual(401);
+      }
+
+      hilog.info(domain, tag, '%{public}s', 'print_function_7600 end');
+    });
+
+    /**
+     * @tc.number print_function_7700
+     * @tc.name print_function_7700
+     * @tc.desc check the enum api
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('print_function_7700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'print_function_7700 start');
+      try {
+        let jobName : string = 'testJobName';
+        let printAdapter: print.PrintDocumentAdapter = new MyPrintDocumentAdapter();
+        let printAttributes: print.PrintAttributes = {
+          copyNumber : 1,
+        };
+        let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let context : Context = abilityDelegator.getAppContext();
+        print.print(jobName, printAdapter, printAttributes, context).then((task: Object | null | undefined) => {
+          hilog.info(domain, tag, 'print_function_7700 succeed');
+          done();
+        }).catch((err: Object | null | undefined) => {
+          const error = err as BusinessError;
+          hilog.error(domain, tag, 'print_function_7600 error');
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.error(domain, tag, 'print_function_7700 error, %{public}s', JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'print_function_7700 end');
+    });
+
+    hilog.info(domain, tag, '%{public}s', 'printTest end');
   });
 }
