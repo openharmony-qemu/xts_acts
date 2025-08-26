@@ -206,7 +206,7 @@ export default function cameraVideoCodecTypeTest() {
     await mCameraSession.release();
   }
 
-  let createInput = async (idx: number): Promise<boolean> => {
+  let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
 
     if (mCameraDevicesArray == undefined) {

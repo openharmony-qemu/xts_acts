@@ -3248,7 +3248,7 @@ export default function cameraJSUnitOutput() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100
-     * @tc.name      : preview output set frame rate
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100
      * @tc.desc      : preview output set frame rate
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -3315,7 +3315,7 @@ export default function cameraJSUnitOutput() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200
-     * @tc.name      : preview output set frame rate with errorCode 7400101
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200
      * @tc.desc      : preview output set frame rate with errorCode 7400101
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -3381,7 +3381,7 @@ export default function cameraJSUnitOutput() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300
-     * @tc.name      : preview output set frame rate with errorCode 7400110
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300
      * @tc.desc      : preview output set frame rate with errorCode 7400110
      * @tc.size      : MEDIUM
      * @tc.type      : Function

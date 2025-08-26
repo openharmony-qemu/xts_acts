@@ -138,7 +138,7 @@ export default function cameraConcurrentTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
-     * @tc.name      : check get camera device by position and type
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
      * @tc.desc      : check get camera device by position and type
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -171,7 +171,7 @@ export default function cameraConcurrentTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
-     * @tc.name      : check get camera concurrent infos 
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
      * @tc.desc      : check get concurrent infos 
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -204,7 +204,7 @@ export default function cameraConcurrentTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
-     * @tc.name      : check cameraInput open by concurrent type 
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
      * @tc.desc      : check cameraInput open by concurrent type  
      * @tc.size      : MEDIUM
      * @tc.type      : Function

@@ -131,7 +131,7 @@ export default function cameraPreconfigTest() {
     }
   }
 
-  let createInput = async (idx: number): Promise<boolean>  => {
+  let createInput = async (idx: int): Promise<boolean>  => {
     console.info('Enter createInput');
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
@@ -198,7 +198,7 @@ export default function cameraPreconfigTest() {
 
     return true;
   }
-  let startCameraSession = async (idx: number, sceneMode: cameraObj.SceneMode, preconfigType: cameraObj.PreconfigType): Promise<boolean>  => {
+  let startCameraSession = async (idx: int, sceneMode: cameraObj.SceneMode, preconfigType: cameraObj.PreconfigType): Promise<boolean>  => {
     console.info(TAG + "Enter startCameraSession, sceneMode is " + sceneMode);
     if (sceneMode == cameraObj.SceneMode.NORMAL_PHOTO) {
       if (!mCameraSession!.canPreconfig(preconfigType)) {
@@ -398,7 +398,11 @@ export default function cameraPreconfigTest() {
     })
 
     afterAll(() => {
-      await releaseCameraSessionInstance();
+      try {
+        await releaseCameraSessionInstance();
+      } catch (error: BusinessError) {
+        console.error(TAG + "afterAll err: " + error.code);
+      }
       await Utils.msSleep(1000);
       console.info('afterAll case');
     })

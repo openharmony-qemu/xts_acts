@@ -443,7 +443,7 @@ export default function cameraEnumTest() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
-     * @tc.name      : test concurrent type  enums
+     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
      * @tc.desc      : assert all concurrent type  enums
      * @tc.size      : MEDIUM
      * @tc.type      : Function
