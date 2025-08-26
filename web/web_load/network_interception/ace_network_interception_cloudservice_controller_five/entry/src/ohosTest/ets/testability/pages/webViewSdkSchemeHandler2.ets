@@ -18,6 +18,8 @@ import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import { waitForExist } from '../../test/WaitTest.test'
+
 @Entry
 @Component
 struct webViewSdkSchemeHandler2 {
@@ -37,15 +39,19 @@ struct webViewSdkSchemeHandler2 {
     schemeName: 'custom', isSupportCORS: true, isSupportFetch: true
   }
   htmlData: string = '{"returnStreamResult":1}';
-  
+  @State isReceive: number = -1
+  @State isEnd: number = -1;
+  @State isPageEnd: number = -1;
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 142311,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(142311)
+  }
   aboutToAppear():void {
     try {
       webview.WebviewController.customizeSchemes([this.scheme1])
@@ -60,6 +66,7 @@ struct webViewSdkSchemeHandler2 {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0
           }
       }
   }
@@ -70,16 +77,22 @@ struct webViewSdkSchemeHandler2 {
               Button('web click')
               .key('webViewSdkSchemeHandler2')
               .onClick(async () => {
+                await waitForExist(() => this.isReceive, this.emitKey, 0);
+                this.isReceive = -1;
                   console.info('key==>' + this.emitKey)
+                this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('chunked_post_stream.html'))
-                  await Utils.sleep(2000)
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0)
                   this.controller.runJavaScript('test()', (error, result) => {
+                    if(result){
+                      this.isEnd = 0
+                    }
                   })
-                  await Utils.sleep(1000)
+                await waitForExist(() => this.isEnd, this.emitKey, 0)
                   switch (this.emitKey) {
                     case 'emitWebViewSdkSchemeHandler_getHttpBodyStream': {
                       if(this.httpBodyStream){
-                        Utils.emitEvent(true,1507)
+                        Utils.emitEvent(true,142370)
                       }
                       break;
                     }
@@ -87,21 +100,21 @@ struct webViewSdkSchemeHandler2 {
                     case 'emitWebViewSdkSchemeHandler_getSize': {
                       let isGetSize = ( this.existHttpBodyStream?.getSize() != undefined )
                       if(this.httpBodyStream?.getSize() != undefined || isGetSize){
-                        Utils.emitEvent(true,1508)
+                        Utils.emitEvent(true,142380)
                       }
                       break;
                     }
                     case 'emitWebViewSdkSchemeHandler_getPosition': {
                       let isExistPosition = ( this.existHttpBodyStream?.getPosition() !== undefined )
                       if(this.httpBodyStream?.getPosition() !== undefined || isExistPosition){
-                        Utils.emitEvent(true,1509)
+                        Utils.emitEvent(true,142390)
                       }
                       break;
                     }
                     case 'emitWebViewSdkSchemeHandler_isChunked': {
                       let isExistChunked = ( this.existHttpBodyStream?.isChunked() !== undefined )
                       if(this.httpBodyStream?.isChunked() !== undefined || isExistChunked){
-                        Utils.emitEvent(true,1510)
+                        Utils.emitEvent(true,142400)
                       }
                       break;
                     }
@@ -109,7 +122,7 @@ struct webViewSdkSchemeHandler2 {
                     case 'emitWebViewSdkSchemeHandler_isEof': {
                       let isExistEof =  ( this.existHttpBodyStream?.isEof() !== undefined )
                       if(this.httpBodyStream?.isEof() !== undefined || isExistEof){
-                        Utils.emitEvent(true,1511)
+                        Utils.emitEvent(true,142410)
                       }
                       break;
                     }
@@ -117,20 +130,23 @@ struct webViewSdkSchemeHandler2 {
                     case 'emitWebViewSdkSchemeHandler_isInMemory': {
                       let isInMemory =  ( this.existHttpBodyStream?.isInMemory() !== undefined )
                       if(this.httpBodyStream?.isInMemory() !== undefined || isInMemory){
-                        Utils.emitEvent(true,1512)
+                        Utils.emitEvent(true,142420)
                       }
                       break;
                     }
                   }
               })
           }
-          Web({ src: '', controller: this.controller })
+          Web({ src: $rawfile('chunked_post_stream.html'), controller: this.controller })
                 .javaScriptAccess(this.javaScriptAccess)
                 .fileAccess(this.fileAccess)
                 .imageAccess(this.imageAccess)
                 .domStorageAccess(this.domStorageAccess)
                 .onlineImageAccess(this.onlineImageAccess)
                 .databaseAccess(this.databaseAccess)
+            .onPageEnd(()=>{
+              this.isPageEnd = 0
+            })
             .onControllerAttached(() => {
               try {
                 this.schemeHandler.onRequestStart(
@@ -160,28 +176,28 @@ struct webViewSdkSchemeHandler2 {
                       response.setHeaderByName('Access-Control-Allow-Origin', '*' ,true)
                       if(this.httpBodyStream !== undefined) {
                         this.existHttpBodyStream = this.httpBodyStream
-                        Utils.emitEvent(true,1507)
+                        Utils.emitEvent(true,142370)
 
                       }
 
                       if(this.httpBodyStream?.getSize() !== undefined) {
-                        Utils.emitEvent(true,1508)
+                        Utils.emitEvent(true,142380)
                       }
 
                       if(this.httpBodyStream?.getPosition() !== undefined) {
-                        Utils.emitEvent(true,1509)
+                        Utils.emitEvent(true,142390)
                       }
 
                       if(this.httpBodyStream?.isChunked() !== undefined) {
-                        Utils.emitEvent(true,1510)
+                        Utils.emitEvent(true,142400)
                       }
 
                       if(this.httpBodyStream?.isEof() !== undefined) {
-                        Utils.emitEvent(true,1511)
+                        Utils.emitEvent(true,142410)
                       }
 
                       if(this.httpBodyStream?.isInMemory() !== undefined) {
-                        Utils.emitEvent(true,1512)
+                        Utils.emitEvent(true,142420)
                       }
                       resourceHandler.didReceiveResponse(response);
                       let buf = buffer.from(this.htmlData)
@@ -192,28 +208,28 @@ struct webViewSdkSchemeHandler2 {
 
                     if(this.httpBodyStream !== undefined) {
                       this.existHttpBodyStream = this.httpBodyStream
-                      Utils.emitEvent(true,1507)
+                      Utils.emitEvent(true,142370)
 
                     }
 
                     if(this.httpBodyStream?.getSize() !== undefined) {
-                      Utils.emitEvent(true,1508)
+                      Utils.emitEvent(true,142380)
                     }
 
                     if(this.httpBodyStream?.getPosition() !== undefined) {
-                      Utils.emitEvent(true,1509)
+                      Utils.emitEvent(true,142390)
                     }
 
                     if(this.httpBodyStream?.isChunked() !== undefined) {
-                      Utils.emitEvent(true,1510)
+                      Utils.emitEvent(true,142400)
                     }
 
                     if(this.httpBodyStream?.isEof() !== undefined) {
-                      Utils.emitEvent(true,1511)
+                      Utils.emitEvent(true,142410)
                     }
 
                     if(this.httpBodyStream?.isInMemory() !== undefined) {
-                      Utils.emitEvent(true,1512)
+                      Utils.emitEvent(true,142420)
                     }
 
                     return false;

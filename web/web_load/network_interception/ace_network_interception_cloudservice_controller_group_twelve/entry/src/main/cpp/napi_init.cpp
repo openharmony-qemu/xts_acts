@@ -36,6 +36,7 @@ int32_t result_num1 = 1;
 int32_t result_num2 = 1;
 
 int32_t judgment_num = 1;
+int32_t result_all = -1;
 std::string url_return = "";
 
 int g_parameter = 0;
@@ -61,6 +62,7 @@ void OnURLRequestStart1(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart1");
     ArkWeb_Response *response = NULL;
@@ -79,6 +81,7 @@ void OnURLRequestStart1(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl with error code: %{public}d", result_num);
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart2(const ArkWeb_SchemeHandler *schemeHandler,
@@ -86,6 +89,7 @@ void OnURLRequestStart2(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart2");
     ArkWeb_Response *response = NULL;
@@ -118,6 +122,7 @@ void OnURLRequestStart2(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl with error code: %{public}d", result_num);
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart3(const ArkWeb_SchemeHandler *schemeHandler,
@@ -125,6 +130,7 @@ void OnURLRequestStart3(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart3");
     ArkWeb_Response *response = NULL;
@@ -143,6 +149,7 @@ void OnURLRequestStart3(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl with error code: %{public}d", result_num);
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart4(const ArkWeb_SchemeHandler *schemeHandler,
@@ -150,6 +157,7 @@ void OnURLRequestStart4(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart4");
     ArkWeb_Response *response = NULL;
@@ -182,6 +190,7 @@ void OnURLRequestStart4(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl with error code: %{public}d", result_num);
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart5(const ArkWeb_SchemeHandler *schemeHandler,
@@ -189,6 +198,7 @@ void OnURLRequestStart5(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart5");
     ArkWeb_Response *response = NULL;
@@ -223,6 +233,7 @@ void OnURLRequestStart5(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl");
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart6(const ArkWeb_SchemeHandler *schemeHandler,
@@ -230,6 +241,7 @@ void OnURLRequestStart6(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart6");
     ArkWeb_Response *response = NULL;
@@ -264,6 +276,7 @@ void OnURLRequestStart6(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl");
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart7(const ArkWeb_SchemeHandler *schemeHandler,
@@ -271,6 +284,7 @@ void OnURLRequestStart7(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart7");
     ArkWeb_Response *response = NULL;
@@ -305,6 +319,7 @@ void OnURLRequestStart7(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl");
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart8(const ArkWeb_SchemeHandler *schemeHandler,
@@ -312,6 +327,7 @@ void OnURLRequestStart8(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart8");
     ArkWeb_Response *response = NULL;
@@ -345,6 +361,7 @@ void OnURLRequestStart8(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Fail to OH_ArkWebResponse_SetUrl");
     }
     OH_ArkWeb_DestroyResponse(response);
+    result_all = 1;
 }
 
 void OnURLRequestStart9(const ArkWeb_SchemeHandler *schemeHandler,
@@ -352,6 +369,7 @@ void OnURLRequestStart9(const ArkWeb_SchemeHandler *schemeHandler,
                         const ArkWeb_ResourceHandler *resourceHandler,
                         bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart9");
     ArkWeb_Response *response = NULL;
@@ -367,6 +385,7 @@ void OnURLRequestStart9(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num1 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Failed to execute OH_ArkWebResponse_SetError. Error: %{public}d", result_num1);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart10(const ArkWeb_SchemeHandler *schemeHandler,
@@ -374,6 +393,7 @@ void OnURLRequestStart10(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart10");
     ArkWeb_Response *response = NULL;
@@ -389,6 +409,7 @@ void OnURLRequestStart10(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart11(const ArkWeb_SchemeHandler *schemeHandler,
@@ -396,6 +417,7 @@ void OnURLRequestStart11(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart11");
     ArkWeb_Response *response = NULL;
@@ -411,6 +433,7 @@ void OnURLRequestStart11(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart12(const ArkWeb_SchemeHandler *schemeHandler,
@@ -418,6 +441,7 @@ void OnURLRequestStart12(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart12");
     ArkWeb_Response *response = NULL;
@@ -433,6 +457,7 @@ void OnURLRequestStart12(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart13(const ArkWeb_SchemeHandler *schemeHandler,
@@ -440,6 +465,7 @@ void OnURLRequestStart13(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart13");
     ArkWeb_Response *response = NULL;
@@ -456,6 +482,7 @@ void OnURLRequestStart13(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed SetStatusText: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart14(const ArkWeb_SchemeHandler *schemeHandler,
@@ -463,6 +490,7 @@ void OnURLRequestStart14(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart14");
     ArkWeb_Response *response = NULL;
@@ -479,6 +507,7 @@ void OnURLRequestStart14(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed SetStatusText: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart15(const ArkWeb_SchemeHandler *schemeHandler,
@@ -486,6 +515,7 @@ void OnURLRequestStart15(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart15");
     ArkWeb_Response *response = NULL;
@@ -504,6 +534,7 @@ void OnURLRequestStart15(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Test with invalid status code failed SetStatusText: %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart16(const ArkWeb_SchemeHandler *schemeHandler,
@@ -511,6 +542,7 @@ void OnURLRequestStart16(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart16");
     ArkWeb_Response *response = NULL;
@@ -525,6 +557,7 @@ void OnURLRequestStart16(const ArkWeb_SchemeHandler *schemeHandler,
     } else if (result_num2 == g_errorNum) {
         OH_LOG_ERROR(LOG_APP, "Failed to  OH_ArkWebResponse_SetCharset %{public}d", result_num2);
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart17(const ArkWeb_SchemeHandler *schemeHandler,
@@ -532,6 +565,7 @@ void OnURLRequestStart17(const ArkWeb_SchemeHandler *schemeHandler,
                          const ArkWeb_ResourceHandler *resourceHandler,
                          bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     OH_LOG_INFO(LOG_APP, "Succeed in OnURLRequestStart17");
     void *userData = malloc(sizeof(int));
@@ -549,12 +583,14 @@ void OnURLRequestStart17(const ArkWeb_SchemeHandler *schemeHandler,
         OH_LOG_ERROR(LOG_APP, "Failed to set userData for schemeHandler");
         OH_LOG_INFO(LOG_APP, "Failed to  OH_ArkWebSchemeHandler_SetUserData result_num2 : %{public}d", result_num2);
     }
+    result_all = 1;
 }
 void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
                        ArkWeb_ResourceRequest *resourceRequest,
                        const ArkWeb_ResourceHandler *resourceHandler,
                        bool *intercept)
 {
+    result_all = -1;
     *intercept = true;
     ArkWeb_RequestHeaderList *requestHeaderList;
     OH_ArkWebResourceRequest_GetRequestHeaders(resourceRequest, &requestHeaderList);
@@ -602,6 +638,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler,
             g_judgment2 = true;
         }
     }
+    result_all = 1;
 }
 
 void OnURLRequestStart22(const ArkWeb_SchemeHandler *schemeHandler,
@@ -1402,6 +1439,19 @@ static napi_value ReturnsMethod(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetRequestValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (result_all ==1) {
+        napi_create_int32(env, 1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: 1");
+    } else {
+        napi_create_int32(env, -1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: -1");
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1418,6 +1468,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"judgment1", nullptr, Judgment1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"judgment2", nullptr, Judgment2, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"returnsMethod", nullptr, ReturnsMethod, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getRequestValue", nullptr, GetRequestValue, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

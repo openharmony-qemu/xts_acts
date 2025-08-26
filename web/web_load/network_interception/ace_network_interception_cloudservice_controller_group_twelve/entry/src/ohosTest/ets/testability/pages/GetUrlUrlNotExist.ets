@@ -17,12 +17,14 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct testWebResponseGetUrlUrlNotExist {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
   @State str: string = ''
+  @State isReceive: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes()
@@ -32,14 +34,14 @@ struct testWebResponseGetUrlUrlNotExist {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124617,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124617)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +50,7 @@ struct testWebResponseGetUrlUrlNotExist {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,15 +60,18 @@ struct testWebResponseGetUrlUrlNotExist {
       Button('GetUrl')
         .key('GetUrl')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'testWebResponse_GetUrl_Url_NotExist': {
               let judgment = testNapi.judgment_num();
               if (judgment == 0) {
                 console.log('Succeed OH_ArkWebResponse_GetUrl');
-                Utils.emitEvent(true, 5107);
+                Utils.emitEvent(true, 124740);
               } else {
                 console.log('Faild OH_ArkWebResponse_GetUrl');
-                Utils.emitEvent(false, 5107);
+                Utils.emitEvent(false, 124740);
               }
               break;
             }
