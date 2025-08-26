@@ -70,7 +70,7 @@ export default function ActsLocation20Test() {
           atManager.requestPermissionOnSetting(getContext(), permissions)
         }
       })
-      let text: Component = await driver.findComponent(ON.text(''));
+      let text: Component = await driver.findComponent(ON.text('允许本次使用'));
       if (deviceTypeInfo == 'default') {
         text = await driver.findComponent(ON.text('允许本次使用'));
       } else if (deviceTypeInfo == 'phone') {
