@@ -52,10 +52,10 @@ struct WebInitTest {
         this.str = strValue;
       }
     }
-    console.log('lichenwei: valueChangeCallBack str: ' + this.str)
+    console.log('valueChangeCallBack str: ' + this.str)
   }
   aboutToAppear() {
-    console.log('lichenwei: aboutToAppear')
+    console.log('aboutToAppear')
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -67,7 +67,7 @@ struct WebInitTest {
     Column() {
       Row() {
         Button('WebInitTestButton').key('WebInitTestButton').onClick((event: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'lichenwei: WebInitTestButton click key==>' + this.str);
+          hilog.info(0x0000, 'testTag', 'WebInitTestButton click key==>' + this.str);
           switch (this.str) {
 
             case 'emitContextMenuMediaType': {
@@ -133,10 +133,10 @@ struct WebInitTest {
                     'confirmTest()',
                     (error: BusinessError | null, result: String | undefined) => {
                       if (error) {
-                        console.info('lichenwei: confirmTest() return error: ' + error)
+                        console.info('confirmTest() return error: ' + error)
                       }
                       if (result) {
-                        console.info('lichenwei: confirmTest() return result: ' + result)
+                        console.info('confirmTest() return result: ' + result)
                         setTimeout(() => {
                           Utils.emitEvent(result, 70021)
                         }, 2000)
@@ -158,10 +158,10 @@ struct WebInitTest {
                     'confirmTest()',
                     (error: BusinessError | null, result: String | undefined) => {
                       if (error) {
-                        console.info('lichenwei: confirmTest() return error: ' + error)
+                        console.info('confirmTest() return error: ' + error)
                       }
                       if (result) {
-                        console.info('lichenwei: confirmTest() return result: ' + result)
+                        console.info('confirmTest() return result: ' + result)
                         setTimeout(() => {
                           Utils.emitEvent(result, 70023)
                         }, 2000)
@@ -182,10 +182,10 @@ struct WebInitTest {
                     'promptTest()',
                     (error: BusinessError | null, result: String | undefined) => {
                       if (error) {
-                        console.info('lichenwei: promptTest() return error: ' + error)
+                        console.info('promptTest() return error: ' + error)
                       }
                       if (result) {
-                        console.info('lichenwei: promptTest() return result: ' + result)
+                        console.info('promptTest() return result: ' + result)
                         setTimeout(() => {
                           Utils.emitEvent(result, 70025)
                         }, 2000)
@@ -225,7 +225,7 @@ struct WebInitTest {
           Utils.emitEvent('requestFocus', 126);
         })
         .onBlur(() => {
-          console.info('lichenwei: onBlur==>');
+          console.info('onBlur==>');
           this.controller.requestFocus();
         })
         .onConfirm((event: OnConfirmEvent): boolean => {

@@ -57,10 +57,10 @@ struct webViewController {
         this.str = strValue;
       }
     }
-    console.log('lichenwei: valueChangeCallBack str: ' + this.str)
+    console.log('valueChangeCallBack str: ' + this.str)
   }
   aboutToAppear() {
-    console.log('lichenwei: aboutToAppear')
+    console.log('aboutToAppear')
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -72,7 +72,7 @@ struct webViewController {
     Column() {
       Row() {
         Button('WebViewController click').key('WebViewControllerButton').onClick((event: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'lichenwei: WebViewController click key==>' + this.str);
+          hilog.info(0x0000, 'testTag', 'WebViewController click key==>' + this.str);
           switch (this.str) {
 
             case 'testOnShowFileSelector001': {
@@ -234,16 +234,16 @@ struct webViewController {
         .javaScriptAccess(this.javaScriptAccess)
         .key('onShowFileSelectorKey')
         .onShowFileSelector((event: OnShowFileSelectorEvent): boolean => {
-          hilog.info(0x0000, 'testTag', 'lichenwei: onShowFileSelector');
+          hilog.info(0x0000, 'testTag', 'onShowFileSelector');
           if (event) {
             this.onShowFileSelectorCallBack = true
             console.log('MyFileUploader onShowFileSelector invoked')
             event.result.handleFileList(new Array<string>(this.uri));
-            console.info('lichenwei: getTitle:', event.fileSelector.getTitle())
-            console.info('lichenwei: getMode:', event.fileSelector.getMode())
-            console.info('lichenwei: isCapture:', event.fileSelector.isCapture())
-            console.info('lichenwei: getAcceptType:', event.fileSelector.getAcceptType())
-            console.info('lichenwei: getMimeTypes:', event.fileSelector.getMimeTypes())
+            console.info('getTitle:', event.fileSelector.getTitle())
+            console.info('getMode:', event.fileSelector.getMode())
+            console.info('isCapture:', event.fileSelector.isCapture())
+            console.info('getAcceptType:', event.fileSelector.getAcceptType())
+            console.info('getMimeTypes:', event.fileSelector.getMimeTypes())
             this.FileSelectorParamGetTitle = event.fileSelector.getTitle()
             this.FileSelectorParamGetGetMode = event.fileSelector.getMode()
             this.FileSelectorParamGetIsCapture = event.fileSelector.isCapture()

@@ -42,11 +42,11 @@ struct MyStateSample {
           this.str = strValue;
         }
       }
-      console.log('lichenwei: valueChangeCallBack str: ' + this.str)
+      console.log('valueChangeCallBack str: ' + this.str)
     }
 
   aboutToAppear() {
-    console.log('lichenwei: aboutToAppear')
+    console.log('aboutToAppear')
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW

@@ -66,9 +66,9 @@ export default class Utils {
       let callBack = (backData: events_emitter.EventData) => {
         try {
           expectFunction(backData, expected);
-          console.info(`lichenwei: [${testCaseName}] END`);
+          console.info(`[${testCaseName}] END`);
         } catch (err: BusinessError) {
-          console.info(`lichenwei: [${testCaseName}] err:` + err.message);
+          console.info(`[${testCaseName}] err:` + err.message);
         }
         done()
       }
@@ -87,7 +87,7 @@ export default class Utils {
       (backData: events_emitter.EventData, expected: Object) => {
         const data = backData?.data as Record<string, boolean | string | Int | object>;
         const action = data['ACTION'];
-        console.info(`lichenwei: Begin to assert [${action}] Equal [${expected}]`);
+        console.info(`Begin to assert [${action}] Equal [${expected}]`);
         expect(action).assertEqual(expected);
       });
   }

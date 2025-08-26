@@ -59,10 +59,10 @@ struct WebViewEnumAndFontLibrary {
         this.str = strValue;
       }
     }
-    console.log('lichenwei: valueChangeCallBack str: ' + this.str)
+    console.log('valueChangeCallBack str: ' + this.str)
   }
   aboutToAppear() {
-    console.log('lichenwei: aboutToAppear')
+    console.log('aboutToAppear')
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -74,7 +74,7 @@ struct WebViewEnumAndFontLibrary {
     Column() {
       Row() {
         Button('web click').key('buttonEnumAndFontLibrary').onClick((event: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'lichenwei: buttonEnumAndFontLibrary click key==>' + this.str);
+          hilog.info(0x0000, 'testTag', 'buttonEnumAndFontLibrary click key==>' + this.str);
           console.info('key==>' + this.str)
           switch (this.str) {
 
