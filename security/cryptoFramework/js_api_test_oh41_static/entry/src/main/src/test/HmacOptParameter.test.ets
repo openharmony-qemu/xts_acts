@@ -207,7 +207,7 @@ export default function cryptoHmacOptParaJsTestUnit() {
       let srcStr: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789";
       let randomStr: string = "";
       for (let i = 0; i < strLen; i++) {
-        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length));
+        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length).toInt());
       }
       commons.sliceAndPrintString(randomStr, 500);
       let keyBlob: cryptoFramework.DataBlob = {
@@ -416,7 +416,7 @@ export default function cryptoHmacOptParaJsTestUnit() {
       let srcStr: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789";
       let randomStr: string = "";
       for (let i = 0; i < strLen; i++) {
-        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length));
+        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length).toInt());
       }
       commons.sliceAndPrintString(randomStr, 500);
       let keyBlob: cryptoFramework.DataBlob = {

@@ -62,7 +62,7 @@ export default function cryptoPbkdf2JsTestUnit() {
       let srcStr: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789";
       let randomStr: string = "";
       for (let i = 0; i < strLen; i++) {
-        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length));
+        randomStr += srcStr.charAt(Math.floor(Math.random() * srcStr.length).toInt());
       }
       try {
         crypto.createKdf("");

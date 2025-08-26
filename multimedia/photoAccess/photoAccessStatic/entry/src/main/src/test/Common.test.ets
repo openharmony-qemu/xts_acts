@@ -56,7 +56,7 @@ export function genRadomStr(len: number): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let randomStr = '';
   for (let i = 0; i < len; i++) {
-    randomStr += chars.charAt(Math.floor(Math.random() * chars.length));
+    randomStr += chars.charAt(Math.floor(Math.random() * chars.length).toInt());
   }
   return randomStr;
 }
