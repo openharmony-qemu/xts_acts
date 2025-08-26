@@ -20,7 +20,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium_0702/index';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;

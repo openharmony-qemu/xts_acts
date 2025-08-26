@@ -16,7 +16,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '../../../hypium_0702/index';
+import { expect } from '../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 
