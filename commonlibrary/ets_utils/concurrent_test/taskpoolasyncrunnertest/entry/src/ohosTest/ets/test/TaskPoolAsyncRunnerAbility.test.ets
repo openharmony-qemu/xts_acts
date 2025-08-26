@@ -154,7 +154,9 @@ export default function taskPoolAsyncRunnerAbility() {
           })
         }
 
-        await sleep(1000);
+        while (Count2.count < 10 || Count1.count < 10) {
+          await sleep(100);
+        }
         expect('q1'.repeat(10)).assertEqual(CountStr1.count);
         expect('q2'.repeat(10)).assertEqual(CountStr2.count);
         expect(10).assertEqual(Count1.count);
@@ -255,7 +257,9 @@ export default function taskPoolAsyncRunnerAbility() {
             console.info('======', Count2.count);
           })
         }
-        await sleep(1000);
+        while (Count2.count < 10 || Count1.count < 10) {
+          await sleep(100);
+        }
         expect(10).assertEqual(Count1.count);
         expect(20).assertEqual(Count2.count);
         Count1.count = 0;
@@ -347,7 +351,9 @@ export default function taskPoolAsyncRunnerAbility() {
           });
         }
 
-        await sleep(1000);
+        while (CountBol1.count !== false || CountBol2.count !== true) {
+          await sleep(100);
+        }
         expect(false).assertEqual(CountBol1.count);
         expect(true).assertEqual(CountBol2.count);
         CountBol1.count = false;
@@ -439,7 +445,9 @@ export default function taskPoolAsyncRunnerAbility() {
           });
         }
 
-        await sleep(1000);
+        while (CountBigint1.count !== 10n || CountBigint2.count !== 20n) {
+          await sleep(100);
+        }
         expect(10n).assertEqual(CountBigint1.count);
         expect(20n).assertEqual(CountBigint2.count);
         CountBigint1.count = 0n;
@@ -721,7 +729,9 @@ export default function taskPoolAsyncRunnerAbility() {
             console.info('======', Count2.count);
           });
         }
-        await sleep(1000);
+        while (Count2.count < 10 || Count1.count < 10) {
+          await sleep(100);
+        }
         expect(10).assertEqual(Count1.count);
         expect(10).assertEqual(Count2.count);
         Count1.count = 0;
