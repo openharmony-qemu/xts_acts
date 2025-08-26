@@ -628,6 +628,134 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
+     * @tc.name       : KvStoreTest019
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
+     * @tc.desc       : //DeviceKVStore get(did, key)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 start ");
+      try {
+        let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 getKVStore ");
+        let deviceId : string = "000000000000000000";
+        store.get(deviceId, 'keyno').then((data: boolean | string | number | Uint8Array) => {
+          hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 get success");
+          expect(null).assertFail();
+          done();
+        }).catch((err:Error) => {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest019 fail error=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name       : KvStoreTest0191
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
+     * @tc.desc       : //DeviceKVStore get(key)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 start ");
+      try {
+        let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 getKVStore ");
+        store.get('keyno').then((data: boolean | string | number | Uint8Array) => {
+          hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 get success");
+          expect(null).assertFail();
+          done();
+        }).catch((err:Error) => {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest0191 fail error=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name       : KvStoreTest020
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
+     * @tc.desc       : //DeviceKVStore get(did,key)  callback
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 start ");
+      let deviceId : string = "000000000000000000";
+      try {
+        kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
+          store?.get(deviceId, 'keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+            if (err != undefined) {
+              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${err.code},ms=${err.message}`);
+              expect(err.code).assertEqual(15100004);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 get success");
+              expect(null).assertFail();
+              done();
+            }
+
+          });
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name       : KvStoreTest0201
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
+     * @tc.desc       : //DeviceKVStore get(key)  callback
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0201 start ");
+      try {
+        kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
+          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+            if (err != undefined) {
+              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest0201 fail err=${err.code},ms=${err.message}`);
+              expect(err.code).assertEqual(15100004);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0201 get success");
+              expect(null).assertFail();
+              done();
+            }
+
+          });
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0201 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
      * @tc.name       : KvStoreTest021
      * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
      * @tc.desc       : //Schema.constructor, FieldNode.constructor, Query.constructor
@@ -647,5 +775,69 @@ export default function KvStoreEtsTestStatic() {
         done();
       }
     })
+    
+  /**
+   * @tc.name       : KvStoreTest022
+   * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
+   * @tc.desc       : //SingleKVStore get(key)
+   * @tc.size       : MediumTest
+   * @tc.type       : Function
+   * @tc.level      : Level 1
+   */
+    it('KvStoreTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 start ");
+      try {
+        let store : distributedKVStore.SingleKVStore = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 getKVStore ");
+        store.get('keyno').then((data: boolean | string | number | Uint8Array) => {
+          hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 get success");
+          expect(null).assertFail();
+          done();
+        }).catch((err:Error) => {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', `=======KvStoreTest022 fail err=${error.code},ms=${error.message}`);
+          expect(error.code).assertEqual(15100004);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.name       : KvStoreTest023
+     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
+     * @tc.desc       : //SingleKVStore get(key)  callback
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('KvStoreTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "=======KvStoreTest023 start ");
+      try {
+        kvManager.getKVStore(TEST_SINGLE_STORE_ID, singleOptions, (err: BusinessError|null, store: distributedKVStore.SingleKVStore|undefined) => {
+          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+            if (err != undefined) {
+              hilog.info(domain, tag, '%{public}s', `=======KvStoreTest023 fail err=${err.code},ms=${err.message}`);
+              expect(err.code).assertEqual(15100004);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', "=======KvStoreTest023 get success");
+              expect(null).assertFail();
+              done();
+            }
+
+          });
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "=======KvStoreTest023 catch e=" + e);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
   })
 }
