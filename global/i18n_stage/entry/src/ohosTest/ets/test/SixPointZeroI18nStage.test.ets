@@ -431,7 +431,7 @@ export default function SixPointZeroI18nStageTest() {
     * @tc.type      : Function
     * @tc.level     : Level 2
     */
-    it(' SUB_GLOBAL_testDisplayNames_0300', Level.LEVEL2, () => {
+    it(' SUB_GLOBAL_testDisplayNames_0400', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('ar', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('ar-EG');
       expect(dn).assertEqual('ar-EG');
