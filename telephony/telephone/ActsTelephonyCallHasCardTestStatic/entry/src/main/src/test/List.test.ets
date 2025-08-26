@@ -15,8 +15,16 @@
 
 import HasCard2PublicTest from "./TelephonyCallHasCard2Public.test";
 import HasCard3PublicTest from "./TelephonyCallHasCard3Public.test";
+import sim from '@ohos.telephony.sim';
+import EmptyTest from './Empty.test'
+
+let simState: sim.SimState = sim.getSimStateSync(0);
 
 export default function testsuite() {
-  HasCard2PublicTest();
-  HasCard3PublicTest();
+  if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    HasCard2PublicTest();
+    HasCard3PublicTest();
+  } else {
+    EmptyTest()
+  }
 }
