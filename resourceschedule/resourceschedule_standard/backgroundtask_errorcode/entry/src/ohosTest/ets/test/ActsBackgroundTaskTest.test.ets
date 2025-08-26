@@ -82,8 +82,8 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_RequestSuspendDelaySuccess_0400
-     * @tc.name    : SUB_Resourceschedule_RequestSuspendDelaySuccess_0400
+     * @tc.number  : SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
+     * @tc.name    : SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
      * @tc.desc    : Test RequestSuspendDelaySuccess
      * @tc.level   : Level3
      * @tc.size    : MediumTest
@@ -91,13 +91,13 @@ export default function ActsBackgroundTaskErrorTest() {
      */
     it('SUB_Resourceschedule_RequestSuspendDelaySuccess_0100', Level.LEVEL3, async (done: Function) => {
       try {
-        console.info("====>SUB_Resourceschedule_RequestSuspendDelaySuccess_0400 start====");
+        console.info("====>SUB_Resourceschedule_RequestSuspendDelaySuccess_0100 start====");
         let res: number = backgroundtaskerror.RequestSuspendDelaySuccess();
-        console.log("SUB_Resourceschedule_RequestSuspendDelaySuccess_0400 res: " + res);
+        console.log("SUB_Resourceschedule_RequestSuspendDelaySuccess_0100 res: " + res);
         expect(res).assertEqual(Success);
         done();
       } catch (err) {
-        console.error("SUB_Resourceschedule_RequestSuspendDelaySuccess_0400 catch err: " + err);
+        console.error("SUB_Resourceschedule_RequestSuspendDelaySuccess_0100 catch err: " + err);
         expect().assertFail();
       }
     })
