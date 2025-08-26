@@ -294,7 +294,7 @@ export default function taskPoolAsyncRunnerExecute() {
           let task2: taskpool.Task = new taskpool.Task(idCancel, task.taskId, 50);
           runner.execute(task).then((num: object) => {
             Count1.count = Count1.count + Number(num);
-          }),
+          });
             runner.execute(task2).then(() => {
               Count2.count++;
             }).catch((e:Error)=>{
