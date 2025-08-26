@@ -12,35 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { webview } from '@kit.ArkWeb';
+import router from '@ohos.router';
+import { waitForExist} from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
-import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
-import business_error from '@ohos.base';
-
-class TestClass {
-  constructor() {
-  }
-
-  test(): string {
-    return 'ArkUI Web Component';
-  }
-
-  toString(): void {
-    console.log('Web Component toString');
-  }
-}
 
 @Entry
 @Component
 struct WebComponent {
-  controller: webview.WebviewController = new webview.WebviewController();
+  aboutToAppear(): void {
+    if(this.flag) {
+      webview.WebviewController.setWebDestroyMode(webview.WebDestroyMode.FAST_MODE)
+    } else {
+      webview.WebviewController.setWebDestroyMode(webview.WebDestroyMode.NORMAL_MODE)
+    }
+  }
+  @State webviewController: webview.WebviewController = new webview.WebviewController();
+  @State flag:Boolean = true
+  @State setWebDestroyModeArr:String[] = ['webview.WebDestroyMode.FAST_MODE','webview.WebDestroyMode.NORMAL_MODE']
   @State emitKey: string = '';
-  webOptions: MyWebOptions = { src: 'www.example.com', controller: this.controller, sharedRenderProcessToken: '111' }
-  webOptions2: MyWebOptions = { src: 'www.w3.org', controller: this.controller, sharedRenderProcessToken: '111' }
-  webOptions3: MyWebOptions = { src: 'www.baidu.com', controller: this.controller, sharedRenderProcessToken: '111' }
-  @State testObj: TestClass = new TestClass();
-
-
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State url: string = '';
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -54,69 +48,42 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
-
   build() {
-
     Column() {
       Row() {
         Button('web click')
-          .key('webViewSharedRenderProcessToken')
+          .key('webViewSetWebDestroyModeKey')
           .onClick(async () => {
-            await Utils.sleep(1000);
-            console.info('key==>' + this.emitKey)
-
+            await waitForExist(()=>this.isReceive, this.emitKey, 0);
+            console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
-              case 'emitWebViewSharedRenderProcessToken': {
-                try {
-                  console.log(this.webOptions.sharedRenderProcessToken)
-                  Utils.emitEvent(true,1600)
-                } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                }
+              case 'emitwebViewSetWebDestroyMode001': {
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                Utils.emitEvent(this.setWebDestroyModeArr[0],20250820)
                 break;
               }
 
-              case 'emitWebViewWebViewJsBridge': {
-                try {
-                  this.controller.registerJavaScriptProxy(this.testObj, 'testObjName', ['test', 'toString'],
-                    // 可选参数, asyncMethodList
-                    []
-                  );
-                  Utils.emitEvent(true,1601)
-                } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                  Utils.emitEvent(false,1601)
-
-                }
+              case 'emitwebViewSetWebDestroyMode002': {
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                Utils.emitEvent(this.setWebDestroyModeArr[1],20250821)
                 break;
               }
             }
           })
       }
-      Web(this.webOptions)
-        .javaScriptProxy({
-        object: this.testObj,
-        name: 'testObjName',
-        methodList: ['test'],
-        controller: this.controller,
-        // 可选参数
-        asyncMethodList: []
-      })
-      Web(this.webOptions2)
-      Web(this.webOptions3)
+      Row() {
+        Web({ src: "www.163.com", controller: this.webviewController })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url：' + event.url);
+            this.isPageEnd = 0;
+            this.url = event.url;
+          })
+      }
     }
   }
-}
-
-interface MyWebOptions {
-  src: ResourceStr;
-  controller: WebviewController | WebController;
-  renderMode?: RenderMode;
-  incognitoMode?: boolean;
-  sharedRenderProcessToken?: string;
 }
