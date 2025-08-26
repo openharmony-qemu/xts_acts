@@ -18,10 +18,13 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = ""
-
+const  driver = Driver.create();
 
 export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
 
@@ -34,28 +37,7 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000)
       console.info("WebResourceResponse beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      try {
-          let backData: events_emitter.EventData = {
-              data: {
-                  "ACTION": emitKey
-              }
-          }
-          let backEvent : events_emitter.InnerEvent = {
-              eventId: 10,
-              priority: events_emitter.EventPriority.LOW
-          }
-          console.info("start send emitKey");
-          events_emitter.emit(backEvent, backData);
-      } catch (err) {
-          console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
       done();
     })
 
@@ -69,10 +51,12 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
     */
     it('testGetResponseDataExReturnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "testGetResponseDataExReturnString"
-      Utils.emitEvent("testGetResponseDataExReturnString", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseDataExReturnString", true, 36010, done);
-      sendEventByKey('WebResourceResponseButton', 10, '');
+      Utils.emitEvent("testGetResponseDataExReturnString", 124601)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseDataExReturnString", true, 124660, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseButton",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
    
@@ -87,13 +71,12 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
     */
     it('testGetResponseIsReadyReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testGetResponseIsReadyReturnTrue"
-      Utils.emitEvent("testGetResponseIsReadyReturnTrue", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetResponseIsReadyReturnTrue", true, 36015, done);
-      sendEventByKey('WebResourceResponseButton', 10, '');
+      Utils.emitEvent("testGetResponseIsReadyReturnTrue", 124601)
+      let isReturn = false;
+      Utils.registerEvent("testGetResponseIsReadyReturnTrue", true, 124670, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("WebResourceResponseButton",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
-
-   
-
   })
 }
