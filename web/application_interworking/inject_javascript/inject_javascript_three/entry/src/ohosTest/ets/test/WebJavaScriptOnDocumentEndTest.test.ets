@@ -32,14 +32,14 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebJavaScriptOnDocumentEndTest state success " + JSON.stringify(pages));
+        console.info('get WebJavaScriptOnDocumentEndTest state success ' + JSON.stringify(pages));
         if (!("WebJavaScriptOnDocumentEndTest" == pages.name)) {
-          console.info("get WebJavaScriptOnDocumentEndTest state success " + JSON.stringify(pages.name));
+          console.info('get WebJavaScriptOnDocumentEndTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebJavaScriptOnDocumentEndTest page success " + JSON.stringify(result));
+          console.info('push WebJavaScriptOnDocumentEndTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebJavaScriptOnDocumentEndTest page error: " + err);
+        console.error('push WebJavaScriptOnDocumentEndTest page error: ' + err);
       }
        await waitForComponent("WebJavaScriptOnDocumentEndTestButton");
       done()
@@ -51,13 +51,13 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebJavaScriptOnDocumentEndTest beforeEach start");
+      console.info('WebJavaScriptOnDocumentEndTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebJavaScriptOnDocumentEndTest afterEach start");
-      console.info("WebJavaScriptOnDocumentEndTest afterEach end");
+      console.info('WebJavaScriptOnDocumentEndTest afterEach start');
+      console.info('WebJavaScriptOnDocumentEndTest afterEach end');
       done();
     })
 

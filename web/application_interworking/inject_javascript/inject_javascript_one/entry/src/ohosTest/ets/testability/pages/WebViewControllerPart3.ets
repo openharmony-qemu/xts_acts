@@ -43,6 +43,7 @@ struct WebViewControllerPart3 {
   @State console: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 172310,
@@ -91,14 +92,14 @@ struct WebViewControllerPart3 {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "javaScriptProxy": {
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/proxy.html")
               await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript("htmlTest()", async (error, result) => {
-                console.log("error" + error)
+                console.log('error' + error)
                 if (result == '"ArkUI Web Component"') {
                   Utils.emitEvent(true, 172320);
                   this.isPageEnd = -1;
@@ -141,7 +142,6 @@ struct WebViewControllerPart3 {
                   console.info('requestPosition() return error: ' + error)
                 }
               })
-          
               if (this.console !== "web222") {
                 Utils.emitEvent(true, 172340)
               }
@@ -169,10 +169,10 @@ struct WebViewControllerPart3 {
           return false
         })
         .onPageEnd((event) => {
-        if (event) {
+          if (event) {
             this.isPageEnd = 0;
             console.log(' WebViewController onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

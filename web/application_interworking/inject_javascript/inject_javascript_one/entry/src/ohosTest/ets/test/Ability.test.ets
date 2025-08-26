@@ -34,14 +34,14 @@ export default function abilityTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
+        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!("Index" == pages.name)) {
-          console.info("get index state success " + JSON.stringify(pages.name));
+          console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push index state success " + JSON.stringify(result));
+          console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push index page error:" + err);
+        console.error('push index page error:' + err);
       }
       await waitForComponent("001");
       done()
@@ -218,7 +218,7 @@ export default function abilityTest() {
      * @tc.level Level 3
      */
     it("testWebView_registerJavaScriptProxy_00010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("normal", 172000);
+      Utils.emitEvent("normal_010", 172000);
       Utils.registerBaseEvent("registerJavaScriptProxy", "true", 172100, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)

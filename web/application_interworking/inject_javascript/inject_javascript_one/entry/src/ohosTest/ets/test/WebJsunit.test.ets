@@ -12,29 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitRegisterJavaScriptProxy";
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
+    beforeAll(async (done: Function) => {
+      await waitForComponent("webcomponent");
+      done()
+    });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await waitForComponent("webcomponent");
-      console.info("web beforeEach start");
+      console.info('web beforeEach start');
       done();
     })
-    afterEach(() => {
-    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_058
      *tc.name registerJavaScriptProxy

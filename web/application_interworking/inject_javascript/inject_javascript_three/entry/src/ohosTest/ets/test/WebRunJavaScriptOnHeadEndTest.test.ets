@@ -31,14 +31,14 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebRunJavaScriptOnHeadEndTest state success " + JSON.stringify(pages));
+        console.info('get WebRunJavaScriptOnHeadEndTest state success ' + JSON.stringify(pages));
         if (!("WebRunJavaScriptOnHeadEndTest" == pages.name)) {
-          console.info("get WebRunJavaScriptOnHeadEndTest state success " + JSON.stringify(pages.name));
+          console.info('get WebRunJavaScriptOnHeadEndTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebRunJavaScriptOnHeadEndTest page success " + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnHeadEndTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebRunJavaScriptOnHeadEndTest page error: " + err);
+        console.error('push WebRunJavaScriptOnHeadEndTest page error: ' + err);
       }
       await waitForComponent("WebRunJavaScriptOnHeadEndTestButton");
       done()
@@ -50,13 +50,13 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebRunJavaScriptOnHeadEndTest beforeEach start");
+      console.info('WebRunJavaScriptOnHeadEndTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebRunJavaScriptOnHeadEndTest afterEach start");
-      console.info("WebRunJavaScriptOnHeadEndTest afterEach end");
+      console.info('WebRunJavaScriptOnHeadEndTest afterEach start');
+      console.info('WebRunJavaScriptOnHeadEndTest afterEach end');
       done();
     })
 

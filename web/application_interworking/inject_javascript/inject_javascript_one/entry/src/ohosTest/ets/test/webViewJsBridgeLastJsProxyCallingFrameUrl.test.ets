@@ -35,14 +35,14 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
         try {
             router.clear();
             let pages = router.getState();
-            console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages));
+            console.info('get webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(pages));
             if (!("webViewJsBridgeLastJsProxyCallingFrameUrl" == pages.name)) {
-                console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages.name));
+                console.info('get webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                console.info("push webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(result));
+                console.info('push webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(result));
             }
         } catch (err) {
-            console.error("push webViewJsBridgeLastJsProxyCallingFrameUrl page error:" + err);
+            console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
         await waitForComponent("webViewJsBridgeLastJsProxyCallingFrameUrl");
         done()
@@ -56,11 +56,6 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
         })
         done();
     })
-    
-    afterEach(() => {
-
-    })
-
 
     /*
     * @tc.number     : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200

@@ -32,14 +32,14 @@ export default function ActsWebJavaScriptOnDocumentStartTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebJavaScriptOnDocumentStartTest state success " + JSON.stringify(pages));
+        console.info('get WebJavaScriptOnDocumentStartTest state success ' + JSON.stringify(pages));
         if (!("WebJavaScriptOnDocumentStartTest" == pages.name)) {
-          console.info("get WebJavaScriptOnDocumentStartTest state success " + JSON.stringify(pages.name));
+          console.info('get WebJavaScriptOnDocumentStartTest state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebJavaScriptOnDocumentStartTest page success " + JSON.stringify(result));
+          console.info('push WebJavaScriptOnDocumentStartTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebJavaScriptOnDocumentStartTest page error: " + err);
+        console.error('push WebJavaScriptOnDocumentStartTest page error: ' + err);
       }
       await waitForComponent("WebJavaScriptOnDocumentStartTestButton");
       done()
@@ -51,13 +51,13 @@ export default function ActsWebJavaScriptOnDocumentStartTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebJavaScriptOnDocumentStartTest beforeEach start");
+      console.info('WebJavaScriptOnDocumentStartTest beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebJavaScriptOnDocumentStartTest afterEach start");
-      console.info("WebJavaScriptOnDocumentStartTest afterEach end");
+      console.info('WebJavaScriptOnDocumentStartTest afterEach start');
+      console.info('WebJavaScriptOnDocumentStartTest afterEach end');
       done();
     })
 

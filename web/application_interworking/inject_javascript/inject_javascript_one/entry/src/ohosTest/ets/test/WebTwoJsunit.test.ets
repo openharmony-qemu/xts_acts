@@ -33,14 +33,14 @@ export default function webTwoJsunit() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webTwo state success " + JSON.stringify(pages));
+        console.info('get webTwo state success ' + JSON.stringify(pages));
         if (!("RegisterJavaScriptProxy" == pages.name)) {
-          console.info("get webTwo state success " + JSON.stringify(pages.name));
+          console.info('get webTwo state success ' + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          console.info("push webTwo page success " + JSON.stringify(result));
+          console.info('push webTwo page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webTwo page error: " + err);
+        console.error('push webTwo page error: ' + err);
       }
       await waitForComponent("webcomponenttwo");
       done()
@@ -51,7 +51,7 @@ export default function webTwoJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("web beforeEach start");
+      console.info('web beforeEach start');
       done();
     })
     /* 

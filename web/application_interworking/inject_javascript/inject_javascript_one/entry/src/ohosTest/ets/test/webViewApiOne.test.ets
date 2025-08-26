@@ -30,18 +30,18 @@ export default function webViewApiOne() {
         let options : router.RouterOptions = {
             url: 'testability/pages/webViewApiOne',
         }
-        
+
         try {
             router.clear();
             let pages = router.getState();
-            console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages));
+            console.info('get webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(pages));
             if (!("webViewJsBridgeLastJsProxyCallingFrameUrl" == pages.name)) {
-                console.info("get webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(pages.name));
+                console.info('get webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                console.info("push webViewJsBridgeLastJsProxyCallingFrameUrl state success " + JSON.stringify(result));
+                console.info('push webViewJsBridgeLastJsProxyCallingFrameUrl state success ' + JSON.stringify(result));
             }
         } catch (err) {
-            console.error("push webViewJsBridgeLastJsProxyCallingFrameUrl page error:" + err);
+            console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
         await waitForComponent("webViewJsBridgeLastJsProxyCallingFrameUrl");
         done()
@@ -54,9 +54,6 @@ export default function webViewApiOne() {
         console.error(`failed to enable, ${err}`);
       })
       done();
-    })
-    
-    afterEach(() => {
     })
 
 

@@ -51,9 +51,9 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("getLastJavascriptProxyCallingFrameUrl page valueChangeCallBack");
+    console.info('getLastJavascriptProxyCallingFrameUrl page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -67,17 +67,15 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
         Button("获取url")
           .key('webViewJsBridgeLastJsProxyCallingFrameUrl')
           .onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
-          this.isReceive = -1;
-            console.info("key==>" + this.str)
+            console.info('key==>' + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             switch (this.str) {
               case "emitJsBridgeGetLastJavascriptProxyCallingFrameUrl": {
                 let transObj_02 = new DataTrans()
                 this.controller.registerJavaScriptProxy(transObj_02, "dataTrans", ["trans"])
-                this.isPageEnd = -1;
                 this.controller.refresh()
-                await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile(this.webUrl))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
@@ -104,10 +102,10 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
             } else {
               this.check = 'fail'
             }
-            console.log("=====>getLastJavascriptProxyCallingFrameUrl | result {" + this.getUrlStr + "}")
+            console.log('=====>getLastJavascriptProxyCallingFrameUrl | result {" + this.getUrlStr + "}')
             Utils.emitEvent('success', 172380)
           } catch (error) {
-            console.log("getLastJavascriptProxyCallingFrameUrl " + error)
+            console.log('getLastJavascriptProxyCallingFrameUrl ' + error)
             Utils.emitEvent("error", 172380)
           }
         })

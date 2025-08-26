@@ -226,7 +226,6 @@ struct Index {
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
- 
             } catch (e) {
               Utils.emitEvent(e.code, 172040)
               console.error('err.code=' + e.code)
@@ -282,7 +281,6 @@ struct Index {
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-
             } catch (e) {
               console.error('err.code=' + e.code)
             }
@@ -435,7 +433,7 @@ struct Index {
           if (event) {
             this.isPageEnd = 0;
             console.log('onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

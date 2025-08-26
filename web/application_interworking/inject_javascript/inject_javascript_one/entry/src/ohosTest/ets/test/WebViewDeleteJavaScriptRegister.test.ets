@@ -36,14 +36,14 @@ export default function ActsAceDeleteJavaScriptRegister() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
+        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!("webviewDeleteJavaScriptRegister" == pages.name)) {
-          console.info("get index state success " + JSON.stringify(pages.name));
+          console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push index state success " + JSON.stringify(result));
+          console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push index page error:" + err);
+        console.error('push index page error:' + err);
       }
       await waitForComponent("deleteJavaScriptRegister_withOutRefresh");
       done()
@@ -57,6 +57,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
       done();
     });
 
+
     /**
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0001
      * @tc.name testWebView_deleteJavaScriptRegister_0001
@@ -66,14 +67,15 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.level Level 0
      */
     it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 172420, done,
+      Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 10072, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithoutRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withOutRefresh', 10, '');
-      sendEventByKey('runJavaScript', 10, '');
-
+      // setTimeout(() => {
+      //   sendEventByKey('runJavaScript', 10, '');
+      // }, 500)
     });
 
     /**
@@ -86,15 +88,16 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0002",
-        '"ReferenceError: testObjName is not defined"', 172430,
+        '"ReferenceError: testObjName is not defined"', 10073,
         done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithRefresh', 172410)
       sendEventByKey('deleteJavaScriptRegister_withRefresh', 10, '');
-      sendEventByKey('runJavaScript', 10, '');
-
+      //setTimeout(() => {
+       // sendEventByKey('runJavaScript', 10, '');
+      //}, 1000)
     });
 
 
@@ -108,11 +111,10 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0003",
-        '17100008Failed to delete JavaScriptProxy because it does not exist.', 172440, done,
+        '17100008Failed to delete JavaScriptProxy because it does not exist.', 10074, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-        Utils.emitEvent('name_err', 172410)
       sendEventByKey('deleteJavaScriptRegister_name_err', 10, '');
     });
 
@@ -127,11 +129,10 @@ export default function ActsAceDeleteJavaScriptRegister() {
      */
     it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0004",
-        "401BusinessError 401: Parameter error. The type of 'name' must be string.", 172450, done,
+        "401BusinessError 401: Parameter error. The type of 'name' must be string.", 10075, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-        Utils.emitEvent('name_null', 172410)
       sendEventByKey('deleteJavaScriptRegister_name_null', 10, '');
     });
   });

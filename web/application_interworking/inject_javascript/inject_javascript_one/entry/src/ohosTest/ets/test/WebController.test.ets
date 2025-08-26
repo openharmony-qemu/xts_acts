@@ -32,14 +32,14 @@ export default function webController() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webController state success " + JSON.stringify(pages));
+        console.info('get webController state success ' + JSON.stringify(pages));
         if (!("webController" == pages.name)) {
-          console.info("get webController state success " + JSON.stringify(pages.name));
+          console.info('get webController state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push webController page success " + JSON.stringify(result));
+          console.info('push webController page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webController page error: " + err);
+        console.error('push webController page error: ' + err);
       }
       await waitForComponent("WebControllerButton");
       done()
@@ -51,7 +51,7 @@ export default function webController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("webController beforeEach start");
+      console.info('webController beforeEach start');
       done();
     })
 

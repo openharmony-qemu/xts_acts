@@ -33,18 +33,19 @@ export default function webJsunitTwo() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webtwo state success " + JSON.stringify(pages));
+        console.info('get webtwo state success ' + JSON.stringify(pages));
         if (!("webtwo" == pages.name)) {
-          console.info("get webtwo state success " + JSON.stringify(pages.name));
+          console.info('get webtwo state success ' + JSON.stringify(pages.name));
           let result = await router.push(options);
-          console.info("push webtwo page success " + JSON.stringify(result));
+          console.info('push webtwo page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webtwo error: " + err);
+        console.error('push webtwo error: ' + err);
       }
       await waitForComponent("webcomponent");
       done()
     });
+
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_013                                                                                                                                                           
      *tc.name RegisterJavaScriptProxy                                                                                                                                                                                                               

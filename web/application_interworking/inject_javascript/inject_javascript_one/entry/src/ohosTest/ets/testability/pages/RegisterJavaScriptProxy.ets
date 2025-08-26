@@ -82,9 +82,9 @@ struct Second {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -99,15 +99,13 @@ struct Second {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
           switch (this.str) {
             case "emitRegisterJavaScriptProxyTwo": {
               this.isPageEnd = -1;
               this.webviewCtl.loadUrl("resource://rawfile/indexweb.html")
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              this.isPageEnd = -1;
               this.webviewCtl.registerJavaScriptProxy(this.testObjtest, "objName", ["test", "toString", "testNumber", "testBool", "webString"]);
-              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.isPageEnd = -1;
               this.webviewCtl.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
@@ -117,19 +115,19 @@ struct Second {
                     return;
                   }
                   if (result) {
-                    console.info("emitRegisterJavaScriptProxy==>" + result);
+                    console.info('emitRegisterJavaScriptProxy==>' + result);
                     Utils.emitEvent(result, 172280);
                   }
                 })
               break;
             }
             default:
-              console.info("can not match case");
+              console.info('can not match case');
           }
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.webviewCtl, incognitoMode: true })
+      Web({ src: 'www.example.com', controller: this.webviewCtl, incognitoMode: true })
         .fileAccess(true)
         .javaScriptOnDocumentEnd(this.scripts)
         .enableNativeEmbedMode(false)
@@ -142,7 +140,7 @@ struct Second {
           if (event) {
             this.isPageEnd = 0;
             console.log('web onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

@@ -32,14 +32,14 @@ export default function webViewControllerPart3Test() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebViewControllerPart3 state success " + JSON.stringify(pages));
+        console.info('get WebViewControllerPart3 state success ' + JSON.stringify(pages));
         if (!("WebViewControllerPart3" == pages.name)) {
-          console.info("get WebViewControllerPart3 state success " + JSON.stringify(pages.name));
+          console.info('get WebViewControllerPart3 state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebViewControllerPart3 page success " + JSON.stringify(result));
+          console.info('push WebViewControllerPart3 page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebViewControllerPart3 page error: " + err);
+        console.error('push WebViewControllerPart3 page error: ' + err);
       }
       await waitForComponent("WebViewControllerTestButton");
       done()
@@ -51,7 +51,7 @@ export default function webViewControllerPart3Test() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebViewControllerPart3 beforeEach start");
+      console.info('WebViewControllerPart3 beforeEach start');
       done();
     })
    /*

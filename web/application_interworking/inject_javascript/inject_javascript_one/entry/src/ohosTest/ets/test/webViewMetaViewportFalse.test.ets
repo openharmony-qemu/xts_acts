@@ -35,16 +35,16 @@ export default function webViewMetaViewportFalse() {
         try {
             router.clear();
             let pages = router.getState();
-            console.info("get webViewMetaViewportFalse state success " + JSON.stringify(pages));
+            console.info('get webViewMetaViewportFalse state success ' + JSON.stringify(pages));
             if (!("webViewMetaViewportFalse" == pages.name)) {
-                console.info("get webViewMetaViewportFalse state success " + JSON.stringify(pages.name));
+                console.info('get webViewMetaViewportFalse state success ' + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                console.info("push webViewMetaViewportFalse state success " + JSON.stringify(result));
+                console.info('push webViewMetaViewportFalse state success ' + JSON.stringify(result));
             }
         } catch (err) {
-            console.error("push webViewMetaViewportFalse page error:" + err);
+            console.error('push webViewMetaViewportFalse page error:' + err);
         }
-        await waitForComponent("webViewMetaViewportFalse");
+      await waitForComponent("webViewMetaViewportFalse");
         done()
     });
     
@@ -56,10 +56,7 @@ export default function webViewMetaViewportFalse() {
         })
       done();
     })
-    
-    afterEach(() => {
 
-    })
 
     /*
     * @tc.number     : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200
