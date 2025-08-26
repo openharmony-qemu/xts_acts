@@ -312,5 +312,26 @@ export default function ActsBackgroundTaskErrorTest() {
       }
     })
 
+    /**
+     * @tc.number  : SUB_Resourceschedule_TransientTaskSVFailed_1200
+     * @tc.name    : SUB_Resourceschedule_TransientTaskSVFailed_1200
+     * @tc.desc    : Test TransientTaskSVFailed
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Resourceschedule_TransientTaskSVFailed_1200', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_TransientTaskSVFailed_1200 start====");
+        let res: number = backgroundtaskerror.TransientTaskSVFailed();
+        console.log("SUB_Resourceschedule_TransientTaskSVFailed_1200 res: " + res);
+        expect(res).assertEqual(Success);
+        done();
+      } catch (err) {
+        console.error("SUB_Resourceschedule_TransientTaskSVFailed_1200 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
   })
 }

@@ -26,3 +26,4 @@ export const GetTransientTaskInfoSuccess: ()=> number;
 export const TransientTaskOK: ()=> number;
 export const TransientTaskInvalidParam: ()=> number;
 export const TransientTaskCIVerificationFailed: ()=> number;
+export const TransientTaskSVFailed: ()=> number;

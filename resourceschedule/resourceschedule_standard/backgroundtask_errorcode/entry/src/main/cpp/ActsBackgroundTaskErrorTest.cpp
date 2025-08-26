@@ -180,6 +180,37 @@ static napi_value TransientTaskCIVerificationFailed(napi_env env, napi_callback_
     return result;
 }
 
+static napi_value TransientTaskSVFailed(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int maxAttempts = 4;
+    int successCount = 0;
+    for (int i = 0; i < maxAttempts; i++) {
+        int32_t res =
+            OH_BackgroundTaskManager_RequestSuspendDelay("Quota Test", OnCallbackCompleted, &delaySuspendInfo);
+        if (res == ERR_TRANSIENT_TASK_OK) {
+            successCount++;
+            int32_t intTime = 15;
+            sleep(intTime);
+            OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask",
+                         "=======  RequestSuspendDelay requestId = %{public}d", delaySuspendInfo.requestId);
+            napi_create_int32(env, -1, &result);
+        } else if (res == ERR_TRANSIENT_TASK_SERVICE_VERIFICATION_FAILED) {
+            OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask",
+                         "=======  Attempt %d: Quota exceeded (Error 9900002)\n", i + 1);
+            napi_create_int32(env, res == ERR_TRANSIENT_TASK_SERVICE_VERIFICATION_FAILED ? 0 : -1, &result);
+            return result;
+        } else {
+            OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask", "======= Attempt: Failed with error %d\n",
+                         res);
+            napi_create_int32(env, -1, &result);
+            break;
+        }
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask", "======= Total successful attempts: %d\n", successCount);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -211,6 +242,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TransientTaskInvalidParam", nullptr, TransientTaskInvalidParam,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"TransientTaskCIVerificationFailed", nullptr, TransientTaskCIVerificationFailed,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"TransientTaskSVFailed", nullptr, TransientTaskSVFailed,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
