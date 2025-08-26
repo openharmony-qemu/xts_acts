@@ -22,7 +22,6 @@ import controller from '@ohos.nfc.controller';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-// import tag from '@ohos.nfc.tag';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,TestType,Size} from '../../../hypium/index';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -50,20 +49,21 @@ export default function nfcControllerTest() {
          * @tc.size since 7
          * @tc.type Function
          * @tc.level Level 1
-        */
+         */
         it('SUB_COMMUNICATION_NFC_Cont_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             let nfcswitchis:boolean = controller.isNfcOpen();
             await Utils.msSleep(2000)
             if (nfcswitchis == true) {
-                hilog.info(domain,tag,'%{public}s','[NFC_test] controller3 Nfc isopenstate is ->' + nfcswitchis);
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0100 Nfc isopenstate is ->' + nfcswitchis);
                 expect(nfcswitchis).assertTrue();
             } else if (nfcswitchis == false){
-                hilog.info(domain,tag,'%{public}s','[NFC_test] controller3 Nfc isopenstate is ->' + nfcswitchis);
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0100 Nfc isopenstate is ->' + nfcswitchis);
                 expect().assertFail();
             }
             await Utils.msSleep(2000)
             done();
         })
+
         /**
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0200
          * @tc.name getNfcState
@@ -76,10 +76,156 @@ export default function nfcControllerTest() {
         it('SUB_COMMUNICATION_NFC_Cont_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             let checkopennfc:controller.NfcState =  controller.getNfcState();
             await Utils.msSleep(2000)
-            hilog.info(domain,tag,'%{public}s','[NFC_test] checkopen the state of nfc ->' + checkopennfc);
-            hilog.info(domain, tag, '%{public}s', 'abilityTest001 start');
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0200 checkopen the state of nfc ->' + checkopennfc);
             expect(checkopennfc).assertEqual(3);
             await Utils.msSleep(2000)
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
+         * @tc.name SUB_COMMUNICATION_NFCCont_static_0300
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            expect(controller.NfcState.STATE_ON).assertEqual(3);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0400
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_0400
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let recvNfcStateNotifyFunc: (changeInfo:controller.NfcState) => void = (changeInfo: controller.NfcState) => {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0400 nfc state receive state ->' + changeInfo);
+            };
+
+            try {
+                controller.on('nfcStateChange', recvNfcStateNotifyFunc);
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0400 nfc state receive state success');
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0400 nfc state receive state ->' + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0500
+         * @tc.name CheckWhetherNFCFunctionIsEnabled
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let recvNfcStateNotifyFunc: (changeInfo:controller.NfcState) => void = (changeInfo: controller.NfcState) => {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0500 nfc state receive state ->' + changeInfo);
+            };
+
+            try {
+                controller.off('nfcStateChange', recvNfcStateNotifyFunc);
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0500 nfc state receive state success');
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0500 nfc state receive state ->' + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0600
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_0600
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0600 nfc state is' + controller.NfcState.STATE_OFF);
+            expect(controller.NfcState.STATE_OFF).assertEqual(1);
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0600 nfc state is' + controller.NfcState.STATE_TURNING_ON);
+            expect(controller.NfcState.STATE_TURNING_ON).assertEqual(2)
+            hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0600 nfc state is' + controller.NfcState.STATE_TURNING_OFF);
+            expect(controller.NfcState.STATE_TURNING_OFF).assertEqual(4)
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0700
+         * @tc.name CheckWhetherTheNFCFunctionIsDisabled
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            try {
+                controller.disableNfc();
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state success');
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                if (err.code == 201) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else if (err.code == 801) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else if (err.code == 3100101) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0800
+         * @tc.name EnableNfc
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+
+        it('SUB_COMMUNICATION_NFC_Cont_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            try {
+                controller.enableNfc();
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state success');
+                expect(true).assertTrue();
+            } catch(err:BusinessError) {
+                if (err.code == 201) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else if (err.code == 801) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else if (err.code == 3100101) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
+                    expect(true).assertTrue();
+                } else {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
+                    expect().assertFail();
+                }
+            }
             done();
         })
 
