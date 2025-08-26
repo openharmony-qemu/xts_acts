@@ -26,11 +26,13 @@ import webViewJavaScriptPermission from './webViewJavaScriptPermission.test';
 import AceWeb from './Acewebenhanced2.test';
 import webViewApiOne from './webViewApiOne.test';
 import webTwoJsunit from './WebTwoJsunit.test';
+import webController from './WebController.test';
 
 export default function testsuite() {
   webJsunit();
   webJsunitTwo();
   webAttribute();
+  webController();
   webJavaScriptOnDocumentStartTest();
   abilityTest();
   DeleteJavaScriptRegisterUnitTest();

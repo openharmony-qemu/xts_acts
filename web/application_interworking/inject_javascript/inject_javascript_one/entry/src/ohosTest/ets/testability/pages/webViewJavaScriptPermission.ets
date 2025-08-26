@@ -37,6 +37,7 @@ struct WebComponent {
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State isRunJSEnd: number = -1;
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -45,8 +46,7 @@ struct WebComponent {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
-    onPageHide() {
+  onPageHide() {
     events_emitter.off(172350)
   }
 
@@ -70,9 +70,12 @@ struct WebComponent {
           console.info('key==>' + this.emitKey)
           switch (this.emitKey) {
             case 'emitWebViewJavaScriptPermission': {
+              this.isRunJSEnd = -1;
               this.webviewController.runJavaScript('callArkTS()', (error, result) => {
                 console.log(`The callArkTS() return value is: ${result}`);
+                this.isRunJSEnd = 0;
               })
+              await waitForExist(() =>  this.isRunJSEnd, this.emitKey, 0);
               Utils.emitEvent('success', 172360)
             }
           }
@@ -94,10 +97,10 @@ struct WebComponent {
             '{"scheme":"u","host":"v","port":"","path":""}]}]}}'
         })
         .onPageEnd((event) => {
-        if (event) {
+          if (event) {
             this.isPageEnd = 0;
             console.log('WebViewController onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

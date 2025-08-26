@@ -32,14 +32,14 @@ export default function webAttribute() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webAttribute state success " + JSON.stringify(pages));
+        console.info('get webAttribute state success ' + JSON.stringify(pages));
         if (!("webAttribute" == pages.name)) {
-          console.info("get webAttribute state success " + JSON.stringify(pages.name));
+          console.info('get webAttribute state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push webAttribute page success " + JSON.stringify(result));
+          console.info('push webAttribute page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webAttribute page error: " + err);
+        console.error('push webAttribute page error: ' + err);
       }
       await waitForComponent("WebAttributeButton");
       done()
@@ -51,7 +51,7 @@ export default function webAttribute() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("webAttribute beforeEach start");
+      console.info('webAttribute beforeEach start');
       done();
     })
     /*

@@ -37,14 +37,14 @@ export default function AceWeb() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get IndexOthers state success " + JSON.stringify(pages));
+        console.info('get IndexOthers state success ' + JSON.stringify(pages));
         if (!("IndexOthers" == pages.name)) {
-          console.info("get IndexOthers state success " + JSON.stringify(pages.name));
+          console.info('get IndexOthers state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push IndexOthers page success " + JSON.stringify(result));
+          console.info('push IndexOthers page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push IndexOthers page error: " + err);
+        console.error('push IndexOthers page error: ' + err);
       }
       await waitForComponent("registerJavaScriptProxyAsyncMethodListButton");
       done()
@@ -57,7 +57,7 @@ export default function AceWeb() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("IndexOthers beforeEach start");
+      console.info('IndexOthers beforeEach start');
       done();
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.

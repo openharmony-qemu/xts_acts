@@ -47,9 +47,9 @@ struct WebJavaScriptOnDocumentStartTest {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -63,10 +63,10 @@ struct WebJavaScriptOnDocumentStartTest {
         Button("WebJavaScriptOnDocumentStartTest click")
           .key('WebJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
-          this.isReceive = -1;
-            console.info("key==>" + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('key==>' + this.str)
             switch (this.str) {
 
               case "testJavaScriptOnDocumentStart001": {
@@ -123,7 +123,7 @@ struct WebJavaScriptOnDocumentStartTest {
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 0;
-            console.log('WebJavaScriptOnDocumentStartTest:' + event.url)
+            console.log('url:' + event.url)
           }
         })
         .width('100%')

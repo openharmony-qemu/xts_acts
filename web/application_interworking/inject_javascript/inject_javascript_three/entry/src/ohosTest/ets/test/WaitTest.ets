@@ -125,5 +125,5 @@ export async function waitForExist<T> (
 export async function waitForComponent(componentName:string) {
   let driver = Driver.create();
   await driver.waitForComponent(ON.id(componentName), 10000);
-  console.info("waitForComponent", componentName, '==>');
+  console.info('waitForComponent', componentName, '==>');
 }

@@ -28,6 +28,7 @@ struct Index {
   @State javaScriptAccess: boolean = true;
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+
   
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -42,9 +43,9 @@ struct Index {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -56,7 +57,7 @@ struct Index {
       Utils.emitEvent(res, 102);
     },
     toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
+      console.info('ets toString:' + String(str));
     },
     register: (res: ESObject) => {
       Utils.emitEvent(res, 172250);
@@ -78,7 +79,7 @@ struct Index {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
           switch (this.str) {
             case "emitRegisterJavaScriptProxy": {
               this.controller.registerJavaScriptProxy({
@@ -89,7 +90,8 @@ struct Index {
               this.isPageEnd = -1;
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              this.controller.runJavaScript({ script: "proxy()" });
+                this.controller.runJavaScript({ script: "proxy()" });
+
               break;
             }
             case "emitDeleteJavaScriptRegister": {
@@ -97,10 +99,10 @@ struct Index {
               this.controller.runJavaScript({ script: "registerTest()" });
               await waitForExist(() => this.console,"jsResult",null);
               const result = await waitForExist(
-                  () => this.console !== "web222" ? "ready" : null,
-                  this.str,
-                  "ready"
-                );
+                () => this.console !== "web222" ? "ready" : null,
+                this.str,
+                "ready"
+              );
               if (result === "ready") {
                   let deleteEntireCookieCalled = true;
                   Utils.emitEvent(deleteEntireCookieCalled, 172260);
@@ -108,7 +110,7 @@ struct Index {
               break;
             }
             default:
-              console.info("can not match case");
+              console.info('can not match case');
           }
         })
       }
@@ -119,7 +121,7 @@ struct Index {
           if (event) {
             this.isPageEnd = 0;
             console.log('web onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

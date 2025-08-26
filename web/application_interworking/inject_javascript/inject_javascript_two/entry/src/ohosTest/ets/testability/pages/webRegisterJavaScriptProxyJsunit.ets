@@ -21,7 +21,7 @@ import testsuite from '../../test/List.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import Utils from '../../test/Utils';
-
+import {waitForExist} from '../../test/WaitTest.test';
 
 class testObj {
   constructor() {
@@ -66,6 +66,8 @@ struct Index {
   @State playing: boolean = false
   @State str: string = "emitRegisterJavaScriptProxy"
   @State arrid: number = 0
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
 
@@ -82,11 +84,12 @@ struct Index {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -96,14 +99,14 @@ struct Index {
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-    console.error("ygz aboutToAppear")
+    console.error('ygz aboutToAppear')
     web_webview.WebviewController.setWebDebuggingAccess(true);
     //初始化web ndk
     testNapi.nativeWebInit(this.webTag);
   }
 
   aboutToDisappear() {
-    console.error("ygz aboutToDisAppear")
+    console.error('ygz aboutToDisAppear')
   }
 
   build() {
@@ -143,7 +146,7 @@ struct Index {
           .fontSize(12)
           .onClick(() => {
             let data1M = this.data.repeat(64 * 1024)
-            console.log("ygz time in ets start:" + new Date().getTime());
+            console.log('ygz time in ets start:' + new Date().getTime());
             testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + data1M + "\")");
           })
 
@@ -151,7 +154,7 @@ struct Index {
           .fontSize(12)
           .onClick(() => {
             let data5M = this.data.repeat(64 * 1024 * 5)
-            console.log("ygz time in ets start:" + new Date().getTime());
+            console.log('ygz time in ets start:' + new Date().getTime());
             testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + data5M + "\")");
           })
       }
@@ -161,16 +164,17 @@ struct Index {
           .fontSize(12)
           .onClick(() => {
             const data10M = this.data.repeat(64 * 1024 * 10);
-            console.log("ygz time in ets start:" + new Date().getTime());
+            console.log('ygz time in ets start:' + new Date().getTime());
             testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + data10M + "\")");
           })
         Button("runJS 20M数据")
           .fontSize(12)
           .onClick(() => {
             const data10M = this.data.repeat(64 * 1024 * 20);
-            console.log("ygz time in ets start:" + new Date().getTime());
+            console.log('ygz time in ets start:' + new Date().getTime());
             testNapi.runJavaScript(this.webTag, "runJSRetStr(\"" + data10M + "\")");
           })
+
       }
 
       Web({ src: $rawfile('runJS.html'), controller: this.controller })
@@ -178,10 +182,16 @@ struct Index {
           // 触发调用ndk接口
           testNapi.registerJavaScriptProxy(this.webTag);
         })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
 
       Button("web click").key('webcomponent')
         .onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 0);
+          await waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitRegisterJavaScriptProxy": {
               // 运行接口  验证接口是否注册成功
@@ -226,7 +236,7 @@ struct Index {
               break;
             }
             default:
-              console.info("can not match case")
+              console.info('can not match case')
           }
         })
     }

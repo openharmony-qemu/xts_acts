@@ -92,7 +92,7 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
                 .onlineImageAccess(true)
                 .databaseAccess(true)
                 .onPageEnd(async () => {
-                this.isPageEnd = 0;
+                  this.isPageEnd = 0;
                 try{
                     this.getUrlStr = this.controller.getLastJavascriptProxyCallingFrameUrl()
                     if (this.getUrlStr == this.webUrl) {
@@ -106,8 +106,7 @@ struct webViewJsBridgeLastJsProxyCallingFrameUrl {
                     console.log('getLastJavascriptProxyCallingFrameUrl ' + error)
                     Utils.emitEvent('error', 172300)
                 }     
-            }
-        )
+            })
         }
     }
 }

@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { Driver,ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
 
@@ -126,5 +125,5 @@ export async function waitForExist<T> (
 export async function waitForComponent(componentName:string) {
   let driver = Driver.create();
   await driver.waitForComponent(ON.id(componentName), 10000);
-  console.info("waitForComponent", componentName, '==>');
+  console.info('waitForComponent', componentName, '==>');
 }

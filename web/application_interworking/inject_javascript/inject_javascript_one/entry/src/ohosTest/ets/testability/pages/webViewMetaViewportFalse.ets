@@ -42,7 +42,6 @@ struct webViewOnMetaViewportFalse {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
   onPageHide() {
     events_emitter.off(172390)
   }
@@ -64,14 +63,14 @@ struct webViewOnMetaViewportFalse {
         Button("web click")
           .key('webViewMetaViewportFalse')
           .onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
-          this.isReceive = -1;
-            console.info("key==>" + this.str)
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
+            console.info('key==>' + this.str)
             switch (this.str) {
               case "emitWebViewMetaViewportFalse": {
                 try {
-                  console.info("emitWebViewMetaViewportFalse==>")
+                  console.info('emitWebViewMetaViewportFalse==>')
                   this.controller.runJavaScript("isElementMetaViewport()", (error, result) => {
                     console.log('The isElementMetaViewport() return value is: ${result}')
                     Utils.emitEvent(result, 172400)
@@ -96,8 +95,8 @@ struct webViewOnMetaViewportFalse {
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 0;
-            console.log('WebController onPageEnd url:' + event.url);
-           }
+            console.log('webViewMetaViewportFalse onPageEnd url:' + event.url);
+          }
         })
     }
   }

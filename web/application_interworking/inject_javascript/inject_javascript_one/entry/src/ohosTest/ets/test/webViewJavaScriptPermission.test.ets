@@ -35,14 +35,14 @@ export default function ActsAceWebviewJavaScriptPermission() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webViewJavaScriptPermission state success " + JSON.stringify(pages));
+        console.info('get webViewJavaScriptPermission state success ' + JSON.stringify(pages));
         if (!("webViewJavaScriptPermission" == pages.name)) {
-          console.info("get webViewJavaScriptPermission state success " + JSON.stringify(pages.name));
+          console.info('get webViewJavaScriptPermission state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push webViewJavaScriptPermission state success " + JSON.stringify(result));
+          console.info('push webViewJavaScriptPermission state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webViewJavaScriptPermission page error:" + err);
+        console.error('push webViewJavaScriptPermission page error:' + err);
       }
       await waitForComponent("webviewJavaScriptPermissionButton");
       done()
@@ -57,8 +57,6 @@ export default function ActsAceWebviewJavaScriptPermission() {
       done();
     })
 
-    afterEach( () => {
-    })
 
     /*
     *@tc.number SUB_ACE_WEBVIEW_JAVASCRIPTPERMISSION_API_0001

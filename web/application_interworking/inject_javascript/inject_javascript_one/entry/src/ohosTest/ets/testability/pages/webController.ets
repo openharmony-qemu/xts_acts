@@ -25,7 +25,6 @@ struct webController {
   @State str: string = "emitUserAgent"
   @State console: string = ""
   @State javaScriptAccess: boolean = true
-
   @State registerJavaScriptProxyFlag: boolean = false
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -44,9 +43,9 @@ struct webController {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -75,7 +74,7 @@ struct webController {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "testRegisterJavaScriptProxy001": {
               try {
@@ -130,7 +129,7 @@ struct webController {
           if (event) {
             this.isPageEnd = 0;
             console.log('WebController onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

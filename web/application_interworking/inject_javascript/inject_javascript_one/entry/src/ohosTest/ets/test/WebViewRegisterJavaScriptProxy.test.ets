@@ -35,14 +35,14 @@ export default function ActsAceRegisterJavaScriptProxy() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webviewBFCacheSuspendPlayer state success " + JSON.stringify(pages));
+        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!("webviewRegisterJavaScriptProxy" == pages.name)) {
-          console.info("get index state success " + JSON.stringify(pages.name));
+          console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push index state success " + JSON.stringify(result));
+          console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push index page error:" + err);
+        console.error('push index page error:' + err);
       }
       await waitForComponent("testWebView_registerJavaScriptProxy_0013");
       done()
@@ -51,14 +51,6 @@ export default function ActsAceRegisterJavaScriptProxy() {
       done();
     });
 
-    afterEach(async (done: Function) => {
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-        console.info(`enable success`);
-        }).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-      })
-      done();
-    })
 
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.

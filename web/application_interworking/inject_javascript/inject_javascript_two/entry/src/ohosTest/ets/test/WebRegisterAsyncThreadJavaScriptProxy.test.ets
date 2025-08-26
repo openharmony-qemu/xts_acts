@@ -34,17 +34,17 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebRegisterAsyncThreadJavaScriptProxy state success " + JSON.stringify(pages));
+        console.info('get WebRegisterAsyncThreadJavaScriptProxy state success ' + JSON.stringify(pages));
         if (!("WebRegisterAsyncThreadJavaScriptProxy" == pages.name)) {
-          console.info("get WebRegisterAsyncThreadJavaScriptProxy state success " + JSON.stringify(pages.name));
+          console.info('get WebRegisterAsyncThreadJavaScriptProxy state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebRegisterAsyncThreadJavaScriptProxy page success " + JSON.stringify(result));
+          console.info('push WebRegisterAsyncThreadJavaScriptProxy page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebRegisterAsyncThreadJavaScriptProxy page error: " + err);
+        console.error('push WebRegisterAsyncThreadJavaScriptProxy page error: ' + err);
       }
       await driver.waitForComponent(ON.id("RegisterAsyncThreadJavaScriptProxy"),10000);
-      console.log("waitForComponent RegisterAsyncThreadJavaScriptProxy==>");
+      console.log('waitForComponent RegisterAsyncThreadJavaScriptProxy==>');
       done()
     });
 
@@ -54,9 +54,10 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
        }).catch((err: object) => {
          console.error(`failed to enable, ${err}`);
        })
-      console.info("WebRegisterAsyncThreadJavaScriptProxy beforeEach start");
+      console.info('WebRegisterAsyncThreadJavaScriptProxy beforeEach start');
       done();
     })
+
 
     /*
     * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0001

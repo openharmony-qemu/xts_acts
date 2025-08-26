@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
@@ -27,14 +27,18 @@ let emitKey = "emitRegisterJavaScriptProxy";
 export default function webRegisterJavaScriptProxyJsunit() {
 
   describe('NdkRegisterJavaScriptProxyTest', () => {
+    beforeAll(async (done: Function) => {
+      await waitForComponent("webcomponent");
+      done()
+    });
+
     beforeEach(async (done:Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await waitForComponent("webcomponent");
-      console.info("httpAuthHandler beforeEach start");
+      console.info('httpAuthHandler beforeEach start');
       done();
     })
 

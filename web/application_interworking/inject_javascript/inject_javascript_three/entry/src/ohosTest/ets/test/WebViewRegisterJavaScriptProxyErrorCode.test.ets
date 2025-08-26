@@ -32,14 +32,14 @@ export default function WebviewRegisterJavaScriptProxyErrorCode() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get WebviewRegisterJavaScriptProxyErrorCode state success " + JSON.stringify(pages));
+        console.info('get WebviewRegisterJavaScriptProxyErrorCode state success ' + JSON.stringify(pages));
         if (!("WebviewRegisterJavaScriptProxyErrorCode" == pages.name)) {
-          console.info("get WebviewRegisterJavaScriptProxyErrorCode state success " + JSON.stringify(pages.name));
+          console.info('get WebviewRegisterJavaScriptProxyErrorCode state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push WebviewRegisterJavaScriptProxyErrorCode page success " + JSON.stringify(result));
+          console.info('push WebviewRegisterJavaScriptProxyErrorCode page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push WebviewRegisterJavaScriptProxyErrorCode page error: " + err);
+        console.error('push WebviewRegisterJavaScriptProxyErrorCode page error: ' + err);
       }
       await waitForComponent("WebviewRegisterJavaScriptProxyErrorCodeButton");
       done()
@@ -51,13 +51,13 @@ export default function WebviewRegisterJavaScriptProxyErrorCode() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("WebviewRegisterJavaScriptProxyErrorCode beforeEach start");
+      console.info('WebviewRegisterJavaScriptProxyErrorCode beforeEach start');
       done();
     })
 
     afterEach(async (done: Function) => {
-      console.info("WebviewRegisterJavaScriptProxyErrorCode afterEach start");
-      console.info("WebviewRegisterJavaScriptProxyErrorCode afterEach end");
+      console.info('WebviewRegisterJavaScriptProxyErrorCode afterEach start');
+      console.info('WebviewRegisterJavaScriptProxyErrorCode afterEach end');
       done();
     })
 

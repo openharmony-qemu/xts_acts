@@ -40,9 +40,9 @@ struct webAttribute {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -57,17 +57,17 @@ struct webAttribute {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           switch (this.str) {
             case "testJavaScriptAccess001": {
               try {
                 this.javaScriptAccess = false
                 this.controller.runJavaScript({ script: "jsAccess()" })
                 const result = await waitForExist(
-                    () => this.console !== "web111" ? "ready" : null,
-                    this.str,
-                    "ready"
-                  );
+                  () => this.console !== "web111" ? "ready" : null,
+                  this.str,
+                  "ready"
+                );
                 if (result === "ready") {
                   let javaScriptAccessCalled = true
                   Utils.emitEvent(javaScriptAccessCalled, 172170)
@@ -88,7 +88,7 @@ struct webAttribute {
           if (event) {
             this.isPageEnd = 0;
             console.log('WebAttribute onPageEnd url:' + event.url);
-           }
+          }
         })
     }
   }

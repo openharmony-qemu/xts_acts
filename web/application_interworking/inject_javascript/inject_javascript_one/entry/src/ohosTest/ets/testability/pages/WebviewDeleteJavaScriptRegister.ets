@@ -17,6 +17,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
+
 class TestObj {
   constructor(){
   }
@@ -40,7 +41,6 @@ struct WebComponent {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State isNewButtonEnd: number = -1;
-
 
   onPageShow(): void{
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -82,20 +82,39 @@ struct WebComponent {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           this.isPageEnd = -1;
           this.InitJavaScriptProxyTest()
           await waitForExist(() => this.isPageEnd, this.str, 0);
             try {
+              this.isNewButtonEnd = -1;
               this.controller.deleteJavaScriptRegister(this.name);
-              this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
               console.log('deleteJavaScriptRegister_withRefresh success')
+              this.isNewButtonEnd = 0;
             } catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }
-            this.isNewButtonEnd = 0;  
+          await waitForExist(() => this.isNewButtonEnd, this.str, 0);
+    
+          try {
+            this.controller.runJavaScript(
+              'callArkTS()',
+              (error, result) => {
+                if (error) {
+                  console.error(`run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                  return;
+                }
+                if (result) {
+                  Utils.emitEvent(result, 10073)
+                  console.log('result is' + result);
+                }
+              });
+            console.log('runJavaScript SUCCESS')
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+
         })
         .key('deleteJavaScriptRegister_withRefresh')
         .margin({ top: 30 })
@@ -105,17 +124,37 @@ struct WebComponent {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;
-          console.info("key==>" + this.str)
+          console.info('key==>'+ this.str)
           this.isPageEnd = -1;
           this.InitJavaScriptProxyTest()
           await waitForExist(() => this.isPageEnd, this.str, 0);
             try {
+              this.isNewButtonEnd = -1;
               this.controller.deleteJavaScriptRegister(this.name);
               console.log('deleteJavaScriptRegister_withOutRefresh success')
+              this.isNewButtonEnd = 0;
             } catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
             }
-            this.isNewButtonEnd = 0;  
+          await waitForExist(() => this.isNewButtonEnd, this.str, 0);
+
+            try {
+              this.controller.runJavaScript(
+                'callArkTS()',
+                (error, result) => {
+                  if (error) {
+                    console.error(`run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                    return;
+                  }
+                  if (result) {
+                    Utils.emitEvent(result, 10072)
+                    console.log('result is' + result);
+                  }
+                });
+              console.log('runJavaScript SUCCESS')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
         })
         .key('deleteJavaScriptRegister_withOutRefresh')
         .margin({ top: 30 })
@@ -128,7 +167,7 @@ struct WebComponent {
             console.log('deleteJavaScriptRegister success')
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-            Utils.emitEvent((error as BusinessError).code + (error as BusinessError).message, 172440)
+            Utils.emitEvent((error as BusinessError).code + (error as BusinessError).message, 10074)
           }
         })
         .key('deleteJavaScriptRegister_name_err')
@@ -142,44 +181,10 @@ struct WebComponent {
             console.log('deleteJavaScriptRegister success')
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-            Utils.emitEvent((error as BusinessError).code + (error as BusinessError).message, 172450)
+            Utils.emitEvent((error as BusinessError).code + (error as BusinessError).message, 10075)
           }
         })
         .key('deleteJavaScriptRegister_name_null')
-        .margin({ top: 30 })
-
-      Button('runJavaScript').onClick(async () => {
-          await waitForExist(() => this.isNewButtonEnd, this.str, 0);
-          this.isNewButtonEnd = -1;
-          console.info('key==>' + this.str)
-        try {
-          this.controller.runJavaScript(
-            'callArkTS()',
-            (error, result) => {
-              if (error) {
-                console.error(`run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                return;
-              }
-              if (result) {
-                switch (this.str) {
-                  case 'deleteWithoutRefresh':
-                    Utils.emitEvent(result, 172420)
-                    break;
-                  case 'deleteWithRefresh':
-                    Utils.emitEvent(result, 172430)
-                    break;
-                  default:
-                    break;
-                }
-                console.log('result is' + result);
-              }
-            });
-          console.log('runJavaScript SUCCESS')
-        } catch (error) {
-          console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        }
-      })
-        .key('runJavaScript')
         .margin({ top: 30 })
 
       Web({ src: $rawfile('index2.html'), controller: this.controller })
@@ -187,8 +192,8 @@ struct WebComponent {
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 0;
-            console.log('WebController onPageEnd url:' + event.url);
-           }
+            console.log(' WebViewController onPageEnd url:' + event.url);
+          }
         })
     }
   }
