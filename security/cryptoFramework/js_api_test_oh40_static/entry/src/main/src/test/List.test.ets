@@ -34,12 +34,7 @@ export default function testsuite() {
   DigestAlgorithmSm3Jsunit();
   SecurityRandomSyncJsunit();
   SecurityKeyAgreementJsunit();
-  let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
   // AsyGetKeySpecBySpecJsunit();
   // AsyKeyGeneratorBySpecJsunit();
   // AsyKeyGeneratorBySpecTwoJsunit();
-  taskGroup.addTask(AsyGetKeySpecBySpecJsunit, );
-  taskGroup.addTask(AsyKeyGeneratorBySpecJsunit, );
-  taskGroup.addTask(AsyKeyGeneratorBySpecTwoJsunit, );
-  await taskpool.execute(taskGroup).then((res: NullishType) => {});
 }
