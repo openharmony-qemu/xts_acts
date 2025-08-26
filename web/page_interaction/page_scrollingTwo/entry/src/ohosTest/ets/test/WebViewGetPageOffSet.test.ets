@@ -20,6 +20,12 @@ import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 182201;
+let driver = Driver.create();
+let emitKey = ""
+let tcName = ""
+
 export default function WebViewEnumAndFontLibrary() {
 
   describe('WebViewWebViewGetPageOffSetTest', () => {
@@ -35,14 +41,12 @@ export default function WebViewEnumAndFontLibrary() {
         if (!("WebViewGetPageOffSet" == pages.name)) {
           console.info("get WebViewGetPageOffSet state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("webgetPageOffsetButton"), 10000);
           console.info("push WebViewGetPageOffSet page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewGetPageOffSet page error: " + err);
       }
-      let driver: Driver = Driver.create();
-      await driver.waitForComponent(ON.id("webgetPageOffsetButton"),10000);
       done()
     });
 
@@ -52,18 +56,9 @@ export default function WebViewEnumAndFontLibrary() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-
-    afterEach(async (done: Function) => {
-      console.info("WebViewGetPageOffSet afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewGetPageOffSet afterEach end");
-      done();
-    })
-
 
     /*
     * @tc.number     : SUB_WEB_EMITGETPAGEOFFSET_0100
@@ -74,9 +69,14 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('emitgetPageOffset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitgetPageOffset001", 10)
-      Utils.registerEvent("emitgetPageOffset001", 150, 20250710, done);
-      sendEventByKey('webgetPageOffsetButton', 10, '');
+      emitKey = 'emitgetPageOffset001';
+      tcName = 'emitgetPageOffset001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 150, 182210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webgetPageOffsetButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -88,9 +88,14 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('emitgetPageOffset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitgetPageOffset002", 10)
-      Utils.registerEvent("emitgetPageOffset002", 0, 20250711, done);
-      sendEventByKey('webgetPageOffsetButton', 10, '');
+      emitKey = 'emitgetPageOffset002';
+      tcName = 'emitgetPageOffset002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 0, 182220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webgetPageOffsetButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
     * @tc.number     : SUB_WEB_EMITGETPAGEOFFSET_0300
@@ -101,9 +106,14 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('emitgetPageOffset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitgetPageOffset003", 10)
-      Utils.registerEvent("emitgetPageOffset003", 200, 20250712, done);
-      sendEventByKey('webgetPageOffsetButton', 10, '');
+      emitKey = 'emitgetPageOffset003';
+      tcName = 'emitgetPageOffset003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 200, 182230, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webgetPageOffsetButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 

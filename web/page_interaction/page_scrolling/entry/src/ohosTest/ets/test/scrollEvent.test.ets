@@ -19,9 +19,15 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "scroll01";
+
+const EVENT_ID_SET_SUITE_KEY = 179201;
+let driver: Driver = Driver.create();
+
 export default function webViewSrollableJsunit() {
   describe('scrollTest',  () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,7 +41,7 @@ export default function webViewSrollableJsunit() {
         if (!("scrollEvent" == pages.name)) {
           console.info("get scroll state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("scrollEvent01"), 10000);
           console.info("push scroll page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,28 +55,7 @@ export default function webViewSrollableJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("scroll beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("scroll afterEach start:"+emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId:10,
-          priority:events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -80,9 +65,12 @@ export default function webViewSrollableJsunit() {
      *tc.desic test blurMode01 interface when choose callback mode.
      */
     it('scroll01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="scroll02";
-      Utils.registerEvent("scroll01",50,20241225,done);
-      sendEventByKey('scrollEvent01',10,'');
+      Utils.emitEvent("scroll01", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("scroll01", 50, 179210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollEvent01", "scroll01");
+      await Utils.waitForExist(() => isReturn, "scroll01" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -91,9 +79,12 @@ export default function webViewSrollableJsunit() {
    *tc.desic test blurMode02 interface when choose callback mode.
    */
     it('scroll02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="scroll02";
-      Utils.registerEvent("scroll02",80,20241226,done);
-      sendEventByKey('scrollEvent01',10,'');
+      Utils.emitEvent("scroll02", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("scroll02", 80, 179220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "scrollEvent01", "scroll02");
+      await Utils.waitForExist(() => isReturn, "scroll02" + '_returnCheck', true, 1000);
+      done();
     })
 
   })

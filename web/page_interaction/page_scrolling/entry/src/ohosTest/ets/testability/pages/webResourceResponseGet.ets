@@ -19,6 +19,10 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import webView from '@ohos.web.webview';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 179701;
+let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -61,17 +65,19 @@ struct webResourceResponseGet {
   @State getResponseMimeTypeValue: string = ''
   @State getReasonMessageValue: string = ''
   @State getResponseCodeValue: number = 10000
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -80,6 +86,7 @@ struct webResourceResponseGet {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -96,11 +103,13 @@ struct webResourceResponseGet {
       Row() {
         Button("WebResourceResponseGet click").key('WebResourceResponseGetButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "testScrollType001": {
               try {
                 console.log('testScrollType001 :'+webView.ScrollType.EVENT)
-                Utils.emitEvent(webView.ScrollType.EVENT, 37023);
+                Utils.emitEvent(webView.ScrollType.EVENT, 179710);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -108,15 +117,16 @@ struct webResourceResponseGet {
             }
             case "testscrollByWithResult001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScrolltwo.html'))
-                await Utils.sleep(4000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 let result = this.controllerone.scrollByWithResult(200, 200);
-                await Utils.sleep(2000);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 console.log("original result: " + result);
-                Utils.emitEvent(result, 37024);
+                Utils.emitEvent(result, 179720);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent("error", 37024);
+                Utils.emitEvent("error", 179720);
               }
               break;
             }
@@ -133,6 +143,10 @@ struct webResourceResponseGet {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

@@ -18,6 +18,10 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 184501;
+let driver: Driver = Driver.create();
 
 @Entry
 @Component
@@ -27,13 +31,19 @@ struct webViewScrollBy {
   @State res: boolean = false;
   @State xNum: number = 0;
   @State yNum: number = 0;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -42,6 +52,7 @@ struct webViewScrollBy {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -51,17 +62,21 @@ struct webViewScrollBy {
       Row() {
         Button("web click").key('webcomponentScrollBy').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitScrollByOne": {
+              this.isPageEnd = -1
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1
               this.controller.loadUrl($rawfile('theScroll.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 0;
               this.yNum = 1717;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -77,21 +92,23 @@ struct webViewScrollBy {
                     this.res = false;
                   }
                 }
-                Utils.emitEvent(this.res, 228)
+                Utils.emitEvent(this.res, 184510)
                 console.info("emitScrollByOne  res: " + result);
               })
               break;
             }
             case "emitScrollByTwo": {
+              this.isPageEnd = -1
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 0;
               this.yNum = 3500;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -107,21 +124,21 @@ struct webViewScrollBy {
                     this.res = false;
                   }
                 }
-                Utils.emitEvent(this.res, 230)
+                Utils.emitEvent(this.res, 184520)
                 console.info("emitScrollByTwo  res: " + result);
               })
               break;
             }
             case "emitScrollByThree": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.controller.loadUrl($rawfile('theScroll.html'));
               this.xNum = 0;
               this.yNum = -1717;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -132,21 +149,23 @@ struct webViewScrollBy {
                 } else {
                   console.log("emitScrollByThree runJavaScript.result: " + result);
                 }
-                Utils.emitEvent(result, 232)
+                Utils.emitEvent(result, 184530)
                 console.info("emitScrollByThree  res: " + result);
               })
               break;
             }
             case "emitScrollByFour": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 0;
               this.yNum = -3500;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -157,21 +176,24 @@ struct webViewScrollBy {
                 } else {
                   console.log("emitScrollByFour runJavaScript.result: " + result);
                 }
-                Utils.emitEvent(result, 234)
+                Utils.emitEvent(result, 184540)
                 console.info("emitScrollByFour  res: " + result);
               })
               break;
             }
             case "emitScrollByFive": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 1500;
               this.yNum = 0;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -187,21 +209,23 @@ struct webViewScrollBy {
                     this.res = false;
                   }
                 }
-                Utils.emitEvent(this.res, 236)
+                Utils.emitEvent(this.res, 184550)
                 console.info("emitScrollByFive  res: " + result);
               })
               break;
             }
             case "emitScrollBySix": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 4000;
               this.yNum = 0;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -217,21 +241,23 @@ struct webViewScrollBy {
                     this.res = false;
                   }
                 }
-                Utils.emitEvent(this.res, 238)
+                Utils.emitEvent(this.res, 184560)
                 console.info("emitScrollBySix  res: " + result);
               })
               break;
             }
             case "emitScrollBySeven": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = -4000;
               this.yNum = 0;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -242,21 +268,24 @@ struct webViewScrollBy {
                 } else {
                   console.log("emitScrollBySeven runJavaScript.result: " + result);
                 }
-                Utils.emitEvent(result, 240)
+                Utils.emitEvent(result, 184570)
                 console.info("emitScrollBySeven  res: " + result);
               })
               break;
             }
             case "emitScrollByEight": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = -1500;
               this.yNum = 0;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -267,21 +296,23 @@ struct webViewScrollBy {
                 } else {
                   console.log("emitScrollByEight runJavaScript.result: " + result);
                 }
-                Utils.emitEvent(result, 242)
+                Utils.emitEvent(result, 184580)
                 console.info("emitScrollByEight  res: " + result);
               })
               break;
             }
             case "emitScrollByNine": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'))
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 1500;
               this.yNum = 1717;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -297,21 +328,24 @@ struct webViewScrollBy {
                     this.res = false;
                   }
                 }
-                Utils.emitEvent(this.res, 244)
+                Utils.emitEvent(this.res, 184590)
                 console.info("emitScrollByNine  res: " + result);
               })
               break;
             }
             case "emitScrollByTen": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = 4000;
               this.yNum = 3500;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -328,21 +362,24 @@ struct webViewScrollBy {
                       this.res = false;
                     }
                   }
-                  Utils.emitEvent(this.res, 246)
+                  Utils.emitEvent(this.res, 184600)
                   console.info("emitScrollByTen  res: " + result);
                 })
               break;
             }
             case "emitScrollByEleven": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = -1500;
               this.yNum = -1717;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -353,23 +390,26 @@ struct webViewScrollBy {
                     return;
                   } else {
                     console.log("emitScrollByEleven runJavaScript.result: " + result);
-                    Utils.emitEvent(result, 248)
+                    Utils.emitEvent(result, 184610)
                   }
-                  Utils.emitEvent(result, 248)
+                  Utils.emitEvent(result, 184610)
                   console.info("emitScrollByEleven  res: " + result);
                 })
               break;
             }
             case "emitScrollByTwelve": {
+              this.isPageEnd = -1;
               this.controller.loadUrl('www.example.com')
-              await Utils.sleep(1000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('theScroll.html'));
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.xNum = -4000;
               this.yNum = -3500;
-              await Utils.sleep(1000);
               try {
                 this.controller.scrollBy(this.xNum, this.yNum);
-                await Utils.sleep(1000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -381,7 +421,7 @@ struct webViewScrollBy {
                   } else {
                     console.log("emitScrollByTwelve runJavaScript.result: " + result);
                   }
-                  Utils.emitEvent(result, 250)
+                  Utils.emitEvent(result, 184620)
                   console.info("emitScrollByTwelve  res: " + result);
                 })
               break;
@@ -391,6 +431,10 @@ struct webViewScrollBy {
       }
 
       Web({ src: $rawfile('theScroll.html'), controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

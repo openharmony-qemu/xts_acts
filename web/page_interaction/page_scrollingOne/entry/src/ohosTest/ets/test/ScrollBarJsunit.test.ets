@@ -17,11 +17,16 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON, MouseButton } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-let emitKey = "emitScrollBarKeep001"
+let emitKey = ""
+let tcName = ""
+const EVENT_ID_SET_SUITE_KEY = 184001;
+let driver = Driver.create();
 
 export default function ActsAceWebviewScrollBar() {
   describe('TEST_ScrollBar_Keep', () => {
@@ -37,14 +42,11 @@ export default function ActsAceWebviewScrollBar() {
         if (!("scrollBar" == pages.name)) {
           console.info("get scrollBar state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push scrollBar page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollBar page error: " + err);
       }
-      let driver: Driver = Driver.create();
-      await driver.waitForComponent(ON.id("webcomponentScrollBy"),10000);
       done()
     });
 
@@ -55,45 +57,35 @@ export default function ActsAceWebviewScrollBar() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      let driver: Driver = Driver.create();
-      await driver.waitForComponent(ON.id("webcomponentScrollBy"),10000);
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
       try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        };
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        };
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
+        await driver.waitForComponent(ON.id("webcomponentScrollBy"),10000);
+      }catch (e) {
+        const error = e as BusinessError;
+        console.error(`${emitKey} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
       }
-      await Utils.sleep(2000);
       done();
     })
-
-
 
     it('testScrollBarKeep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) => {
-      emitKey="emitScrollBarKeep001";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testScrollBarKeep001","BarState.Auto",20250701,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollBarKeep001';
+      tcName = 'testScrollBarKeep001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "BarState.Auto", 184010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     });
 
     it('testScrollBarKeep002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) =>{
-      emitKey="emitScrollBarKeep002";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testScrollBarKeep002","ScrollDirection.Vertical",20250702,done);
-      sendEventByKey('webcomponentScrollBy',10,'');
+      emitKey = 'emitScrollBarKeep002';
+      tcName = 'testScrollBarKeep002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, "ScrollDirection.Vertical", 184020, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentScrollBy", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     });
 
   })

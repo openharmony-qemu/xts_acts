@@ -16,8 +16,13 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 179301;
+let driver: Driver = Driver.create();
 
 export default function ScrollPage() {
 
@@ -33,7 +38,7 @@ export default function ScrollPage() {
         if (!("webTwo" == pages.name)) {
           console.info("get ScrollPage state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("scrollByToButton"), 10000);
           console.info("push ScrollPage page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,7 +52,6 @@ export default function ScrollPage() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -60,10 +64,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo001", "[0,0]", 100042, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo001", "[0,0]", 179310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo001");
+      await Utils.waitForExist(() => isReturn, "testScrollTo001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -75,10 +81,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo002", true, 100043, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo002", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo002", true, 179320, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo002");
+      await Utils.waitForExist(() => isReturn, "testScrollTo002" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -90,10 +98,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo003", "[0,100]", 100044, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo003", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo003", "[0,100]", 179330, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo003");
+      await Utils.waitForExist(() => isReturn, "testScrollTo003" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -105,10 +115,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo004", "[100,0]", 100045, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo004", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo004", "[100,0]", 179340, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo004");
+      await Utils.waitForExist(() => isReturn, "testScrollTo004" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -120,10 +132,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo005", true, 100046, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo005", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo005", true, 179350, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo005");
+      await Utils.waitForExist(() => isReturn, "testScrollTo005" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -135,10 +149,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo006", "[100,100]", 100047, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo006", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo006", "[100,100]", 179360, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo006");
+      await Utils.waitForExist(() => isReturn, "testScrollTo006" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -150,10 +166,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testScrollTo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testScrollTo007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScrollTo007", true, 100048, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testScrollTo007", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testScrollTo007", true, 179370, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testScrollTo007");
+      await Utils.waitForExist(() => isReturn, "testScrollTo007" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -165,10 +183,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testPageDown001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testPageDown001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageDown001", true, 100063, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testPageDown001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPageDown001", true, 179380, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testPageDown001");
+      await Utils.waitForExist(() => isReturn, "testPageDown001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -180,10 +200,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testPageDown002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testPageDown002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageDown002", true, 100064, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testPageDown002", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPageDown002", true, 179390, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testPageDown002");
+      await Utils.waitForExist(() => isReturn, "testPageDown002" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -195,10 +217,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testPageUp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testPageUp001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageUp001", true, 100065, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testPageUp001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPageUp001", true, 179400, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testPageUp001");
+      await Utils.waitForExist(() => isReturn, "testPageUp001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -210,10 +234,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testPageUp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testPageUp002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testPageUp002", true, 100066, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testPageUp002", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testPageUp002", true, 179410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testPageUp002");
+      await Utils.waitForExist(() => isReturn, "testPageUp002" + '_returnCheck', true, 1000);
+      done();
     })
     /*
     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SLIDESCROLL_0100
@@ -224,10 +250,12 @@ export default function ScrollPage() {
     * @tc.level      : Level 1
     */
     it('testSlideScroll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSlideScroll001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSlideScroll001", true, 100082, done);
-      sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
+      Utils.emitEvent("testSlideScroll001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testSlideScroll001", true, 179420, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "setPathAllowingUniversalAccessButton", "testSlideScroll001");
+      await Utils.waitForExist(() => isReturn, "testSlideScroll001" + '_returnCheck', true, 1000);
+      done();
     })
 
     

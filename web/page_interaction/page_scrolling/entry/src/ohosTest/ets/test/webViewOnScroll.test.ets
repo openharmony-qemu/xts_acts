@@ -18,10 +18,16 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = "emitOnscroll";
+let tcName = ''
+const EVENT_ID_SET_SUITE_KEY = 179901;
+let driver: Driver = Driver.create();
+
 export default function webViewOnScroll() {
   describe('ActsAceWebDevWbViewOnScrollTest', () =>{
     beforeAll(async  (done: Function) =>{
@@ -35,7 +41,7 @@ export default function webViewOnScroll() {
         if (!("webViewOnScroll" == pages.name)) {
           console.info("get webViewOnScroll state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("scrollByToButton"), 10000);
           console.info("push webViewOnScroll page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -49,28 +55,7 @@ export default function webViewOnScroll() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webViewOnScroll beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) =>{
-      console.info("webViewOnScroll afterEach start:" + emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -79,10 +64,15 @@ export default function webViewOnScroll() {
      *tc.desc onscroll after scrollby 100,100
      */
     it('testOnscroll',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitOnscrollAgain";
-      Utils.registerEvent("testOnscroll",100,312,done);
-      Utils.registerEvent("testOnscroll",100,314,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitOnscroll';
+      tcName = 'testOnscroll'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 100, 179910, () => { isReturn = true });
+      Utils.registerEvent(tcName, 100, 179920, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR3_API_0200
@@ -90,10 +80,15 @@ export default function webViewOnScroll() {
      *tc.desc onscroll after scrollby -100,-100
      */
     it('testOnscrollAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitpageDown";
-      Utils.registerEvent("testOnscrollAgain",50,316,done);
-      Utils.registerEvent("testOnscrollAgain",50,318,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitOnscrollAgain';
+      tcName = 'testOnscrollAgain'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 50, 179930, () => { isReturn = true });
+      Utils.registerEvent(tcName, 50, 179940, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_0400
@@ -101,9 +96,14 @@ export default function webViewOnScroll() {
      *tc.desc Go pageDown
      */
     it('testPageDown',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitpageUp";    
-      Utils.registerEvent("testPageDown",true,106,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitpageDown';
+      tcName = 'testPageDown'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 179950, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_0500
@@ -111,9 +111,14 @@ export default function webViewOnScroll() {
      *tc.desc Go pageUp
      */
     it('testPageUp',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitpageDownAgain";    
-      Utils.registerEvent("testPageUp",true,108,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitpageUp';
+      tcName = 'testPageUp'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 179960, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_0600
@@ -121,9 +126,14 @@ export default function webViewOnScroll() {
      *tc.desc Go PageDown Again
      */
     it('testPageDownAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitpageUpAgain";    
-      Utils.registerEvent("testPageDownAgain",true,110,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitpageDownAgain';
+      tcName = 'testPageDownAgain'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 179970, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_API_0700
@@ -131,9 +141,14 @@ export default function webViewOnScroll() {
      *tc.desc Go PageUp again
      */
     it('testPageUpAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitpageUpAgain";    
-      Utils.registerEvent("testPageUpAgain",true,112,done);
-      sendEventByKey('webViewOnScroll',10,'');
+      emitKey = 'emitpageUpAgain';
+      tcName = 'testPageUpAgain'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 179980, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webViewOnScroll", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

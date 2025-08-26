@@ -18,7 +18,10 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
-import { Driver } from '@ohos.UiTest';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 179801;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -40,18 +43,20 @@ struct webViewController {
   @State darkMode: WebDarkMode = WebDarkMode.Off
   @State forceDarkAccess: boolean = false
   @State userAgentPC:string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -60,6 +65,7 @@ struct webViewController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -69,6 +75,8 @@ struct webViewController {
       Row() {
         Button("WebViewController click").key('WebViewControllerButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
@@ -77,11 +85,11 @@ struct webViewController {
             case "testOnScroll001": {
               try {
                 this.controller.scrollTo(10, 10)
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.onScrollCallBack, 31022)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.onScrollCallBack, 179810)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31022)
+                Utils.emitEvent(error.code, 179810)
               }
               this.onScrollCallBack = false
               break;
@@ -91,11 +99,11 @@ struct webViewController {
               try {
                 this.onScrollCallBack = false
                 this.controller.scrollBy(100, 100)
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.onScrollCallBack, 100068)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.onScrollCallBack, 179820)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 100068)
+                Utils.emitEvent(error.code, 179820)
               }
               this.onScrollCallBack = false
               break;
@@ -104,14 +112,14 @@ struct webViewController {
             case "testOnScroll003": {
               try {
                 this.controller.scrollBy(100, 100)
-                await Utils.sleep(2000)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.onScrollCallBack = false
                 this.controller.scrollBy(-50, -50)
-                await Utils.sleep(2000)
-                Utils.emitEvent(this.onScrollCallBack, 100069)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.onScrollCallBack, 179830)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 100069)
+                Utils.emitEvent(error.code, 179830)
               }
               this.onScrollCallBack = false
               break;
@@ -119,64 +127,61 @@ struct webViewController {
 
             case "testOnOverScroll001": {
               try {
+                this.isPageEnd = -1
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
-                let driver = Driver.create();
                 await driver.swipe(X, Y - 60, X, Y + 60);
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.onOverScrollCallBack, 31038)
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                Utils.emitEvent(this.onOverScrollCallBack, 179840)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31038)
+                Utils.emitEvent(error.code, 179840)
               }
               break;
             }
 
             case "testOnOverScroll002": {
               try {
+                this.isPageEnd = -1
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
-                let driver = Driver.create();
                 await driver.swipe(X, Y + 230, X, Y - 200);
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.onOverScrollCallBack, 100034)
+                Utils.emitEvent(this.onOverScrollCallBack, 179850)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 100034)
+                Utils.emitEvent(error.code, 179850)
               }
               break;
             }
 
             case "testOnOverScroll003": {
               try {
+                this.isPageEnd = -1
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
-                let driver = Driver.create();
                 await driver.swipe(X + 60, Y, X - 60, Y);
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.onOverScrollCallBack, 100035)
+                Utils.emitEvent(this.onOverScrollCallBack, 179860)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 100035)
+                Utils.emitEvent(error.code, 179860)
               }
               break;
             }
 
             case "testOnOverScroll004": {
               try {
+                this.isPageEnd = -1
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
-                let driver = Driver.create();
                 await driver.swipe(X - 60, Y, X + 60, Y);
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.onOverScrollCallBack, 100036)
+                Utils.emitEvent(this.onOverScrollCallBack, 179870)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 100036)
+                Utils.emitEvent(error.code, 179870)
               }
               break;
             }
@@ -204,6 +209,8 @@ struct webViewController {
         .onPageEnd((event) => {
           if (event) {
             this.enterPageEnd = true
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           }
         })
         .onShowFileSelector((event) => {
