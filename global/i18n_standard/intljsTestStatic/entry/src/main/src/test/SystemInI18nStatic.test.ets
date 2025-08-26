@@ -238,7 +238,7 @@ export default function SystemIni18nTest() {
       console.log('i18n_system_test_static_1800 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
-    
+
     /* *
     * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1900
     * @tc.name    i18n_system_test_static_1900
@@ -256,7 +256,7 @@ export default function SystemIni18nTest() {
     * @tc.desc getSystemLanguages test
     */
     it('i18n_system_test_static_2200', Level.LEVEL2, async (): Promise<void> => {
-      let value = i18n.System.getSystemLanguages(); 
+      let value = i18n.System.getSystemLanguages();
       let len = value.length;
       console.log('i18n_system_test_static_2200 ' + len);
       expect(len > 0).assertTrue();
@@ -338,6 +338,17 @@ export default function SystemIni18nTest() {
       let region: string = i18n.System.getSystemRegion();
       hilog.info(domain, tag, '%{public}s', 'i18n_system_test_static_3300 ' + region);
       expect(region).assertInstanceOf('String');
+    })
+
+    /* *
+    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3400
+    * @tc.name    i18n_system_test_static_3400
+    * @tc.desc    check the getSystemLocaleInstance
+    */
+    it('i18n_system_test_static_3400', Level.LEVEL0, (): void => {
+      let locale: string = i18n.System.getSystemLocaleInstance().toString();
+      hilog.info(domain, tag, '%{public}s', 'i18n_system_test_static_3400 ' + locale);
+      expect(locale).assertInstanceOf('String');
     })
 
     /* *

@@ -14,7 +14,9 @@
  */
 import FivePointOne_i18nStageTest from "./FivePointOneI18nStageStatic.test";
 import i18nStageTest from "./I18nStageStatic.test";
+import styledNumberFormatTest from "./StyledNumberFormat.test";
 export default function testsuite() {
     FivePointOne_i18nStageTest();
     i18nStageTest();
+    styledNumberFormatTest();
 }
