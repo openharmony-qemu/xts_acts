@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
 import { JsProxyObject } from '../../test/Interfaces';
 import { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -27,10 +28,12 @@ struct PrecompileJavaScriptTest {
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ""
   @State javaScriptAccess: boolean = true;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 120060,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -38,7 +41,7 @@ struct PrecompileJavaScriptTest {
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(120060)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,6 +50,7 @@ struct PrecompileJavaScriptTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -66,7 +70,10 @@ struct PrecompileJavaScriptTest {
     Column() {
       Row() {
         Button("precompileJavaScriptTest click").key('precompileJavaScriptTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await waitForExist(()=>this.isReceive, this.str, 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "testPrecompileJavaScript002": {
               let msg = "testPrecompileJavaScript002"
@@ -81,7 +88,7 @@ struct PrecompileJavaScriptTest {
                 console.info(msg + " precompile result: " + res);
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
-                Utils.emitEvent(err, 10093)
+                Utils.emitEvent(err, 120070)
               })
               break;
             }
@@ -98,7 +105,7 @@ struct PrecompileJavaScriptTest {
                 console.info(msg + " precompile result: " + res);
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
-                Utils.emitEvent(err, 10094)
+                Utils.emitEvent(err, 120080)
               })
               break;
             }
@@ -115,7 +122,7 @@ struct PrecompileJavaScriptTest {
                 console.info(msg + " precompile result: " + res);
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
-                Utils.emitEvent(err, 10095)
+                Utils.emitEvent(err, 120090)
               })
               break;
             }
@@ -130,7 +137,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10098)
+                Utils.emitEvent(res, 120100)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -147,7 +154,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10099)
+                Utils.emitEvent(res, 120110)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -170,7 +177,7 @@ struct PrecompileJavaScriptTest {
                 })
               } catch (error) {
                 console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 10100)
+                Utils.emitEvent(error.code, 120120)
               }
               break;
             }
@@ -191,7 +198,7 @@ struct PrecompileJavaScriptTest {
                 })
               } catch (error) {
                 console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 10101)
+                Utils.emitEvent(error.code, 120130)
               }
               break;
             }
@@ -200,7 +207,7 @@ struct PrecompileJavaScriptTest {
               this.controller.precompileJavaScript('https://exmaple.com/example.js', 'hawe', undefined)
                 .then((res) => {
                   console.info(msg + " precompile result: " + res);
-                  Utils.emitEvent(res, 10103)
+                  Utils.emitEvent(res, 120140)
                 })
                 .catch((err: number) => {
                   console.error(msg + " precompile error: " + err);
@@ -218,7 +225,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10104)
+                Utils.emitEvent(res, 120150)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -235,7 +242,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10105)
+                Utils.emitEvent(res, 120160)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -252,7 +259,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10106)
+                Utils.emitEvent(res, 120170)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -269,7 +276,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10107)
+                Utils.emitEvent(res, 120180)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -286,7 +293,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10108)
+                Utils.emitEvent(res, 120190)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -303,7 +310,7 @@ struct PrecompileJavaScriptTest {
                 ]
               }).then((res) => {
                 console.info(msg + " precompile result: " + res);
-                Utils.emitEvent(res, 10109)
+                Utils.emitEvent(res, 120200)
               }).catch((err: number) => {
                 console.error(msg + " precompile error: " + err);
               })
@@ -324,7 +331,7 @@ struct PrecompileJavaScriptTest {
                   console.info(msg + " precompile result: " + res);
                 }).catch((err: number) => {
                   console.error(msg + " precompile error: " + err);
-                  Utils.emitEvent(err, 10110)
+                  Utils.emitEvent(err, 120210)
                 })
               }).catch((err: BusinessError) => {
                 console.error(`${msg} getRawFileContent ErrorCode: ${err.code},  Message: ${err.message}`);
@@ -342,6 +349,9 @@ struct PrecompileJavaScriptTest {
           name: "backToEts",
           methodList: ["test", "toString"],
           controller: this.controller
+        })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
         })
 
     }
