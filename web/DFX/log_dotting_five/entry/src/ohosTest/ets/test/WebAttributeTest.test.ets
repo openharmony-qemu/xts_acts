@@ -16,6 +16,7 @@
 import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { waitForComponent } from './WaitTest';
 
 export default function webAttributeTest() {
   describe('WebAttributeTest', () => {
@@ -30,12 +31,12 @@ export default function webAttributeTest() {
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
+      await waitForComponent("WebAttributeTestButton");
       done()
     });
 
@@ -48,9 +49,8 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnConsole001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnConsole001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnConsole001", "console test", 70040, done);
+      Utils.emitEvent("emitOnConsole001", 119060)
+      Utils.registerEvent("testOnConsole001", "console test", 119070, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
@@ -63,11 +63,10 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testConsoleMessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitConsoleMessage001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConsoleMessage001", 51, 70042, done);
-      Utils.registerEvent("testConsoleMessage001", 'resource://rawfile/index.html', 70044, done);
-      Utils.registerEvent("testConsoleMessage001", MessageLevel.Info, 70046, done);
+      Utils.emitEvent("emitConsoleMessage001", 119060)
+      Utils.registerEvent("testConsoleMessage001", 51, 119080, done);
+      Utils.registerEvent("testConsoleMessage001", 'resource://rawfile/index.html', 119090, done);
+      Utils.registerEvent("testConsoleMessage001", MessageLevel.Info, 119100, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
   })

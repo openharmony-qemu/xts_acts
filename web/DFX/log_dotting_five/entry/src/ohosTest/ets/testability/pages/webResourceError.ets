@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -27,17 +28,19 @@ struct webResourceError {
     "(KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State errorInfo: string = ''
   @State errorCode: number = 0
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 120010,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(120010)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +49,7 @@ struct webResourceError {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -54,14 +58,18 @@ struct webResourceError {
     Column() {
       Row() {
         Button("WebResourceError click").key('WebResourceErrorButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isReceive, 'WebResourceErrorButtonIsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, 'WebResourceErrorButtonIsPageEnd', 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "testGetErrorCode001": {
               try {
                 this.errorCode = 0
+                this.isPageEnd = -1;
                 this.controller.loadUrl('https://wrong.host.badssl.com');
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.errorCode, 36022)
+                await waitForExist(()=>this.isPageEnd, 'WebResourceErrorButtonIsPageEnd', 0);
+                Utils.emitEvent(this.errorCode, 120020)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -82,6 +90,9 @@ struct webResourceError {
             this.errorCode = event.error.getErrorCode();
             console.log(`errorCode is: ${this.errorCode}`);
           }
+        })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
         })
 
     }

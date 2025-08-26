@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -24,18 +25,20 @@ struct setPathAllowingUniversalAccess {
   @State str: string = ""
   @State checkResult: number = 0;
   controller: webView.WebviewController = new webView.WebviewController();
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 119030,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(119030)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -44,6 +47,7 @@ struct setPathAllowingUniversalAccess {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -52,7 +56,10 @@ struct setPathAllowingUniversalAccess {
     Column() {
       Row() {
         Button("setPathAllowingUniversalAccess").key('setPathAllowingUniversalAccessButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await waitForExist(()=>this.isReceive, 'setPathAllowingUniversalAccessButtonIsReceive', 0);
+          //await waitForExist(()=>this.isPageEnd, 'setPathAllowingUniversalAccessButtonIsPageEnd', 0);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "setPathAllowingUniversalAccess0200": {
               try {
@@ -64,7 +71,7 @@ struct setPathAllowingUniversalAccess {
                 console.log(getContext().resourceDir)
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 9471)
+                Utils.emitEvent(error.code, 119040)
               }
               break;
             }
@@ -78,7 +85,7 @@ struct setPathAllowingUniversalAccess {
                 console.log(getContext().resourceDir)
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 9472)
+                Utils.emitEvent(error.code, 119050)
               }
               break;
             }
@@ -92,6 +99,9 @@ struct setPathAllowingUniversalAccess {
         .javaScriptAccess(true)
         .fileAccess(true)
         .domStorageAccess(true)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }

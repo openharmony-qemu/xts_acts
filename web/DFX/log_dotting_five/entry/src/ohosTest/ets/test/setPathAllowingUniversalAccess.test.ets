@@ -16,6 +16,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -33,12 +34,12 @@ export default function setPathAllowingUniversalAccess() {
         if (!("webTwo" == pages.name)) {
           console.info("get setPathAllowingUniversalAccess state success " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
-          await Utils.sleep(2000);
           console.info("push setPathAllowingUniversalAccess page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setPathAllowingUniversalAccess page error: " + err);
       }
+      await waitForComponent("setPathAllowingUniversalAccessButton");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -47,7 +48,6 @@ export default function setPathAllowingUniversalAccess() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,9 +61,8 @@ export default function setPathAllowingUniversalAccess() {
     * @tc.level      : Level 1
     */
     it('setPathAllowingUniversalAccess0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("setPathAllowingUniversalAccess0200", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("setPathAllowingUniversalAccess0200", '401', 9471, done);
+      Utils.emitEvent("setPathAllowingUniversalAccess0200", 119030)
+      Utils.registerEvent("setPathAllowingUniversalAccess0200", '401', 119040, done);
       sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
     })
 
@@ -76,9 +75,8 @@ export default function setPathAllowingUniversalAccess() {
     * @tc.level      : Level 1
     */
     it('setPathAllowingUniversalAccess0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("setPathAllowingUniversalAccess0300", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("setPathAllowingUniversalAccess0300", '401', 9472, done);
+      Utils.emitEvent("setPathAllowingUniversalAccess0300", 119030)
+      Utils.registerEvent("setPathAllowingUniversalAccess0300", '401', 119050, done);
       sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
     })
 
