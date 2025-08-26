@@ -181,6 +181,10 @@ export default function avRecorderTest() {
       avRecorder.on('stateChange', (state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
+      // 录制监听回调函数
+      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+        console.info(TAG + 'audioCapturerChange');
+      });
       // 错误上报回调函数
       avRecorder.on('error', (err: BusinessError|null) => {
         try {
@@ -2047,6 +2051,26 @@ export default function avRecorderTest() {
       done();
     })
 
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
+        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
+        * @tc.desc      : Recorder audio create->getAVRecorderConfig
+        *               : 001.test create->getAVRecorderConfig
+        * @tc.size      : MediumTest
+        * @tc.type      : Reliabilit test
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      expect(fdObject != undefined).assertTrue();
+      commonFun.avRecorderReliabilitTestCallback39(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001 end');
+      done();
+    })
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002
         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002

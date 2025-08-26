@@ -19,6 +19,7 @@ import resourceManager from '@ohos.resourceManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import image from "@ohos.multimedia.image";
 import { BusinessError } from '@ohos.base';
+import fs, {ReadOptions} from '@ohos.file.fs';
 
 const AUDIO_SOURCE = 'mjpeg_mp3.mp3';
 const VIDEO_SOURCE = 'H264_AAC_Matedata.mp4';
@@ -964,6 +965,81 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, hdrType: ${metadata!!.hdrType}`);
+        avMetadataExtractor!!.release();
+      }).catch((error: Error) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+
+    /* *
+     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_LOCATION_PROMISE_FUNCTION_static_1900
+     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_LOCATION_PROMISE_FUNCTION_static_1900
+     * @tc.desc      : Local Video playback control test
+     *               : 001.testAVMeta location
+     * @tc.size      : MediumTest
+     * @tc.type      : Function Test
+     * @tc.level     : Level0
+        */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_LOCATION_PROMISE_FUNCTION_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('AVMetadataExtractor success');
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
+        expect(metadata).not().assertNull();
+        let location = metadata!!.location;
+        console.info(TAG, `fetchMetadata callback success, latitude: ${location?.latitude}`);
+        console.info(TAG, `fetchMetadata callback success, longitude: ${location?.longitude}`);
+        avMetadataExtractor!!.release();
+      }).catch((error: Error) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+
+    /* *
+     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATASRC_PROMISE_FUNCTION_static_2000
+     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATASRC_PROMISE_FUNCTION_static_2000
+     * @tc.desc      : Local Video playback control test
+     *               : 001.testAVMeta dataSrc
+     * @tc.size      : MediumTest
+     * @tc.type      : Function Test
+     * @tc.level     : Level0
+    */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATASRC_PROMISE_FUNCTION_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('AVMetadataExtractor success');
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success');
+      let stat = fs.statSync(AVFileDescriptor.fd);
+      let size = stat.size;
+      let dataSrc: media.AVDataSrcDescriptor = {
+        fileSize: size,
+        callback: (buffer: ArrayBuffer, len: long, pos?: long) => {
+          if (buffer == undefined || len == undefined || pos == undefined) {
+            console.error(TAG, `dataSrc callback param invalid`);
+            return -1;
+          }
+          let options: ReadOptions = {
+            offset: pos,
+            length: len
+          };
+          let num = fs.readSync(AVFileDescriptor.fd, buffer, options);
+          console.info(TAG, 'readAt end, num: ' + num);
+          if (num > 0 && size >= pos) {
+            return num.toInt();
+          }
+          return -1;
+        }
+      };
+      avMetadataExtractor!!.dataSrc = dataSrc;
+      // 获取元信息
+      await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
+        expect(metadata).not().assertNull();
+        console.info(TAG, `fetchMetadata callback success, customInfo: ${metadata}`);
         avMetadataExtractor!!.release();
       }).catch((error: Error) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);

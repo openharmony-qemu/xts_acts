@@ -233,5 +233,64 @@ export default function AVPlayerAudioEffectModeTest() {
       console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_666")
       setSource(avPlayer!, fileDescriptor);
     });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
+        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
+        * @tc.desc      : test get max amplitude
+        *               : 001.test get max amplitude
+        * @tc.size      : MediumTest
+        * @tc.type      : performance test
+        * @tc.level     : Level3
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
+      await media.createAVPlayer().then((video: media.AVPlayer | undefined) => {
+        if (typeof (video) != 'undefined') {
+          avPlayer = video;
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }).catch(mediaTestBase.catchCallback);
+      avPlayer?.on('stateChange', (state, reason) => {
+        switch (state) {
+          case INITIALIZED:
+              if (!avPlayer) {
+                  console.info(`avPlayer is: null`);
+                  break;
+              }
+            avPlayer!!.surfaceId = globalThis.value;
+            avPlayer!!.prepare();
+            break;
+          case PREPARED:
+              if (!avPlayer) {
+                  console.info(`avPlayer is: null`);
+                  break;
+              }
+            avPlayer!!.play();
+            break;
+          case PLAYING:
+            avPlayer?.release();
+            break;
+          case RELEASED:
+            avPlayer?.off('amplitudeUpdate')
+            avPlayer = null;
+            done();
+            break;
+          default:
+            break;
+        }
+      });
+      avPlayer?.on('amplitudeUpdate', (value) => {
+        console.info(`get max amplitude ${value}`);
+        expect(value.length).assertEqual(5);
+      });
+      avPlayer?.on('error', (err) => {
+        console.error(`error occurred, message is ${err.message}`);
+        expect().assertFail();
+        avPlayer?.release();
+      });
+      setSource(avPlayer!, fileDescriptor);
+    });
   })
 }
