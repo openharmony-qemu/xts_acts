@@ -15,18 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/hisec/.ohos/config/openharmony/default_js_api_test_oh40_static_ZB0BaOG-6bobu-Rk-G7bTeBLNRSGwGXYdEYKExWJUSc=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001AD2E6C9432A872117A3BC4D5F28BEB721A320C7AD478B28AEEC669886503204A2E52F1CB941DD",
-          "profile": "C:/Users/hisec/.ohos/config/openharmony/default_js_api_test_oh40_static_ZB0BaOG-6bobu-Rk-G7bTeBLNRSGwGXYdEYKExWJUSc=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/hisec/.ohos/config/openharmony/default_js_api_test_oh40_static_ZB0BaOG-6bobu-Rk-G7bTeBLNRSGwGXYdEYKExWJUSc=.p12",
-          "storePassword": "0000001AD94F00E7D93992B85EC35BA27BDA254CF2AEBE4BD7A758730AD94FD377297C109F0029B435EA"
-        }
-      }
     ],
     "products": [
       {
