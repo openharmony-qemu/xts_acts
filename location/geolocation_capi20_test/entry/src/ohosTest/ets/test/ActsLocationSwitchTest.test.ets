@@ -86,12 +86,12 @@ export default function ActsLocationSwitchTest() {
     )
 
     afterAll(async (done: Function) => {
-      if (deviceTypeInfo == 'default') {
-        LocationSwitchOn()
-      } else if (deviceTypeInfo == 'phone') {
-        LocationSwitchOnPhone()
-      }
       setTimeout(() => {
+        if (deviceTypeInfo == 'default') {
+         LocationSwitchOn()
+        } else if (deviceTypeInfo == 'phone') {
+          LocationSwitchOnPhone()
+        }
         done()
       }, 5000)
     })
