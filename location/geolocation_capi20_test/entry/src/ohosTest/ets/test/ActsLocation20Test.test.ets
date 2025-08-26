@@ -57,7 +57,6 @@ export default function ActsLocation20Test() {
       let permissions: Permissions[] = ['ohos.permission.APPROXIMATELY_LOCATION', "ohos.permission.LOCATION"];
       let atManager = abilityAccessCtrl.createAtManager();
       atManager.requestPermissionsFromUser(getContext(), permissions).then(async (data) => {
-        if (data.authResults[0] == 0) {
           if (deviceTypeInfo == 'default') {
             LocationSwitchOn()
           } else if (deviceTypeInfo == 'phone') {
@@ -66,9 +65,6 @@ export default function ActsLocation20Test() {
           setTimeout(() => {
             done()
           }, 2000)
-        } else {
-          atManager.requestPermissionOnSetting(getContext(), permissions)
-        }
       })
       let text: Component = await driver.findComponent(ON.text('允许本次使用'));
       if (deviceTypeInfo == 'default') {
