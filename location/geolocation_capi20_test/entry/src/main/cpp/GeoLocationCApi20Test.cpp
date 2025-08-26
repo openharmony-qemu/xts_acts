@@ -63,7 +63,7 @@ static napi_value OH_Location_StartLocating1(napi_env env, napi_callback_info in
     OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, nullptr);
     OH_LocationRequestConfig_SetInterval(config, 1);
     Location_ResultCode startCode = OH_Location_StartLocating(config);
-    sleep(SleepTime);
+    sleep(g_sleepTime);
     Location_ResultCode qaz = OH_Location_StopLocating(config);
     napi_value result = nullptr;
     napi_create_int32(env, startCode, &result);
@@ -78,10 +78,10 @@ static napi_value OH_Location_StartLocating2(napi_env env, napi_callback_info in
 }
 static napi_value OH_Location_StopLocating1(napi_env env, napi_callback_info info)
 {
-    sleep(SleepTime);
+    sleep(g_sleepTime);
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
     OH_Location_StartLocating(config);
-    sleep(SleepTime);
+    sleep(g_sleepTime);
     Location_ResultCode stopCode = OH_Location_StopLocating(config);
     napi_value result = nullptr;
     napi_create_int32(env, stopCode, &result);
