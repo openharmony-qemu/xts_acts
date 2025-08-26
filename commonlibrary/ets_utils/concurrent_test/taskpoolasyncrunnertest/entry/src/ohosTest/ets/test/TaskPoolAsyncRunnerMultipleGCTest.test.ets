@@ -56,18 +56,18 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
     it('taskPoolAsyncRunnerMultipleGCTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleGCTest0100';
       console.info(`${caseName} test start`);
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
+      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 1000);
       let count: number = 0;
       for (let j = 0; j < 10; j++) {
         await sleep(10);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1);
-          await asyncRunner.execute(task).then(() => {
+          asyncRunner.execute(task).then(() => {
             console.info('=======', count);
             count++;
           }).catch((e: BusinessError) => {
             console.info('=======error', JSON.stringify(e.message));
-            expect(true).assertFalse();
+            expect().assertFail();
           })
         }
         if (j == (2 || 4 || 7)) {

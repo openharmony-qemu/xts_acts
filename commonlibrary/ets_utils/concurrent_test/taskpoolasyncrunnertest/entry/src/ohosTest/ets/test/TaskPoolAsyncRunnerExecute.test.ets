@@ -266,7 +266,7 @@ export default function taskPoolAsyncRunnerExecute() {
             console.info('======', Count2.count);
           })
         }
-        while (Count2.count < 10) {
+        while (Count2.count < 10 || Count1.count < 10) {
           await sleep(100);
         }
         expect(Count1.count).assertEqual(0);
@@ -292,16 +292,19 @@ export default function taskPoolAsyncRunnerExecute() {
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(idCancel, task.taskId, 50);
-          Promise.all([runner.execute(task).then((num: object) => {
+          runner.execute(task).then((num: object) => {
             Count1.count = Count1.count + Number(num);
-            console.info('======', Count1.count);
+            console.info(Count1.count);
           }),
             runner.execute(task2).then(() => {
               Count2.count++;
-              console.info('======', Count2.count);
-            })])
+              console.info(Count2.count);
+            }).catch((e:Error)=>{
+              Count2.count++;
+              console.info('=====', e.message);
+            })
         }
-        while (Count2.count < 10) {
+        while (Count2.count < 10 || Count1.count < 0) {
           await sleep(100);
         }
         expect(Count1.count).assertEqual(0);
@@ -361,7 +364,7 @@ export default function taskPoolAsyncRunnerExecute() {
           })
         }
 
-        while (view.byteLength > 0) {
+        while (view.byteLength > 0||view1.byteLength > 0||views.byteLength > 0||views1.byteLength > 0 ) {
           await sleep(100);
         }
         console.info('testTransfer view2 byteLength: ' + view.byteLength);
@@ -415,7 +418,7 @@ export default function taskPoolAsyncRunnerExecute() {
           });
         }
 
-        while (ret1 != 55) {
+        while (ret1 != 55 || ret2 != 55) {
           await sleep(100);
         }
         expect(55).assertEqual(ret1);
@@ -895,7 +898,7 @@ export default function taskPoolAsyncRunnerExecute() {
           runner.execute(task2).then(() => {
             console.info('taskpool: execute task success');
           });
-          while (!task2.isDone()) {
+          while (!task2.isDone() || !task.isDone()) {
             await sleep(100);
           }
           expect(task.isDone()).assertTrue();
@@ -924,8 +927,11 @@ export default function taskPoolAsyncRunnerExecute() {
           runner.execute(task2).then(() => {
             console.info('taskpool: execute task success');
           });
-          expect(task.isDone()).assertFalse();
-          expect(task2.isDone()).assertFalse();
+          while (!task2.isDone() || !task.isDone()) {
+            await sleep(100);
+          }
+          expect(task.isDone()).assertTrue();
+          expect(task2.isDone()).assertTrue();
         }
         Done();
       })

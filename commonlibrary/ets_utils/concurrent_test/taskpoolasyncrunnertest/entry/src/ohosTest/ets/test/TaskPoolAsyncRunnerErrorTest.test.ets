@@ -91,7 +91,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
               Count2.count++;
@@ -134,7 +134,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               console.log(`${tag} ${Count1.count}: then ${task1.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} ${Count2.count}: then ${task2.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
               Count2.count++;
@@ -197,7 +197,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
             });
           } catch (e) {
@@ -258,7 +258,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
             })
           } catch (e) {
@@ -319,7 +319,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
           } catch (e) {
@@ -380,7 +380,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
             })
           } catch (e) {
@@ -441,7 +441,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
               console.log(`${tag} then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
-            await asyncRunner.execute(task2).catch((err: BusinessError) => {
+            asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
             })
           } catch (e) {
@@ -488,7 +488,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 Count1.count++;
               }
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               try {
                 console.info('dependency: second task1 success');
                 let s: string[] = [];
@@ -545,7 +545,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 Count1.count++;
               }
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: string) => {
               try {
@@ -605,7 +605,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 Count1.count++;
               }
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: string) => {
               console.error('taskpool test occur error: ' + err);
@@ -660,7 +660,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               Count1.count++;
             });
             ;
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -708,7 +708,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               Count1.count++;
             });
             ;
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -756,7 +756,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               Count1.count++;
             });
             ;
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -804,7 +804,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               Count1.count++;
             });
             ;
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -851,7 +851,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in task execution.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -898,7 +898,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in then callback.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -945,7 +945,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in then callback.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -992,7 +992,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in finally callback.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -1039,7 +1039,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in setTimeout callback.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -1086,7 +1086,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in async operation.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).then(() => {
+            asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
@@ -1138,7 +1138,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }
             work.postMessage('2');
           });
-          await asyncRunner.execute(task2).then(() => {
+          asyncRunner.execute(task2).then(() => {
             let work = new worker.ThreadWorker('../testability/pages/workers/Worker.ets');
             work.onerror = (e: ErrorEvent): void => {
               try {
@@ -1193,7 +1193,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }
             work.postMessage('1');
           });
-          await asyncRunner.execute(task2).then(() => {
+          asyncRunner.execute(task2).then(() => {
             let work = new worker.ThreadWorker('../testability/pages/workers/Worker.ets');
             work.onmessage = (e: MessageEvents): void => {
               try {
@@ -1241,7 +1241,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               console.error(`${Count1.count}_taskpool test occur error: ` + JSON.stringify(err));
               expect(err.message).assertContain('Error: Simulated error in task execution.');
             });
-            await asyncRunner.execute(task2).catch((err: Error) => {
+            asyncRunner.execute(task2).catch((err: Error) => {
               console.error(`${Count2.count}_taskpool test occur error: ` + JSON.stringify(err));
               Count2.count++;
               expect(err.message).assertContain('Error: Simulated error in task execution.');
@@ -1283,7 +1283,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             expect(err.message).assertContain('Simulated error in then execution.');
             Count1.count++;
           });
-          await asyncRunner.execute(task2).catch((err: Error) => {
+          asyncRunner.execute(task2).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in then execution.');
             Count2.count++;
@@ -1323,7 +1323,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               expect(err.message).assertContain('Simulated error in catch execution.');
               Count1.count++;
             });
-            await asyncRunner.execute(task2).catch((err: Error) => {
+            asyncRunner.execute(task2).catch((err: Error) => {
               console.error('taskpool test occur error: ' + err.message);
               expect(err.message).assertContain('Simulated error in catch execution.');
               Count2.count++;
@@ -1365,7 +1365,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             expect(err.message).assertContain('Simulated error in finally execution.');
             Count1.count++;
           });
-          await asyncRunner.execute(task2).catch((err: Error) => {
+          asyncRunner.execute(task2).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in finally execution.');
             Count2.count++;

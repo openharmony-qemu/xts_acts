@@ -272,7 +272,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task2);
 
         }
-        while (count < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -309,7 +309,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           });
 
         }
-        while (count < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -350,7 +350,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           });
 
         }
-        while (count < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -382,11 +382,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           }).catch(() => {
             count2++;
           });
-          await asyncRunner.execute(task2).then(() => {
+          asyncRunner.execute(task2).then(() => {
             count++;
           });
         }
-        while (count < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -421,7 +421,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -463,12 +463,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
             Count1.count = Count1.count + Number(num);
             console.info('taskpool: execute task success');
           });
-          await asyncRunner.execute(task2).then((num: object) => {
+          asyncRunner.execute(task2).then((num: object) => {
             Count2.count = Count2.count + Number(num);
             console.info('taskpool: execute task success');
           });
         }
-        while (Count1.count < 10) {
+        while (Count1.count < 10 ||Count2.count < 10||count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -513,12 +513,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
             count++;
             console.info('taskpool: execute task fail');
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
             console.info('taskpool: execute task fail');
           });
         }
-        while (count2 < 20) {
+        while (count2 < 20 || count < 20) {
           await sleep(100);
         }
         expect(20).assertEqual(count);
@@ -548,13 +548,13 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then((num) => {
             count += Number(num);
           });
-          await asyncRunner.execute(task2).catch((e: BusinessError) => {
+          asyncRunner.execute(task2).catch((e: BusinessError) => {
             console.info('=====', e.message)
             expect(e.message).assertContain('Cannot read property split of undefined')
             count2++;
           })
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -584,11 +584,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -618,11 +618,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -652,11 +652,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+           asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -686,11 +686,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -720,11 +720,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -754,11 +754,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -787,11 +787,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then((num) => {
             count += Number(num);
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count < 10) {
+        while (count < 10 || count2 < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -821,11 +821,11 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).catch(() => {
+          asyncRunner.execute(task2).catch(() => {
             count2++;
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);

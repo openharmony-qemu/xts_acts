@@ -68,7 +68,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).then(() => {
+          asyncRunner.execute(task2).then(() => {
             let work = new worker.ThreadWorker('../testability/pages/workers/Worker.ets');
             work.onerror = (e: ErrorEvent): void => {
               console.info('======e.message', e.message);
@@ -78,7 +78,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             work.postMessage('2');
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -107,7 +107,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
           asyncRunner.execute(task).then(() => {
             count++;
           });
-          await asyncRunner.execute(task2).then(() => {
+          asyncRunner.execute(task2).then(() => {
             let work = new worker.ThreadWorker('../testability/pages/workers/Worker.ets');
             work.onmessage = (e: MessageEvents): void => {
               console.info('======e.message', e.data);
@@ -122,7 +122,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             work.postMessage('1');
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -152,13 +152,13 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             console.info('======1');
             count++;
           });
-          await asyncRunner.execute(task2).catch((e: BusinessError) => {
+          asyncRunner.execute(task2).catch((e: BusinessError) => {
             expect(e.message).assertContain('Cannot read property split of undefined')
             count2++;
             console.info('======2', count2, e.message);
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -188,13 +188,13 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             console.info('======1');
             count++;
           });
-          await asyncRunner.execute(task2).catch((e: BusinessError) => {
+          asyncRunner.execute(task2).catch((e: BusinessError) => {
             expect(e.message).assertContain('Cannot read property split of undefined');
             count2++;
             console.info('======2', count2, e.message);
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -224,13 +224,13 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             console.info('======1');
             count++;
           });
-          await asyncRunner.execute(task2).catch((e: BusinessError) => {
+          asyncRunner.execute(task2).catch((e: BusinessError) => {
             expect(e.message).assertContain('Cannot read property split of undefined');
             count2++;
             console.info('======2', count2, e.message);
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -259,13 +259,13 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
             console.info('======1');
             count++;
           });
-          await asyncRunner.execute(task2).catch((e: BusinessError) => {
+          asyncRunner.execute(task2).catch((e: BusinessError) => {
             expect(e.message).assertContain('Cannot read property split of undefined');
             count2++;
             console.info('======2', count2, e.message);
           });
         }
-        while (count2 < 10) {
+        while (count2 < 10 || count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
