@@ -337,23 +337,23 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         CountBol1.count = false;
         CountBol2.count = true;
+        const promises: Promise<[void, void]>[] = [];
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printBoolean1, false);
           let task2: taskpool.Task = new taskpool.Task(printBoolean2, true);
-          asyncRunner.execute(task).then((num: object) => {
+          const promise = Promise.all([
+            asyncRunner.execute(task).then((num: object) => {
             CountBol1.count = Boolean(num);
             console.info('======', CountBol1.count);
-          });
-          await sleep(100);
+          }),
           asyncRunner.execute(task2).then((num: object) => {
             CountBol2.count = Boolean(num);
             console.info('======', CountBol2.count);
-          });
+          })
+          ])
+          promises.push(promise);
         }
-
-        while (CountBol1.count !== false || CountBol2.count !== true) {
-          await sleep(100);
-        }
+        await Promise.all(promises);
         expect(false).assertEqual(CountBol1.count);
         expect(true).assertEqual(CountBol2.count);
         CountBol1.count = false;
