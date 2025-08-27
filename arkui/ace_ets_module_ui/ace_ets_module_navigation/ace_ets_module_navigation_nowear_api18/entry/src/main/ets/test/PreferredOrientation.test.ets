@@ -17,9 +17,35 @@ import CommonFunc from '../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { display } from '@kit.ArkUI';
+import window from '@ohos.window';
+import ohosWindow from '@ohos.window';
 
 export default function PreferredOrientation() {
   describe('PreferredOrientation', () => {
+    let isSupportRotate = false;
+    let windowStage: ohosWindow.WindowStage;
+    beforeAll(async () => {
+      windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
+      let windowClass = windowStage.getMainWindowSync();
+      //查看设备是否支持旋转: isSupportRotate == true 支持; isSupportRotate == false 不支持
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
+      await CommonFunc.sleep(1000);
+      let Orientation1 = display.getDefaultDisplaySync().orientation;
+      await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+      await CommonFunc.sleep(1000);
+      let Orientation2 = display.getDefaultDisplaySync().orientation;
+      if(Orientation1 != Orientation2){
+        isSupportRotate = true;
+      }else{
+        isSupportRotate = false;
+      }
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+      await CommonFunc.sleep(1000);
+      console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+
+    })
+
     beforeEach(async (done: Function) => {
       console.info('PreferredOrientation beforeEach start');
       let options: router.RouterOptions = {
@@ -56,7 +82,7 @@ export default function PreferredOrientation() {
      */
     it('PreferredOrientation_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0100 START');
-      if (globalThis.winLeft == 0) {
+      if (globalThis.winLeft == 0 && isSupportRotate) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
         await driver.delayMs(500);
@@ -82,7 +108,7 @@ export default function PreferredOrientation() {
      */
     it('PreferredOrientation_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0200 START');
-      if (globalThis.winLeft == 0) {
+      if (globalThis.winLeft == 0 && isSupportRotate) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
         await driver.delayMs(500);
@@ -114,7 +140,7 @@ export default function PreferredOrientation() {
      */
     it('PreferredOrientation_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0300 START');
-      if (globalThis.winLeft == 0) {
+      if (globalThis.winLeft == 0 && isSupportRotate) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
         await driver.delayMs(500);
@@ -151,7 +177,7 @@ export default function PreferredOrientation() {
      */
     it('PreferredOrientation_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0400 START');
-      if (globalThis.winLeft == 0) {
+      if (globalThis.winLeft == 0 && isSupportRotate) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
         await driver.delayMs(500);
@@ -182,7 +208,7 @@ export default function PreferredOrientation() {
      */
     it('PreferredOrientation_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0500 START');
-      if (globalThis.winLeft == 0) {
+      if (globalThis.winLeft == 0 && isSupportRotate) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
         await driver.delayMs(500);
