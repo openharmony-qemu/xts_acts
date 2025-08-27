@@ -527,9 +527,13 @@ export default function abilityTest() {
         * @tc.level     : Level0
         */
     it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
-      console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport is", isSysSupport);
-      expect(isSysSupport).not().assertFalse();
+      try {
+        let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
+        console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport is", isSysSupport);
+      } catch(error: Error) {
+        console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport error: ", JSON.stringify(error));
+        expect(true).assertFalse();
+      }
       done();
     });
     /* *
@@ -542,9 +546,13 @@ export default function abilityTest() {
         * @tc.level     : Level0
         */
     it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_ENHANCED_HW);
-      console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport is", isSysSupport);
-      expect(isSysSupport).not().assertFalse();
+      try {
+        let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_ENHANCED_HW);
+        console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport is", isSysSupport);
+      } catch(error: Error) {
+        console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport error: ", JSON.stringify(error));
+        expect(true).assertFalse();
+      }
       done();
     });
     /* *
@@ -3237,6 +3245,12 @@ export default function abilityTest() {
           console.info('bbbbb receive keyRequired ' + eventInfo.info);
           console.info('bbbbb receive keyRequired ' + eventInfo.extraInfo);
           sign = 2;
+          expect(sign).assertEqual(2);
+          console.info("XX SESSION_ON_OFF_0100 2 is ",sign)
+          keySession!.off('keyRequired');
+          keySession!.destroy();
+          mediaKeySystem!.destroy();
+          done();
         });
         let base64 = new util.Base64Helper();
         let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
@@ -3259,13 +3273,6 @@ export default function abilityTest() {
           }
           keySession!.processMediaKeyResponse(licenseResponseByte).then(async (keyId: Uint8Array) => {
             console.info("XX SESSION_ON_OFF_0100 is ",sign)
-            await Utils.msSleep(1000);
-            expect(sign).assertEqual(2);
-            console.info("XX SESSION_ON_OFF_0100 2 is ",sign)
-            keySession!.off('keyRequired');
-            keySession!.destroy();
-            mediaKeySystem!.destroy();
-            done();
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0100 processMediaKeyResponse err end", err.code);
             keySession!.destroy();

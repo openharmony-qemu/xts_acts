@@ -1583,7 +1583,14 @@ export default function AVPlayerLocalTest() {
       * @tc.level     : Level1
       */
       it('SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-        let keySystem:drm.MediaKeySystem|undefined= drm.createMediaKeySystem('com.clearplay.drm');
+        let systemName:string;
+        let isClearPlay = drm.isMediaKeySystemSupported("com.clearplay.drm");
+        if (isClearPlay) {
+          systemName = "com.clearplay.drm";
+        } else {
+          systemName = "com.wiseplay.drm";
+        }
+        let keySystem:drm.MediaKeySystem|undefined= drm.createMediaKeySystem(systemName);
         expect(keySystem).not().assertNull();
         let keySession:drm.MediaKeySession|undefined = keySystem?.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
         expect(keySession).not().assertNull();
