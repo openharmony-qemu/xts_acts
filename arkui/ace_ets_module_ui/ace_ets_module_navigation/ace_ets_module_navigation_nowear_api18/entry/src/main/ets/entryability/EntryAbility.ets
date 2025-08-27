@@ -30,7 +30,7 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage):void{
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
+    AppStorage.setOrCreate('windowStage',windowStage);
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
