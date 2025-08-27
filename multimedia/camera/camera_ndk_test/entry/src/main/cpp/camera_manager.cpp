@@ -3197,3 +3197,19 @@ Camera_ErrorCode NDKCamera::WhiteBalanceTest(void)
     ret_ = OH_CaptureSession_GetWhiteBalanceMode(captureSession_, &mode);
     return ret_;
 }
+
+void OnMacroStatusChange(Camera_CaptureSession* session, bool isMacroActive)
+{
+    LOG("OnMacroStatusChange MacroStatus ENTER");
+}
+
+Camera_ErrorCode NDKCamera::MacroStatusChangeTest(void)
+{
+    LOG("MacroStatusChangeTest begin.");
+    bool flag;
+    ret_ = OH_CaptureSession_RegisterMacroStatusChangeCallback(
+        captureSession_, OnMacroStatusChange);
+    ret_ = OH_CaptureSession_UnregisterMacroStatusChangeCallback(
+        captureSession_, OnMacroStatusChange);
+    return ret_;
+}
