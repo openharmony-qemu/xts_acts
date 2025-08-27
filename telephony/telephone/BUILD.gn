@@ -31,5 +31,8 @@ group("telephone") {
     "simTestStatic:ActsTelephonySimHasCardStaticTest",
     "noCardStatic:ActsTelephonySimNoCardStaticTest",
 
+"ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
+"ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
+"ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
   ]
 }

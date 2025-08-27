@@ -14,6 +14,9 @@
 group("webPageDocumentProcessing") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "preview_print_PDF:ActsWebPreviewPrintPDFTest" ]
+    deps = [ 
+      "preview_print_PDF:ActsWebPreviewPrintPDFTest",
+      "preview_print_PDF_static:ActsWebPreviewPrintPDFStaticTest",
+     ]
   }
 }
