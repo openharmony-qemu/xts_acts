@@ -455,7 +455,7 @@ export default function NetworkManagerVpnTest() {
 
     /**
      * @tc.number: SUB_NetworkManager_VPN_generateVpnId_Promise_0100
-     * @tc.name: Test generateVpnId() interface
+     * @tc.name: SUB_NetworkManager_VPN_generateVpnId_Promise_0100
      * @tc.desc: Function test
      * @tc.level 0
      * @tc.type: Function
@@ -479,15 +479,15 @@ export default function NetworkManagerVpnTest() {
     })
 
     /**
-     * @tc.number: SUB_NetworkManager_VPN_destroy_Promise_0100
-     * @tc.name: Test destroy(vpnId: string) interface
+     * @tc.number: SUB_NetworkManager_VPN_destroy_Promise_0200
+     * @tc.name: SUB_NetworkManager_VPN_destroy_Promise_0200
      * @tc.desc: Function test
      * @tc.level 0
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it('SUB_NetworkManager_VPN_destroy_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
-      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0100';
+    it('SUB_NetworkManager_VPN_destroy_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0200';
       try {
         let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
         let vpnId :string = "test";
