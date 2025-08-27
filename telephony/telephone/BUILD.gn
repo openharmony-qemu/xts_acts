@@ -28,6 +28,6 @@ group("telephone") {
     "telephonyNDKTest:ActsTelephonyNdkTest",
 "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
 "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
-"ActsTelephonyCallHasCardTestStatic":"ActsTelephonyCallHasCardStaticTest"
+"ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
   ]
 }
