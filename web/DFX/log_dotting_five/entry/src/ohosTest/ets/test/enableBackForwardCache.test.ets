@@ -64,12 +64,12 @@ export default function EnableBackForwardCacheTest() {
      * @tc.level Level 1
      */
     it("testWebView_enableBackForwardCache00016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("SUB_ACE_WEB_BFCACHE_SDK_00015", 119010)
       Utils.registerBaseEvent("setBackForwardCacheOptions",
         "17100001Init error. The WebviewController must be associated with a Web component", 119020, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent("SUB_ACE_WEB_BFCACHE_SDK_00015", 119010)
       sendEventByKey('setBackForwardCacheOptions', 10, '');
     })
   })

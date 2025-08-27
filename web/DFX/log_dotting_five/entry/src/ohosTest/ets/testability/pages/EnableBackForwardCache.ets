@@ -20,6 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import { JSON } from '@kit.ArkTS';
 import {waitForExist} from '../../test/WaitTest';
 
+
 @Entry
 @Component
 struct Index {
@@ -29,7 +30,7 @@ struct Index {
   @State incognitoMode: boolean = true
   @State src: string | Resource = $rawfile('index.html')
   @State isReceive: number = -1;
-  @State isPageEnd: number = -1;
+
 
   onPageShow(): void{
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -58,9 +59,8 @@ struct Index {
     Column() {
       Button('Options')
         .key('setBackForwardCacheOptions')
-        .onClick(async (event: ClickEvent) => {
-          await waitForExist(()=>this.isPageEnd, 'setBackForwardCacheOptionsIsPageEnd', 0);
-          await waitForExist(()=>this.isReceive, 'setBackForwardCacheOptionsIsReceive', 0);
+        .onClick(async () => {
+          await waitForExist(()=>this.isReceive, this.str, 0);
           console.info('key==>' + this.str);
           this.isReceive = -1;
             switch (this.str) {
@@ -80,9 +80,6 @@ struct Index {
       
       Web({ src: this.src, controller: this.controller, incognitoMode: this.incognitoMode })
         .javaScriptAccess(true)
-        .onPageEnd(()=>{
-          this.isPageEnd = 0;
-        })
     }
   }
 }
