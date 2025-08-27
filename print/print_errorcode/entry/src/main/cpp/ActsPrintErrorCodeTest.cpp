@@ -22,6 +22,7 @@
 #define TEST_PRINTER "testPrinter"
 namespace {
     static const uint32_t MAX_NAME_LENGTH = 1024;
+    static uint32_t g_singleFd = 100;
 }
 static void PrinterChangeCallback(Print_PrinterEvent event, const Print_PrinterInfo *printerInfo)
 {
@@ -50,6 +51,8 @@ void addPrintErrorCodeTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"OH_Print_ConnectPrinter1", nullptr, OH_Print_ConnectPrinter1,
             nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OH_Print_StartPrintJob1", nullptr, OH_Print_StartPrintJob1,
+            nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_StartPrintJob2", nullptr, OH_Print_StartPrintJob2,
             nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OH_Print_RegisterPrinterChangeListener1", nullptr, OH_Print_RegisterPrinterChangeListener1,
             nullptr, nullptr, nullptr, napi_default, nullptr});
@@ -172,6 +175,26 @@ napi_value OH_Print_StartPrintJob1(napi_env env, napi_callback_info info)
     Print_ErrorCode errorCode = OH_Print_StartPrintJob(&printJob);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PRINT_JOB ? 0 : -1, &result);
+    return result;
+}
+
+
+napi_value OH_Print_StartPrintJob2(napi_env env, napi_callback_info info)
+{
+    Print_PrinterInfo virtualPrinter = {
+        .printerId = "VIRTUAL_001", .printerName = "虚拟打印机", .printerState = PRINTER_IDLE};
+    Print_PrintJob printJob = {.jobName = strdup("Document1"),
+                               .printerId = strdup(virtualPrinter.printerId),
+                               .fdList = &g_singleFd,
+                               .fdListCount = 0,
+                               .copyNumber = 1,
+                               .colorMode = COLOR_MODE_COLOR,
+                               .paperSource = strdup("Auto"),
+                               .pageSizeId = strdup("A4")};
+    OH_Print_ConnectPrinter(virtualPrinter.printerId);
+    Print_ErrorCode errorCode = OH_Print_StartPrintJob(&printJob);
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PRINTER ? 0 : -1, &result);
     return result;
 }
 
