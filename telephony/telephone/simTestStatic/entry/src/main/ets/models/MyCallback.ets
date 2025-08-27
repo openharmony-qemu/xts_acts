@@ -1,4 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
+* Copyright (c) 2023 CIAI All Rights Reserved.
+ * This code is provided by CIAI and may not be reproduced or used without permission.
+ */
 
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
