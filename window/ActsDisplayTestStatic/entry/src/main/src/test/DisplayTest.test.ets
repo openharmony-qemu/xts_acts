@@ -23,6 +23,11 @@ import type { AsyncCallback, Callback} from '@ohos.base'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
+
+function isPositiveInteger(value:int) {
+  //判断是否为正整数
+  return Number.isInteger(value) && value > 0;
+}
 export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
@@ -127,8 +132,8 @@ export default function DisplayTest() {
                 expect(data![0].densityPixels != null).assertTrue();
                 expect(data![0].scaledDensity != null).assertTrue();
                 expect(data![0].xDPI != null).assertTrue();
-                // expect(data![0].yDPI != null).assertTrue();
-                // expect((data![0].screenShape == 0) || (data![0].screenShape == 1)).assertTrue();
+                expect(data![0].yDPI != null).assertTrue();
+                expect((data![0].screenShape == 0) || (data![0].screenShape == 1)).assertTrue();
                 done();
 
             });
@@ -1475,7 +1480,104 @@ export default function DisplayTest() {
                 }
             }
         });
+/**
+       * @tc.number     : SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0100
+       * @tc.name       : testMainScreenSupportRefreshRate_static_0100
+       * @tc.desc       : 验证主屏刷新率支持的档位
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 0
+       */
+      it('testMainScreenSupportRefreshRate_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
+        let caseName: string = "testMainScreenSupportRefreshRate_static_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+        try {
+          let result:Array<Int>|undefined = display.getDisplayByIdSync(0).supportedRefreshRates;
+          hilog.info(0x0000, '[ANI]',`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+          if (result === undefined) {
+            done();
+          } else if(result !=null) {
+            let length:number = result.length;
+            hilog.info(0x0000, '[ANI]',`${caseName} dresult.length: ${length}`);
+            for(let i=0;i<length-1;i++){
+              hilog.info(0x0000, '[ANI]',`${caseName} i: i:${result[i]}`);
+              //判断是否为正整数
+              expect(isPositiveInteger(result[i])).assertTrue();
 
+              //判断递增
+              expect(result[i]).assertLess(result[i+1]);
+            }
+            done();
+          }
+        } catch (e: BusinessError) {
+          hilog.info(0x0000, '[ANI]',`${caseName} Failed.err:${JSON.stringify(e)}`);
+          expect().assertFail();
+          done()
+        }
+      })
+      /**
+       * @tc.number     : SUB_BASIC_WMS_ScreenShape_0100
+       * @tc.name       : test_ScreenShape_static_0100
+       * @tc.desc       : test_ScreenShape_static_0100
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+      it('test_ScreenShape_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> =>{
+        let caseName: string = "test_ScreenShape_static_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+        try {
+          expect(display.ScreenShape.RECTANGLE).assertEqual(0)
+          expect(display.ScreenShape.ROUND).assertEqual(1)
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(0x0000, '[ANI]',`jsunittets ${caseName} fail to test_ScreenShape, cause:` + error);
+          expect().assertFail();
+          done();
+        }
+      });
+      /**
+       * @tc.number    : SUB_BASIC_WMS_DisplaySourceMode_0100
+       * @tc.name      : test_DisplaySourceMode_enum_static_0100
+       * @tc.desc      : test_DisplaySourceMode_enum_static_0100
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 0
+       */
+      it('test_DisplaySourceMode_enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
+        let caseName: string = 'test_DisplaySourceMode_enum_static_0100';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        expect(display.DisplaySourceMode.NONE).assertEqual(0);
+        expect(display.DisplaySourceMode.MAIN).assertEqual(1);
+        expect(display.DisplaySourceMode.MIRROR).assertEqual(2);
+        expect(display.DisplaySourceMode.EXTEND).assertEqual(3);
+        expect(display.DisplaySourceMode.ALONE).assertEqual(4);
+        done();
+      });
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_DisplaySourceMode_0200
+       * @tc.name      : test_display_DisplaySourceMode_static_0100
+       * @tc.desc      : test_display_DisplaySourceMode_static_0100
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 0
+       */
+      it('test_display_DisplaySourceMode_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
+        let caseName: string = 'test_display_DisplaySourceMode_static_0100';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        let displayClass:display.Display = display.getDefaultDisplaySync();
+        let sourceMode:display.DisplaySourceMode | undefined = displayClass?.sourceMode;
+        hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync DisplaySourceMode: ' + sourceMode);
+        hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync ScreenShape: ' + displayClass!.screenShape);
+        hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync x: ' + displayClass!.x);
+        hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
+        done();
+      });
 
 
 
