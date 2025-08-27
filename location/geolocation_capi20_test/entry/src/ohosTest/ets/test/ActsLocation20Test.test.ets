@@ -21,9 +21,9 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 
 const OS_LOCATION_ERR_OK = 0;
 let deviceTypeInfo: string = deviceInfo.deviceType;
+  const driver = await Driver.create();
 
 export async function LocationSwitchOn() {
-  const driver = await Driver.create();
   await driver.swipe(500, 50, 500, 500, 40000);
   let component = await driver.findComponent(ON.text('位置信息'));
   let bounds = await component.getBounds()
@@ -37,7 +37,6 @@ export async function LocationSwitchOn() {
 }
 
 export async function LocationSwitchOnPhone() {
-  const driver = await Driver.create();
   await driver.swipe(1150, 50, 1150, 1000, 40000);
   let component = await driver.findComponent(ON.text('位置'));
   let bounds = await component.getBounds()
@@ -53,7 +52,6 @@ export async function LocationSwitchOnPhone() {
 export default function ActsLocation20Test() {
   describe('ActsLocation20Test', () => {
     beforeAll(async (done: Function) => {
-      let driver: Driver = await Driver.create();
       let permissions: Permissions[] = ['ohos.permission.APPROXIMATELY_LOCATION', "ohos.permission.LOCATION"];
       let atManager = abilityAccessCtrl.createAtManager();
       atManager.requestPermissionsFromUser(getContext(), permissions).then(async (data) => {
@@ -128,9 +126,9 @@ export default function ActsLocation20Test() {
 
     afterAll(async (done: Function) => {
       if (deviceTypeInfo == 'default') {
-        LocationSwitchOn()
+        await LocationSwitchOn()
       } else if (deviceTypeInfo == 'phone') {
-        LocationSwitchOnPhone()
+        await LocationSwitchOnPhone()
       }
       setTimeout(() => {
         done()
