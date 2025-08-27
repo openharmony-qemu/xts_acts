@@ -12,64 +12,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <unistd.h>
 #include "ActsPrintErrorCodeTest.h"
 #include "napi/native_api.h"
 #include <BasicServicesKit/ohprint.h>
 #include <ffrt/sleep.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
+#include <unistd.h>
 #define TEST_PRINTER "testPrinter"
 namespace {
-    static const uint32_t MAX_NAME_LENGTH = 1024;
-    static uint32_t g_singleFd = 100;
-}
-static void PrinterChangeCallback(Print_PrinterEvent event, const Print_PrinterInfo *printerInfo)
-{
-}
+static const uint32_t MAX_NAME_LENGTH = 1024;
+static uint32_t g_singleFd = 100;
+} // namespace
+static void PrinterChangeCallback(Print_PrinterEvent event, const Print_PrinterInfo *printerInfo) {}
 static constexpr size_t ARG_SIZE_ONE = 1;
 static constexpr int32_t ERROR_COMMON = -1;
 
-void addPrintErrorCodeTest(std::vector<napi_property_descriptor>& descData)
+void addPrintErrorCodeTest(std::vector<napi_property_descriptor> &descData)
 {
-    descData.push_back({"OHPrintNoError", nullptr, OHPrintNoError,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OHPrintInvalidParameter", nullptr, OHPrintInvalidParameter,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OHPrintGenericFailure", nullptr, OHPrintGenericFailure,
-             nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OHPrintInvalidPrintJob", nullptr, OHPrintInvalidPrintJob,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OHPrintInvalidPrinter", nullptr, OHPrintInvalidPrinter,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_Init1", nullptr, OH_Print_Init1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_StartPrinterDiscovery1", nullptr, OH_Print_StartPrinterDiscovery1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_StopPrinterDiscovery1", nullptr, OH_Print_StopPrinterDiscovery1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_ConnectPrinter1", nullptr, OH_Print_ConnectPrinter1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_StartPrintJob1", nullptr, OH_Print_StartPrintJob1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_StartPrintJob2", nullptr, OH_Print_StartPrintJob2,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OHPrintNoError", nullptr, OHPrintNoError, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OHPrintInvalidParameter", nullptr, OHPrintInvalidParameter, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back(
+        {"OHPrintGenericFailure", nullptr, OHPrintGenericFailure, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back(
+        {"OHPrintInvalidPrintJob", nullptr, OHPrintInvalidPrintJob, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back(
+        {"OHPrintInvalidPrinter", nullptr, OHPrintInvalidPrinter, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_Init1", nullptr, OH_Print_Init1, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_StartPrinterDiscovery1", nullptr, OH_Print_StartPrinterDiscovery1, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_StopPrinterDiscovery1", nullptr, OH_Print_StopPrinterDiscovery1, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_ConnectPrinter1", nullptr, OH_Print_ConnectPrinter1, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_StartPrintJob1", nullptr, OH_Print_StartPrintJob1, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_StartPrintJob2", nullptr, OH_Print_StartPrintJob2, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
     descData.push_back({"OH_Print_RegisterPrinterChangeListener1", nullptr, OH_Print_RegisterPrinterChangeListener1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_QueryPrinterList1", nullptr, OH_Print_QueryPrinterList1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_QueryPrinterList2", nullptr, OH_Print_QueryPrinterList2,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_QueryPrinterInfo1", nullptr, OH_Print_QueryPrinterInfo1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_QueryPrinterInfo2", nullptr, OH_Print_QueryPrinterInfo2,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_LaunchPrinterManager1", nullptr, OH_Print_LaunchPrinterManager1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_QueryPrinterProperties1", nullptr, OH_Print_QueryPrinterProperties1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"OH_Print_RestorePrinterProperties1", nullptr, OH_Print_RestorePrinterProperties1,
-            nullptr, nullptr, nullptr, napi_default, nullptr});
+                        nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_QueryPrinterList1", nullptr, OH_Print_QueryPrinterList1, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_QueryPrinterList2", nullptr, OH_Print_QueryPrinterList2, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_QueryPrinterInfo1", nullptr, OH_Print_QueryPrinterInfo1, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_QueryPrinterInfo2", nullptr, OH_Print_QueryPrinterInfo2, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"OH_Print_LaunchPrinterManager1", nullptr, OH_Print_LaunchPrinterManager1, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_QueryPrinterProperties1", nullptr, OH_Print_QueryPrinterProperties1, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Print_RestorePrinterProperties1", nullptr, OH_Print_RestorePrinterProperties1, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
 }
 
 napi_value OHPrintNoError(napi_env env, napi_callback_info info)
@@ -84,7 +80,7 @@ napi_value OHPrintInvalidParameter(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     Print_ErrorCode errorCode = OH_Print_Init();
-    Print_StringList* list = nullptr;
+    Print_StringList *list = nullptr;
     errorCode = OH_Print_QueryPrinterList(list);
     napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
