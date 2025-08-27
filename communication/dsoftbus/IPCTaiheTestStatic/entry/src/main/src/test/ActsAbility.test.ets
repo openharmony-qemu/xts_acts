@@ -62,6 +62,10 @@ class TestStub extends rpc.RemoteObject {
         super(descriptor);
     }
 
+    asObject() {
+       return this;
+    }
+
     onRemoteMessageRequest(code: int, data: rpc.MessageSequence, reply: rpc.MessageSequence, options: rpc.MessageOption): boolean {
         hilog.info(domain, tag, '%{public}s', '++++++++++++++++++ remoteObject begin ++++++++++++++++++');
         hilog.info(domain, tag, '%{public}s', 'into onRemoteMessageRequest');
@@ -69,7 +73,7 @@ class TestStub extends rpc.RemoteObject {
             hilog.info(domain, tag, '%{public}s', 'code is 1');
             let res = data.readInt();
             hilog.info(domain, tag, '%{public}s', 'readInt, res is :' + res);
-            reply.writeInt(999);
+            reply.writeInt(123);
             return true;
         } else {
             hilog.info(domain, tag, '%{public}s', 'code err:' + code);
@@ -1981,7 +1985,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_RemoteProxy_IsObjectDead_0100
         * @tc.name: SUB_IPC_RemoteProxy_IsObjectDead_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest  callback after write and read Proxy
+        * @tc.desc: test RemoteProxy IsObjectDead
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2025,7 +2029,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_RemoteProxy_getDescriptor_0100
          * @tc.name: SUB_IPC_RemoteProxy_getDescriptor_0100
-         * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.desc: test RemoteProxy getDescriptor
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -2062,9 +2066,50 @@ export default function abilityTest() {
         });
 
         /*
+         * @tc.number: SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.name: SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.desc: test asObject
+         * @tc.level: LEVEL1
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+         */
+        it("SUB_IPC_IRemoteBroker_asObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+          await Utils.msSleep(200)
+          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
+
+          let data = rpc.MessageSequence.create();
+          let reply = rpc.MessageSequence.create();
+          try {
+            let testRemoteObject = new TestStub("testObject");
+            let testRemoteObject1 = testRemoteObject.asObject();
+            let option = new rpc.MessageOption();
+            option.setAsync(false);
+            data.writeInt(666);
+            await testRemoteObject1.sendMessageRequest(1, data, reply, option)
+              .then((ret: rpc.RequestResult) => {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.data is: ' + JSON.stringify(ret.data) );
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.reply is: ' + JSON.stringify(ret.reply) );
+                let res = reply.readInt();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 res is: ' + res)
+                expect(res == 123).assertTrue();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 err in catch is: ' + err);
+              });
+          } catch (error) {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 error is: ' + error);
+            expect(error == null).assertTrue();
+          } finally {
+            data.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 reclaim done')
+          }
+          done()
+          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
+        });
+
+        /*
          * @tc.number: SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
-         * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.desc: test writeRemoteObject errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -2092,7 +2137,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readRemoteObject errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2121,7 +2166,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeInterfaceToken errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2148,7 +2193,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readInterfaceToken errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2176,7 +2221,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test setCapacity errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2203,7 +2248,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeNoException errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2230,7 +2275,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readException_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readException_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readException errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2257,7 +2302,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeInt errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2284,7 +2329,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readInt_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readInt_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readInt errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2312,7 +2357,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeLong errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2339,7 +2384,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readLong_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readLong_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readLong errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2367,7 +2412,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeBoolean errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2394,7 +2439,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readBoolean errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2422,7 +2467,7 @@ export default function abilityTest() {
        /*
         * @tc.number: SUB_IPC_MessageSequence_writeString_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeString_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeString errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2449,7 +2494,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readString_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readString_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readString errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2477,7 +2522,7 @@ export default function abilityTest() {
        /*
         * @tc.number: SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeParcelable errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2505,7 +2550,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readParcelable errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2536,7 +2581,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeIntArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2564,7 +2609,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readIntArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2594,7 +2639,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
         * @tc.name: SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readIntArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2624,7 +2669,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeDoubleArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2652,7 +2697,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readDoubleArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2682,7 +2727,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
         * @tc.name: SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readDoubleArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2712,7 +2757,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeBooleanArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2740,7 +2785,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readBooleanArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2770,7 +2815,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
         * @tc.name: SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readBooleanArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2800,7 +2845,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeStringArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2828,7 +2873,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readStringArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2858,7 +2903,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
         * @tc.name: SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readStringArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2888,7 +2933,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeParcelableArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2919,7 +2964,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test readParcelableArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2953,7 +2998,7 @@ export default function abilityTest() {
        /*
         * @tc.number: SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
-        * @tc.desc: test RemoteProxy SendMessageRequest after write and read Proxy
+        * @tc.desc: test writeByteArray errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -2981,7 +3026,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
-         * @tc.desc: test MessageSequence writeAshmem Ashmem
+         * @tc.desc: test MessageSequence writeAshmem Ashmem errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3010,7 +3055,7 @@ export default function abilityTest() {
        /*
         * @tc.number: SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
-        * @tc.desc: test MessageSequence writeAshmem Ashmem
+        * @tc.desc: test MessageSequence writeAshmem Ashmem errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -3040,7 +3085,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
-         * @tc.desc: test MessageSequence writeAshmem Ashmem
+         * @tc.desc: test MessageSequence writeRawDataBuffer errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3071,7 +3116,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
-         * @tc.desc: test MessageSequence writeAshmem Ashmem
+         * @tc.desc: test MessageSequence readRawDataBuffer errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3103,7 +3148,7 @@ export default function abilityTest() {
         /*
         * @tc.number: SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
         * @tc.name: SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
-        * @tc.desc: test MessageSequence readFileDescriptor
+        * @tc.desc: test MessageSequence readFileDescriptor errCode
         * @tc.level: LEVEL1
         * @tc.size: MEDIUMTEST
         * @tc.type: FUNCTION
@@ -3137,7 +3182,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
-         * @tc.desc: test MessageSequence writeFileDescriptor
+         * @tc.desc: test MessageSequence writeFileDescriptor errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3169,7 +3214,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
          * @tc.name: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
-         * @tc.desc: test MessageSequence writeFileDescriptor
+         * @tc.desc: test MessageSequence writeFileDescriptor errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3201,7 +3246,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
          * @tc.name: SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
-         * @tc.desc: test MessageSequence writeFileDescriptor
+         * @tc.desc: test MessageSequence writeFileDescriptor errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
@@ -3227,7 +3272,7 @@ export default function abilityTest() {
         /*
          * @tc.number: SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
          * @tc.name: SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
-         * @tc.desc: test MessageSequence closeFileDescriptor
+         * @tc.desc: test MessageSequence closeFileDescriptor errCode
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
