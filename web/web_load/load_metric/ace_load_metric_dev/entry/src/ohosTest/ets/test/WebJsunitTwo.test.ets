@@ -18,8 +18,11 @@ import { router } from '@kit.ArkUI';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+let driver = Driver.create();
 
 
 export default function webJsunitTwo() {
@@ -57,10 +60,7 @@ export default function webJsunitTwo() {
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" );
-      done();
-    })
+
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0100
      * @tc.name       : testWebviewGetProgress001
@@ -70,12 +70,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress001", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress001", true, 2025070401, done,
+      Utils.emitEvent("emitWebviewGetProgress001", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress001", true, 140020, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0200
@@ -86,12 +89,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress002", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress002", true, 2025070402, done,
+      Utils.emitEvent("emitWebviewGetProgress002", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress002", true, 140030, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0300
@@ -102,12 +108,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress003", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress003", true, 2025070403, done,
+      Utils.emitEvent("emitWebviewGetProgress003", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress003", true, 140040, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0400
@@ -118,12 +127,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress004", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress004", true, 2025070404, done,
+      Utils.emitEvent("emitWebviewGetProgress004", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress004", true, 140050, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0500
@@ -134,12 +146,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress005", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress005", true, 2025070405, done,
+      Utils.emitEvent("emitWebviewGetProgress005", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress005", true, 140060, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
     /*
      * @tc.number     : SUB_WEB_GETPROGRESS_API_0600
@@ -150,12 +165,15 @@ export default function webJsunitTwo() {
      * @tc.level      : Level 0
      */
     it("testWebviewGetProgress006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebviewGetProgress006", 122);
-      Utils.registerBaseEvent("testWebviewGetProgress006", true, 2025070406, done,
+      Utils.emitEvent("emitWebviewGetProgress006", 140011);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebviewGetProgress006", true, 140070, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webTwoButton', 10, '');
+      Utils.waitAndClickComponent("webTwoButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
   })
 }

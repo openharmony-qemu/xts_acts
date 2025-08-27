@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import { waitForExist } from '../../test/WaitTest.test';
 
 let loadedUrl: string;
 
@@ -58,13 +59,18 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 140001,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+  onPageHide() {
+    events_emitter.off(140001)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,6 +79,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -100,12 +107,15 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str);
           switch (this.str) {
             case "emitOnProgressChange": {
               this.isProgressFinish = true;
-              await Utils.sleep(1000);
+              this.isPageEnd = -1
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               break;
             }
             default:
@@ -148,11 +158,14 @@ struct Index {
           if (this.isProgressFinish) {
             console.info("isProgressFinish==>");
             if (this.progress == "100") {
-              Utils.emitEvent(this.progress, 114);
+              Utils.emitEvent(this.progress, 140010);
               this.isProgressFinish = false;
             }
           }
           this.progress = event.newProgress + "";
+        })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
         })
     }
   }
