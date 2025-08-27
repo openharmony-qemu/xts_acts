@@ -266,7 +266,7 @@ export default function taskPoolAsyncRunnerExecute() {
             console.info('======', Count2.count);
           })
         }
-        while (Count2.count < 10 || Count1.count < 10) {
+        while (Count2.count < 10 || Count1.count < 0) {
           await sleep(100);
         }
         expect(Count1.count).assertEqual(0);
@@ -302,10 +302,10 @@ export default function taskPoolAsyncRunnerExecute() {
               console.info('=====', e.message);
             })
         }
-        while (Count2.count < 10 || Count1.count < 0) {
+        while (Count2.count < 10 || Count1.count < 10) {
           await sleep(100);
         }
-        expect(Count1.count).assertEqual(0);
+        expect(Count1.count).assertEqual(10);
         expect(Count2.count).assertEqual(10);
         Count1.count = 0;
         Count2.count = 0;

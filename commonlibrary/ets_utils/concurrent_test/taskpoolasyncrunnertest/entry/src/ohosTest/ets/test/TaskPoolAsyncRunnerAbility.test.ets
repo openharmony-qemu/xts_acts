@@ -202,7 +202,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
-                await asyncRunner.execute(task2)
+                asyncRunner.execute(task2)
                   .then((num: object) => {
                     Count4.count++;
                     console.info('======', Count4.count);
@@ -257,7 +257,7 @@ export default function taskPoolAsyncRunnerAbility() {
             console.info('======', Count2.count);
           })
         }
-        while (Count2.count < 10 || Count1.count < 10) {
+        while (Count2.count < 20 || Count1.count < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(Count1.count);
@@ -298,7 +298,7 @@ export default function taskPoolAsyncRunnerAbility() {
               count++;
               console.error(`error message error: ${JSON.stringify(error.message)}`);
             });
-            await asyncRunner.execute(task2).then((num: object) => {
+            asyncRunner.execute(task2).then((num: object) => {
               Count4.count = Count4.count + Number(num);
               console.info('======', Count4.count);
             }).catch((error: BusinessError) => {
@@ -392,7 +392,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
-                await asyncRunner.execute(task2)
+                asyncRunner.execute(task2)
                   .then((num: object) => {
                     Count4.count++;
                     console.info('======', Count4.count);
@@ -486,7 +486,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
-              await asyncRunner.execute(task2)
+              asyncRunner.execute(task2)
                 .then((num: object) => {
                   Count4.count++;
                   console.info('======', Count4.count);
@@ -576,7 +576,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
-              await asyncRunner.execute(task2)
+              asyncRunner.execute(task2)
                 .then((num: object) => {
                   Count4.count++;
                   console.info('======', Count4.count);
@@ -625,7 +625,7 @@ export default function taskPoolAsyncRunnerAbility() {
             Count1.count++;
             console.info('======', Count1.count);
           });
-          await asyncRunner.execute(task2).then((result) => {
+          asyncRunner.execute(task2).then((result) => {
             console.info('======result:', JSON.stringify(result));
             expect(JSON.stringify(result)).assertEqual(JSON.stringify({}));
             Count2.count++;
@@ -673,7 +673,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
-              await asyncRunner.execute(task2)
+              asyncRunner.execute(task2)
                 .then((num: object) => {
                   Count4.count++;
                   console.info('======', Count4.count);

@@ -70,7 +70,7 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
           console.info('=======error', JSON.stringify(e.message));
           expect(true).assertFalse();
         });
-        await asyncRunner.execute(task2).then(() => {
+        asyncRunner.execute(task2).then(() => {
           console.info('=======', count);
           count++;
         }).catch((e: BusinessError) => {
@@ -110,7 +110,7 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
           console.info('=======error', JSON.stringify(e.message));
           expect(true).assertFalse();
         });
-        await asyncRunner.execute(task2).then(() => {
+        asyncRunner.execute(task2).then(() => {
           console.info('=======', count);
           count++;
         }).catch((e: BusinessError) => {

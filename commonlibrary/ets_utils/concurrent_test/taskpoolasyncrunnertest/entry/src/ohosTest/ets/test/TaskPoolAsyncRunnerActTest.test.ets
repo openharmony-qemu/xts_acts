@@ -75,13 +75,13 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + Number(num);
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
           console.info('======', Count1.count);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
@@ -114,7 +114,7 @@ export default function taskPoolAsyncRunnerActTest() {
         }).catch((e: BusinessError) => {
           console.info('======e.message', e.message)
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
           console.info('======', Count2.count);
         }).catch((e: BusinessError) => {
@@ -122,7 +122,7 @@ export default function taskPoolAsyncRunnerActTest() {
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
@@ -152,13 +152,13 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + Number(num);
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
           console.info('======', Count2.count);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
@@ -188,13 +188,13 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + Number(num);
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
           console.info('======', Count2.count);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
@@ -225,7 +225,7 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + 1;
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((res) => {
+        asyncRunner.execute(task2).then((res) => {
           cancelTask(task2);
           expect(res).assertEqual(2);
           Count2.count = Count2.count + 1;
@@ -261,13 +261,13 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + Number(num);
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
           console.info('======', Count2.count);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
@@ -296,12 +296,12 @@ export default function taskPoolAsyncRunnerActTest() {
           Count1.count = Count1.count + Number(num);
           console.info('======', Count1.count);
         });
-        await asyncRunner.execute(task2).then((num: object) => {
+        asyncRunner.execute(task2).then((num: object) => {
           Count2.count = Count2.count + Number(num);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1.count < 10 || Count2.count < 20) {
         await sleep(100);
       }
       expect(10).assertEqual(Count1.count);
