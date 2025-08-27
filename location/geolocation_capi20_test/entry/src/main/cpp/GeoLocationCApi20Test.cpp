@@ -23,6 +23,7 @@
 namespace {
 auto g_sleepTime = 3;
 static const Location_RequestConfig *requestConfig = OH_Location_CreateRequestConfig();
+
 }
 
 static napi_value OHLocationInfoGetAdditionalInfo(napi_env env, napi_callback_info info)
