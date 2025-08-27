@@ -292,7 +292,7 @@ export default function taskPoolAsyncRunnerExecute() {
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(idCancel, task.taskId, 50);
-          runner.execute(task).then((num: object) => {
+          runner.execute(task).then((num: object) => { 
           }).catch((e:Error)=>{
             Count1.count = Count1.count + Number(num);
             console.info('=====', e.message);
