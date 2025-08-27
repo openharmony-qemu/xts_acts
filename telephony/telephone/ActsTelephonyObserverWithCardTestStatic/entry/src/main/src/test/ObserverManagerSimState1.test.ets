@@ -90,8 +90,8 @@ export default function observerManagerSimStateTest1() {
         let myNumber: int = 1;
         let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
-          number++;
-          console.info(`${caseName} number ` + myNumber);
+          myNumber++;
+          console.info(`${caseName} myNumber ` + myNumber);
         };
         observer.on('simStateChange', callback);
         observer.off('simStateChange', callback);
@@ -121,8 +121,8 @@ export default function observerManagerSimStateTest1() {
         let myNumber: int = 1;
         let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
-          number++;
-          console.info(`${caseName} number ` + myNumber);
+          myNumber++;
+          console.info(`${caseName} myNumber ` + myNumber);
         };
         observer.off('simStateChange', callback);
         ExpectTrue(myNumber === 1);
