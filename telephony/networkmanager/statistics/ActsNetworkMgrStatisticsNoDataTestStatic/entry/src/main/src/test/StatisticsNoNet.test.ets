@@ -173,27 +173,27 @@ export default function statisticsNoNetTest() {
         })
 
         /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_0100
-        * @tc.name  : testNetworkMgrStatisticsGetUidRxBytes_static_0100
+        * @tc.number: SUB_NetworkManager_GetUidRxBytes_Async_static_0100
+        * @tc.name  : testNetworkManagerGetUidRxBytesAsync_static_0100
         * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
         * @tc.size  : MediumTest
         * @tc.type  : Function
         * @tc.level : level 0
         */
-        it("testNetworkMgrStatisticsGetUidRxBytes_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytes_static_0100';
+        it("testNetworkManagerGetUidRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkManagerGetUidRxBytesAsync_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let uid = 20010084;
                 statistics.getUidRxBytes(uid, (error: BusinessError<void>|null, stats: long| undefined) => {
                     if (error?.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-                        ExpectFail();
+                        ExpectTrue(error?.code == 2103005);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
-                        ExpectTrue(true);
+                        ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }
@@ -207,60 +207,60 @@ export default function statisticsNoNetTest() {
         })
 
         /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_0200
-         * @tc.name  : testNetworkMgrStatisticsGetUidRxBytes_static_0200
+         * @tc.number: SUB_NetworkManager_GetUidRxBytes_Promise_static_0100
+         * @tc.name  : testNetworkManagerGetUidRxBytesPromise_static_0100
          * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access ;promise
          * @tc.size  : MediumTest
          * @tc.type  : Function
          * @tc.level : level 3
          */
-        it("testNetworkMgrStatisticsGetUidRxBytes_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytes_static_0200';
+        it("testNetworkManagerGetUidRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkManagerGetUidRxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let uid = 20010084;
                 statistics.getUidRxBytes(uid).then((stats: long)=>{
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
-                    ExpectTrue(true);
+                    ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectFail();
+                    ExpectTrue(err.code == 2103005);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 })
             }catch(err: BusinessError){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
+                ExpectTrue(err.code == 2103005);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
         })
 
         /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_0100
-        * @tc.name  : testNetworkMgrStatisticsGetUidTxBytes_static_0100
+        * @tc.number: SUB_NetworkManager_GetUidTxBytes_Async_static_0100
+        * @tc.name  : testNetworkManagerGetUidTxBytesAsync_static_0100
         * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
         * @tc.size  : MediumTest
         * @tc.type  : Function
         * @tc.level : level 0
         */
-        it("testNetworkMgrStatisticsGetUidTxBytes_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytes_static_0100';
+        it("testNetworkManagerGetUidTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkManagerGetUidTxBytesAsync_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let uid = 20010084;
                 statistics.getUidTxBytes(uid, (error: BusinessError<void>|null, stats: long| undefined) => {
                     if (error?.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-                        ExpectFail();
+                        ExpectTrue(error?.code == 2103005);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
-                        ExpectTrue(true);
+                        ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }
@@ -274,27 +274,27 @@ export default function statisticsNoNetTest() {
         })
 
         /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_0200
-         * @tc.name  : testNetworkMgrStatisticsGetUidTxBytes_static_0200
+         * @tc.number: SUB_NetworkManager_GetUidTxBytes_Promise_static_0100
+         * @tc.name  : testNetworkManagerGetUidTxBytesPromise_static_0100
          * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access ;promise
          * @tc.size  : MediumTest
          * @tc.type  : Function
          * @tc.level : level 3
          */
-        it("testNetworkMgrStatisticsGetUidTxBytes_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytes_static_0200';
+        it("testNetworkManagerGetUidTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetworkManagerGetUidTxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let uid = 20010084;
                 statistics.getUidTxBytes(uid).then((stats: long)=>{
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
-                    ExpectTrue(true);
+                    ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectFail();
+                    ExpectTrue(err.code == 2103005);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 })
@@ -307,67 +307,130 @@ export default function statisticsNoNetTest() {
         })
 
         /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetSockfdRxBytes_0100
-        * @tc.name  : testNetworkMgrStatisticsGetSockfdRxBytes_static_0100
+        * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_static_0100
+        * @tc.name  : testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0100
         * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
         * @tc.size  : MediumTest
         * @tc.type  : Function
         * @tc.level : level 0
         */
-        it("testNetworkMgrStatisticsGetSockfdRxBytes_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetSockfdRxBytes_static_0100';
+        it("testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                let sockfd: int = 50;
-                statistics.getSockfdRxBytes(sockfd, (error: BusinessError<void>|null, stats: long| undefined) => {
+                statistics.getSockfdRxBytes(123456, (error: BusinessError<void>|null, stats: long| undefined) => {
                     if (error?.code != 0) {
                         hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-                        ExpectFail();
+                        ExpectTrue(error?.code == 2100002);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
-                        ExpectTrue(true);
+                        ExpectFail();
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         done();
                     }
                 });
             }catch(err: BusinessError){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
+                ExpectTrue(err.code == 2100002);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
         })
 
         /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetSockfdRxBytes_0200
-         * @tc.name  : testNetworkMgrStatisticsGetSockfdRxBytes_static_0200
+         * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_static_0200
+         * @tc.name  : testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0200
          * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access ;promise
          * @tc.size  : MediumTest
          * @tc.type  : Function
          * @tc.level : level 3
          */
-        it("testNetworkMgrStatisticsGetSockfdRxBytes_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testNetworkMgrStatisticsGetSockfdRxBytes_static_0200';
+        it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                let sockfd: int = 50;
-                statistics.getSockfdRxBytes(sockfd).then((stats: long)=>{
-                    hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
-                    ExpectTrue(true);
+                statistics.getSockfdRxBytes(123456).then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectFail();
+                    ExpectTrue(err.code == 2100002);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 })
             }catch(err: BusinessError){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
+                ExpectTrue(err.code == 2100002);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /* *
+        * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_CallbackErrCo_static_0500
+        * @tc.name  : testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0500
+        * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
+        * @tc.size  : MediumTest
+        * @tc.type  : Function
+        * @tc.level : level 0
+        */
+        it("testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdRxBytes(-1, (error: BusinessError<void>|null, stats: long| undefined) => {
+                    if (error?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                        ExpectTrue(error?.code == 2100001);
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    } else {
+                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
+                        ExpectFail();
+                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                        done();
+                    }
+                });
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100001);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                done();
+            }
+        })
+
+        /* *
+         * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_static_0600
+         * @tc.name  : testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0600
+         * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access ;promise
+         * @tc.size  : MediumTest
+         * @tc.type  : Function
+         * @tc.level : level 3
+         */
+        it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo_static_0600';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                statistics.getSockfdRxBytes(-1).then((data: long)=>{
+                    hilog.info(domain, tag, '%{public}s', caseName +': data ->'+data);
+                    ExpectFail();
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 2100001);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                })
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 2100001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
             }
