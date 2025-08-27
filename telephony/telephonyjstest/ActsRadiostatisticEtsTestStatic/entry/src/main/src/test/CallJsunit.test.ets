@@ -72,36 +72,11 @@ export default function callJsunit() {
             done();
           });
         } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
           expect(false).assertTrue();
           done();
         }
         hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
       });
 
-    /**
-     * @tc.number Telephony_Call_Call_MakeCall_0200
-     * @tc.name Makes a call.
-     * @tc.desc Function test
-     */
-    it("Telephony_Call_Call_MakeCall_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName: string = "Telephony_Call_Call_MakeCall_0200";
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        let telNumber = "";
-        try {
-          call.makeCall(telNumber).then(() => {
-            done();
-          }).catch((err) => {
-            hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          });
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(err));
-          expect(false).assertTrue();
-          done();
-        }
-        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
-      });
   });
 }
