@@ -1798,10 +1798,11 @@ function testRemoveDisallowedWifiList() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1"}]
-      wifiManager.removeAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      wifiManager.removeDisallowedWifiList(SELFWANT, wifiAccessInfos);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error == null).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
