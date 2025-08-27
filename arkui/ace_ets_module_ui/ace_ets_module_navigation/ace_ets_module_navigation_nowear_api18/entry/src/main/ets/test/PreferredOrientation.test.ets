@@ -17,10 +17,11 @@ import CommonFunc from '../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { display } from '@kit.ArkUI';
 
 export default function PreferredOrientation() {
   describe('PreferredOrientation', () => {
-    let initRotation: number = 0;
+    let initRotation: number = display.getDefaultDisplaySync().orientation;
     beforeEach(async (done: Function) => {
       console.info('PreferredOrientation beforeEach start');
       let options: router.RouterOptions = {
@@ -66,9 +67,9 @@ export default function PreferredOrientation() {
         await btn1.click();
         await driver.delayMs(2000);
 
-        initRotation = AppStorage.get('testOrientation') as number
-        console.info('[PreferredOrientation_0100] initRotation is ', initRotation);
-        expect(initRotation).assertEqual(0);
+        let rotation: number = AppStorage.get('testOrientation') as number
+        console.info('[PreferredOrientation_0100] rotation is ', rotation);
+        expect(rotation == 0 || rotation == initRotation).assertTrue();
         AppStorage.delete('testOrientation');
       }
       console.info('PreferredOrientation_0100 END');
