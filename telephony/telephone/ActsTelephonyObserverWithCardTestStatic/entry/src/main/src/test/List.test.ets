@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 import ObserverManagerTest from "./ObserverManager.test";
+import observerManagerSimStateTest1 from './ObserverManagerSimStateTest1';
+
+
 export default function testsuite() {
     ObserverManagerTest();
+    observerManagerSimStateTest1();
 }
