@@ -21,7 +21,7 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 
 const OS_LOCATION_ERR_OK = 0;
 let deviceTypeInfo: string = deviceInfo.deviceType;
-  const driver = await Driver.create();
+const driver = Driver.create();
 
 export async function LocationSwitchOn() {
   await driver.swipe(500, 50, 500, 500, 40000);
