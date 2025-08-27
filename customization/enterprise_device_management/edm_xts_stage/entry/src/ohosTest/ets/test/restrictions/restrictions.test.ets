@@ -59,6 +59,7 @@ const LABEL_SUDO = "sudo";
 const LABEL_TELEPHONY_CALL = "telephoneCall";
 const LABEL_BACKUP_AND_RESTORE = "backupAndRestore";
 const LABEL_PRIVATE_SPACE = "privateSpace";
+const LABLE_EXTERNAL_STORAGE_CARD = "externalStorageCard";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1397,6 +1398,49 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0166
+   * @tc.name      : test_set_disallowed_policy_0166
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0166", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD)).assertFalse();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0167
+   * @tc.name      : test_set_disallowed_policy_0167
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0167", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, true);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD)).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, false);
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
@@ -1480,6 +1524,71 @@ function testGetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0107
+   * @tc.name      : test_get_disallowed_policy_0107
+   * @tc.desc      : test restrictions getDisallowedPolicy with with invalid admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(INVALID_WANT, LABLE_EXTERNAL_STORAGE_CARD);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0108
+   * @tc.name      : test_get_disallowed_policy_0108
+   * @tc.desc      : test restrictions getDisallowedPolicy with with invalid admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_0108", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_disallowed_policy_0108 error 9200001 is expected, actually catch: ' + error.code);
+      expect(error.code == 9200001).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+    /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0109
+   * @tc.name      : test_get_disallowed_policy_0109
+   * @tc.desc      : test restrictions getDisallowedPolicy with with invalid admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_disallowed_policy_0109 error 9200002 is expected, actually catch: ' + error.code);
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testSetDisallowedForAccountPolicy() {
