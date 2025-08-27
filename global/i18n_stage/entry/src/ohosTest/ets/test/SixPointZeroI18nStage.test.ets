@@ -476,7 +476,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_0700', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('en', { type: 'language', languageDisplay: 'standard' });
       let dn = dnDialect.of('en-GB');
-      expect(dn).assertEqual('en-GB')
+      expect(dn).assertEqual('British English')
     })
 
     /* *
@@ -490,7 +490,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_0800', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('en', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('en-GB');
-      expect(dn).assertEqual('en-GB');
+      expect(dn).assertEqual('British English');
     })
 
     /* *
@@ -518,7 +518,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_1000', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('TW');
-      expect(dn).assertEqual('ไต้หวัน(จีน)');
+      expect(dn).assertEqual('ไต้หวัน (จีน)');
     })
 
     /* *
@@ -546,7 +546,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_1200', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('MM');
-      expect(dn).assertEqual('เมียนมา(พม่า)');
+      expect(dn).assertEqual('เมียนมา (พม่า)');
     })
 
     /* *
@@ -616,7 +616,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_1700', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('TW');
-      expect(dn).assertEqual('ထိုင်ဝမ်(တရုတ်)');
+      expect(dn).assertEqual('ထိုင်ဝမ် (တရုတ်)');
     })
 
     /* *
@@ -714,7 +714,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_2400', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('TW');
-      expect(dn).assertEqual('تايوان(الصين)');
+      expect(dn).assertEqual('تايوان (الصين)');
     })
 
     /* *
@@ -771,7 +771,7 @@ export default function SixPointZeroI18nStageTest() {
     it(' SUB_GLOBAL_testDisplayNames_2800', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('US');
-      expect(dn).assertEqual('الولايت المتحدة');
+      expect(dn).assertEqual('الولايات المتحدة');
     })
 
     /* *
