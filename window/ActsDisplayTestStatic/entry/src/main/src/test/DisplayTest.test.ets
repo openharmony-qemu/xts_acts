@@ -133,7 +133,7 @@ export default function DisplayTest() {
                 expect(data![0].scaledDensity != null).assertTrue();
                 expect(data![0].xDPI != null).assertTrue();
                 expect(data![0].yDPI != null).assertTrue();
-                expect((data![0].screenShape == 0) || (data![0].screenShape == 1)).assertTrue();
+                expect((data![0].screenShape === display.ScreenShape.RECTANGLE) || (data![0].screenShape === display.ScreenShape.ROUND)).assertTrue();
                 done();
 
             });
