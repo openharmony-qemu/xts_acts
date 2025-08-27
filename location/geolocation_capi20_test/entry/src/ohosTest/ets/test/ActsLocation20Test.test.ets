@@ -57,12 +57,10 @@ export default function ActsLocation20Test() {
       atManager.requestPermissionsFromUser(getContext(), permissions).then(async (data) => {
         if (deviceTypeInfo == 'default') {
             await LocationSwitchOn()
-        } else if (deviceTypeInfo == 'phone') {
+        } else{
             await LocationSwitchOnPhone()
         }
-        setTimeout(() => {
-            done()
-        }, 5000)
+        done()
       })
       let text: Component = await driver.findComponent(ON.text('允许本次使用'));
       if (deviceTypeInfo == 'default') {
@@ -127,12 +125,10 @@ export default function ActsLocation20Test() {
     afterAll(async (done: Function) => {
       if (deviceTypeInfo == 'default') {
         await LocationSwitchOn()
-      } else if (deviceTypeInfo == 'phone') {
+      } else{
         await LocationSwitchOnPhone()
       }
-      setTimeout(() => {
-        done()
-      }, 5000)
+    done()
     }
     )
   })
