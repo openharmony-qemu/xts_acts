@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("image_static_hap") {
+ohos_js_app_static_suite("image_HDR_static_hap") {
   # test_hap = true
   # testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsImageStaticTest"
+  hap_name = "ActsImageHDRStaticTest"
   part_name = "image_framework"
   subsystem_name = "multimedia"
 }
