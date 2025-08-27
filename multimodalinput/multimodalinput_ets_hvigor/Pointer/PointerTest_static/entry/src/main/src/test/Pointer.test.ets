@@ -21,6 +21,14 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
+class CursorConfigTest implements pointer.CursorConfig {
+  followSystem: boolean;
+
+  constructor(followSystem: boolean) {
+    this.followSystem = followSystem;
+  }
+}
+
 export default function MultimodalInputPointerTest() {
   describe("MultimodalInputPointerTest", (): void => {
     const ExpectTrue = (n: boolean) => {
@@ -230,6 +238,31 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_RIGHT_BUTTON == 1);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(true);
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
+     * @tc.number SUB_MMI_Input_Api_Pointer_CursorConfig_0100
+     * @tc.name SUB_MMI_Input_Api_Pointer_CursorConfig_0100
+     * @tc.desc Test CursorConfig
+     * @tc.level: Level 2
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it("SUB_MMI_Input_Api_Pointer_CursorConfig_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_CursorConfig_0100";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          let cursorconfig = new CursorConfigTest(true);
+          let followSystemTest = cursorconfig.followSystem;
+          ExpectTrue(followSystemTest == true);
           done();
         } catch (error: BusinessError) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
