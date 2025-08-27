@@ -56,7 +56,7 @@ export default function PreferredOrientation() {
      * @tc.level     Level 2
      */
     it('PreferredOrientation_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('PreferredOrientation_0100 START');  
+      console.info('PreferredOrientation_0100 START');
       if (globalThis.winLeft == 0) {
         await CommonFunc.sleep(500);
         let driver = Driver.create();
