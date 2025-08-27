@@ -465,14 +465,16 @@ export default function NetworkManagerVpnTest() {
       let caseName = 'SUB_NetworkManager_VPN_generateVpnId_Promise_0100';
       try {
         let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
-        vpnConnection.generateVpnId().then((data:string) => {
+        vpnConnection.generateVpnId().then((data: string) => {
           console.log(`${caseName} generateVpnId success ${JSON.stringify(data)}`);
-        });
-        console.log(`${caseName} generateVpnId success`);
-        done();
-      }
-      catch (error) {
-        console.log(`${caseName} generateVpnId fail ${JSON.stringify(error)}`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} generateVpnId fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} generateVpnId error ${JSON.stringify(error)}`);
         expect(error.code == 401).assertTrue();
         done();
       }
@@ -490,13 +492,17 @@ export default function NetworkManagerVpnTest() {
       let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0200';
       try {
         let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
-        let vpnId :string = "test";
-        vpnConnection.destroy(vpnId);
-        console.log(`${caseName} destroy success`);
-        done();
-      }
-      catch (error) {
-        console.log(`${caseName} destroy fail ${JSON.stringify(error)}`);
+        let vpnId: string = "test";
+        vpnConnection.destroy(vpnId).then(() => {
+          console.log(`${caseName} destroy success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
         expect(error.code == 401).assertTrue();
         done();
       }
