@@ -29,12 +29,10 @@ export default function ActsLocationSwitchTest() {
     beforeAll(async (done: Function) => {
       if (deviceTypeInfo == 'default') {
         await LocationSwitchOn()
-      } else if (deviceTypeInfo == 'phone') {
+      } else{
         await LocationSwitchOnPhone()
       }
-      setTimeout(() => {
-        done()
-      }, 5000)
+    done()
     })
 
     /**
@@ -87,12 +85,10 @@ export default function ActsLocationSwitchTest() {
     afterAll(async (done: Function) => {
       if (deviceTypeInfo == 'default') {
         await LocationSwitchOn()
-      } else if (deviceTypeInfo == 'phone') {
+      } else{
         await LocationSwitchOnPhone()
       }
-      setTimeout(() => {
-        done()
-      }, 5000)
+    done()
     }
     )
   })
