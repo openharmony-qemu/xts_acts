@@ -69,6 +69,7 @@ export default function PreferredOrientation() {
         initRotation = AppStorage.get('testOrientation') as number
         console.info('[PreferredOrientation_0100] initRotation is ', initRotation);
         expect(initRotation).assertEqual(0);
+        AppStorage.delete('testOrientation');
       }
       console.info('PreferredOrientation_0100 END');
       done();
@@ -99,7 +100,7 @@ export default function PreferredOrientation() {
         let rotation: number = AppStorage.get('testOrientation') as number
         console.info('[PreferredOrientation_0200] rotation is ', rotation);
         expect(rotation == 1 || rotation == 3 || rotation == initRotation).assertTrue();
-
+        AppStorage.delete('testOrientation');
       }
       console.info('PreferredOrientation_0200 END');
       done();
@@ -136,6 +137,7 @@ export default function PreferredOrientation() {
         if (navigationWidth < 1500) {
           expect(rotation == 0 || rotation == initRotation).assertTrue();
         }
+        AppStorage.delete('testOrientation');
       }
       console.info('PreferredOrientation_0300 END');
       done();
@@ -166,6 +168,7 @@ export default function PreferredOrientation() {
         let rotation: number = AppStorage.get('testOrientation') as number
         console.info('[PreferredOrientation_0400] rotation is ', rotation);
         expect(rotation == 2 || rotation == initRotation).assertTrue();
+        AppStorage.delete('testOrientation');
       }
       console.info('PreferredOrientation_0400 END');
       done();
