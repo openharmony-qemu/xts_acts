@@ -182,7 +182,7 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0400';
       console.info(`${caseName} test start`);
       try {
-        let myNumber: number = 1;
+        let myNumber: int = 1;
         let callback: () => void = () => {
           myNumber++;
         };
