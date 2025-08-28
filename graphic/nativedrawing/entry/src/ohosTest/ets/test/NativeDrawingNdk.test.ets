@@ -1687,6 +1687,51 @@ export default function nativeDrawingNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTBASELINE_0100
+     * @tc.name       : testOHDrawingTextVerticalAlignmentBaseline001
+     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_BASELINE
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOHDrawingTextVerticalAlignmentBaseline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeDrawing.oHDrawingTextVerticalAlignmentBaseline();
+        expect(result).assertEqual(0);
+        done();
+    });
+
+    /**
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTCENTER_0100
+     * @tc.name       : testOHDrawingTextVerticalAlignmentCenter001
+     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_CENTER
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOHDrawingTextVerticalAlignmentCenter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeDrawing.oHDrawingTextVerticalAlignmentCenter();
+        expect(result).assertEqual(0);
+        done();
+    });
+
+    /**
+     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTTOP_0100
+     * @tc.name       : testOHDrawingTextVerticalAlignmentTop001
+     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_CENTER
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOHDrawingTextVerticalAlignmentTop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeDrawing.oHDrawingTextVerticalAlignmentTop();
+        expect(result).assertEqual(0);
+        done();
+    });
     
   })
 }

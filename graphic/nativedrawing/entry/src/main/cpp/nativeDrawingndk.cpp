@@ -1960,6 +1960,33 @@ static napi_value OHDrawingCreateTypographyPaint(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value OHDrawingTextVerticalAlignmentBaseline(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle *TypographyStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyVerticalAlignment(TypographyStyle, TEXT_VERTICAL_ALIGNMENT_BASELINE);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHDrawingTextVerticalAlignmentCenter(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle *TypographyStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyVerticalAlignment(TypographyStyle, TEXT_VERTICAL_ALIGNMENT_CENTER);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHDrawingTextVerticalAlignmentTop(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle *TypographyStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_SetTypographyVerticalAlignment(TypographyStyle, TEXT_VERTICAL_ALIGNMENT_TOP);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2111,6 +2138,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHDrawingCreateTypographyStyleEnormal", nullptr, OHDrawingCreateTypographyStyleEnormal, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"oHDrawingCreateTypographyStyleFnormal", nullptr, OHDrawingCreateTypographyStyleFnormal, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"oHDrawingTextVerticalAlignmentBaseline", nullptr, OHDrawingTextVerticalAlignmentBaseline, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"oHDrawingTextVerticalAlignmentCenter", nullptr, OHDrawingTextVerticalAlignmentCenter, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"oHDrawingTextVerticalAlignmentTop", nullptr, OHDrawingTextVerticalAlignmentTop, nullptr, nullptr,
          nullptr, napi_default, nullptr},
 
         {"oHDrawingCreateTextStyleAnormal", nullptr, OHDrawingCreateTextStyleAnormal, nullptr, nullptr, nullptr,
