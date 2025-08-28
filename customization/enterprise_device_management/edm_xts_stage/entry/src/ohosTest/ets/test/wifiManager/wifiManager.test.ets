@@ -1020,7 +1020,7 @@ function testAddAllowedWifiList() {
       expect(ret.length == 1).assertTrue();
       wifiManager.removeAllowedWifiList(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1194,7 +1194,7 @@ function testAddAllowedWifiList() {
       expect(ret.length == 2).assertTrue();
       wifiManager.removeAllowedWifiList(SELFWANT, ret);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1277,7 +1277,7 @@ function testRemoveAllowedWifiList() {
       expect(ret1.length == 1).assertTrue();
       wifiManager.removeAllowedWifiList(SELFWANT, ret1);
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1802,7 +1802,7 @@ function testRemoveDisallowedWifiList() {
       let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
       expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error == null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
