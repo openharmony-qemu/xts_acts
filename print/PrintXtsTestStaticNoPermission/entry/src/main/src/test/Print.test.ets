@@ -66,7 +66,8 @@ export default function printTest() {
         const extensionList = ['extension1', 'extension2'];
         print.startDiscoverPrinter(extensionList, (err: Object | null | undefined) => {
           if (err) {
-            const error = err as BusinessError;
+            let error = err as BusinessError;
+            expect(error.code).assertEqual(201);
             hilog.error(domain, tag, 'print_function_0100 error, code: %{public}d, message: %{public}s',
               error.code, error.message);
           } else {
@@ -646,6 +647,7 @@ export default function printTest() {
           done();
         }).catch((err: Object | null | undefined) => {
           let error = err as BusinessError;
+          expect(error.code).assertEqual(201);
           hilog.error(domain, tag, 'print_function_1900 error, %{public}s', JSON.stringify(error));
           done();
         });
