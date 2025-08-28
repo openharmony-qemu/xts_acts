@@ -433,7 +433,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapHasValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapHasValue0006';
-      const value: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const value: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set('key', value);
@@ -621,7 +621,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapGet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0006';
-      const value: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const value: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set("squirrel", value);
@@ -667,7 +667,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapGet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapGet0008';
-      const key: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const key: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
@@ -1106,7 +1106,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSet0002';
-      const key: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const key: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
@@ -1233,7 +1233,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapRemove0004';
-      const key: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const key: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
@@ -1451,7 +1451,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapSetValueAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapSetValueAt0006';
-      const value: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const value: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set("squirrel", "sparrow");
@@ -1656,7 +1656,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapKeys0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapKeys0003';
-      const key: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const key: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
@@ -1730,7 +1730,7 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapValues0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0003';
-      const value: string = Array(10000).map((_: undefined, index: Number): String => `${index}`).join('');
+      const value: string = Array(10000).map((_: undefined, index): String => `${index}`).join('');
       try {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set("squirrel", value);
