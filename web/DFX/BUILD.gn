@@ -25,6 +25,7 @@ group("DFXTest") {
       "log_dotting_six:ActsWebLogDottingSixTest",
       "log_dotting_three:ActsWebLogDottingThreeTest",
       "log_dotting_two:ActsWebLogDottingTwoTest",
+      "log_dotting_two_static:ActsWebLogDottingTwoStaticTest",
       "performance_maintenance:ActsWebPerformanceMaintenanceTest",
       "system_events:ActsWebSystemEventsTest",
     ]
