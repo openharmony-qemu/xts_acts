@@ -2372,6 +2372,837 @@ export default function SixPointZeroI18nStageTest() {
       expect(dateTimeField).assertEqual("AM/PM")
     })
 
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0100
+    * @tc.name      : test_NumberFormatRange_0100
+    * @tc.desc      : formatRange  with zh & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_NumberFormatRange_0100', Level.LEVEL0, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 km/h');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0200
+    * @tc.name      : test_NumberFormatRange_0200
+    * @tc.desc      : formatRange  with th & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0200', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 กม./ชม.');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0300
+    * @tc.name      : test_NumberFormatRange_0300
+    * @tc.desc      : formatRange  with ja & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0300', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0～3 km/h');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0400
+    * @tc.name      : test_NumberFormatRange_0400
+    * @tc.desc      : formatRange  with ar & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0400', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('ar', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('٠-٣ كم/س');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0500
+    * @tc.name      : test_NumberFormatRange_0500
+    * @tc.desc      : formatRange  with zh & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0500', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3升');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0600
+    * @tc.name      : test_NumberFormatRange_0600
+    * @tc.desc      : formatRange  with th & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0600', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 ล.');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0700
+    * @tc.name      : test_NumberFormatRange_0700
+    * @tc.desc      : formatRange  with en & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0700', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('en', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 L');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0800
+    * @tc.name      : test_NumberFormatRange_0800
+    * @tc.desc      : formatRange  with ja & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0800', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0～3 L');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_0900
+    * @tc.name      : test_NumberFormatRange_0900
+    * @tc.desc      : formatRange  with ar & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_0900', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('ar', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('٠-٣ لتر');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_1000
+    * @tc.name      : test_NumberFormatRange_1000
+    * @tc.desc      : formatRange  with zh & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1000', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3米');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_1100
+    * @tc.name      : test_NumberFormatRange_1100
+    * @tc.desc      : formatRange  with th & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1100', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 ม.');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_1200
+    * @tc.name      : test_NumberFormatRange_1200
+    * @tc.desc      : formatRange  with ja & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1200', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('en', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3 m');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_1300
+    * @tc.name      : test_NumberFormatRange_1300
+    * @tc.desc      : formatRange  with ja & 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1300', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat =
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0～3 m');
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1400
+    * @tc.name      : test_NumberFormatRange_1400
+    * @tc.desc      : formatRange  with 0,3 & ar
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1400', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ar', {
+        style: 'unit', unit: 'meter', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('٠—٣ أمتار');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1500
+    * @tc.name      : test_NumberFormatRange_1500
+    * @tc.desc      : formatRange  with 3500,9500 & zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1500', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh-CN', {
+        style: 'currency', currency: 'CNY', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(3500, 9500);
+      expect(formattedRange).assertEqual('￥3,500.00 - ￥9,500.00');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1600
+    * @tc.name      : test_NumberFormatRange_1600
+    * @tc.desc      : formatRange  with 3500,9500 & de-DE
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1600', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('de-DE', {
+        style: 'currency', currency: 'EUR', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(3500, 9500);
+      expect(formattedRange).assertEqual('3.500,00—9.500,00 €');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1700
+    * @tc.name      : test_NumberFormatRange_1700
+    * @tc.desc      : formatRange  with 3500,9500 & en
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1700', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('en', {
+        style: 'currency', currency: 'USD', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(3500, 9500);
+      expect(formattedRange).assertEqual('$3,500.00 — $9,500.00');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1800
+    * @tc.name      : test_NumberFormatRange_1800
+    * @tc.desc      : formatRange  with 3500,9500 & ja-JP
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1800', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ja-JP', {
+        style: 'currency', currency: 'JPY', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(3500, 9500);
+      expect(formattedRange).assertEqual('￥3,500 ～ ￥9,500');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_1900
+    * @tc.name      : test_NumberFormatRange_1900
+    * @tc.desc      : formatRange  with 0,3 & ar
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_1900', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ar', {
+        style: 'currency', currency: 'USD', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('٠٫٠٠—٣٫٠٠ US$');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_2000
+    * @tc.name      : test_NumberFormatRange_2000
+    * @tc.desc      : formatRange  with 0,3 & zh
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_2000', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', {
+        style: 'percent', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0% - 300%');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_2100
+    * @tc.name      : test_NumberFormatRange_2100
+    * @tc.desc      : formatRange  with 0,3 & ja
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_2100', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ja', {
+        style: 'percent', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0% ～ 300%');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_2200
+    * @tc.name      : test_NumberFormatRange_2200
+    * @tc.desc      : formatRange  with 0,3 & ar
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_2200', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ar', {
+        style: 'percent', unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('٪٠—٣٠٠');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementNumberFormat_2300
+    * @tc.name      : test_NumberFormatRange_2300
+    * @tc.desc      : formatRange  with 0,3 & zh
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRange_2300', Level.LEVEL2, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', {
+        unitDisplay: "short"
+      });
+      let formattedRange: string = numFmt.formatRange(0, 3);
+      expect(formattedRange).assertEqual('0-3');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_2500
+    * @tc.name      : test_NumberFormatRangeToParts_0100
+    * @tc.desc      : formatRange  with 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_NumberFormatRangeToParts_0100', Level.LEVEL0, () => {
+      let range: string = JSON.stringify([{
+        "type": "integer", "value": "."
+      }, {
+        "type": "literal", "value": "-"
+      }, {
+        "type": "integer", "value": "٣"
+      }, {
+        "type": "literal", "value": " "
+      }, {
+        "type": "unit", "value": "لتر"
+      }]);
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat("ar", {
+        style: 'unit', unit: "liter", unitDisplay: "short"
+      });
+      let formattedRange = numFmt.formatRangeToParts(0, 3);
+      expect(JSON.stringify(formattedRange)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_2600
+    * @tc.name      : test_NumberFormatRangeToParts_0200
+    * @tc.desc      : formatRange  with 3500,9500
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRangeToParts_0200', Level.LEVEL2, () => {
+      let range: string = JSON.stringify([{
+        "type": "integer", "value": "3"
+      }, {
+        "type": "group", "value": "."
+      }, {
+        "type": "integer", "value": "500"
+      }, {
+        "type": "decimal", "value": ","
+      }, {
+        "type": "fraction", "value": "00"
+      }, {
+        "type": "literal", "value": "-"
+      }, {
+        "type": "integer", "value": "9"
+      }, {
+        "type": "group", "value": "."
+      }, {
+        "type": "integer", "value": "500"
+      }, {
+        "type": "decimal", "value": ","
+      }, {
+        "type": "fraction", "value": "00"
+      }, {
+        "type": "literal", "value": " "
+      }, {
+        "type": "currency", "value": "€"
+      }]);
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat("de-DE", {
+        style: 'currency', currency: "EUR", unitDisplay: "short"
+      });
+      let formattedRange = numFmt.formatRangeToParts(3500, 9500);
+      expect(JSON.stringify(formattedRange)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_2700
+    * @tc.name      : test_NumberFormatRangeToParts_0300
+    * @tc.desc      : formatRange  with 0,3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRangeToParts_0300', Level.LEVEL2, () => {
+      let range: string = JSON.stringify([{
+        "type": "integer", "value": "0"
+      }, {
+        "type": "percentSign", "value": "%"
+      }, {
+        "type": "literal", "value": " - "
+      }, {
+        "type": "integer", "value": "300"
+      }, {
+        "type": "literal", "value": "%"
+      }]);
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat("zh", {
+        style: 'percent', unitDisplay: "short"
+      });
+      let formattedRange = numFmt.formatRangeToParts(0, 3);
+      expect(JSON.stringify(formattedRange)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_intl_SupplementNumberFormat_2800
+    * @tc.name      : test_NumberFormatRangeToParts_0400
+    * @tc.desc      : formatRange  with -30000.2,-10000.2
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_NumberFormatRangeToParts_0400', Level.LEVEL2, () => {
+      let range: string = JSON.stringify([{
+        "type": "minusSign", "value": "-"
+      }, {
+        "type": "integer", "value": "30"
+      }, {
+        "type": "group", "value": ","
+      }, {
+        "type": "integer", "value": "000"
+      }, {
+        "type": "decimal", "value": "."
+      }, {
+        "type": "fraction", "value": "2"
+      }, {
+        "type": "literal", "value": " ～ "
+      }, {
+        "type": "minusSign", "value": "-"
+      }, {
+        "type": "integer", "value": "10"
+      }, {
+        "type": "group", "value": ","
+      }, {
+        "type": "integer", "value": "000"
+      }, {
+        "type": "decimal", "value": "."
+      }, {
+        "type": "fraction", "value": "2"
+      }]);
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat("ja", {
+        unitDisplay: "short"
+      });
+      let formattedRange = numFmt.formatRangeToParts(-30000.2, -10000.2);
+      expect(JSON.stringify(formattedRange)).assertEqual(range);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0100
+    * @tc.name      : test_IntlPluralRules_0100
+    * @tc.desc      : PluralRules  with en-US
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_IntlPluralRules_0100', Level.LEVEL0, () => {
+      const enCardinalRules = new Intl.PluralRules('en-US');
+      expect(enCardinalRules.select(0)).assertEqual('other');
+      expect(enCardinalRules.select(0.01)).assertEqual('other');
+      expect(enCardinalRules.select(1)).assertEqual('one');
+      expect(enCardinalRules.select(2)).assertEqual('other');
+      expect(enCardinalRules.select(3)).assertEqual('other');
+    })
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0200
+    * @tc.name      : test_IntlPluralRules_0200
+    * @tc.desc      : PluralRules  with ar
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0200', Level.LEVEL2, () => {
+      const enCardinalRules = new Intl.PluralRules('ar');
+      expect(enCardinalRules.select(0)).assertEqual('zero');
+      expect(enCardinalRules.select(0.01)).assertEqual('other');
+      expect(enCardinalRules.select(1)).assertEqual('one');
+      expect(enCardinalRules.select(2)).assertEqual('two');
+      expect(enCardinalRules.select(9)).assertEqual('few');
+      expect(enCardinalRules.select(10)).assertEqual('few');
+      expect(enCardinalRules.select(11)).assertEqual('many');
+      expect(enCardinalRules.select(19)).assertEqual('many');
+      expect(enCardinalRules.select(900)).assertEqual('other');
+      expect(enCardinalRules.select(9999)).assertEqual('many');
+      expect(enCardinalRules.select(1000)).assertEqual('other');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0300
+    * @tc.name      : test_IntlPluralRules_0300
+    * @tc.desc      : PluralRules  with zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0300', Level.LEVEL2, () => {
+      const enCardinalRules = new Intl.PluralRules('zh-CN', { type: 'ordinal' });
+      expect(enCardinalRules.select(0.1)).assertEqual('other');
+      expect(enCardinalRules.select(0)).assertEqual('other');
+      expect(enCardinalRules.select(1)).assertEqual('other');
+      expect(enCardinalRules.select(2)).assertEqual('other');
+      expect(enCardinalRules.select(100)).assertEqual('other');
+    })
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0400
+    * @tc.name      : test_IntlPluralRules_0400
+    * @tc.desc      : PluralRules  with en-US
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0400', Level.LEVEL2, () => {
+      const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
+      const suffixes = new Map([['one', 'st'], ['two', 'nd'], ['few', 'rd'], ['other', 'th']]);
+      const formatOrdinals = (n: number) => {
+        const rule = pr.select(n);
+        const suffix = suffixes.get(rule);
+        return '${n}${suffix}';
+      }
+      expect(formatOrdinals(0)).assertEqual('0th');
+      expect(formatOrdinals(1)).assertEqual('1st');
+      expect(formatOrdinals(2)).assertEqual('2nd');
+      expect(formatOrdinals(3)).assertEqual('3rd');
+      expect(formatOrdinals(4)).assertEqual('4th');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0500
+    * @tc.name      : test_IntlPluralRules_0500
+    * @tc.desc      : PluralRules  with NULL
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0500', Level.LEVEL2, () => {
+      try {
+        new Intl.PluralRules('').select(0);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0600
+    * @tc.name      : test_IntlPluralRules_0600
+    * @tc.desc      : PluralRules  with abcd
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0600', Level.LEVEL2, () => {
+      try {
+        new Intl.PluralRules('abcd').select(0);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0700
+    * @tc.name      : test_IntlPluralRules_0700
+    * @tc.desc      : PluralRules  with abcd
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0700', Level.LEVEL2, () => {
+      const enCardinalRules = new Intl.PluralRules('en-US', { minimumIntegerDigits: 3, maximumFractionDigits: 0 });
+      expect(enCardinalRules.select(0)).assertEqual('other');
+      expect(enCardinalRules.select(0.1)).assertEqual('other');
+      expect(enCardinalRules.select(0.47)).assertEqual('other');
+      expect(enCardinalRules.select(0.5)).assertEqual('one');
+      expect(enCardinalRules.select(1.1)).assertEqual('one');
+      expect(enCardinalRules.select(1.5)).assertEqual('other');
+      expect(enCardinalRules.select(2)).assertEqual('other');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0800
+    * @tc.name      : test_IntlPluralRules_0800
+    * @tc.desc      : PluralRules  with ar-AE
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0800', Level.LEVEL2, () => {
+      const enCardinalRules = new Intl.PluralRules('ar-AE', { minimumIntegerDigits: 3, maximumFractionDigits: 1 });
+      expect(enCardinalRules.select(0)).assertEqual('zero');
+      expect(enCardinalRules.select(0.01)).assertEqual('zero');
+      expect(enCardinalRules.select(0.047)).assertEqual('zero');
+      expect(enCardinalRules.select(0.05)).assertEqual('other');
+      expect(enCardinalRules.select(0.1)).assertEqual('other');
+      expect(enCardinalRules.select(1.5)).assertEqual('other');
+      expect(enCardinalRules.select(2.04)).assertEqual('two');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_0900
+    * @tc.name      : test_IntlPluralRules_0900
+    * @tc.desc      : PluralRules  with ar-AE && type: 'ordinal', minimumIntegerDigits:1, maximumFractionDigits:0
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRules_0900', Level.LEVEL2, () => {
+      try {
+        new Intl.PluralRules('ar-AE', { type: 'ordinal', minimumIntegerDigits: 1, maximumFractionDigits: 0 });
+      } catch (e) {
+        expect(e.name).assertEqual('RangError');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1000
+    * @tc.name      : test_IntlPluralRules_0100
+    * @tc.desc      : PluralRules  with zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesResolvedOptions_0100', Level.LEVEL2, () => {
+      let expected = JSON.stringify({
+        'locale': 'zh',
+        'type': 'cardinal',
+        'minimumIntegerDigits': 1,
+        'minimumFractionDigits': 0,
+        'maximumFractionDigits': 3,
+        'pluralCategories': ['other']
+      });
+      const enCardinalRules = new Intl.PluralRules('zh-CN');
+      let Options = enCardinalRules.resolvedOptions();
+      expect(JSON.stringify(Options)).assertEqual(expected);
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1100
+    * @tc.name      : test_IntlPluralRules_0200
+    * @tc.desc      : PluralRules  with ar-AE
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesResolvedOptions_0200', Level.LEVEL2, () => {
+      let enCardinalRules = new Intl.PluralRules('ar-AE');
+      let Options = enCardinalRules.resolvedOptions();
+      expect(Options.locale).assertEqual('ar');
+      expect(Options.type).assertEqual('cardinal');
+      expect(Options.minimumIntegerDigits).assertEqual(1);
+      expect(Options.minimumFractionDigits).assertEqual(0);
+      expect(Options.maximumFractionDigits).assertEqual(3);
+      expect(Options.pluralCategories.toString()).assertEqual('few,many,one,two,zero,other');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1200
+    * @tc.name      : test_IntlPluralRules_0300
+    * @tc.desc      : PluralRules  with ar-AE && type: 'ordinal', minimumIntegerDigits: 3, minimumFractionDigits: 3, maximumFractionDigits: 5
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesResolvedOptions_0300', Level.LEVEL2, () => {
+      let enCardinalRules = new Intl.PluralRules('ar-AE', {
+        type: 'ordinal',
+        minimumIntegerDigits: 3,
+        minimumFractionDigits: 3,
+        maximumFractionDigits: 5
+      });
+      let Options = enCardinalRules.resolvedOptions();
+      expect(Options.locale).assertEqual('ar');
+      expect(Options.type).assertEqual('ordinal');
+      expect(Options.minimumIntegerDigits).assertEqual(3);
+      expect(Options.minimumFractionDigits).assertEqual(3);
+      expect(Options.maximumFractionDigits).assertEqual(5);
+      expect(Options.pluralCategories.toString()).assertEqual('other');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1300
+    * @tc.name      : test_IntlPluralRules_0400
+    * @tc.desc      : PluralRules  with NULL
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesResolvedOptions_0400', Level.LEVEL2, () => {
+      try {
+        let enCardinalRules = new Intl.PluralRules('');
+        enCardinalRules.resolvedOptions();
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1400
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0100
+    * @tc.desc      : supportedLocalesOf  with zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0100', Level.LEVEL2, () => {
+      let localesOf = Intl.PluralRules.supportedLocalesOf('zh-CN');
+      expect(localesOf.toString()).assertEqual('zh-CN');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1500
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0200
+    * @tc.desc      : supportedLocalesOf  with 'en-US', 'ban', 'ar-OM', 'de-DE', 'abc', 'sss'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0200', Level.LEVEL2, () => {
+      const locales = ['en-US', 'ban', 'ar-OM', 'de-DE', 'abc', 'sss'];
+      let localesOf = Intl.PluralRules.supportedLocalesOf(locales);
+      expect(localesOf.toString()).assertEqual('en-US,ar-OM,de-DE');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1600
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0300
+    * @tc.desc      : supportedLocalesOf  with zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0300', Level.LEVEL2, () => {
+      try {
+        Intl.PluralRules.supportedLocalesOf('');
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1700
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0400
+    * @tc.desc      : supportedLocalesOf  with zh-CN
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0400', Level.LEVEL2, () => {
+      try {
+        Intl.PluralRules.supportedLocalesOf('abcd');
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1800
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0500
+    * @tc.desc      : supportedLocalesOf  with 'en-US', 'en-US', 'ar-OM', 'de-DE', 'zh', 'zh'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0500', Level.LEVEL2, () => {
+      const locales = ['en-US', 'en-US', 'ar-OM', 'de-DE', 'zh', 'zh'];
+      let localesOf = Intl.PluralRules.supportedLocalesOf(locales);
+      expect(localesOf.toString()).assertEqual('en-US,ar-OM,de-DE,zh');
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1900
+    * @tc.name      : test_IntlPluralRulesSupportedLocalesOf_0600
+    * @tc.desc      : supportedLocalesOf  with 'null', '1', '@', '#', '_', '*', '/', '&'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlPluralRulesSupportedLocalesOf_0600', Level.LEVEL2, () => {
+      const locales = ['null', '1', '@', '#', '_', '*', '/', '&'];
+      try {
+        Intl.PluralRules.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale');
+      }
+    })
+
 
   })
 }
