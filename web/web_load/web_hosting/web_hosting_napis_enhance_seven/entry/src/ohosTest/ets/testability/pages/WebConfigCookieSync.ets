@@ -31,14 +31,14 @@ struct WebConfigCookieSync {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 612,
+      eventId: 147501,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(612)
+    events_emitter.off(147501)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -74,9 +74,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync001 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'test=abc') {
-                    Utils.emitEvent(true,2025061201)
+                    Utils.emitEvent(true,147550)
                   } else {
-                    Utils.emitEvent(false,2025061201)
+                    Utils.emitEvent(false,147550)
                   }
                   break
                 }
@@ -86,9 +86,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync002 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 17100104 &&  resultValue === '') {
-                    Utils.emitEvent(true,2025061202)
+                    Utils.emitEvent(true,147560)
                   } else {
-                    Utils.emitEvent(false,2025061202)
+                    Utils.emitEvent(false,147560)
                   }
                   break
                 }
@@ -98,9 +98,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync003 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'test=abc') {
-                    Utils.emitEvent(true,2025061203)
+                    Utils.emitEvent(true,147570)
                   } else {
-                    Utils.emitEvent(false,2025061203)
+                    Utils.emitEvent(false,147570)
                   }
                   break
                 }
@@ -110,9 +110,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync004 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'test2=abc') {
-                    Utils.emitEvent(true,2025061204)
+                    Utils.emitEvent(true,147580)
                   } else {
-                    Utils.emitEvent(false,2025061204)
+                    Utils.emitEvent(false,147580)
                   }
                   break
                 }
@@ -122,9 +122,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, true)
                   console.log('emitConfigCookieSync005 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'name=ZhangSan') {
-                    Utils.emitEvent(true,2025061205)
+                    Utils.emitEvent(true,147590)
                   } else {
-                    Utils.emitEvent(false,2025061205)
+                    Utils.emitEvent(false,147590)
                   }
                   break
                 }
@@ -134,9 +134,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, true)
                   console.log('emitConfigCookieSync006 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 17100104 &&  resultValue === '') {
-                    Utils.emitEvent(true,2025061206)
+                    Utils.emitEvent(true,147600)
                   } else {
-                    Utils.emitEvent(false,2025061206)
+                    Utils.emitEvent(false,147600)
                   }
                   break
                 }
@@ -146,9 +146,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, true)
                   console.log('emitConfigCookieSync007 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'address=Nanjing') {
-                    Utils.emitEvent(true,2025061207)
+                    Utils.emitEvent(true,147610)
                   } else {
-                    Utils.emitEvent(false,2025061207)
+                    Utils.emitEvent(false,147610)
                   }
                   break
                 }
@@ -158,9 +158,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, false, true)
                   console.log('emitConfigCookieSync008 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'age=11') {
-                    Utils.emitEvent(true,2025061208)
+                    Utils.emitEvent(true,147620)
                   } else {
-                    Utils.emitEvent(false,2025061208)
+                    Utils.emitEvent(false,147620)
                   }
                   break
                 }
@@ -172,9 +172,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync009 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061209)
+                    Utils.emitEvent(true,147630)
                   } else {
-                    Utils.emitEvent(false,2025061209)
+                    Utils.emitEvent(false,147630)
                   }
                   break
                 }
@@ -186,9 +186,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync010 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061210)
+                    Utils.emitEvent(true,147640)
                   } else {
-                    Utils.emitEvent(false,2025061210)
+                    Utils.emitEvent(false,147640)
                   }
                   break
                 }
@@ -200,9 +200,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, false, false)
                   console.log('emitConfigCookieSync011 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061211)
+                    Utils.emitEvent(true,147650)
                   } else {
-                    Utils.emitEvent(false,2025061211)
+                    Utils.emitEvent(false,147650)
                   }
                   break
                 }
@@ -214,9 +214,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, false)
                   console.log('emitConfigCookieSync012 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061212)
+                    Utils.emitEvent(true,147660)
                   } else {
-                    Utils.emitEvent(false,2025061212)
+                    Utils.emitEvent(false,147660)
                   }
                   break
                 }
@@ -228,9 +228,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, false)
                   console.log('emitConfigCookieSync013 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061213)
+                    Utils.emitEvent(true,147670)
                   } else {
-                    Utils.emitEvent(false,2025061213)
+                    Utils.emitEvent(false,147670)
                   }
                   break
                 }
@@ -242,9 +242,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, false)
                   console.log('emitConfigCookieSync014 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061214)
+                    Utils.emitEvent(true,147680)
                   } else {
-                    Utils.emitEvent(false,2025061214)
+                    Utils.emitEvent(false,147680)
                   }
                   break
                 }
@@ -256,9 +256,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, true)
                   console.log('emitConfigCookieSync015 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061215)
+                    Utils.emitEvent(true,147690)
                   } else {
-                    Utils.emitEvent(false,2025061215)
+                    Utils.emitEvent(false,147690)
                   }
                   break
                 }
@@ -268,9 +268,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, true, true)
                   console.log('emitConfigCookieSync016 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 17100104 &&  resultValue === '') {
-                    Utils.emitEvent(true,2025061216)
+                    Utils.emitEvent(true,147700)
                   } else {
-                    Utils.emitEvent(false,2025061216)
+                    Utils.emitEvent(false,147700)
                   }
                   break
                 }
@@ -282,9 +282,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, true)
                   console.log('emitConfigCookieSync017 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061217)
+                    Utils.emitEvent(true,147710)
                   } else {
-                    Utils.emitEvent(false,2025061217)
+                    Utils.emitEvent(false,147710)
                   }
                   break
                 }
@@ -296,9 +296,9 @@ struct WebConfigCookieSync {
                   let resultValue2 = testNapi.getFetchCookieSync(URL_EXAMPLE, true, true)
                   console.log('emitConfigCookieSync018 getFetchCookieSync resultValue2:' + resultValue2)
                   if (resultCode === 0 &&  resultValue === 'name=Li' && resultValue2 === '') {
-                    Utils.emitEvent(true,2025061218)
+                    Utils.emitEvent(true,147720)
                   } else {
-                    Utils.emitEvent(false,2025061218)
+                    Utils.emitEvent(false,147720)
                   }
                   break
                 }
@@ -308,9 +308,9 @@ struct WebConfigCookieSync {
                   let resultValue = testNapi.getFetchCookieSync(URL_EXAMPLE, true, true)
                   console.log('emitConfigCookieSync019 getFetchCookieSync resultValue:' + resultValue)
                   if (resultCode === 0 &&  resultValue === 'area=JiangNing') {
-                    Utils.emitEvent(true,2025061219)
+                    Utils.emitEvent(true,147730)
                   } else {
-                    Utils.emitEvent(false,2025061219)
+                    Utils.emitEvent(false,147730)
                   }
                   break
                 }

@@ -19,9 +19,12 @@ import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const  driver = Driver.create();
 export default function WebConfigCookieSync() {
 
   describe('ActsWebWebConfigCookieSyncTest', () => {
@@ -37,7 +40,6 @@ export default function WebConfigCookieSync() {
         if (!("WebConfigCookieSync" == pages.name)) {
           console.info("get WebConfigCookieSync state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebConfigCookieSync page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -52,15 +54,7 @@ export default function WebConfigCookieSync() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebConfigCookieSync beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebConfigCookieSync afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebConfigCookieSync afterEach end");
       done();
     })
 
@@ -73,11 +67,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 0
     */
     it('testConfigCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync001", 612)
-      Utils.registerBaseEvent("testConfigCookieSync001", true, 2025061201, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync001", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync001", true, 147550, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync001', true,1000);
+      done();
     })
 
     /*
@@ -89,11 +86,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync002", 612)
-      Utils.registerBaseEvent("testConfigCookieSync002", true, 2025061202, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync002", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync002", true, 147560, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync002', true,1000);
+      done();
     })
 
     /*
@@ -105,11 +105,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync003", 612)
-      Utils.registerBaseEvent("testConfigCookieSync003", true, 2025061203, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync003", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync003", true, 147570, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync003', true,1000);
+      done();
     })
 
     /*
@@ -121,11 +124,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync004", 612)
-      Utils.registerBaseEvent("testConfigCookieSync004", true, 2025061204, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync004", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync004", true, 147580, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync004', true,1000);
+      done();
     })
 
     /*
@@ -137,11 +143,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 0
     */
     it('testConfigCookieSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync005", 612)
-      Utils.registerBaseEvent("testConfigCookieSync005", true, 2025061205, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync005", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync005", true, 147590, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync005', true,1000);
+      done();
     })
 
     /*
@@ -153,11 +162,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync006", 612)
-      Utils.registerBaseEvent("testConfigCookieSync006", true, 2025061206, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync006", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync006", true, 147600, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync006', true,1000);
+      done();
     })
 
     /*
@@ -169,11 +181,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync007", 612)
-      Utils.registerBaseEvent("testConfigCookieSync007", true, 2025061207, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync007", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync007", true, 147610, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync007', true,1000);
+      done();
     })
 
     /*
@@ -185,11 +200,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync008", 612)
-      Utils.registerBaseEvent("testConfigCookieSync008", true, 2025061208, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync008", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync008", true, 147620, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync008', true,1000);
+      done();
     })
 
     /*
@@ -201,11 +219,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 0
      */
     it('testConfigCookieSync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync009", 612)
-      Utils.registerBaseEvent("testConfigCookieSync009", true, 2025061209, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync009", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync009", true, 147630, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -217,11 +238,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 0
      */
     it('testConfigCookieSync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync010", 612)
-      Utils.registerBaseEvent("testConfigCookieSync010", true, 2025061210, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync010", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync010", true, 147640, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync010', true,1000);
+      done();
     })
 
     /*
@@ -233,11 +257,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync011", 612)
-      Utils.registerBaseEvent("testConfigCookieSync011", true, 2025061211, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync011", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync011", true, 147650, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync011', true,1000);
+      done();
     })
 
     /*
@@ -249,11 +276,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync012", 612)
-      Utils.registerBaseEvent("testConfigCookieSync012", true, 2025061212, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync012", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync012", true, 147660, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync012', true,1000);
+      done();
     })
 
     /*
@@ -265,11 +295,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync013", 612)
-      Utils.registerBaseEvent("testConfigCookieSync013", true, 2025061213, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync013", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync013", true, 147670, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync013', true,1000);
+      done();
     })
 
     /*
@@ -281,11 +314,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync014", 612)
-      Utils.registerBaseEvent("testConfigCookieSync014", true, 2025061214, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync014", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync014", true, 147680, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync014', true,1000);
+      done();
     })
 
     /*
@@ -297,11 +333,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync015", 612)
-      Utils.registerBaseEvent("testConfigCookieSync015", true, 2025061215, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync015", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync015", true, 147690, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync015', true,1000);
+      done();
     })
 
     /*
@@ -313,11 +352,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync016", 612)
-      Utils.registerBaseEvent("testConfigCookieSync016", true, 2025061216, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync016", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync016", true, 147700, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync016', true,1000);
+      done();
     })
 
     /*
@@ -329,11 +371,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync017", 612)
-      Utils.registerBaseEvent("testConfigCookieSync017", true, 2025061217, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync017", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync017", true, 147710, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync017', true,1000);
+      done();
     })
 
     /*
@@ -345,11 +390,14 @@ export default function WebConfigCookieSync() {
      * @tc.level      : Level 2
      */
     it('testConfigCookieSync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync018", 612)
-      Utils.registerBaseEvent("testConfigCookieSync018", true, 2025061218, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync018", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync018", true, 147720, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync018', true,1000);
+      done();
     })
 
     /*
@@ -361,11 +409,14 @@ export default function WebConfigCookieSync() {
     * @tc.level      : Level 2
     */
     it('testConfigCookieSync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitConfigCookieSync019", 612)
-      Utils.registerBaseEvent("testConfigCookieSync019", true, 2025061219, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("emitConfigCookieSync019", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testConfigCookieSync019", true, 147730, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ConfigCookieSync', 10, '');
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync019', true,1000);
+      done();
     })
 
   })

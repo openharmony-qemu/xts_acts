@@ -35,6 +35,7 @@ int32_t testFrameUrl = -1;
 int32_t testServiceWorkerFrameUrl = -1;
 int32_t testLoadUrlFrameUrl = -1;
 int32_t testSubFrameUrl = -1;
+int32_t result_all = -1;
 
 
 // 注册三方协议的配置，需要在Web内核初始化之前调用，否则会注册失败。
@@ -51,6 +52,7 @@ static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info)
 void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_ResourceRequest *resourceRequest,
                        const ArkWeb_ResourceHandler *resourceHandler, bool *intercept) 
 {
+    result_all = -1;
     *intercept = false;
     int32_t reType = OH_ArkWebResourceRequest_GetResourceType(resourceRequest);
     
@@ -71,7 +73,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
         testFrameUrl = 0;
     }
     
-    if (reType == SERVICE_WORKER || frameUrl1.find("iqiyi.com") != std::string::npos) {
+    if (reType == SERVICE_WORKER || frameUrl1.find("openharmony") != std::string::npos) {
         OH_LOG_INFO(LOG_APP, "resourceType == SERVICE_WORKER || frameUrl1.find is blank");
         testServiceWorkerFrameUrl = 0;
     }
@@ -85,6 +87,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
         OH_LOG_INFO(LOG_APP, "sdkSchemeHandler isLoadFrameUrl");
         testSubFrameUrl = 0;
     }
+    result_all = 1;
 }
 
 // 请求结束的回调，在该函数中我们需要标记RawfileRequest已经结束了，内部不应该再使用ResourceHandler。
@@ -391,6 +394,19 @@ static napi_value GetSubFrameUrl(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetRequestValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (result_all == 1) {
+        napi_create_int32(env, 1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: 1");
+    } else {
+        napi_create_int32(env, -1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: -1");
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
@@ -420,7 +436,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"getFrameUrl", nullptr, GetFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getServiceWorkerFrameUrl", nullptr, GetServiceWorkerFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getLoadUrlFrameUrl", nullptr, GetLoadUrlFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getSubFrameUrl", nullptr, GetSubFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"getSubFrameUrl", nullptr, GetSubFrameUrl, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getRequestValue", nullptr, GetRequestValue, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

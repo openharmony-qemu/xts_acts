@@ -18,6 +18,8 @@ import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import { waitForExist } from '../../test/WaitTest.test'
+
 @Entry
 @Component
 struct webSetResponse {
@@ -25,13 +27,18 @@ struct webSetResponse {
   srcUrl: string = 'https://www.example.com/';
 
   @State emitKey: string = '';
+  @State isReceive:number = -1
 
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 147001,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(){
+    events_emitter.off(147001)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -39,6 +46,7 @@ struct webSetResponse {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0
           }
       }
   }
@@ -49,21 +57,22 @@ struct webSetResponse {
               Button('web click')
               .key('webSetNetErrorCode')
               .onClick(async () => {
+                await waitForExist(()=>this.isReceive, this.emitKey, 0);
+                this.isReceive = -1;
                   console.info('key==>' + this.emitKey)
-                  await Utils.sleep(1000);
                   switch (this.emitKey) {
                     case 'emitWebSetResponseStatus': {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setStatus(null);
-                        Utils.emitEvent(false, 1001)
+                        Utils.emitEvent(false, 147010)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1001)
+                          Utils.emitEvent(true, 147010)
                         } else {
-                          Utils.emitEvent(false, 1001)
+                          Utils.emitEvent(false, 147010)
                         }
                       }
                       break;
@@ -73,14 +82,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setStatusText(null);
-                        Utils.emitEvent(false, 1002)
+                        Utils.emitEvent(false, 147020)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1002)
+                          Utils.emitEvent(true, 147020)
                         } else {
-                          Utils.emitEvent(false, 1002)
+                          Utils.emitEvent(false, 147020)
                         }
                       }
                       break;
@@ -90,14 +99,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setMimeType(null);
-                        Utils.emitEvent(false, 1003)
+                        Utils.emitEvent(false, 147030)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1003)
+                          Utils.emitEvent(true, 147030)
                         } else {
-                          Utils.emitEvent(false, 1003)
+                          Utils.emitEvent(false, 147030)
                         }
                       }
                       break;
@@ -107,14 +116,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setEncoding(null);
-                        Utils.emitEvent(false, 1004)
+                        Utils.emitEvent(false, 147040)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1004)
+                          Utils.emitEvent(true, 147040)
                         } else {
-                          Utils.emitEvent(false, 1004)
+                          Utils.emitEvent(false, 147040)
                         }
                       }
                       break;
@@ -124,14 +133,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setHeaderByName(null, 'test', true);
-                        Utils.emitEvent(false, 1005)
+                        Utils.emitEvent(false, 147050)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1005)
+                          Utils.emitEvent(true, 147050)
                         } else {
-                          Utils.emitEvent(false, 1005)
+                          Utils.emitEvent(false, 147050)
                         }
                       }
                       break;
@@ -141,14 +150,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setHeaderByName('test', null, true);
-                        Utils.emitEvent(false, 1006)
+                        Utils.emitEvent(false, 147060)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1006)
+                          Utils.emitEvent(true, 147060)
                         } else {
-                          Utils.emitEvent(false, 1006)
+                          Utils.emitEvent(false, 147060)
                         }
                       }
                       break;
@@ -158,14 +167,14 @@ struct webSetResponse {
                       let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
                       try {
                         response.setHeaderByName('test', 'test', null);
-                        Utils.emitEvent(false, 1007)
+                        Utils.emitEvent(false, 147070)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         if (e.code == 401) {
-                          Utils.emitEvent(true, 1007)
+                          Utils.emitEvent(true, 147070)
                         } else {
-                          Utils.emitEvent(false, 1007)
+                          Utils.emitEvent(false, 147070)
                         }
                       }
                       break;

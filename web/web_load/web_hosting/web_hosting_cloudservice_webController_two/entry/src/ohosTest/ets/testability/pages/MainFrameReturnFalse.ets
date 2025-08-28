@@ -15,15 +15,39 @@
 
 import { webview } from '@kit.ArkWeb';
 import Util from '../../test/Util';
+import events_emitter from '@ohos.events.emitter'
 import { waitForExist } from '../../test/WaitTest.test';
-
 
 @Entry
 @Component
 struct WebComponent {
   @State controller: webview.WebviewController = new webview.WebviewController();
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
-  @State isComplete: number = -1;
+  @State emitKey: string = '';
+  @State isReceive:number = -1
+  @State isEnd:boolean = false;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 147011,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(){
+    events_emitter.off(147011)
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0
+      }
+    }
+  }
 
   build(){
     Column() {
@@ -31,11 +55,19 @@ struct WebComponent {
       Button('runJavaScript')
         .key('runJavaScript')
         .onClick(async (event: ClickEvent) => {
-          console.log('isMainFrame ' + 'clicked!');
-          await waitForExist(()=>this.isComplete, 'SUB_ACE_WEB_getRequestMethod', 0);
-          await this.controller.runJavaScript('loadIframePage()')
+          await waitForExist(()=>this.isReceive, this.emitKey, true);
+          await waitForExist(()=>this.isEnd, this.emitKey, true);
+          console.info('key==>' + this.emitKey)
+          switch (this.emitKey) {
+            case 'runJavaScript': {
+              console.log('isMainFrame ' + 'clicked!')
+              await this.controller.runJavaScript('loadIframePage()')
+              break;
+            }
+          }
         });
       Web({ src: $rawfile('main_page.html'), controller: this.controller })
+        .javaScriptAccess(true)
         .onNavigationEntryCommitted((details) => {
           console.log('onNavigationEntryCommitted: [isMainFrame]= ' + details.isMainFrame +
             ', [isSameDocument]=' + details.isSameDocument +
@@ -43,12 +75,11 @@ struct WebComponent {
             ', [navigationType]=' + details.navigationType +
             ', [url]=' + details.url);
           if (details.isMainFrame === false) {
-            Util.emitEvent(details.isMainFrame, 5010);
+            Util.emitEvent(details.isMainFrame, 147080);
           }
         })
-        .onPageEnd((event) => {
-          console.log('onPageEnd url==>' + event.url);
-          this.isComplete = 0;
+        .onPageEnd(()=>{
+          this.isEnd = true;
         })
     }
   }

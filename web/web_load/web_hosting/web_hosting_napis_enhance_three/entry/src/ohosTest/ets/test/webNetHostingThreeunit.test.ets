@@ -17,9 +17,12 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import hilog from '@ohos.hilog';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const  driver = Driver.create();
 
 
 export default function webviewApi() {
@@ -31,7 +34,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -47,11 +49,9 @@ export default function webviewApi() {
     it('testWebResourceHandler_DidFailWithError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidFailWithError PASS');
-
-      Utils.emitEvent("emitWebResourceHandler_DidFailWithError", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResourceHandler_DidFailWithError", true, 7755, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResourceHandler_DidFailWithError", 147801)
+      Utils.registerEvent("testWebResourceHandler_DidFailWithError", true, 147850, done);
+      Utils.waitAndClickComponent("webHostingButton",driver)
     })
   })
 }

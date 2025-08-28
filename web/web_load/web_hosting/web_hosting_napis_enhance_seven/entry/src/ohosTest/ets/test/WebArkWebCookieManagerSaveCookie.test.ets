@@ -20,6 +20,8 @@ import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
@@ -39,13 +41,11 @@ export default function WebArkWebCookieManagerSaveCookie() {
         if (!("WebArkWebCookieManagerSaveCookie" == pages.name)) {
           console.info("get WebArkWebCookieManagerSaveCookie state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebArkWebCookieManagerSaveCookie page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebArkWebCookieManagerSaveCookie page error: " + err);
       }
-      await driver.waitForComponent(ON.id("ArkWebCookieManagerSaveCookieTest"),10000);
       console.log("waitForComponent ArkWebCookieManagerSaveCookieTest==>");
       done()
     });
@@ -56,15 +56,7 @@ export default function WebArkWebCookieManagerSaveCookie() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebArkWebCookieManagerSaveCookie beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebArkWebCookieManagerSaveCookie afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebArkWebCookieManagerSaveCookie afterEach end");
       done();
     })
 
@@ -77,11 +69,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebCookieManager_SaveCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync001", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync001", "0", 2025072501, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync001", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync001", "0", 148650, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -93,11 +88,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebCookieManager_SaveCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync002", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync002", "0", 2025072502, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync002", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync002", "0", 148660, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -109,11 +107,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 1
     */
     it('testOH_ArkWebCookieManager_SaveCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync003", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync003", "0", 2025072503, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync003", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieSync003", "0", 148670, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -125,11 +126,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync001", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync001", "1", 2025072504, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync001", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync001", "1", 148680, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -141,11 +145,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync002", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync002", "0", 2025072505, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync002", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync002", "0", 148690, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
     /*
@@ -157,11 +164,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync003", 725)
-      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync003", "0", 2025072506, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync003", 147511)
+      let isReturn = false;
+      Utils.registerBaseEvent("testOH_ArkWebCookieManager_SaveCookieAsync003", "0", 148700, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebCookieManagerSaveCookieTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebCookieManagerSaveCookieTest",driver)
+      await waitForExist(()=>isReturn, 'testConfigCookieSync009', true,1000);
+      done();
     })
 
 

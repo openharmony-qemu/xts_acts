@@ -20,6 +20,8 @@ import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
@@ -39,13 +41,11 @@ export default function WebArkWebHttpBodyStream() {
         if (!("WebConfigCookieSync" == pages.name)) {
           console.info("get WebArkWebHttpBodyStream state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebArkWebHttpBodyStream page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebArkWebHttpBodyStream page error: " + err);
       }
-      await driver.waitForComponent(ON.id("ArkWebHttpBodyStreamTest"),10000);
       console.log("waitForComponent ArkWebHttpBodyStreamTest==>");
       done()
     });
@@ -56,15 +56,7 @@ export default function WebArkWebHttpBodyStream() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebArkWebHttpBodyStream beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebArkWebHttpBodyStream afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebArkWebHttpBodyStream afterEach end");
       done();
     })
 
@@ -77,11 +69,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebHttpBodyStream_SetAsyncReadCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_SetAsyncReadCallback001", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_SetAsyncReadCallback001", 1, 2025070901, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_SetAsyncReadCallback001", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_SetAsyncReadCallback001", 1, 147100, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -93,11 +85,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 0
     */
     it('testArkWebHttpBodyStreamAsyncReadCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback001", 709)
-      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback001", 1, 2025070902, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback001", 147101)
+      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback001", 1, 147110, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -109,11 +101,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testArkWebHttpBodyStreamAsyncReadCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback002", 709)
-      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback002", 1, 2025070903, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback002", 147101)
+      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback002", 1, 147120, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -125,11 +117,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testArkWebHttpBodyStreamAsyncReadCallback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback003", 709)
-      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback003", "hello", 2025070904, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback003", 147101)
+      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback003", "hello", 147130, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -141,11 +133,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testArkWebHttpBodyStreamAsyncReadCallback004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback004", 709)
-      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback004", 1, 2025070905, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("ArkWebHttpBodyStreamAsyncReadCallback004", 147101)
+      Utils.registerBaseEvent("testArkWebHttpBodyStreamAsyncReadCallback004", 1, 147140, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -157,11 +149,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead001", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead001", 1, 2025070906, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead001", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead001", 1, 147150, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -173,11 +165,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 1
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead002", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead002", 1, 2025070907, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead002", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead002", 1, 147160, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
     /*
     * @tc.number     : SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_ASYNCREAD_0003
@@ -188,11 +180,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 0
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead003", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead003", 1, 2025070908, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead003", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead003", 1, 147170, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -204,11 +196,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead004", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead004", "23", 2025070909, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead004", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead004", "23", 147180, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -220,11 +212,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead005", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead005", "hello", 2025070910, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead005", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead005", "hello", 147190, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -236,11 +228,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead006", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead006", true, 2025070911, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead006", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead006", true, 147200, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -252,11 +244,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead007", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead007", 1, 2025070912, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead007", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead007", 1, 147210, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -268,11 +260,11 @@ export default function WebArkWebHttpBodyStream() {
      * @tc.level      : Level 2
      */
     it('testOH_ArkWebHttpBodyStream_AsyncRead008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead008", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead008", "DCB", 2025070913, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead008", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead008", "DCB", 147220, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
 
@@ -285,11 +277,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead009", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead009", "html>", 2025070914, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead009", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead009", "html>", 147230, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -301,11 +293,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead010", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead010", "23", 2025070915, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead010", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead010", "23", 147240, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -317,11 +309,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead011", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead011", "hello", 2025070916, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead011", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead011", "hello", 147250, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -333,11 +325,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead012", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead012", true, 2025070917, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead012", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead012", true, 147260, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -349,11 +341,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead013", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead013", 1, 2025070918, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead013", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead013", 1, 147270, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -365,11 +357,11 @@ export default function WebArkWebHttpBodyStream() {
      * @tc.level      : Level 2
      */
     it('testOH_ArkWebHttpBodyStream_AsyncRead014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead014", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead014", "DCB", 2025070919, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead014", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead014", "DCB", 147280, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
 
@@ -382,11 +374,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead015", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead015", "html>", 2025070920, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead015", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead015", "html>", 147290, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -398,11 +390,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead016", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead016", "hel", 2025070921, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead016", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead016", "hel", 147300, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
 
@@ -415,11 +407,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead017", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead017", "hellohello", 2025070922, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead017", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead017", "hellohello", 147310, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -431,11 +423,11 @@ export default function WebArkWebHttpBodyStream() {
     * @tc.level      : Level 2
     */
     it('testOH_ArkWebHttpBodyStream_AsyncRead018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead018", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead018", "el", 2025070923, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead018", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead018", "el", 147320, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -447,11 +439,11 @@ export default function WebArkWebHttpBodyStream() {
      * @tc.level      : Level 2
      */
     it('testOH_ArkWebHttpBodyStream_AsyncRead019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead019", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead019", "hello", 2025070924, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead019", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead019", "hello", 147330, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
     /*
@@ -463,11 +455,11 @@ export default function WebArkWebHttpBodyStream() {
      * @tc.level      : Level 2
      */
     it('testOH_ArkWebHttpBodyStream_AsyncRead020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead020", 709)
-      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead020", "", 2025070925, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("OH_ArkWebHttpBodyStream_AsyncRead020", 147101)
+      Utils.registerBaseEvent("testOH_ArkWebHttpBodyStream_AsyncRead020", "", 147340, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('ArkWebHttpBodyStreamTest', 10, '');
+      Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
     })
 
   })

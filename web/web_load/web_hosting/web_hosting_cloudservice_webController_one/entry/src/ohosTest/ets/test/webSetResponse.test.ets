@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +18,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 // @ts-nocheck
 let emitKey = ""
-
+const driver = Driver.create();
 export default function ActsAceWebSetResponse() {
   describe('ActsAceWebSetResponse', () => {
 
@@ -29,14 +33,12 @@ export default function ActsAceWebSetResponse() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webSetResponse state success " + JSON.stringify(pages));
         if (!("webSetResponse" == pages.name)) {
           console.info("get webSetResponse state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webSetResponse state success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -46,27 +48,6 @@ export default function ActsAceWebSetResponse() {
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(2000);
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
       done();
     })
 
@@ -78,14 +59,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 0
-    */ 
+    */
     it('testWebSetResponseStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseStatus"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseStatus", true, 1001, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseStatus", true, 147010, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -96,17 +80,20 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 0
-    */ 
+    */
     it('testWebSetResponseStatusText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseStatusText"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseStatusText", true, 1002, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseStatusText", true, 147020, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
- 
+
 
     /*
     * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0003
@@ -115,14 +102,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 1
-    */ 
+    */
     it('testWebSetResponseMimeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetResponseMimeType"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseMimeType", true, 1003, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseMimeType", true, 147030, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -133,14 +123,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 1
-    */   
+    */
     it('testWebSetResponseEncoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetResponseEncoding"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseEncoding", true, 1004, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseEncoding", true, 147040, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -152,14 +145,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 0
-    */  
+    */
     it('testWebSetResponseHeaderNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderNameNull"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseHeaderNameNull", true, 1005, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseHeaderNameNull", true, 147050, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -170,14 +166,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 0
-    */ 
+    */
     it('testWebSetResponseHeaderValueNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderValueNull"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseHeaderValueNull", true, 1006, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseHeaderValueNull", true, 147060, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -188,14 +187,17 @@ export default function ActsAceWebSetResponse() {
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 0
-    */ 
+    */
     it('testWebSetResponseHeaderOverwriteNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderOverwriteNull"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebSetResponseHeaderOverwriteNull", true, 1007, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent(emitKey, 147001);
+      let isReturn = false;
+      Utils.registerBaseEvent("testWebSetResponseHeaderOverwriteNull", true, 147070, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('webSetNetErrorCode', 10, '');
+      Utils.waitAndClickComponent('webSetNetErrorCode',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
   })
 }

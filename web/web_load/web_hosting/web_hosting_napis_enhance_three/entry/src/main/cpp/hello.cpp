@@ -28,6 +28,7 @@ ArkWeb_SchemeHandler *g_schemeHandlerForSW;
 NativeResourceManager *g_resourceManager;
 
 int32_t testResourceHandlerDidFailWithError = -1;
+int32_t result_all = -1;
 
 
 // 注册三方协议的配置，需要在Web内核初始化之前调用，否则会注册失败。
@@ -43,6 +44,7 @@ static napi_value RegisterCustomSchemes(napi_env env, napi_callback_info info) {
 // 请求开始的回调，在该函数中我们创建一个RawfileRequest来实现对Web内核请求的拦截。
 void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_ResourceRequest *resourceRequest,
                        const ArkWeb_ResourceHandler *resourceHandler, bool *intercept) {
+    result_all = -1;
     *intercept = true;
     RawfileRequest *request = new RawfileRequest(resourceRequest, resourceHandler, g_resourceManager);
 
@@ -55,6 +57,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
 
     // 接口覆盖6 OH_ArkWebSchemeHandler_GetUserData
     OH_ArkWebSchemeHandler_GetUserData(schemeHandler);
+    result_all = 1;
 }
 
 // 请求结束的回调，在该函数中我们需要标记RawfileRequest已经结束了，内部不应该再使用ResourceHandler。
@@ -138,6 +141,19 @@ static napi_value ResourceHandlerDidFailWithError(napi_env env, napi_callback_in
     return result;
 }
 
+static napi_value GetRequestValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (result_all == 1) {
+        napi_create_int32(env, 1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: 1");
+    } else {
+        napi_create_int32(env, -1, &result);
+        OH_LOG_INFO(LOG_APP, "yb--> result: -1");
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
@@ -145,7 +161,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"initResourceManager", nullptr, InitResourceManager, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"registerCustomSchemes", nullptr, RegisterCustomSchemes, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"resourceHandlerDidFailWithError", nullptr, ResourceHandlerDidFailWithError, nullptr, nullptr, nullptr,
-         napi_default, nullptr}
+         napi_default, nullptr},
+        {"getRequestValue", nullptr, GetRequestValue, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
