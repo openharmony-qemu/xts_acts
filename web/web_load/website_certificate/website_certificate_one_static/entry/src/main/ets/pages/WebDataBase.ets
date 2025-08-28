@@ -16,43 +16,36 @@
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Row, Button, ClickEvent, Web, WebResourceResponse } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Callback, BusinessError } from '@ohos.base'
-class StringFields {
-  str: string = '';
-}
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+
 @Entry
 @Component
 struct WebDataBase {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields ();
   @State str: string = 'testDeleteHttpAuthCredentials001'
   @State username_password: string = '';
   @State host: string = 'www.baidu.com';
   @State realm: string = 'example';
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
-        let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
-        this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
+      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
       }
     }
   }
@@ -60,8 +53,8 @@ struct WebDataBase {
     Column() {
       Row() {
         Button('WebDataBase click').key('WebDataBaseButton').onClick((e: ClickEvent) => {
-          console.info('key==>' + this.stringObj.str)
-          switch (this.stringObj.str) {
+          console.info('key==>' + this.str)
+          switch (this.str) {
             case 'testSaveHttpAuthCredentials001': {
               try {
                 web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
@@ -114,6 +107,13 @@ struct WebDataBase {
                 console.info('==>' + JSON.stringify(e))
                 Utils.emitEvent(e.code, 30050)
               }
+              break;
+            }
+
+            case 'emitonSwitchNextPage1': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/onSslErrorEvent' })
               break;
             }
           }
