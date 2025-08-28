@@ -25,6 +25,7 @@ group("pageInteraction") {
       "page_scrollingOne:ActsWebPageScrollingOneTest",
       "page_scrollingTwo:ActsWebPageScrollingTwoTest",
       "picture_text_selection:ActsWebPictureTextSelectionTest",
+      "picture_text_selection_static:ActsWebPictureTextSelectionStaticTest",
       "picture_text_selectionTwo:ActsWebPictureTextSelectionTwoTest",
       "soft_keyboard_avoidance:ActsWebSoftKeyboardAvoidanceTest",
       "page_interaction_static:ActsWebInteractionStaticTest",
