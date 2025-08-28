@@ -398,7 +398,11 @@ export default function cameraPreconfigTest() {
     })
 
     afterAll(() => {
-      await releaseCameraSessionInstance();
+      try {
+        await releaseCameraSessionInstance();
+      } catch (error: BusinessError) {
+        console.error(TAG + "afterAll err: " + error.code);
+      }
       await Utils.msSleep(1000);
       console.info('afterAll case');
     })

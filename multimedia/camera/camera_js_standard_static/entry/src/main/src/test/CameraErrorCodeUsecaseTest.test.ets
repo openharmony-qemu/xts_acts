@@ -78,6 +78,8 @@ let metadataOutput: cameraObj.MetadataOutput;
 let mMetadataObjectTypeArray: Array<cameraObj.MetadataObjectType>;
 let receiver: image.ImageReceiver;
 let surfaceId: string = '';
+let isSessionCreated: boolean = false;
+let isCameraInputOpen: boolean = false;
 
 let getPhotoReceiverSurface = async (): Promise<void> => {
   console.log(TAG + 'Entering getPhotoReceiverSurface')
@@ -224,6 +226,7 @@ export default function cameraErrorCodeUsecaseTest() {
       return false;
     }
     await mCameraInput.open();
+    isCameraInputOpen = true;
     await Utils.msSleep(100);
     console.info(idx + 'th CameraInput is: ' + mCameraInput);
     console.info(TAG + 'Exit createInput');
@@ -233,8 +236,9 @@ export default function cameraErrorCodeUsecaseTest() {
   let releaseInput = async (): Promise<boolean> => {
     console.info(TAG + 'Enter releaseInput');
 
-    if (!isEmpty03(mCameraInput)) {
+    if (isCameraInputOpen && !isEmpty03(mCameraInput)) {
       await mCameraInput!.close();
+      isCameraInputOpen = false;
     }
 
     console.info(TAG + 'Exit releaseInput');
@@ -267,6 +271,8 @@ export default function cameraErrorCodeUsecaseTest() {
     if (isEmpty04(mCameraSession)) {
       console.info(TAG + "createCaptureSession FAILED");
       return false;
+    } else {
+      isSessionCreated = true;
     }
     beginCameraSessionConfig();
     console.info(TAG + 'Exit createCameraSessionInstance');
@@ -274,7 +280,10 @@ export default function cameraErrorCodeUsecaseTest() {
   }
 
   let releaseCameraSessionInstance = async (): Promise<void> => {
-    await mCameraSession.release();
+    if (isSessionCreated && mCameraSession != undefined) {
+      await mCameraSession.release();
+      isSessionCreated = false;
+    }
   }
 
   let fdNumber: int;
@@ -326,8 +335,7 @@ export default function cameraErrorCodeUsecaseTest() {
 
   let releaseVideoReceiveSurface = async (): Promise<void> => {
     console.log(TAG + 'Entering releaseVideoReceiveSurface')
-    await videoRecorder!.release()
-    videoRecorder = null
+    await AVRecorder!.release()
     await closeFd();
     console.log(TAG + 'Exit releaseVideoReceiveSurface')
   }
@@ -394,11 +402,10 @@ export default function cameraErrorCodeUsecaseTest() {
 
     afterEach(() => {
       console.info('afterEach case');
-      await releaseVideoReceiveSurface();
-      if (!isEmpty10(mCameraInput)) {
+      if (isCameraInputOpen && !isEmpty10(mCameraInput)) {
         await releaseInput();
       }
-      if (!isEmpty04(mCameraSession)) {
+      if (isSessionCreated && !isEmpty04(mCameraSession)) {
         await releaseCameraSessionInstance();
       }
     })
@@ -406,10 +413,10 @@ export default function cameraErrorCodeUsecaseTest() {
     afterAll(() => {
       await releaseVideoReceiveSurface();
       console.info('afterAll case');
-      if (!isEmpty10(mCameraInput)) {
+      if (isCameraInputOpen && !isEmpty10(mCameraInput)) {
         await releaseInput();
       }
-      if (!isEmpty04(mCameraSession)) {
+      if (isSessionCreated && !isEmpty04(mCameraSession)) {
         await releaseCameraSessionInstance();
       }
       await Utils.msSleep(1000);
