@@ -32,14 +32,14 @@ struct WebArkWebCookieManagerSaveCookie {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 725,
+      eventId: 147511,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(725)
+    events_emitter.off(147511)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -75,7 +75,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   console.log('OH_ArkWebCookieManager_SaveCookieSync001 fetchCookieSync:' + getCookieValue)
                   let resultCode:number = testNapi.saveCookieSync()
                   console.log('OH_ArkWebCookieManager_SaveCookieSync001 saveCookieSync resultCode:' + String(resultCode))
-                  Utils.emitEvent(String(resultCode),2025072501)
+                  Utils.emitEvent(String(resultCode),148650)
                   break
                 }
                 case 'OH_ArkWebCookieManager_SaveCookieSync002': {
@@ -85,7 +85,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   console.log('OH_ArkWebCookieManager_SaveCookieSync002 fetchCookieSync:' + getCookieValue)
                   let resultCode:number = testNapi.saveCookieSync()
                   console.log('OH_ArkWebCookieManager_SaveCookieSync002 saveCookieSync resultCode:' + String(resultCode))
-                  Utils.emitEvent(String(resultCode),2025072502)
+                  Utils.emitEvent(String(resultCode),148660)
                   break
                 }
                 case 'OH_ArkWebCookieManager_SaveCookieSync003': {
@@ -98,7 +98,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   await waitForExist(()=>testNapi.getSaveCookieSyncThreadResult(), 'OH_ArkWebCookieManager_SaveCookieSync003_syncThread', 0, 1000)
                   let resultCode:number = testNapi.getSaveCookieSyncThreadResult()
                   console.log('OH_ArkWebCookieManager_SaveCookieSync003 getSaveCookieSyncThreadResult resultCode:' + String(resultCode))
-                  Utils.emitEvent(String(resultCode),2025072503)
+                  Utils.emitEvent(String(resultCode),148670)
                   break
                 }
                 case 'OH_ArkWebCookieManager_SaveCookieAsync001': {
@@ -108,7 +108,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   console.log('OH_ArkWebCookieManager_SaveCookieAsync001 fetchCookieSync:' + getCookieValue)
                   let resultValue:number = testNapi.saveCookieAsyncNullptr()
                   console.log('OH_ArkWebCookieManager_SaveCookieAsync001 saveCookieAsyncNullptr resultValue:' + String(resultValue))
-                  Utils.emitEvent(String(resultValue),2025072504)
+                  Utils.emitEvent(String(resultValue),148680)
                   break
                 }
                 case 'OH_ArkWebCookieManager_SaveCookieAsync002': {
@@ -121,7 +121,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   await waitForExist(()=>testNapi.getSaveCookieAsyncCallbackResult(), 'OH_ArkWebCookieManager_SaveCookieAsync002_syncThread', 0, 1000)
                   let resultCode:number = testNapi.getSaveCookieAsyncCallbackResult()
                   console.log('OH_ArkWebCookieManager_SaveCookieAsync002 getSaveCookieAsyncCallbackResult resultCode:' + String(resultCode))
-                  Utils.emitEvent(String(resultCode),2025072505)
+                  Utils.emitEvent(String(resultCode),148690)
                   break
                 }
                 case 'OH_ArkWebCookieManager_SaveCookieAsync003': {
@@ -134,7 +134,7 @@ struct WebArkWebCookieManagerSaveCookie {
                   await waitForExist(()=>testNapi.getSaveCookieAsyncCallbackResult(), 'OH_ArkWebCookieManager_SaveCookieAsync003_syncThread', 0, 1000)
                   let resultCode:number = testNapi.getSaveCookieAsyncCallbackResult()
                   console.log('OH_ArkWebCookieManager_SaveCookieAsync003 getSaveCookieAsyncCallbackResult resultCode:' + String(resultCode))
-                  Utils.emitEvent(String(resultCode),2025072506)
+                  Utils.emitEvent(String(resultCode),148700)
                   break
                 }
                 default :

@@ -18,9 +18,12 @@ import Utils from './Utils';
 import hilog from '@ohos.hilog';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import testNapi from 'libentry.so';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+const  driver = Driver.create();
 
 
 
@@ -33,7 +36,6 @@ export default function webviewApi() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(1000);
       console.info("web beforeEach start");
       done();
     })
@@ -50,10 +52,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_GetNativeAPI PASS');
 
-      Utils.emitEvent("emitWeb_GetNativeAPI", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_GetNativeAPI", true, 1001, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_GetNativeAPI", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_GetNativeAPI", true, 147420, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_GetNativeAPI', true,1000);
+      done();
     })
 
     /*
@@ -68,10 +72,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ReleaseString PASS');
 
-      Utils.emitEvent("emitWeb_ReleaseString", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_ReleaseString", true, 1002, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_ReleaseString", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_ReleaseString", true, 147430, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_ReleaseString', true,1000);
+      done();
     })
 
     /*
@@ -86,10 +92,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ReleaseByteArray PASS');
 
-      Utils.emitEvent("emitWeb_ReleaseByteArray", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_ReleaseByteArray", true, 1003, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_ReleaseByteArray", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_ReleaseByteArray", true, 147440, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_ReleaseByteArray', true,1000);
+      done();
     })
 
     /*
@@ -104,10 +112,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_DestroyHttpBodyStream PASS');
 
-      Utils.emitEvent("emitWebResourceRequest_DestroyHttpBodyStream", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResourceRequest_DestroyHttpBodyStream", true, 1004, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResourceRequest_DestroyHttpBodyStream", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWebResourceRequest_DestroyHttpBodyStream", true, 147450, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWebResourceRequest_DestroyHttpBodyStream', true,1000);
+      done();
     })
 
     /*
@@ -122,10 +132,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetHeaderByName PASS');
 
-      Utils.emitEvent("emitWebResponse_SetHeaderByName", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWebResponse_SetHeaderByName", true, 1005, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWebResponse_SetHeaderByName", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWebResponse_SetHeaderByName", true, 147460, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWebResponse_SetHeaderByName', true,1000);
+      done();
     })
 
     /*
@@ -140,10 +152,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_SchemeHandler PASS');
 
-      Utils.emitEvent("emitWeb_SchemeHandler", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_SchemeHandler", true, 1006, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_SchemeHandler", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_SchemeHandler", true, 147470, ()=>{isReturn = true});
+     Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_SchemeHandler', true,1000);
+      done();
     })
 
     /*
@@ -158,10 +172,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceHandler PASS');
 
-      Utils.emitEvent("emitWeb_ResourceHandler", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_ResourceHandler", true, 1007, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_ResourceHandler", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_ResourceHandler", true, 147480, ()=>{isReturn = true});
+     Utils.waitAndClickComponent("webHostingButton",driver)
+     await waitForExist(()=>isReturn, 'testWeb_ResourceHandler', true,1000);
+     done();
     })
 
     /*
@@ -176,10 +192,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_Response PASS');
 
-      Utils.emitEvent("emitWeb_Response", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_Response", true, 1008, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_Response", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_Response", true, 147490, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_Response', true,1000);
+      done();
     })
 
     /*
@@ -194,10 +212,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceRequest PASS');
 
-      Utils.emitEvent("emitWeb_ResourceRequest", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_ResourceRequest", true, 1009, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_ResourceRequest", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_ResourceRequest", true, 147500, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_ResourceRequest', true,1000);
+      done();
     })
 
     /*
@@ -212,10 +232,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_RequestHeaderList PASS');
 
-      Utils.emitEvent("emitWeb_RequestHeaderList", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_RequestHeaderList", true, 1010, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_RequestHeaderList", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_RequestHeaderList", true, 147510, ()=>{isReturn = true});
+       Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_RequestHeaderList', true,1000);
+      done();
     })
 
     /*
@@ -230,10 +252,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_HttpBodyStream PASS');
 
-      Utils.emitEvent("emitWeb_HttpBodyStream", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_HttpBodyStream", true, 1011, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_HttpBodyStream", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_HttpBodyStream", true, 147520, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_HttpBodyStream', true,1000);
+      done();
     })
 
     /*
@@ -248,10 +272,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_HttpBodyStreamInitCallback PASS');
 
-      Utils.emitEvent("emitWeb_HttpBodyStreamInitCallback", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_HttpBodyStreamInitCallback", true, 1012, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_HttpBodyStreamInitCallback", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_HttpBodyStreamInitCallback", true, 147530, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_HttpBodyStreamInitCallback', true,1000);
+      done();
     })
 
     /*
@@ -266,10 +292,12 @@ export default function webviewApi() {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_HttpBodyStreamReadCallback PASS');
 
-      Utils.emitEvent("emitWeb_HttpBodyStreamReadCallback", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("testWeb_HttpBodyStreamReadCallback", true, 1013, done);
-      sendEventByKey('webHostingButton', 10, '');
+      Utils.emitEvent("emitWeb_HttpBodyStreamReadCallback", 147411)
+      let isReturn = false;
+      Utils.registerEvent("testWeb_HttpBodyStreamReadCallback", true, 147540, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webHostingButton",driver)
+      await waitForExist(()=>isReturn, 'testWeb_HttpBodyStreamReadCallback', true,1000);
+      done();
     })
 
     /*
@@ -283,8 +311,6 @@ export default function webviewApi() {
     it('testWeb_GetNativeAPI_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_GetNativeAPI_False PASS');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.getNativeApiFalse()
       expect(0).assertEqual(result);
       done();
@@ -301,8 +327,6 @@ export default function webviewApi() {
     it('testWebRequestHeaderList_GetSize_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebRequestHeaderList_GetSize_False PASS');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.requestHeaderListFalse()
       expect(-1).assertEqual(result);
       done();
@@ -319,8 +343,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_SetUserDataFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_SetUserDataFalse PASS');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamSetUserDataFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -337,8 +359,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_SetReadCallback_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_SetReadCallback_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamSetReadCallbackFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -355,8 +375,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_Init_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_Init_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamInitFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -373,8 +391,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_IsChunked_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_IsChunked_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamIsChunkedFalse()
       expect(0).assertEqual(result);
       done();
@@ -391,8 +407,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_IsEof_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_IsEof_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamIsEofFalse()
       expect(0).assertEqual(result);
       done();
@@ -409,8 +423,6 @@ export default function webviewApi() {
     it('testWebHttpBodyStream_IsInMemory_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_IsInMemory_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.httpBodyStreamIsInMemoryFalse()
       expect(0).assertEqual(result);
       done();
@@ -427,8 +439,6 @@ export default function webviewApi() {
     it('testWebResourceRequest_IsRedirect_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsRedirect_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.resourceRequestIsRedirectFalse()
       expect(0).assertEqual(result);
       done();
@@ -445,8 +455,6 @@ export default function webviewApi() {
     it('testWebResourceRequest_IsMainFrame_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsMainFrame_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.resourceRequestIsMainFrameFalse()
       expect(0).assertEqual(result);
       done();
@@ -463,8 +471,6 @@ export default function webviewApi() {
     it('testWebResourceRequest_HasGesture_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_HasGesture_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.resourceRequestHasGestureFalse()
       expect(0).assertEqual(result);
       done();
@@ -481,8 +487,6 @@ export default function webviewApi() {
     it('testWeb_RegisterCustomSchemes_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_RegisterCustomSchemes_True');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.registerCustomSchemesTrue()
       expect(0).assertEqual(result);
       done();
@@ -499,8 +503,6 @@ export default function webviewApi() {
     it('testWeb_RegisterCustomSchemes_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_RegisterCustomSchemes_INVALID');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.registerCustomSchemesInvalid()
       expect(17100101).assertEqual(result);
       done();
@@ -517,8 +519,6 @@ export default function webviewApi() {
     it('testWeb_RegisterCustomSchemes_ERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_RegisterCustomSchemes_ERROR');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.registerCustomSchemesError()
       expect(17100102).assertEqual(result);
       done();
@@ -535,8 +535,6 @@ export default function webviewApi() {
     it('testWebServiceWorker_SetSchemeHandler_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebServiceWorker_SetSchemeHandler_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.serviceWorkerSetSchemeHandlerFalse()
       expect(0).assertEqual(result);
       done();
@@ -553,8 +551,6 @@ export default function webviewApi() {
     it('testWeb_SetSchemeHandler_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_SetSchemeHandler_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setSchemeHandlerFalse()
       expect(0).assertEqual(result);
       done();
@@ -571,8 +567,6 @@ export default function webviewApi() {
     it('testWeb_ClearSchemeHandlers_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ClearSchemeHandlers_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.clearSchemeHandlersFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -589,8 +583,6 @@ export default function webviewApi() {
     it('testWebSchemeHandler_SetUserData_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetUserData_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.schemeHandlerSetUserDataFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -607,8 +599,6 @@ export default function webviewApi() {
     it('testWebSchemeHandler_SetOnRequestStart_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetOnRequestStart_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setOnRequestStartFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -625,8 +615,6 @@ export default function webviewApi() {
     it('testWebSchemeHandler_SetOnRequestStop_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebSchemeHandler_SetOnRequestStop_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setOnRequestStopFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -643,8 +631,6 @@ export default function webviewApi() {
     it('testWebResponse_SetUrl_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetUrl_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetUrlFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -661,8 +647,6 @@ export default function webviewApi() {
     it('testWebResponse_SetError_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetError_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetErrorFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -679,8 +663,6 @@ export default function webviewApi() {
     it('testWebResponse_SetStatus_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetStatus_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetStatusFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -697,8 +679,6 @@ export default function webviewApi() {
     it('testWebResponse_GetStatus_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetStatus_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseGetStatusFalse()
       expect(-1).assertEqual(result);
       done();
@@ -715,8 +695,6 @@ export default function webviewApi() {
     it('testWebResponse_SetStatusText_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetStatusText_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetStatusTextFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -733,8 +711,6 @@ export default function webviewApi() {
     it('testWebResponse_SetMimeType_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetMimeType_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetMimeTypeFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -751,8 +727,6 @@ export default function webviewApi() {
     it('testWebResponse_SetCharset_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetCharset_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.responseSetCharsetFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -769,8 +743,6 @@ export default function webviewApi() {
     it('testWebResponse_SetHeaderByName_Name_NULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetHeaderByName_Name_NULL');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setHeaderByNameNameNull()
       expect(17100101).assertEqual(result);
       done();
@@ -787,8 +759,6 @@ export default function webviewApi() {
     it('testWebResponse_SetHeaderByName_Value_NULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetHeaderByName_Value_NULL');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setHeaderByNameValueNull()
       expect(17100101).assertEqual(result);
       done();
@@ -805,8 +775,6 @@ export default function webviewApi() {
     it('testWebResponse_SetHeaderByName_Overwrite_NULL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetHeaderByName_Overwrite_NULL');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.setHeaderByNameOverwriteNull()
       expect(0).assertEqual(result);
       done();
@@ -823,8 +791,6 @@ export default function webviewApi() {
     it('testWebResourceHandler_Destroy_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_Destroy_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.resourceHandlerDestroyFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -841,8 +807,6 @@ export default function webviewApi() {
     it('testWebResourceHandler_DidReceiveResponse_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidReceiveResponse_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.didReceiveResponseFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -859,8 +823,6 @@ export default function webviewApi() {
     it('testWebResourceHandler_DidReceiveData_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidReceiveData_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.didReceiveDataFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -877,8 +839,6 @@ export default function webviewApi() {
     it('testWebResourceHandler_DidFinish_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidFinish_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.didFinishFalse()
       expect(17100101).assertEqual(result);
       done();
@@ -895,8 +855,6 @@ export default function webviewApi() {
     it('testWebResourceHandler_DidFailWithError_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidFailWithError_False');
-
-      await Utils.sleep(1000);
       let result:number = testNapi.didFailWithErrorFalse()
       expect(17100101).assertEqual(result);
       done();
