@@ -17,6 +17,7 @@ group("ActsIncognitoModeTest") {
     deps = [
       "ace_incognito_mode_cloudservice_controller_group_eight:ActsWebIncognitoModeCloudServiceControllerGroupEightTest",
       "ace_incognito_mode_controller_five:ActsWebIncognitoModeControllerFiveTest",
+      "ace_incognito_mode_controller_five_static:ActsWebIncognitoModeControllerFiveStaticTest",
       "ace_incognito_mode_dev_three:ActsWebIncognitoModeDevThreeTest",
       "ace_incognito_mode_dev_two:ActsWebIncognitoModeDevTwoTest",
       "ace_incognito_mode_webviewController:ActsWebIncognitoModeWebViewControllerTest",

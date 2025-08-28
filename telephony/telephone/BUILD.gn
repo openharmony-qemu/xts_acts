@@ -29,5 +29,6 @@ group("telephone") {
 "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
 "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
 "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest"
+"ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
   ]
 }
