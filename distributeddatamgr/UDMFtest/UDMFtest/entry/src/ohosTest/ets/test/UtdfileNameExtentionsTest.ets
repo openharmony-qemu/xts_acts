@@ -6429,5 +6429,369 @@ export default function UtdfileNameTest() {
       console.log("typeId:" + result);
       expect(result).assertEqual("com.panasonic.rw2-raw-image");
     });
+
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4630
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4630
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".dif"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4630',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.dif', 'general.video');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.dif-video");
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect(error != null ).assertFail();
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4640
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4640
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".dif"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.dif', 'general.composite-object');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.microsoft.excel.dif")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4650
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4650
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".ts"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4650',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ts', 'general.video');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.ts")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4660
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4660
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".ts"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4660',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ts', 'general.source-code');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.type-script")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4670
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4670
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".ogg"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4670',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ogg', 'general.audio');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.ogg,org.xiph.ogg")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4680
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4680
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".aiff"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4680',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.aiff', 'general.audio');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.aiff,general.aifc-audio")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4690
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4690
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".au"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4690',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.au', 'general.audio');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.au-audio,general.ulaw-audio")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".snd"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.snd', 'general.audio');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.au-audio,general.ulaw-audio")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4700
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4710
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".tar"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4710',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.tar', 'general.archive');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.tar-archive")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4720
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4720
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".etx"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4720',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'general.text');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.setext")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4730
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4730
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".etx"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4730',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'general.composite-object');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4740
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4740
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".etx"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4740',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'com.kingsoft.office');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4750
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4750
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".etx"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4750',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'com.kingsoft.office');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4760
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4760
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".otf"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4760',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'general.font');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("general.opentype-font")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4770
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4770
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".otf"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4770',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'general.composite-object');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("org.oasis-open.opendocument.formula-template")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".otf"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4780',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'org.oasis.opendocument');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("org.oasis-open.opendocument.formula-template")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4790
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4790
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".movie"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4790',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.movie', 'general.video');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.sgi.movie,com.apple.quicktime-movie")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4800
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4800
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".sit"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4800',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.sit', 'general.archive');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.allume.stuffit-archive,com.stuffit.sit-archive")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4810
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4810
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".pdb"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4810',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pdb', 'general.database');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.microsoft.pdb")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
+    /**
+     * @tc.name      : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4820
+     * @tc.number    : SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4820
+     * @tc.desc      : getUniformDataTypeByFilenameExtension  parmater is ".ape"
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_4820',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ape', 'general.audio');
+        console.info(`typeId is ${typeIds}`);
+        expect(typeIds.toString()).assertEqual("com.monkeysaudio.ape-audio")
+      } catch(e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+      }
+    })
   });
 }
