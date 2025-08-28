@@ -602,26 +602,26 @@ export default function ActsCommonEventManagerSupportTest() {
     })
 
     /*
-      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3100
+      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3700
       * @tc.name      : commonEventManager.Support
       * @tc.desc      : SECOND_MOUNTED common event
       */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3100', Level.LEVEL0, async function () {
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3100 START`)
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3700', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3700 START`)
       expect(commonEventManager.Support.COMMON_EVENT_SECOND_MOUNTED).assertEqual('usual.event.SECOND_MOUNTED')
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3100 END`)
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3700 END`)
     })
 
     /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3200
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3800
      * @tc.name      : commonEventManager.Support
      * @tc.desc      : enter/exit force sleep common event
      */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3200', Level.LEVEL0, async function () {
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3200 START`)
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3800', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3800 START`)
       expect(commonEventManager.Support.COMMON_EVENT_ENTER_HIBERNATE).assertEqual('usual.event.ENTER_HIBERNATE')
       expect(commonEventManager.Support.COMMON_EVENT_EXIT_HIBERNATE).assertEqual('usual.event.EXIT_HIBERNATE')
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3200 END`)
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_3800 END`)
     })
 
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
