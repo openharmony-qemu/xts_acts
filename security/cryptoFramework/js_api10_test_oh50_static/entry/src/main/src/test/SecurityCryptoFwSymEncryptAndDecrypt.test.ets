@@ -1262,7 +1262,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
         for (let index = 0; index < encCipherIndex1.length; index++) {
-          let tmp = cipherText1.subarray(encTotal1, encTotal1 + encCipherIndex1[index]);
+          let tmp = cipherText1.subarray(encTotal1.toInt(), (encTotal1 + encCipherIndex1[index]).toInt());
           let cipherPlain1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync({data: tmp});
           if (cipherPlain1 === null) {
             throw new Error("[TEST] Data is null.")
@@ -1274,7 +1274,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           decText1 = mergeText;
         }
         for (let index = 0; index < encCipherIndex2.length; index++) {
-          let tmp = cipherText2.subarray(encTotal2, encTotal2 + encCipherIndex2[index]);
+          let tmp = cipherText2.subarray(encTotal2.toInt(), (encTotal2 + encCipherIndex2[index]).toInt());
           let cipherPlain2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync({data: tmp});
           if (cipherPlain2 === null) {
             throw new Error("[TEST] Data is null.")
@@ -1454,8 +1454,8 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         if (cipherDataTmp === null) {
           throw new Error("[TEST] DoFinal failed.")
         }
-        let authTag = cipherDataTmp.data.subarray(cipherDataTmp.data.byteLength - 16, cipherDataTmp.data.byteLength);
-        let cipherData2: cryptoFramework.DataBlob = {data: cipherDataTmp.data.subarray(0, cipherDataTmp.data.byteLength - 16)}
+        let authTag = cipherDataTmp.data.subarray(cipherDataTmp.data.byteLength.toInt() - 16, cipherDataTmp.data.byteLength.toInt());
+        let cipherData2: cryptoFramework.DataBlob = {data: cipherDataTmp.data.subarray(0, cipherDataTmp.data.byteLength.toInt() - 16)}
         let ret: boolean = commonUtils.compareDataBlob(cipherData, cipherData2);
         expect(ret).assertTrue();
         expect(authTag.byteLength).assertEqual(16);

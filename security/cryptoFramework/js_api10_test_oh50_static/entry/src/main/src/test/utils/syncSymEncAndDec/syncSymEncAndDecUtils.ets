@@ -233,7 +233,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
       cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
     }
     for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
-      let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+      let tmp = data.data.subarray((blockSize * dataSize).toInt(), (blockSize * (dataSize + 1)).toInt());
       let doFinalText: cryptoFramework.DataBlob = { data:tmp };
       let encryptCipher = cipher.updateSync(doFinalText);
       if (encryptCipher === null) {
@@ -269,7 +269,7 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
       await cipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
     }
     for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
-      let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+      let tmp = data.data.subarray((blockSize * dataSize).toInt(), (blockSize * (dataSize + 1)).toInt());
       let doFinalText: cryptoFramework.DataBlob = { data:tmp };
       let encryptCipher = await cipher.update(doFinalText);
       if (encryptCipher === null) {

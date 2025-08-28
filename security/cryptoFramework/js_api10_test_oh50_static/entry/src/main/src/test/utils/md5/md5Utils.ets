@@ -78,7 +78,7 @@ async function doHmacWithSplit(macAlgName: string, key: cryptoFramework.SymKey,
     let mac: cryptoFramework.Mac = cryptoFramework.createMac(macAlgName);
     await mac.init(key);
     for(let dataSize = 0; dataSize < message.data.byteLength / blockSize; dataSize++) {
-      let tmp = message.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+      let tmp = message.data.subarray((blockSize * dataSize).toInt(), (blockSize * (dataSize + 1)).toInt());
       let updateText: cryptoFramework.DataBlob = { data:tmp };
       await mac.update(updateText);
     }

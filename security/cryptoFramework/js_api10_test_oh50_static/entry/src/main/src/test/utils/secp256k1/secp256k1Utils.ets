@@ -531,11 +531,11 @@ async function doSignUpdatePromise(algName: string, priKey: cryptoFramework.PriK
       iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
-      let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+      let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
       let updateText: cryptoFramework.DataBlob = { data:tmp };
       await sign.update(updateText);
       if (rem != 0 && index + 1 == iterate) {
-        let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+        let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
         let updateText: cryptoFramework.DataBlob = { data:tmp };
         await sign.update(updateText);
       }
@@ -573,11 +573,11 @@ function doSignUpdateSync(algName: string, priKey: cryptoFramework.PriKey, msg: 
       iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
-      let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+      let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
       let updateText: cryptoFramework.DataBlob = { data:tmp };
       sign.updateSync(updateText);
       if (rem != 0 && index + 1 == iterate) {
-        let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+        let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
         let updateText: cryptoFramework.DataBlob = { data:tmp };
         sign.updateSync(updateText);
       }

@@ -190,11 +190,11 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
           iterate = (msgLen - rem) / blockSize;
         }
         for (let index = 0; index < iterate; index++) {
-          let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+          let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await doSignUpdateCallback(sign, updateText);
           if (rem != 0 && index + 1 == iterate) {
-            let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+            let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
             let updateText: cryptoFramework.DataBlob = { data: tmp };
             await doSignUpdateCallback(sign, updateText);
           }
@@ -203,11 +203,11 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
         await verify.init(keyPair.pubKey);
         for (let index = 0; index < iterate; index++) {
-          let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+          let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await doVerifyUpdateCallback(verify, updateText);
           if (rem != 0 && index + 1 == iterate) {
-            let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+            let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
             let updateText: cryptoFramework.DataBlob = { data: tmp };
             await doVerifyUpdateCallback(verify, updateText);
           }
@@ -271,11 +271,11 @@ async function doSignVerifyWithUpdateByDigestSpec(algName: string,
         iterate = (msgLen - rem) / blockSize;
       }
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         await sign.update(updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await sign.update(updateText);
         }
@@ -284,11 +284,11 @@ async function doSignVerifyWithUpdateByDigestSpec(algName: string,
       let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
       await verify.init(keyPair.pubKey);
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         await verify.update(updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await verify.update(updateText);
         }
@@ -339,11 +339,11 @@ function doSignVerifyWithUpdateByDigestSpecSync(algName: string,
         iterate = (msgLen - rem) / blockSize;
       }
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         sign.updateSync(updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           sign.updateSync(updateText);
         }
@@ -352,11 +352,11 @@ function doSignVerifyWithUpdateByDigestSpecSync(algName: string,
       let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
       verify.initSync(keyPair.pubKey);
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         verify.updateSync(updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           verify.updateSync(updateText);
         }
@@ -408,11 +408,11 @@ async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
         iterate = (msgLen - rem) / blockSize;
       }
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         await doSignUpdateCallback(sign, updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await doSignUpdateCallback(sign, updateText);
         }
@@ -421,11 +421,11 @@ async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
       let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
       await verify.init(keyPair.pubKey);
       for (let index = 0; index < iterate; index++) {
-        let tmp = msg.data.subarray(blockSize * index, blockSize * (index + 1));
+        let tmp = msg.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
         let updateText: cryptoFramework.DataBlob = { data: tmp };
         await doVerifyUpdateCallback(verify, updateText);
         if (rem != 0 && index + 1 == iterate) {
-          let tmp = msg.data.subarray(blockSize * (index + 1), msgLen);
+          let tmp = msg.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
           let updateText: cryptoFramework.DataBlob = { data: tmp };
           await doVerifyUpdateCallback(verify, updateText);
         }
