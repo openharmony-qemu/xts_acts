@@ -30,7 +30,7 @@ group("telephone") {
     "noCardStatic:ActsTelephonySimNoCardStaticTest",
     "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
     "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
-    "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest"
+    "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
     "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest"
   ]
 }
