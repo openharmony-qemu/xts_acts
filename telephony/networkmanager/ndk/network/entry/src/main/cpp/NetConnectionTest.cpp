@@ -48,6 +48,23 @@ static const uint32_t CASE_INDEX_13 = 13;
 static const uint32_t CASE_INDEX_14 = 14;
 static const uint32_t DURATION = 15;
 
+static const int32_t INVALID_STATUS = -1;
+static const uint32_t NETMANAGER_EXT_SUCCESS = 0;
+static const uint32_t NETMANAGER_ERR_PERMISSION_DENIED = 201;
+static const uint32_t NETMANAGER_ERR_PARAMETER_ERROR = 401;
+static const uint32_t OK = 0;
+static const uint32_t PERMISSION_DENIED = 201;
+static const uint32_t PARAMETER_ERROR = 401;
+static const uint32_t OPERATION_FAILED = 2100002;
+static const uint32_t INTERNAL_ERROR = 2100003;
+static const uint32_t CALLBACK_REG_TRY_AGAIN_ERROR = 2100008;
+static const uint32_t REQ_NUMBER_OVERLOAD = 2101022;
+
+static const uint32_t CERT_REVOKED = 2305023;
+static const uint32_t INVALID_CA = 2305024;
+static const uint32_t CERT_UNTRUST = 2305027;
+static const uint32_t MEMORY_OVERFLOW = 2305999;
+
 static std::string GetString(napi_env env, napi_callback_info info, uint32_t index)
 {
     size_t argc = MAX_ARG_COUNT;
@@ -73,6 +90,13 @@ napi_value NetConn_HasDefaultNet(napi_env env, napi_callback_info info)
 {
     int32_t hasDefaultNet;
     int32_t returnValue = OH_NetConn_HasDefaultNet(&hasDefaultNet);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -82,6 +106,13 @@ napi_value NetConn_GetDefaultNet(napi_env env, napi_callback_info info)
 {
     NetConn_NetHandle netHandle;
     int32_t returnValue = OH_NetConn_GetDefaultNet(&netHandle);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -91,6 +122,13 @@ napi_value NetConn_IsDefaultNetMetered(napi_env env, napi_callback_info info)
 {
     int32_t isMetered;
     int32_t returnValue = OH_NetConn_IsDefaultNetMetered(&isMetered);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -102,6 +140,13 @@ napi_value NetConn_GetConnectionProperties(napi_env env, napi_callback_info info
     NetConn_NetHandle netHandle;
     OH_NetConn_GetDefaultNet(&netHandle);
     int32_t returnValue = OH_NetConn_GetConnectionProperties(&netHandle, &netProp);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -113,6 +158,13 @@ napi_value NetConn_GetNetCapabilities(napi_env env, napi_callback_info info)
     OH_NetConn_GetDefaultNet(&netHandle);
     NetConn_NetCapabilities netCapacities;
     int32_t returnValue = OH_NetConn_GetNetCapabilities(&netHandle, &netCapacities);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -125,6 +177,13 @@ napi_value NetConn_GetAddrInfo(napi_env env, napi_callback_info info)
     struct addrinfo *res = nullptr;
     int32_t returnValue = OH_NetConn_GetAddrInfo(const_cast<char*>(host.c_str()),
         const_cast<char*>(serv.c_str()), nullptr, &res, 0);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -134,6 +193,13 @@ napi_value NetConn_GetAllNets(napi_env env, napi_callback_info info)
 {
     NetConn_NetHandleList netHandles;
     int32_t returnValue = OH_NetConn_GetAllNets(&netHandles);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -147,6 +213,17 @@ napi_value NetConn_SetPacUrl(napi_env env, napi_callback_info info)
         returnValue = OH_NetConn_SetPacUrl(nullptr);
     } else {
         returnValue = OH_NetConn_SetPacUrl(const_cast<char*>(pacUrl.c_str()));
+    }
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -162,6 +239,17 @@ napi_value NetConn_GetPacUrl(napi_env env, napi_callback_info info)
         pac = nullptr;
     }
     int32_t returnValue = OH_NetConn_GetPacUrl(pac);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -360,6 +448,53 @@ napi_value Web_Socket(napi_env env, napi_callback_info info)
     return result;
 }
 
+static int32_t ReadSocketError(int32_t errCode)
+{
+    switch (errCode) {
+        case WEBSOCKET_OK:
+            break;
+        case E_BASE:
+            break;
+        case WEBSOCKET_CLIENT_NULL:
+            break;
+        case WEBSOCKET_CLIENT_NOT_CREATED:
+            break;
+        case WEBSOCKET_CONNECTION_ERROR:
+            break;
+        case WEBSOCKET_CONNECTION_PARSE_URL_ERROR:
+            break;
+        case WEBSOCKET_CONNECTION_NO_MEMORY:
+            break;
+        case WEBSOCKET_CONNECTION_CLOSED_BY_PEER:
+            break;
+        case WEBSOCKET_DESTROYED:
+            break;
+        case WEBSOCKET_PROTOCOL_ERROR:
+            break;
+        case WEBSOCKET_SEND_NO_MEMORY:
+            break;
+        case WEBSOCKET_SEND_DATA_NULL:
+            break;
+        case WEBSOCKET_DATA_LENGTH_EXCEEDED:
+            break;
+        case WEBSOCKET_QUEUE_LENGTH_EXCEEDED:
+            break;
+        case WEBSOCKET_NO_CLIENT_CONTEXT:
+            break;
+        case WEBSOCKET_NO_HEADER_CONTEXT:
+            break;
+        case WEBSOCKET_HEADER_EXCEEDED:
+            break;
+        case WEBSOCKET_NO_CONNECTION:
+            break;
+        case WEBSOCKET_NO_CONNECTION_CONTEXT:
+            break;
+        default:
+            return INVALID_STATUS;
+    }
+    return errCode;
+}
+
 napi_value Web_Socket_ErrCode(napi_env env, napi_callback_info info)
 {
     int32_t index = GetInt(env, info, 0);
@@ -386,6 +521,7 @@ napi_value Web_Socket_ErrCode(napi_env env, napi_callback_info info)
         returnValue = OH_WebSocketClient_AddHeader(client, header);
         returnValue = OH_WebSocketClient_Send(client, nullptr, 0);
     }
+    returnValue = ReadSocketError(returnValue);
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -397,6 +533,11 @@ napi_value NetStack_Certificate_PinningKind(napi_env env, napi_callback_info inf
     NetStack_CertificatePinning pin;
     pin.kind = NetStack_CertificatePinningKind::PUBLIC_KEY;
     int32_t returnValue = OH_NetStack_GetPinSetForHostName(url.c_str(), &pin);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == MEMORY_OVERFLOW) {
+        returnValue = MEMORY_OVERFLOW;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -409,6 +550,11 @@ napi_value NetStack_Hash_Algorithm(napi_env env, napi_callback_info info)
     pin.kind = NetStack_CertificatePinningKind::PUBLIC_KEY;
     pin.hashAlgorithm = NetStack_HashAlgorithm::SHA_256;
     int32_t returnValue = OH_NetStack_GetPinSetForHostName(url.c_str(), &pin);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == MEMORY_OVERFLOW) {
+        returnValue = MEMORY_OVERFLOW;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -422,6 +568,11 @@ napi_value Public_KeyHash(napi_env env, napi_callback_info info)
     pin.hashAlgorithm = NetStack_HashAlgorithm::SHA_256;
     pin.publicKeyHash = nullptr;
     int32_t returnValue = OH_NetStack_GetPinSetForHostName(url.c_str(), &pin);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == MEMORY_OVERFLOW) {
+        returnValue = MEMORY_OVERFLOW;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -436,6 +587,13 @@ napi_value NetStack_IsCleartextPermitted(napi_env env, napi_callback_info info)
         returnValue = OH_Netstack_IsCleartextPermitted(&isCleartextPermitted);
     } else {
         returnValue = OH_Netstack_IsCleartextPermitted(nullptr);
+    }
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
     }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
@@ -453,7 +611,15 @@ napi_value NetStack_IsCleartextPermittedByHostName(napi_env env, napi_callback_i
     } else {
         returnValue = OH_Netstack_IsCleartextPermittedByHostName(nullptr, &isCleartextPermitted);
     }
-    
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -467,6 +633,7 @@ napi_value NetConn_Net_Specifier(napi_env env, napi_callback_info info)
     NetConn_NetConnCallback netConnCallback;
     uint32_t timeout = 1;
     uint32_t callbackId = 1;
+    int32_t returnValue = -1;
     specifier.bearerPrivateIdentifier = strdup(identifier.c_str());
     if (index == CASE_INDEX_1) {
         specifier.caps.bearerTypes[0] = NetConn_NetBearerType::NETCONN_BEARER_BLUETOOTH;
@@ -477,8 +644,23 @@ napi_value NetConn_Net_Specifier(napi_env env, napi_callback_info info)
     } else {
         specifier.caps.bearerTypes[0] = NetConn_NetBearerType::NETCONN_BEARER_VPN;
         specifier.caps.bearerTypesSize = 1;
+        returnValue = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, timeout, &callbackId);
+        callbackId++;
     }
-    int32_t returnValue = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, timeout, &callbackId);
+    returnValue = OH_NetConn_RegisterNetConnCallback(&specifier, &netConnCallback, timeout, &callbackId);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    } else if (returnValue == REQ_NUMBER_OVERLOAD) {
+        returnValue = REQ_NUMBER_OVERLOAD;
+    } else if (returnValue == CALLBACK_REG_TRY_AGAIN_ERROR) {
+        returnValue = CALLBACK_REG_TRY_AGAIN_ERROR;
+    }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -504,6 +686,13 @@ napi_value NetConn_Net_Addr(napi_env env, napi_callback_info info)
     NetConn_NetHandle netHandle;
     OH_NetConn_GetDefaultNet(&netHandle);
     int32_t returnValue = OH_NetConn_GetConnectionProperties(&netHandle, &netProperty);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -553,6 +742,15 @@ napi_value NetConn_Http_Proxy(napi_env env, napi_callback_info info)
         httpProxy.port = 0;
     }
     int32_t returnValue = OH_NetConn_GetDefaultHttpProxy(&httpProxy);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -632,6 +830,13 @@ napi_value Register_DnsResolver(napi_env env, napi_callback_info info)
     } else if (index == CASE_INDEX_2) {
         returnValue = OHOS_NetConn_RegisterDnsResolver(nullptr);
     }
+    if (returnValue == NETMANAGER_EXT_SUCCESS) {
+        returnValue = NETMANAGER_EXT_SUCCESS;
+    } else if (returnValue == NETMANAGER_ERR_PERMISSION_DENIED) {
+        returnValue = NETMANAGER_ERR_PERMISSION_DENIED;
+    } else if (returnValue == NETMANAGER_ERR_PARAMETER_ERROR) {
+        returnValue = NETMANAGER_ERR_PARAMETER_ERROR;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -651,6 +856,17 @@ napi_value Unregister_DnsResolver(napi_env env, napi_callback_info info)
     } else if (index == CASE_INDEX_4) {
         OHOS_NetConn_RegisterDnsResolver(DnsResolver);
         returnValue = OH_NetConn_UnregisterDnsResolver();
+    }
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -674,6 +890,19 @@ napi_value Register_DetCallback(napi_env env, napi_callback_info info)
         uint32_t callbackId;
         returnValue = OH_NetConn_RegisterDefaultNetConnCallback(&netConnCallback, &callbackId);
         returnValue = OH_NetConn_UnregisterNetConnCallback(callbackId);
+    }
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    } else if (returnValue == REQ_NUMBER_OVERLOAD) {
+        returnValue = REQ_NUMBER_OVERLOAD;
+    } else if (returnValue == CALLBACK_REG_TRY_AGAIN_ERROR) {
+        returnValue = CALLBACK_REG_TRY_AGAIN_ERROR;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -725,9 +954,111 @@ napi_value NetConn_QueryTrRout(napi_env env, napi_callback_info info)
     return result;
 }
 
-EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
+napi_value NetConn_FreeDnsResult(napi_env env, napi_callback_info info)
 {
+    std::string host = GetString(env, info, 0);
+    std::string serv = GetString(env, info, 1);
+    struct addrinfo *res = nullptr;
+    int32_t returnValue = OH_NetConn_GetAddrInfo(const_cast<char*>(host.c_str()),
+        const_cast<char*>(serv.c_str()), nullptr, &res, 0);
+    if (res != nullptr) {
+        returnValue = OH_NetConn_FreeDnsResult(res);
+    }
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+napi_value NetConn_BindSocket(napi_env env, napi_callback_info info)
+{
+    int32_t socketFd = GetInt(env, info, 0);
+    struct addrinfo *res = nullptr;
+    NetConn_NetHandle netHandle;
+    int32_t returnValue = OH_NetConn_BindSocket(socketFd, &netHandle);
+    if (returnValue == PERMISSION_DENIED) {
+        returnValue = PERMISSION_DENIED;
+    } else if (returnValue == PARAMETER_ERROR) {
+        returnValue = PARAMETER_ERROR;
+    } else if (returnValue == OPERATION_FAILED) {
+        returnValue = OPERATION_FAILED;
+    } else if (returnValue == INTERNAL_ERROR) {
+        returnValue = INTERNAL_ERROR;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static bool load_cert_blob(const char* filename, NetStack_CertBlob* certBlob) {
+    if (certBlob == nullptr) {
+        return false;
+    }
+    FILE* fp = fopen(filename, "rb");
+    if (!fp) {
+        return false;
+    }
+    fseek(fp, 0, SEEK_END);
+    long size = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    uint8_t* data = new uint8_t[size + 1];
+    fread(data, 1, size, fp);
+    fclose(fp);
+    data[size] = '\0';
+
+    certBlob->type = NetStack_CertType::NETSTACK_CERT_TYPE_PEM;
+    certBlob->size = static_cast<uint32_t>(size);
+    certBlob->data = data;
+    return true;
+}
+
+napi_value CertVerification(napi_env env, napi_callback_info info)
+{
+    std::string servCert = GetString(env, info, 0);
+    std::string caCert = GetString(env, info, 1);
+    NetStack_CertBlob servBlob; 
+    bool bServStatus = load_cert_blob(servCert.c_str(), &servBlob);
+    NetStack_CertBlob caBlob; 
+    bool bCaStatus = load_cert_blob(caCert.c_str(), &caBlob);
+    int32_t returnValue = -1;
+    if (bServStatus && bCaStatus) {
+        returnValue = OH_NetStack_CertVerification(&servBlob, &caBlob);
+        if (returnValue == OK) {
+            returnValue = OK;
+        } else if (returnValue == CERT_REVOKED) {
+            returnValue = CERT_REVOKED;
+        } else if (returnValue == INVALID_CA) {
+            returnValue = INVALID_CA;
+        } else if (returnValue == CERT_UNTRUST) {
+            returnValue = CERT_UNTRUST;
+        }
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+napi_value GetCertificatesHost(napi_env env, napi_callback_info info)
+{
+    std::string hostname = GetString(env, info, 0);
+    NetStack_Certificates certs;
+    int32_t returnValue = OH_NetStack_GetCertificatesForHostName(hostname.c_str(), &certs);
+    if (returnValue == OK) {
+        returnValue = OK;
+    } else if (returnValue == MEMORY_OVERFLOW) {
+        returnValue = MEMORY_OVERFLOW;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+EXTERN_C_START
+static void RegisterNetConnProperties(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
         {"NetConn_HasDefaultNet", nullptr, NetConn_HasDefaultNet, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetConn_GetDefaultNet", nullptr, NetConn_GetDefaultNet, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -751,7 +1082,13 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Web_Socket", nullptr, Web_Socket, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Web_Socket_ErrCode", nullptr, Web_Socket_ErrCode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetStack_Certificate_PinningKind", nullptr, NetStack_Certificate_PinningKind, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
+         nullptr, napi_default, nullptr}
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static void RegisterRemainingProperties(napi_env env, napi_value exports) {
+    napi_property_descriptor desc[] = {
         {"NetStack_Hash_Algorithm", nullptr, NetStack_Hash_Algorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Public_KeyHash", nullptr, Public_KeyHash, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetStack_IsCleartextPermittedByHostName", nullptr, NetStack_IsCleartextPermittedByHostName, nullptr, nullptr,
@@ -770,8 +1107,18 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Register_DetCallback", nullptr, Register_DetCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetCon_QueryProResult", nullptr, NetCon_QueryProResult, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetConn_QueryTrRout", nullptr, NetConn_QueryTrRout, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NetConn_FreeDnsResult", nullptr, NetConn_FreeDnsResult, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NetConn_BindSocket", nullptr, NetConn_BindSocket, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CertVerification", nullptr, CertVerification, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetCertificatesHost", nullptr, GetCertificatesHost, nullptr, nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+static napi_value Init(napi_env env, napi_value exports)
+{
+    RegisterNetConnProperties(env, exports);
+    RegisterRemainingProperties(env, exports);
     return exports;
 }
 EXTERN_C_END
