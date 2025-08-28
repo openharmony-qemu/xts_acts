@@ -1002,7 +1002,9 @@ static bool load_cert_blob(const char* filename, NetStack_CertBlob* certBlob)
     }
     try {
         std::ifstream file(filename, std::ios::binary);
-        if (!file) return false;
+        if (!file) {
+            return false;
+        }
         std::vector<uint8_t> buffer(
             (std::istreambuf_iterator<char>(file)),
             std::istreambuf_iterator<char>()
