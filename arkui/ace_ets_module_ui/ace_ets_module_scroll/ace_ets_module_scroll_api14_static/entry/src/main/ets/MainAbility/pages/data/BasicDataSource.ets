@@ -94,7 +94,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 
   public getData(index: number): T {
     console.log("zxy List cacheCountTest3 getData = " + index)
-    return this.dataArray[index]
+    return this.dataArray[index.toInt()]
   }
 
   public addData(index: number, data: T): void {
@@ -134,7 +134,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public changeData(index: number, data: T) {
-    this.dataArray[index] = data
+    this.dataArray[index.toInt()] = data
     this.notifyDataChange(index)
   }
 

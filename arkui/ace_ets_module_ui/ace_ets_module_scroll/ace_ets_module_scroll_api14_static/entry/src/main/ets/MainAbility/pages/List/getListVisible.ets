@@ -78,7 +78,7 @@ struct getVisibleContentInfo {
                   .height(50)
                   .fontSize(20)
                   .textAlign(TextAlign.Center)
-                  .backgroundColor(this.itemBackgroundColorArr[index * 3 +subIndex] ? 0x68B4FF : 0xFFFFFF)
+                  .backgroundColor(this.itemBackgroundColorArr[(index * 3 +subIndex).toInt()] ? 0x68B4FF : 0xFFFFFF)
               }
             }, (item: string) => item)
           }
@@ -105,7 +105,7 @@ struct getVisibleContentInfo {
                   this.listIndexInfo.index >= 0 &&
                   this.listIndexInfo.itemIndexInGroup! >= 0) {
                   this.itemBackgroundColorArr[
-                  this.listIndexInfo.index * 3 + this.listIndexInfo.itemIndexInGroup!
+                  (this.listIndexInfo.index * 3 + this.listIndexInfo.itemIndexInGroup!).toInt()
                   ] = true;
                 }
               }

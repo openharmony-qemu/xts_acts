@@ -84,8 +84,8 @@ struct WaterFlowFrictionPage {
           }
           .width('100%')
           .height('5%')
-          .height(this.itemHeightArray[item])
-          .backgroundColor(this.colors[item % 5])
+          .height(this.itemHeightArray[item.toInt()])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number) => `${item}`)
       }
       .width('90%')
@@ -104,8 +104,8 @@ struct WaterFlowFrictionPage {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item])
-          .backgroundColor(this.colors[item % 5])
+          .height(this.itemHeightArray[item.toInt()])
+          .backgroundColor(this.colors[item.toInt() % 5])
         }, (item: number) => `${item}`)
       }
       .columnsTemplate("1fr 1fr 1fr 1fr")

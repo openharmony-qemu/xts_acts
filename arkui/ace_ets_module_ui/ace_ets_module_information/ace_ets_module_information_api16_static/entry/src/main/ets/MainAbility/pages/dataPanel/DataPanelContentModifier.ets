@@ -90,7 +90,7 @@ struct ChildItem {
         Rect()
           .height(25)
           .width(this.item * 600 / this.max)
-          .foregroundColor(this.colorArray[this.index])
+          .foregroundColor(this.colorArray[this.index.toInt()])
           .radius(5)
           .align(Alignment.Start)
         Text(' ' + this.item)

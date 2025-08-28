@@ -64,7 +64,7 @@ struct RichEditorMaxLengthTest {
         .width('95%')
         .margin(10)
         .height(60)
-        .maxLength(this.maxLengthList[this.maxLengthIndex])
+        .maxLength(this.maxLengthList[this.maxLengthIndex.toInt()])
         .backgroundColor('rgb(240,250,255)')
         .id('MaxLengthRichText')
     }

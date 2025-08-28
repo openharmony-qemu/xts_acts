@@ -289,7 +289,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
@@ -327,7 +327,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
     let j:int = 0;
     let k:int = 0;
     let equalFlag:boolean = false;
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_VIDEO);
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null && cameraOutputCap.photoProfiles !=null && cameraOutputCap.videoProfiles != null) {

@@ -101,18 +101,18 @@ struct AlphabetIndexerValueIndex {
             .alignStyle(IndexerAlign.Left)
             .itemBorderRadius(-10)
             .onSelect((index: number): void => {
-              console.info(this.value[index] + ' Selected!')
+              console.info(this.value[index.toInt()] + ' Selected!')
               this.num = index
-              this.t = this.value[index]
+              this.t = this.value[index.toInt()]
             })
             .onRequestPopupData((index: number): string[] => {
-              if (this.value[index] == 'A') {
+              if (this.value[index.toInt()] == 'A') {
                 return this.arrayA
-              } else if (this.value[index] == 'B') {
+              } else if (this.value[index.toInt()] == 'B') {
                 return this.arrayB
-              } else if (this.value[index] == 'C') {
+              } else if (this.value[index.toInt()] == 'C') {
                 return this.arrayC
-              } else if (this.value[index] == 'L') {
+              } else if (this.value[index.toInt()] == 'L') {
                 return this.arrayL
               } else {
                 return [''] 

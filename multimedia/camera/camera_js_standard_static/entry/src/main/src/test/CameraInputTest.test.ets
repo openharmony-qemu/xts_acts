@@ -196,7 +196,7 @@ let isEmpty08 = (data: BusinessError) => {
     }
 
     console.info('Enter mCameraDevicesArray');
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
     console.info('Enter mCameraInput');
 
     if (isEmpty04(mCameraInput)) {
@@ -245,7 +245,7 @@ let isEmpty08 = (data: BusinessError) => {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
       cameraObj.SceneMode.NORMAL_VIDEO);
     console.log(TAG + 'Exit createOutput cameraOutputCap001')
 

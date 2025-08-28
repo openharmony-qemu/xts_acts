@@ -41,7 +41,7 @@ class MyDataSourceGrid implements IDataSource<string> {
   }
 
   getData(index: number): string {
-    return this.list[index]
+    return this.list[index.toInt()]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

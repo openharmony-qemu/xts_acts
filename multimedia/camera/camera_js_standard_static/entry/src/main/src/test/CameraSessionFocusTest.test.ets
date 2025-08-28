@@ -242,7 +242,7 @@ export default function cameraSessionFocusTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
@@ -275,7 +275,7 @@ export default function cameraSessionFocusTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {

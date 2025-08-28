@@ -23,7 +23,7 @@ export class BasicDataSource<T> implements IDataSource<T> {
   }
 
   public getData(index: number): T {
-    return this.dataArray[index];
+    return this.dataArray[index.toInt()];
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

@@ -110,7 +110,7 @@ struct FocusScopeId007 {
                 Button('btn1').focusOnTouch(true).id('FocusScopeId007_btn1_1')
                 Button('btn2').focusOnTouch(true).id('FocusScopeId007_btn2_1')
                 Button('btn3').focusOnTouch(true).id('FocusScopeId007_btn3_1')
-              }.focusScopeId(this.focusId[this.focusIdIndex], this.isGroupValue)
+              }.focusScopeId(this.focusId[this.focusIdIndex.toInt()], this.isGroupValue)
               .borderWidth(1)
             }
 
@@ -207,7 +207,7 @@ struct FocusScopeId007 {
                   this.getUIContext().getFocusController().clearFocus()
                 })
 
-              Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex]))
+              Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex.toInt()]))
                 .id('FocusScopeId007_changFocusId')
                 .focusOnTouch(true)
                 .onClick((e: ClickEvent) => {

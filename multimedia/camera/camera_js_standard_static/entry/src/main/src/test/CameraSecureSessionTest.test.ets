@@ -158,7 +158,7 @@ export default function cameraSecureSessionTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (isEmpty04(mCameraInput)) {
       console.info(TAG + "createCameraInput FAILED");
@@ -178,7 +178,7 @@ export default function cameraSecureSessionTest() {
 
   let createOutput = async (idx: int): Promise<boolean> => {
     console.info('Enter createOutput');
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
       cameraObj.SceneMode.SECURE_PHOTO);
     if (!isEmpty05(cameraOutputCap)) {
       if (!isEmpty06(cameraOutputCap.previewProfiles)) {

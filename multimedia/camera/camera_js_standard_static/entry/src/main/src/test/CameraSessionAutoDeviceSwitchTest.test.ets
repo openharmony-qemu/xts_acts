@@ -130,7 +130,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
     if (isEmpty04(mCameraInput)) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
@@ -143,7 +143,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
     if (!isEmpty05(cameraOutputCap)) {
       if (!isEmpty06(cameraOutputCap.previewProfiles)) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
