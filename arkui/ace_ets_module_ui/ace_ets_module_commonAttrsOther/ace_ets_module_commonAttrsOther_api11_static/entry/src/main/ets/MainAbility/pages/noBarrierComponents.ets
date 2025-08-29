@@ -271,16 +271,16 @@ struct noBarrierComponents {
               .itemSize(28)
               .alignStyle(IndexerAlign.Left)
               .onSelect((index: number): void => {
-                console.info(this.value[index] + ' Selected!')
+                console.info(this.value[index.toInt()] + ' Selected!')
               })
               .onRequestPopupData((index: Double): Array<String> => {
-                if (this.value[index] == 'A') {
+                if (this.value[index.toInt()] == 'A') {
                   return this.arrayA
-                } else if (this.value[index] == 'B') {
+                } else if (this.value[index.toInt()] == 'B') {
                   return this.arrayB
-                } else if (this.value[index] == 'C') {
+                } else if (this.value[index.toInt()] == 'C') {
                   return this.arrayC
-                } else if (this.value[index] == 'L') {
+                } else if (this.value[index.toInt()] == 'L') {
                   return this.arrayL
                 } else {
                   return []

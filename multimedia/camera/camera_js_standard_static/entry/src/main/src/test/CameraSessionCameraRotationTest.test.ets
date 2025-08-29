@@ -242,7 +242,7 @@ export default function cameraSessionCameraRotationTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
@@ -284,7 +284,7 @@ export default function cameraSessionCameraRotationTest() {
     let j:int = 0;
     let k:int = 0;
     let equalFlag:boolean = false;
-    let cameraOutputCap: cameraObj.CameraOutputCapability = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], mode);
+    let cameraOutputCap: cameraObj.CameraOutputCapability = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], mode);
     console.info(TAG + 'getSupportedOutputCapability is: ' + JSON.stringify(cameraOutputCap));
     let ratio = 4 / 3;
     if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {

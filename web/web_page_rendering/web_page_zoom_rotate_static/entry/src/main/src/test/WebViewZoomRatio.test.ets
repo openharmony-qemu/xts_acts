@@ -20,8 +20,8 @@ import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -65,17 +65,32 @@ export default function webViewZoomRatio() {
     */
     it('textZoomRatioStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
+        await Utils.msSleep(3000);
         Utils.emitEvent('emitZoomRatio', 10)
         await Utils.msSleep(2000);
         Utils.registerEvent('textZoomRatio001', true, 3701, done);
-        await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(3000);
+		let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
         let button = await driver.findComponent(ON.id('WebViewZoomRatioTestButton'));
         await Utils.msSleep(2000);
         button?.click();
         await Utils.msSleep(3000);
         done();
+      })
+
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('WebViewZoomRatioTestButton'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(1000);
+        done()
       })
   })
 }

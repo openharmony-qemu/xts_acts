@@ -59,7 +59,7 @@ struct WordBreakTest {
           .width('33%')
       }.height('5%')
       TextArea({text:this.text})
-        .wordBreak(this.wordBreakList[this.wordBreakIndex])
+        .wordBreak(this.wordBreakList[this.wordBreakIndex.toInt()])
         .clip(true)
         .id('wordBreakTest')
     }

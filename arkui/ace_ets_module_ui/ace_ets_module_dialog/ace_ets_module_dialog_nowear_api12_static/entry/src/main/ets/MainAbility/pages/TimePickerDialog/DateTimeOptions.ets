@@ -58,7 +58,7 @@ struct TimerPickerDialogExample {
       selected: this.selectedDate,
       showTime: true,
       useMilitaryTime: this.isMilitaryTime,
-      dateTimeOptions: this.opt[this.indexNumber1]!,
+      dateTimeOptions: this.opt[this.indexNumber1.toInt()]!,
       onDateAccept: (value: Date) => {
         this.selectedDate = value
       }
@@ -95,7 +95,7 @@ struct TimerPickerDialogExample {
       }
 
       Text(`${this.indexNumber1 + 1} / ${this.opt.length}`)
-      Text(`${JSON.stringify(this.opt[this.indexNumber1])} / ${this.isMilitaryTime}`)
+      Text(`${JSON.stringify(this.opt[this.indexNumber1.toInt()])} / ${this.isMilitaryTime}`)
         .id("DateTimeOptionsValue")
         .margin({ top: 15 } as Margin)
         .shadow(ShadowStyle.OUTER_DEFAULT_XS)

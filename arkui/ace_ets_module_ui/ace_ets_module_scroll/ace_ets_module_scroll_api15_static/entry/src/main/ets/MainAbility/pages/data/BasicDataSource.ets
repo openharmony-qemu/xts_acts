@@ -24,7 +24,7 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   public getData(index: number): string {
-    return this.originDataArray[index];
+    return this.originDataArray[index.toInt()];
   }
 
   
@@ -100,7 +100,7 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public getData(index: number): string {
-    return this.dataArray[index];
+    return this.dataArray[index.toInt()];
   }
 
   public addData(index: number, data: string): void {

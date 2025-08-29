@@ -105,7 +105,7 @@ struct ScrollToIndexForWaterFlow02 {
                         }
                       })
                       .width('100%')
-                      .height(this.itemHeightArray[item % 100])
+                      .height(this.itemHeightArray[item.toInt() % 100])
                       .backgroundColor(Color.Grey)
                       .borderColor(Color.Pink)
                     })
@@ -137,7 +137,7 @@ struct ScrollToIndexForWaterFlow02 {
                 }
               })
               .width('100%')
-              .height(this.itemHeightArray[item % 100])
+              .height(this.itemHeightArray[item.toInt() % 100])
               
             })
           }

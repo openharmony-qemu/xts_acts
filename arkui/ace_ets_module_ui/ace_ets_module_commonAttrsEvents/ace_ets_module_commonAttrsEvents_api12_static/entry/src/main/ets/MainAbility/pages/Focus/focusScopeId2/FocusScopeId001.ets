@@ -110,7 +110,7 @@ struct FocusScopeId001 {
                 Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_1')
                 Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_1')
                 Button('btn3').focusOnTouch(true).id('FocusScopeId001_btn3_1')
-              }.focusScopeId(this.focusId[this.focusIdIndex], this.isGroupValue)
+              }.focusScopeId(this.focusId[this.focusIdIndex.toInt()], this.isGroupValue)
               .borderWidth(1)
             }
 

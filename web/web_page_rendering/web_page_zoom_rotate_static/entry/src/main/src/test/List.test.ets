@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import WebViewZoomRatio from './WebViewZoomRatio.test'
+import WebAttributeTest from './WebAttributeTest.test'
+
 export default function testsuite() {
   WebViewZoomRatio();
+  WebAttributeTest();
 }

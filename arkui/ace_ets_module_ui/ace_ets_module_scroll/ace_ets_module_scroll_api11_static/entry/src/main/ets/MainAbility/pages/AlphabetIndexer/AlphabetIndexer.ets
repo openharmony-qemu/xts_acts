@@ -63,7 +63,7 @@ struct alphabetIndexer {
         .itemSize(28)
         .alignStyle(IndexerAlign.Left)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' on selected')
+          console.info(this.value[index.toInt()] + ' on selected')
         })
       Text("AlphabetIndexer1")
       AlphabetIndexer({ arrayValue: this.value1, selected: 0 })
@@ -79,7 +79,7 @@ struct alphabetIndexer {
         .alignStyle(IndexerAlign.Right)
         .margin({ left: 50 } as Margin)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + ' on selected')
+          console.info(this.value[index.toInt()] + ' on selected')
         })
     }
   }

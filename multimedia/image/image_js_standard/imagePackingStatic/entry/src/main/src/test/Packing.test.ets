@@ -210,6 +210,16 @@ export default function imagePacking() {
           let data: ArrayBuffer = await globalPacker.packToDataFromPixelmapSequence(pixelMapList, packingOptions);
           console.info(`${testNum} testPackingForSequencePromise success`);
           await globalPacker.release();
+          for (let i = 0; i < pixelMapList.length; i++) {
+            if (pixelMapList[i] != undefined) {
+              console.info(`${testNum} pixelMapList[${i}] release`);
+              await pixelMapList[i].release();
+            } else {
+              console.info(`${testNum} pixelMapList[${i}] is undefined`);
+              expect().assertFail();
+              done();
+            }
+          }
           await checkPackingForSequenceResult(data, pictureSize, packingOptions);
           done();
         } catch (e1) {
@@ -240,6 +250,16 @@ export default function imagePacking() {
         done();
       } catch(error: BusinessError) {
         await globalPacker.release();
+        for (let i = 0; i < pixelMapList.length; i++) {
+          if (pixelMapList[i] != undefined) {
+            console.info(`${testNum} pixelMapList[${i}] release`);
+            await pixelMapList[i].release();
+          } else {
+            console.info(`${testNum} pixelMapList[${i}] is undefined`);
+            expect().assertFail();
+            done();
+          }
+        }
         console.log(`${testNum} packing error: ` + JSON.stringify(error));
         expect(error.code == ERROR_CODE).assertTrue();
         done();

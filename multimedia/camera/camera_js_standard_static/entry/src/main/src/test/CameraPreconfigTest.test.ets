@@ -137,7 +137,7 @@ export default function cameraPreconfigTest() {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
     mCameraInput.open();
     await Utils.msSleep(100);
     console.info(idx + 'th CameraInput is: ' + mCameraInput);

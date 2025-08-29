@@ -18,6 +18,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { BusinessError } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import {
   Color,
   TextInput,
@@ -92,6 +93,13 @@ struct WebViewZoomRatio {
                 }
               })
               break;
+            }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebAttributeTest' })
+              console.log('push URL success')
             }
           }
         })

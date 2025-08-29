@@ -57,32 +57,32 @@
 <div>CENTER TEXT<input type="number" value="12345678"/></div>
 </body>
 <script>
-    let ele=document.getElementById('img');
+    let ele = document.getElementById('img');
     let loadImage;
-    ele.onload=function() {
-        loadImage = "load complete"
-    }
+    ele.onload = function() {
+        loadImage = 'load complete';
+    };
     function webTest() {
-        return 'This value is from indexJru.html'
-    }
+        return 'This value is from indexJru.html';
+    };
     function getFontSize() {
-        let fontSize = window.getComputedStyle(document.body, null).getPropertyValue('font-size')
+        let fontSize = window.getComputedStyle(document.body, null).getPropertyValue('font-size');
         console.log(fontSize);
-        return fontSize
-    }
+        return fontSize;
+    };
     function clickFile() {
-        return document.getElementById('webCenter').click()
-    }
+        return document.getElementById('webCenter').click();
+    };
       function onClickFile() {
-        document.getElementById('file').click()
+        document.getElementById('file').click();
         return 'in';
-      }
+      };
     function clickA() {
-        document.getElementById('fileAccess').click()
-    }
+        document.getElementById('fileAccess').click();
+    };
     function clickB() {
         document.getElementById('img').click();
-    }
+    };
     function getMessageLevel() {
            console.debug('This is a warning message.1');
            console.info('This is a warning message.2');
@@ -90,31 +90,31 @@
            console.error('This is a warning message.4');
            console.log('This is a warning message.5');
            return '回调index.html的返回值';
-    }
+    };
     function getMessageLevelDebug() {
            console.debug('This is a warning message.1');
            return '1';
-    }
+    };
     function getMessageLevelInfo() {
            console.info('This is a warning message.1');
-    }
+    };
     function getMessageLevelWarn() {
            console.warn('This is a warning message.1');
            return '3';
-    }
+    };
     function getMessageLevelError() {
            console.error('This is a warning message.1');
            return '4';
-    }
+    };
     function getMessageLevelLog() {
            console.log('This is a warning message.1');
            return '5';
-    }
+    };
     function getFontFamily() {
         const bodyStyle = window.getComputedStyle(document.body);
 		const fontFamily = bodyStyle.getPropertyValue('font-family');
         return window.getComputedStyle(document.body).fontFamily;
-    }
+    };
 
     function getBodySerifFontValue() {
       const bodyElement = document.querySelector('body');
@@ -126,7 +126,7 @@
         }
       }
       return null;
-    }
+    };
     function getSerifFont() {
     const bodySerifFontValue = getBodySerifFontValue();
     if (bodySerifFontValue) {
@@ -134,64 +134,64 @@
     } else {
       return '没有';
     }
-	}
+	};
 	function getSansSerifFont() {
 	    return window.getComputedStyle(document.body).fontFamily;
-	}
+	};
 	function getWebFixedFont() {
 	    return '504方法';
-	}
+	};
 	function getWebFantasyFont() {
 	    return '505方法';
-	}
+	};
 	function getWebCursiveFont() {
 	    return '506方法';
-	}
+	};
     function getUserAgent() {
         return navigator.userAgent;
-    }
+    };
     function test() {
-        backToEts.test("backToEts")
-    }
+        backToEts.test('backToEts');
+    };
     function testRunJavaScript() {
-        return "testRunJavaScript";
-    }
+        return 'testRunJavaScript';
+    };
     function getPageHeight() {
-        let height=document.body.scrollHeight;
+        let height = document.body.scrollHeight;
         return height;
-    }
+    };
     function proxy() {
-        objName.register("backToEts")
-    }
+        objName.register('backToEts');
+    };
     function registerTest() {
-        let str=objName.register();
+        let str = objName.register();
         console.log(str);
         return str;
-    }
+    };
     function jsAccess() {
-        console.log("web111")
-    }
+        console.log('web111');
+    };
     function consoleTest() {
-        console.log("console test")
-    }
+        console.log('console test');
+    };
     function alertTest() {
-        alert('alert test')
-    }
+        alert('alert test');
+    };
     function confirmTest() {
-        confirm("confirm test")
-    }
+        confirm('confirm test');
+    };
     function getImgResult() {
-        return loadImage
-    }
+        return loadImage;
+    };
     function toPrompt() {
-        let result = prompt( "age", "20");
-        console.log("result:" + result)
-    }
+        let result = prompt( 'age', '20');
+        console.log('result:' + result);
+    };
     function openRawFile() {
-        document.getElementById('fileAccess').click()
-    }
+        document.getElementById('fileAccess').click();
+    };
     function getTitle() {
         return document.title;
-    }
+    };
 </script>
 </html>
