@@ -26,7 +26,6 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M114);
-        webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.SYSTEM_EVERGREEN);
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.SYSTEM_DEFAULT);
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M132);
     }
