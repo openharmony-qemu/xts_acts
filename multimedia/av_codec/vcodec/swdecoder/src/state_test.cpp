@@ -70,12 +70,7 @@ void SwdecStateNdkTest::SetUp(void)
     }
 }
 
-void SwdecStateNdkTest::TearDown(void)
-{
-    vDecSample->Release();
-    delete vDecSample;
-    vDecSample = nullptr;
-}
+void SwdecStateNdkTest::TearDown(void) {}
 } // namespace Media
 } // namespace OHOS
 
