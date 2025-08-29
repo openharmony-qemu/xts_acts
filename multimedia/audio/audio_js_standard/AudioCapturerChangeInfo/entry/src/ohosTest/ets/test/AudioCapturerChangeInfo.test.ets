@@ -85,8 +85,8 @@ export default function audioCapturerChange() {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       await getPermission();
       await driveFn();
-      audioStreamManager = audioManager.getStreamManager();
-      audioStreamManagerCB = audioManager.getStreamManager();
+      await audioStreamManager = audioManager.getStreamManager();
+      await audioStreamManagerCB = audioManager.getStreamManager();
       console.info('TestLog: Start Testing AudioFrameworkTest Interfaces');
     })
 
