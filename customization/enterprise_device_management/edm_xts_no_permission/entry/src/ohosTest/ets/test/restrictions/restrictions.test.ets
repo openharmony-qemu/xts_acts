@@ -485,11 +485,11 @@ function testGetDisallowedPolicy() {
   it("test_get_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      restrictions.getDisallowedPolicy(SELFWANT, LABLE_APP_CLONE);
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE);
       expect(false).assertTrue();
     } catch (error) {
-      console.info(' --- test_get_disallowed_policy_0109 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      console.info(' --- test_get_disallowed_policy_0109 error 201 is expected, actually catch: ' + error.code);
+      expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
