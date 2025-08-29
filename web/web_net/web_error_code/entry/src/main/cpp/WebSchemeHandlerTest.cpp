@@ -259,7 +259,8 @@ napi_value ArkWebHttpBodyStreamSetReadCallbackInvalidParam(napi_env env, napi_ca
 {
     int ret = -1;
     ArkWeb_HttpBodyStream *stream_{nullptr};
-    if (OH_ArkWebHttpBodyStream_SetReadCallback(stream_, nullptr) == ARKWEB_INVALID_PARAM) {
+    int retCallBack = OH_ArkWebHttpBodyStream_SetReadCallback(stream_, nullptr);
+    if (retCallBack == ARKWEB_INVALID_PARAM) {
         ret = 0;
     }
 
@@ -299,7 +300,8 @@ napi_value ArkWebHttpBodyStreamInitInvalidParam(napi_env env, napi_callback_info
     napi_value result;
     ArkWeb_HttpBodyStream* httpBodyStream = nullptr;
     int ret = -1;
-    if (OH_ArkWebHttpBodyStream_Init(httpBodyStream, InitcallBack) == ARKWEB_INVALID_PARAM) {
+    int retInit = OH_ArkWebHttpBodyStream_Init(httpBodyStream, InitcallBack);
+    if (retInit == ARKWEB_INVALID_PARAM) {
         ret = 0;
     }
     napi_create_int32(env, ret, &result);
@@ -341,7 +343,8 @@ napi_value ArkWebHttpBodyStreamAsyncRead(napi_env env, napi_callback_info info)
 napi_value ArkWebResourceRequestDestroyInvalidParam(napi_env env, napi_callback_info info)
 {
     int ret = -1;
-    if (OH_ArkWebResourceRequest_Destroy(nullptr) == ARKWEB_INVALID_PARAM) {
+    int retDestory = OH_ArkWebResourceRequest_Destroy(nullptr);
+    if (retDestory == ARKWEB_INVALID_PARAM) {
         ret = 0;
     }
 
