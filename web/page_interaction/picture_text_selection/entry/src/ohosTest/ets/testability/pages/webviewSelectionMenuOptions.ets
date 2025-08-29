@@ -21,6 +21,9 @@ import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
 import { Driver, ON, On } from '@ohos.UiTest';
 
+const EVENT_ID_SET_SUITE_KEY = 176701;
+const driver = Driver.create();
+
 @Entry
 @Component
 struct webviewSelectionMenuOptions {
@@ -31,16 +34,19 @@ struct webviewSelectionMenuOptions {
   @State menuOptionArray: Array<ExpandedMenuItemOptions> = [
     {content: 'Apple', startIcon: $r('app.media.icon'), action: (selectedText) => {
       console.info('select Apple info ' + selectedText.toString());
-      Utils.emitEvent(1, 5400)
+      Utils.emitEvent(1, 176710)
     }},
     {content: 'Banana', startIcon: $r('app.media.icon'), action: (selectedText) => {
       console.info('select Banana info ' + selectedText.toString());
     }}
   ];
 
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -52,8 +58,13 @@ struct webviewSelectionMenuOptions {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   build() {
@@ -61,40 +72,38 @@ struct webviewSelectionMenuOptions {
       Row() {
         Button("web click").key('SelectionMenuOptions').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitSelectionMenuOptions0100": {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(1, 5400)
+                  Utils.emitEvent(1, 176710)
                   break;
                 }else if((this.userAgentPC).includes("Tablet")){
-                  Utils.emitEvent(1, 5400)
+                  Utils.emitEvent(1, 176710)
                   break;
                 }
-                this.controller.loadUrl($rawfile("indexdemotwo.html"))
-                await Utils.sleep(12000);
-                let driver: Driver = Driver.create();
                 let buttonCenter = await driver.findComponent(ON.id('webCenter'));
                 await buttonCenter.longClick()
-                await Utils.sleep(4000);
+                await Utils.waitForReleaseDriver(this.str,driver)
                 let buttonOne = await driver.findComponent(ON.text('Please'));
                 await buttonOne.longClick()
-                await Utils.sleep(4000);
-                let buttontwo = await driver.findComponent(ON.text('Apple'));
-				//点击菜单栏的扩展项
+                await Utils.waitForReleaseDriver(this.str,driver)
+                let buttontwo = await driver.waitForComponent(ON.text('Apple'), 10000);
+				        //点击菜单栏的扩展项
                 if(!buttontwo) {
-                  let buttonThree = await driver.findComponent(ON.type('SymbolGlyph'));
+                  let buttonThree = await driver.waitForComponent(ON.type('SymbolGlyph'),10000);
                   console.log('hhaaaaa' + buttonThree)
                   await buttonThree.click();
                 }
-				console.log('999buttontwo' + buttontwo)
-			    //然后再点Apple
-				let buttonFour = await driver.findComponent(ON.text('Apple'));
-				console.log('999buttontwo3333' + buttonFour)
+				        console.log('999buttontwo' + buttontwo)
+			          //然后再点Apple
+				        let buttonFour = await driver.waitForComponent(ON.text('Apple'),10000);
+                console.log('999buttontwo3333' + buttonFour)
                 await buttonFour.click();
-                await Utils.sleep(4000);
-                
+                await Utils.waitForReleaseDriver(this.str,driver)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -107,6 +116,11 @@ struct webviewSelectionMenuOptions {
       Web({ src: $rawfile('indexdemotwo.html'), controller: this.controller })
       .selectionMenuOptions(this.menuOptionArray)
       .id('webCenter')
+      .onPageEnd((event) => {
+        console.log('onPageEnd url:' + event.url);
+        this.isPageEnd = 1;
+      })
+
     }
   }
 }
