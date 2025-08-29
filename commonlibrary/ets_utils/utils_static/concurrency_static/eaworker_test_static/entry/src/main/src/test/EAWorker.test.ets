@@ -2403,8 +2403,8 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
         worker.start()
-        const arr: Char[] = [1, 2, 3]
-        const inputChar: Char = 4;
+        const arr: Char[] = [c'1', c'2', c'3']
+        const inputChar: Char = c'4';
         try {
           const workerPromise = new Promise<Char[]>((resolve, reject) => {
             worker.run(async (input: Char): Promise<void> => {
@@ -2418,7 +2418,7 @@ export default function EAWorkerTest() {
           });
           workerPromise
             .then((res: Char[]) => {
-              expect(String(res[2])).assertEqual(4);
+              expect(String(res[2])).assertEqual(c'4');
             })
         } catch (err: Error) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);

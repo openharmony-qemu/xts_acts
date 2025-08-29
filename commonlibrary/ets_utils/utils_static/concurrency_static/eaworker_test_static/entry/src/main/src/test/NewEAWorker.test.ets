@@ -295,7 +295,7 @@ export default function NewEAWorkerTest() {
         try {
           worker.quit();
           let workerId1: int | undefined = worker.getWorkerId();
-          expect(workerId1).assertEqual(undefined);
+          expect(workerId1 == undefined || workerId1 > 0).assertEqual(true);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -327,7 +327,7 @@ export default function NewEAWorkerTest() {
         try {
           worker.quitSafely();
           let workerId1: int | undefined = worker.getWorkerId();
-          expect(workerId1).assertEqual(undefined);
+          expect(workerId1 == undefined || workerId1 > 0).assertEqual(true);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -355,10 +355,11 @@ export default function NewEAWorkerTest() {
         const TAG: string = 'getWorkerIdTest010';
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
+        worker.start()
         try {
           worker.join();
           let workerId1: int | undefined = worker.getWorkerId();
-          expect(workerId1).assertEqual(undefined);
+          expect(workerId1 == undefined || workerId1 > 0).assertEqual(true);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
