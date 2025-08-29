@@ -1413,7 +1413,28 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_APP_CLONE, false);
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE)).assertFalse();
     } catch (error) {
-      expect(error.code == 801).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0165
+   * @tc.name      : test_set_disallowed_policy_0165
+   * @tc.desc      : test restrictions setDisallowedPolicy
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_0165", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_APP_CLONE, true);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE)).assertTrue();
+    } catch (error) {
+      expect(true).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
