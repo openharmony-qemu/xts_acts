@@ -51,7 +51,7 @@ const LABEL_SUDO = "sudo";
 const LABEL_TELEPHONY_CALL = "telephoneCall";
 const LABEL_BACKUP_AND_RESTORE = "backupAndRestore";
 const LABEL_PRIVATE_SPACE = "privateSpace";
-const LABLE_APP_CLONE = "appClone"
+const LABEL_APP_CLONE = "appClone";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -270,11 +270,11 @@ function testSetDisallowedPolicy() {
   it("test_set_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      restrictions.setDisallowedPolicy(SELFWANT, LABLE_APP_CLONE, false);
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_APP_CLONE, false);
       expect(false).assertTrue();
     } catch (error) {
-      console.info(' --- test_set_disallowed_policy_0109 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      console.info(' --- test_set_disallowed_policy_0109 error 201 is expected, actually catch: ' + error.code);
+      expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
