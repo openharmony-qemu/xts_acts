@@ -67,15 +67,15 @@ export default function webOnPermissionRequest() {
 
     // /*
     //   * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
-    //   * @tc.name        : emitWebDoubleInnerNucleus001
-    //   * @tc.desc        : emitWebDoubleInnerNucleus001
+    //   * @tc.name        : emitWebDoubleInnerNucleus002
+    //   * @tc.desc        : emitWebDoubleInnerNucleus002
     //   * @tc.size        : MediumTest
     //   * @tc.type        : Function
     //   * @tc.level       : Level 0
     //   */
-    // it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   Utils.emitEvent("emitWebDoubleInnerNucleus001", 10)
-    //   Utils.registerEvent("emitWebDoubleInnerNucleus001", true, 20250901, done);
+    // it('emitWebDoubleInnerNucleus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    //   Utils.emitEvent("emitWebDoubleInnerNucleus002", 10)
+    //   Utils.registerEvent("emitWebDoubleInnerNucleus002", true, 20250901, done);
     //   sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
     // })
 
