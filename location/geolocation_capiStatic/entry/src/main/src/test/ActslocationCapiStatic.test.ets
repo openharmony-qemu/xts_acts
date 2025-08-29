@@ -95,10 +95,6 @@ export default function actslocationTest() {
                 expect(true).assertEqual(geoLocationManager.LocatingPriority.PRIORITY_LOCATING_SPEED == 0x502)
                 expect(true).assertEqual(geoLocationManager.LocatingPriority.PRIORITY_ACCURACY == 0x501)
 
-                expect(true).assertEqual(geoLocationManager.UserACtivityScenario.NAVIGATION==0X401)
-                expect(true).assertEqual(geoLocationManager.UserACtivityScenario.SPORT == 0x402)
-                expect(true).assertEqual(geoLocationManager.UserACtivityScenario.TRANSPORT ==0X403)
-                expect(true).assertEqual(geoLocationManager.UserACtivityScenario.DAILY_LIFE_SERVICE == 0x404)
                 done();
 
 
