@@ -560,7 +560,7 @@ export default function taskPoolAsyncRunnerExecute() {
         }
         expect(10).assertEqual(count3);
         expect(10).assertEqual(count);
-        expect(10).assertEqual(count5);
+        expect(10).assertEqual(count4);
         expect(10).assertEqual(count2);
         Done();
       })

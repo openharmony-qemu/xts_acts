@@ -59,19 +59,19 @@ export function printStr4(str: string): string {
   return str;
 }
 
-let Count1: number = 0;
-let Count2: number = 0;
+let count1: number = 0;
+let count2: number = 0;
 @Concurrent
 export function printArgs1(args: number): number {
   console.info('printArgs: ' + args);
-  Count1++
+  count1++
   return args;
 }
 
 @Concurrent
 export function printArgs2(args: number): number {
   console.info('printArgs: ' + args);
-  Count2++
+  count2++
   return args;
 }
 

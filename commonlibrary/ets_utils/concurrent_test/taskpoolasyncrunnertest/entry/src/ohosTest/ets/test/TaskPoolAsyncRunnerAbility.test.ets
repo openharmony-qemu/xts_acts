@@ -131,8 +131,8 @@ export default function taskPoolAsyncRunnerAbility() {
         const str2: string = 'q2';
         let Count1: number = 0;
         let Count2: number = 0;
-        const CountStr1: string = '';
-        const CountStr2: string = '';
+        let CountStr1: string = '';
+        let CountStr2: string = '';
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printStr1, str1);
@@ -241,7 +241,7 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0300: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const num1: number = 1;
-        const num2: number = 2; 
+        const num2: number = 2;
         let Count1: number = 0;
         let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -335,21 +335,21 @@ export default function taskPoolAsyncRunnerAbility() {
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0500: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-       let CountBol1:boolean  = false;
-       let CountBol2:boolean = true;
+        let CountBol1:boolean  = false;
+        let CountBol2:boolean = true;
         const promises: Promise<[void, void]>[] = [];
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printBoolean1, false);
           let task2: taskpool.Task = new taskpool.Task(printBoolean2, true);
           const promise = Promise.all([
             asyncRunner.execute(task).then((num: object) => {
-            CountBol1 = Boolean(num);
-            console.info('======', CountBol1);
-          }),
-          asyncRunner.execute(task2).then((num: object) => {
-            CountBol2 = Boolean(num);
-            console.info('======', CountBol2);
-          })
+              CountBol1 = Boolean(num);
+              console.info('======', CountBol1);
+            }),
+            asyncRunner.execute(task2).then((num: object) => {
+              CountBol2 = Boolean(num);
+              console.info('======', CountBol2);
+            })
           ])
           promises.push(promise);
         }
@@ -376,6 +376,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let Count: number = 0;
         let Count2: number = 0;
+        let Count3: number = 0;
+        let Count4: number = 0;
         const promises: Promise<[void, void]>[] = [];
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printBoolean3, false);
@@ -384,8 +386,8 @@ export default function taskPoolAsyncRunnerAbility() {
             const promise = Promise.all(
               [asyncRunner.execute(task)
                 .then((num: object) => {
-                  Count3.Count++;
-                  console.info('======', Count3.Count);
+                  Count3++;
+                  console.info('======', Count3);
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
@@ -394,8 +396,8 @@ export default function taskPoolAsyncRunnerAbility() {
                 }),
                 asyncRunner.execute(task2)
                   .then((num: object) => {
-                    Count4.Count++;
-                    console.info('======', Count4.Count);
+                    Count4++;
+                    console.info('======', Count4);
                   })
                   .catch((error: BusinessError) => {
                     expect(error.message).assertContain('Cannot read property split of undefined');
@@ -408,11 +410,11 @@ export default function taskPoolAsyncRunnerAbility() {
           }
         }
         await Promise.all(promises);
-        expect(0).assertEqual(Count3.Count);
-        expect(0).assertEqual(Count4.Count);
+        expect(0).assertEqual(Count3);
+        expect(0).assertEqual(Count4);
         expect(10).assertEqual(Count);
-        Count3.Count = 0;
-        Count4.Count = 0;
+        Count3 = 0;
+        Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility0600: end');
         Done();
       })
@@ -469,7 +471,7 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0800: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let Count: number = 0;
-        let Count2: number = 0;  
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -528,20 +530,20 @@ export default function taskPoolAsyncRunnerAbility() {
           let task: taskpool.Task = new taskpool.Task(printUndefined1, Object(undefined));
           let task2: taskpool.Task = new taskpool.Task(printUndefined2, Object(undefined));
           asyncRunner.execute(task).then((num: object) => {
-            CountUndefined1.Count;
-            console.info('======', CountUndefined1.Count);
+            CountUndefined1.count;
+            console.info('======', CountUndefined1.count);
           });
           await sleep(100);
           asyncRunner.execute(task2).then((num: object) => {
-            CountUndefined2.Count;
-            console.info('======', CountUndefined2.Count);
+            CountUndefined2.count;
+            console.info('======', CountUndefined2.count);
           });
         }
         await sleep(1000);
-        expect().assertEqual(CountUndefined1.Count);
-        expect().assertEqual(CountUndefined2.Count);
-        CountUndefined1.Count;
-        CountUndefined1.Count;
+        expect().assertEqual(CountUndefined1.count);
+        expect().assertEqual(CountUndefined2.count);
+        CountUndefined1.count;
+        CountUndefined1.count;
         console.info('taskPoolAsyncRunnerAbility0900: end');
         Done();
       })
@@ -1455,7 +1457,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 }),
               asyncRunner.execute(task2)
                 .then((num: object) => {
-                  Count2++;
+                  Count4++;
                   console.info('======', Count4);
                 })
                 .catch((error: BusinessError) => {
