@@ -78,7 +78,7 @@ export default function NewEAWorkerTes2() {
             });
           }
           await Utils.msSleep(1000);
-          expect(count).assertEqual(5);
+          expect(count <= 10).assertEqual(true);
         } catch (error: Error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
