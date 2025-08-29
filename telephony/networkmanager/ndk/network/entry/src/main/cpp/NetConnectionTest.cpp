@@ -950,6 +950,9 @@ napi_value NetConn_QueryTrRout(napi_env env, napi_callback_info info)
         traceRouteInfoPtr = &traceRouteInfo;
     }
     int32_t returnValue = OH_NetConn_QueryTraceRoute(destination, optionPtr, traceRouteInfoPtr);
+    if (returnValue == OK) {
+        returnValue = OK;
+    }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
