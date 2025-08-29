@@ -1,0 +1,25 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.MultimodalInput.Input.InputMonitor",
+                    "SystemCapability.MultimodalInput.Input.Core"
+                ]
+            }
+        ]
+    },
+    "development": {
+        "addedSysCaps": [
+            "SystemCapability.Input.InputMonitor"
+        ]
+    },
+    "production": {
+        "addedSysCaps": [],
+        "removedSysCaps": []
+    }
+}

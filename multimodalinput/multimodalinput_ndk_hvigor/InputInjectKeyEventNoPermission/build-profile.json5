@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B76008B95830402FD069D689A0F673C8390472EEF9FC944562BFB77220516BE3B21B6803973D8DD",
+          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.p12",
+          "storePassword": "0000001BA26F7C125233ACD5C9C6CACC41477BE6BA48C1B91F6E383AD18AB7037C69311DDDA30DD9C74059"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": 20,
+        "compatibleSdkVersion": 20,
+        "targetSdkVersion": 20,
+        "runtimeOS": "OpenHarmony"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
