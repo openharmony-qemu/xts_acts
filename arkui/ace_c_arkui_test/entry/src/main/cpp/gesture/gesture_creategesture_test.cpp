@@ -37,7 +37,7 @@ static std::shared_ptr<ButtonComponent> CreateButtonToTapGestureNode(
     button->SetHeight(SIZE_20);
     button->SetBackgroundColor(COLOR_RED);
     button->SetId(id);
-    button->SetMargin(SIZE_10);
+    button->SetMargin(SIZE_5);
     auto tapGesture = gestureAPI->createTapGesture(countNum, fingersNum);
     gestureAPI->setGestureEventTarget(tapGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(button->GetComponent(), tapGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -52,7 +52,7 @@ static std::shared_ptr<ButtonComponent> CreateButtonToLongPressGestureNode(ArkUI
     button->SetHeight(SIZE_20);
     button->SetBackgroundColor(COLOR_RED);
     button->SetId(id);
-    button->SetMargin(SIZE_10);
+    button->SetMargin(SIZE_5);
     auto longPressGesture = gestureAPI->createLongPressGesture(fingersNum, repeatResult, durationNum);
     gestureAPI->setGestureEventTarget(longPressGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(button->GetComponent(), longPressGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -64,10 +64,10 @@ static std::shared_ptr<ColumnComponent> CreateColumnToPanGestureNode(ArkUI_Nativ
 {
     auto column = std::make_shared<ColumnComponent>();
     column->SetWidth(SIZE_40);
-    column->SetHeight(SIZE_20);
+    column->SetHeight(SIZE_30);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
-    column->SetMargin(SIZE_10);
+    column->SetMargin(SIZE_5);
     auto panGesture = gestureAPI->createPanGesture(fingersNum, directions, distanceNum);
     gestureAPI->setGestureEventTarget(panGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(column->GetComponent(), panGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -82,7 +82,7 @@ static std::shared_ptr<ColumnComponent> CreateColumnToPinchGestureNode(
     column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
-    column->SetMargin(SIZE_10);
+    column->SetMargin(SIZE_5);
     auto pinchGesture = gestureAPI->createPinchGesture(fingersNum, durationNum);
     gestureAPI->setGestureEventTarget(pinchGesture, GESTURE_EVENT_ACTION_UPDATE, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(column->GetComponent(), pinchGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -97,7 +97,7 @@ static std::shared_ptr<ColumnComponent> CreateColumnToRotationGestureNode(
     column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
-    column->SetMargin(SIZE_10);
+    column->SetMargin(SIZE_5);
     auto rotationGesture = gestureAPI->createRotationGesture(fingersNum, angleNum);
     gestureAPI->setGestureEventTarget(rotationGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(column->GetComponent(), rotationGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -112,7 +112,7 @@ static std::shared_ptr<ColumnComponent> CreateColumnToSwipeGestureNode(ArkUI_Nat
     column->SetHeight(SIZE_20);
     column->SetBackgroundColor(COLOR_RED);
     column->SetId(id);
-    column->SetMargin(SIZE_10);
+    column->SetMargin(SIZE_5);
     auto swipeGesture = gestureAPI->createSwipeGesture(fingersNum, directions, speedNum);
     gestureAPI->setGestureEventTarget(swipeGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, &OnEventGesture);
     gestureAPI->addGestureToNode(column->GetComponent(), swipeGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -127,7 +127,7 @@ static std::shared_ptr<ButtonComponent> CreateGestureGroupNode(
     button->SetHeight(SIZE_20);
     button->SetBackgroundColor(COLOR_RED);
     button->SetId(id);
-    button->SetMargin(SIZE_10);
+    button->SetMargin(SIZE_5);
     auto tapGesture = gestureAPI->createTapGesture(PARAM_1, PARAM_1);
     auto group = gestureAPI->createGroupGesture(SEQUENTIAL_GROUP);
     gestureAPI->addChildGesture(group, tapGesture);

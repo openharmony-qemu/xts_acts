@@ -48,7 +48,7 @@ export default function DragEventGetDropOperationTest() {
       let upY = Math.round(globalThis.winTop + rectOne.top + (rectOne.bottom - rectOne.top) / 2);
       let driver: Driver = Driver.create();
       await driver.click(downX, downY);
-      await driver.drag(downX, downY, upX, upY, 10);
+      await driver.drag(downX, downY, upX, upY, 1000);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('GetDropOperation').$attrs.backgroundColor).assertEqual('#FF00FF00');
       done();

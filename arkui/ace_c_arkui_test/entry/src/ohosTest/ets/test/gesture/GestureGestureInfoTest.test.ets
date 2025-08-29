@@ -92,7 +92,7 @@ export default function gestureGestureInfoTest() {
      */
     it('testGestureGestureInfo002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
-      await pan('column2', 10, 10, 20, 10)
+      await pan('column2', 10, 10, 40, 10)
       let dataArray: number[][] = nativeRender.getGestureData();
       let panGesture: number[] = dataArray[1];
       console.log('testGestureGestureInfo002', JSON.stringify(dataArray))

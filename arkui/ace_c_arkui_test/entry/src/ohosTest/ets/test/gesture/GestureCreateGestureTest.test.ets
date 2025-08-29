@@ -39,14 +39,14 @@ async function pinchGesture(id: string) {
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let point: PointerMatrix = PointerMatrix.create(2, 4);
-  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(12)), y:Math.round( rect.top + vp2px(12)) });
-  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(10)), y: Math.round(rect.top + vp2px(10)) });
-  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(7)), y: Math.round(rect.top + vp2px(7)) });
+  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(14)), y:Math.round( rect.top + vp2px(14)) });
+  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(11)), y: Math.round(rect.top + vp2px(11)) });
+  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)) });
   point.setPoint(0, 3, { x: Math.round(rect.left + vp2px(5)), y: Math.round(rect.top + vp2px(5)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(15)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(18)), y: Math.round(rect.top + vp2px(18)) });
-  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(20)) });
-  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(22)), y: Math.round(rect.top + vp2px(22)) });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(17)), y: Math.round(rect.top + vp2px(17)) });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(20)) });
+  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(23)), y: Math.round(rect.top + vp2px(23)) });
+  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(26)), y: Math.round(rect.top + vp2px(26)) });
   await driver.injectMultiPointerAction(point, 200);
 }
 
@@ -141,16 +141,16 @@ export default function gestureCreateGestureTest() {
      */
     it('testGestureCreateGesture004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG2}`);
-      await panGesture('column1', 10, 10, 20, 10)
-      await panGesture('column2', 20, 10, 10, 10)
-      await panGesture('column3', 10, 10, 10, 20)
-      await panGesture('column4', 20, 10, 10, 10)
-      await panGesture('column5', 10, 10, 20, 10)
-      await panGesture('column6', 10, 20, 10, 10)
-      await panGesture('column7', 20, 10, 20, 20)
-      await panGesture('column8', 10, 10, 20, 10)
-      await panGesture('column9', 10, 10, 20, 10)
-      await panGesture('column10', 10, 10, 20, 10)
+      await panGesture('column1', 10, 10, 40, 10)
+      await panGesture('column2', 40, 10, 10, 10)
+      await panGesture('column3', 10, 0, 10, 20)
+      await panGesture('column4', 40, 10, 10, 10)
+      await panGesture('column5', 10, 10, 40, 10)
+      await panGesture('column6', 10, 20, 10, 0)
+      await panGesture('column7', 20, 0, 20, 20)
+      await panGesture('column8', 10, 10, 40, 10)
+      await panGesture('column9', 10, 10, 40, 10)
+      await panGesture('column10', 10, 10, 40, 10)
       await Utils.sleep(600)
       expect(Utils.getComponentInfoByKey('column1').$attrs.backgroundColor).assertEqual('#FF00FF00')
       expect(Utils.getComponentInfoByKey('column2').$attrs.backgroundColor).assertEqual('#FF00FF00')

@@ -50,7 +50,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper1", 10, 10, 5, 5)
+      await panGesture("swiper1", 20, 20, 10, 10)
       expect(Utils.getComponentInfoByKey('swiper1').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -64,7 +64,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper2", 10, 10, 10, 5)
+      await panGesture("swiper2", 20, 20, 20, 10)
       expect(Utils.getComponentInfoByKey('swiper2').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -78,7 +78,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper3", 10, 10, 15, 5)
+      await panGesture("swiper3", 20, 20, 30, 10)
       expect(Utils.getComponentInfoByKey('swiper3').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -92,7 +92,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper4", 10, 10, 15, 10)
+      await panGesture("swiper4", 20, 20, 30, 20)
       expect(Utils.getComponentInfoByKey('swiper4').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -120,7 +120,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper6", 10, 10, 15, 15)
+      await panGesture("swiper6", 20, 20, 30, 30)
       expect(Utils.getComponentInfoByKey('swiper6').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -134,7 +134,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture007', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper7", 10, 10, 10, 15)
+      await panGesture("swiper7", 20, 20, 20, 30)
       expect(Utils.getComponentInfoByKey('swiper7').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -148,7 +148,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture008', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper8", 10, 10, 5, 15)
+      await panGesture("swiper8", 20, 20, 10, 30)
       expect(Utils.getComponentInfoByKey('swiper8').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
@@ -162,7 +162,7 @@ export default function requirementPanGestureTest() {
      */
     it('testRequirementPanGesture009', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`);
-      await panGesture("swiper9", 10, 10, 5, 10)
+      await panGesture("swiper9", 20, 20, 10, 20)
       expect(Utils.getComponentInfoByKey('swiper9').$attrs.backgroundColor).assertEqual('#FF000000')
       done();
     })
