@@ -2432,6 +2432,66 @@ export default function ActsGzipDecompressionTest() {
         done();
         hilog.info(domain, tag, "=====Test_gzgets_0200 End=====");
       })
+      
+    /**
+     * @tc.number     : Test_ReturnStatus_0100
+     * @tc.name       : Test_ReturnStatus_0100
+     * @tc.desc       : test ReturnStatus enum
+     * @tc.size       : MEDIUM
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('Test_ReturnStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "=====Test_ReturnStatus_0100 Start=====");
+        try {
+          let gzip = zlib.createGZipSync();
+          gzip.gzopen("/data/storage/el2/base/cache/test.gz", "wb").then(() => {
+            hilog.info(domain, tag, "gzopen success ");
+            let bufferWithData = new ArrayBuffer(16);
+            let uint8View = new Uint8Array(bufferWithData);
+            for (let i = 0; i < uint8View.length; i++) {
+              uint8View[i] = i;
+            }
+            gzip.gzwrite(bufferWithData, -1).then((data) => {
+              hilog.info(domain, tag, "gzwrite success : " + data);
+              gzip.gzclose().then((data: zlib.ReturnStatus) => {
+                hilog.info(domain, tag, "gzclose success : " + JSON.stringify(data));
+              }).catch((err: BusinessError<void>): void => {
+                hilog.info(domain, tag,
+                  "gzclose failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
+              });
+            }).catch((err: BusinessError<void>): void => {
+              hilog.info(domain, tag,
+                "gzwrite failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
+              gzip.gzerror().then((data: zlib.GzErrorOutputInfo) => {
+                hilog.info(domain, tag, "gzerror success data.status : " + data.status);
+                hilog.info(domain, tag, "gzerror success status : " + JSON.stringify(data.status));
+                hilog.info(domain, tag, "gzerror success statusMsg : " + JSON.stringify(data.statusMsg));
+                expect(data.status).assertEqual(-3);
+                expect(zlib.ReturnStatus.ERRNO).assertEqual(-1);
+                expect(zlib.ReturnStatus.STREAM_ERROR).assertEqual(-2);
+                expect(zlib.ReturnStatus.DATA_ERROR).assertEqual(-3);
+                expect(zlib.ReturnStatus.MEM_ERROR).assertEqual(-4);
+                expect(zlib.ReturnStatus.BUF_ERROR).assertEqual(-5);
+                done();
+              }).catch((err: BusinessError<void>): void => {
+                hilog.info(domain, tag,
+                  "gzerror failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
+              });
+            });
+          }).catch((err: BusinessError<void>): void => {
+            hilog.info(domain, tag,
+              "gzopen failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
+          });
+        } catch (err) {
+          let code = (err as BusinessError).code;
+          let message = (err as BusinessError).message;
+          hilog.info(domain, tag, " gzopen catch code:" + JSON.stringify(code));
+          hilog.info(domain, tag, " gzopen catch message:" + JSON.stringify(message));
+        }
+        hilog.info(domain, tag, "=====Test_ReturnStatus_0100 End=====");
+      })
 
     /**
      * @tc.number     : GzipDecompressionAbilityTest_static_8900
