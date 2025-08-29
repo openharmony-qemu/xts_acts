@@ -37,4 +37,6 @@ export const RemoveKeyEventInterceptorDenied: () => number;
 export const RemoveInputEventInterceptorDenied: () => number;
 export const UnregisterDeviceListenersException: () => number;
 export const OHInputInjectKeyEventCapsLock: () => number;
+export const OHInputInjectMouseEventSuccess: () => number;
+export const InjectMouseEventGlobalSuccess: () => number;
 

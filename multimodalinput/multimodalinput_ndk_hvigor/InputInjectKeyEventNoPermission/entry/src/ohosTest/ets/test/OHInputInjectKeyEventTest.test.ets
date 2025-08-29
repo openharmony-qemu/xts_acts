@@ -570,6 +570,72 @@ export default function ActsInputInjectNoPermissionTest() {
       }
     })
 
+    /**
+     * @tc.number  : SUB_Input_Inject_key_event_2600
+     * @tc.name    : SUB_Input_Inject_key_event_2600
+     * @tc.desc    : Covering the enumeration value.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Input_Inject_key_event_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Input_Inject_key_event_2600 start====");
+        let result = inputinjectnopermissionndk.OHInputInjectMouseEventSuccess();
+        console.info("====>SUB_Input_Inject_key_event_2600 result: " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Input_Inject_key_event_2600 catch err: " + err);
+        expect(-1).assertEqual(0);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Input_Inject_key_event_2700
+     * @tc.name    : SUB_Input_Inject_key_event_2700
+     * @tc.desc    : Covering the enumeration value.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Input_Inject_key_event_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Input_Inject_key_event_2700 start====");
+        let result = inputinjectnopermissionndk.InjectMouseEventGlobalSuccess();
+        console.info("====>SUB_Input_Inject_key_event_2700 result: " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Input_Inject_key_event_2700 catch err: " + err);
+        expect(-1).assertEqual(0);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_Input_Inject_key_event_2800
+     * @tc.name    : SUB_Input_Inject_key_event_2800
+     * @tc.desc    : Covering the enumeration value.
+     * @tc.level   : LEVEL1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_Input_Inject_key_event_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Input_Inject_key_event_2800 start====");
+        let result = inputinjectnopermissionndk.RequestInjectionFrequent();
+        console.info("====>SUB_Input_Inject_key_event_2800 result: " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Input_Inject_key_event_2800 catch err: " + err);
+        expect(-1).assertEqual(0);
+        done()
+      }
+    })
+
   })
 }
 

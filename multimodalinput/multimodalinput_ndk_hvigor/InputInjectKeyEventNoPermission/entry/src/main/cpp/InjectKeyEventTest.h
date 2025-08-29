@@ -45,4 +45,6 @@ napi_value RemoveKeyEventInterceptorDenied(napi_env env, napi_callback_info info
 napi_value RemoveInputEventInterceptorDenied(napi_env env, napi_callback_info info);
 napi_value UnregisterDeviceListenersException(napi_env env, napi_callback_info info);
 napi_value OHInputInjectKeyEventCapsLock(napi_env env, napi_callback_info info);
+napi_value OHInputInjectMouseEventSuccess(napi_env env, napi_callback_info info);
+napi_value InjectMouseEventGlobalSuccess(napi_env env, napi_callback_info info);
 #endif //INJECT_KEY_EVENT_TEST_H

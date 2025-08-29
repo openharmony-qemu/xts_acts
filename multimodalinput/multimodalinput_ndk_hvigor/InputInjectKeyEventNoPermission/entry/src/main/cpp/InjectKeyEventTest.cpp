@@ -355,6 +355,36 @@ napi_value OHInputInjectKeyEventCapsLock(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value OHInputInjectMouseEventSuccess(napi_env env, napi_callback_info info)
+{
+    struct Input_MouseEvent *mouseEvent = OH_Input_CreateMouseEvent();
+    OH_Input_SetMouseEventAction(mouseEvent, MOUSE_ACTION_MOVE);
+    OH_Input_SetMouseEventDisplayX(mouseEvent, 1);
+    OH_Input_SetMouseEventDisplayY(mouseEvent, 1);
+    OH_Input_SetMouseEventButton(mouseEvent, 0);
+    OH_Input_SetMouseEventActionTime(mouseEvent, -1);
+    int retResult = OH_Input_InjectMouseEvent(mouseEvent);
+    OH_Input_DestroyMouseEvent(&mouseEvent);
+    napi_value result;
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SUCCESS) ? 0 : -1, &result);
+    return result;
+}
+
+napi_value InjectMouseEventGlobalSuccess(napi_env env, napi_callback_info info)
+{
+    struct Input_MouseEvent *mouseEvent = OH_Input_CreateMouseEvent();
+    OH_Input_SetMouseEventAction(mouseEvent, MOUSE_ACTION_MOVE);
+    OH_Input_SetMouseEventGlobalX(mouseEvent, 1);
+    OH_Input_SetMouseEventGlobalY(mouseEvent, 1);
+    OH_Input_SetMouseEventButton(mouseEvent, 0);
+    OH_Input_SetMouseEventActionTime(mouseEvent, -1);
+    int retResult = OH_Input_InjectMouseEventGlobal(mouseEvent);
+    OH_Input_DestroyMouseEvent(&mouseEvent);
+    napi_value result;
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SUCCESS) ? 0 : -1, &result);
+    return result;
+}
+
 void addSetKeyEventKeyCodeTest1(std::vector<napi_property_descriptor>& descData)
 {
     descData.push_back({"RequestInjectionFrequent",
@@ -412,6 +442,10 @@ void addSetKeyEventKeyCodeTest2(std::vector<napi_property_descriptor>& descData)
                        nullptr, UnregisterDeviceListenersException, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OHInputInjectKeyEventCapsLock",
                        nullptr, OHInputInjectKeyEventCapsLock, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OHInputInjectMouseEventSuccess",
+                       nullptr, OHInputInjectMouseEventSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"InjectMouseEventGlobalSuccess",
+                       nullptr, InjectMouseEventGlobalSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void addInjectKeyEventTest(std::vector<napi_property_descriptor>& descData)
