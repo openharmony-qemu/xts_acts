@@ -13,6 +13,9 @@
 * limitations under the License.
 */
 
+export let count1: number = 0;
+export let count2: number = 0;
+
 export class Count1 {
   public static count: number = 0
 }
