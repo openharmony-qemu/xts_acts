@@ -20,7 +20,7 @@
 #include <cstdint>
 #include <string>
 
-#include "component.h"
+#include "ComponentTest.h"
 
 namespace ArkUICapiTest {
 class ImageComponent : public Component {

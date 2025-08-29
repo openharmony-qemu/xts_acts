@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "image_draggableEvent_test.h"
+#include "ImageDraggableEventTest.h"
 
 #include <arkui/drag_and_drop.h>
 #include <database/udmf/udmf.h>
@@ -52,7 +52,7 @@ static std::shared_ptr<ImageComponent> CreateImageNode(const std::string &id)
     imageTrue->SetId("imageDragTrue");
     return imageTrue;
 }
-napi_value ImageDraggableTest::CreateNativeNode(napi_env env, napi_callback_info info)
+napi_value ImageDraggableEventTest::CreateNativeNode(napi_env env, napi_callback_info info)
 {
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "imageNODEIMAGEDRAGGABLETest", "CreateNativeNode");
 

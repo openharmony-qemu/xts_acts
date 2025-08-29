@@ -16,7 +16,7 @@
 #ifndef ARKUI_CAPI_DEMO_ROW_COMPONENT_H
 #define ARKUI_CAPI_DEMO_ROW_COMPONENT_H
 
-#include "component.h"
+#include "ComponentTest.h"
 namespace ArkUICapiTest {
 class RowComponent : public Component {
 public:

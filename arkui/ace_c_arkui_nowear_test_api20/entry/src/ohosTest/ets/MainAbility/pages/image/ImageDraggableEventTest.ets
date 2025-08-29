@@ -18,8 +18,8 @@ import { CommonView } from '../../componet/CommonView';
 
 @Entry
 @Component
-struct ImageDraggableTest {
-  PAGE_TAG: string = 'ImageDraggableTest';
+struct ImageDraggableEventTest {
+  PAGE_TAG: string = 'ImageDraggableEventTest';
 
   build() {
     Column() {

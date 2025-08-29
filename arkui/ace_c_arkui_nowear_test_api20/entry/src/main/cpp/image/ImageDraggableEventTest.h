@@ -13,23 +13,19 @@
  * limitations under the License.
  */
 
-#ifndef ARKUI_CAPI_DEMO_TEXT_COMPONENT_H
-#define ARKUI_CAPI_DEMO_TEXT_COMPONENT_H
+#ifndef ARKUI_CAPI_XTS_IMAGE_NODE_IMAGE_DRAGGABLE_TEST_H
+#define ARKUI_CAPI_XTS_IMAGE_NODE_IMAGE_DRAGGABLE_TEST_H
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_interface.h>
+#include <arkui/native_node.h>
 
-#include <cassert>
-#include <string>
-
-#include "component.h"
+#include "../common/common.h"
 
 namespace ArkUICapiTest {
-class TextComponent : public Component {
+class ImageDraggableEventTest {
 public:
-    explicit TextComponent() : Component(ARKUI_NODE_TEXT) {}
-    explicit TextComponent(ArkUI_NodeHandle handle) : Component(handle) {}
-    void SetFontSize(float fontSize) override;
-    void SetFontColor(uint32_t color);
-    void SetTextContent(const std::string& content);
-    void SetTextAlign(ArkUI_TextAlignment align);
+    ~ImageDraggableEventTest();
+    static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
-#endif // ARKUI_CAPI_DEMO_TEXT_COMPONENT_H
+#endif // ARKUI_CAPI_XTS_IMAGE_NODE_IMAGE_DRAGGABLE_TEST_H
