@@ -75,7 +75,7 @@ export default function WebViewActiveWebEngineVersion() {
     */
     it('emitActiveWebEngineVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion001', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion001', webview.ArkWebEngineVersion.SYSTEM_DEFAULT, 20250903, done);
+      Utils.registerEvent('emitActiveWebEngineVersion001', webview.ArkWebEngineVersion.M132, 20250903, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
@@ -117,7 +117,7 @@ export default function WebViewActiveWebEngineVersion() {
     */
     it('emitActiveWebEngineVersion004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion004', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion004', webview.ArkWebEngineVersion.SYSTEM_EVERGREEN, 20250906, done);
+      Utils.registerEvent('emitActiveWebEngineVersion004', webview.ArkWebEngineVersion.M132, 20250906, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
