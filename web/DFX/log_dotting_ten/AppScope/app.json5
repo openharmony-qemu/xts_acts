@@ -14,7 +14,7 @@
 */
 {
   "app": {
-    "bundleName": "com.open.harmony.logdottingTentest",
+    "bundleName": "com.open.harmony.logdottingtentest",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
