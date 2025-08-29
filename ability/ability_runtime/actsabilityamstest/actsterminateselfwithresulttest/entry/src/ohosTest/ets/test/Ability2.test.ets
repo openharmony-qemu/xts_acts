@@ -129,7 +129,7 @@ export default function abilityTest2() {
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
           if (allowed) {
             times = 1000;
-            let buttons = await driver.findComponents(ON.text('打开'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }
@@ -163,7 +163,7 @@ export default function abilityTest2() {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed1} `);
           if (allowed1) {
-            let buttons = await driver.findComponents(ON.text('打开'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }
@@ -265,7 +265,7 @@ export default function abilityTest2() {
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
             if (allowed) {
               times = 1000;
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -288,7 +288,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed1} `);
             if (allowed1) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -298,7 +298,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed2} `);
             if (allowed2) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -381,7 +381,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -474,7 +474,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -484,7 +484,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed1} `);
             if (allowed1) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -601,7 +601,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -611,7 +611,7 @@ export default function abilityTest2() {
             hilog.info(0x0000, TAG, '%{public}s',
               `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed1} `);
             if (allowed1) {
-              let buttons = await driver.findComponents(ON.text('打开'));
+              let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
               if (buttons && buttons.length > 0) {
                 buttons[buttons.length - 1].click();
               }
@@ -701,7 +701,7 @@ export default function abilityTest2() {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
           if (allowed) {
-            let buttons = await driver.findComponents(ON.text('打开'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }
@@ -785,7 +785,7 @@ export default function abilityTest2() {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
           if (allowed) {
-            let buttons = await driver.findComponents(ON.text('打开'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }
@@ -864,7 +864,7 @@ export default function abilityTest2() {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
           if (allowed) {
-            let buttons = await driver.findComponents(ON.text('打开'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }
