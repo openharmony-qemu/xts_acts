@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { Count1, Count2, MyClass, MyEnum, SendableTestClass } from './DataFlg';
+import { MyClass, MyEnum, SendableTestClass } from './DataFlg';
 import { AsyncLock, BaseClass, DeriveClass } from './SendableTest';
 import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
 
@@ -59,7 +59,8 @@ export function printStr4(str: string): string {
   return str;
 }
 
-
+let Count1: number = 0;
+let Count2: number = 0;
 @Concurrent
 export function printArgs1(args: number): number {
   console.info('printArgs: ' + args);

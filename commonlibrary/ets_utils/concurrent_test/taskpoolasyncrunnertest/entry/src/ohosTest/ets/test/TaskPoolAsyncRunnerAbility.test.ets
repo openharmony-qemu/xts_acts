@@ -131,8 +131,8 @@ export default function taskPoolAsyncRunnerAbility() {
         const str2: string = 'q2';
         let Count1: number = 0;
         let Count2: number = 0;
-        const CountStr1: string = 'q1';
-        const CountStr2: string = 'q2'
+        const CountStr1: string = '';
+        const CountStr2: string = '';
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printStr1, str1);
@@ -184,8 +184,8 @@ export default function taskPoolAsyncRunnerAbility() {
         const str4: string = 'q4';
         let Count3: number = 0;
         let Count4: number = 0;
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printStr3, str3);
@@ -199,7 +199,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
                 asyncRunner.execute(task2)
@@ -209,7 +209,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   })
                   .catch((error: BusinessError) => {
                     expect(error.message).assertContain('Cannot read property split of undefined');
-                    count2++;
+                    Count2++;
                     console.error(`error message error: ${JSON.stringify(error.message)}`);
                   })]);
             promises.push(promise);
@@ -220,8 +220,8 @@ export default function taskPoolAsyncRunnerAbility() {
         await Promise.all(promises);
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
-        expect(10).assertEqual(count2);
+        expect(10).assertEqual(Count);
+        expect(10).assertEqual(Count2);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility0200: end');
@@ -282,8 +282,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const num1: number = 1;
         const num2: number = 2
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -295,7 +295,7 @@ export default function taskPoolAsyncRunnerAbility() {
               console.info('======', Count3);
             }).catch((error: BusinessError) => {
               expect(error.message).assertContain('Cannot read property split of undefined');
-              count++;
+              Count++;
               console.error(`error message error: ${JSON.stringify(error.message)}`);
             });
             asyncRunner.execute(task2).then((num: object) => {
@@ -303,7 +303,7 @@ export default function taskPoolAsyncRunnerAbility() {
               console.info('======', Count4);
             }).catch((error: BusinessError) => {
               expect(error.message).assertContain('Cannot read property split of undefined');
-              count2++;
+              Count2++;
               console.error(`error message error: ${JSON.stringify(error.message)}`);
             });
           } catch (e) {
@@ -311,12 +311,12 @@ export default function taskPoolAsyncRunnerAbility() {
           }
         }
         await sleep(1000);
-        while (count < 10 || count2 < 10) {
+        while (Count < 10 || Count2 < 10) {
           await sleep(100);
         }
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility0400: end');
@@ -374,8 +374,8 @@ export default function taskPoolAsyncRunnerAbility() {
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0600: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         const promises: Promise<[void, void]>[] = [];
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printBoolean3, false);
@@ -384,22 +384,22 @@ export default function taskPoolAsyncRunnerAbility() {
             const promise = Promise.all(
               [asyncRunner.execute(task)
                 .then((num: object) => {
-                  Count3.count++;
-                  console.info('======', Count3.count);
+                  Count3.Count++;
+                  console.info('======', Count3.Count);
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
                 asyncRunner.execute(task2)
                   .then((num: object) => {
-                    Count4.count++;
-                    console.info('======', Count4.count);
+                    Count4.Count++;
+                    console.info('======', Count4.Count);
                   })
                   .catch((error: BusinessError) => {
                     expect(error.message).assertContain('Cannot read property split of undefined');
-                    count2++;
+                    Count2++;
                     console.error(`error message error: ${JSON.stringify(error.message)}`);
                   })]);
             promises.push(promise);
@@ -408,11 +408,11 @@ export default function taskPoolAsyncRunnerAbility() {
           }
         }
         await Promise.all(promises);
-        expect(0).assertEqual(Count3.count);
-        expect(0).assertEqual(Count4.count);
-        expect(10).assertEqual(count);
-        Count3.count = 0;
-        Count4.count = 0;
+        expect(0).assertEqual(Count3.Count);
+        expect(0).assertEqual(Count4.Count);
+        expect(10).assertEqual(Count);
+        Count3.Count = 0;
+        Count4.Count = 0;
         console.info('taskPoolAsyncRunnerAbility0600: end');
         Done();
       })
@@ -468,8 +468,8 @@ export default function taskPoolAsyncRunnerAbility() {
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility0800: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        let count: number = 0;
-        let count2: number = 0;  
+        let Count: number = 0;
+        let Count2: number = 0;  
         let Count3: number = 0;
         let Count4: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -485,7 +485,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -495,7 +495,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
             promises.push(promise);
@@ -507,7 +507,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         console.info('taskPoolAsyncRunnerAbility0800: end');
         Done();
       })
@@ -528,20 +528,20 @@ export default function taskPoolAsyncRunnerAbility() {
           let task: taskpool.Task = new taskpool.Task(printUndefined1, Object(undefined));
           let task2: taskpool.Task = new taskpool.Task(printUndefined2, Object(undefined));
           asyncRunner.execute(task).then((num: object) => {
-            CountUndefined1.count;
-            console.info('======', CountUndefined1.count);
+            CountUndefined1.Count;
+            console.info('======', CountUndefined1.Count);
           });
           await sleep(100);
           asyncRunner.execute(task2).then((num: object) => {
-            CountUndefined2.count;
-            console.info('======', CountUndefined2.count);
+            CountUndefined2.Count;
+            console.info('======', CountUndefined2.Count);
           });
         }
         await sleep(1000);
-        expect().assertEqual(CountUndefined1.count);
-        expect().assertEqual(CountUndefined2.count);
-        CountUndefined1.count;
-        CountUndefined1.count;
+        expect().assertEqual(CountUndefined1.Count);
+        expect().assertEqual(CountUndefined2.Count);
+        CountUndefined1.Count;
+        CountUndefined1.Count;
         console.info('taskPoolAsyncRunnerAbility0900: end');
         Done();
       })
@@ -558,8 +558,8 @@ export default function taskPoolAsyncRunnerAbility() {
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1000: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -575,7 +575,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -585,7 +585,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
             promises.push(promise);
@@ -597,7 +597,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility0800: end');
@@ -657,8 +657,8 @@ export default function taskPoolAsyncRunnerAbility() {
       async (Done: Function) => {
         console.info('taskPoolAsyncRunnerAbility1200: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         const promises: Promise<[void, void]>[] = [];
@@ -674,7 +674,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -684,7 +684,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
             ]);
@@ -697,7 +697,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility1200: end');
@@ -757,8 +757,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const Array1: Array<number> = [1, 2, 3];
         const Array2: Array<number> = [4, 5, 6];
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -773,7 +773,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -783,7 +783,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })
             ]);
@@ -794,7 +794,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility1400: end');
@@ -855,8 +855,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const map1: Map<string, number> = new Map([['Test1', 1]]);
         const map2: Map<string, number> = new Map([['Test2', 2]]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -871,7 +871,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined')
-                  count++
+                  Count++
                   console.error(`error message error: ${JSON.stringify(error.message)}`)
                 }),
               asyncRunner.execute(task2)
@@ -881,7 +881,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined')
-                  count2++
+                  Count2++
                   console.error(`error message error: ${JSON.stringify(error.message)}`)
                 })]);
           } catch (e) {
@@ -890,7 +890,7 @@ export default function taskPoolAsyncRunnerAbility() {
         }
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility1600: end');
@@ -951,8 +951,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const set1: Set<number> = new Set([1, 2, 3]);
         const set2: Set<number> = new Set([4, 5, 6]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -967,7 +967,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -977,7 +977,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
           } catch (e) {
@@ -987,7 +987,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         console.info('taskPoolAsyncRunnerAbility1800: end');
         Done();
       })
@@ -1046,8 +1046,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const int8Array1 = new Int8Array([1, 2, 3]);
         const int8Array2 = new Int8Array([4, 5, 6]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -1062,7 +1062,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -1072,7 +1072,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++
+                  Count2++
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })])
           } catch (e) {
@@ -1082,7 +1082,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility2000: end');
@@ -1143,8 +1143,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint8Array1 = new Uint8Array([1, 2, 3]);
         const uint8Array2 = new Uint8Array([4, 5, 6]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -1159,7 +1159,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -1169,7 +1169,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
           } catch (e) {
@@ -1179,7 +1179,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility2200: end');
@@ -1256,7 +1256,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -1266,7 +1266,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
           } catch (e) {
@@ -1276,7 +1276,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility2400: end');
@@ -1337,8 +1337,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint16Array1 = new Uint16Array([1, 2, 3]);
         const uint16Array2 = new Uint16Array([4, 5, 6]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -1353,7 +1353,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
@@ -1363,7 +1363,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
           } catch (e) {
@@ -1373,7 +1373,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility2600: end');
@@ -1450,17 +1450,17 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
               asyncRunner.execute(task2)
                 .then((num: object) => {
-                  Count4++;
+                  Count2++;
                   console.info('======', Count4);
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count2++;
+                  Count2++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 })]);
           } catch (e) {
@@ -1470,7 +1470,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility2800: end');
@@ -1531,8 +1531,8 @@ export default function taskPoolAsyncRunnerAbility() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         const uint32Array1 = new Uint32Array([1, 2, 3]);
         const uint32Array2 = new Uint32Array([4, 5, 6]);
-        let count: number = 0;
-        let count2: number = 0;
+        let Count: number = 0;
+        let Count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
         for (let i = 0; i < 10; i++) {
@@ -1547,7 +1547,7 @@ export default function taskPoolAsyncRunnerAbility() {
                 })
                 .catch((error: BusinessError) => {
                   expect(error.message).assertContain('Cannot read property split of undefined');
-                  count++;
+                  Count++;
                   console.error(`error message error: ${JSON.stringify(error.message)}`);
                 }),
                 asyncRunner.execute(task2)
@@ -1557,7 +1557,7 @@ export default function taskPoolAsyncRunnerAbility() {
                   })
                   .catch((error: BusinessError) => {
                     expect(error.message).assertContain('Cannot read property split of undefined');
-                    count2++;
+                    Count2++;
                     console.error(`error message error: ${JSON.stringify(error.message)}`);
                   })]);
           } catch (e) {
@@ -1567,7 +1567,7 @@ export default function taskPoolAsyncRunnerAbility() {
 
         expect(0).assertEqual(Count3);
         expect(0).assertEqual(Count4);
-        expect(10).assertEqual(count);
+        expect(10).assertEqual(Count);
         Count3 = 0;
         Count4 = 0;
         console.info('taskPoolAsyncRunnerAbility3000: end');
