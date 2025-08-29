@@ -29,7 +29,7 @@
       },
       {
         "name": "ohos.permission.SET_PAC_URL"
-      },
+      }
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
