@@ -1552,7 +1552,7 @@ function testGetDisallowedPolicy() {
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
-  it("test_set_disallowed_policy_for_account_0200", Level.LEVEL2, async (done: Function) => {
+  it("test_get_disallowed_policy_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE);
