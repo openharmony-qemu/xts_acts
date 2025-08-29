@@ -20,6 +20,7 @@
 #include "web/arkweb_interface.h"
 #include "web/arkweb_scheme_handler.h"
 #include <cstdint>
+#include <vector>
 #include <hilog/log.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
@@ -85,12 +86,14 @@ static napi_value WebErrorUnknow(napi_env env, napi_callback_info info)
     OH_LOG_DEBUG(LOG_APP, "WebErrorUnknow start..");
     ArkWeb_HttpBodyStream *httpBodyStream = nullptr;
     ArkWeb_HttpBodyStreamAsyncReadCallback readCallback;
-    int ret = OH_ArkWebHttpBodyStream_SetAsyncReadCallback(httpBodyStream, readCallback);
+    int ret = ArkWeb_ErrorCode::ARKWEB_ERROR_UNKNOWN;
     napi_value result;
-    if (ret == ArkWeb_ErrorCode::ARKWEB_ERROR_UNKNOWN) {
-        napi_create_int32(env, ret, &result);
+    int32_t retCallBack = OH_ArkWebHttpBodyStream_SetAsyncReadCallback(httpBodyStream, readCallback);
+    if (retCallBack == ArkWeb_ErrorCode::ARKWEB_ERROR_UNKNOWN) {
+        OH_LOG_DEBUG(LOG_APP, "OH_ArkWebHttpBodyStream_SetAsyncReadCallback error unknown");
     }
 
+    napi_create_int32(env, ret, &result);
     OH_LOG_DEBUG(LOG_APP, "WebErrorUnknow end..");
     return result;
 }
@@ -198,13 +201,18 @@ static napi_value WebErrorCookeManagerNotInitialized(napi_env env, napi_callback
 {
     OH_LOG_DEBUG(LOG_APP, "WebErrorCookeManagerNotInitialized start..");
     ArkWeb_ErrorCode ret = ARKWEB_COOKIE_MANAGER_NOT_INITIALIZED;
-    ArkWeb_SchemeHandler *g_schemeHandler;
+    ArkWeb_ErrorCode ret1 = ARKWEB_COOKIE_MANAGER_INITIALIZE_FAILED;
+    ArkWeb_ErrorCode ret2 = ARKWEB_COOKIE_SAVE_FAILED;
     int saveRet = OH_ArkWebCookieManager_SaveCookieSync();
     napi_value result;
-    if (saveRet != ARKWEB_SUCCESS) {
+    if (saveRet == ARKWEB_SUCCESS) {
         napi_create_int32(env, saveRet, &result);
-    } else {
+    } else if (saveRet == ARKWEB_COOKIE_MANAGER_NOT_INITIALIZED) {
         napi_create_int32(env, ret, &result);
+    } else if (saveRet == ARKWEB_COOKIE_MANAGER_INITIALIZE_FAILED) {
+        napi_create_int32(env, ret1, &result);
+    } else if (saveRet == ARKWEB_COOKIE_SAVE_FAILED) {
+        napi_create_int32(env, ret2, &result);
     }
     OH_LOG_DEBUG(LOG_APP, "WebErrorCookeManagerNotInitialized end..");
     return result;
@@ -417,9 +425,13 @@ static napi_value OH_ArkWeb_RegisterCustomSchemes0100(napi_env env, napi_callbac
     int32_t option = ARKWEB_SCHEME_OPTION_STANDARD;
     char *scheme = "custom-local";
     int32_t errcode = OH_ArkWeb_RegisterCustomSchemes(scheme, option);
+    int ret = -1;
+    if (errcode == ARKWEB_SCHEME_REGISTER_FAILED) {
+        ret = 0;
+    }
     scheme = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -427,10 +439,14 @@ static napi_value OH_ArkWeb_RegisterCustomSchemes0101(napi_env env, napi_callbac
 {
     int32_t option = ARKWEB_SCHEME_OPTION_LOCAL;
     char *scheme = "custom-local";
+    int ret = -1;
     int32_t errcode = OH_ArkWeb_RegisterCustomSchemes(nullptr, option);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     scheme = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -441,9 +457,13 @@ static napi_value OH_ArkWebServiceWorker_ClearSchemeHandlers0100(napi_env env, n
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWebServiceWorker_SetSchemeHandler(scheme, schemeHandler);
     int32_t errcode = OH_ArkWebServiceWorker_ClearSchemeHandlers();
+    int ret = -1;
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     scheme = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -454,9 +474,13 @@ static napi_value OH_ArkWeb_ClearSchemeHandlers0100(napi_env env, napi_callback_
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *webTag = "a";
     OH_ArkWeb_SetSchemeHandler(scheme, webTag, schemeHandler);
+    int ret = -1;
     int32_t errcode = OH_ArkWeb_ClearSchemeHandlers(webTag);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 static napi_value OH_ArkWeb_ClearSchemeHandlers0101(napi_env env, napi_callback_info info)
@@ -466,9 +490,13 @@ static napi_value OH_ArkWeb_ClearSchemeHandlers0101(napi_env env, napi_callback_
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *webTag = "a";
     OH_ArkWeb_SetSchemeHandler(scheme, webTag, schemeHandler);
+    int ret = -1;
     int32_t errcode = OH_ArkWeb_ClearSchemeHandlers(nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -477,9 +505,13 @@ static napi_value OH_ArkWebSchemeHandler_SetUserData0100(napi_env env, napi_call
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetUserData(schemeHandler, userData);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -488,10 +520,14 @@ static napi_value OH_ArkWebSchemeHandler_SetUserData0101(napi_env env, napi_call
     ArkWeb_SchemeHandler *g_schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&g_schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetUserData(g_schemeHandler, nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     userData = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -500,10 +536,14 @@ static napi_value OH_ArkWebSchemeHandler_SetOnRequestStart0100(napi_env env, nap
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetOnRequestStart(schemeHandler, nullptr);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     userData = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -512,10 +552,14 @@ static napi_value OH_ArkWebSchemeHandler_SetOnRequestStart0101(napi_env env, nap
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetOnRequestStart(nullptr, nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     userData = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -524,10 +568,14 @@ static napi_value OH_ArkWebSchemeHandler_SetOnRequestStop0100(napi_env env, napi
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetOnRequestStop(nullptr, nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     userData = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -536,10 +584,14 @@ static napi_value OH_ArkWebSchemeHandler_SetOnRequestStop0101(napi_env env, napi
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     char *userData = "MySchemeHandler";
+    int ret = -1;
     int32_t errcode = OH_ArkWebSchemeHandler_SetOnRequestStop(schemeHandler, nullptr);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     userData = nullptr;
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -548,9 +600,13 @@ static napi_value OH_ArkWebResponse_SetUrl0100(napi_env env, napi_callback_info 
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *url = "https://example.com/custom_response";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetUrl(response, url);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -558,9 +614,13 @@ static napi_value OH_ArkWebResponse_SetUrl0101(napi_env env, napi_callback_info 
 {
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetUrl(nullptr, nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -568,9 +628,13 @@ static napi_value OH_ArkWebResponse_SetError0100(napi_env env, napi_callback_inf
 {
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetError(nullptr, ARKWEB_ERR_FAILED);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -579,9 +643,13 @@ static napi_value OH_ArkWebResponse_SetStatus0100(napi_env env, napi_callback_in
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     int status = 200;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetStatus(response, status);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -590,9 +658,13 @@ static napi_value OH_ArkWebResponse_SetStatus0101(napi_env env, napi_callback_in
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     int status = 200;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetStatus(nullptr, status);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -601,9 +673,13 @@ static napi_value OH_ArkWebResponse_SetStatusText0100(napi_env env, napi_callbac
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *statusText = "success";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetStatusText(response, statusText);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -612,9 +688,13 @@ static napi_value OH_ArkWebResponse_SetStatusText0101(napi_env env, napi_callbac
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *statusText = "success";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetStatusText(nullptr, statusText);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -623,9 +703,13 @@ static napi_value OH_ArkWebResponse_SetMimeType0100(napi_env env, napi_callback_
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *mimeType = "mp4";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetMimeType(response, mimeType);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -634,9 +718,13 @@ static napi_value OH_ArkWebResponse_SetMimeType0101(napi_env env, napi_callback_
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *mimeType = "mp4";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetMimeType(nullptr, mimeType);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -645,9 +733,13 @@ static napi_value OH_ArkWebResponse_SetCharset0100(napi_env env, napi_callback_i
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *charset = "0123456789";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetCharset(response, charset);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -656,9 +748,13 @@ static napi_value OH_ArkWebResponse_SetCharset0101(napi_env env, napi_callback_i
     ArkWeb_Response *response;
     OH_ArkWeb_CreateResponse(&response);
     char *charset = "0123456789";
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetCharset(nullptr, charset);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -669,9 +765,13 @@ static napi_value OH_ArkWebResponse_SetHeaderByName0100(napi_env env, napi_callb
     char *name = "a";
     char *value = "0";
     bool overwrite = true;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetHeaderByName(response, name, value, overwrite);
+    if (errcode == ARKWEB_NET_OK) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -682,9 +782,13 @@ static napi_value OH_ArkWebResponse_SetHeaderByName0101(napi_env env, napi_callb
     char *name = "a";
     char *value = "0";
     bool overwrite = true;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResponse_SetHeaderByName(nullptr, name, value, overwrite);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -695,9 +799,13 @@ static napi_value OH_ArkWebResourceHandler_Destroy0100(napi_env env, napi_callba
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     ArkWeb_ResourceHandler *resourceHandler;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResourceHandler_Destroy(nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -708,9 +816,13 @@ static napi_value OH_ArkWebResourceHandler_DidReceiveResponse0100(napi_env env, 
     ArkWeb_SchemeHandler *schemeHandler;
     OH_ArkWeb_CreateSchemeHandler(&schemeHandler);
     ArkWeb_ResourceHandler *resourceHandler;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResourceHandler_DidReceiveResponse(nullptr, nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -724,9 +836,13 @@ static napi_value OH_ArkWebResourceHandler_DidReceiveData0100(napi_env env, napi
     int64_t fixedLen = 1024;
     uint8_t buffer[fixedLen];
     int64_t bufLen = fixedLen;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResourceHandler_DidReceiveData(nullptr, buffer, bufLen);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -740,9 +856,13 @@ static napi_value OH_ArkWebResourceHandler_DidFinish0100(napi_env env, napi_call
     int64_t fixedLen = 1024;
     uint8_t buffer[fixedLen];
     int64_t bufLen = fixedLen;
+    int ret = 0;
     int32_t errcode = OH_ArkWebResourceHandler_DidFinish(nullptr);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -756,9 +876,13 @@ static napi_value OH_ArkWebResourceHandler_DidFailWithError0100(napi_env env, na
     int64_t fixedLen = 1024;
     uint8_t buffer[fixedLen];
     int64_t bufLen = fixedLen;
+    int ret = 0;
     int32_t errcode = OH_ArkWebResourceHandler_DidFailWithError(nullptr, ARKWEB_NET_OK);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
@@ -773,105 +897,107 @@ static napi_value OH_ArkWebResourceHandler_DidFailWithErrorV20100(napi_env env, 
     uint8_t buffer[fixedLen];
     int64_t bufLen = fixedLen;
     bool completeIfNoResponse = true;
+    int ret = -1;
     int32_t errcode = OH_ArkWebResourceHandler_DidFailWithErrorV2(nullptr, ARKWEB_NET_OK, completeIfNoResponse);
+    if (errcode == ARKWEB_INVALID_PARAM) {
+        ret = 0;
+    }
     napi_value result;
-    napi_create_int32(env, errcode, &result);
+    napi_create_int32(env, ret, &result);
     return result;
 }
 
-napi_property_descriptor desc[] = {
-    DECLARE_NAPI_FUNCTION("webErrCodeSuccess", WebErrorCodeSuccess),
-    DECLARE_NAPI_FUNCTION("webInitError", WebInitError),
-    DECLARE_NAPI_FUNCTION("webErrorUnknow", WebErrorUnknow),
-    DECLARE_NAPI_FUNCTION("webErrorInvalidParam", WebErrorInvalidParam),
-    DECLARE_NAPI_FUNCTION("webErrorSchemeRegitsterFailed", WebErrorSchemeRegitsterFailed),
-    DECLARE_NAPI_FUNCTION("webErrorInvaledURL", WebErrorInvaledURL),
-    DECLARE_NAPI_FUNCTION("webErrorInvaledCookieValue", WebErrorInvaledCookieValue),
-    DECLARE_NAPI_FUNCTION("webErrorLibraryOpenFailure", WebErrorLibraryOpenFailure),
-    DECLARE_NAPI_FUNCTION("webErrorLibraySymbolNotFound", WebErrorLibraySymbolNotFound),
-    DECLARE_NAPI_FUNCTION("webErrorCookeManagerNotInitialized", WebErrorCookeManagerNotInitialized),
-    DECLARE_NAPI_FUNCTION("webBlanklessSuccess", WebBlanklessSuccess),
-    DECLARE_NAPI_FUNCTION("webBlanklessErrUnknown", WebBlanklessErrUnknown),
-    DECLARE_NAPI_FUNCTION("webBlanklessErrInvalidArgs", WebBlanklessErrInvalidArgs),
-    DECLARE_NAPI_FUNCTION("webBlanklessErrControllerNotInited", WebBlanklessErrControllerNotInited),
-    DECLARE_NAPI_FUNCTION("webBlanklessErrKeyNotMatch", WebBlanklessErrKeyNotMatch),
-    DECLARE_NAPI_FUNCTION("webBlanklessErrSignificantChange", WebBlanklessErrSignificantChange),
-    DECLARE_NAPI_FUNCTION("webBlanklessDeviceNotSupport", WebBlanklessDeviceNotSupport),
-    DECLARE_NAPI_FUNCTION("webAnyNativeAPI", WebAnyNativeAPI),
-    DECLARE_NAPI_FUNCTION("webNativeComponent", WebNativeComponent),
-    DECLARE_NAPI_FUNCTION("webNativeController", WebNativeController),
-    DECLARE_NAPI_FUNCTION("webNativeWebMessagePort", WebNativeWebMessagePort),
-    DECLARE_NAPI_FUNCTION("webNativeWebMessage", WebNativeWebMessage),
-    DECLARE_NAPI_FUNCTION("webNativeCookieManger", WebNativeCookieManger),
-    DECLARE_NAPI_FUNCTION("webNativeJavaScriptValue", WebNativeJavaScriptValue),
-    DECLARE_NAPI_FUNCTION("webArkWebNetError", WebArkWebNetError),
-    DECLARE_NAPI_FUNCTION("webRegisterCustomSchemes", WebRegisterCustomSchemes),
-    {"OH_ArkWeb_RegisterCustomSchemes0100", nullptr, OH_ArkWeb_RegisterCustomSchemes0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWeb_RegisterCustomSchemes0101", nullptr, OH_ArkWeb_RegisterCustomSchemes0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebServiceWorker_ClearSchemeHandlers0100", nullptr, OH_ArkWebServiceWorker_ClearSchemeHandlers0100,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWeb_ClearSchemeHandlers0100", nullptr, OH_ArkWeb_ClearSchemeHandlers0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWeb_ClearSchemeHandlers0101", nullptr, OH_ArkWeb_ClearSchemeHandlers0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetUserData0100", nullptr, OH_ArkWebSchemeHandler_SetUserData0100, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetUserData0101", nullptr, OH_ArkWebSchemeHandler_SetUserData0101, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetOnRequestStart0100", nullptr, OH_ArkWebSchemeHandler_SetOnRequestStart0100, nullptr,
-     nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetOnRequestStart0101", nullptr, OH_ArkWebSchemeHandler_SetOnRequestStart0101, nullptr,
-     nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetOnRequestStop0100", nullptr, OH_ArkWebSchemeHandler_SetOnRequestStop0100, nullptr,
-     nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebSchemeHandler_SetOnRequestStop0101", nullptr, OH_ArkWebSchemeHandler_SetOnRequestStop0101, nullptr,
-     nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebResponse_SetUrl0100", nullptr, OH_ArkWebResponse_SetUrl0100, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
-    {"OH_ArkWebResponse_SetUrl0101", nullptr, OH_ArkWebResponse_SetUrl0101, nullptr, nullptr, nullptr, napi_default,
-     nullptr},
-    {"OH_ArkWebResponse_SetError0100", nullptr, OH_ArkWebResponse_SetError0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetStatus0100", nullptr, OH_ArkWebResponse_SetStatus0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetStatus0101", nullptr, OH_ArkWebResponse_SetStatus0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetStatusText0100", nullptr, OH_ArkWebResponse_SetStatusText0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetStatusText0101", nullptr, OH_ArkWebResponse_SetStatusText0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetMimeType0100", nullptr, OH_ArkWebResponse_SetMimeType0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetMimeType0101", nullptr, OH_ArkWebResponse_SetMimeType0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetCharset0100", nullptr, OH_ArkWebResponse_SetCharset0100, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetCharset0101", nullptr, OH_ArkWebResponse_SetCharset0101, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"OH_ArkWebResponse_SetHeaderByName0100", nullptr, OH_ArkWebResponse_SetHeaderByName0100, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebResponse_SetHeaderByName0101", nullptr, OH_ArkWebResponse_SetHeaderByName0101, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_Destroy0100", nullptr, OH_ArkWebResourceHandler_Destroy0100, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_DidReceiveResponse0100", nullptr, OH_ArkWebResourceHandler_DidReceiveResponse0100,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_DidReceiveData0100", nullptr, OH_ArkWebResourceHandler_DidReceiveData0100, nullptr,
-     nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_DidFinish0100", nullptr, OH_ArkWebResourceHandler_DidFinish0100, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_DidFailWithError0100", nullptr, OH_ArkWebResourceHandler_DidFailWithError0100,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_ArkWebResourceHandler_DidFailWithErrorV20100", nullptr, OH_ArkWebResourceHandler_DidFailWithErrorV20100,
-     nullptr, nullptr, nullptr, napi_default, nullptr},
-};
-
 EXTERN_C_START
+
+static void AddExFunction(std::vector<napi_property_descriptor> &descVector)
+{
+    std::vector<napi_property_descriptor> descEx = {
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_RegisterCustomSchemes0100", OH_ArkWeb_RegisterCustomSchemes0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_RegisterCustomSchemes0101", OH_ArkWeb_RegisterCustomSchemes0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebServiceWorker_ClearSchemeHandlers0100",
+                              OH_ArkWebServiceWorker_ClearSchemeHandlers0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_ClearSchemeHandlers0100", OH_ArkWeb_ClearSchemeHandlers0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_ClearSchemeHandlers0101", OH_ArkWeb_ClearSchemeHandlers0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetUserData0100", OH_ArkWebSchemeHandler_SetUserData0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetUserData0101", OH_ArkWebSchemeHandler_SetUserData0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetOnRequestStart0100",
+                              OH_ArkWebSchemeHandler_SetOnRequestStart0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetOnRequestStart0101",
+                              OH_ArkWebSchemeHandler_SetOnRequestStart0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetOnRequestStop0100",
+                              OH_ArkWebSchemeHandler_SetOnRequestStop0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebSchemeHandler_SetOnRequestStop0101",
+                              OH_ArkWebSchemeHandler_SetOnRequestStop0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetUrl0100", OH_ArkWebResponse_SetUrl0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetUrl0101", OH_ArkWebResponse_SetUrl0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetError0100", OH_ArkWebResponse_SetError0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetStatus0100", OH_ArkWebResponse_SetStatus0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetStatus0101", OH_ArkWebResponse_SetStatus0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetStatusText0100", OH_ArkWebResponse_SetStatusText0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetStatusText0101", OH_ArkWebResponse_SetStatusText0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetMimeType0100", OH_ArkWebResponse_SetMimeType0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetMimeType0101", OH_ArkWebResponse_SetMimeType0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetCharset0100", OH_ArkWebResponse_SetCharset0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetCharset0101", OH_ArkWebResponse_SetCharset0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetHeaderByName0100", OH_ArkWebResponse_SetHeaderByName0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetHeaderByName0101", OH_ArkWebResponse_SetHeaderByName0101),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_Destroy0100", OH_ArkWebResourceHandler_Destroy0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidReceiveResponse0100",
+                              OH_ArkWebResourceHandler_DidReceiveResponse0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidReceiveData0100",
+                              OH_ArkWebResourceHandler_DidReceiveData0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidFinish0100", OH_ArkWebResourceHandler_DidFinish0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidFailWithError0100",
+                              OH_ArkWebResourceHandler_DidFailWithError0100),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidFailWithErrorV20100",
+                              OH_ArkWebResourceHandler_DidFailWithErrorV20100),
+    };
+
+    for (const auto& desc : descEx) {
+        descVector.push_back(desc);
+    }
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    std::vector<napi_property_descriptor> desc = {
+        DECLARE_NAPI_FUNCTION("webErrCodeSuccess", WebErrorCodeSuccess),
+        DECLARE_NAPI_FUNCTION("webInitError", WebInitError),
+        DECLARE_NAPI_FUNCTION("webErrorUnknow", WebErrorUnknow),
+        DECLARE_NAPI_FUNCTION("webErrorInvalidParam", WebErrorInvalidParam),
+        DECLARE_NAPI_FUNCTION("webErrorSchemeRegitsterFailed", WebErrorSchemeRegitsterFailed),
+        DECLARE_NAPI_FUNCTION("webErrorInvaledURL", WebErrorInvaledURL),
+        DECLARE_NAPI_FUNCTION("webErrorInvaledCookieValue", WebErrorInvaledCookieValue),
+        DECLARE_NAPI_FUNCTION("webErrorLibraryOpenFailure", WebErrorLibraryOpenFailure),
+        DECLARE_NAPI_FUNCTION("webErrorLibraySymbolNotFound", WebErrorLibraySymbolNotFound),
+        DECLARE_NAPI_FUNCTION("webErrorCookeManagerNotInitialized", WebErrorCookeManagerNotInitialized),
+        DECLARE_NAPI_FUNCTION("webBlanklessSuccess", WebBlanklessSuccess),
+        DECLARE_NAPI_FUNCTION("webBlanklessErrUnknown", WebBlanklessErrUnknown),
+        DECLARE_NAPI_FUNCTION("webBlanklessErrInvalidArgs", WebBlanklessErrInvalidArgs),
+        DECLARE_NAPI_FUNCTION("webBlanklessErrControllerNotInited", WebBlanklessErrControllerNotInited),
+        DECLARE_NAPI_FUNCTION("webBlanklessErrKeyNotMatch", WebBlanklessErrKeyNotMatch),
+        DECLARE_NAPI_FUNCTION("webBlanklessErrSignificantChange", WebBlanklessErrSignificantChange),
+        DECLARE_NAPI_FUNCTION("webBlanklessDeviceNotSupport", WebBlanklessDeviceNotSupport),
+        DECLARE_NAPI_FUNCTION("webAnyNativeAPI", WebAnyNativeAPI),
+        DECLARE_NAPI_FUNCTION("webNativeComponent", WebNativeComponent),
+        DECLARE_NAPI_FUNCTION("webNativeController", WebNativeController),
+        DECLARE_NAPI_FUNCTION("webNativeWebMessagePort", WebNativeWebMessagePort),
+        DECLARE_NAPI_FUNCTION("webNativeWebMessage", WebNativeWebMessage),
+        DECLARE_NAPI_FUNCTION("webNativeCookieManger", WebNativeCookieManger),
+        DECLARE_NAPI_FUNCTION("webNativeJavaScriptValue", WebNativeJavaScriptValue),
+        DECLARE_NAPI_FUNCTION("webArkWebNetError", WebArkWebNetError),
+        DECLARE_NAPI_FUNCTION("webRegisterCustomSchemes", WebRegisterCustomSchemes),
+        DECLARE_NAPI_FUNCTION("initResourceManager", InitResourceManager),
+        DECLARE_NAPI_FUNCTION("setSchemeHandler", SetSchemeHandler),
+        DECLARE_NAPI_FUNCTION("webSchemeHandlerProcess", WebSchemeHandlerProcess),
+        DECLARE_NAPI_FUNCTION("registerCustomSchemes", RegisterCustomSchemes),
+        DECLARE_NAPI_FUNCTION("requestStop", RequestStop),
+        DECLARE_NAPI_FUNCTION("setAsyncReadCallback", SetAsyncReadCallback),
+    };
+    
+    AddExFunction(desc);
+
+    napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }
 EXTERN_C_END

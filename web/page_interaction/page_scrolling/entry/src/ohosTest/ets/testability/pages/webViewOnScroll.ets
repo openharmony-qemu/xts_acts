@@ -30,6 +30,7 @@ let driver = Driver.create();
 @Component
 struct webViewOnScroll {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  @State webHeight: number = 0
   @State str: string = "emitOnscroll";
   @State textX: number = 100;
   @State textY: number = 100;
@@ -50,6 +51,9 @@ struct webViewOnScroll {
   @State checkEleResult: number[] = [];
   @State databaseAccess: boolean = true;
   @State flag: boolean = false;
+  @State isWebBottom:Boolean = false;
+  @State isWebTop:Boolean = false;
+
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State isPageEnd: number = -1;
@@ -258,6 +262,11 @@ struct webViewOnScroll {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
+        .onPageEnd((event) => {
+          this.getWebHeight();
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
         .onScroll((event) => {
           console.log('onScroll:', this.firstId,this.secondId)
           console.log('onScroll xOffset:' + event.xOffset + ' yOffset:' + event.yOffset);
@@ -268,10 +277,6 @@ struct webViewOnScroll {
             console.info("y = " + event.yOffset + this.secondId)
             Utils.emitEvent(event.yOffset, this.secondId)
           }
-        })
-        .onPageEnd((event) => {
-          console.log('onPageEnd url:' + event.url);
-          this.isPageEnd = 1;
         })
     }
   }
