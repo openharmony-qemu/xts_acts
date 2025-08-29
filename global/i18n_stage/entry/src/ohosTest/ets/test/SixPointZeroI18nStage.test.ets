@@ -3033,7 +3033,7 @@ export default function SixPointZeroI18nStageTest() {
 
     /* *
     * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1000
-    * @tc.name      : test_IntlPluralRules_0100
+    * @tc.name      : test_IntlPluralRulesResolvedOptions_0100
     * @tc.desc      : PluralRules  with zh-CN
     * @tc.size      : MediumTest
     * @tc.type      : Function
@@ -3055,7 +3055,7 @@ export default function SixPointZeroI18nStageTest() {
 
     /* *
     * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1100
-    * @tc.name      : test_IntlPluralRules_0200
+    * @tc.name      : test_IntlPluralRulesResolvedOptions_0200
     * @tc.desc      : PluralRules  with ar-AE
     * @tc.size      : MediumTest
     * @tc.type      : Function
@@ -3074,7 +3074,7 @@ export default function SixPointZeroI18nStageTest() {
 
     /* *
     * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1200
-    * @tc.name      : test_IntlPluralRules_0300
+    * @tc.name      : test_IntlPluralRulesResolvedOptions_0300
     * @tc.desc      : PluralRules  with ar-AE && type: 'ordinal', minimumIntegerDigits: 3, minimumFractionDigits: 3, maximumFractionDigits: 5
     * @tc.size      : MediumTest
     * @tc.type      : Function
@@ -3098,7 +3098,7 @@ export default function SixPointZeroI18nStageTest() {
 
     /* *
     * @tc.number    : SUB_GLOBAL_Intl_SupplementPluralRules_1300
-    * @tc.name      : test_IntlPluralRules_0400
+    * @tc.name      : test_IntlPluralRulesResolvedOptions_0400
     * @tc.desc      : PluralRules  with NULL
     * @tc.size      : MediumTest
     * @tc.type      : Function
