@@ -1433,8 +1433,9 @@ function testSetDisallowedPolicy() {
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_APP_CLONE, true);
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE)).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_APP_CLONE, false);
     } catch (error) {
-      expect(true).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
