@@ -20,6 +20,7 @@
 #include <vector>
 #include "multimodalinput/oh_input_manager.h"
 #include "multimodalinput/oh_key_code.h"
+#include <hilog/log.h>
 
 void KeyEventCallback(const struct Input_KeyEvent* keyEvent)
 {
@@ -70,9 +71,12 @@ napi_value RequestInjectionFrequent(napi_env env, napi_callback_info info)
 {
     napi_value result;
     auto fnCallBack = [](Input_InjectionStatus authorizedStatus)
-    {};
+    {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkData", "=======zh  OH_RdbTrans_Insert errCode = %{public}d", 0);
+    };
     Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
-    napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED || retResult == INPUT_INJECTION_OPERATION_FREQUENT) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED ||
+                      retResult == INPUT_INJECTION_OPERATION_FREQUENT) ? 0 : -1, &result);
     return result;
 }
 
@@ -80,9 +84,12 @@ napi_value RequestInjectionAuthorized(napi_env env, napi_callback_info info)
 {
     napi_value result;
     auto fnCallBack = [](Input_InjectionStatus authorizedStatus)
-    {};
+    {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkData", "=======zh  OH_RdbTrans_Insert errCode = %{public}d", 0);
+    };
     Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
-    napi_create_int32(env, (retResult == 801 || retResult == INPUT_INJECTION_AUTHORIZED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED || 
+                      retResult == INPUT_INJECTION_AUTHORIZED) ? 0 : -1, &result);
     return result;
 }
 
@@ -111,7 +118,8 @@ napi_value AddKeyEventMonitorException(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_AddKeyEventMonitor(KeyEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveKeyEventMonitor(KeyEventCallback);
     return result;
 }
@@ -120,7 +128,8 @@ napi_value AddMouseEventMonitorException(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_AddMouseEventMonitor(MouseEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveMouseEventMonitor(MouseEventCallback);
     return result;
 }
@@ -129,7 +138,8 @@ napi_value AddTouchEventMonitorException(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_AddTouchEventMonitor(TouchEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveTouchEventMonitor(TouchEventCallback);
     return result;
 }
@@ -138,7 +148,8 @@ napi_value AddAxisEventMonitorForAllException(napi_env env, napi_callback_info i
 {
     napi_value result;
     Input_Result retResult = OH_Input_AddAxisEventMonitorForAll(AxisEventCallbackAll);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveAxisEventMonitorForAll(AxisEventCallbackAll);
     return result;
 }
@@ -148,7 +159,8 @@ napi_value AddAxisEventMonitorException(napi_env env, napi_callback_info info)
     napi_value result;
     InputEvent_AxisEventType axisEventType = AXIS_EVENT_TYPE_PINCH;
     Input_Result retResult = OH_Input_AddAxisEventMonitor(axisEventType, AxisEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveAxisEventMonitor(axisEventType, AxisEventCallback);
     return result;
 }
@@ -158,7 +170,8 @@ napi_value RemoveKeyEventMonitorException(napi_env env, napi_callback_info info)
     napi_value result;
     Input_Result retResult = OH_Input_AddKeyEventMonitor(KeyEventCallback);
     retResult = OH_Input_RemoveKeyEventMonitor(KeyEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -166,7 +179,8 @@ napi_value RemoveKeyEventMonitorDenied(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_RemoveKeyEventMonitor(KeyEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -175,7 +189,8 @@ napi_value RemoveMouseEventMonitorException(napi_env env, napi_callback_info inf
     napi_value result;
     Input_Result retResult = OH_Input_AddMouseEventMonitor(MouseEventCallback);
     retResult = OH_Input_RemoveMouseEventMonitor(MouseEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -184,7 +199,8 @@ napi_value RemoveMouseEventMonitorDenied(napi_env env, napi_callback_info info)
     napi_value result;
     Input_Result retResult = OH_Input_AddMouseEventMonitor(MouseEventCallback);
     retResult = OH_Input_RemoveMouseEventMonitor(MouseEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -193,7 +209,8 @@ napi_value RemoveTouchEventMonitorException(napi_env env, napi_callback_info inf
     napi_value result;
     Input_Result retResult = OH_Input_AddTouchEventMonitor(TouchEventCallback);
     retResult = OH_Input_RemoveTouchEventMonitor(TouchEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -202,7 +219,8 @@ napi_value RemoveTouchEventMonitorDenied(napi_env env, napi_callback_info info)
     napi_value result;
     Input_Result retResult = OH_Input_AddTouchEventMonitor(TouchEventCallback);
     retResult = OH_Input_RemoveTouchEventMonitor(TouchEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -211,7 +229,8 @@ napi_value RemoveAxisEventMonitorForAllException(napi_env env, napi_callback_inf
     napi_value result;
     Input_Result retResult = OH_Input_AddAxisEventMonitorForAll(AxisEventCallbackAll);
     retResult = OH_Input_RemoveAxisEventMonitorForAll(AxisEventCallbackAll);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -220,7 +239,8 @@ napi_value RemoveAxisEventMonitorForAllDenied(napi_env env, napi_callback_info i
     napi_value result;
     Input_Result retResult = OH_Input_AddAxisEventMonitorForAll(AxisEventCallbackAll);
     retResult = OH_Input_RemoveAxisEventMonitorForAll(AxisEventCallbackAll);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -230,7 +250,8 @@ napi_value RemoveAxisEventMonitorException(napi_env env, napi_callback_info info
     InputEvent_AxisEventType axisEventType = AXIS_EVENT_TYPE_PINCH;
     Input_Result retResult = OH_Input_AddAxisEventMonitor(axisEventType, AxisEventCallback);
     retResult = OH_Input_RemoveAxisEventMonitor(axisEventType, AxisEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -240,7 +261,8 @@ napi_value RemoveAxisEventMonitorDenied(napi_env env, napi_callback_info info)
     InputEvent_AxisEventType axisEventType = AXIS_EVENT_TYPE_PINCH;
     Input_Result retResult = OH_Input_AddAxisEventMonitor(axisEventType, AxisEventCallback);
     retResult = OH_Input_RemoveAxisEventMonitor(axisEventType, AxisEventCallback);
-    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -248,7 +270,8 @@ napi_value AddKeyEventInterceptorException(napi_env env, napi_callback_info info
 {
     napi_value result;
     Input_Result retResult = OH_Input_AddKeyEventInterceptor(KeyEventCallback, nullptr);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     return result;
 }
 
@@ -261,7 +284,8 @@ napi_value AddInputEventInterceptorException(napi_env env, napi_callback_info in
     callback.axisCallback = AxisEventCallback;
     Input_InterceptorOptions *option = nullptr;
     Input_Result retResult = OH_Input_AddInputEventInterceptor(&callback, option);
-    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_PERMISSION_DENIED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 0 : -1, &result);
     OH_Input_RemoveInputEventInterceptor();
     return result;
 }
@@ -272,7 +296,8 @@ napi_value RemoveKeyEventInterceptorDenied(napi_env env, napi_callback_info info
     Input_Result retResult = OH_Input_AddKeyEventInterceptor(KeyEventCallback, nullptr);
     retResult = OH_Input_AddKeyEventInterceptor(KeyEventCallback, nullptr);
     retResult = OH_Input_RemoveKeyEventInterceptor();
-    napi_create_int32(env, (retResult == INPUT_SERVICE_EXCEPTION || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_SERVICE_EXCEPTION ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -286,7 +311,8 @@ napi_value RemoveInputEventInterceptorDenied(napi_env env, napi_callback_info in
     Input_InterceptorOptions *option = nullptr;
     Input_Result retResult = OH_Input_AddInputEventInterceptor(&callback, option);
     retResult = OH_Input_RemoveInputEventInterceptor();
-    napi_create_int32(env, (retResult == INPUT_SERVICE_EXCEPTION || retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
+    napi_create_int32(env, (retResult == INPUT_SERVICE_EXCEPTION ||
+                      retResult == INPUT_PERMISSION_DENIED) ? 0 : -1, &result);
     return result;
 }
 
@@ -362,7 +388,8 @@ void addSetKeyEventKeyCodeTest1(std::vector<napi_property_descriptor>& descData)
     descData.push_back({"RemoveTouchEventMonitorDenied",
                        nullptr, RemoveTouchEventMonitorDenied, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"RemoveAxisEventMonitorForAllException",
-                       nullptr, RemoveAxisEventMonitorForAllException, nullptr, nullptr, nullptr, napi_default, nullptr});
+                       nullptr, RemoveAxisEventMonitorForAllException,
+                       nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"RemoveAxisEventMonitorForAllDenied",
                        nullptr, RemoveAxisEventMonitorForAllDenied, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"RemoveAxisEventMonitorException",
@@ -375,6 +402,10 @@ void addSetKeyEventKeyCodeTest1(std::vector<napi_property_descriptor>& descData)
                        nullptr, AddInputEventInterceptorException, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"RemoveKeyEventInterceptorDenied",
                        nullptr, RemoveKeyEventInterceptorDenied, nullptr, nullptr, nullptr, napi_default, nullptr});
+}
+
+void addSetKeyEventKeyCodeTest2(std::vector<napi_property_descriptor>& descData)
+{
     descData.push_back({"RemoveInputEventInterceptorDenied",
                        nullptr, RemoveInputEventInterceptorDenied, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"UnregisterDeviceListenersException",
@@ -386,4 +417,5 @@ void addSetKeyEventKeyCodeTest1(std::vector<napi_property_descriptor>& descData)
 void addInjectKeyEventTest(std::vector<napi_property_descriptor>& descData)
 {
     addSetKeyEventKeyCodeTest1(descData);
+    addSetKeyEventKeyCodeTest2(descData);
 }

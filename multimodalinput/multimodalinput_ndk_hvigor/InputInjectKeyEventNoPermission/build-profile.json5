@@ -15,21 +15,7 @@
 
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B76008B95830402FD069D689A0F673C8390472EEF9FC944562BFB77220516BE3B21B6803973D8DD",
-          "profile": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lenovo\\.ohos\\config\\default_InputInjectKeyEventNoPermission_taBMpWC67zvHBXor4ha0XeoiU0ifh73NZ7YbmN2neFY=.p12",
-          "storePassword": "0000001BA26F7C125233ACD5C9C6CACC41477BE6BA48C1B91F6E383AD18AB7037C69311DDDA30DD9C74059"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
