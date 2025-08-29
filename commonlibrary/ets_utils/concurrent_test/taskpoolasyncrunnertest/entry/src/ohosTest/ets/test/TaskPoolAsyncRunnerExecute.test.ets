@@ -65,27 +65,27 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 100);
           runner.execute(task).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
-            console.info('======Count1', Count1.count);
+            count1 = count1 + Number(num);
+            console.info('======count1', count1);
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
-            console.info('======Count2', Count2.count);
+            count2 = count2 + Number(num);
+            console.info('======count2', count2);
           });
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(count1);
+        expect(10).assertEqual(count2);
+        count1 = 0;
+        count2 = 0;
         Done();
       });
 
@@ -100,31 +100,31 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1001_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count3.count = 0;
-        Count4.count = 0;
+        let count3: number = 0;
+        let count4: number = 0;
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs4, 1, 100);
           runner.execute(task).catch((error: BusinessError) => {
             expect(error.message).assertContain('Cannot read property split of undefined');
-            Count3.count = Count3.count + 1;
-            console.info('======', Count3.count);
+            count3 = count3 + 1;
+            console.info('======', count3);
             console.error(`error message error: ${JSON.stringify(error)}`);
           })
           runner.execute(task2).catch((error: BusinessError) => {
             expect(error.message).assertContain('Cannot read property split of undefined');
-            Count4.count = Count4.count + 1;
-            console.info('======', Count4.count);
+            count4 = count4 + 1;
+            console.info('======', count4);
             console.error(`error message error: ${JSON.stringify(error)}`);
           })
         }
-        while (Count4.count < 10 || Count3.count < 10) {
+        while (count4 < 10 || count3 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count3.count);
-        expect(10).assertEqual(Count4.count);
-        Count3.count = 0;
-        Count4.count = 0;
+        expect(10).assertEqual(count3);
+        expect(10).assertEqual(count4);
+        count3 = 0;
+        count4 = 0;
         Done();
       });
 
@@ -139,27 +139,27 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.GenericsTask<[number, number], number>(printArgs2, 1, 100);
           runner.execute(task1).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
-            console.info('======', Count1.count);
+            count1 = count1 + Number(num);
+            console.info('======', count1);
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
-            console.info('======', Count2.count);
+            count2 = count2 + Number(num);
+            console.info('======', count2);
           });
         }
-        while (Count1.count < 10 || Count2.count < 10 ) {
+        while (count1 < 10 || count2 < 10 ) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(count1);
+        expect(10).assertEqual(count2);
+        count1 = 0;
+        count2 = 0;
         Done();
       });
 
@@ -174,31 +174,31 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1002_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count3.count = 0;
-        Count4.count = 0;
+        let count3: number = 0;
+        let count4: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.GenericsTask<[number, number], number>(printArgs4, 1, 100);
           runner.execute(task1).catch((error: BusinessError) => {
             expect(error.message).assertContain('Cannot read property split of undefined');
-            Count3.count = Count3.count + 1;
-            console.info('======', Count3.count);
+            count3 = count3 + 1;
+            console.info('======', count3);
             console.error(`error message error: ${JSON.stringify(error)}`);
           })
           runner.execute(task2).catch((error: BusinessError) => {
             expect(error.message).assertContain('Cannot read property split of undefined');
-            Count4.count = Count4.count + 1;
-            console.info('======', Count4.count);
+            count4 = count4 + 1;
+            console.info('======', count4);
             console.error(`error message error: ${JSON.stringify(error)}`);
           })
         }
-        while (Count4.count < 10 || Count3.count < 10) {
+        while (count4 < 10 || count3 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count3.count);
-        expect(10).assertEqual(Count4.count);
-        Count3.count = 0;
-        Count4.count = 0;
+        expect(10).assertEqual(count3);
+        expect(10).assertEqual(count4);
+        count3 = 0;
+        count4 = 0;
         Done();
       });
 
@@ -213,29 +213,29 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task('TaskName1', printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task('TaskName2', printArgs2, 1, 100);
           runner.execute(task1).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
-            console.info('======', Count1.count);
+            count1 = count1 + Number(num);
+            console.info('======', count1);
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
-            console.info('======', Count2.count);
+            count2 = count2 + Number(num);
+            console.info('======', count2);
           });
           expect('TaskName1').assertEqual(task1.name);
           expect('TaskName2').assertEqual(task2.name);
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(count1);
+        expect(10).assertEqual(count2);
+        count1 = 0;
+        count2 = 0;
         Done();
       });
 
@@ -250,29 +250,29 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs, 1, 50);
           runner.execute(task).then((num: object) => {
             taskpool.cancel(task)
-            Count1.count = Count1.count + Number(num);
-            console.info('======', Count1.count);
+            count1 = count1 + Number(num);
+            console.info('======', count1);
           })
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
+            count2 = count2 + Number(num);
             taskpool.cancel(task2)
-            console.info('======', Count2.count);
+            console.info('======', count2);
           })
         }
-        while (Count2.count < 10 || Count1.count < 0) {
+        while (count2 < 10 || count1 < 0) {
           await sleep(100);
         }
-        expect(Count1.count).assertEqual(0);
-        expect(Count2.count).assertEqual(10);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(count1).assertEqual(0);
+        expect(count2).assertEqual(10);
+        count1 = 0;
+        count2 = 0;
         Done();
       });
 
@@ -287,31 +287,31 @@ export default function taskPoolAsyncRunnerExecute() {
     it('taskPoolAsyncRunnerExecute1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(idCancel, task.taskId, 50);
           runner.execute(task).then((num: object) => { 
-           Count1.count++;
+           count1++;
           }).catch((e:Error)=>{
-            Count1.count++;
+            count1++;
             console.info('=====', e.message);
           });
             runner.execute(task2).then(() => {
-              Count2.count++;
+              count2++;
             }).catch((e:Error)=>{
-              Count2.count++;
+              count2++;
               console.info('=====', e.message);
             })
         }
-        while (Count2.count < 10 || Count1.count < 10) {
+        while (count2 < 10 || count1 < 10) {
           await sleep(100);
         }
-        expect(Count1.count).assertEqual(10);
-        expect(Count2.count).assertEqual(10);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(count1).assertEqual(10);
+        expect(count2).assertEqual(10);
+        count1 = 0;
+        count2 = 0;
         Done();
       });
 
@@ -439,8 +439,8 @@ export default function taskPoolAsyncRunnerExecute() {
       async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
-        Count1.count = 0;
-        Count2.count = 0;
+        let count3: number = 0;
+        let count4: number = 0;
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -452,24 +452,22 @@ export default function taskPoolAsyncRunnerExecute() {
             count2++;
           });
           runner.execute(task).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
+            count3++;
             console.info('taskpool: execute task success');
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
+            count4++
             console.info('taskpool: execute task success');
           });
         }
 
-        while (count < 10 || Count1.count < 10 || Count2.count < 10 || count2 < 10) {
+        while (count < 10 || count3 || count4 || count2 < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
         expect(10).assertEqual(count2);
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(count3);
+        expect(10).assertEqual(count4);
         Done();
       })
 
@@ -483,8 +481,8 @@ export default function taskPoolAsyncRunnerExecute() {
      */
     it('taskPoolAsyncRunnerExecute1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
-        Count1.count = 0;
-        Count2.count = 0;
+        let count1: number = 0;
+        let count2: number = 0;
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -494,7 +492,7 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
-              Count1.count++;
+              count1++;
             }
           })
           task2.onEnqueued(() => {
@@ -502,7 +500,7 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
-              Count2.count++;
+              count2++;
             }
           })
 
@@ -514,14 +512,12 @@ export default function taskPoolAsyncRunnerExecute() {
           });
         }
 
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100);
         }
 
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(count1);
+        expect(10).assertEqual(count2);
         Done();
       })
 
@@ -537,8 +533,8 @@ export default function taskPoolAsyncRunnerExecute() {
       async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
-        Count1.count = 0;
-        Count2.count = 0;
+        let count3: number = 0;
+        let count4: number = 0;
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -550,24 +546,22 @@ export default function taskPoolAsyncRunnerExecute() {
             count2++;
           });
           runner.execute(task).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
+            count3++;
             console.info('taskpool: execute task success');
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
+            count4++;
             console.info('taskpool: execute task success');
           });
         }
 
-        while (count < 10 || Count1.count < 10 || Count2.count < 10 || count2 < 10) {
+        while (count < 10 || count3 || count4 || count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
+        expect(10).assertEqual(count3);
         expect(10).assertEqual(count);
-        expect(10).assertEqual(Count2.count);
+        expect(10).assertEqual(count5);
         expect(10).assertEqual(count2);
-        Count1.count = 0;
-        Count2.count = 0;
         Done();
       })
 
@@ -583,8 +577,8 @@ export default function taskPoolAsyncRunnerExecute() {
       async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
-        Count1.count = 0;
-        Count2.count = 0;
+        let count3: number = 0;
+        let count4: number = 0;
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -606,24 +600,22 @@ export default function taskPoolAsyncRunnerExecute() {
             }
           });
           runner.execute(task).then((num: object) => {
-            Count1.count = Count1.count + Number(num);
+            count3++;
             console.info('taskpool: execute task success');
           });
           runner.execute(task2).then((num: object) => {
-            Count2.count = Count2.count + Number(num);
+            count4++;
             console.info('taskpool: execute task success');
           });
         }
 
-        while (count < 10 || Count1.count < 10 || Count2.count < 10 || count2 < 10) {
+        while (count < 10 || count3 < 10 || count4 < 10 || count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
+        expect(10).assertEqual(count4);
         expect(10).assertEqual(count);
-        expect(10).assertEqual(Count2.count);
+        expect(10).assertEqual(count3);
         expect(10).assertEqual(count2);
-        Count1.count = 0;
-        Count2.count = 0;
         Done();
       })
 

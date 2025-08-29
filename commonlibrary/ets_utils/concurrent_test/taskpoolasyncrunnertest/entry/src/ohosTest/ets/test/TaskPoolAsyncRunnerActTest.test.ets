@@ -66,28 +66,28 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1001, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1002, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
-          console.info('======', Count1.count);
+          Count2 = Count2 + Number(num);
+          console.info('======', Count1);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -102,33 +102,32 @@ export default function taskPoolAsyncRunnerActTest() {
     it('taskPoolAsyncRunnerActTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       await sleep(1000)
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
-
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1003, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1004, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         }).catch((e: BusinessError) => {
           console.info('======e.message', e.message)
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
-          console.info('======', Count2.count);
+          Count2 = Count2 + Number(num);
+          console.info('======', Count2);
         }).catch((e: BusinessError) => {
           console.info('======e.message', e.message);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -142,29 +141,28 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
-
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1005, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1006, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
-          console.info('======', Count2.count);
+          Count2 = Count2 + Number(num);
+          console.info('======', Count2);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -178,29 +176,28 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
-
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1007, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1008, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
-          console.info('======', Count2.count);
+          Count2 = Count2 + Number(num);
+          console.info('======', Count2);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -214,31 +211,31 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1, 2);
         asyncRunner.execute(task).then((res) => {
           cancelTask(task);
           expect(res).assertEqual(1);
-          Count1.count = Count1.count + 1;
-          console.info('======', Count1.count);
+          Count1 = Count1 + 1;
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((res) => {
           cancelTask(task2);
           expect(res).assertEqual(2);
-          Count2.count = Count2.count + 1;
-          console.info('======', Count2.count);
+          Count2 = Count2 + 1;
+          console.info('======', Count2);
         });
       }
-      while (Count1.count < 10 || Count2.count < 10) {
+      while (Count1 < 10 || Count2 < 10) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(10).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(10).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -252,28 +249,28 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1011, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1012, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
-          console.info('======', Count2.count);
+          Count2 = Count2 + Number(num);
+          console.info('======', Count2);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
 
@@ -287,27 +284,27 @@ export default function taskPoolAsyncRunnerActTest() {
      */
     it('taskPoolAsyncRunnerActTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-      Count1.count = 0;
-      Count2.count = 0;
+      let Count1: number = 0;
+      let Count2: number = 0;
       for (let i = 0; i < 10; i++) {
         let task: taskpool.Task = new taskpool.Task(printArgs1013, 1);
         let task2: taskpool.Task = new taskpool.Task(printArgs1014, 2);
         asyncRunner.execute(task).then((num: object) => {
-          Count1.count = Count1.count + Number(num);
-          console.info('======', Count1.count);
+          Count1 = Count1 + Number(num);
+          console.info('======', Count1);
         });
         asyncRunner.execute(task2).then((num: object) => {
-          Count2.count = Count2.count + Number(num);
+          Count2 = Count2 + Number(num);
         });
       }
 
-      while (Count1.count < 10 || Count2.count < 20) {
+      while (Count1 < 10 || Count2 < 20) {
         await sleep(100);
       }
-      expect(10).assertEqual(Count1.count);
-      expect(20).assertEqual(Count2.count);
-      Count1.count = 0;
-      Count2.count = 0;
+      expect(10).assertEqual(Count1);
+      expect(20).assertEqual(Count2);
+      Count1 = 0;
+      Count2 = 0;
       Done();
     })
   })

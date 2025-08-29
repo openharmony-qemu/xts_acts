@@ -79,8 +79,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0100: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -89,24 +89,24 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task).catch((err: BusinessError) => {
               console.log(`${tag} then ${task.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).catch((err: BusinessError) => {
               console.log(`${tag} then ${task2.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             })
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count2.count < 10 || Count1.count < 10) {
+        while (Count2 < 10 || Count1 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0100: end`);
         Done();
       })
@@ -123,33 +123,33 @@ export default function taskPoolAsyncRunnerErrorTest() {
       async (Done: Function) => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0200: start`);
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.GenericsTask<[number], number>(printArgs3, 2);
           try {
             asyncRunner.execute(task1).catch((err: BusinessError) => {
-              Count1.count++;
-              console.log(`${tag} ${Count1.count}: then ${task1.name} catch: ${JSON.stringify(err)}`);
+              Count1++;
+              console.log(`${tag} ${Count1}: then ${task1.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
             });
             asyncRunner.execute(task2).catch((err: BusinessError) => {
-              console.log(`${tag} ${Count2.count}: then ${task2.name} catch: ${JSON.stringify(err)}`);
+              console.log(`${tag} ${Count2}: then ${task2.name} catch: ${JSON.stringify(err)}`);
               expect(err.message).assertContain('TypeError: Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             })
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count2.count < 10 || Count1.count < 10) {
+        while (Count2 < 10 || Count1 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0200: end`);
         Done();
       })
@@ -165,8 +165,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -179,7 +179,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             }
           });
           task2.onEnqueued(() => {
@@ -190,7 +190,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             }
           });
           try {
@@ -204,13 +204,13 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: end`);
         Done();
       })
@@ -226,8 +226,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -240,7 +240,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             }
           });
           task2.onStartExecution(() => {
@@ -251,7 +251,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             }
           });
           try {
@@ -265,13 +265,13 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: end`);
         Done();
       })
@@ -287,8 +287,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -301,7 +301,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             }
           });
           task2.onExecutionFailed((e: Error) => {
@@ -312,7 +312,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             }
           });
           try {
@@ -326,13 +326,13 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: end`);
         Done();
       })
@@ -348,8 +348,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0600: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -362,7 +362,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             }
           });
           task2.onExecutionSucceeded(() => {
@@ -373,7 +373,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             }
           });
           try {
@@ -387,13 +387,13 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: end`);
         Done();
       })
@@ -409,8 +409,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0700: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(sendData1, 1);
           let task2: taskpool.Task = new taskpool.Task(sendData1, 2);
@@ -423,7 +423,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             }
           });
           task2.onReceiveData((data: number) => {
@@ -434,7 +434,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               console.info(`${tag} execute error:${e.message}`);
               expect(e.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             }
           });
           try {
@@ -448,13 +448,13 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0700: end`);
         Done();
       })
@@ -470,8 +470,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0800: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -485,7 +485,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count1.count++;
+                Count1++;
               }
             });
             asyncRunner.execute(task2).then(() => {
@@ -496,20 +496,20 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count2.count++;
+                Count2++;
               }
             })
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0800: end`);
         Done();
       })
@@ -525,8 +525,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0900: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -542,7 +542,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count1.count++;
+                Count1++;
               }
             });
             asyncRunner.execute(task2).then(() => {
@@ -555,20 +555,20 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count2.count++;
+                Count2++;
               }
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0900: end`);
         Done();
       })
@@ -584,8 +584,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1000: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -602,7 +602,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count1.count++;
+                Count1++;
               }
             });
             asyncRunner.execute(task2).then(() => {
@@ -616,20 +616,20 @@ export default function taskPoolAsyncRunnerErrorTest() {
               } catch (e) {
                 console.info(`${tag} execute error:${e.message}`);
                 expect(e.message).assertContain('Cannot read property split of undefined');
-                Count2.count++;
+                Count2++;
               }
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1000: end`);
         Done();
       })
@@ -647,7 +647,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1100: start`);
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
-
+        let Count1: number = 0;
+        let Count2: number = 0;
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock1);
           let task2: taskpool.Task = new taskpool.Task(printArgsLock1);
@@ -657,7 +658,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count1.count++;
+              Count1++;
             });
             ;
             asyncRunner.execute(task2).then(() => {
@@ -665,19 +666,19 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1100: end`);
         Done();
       })
@@ -693,8 +694,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1200: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock3);
@@ -705,7 +706,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count1.count++;
+              Count1++;
             });
             ;
             asyncRunner.execute(task2).then(() => {
@@ -713,19 +714,19 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1200: end`);
         Done();
       })
@@ -741,8 +742,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1300: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock5);
@@ -753,7 +754,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count1.count++;
+              Count1++;
             });
             ;
             asyncRunner.execute(task2).then(() => {
@@ -761,19 +762,19 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1300: end`);
         Done();
       })
@@ -789,8 +790,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1400: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsLock7);
@@ -801,7 +802,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Cannot read property split of undefined');
-              Count1.count++;
+              Count1++;
             });
             ;
             asyncRunner.execute(task2).then(() => {
@@ -809,19 +810,19 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Cannot read property split of undefined');
-              Count2.count++;
+              Count2++;
             })
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1400: end`);
         Done();
       })
@@ -837,8 +838,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1500: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise1);
@@ -849,26 +850,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in task execution.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1500: end`);
         Done();
       })
@@ -884,8 +885,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1600: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise3);
@@ -896,26 +897,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in then callback.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in then callback.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1600: end`);
         Done();
       })
@@ -931,8 +932,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1700: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise5);
@@ -943,26 +944,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in then callback.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in then callback.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1700: end`);
         Done();
       })
@@ -978,8 +979,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1800: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsPromise7);
@@ -990,26 +991,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in finally callback.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in finally callback.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1800: end`);
         Done();
       })
@@ -1025,8 +1026,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1900: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsSettimeout1);
@@ -1037,26 +1038,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in setTimeout callback.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in setTimeout callback.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest1900: end`);
         Done();
       })
@@ -1072,8 +1073,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2000: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsSettimeout3);
@@ -1084,26 +1085,26 @@ export default function taskPoolAsyncRunnerErrorTest() {
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err.message);
               expect(err.message).assertContain('Simulated error in async operation.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).then(() => {
               console.info('taskpool: execute task success');
             }).catch((err: BusinessError) => {
               console.error('taskpool test occur error: ' + err);
               expect(err.message).assertContain('Simulated error in async operation.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.info(`${tag} execute error:${e.message}`);
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2000: end`);
         Done();
       })
@@ -1119,8 +1120,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2500: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -1132,7 +1133,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 let s: string[] = [];
                 s[0].split('')[1].toString();
               } catch (e) {
-                Count1.count++;
+                Count1++;
                 work.terminate();
               }
             }
@@ -1145,20 +1146,20 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 let s: string[] = [];
                 s[0].split('')[1].toString();
               } catch (e) {
-                Count2.count++;
+                Count2++;
                 work.terminate();
               }
             }
             work.postMessage('2');
           })
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2500: end`);
         Done();
       })
@@ -1174,8 +1175,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2600: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -1187,7 +1188,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 let s: string[] = [];
                 s[0].split('')[1].toString();
               } catch (e) {
-                Count1.count++;
+                Count1++;
                 work.terminate();
               }
             }
@@ -1200,20 +1201,20 @@ export default function taskPoolAsyncRunnerErrorTest() {
                 let s: string[] = [];
                 s[0].split('')[1].toString();
               } catch (e) {
-                Count2.count++;
+                Count2++;
                 work.terminate();
               }
             }
             work.postMessage('1');
           });
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2600: end`);
         Done();
       })
@@ -1229,34 +1230,34 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2700: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgsTaskpool, 2);
           try {
             asyncRunner.execute(task1).catch((err: Error) => {
-              Count1.count++;
-              console.error(`${Count1.count}_taskpool test occur error: ` + JSON.stringify(err));
+              Count1++;
+              console.error(`${Count1}_taskpool test occur error: ` + JSON.stringify(err));
               expect(err.message).assertContain('Error: Simulated error in task execution.');
             });
             asyncRunner.execute(task2).catch((err: Error) => {
-              console.error(`${Count2.count}_taskpool test occur error: ` + JSON.stringify(err));
-              Count2.count++;
+              console.error(`${Count2}_taskpool test occur error: ` + JSON.stringify(err));
+              Count2++;
               expect(err.message).assertContain('Error: Simulated error in task execution.');
             });
           } catch (e) {
             console.error('taskpool test occur error: ' + JSON.stringify(e.message));
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2700: end`);
         Done();
       })
@@ -1272,8 +1273,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2800: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool1, 1);
@@ -1281,21 +1282,21 @@ export default function taskPoolAsyncRunnerErrorTest() {
           asyncRunner.execute(task1).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in then execution.');
-            Count1.count++;
+            Count1++;
           });
           asyncRunner.execute(task2).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in then execution.');
-            Count2.count++;
+            Count2++;
           });
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2800: end`);
         Done();
       })
@@ -1311,8 +1312,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2900: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool2, 1);
@@ -1321,24 +1322,24 @@ export default function taskPoolAsyncRunnerErrorTest() {
             asyncRunner.execute(task1).catch((err: Error) => {
               console.error('taskpool test occur error: ' + err.message);
               expect(err.message).assertContain('Simulated error in catch execution.');
-              Count1.count++;
+              Count1++;
             });
             asyncRunner.execute(task2).catch((err: Error) => {
               console.error('taskpool test occur error: ' + err.message);
               expect(err.message).assertContain('Simulated error in catch execution.');
-              Count2.count++;
+              Count2++;
             });
           } catch (e) {
             console.error('catch callback occur error: ' + JSON.stringify(e.message));
           }
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest2900: end`);
         Done();
       })
@@ -1354,8 +1355,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest3000: start`);
-        Count1.count = 0;
-        Count2.count = 0;
+        let Count1: number = 0;
+        let Count2: number = 0;
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgsTaskpool3, 1);
@@ -1363,21 +1364,21 @@ export default function taskPoolAsyncRunnerErrorTest() {
           asyncRunner.execute(task1).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in finally execution.');
-            Count1.count++;
+            Count1++;
           });
           asyncRunner.execute(task2).catch((err: Error) => {
             console.error('taskpool test occur error: ' + err.message);
             expect(err.message).assertContain('Simulated error in finally execution.');
-            Count2.count++;
+            Count2++;
           });
         }
-        while (Count1.count < 10 || Count2.count < 10) {
+        while (Count1 < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1.count);
-        expect(10).assertEqual(Count2.count);
-        Count1.count = 0;
-        Count2.count = 0;
+        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count2);
+        Count1 = 0;
+        Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest3000: end`);
         Done();
       })

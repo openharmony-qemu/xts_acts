@@ -63,14 +63,14 @@ export function printStr4(str: string): string {
 @Concurrent
 export function printArgs1(args: number): number {
   console.info('printArgs: ' + args);
-  Count1.count++
+  Count1++
   return args;
 }
 
 @Concurrent
 export function printArgs2(args: number): number {
   console.info('printArgs: ' + args);
-  Count2.count++
+  Count2++
   return args;
 }
 
