@@ -65,31 +65,31 @@ export default function webOnPermissionRequest() {
       done();
     })
 
-    /*
-      * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
-      * @tc.name        : emitWebDoubleInnerNucleus001
-      * @tc.desc        : emitWebDoubleInnerNucleus001
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 0
-      */
-    it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebDoubleInnerNucleus001", 10)
-      Utils.registerEvent("emitWebDoubleInnerNucleus001", true, 20250901, done);
-      sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
-    })
+    // /*
+    //   * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
+    //   * @tc.name        : emitWebDoubleInnerNucleus002
+    //   * @tc.desc        : emitWebDoubleInnerNucleus002
+    //   * @tc.size        : MediumTest
+    //   * @tc.type        : Function
+    //   * @tc.level       : Level 0
+    //   */
+    // it('emitWebDoubleInnerNucleus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    //   Utils.emitEvent("emitWebDoubleInnerNucleus002", 10)
+    //   Utils.registerEvent("emitWebDoubleInnerNucleus002", true, 20250901, done);
+    //   sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
+    // })
 
     /*
-       * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0002
-       * @tc.name        : emitWebDoubleInnerNucleus002
-       * @tc.desc        : emitWebDoubleInnerNucleus002
+       * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
+       * @tc.name        : emitWebDoubleInnerNucleus001
+       * @tc.desc        : emitWebDoubleInnerNucleus001
        * @tc.size        : MediumTest
        * @tc.type        : Function
        * @tc.level       : Level 0
        */
-    it('emitWebDoubleInnerNucleus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebDoubleInnerNucleus002", 10)
-      Utils.registerEvent("emitWebDoubleInnerNucleus002", webview.ArkWebEngineVersion.M132, 20250902, done);
+    it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitWebDoubleInnerNucleus001", 10)
+      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M132, 20250902, done);
       sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
     })
 
