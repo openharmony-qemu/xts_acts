@@ -642,5 +642,18 @@ export default function ActsCommonEventManagerSupportTest() {
         done()
       })
 
+    /*
+     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
+     * @tc.desc      : restore end common event
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100 START`)
+        expect(commonEventManager.Support.COMMON_EVENT_RESTORE_END as string).assertEqual('usual.event.RESTORE_END')
+        hilog.info(domain, TAG, `SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100 END`)
+        done()
+      })
+
   })
 }
