@@ -1534,9 +1534,10 @@ function testGetDisallowedPolicy() {
    */
   it("test_get_disallowed_policy_0105", Level.LEVEL2, async (done: Function) => {
     try {
-      restrictions.getDisallowedPolicy(INVALID_WANT, LABEL_APP_CLONE);
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE);
       expect(false).assertTrue();
     } catch (error) {
+      console.info('test_get_disallowed_policy_0105 error 9200001 is expected, actually catch: ' + error.code);
       expect(error.code == 9200001).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -1558,6 +1559,7 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_APP_CLONE);
       expect(false).assertTrue();
     } catch (error) {
+      console.info('test_get_disallowed_policy_0106 error 9200002 is expected, actually catch: ' + error.code);
       expect(error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
