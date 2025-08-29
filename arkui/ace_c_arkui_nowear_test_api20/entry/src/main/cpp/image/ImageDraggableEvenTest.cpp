@@ -24,10 +24,10 @@
 #include <string>
 
 #include "../manager/plugin_manager.h"
-#include "column_component.h"
-#include "image_component.h"
-#include "row_component.h"
-#include "text_component.h"
+#include "component/column_component.h"
+#include "component/image_component.h"
+#include "component/row_component.h"
+#include "component/TextComponentTest.h"
 
 namespace ArkUICapiTest {
 TextComponent* textTrue;
