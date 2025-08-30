@@ -18,7 +18,6 @@ import web_webview from '@ohos.web.webview';
 import business_error from '@ohos.base';
 import cert from '@ohos.security.cert';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import print from '@ohos.print';
 import { BusinessError } from '@ohos.base';
 
 
@@ -180,10 +179,14 @@ struct Second {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160830,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160830)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -208,7 +211,7 @@ struct Second {
                 this.webviewCtl.getCertificate().then(x509CertArray => {
                   this.outputStr = ParseX509CertInfo(x509CertArray);
                   console.info('11111111111111' + this.outputStr);
-                  Utils.emitEvent(this.outputStr, 4);
+                  Utils.emitEvent(this.outputStr, 160840);
                 })
               } catch (error) {
                 this.outputStr = 'getCertificate failed: ' + (error as BusinessError).code + ", errMsg: " + (error as BusinessError).message;

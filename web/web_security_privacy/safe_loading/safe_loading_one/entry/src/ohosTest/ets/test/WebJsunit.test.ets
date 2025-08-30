@@ -12,44 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitFileAccessTrue";
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
+    beforeAll(async  (done: Function) =>{
+      await waitForComponent("webcomponent");
+      done()
+    });
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -59,8 +43,8 @@ export default function webJsunit() {
      *tc.desic Sets  enable local file system access in Web
      */
     it('fileAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnInactive";
-      Utils.registerContainEvent("fileAccessTrue", "index", 190, done);
+      Utils.emitEvent("emitFileAccessTrue", 160700);
+      Utils.registerContainEvent("fileAccessTrue", "index", 160710, done);
       sendEventByKey('webcomponent', 10, '');
     })
 
@@ -70,8 +54,8 @@ export default function webJsunit() {
      *tc.desic Let the Web inactive.
      */
     it('onInactive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitOnActive";
-      Utils.registerEvent("onInactive", true, 84, done);
+      Utils.emitEvent("emitOnInactive", 160700);
+      Utils.registerEvent("onInactive", true, 160720, done);
       sendEventByKey('webcomponent', 10, '');
     })
     /*
@@ -80,8 +64,8 @@ export default function webJsunit() {
      *tc.desic Let the Web active
      */
     it('onActive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitRegisterJavaScriptProxy";
-      Utils.registerContainEvent("onActive", "index.html", 85, done);
+      Utils.emitEvent("emitOnActive", 160700);
+      Utils.registerContainEvent("onActive", "index.html", 160730, done);
       sendEventByKey('webcomponent', 10, '');
     })
 

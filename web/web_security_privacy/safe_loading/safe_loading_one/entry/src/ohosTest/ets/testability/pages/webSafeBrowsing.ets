@@ -18,6 +18,7 @@ import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 @Entry
 @Component
 struct webSafeBrowsing {
@@ -25,13 +26,19 @@ struct webSafeBrowsing {
   srcUrl: string = 'https://m.iqiyi.com/';
 
   @State emitKey: string = '';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 160740,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(160740)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -39,6 +46,7 @@ struct webSafeBrowsing {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -49,22 +57,21 @@ struct webSafeBrowsing {
               Button('web click')
               .key('webViewSdkSchemeHandler')
               .onClick(async () => {
+                await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                await waitForExist(() => this.isReceive, this.emitKey, 0);
+                this.isReceive = -1;
                   console.info('key==>' + this.emitKey)
-                  await Utils.sleep(3000);
                   switch (this.emitKey) {
                     case 'emitEnableSafeBrowsingTrue': {
                       try {
                         this.controller.enableSafeBrowsing(true);
                         let result:boolean = this.controller.isSafeBrowsingEnabled();
                         console.log(' emitEnableSafeBrowsingTrue:  ', result);
-
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(result, 2001)
+                        Utils.emitEvent(result, 160750)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(false, 2001)
+                        Utils.emitEvent(false, 160750)
                       }
                       break;
                     }
@@ -74,14 +81,11 @@ struct webSafeBrowsing {
                         this.controller.enableSafeBrowsing(false);
                         let result:boolean = this.controller.isSafeBrowsingEnabled();
                         console.log(' emitEnableSafeBrowsingFalse:  ', result);
-
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(!result, 2002)
+                        Utils.emitEvent(!result, 160760)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(false, 2002)
+                        Utils.emitEvent(false, 160760)
                       }
                       break;
                     }
@@ -92,13 +96,11 @@ struct webSafeBrowsing {
                         let result:boolean = this.controller.isSafeBrowsingEnabled();
                         console.log(' emitIsSafeBrowsingEnabledTrue:  ', result);
 
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(result, 2003)
+                        Utils.emitEvent(result, 160770)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(false, 2003)
+                        Utils.emitEvent(false, 160770)
                       }
                       break;
                     }
@@ -109,13 +111,11 @@ struct webSafeBrowsing {
                         let result:boolean = this.controller.isSafeBrowsingEnabled();
                         console.log(' emitIsSafeBrowsingEnabledFalse:  ', result);
 
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(!result, 2004)
+                        Utils.emitEvent(!result, 160780)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
-                        Utils.emitEvent(false, 2004)
+                        Utils.emitEvent(false, 160780)
                       }
                       break;
                     }
@@ -123,6 +123,12 @@ struct webSafeBrowsing {
               })
           }
           Web({ src: this.srcUrl, controller: this.controller })
+            .onPageEnd((event) => {
+              if (event) {
+                this.isPageEnd = 0;
+                console.log('onPageEnd url:' + event.url);
+              }
+            })
       }
   }
 }
