@@ -217,7 +217,7 @@ export default function Uint8ClampedArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_uint8ClampedArray_constructor_with_iterable_concurrently',
+    it('test_uint8ClampedArray_constructor_with_iterable',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_uint8ClampedArray_constructor_with_iterable';
@@ -388,10 +388,10 @@ export default function Uint8ClampedArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_uint8ClampedArray_static_from_iterable_concurrently_100_times',
+    it('test_uint8ClampedArray_static_from_iterable',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_uint8ClampedArray_static_from_iterable_concurrently_100_times';
+        const caseName = 'test_uint8ClampedArray_static_from_iterable';
         const concurrentNum = 100;
 
         try {
@@ -428,16 +428,16 @@ export default function Uint8ClampedArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_UINT8CLAPEDARRAY_TEST_0009
-     * @tc.name      : test_uint8ClampedArray_static_of_numbers
+     * @tc.name      : test_uint8ClampedArray_static_of_numbers_100
      * @tc.desc      : Test concurrent creation of Uint8ClampedArray via static of() method with number inputs via taskpool (100 times)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_uint8ClampedArray_static_of_numbers_concurrently_100_times',
+    it('test_uint8ClampedArray_static_of_numbers_100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_uint8ClampedArray_static_of_numbers_concurrently_100_times';
+        const caseName = 'test_uint8ClampedArray_static_of_numbers_100';
         const concurrentNum = 100;
 
         try {
@@ -480,10 +480,10 @@ export default function Uint8ClampedArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_uint8ClampedArray_toString_concurrently_100_times',
+    it('test_uint8ClampedArray_toString_concurrently',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_uint8ClampedArray_toString_concurrently_100_times';
+        const caseName = 'test_uint8ClampedArray_toString_concurrently';
         const concurrentNum = 100;
 
         try {
@@ -530,10 +530,10 @@ export default function Uint8ClampedArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_uint8ClampedArray_toLocaleString_concurrently_100_times',
+    it('test_uint8ClampedArray_toLocaleString_concurrently',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_uint8ClampedArray_toLocaleString_concurrently_100_times';
+        const caseName = 'test_uint8ClampedArray_toLocaleString_concurrently';
         const concurrentNum = 100;
 
         try {
@@ -1124,7 +1124,7 @@ export default function Uint8ClampedArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_iunt32array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_concurrent_uint8ClampedArray_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_uint8ClampedArray_reduceRight_001';
         console.info(`${caseName} test start`);

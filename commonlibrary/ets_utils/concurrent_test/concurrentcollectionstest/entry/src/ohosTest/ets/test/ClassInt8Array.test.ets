@@ -345,7 +345,7 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0007
-     * @tc.name      : test_concurrent_int8array_from_fixed
+     * @tc.name      : test_concurrent_int8array_from_fixed_001
      * @tc.desc      : Test Int8Array
      * @tc.size      : SmallTest
      * @tc.type      : Function
@@ -817,7 +817,7 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0017
-     * @tc.name      : test_concurrent_int8array_find
+     * @tc.name      : test_concurrent_int8array_find_001
      * @tc.desc      : Test the find() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -931,7 +931,7 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0020
-     * @tc.name      : test_Uint8ClampedArray_concurrent_read_write
+     * @tc.name      : test_concurrent_int8array_indexOf_001
      * @tc.desc      : Test concurrent read and write operations with locks
      * @tc.size      : MediumTest
      * @tc.type      : Function

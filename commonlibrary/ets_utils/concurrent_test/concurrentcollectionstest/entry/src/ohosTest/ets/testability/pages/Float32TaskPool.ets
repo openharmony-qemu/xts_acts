@@ -23,18 +23,20 @@ export async function test_float32array_constructor_with_length(
   try {
     console.info(`[${name}] Task ${index}: Creating Float32Array with length = ${length}`);
 
-    let Float32Array: collections.Float32Array = new collections.Float32Array(length);
+    let float32Array: collections.Float32Array = new collections.Float32Array(length);
 
     console.info(`[${name}] Task ${index}: Float32Array created successfully`);
 
-    if (Float32Array == null) {
-      const errorMsg = `[${name}] Task ${index}: Float32Array is null or undefined after construction with length=${length}`;
+    if (float32Array == null) {
+      const errorMsg =
+        `[${name}] Task ${index}: Float32Array is null or undefined after construction with length=${length}`;
       console.error(errorMsg);
       throw new Error(errorMsg);
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create Float32Array. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create Float32Array. Error: ${e instanceof Error ? e.message :
+    String(e)}`);
   }
 }
 
@@ -58,7 +60,8 @@ export async function test_Float32array_constructor_with_array_buffer(
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create ArrayBuffer. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create ArrayBuffer. Error: ${e instanceof Error ? e.message :
+    String(e)}`);
   }
 }
 
@@ -67,9 +70,9 @@ export async function test_Float32array_constructor_with_iterable(
   elements: Iterable<number>
 ) {
   try {
-    let Float32Array: collections.Float32Array = new collections.Float32Array(elements);
+    let float32Array: collections.Float32Array = new collections.Float32Array(elements);
 
-    if (Float32Array == null) {
+    if (float32Array == null) {
       const errorMsg = `Float32Array is null after constructing from iterable`;
       console.error(errorMsg);
       throw new Error(errorMsg);
@@ -88,22 +91,23 @@ export async function test_Float32array_constructor_with_buffer(
 ) {
   try {
     let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(100);
-    let Float32Array: collections.Float32Array = new collections.Float32Array(buffer, 0, 10);
+    let float32Array: collections.Float32Array = new collections.Float32Array(buffer, 0, 10);
 
-    if (Float32Array == null) {
+    if (float32Array == null) {
       const errorMsg = `Float32Array is null after construction`;
       console.error(`[${name}] Task ${index}: ${errorMsg}`);
       throw new Error(errorMsg);
     }
 
-    if (length !== undefined && Float32Array.length !== length) {
-      const errorMsg = `Float32Array length mismatch. Expected: ${length}, got: ${Float32Array.length}`;
+    if (length !== undefined && float32Array.length !== length) {
+      const errorMsg = `Float32Array length mismatch. Expected: ${length}, got: ${float32Array.length}`;
       console.error(`[${name}] Task ${index}: ${errorMsg}`);
       throw new Error(errorMsg);
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create Float32Array from buffer. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create Float32Array from buffer. Error: ${e instanceof Error ?
+    e.message : String(e)}`);
   }
 }
 
@@ -114,9 +118,10 @@ export async function test_Float32array_static_from_array_like(
   index: number = 0
 ) {
   try {
-    console.info(`[${name}] Task ${index}: Creating Float32Array from arrayLike: [${Array.from(arrayLike).join(', ')}]`);
-    let Float32Array: collections.Float32Array = collections.Float32Array.from(arrayLike);
-    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${Float32Array.length}`);
+    console.info(`[${name}] Task ${index}: Creating Float32Array from arrayLike: [${Array.from(arrayLike)
+      .join(', ')}]`);
+    let float32Array: collections.Float32Array = collections.Float32Array.from(arrayLike);
+    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${float32Array.length}`);
 
   } catch (e) {
     console.error(`[${name}] Task ${index}: Failed to create Float32Array from arrayLike. Error: ${e}`);
@@ -128,27 +133,27 @@ export async function test_Float32array_from_fixed_001(name: string, index: numb
   try {
     console.info(`${name} task ${index} start`);
 
-    let Float32Array: collections.Float32Array;
+    let float32Array: collections.Float32Array;
     let expectedResult: number[];
 
     if (index % 3 === 0) {
       let mapFn = (v: object, k: number) => k;
       let arrayLike = [];
-      Float32Array = collections.Float32Array.from(arrayLike, mapFn);
+      float32Array = collections.Float32Array.from(arrayLike, mapFn);
       expectedResult = [0, 1, 2, 3, 4];
       console.info(`${name} task ${index} - from(object, mapFn)`);
 
     } else if (index % 3 === 1) {
       let arrayLike: string[] = ['1', '3', '5'];
       let mapFn = (v: string, k: number) => parseInt(v, 10);
-      Float32Array = collections.Float32Array.from(arrayLike, mapFn);
+      float32Array = collections.Float32Array.from(arrayLike, mapFn);
       expectedResult = [1, 3, 5];
       console.info(`${name} task ${index} - from(string[], mapFn)`);
 
     } else if (index % 3 === 2) {
       let arrayLike: string = '12345';
       let mapFn = (v: string, k: number) => parseInt(v, 10);
-      Float32Array = collections.Float32Array.from(arrayLike, mapFn);
+      float32Array = collections.Float32Array.from(arrayLike, mapFn);
       expectedResult = [1, 2, 3, 4, 5];
       console.info(`${name} task ${index} - from(string, mapFn)`);
 
@@ -156,7 +161,7 @@ export async function test_Float32array_from_fixed_001(name: string, index: numb
       throw new Error(`Unexpected index modulo: ${index % 3}`);
     }
 
-    let actualArray: number[] = Array.from(Float32Array);
+    let actualArray: number[] = Array.from(float32Array);
     for (let i = 0; i < expectedResult.length; i++) {
       if (actualArray[i] !== expectedResult[i]) {
         throw new Error(`Mismatch at index ${i}: expected ${expectedResult[i]}, got ${actualArray[i]}`);
@@ -179,8 +184,8 @@ export async function test_Float32array_static_from_iterable(
   try {
     console.info(`[${name}] Task ${index}: Creating Float32Array from iterable`);
 
-    let Float32Array: collections.Float32Array = collections.Float32Array.from(arrayLike);
-    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${Float32Array.length}`);
+    let float32Array: collections.Float32Array = collections.Float32Array.from(arrayLike);
+    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${float32Array.length}`);
     const inputArray = Array.from(arrayLike);
     const expectedLength = inputArray.length;
 
@@ -199,9 +204,9 @@ export async function test_Float32array_static_of_numbers(
   try {
     console.info(`[${name}] Task ${index}: Creating Float32Array from numbers: [${numbers.join(', ')}]`);
 
-    let Float32Array: collections.Float32Array = collections.Float32Array.of(...numbers);
+    let float32Array: collections.Float32Array = collections.Float32Array.of(...numbers);
 
-    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${Float32Array.length}`);
+    console.info(`[${name}] Task ${index}: Float32Array created successfully, length = ${float32Array.length}`);
 
   } catch (e) {
     console.error(`[${name}] Task ${index}: Failed to create Float32Array from numbers. Error: ${e}`);
@@ -259,16 +264,16 @@ export async function test_Float32array_copyWithin_helper(
   taskIndex: number
 ): Promise<void> {
   try {
-    console.debug(`${caseName} - task[${taskIndex}] - before copyWithin:`, Array.from(Float32Array));
+    console.debug(`${caseName} - task[${taskIndex}] - before copyWithin:`, Array.from(float32Array));
 
     const resultArray = Float32Array.copyWithin(target, start, end);
 
-    console.debug(`${caseName} - task[${taskIndex}] - after copyWithin:`, Array.from(Float32Array));
+    console.debug(`${caseName} - task[${taskIndex}] - after copyWithin:`, Array.from(float32Array));
 
     for (let i = 0; i < expectedArray.length; i++) {
-      if (Float32Array[i] !== expectedArray[i]) {
+      if (float32Array[i] !== expectedArray[i]) {
         console.error(`${caseName} - task[${taskIndex}] - Mismatch at index ${i}: ` +
-          `actual=${Float32Array[i]}, expected=${expectedArray[i]}`);
+          `actual=${float32Array[i]}, expected=${expectedArray[i]}`);
       }
     }
 
@@ -279,7 +284,8 @@ export async function test_Float32array_copyWithin_helper(
 }
 
 @Concurrent
-export async function test_Float32array_some_001(Float32Array: collections.Float32Array, name: string, index: number, testValue: number) {
+export async function test_Float32array_some_001(Float32Array: collections.Float32Array, name: string, index: number,
+  testValue: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     try {
       console.info(`${name} task ${index} executing some() test`);
@@ -342,7 +348,7 @@ export async function test_Float32array_fill_fixed(name: string, index: number) 
         originalValues[i] = i + 1;
       }
 
-      let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+      let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
       console.info(`${name} task ${index} - Original array: ${Float32Array}`);
 
@@ -379,9 +385,9 @@ export async function test_Float32array_filter_fixed(name: string, index: number
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [0, 1, 2, 3, 4];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let filtered: collections.Float32Array = Float32Array.filter((element: number) => element % 2 === 0);
 
@@ -390,8 +396,8 @@ export async function test_Float32array_filter_fixed(name: string, index: number
     let expectedResult: number[] = [0, 2, 4];
     let expectedFloat32Array: collections.Float32Array = new collections.Float32Array(expectedResult);
 
-    if (filtered.length !== expectedFloat32Array.length) {
-      throw new Error(`filter result length mismatch: expected length ${expectedFloat32Array.length}, got length ${filtered.length}`);
+    if (filtered.length !== expectedfloat32Array.length) {
+      throw new Error(`filter result length mismatch: expected length ${expectedfloat32Array.length}, got length ${filtered.length}`);
     }
 
     for (let i = 0; i < filtered.length; i++) {
@@ -413,9 +419,9 @@ export async function test_Float32array_find_001(name: string, index: number) {
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [0, 1, 2, 3, 4];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let foundValue1: number | undefined = Float32Array.find((element: number) => element > 2);
     console.info(`${name} task ${index} - find((element) => element > 2) = '${foundValue1}'`);
@@ -446,9 +452,9 @@ export async function test_Float32array_findIndex_001(name: string, index: numbe
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let foundIndex: number = Float32Array.findIndex((element: number) => element % 2 === 0);
 
@@ -461,7 +467,7 @@ export async function test_Float32array_findIndex_001(name: string, index: numbe
     }
 
     if (foundIndex !== -1) {
-      let foundElement: number = Float32Array[foundIndex];
+      let foundElement: number = float32Array[foundIndex];
       if (foundElement % 2 !== 0) {
         throw new Error(`Found element at index ${foundIndex} is not even: ${foundElement}`);
       }
@@ -483,9 +489,9 @@ export async function test_Float32array_forEach_001(name: string, index: number)
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     Float32Array.forEach((value: number, index: number, array: collections.Float32Array) => {
       console.info(`${name} task ${index} - forEach Callback - Element ${value} at index ${index}`);
@@ -504,9 +510,9 @@ export async function test_Float32array_indexOf_001(name: string, index: number)
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [3, 5, 9];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let searchElement1: number = 3;
     let foundIndex1: number = Float32Array.indexOf(searchElement1);
@@ -553,9 +559,9 @@ export async function test_Float32array_lastIndexOf_001(name: string, index: num
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [3, 5, 9];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let searchElement1: number = 3;
     let foundIndex1: number = Float32Array.lastIndexOf(searchElement1);
@@ -604,9 +610,9 @@ export async function test_Float32array_join_001(name: string, index: number) {
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let separator: string = '-';
     let joinedString: string = Float32Array.join(separator);
@@ -633,12 +639,12 @@ export async function test_Float32array_map_001(name: string, index: number) {
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [25, 36, 49];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let callbackFn: Float32ArrayMapCallback = Math.sqrt;
-    let mappedArray: collections.Float32Array = Float32Array.map(callbackFn);
+    let mappedArray: collections.Float32Array = float32Array.map(callbackFn);
 
     console.info(`${name} task ${index} - Mapped array (first 5 elements): [${Array.from(mappedArray).slice(0, 5)}]`);
 
@@ -670,9 +676,9 @@ export async function test_Float32array_reduce_001(name: string, index: number, 
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let callbackFn: Float32ArrayReduceCallback = (accumulator: number, value: number) => accumulator + value;
     let reducedValue: number = Float32Array.reduce(callbackFn);
@@ -699,9 +705,9 @@ export async function test_Float32array_reduceRight_001(name: string, index: num
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let callbackFn: Float32ArrayReduceCallback = (accumulator: number, value: number) => accumulator + value;
     let reducedValue: number = Float32Array.reduceRight(callbackFn);
@@ -727,12 +733,13 @@ export async function test_Float32array_reduce_with_initial_001(name: string, in
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let initialValue: number = 1;
-    let reducedValue: number = Float32Array.reduce((accumulator: number, value: number) => accumulator + value, initialValue);
+    let reducedValue: number =
+      Float32Array.reduce((accumulator: number, value: number) => accumulator + value, initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
     let expectedResult: number = 16;
@@ -754,12 +761,13 @@ export async function test_Float32array_reduceRight_fixed_001(name: string, inde
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let initialValue: number = 1;
-    let reducedValue: number = Float32Array.reduceRight((accumulator: number, value: number) => accumulator + value, initialValue);
+    let reducedValue: number =
+      Float32Array.reduceRight((accumulator: number, value: number) => accumulator + value, initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
 
@@ -782,12 +790,13 @@ export async function test_Float32array_reduce_fixed_001(name: string, index: nu
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let initialValue: string = 'initialValue';
-    let reducedValue: string = Float32Array.reduce<string>((accumulator: string, value: number) => accumulator + value.toString(), initialValue);
+    let reducedValue: string =
+      Float32Array.reduce<string>((accumulator: string, value: number) => accumulator + value.toString(), initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
 
@@ -810,9 +819,9 @@ export async function test_Float32array_reverse_001(name: string, index: number)
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let reversed: collections.Float32Array = Float32Array.reverse();
     console.info(`${name} task ${index} - Reversed array: [${Array.from(reversed)}]`);
@@ -836,19 +845,19 @@ export async function test_Float32array_set_001(name: string, index: number) {
     console.info(`${name} task ${index} start`);
 
     let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
-    let Float32Array: collections.Float32Array = new collections.Float32Array(buffer);
+    let float32Array: collections.Float32Array = new collections.Float32Array(buffer);
 
-    console.info(`${name} task ${index} - Initial Float32Array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Initial Float32Array: [${Array.from(float32Array)}]`);
 
     let dataArray: ArrayLike<number> = [1, 2, 3];
     let offset: number = 3;
     Float32Array.set(dataArray, offset);
-    console.info(`${name} task ${index} - After set: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - After set: [${Array.from(float32Array)}]`);
 
     let expectedValues: number[] = [0, 0, 0, 1, 2, 3, 0, 0];
 
-    if (Float32Array.length !== expectedValues.length) {
-      throw new Error(`Length mismatch: expected ${expectedValues.length}, got ${Float32Array.length}`);
+    if (float32Array.length !== expectedValues.length) {
+      throw new Error(`Length mismatch: expected ${expectedValues.length}, got ${float32Array.length}`);
     }
 
   } catch (e) {
@@ -862,9 +871,9 @@ export async function test_Float32array_slice_001(name: string, index: number) {
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let start: number | undefined;
     let end: number | undefined;
@@ -928,9 +937,9 @@ export async function test_Float32array_sort_fixed_001(name: string, index: numb
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 3, 5, 4, 2];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let compareFn: ((a: number, b: number) => number) | undefined;
     let expectedValues: number[];
@@ -983,10 +992,10 @@ export async function test_Float32array_subarray_fixed_001(name: string, index: 
     console.info(`${name} task ${index} start`);
 
     let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
-    let Float32Array: collections.Float32Array = new collections.Float32Array(buffer);
+    let float32Array: collections.Float32Array = new collections.Float32Array(buffer);
 
     Float32Array.set([1, 2, 3, 4, 5]);
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let subArray: collections.Float32Array = Float32Array.subarray();
     console.info(`${name} task ${index} - SubArray (before set): [${Array.from(subArray)}]`);
@@ -1009,13 +1018,13 @@ export async function test_Float32array_subarray_fixed_001(name: string, index: 
       }
     }
 
-    if (Float32Array.length !== expectedFloat32ArrayValues.length) {
-      throw new Error(`Original Float32Array length mismatch: expected ${expectedFloat32ArrayValues.length}, got ${Float32Array.length}`);
+    if (float32Array.length !== expectedFloat32ArrayValues.length) {
+      throw new Error(`Original Float32Array length mismatch: expected ${expectedFloat32ArrayValues.length}, got ${float32Array.length}`);
     }
 
-    for (let i = 0; i < Float32Array.length; i++) {
-      if (Float32Array[i] !== expectedFloat32ArrayValues[i]) {
-        throw new Error(`Original Float32Array element at index ${i} mismatch: expected ${expectedFloat32ArrayValues[i]}, got ${Float32Array[i]}`);
+    for (let i = 0; i < float32Array.length; i++) {
+      if (float32Array[i] !== expectedFloat32ArrayValues[i]) {
+        throw new Error(`Original Float32Array element at index ${i} mismatch: expected ${expectedFloat32ArrayValues[i]}, got ${float32Array[i]}`);
       }
     }
 
@@ -1031,9 +1040,9 @@ export async function test_Float32array_at_fixed_001(name: string, index: number
   try {
     console.info(`${name} task ${index} start`);
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
     let atIndex: number;
     let expectedValue: number | undefined;
 
@@ -1080,9 +1089,9 @@ export async function test_Float32array_includes_fixed_001(name: string, index: 
 
     // 创建固定的初始数组 [1, 2, 3]
     let originalValues: number[] = [1, 2, 3];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     // 基于任务索引定义固定的includes参数
     let searchElement: number;
@@ -1126,9 +1135,9 @@ export async function test_Float32array_entries_fixed_001(name: string, index: n
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [11, 22, 33];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let iterator: IterableIterator<[number, number]> = Float32Array.entries();
     console.info(`${name} task ${index} - Iterator obtained`);
@@ -1177,9 +1186,9 @@ export async function test_Float32array_keys_fixed_001(name: string, index: numb
     let originalValues: number[] = [1, 2, 3, 4, 5];
     let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
-    let iterator: IterableIterator<number> = Float32Array.keys();
+    let iterator: IterableIterator<number> = float32Array.keys();
     console.info(`${name} task ${index} - Iterator obtained`);
 
     let expectedKeys: number[] = [0, 1, 2, 3, 4];
@@ -1214,9 +1223,9 @@ export async function test_Float32array_values_fixed_001(name: string, index: nu
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let iterator: IterableIterator<number> = Float32Array.values();
     console.info(`${name} task ${index} - Iterator obtained`);
@@ -1244,14 +1253,14 @@ export async function test_Float32array_index_access_fixed_001(name: string, ind
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 4];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
-    console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
+    console.info(`${name} task ${index} - Original array: [${Array.from(float32Array)}]`);
 
     let accessIndex: number = 1;
     let expectedValue: number = 2;
 
-    let value: number = Float32Array[accessIndex];
+    let value: number = float32Array[accessIndex];
     console.info(`${name} task ${index} - Element at index ${accessIndex}: ${value}`);
 
     if (value !== expectedValue) {

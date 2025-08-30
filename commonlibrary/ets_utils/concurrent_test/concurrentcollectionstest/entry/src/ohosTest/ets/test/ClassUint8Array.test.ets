@@ -1124,7 +1124,7 @@ export default function Uint8ArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_concurrent_iunt32array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('test_concurrent_uint8array_reduceRight_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_uint8array_reduceRight_001';
         console.info(`${caseName} test start`);

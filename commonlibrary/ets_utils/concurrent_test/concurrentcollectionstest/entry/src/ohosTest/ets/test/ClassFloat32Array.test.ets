@@ -119,7 +119,7 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : GLOBAL_TEST_0002
-     * @tc.name      : test_Float32array_constructor_length
+     * @tc.name      : test_Float32array_constructor_with_length
      * @tc.desc      : Test sequential creation of Float32Array with length (100 iterations, verifies instance validity and length consistency)
      * @tc.size      : SmallTest
      * @tc.type      : Function
@@ -217,7 +217,7 @@ export default function Float32ArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_Float32array_constructor_with_iterable_concurrently',
+    it('test_Float32array_constructor_with_iterable',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_Float32array_constructor_with_iterable';
@@ -382,16 +382,16 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : GLOBAL_TEST_0008
-     * @tc.name      : test_Float32array_static_from_iterable
+     * @tc.name      : test_Float32array_static_from_iterable_0008
      * @tc.desc      : Test concurrent execution of Float32Array.from() with iterable input (100 tasks via taskpool, iterable data varies by task)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_Float32array_static_from_iterable_concurrently_100_times',
+    it('test_Float32array_static_from_iterable',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_Float32array_static_from_iterable_concurrently_100_times';
+        const caseName = 'test_Float32array_static_from_iterable_0008';
         const concurrentNum = 100;
 
         try {
@@ -428,7 +428,7 @@ export default function Float32ArrayGlobalTest() {
 
     /**
      * @tc.number    : GLOBAL_TEST_0009
-     * @tc.name      : test_Float32array_static_of_numbers
+     * @tc.name      : test_Float32array_static_of_numbers_concurrently_100_times
      * @tc.desc      : Test concurrent execution of Float32Array.of() with numeric input (100 tasks via taskpool, numeric data varies by task)
      * @tc.size      : MediumTest
      * @tc.type      : Function

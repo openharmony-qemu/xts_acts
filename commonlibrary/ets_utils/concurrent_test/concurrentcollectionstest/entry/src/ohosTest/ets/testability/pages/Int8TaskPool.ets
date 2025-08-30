@@ -28,13 +28,15 @@ export async function test_int8array_constructor_with_length(
     console.info(`[${name}] Task ${index}: Int8Array created successfully`);
 
     if (int8Array == null) {
-      const errorMsg = `[${name}] Task ${index}: Int8Array is null or undefined after construction with length=${length}`;
+      const errorMsg =
+        `[${name}] Task ${index}: Int8Array is null or undefined after construction with length=${length}`;
       console.error(errorMsg);
       throw new Error(errorMsg);
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create Int8Array. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create Int8Array. Error: ${e instanceof Error ? e.message :
+    String(e)}`);
   }
 }
 
@@ -58,7 +60,8 @@ export async function test_int8array_constructor_with_array_buffer(
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create ArrayBuffer. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create ArrayBuffer. Error: ${e instanceof Error ? e.message :
+    String(e)}`);
   }
 }
 
@@ -103,7 +106,8 @@ export async function test_int8array_constructor_with_buffer(
     }
 
   } catch (e) {
-    console.error(`[${name}] Task ${index}: Failed to create Int8Array from buffer. Error: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`[${name}] Task ${index}: Failed to create Int8Array from buffer. Error: ${e instanceof Error ?
+    e.message : String(e)}`);
   }
 }
 
@@ -278,7 +282,8 @@ export async function test_int8array_copyWithin_helper(
 }
 
 @Concurrent
-export async function test_int8array_some_001(int8Array: collections.Int8Array, name: string, index: number, testValue: number) {
+export async function test_int8array_some_001(int8Array: collections.Int8Array, name: string, index: number,
+  testValue: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     try {
       console.info(`${name} task ${index} executing some() test`);
@@ -731,7 +736,8 @@ export async function test_int8array_reduce_with_initial_001(name: string, index
     console.info(`${name} task ${index} - Original array: [${Array.from(int8Array)}]`);
 
     let initialValue: number = 1;
-    let reducedValue: number = int8Array.reduce((accumulator: number, value: number) => accumulator + value, initialValue);
+    let reducedValue: number =
+      int8Array.reduce((accumulator: number, value: number) => accumulator + value, initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
     let expectedResult: number = 16;
@@ -758,7 +764,8 @@ export async function test_int8array_reduceRight_fixed_001(name: string, index: 
     console.info(`${name} task ${index} - Original array: [${Array.from(int8Array)}]`);
 
     let initialValue: number = 1;
-    let reducedValue: number = int8Array.reduceRight((accumulator: number, value: number) => accumulator + value, initialValue);
+    let reducedValue: number =
+      int8Array.reduceRight((accumulator: number, value: number) => accumulator + value, initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
 
@@ -786,7 +793,8 @@ export async function test_int8array_reduce_fixed_001(name: string, index: numbe
     console.info(`${name} task ${index} - Original array: [${Array.from(int8Array)}]`);
 
     let initialValue: string = 'initialValue';
-    let reducedValue: string = int8Array.reduce<string>((accumulator: string, value: number) => accumulator + value.toString(), initialValue);
+    let reducedValue: string =
+      int8Array.reduce<string>((accumulator: string, value: number) => accumulator + value.toString(), initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
 
