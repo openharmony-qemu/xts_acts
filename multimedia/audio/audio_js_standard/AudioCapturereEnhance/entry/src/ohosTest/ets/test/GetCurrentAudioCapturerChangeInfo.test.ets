@@ -27,6 +27,14 @@ import App from '@system.app';
 let audioManager: audio.AudioManager;
 let TagFrmwk: string = "AudioCapturerChangeInfoTest";
 
+async function getAudioManager() {
+  audioManager = audio.getAudioManager();
+  if (audioManager != null) {
+    console.info(`${TagFrmwk}: getAudioManger : PASS`);
+  } else {
+    console.info(`${TagFrmwk}: getAudioManger : FAIL`);
+  }
+}
 
 let sleep = (ms: number): Promise<string> => {
   return new Promise((resolve) => {
