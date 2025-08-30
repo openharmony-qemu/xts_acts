@@ -16,7 +16,7 @@ import hilog from '@ohos.hilog';
 import testNapi from 'libentry.so';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import systemDateTime from "@ohos.systemDateTime";
-
+const Success = 0
 export default function timeNdkTest() {
   describe('timeNdkTestSuit', () => {
     let timeZone: string;
@@ -58,7 +58,7 @@ export default function timeNdkTest() {
       console.info("====>SUB_Time_TimeManagement_Obtaining_5700 start");
       let result: number = testNapi.getTimezone_0100();
       console.info('====>SUB_Time_TimeManagement_Obtaining_5700 result: ' + result);
-      expect(result).assertEqual(13000002);
+      expect(result).assertEqual(Success);
       done();
     });
 
