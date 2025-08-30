@@ -105,13 +105,13 @@ struct RenderNodeAttribute {
       }
 
       Row(){
-        Text(`${borderRadius.topRight}`).key('RenderNodeAttribute_borderRadius_topRight')
+        Text(`${borderRadius?.topRight}`).key('RenderNodeAttribute_borderRadius_topRight')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius.topLeft}`).key('RenderNodeAttribute_borderRadius_topLeft')
+        Text(`${borderRadius?.topLeft}`).key('RenderNodeAttribute_borderRadius_topLeft')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius.bottomLeft}`).key('RenderNodeAttribute_borderRadius_bottomLeft')
+        Text(`${borderRadius?.bottomLeft}`).key('RenderNodeAttribute_borderRadius_bottomLeft')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius.bottomRight}`).key('RenderNodeAttribute_borderRadius_bottomRight')
+        Text(`${borderRadius?.bottomRight}`).key('RenderNodeAttribute_borderRadius_bottomRight')
           .fontWeight(700).fontSize(30).width('25%')
       }
 
