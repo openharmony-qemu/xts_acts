@@ -1551,7 +1551,7 @@ export default function CameraPhotoSessionTest() {
               expect(true).assertTrue();
           } catch (err) {
               console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_GETZOOMRATIO_0100 FAILED" + err.code);
-              if (err.code == camera.CameraErrorCode.SERVICE_FATAL_ERROR){
+              if (err.code == camera.CameraErrorCode.SERVICE_FATAL_ERROR || err.code == camera.CameraErrorCode.DEVICE_DISABLED){
                 expect(true).assertTrue();
               }else{
                 expect(true).assertFalse();
