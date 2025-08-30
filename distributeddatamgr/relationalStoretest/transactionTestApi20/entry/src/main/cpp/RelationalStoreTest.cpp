@@ -95,10 +95,8 @@ void AddRelationStoreTest1(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back(
         {"testExecuteV2Error", nullptr, TestExecuteV2Error, nullptr, nullptr, nullptr, napi_default, nullptr});
-    
     descData.push_back(
         {"testOHRdbAttachError", nullptr, TestOHRdbAttachError, nullptr, nullptr, nullptr, napi_default, nullptr});
-    
 }
 
 void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
@@ -145,10 +143,8 @@ void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
         {"testOHRdbDetachOk", nullptr, TestOHRdbDetachOk, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"testOHRdbDetachError", nullptr, TestOHRdbDetachError, nullptr, nullptr, nullptr, napi_default, nullptr});
-    
-    descData.push_back(
-        {"testOHRdbSubscribeDetails", nullptr, TestOHRdbSubscribeDetails, nullptr, nullptr, nullptr, napi_default, nullptr});
-    
+    descData.push_back({"testOHRdbSubscribeDetails", nullptr, TestOHRdbSubscribeDetails, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
 }
 
 void AddRelationStoreTest(std::vector<napi_property_descriptor> &descData)
@@ -1423,8 +1419,8 @@ napi_value TestOHRdbAttachBusy(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -1432,7 +1428,7 @@ napi_value TestOHRdbAttachBusy(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_RollBack(testRdbStore);
@@ -1441,11 +1437,11 @@ napi_value TestOHRdbAttachBusy(napi_env env, napi_callback_info info)
     OH_Rdb_CreateTransaction(testRdbStore, options, &trans);
     OH_RdbTrans_DestroyOptions(options);
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    OH_Cursor *cursor= OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
+    OH_Cursor *cursor = OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
     OH_ColumnType type;
     errCode = cursor->getColumnType(cursor, 0, &type);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2,"rdb_attach_test", 3, &attachedNumber);
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 3, &attachedNumber);
     napi_create_int32(env, ret == RDB_E_DATABASE_BUSY ? 0 : -1, &result);
     cursor->destroy(cursor);
     predicates->destroy(predicates);
@@ -1461,8 +1457,8 @@ napi_value TestOHRdbAttachError(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry6";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry6";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -1470,13 +1466,13 @@ napi_value TestOHRdbAttachError(napi_env env, napi_callback_info info)
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL5);
     OH_Rdb_SetReadOnly(configV2, false);
     int errCode = 0;
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_SetReadOnly(configV2, true);
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2,"rdb_attach_test", 1, &attachedNumber);
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 1, &attachedNumber);
     napi_create_int32(env, ret == RDB_E_ERROR ? 0 : ret, &result);
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_DeleteStoreV2(configV2);
@@ -1488,8 +1484,8 @@ napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -1497,7 +1493,7 @@ napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_RollBack(testRdbStore);
@@ -1506,12 +1502,12 @@ napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info)
     OH_Rdb_CreateTransaction(testRdbStore, options, &trans);
     OH_RdbTrans_DestroyOptions(options);
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    OH_Cursor *cursor= OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
+    OH_Cursor *cursor = OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
     OH_ColumnType type;
     errCode = cursor->getColumnType(cursor, 0, &type);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2,"rdb_attach_test", 3, &attachedNumber);
-    ret = OH_Rdb_Detach(testRdbStore,"rdb_attach_test", 3, &attachedNumber);
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 3, &attachedNumber);
+    ret = OH_Rdb_Detach(testRdbStore, "rdb_attach_test", 3, &attachedNumber);
     napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
     predicates->destroy(predicates);
     cursor->destroy(cursor);
@@ -1527,8 +1523,8 @@ napi_value TestOHRdbDetachError(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry6";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry6";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -1536,14 +1532,14 @@ napi_value TestOHRdbDetachError(napi_env env, napi_callback_info info)
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL5);
     OH_Rdb_SetReadOnly(configV2, false);
     int errCode = 0;
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_SetReadOnly(configV2, true);
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2,"rdb_attach_test", 1, &attachedNumber);
-    ret = OH_Rdb_Detach(testRdbStore,"rdb_attach_test", 1, &attachedNumber);
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 1, &attachedNumber);
+    ret = OH_Rdb_Detach(testRdbStore, "rdb_attach_test", 1, &attachedNumber);
     napi_create_int32(env, ret == RDB_E_ERROR ? 0 : -1, &result);
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_DeleteStoreV2(configV2);

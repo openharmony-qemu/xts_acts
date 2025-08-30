@@ -15,6 +15,7 @@
 
 #include "CursorTest.h"
 #include "napi/native_api.h"
+#include <cstdint>
 #include <database/rdb/oh_cursor.h>
 #include <database/rdb/relational_store.h>
 #include <database/rdb/relational_store_error_code.h>
@@ -143,7 +144,9 @@ napi_value TestOHCursorGetFloatVectorError(napi_env env, napi_callback_info info
     auto errCode = OH_Rdb_ExecuteV2(store, "update test set data1 = ? where id = ?", values1, nullptr);
     size_t outLen;
     float test1[2] = { 5.5, 6.6 };
-    errCode = OH_Cursor_GetFloatVector(cursor, 10, test1, 2, &outLen);
+    int32_t columnIndex = 10;
+    size_t inLen = 2;
+    errCode = OH_Cursor_GetFloatVector(cursor, columnIndex, test1, inLen, &outLen);
     OH_Values_Destroy(values);
     OH_Values_Destroy(values1);
     cursor->destroy(cursor);

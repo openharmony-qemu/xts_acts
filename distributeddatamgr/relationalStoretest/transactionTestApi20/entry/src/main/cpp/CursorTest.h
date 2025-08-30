@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
+#ifndef TRANSACTIONTESTAPI20_CURSORTEST_H
+#define TRANSACTIONTESTAPI20_CURSORTEST_H
+
 #include "napi/native_api.h"
 #include <database/rdb/relational_store.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 #include <vector>
-
-#ifndef TRANSACTIONTESTAPI20_CURSORTEST_H
-#define TRANSACTIONTESTAPI20_CURSORTEST_H
 
 #ifndef RDB_ERROR_CODE_TEST_H
 #define RDB_ERROR_CODE_TEST_H

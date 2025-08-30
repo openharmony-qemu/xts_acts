@@ -126,13 +126,10 @@ void AddTransactionTest2(std::vector<napi_property_descriptor> &descData)
                         nullptr, napi_default, nullptr});
     descData.push_back({"testDestroyInvalidParam", nullptr, TestDestroyInvalidParam, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
-    descData.push_back({"testOHRdbTransOptionSetTypeImmediate", nullptr, TestOHRdbTransOptionSetTypeImmediate, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
-    descData.push_back({"testOHRdbTransOptionSetTypeExclusive", nullptr, TestOHRdbTransOptionSetTypeExclusive, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
-    
-    
-    
+    descData.push_back({"testOHRdbTransOptionSetTypeImmediate", nullptr, TestOHRdbTransOptionSetTypeImmediate, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testOHRdbTransOptionSetTypeExclusive", nullptr, TestOHRdbTransOptionSetTypeExclusive, nullptr,
+                        nullptr, nullptr, napi_default, nullptr});
 }
 
 void AddTransactionTest(std::vector<napi_property_descriptor> &descData)
@@ -1349,30 +1346,33 @@ napi_value TestOHRdbTransOptionSetTypeImmediate(napi_env env, napi_callback_info
     OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
     valueBucket->putInt64(valueBucket, "id", 1);
     valueBucket->putText(valueBucket, "data1", "zhangSan");
-    valueBucket->putInt64(valueBucket, "data2", 12800);
-    valueBucket->putReal(valueBucket, "data3", 100.1);
+    int64_t int64Value = 12800;
+    valueBucket->putInt64(valueBucket, "data2", int64Value);
+    double doubleValue = 100.1;
+    valueBucket->putReal(valueBucket, "data3", doubleValue);
     uint8_t arr[] = { 1, 2, 3, 4, 5 };
     int len = sizeof(arr) / sizeof(arr[0]);
     valueBucket->putBlob(valueBucket, "data4", arr, len);
     valueBucket->putText(valueBucket, "data5", "ABCDEFG");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
-    const int ID = 2;
-    const int PHONE_NUMBER = 13800;
-    const double HEIGHT = 200.1;
+    const int id = 2;
+    const int phoneNumber = 13800;
+    const double height = 200.1;
     valueBucket->clear(valueBucket);
-    valueBucket->putInt64(valueBucket, "id", ID);
+    valueBucket->putInt64(valueBucket, "id", id);
     valueBucket->putText(valueBucket, "data1", "liSi");
-    valueBucket->putInt64(valueBucket, "data2", PHONE_NUMBER);
-    valueBucket->putReal(valueBucket, "data3", HEIGHT);
+    valueBucket->putInt64(valueBucket, "data2", phoneNumber);
+    valueBucket->putReal(valueBucket, "data3", height);
     valueBucket->putText(valueBucket, "data5", "ABCDEFGH");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
     valueBucket->clear(valueBucket);
-    valueBucket->putInt64(valueBucket, "id", 3);
+    int64_t int64Value1 = 3;
+    valueBucket->putInt64(valueBucket, "id", int64Value1);
     valueBucket->putText(valueBucket, "data1", "wangWu");
-    const int DATA2_VALUE = 14800;
-    valueBucket->putInt64(valueBucket, "data2", DATA2_VALUE);
-    const double HEIGHT_DATA = 300.1;
-    valueBucket->putReal(valueBucket, "data3", HEIGHT_DATA);
+    const int datA2Value = 14800;
+    valueBucket->putInt64(valueBucket, "data2", datA2Value);
+    const double heightData = 300.1;
+    valueBucket->putReal(valueBucket, "data3", heightData);
     valueBucket->putText(valueBucket, "data5", "ABCDEFGHI");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
     valueBucket->destroy(valueBucket);
@@ -1401,31 +1401,33 @@ napi_value TestOHRdbTransOptionSetTypeExclusive(napi_env env, napi_callback_info
     OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
     valueBucket->putInt64(valueBucket, "id", 1);
     valueBucket->putText(valueBucket, "data1", "zhangSan");
-    valueBucket->putInt64(valueBucket, "data2", 12800);
-    valueBucket->putReal(valueBucket, "data3", 100.1);
+    int64_t int64Value = 12800;
+    valueBucket->putInt64(valueBucket, "data2", int64Value);
+    double doubleValue = 100.1;
+    valueBucket->putReal(valueBucket, "data3", doubleValue);
     uint8_t arr[] = { 1, 2, 3, 4, 5 };
     int len = sizeof(arr) / sizeof(arr[0]);
     valueBucket->putBlob(valueBucket, "data4", arr, len);
     valueBucket->putText(valueBucket, "data5", "ABCDEFG");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
-    const int SUCCESS = 1;
-    const int ID = 2;
-    const int PHONE_NUMBER = 13800;
-    const double HEIGHT = 200.1;
+    const int id = 2;
+    const int phoneNumber = 13800;
+    const double height = 200.1;
     valueBucket->clear(valueBucket);
-    valueBucket->putInt64(valueBucket, "id", ID);
+    valueBucket->putInt64(valueBucket, "id", id);
     valueBucket->putText(valueBucket, "data1", "liSi");
-    valueBucket->putInt64(valueBucket, "data2", PHONE_NUMBER);
-    valueBucket->putReal(valueBucket, "data3", HEIGHT);
+    valueBucket->putInt64(valueBucket, "data2", phoneNumber);
+    valueBucket->putReal(valueBucket, "data3", height);
     valueBucket->putText(valueBucket, "data5", "ABCDEFGH");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
     valueBucket->clear(valueBucket);
-    valueBucket->putInt64(valueBucket, "id", 3);
+    int64_t int64Value1 = 3;
+    valueBucket->putInt64(valueBucket, "id", int64Value1);
     valueBucket->putText(valueBucket, "data1", "wangWu");
-    const int DATA2_VALUE = 14800;
-    valueBucket->putInt64(valueBucket, "data2", DATA2_VALUE);
-    const double HEIGHT_DATA = 300.1;
-    valueBucket->putReal(valueBucket, "data3", HEIGHT_DATA);
+    const int datA2Value = 14800;
+    valueBucket->putInt64(valueBucket, "data2", datA2Value);
+    const double heightData = 300.1;
+    valueBucket->putReal(valueBucket, "data3", heightData);
     valueBucket->putText(valueBucket, "data5", "ABCDEFGHI");
     errCode = OH_Rdb_Insert(transStore, table, valueBucket);
     valueBucket->destroy(valueBucket);

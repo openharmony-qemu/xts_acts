@@ -35,8 +35,9 @@ void AddPredicatesTest(std::vector<napi_property_descriptor> &descData)
 
 napi_value TestOHPredicatesGlobOk(napi_env env, napi_callback_info info)
 {
-     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    if (!predicates) return nullptr;
+    OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
+    if (!predicates)
+        return nullptr;
     const char *data5Value = "aBCD*";
     int ret = OH_Predicates_Glob(predicates, "data5", data5Value);
     predicates->destroy(predicates);
@@ -48,8 +49,9 @@ napi_value TestOHPredicatesGlobOk(napi_env env, napi_callback_info info)
 napi_value TestOHPredicatesNotGlobOk(napi_env env, napi_callback_info info)
 {
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    if (!predicates) return nullptr;
-
+    if (!predicates) {
+        return nullptr;
+    }
     const char *data5Value = "aBCD*";
     int ret = OH_Predicates_NotGlob(predicates, "data5", data5Value);
 
@@ -61,8 +63,9 @@ napi_value TestOHPredicatesNotGlobOk(napi_env env, napi_callback_info info)
 napi_value TestOHPredicatesNotLikeOk(napi_env env, napi_callback_info info)
 {
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    if (!predicates) return nullptr;
-
+    if (!predicates) {
+        return nullptr;
+    }
     const char *data5Value = "BBCD%";
     int ret = OH_Predicates_NotLike(predicates, "data5", data5Value);
 
@@ -75,8 +78,8 @@ napi_value TestOHPredicatesHavingOk(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -93,7 +96,8 @@ napi_value TestOHPredicatesHavingOk(napi_env env, napi_callback_info info)
         ");";
     OH_Rdb_Execute(testRdbStore, createTableSQL);
     OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
-    valueBucket->putInt64(valueBucket, "data5", 123);
+    int64_t int64Value = 123;
+    valueBucket->putInt64(valueBucket, "data5", int64Value);
     int64_t rowId = 0;
     OH_Rdb_Insert(testRdbStore, "test_table", valueBucket);
     valueBucket->destroy(valueBucket);
@@ -101,7 +105,8 @@ napi_value TestOHPredicatesHavingOk(napi_env env, napi_callback_info info)
     const char *groupCol = "data5";
     predicates->groupBy(predicates, &groupCol, 1);
     OH_Data_Values *values = OH_Values_Create();
-    OH_Values_PutInt(values, 100);
+    int64_t int64Value1 = 100;
+    OH_Values_PutInt(values, int64Value1);
     int error = OH_Predicates_Having(predicates, "data5 > ?", values);
     napi_create_int32(env, error == RDB_OK ? 0 : -1, &result);
     OH_Values_Destroy(values);

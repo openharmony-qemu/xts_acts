@@ -70,14 +70,14 @@ void AddRdbErrorCodeTest(std::vector<napi_property_descriptor> &descData)
         {"testNoRowInQuery", nullptr, TestNoRowInQuery, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testNoTransactionInSession", nullptr, TestNoTransactionInSession, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
-    descData.push_back({"testInvalidColumnIndex", nullptr, TestInvalidColumnIndex, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
-    descData.push_back({"testAlreadyClosed", nullptr, TestAlreadyClosed, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
-    descData.push_back({"testNotSupportedAttachInWalMode", nullptr, TestNotSupportedAttachInWalMode, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
-    descData.push_back({"testAttachDatabaseBusy", nullptr, TestAttachDatabaseBusy, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
+    descData.push_back(
+        {"testInvalidColumnIndex", nullptr, TestInvalidColumnIndex, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back(
+        {"testAlreadyClosed", nullptr, TestAlreadyClosed, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"testNotSupportedAttachInWalMode", nullptr, TestNotSupportedAttachInWalMode, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back(
+        {"testAttachDatabaseBusy", nullptr, TestAttachDatabaseBusy, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testGoToNextRowResultClosed", nullptr, TestGoToNextRowResultClosed, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"testGoToNextRowAfterLast", nullptr, TestGoToNextRowAfterLast, nullptr, nullptr, nullptr,
@@ -297,7 +297,8 @@ napi_value TestInvalidColumnIndex(napi_env env, napi_callback_info info)
     cursor->getRowCount(cursor, &rowCount);
     int moveResult = cursor->goToNextRow(cursor);
     size_t size = 0;
-    moveResult = cursor->getSize(cursor, 10, &size);
+    int32_t columnIndex = 10;
+    moveResult = cursor->getSize(cursor, columnIndex, &size);
     valueBucket->destroy(valueBucket);
     OH_Values_Destroy(values);
     cursor->destroy(cursor);
@@ -312,8 +313,8 @@ napi_value TestAlreadyClosed(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry/1";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry/1";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -321,7 +322,7 @@ napi_value TestAlreadyClosed(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_RollBack(testRdbStore);
@@ -338,13 +339,14 @@ napi_value TestAlreadyClosed(napi_env env, napi_callback_info info)
     OH_Rdb_CloseStore(testRdbStore);
     bool readOnly = true;
     OH_Rdb_SetReadOnly(configV2, readOnly);
-    OH_Rdb_Store * testRdbStore1 = nullptr;
+    OH_Rdb_Store *testRdbStore1 = nullptr;
     testRdbStore1 = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_Rdb_SetTokenizer(configV2, Rdb_Tokenizer::RDB_ICU_TOKENIZER);
     OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
     valueBucket->putInt64(valueBucket, "id", 1);
     valueBucket->putText(valueBucket, "name", "ZhangSan");
-    valueBucket->putInt64(valueBucket, "score", 99);
+    int64_t int64Value = 99;
+    valueBucket->putInt64(valueBucket, "score", int64Value);
     char table[] = "test";
     int64_t rowId = -1;
     int ret = OH_RdbTrans_Insert(trans, table, valueBucket, &rowId);
@@ -381,8 +383,8 @@ napi_value TestAttachDatabaseBusy(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
-    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH1);
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
     OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
     OH_Rdb_SetBundleName(configV2, "com.acts.acttransactiontest");
     OH_Rdb_SetModuleName(configV2, "");
@@ -390,17 +392,17 @@ napi_value TestAttachDatabaseBusy(napi_env env, napi_callback_info info)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
-    OH_Rdb_Store * testRdbStore = nullptr;
+    OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
     testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
     OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
     OH_RdbTrans_DestroyOptions(options);
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    OH_Cursor *cursor= OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
+    OH_Cursor *cursor = OH_Rdb_Query(testRdbStore, predicates, NULL, 0);
     OH_ColumnType type;
     errCode = cursor->getColumnType(cursor, 0, &type);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2,"rdb_attach_test", 1, &attachedNumber);
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 1, &attachedNumber);
     napi_create_int32(env, ret == RDB_E_DATABASE_BUSY ? 0 : -1, &result);
     cursor->destroy(cursor);
     predicates->destroy(predicates);
@@ -413,8 +415,8 @@ napi_value TestAttachDatabaseBusy(napi_env env, napi_callback_info info)
 
 napi_value TestGoToNextRowResultClosed(napi_env env, napi_callback_info info)
 {
-    const char *RDB_TEST_PATH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry1/";
-    RdbErrorCodeTest::RDB_CONFIG.dataBaseDir = RDB_TEST_PATH1;
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry1/";
+    RdbErrorCodeTest::RDB_CONFIG.dataBaseDir = rdbTestPatH1;
     RdbErrorCodeTest::RDB_CONFIG.storeName = "rdb_store_test.db";
     RdbErrorCodeTest::RDB_CONFIG.bundleName = "com.example.buchongndktest";
     RdbErrorCodeTest::RDB_CONFIG.moduleName = "";
@@ -431,7 +433,8 @@ napi_value TestGoToNextRowResultClosed(napi_env env, napi_callback_info info)
     OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(testStore, querySql, values);
     float test[2] = {5.5f, 6.6f};
     OH_Data_Values *values1 = OH_Values_Create();
-    OH_Values_PutFloatVector(values1, test, 2);
+    size_t length = 2;
+    OH_Values_PutFloatVector(values1, test, length);
     OH_Values_PutInt(values1, 1);
     OH_Rdb_ExecuteV2(testStore, "update test set data1 = ? where id = ?", values1, nullptr);
 
@@ -474,7 +477,8 @@ napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info)
     cursor->getRowCount(cursor, &rowCount);
     float test[2] = { 5.5f, 6.6f };
     OH_Data_Values *values1 = OH_Values_Create();
-    OH_Values_PutFloatVector(values1, test, 2);
+    size_t length = 2;
+    OH_Values_PutFloatVector(values1, test, length);
     OH_Values_PutInt(values1, 1);
     OH_Rdb_ExecuteV2(testStore, "update test set data1 = ? where id = ?", values1, nullptr);
     cursor = OH_Rdb_ExecuteQueryV2(testStore, querySql, values);

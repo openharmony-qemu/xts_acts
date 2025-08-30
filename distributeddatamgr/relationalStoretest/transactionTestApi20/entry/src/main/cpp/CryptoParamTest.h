@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
+#ifndef TRANSACTIONTESTAPI20_CRYPTOPARAMTEST_H
+#define TRANSACTIONTESTAPI20_CRYPTOPARAMTEST_H
+
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 #include <vector>
-
-#ifndef TRANSACTIONTESTAPI20_CRYPTOPARAMTEST_H
-#define TRANSACTIONTESTAPI20_CRYPTOPARAMTEST_H
 
 void AddCryptoParamTest(std::vector<napi_property_descriptor> &descData);
 
