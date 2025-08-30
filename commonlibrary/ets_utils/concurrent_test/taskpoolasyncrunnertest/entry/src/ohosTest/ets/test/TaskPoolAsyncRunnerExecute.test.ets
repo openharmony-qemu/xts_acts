@@ -454,14 +454,19 @@ export default function taskPoolAsyncRunnerExecute() {
           runner.execute(task).then((num: object) => {
             count3++;
             console.info('taskpool: execute task success');
-          });
+          }).catch((e:Error)=>{
+            console.info('==========',e.message)
+          })
+
           runner.execute(task2).then((num: object) => {
             count4++
             console.info('taskpool: execute task success');
+          }).catch((e:Error)=>{
+            console.info('==========',e.message)
           });
         }
 
-        while (count < 10 || count3 || count4 || count2 < 10) {
+        while (count < 10 || count3 < 10 || count4 < 10 || count2 < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count);
@@ -555,7 +560,7 @@ export default function taskPoolAsyncRunnerExecute() {
           });
         }
 
-        while (count < 10 || count3 || count4 || count2 < 10) {
+        while (count < 10 || count3< 10 || count4< 10 || count2 < 10) {
           await sleep(100);
         }
         expect(10).assertEqual(count3);
