@@ -16,5 +16,6 @@ group("distributedhardware") {
   testonly = true
   deps = [
     "device_manager:ActsdeviceManagerTest",
+    "mechanicmanager:ActsmechanicManagerTest",
   ]
 }
