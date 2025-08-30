@@ -1,5 +1,5 @@
-import { ArkTSUtils, collections } from "@kit.ArkTS";
-import { expect } from "@ohos/hypium";
+import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { expect } from '@ohos/hypium';
 
 @Concurrent
 export async function test_array_001(arr: collections.Array<number>, name: string, index: number) {

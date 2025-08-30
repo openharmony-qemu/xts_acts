@@ -1,5 +1,5 @@
-import { ArkTSUtils, collections, HashMap, lang } from "@kit.ArkTS";
-import { ChildLRUCache } from "./sendableclass";
+import { ArkTSUtils, collections, HashMap, lang } from '@kit.ArkTS';
+import { ChildLRUCache } from './sendableclass';
 
 
 @Concurrent
@@ -143,9 +143,9 @@ export async function test_sendable_1600(pro: ArkTSUtils.SendableLruCache<number
 @Concurrent
 export async function test_sendable_1700(pro: collections.Map<string, string>, name: string, index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
-    pro.set("ha", "a");
-    pro.set("sh", "b");
-    pro.set("map", "c");
+    pro.set('ha', 'a');
+    pro.set('sh', 'b');
+    pro.set('map', 'c');
     let a: number = index
     pro.set(`${a}`, `${a}`);
   })

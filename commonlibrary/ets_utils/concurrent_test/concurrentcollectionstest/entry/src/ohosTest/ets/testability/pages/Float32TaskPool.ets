@@ -1,5 +1,5 @@
-import { ArkTSUtils, collections } from "@kit.ArkTS";
-import { expect } from "@ohos/hypium";
+import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { expect } from '@ohos/hypium';
 
 @Concurrent
 export async function test_array_001(arr: collections.Array<number>, name: string, index: number) {
@@ -83,7 +83,7 @@ export async function test_Float32array_constructor_with_iterable(
 @Concurrent
 export async function test_Float32array_constructor_with_buffer(
   length?: number,
-  name: string = "test_Float32array_constructor_with_buffer",
+  name: string = 'test_Float32array_constructor_with_buffer',
   index: number = 0
 ) {
   try {
@@ -110,7 +110,7 @@ export async function test_Float32array_constructor_with_buffer(
 @Concurrent
 export async function test_Float32array_static_from_array_like(
   arrayLike: ArrayLike<number>,
-  name: string = "test_Float32array_static_from_array_like",
+  name: string = 'test_Float32array_static_from_array_like',
   index: number = 0
 ) {
   try {
@@ -139,14 +139,14 @@ export async function test_Float32array_from_fixed_001(name: string, index: numb
       console.info(`${name} task ${index} - from(object, mapFn)`);
 
     } else if (index % 3 === 1) {
-      let arrayLike: string[] = ["1", "3", "5"];
+      let arrayLike: string[] = ['1', '3', '5'];
       let mapFn = (v: string, k: number) => parseInt(v, 10);
       Float32Array = collections.Float32Array.from(arrayLike, mapFn);
       expectedResult = [1, 3, 5];
       console.info(`${name} task ${index} - from(string[], mapFn)`);
 
     } else if (index % 3 === 2) {
-      let arrayLike: string = "12345";
+      let arrayLike: string = '12345';
       let mapFn = (v: string, k: number) => parseInt(v, 10);
       Float32Array = collections.Float32Array.from(arrayLike, mapFn);
       expectedResult = [1, 2, 3, 4, 5];
@@ -173,7 +173,7 @@ export async function test_Float32array_from_fixed_001(name: string, index: numb
 @Concurrent
 export async function test_Float32array_static_from_iterable(
   arrayLike: Iterable<number>,
-  name: string = "test_Float32array_static_from_iterable",
+  name: string = 'test_Float32array_static_from_iterable',
   index: number = 0
 ) {
   try {
@@ -193,7 +193,7 @@ export async function test_Float32array_static_from_iterable(
 @Concurrent
 export async function test_Float32array_static_of_numbers(
   numbers: number[],
-  name: string = "test_Float32array_static_of_numbers",
+  name: string = 'test_Float32array_static_of_numbers',
   index: number = 0
 ) {
   try {
@@ -212,7 +212,7 @@ export async function test_Float32array_static_of_numbers(
 @Concurrent
 export async function test_Float32array_toString(
   Float32Array: collections.Float32Array,
-  name: string = "test_Float32array_toString",
+  name: string = 'test_Float32array_toString',
   index: number = 0
 ) {
   try {
@@ -220,7 +220,7 @@ export async function test_Float32array_toString(
 
     const result: string = Float32Array.toString();
 
-    console.info(`[${name}] Task ${index}: toString() result = "${result}"`);
+    console.info(`[${name}] Task ${index}: toString() result = '${result}'`);
 
   } catch (e) {
     console.error(`[${name}] Task ${index}: Failed to call toString() on Float32Array. Error: ${e}`);
@@ -230,7 +230,7 @@ export async function test_Float32array_toString(
 
 @Concurrent
 export async function test_Float32array_toLocaleString(
-  name: string = "test_Float32array_toLocaleString",
+  name: string = 'test_Float32array_toLocaleString',
   index: number = 0
 ) {
   try {
@@ -240,7 +240,7 @@ export async function test_Float32array_toLocaleString(
 
     const result: string = array.toLocaleString();
 
-    console.info(`[${name}] Task ${index}: toLocaleString() result = "${result}"`);
+    console.info(`[${name}] Task ${index}: toLocaleString() result = '${result}'`);
 
   } catch (e) {
     console.error(`[${name}] Task ${index}: Failed. Error: ${e}`);
@@ -786,15 +786,15 @@ export async function test_Float32array_reduce_fixed_001(name: string, index: nu
 
     console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
 
-    let initialValue: string = "initialValue";
+    let initialValue: string = 'initialValue';
     let reducedValue: string = Float32Array.reduce<string>((accumulator: string, value: number) => accumulator + value.toString(), initialValue);
 
     console.info(`${name} task ${index} - Reduced value: ${reducedValue}`);
 
-    let expectedResult: string = "initialValue12345";
+    let expectedResult: string = 'initialValue12345';
 
     if (reducedValue !== expectedResult) {
-      throw new Error(`Reduce result mismatch: expected "${expectedResult}", got "${reducedValue}"`);
+      throw new Error(`Reduce result mismatch: expected '${expectedResult}', got '${reducedValue}'`);
     }
 
     console.info(`${name} task ${index} - reduce() successful`);

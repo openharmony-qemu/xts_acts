@@ -428,7 +428,7 @@ export default function Int8ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT8ARRAY_TEST_0009
-     * @tc.name      : test_int8array_static_of_numbers_concurrently_100_times'
+     * @tc.name      : test_int8array_static_of_numbers_concurrently_100_times
      * @tc.desc      : Test int8array static of numbers concurrently 100 times
      * @tc.size      : SmallTest
      * @tc.type      : Function
@@ -480,10 +480,10 @@ export default function Int8ArrayGlobalTest() {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('test_int8array_toString_concurrently_100_times',
+    it('test_int8array_concurrent_read_write',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'test_int8array_toString_concurrently_100_times';
+        const caseName = 'test_int8array_concurrent_read_write';
         const concurrentNum = 100;
 
         try {
