@@ -69,6 +69,8 @@ struct scrollEventComponent {
               let button = await driver.findComponent(ON.id('scrollToButton'));
               await button.click();
               await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+              Utils.emitEvent(this.xOffset,this.emitEventId);
               break;
             }
 
@@ -80,6 +82,8 @@ struct scrollEventComponent {
               let button = await driver.findComponent(ON.id('scrollByButton'));
               await button.click();
               await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+              Utils.emitEvent(this.xOffset,this.emitEventId);
               break;
             }
           }
@@ -109,11 +113,6 @@ struct scrollEventComponent {
           this.yOffset = event.yOffset;
           console.info("x = " + event.xOffset);
           console.info("y = " + event.yOffset);
-          if(this.flag){
-            if(this.xOffset==50 || this.xOffset==80){
-              Utils.emitEvent(this.xOffset,this.emitEventId);
-            }
-          }
         })
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
@@ -123,3 +122,7 @@ struct scrollEventComponent {
     }
   }
 }
+
+
+
+

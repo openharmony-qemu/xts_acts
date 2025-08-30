@@ -35,6 +35,11 @@ export default function webResourceResponseGet() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+      try {
+        await driver.waitForComponent(ON.id("WebResourceResponseGetButton"), 10000);
+      } catch (err) {
+        console.error("push WebResourceResponseGetTestSuite page error: " + err);
+      }
       console.info("webResourceResponseGet beforeEach start");
       done();
     })

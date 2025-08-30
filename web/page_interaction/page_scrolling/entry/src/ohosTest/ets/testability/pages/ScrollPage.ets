@@ -79,7 +79,6 @@ struct setPathAllowingUniversalAccess {
     }
   }
 
-
   build() {
     Column() {
       Row() {
@@ -274,7 +273,7 @@ struct setPathAllowingUniversalAccess {
             case "testPageDown001": {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("tablet")) {
+                if ((this.userAgentPC).includes("Tablet")) {
                   Utils.emitEvent(true, 179380)
                   break;
                 }
@@ -288,11 +287,10 @@ struct setPathAllowingUniversalAccess {
                   }
                   this.checkEleResult = JSON.parse(result)
                   console.log(`The checkVIsible() return value is: ${result}`);
-                  
+
                 })
-                this.onScrollCallBack = false
                 this.controller.pageDown(false);
-                await Utils.waitForExist(()=>this.onScrollCallBack, this.str+' onScrollCallBack', true, 1000);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   if (error) {
                     console.error(`The checkVIsible() return value is: error`);
@@ -317,13 +315,14 @@ struct setPathAllowingUniversalAccess {
 
             case "testPageDown002": {
               try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }else{
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('indexCopyTwo.html'))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -333,7 +332,6 @@ struct setPathAllowingUniversalAccess {
                   }
                   console.log(`The checkVIsible() return value is: ${result}`);
                 })
-                this.onScrollCallBack = false
                 this.controller.pageDown(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -361,14 +359,13 @@ struct setPathAllowingUniversalAccess {
             case "testPageUp001": {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("tablet")) {
+                if ((this.userAgentPC).includes("Tablet")) {
                   Utils.emitEvent(true, 179400)
                   break;
                 }
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('indexCopyTwo.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                this.onScrollCallBack = false
                 this.controller.pageDown(false);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -404,18 +401,18 @@ struct setPathAllowingUniversalAccess {
 
             case "testPageUp002": {
               try {
-                this.isPageEnd = -1;
-                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("Tablet")) {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopyTablet.html'))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }else {
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 }
-                this.onScrollCallBack = false
                 this.controller.pageDown(true);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   if (error) {
                     console.error(`The checkVIsible() return value is: error`);
@@ -424,7 +421,6 @@ struct setPathAllowingUniversalAccess {
                   console.log(`The checkVIsible() return value is: ${result}`);
                   this.checkEleResult = JSON.parse(result)
                 })
-                this.onScrollCallBack = false
                 this.controller.pageUp(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y);
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -433,6 +429,7 @@ struct setPathAllowingUniversalAccess {
                     return;
                   }
                   console.log(`The checkVIsible() again return value is: ${result}`);
+                  console.log("==>testPageUp002 this.checkEleResult",this.checkEleResult)
                   if (JSON.parse(result)[3] == 0 && this.checkEleResult[3] > (JSON.parse(result)[1] / 2)) {
                     console.log('testPageUp002 result is :' + true);
                     Utils.emitEvent(true, 179410)

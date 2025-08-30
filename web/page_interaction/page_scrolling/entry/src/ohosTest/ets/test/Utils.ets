@@ -351,8 +351,8 @@ export default class Utils {
   static async waitForScrollStop(
     getValue: () => number,
     testsuite: string = 'test',
-    interval: number = 500,
-    maxRetries: number = 20
+    interval: number = 100,
+    maxRetries: number = 100
     ) :Promise<void> {
     let retryTimes = 0;
     let lastValue = getValue();

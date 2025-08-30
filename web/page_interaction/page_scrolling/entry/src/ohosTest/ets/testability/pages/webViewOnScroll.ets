@@ -194,10 +194,23 @@ struct webViewOnScroll {
             }
             case "emitpageUp": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
                   this.checkEleResult = JSON.parse(result)
                   console.log(`The checkVIsible() return value is: ${result}`);
                 })
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageUp(false);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.runJavaScript("checkVIsible()", (error, result) => {
@@ -222,6 +235,21 @@ struct webViewOnScroll {
             }
             case "emitpageDownAgain": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageDown(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 if (this.isWebBottom) {
@@ -237,14 +265,31 @@ struct webViewOnScroll {
             }
             case "emitpageUpAgain": {
               try {
-                  this.controller.pageUp(true);
-                  await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                  if (this.isWebTop) {
-                    console.log("页面已经滑动到顶部");
-                    Utils.emitEvent(true, 179980);
-                  } else {
-                    Utils.emitEvent(false, 179980);
-                  }
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("Tablet")) {
+                  this.isPageEnd = -1
+                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                }
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(false);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageDown(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                this.controller.pageUp(true);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                if (this.isWebTop) {
+                  console.log("页面已经滑动到顶部");
+                  Utils.emitEvent(true, 179980);
+                } else {
+                  Utils.emitEvent(false, 179980);
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
