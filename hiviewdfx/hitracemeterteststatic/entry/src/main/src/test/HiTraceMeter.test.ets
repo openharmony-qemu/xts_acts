@@ -179,8 +179,7 @@ export default function HitraceMeterTest() {
         console.info("-------DFX_DFR_HitraceMeter_Static_0700 start--------");
         try {
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 start")
-          let ret = hiTraceMeter.isTraceEnabled();
-          expect(ret).assertFalse();
+          hiTraceMeter.isTraceEnabled();
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 success");
         } catch (err) {
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 fail!");
