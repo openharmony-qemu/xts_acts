@@ -92,6 +92,7 @@ export default function audioCapturerEnhanceTest() {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       await getPermission();
       await driveFn();
+      await getAudioManager();
       console.info('TestLog: Start Testing AudioCpaturerEnhanceTest Interfaces');
     });
 
