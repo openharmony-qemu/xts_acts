@@ -17,8 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitForComponent } from './WaitTest';
 // @ts-nocheck
-let emitKey = "emitWebViewCookieTrack"
+let emitKey = ""
 
 export default function ActsAcewebViewCookieTrack() {
   describe('ActsAcewebViewCookieTrack', () => {
@@ -27,45 +28,18 @@ export default function ActsAcewebViewCookieTrack() {
         let options : router.RouterOptions = {
             url: 'testability/pages/webViewCookieTrack',
         }
-        
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             if (!("webViewCookieTrack" == pages.name)) {
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
             }
         } catch (err) {
             console.error("push webViewCookieTrack page error:" + err);
         }
+      await waitForComponent("webViewCookieTrackTriggerButton");
         done()
     });
-    
-    beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
-      done();
-    })
-    
-    afterEach(async (done: Function) => {
-        try {
-            let backData: emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
 
 
     /*
@@ -78,8 +52,8 @@ export default function ActsAcewebViewCookieTrack() {
      */
     it('testWebViewCookieTrackEnableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableTrue";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewCookieTrackEnableTrue", true, 7701, done);
+      Utils.emitEvent(emitKey, 160060)
+      Utils.registerEvent("testWebViewCookieTrackEnableTrue", true, 160070, done);
       sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
     })
 
@@ -94,8 +68,8 @@ export default function ActsAcewebViewCookieTrack() {
      */
     it('testWebViewCookieTrackEnableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableFalse";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testWebViewCookieTrackEnableFalse", true, 1278, done);
+      Utils.emitEvent(emitKey, 160060)
+      Utils.registerEvent("testWebViewCookieTrackEnableFalse", true, 160080, done);
       sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
     })
 
@@ -110,10 +84,9 @@ export default function ActsAcewebViewCookieTrack() {
     */
     it('testCookieTrackClearTrackingPrevention', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitCookieTrackClearTrackingPrevention";
-      Utils.emitEvent(emitKey, 10)
-      Utils.registerEvent("testCookieTrackClearTrackingPrevention", true, 1282, done);
+      Utils.emitEvent(emitKey, 160060)
+      Utils.registerEvent("testCookieTrackClearTrackingPrevention", true, 160090, done);
       sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
     })
-
   })
 }
