@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, afterEach } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 178501;
+const driver = Driver.create();
 
 export default function webController() {
 
@@ -35,8 +40,8 @@ export default function webController() {
         if (!("webController" == pages.name)) {
           console.info("get webController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webController page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebControllerButton"), 10000);
         }
       } catch (err) {
         console.error("push webController page error: " + err);
@@ -50,7 +55,6 @@ export default function webController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webController beforeEach start");
       done();
     })
@@ -64,10 +68,12 @@ export default function webController() {
     * @tc.level      : Level 1
     */
     it('testRequestFocus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testRequestFocus001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRequestFocus001", true, 33030, done);
-      sendEventByKey('WebControllerButton', 10, '');
+      Utils.emitEvent("testRequestFocus001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebGestureTapAndLongPress001", true, 178510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebControllerButton","testRequestFocus001");
+      await Utils.waitForExist(() => isReturn, "testRequestFocus001" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

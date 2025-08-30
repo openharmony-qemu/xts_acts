@@ -15,10 +15,13 @@
 
 import web_webview from '@ohos.web.webview';
 import prompt from '@ohos.promptAction';
-import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { Driver, ON } from '@kit.TestKit';
 
+
+const EVENT_ID_SET_SUITE_KEY = 181001;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -29,13 +32,20 @@ struct getLastHitTest {
   @State sm2: string = '黑盒'
   @State shouldShowVirtualKeyboard: boolean=false;
   @State str: string = "getLastHitTest001";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isOnLoadInterceptEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -44,6 +54,7 @@ struct getLastHitTest {
       console.info("getLastHitTest:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -55,15 +66,17 @@ struct getLastHitTest {
       Row() {
         Button("web click").key('webGetLastHitTest').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "getLastHitTest001": {
               try {
-                let driver = Driver.create();
+                await Utils.waitForReleaseDriver(this.str,driver)
+                this.isOnLoadInterceptEnd = -1
                 let component = await driver.findComponent(ON.text('www.example.com'));
                 await component.click();
-                await Utils.sleep(1000);
-
-                Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/' , 20250313)
+                await Utils.waitForExist(()=>this.isOnLoadInterceptEnd, this.str+' isOnLoadInterceptEnd', 1, 1000);
+                Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/' , 181010)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -84,9 +97,11 @@ struct getLastHitTest {
         Web({ src: $rawfile('getLastHitTest.html'), controller: this.controller })
           .height("75%")
           .domStorageAccess(true)
-          .onInterceptKeyboardAttach(()=>{return {
-            useSystemKeyboard: this.shouldShowVirtualKeyboard,
-          }})
+          .onInterceptKeyboardAttach(()=>{
+            return {
+              useSystemKeyboard: this.shouldShowVirtualKeyboard,
+            }
+          })
           .onLoadIntercept((event) => {
             try {
               let tmp = this.controller.getLastHitTest()
@@ -99,12 +114,17 @@ struct getLastHitTest {
               console.log(e.toString())
             }
             if (event.data.getRequestUrl().match("resource")) {
+              this.isOnLoadInterceptEnd = 1
               return false
             } else {
+              this.isOnLoadInterceptEnd = 1
               return true;
             }
           })
-
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
+          })
 
     }.width('100%').height('100%')
 

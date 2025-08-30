@@ -16,8 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@kit.TestKit';
 
 class TestObj {
   constructor() {
@@ -31,6 +31,9 @@ class TestObj {
     console.log('Web Component toString')
   }
 }
+
+const EVENT_ID_SET_SUITE_KEY = 177601;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -100,17 +103,19 @@ struct WebViewEnumAndFontLibrary {
   @State PermissionRequestState: boolean = false
   @State userAgentPC:string = "";
   WebResult: WebContextMenuResult = new WebContextMenuResult;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -119,6 +124,7 @@ struct WebViewEnumAndFontLibrary {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -128,22 +134,25 @@ struct WebViewEnumAndFontLibrary {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitFileSelectorModeFileOpenMode": {
               if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/indexFile.html")
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 let button = await driver.findComponent(ON.id('webCenter'));
                 await button.click();
-                await Utils.sleep(2000);
-                Utils.emitEvent(Number(this.FileSelectorMode), 861)
+                await Utils.waitForReleaseDriver(this.str, driver)
+                Utils.emitEvent(Number(this.FileSelectorMode), 177610)
                 this.FileSelectorMode = 0
+                this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/indexJru.html")
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 break;
               } else {
-                Utils.emitEvent(0, 861)
+                Utils.emitEvent(0, 177610)
               }
             }
           }
@@ -197,6 +206,7 @@ struct WebViewEnumAndFontLibrary {
           this.controller.runJavaScript("webTest()", (error, result) => {
             console.log("error" + error)
             this.webResultText = result
+            this.isPageEnd = 1
           })
         })
         .onShowFileSelector((event) => {

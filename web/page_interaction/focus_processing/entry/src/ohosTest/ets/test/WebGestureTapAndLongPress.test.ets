@@ -19,10 +19,15 @@ import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON, MouseButton } from '@ohos.UiTest';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = ""
+
+const EVENT_ID_SET_SUITE_KEY = 178101;
+let driver = Driver.create();
+
 export default function WebGestureTapAndLongPressJsunit() {
   describe('WebGestureTapAndLongPressTest',  () => {
     beforeAll(async (done: Function) => {
@@ -36,13 +41,13 @@ export default function WebGestureTapAndLongPressJsunit() {
         if (!("WebGestureTapAndLongPress" == pages.name)) {
           console.info("get WebGestureTapAndLongPress state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push WebGestureTapAndLongPress page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebGestureFocusModeButton"), 10000);
         }
+
       } catch (err) {
         console.error("push WebGestureTapAndLongPress page error: " + err);
       }
-      let driver: Driver = Driver.create();
       await driver.waitForComponent(ON.id("WebWebViewWebGestureTapAndLongPressButton"), 10000);
       done()
     });
@@ -52,28 +57,7 @@ export default function WebGestureTapAndLongPressJsunit() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("blurMode beforeEach start");
-      done();
-    })
-    afterEach(async (done: Function) => {
-      console.info("blurMode afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
 
@@ -87,9 +71,12 @@ export default function WebGestureTapAndLongPressJsunit() {
     */
     it('testWebGestureTapAndLongPress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "testWebGestureTapAndLongPress001";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebGestureTapAndLongPress001", true, 20250726, done);
-      sendEventByKey('WebWebViewWebGestureTapAndLongPressButton', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebGestureTapAndLongPress001", true, 178110,  () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebWebViewWebGestureTapAndLongPressButton","testWebGestureTapAndLongPress001");
+      await Utils.waitForExist(() => isReturn, "testWebGestureTapAndLongPress001" + '_returnCheck', true, 1000);
+      done();
     })
 
 
@@ -103,9 +90,12 @@ export default function WebGestureTapAndLongPressJsunit() {
     */
     it('testWebGestureTapAndLongPress002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebGestureTapAndLongPress002";
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebGestureTapAndLongPress002", true, 20250727, done);
-      sendEventByKey('WebWebViewWebGestureTapAndLongPressButton', 10, '');
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebGestureTapAndLongPress002", true, 178120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebWebViewWebGestureTapAndLongPressButton", emitKey);
+      await Utils.waitForExist(() => isReturn, "testWebGestureTapAndLongPress002" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

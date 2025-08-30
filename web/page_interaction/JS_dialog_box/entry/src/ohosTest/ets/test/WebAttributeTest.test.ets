@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 177101;
+let driver = Driver.create();
 
 export default function webAttributeTest() {
 
@@ -35,7 +40,7 @@ export default function webAttributeTest() {
         if (!("WebAttributeTest" == pages.name)) {
           console.info("get WebAttributeTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebAttributeTestButton"), 10000);
           console.info("push WebAttributeTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -54,13 +59,6 @@ export default function webAttributeTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebAttributeTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebAttributeTest afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_ONALERT_0100
     * @tc.name        : testOnAlert001
@@ -70,10 +68,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnAlert001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnAlert001", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testOnAlert001", "alert test", 70017, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnAlert001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testOnAlert001", "alert test", 177110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testOnAlert001");
+      await Utils.waitForExist(() => isReturn, "testOnAlert001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -85,10 +85,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnConfirm001", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testOnConfirm001", "confirm test", 70018, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnConfirm001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testOnConfirm001", "confirm test", 177120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testOnConfirm001");
+      await Utils.waitForExist(() => isReturn, "testOnConfirm001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -100,10 +102,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testOnPrompt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnPrompt001", 10)
-      await Utils.sleep(2000);
-      Utils.registerContainEvent("testOnPrompt001", "prompt test", 70019, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitOnPrompt001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testOnPrompt001", "prompt test", 177130, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testOnPrompt001");
+      await Utils.waitForExist(() => isReturn, "testOnPrompt001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -115,10 +119,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testJsResultHandleCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitJsResultHandleCancel001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsResultHandleCancel001", "false", 70021, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitJsResultHandleCancel001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testJsResultHandleCancel001", "false", 177140, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testJsResultHandleCancel001");
+      await Utils.waitForExist(() => isReturn, "testJsResultHandleCancel001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -130,10 +136,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testJsResultHandleConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitJsResultHandleConfirm001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsResultHandleConfirm001", "true", 70023, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitJsResultHandleConfirm001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testJsResultHandleConfirm001", "true", 177150, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testJsResultHandleConfirm001");
+      await Utils.waitForExist(() => isReturn, "testJsResultHandleConfirm001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -145,10 +153,12 @@ export default function webAttributeTest() {
     * @tc.level       : Level 1
     */
     it('testJsResultHandlePromptConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitJsResultHandlePromptConfirm001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsResultHandlePromptConfirm001", "\"handlePromptConfirm\"", 70025, done);
-      sendEventByKey('WebAttributeTestButton', 10, '');
+      Utils.emitEvent("emitJsResultHandlePromptConfirm001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testJsResultHandlePromptConfirm001", "\"handlePromptConfirm\"", 177160, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testJsResultHandlePromptConfirm001");
+      await Utils.waitForExist(() => isReturn, "testJsResultHandlePromptConfirm001" + '_returnCheck', true, 1000);
+      done();
     })
 
     

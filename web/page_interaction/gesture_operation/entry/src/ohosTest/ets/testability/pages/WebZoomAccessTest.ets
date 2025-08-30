@@ -16,7 +16,11 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
-import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
+import { Driver, PointerMatrix } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 181201;
+const driver = Driver.create();
+
 
 @Entry
 @Component
@@ -35,17 +39,20 @@ struct WebZoomAccessTest {
   @State userAgentPC:string = "";
   @State flag: boolean = false;
   @State compareScale: number = 0
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isPointerEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -54,6 +61,7 @@ struct WebZoomAccessTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -63,14 +71,16 @@ struct WebZoomAccessTest {
       Row() {
         Button("WebZoomAccessTestButton").key('WebZoomAccessTestButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "testWebZoomAccess001": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/second.html")
-                  await Utils.sleep(2000)
-                  await Utils.fingerZoom('WebZoomAccessTestWebView', true);
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.oldScale == 0 && this.newScale == 0, 6500)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.fingerZoom('WebZoomAccessTestWebView', true, driver);
+                  Utils.emitEvent(this.oldScale == 0 && this.newScale == 0, 181210)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -78,11 +88,10 @@ struct WebZoomAccessTest {
             }
             case "testWebZoomAccess002": {
                 try {
-                  await Utils.fingerZoom('WebZoomAccessTestWebView', true);
-                  await Utils.sleep(2000)
-                  await Utils.fingerZoom('WebZoomAccessTestWebView', false);
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.oldScale == 0 && this.newScale == 0, 6502)
+                  await Utils.waitForReleaseDriver(this.str,driver)
+                  await Utils.fingerZoom('WebZoomAccessTestWebView', true, driver);
+                  await Utils.fingerZoom('WebZoomAccessTestWebView', false, driver);
+                  Utils.emitEvent(this.oldScale == 0 && this.newScale == 0, 181220)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -92,9 +101,7 @@ struct WebZoomAccessTest {
                 try {
                   this.userAgentPC = this.controller.getUserAgent();
                   this.zoomAccess = true;
-                  await Utils.sleep(2000)
                   if ((this.userAgentPC).includes("Wearable")) {
-                    let driver: Driver = Driver.create();
                     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
                     pointers.setPoint(0, 0, {
                       x: 200, y: 170
@@ -114,12 +121,17 @@ struct WebZoomAccessTest {
                     pointers.setPoint(1, 2, {
                       x: 200, y: 340
                     });
-                    await driver.injectMultiPointerAction(pointers);
+                    await driver.injectMultiPointerAction(pointers).then(res=>{
+                      if(res){
+                        console.log('==>res:',res)
+                      }
+                    });
                   }else{
-                    await Utils.fingerZoom('WebZoomAccessTestWebView', true);
+                    await Utils.waitForReleaseDriver(this.str,driver)
+                    await Utils.fingerZoom('WebZoomAccessTestWebView', true, driver);
+                    await Utils.waitForReleaseDriver(this.str,driver)
                   }
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.oldScale > 0 && this.newScale > 0 && this.newScale > this.oldScale, 6504)
+                  Utils.emitEvent(this.oldScale > 0 && this.newScale > 0 && this.newScale > this.oldScale, 181230)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -130,7 +142,6 @@ struct WebZoomAccessTest {
                   this.userAgentPC = this.controller.getUserAgent();
                   this.zoomAccess = true;
                   this.flag = true;
-                  await Utils.sleep(2000)
                   if ((this.userAgentPC).includes("Wearable")){
                     let driver: Driver = Driver.create();
                     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
@@ -154,16 +165,13 @@ struct WebZoomAccessTest {
                     });
                     await driver.injectMultiPointerAction(pointers);
                   }else{
-                    await Utils.fingerZoom('WebZoomAccessTestWebView', true);
+                    await Utils.waitForReleaseDriver(this.str,driver)
+                    await Utils.fingerZoom('WebZoomAccessTestWebView', true, driver);
                   }
-                  await Utils.sleep(2000)
                   this.flag = false;
-                  
-              
-                  await Utils.fingerZoom('WebZoomAccessTestWebView', false);
-
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.oldScale > 0 && this.newScale > 0 && this.newScale < this.compareScale, 6506)
+                  await Utils.fingerZoom('WebZoomAccessTestWebView', false, driver);
+                  await Utils.waitForReleaseDriver(this.str,driver)
+                  Utils.emitEvent(this.oldScale > 0 && this.newScale > 0 && this.newScale < this.compareScale, 181240)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -195,6 +203,10 @@ struct WebZoomAccessTest {
           if(this.flag){
             this.compareScale = event.newScale
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

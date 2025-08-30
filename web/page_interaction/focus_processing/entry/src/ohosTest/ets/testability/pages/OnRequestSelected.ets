@@ -17,6 +17,10 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import cert from '@ohos.security.cert';
+import { Driver } from '@kit.TestKit';
+
+
+const EVENT_ID_SET_SUITE_KEY = 178401;
 
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
@@ -74,16 +78,20 @@ struct WebAttributeTest {
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
 
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isRequestFocus: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -92,12 +100,7 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        try {
-          this.controller.loadUrl("resource://rawfile/index.html");
-        } catch (error) {
-          console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-        }
-        this.errorReceive = ''
+        this.isReceive = 1;
       }
     }
   }
@@ -115,16 +118,17 @@ struct WebAttributeTest {
             console.log("onBlur==>")
           })
           .onClick(async () => {
-            console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitOnRequestSelected001": {
                   try {
                     this.onRequestSelectedCalled = false
                     focusControl.requestFocus('WebAttributeTestButton')
-                    await Utils.sleep(1000)
+                    this.isRequestFocus = -1
                     this.controller.requestFocus()
-                    await Utils.sleep(1000)
-                    Utils.emitEvent(this.onRequestSelectedCalled, 70015)
+                    await Utils.waitForExist(()=>this.isRequestFocus, this.str+' isRequestFocus', 1, 1000);
+                    Utils.emitEvent(this.onRequestSelectedCalled, 178410)
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
@@ -149,9 +153,14 @@ struct WebAttributeTest {
           .onRequestSelected(() => {
             console.log("onRequestSelected==>")
             this.onRequestSelectedCalled = true
+            this.isRequestFocus = 1;
           })
           .onFocus(() => {
             console.log("WebOnFocus==>")
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
       .width('100%')

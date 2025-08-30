@@ -16,8 +16,13 @@
 import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 177301;
+let driver = Driver.create();
 
 export default function webInitTest() {
 
@@ -32,23 +37,18 @@ export default function webInitTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
-      done();
-    })
-
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_032
      *tc.name onPrompt
      *tc.desic Triggered when the web page wants to display a JavaScript prompt() dialog
      */
     it('onPrompt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnPrompt", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onPrompt", "age", 178, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("emitOnPrompt", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("onPrompt", "age", 177310, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", "onPrompt");
+      await Utils.waitForExist(() => isReturn, "onPrompt" + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_041
@@ -56,10 +56,12 @@ export default function webInitTest() {
      *tc.desic Triggered when the Web wants to display a JavaScript alert() dialog
      */
     it('onAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnAlert", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onAlert", "alert test", 63, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("emitOnAlert", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("onAlert", "alert test", 177320, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", "onAlert");
+      await Utils.waitForExist(() => isReturn, "onAlert" + '_returnCheck', true, 1000);
+      done();
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_042
@@ -67,10 +69,12 @@ export default function webInitTest() {
      *tc.desic Triggered when the web page wants to display a JavaScript confirm() dialog
      */
     it('onConfirm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitOnConfirm", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("onConfirm", "confirm test", 64, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("emitOnConfirm", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("onConfirm", "confirm test", 177330, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", "onConfirm");
+      await Utils.waitForExist(() => isReturn, "onConfirm" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

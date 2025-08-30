@@ -20,6 +20,10 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import business_error from '@ohos.base';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 178301;
+const driver = Driver.create();
 
 @Entry
 @Component
@@ -64,16 +68,19 @@ struct WebInitTest {
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
 
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -82,13 +89,7 @@ struct WebInitTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        try {
-          this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-        } catch (error) {
-          console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-        }
-        this.interceptUrl = ''
-        this.consoleMsg = ''
+        this.isReceive = 1;
       }
     }
   }
@@ -107,10 +108,13 @@ struct WebInitTest {
           .key('WebInitTestButton')
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitGetRequestFocus": {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl({ url: "resource://rawfile/second.html" });
-                  await Utils.sleep(2000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   sendEventByKey('textInput', 10, '');
                   break;
               }
@@ -150,11 +154,15 @@ struct WebInitTest {
           .mixedMode(this.mixedMode)
           .userAgent("Mozila/5.0 (Linux; Andriod 9; VRD-AL10; HMSCore 6.3.0.331) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.0.4.1 MobileSafari/537.36")
           .onFocus(() => {
-            Utils.emitEvent("requestFocus", 126);
+            Utils.emitEvent("requestFocus", 178310);
           })
           .onBlur(() => {
             console.info("onBlur==>");
             this.controller.requestFocus();
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
     }

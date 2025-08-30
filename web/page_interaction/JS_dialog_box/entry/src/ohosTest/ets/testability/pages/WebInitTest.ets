@@ -22,6 +22,8 @@ import testsuite from '../../test/List.test';
 import BusinessError from '@ohos.base';
 import window from '@ohos.window'
 
+const EVENT_ID_SET_SUITE_KEY = 177301;
+
 @Entry
 @Component
 struct WebInitTest {
@@ -36,17 +38,19 @@ struct WebInitTest {
   @State consoleMsg: string = ''
   @State screenHeight: number = 0;
   @State avoidAreaChangeStr: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -55,6 +59,7 @@ struct WebInitTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
         try {
           this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
@@ -79,36 +84,34 @@ struct WebInitTest {
           .key('WebInitTestButton')
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitOnPrompt": {
-                  this.controller.loadUrl("resource://rawfile/index.html");
-                  setTimeout(() => {
-                    this.controller.runJavaScript('toPrompt()')
-                      .then((result) => {
-                        console.log('result: ' + result);
-                      })
-                  }, 3000);
-                  break;
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/index.html");
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.runJavaScript('toPrompt()')
+                  .then((result) => {
+                    console.log('result: ' + result);
+                  })
+                break;
               }
               case "emitOnAlert": {
-                  this.controller.runJavaScript('alertTest()')
-                    .then((result) => {
-                      console.log('result: ' + result);
-                    })
-                  setTimeout(() => {
-                    Utils.emitEvent(this.alert, 63);
-                  }, 3000);
-                  break;
+                this.controller.runJavaScript('alertTest()')
+                  .then((result) => {
+                    console.log('result: ' + result);
+                    Utils.emitEvent(this.alert, 177320);
+                  })
+                break;
               }
               case "emitOnConfirm": {
-                  this.controller.runJavaScript('confirmTest()')
-                    .then((result) => {
-                      console.log('result: ' + result);
-                    })
-                  setTimeout(() => {
-                    Utils.emitEvent(this.confirm, 64);
-                  }, 3000);
-                  break;
+                this.controller.runJavaScript('confirmTest()')
+                  .then((result) => {
+                    console.log('result: ' + result);
+                    Utils.emitEvent(this.confirm, 177330);
+                  })
+                break;
               }
             }
           })
@@ -126,7 +129,7 @@ struct WebInitTest {
           })
           .onPrompt((event) => {
             event.result.handlePromptConfirm("onPrompt ok");
-            Utils.emitEvent(event.message, 178);
+            Utils.emitEvent(event.message, 177310);
             return true;
           })
           .javaScriptAccess(true)
@@ -148,6 +151,10 @@ struct WebInitTest {
                 console.log('The request header key is : ' + i.headerKey + ', value is : ' + i.headerValue)
               }
             }
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
       .width('100%')

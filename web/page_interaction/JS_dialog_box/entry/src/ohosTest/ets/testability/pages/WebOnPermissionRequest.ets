@@ -19,6 +19,10 @@ import webView from '@ohos.web.webview';
 import PermissionsUtils from '../../test/PermissionsUtils';
 import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+const EVENT_ID_SET_SUITE_KEY = 177401;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -27,18 +31,24 @@ struct WebOnPermissionRequest {
   @State str: string = ""
   @State deny: boolean = false
   @State userAgentPC:string = "";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isRunJSEnd: number = -1
+  @State isOperateEnd: number = -1
+  @State isOnPermissionRequestEnd: number = -1
+  @State isOnConsoleEnd: number = -1
   permissionRequest: PermissionRequest | null = null
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -47,6 +57,7 @@ struct WebOnPermissionRequest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -65,24 +76,31 @@ struct WebOnPermissionRequest {
           })
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitPermissionRequestDeny001": {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   try {
                     this.deny = true;
-                    this.controller.runJavaScript("getMedia()", (error) => {
+                    this.controller.runJavaScript("getMedia()", (error,result) => {
                       if (error) {
                         console.info('getMedia() return error: ' + error)
+                        return
+                      }
+                      if (result) {
+                        console.info(`return value is: ${result}`);
                       }
                     })
-                    await Utils.sleep(2000)
+                    await Utils.waitForExist(()=>this.isOnPermissionRequestEnd, this.str+' isOnPermissionRequestEnd', 1, 1000);
                     this.controller.runJavaScript("getResult()", (error, result) => {
                       if (error) {
                         console.info('getResult() return error: ' + error)
+                        return
                       }
                       if (result) {
                         console.info('getResult() return result: ' + result)
-                        Utils.emitEvent(result, 70320)
+                        Utils.emitEvent(result, 177410)
                       }
                     })
 
@@ -91,24 +109,26 @@ struct WebOnPermissionRequest {
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"deny"', 70320)
+                  Utils.emitEvent('"deny"', 177410)
                 }
               }
               case "emitPermissionRequestGrant001": {
+                await Utils.waitForReleaseDriver(this.str, driver)
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   this.userAgentPC = this.controller.getUserAgent();
                   if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent('"grant"', 70322)
+                    Utils.emitEvent('"grant"', 177420)
                     break;
                   }
                   try {
                     this.deny = false;
-                    this.controller.runJavaScript("getMedia()", (error) => {
-                      if (error) {
-                        console.info('getMedia() return error: ' + error)
-                      }
+                    this.isRunJSEnd = -1
+                    this.controller.runJavaScript("getMedia()").then((result) => {
+                      console.log('wait for JS end, result: ' + result)
+                      this.isRunJSEnd = 1
+                    }).catch((error: BusinessError) => {
+                      console.error("error: " + error);
                     })
-                    await Utils.sleep(8000)
                     PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
                       (success: boolean) => {
                         if (success) {
@@ -119,19 +139,21 @@ struct WebOnPermissionRequest {
                             console.info('permissionRequest is null')
                           }
                         }
+                        this.isOperateEnd = 1
                       })
-                    await Utils.sleep(8000);
-                    let driver = Driver.create();
-                    let component = await driver.findComponent(ON.text('允许'));
+                    let component = await driver.waitForComponent(ON.text('允许'),10000);
                     await component.click();
-                    await Utils.sleep(8000);
+                    await Utils.waitForReleaseDriver(this.str, driver)
+                    await Utils.waitForExist(()=>this.isOperateEnd, this.str+' isOperateEnd', 1, 1000);
+                    await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
+                    await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
                     this.controller.runJavaScript("getResult()", (error, result) => {
                       if (error) {
                         console.info('getResult() return error: ' + error)
                       }
                       if (result) {
                         console.info('getResult() return result: ' + result)
-                        Utils.emitEvent(result, 70322)
+                        Utils.emitEvent(result, 177420)
                       }
                     })
 
@@ -140,7 +162,7 @@ struct WebOnPermissionRequest {
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"grant"', 70322)
+                  Utils.emitEvent('"grant"', 177420)
                 }
               }
             }
@@ -160,12 +182,18 @@ struct WebOnPermissionRequest {
                 this.permissionRequest = event.request
               }
             }
+            this.isOnPermissionRequestEnd = 1
           })
           .onConsole((event) => {
             if (event) {
               console.info('onConsole ====>' + event.message.getMessage())
+              this.isOnConsoleEnd = 1
             }
             return false
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
       .width('100%')

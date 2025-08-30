@@ -27,6 +27,8 @@ interface PreviewBuilderParam {
   progressVisible:boolean;
 }
 
+const EVENT_ID_SET_SUITE_KEY = 177201;
+
 @Entry
 @Component
 struct SelectionMenuLongPress {
@@ -90,6 +92,7 @@ struct SelectionMenuLongPress {
   @State progressVisible:boolean = true;
   @State isReceive: number = -1;
   @State str: string = 'WebElementType01'
+  @State isPageEnd: number = -1;
 
   @Builder
   MenuBuilder() {
@@ -109,18 +112,20 @@ struct SelectionMenuLongPress {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -130,13 +135,14 @@ struct SelectionMenuLongPress {
       Row() {
         Button("web test").key('WebElementTypeButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "WebElementType01": {
               let strJson = getInspectorByKey('WebElementTypeLink');
               let obj: ESObject = JSON.parse(strJson);
               console.info("[testScrollBar001] textResize:" + obj.$attrs.content);
-              Utils.emitEvent(obj.$attrs.content, 20250609)
+              Utils.emitEvent(obj.$attrs.content, 177210)
               break;
             }
 
@@ -204,6 +210,10 @@ struct SelectionMenuLongPress {
             return true;
           }
           return false;
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
 

@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 181201;
+const driver = Driver.create();
 
 export default function webZoomAccessTest() {
   describe('WebZoomAccessTest', () => {
@@ -33,7 +38,7 @@ export default function webZoomAccessTest() {
         if (!("WebZoomAccessTest" == pages.name)) {
           console.info("get WebZoomAccessTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebZoomAccessTestButton"), 10000);
           console.info("push WebZoomAccessTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,15 +52,7 @@ export default function webZoomAccessTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebZoomAccessTestTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebZoomAccessTestTest afterEach end");
       done();
     })
 
@@ -68,10 +65,12 @@ export default function webZoomAccessTest() {
     * @tc.level       : Level 1
     */
     it('testWebZoomAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebZoomAccess001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomAccess001", true, 6500, done);
-      sendEventByKey('WebZoomAccessTestButton', 10, '');
+      Utils.emitEvent("testWebZoomAccess001", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testWebZoomAccess001", true, 181210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebZoomAccessTestButton", "testWebZoomAccess001");
+      await Utils.waitForExist(() => isReturn, "testWebZoomAccess001" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -83,10 +82,12 @@ export default function webZoomAccessTest() {
     * @tc.level       : Level 1
     */
     it('testWebZoomAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebZoomAccess002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomAccess002", true, 6502, done);
-      sendEventByKey('WebZoomAccessTestButton', 10, '');
+      Utils.emitEvent("testWebZoomAccess002", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testWebZoomAccess002", true, 181220, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebZoomAccessTestButton", "testWebZoomAccess002");
+      await Utils.waitForExist(() => isReturn, "testWebZoomAccess002" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -98,10 +99,12 @@ export default function webZoomAccessTest() {
     * @tc.level       : Level 1
     */
     it('testWebZoomAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebZoomAccess003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomAccess003", true, 6504, done);
-      sendEventByKey('WebZoomAccessTestButton', 10, '');
+      Utils.emitEvent("testWebZoomAccess003", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testWebZoomAccess003", true, 181230, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebZoomAccessTestButton", "testWebZoomAccess003");
+      await Utils.waitForExist(() => isReturn, "testWebZoomAccess003" + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -113,10 +116,12 @@ export default function webZoomAccessTest() {
     * @tc.level       : Level 1
     */
     it('testWebZoomAccess004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebZoomAccess004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebZoomAccess004", true, 6506, done);
-      sendEventByKey('WebZoomAccessTestButton', 10, '');
+      Utils.emitEvent("testWebZoomAccess004", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("testWebZoomAccess004", true, 181240, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebZoomAccessTestButton", "testWebZoomAccess004");
+      await Utils.waitForExist(() => isReturn, "testWebZoomAccess004" + '_returnCheck', true, 1000);
+      done();
     })
   })
 }
