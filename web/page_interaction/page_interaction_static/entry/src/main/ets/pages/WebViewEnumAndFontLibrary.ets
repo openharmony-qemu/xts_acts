@@ -86,11 +86,11 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
             case 'emitWebContextMenuParamGetSourceType': {
-              // this.userAgentPC = this.controller.getUserAgent();
-              // if ((this.userAgentPC).includes('PC')) {
-              //   Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 809)
-              //   break;
-              // }
+              this.userAgentPC = this.controller.getUserAgent();
+              if ((this.userAgentPC).includes('PC')) {
+                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 809)
+                break;
+              }
               Utils.longClickComponent('webCenter')
               setTimeout(() => {
                 Utils.emitEvent(this.SourceTypeArr[this.SourceType], 809)
