@@ -74,3 +74,5 @@ export const OHConsumerSurfaceSetDefaultUsageSizeNormal: () => number;
 export const oHNativeWindowDropBufferModeSetTrueNormal: () => number;
 export const oHNativeWindowDropBufferModeSetAbNormal: () => number;
 export const oHNativeWindowDropBufferModeSetTrueNormal2: () => number;
+export const oHNativeImageReleaseNativeWindowBufferNormal: () => number;
+export const oHNativeImageReleaseNativeWindowBufferAbnormal01: () => number;
