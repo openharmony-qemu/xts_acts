@@ -71,9 +71,12 @@ export async function driveFn() {
   let dr = Driver.create();
   await sleep(COMMON_WAIT_DURATION);
   let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
-  await sleep(COMMON_WAIT_DURATION);
-  await power?.click();
-  await sleep(COMMON_WAIT_DURATION);
+  while (power) {
+    await sleep(COMMON_WAIT_DURATION);
+    await power?.click();
+    await sleep(COMMON_WAIT_DURATION);
+    power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  }
 }
 
 export function resourceName() {
@@ -105,18 +108,15 @@ export async function closeFd(fdNumber: number) {
 export async function getPermission(name = 'ohos.acts.multimedia.camera.supp.xts'): Promise<void> {
   try {
     console.info(TAG, 'getPermission start', name);
-
     let atManager = abilityAccessCtrl.createAtManager();
     let testContext: common.UIAbilityContext =
       AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;
     atManager.requestPermissionsFromUser(testContext, [
-      "ohos.permission.CAMERA",
-    /*
+          "ohos.permission.CAMERA",
           "ohos.permission.MICROPHONE",
           'ohos.permission.MEDIA_LOCATION',
           'ohos.permission.READ_IMAGEVIDEO',
-          'ohos.permission.WRITE_IMAGEVIDEO'
-    */
+          'ohos.permission.WRITE_IMAGEVIDEO',
     ], (err: BusinessError, data: PermissionRequestResult) => {
       if (err) {
         console.error(TAG, `requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);

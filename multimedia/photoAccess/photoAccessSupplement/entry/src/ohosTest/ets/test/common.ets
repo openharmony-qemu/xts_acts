@@ -18,6 +18,10 @@ import { BusinessError } from "@kit.BasicServicesKit";
 import { Driver, MatchPattern, ON } from "@kit.TestKit";
 import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
+import photoAccessHelper from '@ohos.file.photoAccessHelper';
+
+
 
 export const LOG_TAG = '[PhotoAccessXts].';
 const TAG = "photoAccessXtsSupp.common";
@@ -42,7 +46,14 @@ export function isEmpty(data: ESObject) {
   }
   return false;
 }
-
+export function fetchAllOption(): photoAccessHelper.FetchOptions  {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  return ops;
+}
 export function checkBackCamera() {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let supportedCamera = camera.getCameraManager(testContext).getSupportedCameras();
@@ -79,7 +90,16 @@ export async function driveFn() {
     power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   }
 }
-
+export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo(key, value);
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  console.info(`${testName} queryOps: ${key} = ${value}`);
+  return ops;
+}
 export function resourceName() {
   let timestamp = Date.now();
   let filename = `avRecorder_${timestamp}.mp4`;
@@ -118,7 +138,8 @@ export async function getPermission(name = 'ohos.acts.multimedia.photoAccess.sup
       "ohos.permission.MICROPHONE",
       'ohos.permission.MEDIA_LOCATION',
       'ohos.permission.READ_IMAGEVIDEO',
-      'ohos.permission.WRITE_IMAGEVIDEO'
+      'ohos.permission.WRITE_IMAGEVIDEO',
+      'ohos.permission.SHORT_TERM_WRITE_IMAGEVIDEO'
     ], (err: BusinessError, data: PermissionRequestResult) => {
       if (err) {
         console.error(TAG, `requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);
@@ -133,7 +154,14 @@ export async function getPermission(name = 'ohos.acts.multimedia.photoAccess.sup
     console.error(TAG, `getPermission failed, error: ${error}`);
   }
 }
-
+export async function copyImageToSandbox(fileName: string, pathUri: string) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  const rawFileContent = testContext.resourceManager.getRawFileContentSync(fileName);
+  const path = 'file://' + testContext.filesDir + "/" + pathUri;
+  const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  await fs.write(fd.fd, rawFileContent.buffer);
+  await fs.close(fd);
+}
 export { COMMON_WAIT_DURATION,
   cameraPosition,
   cameraType,
