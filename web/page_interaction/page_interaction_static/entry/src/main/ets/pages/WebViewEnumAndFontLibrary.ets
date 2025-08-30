@@ -86,8 +86,7 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
             case 'emitWebContextMenuParamGetSourceType': {
-              this.userAgentPC = this.controller.getUserAgent();
-              if ((this.userAgentPC).includes('PC')) {
+              if (this.controller.getUserAgent().includes('PC')) {
                 Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 809)
                 break;
               }
