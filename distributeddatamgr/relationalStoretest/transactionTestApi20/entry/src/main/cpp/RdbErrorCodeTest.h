@@ -50,5 +50,11 @@ napi_value TestEmptyTableName(napi_env env, napi_callback_info info);
 napi_value TestInvalidColumnType(napi_env env, napi_callback_info info);
 napi_value TestNoRowInQuery(napi_env env, napi_callback_info info);
 napi_value TestNoTransactionInSession(napi_env env, napi_callback_info info);
+napi_value TestInvalidColumnIndex(napi_env env, napi_callback_info info);
+napi_value TestAlreadyClosed(napi_env env, napi_callback_info info);
+napi_value TestNotSupportedAttachInWalMode(napi_env env, napi_callback_info info);
+napi_value TestAttachDatabaseBusy(napi_env env, napi_callback_info info);
+napi_value TestGoToNextRowResultClosed(napi_env env, napi_callback_info info);
+napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_RDBERRORCODETEST_H
