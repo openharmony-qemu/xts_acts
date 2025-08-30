@@ -335,6 +335,18 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+       console.info(`${TagFrmwk}: Determine if this is a default device`)
+       const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+          );
+       if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+       }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -350,18 +362,6 @@ export default function audioCapturerEnhanceTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-        console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-        console.info(`${TagFrmwk}: Determine if this is a default device`)
-        const detecteDevice = outputDeviceDescription.some(device => 
-            device.deviceType === audio.DeviceType.DISPLAY_PORT
-          );
-        if (detecteDevice) {
-          console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
-          done();
-          return;
-        }
         const isPlaybackCaptureAvailable = canIUse('SystemCapability.Multimedia.Audio.PlaybackCapture');
         console.info(`isPlaybackCaptureAvailable: ${isPlaybackCaptureAvailable}`)
         if (isPlaybackCaptureAvailable) {
