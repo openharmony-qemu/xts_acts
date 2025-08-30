@@ -221,18 +221,22 @@ export default function MechanicManagerAPI() {
      * @tc.type       : Function
      * @tc.level      : Level 3
      */
-    it("SUB_DH_MechanicManager_getAttachedMechDevices_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0100 begin-----------------");
-      try {
-        let mechInfos: mechanicManager.MechInfo[] = mechanicManager.getAttachedMechDevices();
-        console.info('SUB_DH_MechanicManager_getAttachedMechDevices_0100 设备列表: ' + JSON.stringify(mechInfos));
-        expect(false).assertFail();
-      } catch (error) {
-        console.error('SUB_DH_MechanicManager_getAttachedMechDevices_0100 查询失败, code: ' + error.code + ' message: ' + error.message);
-        expect(error.code == 33300001).assertTrue();
-      }
-      console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0100 end-----------------");
-    });
+    it("SUB_DH_MechanicManager_getAttachedMechDevices_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0100 begin-----------------");
+        try {
+          let mechInfos: mechanicManager.MechInfo[] = mechanicManager.getAttachedMechDevices();
+          console.info('SUB_DH_MechanicManager_getAttachedMechDevices_0100 设备列表: ' + JSON.stringify(mechInfos));
+          expect(mechInfos[0].mechId == 0).assertTrue();
+          expect(mechInfos[0].mechDeviceType == 0).assertTrue();
+          expect(mechInfos[0].mechName == "Osmo Mobile 7P").assertTrue();
+        } catch (error) {
+          console.error('SUB_DH_MechanicManager_getAttachedMechDevices_0100 查询失败, code: ' + error.code +
+            ' message: ' + error.message);
+          expect(error.code == 33300001).assertTrue();
+        }
+        console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0100 end-----------------");
+      });
 
     /**
      * @tc.number     : SUB_DH_MechanicManager_setCameraTrackingEnabled_0100
@@ -402,6 +406,74 @@ export default function MechanicManagerAPI() {
         expect(error.code == 401).assertTrue();
         console.info("-----------------SUB_DH_MechanicManager_on_0600 end-----------------");
       }
+    });
+
+    /**
+     * @tc.number     : SUB_DH_MechanicManager_on_0700
+     * @tc.name       : Provides capabilities for controlling and interacting with mechanical devices connected to this device.
+     * @tc.desc       : Subscribes to tracking events,mechanicManager.on接口调用
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("SUB_DH_MechanicManager_on_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.log("-----------------SUB_DH_MechanicManager_on_0700 begin-----------------");
+      try {
+        let callback = (result: mechanicManager.TrackingEventInfo) => {
+          console.info(`'SUB_DH_MechanicManager_on_0700 callback result: ' ${JSON.stringify(result)}`);
+          expect(result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_ENABLED ||
+            result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_USER_DISABLED ||
+            result.event === mechanicManager.TrackingEvent.CAMERA_TRACKING_LAYOUT_CHANGED
+          ).assertTrue();
+          done();
+        };
+        console.info('SUB_DH_MechanicManager_on_0700 Register');
+        mechanicManager.on("trackingStateChange", callback);
+        console.info('SUB_DH_MechanicManager_on_0700 Register: success');
+        let isTrack = mechanicManager.getCameraTrackingEnabled();
+        console.info(`'SUB_DH_MechanicManager_on_0700 tracking status:' ${isTrack}`);
+        mechanicManager.setCameraTrackingEnabled(!isTrack);
+        let isTrack2 = mechanicManager.getCameraTrackingEnabled();
+        console.info(`'SUB_DH_MechanicManager_on_0700 tracking status:' ${isTrack2}`);
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_on_0700 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+        expect(error.code == 33300001).assertTrue();
+        done();
+      }
+      done();
+      console.log("-----------------SUB_DH_MechanicManager_on_0700 end-----------------");
+    });
+ 
+    /**
+     * @tc.number     : SUB_DH_MechanicManager_on_0800
+     * @tc.name       : Provides capabilities for controlling and interacting with mechanical devices connected to this device.
+     * @tc.desc       : Subscribes to device attachment state change events,mechanicManager.on接口正常调用
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it("SUB_DH_MechanicManager_on_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.log("-----------------SUB_DH_MechanicManager_on_0800 begin-----------------");
+      try {
+        let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+          console.info(`'SUB_DH_MechanicManager_on_0800 callback result: ' ${JSON.stringify(result)}`);
+          expect(result.state === mechanicManager.AttachState.ATTACHED ||
+            result.state === mechanicManager.AttachState.DETACHED).assertTrue();
+          expect(result.mechInfo[0].mechId == 0).assertTrue();
+          expect(result.mechInfo[0].mechDeviceType == 0).assertTrue();
+          expect(result.mechInfo[0].mechName == "Osmo Mobile 7P").assertTrue();
+          done();
+        };
+        console.info('SUB_DH_MechanicManager_on_0800 Register');
+        mechanicManager.on("attachStateChange", callback);
+        console.info('SUB_DH_MechanicManager_on_0800 Register: success');
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_on_0800 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      done();
+      console.log("-----------------SUB_DH_MechanicManager_on_0800 end-----------------");
     });
 
     /**
