@@ -91,7 +91,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0100
-     * @tc.name Test Random. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0100
      * @tc.desc enable hardware entropy
      * @tc.size Medium
      * @tc.type Func
@@ -114,7 +114,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0200
-     * @tc.name Test Random. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0200
      * @tc.desc enable hardware entropy, pthread
      * @tc.size Medium
      * @tc.type Func
@@ -142,7 +142,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0300
-     * @tc.name Test Random. Sync style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0300
      * @tc.desc enable hardware entropy with seed
      * @tc.size Medium
      * @tc.type Func
@@ -169,7 +169,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0400
-     * @tc.name Test Random. Promise style. Process success
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0400
      * @tc.desc enable hardware entropy with seed
      * @tc.size Medium
      * @tc.type Func
@@ -198,7 +198,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0500
-     * @tc.name Test Random. Sync style. Process failed
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0500
      * @tc.desc enable hardware entropy
      * @tc.size Medium
      * @tc.type Func
@@ -221,7 +221,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
 
     /**
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0600
-     * @tc.name Test Random. Sync style. Process failed
+     * @tc.name SUB_Security_CryptoFramework_Random_Func_0600
      * @tc.desc enable hardware entropy
      * @tc.size Medium
      * @tc.type Func
