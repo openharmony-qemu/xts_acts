@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 let loadedUrl: string;
 
@@ -58,13 +59,20 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isRunJSEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160700,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(160700)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,19 +81,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -100,25 +97,30 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           console.info("key==>" + this.str);
           switch (this.str) {
             case "emitFileAccessTrue": {
               this.fileAccess = true;
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.runJavaScript({ script: "openRawFile()" });
-              setTimeout(() => {
                 this.controller.runJavaScript({
                   script: "getTitle()", callback: (res) => {
-                    Utils.emitEvent(res, 190);
+                    Utils.emitEvent(res, 160710);
                   }
                 })
-              }, 3000);
+
               break;
             }
             case "emitOnInactive": {
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
+              await waitForExist(() => this.isPageEnd, this.str, 0);
               this.controller.onInactive();
-              setTimeout(() => {
                 let onInactiveCalled = false;
                 this.controller.runJavaScript({
                   script: "getTitle()", callback: (res) => {
@@ -126,19 +128,18 @@ struct Index {
                     if (res == "\"index\"") {
                       onInactiveCalled = true;
                     }
-                    Utils.emitEvent(onInactiveCalled, 84);
+                    Utils.emitEvent(onInactiveCalled, 160720);
                   }
                 })
-              }, 3000);
               break;
             }
             case "emitOnActive": {
               this.controller.onActive();
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
                 let onActiveCalled = this.pageBegin
-                Utils.emitEvent(onActiveCalled, 85)
-              }, 5000);
+                Utils.emitEvent(onActiveCalled, 160730)
               break;
             }
 
@@ -179,12 +180,6 @@ struct Index {
         .initialScale(this.initialScale)
         .mixedMode(this.mixedMode)
         .userAgent("Mozila/5.0 (Linux; Andriod 9; VRD-AL10; HMSCore 6.3.0.331) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.0.4.1 MobileSafari/537.36")
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onUrlLoadIntercept((event) => {
           console.info("onUrlLoadIntercept==>" + event?.data);
           loadedUrl = String(event?.data);
@@ -219,6 +214,7 @@ struct Index {
           this.pageBegin = event.url;
         })
         .onPageEnd((event) => {
+          this.isPageEnd = 0;
           this.pageEnd = event.url;
           console.log("onPageEnd==>");
           if (this.enterPageEnd) {
