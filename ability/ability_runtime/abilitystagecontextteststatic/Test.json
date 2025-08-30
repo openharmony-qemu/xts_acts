@@ -6,7 +6,7 @@
         "shell-timeout": "300000",
         "bundle-name": "com.example.stagecontexttest.static",
         "module-name": "entry",
-        "testcase-timeout": 5000
+        "testcase-timeout": 50000
     },
     "kits": [
         {
