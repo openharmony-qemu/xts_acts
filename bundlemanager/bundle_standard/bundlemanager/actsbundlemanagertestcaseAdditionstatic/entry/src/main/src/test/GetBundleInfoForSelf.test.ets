@@ -140,7 +140,7 @@ export default function getBundleInfoForSelf() {
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ROUTER_MAP).then((data: BundleInfo) => {
           hilog.info(domain, tag, 'getBundleInfoForSelfWithROUTERMAP  ====> start');
           expect(data.appInfo).assertEqual(null);
-          expect(data.hapModulesInfo[0].type + '').assertEqual('1');
+          expect(data.hapModulesInfo[0].type).assertEqual(bundle.BundleType.ATOMIC_SERVICE);
           expect(data.hapModulesInfo[0].routerMap.length).assertLarger(0.0);
           expect(data.hapModulesInfo[0].routerMap[0].name).assertEqual("DynamicPage1");
           expect(data.hapModulesInfo[0].routerMap[0].pageSourceFile).assertEqual("src/main/ets");
