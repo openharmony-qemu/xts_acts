@@ -180,6 +180,10 @@ napi_value Http_RequestRequest(napi_env env, napi_callback_info info)
     } else if (index == CASE_INDEX_3) {
         request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
         returnValue = OH_Http_Request(nullptr, nullptr, handler);
+    } else if (index == CASE_INDEX_4) {
+        request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
+        Http_ResponseCallback callback = ResponseCallback;
+        returnValue = OH_Http_Request(nullptr, callback, handler);
     }
     if (request->options != nullptr) {
         free(request->options);
@@ -406,7 +410,8 @@ napi_value Http_Client_Cert(napi_env env, napi_callback_info info)
     Http_ResponseCallback callback = ResponseCallback;
     Http_EventsHandler handler;
     const char* clientCertTest = "test";
-    request->options->clientCert = (Http_ClientCert *)calloc(1, sizeof(Http_ClientCert));
+    Http_ClientCert clientCert;
+    request->options->clientCert = &clientCert;
     request->options->clientCert->certPath = strdup(clientCertTest);
     request->options->clientCert->keyPassword = strdup(clientCertTest);
     request->options->clientCert->keyPath = strdup(clientCertTest);
@@ -479,6 +484,7 @@ napi_value Http_ProxyProxy(napi_env env, napi_callback_info info)
     request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
     
     Http_Proxy httpProxy;
+    std::fill_n(reinterpret_cast<unsigned char*>(&httpProxy), sizeof(httpProxy), '\0');
     httpProxy.proxyType = Http_ProxyType::HTTP_PROXY_CUSTOM;
     request->options->httpProxy = &httpProxy;
     httpProxy.customProxy.host = "host test";
@@ -687,6 +693,20 @@ napi_value Http_Events_Handler(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value Http_DestroyHeaders(napi_env env, napi_callback_info info)
+{
+    int32_t index = GetInt(env, info, 0);
+    if (index == CASE_INDEX_1) {
+        Http_Headers *header = OH_Http_CreateHeaders();
+        OH_Http_DestroyHeaders(&header);
+    } else {
+        OH_Http_DestroyHeaders(nullptr);
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -717,6 +737,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Http_Resps", nullptr, Http_Resps, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Http_Req", nullptr, Http_Req, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Http_Events_Handler", nullptr, Http_Events_Handler, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Http_DestroyHeaders", nullptr, Http_DestroyHeaders, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
