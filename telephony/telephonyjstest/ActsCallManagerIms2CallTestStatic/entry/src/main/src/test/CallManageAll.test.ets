@@ -81,9 +81,9 @@ export default function CallManageImsCall() {
 
     /**
      * @tc.number Telephony_CallManager_getCallState_Async_0100
-     * @tc.name To get the idle call status, call getCallState() to get the current call status.
+     * @tc.name Telephony_CallManager_getCallState_Async_0100.
      *             call.CALL_STATE_IDLE is returned
-     * @tc.desc Function test
+     * @tc.desc To get the idle call status, call getCallState() to get the current call status.
      */
     it('Telephony_CallManager_getCallState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       call.getCallState((err, data) => {
