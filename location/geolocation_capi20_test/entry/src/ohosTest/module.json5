@@ -44,6 +44,26 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.LOCATION"
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION"
+      },
+      {
+        "name": "ohos.permission.LOCATION_IN_BACKGROUND"
+      },
+      {
+        "name": "ohos.permission.CONTROL_LOCATION_SWITCH"
+      },
+      {
+        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
+      },
+      {
+        "name": "ohos.permission.MANAGE_SECURE_SETTINGS"
+      }
     ]
   }
 }
