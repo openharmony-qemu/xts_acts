@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import actslocationTest from "./ActslocationCapiStaticTest.test";
+import actslocationTest from "./ActslocationCapiStatic.test";
 export default function testsuite() {
   actslocationTest();
 }
