@@ -159,5 +159,36 @@ export default function actslocationTest() {
                 done();
             })
 
+            /*
+            * @tc.number: Sub_Location_GetCurrentLocation_0200
+            * @tc.name: Sub_Location_GetCurrentLocation_0200
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 0
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it ('Sub_Location_GetCurrentLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+                async(done:()=>void):Promise<void>=>{
+                    const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0200'
+                    try{
+                        geolocaiontManager.getCurrentLocation(
+                            (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
+                                if(!geoLocationManager.isLocationEnabled()){
+                                    if(err !=null){
+                                        expect(err?.code).assertEqual(3301100)
+                                    }
+                                }
+                            });
+                    }catch(err:BusinessError){
+                        hilog.error(domain,TAG,'[lns_js] getCurrentLocation try err.'+JSON.stringify(err));
+                        expect(false).assertTrue();
+                    }
+                    await Utils.msSleep(1000)
+                    done();
+                })
+
+
+
     })
 }
