@@ -110,7 +110,7 @@ export default function globalTest2() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0100
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0100
      * @tc.name      : test_concurrent_collections_map_001
      * @tc.desc      : test_concurrent_collections_map_001 - test Map entries method
      * @tc.size      : MediumTest
@@ -146,7 +146,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0200
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0200
      * @tc.name      : test_concurrent_collections_map_002
      * @tc.desc      : test_concurrent_collections_map_002 - test Map keys method
      * @tc.size      : MediumTest
@@ -182,7 +182,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0300
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0300
      * @tc.name      : test_concurrent_collections_map_003
      * @tc.desc      : test_concurrent_collections_map_003 - test Map values method
      * @tc.size      : MediumTest
@@ -218,7 +218,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0400
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0400
      * @tc.name      : test_concurrent_collections_map_004
      * @tc.desc      : test_concurrent_collections_map_004 - test Map get method
      * @tc.size      : MediumTest
@@ -254,7 +254,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0500
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0500
      * @tc.name      : test_concurrent_collections_map_005
      * @tc.desc      : test_concurrent_collections_map_005 - test Map has method
      * @tc.size      : MediumTest
@@ -291,7 +291,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0600
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0600
      * @tc.name      : test_concurrent_collections_map_006
      * @tc.desc      : test_concurrent_collections_map_006 - test Map set method
      * @tc.size      : MediumTest
@@ -325,7 +325,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0700
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0700
      * @tc.name      : test_concurrent_collections_map_007
      * @tc.desc      : test_concurrent_collections_map_007 - test Map delete method
      * @tc.size      : MediumTest
@@ -359,7 +359,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0800
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0800
      * @tc.name      : test_concurrent_collections_map_008
      * @tc.desc      : test_concurrent_collections_map_008 - test Map clear method
      * @tc.size      : MediumTest
@@ -393,7 +393,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_0900
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_0900
      * @tc.name      : test_concurrent_collections_map_009
      * @tc.desc      : test_concurrent_collections_map_009 - test Map forEach method
      * @tc.size      : MediumTest
@@ -429,7 +429,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1000
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1000
      * @tc.name      : test_concurrent_collections_map_010
      * @tc.desc      : test_concurrent_collections_map_010 - test Map size property
      * @tc.size      : MediumTest
@@ -465,7 +465,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1100
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1100
      * @tc.name      : test_concurrent_collections_set_011
      * @tc.desc      : test_concurrent_collections_set_011 - test Set entries method
      * @tc.size      : MediumTest
@@ -501,7 +501,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1200
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1200
      * @tc.name      : test_concurrent_collections_set_012
      * @tc.desc      : test_concurrent_collections_set_012 - test Set keys method
      * @tc.size      : MediumTest
@@ -537,7 +537,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1300
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1300
      * @tc.name      : test_concurrent_collections_set_013
      * @tc.desc      : test_concurrent_collections_set_013 - test Set values method
      * @tc.size      : MediumTest
@@ -573,7 +573,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1400
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1400
      * @tc.name      : test_concurrent_collections_set_014
      * @tc.desc      : test_concurrent_collections_set_014 - test Set has method
      * @tc.size      : MediumTest
@@ -609,7 +609,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1500
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1500
      * @tc.name      : test_concurrent_collections_set_015
      * @tc.desc      : test_concurrent_collections_set_015 - test Set add method
      * @tc.size      : MediumTest
@@ -643,7 +643,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1600
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1600
      * @tc.name      : test_concurrent_collections_set_016
      * @tc.desc      : test_concurrent_collections_set_016 - test Set delete method
      * @tc.size      : MediumTest
@@ -677,7 +677,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1700
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1700
      * @tc.name      : test_concurrent_collections_set_017
      * @tc.desc      : test_concurrent_collections_set_017 - test Set clear method
      * @tc.size      : MediumTest
@@ -711,7 +711,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1800
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1800
      * @tc.name      : test_concurrent_collections_set_018
      * @tc.desc      : test_concurrent_collections_set_018 - test Set forEach method
      * @tc.size      : MediumTest
@@ -747,7 +747,7 @@ export default function globalTest2() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_COLLECTIONS_TEST_1900
+     * @tc.number    : SUB_CONCURRENT_MAPANDSET_TEST_1900
      * @tc.name      : test_concurrent_collections_set_019
      * @tc.desc      : test_concurrent_collections_set_019 - test Set size property
      * @tc.size      : MediumTest

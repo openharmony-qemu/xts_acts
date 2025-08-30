@@ -22,7 +22,8 @@ export async function test_bitvector_constructor_001_task(length: number, name: 
 }
 
 @Concurrent
-export async function test_bitvector_push_001_task(initialLength: number, elements: number[], name: string, index: number) {
+export async function test_bitvector_push_001_task(initialLength: number, elements: number[], name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     try {
       let bitVector: collections.BitVector = new collections.BitVector(initialLength);
@@ -45,7 +46,8 @@ export async function test_bitvector_push_001_task(initialLength: number, elemen
 }
 
 @Concurrent
-export async function test_bitvector_pop_001_task(initialLength: number, elements: number[], name: string, index: number) {
+export async function test_bitvector_pop_001_task(initialLength: number, elements: number[], name: string,
+  index: number) {
   await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => {
     try {
       let bitVector: collections.BitVector = new collections.BitVector(initialLength);

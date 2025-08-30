@@ -1175,7 +1175,7 @@ export async function test_Float32array_keys_fixed_001(name: string, index: numb
     console.info(`${name} task ${index} start`);
 
     let originalValues: number[] = [1, 2, 3, 4, 5];
-    let Float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
+    let float32Array: collections.Float32Array = new collections.Float32Array(originalValues);
 
     console.info(`${name} task ${index} - Original array: [${Array.from(Float32Array)}]`);
 
