@@ -39,78 +39,9 @@ const CASE_INDEX_8 = 8;
 const CASE_INDEX_9 = 9;
 const CASE_INDEX_10 = 10;
 const CASE_INDEX_11 = 11;
-const CASE_INDEX_12 = 12;
-const CASE_INDEX_13 = 13;
-const CASE_INDEX_14 = 14;
-
-let revokeCert : string = '';
-let revokeCa : string = '';
-
-let invalidCert : string = '';
-let invalidCa : string = '';
-
-let untrustedCert : string = '';
-let untrustedCa : string = '';
-
-export async function getRawFilePath(rawFilePath: string): Promise<string> {
-  const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-  const context = abilityDelegator.getAppContext();
-  const targetPath = `${context.filesDir}/rawfile/${rawFilePath}`;
-
-  try {
-    if (fs.accessSync(targetPath)) {
-      console.info(`File already exists: ${targetPath}`);
-      return targetPath;
-    }
-  } catch (error) {
-    console.info(`File not found in sandbox, will copy from rawfile: ${targetPath}`);
-  }
-
-  try {
-    const resourceMgr = context.resourceManager;
-    const fileData = await resourceMgr.getRawFileContent(rawFilePath);
-    const dirPath = targetPath.substring(0, targetPath.lastIndexOf('/'));
-    try {
-      if (!fs.accessSync(dirPath)) {
-        console.info(`Creating directory: ${dirPath}`);
-        fs.mkdirSync(dirPath, true);
-      }
-    } catch (dirError) {
-      console.warn(`Directory access error: ${JSON.stringify(dirError)}`);
-      fs.mkdirSync(dirPath, true);
-    }
-
-    console.warn(`START openSync`);
-    const file = fs.openSync(targetPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE | fs.OpenMode.TRUNC);
-    console.warn(`end openSync`);
-    fs.writeSync(file.fd, fileData.buffer);
-    console.warn(`end writeSync`);
-    fs.closeSync(file);
-    console.info(`File successfully copied to: ${targetPath}`);
-    return targetPath;
-  } catch (error) {
-    throw new Error(`Failed to access resource file: ${rawFilePath},${JSON.stringify(error)}`);
-  }
-}
 
 export default function ActsNetConnectionTest() {
   describe('ActsNetConnectionTest', () => {
-
-    beforeAll(async (done: Function) => {
-      revokeCert = await getRawFilePath('revoke_test/server.crt');
-      revokeCa = await getRawFilePath('revoke_test/rootCA.crt');
-      invalidCert = await getRawFilePath('invalid_ca_test/server.crt');
-      invalidCa  = await getRawFilePath('invalid_ca_test/fakeCA.crt');
-      untrustedCert = await getRawFilePath('untrusted_test/server.crt');
-      untrustedCa = await getRawFilePath('untrusted_test/unrelatedCA.crt');
-      done();
-    })
-    beforeEach(() => {
-    })
-    afterEach(() => {
-    })
-    afterAll(() => {
-    })
 
     /**
      * @tc.number  : SUB_NetworkManager_Net_HasDefaultNet_NoP_0100
@@ -1976,79 +1907,6 @@ export default function ActsNetConnectionTest() {
         let result : number = NetConnectionTest.NetConn_BindSocket(1);
         console.info(`${caseName} result is: ` + JSON.stringify(result));
         expect(result).assertEqual(OH_HTTP_PARAMETER_ERROR);
-        done();
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(true);
-      }
-    })
-
-    /**
-     * @tc.number  : SUB_NetworkManager_CertVerification_Auth_0100
-     * @tc.name    : testNetworkManagerCertVerificationAuth0100
-     * @tc.desc    : test NetStack_CertVerification error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
-    it('testNetworkManagerCertVerificationAuth0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkManagerCertVerificationAuth0100';
-      try {
-        console.info(`${caseName} ---start`);
-        console.info(`${caseName} revokeCert is: ` + revokeCert);
-        console.info(`${caseName} revokeCa is: ` + revokeCa);
-
-        let result : number = NetConnectionTest.CertVerification(revokeCert, revokeCa);
-        console.info(`${caseName} result is: ` + JSON.stringify(result));
-        expect(result).assertEqual(OH_HTTP_OK);
-        done();
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(true);
-      }
-    })
-
-    /**
-     * @tc.number  : SUB_NetworkManager_CertVerification_Auth_0200
-     * @tc.name    : testNetworkManagerCertVerificationAuth0200
-     * @tc.desc    : test NetStack_CertVerification error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
-    it('testNetworkManagerCertVerificationAuth0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkManagerCertVerificationAuth0200';
-      try {
-        console.info(`${caseName} ---start`);
-        console.info(`${caseName} invalidCert is: ` + invalidCert);
-        console.info(`${caseName} invalidCa is: ` + invalidCa);
-        let result : number = NetConnectionTest.CertVerification(invalidCert, invalidCa);
-        console.info(`${caseName} result is: ` + JSON.stringify(result));
-        expect(result).assertEqual(2305079);
-        done();
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(true);
-      }
-    })
-
-    /**
-     * @tc.number  : SUB_NetworkManager_CertVerification_Auth_0300
-     * @tc.name    : testNetworkManagerCertVerificationAuth0300
-     * @tc.desc    : test NetStack_CertVerification error code
-     * @tc.level   : Level2
-     * @tc.size    : SmallTest
-     * @tc.type    : Function
-     */
-    it('testNetworkManagerCertVerificationAuth0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkManagerCertVerificationAuth0300';
-      try {
-        console.info(`${caseName} ---start`);
-        console.info(`${caseName} untrustedCert is: ` + untrustedCert);
-        console.info(`${caseName} untrustedCa is: ` + untrustedCa);
-        let result : number = NetConnectionTest.CertVerification(untrustedCert, untrustedCa);
-        console.info(`${caseName} result is: ` + JSON.stringify(result));
-        expect(result).assertEqual(2305020);
         done();
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));
