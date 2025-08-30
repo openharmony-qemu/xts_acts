@@ -89,7 +89,7 @@ export default function Int8ArrayGlobalTest() {
     })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0001
+     * @tc.number    : SUB_INT8ARRAY_TEST_0001
      * @tc.name      : test_int8array_constructor_length_0
      * @tc.desc      : Test concurrent creation of Int8Array with 0 length using constructor via taskpool
      * @tc.size      : MediumTest
@@ -118,7 +118,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0002
+     * @tc.number    : SUB_INT8ARRAY_TEST_0002
      * @tc.name      : test_int8array_constructor_with_length
      * @tc.desc      : Test concurrent creation of Int8Array with specified length using constructor via taskpool
      * @tc.size      : SmallTest
@@ -165,7 +165,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0003
+     * @tc.number    : SUB_INT8ARRAY_TEST_0003
      * @tc.name      : test_int8array_constructor_with_array_buffer
      * @tc.desc      : Test concurrent creation of Int8Array using ArrayLike input via taskpool
      * @tc.size      : SmallTest
@@ -210,7 +210,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0004
+     * @tc.number    : SUB_INT8ARRAY_TEST_0004
      * @tc.name      : test_int8array_constructor_with_iterable_concurrently
      * @tc.desc      : Test Int8Array with iterable concurrently
      * @tc.size      : SmallTest
@@ -249,7 +249,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0005
+     * @tc.number    : SUB_INT8ARRAY_TEST_0005
      * @tc.name      : test_int8array_constructor_with_buffer
      * @tc.desc      : Test Int8Array with buffer
      * @tc.size      : SmallTest
@@ -299,7 +299,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0006
+     * @tc.number    : SUB_INT8ARRAY_TEST_0006
      * @tc.name      : test_int8array_static_from_array_like
      * @tc.desc      : Test int8array static from array like
      * @tc.size      : MediumTest
@@ -344,7 +344,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0007
+     * @tc.number    : SUB_INT8ARRAY_TEST_0007
      * @tc.name      : test_concurrent_int8array_from_fixed
      * @tc.desc      : Test Int8Array
      * @tc.size      : SmallTest
@@ -381,7 +381,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0008
+     * @tc.number    : SUB_INT8ARRAY_TEST_0008
      * @tc.name      : test_int8array_static_from_iterable
      * @tc.desc      : Test Int8Array static from iterable concurrently 100 times
      * @tc.size      : SmallTest
@@ -427,7 +427,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0009
+     * @tc.number    : SUB_INT8ARRAY_TEST_0009
      * @tc.name      : test_int8array_static_of_numbers_concurrently_100_times'
      * @tc.desc      : Test int8array static of numbers concurrently 100 times
      * @tc.size      : SmallTest
@@ -473,7 +473,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0010
+     * @tc.number    : SUB_INT8ARRAY_TEST_0010
      * @tc.name      : test_int8array_concurrent_read_write
      * @tc.desc      : Test concurrent read and write operations
      * @tc.size      : MediumTest
@@ -523,7 +523,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0011
+     * @tc.number    : SUB_INT8ARRAY_TEST_0011
      * @tc.name      : test_int8array_toLocaleString_concurrently_100_times
      * @tc.desc      : Test toLocaleString() method of Int8Array under concurrent conditions (100 times)
      * @tc.size      : MediumTest
@@ -573,7 +573,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0012
+     * @tc.number    : SUB_INT8ARRAY_TEST_0012
      * @tc.name      : test_int8array_copyWithin_function
      * @tc.desc      : Test copyWithin() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -628,7 +628,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0013
+     * @tc.number    : SUB_INT8ARRAY_TEST_0013
      * @tc.name      : test_concurrent_int8array_some
      * @tc.desc      : Test the some() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -687,7 +687,7 @@ export default function Int8ArrayGlobalTest() {
 
 
     /**
-     * @tc.number    : GLOBAL_TEST_0014
+     * @tc.number    : SUB_INT8ARRAY_TEST_0014
      * @tc.name      : test_concurrent_int8array_every
      * @tc.desc      : Test the every() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -742,7 +742,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0015
+     * @tc.number    : SUB_INT8ARRAY_TEST_0015
      * @tc.name      : test_concurrent_int8array_fill_basic
      * @tc.desc      : Test the fill() method of Int8Array under concurrent conditions (basic fixed scenario)
      * @tc.size      : MediumTest
@@ -779,7 +779,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0016
+     * @tc.number    : SUB_INT8ARRAY_TEST_0016
      * @tc.name      : test_concurrent_int8array_filter_basic
      * @tc.desc      : Test the filter() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -816,7 +816,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0017
+     * @tc.number    : SUB_INT8ARRAY_TEST_0017
      * @tc.name      : test_concurrent_int8array_find
      * @tc.desc      : Test the find() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -854,7 +854,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0018
+     * @tc.number    : SUB_INT8ARRAY_TEST_0018
      * @tc.name      : test_concurrent_int8array_findIndex_001
      * @tc.desc      : Test the findIndex() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -892,7 +892,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0019
+     * @tc.number    : SUB_INT8ARRAY_TEST_0019
      * @tc.name      : test_concurrent_int8array_forEach_001
      * @tc.desc      : Test the forEach() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -930,7 +930,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0020
+     * @tc.number    : SUB_INT8ARRAY_TEST_0020
      * @tc.name      : test_Uint8ClampedArray_concurrent_read_write
      * @tc.desc      : Test concurrent read and write operations with locks
      * @tc.size      : MediumTest
@@ -968,7 +968,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0021
+     * @tc.number    : SUB_INT8ARRAY_TEST_0021
      * @tc.name      : test_concurrent_int8array_lastIndexOf_001
      * @tc.desc      : Test the lastIndexOf() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1006,7 +1006,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0022
+     * @tc.number    : SUB_INT8ARRAY_TEST_0022
      * @tc.name      : test_concurrent_int8array_join_001
      * @tc.desc      : Test the join() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1044,7 +1044,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0023
+     * @tc.number    : SUB_INT8ARRAY_TEST_0023
      * @tc.name      : test_concurrent_int8array_map_001
      * @tc.desc      : Test the map() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1081,7 +1081,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0024
+     * @tc.number    : SUB_INT8ARRAY_TEST_0024
      * @tc.name      : test_concurrent_int8array_reduce_001
      * @tc.desc      : Test the reduce() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1119,7 +1119,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0025
+     * @tc.number    : SUB_INT8ARRAY_TEST_0025
      * @tc.name      : test_concurrent_int8array_reduceRight_001
      * @tc.desc      : Test the reduceRight() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1157,7 +1157,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0026
+     * @tc.number    : SUB_INT8ARRAY_TEST_0026
      * @tc.name      : test_concurrent_int8array_reduce_with_initial_001
      * @tc.desc      : Test the reduce() method of Int8Array with initial value under concurrent conditions
      * @tc.size      : MediumTest
@@ -1195,7 +1195,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0027
+     * @tc.number    : SUB_INT8ARRAY_TEST_0027
      * @tc.name      : test_concurrent_int8array_reduceRight_with_initial_001
      * @tc.desc      : Test the reduceRight() method of Int8Array with initial value under concurrent conditions
      * @tc.size      : MediumTest
@@ -1233,7 +1233,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0028
+     * @tc.number    : SUB_INT8ARRAY_TEST_0028
      * @tc.name      : test_concurrent_int8array_reduce_with_initial_string_001
      * @tc.desc      : Test the reduce() method of Int8Array with string initial value under concurrent conditions
      * @tc.size      : MediumTest
@@ -1271,7 +1271,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0029
+     * @tc.number    : SUB_INT8ARRAY_TEST_0029
      * @tc.name      : test_concurrent_int8array_reverse_001
      * @tc.desc      : Test the reverse() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1308,7 +1308,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0030
+     * @tc.number    : SUB_INT8ARRAY_TEST_0030
      * @tc.name      : test_concurrent_int8array_set_001
      * @tc.desc      : Test the set() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1345,7 +1345,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0031
+     * @tc.number    : SUB_INT8ARRAY_TEST_0031
      * @tc.name      : test_concurrent_int8array_slice_001
      * @tc.desc      : Test the slice() method of Int8Array under concurrent conditions
      * @tc.size      : MediumTest
@@ -1382,7 +1382,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0032
+     * @tc.number    : SUB_INT8ARRAY_TEST_0032
      * @tc.name      : test_concurrent_int8array_sort_fixed_001
      * @tc.desc      : Test the sort() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1419,7 +1419,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0033
+     * @tc.number    : SUB_INT8ARRAY_TEST_0033
      * @tc.name      : test_concurrent_int8array_subarray_fixed_001
      * @tc.desc      : Test the subarray() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1456,7 +1456,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0034
+     * @tc.number    : SUB_INT8ARRAY_TEST_0034
      * @tc.name      : test_concurrent_int8array_at_fixed_001
      * @tc.desc      : Test the at() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1493,7 +1493,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0035
+     * @tc.number    : SUB_INT8ARRAY_TEST_0035
      * @tc.name      : test_concurrent_int8array_includes_fixed_001
      * @tc.desc      : Test the includes() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1530,7 +1530,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0036
+     * @tc.number    : SUB_INT8ARRAY_TEST_0036
      * @tc.name      : test_concurrent_int8array_entries_fixed_001
      * @tc.desc      : Test the entries() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1567,7 +1567,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0037
+     * @tc.number    : SUB_INT8ARRAY_TEST_0037
      * @tc.name      : test_concurrent_int8array_keys_fixed_001
      * @tc.desc      : Test the keys() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1605,7 +1605,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0038
+     * @tc.number    : SUB_INT8ARRAY_TEST_0038
      * @tc.name      : test_concurrent_int8array_values_fixed_001
      * @tc.desc      : Test the values() method of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest
@@ -1642,7 +1642,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0039
+     * @tc.number    : SUB_INT8ARRAY_TEST_0039
      * @tc.name      : test_concurrent_int8array_index_access_fixed_001
      * @tc.desc      : Test index access (read/write) of Int8Array (fixed scenario) under concurrent conditions
      * @tc.size      : MediumTest

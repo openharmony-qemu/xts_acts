@@ -89,7 +89,7 @@ export default function Float32ArrayGlobalTest() {
     })
 
     /**
-     * @tc.number    : global_TEST_0001
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0001
      * @tc.name      : test_Float32array_constructor_length_0
      * @tc.desc      : Test concurrent creation of Float32Array with specified length using constructor via taskpool
      * @tc.size      : MediumTest

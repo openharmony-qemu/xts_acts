@@ -210,7 +210,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0004
+     * @tc.number    : SUB_INT16ARRAY_TEST_0004
      * @tc.name      : test_int16array_constructor_with_iterable_concurrently
      * @tc.desc      : Test concurrent creation of Int16Array with Iterable input via constructor using taskpool
      * @tc.size      : MediumTest
@@ -249,7 +249,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0005
+     * @tc.number    : SUB_INT16ARRAY_TEST_0005
      * @tc.name      : test_int16array_constructor_with_buffer
      * @tc.desc      : Test concurrent creation of Int16Array with ArrayBuffer (with byteOffset/length) via constructor using taskpool
      * @tc.size      : MediumTest
@@ -299,7 +299,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0006
+     * @tc.number    : SUB_INT16ARRAY_TEST_0006
      * @tc.name      : test_int16array_static_from_array_like
      * @tc.desc      : Test concurrent use of Int16Array.from() with ArrayLike input using taskpool
      * @tc.size      : MediumTest
@@ -344,7 +344,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0007
+     * @tc.number    : SUB_INT16ARRAY_TEST_0007
      * @tc.name      : test_concurrent_int16array_from_fixed_001
      * @tc.desc      : Test concurrent use of Int16Array.from() (fixed scenario) using taskpool
      * @tc.size      : MediumTest
@@ -381,7 +381,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0008
+     * @tc.number    : SUB_INT16ARRAY_TEST_0008
      * @tc.name      : test_int16array_static_from_iterable_concurrently_100_times
      * @tc.desc      : Test concurrent use of Int16Array.from() with Iterable input (100 times) using taskpool
      * @tc.size      : MediumTest
@@ -427,7 +427,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0009
+     * @tc.number    : SUB_INT16ARRAY_TEST_0009
      * @tc.name      : test_int16array_static_of_numbers_concurrently_100_times
      * @tc.desc      : Test concurrent use of Int16Array.of() with number inputs (100 times) using taskpool
      * @tc.size      : MediumTest
@@ -473,7 +473,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0010
+     * @tc.number    : SUB_INT16ARRAY_TEST_0010
      * @tc.name      : test_int16array_toString_concurrently_100_times
      * @tc.desc      : Test concurrent use of toString() method of Int16Array (100 times) using taskpool
      * @tc.size      : MediumTest
@@ -523,7 +523,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0011
+     * @tc.number    : SUB_INT16ARRAY_TEST_0011
      * @tc.name      : test_int16array_toLocaleString_concurrently_100_times
      * @tc.desc      : Test concurrent use of toLocaleString() method of Int16Array (100 times) using taskpool
      * @tc.size      : MediumTest
@@ -573,7 +573,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0012
+     * @tc.number    : SUB_INT16ARRAY_TEST_0012
      * @tc.name      : test_int16array_copyWithin_function
      * @tc.desc      : Test concurrent use of copyWithin() method of Int16Array using taskpool
      * @tc.size      : MediumTest
@@ -628,7 +628,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0013
+     * @tc.number    : SUB_INT16ARRAY_TEST_0013
      * @tc.name      : test_concurrent_int16array_some_001
      * @tc.desc      : Test the some() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -687,7 +687,7 @@ export default function Int16ArrayGlobalTest() {
 
 
     /**
-     * @tc.number    : GLOBAL_TEST_0014
+     * @tc.number    : SUB_INT16ARRAY_TEST_0014
      * @tc.name      : test_concurrent_int16array_every_001
      * @tc.desc      : Test the every() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -742,7 +742,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0015
+     * @tc.number    : SUB_INT16ARRAY_TEST_0015
      * @tc.name      : test_concurrent_int16array_fill_basic_fixed_001
      * @tc.desc      : Test the fill() method of Int16Array (basic fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -779,7 +779,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0016
+     * @tc.number    : SUB_INT16ARRAY_TEST_0016
      * @tc.name      : test_concurrent_int16array_filter_basic_fixed_001
      * @tc.desc      : Test the filter() method of Int16Array (basic fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -816,7 +816,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0017
+     * @tc.number    : SUB_INT16ARRAY_TEST_0017
      * @tc.name      : test_concurrent_int16array_find_001
      * @tc.desc      : Test the find() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -854,7 +854,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0018
+     * @tc.number    : SUB_INT16ARRAY_TEST_0018
      * @tc.name      : test_concurrent_int16array_findIndex_001
      * @tc.desc      : Test the findIndex() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -892,7 +892,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0019
+     * @tc.number    : SUB_INT16ARRAY_TEST_0019
      * @tc.name      : test_concurrent_int16array_forEach_001
      * @tc.desc      : Test the forEach() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -930,7 +930,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0020
+     * @tc.number    : SUB_INT16ARRAY_TEST_0020
      * @tc.name      : test_concurrent_int16array_indexOf_001
      * @tc.desc      : Test the indexOf() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -968,7 +968,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0021
+     * @tc.number    : SUB_INT16ARRAY_TEST_0021
      * @tc.name      : test_concurrent_int16array_lastIndexOf_001
      * @tc.desc      : Test the lastIndexOf() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1006,7 +1006,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0022
+     * @tc.number    : SUB_INT16ARRAY_TEST_0022
      * @tc.name      : test_concurrent_int16array_join_001
      * @tc.desc      : Test the join() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1044,7 +1044,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0023
+     * @tc.number    : SUB_INT16ARRAY_TEST_0023
      * @tc.name      : test_concurrent_int16array_map_001
      * @tc.desc      : Test the map() method of Int16Array under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1081,7 +1081,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0024
+     * @tc.number    : SUB_INT16ARRAY_TEST_0024
      * @tc.name      : test_concurrent_int16array_reduce_001
      * @tc.desc      : Test the reduce() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1119,7 +1119,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0025
+     * @tc.number    : SUB_INT16ARRAY_TEST_0025
      * @tc.name      : test_concurrent_int16array_reduceRight_001
      * @tc.desc      : Test the reduceRight() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1157,7 +1157,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0026
+     * @tc.number    : SUB_INT16ARRAY_TEST_0026
      * @tc.name      : test_concurrent_int16array_reduce_with_initial_001
      * @tc.desc      : Test the reduce() method of Int16Array (with initial value) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1195,7 +1195,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0027
+     * @tc.number    : SUB_INT16ARRAY_TEST_0027
      * @tc.name      : test_concurrent_int16array_reduceRight_with_initial_001
      * @tc.desc      : Test the reduceRight() method of Int16Array (with initial value) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1233,7 +1233,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0028
+     * @tc.number    : SUB_INT16ARRAY_TEST_0028
      * @tc.name      : test_concurrent_int16array_reduce_with_initial_string_001
      * @tc.desc      : Test the reduce() method of Int16Array (with string initial value) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1271,7 +1271,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0029
+     * @tc.number    : SUB_INT16ARRAY_TEST_0029
      * @tc.name      : test_concurrent_int16array_reverse_001
      * @tc.desc      : Test the reverse() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1308,7 +1308,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0030
+     * @tc.number    : SUB_INT16ARRAY_TEST_0030
      * @tc.name      : test_concurrent_int16array_set_001
      * @tc.desc      : Test the set() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1345,7 +1345,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0031
+     * @tc.number    : SUB_INT16ARRAY_TEST_0031
      * @tc.name      : test_concurrent_int16array_slice_001
      * @tc.desc      : Test the slice() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1382,7 +1382,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0032
+     * @tc.number    : SUB_INT16ARRAY_TEST_0032
      * @tc.name      : test_concurrent_int16array_sort_fixed_001
      * @tc.desc      : Test the sort() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1419,7 +1419,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0033
+     * @tc.number    : SUB_INT16ARRAY_TEST_0033
      * @tc.name      : test_concurrent_int16array_subarray_fixed_001
      * @tc.desc      : Test subarray() method of Int16Array under concurrent conditions (100 tasks) using taskpool
      * @tc.size      : MediumTest
@@ -1456,7 +1456,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0034
+     * @tc.number    : SUB_INT16ARRAY_TEST_0034
      * @tc.name      : test_concurrent_int16array_at_fixed_001
      * @tc.desc      : Test at() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1493,7 +1493,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0035
+     * @tc.number    : SUB_INT16ARRAY_TEST_0035
      * @tc.name      : test_concurrent_int16array_includes_fixed_001
      * @tc.desc      : Test includes() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1530,7 +1530,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0036
+     * @tc.number    : SUB_INT16ARRAY_TEST_0036
      * @tc.name      : test_concurrent_int16array_entries_fixed_001
      * @tc.desc      : Test entries() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1567,7 +1567,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0037
+     * @tc.number    : SUB_INT16ARRAY_TEST_0037
      * @tc.name      : test_concurrent_int16array_keys_fixed_001
      * @tc.desc      : Test keys() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1605,7 +1605,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0038
+     * @tc.number    : SUB_INT16ARRAY_TEST_0038
      * @tc.name      : test_concurrent_int16array_values_fixed_001
      * @tc.desc      : Test values() method of Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest
@@ -1642,7 +1642,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0039
+     * @tc.number    : SUB_INT16ARRAY_TEST_0039
      * @tc.name      : test_concurrent_int16array_index_access_fixed_001
      * @tc.desc      : Test index access operations on Int16Array (fixed scenario) under concurrent conditions using taskpool
      * @tc.size      : MediumTest

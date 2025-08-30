@@ -89,7 +89,7 @@ export default function Int32ArrayGlobalTest() {
     })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0001
+     * @tc.number    : SUB_INT132ARRAY_TEST_0001
      * @tc.name      : test_int32array_constructor_length_0
      * @tc.desc      : Test repeated creation of Int32Array with length 0 (100 times) to verify constructor stability
      * @tc.size      : MediumTest
@@ -118,7 +118,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0002
+     * @tc.number    : SUB_INT132ARRAY_TEST_0002
      * @tc.name      : test_int32array_constructor_with_length
      * @tc.desc      : Global test - Verify concurrent creation of Int32Array with specified length via constructor (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -165,7 +165,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0003
+     * @tc.number    : SUB_INT132ARRAY_TEST_0003
      * @tc.name      : test_int32array_constructor_with_array_buffer
      * @tc.desc      : Global test - Verify concurrent creation of Int32Array with ArrayBuffer input via constructor (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -210,7 +210,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0004
+     * @tc.number    : SUB_INT132ARRAY_TEST_0004
      * @tc.name      : test_int32array_constructor_with_iterable_concurrently
      * @tc.desc      : Global test - Verify concurrent creation of Int32Array with Iterable input via constructor (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -249,7 +249,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0005
+     * @tc.number    : SUB_INT132ARRAY_TEST_0005
      * @tc.name      : test_int32array_constructor_with_buffer
      * @tc.desc      : Global test - Verify concurrent creation of Int32Array with buffer + offset + length via constructor (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -299,7 +299,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0006
+     * @tc.number    : SUB_INT132ARRAY_TEST_0006
      * @tc.name      : test_int32array_static_from_array_like
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.from() with ArrayLike input (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -344,7 +344,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0007
+     * @tc.number    : SUB_INT132ARRAY_TEST_0007
      * @tc.name      : test_concurrent_int32array_from_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.from() (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -381,7 +381,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0008
+     * @tc.number    : SUB_INT132ARRAY_TEST_0008
      * @tc.name      : test_int32array_static_from_iterable_concurrently_100_times
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.from() with Iterable input (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -427,7 +427,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0009
+     * @tc.number    : SUB_INT132ARRAY_TEST_0009
      * @tc.name      : test_int32array_static_of_numbers_concurrently_100_times
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.of() with number inputs (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -473,7 +473,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0010
+     * @tc.number    : SUB_INT132ARRAY_TEST_0010
      * @tc.name      : test_int32array_toString_concurrently_100_times
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.toString() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -523,7 +523,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0011
+     * @tc.number    : SUB_INT132ARRAY_TEST_0011
      * @tc.name      : test_int32array_toLocaleString_concurrently_100_times
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.toLocaleString() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -573,7 +573,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0012
+     * @tc.number    : SUB_INT132ARRAY_TEST_0012
      * @tc.name      : test_int32array_copyWithin_function
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.copyWithin() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -628,7 +628,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0013
+     * @tc.number    : SUB_INT132ARRAY_TEST_0013
      * @tc.name      : test_concurrent_int32array_some_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.some() method under fixed scenario (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -687,7 +687,7 @@ export default function Int32ArrayGlobalTest() {
 
 
     /**
-     * @tc.number    : GLOBAL_TEST_0014
+     * @tc.number    : SUB_INT132ARRAY_TEST_0014
      * @tc.name      : test_concurrent_int32array_every_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.every() method under fixed scenario (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -742,7 +742,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0015
+     * @tc.number    : SUB_INT132ARRAY_TEST_0015
      * @tc.name      : test_concurrent_int32array_fill_basic_fixed_001
      * @tc.desc      : Global test - Verify basic fixed-scenario concurrent execution of Int32Array.fill() method (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -779,7 +779,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0016
+     * @tc.number    : SUB_INT132ARRAY_TEST_0016
      * @tc.name      : test_concurrent_int32array_filter_basic_fixed_001
      * @tc.desc      : Global test - Verify basic fixed-scenario concurrent execution of Int32Array.filter() method (100 tasks via taskpool)
      * @tc.size      : MediumTest
@@ -817,7 +817,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0017
+     * @tc.number    : SUB_INT132ARRAY_TEST_0017
      * @tc.name      : test_concurrent_int32array_find_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.find() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -855,7 +855,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0018
+     * @tc.number    : SUB_INT132ARRAY_TEST_0018
      * @tc.name      : test_concurrent_int32array_findIndex_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.findIndex() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -893,7 +893,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0019
+     * @tc.number    : SUB_INT132ARRAY_TEST_0019
      * @tc.name      : test_concurrent_int32array_forEach_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.forEach() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -931,7 +931,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0020
+     * @tc.number    : SUB_INT132ARRAY_TEST_0020
      * @tc.name      : test_concurrent_int32array_indexOf_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.indexOf() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -969,7 +969,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0021
+     * @tc.number    : SUB_INT132ARRAY_TEST_0021
      * @tc.name      : test_concurrent_int32array_lastIndexOf_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.lastIndexOf() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1007,7 +1007,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0022
+     * @tc.number    : SUB_INT132ARRAY_TEST_0022
      * @tc.name      : test_concurrent_int32array_join_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.join() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1045,7 +1045,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0023
+     * @tc.number    : SUB_INT132ARRAY_TEST_0023
      * @tc.name      : test_concurrent_int32array_map_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.map() method under fixed scenario (100 tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1082,7 +1082,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0024
+     * @tc.number    : SUB_INT132ARRAY_TEST_0024
      * @tc.name      : test_concurrent_int32array_reduce_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reduce() method (100 concurrent tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1120,7 +1120,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0025
+     * @tc.number    : SUB_INT132ARRAY_TEST_0025
      * @tc.name      : test_concurrent_int32array_reduceRight_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reduceRight() method (100 concurrent tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1158,7 +1158,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0026
+     * @tc.number    : SUB_INT132ARRAY_TEST_0026
      * @tc.name      : test_concurrent_int32array_reduce_with_initial_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reduce() method with initial value (100 concurrent tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1196,7 +1196,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0027
+     * @tc.number    : SUB_INT132ARRAY_TEST_0027
      * @tc.name      : test_concurrent_int32array_reduceRight_with_initial_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reduceRight() method with initial value (100 concurrent tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1234,7 +1234,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0028
+     * @tc.number    : SUB_INT132ARRAY_TEST_0028
      * @tc.name      : test_concurrent_int32array_reduce_with_initial_string_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reduce() method with string-type initial value (100 concurrent tasks via taskpool, 20-element array)
      * @tc.size      : MediumTest
@@ -1272,7 +1272,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0029
+     * @tc.number    : SUB_INT132ARRAY_TEST_0029
      * @tc.name      : test_concurrent_int32array_reverse_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.reverse() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1309,7 +1309,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0030
+     * @tc.number    : SUB_INT132ARRAY_TEST_0030
      * @tc.name      : test_concurrent_int32array_set_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.set() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1346,7 +1346,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0031
+     * @tc.number    : SUB_INT132ARRAY_TEST_0031
      * @tc.name      : test_concurrent_int32array_slice_001
      * @tc.desc      : Global test - Verify concurrent execution of Int32Array.slice() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1383,7 +1383,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0032
+     * @tc.number    : SUB_INT132ARRAY_TEST_0032
      * @tc.name      : test_concurrent_int32array_sort_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.sort() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1420,7 +1420,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0033
+     * @tc.number    : SUB_INT132ARRAY_TEST_0033
      * @tc.name      : test_concurrent_int32array_subarray_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.subarray() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1457,7 +1457,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0034
+     * @tc.number    : SUB_INT132ARRAY_TEST_0034
      * @tc.name      : test_concurrent_int32array_at_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.at() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1494,7 +1494,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0035
+     * @tc.number    : SUB_INT132ARRAY_TEST_0035
      * @tc.name      : test_concurrent_int32array_includes_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.includes() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1531,7 +1531,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0036
+     * @tc.number    : SUB_INT132ARRAY_TEST_0036
      * @tc.name      : test_concurrent_int32array_entries_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.entries() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1568,7 +1568,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0037
+     * @tc.number    : SUB_INT132ARRAY_TEST_0037
      * @tc.name      : test_concurrent_int32array_keys_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.keys() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1606,7 +1606,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0038
+     * @tc.number    : SUB_INT132ARRAY_TEST_0038
      * @tc.name      : test_concurrent_int32array_values_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent execution of Int32Array.values() method (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest
@@ -1643,7 +1643,7 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0039
+     * @tc.number    : SUB_INT132ARRAY_TEST_0039
      * @tc.name      : test_concurrent_int32array_index_access_fixed_001
      * @tc.desc      : Global test - Verify fixed-scenario concurrent index access operations on Int32Array (100 concurrent tasks via taskpool)
      * @tc.size      : MediumTest

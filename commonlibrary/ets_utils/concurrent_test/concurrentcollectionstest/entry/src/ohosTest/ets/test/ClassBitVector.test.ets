@@ -51,7 +51,7 @@ export default function BitVectorGlobalTest() {
     })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0010
+     * @tc.number    : SUB_BITVECTOR_TEST_0010
      * @tc.name      : test_concurrent_collections_bitvector_constructor_001
      * @tc.desc      : Test BitVector constructor with fixed zero length and other lengths
      * @tc.size      : MediumTest
@@ -88,7 +88,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0020
+     * @tc.number    : SUB_BITVECTOR_TEST_0020
      * @tc.name      : test_bitvector_push
      * @tc.desc      : Test BitVector push method with fixed elements [0, 1, 0, 1, 0]
      * @tc.size      : MediumTest
@@ -126,7 +126,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0030
+     * @tc.number    : SUB_BITVECTOR_TEST_0030
      * @tc.name      : test_bitvector_pop
      * @tc.desc      : Test BitVector pop method with fixed elements [0, 1, 0, 1, 0]
      * @tc.size      : MediumTest
@@ -164,7 +164,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0040
+     * @tc.number    : SUB_BITVECTOR_TEST_0040
      * @tc.name      : test_bitvector_has
      * @tc.desc      : Test BitVector has method with fixed elements and range [1, 4] for value 0
      * @tc.size      : MediumTest
@@ -207,7 +207,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0050
+     * @tc.number    : SUB_BITVECTOR_TEST_0050
      * @tc.name      : test_bitvector_setBitsByRange
      * @tc.desc      : Test BitVector setBitsByRange method with fixed elements and range [1, 3) to set value 1
      * @tc.size      : MediumTest
@@ -250,7 +250,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0060
+     * @tc.number    : SUB_BITVECTOR_TEST_0060
      * @tc.name      : test_bitvector_setAllBits
      * @tc.desc      : Test BitVector setAllBits method with fixed elements, setting all to 1
      * @tc.size      : MediumTest
@@ -291,7 +291,7 @@ export default function BitVectorGlobalTest() {
       })
 
      /**
-      * @tc.number    : GLOBAL_TEST_0070(crash)
+      * @tc.number    : SUB_BITVECTOR_TEST_0070(crash)
       * @tc.name      : test_concurrent_collections_bitvector
       * @tc.desc      : test getBitsByRange method of BitVector
       * @tc.size      : MediumTest
@@ -334,7 +334,7 @@ export default function BitVectorGlobalTest() {
        });
 
     /**
-     * @tc.number    : GLOBAL_TEST_0080
+     * @tc.number    : SUB_BITVECTOR_TEST_0080
      * @tc.name      : test_bitvector_resize
      * @tc.desc      : Test BitVector resize method to expand and shrink the BitVector
      * @tc.size      : MediumTest
@@ -376,7 +376,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0090
+     * @tc.number    : SUB_BITVECTOR_TEST_0090
      * @tc.name      : test_bitvector_getBitCountByRange
      * @tc.desc      : Test BitVector getBitCountByRange method with fixed elements and range [1, 4) for bit value 1
      * @tc.size      : MediumTest
@@ -419,7 +419,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0100
+     * @tc.number    : SUB_BITVECTOR_TEST_0100
      * @tc.name      : test_bitvector_getIndexOf
      * @tc.desc      : Test BitVector getIndexOf method with fixed elements and range [1, 4) for bit value 0
      * @tc.size      : MediumTest
@@ -462,7 +462,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0110
+     * @tc.number    : SUB_BITVECTOR_TEST_0110
      * @tc.name      : test_bitvector_getLastIndexOf
      * @tc.desc      : Test BitVector getLastIndexOf method with fixed elements and range [1, 4) for bit value 0
      * @tc.size      : MediumTest
@@ -505,7 +505,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0120
+     * @tc.number    : SUB_BITVECTOR_TEST_0120
      * @tc.name      : test_bitvector_flipBitByIndex
      * @tc.desc      : Test BitVector flipBitByIndex method with fixed elements, flipping bit at index 3
      * @tc.size      : MediumTest
@@ -546,7 +546,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0130
+     * @tc.number    : SUB_BITVECTOR_TEST_0130
      * @tc.name      : test_bitvector_flipBitsByRange
      * @tc.desc      : Test BitVector flipBitsByRange method with fixed elements and range [1, 4)
      * @tc.size      : MediumTest
@@ -588,7 +588,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0140
+     * @tc.number    : SUB_BITVECTOR_TEST_0140
      * @tc.name      : test_bitvector_values
      * @tc.desc      : Test BitVector values() method to iterate over all bit values
      * @tc.size      : MediumTest
@@ -628,7 +628,7 @@ export default function BitVectorGlobalTest() {
       })
 
     /**
-     * @tc.number    : GLOBAL_TEST_0150
+     * @tc.number    : SUB_BITVECTOR_TEST_0150
      * @tc.name      : test_bitvector_index_accessor
      * @tc.desc      : Test BitVector index accessor [index: number]: number by accessing index 1
      * @tc.size      : MediumTest
