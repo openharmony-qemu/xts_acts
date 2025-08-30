@@ -27,7 +27,7 @@ export default function ObserverJsunit() {
     hilog.info(domain, tag, '%{public}s', '************* Observer Test start *************');
     /*
      * @tc.number    : Telephony_observer_observer_on_callStateChange_0200
-     * @tc.name      : on_callStateChange
+     * @tc.name      : Telephony_observer_observer_on_callStateChange_0200
      * @tc.desc      : call the on method of callStateChange
      */
     it('Telephony_observer_observer_on_callStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
@@ -52,7 +52,7 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_off_callStateChange_0100
-     * @tc.name      : off_callStateChange
+     * @tc.name      : Telephony_observer_observer_off_callStateChange_0100
      * @tc.desc      : call the off method of callStateChange
      */
     it('Telephony_observer_observer_off_callStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
@@ -76,7 +76,7 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.name      : on_signalInfoChange
+     * @tc.name      : Telephony_observer_observer_on_signalInfoChange_0200
      * @tc.desc      : call the on method of signalInfoChange
      */
     it('Telephony_observer_observer_on_signalInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -100,7 +100,7 @@ export default function ObserverJsunit() {
 
     /*
      * @tc.number    : Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.name      : off_signalInfoChange
+     * @tc.name      : Telephony_observer_observer_off_signalInfoChange_0100
      * @tc.desc      : call the off method of signalInfoChange
      */
     it('Telephony_observer_observer_off_signalInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
