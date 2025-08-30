@@ -108,7 +108,7 @@ export default function actslocationTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_GetCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1),
+        it('Sub_Location_GetCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
              async(done:()=>void):Promise<void>=>{
                 const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0100'
                 let locationChangeRequest:geoLocationManager.locationRequest={
