@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,ColumnOptions,Counter,DataPanel,DataPanelType
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 

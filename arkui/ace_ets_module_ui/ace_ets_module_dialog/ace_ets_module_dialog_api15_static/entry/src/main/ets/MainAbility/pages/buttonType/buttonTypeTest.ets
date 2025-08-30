@@ -27,7 +27,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'

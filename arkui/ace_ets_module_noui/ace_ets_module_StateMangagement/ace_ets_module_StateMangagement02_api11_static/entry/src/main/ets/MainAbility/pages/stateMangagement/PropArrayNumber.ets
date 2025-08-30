@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,7 +58,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct PropArrayNumberChild {
-  @Prop message: Array<number> = new Array<number>(1, 2, 3)
+  @PropRef message: Array<number> = new Array<number>(1, 2, 3)
 
   build() {
     Column() {

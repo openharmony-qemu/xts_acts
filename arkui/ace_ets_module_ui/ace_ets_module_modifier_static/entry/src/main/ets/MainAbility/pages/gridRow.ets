@@ -16,7 +16,7 @@ import { Entry,Component,$r, Padding,Column,Alignment,BreakpointsReference,GridR
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 

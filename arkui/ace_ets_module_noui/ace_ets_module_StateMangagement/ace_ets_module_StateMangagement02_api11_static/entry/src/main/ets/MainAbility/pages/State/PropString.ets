@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -69,7 +69,7 @@ struct PropString {
   }
   build() {
     Column() {
-      Text('@Prop 支持数据类型：string').fontSize(9).height('5%')
+      Text('@PropRef 支持数据类型：string').fontSize(9).height('5%')
       Text('Father State: ' + this.stringA).width("100%").height('5%')
         .id("PropString_A")
         .onClick((e: ClickEvent) => {
@@ -84,12 +84,12 @@ struct PropString {
 
 @Component
 struct ChildPropString {
-  @Prop stringB: string = '';
+  @PropRef stringB: string = '';
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
-      Text('Child Prop: ' + this.stringB).width("100%").height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('Child PropRef: ' + this.stringB).width("100%").height('5%')
         .id("ChildPropString_A")
         .onClick((e: ClickEvent) => {
           this.stringB = "World"

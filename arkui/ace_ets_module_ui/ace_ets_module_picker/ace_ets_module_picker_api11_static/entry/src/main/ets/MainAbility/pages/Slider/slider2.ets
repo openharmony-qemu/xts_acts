@@ -56,7 +56,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 const TAG = 'ets_apiLack_add';

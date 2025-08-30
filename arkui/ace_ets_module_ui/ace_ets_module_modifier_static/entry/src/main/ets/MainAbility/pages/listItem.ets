@@ -16,7 +16,7 @@ import { Entry,Component,$r,Builder,List, ListItem,Padding,Column,ImageAnimator,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 

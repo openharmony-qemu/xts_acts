@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,Text,Toggle,Togg
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 

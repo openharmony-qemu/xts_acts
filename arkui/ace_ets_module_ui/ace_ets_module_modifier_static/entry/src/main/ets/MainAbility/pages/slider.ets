@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,Search,Slider, Span,Stack,SliderStyle,Search
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 

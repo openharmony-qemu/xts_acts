@@ -14,13 +14,13 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, WithTheme, ForEach} from '@ohos.arkui.component'
-import { State, Prop } from '@ohos.arkui.stateManagement'
+import { State, PropRef } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 export let customButtonSystemTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonSystem {
-  @Prop btnText: string = 'system';
+  @PropRef btnText: string = 'system';
 
   onWillApplyTheme(theme: Theme) {
     customButtonSystemTheme = theme;

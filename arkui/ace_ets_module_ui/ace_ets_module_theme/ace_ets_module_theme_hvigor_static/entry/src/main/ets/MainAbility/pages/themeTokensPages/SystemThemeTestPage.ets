@@ -16,7 +16,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
   Row, ClickEvent, Margin, $r, ResourceColor,  ColumnOptions, ForEach, HorizontalAlign, Padding, Blank, Color} from '@ohos.arkui.component'
 import {
   State,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 import { CustomColorList } from '../customComponents/CustomColorList';
