@@ -100,5 +100,64 @@ export default function actslocationTest() {
 
        })
 
+        /*
+         * @tc.number: Sub_Location_GetCurrentLocation_0100
+         * @tc.name: Sub_Location_GetCurrentLocation_0100
+         * @tc.desc: Test Location API functionality
+         * @tc.level: Level 0
+         * @tc.type: Function
+         * @tc.size: MEDIUMTEST
+         */
+        it('Sub_Location_GetCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1),
+             async(done:()=>void):Promise<void>=>{
+                const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0100'
+                let locationChangeRequest:geoLocationManager.locationRequest={
+                    "priority":geoLocationManager.LocationRequestPriority.UNSET,
+                    "scenario":geoLocationManager.LocationRequestScenario.NAVIGATION,
+                    "timeInterval":5,
+                    "distanceInterval":0,
+                    "maxAccuracy":0
+             };
+                let currentLocationRequest:geoLocationManager.CurrentLocationRequest =
+                {
+                    "priority":geoLocationManager.LocationRequestPriority.UNSET,
+                    "scenario":geoLocationManager.LocationRequestScenario.NAVIGATION,
+                    "timeoutMs":1000,
+                    "maxAccuracy":0
+                };
+                try{
+                    geoLocationManager.getCurrentLocation(currentLocationRequest,
+                    (err:BusinessError<void>|null,result:geolocaiontManager.Location|undefined)=>{
+                        if(srr!=null){
+                            expect().assertFail()
+                        }
+                        else{
+                            if(result !=null){
+                                expect(true).assertEqual(result?.latitude !=-1)
+                                expect(true).assertEqual(result?.longitude !=-1)
+                                expect(true).assertEqual(result?.latitude !=-1)
+                                expect(true).assertEqual(result?.accuracy !=-1)
+                                expect(true).assertEqual(result?.speed !=-1)
+                                expect(true).assertEqual(result?.timeStamp !=-1)
+                                expect(true).assertEqual(result?.direction !=-1)
+                                expect(true).assertEqual(result?.timeSinceBoot !=-1)
+                                expect(true).assertEqual(result?.additions !=-1)
+                                expect(true).assertEqual(result?.additionsSize !=-1)
+                                expect(true).assertEqual(result?.additionsMap !=-1)
+                                expect(true).assertEqual(result?.additionsAccuracy !=-1)
+                                expect(true).assertEqual(result?.directionAccuracy !=-1)
+                                expect(true).assertEqual(result?.uncertaintyOfTimeSinceBoot !=-1)
+
+                        }
+                    }
+
+                    })
+                }catch(error:BusinessError){
+                    expect(false.assertTrue);
+                }
+                await Utils.msSleep(1000)
+                done();
+            })
+
     })
 }
