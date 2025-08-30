@@ -38,6 +38,8 @@ async function openCamera(callback: Callback<string>) {
   }
 }
 
+const EVENT_ID_SET_SUITE_KEY = 175101;
+
 @Entry
 @Component
 struct WebHitTestTypeEnumTest {
@@ -54,6 +56,8 @@ struct WebHitTestTypeEnumTest {
     ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
   ])
   mode: WebLayoutMode = WebLayoutMode.NONE;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
 
   /**
@@ -97,14 +101,14 @@ struct WebHitTestTypeEnumTest {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -113,19 +117,22 @@ struct WebHitTestTypeEnumTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
 
   build() {
       Column() {
-        Button('WebwebKeyboardControllerButton').key('WebwebKeyboardControllerButton')
+        Button('WebKeyboardControllerButton').key('WebKeyboardControllerButton')
           .onClick(async () => {
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             console.info("key==>" + this.str)
             switch (this.str) {
               case "testwebKeyboardController001": {
                 try {
-                  Utils.emitEvent(WebLayoutMode.NONE, 20250321)
+                  Utils.emitEvent(WebLayoutMode.NONE, 175110)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -193,6 +200,10 @@ struct WebHitTestTypeEnumTest {
               }
             })
             return true;
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
       .width('100%')
