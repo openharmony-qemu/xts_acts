@@ -15,65 +15,99 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import locationcapi20 from 'liblocationcapi20.so'
-import { abilityAccessCtrl, common, Permissions, UIAbility } from '@kit.AbilityKit';
+import { abilityAccessCtrl, bundle, common, Permissions, UIAbility } from '@kit.AbilityKit';
 import { Driver, ON, Component } from '@kit.TestKit';
-import { deviceInfo } from '@kit.BasicServicesKit';
+import { deviceInfo, BusinessError } from '@kit.BasicServicesKit';
+import { geolocation, geoLocationManager } from '@kit.LocationKit';
+import osaccount from '@ohos.account.osAccount'
+import bundleManager from '@ohos.bundle.bundleManager';
+import hilog from '@ohos.hilog';
 
 const OS_LOCATION_ERR_OK = 0;
 let deviceTypeInfo: string = deviceInfo.deviceType;
-const driver = Driver.create();
+let locationEnabled = geoLocationManager.isLocationEnabled();
+let bundleFlags =
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
 
-export async function LocationSwitchOn() {
-  await driver.swipe(500, 50, 500, 500, 40000);
-  let component = await driver.findComponent(ON.text('位置信息'));
-  let bounds = await component.getBounds()
-  const width = bounds.right - bounds.left;
-  const height = bounds.bottom - bounds.top;
-  const clickX = bounds.left + width / 2;
-  const clickY = bounds.top - 50;
-  await driver.click(clickX, clickY);
-  await driver.swipe(500, 1000, 500, 50, 40000);
-  return
+try {
+  bundleManager.getBundleInfoForSelf(bundleFlags).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', message);
 }
 
-export async function LocationSwitchOnPhone() {
-  await driver.swipe(1150, 50, 1150, 1000, 40000);
-  let component = await driver.findComponent(ON.text('位置'));
-  let bounds = await component.getBounds()
-  const width = bounds.right - bounds.left;
-  const height = bounds.bottom - bounds.top;
-  const clickX = bounds.left + width / 2;
-  const clickY = bounds.top - 50;
-  await driver.click(clickX, clickY);
-  await driver.swipe(1150, 1000, 1150, 50, 40000);
-  return
+export async function changedLocationMode() {
+  await geolocation.isLocationEnabled().then(async (result) => {
+    console.info('[lbs_js] getLocationSwitchState result: ' + JSON.stringify(result));
+    if (!result) {
+      await geoLocationManager.enableLocation().then(async (res) => {
+        console.info('[lbs_js] test requestEnableLocation promise result: ' + JSON.stringify(res));
+      }).catch((error: BusinessError) => {
+        console.info("[lbs_js] promise then error." + JSON.stringify(error));
+        expect().assertFail();
+      });
+    }
+  });
+  await geolocation.isLocationEnabled().then(async (result) => {
+    console.info('[lbs_js] check LocationSwitchState result: ' + JSON.stringify(result));
+  });
+}
+
+async function applyPermission() {
+  let osAccountManager = osaccount.getAccountManager();
+  console.info("=== getAccountManager finish");
+  let localId = await osAccountManager.getOsAccountLocalIdFromProcess();
+  console.info("LocalId is :" + localId);
+  // let appInfo = await bundle.getApplicationInfo('com.location.napitest', 0, localId);
+  let appInfo = await bundleManager.getBundleInfoForSelf(bundleFlags)
+  console.info("LocalId is :" + localId);
+  let atManager = abilityAccessCtrl.createAtManager();
+  console.info("LocalId is :" + localId);
+  if (atManager != null) {
+    console.info('[permission] case accessTokenID is ')
+    let tokenID = appInfo.appInfo.accessTokenId;
+    console.info('appInfo:' + JSON.stringify(appInfo))
+    console.info('[permission] case accessTokenID is ' + tokenID);
+    let permissionName1: Permissions = 'ohos.permission.LOCATION';
+    let permissionName2: Permissions = 'ohos.permission.APPROXIMATELY_LOCATION';
+    let permissionName3: Permissions = 'ohos.permission.LOCATION_IN_BACKGROUND';
+    await atManager.grantUserGrantedPermission(tokenID, permissionName1, 1).then((result) => {
+      console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+    }).catch((err: BusinessError) => {
+      console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+    });
+    await atManager.grantUserGrantedPermission(tokenID, permissionName2, 64).then((result) => {
+      console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+    }).catch((err: BusinessError) => {
+      console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+    });
+    await atManager.grantUserGrantedPermission(tokenID, permissionName3, 64).then((result) => {
+      console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+    }).catch((err: BusinessError) => {
+      console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+    });
+  } else {
+    console.info('[permission] case apply permission failed, createAtManager failed');
+  }
 }
 
 export default function ActsLocation20Test() {
   describe('ActsLocation20Test', () => {
     beforeAll(async (done: Function) => {
-      let permissions: Permissions[] = ['ohos.permission.APPROXIMATELY_LOCATION', "ohos.permission.LOCATION"];
-      let atManager = abilityAccessCtrl.createAtManager();
-      atManager.requestPermissionsFromUser(getContext(), permissions).then(async (data) => {
-        if (deviceTypeInfo == 'default') {
-            await LocationSwitchOn()
-        } else{
-            await LocationSwitchOnPhone()
-        }
-        done()
-      })
-      let text: Component = await driver.findComponent(ON.text('允许本次使用'));
-      if (deviceTypeInfo == 'default') {
-        text = await driver.findComponent(ON.text('允许本次使用'));
-      } else if (deviceTypeInfo == 'phone') {
-        text = await driver.findComponent(ON.text('本次使用允许'));
-      }
-      if (text) {
-        await text.click();
-      } else {
-        console.info("====>click error====");
-      }
+      console.info('beforeAll case');
+      await applyPermission();
+      await changedLocationMode();
+      done();
     })
+    afterAll(async (done: Function) => {
+      geoLocationManager.disableLocation()
+      done();
+    }
+    )
 
     /**
      * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0102
@@ -121,15 +155,5 @@ export default function ActsLocation20Test() {
           done()
         }
       })
-
-    afterAll(async (done: Function) => {
-      if (deviceTypeInfo == 'default') {
-        await LocationSwitchOn()
-      } else{
-        await LocationSwitchOnPhone()
-      }
-    done()
-    }
-    )
   })
 }

@@ -15,25 +15,23 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import locationcapi20 from 'liblocationcapi20.so'
-import { abilityAccessCtrl, common, Permissions, UIAbility } from '@kit.AbilityKit';
-import { Driver, ON, Component } from '@kit.TestKit';
 import { geoLocationManager } from '@kit.LocationKit';
-import { deviceInfo } from '@kit.BasicServicesKit';
-import { LocationSwitchOn, LocationSwitchOnPhone } from "../test/ActsLocation20Test.test"
+import { changedLocationMode } from "./ActsLocation20Test.test";
 
 const OS_LOCATION_ERR_OK = 0;
-let deviceTypeInfo: string = deviceInfo.deviceType;
 
 export default function ActsLocationSwitchTest() {
   describe('ActsLocationSwitchTest', () => {
     beforeAll(async (done: Function) => {
-      if (deviceTypeInfo == 'default') {
-        await LocationSwitchOn()
-      } else{
-        await LocationSwitchOnPhone()
-      }
-    done()
+      console.info('beforeAll case');
+      await changedLocationMode();
+      done();
     })
+    afterAll(async (done: Function) => {
+      geoLocationManager.disableLocation()
+      done();
+    }
+    )
 
     /**
      * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0103
@@ -81,15 +79,6 @@ export default function ActsLocationSwitchTest() {
           done()
         }
       }
-    )
-    afterAll(async (done: Function) => {
-      if (deviceTypeInfo == 'default') {
-        await LocationSwitchOn()
-      } else{
-        await LocationSwitchOnPhone()
-      }
-    done()
-    }
     )
   })
 }
