@@ -127,5 +127,22 @@ export default function webHitTestTypeEnumTest() {
 
       done();
     })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(3000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebwebKeyboardControllerButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        console.info('click test');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+
+
   })
 }
