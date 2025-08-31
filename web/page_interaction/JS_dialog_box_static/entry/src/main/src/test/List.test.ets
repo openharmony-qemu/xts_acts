@@ -14,7 +14,9 @@
  */
 
 import geolocationPermissions from './geolocationPermissions.test'
+import webViewSrollableJsunit from './bindSelectionMenu.test'
 
 export default function testsuite() {
     geolocationPermissions();
+    webViewSrollableJsunit();
 }
