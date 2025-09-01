@@ -82,6 +82,8 @@ void AddRdbErrorCodeTest(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back({"testGoToNextRowAfterLast", nullptr, TestGoToNextRowAfterLast, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
+    descData.push_back({"testInvalidObjectType", nullptr, TestInvalidObjectType, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
 }
 
 napi_value TestRdbError(napi_env env, napi_callback_info info)
@@ -493,5 +495,60 @@ napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info)
     valueBucket->destroy(valueBucket);
     OH_Rdb_CloseStore(testStore);
     OH_Rdb_DeleteStore(&RdbErrorCodeTest::RDB_CONFIG);
+    return result;
+}
+
+napi_value TestInvalidObjectType(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int errCode = 0;
+    OH_Rdb_Store *testStore = nullptr;
+    OH_Rdb_ConfigV2 *configV2_ = nullptr;
+    configV2_ = OH_Rdb_CreateConfig();
+    OH_Rdb_SetDatabaseDir(configV2_, RdbErrorCodeTest::RDB_TEST);
+    OH_Rdb_SetStoreName(configV2_, RdbErrorCodeTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2_, RdbErrorCodeTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2_, RdbErrorCodeTest::g_moduleName);
+    OH_Rdb_SetDbType(configV2_, RDB_SQLITE);
+    OH_Rdb_SetEncrypted(configV2_, false);
+    OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    testStore = OH_Rdb_CreateOrOpen(configV2_, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "data asset, "
+                                 "score INT64)";
+    OH_Rdb_Execute(testStore, createTableSql);
+    Data_Asset *asset = OH_Data_Asset_CreateOne();
+    OH_Data_Asset_SetName(asset, "sss");
+    OH_Data_Asset_SetUri(asset, "uri");
+    OH_VBucket *insertBucket = OH_Rdb_CreateValuesBucket();
+    insertBucket->putInt64(insertBucket, "id", 1);
+    insertBucket->putText(insertBucket, "name", "ZhangSan");
+    insertBucket->putInt64(insertBucket, "score", 60);
+    OH_VBucket_PutAsset(insertBucket, "data", asset);
+    OH_Rdb_Insert(testStore, "test", insertBucket);
+    const char *sql = "SELECT * FROM test;";
+    OH_Data_Values *values = OH_Values_Create();
+    OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(testStore, sql, values);
+    int cnt = 0;
+    cursor->getRowCount(cursor, &cnt);
+    int cnt1 = 0;
+    cursor->getColumnCount(cursor, &cnt1);
+    const char name[10] = "data";
+    int cli = 0;
+    cursor->getColumnIndex(cursor, name, &cli);
+    cursor->goToNextRow(cursor);
+    size_t size = 0;
+    cursor->getSize(cursor, 1, &size);
+    unsigned char value;
+    int ret = cursor->getBlob(cursor, cli, &value, size);
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_OBJECT_TYPE ? 14800020 : -1, &result);
+    cursor->destroy(cursor);
+    insertBucket->destroy(insertBucket);
+    OH_Rdb_CloseStore(testStore);
+    OH_Rdb_DeleteStoreV2(configV2_);
+    OH_Rdb_DestroyConfig(configV2_);
     return result;
 }

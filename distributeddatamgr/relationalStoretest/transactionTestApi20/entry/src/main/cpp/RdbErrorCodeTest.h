@@ -56,5 +56,6 @@ napi_value TestNotSupportedAttachInWalMode(napi_env env, napi_callback_info info
 napi_value TestAttachDatabaseBusy(napi_env env, napi_callback_info info);
 napi_value TestGoToNextRowResultClosed(napi_env env, napi_callback_info info);
 napi_value TestGoToNextRowAfterLast(napi_env env, napi_callback_info info);
+napi_value TestInvalidObjectType(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_RDBERRORCODETEST_H

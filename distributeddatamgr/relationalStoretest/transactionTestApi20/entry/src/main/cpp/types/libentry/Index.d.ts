@@ -92,6 +92,7 @@ export const testCommitInvalidParam: () => number;
 export const testCommitDatabaseClosed: () => number;
 export const testCommitSuccess: () => number;
 export const testRollBackByTrxIdSuccess: () => number;
+export const testCommitByTrxIdSuccess: () => number;
 export const testBackupInvalidParam: () => number;
 export const testBackupSuccess: () => number;
 export const testRestoreInvalidParam: () => number;
@@ -113,6 +114,9 @@ export const testOHRdbAttachError: () => number;
 export const testOHRdbDetachOk: () => number;
 export const testOHRdbDetachError: () => number;
 export const testOHRdbSubscribeDetails: () => number;
+export const testSetTokenizerNotSupported: () => number;
+export const testSubscribeSuccess: () => number;
+
 //database/rdb/relational_store_error_code.h
 export const testRdbError: () => number;
 export const testEmptyTableName: () => number;
@@ -125,6 +129,7 @@ export const testNotSupportedAttachInWalMode: () => number;
 export const testAttachDatabaseBusy: () => number;
 export const testGoToNextRowResultClosed: () => number;
 export const testGoToNextRowAfterLast: () => number;
+export const testInvalidObjectType: () => number;
 //database/rdb/oh_rdb_crypto_param.h
 export const testOHCryptoSetHmacAlgoSha1: () => number;
 export const testOHCryptoSetHmacAlgoSha256: () => number;
