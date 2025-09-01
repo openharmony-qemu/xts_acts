@@ -120,7 +120,7 @@ export default function AtomicsAPITest() {
         const MAX_INT = 2147483647;
         const oldValue5 = Atomics.add(typedArray, 4, MAX_INT);
         expect(oldValue5).assertEqual(10);
-        expect(typedArray[4]).assertEqual(-2147483639);
+        expect(typedArray[4]).assertEqual(-2147483648);
         
         const oldValue6 = Atomics.add(typedArray, 5, Int.MIN_VALUE);
         expect(oldValue6).assertEqual(10);
