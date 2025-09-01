@@ -39,6 +39,8 @@ export default function ActsValuesBucketTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -60,6 +62,8 @@ export default function ActsValuesBucketTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -81,6 +85,8 @@ export default function ActsValuesBucketTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -102,6 +108,8 @@ export default function ActsValuesBucketTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400 catch err: " + err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -126,6 +134,8 @@ export default function ActsValuesBucketTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
 
@@ -150,6 +160,8 @@ export default function ActsValuesBucketTest() {
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600 catch err: " +
             err);
+          expect(err).assertFail();
+          done();
         }
       })
   })

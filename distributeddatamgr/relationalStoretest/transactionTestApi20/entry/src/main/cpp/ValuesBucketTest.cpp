@@ -141,16 +141,10 @@ napi_value TestPutUnlimitedIntInvalidParam(napi_env env, napi_callback_info info
 {
     napi_value result;
     OH_VBucket *vBucket = nullptr;
-    
     int sign = 0;
-    
     uint64_t arr[] = {1, 2, 3};
-    
     size_t arrLen = sizeof(arr) / sizeof(arr[0]);
-    
     int ret = OH_VBucket_PutUnlimitedInt(vBucket, "data1", sign, arr, arrLen);
-
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS ? g_vBInvalidParamCode : -1, &result);
-    
     return result;
 }

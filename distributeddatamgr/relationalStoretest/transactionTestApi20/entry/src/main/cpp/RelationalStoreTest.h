@@ -83,5 +83,10 @@ napi_value TestLockRowInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestUnlockRowInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestCreateTransactionInvalidParam(napi_env env, napi_callback_info info);
 napi_value TestSetLocaleSuccess(napi_env env, napi_callback_info info);
+napi_value TestOHRdbAttachBusy(napi_env env, napi_callback_info info);
+napi_value TestOHRdbAttachError(napi_env env, napi_callback_info info);
+napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info);
+napi_value TestOHRdbDetachError(napi_env env, napi_callback_info info);
+napi_value TestOHRdbSubscribeDetails(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_RELATIONALSTORETEST_H
