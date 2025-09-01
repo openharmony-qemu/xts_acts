@@ -1367,7 +1367,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void; ErrCode 15100005
+     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
