@@ -17,10 +17,9 @@ import connection from '@ohos.net.connection';
 import EmptyTest from './Empty.test';
 import HttpCreateHttpResponseCacheTest from './HttpCreateHttpResponseCache.test';
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
-let isActive: boolean = false;
 
 export default function testsuite() {
-    if(isActive){
+    if(isDefaultNet){
         HttpDeleteTest();
         HttpCreateHttpResponseCacheTest();
     }else{
