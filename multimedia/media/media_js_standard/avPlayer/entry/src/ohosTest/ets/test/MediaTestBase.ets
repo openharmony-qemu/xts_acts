@@ -291,7 +291,7 @@ export default class MediaTestBase {
     console.info(`stat: ${JSON.stringify(stat)}`);
     console.info(`size: ${stat.size}`);
     fileDescriptor = {
-      fd: fd, length: stat.size;
+      fd: fd, length: stat.size
     }
     return fileDescriptor
   }
