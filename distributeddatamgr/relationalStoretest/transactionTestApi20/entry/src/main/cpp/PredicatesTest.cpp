@@ -36,8 +36,9 @@ void AddPredicatesTest(std::vector<napi_property_descriptor> &descData)
 napi_value TestOHPredicatesGlobOk(napi_env env, napi_callback_info info)
 {
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("store_test");
-    if (!predicates)
+    if (!predicates) {
         return nullptr;
+    }
     const char *data5Value = "aBCD*";
     int ret = OH_Predicates_Glob(predicates, "data5", data5Value);
     predicates->destroy(predicates);

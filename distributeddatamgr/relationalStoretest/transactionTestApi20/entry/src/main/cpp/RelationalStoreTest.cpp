@@ -1506,8 +1506,9 @@ napi_value TestOHRdbDetachOk(napi_env env, napi_callback_info info)
     OH_ColumnType type;
     errCode = cursor->getColumnType(cursor, 0, &type);
     size_t attachedNumber = 0;
-    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", 3, &attachedNumber);
-    ret = OH_Rdb_Detach(testRdbStore, "rdb_attach_test", 3, &attachedNumber);
+    int64_t waitTime = 3;
+    auto ret = OH_Rdb_Attach(testRdbStore, configV2, "rdb_attach_test", waitTime, &attachedNumber);
+    ret = OH_Rdb_Detach(testRdbStore, "rdb_attach_test", waitTime, &attachedNumber);
     napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
     predicates->destroy(predicates);
     cursor->destroy(cursor);
