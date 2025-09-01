@@ -14,13 +14,13 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, WithTheme, ForEach} from '@ohos.arkui.component'
-import { State, Prop } from '@ohos.arkui.stateManagement'
+import { State, PropRef } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 export let customButtonNestedTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonNested {
-  @Prop btnText: string = 'nested';
+  @PropRef btnText: string = 'nested';
 
   onWillApplyTheme(theme: Theme) {
     customButtonNestedTheme = theme;

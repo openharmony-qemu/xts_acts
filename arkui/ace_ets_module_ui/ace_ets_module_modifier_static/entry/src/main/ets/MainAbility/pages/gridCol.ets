@@ -16,7 +16,7 @@ import { Entry,Builder,Component,Scroller,GridRow,Scroll,BreakpointsReference,Gr
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 
 

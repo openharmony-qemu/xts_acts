@@ -16,7 +16,7 @@ import { Entry,Component,$r,Builder,List, ListItem,Marquee,NavDestination,Polyli
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 

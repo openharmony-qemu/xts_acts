@@ -26,7 +26,7 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -99,7 +99,7 @@ struct ChildLink3 {
 
 @Component
 struct ChildProp {
-  @Prop counterVal: ClassA3 = new ClassA3(3, new SubClass4(8));
+  @PropRef counterVal: ClassA3 = new ClassA3(3, new SubClass4(8));
 
   build() {
     Column() {
@@ -149,8 +149,8 @@ struct PropObjectLinkProp {
 
   build() {
     Column() {
-      Text("@Prop能接收来自@ObjectLink的一层属性值").height('3%')
-      Text("@Prop能接收来自@ObjectLink的二层属性值").height('3%')
+      Text("@PropRef能接收来自@ObjectLink的一层属性值").height('3%')
+      Text("@PropRef能接收来自@ObjectLink的二层属性值").height('3%')
       ChildProp({counterVal: this.class_A})
     }
   }
@@ -183,7 +183,7 @@ struct CombinationState4 {
       Text('@ObjectLink支持初始化@Link修饰的数据').height('3%')
       ObjectLinkLink({class_A: this.class_A})
 
-      Text('@ObjectLink支持初始化@Prop修饰的数据').height('3%')
+      Text('@ObjectLink支持初始化@PropRef修饰的数据').height('3%')
       PropObjectLinkProp({class_A: this.class_A})
     }
   }

@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -58,7 +58,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct PropMapChild {
-  @Prop value: Map<number, string> = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
+  @PropRef value: Map<number, string> = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
 
   build() {
     Column() {

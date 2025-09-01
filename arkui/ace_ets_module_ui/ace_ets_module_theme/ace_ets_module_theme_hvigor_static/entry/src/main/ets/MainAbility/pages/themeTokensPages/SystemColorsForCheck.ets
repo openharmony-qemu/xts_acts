@@ -16,7 +16,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
   Row, ClickEvent, Margin, $r, ResourceColor,  ColumnOptions, ForEach, HorizontalAlign, Padding, Blank, Color} from '@ohos.arkui.component'
 import {
   State,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement'
 import { Colors } from '../../themes/checkSystemTokens/colorValues/ColorsTokens';
 import { DataClass } from '../../../../src/test/Utils';
@@ -25,7 +25,7 @@ export const colorsForCheck = 'checkColor';
 
 @Component
 export struct SystemColorsFromResources {
-  @Prop postfix : string;
+  @PropRef postfix : string;
   @State data: Array<DataClass> = new Array<DataClass>();
 
   aboutToAppear() {

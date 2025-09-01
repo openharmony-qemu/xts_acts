@@ -108,7 +108,7 @@ import {
   GridColOptions,
   AlignRuleOption
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'

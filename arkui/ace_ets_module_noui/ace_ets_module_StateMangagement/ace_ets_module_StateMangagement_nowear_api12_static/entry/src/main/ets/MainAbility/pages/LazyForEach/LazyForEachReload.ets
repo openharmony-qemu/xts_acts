@@ -16,7 +16,7 @@ import {DataReloadOperation, DataOperationType,  Entry, Text, TextAttribute, Col
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

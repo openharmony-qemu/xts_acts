@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,ColumnOptions,BorderImageOption,BorderOptions
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 
