@@ -63,6 +63,9 @@ export function setSubtitle(avPlayer: media.AVPlayer | null, src: string | media
     avPlayer.addSubtitleFromUrl(src);
   } else {
     console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
     avPlayer.addSubtitleFromFd(src.fd, src.offset, src.length);
   }
 }
@@ -77,6 +80,7 @@ export function setSubtitle3(avPlayer: media.AVPlayer | null, src: string | medi
     avPlayer.addSubtitleFromUrl(src);
   } else {
     console.info('setSubtitle3 case fdsrc test');
+    console.info('setSubtitle3 fdsrc.fd: ' + src.fd);
     avPlayer.addSubtitleFromFd(src.fd);
   }
 }
@@ -90,6 +94,7 @@ export function setSubtitle4(avPlayer: media.AVPlayer | null, src: string | medi
     avPlayer.addSubtitleFromUrl(src);
   } else {
     console.info('setSubtitle4 case fdsrc test');
+    console.info('setSubtitle4 fdsrc.length: ' + src.length);
     avPlayer.addSubtitleFromFd(src.fd, src.length);
   }
 }
@@ -103,6 +108,7 @@ export function setSubtitle5(avPlayer: media.AVPlayer | null, src: string | medi
     avPlayer.addSubtitleFromUrl(src);
   } else {
     console.info('setSubtitle5 case fdsrc test');
+    console.info('setSubtitle5 fdsrc.offset: ' + src.offset);
     avPlayer.addSubtitleFromFd(src.fd, src.offset);
   }
 }
