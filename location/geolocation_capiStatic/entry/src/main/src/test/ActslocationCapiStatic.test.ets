@@ -127,8 +127,8 @@ export default function actslocationTest() {
                 };
                 try{
                     geoLocationManager.getCurrentLocation(currentLocationRequest,
-                    (err:BusinessError<void>|null,result:geolocaionManager.Location|undefined)=>{
-                        if(srr!=null){
+                    (err:BusinessError<void>|null,result:geolocationManager.Location|undefined)=>{
+                        if(err!=null){
                             expect().assertFail()
                         }
                         else{
@@ -174,7 +174,7 @@ export default function actslocationTest() {
                 async(done:()=>void):Promise<void>=>{
                     const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0200'
                     try{
-                        geolocaiontManager.getCurrentLocation(
+                        geolocationManager.getCurrentLocation(
                             (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
                                 if(!geoLocationManager.isLocationEnabled()){
                                     if(err !=null){
@@ -183,7 +183,7 @@ export default function actslocationTest() {
                                 }
                             });
                     }catch(err:BusinessError){
-                        hilog.error(domain,TAG,'[lns_js] getCurrentLocation try err.'+JSON.stringify(err));
+                        hilog.error(domain,tag,'[lns_js] getCurrentLocation try err.'+JSON.stringify(err));
                         expect(false).assertTrue();
                     }
                     await Utils.msSleep(1000)
