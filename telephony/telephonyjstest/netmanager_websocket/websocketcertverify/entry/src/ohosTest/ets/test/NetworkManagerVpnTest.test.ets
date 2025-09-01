@@ -452,5 +452,61 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number: SUB_NetworkManager_VPN_generateVpnId_Promise_0100
+     * @tc.name: SUB_NetworkManager_VPN_generateVpnId_Promise_0100
+     * @tc.desc: Function test
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_NetworkManager_VPN_generateVpnId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_generateVpnId_Promise_0100';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        vpnConnection.generateVpnId().then((data: string) => {
+          console.log(`${caseName} generateVpnId success ${JSON.stringify(data)}`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} generateVpnId fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} generateVpnId error ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number: SUB_NetworkManager_VPN_destroy_Promise_0200
+     * @tc.name: SUB_NetworkManager_VPN_destroy_Promise_0200
+     * @tc.desc: Function test
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_NetworkManager_VPN_destroy_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0200';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        let vpnId: string = "test";
+        vpnConnection.destroy(vpnId).then(() => {
+          console.log(`${caseName} destroy success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
   });
 }

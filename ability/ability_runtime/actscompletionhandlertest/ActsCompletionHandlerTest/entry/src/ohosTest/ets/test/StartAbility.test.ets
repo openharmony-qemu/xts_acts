@@ -78,21 +78,12 @@ let allowOpen = async () => {
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.text('本次允许', MatchPattern.CONTAINS));
+    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '本次允许');
       await buttons[buttons.length - 1].click();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '本次允许');
-      buttonClicked = true;
-      return;
-    }
-    buttons = await driver.findComponents(ON.text('允许', MatchPattern.CONTAINS));
-    if (buttons && buttons.length > 0) {
-      hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
-      hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '允许');
-      await buttons[buttons.length - 1].click();
-      hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '允许');
       buttonClicked = true;
       return;
     }
@@ -105,7 +96,7 @@ let disallowOpen = async () => {
   let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.CONTAINS));
+    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_2'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '不允许');
@@ -114,7 +105,7 @@ let disallowOpen = async () => {
       buttonClicked = true;
       return;
     }
-    buttons = await driver.findComponents(ON.text('取消', MatchPattern.CONTAINS));
+    buttons = await driver.findComponents(ON.id('advanced_dialog_button_0'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '取消');

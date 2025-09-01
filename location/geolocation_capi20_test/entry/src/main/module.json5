@@ -45,6 +45,38 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": "$string:reason",
+        "usedScene": {
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "$string:reason",
+        "usedScene": {
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION_IN_BACKGROUND",
+        "reason": "$string:reason",
+        "usedScene": {
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.CONTROL_LOCATION_SWITCH"
+      },
+      {
+        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
+      },
+      {
+        "name": "ohos.permission.MANAGE_SECURE_SETTINGS"
+      }
     ]
   }
 }

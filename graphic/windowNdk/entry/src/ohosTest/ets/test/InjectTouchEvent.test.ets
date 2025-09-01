@@ -449,8 +449,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText == '40') {
           expect(true).assertTrue();
@@ -584,6 +586,7 @@ export default function InjectTouchEvent() {
         let result = injectTouchEvent.testInjectTouchEventwithSubWindowClick(subWindowId, x, y);
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
+        await sleep(400);
         let newText = await btn.getText();
         await sleep(200);
         expect(newText).assertEqual('TextChanged');
@@ -632,6 +635,7 @@ export default function InjectTouchEvent() {
         let result = injectTouchEvent.testInjectTouchEventwithDialogWindowClick(subWindowId, x, y);
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
+        await sleep(400);
         let newText = await btn.getText();
         await sleep(200);
         expect(newText).assertEqual('TextChanged');
@@ -676,8 +680,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText != '40') {
           expect(true).assertTrue();
@@ -774,8 +780,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText != '40') {
           expect(true).assertTrue();
