@@ -34,7 +34,6 @@ import {
   PixelMap,
   ColumnOptions,
   ImageAttachment,
-  BorderRadiuses,
   Margin,
   Padding,
   TextDecorationType,
@@ -42,6 +41,7 @@ import {
   TextDecorationStyle,
   Image
 } from '@ohos.arkui.component';
+import { NodeBorderRadiuses } from '@ohos.arkui.node';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
@@ -212,7 +212,7 @@ struct styled_string_imageAttachment {
                 console.info('mutableStr vertical ' + attachment.verticalAlign)
                 console.info('mutableStr fit ' + attachment.objectFit)
                 if (attachment.layoutStyle !== undefined) {
-                  let radius = attachment.layoutStyle!.borderRadius as BorderRadiuses
+                  let radius = attachment.layoutStyle!.borderRadius as NodeBorderRadiuses
                   console.info('mutableStr radius ' + JSON.stringify(radius))
                   console.log('mutableStr margin ' + JSON.stringify(attachment.layoutStyle!.margin));
                   console.log('mutableStr padding ' + JSON.stringify(attachment.layoutStyle!.padding));
