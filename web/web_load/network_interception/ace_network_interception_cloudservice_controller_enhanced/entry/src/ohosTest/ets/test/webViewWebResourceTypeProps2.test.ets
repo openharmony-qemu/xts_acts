@@ -18,11 +18,14 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = ''
-
+const  driver = Driver.create();
 export default function ActsAceWebViewWebResourceTypeProps2() {
   describe('ActsAceWebViewWebResourceTypeProps2', () => {
 
@@ -32,14 +35,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         }
 
         try {
-          await Utils.sleep(1000)
           router.clear();
           let pages = router.getState();
           console.info("get webViewGetFrameUrlResourceType2 state success " + JSON.stringify(pages));
           if (!("webViewGetFrameUrlResourceType2" == pages.name)) {
             console.info("get webViewGetFrameUrlResourceType2 state success " + JSON.stringify(pages.name));
             let result = await router.pushUrl(options);
-            await Utils.sleep(1000);
             console.info("push webViewGetFrameUrlResourceType2 state success " + JSON.stringify(result));
           }
         } catch (err) {
@@ -54,27 +55,6 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(2000);
-        done();
-      })
-
-      afterEach(async (done: Function) => {
-        try {
-          let backData: events_emitter.EventData = {
-            data: {
-              "ACTION": emitKey
-            }
-          }
-          let backEvent: events_emitter.InnerEvent = {
-            eventId: 10,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("start send emitKey");
-          events_emitter.emit(backEvent, backData);
-        } catch (err) {
-          console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
         done();
       })
 
@@ -88,9 +68,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
        */
       it('testWebView_webResourceType_SUB_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_SUB_RESOURCE"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_webResourceType_SUB_RESOURCE", true, 1550, done);
-        sendEventByKey('webViewWebResourceTypeProps2', 10, '');
+        Utils.emitEvent(emitKey, 142021);
+        let isReturn = false;
+        Utils.registerEvent("testWebView_webResourceType_SUB_RESOURCE", true, 142060, ()=>{isReturn = true});
+        Utils.waitAndClickComponent("webViewWebResourceTypeProps2",driver);
+        await waitForExist(()=>isReturn, "emitWebView_webResourceType_SUB_RESOURCE", true,1000);
+        done();
       })
       /*
        *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1600
@@ -102,9 +85,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
        */
       it('testWebView_webResourceType_SERVICE_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_SERVICE_WORKER"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_webResourceType_SERVICE_WORKER", true, 1551, done);
-        sendEventByKey('webViewWebResourceTypeProps2', 10, '');
+        Utils.emitEvent(emitKey, 142021);
+        let isReturn = false;
+        Utils.registerEvent("testWebView_webResourceType_SERVICE_WORKER", true, 142070, ()=>{isReturn = true});
+        Utils.waitAndClickComponent("webViewWebResourceTypeProps2",driver);
+        await waitForExist(()=>isReturn, "emitWebView_webResourceType_SERVICE_WORKER", true,1000);
+        done();
       })
 
       /*
@@ -117,9 +103,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
        */
       it('testWebView_webResourceType_PLUGIN_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_PLUGIN_RESOURCE"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_webResourceType_PLUGIN_RESOURCE", true, 1552, done);
-        sendEventByKey('webViewWebResourceTypeProps2', 10, '');
+        Utils.emitEvent(emitKey, 142021);
+        let isReturn = false;
+        Utils.registerEvent("testWebView_webResourceType_PLUGIN_RESOURCE", true, 142080, ()=>{isReturn = true});
+        Utils.waitAndClickComponent("webViewWebResourceTypeProps2",driver);
+        await waitForExist(()=>isReturn, "emitWebView_webResourceType_PLUGIN_RESOURCE", true,1000);
+        done();
       })
 
       /*
@@ -132,9 +121,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
      */
       it('testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME", true, 1553, done);
-        sendEventByKey('webViewWebResourceTypeProps2', 10, '');
+        Utils.emitEvent(emitKey, 142021);
+        let isReturn = false;
+        Utils.registerEvent("testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME", true, 142090, ()=>{isReturn = true});
+        Utils.waitAndClickComponent("webViewWebResourceTypeProps2",driver);
+        await waitForExist(()=>isReturn, "emitWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME", true,1000);
+        done();
       })
 
 
@@ -148,9 +140,12 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
     */
     it('testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME", true, 1554, done);
-      sendEventByKey('webViewWebResourceTypeProps2', 10, '');
+      Utils.emitEvent(emitKey, 142021);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME", true, 142100, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps2",driver);
+      await waitForExist(()=>isReturn, "emitWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME", true,1000);
+      done();
     })
  })
 }
