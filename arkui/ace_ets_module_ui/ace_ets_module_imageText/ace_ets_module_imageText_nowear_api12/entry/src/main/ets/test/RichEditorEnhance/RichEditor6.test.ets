@@ -91,7 +91,6 @@ export default function RichEditor6() {
 
       let RichEditorGetAttribute = await driver.findComponent(ON.id("RichEditor01"));
       await RichEditorGetAttribute.inputText('abc')
-	  await driver.triggerKey(2047)
       let GetStopEditing = await driver.findComponent(ON.id("StopEditing"));
       await GetStopEditing.click()
       let OnEditingChange = await driver.findComponent(ON.id("OnEditingChange"));

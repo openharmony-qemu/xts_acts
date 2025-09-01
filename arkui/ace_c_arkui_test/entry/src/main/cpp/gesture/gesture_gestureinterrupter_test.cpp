@@ -81,8 +81,8 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInterrupter(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id)
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_150);
-    button->SetHeight(SIZE_100);
+    button->SetWidth(SIZE_40);
+    button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
     button->SetMargin(SIZE_10);
@@ -107,8 +107,8 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInput(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id)
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_150);
-    button->SetHeight(SIZE_100);
+    button->SetWidth(SIZE_40);
+    button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
     button->SetMargin(SIZE_10);

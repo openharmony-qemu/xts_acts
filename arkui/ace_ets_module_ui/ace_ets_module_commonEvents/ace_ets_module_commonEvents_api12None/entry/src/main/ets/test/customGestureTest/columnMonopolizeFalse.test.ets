@@ -67,39 +67,39 @@ export default function columnMonopolizeFalse() {
 
     it('columnMonopolizeFalse_001', Level.LEVEL0, async (done: Function) => {
       console.log('[columnMonopolizeFalse_001] START');
-      // get column left and top on screen
-      let str1 = getInspectorByKey("columnLongPress1");
-      CommonFunc.rect_left =
-        JSON.parse('[' + JSON.parse('[' + JSON.parse(str1).$rect + ']')[0] + ']')[0] + globalThis.winLeft;
-      CommonFunc.rect_top =
-        JSON.parse('[' + JSON.parse('[' + JSON.parse(str1).$rect + ']')[0] + ']')[1] + globalThis.winTop;
-      console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
-      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let column2 = await scrollBar.scrollSearch(ON.id('columnClick2'));
-      
+      let column1 = await driver.findComponent(ON.id('column1'));
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + vp2px(33.33)), Math.round(CommonFunc.rect_top + vp2px(26.66)));
-      await CommonFunc.sleep(1000);
-      await column2.click();
+      await column1.click();
       await CommonFunc.sleep(500);
-      let strJson1 = getInspectorByKey('columnTextFalse');
+      let strJson1 = getInspectorByKey('text1');
       console.log("[columnMonopolizeFalse_001] component obj1 is: " , JSON.stringify(JSON.parse(strJson1)));
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('LongPressGesture onAction success;TapGesture success');
-      await CommonFunc.sleep(1000);
-      let button = await scrollBar.scrollSearch(ON.id('buttonFalse1'));
-    
-      await button.click();
-      await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + vp2px(33.33)), Math.round(CommonFunc.rect_top + vp2px(26.66)));
-      await CommonFunc.sleep(1000);
-      await column2.click();
-      let strJson2 = getInspectorByKey('columnTextFalse');
+      expect(JSON.parse(strJson1).$attrs.content).assertEqual('inner column touch down');
+      let strJson2 = getInspectorByKey('text2');
       console.log("[columnMonopolizeFalse_001] component obj2 is: " , JSON.stringify(JSON.parse(strJson2)));
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual('LongPressGesture onAction success;');
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('inner column touch down');
       await CommonFunc.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id('button1'));
+      let button2 = await driver.findComponent(ON.id('button2'));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+      await button2.click();
+      await CommonFunc.sleep(1000);
+      let strJson3 = getInspectorByKey('text');
+      console.log("[columnMonopolizeFalse_001] component obj3 is: " , JSON.stringify(JSON.parse(strJson3)));
+      expect(JSON.parse(strJson3).$attrs.content).assertEqual('set monopolizeEvents true');
+      await CommonFunc.sleep(1000);
+
+      await column1.click();
+      await CommonFunc.sleep(500);
+      let strJson4 = getInspectorByKey('text1');
+      console.log("[columnMonopolizeFalse_001] component obj4 is: " , JSON.stringify(JSON.parse(strJson4)));
+      expect(JSON.parse(strJson4).$attrs.content).assertEqual(' ');
+      let strJson5 = getInspectorByKey('text2');
+      console.log("[columnMonopolizeFalse_001] component obj5 is: " , JSON.stringify(JSON.parse(strJson5)));
+      expect(JSON.parse(strJson5).$attrs.content).assertEqual('inner column touch down');
       console.log('[columnMonopolizeFalse_001] END');
       done();
     });
