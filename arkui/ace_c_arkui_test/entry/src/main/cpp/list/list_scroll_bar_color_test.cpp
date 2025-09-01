@@ -49,9 +49,10 @@ static napi_value TestListScrollBarColor003(napi_env env, napi_callback_info inf
 {
     NAPI_START(list, ARKUI_NODE_LIST);
 
+    uint32_t scrollBarColor = 0x66182431;
     auto ret = nodeAPI->resetAttribute(list, NODE_SCROLL_BAR_COLOR);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(list, NODE_SCROLL_BAR_COLOR)->value[PARAM_0].u32, COLOR_BLACK);
+    ASSERT_EQ(nodeAPI->getAttribute(list, NODE_SCROLL_BAR_COLOR)->value[PARAM_0].u32, scrollBarColor);
     NAPI_END;
 }
 } // namespace ArkUICapiTest
