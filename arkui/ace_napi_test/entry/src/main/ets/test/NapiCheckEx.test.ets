@@ -319,6 +319,362 @@ export default function napiCheckExTest() {
       }
       done();
     });
-  })
 
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0001
+     * @tc.name      : testBigIntTest0001
+     * @tc.desc      : Testing BigInt creation from int64 value.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0001 START');
+      try {
+        let result: boolean = napitestex.NapiBigIntTest01();
+        console.info('testBigIntTest0001 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0001 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0002
+     * @tc.name      : testBigIntTest0002
+     * @tc.desc      : Testing BigInt creation from uint64 value.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0002 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest02();
+        console.info('testBigIntTest0002 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0002 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0003
+     * @tc.name      : testBigIntTest0003
+     * @tc.desc      : Testing BigInt creation and retrieval using words interface (positive and negative).
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0003 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest03();
+        console.info('testBigIntTest0003 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0003 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0004
+     * @tc.name      : testBigIntTest0004
+     * @tc.desc      : Testing BigInt boundary values (INT64_MAX, INT64_MIN, UINT64_MAX).
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0004 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest04();
+        console.info('testBigIntTest0004 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0004 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0005
+     * @tc.name      : testBigIntTest0005
+     * @tc.desc      : Testing BigInt error handling (nullptr parameters, non-BigInt values).
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0005 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest05();
+        console.info('testBigIntTest0005 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0005 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0006
+     * @tc.name      : testBigIntTest0006
+     * @tc.desc      : Testing BigInt conversion precision (lossless flag verification).
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0006 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest06();
+        console.info('testBigIntTest0006 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0006 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0007
+     * @tc.name      : testBigIntTest0007
+     * @tc.desc      : Testing BigInt int64 round-trip correctness verification.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0007 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest07();
+        console.info('testBigIntTest0007 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0007 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0008
+     * @tc.name      : testBigIntTest0008
+     * @tc.desc      : Testing BigInt uint64 round-trip correctness verification.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0008 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest08();
+        console.info('testBigIntTest0008 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0008 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0009
+     * @tc.name      : testBigIntTest0009
+     * @tc.desc      : Testing BigInt uint64 array words round-trip correctness verification.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0009 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest09();
+        console.info('testBigIntTest0009 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0009 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0010
+     * @tc.name      : testBigIntTest0010
+     * @tc.desc      : Testing BigInt with negative value.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0010 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest10();
+        console.info('testBigIntTest0010 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0010 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0011
+     * @tc.name      : testBigIntTest0011
+     * @tc.desc      : Testing BigInt with maximum int64 value.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0011 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest11();
+        console.info('testBigIntTest0011 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0011 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0012
+     * @tc.name      : testBigIntTest0012
+     * @tc.desc      : Testing BigInt with zero value verification.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0012 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest12();
+        console.info('testBigIntTest0012 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0012 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0013
+     * @tc.name      : testBigIntTest0013
+     * @tc.desc      : Testing BigInt multi-thread concurrent creation.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0013 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest13();
+        console.info('testBigIntTest0013 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0013 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0014
+     * @tc.name      : testBigIntTest0014
+     * @tc.desc      : Testing BigInt multi-thread shared object reading.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0014 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest14();
+        console.info('testBigIntTest0014 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0014 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0015
+     * @tc.name      : testBigIntTest0015
+     * @tc.desc      : Testing BigInt inter-thread object passing.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0015 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest15();
+        console.info('testBigIntTest0015 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0015 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0016
+     * @tc.name      : testBigIntTest0016
+     * @tc.desc      : Testing BigInt multi-thread exception handling.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0016 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest16();
+        console.info('testBigIntTest0016 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0016 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_RUNTIME_LANGUAGE_NAPI_BIGINT_0017
+     * @tc.name      : testBigIntTest0017
+     * @tc.desc      : Testing BigInt thread safety with ArkTS exception interaction.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testBigIntTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('testBigIntTest0017 START');
+      try {
+        const result: boolean = napitestex.NapiBigIntTest17();
+        console.info('testBigIntTest0017 test result: ' + result);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`testBigIntTest0017 err msg: ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+  })
 }

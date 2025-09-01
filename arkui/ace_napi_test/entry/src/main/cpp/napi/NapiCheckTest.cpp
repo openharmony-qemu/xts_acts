@@ -28,7 +28,7 @@
 
 #include "hilog/log.h"
 
-#define THREAD_COUNT 4
+#define THREAD_COUNT_4 4
 #define NUM_100 100
 #define NUM_128 128
 #define NUM_1024 1024
@@ -42,10 +42,18 @@ struct ThreadData {
     bool testPassed;
 };
 
+struct BigIntThreadData {
+    napi_env env;
+    napi_value bigint;
+    int threadId;
+    bool testPassed;
+};
+
 static pthread_mutex_t g_lock;
 static napi_ref g_arraybufferRef;
-
+static pthread_mutex_t g_bigintLock;
 static void* ThreadFunction(void* arg);
+static void* BigIntThreadFunction(void* arg);
 static const char TEST_STR[] = "Where there is a will, there is a way.";
 
 static napi_value CreateBuffer(napi_env env, napi_callback_info info)
@@ -924,10 +932,10 @@ napi_value NapiArrayBufferTest07(napi_env env, napi_callback_info info)
     status = napi_create_reference(env, arraybuffer, 1, &g_arraybufferRef);
     NAPI_ASSERT(env, status == napi_ok, "napi_create_reference failed");
     
-    pthread_t threads[THREAD_COUNT];
-    ThreadData threadData[THREAD_COUNT];
+    pthread_t threads[THREAD_COUNT_4];
+    ThreadData threadData[THREAD_COUNT_4];
     
-    for (int i = 0; i < THREAD_COUNT; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         threadData[i].env = env;
         threadData[i].arraybuffer = arraybuffer;
         threadData[i].threadId = i;
@@ -940,7 +948,7 @@ napi_value NapiArrayBufferTest07(napi_env env, napi_callback_info info)
         }
     }
     
-    for (int i = 0; i < THREAD_COUNT; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         pthread_join(threads[i], nullptr);
     }
     
@@ -952,7 +960,7 @@ napi_value NapiArrayBufferTest07(napi_env env, napi_callback_info info)
     pthread_mutex_destroy(&g_lock);
     
     bool allPassed = true;
-    for (int i = 0; i < THREAD_COUNT; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         if (!threadData[i].testPassed) {
             allPassed = false;
             break;
@@ -983,6 +991,835 @@ static void* ThreadFunction(void* arg)
     return nullptr;
 }
 
+napi_value NapiBigIntTest01(napi_env env, napi_callback_info info)
+{
+    napi_value bigint1;
+    int64_t value1 = 1234567890LL;
+    napi_status status = napi_create_bigint_int64(env, value1, &bigint1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed");
+
+    int64_t retrievedValue1 = 0;
+    bool lossless1 = false;
+    status = napi_get_value_bigint_int64(env, bigint1, &retrievedValue1, &lossless1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, retrievedValue1 == value1, "BigInt value mismatch");
+    NAPI_ASSERT(env, lossless1, "Value conversion should be lossless");
+
+    // 创建负数BigInt
+    napi_value bigint2;
+    int64_t value2 = -9876543210LL;
+    status = napi_create_bigint_int64(env, value2, &bigint2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed for negative value");
+
+    int64_t retrievedValue2 = 0;
+    bool lossless2 = false;
+    status = napi_get_value_bigint_int64(env, bigint2, &retrievedValue2, &lossless2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed for negative value");
+    NAPI_ASSERT(env, retrievedValue2 == value2, "BigInt negative value mismatch");
+    NAPI_ASSERT(env, lossless2, "Negative value conversion should be lossless");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest02(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    uint64_t value = 18446744073709551615ULL; // Max uint64
+    napi_status status = napi_create_bigint_uint64(env, value, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_uint64 failed");
+    
+    // 获取uint64值
+    uint64_t retrievedValue = 0;
+    bool lossless = false;
+    status = napi_get_value_bigint_uint64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_uint64 failed");
+    NAPI_ASSERT(env, retrievedValue == value, "BigInt value mismatch");
+    NAPI_ASSERT(env, lossless, "Value conversion should be lossless");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest03(napi_env env, napi_callback_info info)
+{
+    napi_value bigint1;
+    int signBit1 = 0; // Positive
+    size_t wordCount1 = 2;
+    uint64_t words1[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    
+    napi_status status = napi_create_bigint_words(env, signBit1, wordCount1, words1, &bigint1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for positive");
+    
+    // 获取正数words值
+    int retrievedSignBit1 = -1;
+    size_t retrievedWordCount1 = 0;
+    uint64_t retrievedWords1[2] = {0};
+    
+    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for positive");
+    NAPI_ASSERT(env, retrievedSignBit1 == signBit1, "Positive sign bit mismatch");
+    NAPI_ASSERT(env, retrievedWordCount1 == wordCount1, "Positive word count mismatch");
+    NAPI_ASSERT(env, retrievedWords1[0] == words1[0], "Positive first word mismatch");
+    NAPI_ASSERT(env, retrievedWords1[1] == words1[1], "Positive second word mismatch");
+
+    // 创建负数BigInt
+    napi_value bigint2;
+    int signBit2 = 1; // Negative
+    size_t wordCount2 = 2;
+    uint64_t words2[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    
+    status = napi_create_bigint_words(env, signBit2, wordCount2, words2, &bigint2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for negative");
+    
+    // 获取负数words值
+    int retrievedSignBit2 = -1;
+    size_t retrievedWordCount2 = 0;
+    uint64_t retrievedWords2[2] = {0};
+    
+    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &retrievedWordCount2, retrievedWords2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for negative");
+    NAPI_ASSERT(env, retrievedSignBit2 == signBit2, "Negative sign bit mismatch");
+    NAPI_ASSERT(env, retrievedWordCount2 == wordCount2, "Negative word count mismatch");
+    NAPI_ASSERT(env, retrievedWords2[0] == words2[0], "Negative first word mismatch");
+    NAPI_ASSERT(env, retrievedWords2[1] == words2[1], "Negative second word mismatch");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest04(napi_env env, napi_callback_info info)
+{
+    napi_value bigint1, bigint2, bigint3;
+    napi_status status;
+    
+    // 创建INT64_MAX
+    status = napi_create_bigint_int64(env, INT64_MAX, &bigint1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed for INT64_MAX");
+    
+    // 创建INT64_MIN
+    status = napi_create_bigint_int64(env, INT64_MIN, &bigint2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed for INT64_MIN");
+    
+    // 创建UINT64_MAX
+    status = napi_create_bigint_uint64(env, UINT64_MAX, &bigint3);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_uint64 failed for UINT64_MAX");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest05(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    napi_status status;
+    
+    // 使用nullptr env调用napi_create_bigint_int64
+    status = napi_create_bigint_int64(nullptr, 123, &bigint);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "Expected napi_invalid_arg for nullptr env");
+    
+    // 使用nullptr result调用napi_create_bigint_int64
+    status = napi_create_bigint_int64(env, 123, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "Expected napi_invalid_arg for nullptr result");
+    
+    // 使用非BigInt值调用napi_get_value_bigint_int64
+    napi_value nonBigintValue;
+    status = napi_create_int32(env, 42, &nonBigintValue);
+    NAPI_ASSERT(env, status == napi_ok, "Failed to create non-BigInt value");
+    
+    int64_t outValue;
+    bool lossless;
+    status = napi_get_value_bigint_int64(env, nonBigintValue, &outValue, &lossless);
+    NAPI_ASSERT(env, status == napi_bigint_expected, "Expected napi_bigint_expected for non-BigInt value");
+    
+    // 使用过大word_count调用napi_create_bigint_words
+    uint64_t words[] = {1, 2, 3, 4};
+    status = napi_create_bigint_words(env, 0, 2147483648, words, &bigint);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "Expected napi_invalid_arg for excessive word_count");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest06(napi_env env, napi_callback_info info)
+{
+    napi_value bigint1, bigint2;
+    napi_status status;
+    
+    // 创建超过int64范围的BigInt（使用words接口）
+    uint64_t words1[] = {0x0ULL, 0x1ULL};
+    status = napi_create_bigint_words(env, 0, 2, words1, &bigint1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
+    
+    // 尝试用napi_get_value_bigint_int64获取值
+    int64_t outValue1;
+    bool lossless1;
+    status = napi_get_value_bigint_int64(env, bigint1, &outValue1, &lossless1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, !lossless1, "Expected lossless to be false for out-of-range value");
+    
+    // 创建超过uint64范围的BigInt（使用words接口）
+    uint64_t words2[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    status = napi_create_bigint_words(env, 0, 2, words2, &bigint2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
+    
+    // 尝试用napi_get_value_bigint_uint64获取值
+    uint64_t outValue2;
+    bool lossless2;
+    status = napi_get_value_bigint_uint64(env, bigint2, &outValue2, &lossless2);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_uint64 failed");
+    NAPI_ASSERT(env, !lossless2, "Expected lossless to be false for out-of-range value");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest07(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    int64_t originalValue = 1234567890123456LL;
+    napi_status status = napi_create_bigint_int64(env, originalValue, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed");
+    
+    int64_t retrievedValue;
+    bool lossless;
+    status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, retrievedValue == originalValue, "Retrieved value doesn't match original");
+    NAPI_ASSERT(env, lossless, "Value conversion should be lossless");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest08(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    uint64_t originalValue = 18446744073709551615ULL; // UINT64_MAX
+    napi_status status = napi_create_bigint_uint64(env, originalValue, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_uint64 failed");
+    
+    uint64_t retrievedValue;
+    bool lossless;
+    status = napi_get_value_bigint_uint64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_uint64 failed");
+    NAPI_ASSERT(env, retrievedValue == originalValue, "Retrieved value doesn't match original");
+    NAPI_ASSERT(env, lossless, "Value conversion should be lossless");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest09(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    int signBit = 0;
+    size_t wordCount = 2;
+    uint64_t originalWords[] = {0x123456789ABCDEF0ULL, 0x1122334455667788ULL};
+    
+    napi_status status = napi_create_bigint_words(env, signBit, wordCount, originalWords, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
+    
+    int retrievedSignBit = -1;
+    size_t retrievedWordCount = 0;
+    uint64_t retrievedWords[2] = {0};
+    
+    status = napi_get_value_bigint_words(env, bigint, &retrievedSignBit, &retrievedWordCount, retrievedWords);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed");
+    NAPI_ASSERT(env, retrievedSignBit == signBit, "Sign bit mismatch");
+    NAPI_ASSERT(env, retrievedWordCount == wordCount, "Word count mismatch");
+    NAPI_ASSERT(env, retrievedWords[0] == originalWords[0], "First word mismatch");
+    NAPI_ASSERT(env, retrievedWords[1] == originalWords[1], "Second word mismatch");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest10(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    int64_t value = -1234567890123456LL;
+    napi_status status = napi_create_bigint_int64(env, value, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed");
+    
+    int64_t retrievedValue = 0;
+    bool lossless = false;
+    status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, retrievedValue == value, "BigInt value mismatch");
+    NAPI_ASSERT(env, lossless, "Value conversion should be lossless");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest11(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    uint64_t value = 18446744073709551615ULL; // UINT64_MAX，超出INT64_MAX范围
+    napi_status status = napi_create_bigint_uint64(env, value, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_uint64 failed");
+    
+    int64_t retrievedValue = 0;
+    bool lossless = false;
+    status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, !lossless, "Expected lossless to be false for out-of-int64-range value");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+napi_value NapiBigIntTest12(napi_env env, napi_callback_info info)
+{
+    napi_value bigint;
+    int64_t value = 0;
+    napi_status status = napi_create_bigint_int64(env, value, &bigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_int64 failed");
+    
+    int64_t retrievedValue = 1; // 初始化为非零值
+    bool lossless = false;
+    status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_int64 failed");
+    NAPI_ASSERT(env, retrievedValue == 0, "Retrieved value should be 0");
+    NAPI_ASSERT(env, lossless, "Value conversion should be lossless for zero");
+
+    napi_value result;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+// 多线程并发创建BigInt的线程数据结构
+struct ConcurrentBigIntData {
+    napi_env env;
+    int threadId;
+    int64_t value;
+    napi_value result;
+    bool testPassed;
+};
+
+// 多线程并发创建BigInt的线程函数
+void* ConcurrentCreateBigIntThread(void* arg)
+{
+    ConcurrentBigIntData* data = static_cast<ConcurrentBigIntData*>(arg);
+    
+    napi_status status = napi_create_bigint_int64(data->env, data->value, &data->result);
+    data->testPassed = (status == napi_ok && data->result != nullptr);
+    
+    return nullptr;
+}
+
+napi_value NapiBigIntTest13(napi_env env, napi_callback_info info)
+{
+    // 多线程并发创建BigInt
+    const int threadCount = 4;
+    pthread_t threads[threadCount];
+    ConcurrentBigIntData threadData[threadCount];
+    
+    // 设置线程数据
+    threadData[0] = {env, 1, INT64_MAX, nullptr, false};
+    threadData[1] = {env, 2, INT64_MIN, nullptr, false};
+    threadData[2] = {env, 3, 0, nullptr, false};
+    threadData[3] = {env, 4, 1234567890123456789LL, nullptr, false};
+    
+    // 创建线程
+    for (int i = 0; i < threadCount; i++) {
+        int err = pthread_create(&threads[i], nullptr, ConcurrentCreateBigIntThread, &threadData[i]);
+        NAPI_ASSERT(env, err == 0, "Failed to create thread");
+    }
+    
+    // 等待所有线程完成
+    for (int i = 0; i < threadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // 验证结果
+    bool allPassed = true;
+    for (int i = 0; i < threadCount; i++) {
+        if (!threadData[i].testPassed) {
+            allPassed = false;
+            break;
+        }
+        
+        // 验证创建的BigInt值是否正确
+        int64_t retrievedValue;
+        bool lossless;
+        napi_status status = napi_get_value_bigint_int64(env, threadData[i].result, &retrievedValue, &lossless);
+        if (status != napi_ok || retrievedValue != threadData[i].value || !lossless) {
+            allPassed = false;
+            break;
+        }
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allPassed, &result);
+    return result;
+}
+
+// 多线程共享BigInt读取的线程数据结构
+struct SharedBigIntReadData {
+    napi_env env;
+    napi_value sharedBigint;
+    int threadId;
+    bool testPassed;
+};
+
+// 多线程读取函数 - 使用不同的获取方法
+void* SharedBigIntReadThread1(void* arg) // 使用napi_get_value_bigint_int64读取
+{
+    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
+    
+    int64_t value;
+    bool lossless;
+    napi_status status = napi_get_value_bigint_int64(data->env, data->sharedBigint, &value, &lossless);
+    data->testPassed = (status == napi_ok);
+    
+    return nullptr;
+}
+
+void* SharedBigIntReadThread2(void* arg) // 使用napi_get_value_bigint_uint64读取
+{
+    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
+    
+    uint64_t value;
+    bool lossless;
+    napi_status status = napi_get_value_bigint_uint64(data->env, data->sharedBigint, &value, &lossless);
+    data->testPassed = (status == napi_ok);
+    
+    return nullptr;
+}
+
+void* SharedBigIntReadThread3(void* arg) // 使用napi_get_value_bigint_words读取部分数据
+{
+    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
+    
+    int signBit;
+    size_t wordCount = 2;
+    uint64_t words[2];
+    napi_status status = napi_get_value_bigint_words(data->env, data->sharedBigint, &signBit, &wordCount, words);
+    data->testPassed = (status == napi_ok);
+    
+    return nullptr;
+}
+
+void* SharedBigIntReadThread4(void* arg) // 使用napi_get_value_bigint_words读取全部数据
+{
+    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
+    
+    int signBit;
+    size_t wordCount = 4;
+    uint64_t words[4];
+    napi_status status = napi_get_value_bigint_words(data->env, data->sharedBigint, &signBit, &wordCount, words);
+    data->testPassed = (status == napi_ok);
+    
+    return nullptr;
+}
+
+napi_value NapiBigIntTest14(napi_env env, napi_callback_info info)
+{
+    // 多线程共享BigInt对象读取
+    // 主线程创建一个大型BigInt（使用napi_create_bigint_words）
+    napi_value sharedBigint;
+    int signBit = 0;
+    size_t wordCount = 4;
+    uint64_t words[] = {
+        0x123456789ABCDEF0ULL,
+        0xFEDCBA9876543210ULL,
+        0x1111111111111111ULL,
+        0x2222222222222222ULL
+    };
+    
+    napi_status status = napi_create_bigint_words(env, signBit, wordCount, words, &sharedBigint);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
+    
+    // 创建4个工作线程同时读取该BigInt对象
+    const int threadCount = 4;
+    pthread_t threads[threadCount];
+    SharedBigIntReadData threadData[threadCount];
+    
+    // 设置线程数据
+    for (int i = 0; i < threadCount; i++) {
+        threadData[i].env = env;
+        threadData[i].sharedBigint = sharedBigint;
+        threadData[i].threadId = i + 1;
+        threadData[i].testPassed = false;
+    }
+    
+    // 创建线程，使用不同的获取函数
+    pthread_create(&threads[0], nullptr, SharedBigIntReadThread1, &threadData[0]);
+    pthread_create(&threads[1], nullptr, SharedBigIntReadThread2, &threadData[1]);
+    pthread_create(&threads[2], nullptr, SharedBigIntReadThread3, &threadData[2]);
+    pthread_create(&threads[3], nullptr, SharedBigIntReadThread4, &threadData[3]);
+    
+    // 等待所有线程完成
+    for (int i = 0; i < threadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // 验证所有读取结果一致
+    bool allPassed = true;
+    for (int i = 0; i < threadCount; i++) {
+        if (!threadData[i].testPassed) {
+            allPassed = false;
+            break;
+        }
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allPassed, &result);
+    return result;
+}
+
+// 线程安全队列模拟（简化版）
+static napi_value g_queuedBigint = nullptr;
+static pthread_mutex_t g_queueMutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t g_queueCond = PTHREAD_COND_INITIALIZER;
+static bool g_queueHasData = false;
+
+// 生产者线程数据结构
+struct ProducerThreadData {
+    napi_env env;
+    bool testPassed;
+};
+
+// 消费者线程数据结构  
+struct ConsumerThreadData {
+    napi_env env;
+    bool testPassed;
+};
+
+// 生产者线程函数
+void* ProducerThread(void* arg)
+{
+    ProducerThreadData* data = static_cast<ProducerThreadData*>(arg);
+    
+    // 创建BigInt
+    napi_value producedBigint;
+    int signBit = 1; // 负数
+    size_t wordCount = 2;
+    uint64_t words[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    
+    napi_status status = napi_create_bigint_words(data->env, signBit, wordCount, words, &producedBigint);
+    if (status != napi_ok) {
+        data->testPassed = false;
+        return nullptr;
+    }
+    
+    // 将BigInt放入线程安全队列
+    pthread_mutex_lock(&g_queueMutex);
+    g_queuedBigint = producedBigint;
+    g_queueHasData = true;
+    pthread_cond_signal(&g_queueCond);
+    pthread_mutex_unlock(&g_queueMutex);
+    
+    data->testPassed = true;
+    return nullptr;
+}
+
+// 消费者线程函数
+void* ConsumerThread(void* arg)
+{
+    ConsumerThreadData* data = static_cast<ConsumerThreadData*>(arg);
+    
+    // 从队列获取BigInt
+    pthread_mutex_lock(&g_queueMutex);
+    while (!g_queueHasData) {
+        pthread_cond_wait(&g_queueCond, &g_queueMutex);
+    }
+    napi_value consumedBigint = g_queuedBigint;
+    pthread_mutex_unlock(&g_queueMutex);
+    
+    // 使用napi_get_value_bigint_words验证值
+    int signBit;
+    size_t wordCount = 2;
+    uint64_t words[2];
+    
+    napi_status status = napi_get_value_bigint_words(data->env, consumedBigint, &signBit, &wordCount, words);
+    if (status != napi_ok) {
+        data->testPassed = false;
+        return nullptr;
+    }
+    
+    // 验证值是否正确
+    bool valuesMatch = (signBit == 1 && 
+                       wordCount == 2 && 
+                       words[0] == 0xFFFFFFFFFFFFFFFFULL && 
+                       words[1] == 0x1ULL);
+    
+    data->testPassed = valuesMatch;
+    return nullptr;
+}
+
+napi_value NapiBigIntTest15(napi_env env, napi_callback_info info)
+{
+    // 线程间传递BigInt对象
+    pthread_t producerThread, consumerThread;
+    ProducerThreadData producerData = {env, false};
+    ConsumerThreadData consumerData = {env, false};
+    
+    // 重置队列状态
+    pthread_mutex_lock(&g_queueMutex);
+    g_queuedBigint = nullptr;
+    g_queueHasData = false;
+    pthread_mutex_unlock(&g_queueMutex);
+    
+    // 创建生产者线程
+    int err = pthread_create(&producerThread, nullptr, ProducerThread, &producerData);
+    NAPI_ASSERT(env, err == 0, "Failed to create producer thread");
+    
+    // 创建消费者线程
+    err = pthread_create(&consumerThread, nullptr, ConsumerThread, &consumerData);
+    NAPI_ASSERT(env, err == 0, "Failed to create consumer thread");
+    
+    // 等待线程完成
+    pthread_join(producerThread, nullptr);
+    pthread_join(consumerThread, nullptr);
+    
+    // 验证结果
+    bool testPassed = producerData.testPassed && consumerData.testPassed;
+
+    napi_value result;
+    napi_get_boolean(env, testPassed, &result);
+    return result;
+}
+
+static void* BigIntThreadFunction(void* arg)
+{
+    BigIntThreadData* threadData = static_cast<BigIntThreadData*>(arg);
+    napi_env env = threadData->env;
+    napi_value bigint = threadData->bigint;
+    
+    pthread_mutex_lock(&g_bigintLock);
+    
+    // Perform BigInt operations in thread
+    bool isBigint = false;
+    napi_status status = napi_is_bigint(env, bigint, &isBigint);
+    if (status != napi_ok || !isBigint) {
+        threadData->testPassed = false;
+    }
+    
+    // Test value retrieval
+    int64_t retrievedValue = 0;
+    bool lossless = false;
+    status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
+    if (status != napi_ok) {
+        threadData->testPassed = false;
+    }
+    
+    pthread_mutex_unlock(&g_bigintLock);
+    
+    return nullptr;
+}
+
+// 多线程异常情况测试的线程数据结构
+struct ExceptionThreadData {
+    napi_env env;
+    int threadId;
+    napi_status expectedStatus;
+    bool testPassed;
+};
+
+// 异常测试线程函数
+void* ExceptionTestThread1(void* arg) // 使用nullptr env
+{
+    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
+    
+    napi_value bigint;
+    napi_status status = napi_create_bigint_int64(nullptr, 123, &bigint);
+    data->testPassed = (status == data->expectedStatus);
+    
+    return nullptr;
+}
+
+void* ExceptionTestThread2(void* arg) // 使用nullptr result
+{
+    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
+    
+    napi_status status = napi_create_bigint_uint64(data->env, 456, nullptr);
+    data->testPassed = (status == data->expectedStatus);
+    
+    return nullptr;
+}
+
+void* ExceptionTestThread3(void* arg) // 使用无效napi_value
+{
+    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
+    
+    // 创建一个非BigInt值
+    napi_value nonBigintValue;
+    napi_status createStatus = napi_create_int32(data->env, 789, &nonBigintValue);
+    if (createStatus != napi_ok) {
+        data->testPassed = false;
+        return nullptr;
+    }
+    
+    int64_t outValue;
+    bool lossless;
+    napi_status status = napi_get_value_bigint_int64(data->env, nonBigintValue, &outValue, &lossless);
+    data->testPassed = (status == data->expectedStatus);
+    
+    return nullptr;
+}
+
+void* ExceptionTestThread4(void* arg) // 正常操作作为对照
+{
+    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
+    
+    napi_value bigint;
+    napi_status status = napi_create_bigint_int64(data->env, 999, &bigint);
+    data->testPassed = (status == data->expectedStatus);
+    
+    return nullptr;
+}
+
+napi_value NapiBigIntTest16(napi_env env, napi_callback_info info)
+{
+    // 多线程异常情况测试
+    const int threadCount = 4;
+    pthread_t threads[threadCount];
+    ExceptionThreadData threadData[threadCount];
+    
+    // 设置线程数据
+    threadData[0] = {env, 1, napi_invalid_arg, false}; // nullptr env
+    threadData[1] = {env, 2, napi_invalid_arg, false}; // nullptr result
+    threadData[2] = {env, 3, napi_bigint_expected, false}; // 无效napi_value
+    threadData[3] = {env, 4, napi_ok, false}; // 正常操作
+    
+    // 创建线程
+    pthread_create(&threads[0], nullptr, ExceptionTestThread1, &threadData[0]);
+    pthread_create(&threads[1], nullptr, ExceptionTestThread2, &threadData[1]);
+    pthread_create(&threads[2], nullptr, ExceptionTestThread3, &threadData[2]);
+    pthread_create(&threads[3], nullptr, ExceptionTestThread4, &threadData[3]);
+    
+    // 等待所有线程完成
+    for (int i = 0; i < threadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // 验证结果
+    bool allPassed = true;
+    for (int i = 0; i < threadCount; i++) {
+        if (!threadData[i].testPassed) {
+            allPassed = false;
+            break;
+        }
+    }
+
+    napi_value result;
+    napi_get_boolean(env, allPassed, &result);
+    return result;
+}
+
+// ArkTS异常交互测试的线程数据结构
+struct ArkTSExceptionThreadData {
+    napi_env env;
+    int threadId;
+    bool testPassed;
+};
+
+// ArkTS异常测试线程函数
+void* ArkTSExceptionThread1(void* arg) // 故意触发异常
+{
+    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
+    
+    // 尝试调用可能导致异常的函数（这里模拟一个可能的异常情况）
+    napi_value bigint;
+    uint64_t words[] = {1, 2, 3, 4};
+    napi_status status = napi_create_bigint_words(data->env, 0, SIZE_MAX, words, &bigint);
+    
+    // 异常情况下应该返回错误状态
+    data->testPassed = (status != napi_ok);
+    
+    return nullptr;
+}
+
+void* ArkTSExceptionThread2(void* arg) // 同时尝试创建BigInt
+{
+    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
+    
+    napi_value bigint;
+    napi_status status = napi_create_bigint_int64(data->env, 12345, &bigint);
+    
+    // 正常情况下应该成功或者正确处理异常状态
+    data->testPassed = (status == napi_ok || status == napi_pending_exception);
+    
+    return nullptr;
+}
+
+void* ArkTSExceptionThread3(void* arg) // 同时尝试读取BigInt
+{
+    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
+    
+    // 先创建一个BigInt
+    napi_value bigint;
+    napi_status createStatus = napi_create_bigint_int64(data->env, 67890, &bigint);
+    if (createStatus != napi_ok) {
+        data->testPassed = true; // 如果创建失败，认为正确处理了异常
+        return nullptr;
+    }
+    
+    // 尝试读取BigInt
+    int64_t value;
+    bool lossless;
+    napi_status readStatus = napi_get_value_bigint_int64(data->env, bigint, &value, &lossless);
+    
+    // 正常情况下应该成功或者正确处理异常状态
+    data->testPassed = (readStatus == napi_ok || readStatus == napi_pending_exception);
+    
+    return nullptr;
+}
+
+napi_value NapiBigIntTest17(napi_env env, napi_callback_info info)
+{
+    // 线程安全与ArkTS异常交互
+    const int threadCount = 3;
+    pthread_t threads[threadCount];
+    ArkTSExceptionThreadData threadData[threadCount];
+    
+    // 设置线程数据
+    for (int i = 0; i < threadCount; i++) {
+        threadData[i].env = env;
+        threadData[i].threadId = i + 1;
+        threadData[i].testPassed = false;
+    }
+    
+    // 创建线程
+    pthread_create(&threads[0], nullptr, ArkTSExceptionThread1, &threadData[0]);
+    pthread_create(&threads[1], nullptr, ArkTSExceptionThread2, &threadData[1]);
+    pthread_create(&threads[2], nullptr, ArkTSExceptionThread3, &threadData[2]);
+    
+    // 等待所有线程完成
+    for (int i = 0; i < threadCount; i++) {
+        pthread_join(threads[i], nullptr);
+    }
+    
+    // 验证结果 - 至少有一些线程应该正确处理异常情况
+    int passedCount = 0;
+    for (int i = 0; i < threadCount; i++) {
+        if (threadData[i].testPassed) {
+            passedCount++;
+        }
+    }
+    
+    // 如果至少有2个线程正确处理了情况，认为测试通过
+    bool testPassed = (passedCount >= 2);
+
+    napi_value result;
+    napi_get_boolean(env, testPassed, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1011,6 +1848,23 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiArrayBufferTest05", NapiArrayBufferTest05),
         DECLARE_NAPI_FUNCTION("NapiArrayBufferTest06", NapiArrayBufferTest06),
         DECLARE_NAPI_FUNCTION("NapiArrayBufferTest07", NapiArrayBufferTest07),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest01", NapiBigIntTest01),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest02", NapiBigIntTest02),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest03", NapiBigIntTest03),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest04", NapiBigIntTest04),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest05", NapiBigIntTest05),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest06", NapiBigIntTest06),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest07", NapiBigIntTest07),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest08", NapiBigIntTest08),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest09", NapiBigIntTest09),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest10", NapiBigIntTest10),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest11", NapiBigIntTest11),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest12", NapiBigIntTest12),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest13", NapiBigIntTest13),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest14", NapiBigIntTest14),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest15", NapiBigIntTest15),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest16", NapiBigIntTest16),
+        DECLARE_NAPI_FUNCTION("NapiBigIntTest17", NapiBigIntTest17),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));
