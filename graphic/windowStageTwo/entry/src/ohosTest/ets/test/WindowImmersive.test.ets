@@ -163,7 +163,7 @@ export default function windowImmersiveTest() {
               await sleep(1000);
             }
           });
-          await windowClass.setWindowSystemBarEnable(['status', 'navigation')
+          await windowClass.setWindowSystemBarEnable(['status', 'navigation'])
           console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
           await sleep(2000);
 
