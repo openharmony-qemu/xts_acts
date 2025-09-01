@@ -1,0 +1,108 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import events_emitter from '@ohos.events.emitter';
+import { Entry, Component, Column, Flex, FlexDirection, FlexOptions, BadgeParamWithNumber, BadgeParamWithString, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, TextAlign, Margin} from '@ohos.arkui.component'
+import { State, MutableState, stateOf, observableProxy, AppStorage } from '@ohos.arkui.stateManagement'
+
+@Entry
+@Component
+struct Badge3Example {
+  @State counts: number = 1;
+  @State message: string = 'new';
+  @State fontSizeValue: number = 20;
+  @State colorValue: Color = Color.Red;
+  private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info("Badge page state change called:" + '');
+      if (((eventData.data) as ESObject).getProperty('fontSizeValue') != null) {
+        this.fontSizeValue = ((eventData.data) as ESObject).getProperty('fontSizeValue').toNumber();
+      }
+      if (((eventData.data) as ESObject).getProperty('colorValue') != null) {
+        this.colorValue = ((eventData.data) as ESObject).getProperty('colorValue').toStaticObject() as Color;
+      }
+      if (((eventData.data) as ESObject).getProperty('message') != null) {
+        this.message = ((eventData.data) as ESObject).getProperty('message').toString();
+      }
+    }
+  }
+
+  onPageShow() {
+    console.info('Badge page show called');
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 63,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    let stateChangeEventOne: events_emitter.InnerEvent = {
+      eventId: 64,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventOne, this.stateChangCallBack);
+    let stateChangeEventTwo: events_emitter.InnerEvent = {
+      eventId: 65,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
+  }
+
+  build() {
+    Flex({ justifyContent: FlexAlign.SpaceAround } as FlexOptions) {
+      Badge({
+        count: this.counts,
+        maxCount: 99,
+        style: { color: this.colorValue, fontSize: this.fontSizeValue, badgeSize: 50, badgeColor: Color.Red }
+      } as BadgeParamWithNumber) {
+        Button('message')
+          .onClick((e: ClickEvent) => {
+            this.counts++
+          })
+          .width(200)
+          .height(100)
+          .backgroundColor(0x317aff)
+          .fontSize(20)
+      }.width(100).height(50).key('badge')
+
+      Badge({
+        value: this.message,
+        style: { color: this.colorValue, fontSize: 9, badgeSize: 20, badgeColor: Color.Red }
+      } as BadgeParamWithString) {
+        Text('message')
+          .width(80)
+          .height(50)
+          .fontSize(16)
+          .lineHeight(37)
+          .borderRadius(10)
+          .textAlign(TextAlign.Center)
+          .backgroundColor(0xF3F4ED)
+      }.width(80).height(50).key('badge2')
+
+      Badge({
+        value: '',
+        position: 1 as BadgePosition,
+        style: { badgeSize: 6, badgeColor: Color.Red }
+      } as BadgeParamWithString) {
+        Text('message')
+          .width(90)
+          .height(50)
+          .fontSize(16)
+          .lineHeight(37)
+          .borderRadius(10)
+          .textAlign(TextAlign.Center)
+          .backgroundColor(0xF3F4ED)
+      }.width(90).height(50)
+
+    }.width('100%').margin({ top: 5 } as Margin)
+  }
+}

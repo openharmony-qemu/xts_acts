@@ -28,12 +28,23 @@ import LinkedList from '@ohos.util.LinkedList';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
+import ArrayList from '@ohos.util.ArrayList';
 
 class Temp {
   age: number;
   name: string;
 
   constructor(age: number = 0, name: string = "") {
+    this.age = age;
+    this.name = name;
+  }
+}
+
+class Temp1 {
+  age: number = 0
+  name: string = ""
+
+  constructor(age: number, name: string) {
     this.age = age;
     this.name = name;
   }
@@ -52,31 +63,31 @@ export default function LinkedListTest1() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    // it('testLinkedListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListAdd0001';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     // linkList.add({
-    //     //   age: 10, name: "zhang"
-    //     // });
-    //     linkList.add(new C1(10, "zhang"));
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //     let jsonResult = JSON.stringify(linkList);
-    //     console.log(`${TAG} jsonResult: ${jsonResult}`);
-    //     expect(jsonResult)
-    //       .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListAdd0001';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        // linkList.add({
+        //   age: 10, name: "zhang"
+        // });
+        linkList.add(new Temp(10, "zhang"));
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
+        let jsonResult = JSON.stringify(linkList);
+        console.log(`${TAG} jsonResult: ${jsonResult}`);
+        expect(jsonResult)
+          .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0200
@@ -111,30 +122,28 @@ export default function LinkedListTest1() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    // it('testLinkedListAddFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListAddFirst0001';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.addFirst("zhang san");
-    //     linkList.addFirst(1);
-    //     linkList.addFirst({
-    //       age: 10, name: "zhang"
-    //     });
-    //     linkList.addFirst(undefined);
-    //     linkList.addFirst(null);
-    //     linkList.addFirst(true);
-    //     linkList.addFirst([0, 1, 2, undefined]);
-    //     let jsonResult = JSON.stringify(linkList);
-    //     console.log(`${TAG} jsonResult: ${jsonResult}`);
-    //     expect(jsonResult)
-    //       .assertEqual(`{"0":[0,1,2,null],"1":true,"2":null,"4":{"age":10,"name":"zhang"},"5":1,"6":"zhang san"}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListAddFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListAddFirst0001';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.addFirst("zhang san");
+        linkList.addFirst(1);
+        linkList.addFirst(new Temp(10, "zhang"));
+        linkList.addFirst(undefined);
+        linkList.addFirst(null);
+        linkList.addFirst(true);
+        linkList.addFirst([0, 1, 2, undefined]);
+        let jsonResult = JSON.stringify(linkList);
+        console.log(`${TAG} jsonResult: ${jsonResult}`);
+        expect(jsonResult)
+          .assertEqual(`{"0":[0,1,2,null],"1":true,"2":null,"4":{"age":10,"name":"zhang"},"5":1,"6":"zhang san"}`);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0200
@@ -909,39 +918,29 @@ export default function LinkedListTest1() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    // it('testLinkedListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0005';
-    //   try {
-    //     class Temp {
-    //       age: number = 0;
-    //       name: string = "";
-    //
-    //       constructor(age: number, name: string) {
-    //         this.age = age;
-    //         this.name = name;
-    //       }
-    //     }
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp = new Temp(10, "zhang");
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let setParam = linkList.set(0, "li si");
-    //     let firstParam = linkList.getFirst();
-    //     expect(String(setParam == firstParam)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListSet0005';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        let param: Temp = new Temp(10, "zhang");
+        linkList.add(param);
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
+
+        let setParam = linkList.set(0, "li si");
+        let firstParam = linkList.getFirst();
+        expect(String(setParam == firstParam)).assertEqual('true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0600
@@ -951,39 +950,29 @@ export default function LinkedListTest1() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    // it('testLinkedListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0006';
-    //   try {
-    //     class Temp1 {
-    //       age: number = 0
-    //       name: string = ""
-    //
-    //       constructor(age: number, name: string) {
-    //         this.age = age;
-    //         this.name = name;
-    //       }
-    //     }
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp1 = new Temp1(10, "zhang");
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let setParam = linkList.set(linkList.length - 1, "li si");
-    //     let lastParam = linkList.getLast();
-    //     expect(String(setParam == lastParam)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListSet0006';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        let param: Temp1 = new Temp1(10, "zhang");
+        linkList.add(param);
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
+
+        let setParam = linkList.set(linkList.length - 1, "li si");
+        let lastParam = linkList.getLast();
+        expect(String(setParam == lastParam)).assertEqual('true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0100
@@ -1089,7 +1078,8 @@ export default function LinkedListTest1() {
           console.log("value:" + value, "index:" + index);
           expect(linkedList.get(index)).assertEqual(value)
         });
-        expect(linkedListNew.convertToArray()).assertEqual(0);
+        expect(linkedListNew.length).assertEqual(1);
+        expect(linkedListNew.get(0)).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1167,5 +1157,56 @@ export default function LinkedListTest1() {
       }
     });
 
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0100
+     * @tc.name      : LinkedListRemovetest001
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.remove(2);
+      expect(result).assertEqual(true)
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0200
+     * @tc.name      : LinkedListRemovetest002
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.remove(10);
+      expect(result).assertEqual(false)
+    });
+
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVE_0300
+     * @tc.name      : LinkedListRemovetest003
+     * @tc.desc      : Testing LinkedList remove
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('LinkedListRemovetest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<number> = new LinkedList<number>();
+      linkedList.add(2);
+      let result = linkedList.convertToArray();
+      let array = [2];
+      expect(result.toString()).assertEqual(array.toString());
+    });
   });
 }

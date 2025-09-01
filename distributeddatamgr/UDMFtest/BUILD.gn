@@ -19,6 +19,7 @@ group("UDMFtest") {
       "UDMFndktestHvigor:ActsUDMFNdkTest",
       "UDMFndktestProgressBar:ActsUDMFndktestProgressBarTest",
       "UDMFtest:UDMF_ets_test",
+      "UDMFEts_static:ActsUDMFStaticTest",
       "UDMFwithOutPermissiontest:UDMF_drag_ets_test",
       "UDMFwithPermissiontest:UDMF_drag_test",
     ]

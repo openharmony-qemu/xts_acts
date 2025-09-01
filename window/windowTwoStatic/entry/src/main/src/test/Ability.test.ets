@@ -18,7 +18,7 @@ import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSessi
 
 // import PiPWindow from '@ohos.PiPWindow';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 
@@ -38,8 +38,8 @@ export default function abilityTest() {
       //context = AppStorage.get('context') as common.UIAbilityContext;
       //console.log('windowTest context: ' + JSON.stringify(context))
       try {
-        windowStage = AppStorage.get<window.WindowStage>('windowStage',Type.from<window.WindowStage>()) as window.WindowStage;
-        win = AppStorage.get<window.Window>('mainWindow',Type.from<window.Window>()) as window.Window;
+        windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+        win = AppStorage.get<window.Window>('mainWindow') as window.Window;
         // let win = windowStage.getMainWindowSync();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
@@ -522,6 +522,70 @@ export default function abilityTest() {
         }
         done();
       });
+
+      /**
+       * @tc.number     : onOffRotationChangeTest_static_0231
+       * @tc.name       : onOffRotationChangeTest_static_0231
+       * @tc.desc       : onOffRotationChangeTest_static_0231
+       * @tc.size       : MediumTest
+       * @tc.type       : Function
+       * @tc.level      : Level 1
+       */
+      it("onOffRotationChangeTest_static_0231",
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          let callback: window.RotationChangeCallback<window.RotationChangeInfo, window.RotationChangeResult | undefined> =
+            (info: window.RotationChangeInfo): window.RotationChangeResult | undefined => {
+              let rotationResult: window.RotationChangeResult = {
+                rectType: window.RectType.RELATIVE_TO_PARENT_WINDOW,
+                windowRect: {
+                  left: 0,
+                  top: 0,
+                  width: 2000,
+                  height: 2000
+                }
+              };
+              if (info.type === window.RotationChangeType.WINDOW_WILL_ROTATE) {
+                rotationResult = {
+                  rectType: window.RectType.RELATIVE_TO_PARENT_WINDOW,
+                  windowRect: {
+                    left: 0,
+                    top: 0,
+                    width: 2000,
+                    height: 2000
+                  }
+                };
+                console.info(`onRotationChange type is WINDOW_WILL_ROTATE. rect: [${rotationResult.windowRect.left}, ` +
+                  `${rotationResult.windowRect.top}, ${rotationResult.windowRect.width}, ` +
+                  `${rotationResult.windowRect.height}]`);
+                return rotationResult;
+              } else {
+                console.info('onRotationChange type is WINDOW_DID_ROTATE');
+                return undefined;
+              }
+              return undefined;
+            };
+          try {
+            win.on('rotationChange', callback);
+            win.setPreferredOrientation(window.Orientation.LANDSCAPE);
+            win.setPreferredOrientation(window.Orientation.PORTRAIT);
+            expect(true).assertTrue();
+          } catch (err: BusinessError) {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(`on rotationChange failed. Cause code: ${err.code}, message: ${err.message}`);
+            }
+          }
+          try {
+            win.off('rotationChange', callback);
+            expect(true).assertTrue();
+          } catch (err: BusinessError) {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(`off rotationChange failed. Cause code: ${err.code}, message: ${err.message}`);
+            }
+          }
+          done();
+        });
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 

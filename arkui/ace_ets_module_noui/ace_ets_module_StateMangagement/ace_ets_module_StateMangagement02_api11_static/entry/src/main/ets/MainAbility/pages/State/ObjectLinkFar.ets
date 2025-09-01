@@ -1,0 +1,146 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import {
+  Builder,
+  Button,
+  ButtonType,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  NavDestination,
+  Navigation,
+  NavigationMode,
+  NavPathStack,
+  Row,
+  Text
+} from '@ohos.arkui.component'
+import {
+  AppStorage,
+  Consume,
+  Link,
+  LocalStorage,
+  LocalStorageLink,
+  LocalStorageProp,
+  ObjectLink,
+  Observed,
+  Prop,
+  Provide,
+  State,
+  StorageLink,
+  StorageProp,
+  Watch
+} from '@ohos.arkui.stateManagement'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import common from '@ohos.app.ability.common';
+
+@Observed
+class ClassAAA {
+  public numA: number = 1
+  public classB: ClassBBB = new ClassBBB(1)
+
+  constructor(cValue: ClassBBB, aValue: number = 0) {
+    this.classB = cValue;
+    this.numA = aValue;
+  }
+}
+
+@Observed
+class ClassBBB {
+  public numB: number = 1
+
+  constructor(aValue: number = 0) {
+    this.numB = aValue;
+  }
+}
+
+@Entry
+@Component
+struct ObjectLinkFarClassAAA {
+  @State classA: ClassAAA = new ClassAAA(new ClassBBB(5));
+
+  aboutToAppear() {
+    let uiContext = this.getUIContext();
+    try {
+      let router = uiContext.getRouter();
+      AppStorage.setOrCreate<Router>('ObjectLinkFar', router);
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
+  }
+
+  build() {
+    Column() {
+      Button("Reset").id("ObjectLinkFarClassAAA_reset")
+        .height('5%')
+        .onClick((e: ClickEvent) => {
+          this.classA = new ClassAAA(new ClassBBB(5))
+        })
+      Text('父组件').fontSize(9).height('5%')
+      Text('父组件会刷新').fontSize(9).fontColor('#FF0000').height('5%')
+      Text(`ClassAAA的numA值: ${this.classA.numA}`)
+        .key("farClassAAA")
+        .height('5%')
+        .fontSize(9)
+        .fontWeight(FontWeight.Bold)
+        .onClick((e: ClickEvent) => {
+          this.classA.numA += 1
+        })
+
+      Text('父组件不会刷新').fontSize(9).fontColor('#FF0000').height('5%')
+      Text(`ClassAAA的classBBB: ${this.classA.classB.numB}`)
+        .key("farClassBBB")
+        .height('5%')
+        .fontSize(9)
+        .fontWeight(FontWeight.Bold)
+        .onClick((e: ClickEvent) => {
+          this.classA.classB.numB += 1
+        })
+
+      Text('子组件').fontSize(9).height('5%')
+
+      ObjectLinkSonClassBBB({ classB: this.classA.classB })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+@Component
+struct ObjectLinkSonClassBBB {
+  @ObjectLink classB: ClassBBB = new ClassBBB(1)
+
+  build() {
+    Column() {
+
+      Text(`ClassBBB的numB值: ${this.classB.numB}`)
+        .key("sonClassBBB")
+        .height('5%')
+        .fontSize(9)
+        .fontWeight(FontWeight.Bold)
+        .onClick((e: ClickEvent) => {
+          this.classB.numB += 1
+        })
+
+    }.width('100%')
+    .height('100%')
+  }
+}

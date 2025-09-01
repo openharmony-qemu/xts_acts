@@ -1,0 +1,21 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/tabsFirst",
+    "MainAbility/pages/textPicker",
+    "MainAbility/pages/alphabetIndexer",
+    "MainAbility/pages/swiper",
+    "MainAbility/pages/text",
+    "MainAbility/pages/scroll",
+    "MainAbility/pages/common1",
+    "MainAbility/pages/gridCol",
+    "MainAbility/pages/image",
+    "MainAbility/pages/video",
+    "MainAbility/pages/textInput",
+    "MainAbility/pages/textArea",
+    "MainAbility/pages/scrollNestedScroll",
+    "MainAbility/pages/scrollEnablePaging",
+    "MainAbility/pages/gridNestedScroll",
+    "MainAbility/pages/listNestedScroll"
+  ]
+}

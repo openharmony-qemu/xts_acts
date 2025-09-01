@@ -21,5 +21,8 @@ group("window") {
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
     "windowOneStatic:ActsWindowOneStaticTest",
     "windowTwoStatic:ActsWindowTwoStaticTest",
+    "ActsDisplayTestStatic:ActsDisplayStaticTest",
+    "ActsWindowTestStatic:ActsWindowStaticTest",
+    "ActsWindowErrorCodeTestStatic:ActsWindowErrorCodeStaticTest",
   ]
 }

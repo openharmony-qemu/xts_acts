@@ -874,32 +874,32 @@ export default function hasSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
-    //  * @tc.name      : testHashSetForEach0005
-    //  * @tc.desc      : Testing HashSet has data and ArgThis
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetForEach0005';
-    //   try {
-    //     const hashSet = new HashSet<number>();
-    //     const hashSetNew = new HashSet<number>();
-    //     hashSetNew.add(1);
-    //     hashSet.add(1);
-    //     hashSet.forEach((value?: number) => {
-    //       hashSet.clear();
-    //       expect(String(hashSet.length)).assertEqual('0');
-    //     }, hashSetNew);
-    //     expect(hashSetNew.length).assertEqual(1);
-    //     expect(hashSetNew.has(1)).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
+     * @tc.name      : testHashSetForEach0005
+     * @tc.desc      : Testing HashSet has data and ArgThis
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHashSetForEach0005';
+      try {
+        const hashSet = new HashSet<number>();
+        const hashSetNew = new HashSet<number>();
+        hashSetNew.add(1);
+        hashSet.add(1);
+        hashSet.forEach((value : number, hashSetNew) => {
+          hashSet.clear();
+          expect(String(hashSet.length)).assertEqual('0');
+        });
+        expect(hashSetNew.length).assertEqual(1);
+        expect(hashSetNew.has(1)).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0600

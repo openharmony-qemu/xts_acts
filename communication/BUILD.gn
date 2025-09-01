@@ -34,6 +34,7 @@ group("communication") {
       "netstack_http_nop:ActsHttpNopStageTest",
       "netstack_socket_nop:ActsSocketNoPermissionTest",
       "nfc_Controller:ActsNFCJSTest",
+      "nfc_ControllerStatic:ActsNFCJSStaticTest",
       "nfc_connectedtag:ActsNFCConnectedTagJSTest",
       "nfc_ErrorCode:ActsNFCErrorJSTest",
       "nfc_SecureElement:ActsnfcSEServiceTest",
@@ -45,6 +46,14 @@ group("communication") {
       "wifi_manager_nop:ActsManagerNopStageOhosTest",
       "wifi_p2p:ActsP2PJSTest",
       "wifi_standard:ActsWifiJSTest",
+      "bluetooth_ble_static:ActsBluetoothBleJsStaticTest",
+      "bluetooth_bp_static:ActsBluetoothBpJsStaticTest",
+      "bluetooth_br_static:ActsBluetoothBrJsStaticTest",
+      "bluetooth_nop_static:ActsBlutoothNopStaticTest",
+      "btmanager_switchoff_static:ActsBtManagerSwitchOff003JsStaticTest",
+      "wifi_manager_nop_static:ActsManagerNopStageOhosStaticTest",
+      "wifi_standard_static:ActsWifiJSStaticTest",
+      "wifimanager_switchoff_static:ActsManagerDisableStaticTest",
     ]
   } else {
     deps = [ "wifi_standard:ActsWifiJSTest" ]

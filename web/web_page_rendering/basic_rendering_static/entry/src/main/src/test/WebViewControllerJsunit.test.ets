@@ -77,7 +77,11 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(2000);
       emitKey="emitFetchCookieSync";
       Utils.registerEvent("testGetWebId",6,100,done); //3个Web页面的id之和(6)会根据此用例之前的测试套及用例的运行发生变化
-      inspector.sendEventByKey('webcomponent',10,'');
+      let driver: Driver = Driver.create();
+      await Utils.msSleep(2000);
+      let button = await driver.findComponent(ON.id('webcomponent'));
+      await Utils.msSleep(2000);
+      button?.click();
       await Utils.msSleep(5000);
       done();
     })
