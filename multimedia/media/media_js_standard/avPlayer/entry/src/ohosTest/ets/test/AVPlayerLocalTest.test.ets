@@ -1363,9 +1363,9 @@ async function setOnCallbackSubtitleUpdate(avPlayer: media.AVPlayer | null, done
   })
 }
 async function subtitleUpdateON(avPlayer: media.AVPlayer, done: Function) {
-  let loopTime = 0;
   avPlayer.on('subtitleUpdate', async (info: media.SubtitleInfo) => {
     if (info) {
+      loopTime++;
       let text = (!info.text) ? '' : info.text;
       let startTime = (!info.startTime) ? 0 : info.startTime;
       let duration = (!info.duration) ? 0 : info.duration;
@@ -2148,5 +2148,46 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104
+        * @tc.name      : 001.test subtitle Function
+        * @tc.desc      : Local Video subtitle control test
+        * @tc.size      : MediumTest
+        * @tc.type      : Function test
+        * @tc.level     : Level1
+    */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor && subtitleFdSrc) {
+          subtitleFdSrc.offset = 0;
+          testsubtitle5UpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail()
+        done()
+      }
+    });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105
+        * @tc.name      : 001.test subtitle Function
+        * @tc.desc      : Local Video subtitle control test
+        * @tc.size      : MediumTest
+        * @tc.type      : Function test
+        * @tc.level     : Level1
+    */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor && subtitleFdSrc) {
+          subtitleFdSrc.length = 0;
+          testsubtitle4UpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail()
+        done()
+      }
+    });
+
   })
 }
