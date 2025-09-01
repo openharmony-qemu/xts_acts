@@ -32,10 +32,14 @@ struct WebComponent {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141331,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(){
+    events_emitter.off(141331)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -100,16 +104,16 @@ struct WebComponent {
         Button('web click').key('webOnOffButton').onClick(async () => {
           console.info('key==>' + this.str);
           await waitForExist(()=>this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case 'emitOnOffOne': {
               console.log('ppp333' + this.flagOne)
               console.log('pbbb666' + this.flagTwo)
               console.log('pbbb888' + this.flagThree)
-              await Utils.sleep(2000);
               console.log('bbbbbrrrrr' + this.flagOne + this.flagTwo + this.flagThree)
               if(this.flagOne && this.flagTwo && this.flagThree) {
                 console.log('ppppppTrur')
-                Utils.emitEvent(true, 20250520);
+                Utils.emitEvent(true, 141370);
               }
               break;
             }

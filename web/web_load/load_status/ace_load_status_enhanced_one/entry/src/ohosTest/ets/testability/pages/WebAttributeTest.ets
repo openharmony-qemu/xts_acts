@@ -17,6 +17,7 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import cert from '@ohos.security.cert';
+import { waitForExist } from '../../test/WaitTest.test';
 
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
@@ -73,17 +74,19 @@ struct WebAttributeTest {
   @State title: string = ''
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
-
+  @State isReceive: number = -1;
+  @State isEnd:number = -1;
+  @State isPageEnd:number = -1;
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141401,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141401)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -92,6 +95,7 @@ struct WebAttributeTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
         try {
           this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
@@ -115,16 +119,18 @@ struct WebAttributeTest {
             console.log("onBlur==>")
           })
           .onClick(async () => {
+            await waitForExist(()=>this.isReceive, this.str, 0);
+            this.isReceive = -1;
             console.info("key==>" + this.str)
             switch (this.str) {
               case "emitOnPageEnd001": {
                 try {
                   this.pageEnd = ''
                   this.controller.clearHistory()
-                  await Utils.sleep(1000)
+                  this.isPageEnd = -1
                   this.controller.loadUrl("resource://rawfile/second.html")
-                  await Utils.sleep(3000)
-                  Utils.emitEvent(this.pageEnd, 70007)
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(this.pageEnd, 141410)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -134,19 +140,21 @@ struct WebAttributeTest {
                 try {
                   this.pageEnd = ''
                   this.controller.clearHistory()
-                  await Utils.sleep(1000)
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/iframe.html")
-                  await Utils.sleep(3000)
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.isEnd = -1;
                   this.controller.runJavaScript("createIframe()", (error, result) => {
                     if (error) {
                       console.info('createIframe() return error: ' + error)
                     }
                     if (result) {
                       console.info('createIframe() return result: ' + result)
+                      this.isEnd = 0;
                     }
                   })
-                  await Utils.sleep(4000)
-                  Utils.emitEvent(this.pageEnd, 70008)
+                  await waitForExist(()=>this.isEnd, this.str, 0);
+                  Utils.emitEvent(this.pageEnd, 141420)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -155,9 +163,10 @@ struct WebAttributeTest {
               case "emitOnPageBegin001": {
                 try {
                   this.pageBegin = ''
+                  this.isPageEnd = -1
                   this.controller.loadUrl("resource://rawfile/second.html")
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.pageBegin, 70009)
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(this.pageBegin, 141430)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -166,18 +175,21 @@ struct WebAttributeTest {
               case "emitOnPageBegin002": {
                 try {
                   this.pageBegin = ''
+                  this.isPageEnd = -1
                   this.controller.loadUrl("resource://rawfile/iframe.html")
-                  await Utils.sleep(2000)
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                 this.isEnd = -1;
                   this.controller.runJavaScript("createIframe()", (error, result) => {
                     if (error) {
                       console.info('createIframe() return error: ' + error)
                     }
                     if (result) {
                       console.info('createIframe() return result: ' + result)
+                      this.isEnd = 0
                     }
                   })
-                  await Utils.sleep(4000)
-                  Utils.emitEvent(this.pageBegin, 70010)
+                  await waitForExist(()=>this.isEnd, this.str, 0);
+                  Utils.emitEvent(this.pageBegin, 141440)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -186,9 +198,10 @@ struct WebAttributeTest {
               case "emitOnProgressChange001": {
                 try {
                   this.progress = ''
+                  this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/second.html")
-                  await Utils.sleep(2000)
-                  Utils.emitEvent(this.progress, 700012)
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(this.progress, 141450)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -228,6 +241,7 @@ struct WebAttributeTest {
             }
           })
           .onPageEnd((event) => {
+            this.isPageEnd = 0;
             if (event) {
               this.pageEnd = event.url
               console.log("onPageEnd==> event.url:" + event.url)
