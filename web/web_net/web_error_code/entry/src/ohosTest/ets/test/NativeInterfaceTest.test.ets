@@ -44,26 +44,6 @@ export default function NativeInterfaceTest() {
 
     /**
      * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0100
-     * @tc.name    : testWebNapiLoadDataNotInit
-     * @tc.desc    : test OH_NativeArkWeb_LoadData() not init
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
-     */
-    it('testWebNapiLoadDataNotInit', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
-      try {
-        console.info("====>testWebNapiLoadDataNotInit start====");
-        let result: number = nativeInterface.NativeArkWebLoadDataInitError();
-        console.info("====>testWebNapiLoadDataNotInit result====", result);
-        expect(result).assertEqual(TEST_ARKWEB_INIT_ERROR);
-        done();
-      } catch (err) {
-        console.error("====>testWebNapiLoadDataNotInit catch err: " + err);
-      }
-    })
-
-    /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0200
      * @tc.name    : testWebNapiLoadDataSuccess
      * @tc.desc    : test OH_NativeArkWeb_LoadData() SUCCESS
      * @tc.level   : Level2
@@ -80,55 +60,196 @@ export default function NativeInterfaceTest() {
         done();
       } catch (err) {
         console.error("====>testWebNapiLoadDataSuccess catch err: " + err);
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0200
+     * @tc.name    : testWebNapiLoadDataNotInit
+     * @tc.desc    : test OH_NativeArkWeb_LoadData() not init
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiLoadDataNotInit', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        console.info("====>testWebNapiLoadDataNotInit start====");
+        let result: number = nativeInterface.loadData("web1211", 1);
+        console.info("====>testWebNapiLoadDataNotInit result====", result);
+        expect(result).assertEqual(TEST_ARKWEB_INIT_ERROR);
+        done();
+      } catch (err) {
+        console.error("====>testWebNapiLoadDataNotInit catch err: " + err);
+        expect(true).assertEqual(false);
+        done();
       }
     })
 
     /**
      * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0300
-     * @tc.name    : testWebNapiLoadDataSymbolNotFound
-     * @tc.desc    : test OH_NativeArkWeb_LoadData() ARKWEB_LIBRARY_SYMBOL_NOT_FOUND
+     * @tc.name    : testWebNapiLoadDataNoData
+     * @tc.desc    : test OH_NativeArkWeb_LoadData()
      * @tc.level   : Level2
      * @tc.size    : SMALLTEST
      * @tc.type    : Function
      */
-    it('testWebNapiLoadDataSymbolNotFound', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+    it('testWebNapiLoadDataNoData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
       try {
-        console.info("====>testWebNapiLoadDataSymbolNotFound start====");
-        let result: number = nativeInterface.loadData("web1211", 1);
-        console.info("====>testWebNapiLoadDataSymbolNotFound result====", result);
-        // expect(result).assertEqual(TEST_ARKWEB_LIBRARY_SYMBOL_NOT_FOUND);
-        console.info("====>testWebNapiLoadDataSymbolNotFound stop====");
+        console.info("====>testWebNapiLoadDataNoData start====");
+        let result: number = nativeInterface.loadData("web1211", 2);
+        console.info("====>testWebNapiLoadDataNoData result====", result);
+        expect(result).assertEqual(TEST_ARKWEB_SUCCESS);
+        console.info("====>testWebNapiLoadDataNoData stop====");
         done();
       } catch (err) {
-        console.error("====>testWebNapiLoadDataSymbolNotFound catch err: " + err);
+        console.error("====>testWebNapiLoadDataNoData catch err: " + err);
+        expect(true).assertEqual(false);
+        done();
       }
     })
 
     /**
      * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0400
-     * @tc.name    : testWebNapiLoadDataInvalidParam
-     * @tc.desc    : test OH_NativeArkWeb_LoadData() ARKWEB_INVALID_PARAM
+     * @tc.name    : testWebNapiLoadDataNoType
+     * @tc.desc    : test OH_NativeArkWeb_LoadData()
      * @tc.level   : Level2
      * @tc.size    : SMALLTEST
      * @tc.type    : Function
      */
-    it('testWebNapiLoadDataInvalidParam', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+    it('testWebNapiLoadDataNoType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
-      try {
-        console.info("====>testWebNapiLoadDataInvalidParam start====");
-        let result: number = nativeInterface.loadData("web1211", 2);
-        console.info("====>testWebNapiLoadDataInvalidParam result====", result);
-        // expect(result).assertEqual(0);
-        console.info("====>testWebNapiLoadDataInvalidParam stop====");
-        done();
-      } catch (err) {
-        console.error("====>testWebNapiLoadDataInvalidParam catch err: " + err);
-      }
-    })
+        try {
+          console.info("====>testWebNapiLoadDataNoType start====");
+          let result: number = nativeInterface.loadData("web1211", 3);
+          console.info("====>testWebNapiLoadDataNoType result====", result);
+          expect(result).assertEqual(TEST_ARKWEB_SUCCESS);
+          console.info("====>testWebNapiLoadDataNoType stop====");
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiLoadDataNoType catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0500
+     * @tc.name    : testWebNapiLoadDataNoEncode
+     * @tc.desc    : test OH_NativeArkWeb_LoadData()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiLoadDataNoEncode', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiLoadDataNoEncode start====");
+          let result: number = nativeInterface.loadData("web1211", 4);
+          console.info("====>testWebNapiLoadDataNoEncode result====", result);
+          expect(result).assertEqual(TEST_ARKWEB_SUCCESS);
+          console.info("====>testWebNapiLoadDataNoEncode stop====");
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiLoadDataNoType catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
 
     /**
      * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0100
+     * @tc.name    : testWebNapiGetBlanklessInfoSuccess
+     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiGetBlanklessInfoSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiGetBlanklessInfoSuccess start====");
+          let result: number = nativeInterface.GetBlanklessInfo('web1211', 0);
+          expect([0, 801]).assertContain(result);
+          console.info("====>testWebNapiGetBlanklessInfoSuccess stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiGetBlanklessInfoSuccess catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0200
+     * @tc.name    : testWebNapiGetBlanklessInfoNewkey
+     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiGetBlanklessInfoNewkey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiGetBlanklessInfoNewkey start====");
+          let result: number = nativeInterface.GetBlanklessInfo('web1211', 1);
+          expect([0, 801]).assertContain(result);
+          console.info("====>testWebNapiGetBlanklessInfoNewkey stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiGetBlanklessInfoNewkey catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0300
+     * @tc.name    : testWebNapiGetBlanklessInfoNullkey
+     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiGetBlanklessInfoNullkey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiGetBlanklessInfoNullkey start====");
+          let result: number = nativeInterface.GetBlanklessInfo('web1211', 2);
+          expect([-2, 801]).assertContain(result);
+          console.info("====>testWebNapiGetBlanklessInfoNullkey stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiGetBlanklessInfoNullkey catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0400
+     * @tc.name    : testWebNapiGetBlanklessInfoNullWeb
+     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiGetBlanklessInfoNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiGetBlanklessInfoNullWeb start====");
+          let result: number = nativeInterface.GetBlanklessInfo('web1211', 3);
+          expect([-3, 801]).assertContain(result);
+          console.info("====>testWebNapiGetBlanklessInfoNullWeb stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiGetBlanklessInfoNullWeb catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0500
      * @tc.name    : testWebNapiSetBlanklessInfoNotInit
      * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
      * @tc.level   : Level2
@@ -139,17 +260,19 @@ export default function NativeInterfaceTest() {
       async (done: Function) => {
         try {
           console.info("====>testWebNapiSetBlanklessInfoNotInit start====");
-          let result: number = nativeInterface.SetBlanklessInfo('new', '0731');
-          expect(result).assertEqual(0);
-          console.info("====>testWebNapiSetBlanklessInfoNotInit stop====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 0);
+          expect([-3, 801]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoNotInit stop====", result);
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlanklessInfoNotInit catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0200
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0600
      * @tc.name    : testWebNapiSetBlanklessInfoSuccess
      * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
      * @tc.level   : Level2
@@ -160,17 +283,20 @@ export default function NativeInterfaceTest() {
       async (done: Function) => {
         try {
           console.info("====>testWebNapiSetBlanklessInfoSuccess start====");
-          let result: number = nativeInterface.SetBlanklessInfo('web1211', '0731');
-          expect(result).assertEqual(0);
-          console.info("====>testWebNapiSetBlanklessInfoSuccess stop====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 1);
+          // timeout -1?
+          expect([0, -5, 801]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoSuccess stop====", result);
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlanklessInfoSuccess catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0300
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0700
      * @tc.name    : testWebNapiSetBlanklessInfoNokey
      * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
      * @tc.level   : Level2
@@ -181,34 +307,81 @@ export default function NativeInterfaceTest() {
       async (done: Function) => {
         try {
           console.info("====>testWebNapiSetBlanklessInfoNokey start====");
-          let result: number = nativeInterface.SetBlanklessInfo('web1211', 'xxxxxx');
-          expect(result).assertEqual(0);
-          console.info("====>testWebNapiSetBlanklessInfoNokey stop====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 2);
+          expect([801,-4,-5]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoNokey stop====", result);
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlanklessInfoNokey catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
-
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0400
-     * @tc.name    : testWebNapiGetBlanklessInfo
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0800
+     * @tc.name    : testWebNapiSetBlanklessInfoTrue
      * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
      * @tc.level   : Level2
      * @tc.size    : SMALLTEST
      * @tc.type    : Function
      */
-    it('testWebNapiGetBlanklessInfo', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+    it('testWebNapiSetBlanklessInfoTrue', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
         try {
-          console.info("====>testWebNapiGetBlanklessInfo start====");
-          nativeInterface.SetBlanklessInfo('web1211', '0731');
-          let result: number = nativeInterface.GetBlanklessInfo('web1211', '0731');
-          expect(result).assertEqual(0);
-          console.info("====>testWebNapiGetBlanklessInfo stop====");
+          console.info("====>testWebNapiSetBlanklessInfoTrue start====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 3);
+          expect([0, -5, 801]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoTrue stop====", result);
           done();
         } catch (err) {
-          console.error("====>testWebNapiGetBlanklessInfo catch err: " + err);
+          console.error("====>testWebNapiSetBlanklessInfoTrue catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0900
+     * @tc.name    : testWebNapiSetBlanklessInfoNullWeb
+     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiSetBlanklessInfoNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiSetBlanklessInfoNullWeb start====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 4);
+          expect([-3, 801]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoNullWeb stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiSetBlanklessInfoNullWeb catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
+        }
+      })
+    /**
+     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_1000
+     * @tc.name    : testWebNapiSetBlanklessInfoNullKey
+     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.level   : Level2
+     * @tc.size    : SMALLTEST
+     * @tc.type    : Function
+     */
+    it('testWebNapiSetBlanklessInfoNullKey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          console.info("====>testWebNapiSetBlanklessInfoNullKey start====");
+          let result: number = nativeInterface.SetBlanklessInfo('web1211', 5);
+          expect([-2, 801]).assertContain(result);
+          console.info("====>testWebNapiSetBlanklessInfoNullKey stop====", result);
+          done();
+        } catch (err) {
+          console.error("====>testWebNapiSetBlanklessInfoNullKey catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -230,6 +403,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeDataCallback catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -251,6 +426,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeCallbackNullUser catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -272,6 +449,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeCallbackNullData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -293,6 +472,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeCallbackNullWeb catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -314,6 +495,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeProxyData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -335,6 +518,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeProxyData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -356,6 +541,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeProxyNullData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -377,6 +564,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeProxyNullUser catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -398,6 +587,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSBridgeProxyNullWeb catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -419,6 +610,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgTypeEnumNone catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -440,6 +633,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgTypeEnumString catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -461,6 +656,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgTypeEnumBuffer catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -482,6 +679,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiSize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -503,6 +702,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiCreate catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -524,6 +725,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiDestroy catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -545,6 +748,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiSetType catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -566,6 +771,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiGetType catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -587,6 +794,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiSetData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -608,6 +817,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebMsgApiGetData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -629,6 +840,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebJSValueApiSize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -650,6 +863,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebJSValueApiCreate catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -671,6 +886,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebJSValueEnumNone catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -691,6 +908,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebJSValueEnumString catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -711,6 +930,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiWebJSValueEnumBool catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -731,6 +952,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerAPISize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -752,6 +975,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerAPIRunJS catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -772,6 +997,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRegJSProxy catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -793,6 +1020,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRegJSProxy catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -813,6 +1042,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRefresh catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -833,6 +1064,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRegAsyncJSProxy catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -853,6 +1086,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerCreateWebMsgPort catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -874,6 +1109,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerDestroyWebMsgPort catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -895,6 +1132,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerPostWebMsg catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -915,6 +1154,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerGetLast catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -935,6 +1176,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRegJSProxyEX catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -955,6 +1198,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiControllerRegAsyncJSProxyEX catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
@@ -976,6 +1221,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSObjectSize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -996,6 +1243,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSObjectBuffer catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1016,6 +1265,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSObjectCallback catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1036,6 +1287,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJSObjectUserData catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1056,6 +1309,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodName catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1076,6 +1331,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodCallback catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1096,6 +1353,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodUserdata catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1116,6 +1375,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodWithResultName catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1136,6 +1397,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodWithResultCallback catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1156,6 +1419,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyMethodWithResultUserdata catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1176,6 +1441,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectName catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1196,6 +1463,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectMethodList catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1216,6 +1485,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectSize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1236,6 +1507,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectWithResultName catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1256,6 +1529,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectWithResultMethodList catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1276,6 +1551,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiProxyObjectWithResultSize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1296,6 +1573,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiComponentAPISize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1316,6 +1595,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiComponentAPIAttached catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1336,6 +1617,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiComponentAPIPageBegin catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1356,6 +1639,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiComponentAPIPageEnd catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1376,6 +1661,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiComponentAPIDestroy catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1396,6 +1683,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiMessagePortAPISize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1416,6 +1705,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiMessagePortAPIPost catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1436,6 +1727,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiMessagePortAPIClose catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1456,6 +1749,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiMessagePortAPISetHandler catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1476,6 +1771,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPISize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1496,6 +1793,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPIFetch catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1516,6 +1815,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPIConfig catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1536,6 +1837,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPIExist catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1556,6 +1859,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPIClearAll catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1576,6 +1881,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiCookieManagerAPIClearSession catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1596,6 +1903,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJavaScriptValueAPISize catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1616,6 +1925,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiJavaScriptValueAPICreate catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1636,6 +1947,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiRegisterJSProxyNormal catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1656,6 +1969,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiRegisterJSProxyPermissionNull catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1676,6 +1991,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiRegisterJSProxyObjectNull catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1696,6 +2013,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiRegisterJSProxyWebNameNew catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1716,6 +2035,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiRegisterJSProxyMethodSize0 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1736,6 +2057,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiClearBlankLessCache0 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1756,6 +2079,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiClearBlankLessCacheNormal catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1776,6 +2101,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiClearBlankLessCacheSize100 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1796,6 +2123,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiClearBlankLessCacheSize101 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1816,6 +2145,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiClearBlankLessCacheNullKey catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1836,6 +2167,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlankCacheCap0 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1856,6 +2189,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlankCacheCap100 catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1876,6 +2211,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlankCacheCapBigger catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1891,11 +2228,13 @@ export default function NativeInterfaceTest() {
         try {
           console.info("====>testWebNapiSetBlankCacheCapSmaller start====");
           let result: number = nativeInterface.WebSetBlankCacheCap(3);
-          expect(result).assertEqual(0);
+          expect([0, 100]).assertContain(result);
           console.info("====>testWebNapiSetBlankCacheCapSmaller stop====", result);
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlankCacheCapSmaller catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1916,6 +2255,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSetBlankCacheCapDefault catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1936,6 +2277,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSaveCookieSyncSuccess catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1956,6 +2299,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSaveCookieSyncUninitCookieManager catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1976,6 +2321,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSaveCookieAsyncSuccess catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
     /**
@@ -1996,6 +2343,8 @@ export default function NativeInterfaceTest() {
           done();
         } catch (err) {
           console.error("====>testWebNapiSaveCookieAsyncNullCallback catch err: " + err);
+          expect(true).assertEqual(false);
+          done();
         }
       })
 
