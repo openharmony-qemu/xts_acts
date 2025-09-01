@@ -37,8 +37,8 @@ static void OnEventGesture(ArkUI_GestureEvent* event, void* extraParams)
 static std::shared_ptr<TextComponent> CreateTextNodeToRequirement(uint32_t color)
 {
     auto text = std::make_shared<TextComponent>();
-    text->SetWidth(SIZE_100);
-    text->SetHeight(SIZE_150);
+    text->SetWidth(SIZE_30);
+    text->SetHeight(SIZE_30);
     text->SetBackgroundColor(color);
     text->SetTextAlign(ARKUI_TEXT_ALIGNMENT_CENTER);
     return text;
@@ -47,8 +47,8 @@ static std::shared_ptr<TextComponent> CreateTextNodeToRequirement(uint32_t color
 static auto CreateSwiperNodeToFirstRequirement(ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id)
 {
     auto swiper = std::make_shared<SwiperComponent>();
-    swiper->SetHeight(SIZE_100);
-    swiper->SetWidth(SIZE_150);
+    swiper->SetHeight(SIZE_30);
+    swiper->SetWidth(SIZE_30);
     swiper->SetBorderWidth(PARAM_1);
     swiper->SetId(id);
     swiper->SetMargin(DEFAULT_MARGIN);
@@ -65,8 +65,8 @@ static auto CreateSwiperNodeToSecondRequirement(ArkUI_NativeGestureAPI_1* gestur
     auto text2 = CreateTextNodeToRequirement(COLOR_BLUE);
     auto text3 = CreateTextNodeToRequirement(COLOR_RED);
     std::vector<std::shared_ptr<TextComponent>> texts = { text1, text2, text3 };
-    swiper->SetHeight(SIZE_100);
-    swiper->SetWidth(SIZE_150);
+    swiper->SetHeight(SIZE_30);
+    swiper->SetWidth(SIZE_30);
     swiper->SetBorderWidth(PARAM_1);
     swiper->SetId(id);
     swiper->SetMargin(DEFAULT_MARGIN);

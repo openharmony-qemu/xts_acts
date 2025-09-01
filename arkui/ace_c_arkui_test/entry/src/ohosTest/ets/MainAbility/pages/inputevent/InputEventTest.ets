@@ -44,8 +44,8 @@ struct InputEventTest {
     Column() {
       Button()
         .backgroundColor(Color.Transparent)
-        .width(200)
-        .height(100)
+        .width(50)
+        .height(25)
         .id('mouseButtonCallInputEvent')
         .onClick(() => {
           render.setFuncName(InputEventTestFunctionStaticData.funcName);
