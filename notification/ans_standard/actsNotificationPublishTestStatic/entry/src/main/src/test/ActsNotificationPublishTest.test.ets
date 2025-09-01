@@ -16,7 +16,7 @@
 import notificationManager from '@ohos.notificationManager'
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll } from "../../../hypium/index";
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
 import emitter from '@ohos.events.emitter'
@@ -30,7 +30,7 @@ let bundle_name:string = "com.example.actsnotificationpublish.static"
 let domain: int = 0x0000;
 let wantAgentData : Object = {}
 
-let parameters1 : Record<String,Object> = {
+let parameters1 : Record<String,RecordData> = {
   "mykey0": 2222,
   "mykey1": [1, 2, 3],
   "mykey2": "[1, 2, 3]",
