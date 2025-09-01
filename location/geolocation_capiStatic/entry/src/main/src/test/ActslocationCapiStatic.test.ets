@@ -111,7 +111,7 @@ export default function actslocationTest() {
         it('Sub_Location_GetCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
              async(done:()=>void):Promise<void>=>{
                 const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0100'
-                let locationChangeRequest:geoLocationManager.locationRequest={
+                let locationChangeRequest:geoLocationManager.LocationRequest={
                     "priority":geoLocationManager.LocationRequestPriority.UNSET,
                     "scenario":geoLocationManager.LocationRequestScenario.NAVIGATION,
                     "timeInterval":5,
@@ -127,7 +127,7 @@ export default function actslocationTest() {
                 };
                 try{
                     geoLocationManager.getCurrentLocation(currentLocationRequest,
-                    (err:BusinessError<void>|null,result:geolocaiontManager.Location|undefined)=>{
+                    (err:BusinessError<void>|null,result:geolocaionManager.Location|undefined)=>{
                         if(srr!=null){
                             expect().assertFail()
                         }
@@ -153,7 +153,7 @@ export default function actslocationTest() {
 
                     })
                 }catch(error:BusinessError){
-                    expect(false.assertTrue);
+                    expect().assertFail();
                 }
                 await Utils.msSleep(1000)
                 done();
