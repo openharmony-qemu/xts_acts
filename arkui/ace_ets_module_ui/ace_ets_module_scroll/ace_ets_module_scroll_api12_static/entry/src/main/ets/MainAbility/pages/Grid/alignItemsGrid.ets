@@ -70,7 +70,7 @@ struct alignItemsGridIndex {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
               
-              Text('这是一段文字。'.repeat(this.items[item]))
+              Text('这是一段文字。'.repeat(this.items[item.toInt()]))
                 .flexGrow(1)
                 .width('100%')
                 .align(Alignment.TopStart)
@@ -99,7 +99,7 @@ struct alignItemsGridIndex {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
               
-              Text('这是一段文字。'.repeat(this.items[item]))
+              Text('这是一段文字。'.repeat(this.items[item.toInt()]))
                 .flexGrow(1)
                 .width('100%')
                 .align(Alignment.TopStart)

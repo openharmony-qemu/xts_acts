@@ -27,7 +27,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
   // 获取索引对应的数据
   public getData(index: number): number {
-    return this.dataArray[index]
+    return this.dataArray[index.toInt()]
   }
 
   // 通知控制器数据重新加载

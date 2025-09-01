@@ -30,7 +30,7 @@ let testAbilityContext:common.UIAbilityContext;
 let emitKey = 'enableFollowSystemFontWeight01';
 export default function webenableFollowSystemFontWeightJsunit() {
   describe('enableFollowSystemFontWeightTest',  ():void =>{
-    beforeAll(async  ():Promise<void> =>{
+    beforeAll(async ():Promise<void> =>{
       try {
         console.log(' App start')
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -74,8 +74,12 @@ export default function webenableFollowSystemFontWeightJsunit() {
       Utils.emitEvent('emitenableFollowSystemFontWeight01', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('enableFollowSystemFontWeight01','enableFollowSystemFontWeight',20241231,done);
-      await Utils.msSleep(5000);
-      inspector.sendEventByKey('enableFollowSystemFontWeightButton',10,'');
+      await Utils.msSleep(3000);
+      let driver: Driver = Driver.create();
+      await Utils.msSleep(2000);
+      let button = await driver.findComponent(ON.id('enableFollowSystemFontWeightButton'));
+      await Utils.msSleep(2000);
+      button?.click();
       await Utils.msSleep(5000);
       done();
     })
@@ -89,7 +93,7 @@ export default function webenableFollowSystemFontWeightJsunit() {
         let button = await driver.findComponent(ON.id('enableFollowSystemFontWeightButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(5000)
+        await Utils.msSleep(3000);
         done()
       })
 

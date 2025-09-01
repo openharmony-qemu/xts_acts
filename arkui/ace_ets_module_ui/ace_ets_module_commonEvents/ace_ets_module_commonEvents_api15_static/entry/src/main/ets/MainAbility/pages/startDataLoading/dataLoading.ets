@@ -73,11 +73,11 @@ struct ImageExample {
   index2: number = 0
   buttonStrArr3: string[] = new Array<string>('true', 'false');
   index3: number = 0;
-  @State fileConflictOptionsStr: string = this.buttonStrArr1[this.index1]
-  @State progressIndicatorStr: string = this.buttonStrArr2[this.index2]
-  @State disableDataPrefetchStr: string = this.buttonStrArr3[this.index3]
+  @State fileConflictOptionsStr: string = this.buttonStrArr1[this.index1.toInt()]
+  @State progressIndicatorStr: string = this.buttonStrArr2[this.index2.toInt()]
+  @State disableDataPrefetchStr: string = this.buttonStrArr3[this.index3.toInt()]
   disableDataPrefetchArr: boolean[] = new Array<boolean>(true, false);
-  disableDataPrefetch: boolean = this.disableDataPrefetchArr[this.index3];
+  disableDataPrefetch: boolean = this.disableDataPrefetchArr[this.index3.toInt()];
   @State dragResult: string = '';
   @State dragResult1: string = '';
   @State udKey: string = '';

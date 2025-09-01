@@ -81,7 +81,7 @@ struct RichEditorMaxLinesTest {
         })
         .margin(10)
         .width('95%')
-        .maxLines(this.maxLineList[this.maxLineIndex])
+        .maxLines(this.maxLineList[this.maxLineIndex.toInt()])
         .backgroundColor('rgb(240,250,255)')
         .id('RichEditorMaxLines')
     }

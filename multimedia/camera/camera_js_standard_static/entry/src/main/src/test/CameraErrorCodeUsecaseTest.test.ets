@@ -342,7 +342,7 @@ export default function cameraErrorCodeUsecaseTest() {
 
   let createOutput = (idx: int) => {
     console.info(TAG + 'Enter createOutput');
-    cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_VIDEO);
+    cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
     if (!isEmpty05(cameraOutputCap)) {
       if (!isEmpty06(cameraOutputCap.previewProfiles)) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);

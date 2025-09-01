@@ -52,6 +52,8 @@ group("bundlemanager") {
       "actsbundlenativetest:ActsBundleNativeTest",
       "actsbundlenativetwotest:ActsBundleNativeTwoTest",
       "actsbundleshortcuttest:ActsBundleShortCutTest",
+      "actsbundlemanagermultiAppmodetype1teststatic:ActsbundlemanagermultiAppmodetype1test",
+      "actsbundlemanagermultiAppmodetype2teststatic:ActsbundlemanagermultiAppmodetype2test",
       "sceneProject/bmsaccesstokenfive:bmsAccessTokenTest5",
       "sceneProject/bmsaccesstokenfour:bmsAccessTokenTest4",
       "sceneProject/bmsaccesstokenone:bmsAccessTokenTest1",

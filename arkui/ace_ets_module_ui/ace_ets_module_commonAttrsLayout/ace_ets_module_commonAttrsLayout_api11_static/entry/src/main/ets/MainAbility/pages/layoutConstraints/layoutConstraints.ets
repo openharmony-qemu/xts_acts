@@ -143,7 +143,7 @@ struct LayoutConstraints {
           }
         }, (item: PriorityChild) => item.text)
       }
-      .width(this.container[this.currentIndex].size)
+      .width(this.container[this.currentIndex.toInt()].size)
       .backgroundColor(0xd2cab3)
     }.padding(10)
   }

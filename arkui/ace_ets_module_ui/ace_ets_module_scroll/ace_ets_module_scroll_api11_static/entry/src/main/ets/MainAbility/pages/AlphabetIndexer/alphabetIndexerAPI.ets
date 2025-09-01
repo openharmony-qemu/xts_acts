@@ -79,7 +79,7 @@ struct AlphabetIndexerOnSelect {
         .height(300)
         .alignStyle(IndexerAlign.Left)
         .onSelect((index: number): void => {
-          console.info(this.value[index] + 'on onSelect')
+          console.info(this.value[index.toInt()] + 'on onSelect')
           this.showToast("onSelect() " + index)
           this.onSelectStatus = true;
           try {
@@ -99,11 +99,11 @@ struct AlphabetIndexerOnSelect {
           }
         })
         .onPopupSelect((index: number): void => {
-          console.info(this.value[index] + 'on onPopupSelect')
+          console.info(this.value[index.toInt()] + 'on onPopupSelect')
           this.showToast("onPopupSelect() " + index)
         })
         .onRequestPopupData((index: number): Array<String> => {
-          console.info(this.value[index] + 'on onRequestPopupData')
+          console.info(this.value[index.toInt()] + 'on onRequestPopupData')
           this.showToast("onRequestPopupData() " + index)
           this.onRequestPopupDataStatus = true
           try {

@@ -78,22 +78,22 @@ struct TabsCustomAnimationExample1 {
   private customTransitionOri: (from: number, to: number) => TabContentAnimatedTransition =
     (from: number, to: number) => {
       let tabContentAnimatedTransition = {
-        timeout: this.timeoutList[from],
+        timeout: this.timeoutList[from.toInt()],
         transition: (proxy: TabContentTransitionProxy): void => {
-          this.scaleListOri[from] = 1.0
-          this.scaleListOri[to] = 0.5
-          this.opacityListOri[from] = 1.0
-          this.opacityListOri[to] = 0.5
+          this.scaleListOri[from.toInt()] = 1.0
+          this.scaleListOri[to.toInt()] = 0.5
+          this.opacityListOri[from.toInt()] = 1.0
+          this.opacityListOri[to.toInt()] = 0.5
           animateTo({
-            duration: this.durationListOri[from],
+            duration: this.durationListOri[from.toInt()],
             onFinish: () => {
               proxy.finishTransition()
             }
           }, () => {
-            this.scaleListOri[from] = 0.5
-            this.scaleListOri[to] = 1.0
-            this.opacityListOri[from] = 0.5
-            this.opacityListOri[to] = 1.0
+            this.scaleListOri[from.toInt()] = 0.5
+            this.scaleListOri[to.toInt()] = 1.0
+            this.opacityListOri[from.toInt()] = 0.5
+            this.opacityListOri[to.toInt()] = 1.0
           })
         }
       } as TabContentAnimatedTransition
@@ -115,8 +115,8 @@ struct TabsCustomAnimationExample1 {
           }
           .tabBar(item.text)
           .backgroundColor(item.backgroundColor)
-          .opacity(this.opacityListOri[index])
-          .scale({ x: this.scaleListOri[index], y: this.scaleListOri[index] })
+          .opacity(this.opacityListOri[index.toInt()])
+          .scale({ x: this.scaleListOri[index.toInt()], y: this.scaleListOri[index.toInt()] })
         })
       }
       .id('tabs_bar_curve')

@@ -1,5 +1,6 @@
 {
   "src": [
-    "pages/geolocationPermissions"
+    "pages/geolocationPermissions",
+    "pages/bindSelectionMenu"
   ]
 }

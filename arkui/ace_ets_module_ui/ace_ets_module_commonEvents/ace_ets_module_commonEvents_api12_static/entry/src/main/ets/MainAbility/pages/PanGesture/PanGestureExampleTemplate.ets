@@ -84,7 +84,7 @@ struct PanGestureExampleTemplate {
         .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
         .onTouch((event: TouchEvent) => {
           let arr = event?.getHistoricalPoints()!
-          for (let i: number = 0; i < arr!.length; i++) {
+          for (let i = 0; i < arr!.length; i++) {
             this.inputTemplate_arr.push(Number(arr[i]!.timestamp));
           }
           if (event.type == TouchType.Down && this.startTime == 0) {

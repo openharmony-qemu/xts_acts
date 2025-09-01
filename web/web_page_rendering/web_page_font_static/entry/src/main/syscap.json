@@ -1,7 +1,9 @@
 {
     "devices": {
-        "general": ["default",
-            "tablet"],
+        "general": [
+            "default",
+            "tablet"
+        ],
         "custom": [
             {
                 "xts": [

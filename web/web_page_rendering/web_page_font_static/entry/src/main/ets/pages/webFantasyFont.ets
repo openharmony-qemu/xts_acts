@@ -12,33 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';
-import { State } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
+import { State } from "@ohos.arkui.stateManagement";
 import { Callback } from '@ohos.base';
-import { Visibility,CopyOptions,Entry, Component, Column, Row, Button,ClickEvent, Web } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
+import { CopyOptions,WebMediaOptions,Entry, Component, Column, Row, Button,Text,ClickEvent, Web } from "@ohos.arkui.component";
 
 class StringFields {
-  str: string = '';
+  public str: string = '';
 }
 
 @Entry
 @Component
 struct webFantasyFont {
   stringObj: StringFields  = new StringFields ();
+  @State minFontSize: number = 8
+  @State defaultFontSize: number = 13
+  @State minLogicalFontSize: number = 8
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  @State minFontSize: int = 8
-  @State defaultFontSize: int = 13
-  @State minLogicalFontSize: int = 8
-  @State family: string = 'fantasy';
-  @State family2: string = 'cursive';
-  @State vis: Visibility = Visibility.None
-  @State onFirstContentfulPaintCalled: boolean = false;
+  @State family: string = "fantasy";
+  @State family2: string = "cursive";
 
-  aboutToAppear() {
-    console.info('Entry aboutToAppear');
+  aboutToAppear(): void {
+    console.info("Entry aboutToAppear");
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
       priority: emitter.EventPriority.LOW

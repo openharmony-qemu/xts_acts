@@ -54,7 +54,7 @@ class MyDataSourceT5 implements IDataSource<number> {
   }
 
   getData(index: number): number {
-    return this.list[index]
+    return this.list[index.toInt()]
   }
 
   add() {

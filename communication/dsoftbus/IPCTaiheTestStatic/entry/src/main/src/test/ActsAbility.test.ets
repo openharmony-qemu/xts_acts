@@ -62,6 +62,10 @@ class TestStub extends rpc.RemoteObject {
         super(descriptor);
     }
 
+    asObject() {
+       return this;
+    }
+
     onRemoteMessageRequest(code: int, data: rpc.MessageSequence, reply: rpc.MessageSequence, options: rpc.MessageOption): boolean {
         hilog.info(domain, tag, '%{public}s', '++++++++++++++++++ remoteObject begin ++++++++++++++++++');
         hilog.info(domain, tag, '%{public}s', 'into onRemoteMessageRequest');
@@ -69,7 +73,7 @@ class TestStub extends rpc.RemoteObject {
             hilog.info(domain, tag, '%{public}s', 'code is 1');
             let res = data.readInt();
             hilog.info(domain, tag, '%{public}s', 'readInt, res is :' + res);
-            reply.writeInt(999);
+            reply.writeInt(123);
             return true;
         } else {
             hilog.info(domain, tag, '%{public}s', 'code err:' + code);
@@ -2059,6 +2063,47 @@ export default function abilityTest() {
           }
           done()
           hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_getDescriptor_0100 --------------------')
+        });
+
+        /*
+         * @tc.number: SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.name: SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.desc: test asObject
+         * @tc.level: LEVEL1
+         * @tc.size: MEDIUMTEST
+         * @tc.type: FUNCTION
+         */
+        it("SUB_IPC_IRemoteBroker_asObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+          await Utils.msSleep(200)
+          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
+
+          let data = rpc.MessageSequence.create();
+          let reply = rpc.MessageSequence.create();
+          try {
+            let testRemoteObject = new TestStub("testObject");
+            let testRemoteObject1 = testRemoteObject.asObject();
+            let option = new rpc.MessageOption();
+            option.setAsync(false);
+            data.writeInt(666);
+            await testRemoteObject1.sendMessageRequest(1, data, reply, option)
+              .then((ret: rpc.RequestResult) => {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.data is: ' + JSON.stringify(ret.data) );
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.reply is: ' + JSON.stringify(ret.reply) );
+                let res = reply.readInt();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 res is: ' + res)
+                expect(res == 123).assertTrue();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 err in catch is: ' + err);
+              });
+          } catch (error) {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 error is: ' + error);
+            expect(error == null).assertTrue();
+          } finally {
+            data.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 reclaim done')
+          }
+          done()
+          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
         });
 
         /*

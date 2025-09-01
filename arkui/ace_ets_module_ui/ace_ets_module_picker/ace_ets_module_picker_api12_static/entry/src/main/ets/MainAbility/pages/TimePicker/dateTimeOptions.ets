@@ -83,19 +83,19 @@ struct dateTimeOptionsExample {
         })
 
       TimePicker({
-        selected: this.setTime[this.indexNumber1],
-        format: this.timeformat[this.indexNumber4]
+        selected: this.setTime[this.indexNumber1.toInt()],
+        format: this.timeformat[this.indexNumber4.toInt()]
       })
         .height("30%")
         .useMilitaryTime(this.isMilitaryTime)
         .onChange((value: TimePickerResult):void => {
           if(value.hour) {
-            this.setTime[this.indexNumber1].setHours(value.hour, value.minute)
+            this.setTime[this.indexNumber1.toInt()].setHours(value.hour, value.minute)
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })
         .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
-        .dateTimeOptions(this.opt[this.indexNumber2] as DateTimeOptions)
+        .dateTimeOptions(this.opt[this.indexNumber2.toInt()] as DateTimeOptions)
 
       Row({space: 2} as RowOptions){
         Button('Set TimeType ++')
@@ -121,7 +121,7 @@ struct dateTimeOptionsExample {
       }
 
       Text(`${this.indexNumber2 + 1} / ${this.opt.length}`)
-      Text(JSON.stringify(this.opt[this.indexNumber2]))
+      Text(JSON.stringify(this.opt[this.indexNumber2.toInt()]))
         .id("dateTimeOptionsValue")
         .height('100vp')
         .width('100%')
@@ -135,7 +135,7 @@ struct dateTimeOptionsExample {
           }
         })
 
-      Text("Time Format: " + this.timeformatString[this.indexNumber4]).fontSize(12).fontColor(Color.Blue).width("100%")
+      Text("Time Format: " + this.timeformatString[this.indexNumber4.toInt()]).fontSize(12).fontColor(Color.Blue).width("100%")
       Row({space: 2} as RowOptions){
         Button("Change Date and Time").margin(5).onClick((e:ClickEvent) => {
           this.indexNumber1++
