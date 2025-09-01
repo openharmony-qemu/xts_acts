@@ -1491,7 +1491,7 @@ export default function AVPlayerLocalTest() {
       await mediaTestBase.getFileDescriptorFromFileDir(SUBTITLE, openFileFailed).then((res) => {
         subtitleFdSrc = res;
         subtitleFdSrc = {
-          fd: res.fd, offset: 0, length: 0
+          fd: res.fd, offset: 0, length: res.length
         }
       });
     });
