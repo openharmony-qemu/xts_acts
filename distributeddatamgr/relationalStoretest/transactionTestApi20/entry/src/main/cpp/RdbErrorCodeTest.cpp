@@ -26,6 +26,7 @@ int g_rEmptyTableNameCode = 14800005;
 int g_rInvalidColumnTypeCode = 14800009;
 int g_rNoTransInSessionCode = 14800016;
 int g_rNoRowInQueryCode = 14800018;
+int g_rInvalidObjectTypeCode = 14800020;
 
 namespace RdbErrorCodeTest {
     const char* RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/entry";
@@ -57,6 +58,18 @@ void InitRdbErrorCodeConfigV2(OH_Rdb_ConfigV2 *configV2)
     OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(configV2, RDB_CAYLEY);
+}
+
+void InitRdbSqliteConfigV2(OH_Rdb_ConfigV2 *configV2)
+{
+    OH_Rdb_SetDatabaseDir(configV2, RdbErrorCodeTest::RDB_TEST);
+    OH_Rdb_SetStoreName(configV2, RdbErrorCodeTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2, RdbErrorCodeTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2, RdbErrorCodeTest::g_moduleName);
+    OH_Rdb_SetEncrypted(configV2, false);
+    OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
+    OH_Rdb_SetDbType(configV2, RDB_SQLITE);
 }
 
 void AddRdbErrorCodeTest(std::vector<napi_property_descriptor> &descData)
@@ -505,14 +518,7 @@ napi_value TestInvalidObjectType(napi_env env, napi_callback_info info)
     OH_Rdb_Store *testStore = nullptr;
     OH_Rdb_ConfigV2 *configV2_ = nullptr;
     configV2_ = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(configV2_, RdbErrorCodeTest::RDB_TEST);
-    OH_Rdb_SetStoreName(configV2_, RdbErrorCodeTest::g_storeName);
-    OH_Rdb_SetBundleName(configV2_, RdbErrorCodeTest::g_bundleName);
-    OH_Rdb_SetModuleName(configV2_, RdbErrorCodeTest::g_moduleName);
-    OH_Rdb_SetDbType(configV2_, RDB_SQLITE);
-    OH_Rdb_SetEncrypted(configV2_, false);
-    OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
-    OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    InitRdbSqliteConfigV2(configV2_);
     testStore = OH_Rdb_CreateOrOpen(configV2_, &errCode);
     const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
                                  "id INT64 PRIMARY KEY, "
@@ -544,7 +550,7 @@ napi_value TestInvalidObjectType(napi_env env, napi_callback_info info)
     cursor->getSize(cursor, 1, &size);
     unsigned char value;
     int ret = cursor->getBlob(cursor, cli, &value, size);
-    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_OBJECT_TYPE ? 14800020 : -1, &result);
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_OBJECT_TYPE ? g_rInvalidObjectTypeCode : -1, &result);
     cursor->destroy(cursor);
     insertBucket->destroy(insertBucket);
     OH_Rdb_CloseStore(testStore);

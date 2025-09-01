@@ -129,6 +129,10 @@ void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back(
         {"testSetVersionSuccess", nullptr, TestSetVersionSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
+}
+
+void AddRelationStoreTest3(std::vector<napi_property_descriptor> &descData)
+{
     descData.push_back({"testLockRowInvalidParam", nullptr, TestLockRowInvalidParam, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"testUnlockRowInvalidParam", nullptr, TestUnlockRowInvalidParam, nullptr, nullptr, nullptr,
@@ -145,20 +149,21 @@ void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
         {"testOHRdbDetachError", nullptr, TestOHRdbDetachError, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testOHRdbSubscribeDetails", nullptr, TestOHRdbSubscribeDetails, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
-    descData.push_back({"testSetTokenizerNotSupported", nullptr, TestSetTokenizerNotSupported, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
+    descData.push_back({"testSetTokenizerNotSupported", nullptr, TestSetTokenizerNotSupported, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
     descData.push_back({"testRollBackByTrxIdSuccess", nullptr, TestRollBackByTrxIdSuccess, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"testCommitByTrxIdSuccess", nullptr, TestCommitByTrxIdSuccess, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
-    descData.push_back({"testSubscribeSuccess", nullptr, TestSubscribeSuccess, nullptr, nullptr, nullptr,
-                        napi_default, nullptr});
+    descData.push_back(
+        {"testSubscribeSuccess", nullptr, TestSubscribeSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void AddRelationStoreTest(std::vector<napi_property_descriptor> &descData)
 {
     AddRelationStoreTest1(descData);
     AddRelationStoreTest2(descData);
+    AddRelationStoreTest3(descData);
 }
 
 napi_value TestSetDbType(napi_env env, napi_callback_info info)
@@ -1627,7 +1632,8 @@ napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info)
     insertBucket->clear(insertBucket);
     insertBucket->putInt64(insertBucket, "id", 1);
     insertBucket->putText(insertBucket, "name", "ZhangSan");
-    insertBucket->putInt64(insertBucket, "score", 60);
+    int64_t int64Value = 60;
+    insertBucket->putInt64(insertBucket, "score", int64Value);
     OH_Rdb_Insert(testStore, "test1", insertBucket);
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
@@ -1670,7 +1676,8 @@ napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info)
     OH_VBucket *insertBucket = OH_Rdb_CreateValuesBucket();
     insertBucket->putInt64(insertBucket, "id", 1);
     insertBucket->putText(insertBucket, "name", "ZhangSan");
-    insertBucket->putInt64(insertBucket, "score", 60);
+    int64_t int64Value = 60;
+    insertBucket->putInt64(insertBucket, "score", int64Value);
     OH_Rdb_Insert(testStore, "test", insertBucket);
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);

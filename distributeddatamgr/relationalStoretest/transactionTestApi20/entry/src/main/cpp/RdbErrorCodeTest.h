@@ -39,9 +39,11 @@ extern int g_rEmptyTableNameCode;
 extern int g_rInvalidColumnTypeCode;
 extern int g_rNoRowInQueryCode;
 extern int g_rNoTransInSessionCode;
+extern int g_rInvalidObjectTypeCode;
 
 void InitRdbErrorCodeConfig();
 void InitRdbErrorCodeConfigV2(OH_Rdb_ConfigV2 *configV2);
+void InitRdbSqliteConfigV2(OH_Rdb_ConfigV2 *configV2);
 
 void AddRdbErrorCodeTest(std::vector<napi_property_descriptor> &descData);
 
