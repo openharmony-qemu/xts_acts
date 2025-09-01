@@ -53,7 +53,24 @@ export default function nfcTagTest() {
          */
 
         it('SUB_COMMUNICATION_NFC_Tag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 MIFARE_CLASSIC is' + tag.NfcForumType.MIFARE_CLASSIC);
             expect(tag.NfcForumType.MIFARE_CLASSIC).assertEqual(3);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_A is' + tag.NFC_A);
+            expect(tag.NFC_A).assertEqual(1);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_B is' + tag.NFC_B);
+            expect(tag.NFC_B).assertEqual(2);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 ISO_DEP is' + tag.ISO_DEP);
+            expect(tag.ISO_DEP).assertEqual(3);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_F is' + tag.NFC_F);
+            expect(tag.NFC_F).assertEqual(4);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_V is' + tag.NFC_V);
+            expect(tag.NFC_V).assertEqual(5);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NDEF is' + tag.NDEF);
+            expect(tag.NDEF).assertEqual(6);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 MIFARE_CLASSIC is' + tag.MIFARE_CLASSIC);
+            expect(tag.MIFARE_CLASSIC).assertEqual(8);
+            console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 MIFARE_ULTRALIGHT is' + tag.MIFARE_ULTRALIGHT);
+            expect(tag.MIFARE_ULTRALIGHT).assertEqual(9);
             done();
         })
 
