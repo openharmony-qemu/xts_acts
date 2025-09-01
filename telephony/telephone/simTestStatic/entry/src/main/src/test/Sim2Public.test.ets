@@ -423,7 +423,7 @@ export default function Sim2Public() {
         if (data) {
           console.info(`${caseName} success has  card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
-            if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.iccId.length as int > 0) {
+            if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length as int > 0 && data?.showName.length as int > 0 && data?.showNumber.length as int > 0 ) {
               console.info(`${caseName}: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end `);
@@ -492,7 +492,7 @@ export default function Sim2Public() {
           console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimAccountInfo(0).then((data: sim.IccAccountInfo) => {
             console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
-            if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.iccId.length as int > 0) {
+            if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length as int > 0 && data?.showName.length as int > 0 && data?.showNumber.length as int > 0 ) {
               console.info(`${caseName}: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end `);

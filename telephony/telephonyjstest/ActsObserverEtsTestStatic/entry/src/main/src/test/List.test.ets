@@ -14,7 +14,9 @@
  */
 
 import ObserverJsunit from "./ObserverJsunit.test";
+import ObserverSimJsunit from "./ObserverSimJsunit.test";
 
 export default function testsuite() {
   ObserverJsunit();
+  ObserverSimJsunit();
 }
