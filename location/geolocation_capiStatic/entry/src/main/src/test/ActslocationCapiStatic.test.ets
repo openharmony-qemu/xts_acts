@@ -127,7 +127,7 @@ export default function actslocationTest() {
                 };
                 try{
                     geoLocationManager.getCurrentLocation(currentLocationRequest,
-                    (err:BusinessError<void>|null,result:geolocationManager.Location|undefined)=>{
+                    (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
                         if(err!=null){
                             expect().assertFail()
                         }
@@ -174,7 +174,7 @@ export default function actslocationTest() {
                 async(done:()=>void):Promise<void>=>{
                     const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0200'
                     try{
-                        geolocationManager.getCurrentLocation(
+                        geoLocationManager.getCurrentLocation(
                             (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
                                 if(!geoLocationManager.isLocationEnabled()){
                                     if(err !=null){
