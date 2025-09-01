@@ -532,7 +532,8 @@ napi_value TestInvalidObjectType(napi_env env, napi_callback_info info)
     OH_VBucket *insertBucket = OH_Rdb_CreateValuesBucket();
     insertBucket->putInt64(insertBucket, "id", 1);
     insertBucket->putText(insertBucket, "name", "ZhangSan");
-    insertBucket->putInt64(insertBucket, "score", 60);
+    int64_t int64Value = 60;
+    insertBucket->putInt64(insertBucket, "score", int64Value);
     OH_VBucket_PutAsset(insertBucket, "data", asset);
     OH_Rdb_Insert(testStore, "test", insertBucket);
     const char *sql = "SELECT * FROM test;";
