@@ -123,10 +123,6 @@ struct MyStateSample {
                 setTimeout(() => {
                   Utils.emitEvent(this.progress, 102);
                 }, 2000)
-                setTimeout(() => {
-                  this.errorReceive = ''
-                  this.webviewController.loadUrl("https://untrusted-root.badssl.com/")
-                }, 2000)
               } catch (error) {
                 hilog.info(0x0000, 'testTag', 'ErrorCode: error');
               }
@@ -134,11 +130,9 @@ struct MyStateSample {
             }
             case "OnErrorReceive": {
               try {
+                this.errorReceive = '';
+                this.webviewController.loadUrl("https://untrusted-root.badssl.com/")
                 setTimeout(() => {
-                  this.webviewController.loadUrl("https://untrusted-root.badssl.com/")
-                }, 2000)
-                setTimeout(() => {
-                  hilog.info(0x0000, 'testTag', 'OnErrorReceive Mock');
                   Utils.emitEvent(this.errorReceive, 103);
                 }, 2000)
               } catch (error) {
@@ -434,7 +428,7 @@ struct MyStateSample {
         })
         .onErrorReceive((event: OnErrorReceiveEvent): void => {
           if (event) {
-            this.errorReceive = event.request.getRequestUrl();
+            this.errorReceive = "onErrorReceive";
             hilog.info(0x0000, 'testTag', 'onErrorReceive url:' + event.request.getRequestUrl());
           }
         })

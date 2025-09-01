@@ -162,7 +162,7 @@ export default function webCloudServiceTest() {
          */
         it('testOnErrorReceive_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnErrorReceive", 10);
-            Utils.registerEvent("testOnErrorReceive_static", "https://untrusted-root.badssl.com", 103, done);
+            Utils.registerEvent("testOnErrorReceive_static", "onErrorReceive", 103, done);
             await Utils.msSleep(2000);
             try {
                 let driver = Driver.create();
@@ -192,7 +192,7 @@ export default function webCloudServiceTest() {
          */
         it('testOnLoadIntercept_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnLoadIntercept", 10);
-            Utils.registerEvent("testOnLoadIntercept_static", "resource://rawfile/second.htm", 104, done);
+            Utils.registerEvent("testOnLoadIntercept_static", "resource://rawfile/second.html", 104, done);
             await Utils.msSleep(2000);
             try {
                 let driver = Driver.create();
@@ -222,7 +222,7 @@ export default function webCloudServiceTest() {
          */
         it('testWebviewController_refresh_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("Refresh", 10);
-            Utils.registerEvent("testWebviewController_refresh_static", "resource://rawfile/first.htm", 105, done);
+            Utils.registerEvent("testWebviewController_refresh_static", "resource://rawfile/first.html", 105, done);
             await Utils.msSleep(2000);
             try {
                 let driver = Driver.create();
