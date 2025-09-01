@@ -17,12 +17,11 @@ import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import { ComponentInfo } from '../common/Interfaces';
 import Utils from '../common/Utils';
 import { Component, Driver, ON } from '@ohos.UiTest';
-
 export default function imageDraggableEventTest() {
 
   describe('ImageDraggableEventTest', () => {
 
-    let PAGE_TAG = 'ImageDraggableTest';
+    let PAGE_TAG = 'ImageDraggableEventTest';
 
     /*
      * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0600
