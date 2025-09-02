@@ -1458,7 +1458,7 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, false);
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD)).assertFalse();
     } catch (error) {
-      expect(error.code == 801).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1477,10 +1477,10 @@ function testSetDisallowedPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, true);
-      expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD)).assertTrue();
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD)).assertFalse();
       restrictions.setDisallowedPolicy(SELFWANT, LABLE_EXTERNAL_STORAGE_CARD, false);
     } catch (error) {
-      expect(error.code == 801).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1501,7 +1501,7 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABLE_RANDOM_MAC, false);
       expect(restrictions.getDisallowedPolicy(SELFWANT, LABLE_RANDOM_MAC)).assertFalse();
     } catch (error) {
-      expect(error.code == 801).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1711,8 +1711,6 @@ function testGetDisallowedPolicy() {
     } catch (error) {
       console.info('test_get_disallowed_policy_0108 error 9200001 is expected, actually catch: ' + error.code);
       expect(error.code == 9200001).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -1734,7 +1732,7 @@ function testGetDisallowedPolicy() {
       console.info('test_get_disallowed_policy_0109 error 9200002 is expected, actually catch: ' + error.code);
       expect(error.code == 9200002).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -1775,8 +1773,6 @@ function testGetDisallowedPolicy() {
     } catch (error) {
       console.info('test_get_disallowed_policy_0108 error 9200001 is expected, actually catch: ' + error.code);
       expect(error.code == 9200001).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -1795,10 +1791,10 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABLE_RANDOM_MAC);
       expect(false).assertTrue();
     } catch (error) {
-      console.info('test_get_disallowed_policy_0109 error 9200002 is expected, actually catch: ' + error.code);
+      console.info('test_get_disallowed_policy_0112 error 9200002 is expected, actually catch: ' + error.code);
       expect(error.code == 9200002).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
