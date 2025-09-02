@@ -18,6 +18,9 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 
+const EVENT_ID_SET_SUITE_KEY = 183401;
+let driver = Driver.create();
+
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController
@@ -66,16 +69,20 @@ struct WebViewEnumAndSetWebController {
   controller: webView.WebviewController = new webView.WebviewController();
   @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.None,ContextMenuSourceType.Mouse,ContextMenuSourceType.LongPress]
 
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOnShowFileSelectorEnd: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -84,6 +91,7 @@ struct WebViewEnumAndSetWebController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -101,6 +109,7 @@ struct WebViewEnumAndSetWebController {
             let fileSelectorObj: FileSelectorParam = event.fileSelector
             this.FileSelectorMode = fileSelectorObj.getMode()
           }
+          this.isOnShowFileSelectorEnd = 1
           return true
         })
         .multiWindowAccess(true)
@@ -120,58 +129,67 @@ struct WebViewEnumAndSetWebController {
             event.result.closeContextMenu()
             if (this.mouse) {
               console.info("onContextMenuShow getSourceType = " + event.param.getSourceType())
-              Utils.emitEvent(this.SourceTypeArr[event.param.getSourceType()], 1981)
+              Utils.emitEvent(this.SourceTypeArr[event.param.getSourceType()], 183440)
             } else {
-              Utils.emitEvent(event.param.getMediaType(), 882)
+              Utils.emitEvent(event.param.getMediaType(), 183430)
             }
           }
           return true
         })
         .javaScriptAccess(this.javaScriptAccess)
         .height('30%')
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
 
       Row() {
         Button("web clicks").key('buttonEnumAndSetWebController').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitFileSelectorModeFileOpenMultipleMode": {
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexFile1.html")
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let driver = Driver.create();
               let button = await driver.findComponent(ON.id('WebViewEnumAndSetWebControllerWebView'));
               await button.click();
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isOnShowFileSelectorEnd, this.str+' isOnShowFileSelectorEnd', 1, 1000);
               Utils.emitEvent(Number(this.FileSelectorMode), 862)
               break;
             }
             case "emitFileSelectorModeFileOpenFolderMode": {
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexFile2.html")
-              let driver = Driver.create();
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let buttonOne = await driver.findComponent(ON.text('选择文件'));
               await buttonOne.click()
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isOnShowFileSelectorEnd, this.str+' isOnShowFileSelectorEnd', 1, 1000);
               Utils.emitEvent(Number(this.FileSelectorMode), 863)
               break;
             }
             case "emitContextMenuMediaTypeImage": {
               this.mouse = false
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexLongClickImage.html")
-              let driver = Driver.create();
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('WebViewEnumAndSetWebControllerWebView'));
               await button.longClick();
+              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
             case "emitContextMenuSourceTypeMouse": {
               this.mouse = true
+              this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/indexLongClickImage.html")
-              await Utils.sleep(2000);
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let webRect = Utils.getComponentRect('WebViewEnumAndSetWebControllerWebView');
               let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
               let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-              let driver = Driver.create();
               await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
+              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
           }

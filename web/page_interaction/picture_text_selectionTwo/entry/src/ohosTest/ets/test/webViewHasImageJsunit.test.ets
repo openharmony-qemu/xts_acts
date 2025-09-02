@@ -17,11 +17,15 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from "@kit.TestKit";
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = "emitHasImagePm";
 // import router from '@system.router';
 
+const EVENT_ID_SET_SUITE_KEY = 183501;
+const driver = Driver.create();
 
 export default function webViewHasImageJsunit() {
   describe('ActsAcewebViewHasImageJsunitTest',  () =>{
@@ -36,8 +40,8 @@ export default function webViewHasImageJsunit() {
         if (!("webViewHasImage" == pages.name)) {
           console.info("get webViewHasImage state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
           console.info("push webViewHasImage page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("webImagecomponent"), 10000);
         }
       } catch (err) {
         console.error("push webViewHasImage page error: " + err);
@@ -50,28 +54,7 @@ export default function webViewHasImageJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-    afterEach(async  (done: Function) =>{
-      console.info("web afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
       done();
     })
     /*
@@ -81,9 +64,13 @@ export default function webViewHasImageJsunit() {
       * hasImage:Promise results in true
     */
     it('testHasImagePm',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImagePmSvg";
-      Utils.registerEvent("testHasImagePm",true,202,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImagePm", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImagePm", true, 183510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImagePm");
+      await Utils.waitForExist(() => isReturn, "emitHasImagePm" + '_returnCheck', true, 500);
+      done();
+
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0200
@@ -92,9 +79,13 @@ export default function webViewHasImageJsunit() {
       * hasImage:Promise result is false
     */
     it('testHasImagePmSvg',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImagePmOnline";
-      Utils.registerEvent("testHasImageSvg",false,204,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImagePmSvg", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImageSvg", false, 183520, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImagePmSvg");
+      await Utils.waitForExist(() => isReturn, "emitHasImagePmSvg" + '_returnCheck', true, 500);
+      done();
+
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0300
@@ -103,9 +94,12 @@ export default function webViewHasImageJsunit() {
       * hasImage:Promise result is false
     */
     it('testHasImagePmOnline',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImageCb";
-      Utils.registerEvent("testHasImagePmOnline",false,206,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImagePmOnline", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImagePmOnline", false, 183530, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImagePmOnline");
+      await Utils.waitForExist(() => isReturn, "emitHasImagePmOnline" + '_returnCheck', true, 500);
+      done();
     })
     /*
       * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0400
@@ -114,9 +108,12 @@ export default function webViewHasImageJsunit() {
       * hasImage:Callback results in true
     */
     it('testHasImageCb',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImageCbSvg";
-      Utils.registerEvent("testHasImageCb",true,208,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImageCb", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImageCb", true, 183540, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImagePmOnline");
+      await Utils.waitForExist(() => isReturn, "emitHasImageCb" + '_returnCheck', true, 500);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0500
@@ -125,9 +122,12 @@ export default function webViewHasImageJsunit() {
      * hasImage:Callback result is false
    */
     it('testHasImageCbSvg',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImageCbOnline";
-      Utils.registerEvent("testHasImageCbSvg",false,210,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImageCbSvg", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImageCbSvg", false, 183550, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImageCbSvg");
+      await Utils.waitForExist(() => isReturn, "emitHasImageCbSvg" + '_returnCheck', true, 500);
+      done();
     })
     /*
      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0600
@@ -136,9 +136,12 @@ export default function webViewHasImageJsunit() {
      * hasImage:Callback result is false
    */
     it('testHasImageCbOnline',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitHasImageCbOnline";
-      Utils.registerEvent("testHasImageCbOnline",false,212,done);
-      sendEventByKey('webImagecomponent',10,'');
+      Utils.emitEvent("emitHasImageCbOnline", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testHasImageCbOnline", false, 183560, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webImagecomponent", "testHasImageCbSvg");
+      await Utils.waitForExist(() => isReturn, "emitHasImageCbOnline" + '_returnCheck', true, 500);
+      done();
     })
   })
 }

@@ -17,8 +17,14 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 183401;
+const driver = Driver.create();
+
 export default function WebViewEnumAndSetWebController() {
 
   describe('WebViewEnumAndSetWebControllerTest', () => {
@@ -33,8 +39,8 @@ export default function WebViewEnumAndSetWebController() {
         if (!("webTwo" == pages.name)) {
           console.info("get WebViewEnumAndSetWebController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewEnumAndSetWebController page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("buttonEnumAndSetWebController"), 10000);
         }
       } catch (err) {
         console.error("push WebViewEnumAndSetWebController page error: " + err);
@@ -47,17 +53,10 @@ export default function WebViewEnumAndSetWebController() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
-      done();
-    })
     /*
      * @tc.number     : SUB_WEB_FILESELECTORMODE_0200
      * @tc.name       : testFileSelectorMode002
@@ -67,10 +66,12 @@ export default function WebViewEnumAndSetWebController() {
      * @tc.level      : Level 1
      */
     it('testFileSelectorMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitFileSelectorModeFileOpenMultipleMode", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorMode002", 1, 862, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitFileSelectorModeFileOpenMultipleMode", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorMode002", 1, 183410, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndSetWebController", "testFileSelectorMode002");
+      await Utils.waitForExist(() => isReturn, "emitFileSelectorModeFileOpenMultipleMode" + '_returnCheck', true, 500);
+      done();
     })
     /*
     * @tc.number     : SUB_WEB_FILESELECTORMODE_0300
@@ -81,10 +82,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testFileSelectorMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitFileSelectorModeFileOpenFolderMode", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFileSelectorMode003", 2, 863, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitFileSelectorModeFileOpenFolderMode", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testFileSelectorMode003", 2, 183420,  () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndSetWebController", "testFileSelectorMode003");
+      await Utils.waitForExist(() => isReturn, "emitFileSelectorModeFileOpenFolderMode" + '_returnCheck', true, 500);
+      done();
     })
     /*
     * @tc.number     : SUB_WEB_CONTEXTMENUMEDIATYPE_0200
@@ -95,10 +98,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testContextMenuMediaType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuMediaTypeImage", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testContextMenuMediaType002", 1, 882, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testContextMenuMediaType002", 1, 183430,  () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndSetWebController", "testContextMenuMediaType002");
+      await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeImage" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -110,10 +115,12 @@ export default function WebViewEnumAndSetWebController() {
     * @tc.level      : Level 1
     */
     it('testContextMenuSourceTypeMouse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuSourceTypeMouse", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testContextMenuSourceTypeMouse001", ContextMenuSourceType.Mouse, 1981, done);
-      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+      Utils.emitEvent("emitContextMenuSourceTypeMouse", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testContextMenuSourceTypeMouse001", ContextMenuSourceType.Mouse, 183440, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "buttonEnumAndSetWebController", "testContextMenuSourceTypeMouse001");
+      await Utils.waitForExist(() => isReturn, "emitContextMenuSourceTypeMouse" + '_returnCheck', true, 500);
+      done();
     })
 
 

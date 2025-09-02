@@ -16,8 +16,15 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let emitKey = "";
+let tcName = ''
+const EVENT_ID_SET_SUITE_KEY = 176601;
+const driver = Driver.create();
 
 export default function webViewMenuInputFieldType() {
 
@@ -33,7 +40,7 @@ export default function webViewMenuInputFieldType() {
         if (!("webTwo" == pages.name)) {
           console.info("get webViewMenuInputFieldType state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebViewMenuInputFieldTypeTestButton"), 10000);
           console.info("push webViewMenuInputFieldType page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,7 +54,6 @@ export default function webViewMenuInputFieldType() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,10 +67,14 @@ export default function webViewMenuInputFieldType() {
     * @tc.level      : Level 1
     */
     it('testInputFieldTypeNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitInputFieldTypeNumber001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testInputFieldTypeNumber001", true, 2901, done);
-      sendEventByKey('WebViewMenuInputFieldTypeTestButton', 10, '');
+      emitKey = 'emitInputFieldTypeNumber001';
+      tcName = 'testInputFieldTypeNumber001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176610, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuInputFieldTypeTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -76,10 +86,14 @@ export default function webViewMenuInputFieldType() {
     * @tc.level      : Level 1
     */
     it('testInputFieldTypeText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitInputFieldTypeText001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testInputFieldTypeText001", true, 2902, done);
-      sendEventByKey('WebViewMenuInputFieldTypeTestButton', 10, '');
+      emitKey = 'emitInputFieldTypeText001';
+      tcName = 'testInputFieldTypeText001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176620, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuInputFieldTypeTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -91,10 +105,14 @@ export default function webViewMenuInputFieldType() {
     * @tc.level      : Level 1
     */
     it('testInputFieldTypePassword001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitInputFieldTypePassWord001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testInputFieldTypePassword001", true, 2903, done);
-      sendEventByKey('WebViewMenuInputFieldTypeTestButton', 10, '');
+      emitKey = 'emitInputFieldTypePassWord001';
+      tcName = 'testInputFieldTypePassword001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176630, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuInputFieldTypeTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -106,10 +124,14 @@ export default function webViewMenuInputFieldType() {
     * @tc.level      : Level 1
     */
     it('testInputFieldTypeTelephone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitInputFieldTypeTelephone001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testInputFieldTypeTelephone001", true, 2904, done);
-      sendEventByKey('WebViewMenuInputFieldTypeTestButton', 10, '');
+      emitKey = 'emitInputFieldTypeTelephone001';
+      tcName = 'testInputFieldTypeTelephone001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176640, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuInputFieldTypeTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -121,10 +143,14 @@ export default function webViewMenuInputFieldType() {
     * @tc.level      : Level 1
     */
     it('testInputFieldTypeOther001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitInputFieldTypeOther001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testInputFieldTypeOther001", true, 2905, done);
-      sendEventByKey('WebViewMenuInputFieldTypeTestButton', 10, '');
+      emitKey = 'emitInputFieldTypeOther001';
+      tcName = 'testInputFieldTypeOther001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176650, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuInputFieldTypeTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

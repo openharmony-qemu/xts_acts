@@ -16,8 +16,13 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 183601;
+const driver = Driver.create();
 
 export default function webViewMenuShowResult() {
 
@@ -33,8 +38,8 @@ export default function webViewMenuShowResult() {
         if (!("webTwo" == pages.name)) {
           console.info("get WebViewMenuShowResult state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewMenuShowResult page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebViewMenuShowResultTestButton"), 10000);
         }
       } catch (err) {
         console.error("push WebViewMenuShowResult page error: " + err);
@@ -47,7 +52,6 @@ export default function webViewMenuShowResult() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -61,10 +65,12 @@ export default function webViewMenuShowResult() {
     * @tc.level      : Level 1
     */
     it('testCloseContextMenu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCloseContextMenu", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCloseContextMenu001", true, 3501, done);
-      sendEventByKey('WebViewMenuShowResultTestButton', 10, '');
+      Utils.emitEvent("emitCloseContextMenu", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCloseContextMenu001", true, 176610, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "testCloseContextMenu001");
+      await Utils.waitForExist(() => isReturn, "emitCloseContextMenu" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -76,10 +82,13 @@ export default function webViewMenuShowResult() {
     * @tc.level      : Level 1
     */
     it('emitCopyGetEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCopyGetEditStateFlags001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("emitCopyGetEditStateFlags001", 4, 20241018, done);
-      sendEventByKey('WebViewMenuShowResultTestButton', 10, '');
+      Utils.emitEvent("emitCopyGetEditStateFlags001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitCopyGetEditStateFlags001", 4, 176620, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "emitCopyGetEditStateFlags001");
+      await Utils.waitForExist(() => isReturn, "emitCopyGetEditStateFlags001" + '_returnCheck', true, 500);
+      done();
+
     })
 
     /*
@@ -91,10 +100,12 @@ export default function webViewMenuShowResult() {
     * @tc.level      : Level 1
     */
     it('testCopy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCopy001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCopy001", true, 3502, done);
-      sendEventByKey('WebViewMenuShowResultTestButton', 10, '');
+      Utils.emitEvent("emitCopy001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCopy001", true, 176630, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "testCopy001");
+      await Utils.waitForExist(() => isReturn, "emitCopy001" + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -106,10 +117,12 @@ export default function webViewMenuShowResult() {
     * @tc.level      : Level 1
     */
     it('testCut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitCut001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCut001", true, 3504, done);
-      sendEventByKey('WebViewMenuShowResultTestButton', 10, '');
+      Utils.emitEvent("emitCut001", EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCut001", true, 176640, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewMenuShowResultTestButton", "testCut001");
+      await Utils.waitForExist(() => isReturn, "emitCut001" + '_returnCheck', true, 500);
+      done();
     })
 
   })

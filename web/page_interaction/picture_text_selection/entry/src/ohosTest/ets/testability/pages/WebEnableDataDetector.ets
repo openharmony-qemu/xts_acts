@@ -21,8 +21,10 @@ import common from '@ohos.app.ability.common';
 import Utils from '../../test/Utils';
 import { waitForExist} from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON,  Component } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 
+const EVENT_ID_SET_SUITE_KEY = 176101;
+const driver = Driver.create();
 
 @Entry
 struct WebOnFirstContentfulPaint1 {
@@ -32,10 +34,11 @@ struct WebOnFirstContentfulPaint1 {
   @State changeColor: Color = Color.Red;
   @State isReceive: number = -1;
   @State str:string = ''
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
@@ -46,9 +49,13 @@ struct WebOnFirstContentfulPaint1 {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   build() {
@@ -59,19 +66,19 @@ struct WebOnFirstContentfulPaint1 {
           .key("WebEnableDataDetectorButton")
           .onClick(async () => {
             console.info("key==>" + this.str)
-            await waitForExist(()=>this.isReceive, this.str, 0);
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitWebEnableDataDetector": {
                 try {
                   if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                    Utils.emitEvent(true, 20250607)
+                    Utils.emitEvent(true, 176110)
                   } else {
-                    let driver: Driver = Driver.create();
                     let buttonOne = await driver.findComponent(ON.text('customer.support@example.com'));
                     if (buttonOne) {
-                      Utils.emitEvent(true, 20250607)
+                      Utils.emitEvent(true, 176110)
                     } else {
-                      Utils.emitEvent(false, 20250607)
+                      Utils.emitEvent(false, 176110)
                     }
                   }
                 } catch (error) {
@@ -96,6 +103,10 @@ struct WebOnFirstContentfulPaint1 {
             }
           })
           .offset({x: 0, y: 0})
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
+          })
       }
       .width('100%')
     }
