@@ -286,12 +286,8 @@ export default class MediaTestBase {
   async getFileDescriptorFromFileDir(filename: string, done: Function) {
     let fileDescriptor: media.AVFileDescriptor;
     let fd = await this.getFdRead(filename, done)
-    let pathName = globalThis.abilityContext.filesDir + '/' + filename;
-    let stat = await fs.stat(pathName);
-    console.info(`stat: ${JSON.stringify(stat)}`);
-    console.info(`size: ${stat.size}`);
     fileDescriptor = {
-      fd: fd, length: stat.size
+      fd: fd
     }
     return fileDescriptor
   }

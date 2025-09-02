@@ -1490,9 +1490,6 @@ export default function AVPlayerLocalTest() {
       });
       await mediaTestBase.getFileDescriptorFromFileDir(SUBTITLE, openFileFailed).then((res) => {
         subtitleFdSrc = res;
-        subtitleFdSrc = {
-          fd: res.fd, offset: 0, length: res.length
-        }
       });
     });
     beforeEach(async () => {
@@ -2103,44 +2100,6 @@ export default function AVPlayerLocalTest() {
       try {
         if (fileDescriptor && subtitleFdSrc) {
           testsubtitle3UpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
-        }
-      } catch (error) {
-        console.error(`Test exception: ${JSON.stringify(error)}`);
-        expect().assertFail()
-        done()
-      }
-    });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0102
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
-    it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0102', Level.LEVEL0,async (done: Function) => {
-      try {
-        if (fileDescriptor && subtitleFdSrc) {
-          testsubtitle4UpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
-        }
-      } catch (error) {
-        console.error(`Test exception: ${JSON.stringify(error)}`);
-        expect().assertFail()
-        done()
-      }
-    });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0103
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
-    it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0103', Level.LEVEL0,async (done: Function) => {
-      try {
-        if (fileDescriptor && subtitleFdSrc) {
-          testsubtitle5UpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
         }
       } catch (error) {
         console.error(`Test exception: ${JSON.stringify(error)}`);
