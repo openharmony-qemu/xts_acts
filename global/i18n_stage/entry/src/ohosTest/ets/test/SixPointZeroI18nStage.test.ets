@@ -2429,7 +2429,7 @@ export default function SixPointZeroI18nStageTest() {
       let numFmt: Intl.NumberFormat =
         new Intl.NumberFormat('ar', { style: 'unit', unit: 'kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('٠-٣ كم/س');
+      expect(formattedRange).assertEqual('٠–٣ كم/س');
     })
 
     /* *
