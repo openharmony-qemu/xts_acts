@@ -59,6 +59,8 @@ struct Index {
       let rect = windowClass.getWindowProperties().windowRect;
       this.left = this.getUIContext().px2vp(rect.left);
       this.top = this.getUIContext().px2vp(rect.top);
+    }).catch((err:Error) => {
+        console.log('error: ' + err)
     });
   }
 
