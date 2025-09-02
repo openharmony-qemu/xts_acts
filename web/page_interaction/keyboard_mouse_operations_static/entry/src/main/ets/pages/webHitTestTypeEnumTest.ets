@@ -18,6 +18,7 @@ import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback } from '@ohos.base'
 import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 
@@ -116,6 +117,12 @@ struct WebHitTestTypeEnumTest {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
+              }
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebOnInterceptKeyEvent' })
+                console.log('push URL success')
               }
             }
           })

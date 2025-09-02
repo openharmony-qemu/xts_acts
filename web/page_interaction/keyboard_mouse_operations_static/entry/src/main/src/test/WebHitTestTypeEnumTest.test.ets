@@ -19,6 +19,7 @@ import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext: common.UIAbilityContext;
@@ -184,6 +185,20 @@ export default function webHitTestTypeEnumTest01() {
         inspector.sendEventByKey('WebHitTestTypeEnumTestButton', 10, '');
         await Utils.msSleep(8000);
         done();
+      })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(3000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebHitTestTypeEnumTestButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        console.info('click test');
+        await Utils.msSleep(6000);
+        done()
       })
   })
 }
