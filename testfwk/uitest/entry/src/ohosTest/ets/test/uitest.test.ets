@@ -147,6 +147,7 @@ export default function UiTest() {
             }
             let center = await text.getBoundsCenter()
             await text.clearText();
+            await driver.delayMs(2000);
             await exitInputMethod();
             await driver.delayMs(2000);
             text = await driver.findComponent(ON.type('TextInput'))
