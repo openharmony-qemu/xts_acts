@@ -19,7 +19,8 @@ import HttpRequestInStreamTest from './HttpRequestInStream.test';
 import HttpRequestOptionsTest from './HttpRequestOptions.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
-import httpErrorCodeTest from './HttpErrorCodeTest.test'
+import httpErrorCodeTest from './HttpErrorCodeTest.test';
+import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
 
 export default function testsuite() {
 if (sim.getMaxSimCount()>1){
@@ -29,6 +30,7 @@ if (sim.getMaxSimCount()>1){
   HttpRequestInStreamTest();
   HttpRequestOptionsTest();
   httpErrorCodeTest();
+  HttpRequestGmssl();
   }else{
     EmptyTest()
   }
