@@ -1408,7 +1408,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         }).catch((err: BusinessError) => {
           console.error(TAG + `Failed to get resultSize.code is ${err.code},message is ${err.message}`);
-          expect(error.code).assertEqual(15100004);
+          expect(err.code).assertEqual(15100004);
           done();
         });
       } catch (e) {
