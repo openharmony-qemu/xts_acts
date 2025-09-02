@@ -13,18 +13,15 @@
  * limitations under the License.
  */
 
-import {
-  describe, it, expect,
-} from '../Common';
+import { describe, beforeAll,beforeEach,afterEach,afterAll,it,expect, Level } from '@ohos/hypium';
 import cloudSync from '@ohos.file.cloudSync';
 import fileUri from '@ohos.file.fileuri';
-import featureAbility from '@ohos.ability.featureAbility';
 import fs from '@ohos.file.fs';
-import { Level } from '@ohos/hypium';
+import { BusinessError } from '@kit.BasicServicesKit';
+
 
 export default function CloudFileTest(){
-describe('cloud_file_test', function () {
-
+describe('cloud_file_test', () => {
    /**
    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0100
    * @tc.name Test_CloudFile_State_001
@@ -34,10 +31,10 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_001', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_001', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (pg) => {
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
       };
       fileCache.on('batchDownload', callback);
@@ -58,10 +55,10 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_002', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_002', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (pg) => {
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
       };
       fileCache.on('batchDownload', callback);
@@ -83,7 +80,7 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_003', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_003', Level.LEVEL3, async (done: Function) => {
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
     let uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
@@ -91,13 +88,13 @@ describe('cloud_file_test', function () {
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (pg) => {
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
       };
       fileCache.on('batchDownload', callback);
       fileCache.startBatch(uris, fileType).then(() => {
         console.info("startBatch Download successfully");
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.error("Test_CloudFile_State_003 startBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code == 22400005).assertTrue();
         done();
@@ -118,19 +115,19 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_004', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_004', Level.LEVEL3, async (done: Function) => {
     let downloadId = 1;
     let needClean = true;
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (pg) => {
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
       };
       fileCache.on('batchDownload', callback);
       fileCache.stopBatch(downloadId, needClean).then(() => {
         console.info("stopBatch Download successfully");
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.error("Test_CloudFile_State_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code == 201 && err.message =='Permission verification failed').assertTrue();
         done();
@@ -151,10 +148,10 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_005', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_005', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (MultiDownloadProgress) => {
+      let callback = (MultiDownloadProgress: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + MultiDownloadProgress.state);
         expect(MultiDownloadProgress.taskId == 0).assertTrue();
         expect(MultiDownloadProgress.successfulCount == 0).assertTrue();
@@ -187,15 +184,16 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_006', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_006', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (MultiDownloadProgress) => {
+      let callback = (MultiDownloadProgress: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + MultiDownloadProgress.state);
-        let FailedFileInfo = MultiDownloadProgress.getFailedFiles();
-        console.info("Test_CloudFile_State_006 FailedFileInfo " + FailedFileInfo.uri + FailedFileInfo.error);
-        expect(FailedFileInfo.uri == '').assertTrue();
-        expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+        let failedList: Array<cloudSync.FailedFileInfo> = MultiDownloadProgress.getFailedFiles();
+        for (let FailedFileInfo of failedList) {
+          expect(FailedFileInfo.uri == '').assertTrue();
+          expect(FailedFileInfo.error == cloudSync.DownloadErrorType.NO_ERROR).assertTrue();
+        }
       };
       fileCache.on('batchDownload', callback);
       fileCache.off('batchDownload', callback);
@@ -216,7 +214,7 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_007', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_007', Level.LEVEL3, async (done: Function) => {
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
     let uris = [fileUri.getUriFromPath(path1), fileUri.getUriFromPath(path2)];
@@ -224,7 +222,7 @@ describe('cloud_file_test', function () {
      
      try {
       let fileCache = new cloudSync.CloudFileCache();
-      let callback = (pg) => {
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
         console.info("batchDownload state：" + pg.state);
       };
       fileCache.on('batchDownload', callback);
@@ -233,7 +231,7 @@ describe('cloud_file_test', function () {
         expect(cloudSync.DownloadFileType.CONTENT == 0).assertTrue();
         expect(cloudSync.DownloadFileType.THUMBNAIL == 1).assertTrue();
         expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.error("Test_CloudFile_State_007 startBatch download failed: " + err.message + ", error code: " + err.code);
         expect(err.code == 22400005).assertTrue();
         done();
@@ -254,7 +252,7 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_008', Level.LEVEL3, async function (done) {
+   it('Test_CloudFile_State_008', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
      try {
@@ -277,11 +275,9 @@ describe('cloud_file_test', function () {
    * @tc.level Level 3
    * @tc.require
    */
-   it('Test_CloudFile_State_009', Level.LEVEL3, async function (done) {
-    let fpath = await featureAbility.getContext().getFilesDir() + '/Test_CloudFile_State_009';
-    let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    console.info("Test_CloudFile_State_009 file fd: " + file.fd);
-    let uri = fileUri.getUriFromPath(fpath);
+   it('Test_CloudFile_State_009', Level.LEVEL3, async (done: Function) => {
+    let path = "/data/storage/el2/cloud/Test_CloudFile_State_009.txt";
+    let uri = fileUri.getUriFromPath(path);
     console.info("Test_CloudFile_State_009 uri: " + uri);
     try {
       cloudSync.getCoreFileSyncState(uri);
