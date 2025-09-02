@@ -2382,7 +2382,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0100', Level.LEVEL0, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('zh', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'Kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 km/h');
     })
@@ -2397,7 +2397,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0200', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('th', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'Kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 กม./ชม.');
     })
@@ -2412,7 +2412,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0300', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ja', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'Kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0～3 km/h');
     })
@@ -2427,7 +2427,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0400', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ar', { style: 'unit', unit: 'Kilometer-per-hour', unitDisplay: 'short' });
+        new Intl.NumberFormat('ar', { style: 'unit', unit: 'Kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('٠-٣ كم/س');
     })
@@ -2442,7 +2442,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0500', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('zh', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'liter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3升');
     })
@@ -2457,7 +2457,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0600', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('th', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'liter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 ล.');
     })
@@ -2472,9 +2472,9 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0700', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('en', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+        new Intl.NumberFormat('en', { style: 'unit', unit: 'liter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('0-3 L');
+      expect(formattedRange).assertEqual('0–3 L');
     })
 
     /* *
@@ -2487,7 +2487,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0800', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ja', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'liter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0～3 L');
     })
@@ -2502,9 +2502,9 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0900', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ar', { style: 'unit', unit: 'liter', unitDisplay: 'short' });
+        new Intl.NumberFormat('ar', { style: 'unit', unit: 'liter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('٠-٣ لتر');
+      expect(formattedRange).assertEqual('٠–٣ لتر');
     })
 
     /* *
@@ -2517,7 +2517,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_1000', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('zh', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'meter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3米');
     })
@@ -2532,7 +2532,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_1100', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('th', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'meter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 ม.');
     })
@@ -2547,9 +2547,9 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_1200', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('en', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+        new Intl.NumberFormat('en', { style: 'unit', unit: 'meter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('0-3 m');
+      expect(formattedRange).assertEqual('0–3 m');
     })
 
     /* *
@@ -2562,7 +2562,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_1300', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ja', { style: 'unit', unit: 'meter', unitDisplay: 'short' });
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'meter' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0～3 m');
     })
@@ -2581,7 +2581,7 @@ export default function SixPointZeroI18nStageTest() {
         style: 'unit', unit: 'meter', unitDisplay: "short"
       });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('٠—٣ أمتار');
+      expect(formattedRange).assertEqual('٠–٣ أمتار');
     })
 
     /* *
@@ -2597,7 +2597,7 @@ export default function SixPointZeroI18nStageTest() {
         style: 'currency', currency: 'CNY', unitDisplay: "short"
       });
       let formattedRange: string = numFmt.formatRange(3500, 9500);
-      expect(formattedRange).assertEqual('￥3,500.00 - ￥9,500.00');
+      expect(formattedRange).assertEqual('¥3,500.00 - ¥9,500.00');
     })
 
     /* *
@@ -2613,7 +2613,7 @@ export default function SixPointZeroI18nStageTest() {
         style: 'currency', currency: 'EUR', unitDisplay: "short"
       });
       let formattedRange: string = numFmt.formatRange(3500, 9500);
-      expect(formattedRange).assertEqual('3.500,00—9.500,00 €');
+      expect(formattedRange).assertEqual('3.500,00–9.500,00 €');
     })
 
     /* *
@@ -2629,7 +2629,7 @@ export default function SixPointZeroI18nStageTest() {
         style: 'currency', currency: 'USD', unitDisplay: "short"
       });
       let formattedRange: string = numFmt.formatRange(3500, 9500);
-      expect(formattedRange).assertEqual('$3,500.00 — $9,500.00');
+      expect(formattedRange).assertEqual('$3,500.00 – $9,500.00');
     })
 
     /* *
@@ -2661,7 +2661,7 @@ export default function SixPointZeroI18nStageTest() {
         style: 'currency', currency: 'USD', unitDisplay: "short"
       });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('٠٫٠٠—٣٫٠٠ US$');
+      expect(formattedRange).assertEqual('‏٠٫٠٠–٣٫٠٠ US$');
     })
 
     /* *
@@ -2737,17 +2737,8 @@ export default function SixPointZeroI18nStageTest() {
     * @tc.level     : Level 0
     */
     it('test_NumberFormatRangeToParts_0100', Level.LEVEL0, () => {
-      let range: string = JSON.stringify([{
-        "type": "integer", "value": "."
-      }, {
-        "type": "literal", "value": "-"
-      }, {
-        "type": "integer", "value": "٣"
-      }, {
-        "type": "literal", "value": " "
-      }, {
-        "type": "unit", "value": "لتر"
-      }]);
+      let range: string = JSON.stringify([{ "type": "integer", "value": "٠" }, { "type": "literal", "value": "–" },
+        { "type": "integer", "value": "٣" }, { "type": "literal", "value": " " }, { "type": "unit", "value": "لتر" }]);
       let numFmt: Intl.NumberFormat = new Intl.NumberFormat("ar", {
         style: 'unit', unit: "liter", unitDisplay: "short"
       });
@@ -2764,33 +2755,12 @@ export default function SixPointZeroI18nStageTest() {
     * @tc.level     : Level 2
     */
     it('test_NumberFormatRangeToParts_0200', Level.LEVEL2, () => {
-      let range: string = JSON.stringify([{
-        "type": "integer", "value": "3"
-      }, {
-        "type": "group", "value": "."
-      }, {
-        "type": "integer", "value": "500"
-      }, {
-        "type": "decimal", "value": ","
-      }, {
-        "type": "fraction", "value": "00"
-      }, {
-        "type": "literal", "value": "-"
-      }, {
-        "type": "integer", "value": "9"
-      }, {
-        "type": "group", "value": "."
-      }, {
-        "type": "integer", "value": "500"
-      }, {
-        "type": "decimal", "value": ","
-      }, {
-        "type": "fraction", "value": "00"
-      }, {
-        "type": "literal", "value": " "
-      }, {
-        "type": "currency", "value": "€"
-      }]);
+      let range: string = JSON.stringify([{ "type": "integer", "value": "3" }, { "type": "group", "value": "." },
+        { "type": "integer", "value": "500" }, { "type": "decimal", "value": "," },
+        { "type": "fraction", "value": "00" }, { "type": "literal", "value": "–" }, { "type": "integer", "value": "9" },
+        { "type": "group", "value": "." }, { "type": "integer", "value": "500" }, { "type": "decimal", "value": "," },
+        { "type": "fraction", "value": "00" }, { "type": "literal", "value": " " },
+        { "type": "currency", "value": "€" }]);
       let numFmt: Intl.NumberFormat = new Intl.NumberFormat("de-DE", {
         style: 'currency', currency: "EUR", unitDisplay: "short"
       });
@@ -2807,17 +2777,9 @@ export default function SixPointZeroI18nStageTest() {
     * @tc.level     : Level 2
     */
     it('test_NumberFormatRangeToParts_0300', Level.LEVEL2, () => {
-      let range: string = JSON.stringify([{
-        "type": "integer", "value": "0"
-      }, {
-        "type": "percentSign", "value": "%"
-      }, {
-        "type": "literal", "value": " - "
-      }, {
-        "type": "integer", "value": "300"
-      }, {
-        "type": "literal", "value": "%"
-      }]);
+      let range: string = JSON.stringify([{ "type": "integer", "value": "0" }, { "type": "percentSign", "value": "%" },
+        { "type": "literal", "value": " - " }, { "type": "integer", "value": "300" },
+        { "type": "percentSign", "value": "%" }]);
       let numFmt: Intl.NumberFormat = new Intl.NumberFormat("zh", {
         style: 'percent', unitDisplay: "short"
       });
@@ -2937,7 +2899,7 @@ export default function SixPointZeroI18nStageTest() {
       const formatOrdinals = (n: number) => {
         const rule = pr.select(n);
         const suffix = suffixes.get(rule);
-        return '${n}${suffix}';
+        return `${n}${suffix}`;
       }
       expect(formatOrdinals(0)).assertEqual('0th');
       expect(formatOrdinals(1)).assertEqual('1st');
