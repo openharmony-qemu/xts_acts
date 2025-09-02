@@ -1402,17 +1402,21 @@ export default function deviceKvStorePromiseErrcodeTest(){
       try {
         let  query: factory.Query | null = new factory.Query();
         query.prefixKey("keyno");
-        await kvStore?.getResultSize(localDeviceId, query);
-        console.info(TAG + "Succeeded in getResultSize");
-        expect().assertFail();
-        done();
+        await kvStore?.getResultSize(localDeviceId, query).then((resultSize: number) => {
+          console.info(TAG + 'Succeeded in getting resultSize');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to get resultSize.code is ${err.code},message is ${err.message}`);
+          expect(error.code).assertEqual(15100004);
+          done();
+        });
       } catch (e) {
         let error = e as BusinessError;
         console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
-        expect(error.code).assertEqual(15100004);
+        expect().assertFail();
         done();
       }
-      
     })
 
     /**
@@ -1462,14 +1466,6 @@ export default function deviceKvStorePromiseErrcodeTest(){
       };
       done();
     })
-
-
-
-
-
-
-
-
 
   })
 }
