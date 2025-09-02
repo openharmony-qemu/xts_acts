@@ -47,6 +47,7 @@ export default function audioCapturer() {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
     beforeAll(async () => {
+      await getAudioManager();
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext
       await getFullFilePath(PLAY_FILE);
       console.info('TestLog: Start Testing AudioPlaybackCapturer Interfaces');
