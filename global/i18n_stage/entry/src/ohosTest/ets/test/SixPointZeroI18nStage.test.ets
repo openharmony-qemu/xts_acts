@@ -2382,7 +2382,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0100', Level.LEVEL0, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('zh', { style: 'unit', unit: 'Kilometer-per-hour' });
+        new Intl.NumberFormat('zh', { style: 'unit', unit: 'kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 km/h');
     })
@@ -2397,7 +2397,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0200', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('th', { style: 'unit', unit: 'Kilometer-per-hour' });
+        new Intl.NumberFormat('th', { style: 'unit', unit: 'kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0-3 กม./ชม.');
     })
@@ -2412,7 +2412,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0300', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ja', { style: 'unit', unit: 'Kilometer-per-hour' });
+        new Intl.NumberFormat('ja', { style: 'unit', unit: 'kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('0～3 km/h');
     })
@@ -2427,7 +2427,7 @@ export default function SixPointZeroI18nStageTest() {
     */
     it('test_NumberFormatRange_0400', Level.LEVEL2, () => {
       let numFmt: Intl.NumberFormat =
-        new Intl.NumberFormat('ar', { style: 'unit', unit: 'Kilometer-per-hour' });
+        new Intl.NumberFormat('ar', { style: 'unit', unit: 'kilometer-per-hour' });
       let formattedRange: string = numFmt.formatRange(0, 3);
       expect(formattedRange).assertEqual('٠-٣ كم/س');
     })
@@ -2705,11 +2705,9 @@ export default function SixPointZeroI18nStageTest() {
     * @tc.level     : Level 2
     */
     it('test_NumberFormatRange_2200', Level.LEVEL2, () => {
-      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ar', {
-        style: 'percent', unitDisplay: "short"
-      });
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat('ar', { style: 'percent' });
       let formattedRange: string = numFmt.formatRange(0, 3);
-      expect(formattedRange).assertEqual('٪٠—٣٠٠');
+      expect(formattedRange).assertEqual('٠–٣٠٠٪؜‏');
     })
 
     /* *
