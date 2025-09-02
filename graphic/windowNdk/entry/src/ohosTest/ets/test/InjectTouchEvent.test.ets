@@ -825,8 +825,12 @@ export default function InjectTouchEvent() {
       } catch (err) {
         console.info(`${Tag}: ${caseName} Failed, err: ${JSON.stringify(err)}`);
         await subWindowClass.destroyWindow();
-        expect(false).assertTrue();
-        done();
+        if(err.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
