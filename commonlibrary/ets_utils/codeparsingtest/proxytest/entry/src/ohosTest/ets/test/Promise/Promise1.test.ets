@@ -46,7 +46,7 @@ export default function promise1Test() {
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0100
-     * @tc.name promiseTest001
+     * @tc.name promise1Test001
      * @tc.desc test promise
      * @tc.size MediumTest
      * @tc.type Function
@@ -61,7 +61,7 @@ export default function promise1Test() {
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_0200
-     * @tc.name promise1Test001
+     * @tc.name promise1Test002
      * @tc.desc test promise
      * @tc.size MediumTest
      * @tc.type Function
@@ -558,31 +558,6 @@ export default function promise1Test() {
       }).catch((err: Error) => list.add(err.message));
       expect(JSON.stringify(list)).assertEqual('{"0":"executor sync error"}');
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_PROMISE1_TEST_3300
-     * @tc.name promise1Test033
-     * @tc.desc test promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('promise1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-    //   let errorCaught = false;
-    //   console.log("nanzheng1111111start")
-    //   let list = new ArrayList<boolean>();
-    //   await new Promise<void>((resolve) => {
-    //     setTimeout(() => {
-    //       try {
-    //         throw new Error('executor async error');
-    //       } catch (err) {
-    //       }
-    //     }, 100);
-    //   }).catch(() => errorCaught = true);
-    //   setTimeout(() => console.log("nanzheng1111111"+String(errorCaught)), 200);
-    //   expect(JSON.stringify(list)).assertEqual('{"0":"executor sync error"}');
-    //   expect(errorCaught).assertEqual(false);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE1_TEST_3400
