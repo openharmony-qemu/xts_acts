@@ -58,7 +58,7 @@ struct borderRadiusesExample {
         .onClick((e:ClickEvent) => {
           renderNode.borderRadius = borderRadiuses(30)
           renderNode.invalidate()
-          this.borderRadiusesValue = renderNode.borderRadius.topLeft
+          this.borderRadiusesValue = renderNode!.borderRadius!.topLeft
         })
     }
   }
