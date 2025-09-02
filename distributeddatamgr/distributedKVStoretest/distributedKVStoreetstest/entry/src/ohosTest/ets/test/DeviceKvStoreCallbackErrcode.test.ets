@@ -17,13 +17,11 @@ import factory from '@ohos.data.distributedKVStore';
 import common from "@ohos.app.ability.common";
 import fs from "@ohos.file.fs";
 
-
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
-
 const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
 
@@ -36,13 +34,15 @@ const USED_DEVICE_IDS =  ['A12C1F9261528B21F95778D2FDC0B2E33943E6251AC5487F4473D
 const UNUSED_DEVICE_IDS =  [];  /* add you test device-ids here */
 let syncDeviceIds = USED_DEVICE_IDS.concat(UNUSED_DEVICE_IDS);
 
-let keyPrefix = null;
-
 function sleep(ms:number) {
   return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
 }
 
-const TAG = "[DeviceKv_Ets_TEST >>>>>> ]"
+const TAG = "[DeviceKv_Promise_Ets_TEST >>>>>> ]"
+
+let entries: factory.Entry [] = [];
+let resultSet: factory.KVStoreResultSet;
+let keyPrefix = null;
 
 // 创建数据库损坏
 const dbName = "gen_natural_store.db";
@@ -70,18 +70,15 @@ async function CreateCorruptDb() {
   console.info(TAG + "quit creat corrupt store");
 };
 
-let entries: factory.Entry [] = [];
-let resultSet: factory.KVStoreResultSet;
 
-export default function deviceKvStoreCallbackErrcodeTest(){
-  describe('deviceKvStoreCallbackErrcodeTest', () => {
+export default function deviceKvStorePromiseErrcodeTest(){
+  describe('deviceKvStorePromiseErrcodeTest', () => {
     const options: factory.Options = {
       createIfMissing: true,
       encrypt: false,
       backup: false,
       autoSync: true,
       kvStoreType: factory.KVStoreType.DEVICE_COLLABORATION,
-
       securityLevel: factory.SecurityLevel.S2,
     };
     beforeAll(async (done:Function) => {
@@ -137,17 +134,18 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'beforeAll end');
       done();
     });
+
     afterAll(async (done:Function) => {
       console.info(TAG + 'afterAll');
       done();
     });
 
-
     beforeEach(async (done:Function) =>  {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
+
       await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
-        console.info(TAG + 'beforeEach getKVStore for DeviceId success');
+        console.info(TAG + 'beforeEach getKVStore for getDeviceId success');
       }).catch((err: BusinessError) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
       });
@@ -175,12 +173,11 @@ export default function deviceKvStoreCallbackErrcodeTest(){
           done();
         });
       });
-
     });
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_Get_Did_ErrCode_0001
-     * @tc.desc get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0001
+     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -189,15 +186,15 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_Get_Did_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0001');
       try {
-        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-          }
+        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -206,8 +203,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_Get_Did_ErrCode_0100
-     * @tc.desc get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0100
+     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -216,16 +213,16 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_Get_Did_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0100');
       try {
-        await kvStore.get(localDeviceId, keyPrefix, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail');
-            expect(null).assertFail();
-          }
+        await kvStore.get(null, KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -233,10 +230,9 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
-
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_Get_Did_ErrCode_0200
-     * @tc.desc get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0200
+     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -247,18 +243,16 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       try {
         //数据库损坏
         await CreateCorruptDb();
-        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-            done();
-          }
+        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100003).assertEqual(err.code);
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -267,8 +261,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_Get_Did_ErrCode_0300
-     * @tc.desc
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0300
+     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -277,16 +271,16 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_Get_Did_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0300');
       try {
-        await kvStore.get(localDeviceId, 'keyno', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100004).assertEqual(err.code);
-          }
+        await kvStore.get(localDeviceId, 'keyno').then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100004).assertEqual(err.code);
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -295,8 +289,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_Get_Did_ErrCode_0400
-     * @tc.desc
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_Did_ErrCode_0400
+     * @tc.desc getResultSet(deviceId: string, keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -306,14 +300,13 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_Get_Did_ErrCode_0400');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-          }
+        await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
           done();
         });
       } catch (e) {
@@ -325,8 +318,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GET_ErrCode_0100
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0100
+     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -335,16 +328,16 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_Get_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0100');
       try {
-        await kvStore.get(keyPrefix, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail');
-            expect(null).assertFail();
-          }
+        await kvStore.get(keyPrefix).then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -354,8 +347,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GET_ErrCode_0200
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0200
+     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -365,17 +358,15 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0200');
       try {
         //数据库损坏
-        await CreateCorruptDb();
-        await kvStore.get(KEY_TEST_STRING_ELEMENT, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-          }
+        await kvStore.get(KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -384,8 +375,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GET_ErrCode_0300
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0300
+     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -394,16 +385,16 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_Get_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0300');
       try {
-        await kvStore.get('keyno', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100004).assertEqual(err.code);
-          }
+        await kvStore.get('keyno').then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100004).assertEqual(err.code);
           done();
         });
+
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -412,8 +403,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GET_ErrCode_0400
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GET_ErrCode_0400
+     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -423,14 +414,45 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_Get_ErrCode_0400');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.get(KEY_TEST_STRING_ELEMENT, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' get success');
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-          }
+        await kvStore.get(KEY_TEST_STRING_ELEMENT).then(() => {
+          console.info(TAG + ' get success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' get fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
+          done();
+        });
+
+      } catch (e) {
+        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+      /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0001
+     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
+       * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
+       */
+    it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001 000 ');
+      try {
+        await kvStore.getEntries(localDeviceId, 'batch_test_string_key').then((entrys: factory.Entry[]) => {
+          console.info(TAG + ' getEntries success');
+          console.info(TAG + ' entrys.length: ' + entrys.length);
+          console.info(TAG + ' entrys[0]: ' + JSON.stringify(entrys[0]));
+          expect(entrys.length == 10).assertTrue();
+          expect(entrys[0].value.value == 'batch_test_string_value').assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
           done();
         });
       } catch (e) {
@@ -442,41 +464,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Key_ErrCode_0001
-     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
-     */
-    it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0001 000 ');
-      try {
-        await kvStore.getEntries(localDeviceId, 'batch_test_string_key', (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            console.info(TAG + ' entrys.length: ' + entrys.length);
-            console.info(TAG + ' entrys[0]: ' + JSON.stringify(entrys[0]));
-            expect(entrys.length == 10).assertTrue();
-            expect(entrys[0].value.value == 'batch_test_string_value').assertTrue();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
-        });
-      } catch (e) {
-        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(null).assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Key_ErrCode_0100
-     * @tc.desc getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0100
+     * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -485,17 +474,14 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0100 ');
       try {
-        await kvStore.getEntries(localDeviceId, keyPrefix, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, '').then(() => {
+          console.info(TAG + ' getEntries success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+          done();
         });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -505,7 +491,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Key_ErrCode_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0200
      * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -516,17 +502,14 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0200 ');
       try {
         await CreateCorruptDb();
-        await kvStore.getEntries(localDeviceId, 'batch_test_string_key', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, 'batch_test_string_key').then((entrys: factory.Entry[]) => {
+          console.info(TAG + ' getEntries success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100003).assertEqual(err.code);
+          done();
         });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -535,8 +518,9 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
+
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Key_ErrCode_0300
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Key_ErrCode_0300
      * @tc.desc Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -547,17 +531,14 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Key_ErrCode_0300 ');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getEntries(localDeviceId, 'batch_test_string_key', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, 'batch_test_string_key').then((entrys: factory.Entry[]) => {
+          console.info(TAG + ' getEntries success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
+          done();
         });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -568,58 +549,52 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
       /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Key_ErrCode_0100
-       * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 401
-       * @tc.size MEDIUMTEST
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0100
+     * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 401
+     * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-       * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 401
+     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 401
        */
-    it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0100 ');
-      try {
-        await kvStore.getEntries(keyPrefix, (err) => {
-          if (err == undefined) {
+      it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+        console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0100 ');
+        try {
+          await kvStore.getEntries(keyPrefix).then(() => {
             console.info(TAG + ' getEntries success');
             expect(null).assertFail();
             done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
+          }).catch((err:BusinessError) => {
+            console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
             done();
-          }
-
-        });
-      } catch (e) {
-        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(401).assertEqual(e.code);
-        done();
-      }
-    })
+          });
+        } catch (e) {
+          console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+          expect(401).assertEqual(e.code);
+          done();
+        }
+      })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Key_ErrCode_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0200
      * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
      */
     it('SUB_DDM_DKV_GetEntries_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0200 ');
       try {
         await CreateCorruptDb();
-        await kvStore.getEntries('batch_test_string_key', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries('batch_test_string_key').then((entrys: factory.Entry[]) => {
+          console.info(TAG + ' getEntries success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100003).assertEqual(err.code);
+          done();
         });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -628,8 +603,9 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
+
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Key_ErrCode_0300
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Key_ErrCode_0300
      * @tc.desc Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -640,17 +616,14 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Key_ErrCode_0300 ');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getEntries('batch_test_string_key', (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries('batch_test_string_key').then(() => {
+          console.info(TAG + ' getEntries success');
+          expect(null).assertFail();
+          done();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
+          done();
         });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -661,34 +634,28 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Query_ErrCode_0001
-     * @tc.desc  getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0001
+     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 0
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 0
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001 000 ');
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
       try {
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getEntries(localDeviceId, query, (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            console.info(TAG + ' entrys.length: ' + entrys.length);
-            console.info(TAG + ' entrys[0]: ' + JSON.stringify(entrys[0]));
-            expect(entrys.length == 10).assertTrue();
-            expect(entrys[0].value.value == 'batch_test_string_value').assertTrue();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, query).then((entrys) => {
+          console.info(' getEntries success');
+          console.info(entrys[0].value.value.toString());
+          expect(entrys.length == 10).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -697,30 +664,26 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Query_ErrCode_0100
-     * @tc.desc  getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0100
+     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 401
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 401
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100 000 ');
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0100');
       try {
         let  query: factory.Query | null = new factory.Query();
         query = null;
-        await kvStore.getEntries(localDeviceId, query, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, query).then(() => {
+          console.info(' getEntries success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -729,32 +692,28 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Query_ErrCode_0200
-     * @tc.desc  getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0200
+     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100003
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100003
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0200');
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
       try {
         await CreateCorruptDb();
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getEntries(localDeviceId, query, (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, query).then((entrys) => {
+          console.info(' getEntries success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100003).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -763,32 +722,28 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Did_Query_ErrCode_0300
-     * @tc.desc  getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Did_Query_ErrCode_0300
+     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid) ErrCode 15100005
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100005
      */
     it('SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0300');
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Did_Query_ErrCode_0001');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getEntries(localDeviceId, query, (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(entrys.length == 10).assertTrue();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(localDeviceId, query).then((entrys) => {
+          console.info(' getEntries success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -796,33 +751,27 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
-
-
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Query_ErrCode_0100
-     * @tc.desc  getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0100
+     * @tc.desc  getEntries(query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 401
+     * @tc.name Test Js Api DeviceKvStore.getEntries(query) ErrCode 401
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0100 000 ');
+      console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0100');
       try {
         let  query: factory.Query | null = new factory.Query();
         query = null;
-        await kvStore.getEntries(query, (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getEntries(query).then(() => {
+          console.info(' getEntries success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -831,32 +780,27 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Query_ErrCode_0200
-     * @tc.desc  getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0200
+     * @tc.desc  getEntries(query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 15100003
+     * @tc.name Test Js Api DeviceKvStore.getEntries(query) ErrCode 15100003
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0200');
       try {
         await CreateCorruptDb();
         let query = new factory.Query();
-        query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getEntries(query, (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100003).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(query).then((entrys) => {
+          console.info(' getEntries success');
+          expect(entrys.length == 10).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100003).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -864,14 +808,13 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
-
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetEntries_Query_ErrCode_0300
-     * @tc.desc  getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetEntries_Query_ErrCode_0300
+     * @tc.desc  getEntries(deviceId: string, query: Query): Promise<Entry[]>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getEntries() ErrCode 15100005
+     * @tc.name Test Js Api DeviceKvStore.getEntries(Deviceid, query) ErrCode 15100005
      */
     it('SUB_DDM_DKV_GetEntries_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetEntries_Query_ErrCode_0300');
@@ -880,18 +823,14 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getEntries(query, (err, entrys) => {
-          if (err == undefined) {
-            console.info(TAG + ' getEntries success');
-            expect(entrys.length == 10).assertTrue();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getEntries(query).then(() => {
+          console.info(' getEntries success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(' getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -900,7 +839,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Key_ErrCode_0001
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0001
      * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -910,23 +849,22 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0001');
       try {
-        await kvStore.getResultSet(localDeviceId, 'batch_test_string_key', async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(resultSet.getCount() == 10).assertTrue();
-            await kvStore.closeResultSet(resultSet, (err) => {
-              console.info(TAG + ' closeResultSet success');
-              expect(err == undefined).assertTrue();
-              done();
-            })
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getResultSet(localDeviceId, 'batch_test_string_key').then((result) => {
+          console.info(TAG + ' getResultSet success');
+          resultSet = result;
+          expect(resultSet.getCount() == 10).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -936,7 +874,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Key_ErrCode_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0100
      * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -946,18 +884,21 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0100');
       try {
-        await kvStore.getResultSet(localDeviceId, keyPrefix, async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getResultSet(localDeviceId, '').then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -966,7 +907,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Key_ErrCode_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0200
      * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -978,30 +919,27 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       try {
         let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet(localDeviceId, 'key_test_string_2', async (err, result) => {
-            if (err == undefined) {
-              console.info(TAG + ' getResultSet success, i=' + i);
-              resultSets.push(result);
-            } else {
-              console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-              expect(15100001).assertEqual(err.code);
-              for (let j=0; j<9; j++) {
-                try{
-                  await kvStore.closeResultSet(resultSets[j], (err) => {
-                    if (err == undefined) {
-                      console.info(TAG + ' closeResultSet success, j=' + j);
-                    } else {
-                      console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                    }
-                  })
-                }catch(er){
-                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-                  done();
-                }
-
-              }
-            }
+          await kvStore.getResultSet(localDeviceId, 'key_test_string_2').then((result) => {
+            console.info(TAG + ' getResultSet success, i=' + i);
+            resultSets.push(result);
+          }).catch((err:BusinessError) => {
+            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            expect(15100001).assertEqual(err.code);
           });
+        }
+        for (let j=0; j<9; j++) {
+          try{
+            await kvStore.closeResultSet(resultSets[j], (err) => {
+              if (err == undefined) {
+                console.info(TAG + ' closeResultSet success, j=' + j);
+              } else {
+                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+              }
+            })
+          }catch(er){
+            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            done();
+          }
         }
 
       } catch (e) {
@@ -1012,7 +950,7 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Key_ErrCode_0400
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Key_ErrCode_0400
      * @tc.desc getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -1020,21 +958,17 @@ export default function deviceKvStoreCallbackErrcodeTest(){
      * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100005
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0400');
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Key_ErrCode_0300');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getResultSet(localDeviceId, 'batch_test_string_key', async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getResultSet(localDeviceId, 'batch_test_string_key').then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1043,84 +977,84 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
 
-      /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Key_ErrCode_0100
-       * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-       * @tc.size MEDIUMTEST
-       * @tc.type FUNCTION
-       * @tc.level LEVEL2
-       * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 401
-       */
-      it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-        console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100');
-        try {
-          await kvStore.getResultSet(keyPrefix, async (err) => {
-            if (err == undefined) {
-              console.info(TAG + ' getResultSet success');
-              expect(null).assertFail();
-              done();
-            } else {
-              console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
-            }
-
-          });
-        } catch (e) {
-          console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
-          expect(401).assertEqual(e.code);
-          done();
-        }
-      })
-
-      /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Key_ErrCode_0200
-       * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
-       * @tc.size MEDIUMTEST
-       * @tc.type FUNCTION
-       * @tc.level LEVEL2
-       * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100001
-       */
-      it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-        console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200');
-        try {
-          let resultSets: factory.KVStoreResultSet[] = [];
-          for (let i=0; i<9; i++) {
-            await kvStore.getResultSet('key_test_string_2', async (err, result) => {
-              if (err == undefined) {
-                console.info(TAG + ' getResultSet success, i=' + i);
-                resultSets.push(result);
-              } else {
-                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-                expect(15100001).assertEqual(err.code);
-                for (let j=0; j<9; j++) {
-                  try{
-                    await kvStore.closeResultSet(resultSets[j], (err) => {
-                      if (err == undefined) {
-                        console.info(TAG + ' closeResultSet success, j=' + j);
-                      } else {
-                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                      }
-                    })
-                  }catch(er){
-                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-                    done();
-                  }
-
-                }
-              }
-            });
-          }
-
-        } catch (e) {
-          console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0100
+     * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 401
+     */
+    it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0100');
+      try {
+        await kvStore.getResultSet('').then(() => {
+          console.info(TAG + ' getResultSet success');
           expect(null).assertFail();
-          done();
-        }
-      })
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
+      } catch (e) {
+        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(401).assertEqual(e.code);
+        done();
+      }
+    })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Key_ErrCode_0400
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0200
+     * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100001
+     */
+    it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0200');
+      try {
+        let resultSets: factory.KVStoreResultSet[] = [];
+        for (let i=0; i<9; i++) {
+          await kvStore.getResultSet('key_test_string_2').then((result) => {
+            console.info(TAG + ' getResultSet success, i=' + i);
+            resultSets.push(result);
+          }).catch((err:BusinessError) => {
+            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            expect(15100001).assertEqual(err.code);
+          });
+        }
+        for (let j=0; j<9; j++) {
+          try{
+            await kvStore.closeResultSet(resultSets[j], (err) => {
+              if (err == undefined) {
+                console.info(TAG + ' closeResultSet success, j=' + j);
+              } else {
+                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+              }
+            })
+          }catch(er){
+            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            done();
+          }
+        }
+
+      } catch (e) {
+        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Key_ErrCode_0400
      * @tc.desc getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -1128,21 +1062,17 @@ export default function deviceKvStoreCallbackErrcodeTest(){
      * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100005
      */
     it('SUB_DDM_DKV_GetResultSet_Key_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0400');
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Key_ErrCode_0300');
       try {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getResultSet('batch_test_string_key', async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getResultSet('batch_test_string_key').then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1150,10 +1080,9 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
-
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Query_ErrCode_0001
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0001
+     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1165,23 +1094,22 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-        await kvStore.getResultSet(localDeviceId, query, async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(resultSet.getCount() == 10).assertTrue();
-            await kvStore.closeResultSet(resultSet, (err) => {
-              console.info(TAG + ' closeResultSet success');
-              expect(err == undefined).assertTrue();
-              done();
-            })
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getResultSet(localDeviceId, query).then((result) => {
+          console.info(TAG + ' getResultSet success');
+          resultSet = result;
+          expect(resultSet.getCount() == 10).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1189,8 +1117,9 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
+
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Query_ErrCode_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0100
      * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
@@ -1202,18 +1131,21 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       try {
         let  query: factory.Query | null = new factory.Query();
         query = null;
-        await kvStore.getResultSet(localDeviceId, query, async (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getResultSet(localDeviceId, query).then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -1222,82 +1154,44 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Query_ErrCode_0200
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0200
+     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100001
      */
     it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-        console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200');
-        try {
-          let resultSets: factory.KVStoreResultSet[] = [];
-          let query = new factory.Query();
-          query.deviceId(localDeviceId);
-          query.prefixKey("batch_test");
-          for (let i=0; i<9; i++) {
-            await kvStore.getResultSet(localDeviceId, query, async (err, result) => {
-              if (err == undefined) {
-                console.info(TAG + ' getResultSet success, i=' + i);
-                resultSets.push(result);
-              } else {
-                console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-                expect(15100001).assertEqual(err.code);
-                for (let j=0; j<9; j++) {
-                  try{
-                    await kvStore.closeResultSet(resultSets[j], (err) => {
-                      if (err == undefined) {
-                        console.info(TAG + ' closeResultSet success, j=' + j);
-                      } else {
-                        console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                      }
-                    })
-                  }catch(er){
-                    console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-                    done();
-                  }
-
-                }
-              }
-            });
-          }
-
-        } catch (e) {
-          console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
-          expect(null).assertFail();
-          done();
-        }
-      })
-
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Did_Query_ErrCode_0400
-     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100005
-     */
-    it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400');
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0200');
       try {
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getResultSet(localDeviceId, query, async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
+        let resultSets: factory.KVStoreResultSet[] = [];
+        for (let i=0; i<9; i++) {
+          await kvStore.getResultSet(localDeviceId, query).then((result) => {
+            console.info(TAG + ' getResultSet success, i=' + i);
+            resultSets.push(result);
+          }).catch((err:BusinessError) => {
+            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            expect(15100001).assertEqual(err.code);
+          });
+        }
+        for (let j=0; j<9; j++) {
+          try{
+            await kvStore.closeResultSet(resultSets[j], (err) => {
+              if (err == undefined) {
+                console.info(TAG + ' closeResultSet success, j=' + j);
+              } else {
+                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+              }
+            })
+          }catch(er){
+            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
             done();
           }
+        }
 
-        });
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1305,9 +1199,40 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       }
     })
 
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Did_Query_ErrCode_0400
+     * @tc.desc getResultSet(deviceId: string, query: Query): Promise<KVStoreResultSet>;
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getResultSet(Deviceid) ErrCode 15100005
+     */
+    it('SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Did_Query_ErrCode_0300');
+      try {
+        let query = new factory.Query();
+        query.deviceId(localDeviceId);
+        query.prefixKey("batch_test");
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+        await kvStore.getResultSet(localDeviceId, query).then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
+        });
+        done();
+      } catch (e) {
+        console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
       /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Query_ErrCode_0100
-       * @tc.desc getResultSet(query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0100
+       * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
        * @tc.size MEDIUMTEST
        * @tc.type FUNCTION
        * @tc.level LEVEL2
@@ -1318,18 +1243,21 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       try {
         let  query: factory.Query | null = new factory.Query();
         query = null;
-        await kvStore.getResultSet(query, async (err) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            expect(null).assertFail();
-            done();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
-
+        await kvStore.getResultSet(query).then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
         });
+        await kvStore.closeResultSet(resultSet).then((err) => {
+          console.info(TAG + ' closeResultSet success');
+          expect(err == undefined).assertTrue();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(null).assertFail();
+        });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(401).assertEqual(e.code);
@@ -1338,8 +1266,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Query_ErrCode_0200
-     * @tc.desc getResultSet(query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0200
+     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1348,35 +1276,32 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     it('SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
       console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0200');
       try {
-        let resultSets: factory.KVStoreResultSet[] = [];
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
+        let resultSets: factory.KVStoreResultSet[] = [];
         for (let i=0; i<9; i++) {
-          await kvStore.getResultSet(query, async (err, result) => {
-            if (err == undefined) {
-              console.info(TAG + ' getResultSet success, i=' + i);
-              resultSets.push(result);
-            } else {
-              console.error(TAG + ' get fail' + `,  i is ${i}, error code is ${err.code}, message is ${err.message}`);
-              expect(15100001).assertEqual(err.code);
-              for (let j=0; j<9; j++) {
-                try{
-                  await kvStore.closeResultSet(resultSets[j], (err) => {
-                    if (err == undefined) {
-                      console.info(TAG + ' closeResultSet success, j=' + j);
-                    } else {
-                      console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                    }
-                  })
-                }catch(er){
-                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
-                  done();
-                }
-
-              }
-            }
+          await kvStore.getResultSet(query).then((result) => {
+            console.info(TAG + ' getResultSet success, i=' + i);
+            resultSets.push(result);
+          }).catch((err:BusinessError) => {
+            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            expect(15100001).assertEqual(err.code);
           });
+        }
+        for (let j=0; j<9; j++) {
+          try{
+            await kvStore.closeResultSet(resultSets[j], (err) => {
+              if (err == undefined) {
+                console.info(TAG + ' closeResultSet success, j=' + j);
+              } else {
+                console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+              }
+            })
+          }catch(er){
+            console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            done();
+          }
         }
 
       } catch (e) {
@@ -1387,33 +1312,28 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSet_Query_ErrCode_0400
-     * @tc.desc getResultSet(query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVPromiseEtsApiTest_GetResultSet_Query_ErrCode_0400
+     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      * @tc.name Test Js Api DeviceKvStore.getResultSet() ErrCode 15100005
      */
     it('SUB_DDM_DKV_GetResultSet_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0400');
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSet_Query_ErrCode_0300');
       try {
         let query = new factory.Query();
         query.deviceId(localDeviceId);
         query.prefixKey("batch_test");
-
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        await kvStore.getResultSet(query, async (err, result) => {
-          if (err == undefined) {
-            console.info(TAG + ' getResultSet success');
-            resultSet = result;
-            expect(null).assertFail();
-          } else {
-            console.error(TAG + ' get fail' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100005).assertEqual(err.code);
-            done();
-          }
-
+        await kvStore.getResultSet(query).then(() => {
+          console.info(TAG + ' getResultSet success');
+          expect(null).assertFail();
+        }).catch((err:BusinessError) => {
+          console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+          expect(15100005).assertEqual(err.code);
         });
+        done();
       } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1422,87 +1342,21 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Did_Query_ErrCode_0100
-     * @tc.desc getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): void;
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0100
+     * @tc.desc getResultSize(deviceId: string, query: Query): Promise<number>
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 401
      */
-    it('SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0100');
+    it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0100');
       try {
         let  query: factory.Query | null = new factory.Query();
         query = null;
-        kvStore?.getResultSize(localDeviceId, query, (err: BusinessError) => {
-          if (err) {
-            console.error(TAG + `Failed to get.code is ${err.code},message is ${err.message}`);
-            done();
-          }
-          console.info(TAG + "Succeeded in getResultSize");
-          expect().assertFail();
-        });
-      } catch (e) {
-        let error = e as BusinessError;
-        console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
-        expect(error.code).assertEqual(401);
-      }
-      done();
-    })
-
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Did_Query_ErrCode_0300
-     * @tc.desc getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): void;
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 15100005
-     */
-    it('SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0300');
-      try {
-        await kvManager?.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        console.info(TAG + 'Succeeded in closeKVStore');
-        let  query: factory.Query | null = new factory.Query();
-        kvStore?.getResultSize(localDeviceId, query, (err: BusinessError) => {
-          if (err != undefined) {
-            console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
-            expect(err.code).assertEqual(15100005);
-            done();
-          }else{
-            console.info(TAG + `Succeeded in getResultSize`);
-            expect().assertFail();
-          }
-        });
-      } catch (err) {
-        console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
-        done();
+        await kvStore?.getResultSize(localDeviceId, query);
+        console.info(TAG + "Succeeded in getResultSize");
         expect().assertFail();
-      }
-    })
-
-
-    /**
-       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Query_ErrCode_0100
-       * @tc.desc getResultSize(query: Query, callback: AsyncCallback<number>): void
-       * @tc.size MEDIUMTEST
-       * @tc.type FUNCTION
-       * @tc.level LEVEL2
-       * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 401
-       */
-    it('SUB_DDM_DKV_getResultSize_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_getResultSize_Query_ErrCode_0100');
-      try {
-        let  query: factory.Query | null = new factory.Query();
-        query = null;
-        kvStore?.getResultSize(query, (err: BusinessError) => {
-          if (err) {
-            console.error(TAG + `Failed to get.code is ${err.code},message is ${err.message}`);
-            done();
-          }
-          console.info(TAG + "Succeeded in getResultSize");
-          expect().assertFail();
-        });
       } catch (e) {
         let error = e as BusinessError;
         console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
@@ -1512,44 +1366,106 @@ export default function deviceKvStoreCallbackErrcodeTest(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Query_ErrCode_0300
-     * @tc.desc getResultSize(query: Query, callback: AsyncCallback<number>): void
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0200
+     * @tc.desc getResultSet(deviceId: string, query: Query, callback: AsyncCallback<KVStoreResultSet>): void;
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 15100005
      */
-    it('SUB_DDM_DKV_getResultSize_Query_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
-      console.info(TAG + 'SUB_DDM_DKV_getResultSize_Query_ErrCode_0300');
+    it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0200');
       try {
         await kvManager?.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
         console.info(TAG + 'Succeeded in closeKVStore');
         let query: factory.Query | null = new factory.Query();
-        kvStore?.getResultSize(query, (err: BusinessError) => {
-          if (err != undefined) {
-            console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
-            expect(err.code).assertEqual(15100005);
-            done();
-          }else{
-            console.info(TAG + `Succeeded in getResultSize`);
-            expect().assertFail();
-          }
-        });
-      } catch (err) {
-        console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
-        done();
+        await kvStore?.getResultSize(localDeviceId, query);
+        console.info(TAG + `Succeeded in getResultSize `);
         expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
+        expect(err.code).assertEqual(15100005);
+      };
+      done();
+    })
+
+    /**
+     * @tc.name SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Did_Query_ErrCode_0400
+     * @tc.desc getResultSize(deviceId: string, query: Query): Promise<number>  ErrCode 15100004
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Did_Query_ErrCode_0400');
+      try {
+        let  query: factory.Query | null = new factory.Query();
+        query.prefixKey("keyno");
+        await kvStore?.getResultSize(localDeviceId, query).then((resultSize: number) => {
+          console.info(TAG + 'Succeeded in getting resultSize');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to get resultSize.code is ${err.code},message is ${err.message}`);
+          expect(err.code).assertEqual(15100004);
+          done();
+        });
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
+        expect().assertFail();
+        done();
       }
     })
 
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0100
+     * @tc.desc getResultSize(query: Query): Promise<number>
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 401
+     */
+    it('SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Query_ErrCode_0100');
+      try {
+        let  query: factory.Query | null = new factory.Query();
+        query = null;
+        await kvStore?.getResultSize(query);
+        console.info(TAG + "Succeeded in getResultSize");
+        expect().assertFail();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    })
 
-
-
-
-
-
-
-
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_GetResultSize_Query_ErrCode_0200
+     * @tc.desc getResultSize(query: Query): Promise<number>
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     * @tc.name Test Js Api DeviceKvStore.getResultSize ErrCode 15100005
+     */
+    it('SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_GetResultSize_Query_ErrCode_0200');
+      try {
+        await kvManager?.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+        console.info(TAG + 'Succeeded in closeKVStore');
+        let query: factory.Query | null = new factory.Query();
+        await kvStore?.getResultSize(query);
+        console.info(TAG + `Succeeded in getResultSize `);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
+        expect(err.code).assertEqual(15100005);
+      };
+      done();
+    })
 
   })
 }
