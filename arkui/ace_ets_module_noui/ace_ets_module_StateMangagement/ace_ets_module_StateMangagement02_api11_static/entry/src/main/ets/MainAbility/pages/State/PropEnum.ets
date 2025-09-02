@@ -41,14 +41,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -78,7 +78,7 @@ struct PropEnum {
         .onClick((e: ClickEvent) => {
           this.enumA = KFC.A11
         })
-      Text('@Prop 支持数据类型：enum').fontSize(9).height('5%')
+      Text('@PropRef 支持数据类型：enum').fontSize(9).height('5%')
       Text('Father State: ' + this.enumA)
         .width("100%")
         .height('5%')
@@ -96,13 +96,13 @@ struct PropEnum {
 
 @Component
 struct ChildPropEnum {
-  @Prop enumB: KFC = KFC.A11;
+  @PropRef enumB: KFC = KFC.A11;
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
-      Text('Child Prop: ' + this.enumB)
+      Text('Child PropRef: ' + this.enumB)
         .width("100%")
         .height('5%')
         .key("ChildPropEnum")

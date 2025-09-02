@@ -84,7 +84,7 @@ import {
   LaunchMode,
   NavPathStack
 } from '@ohos.arkui.component';
-import { State, Link, Prop, Provide, Consume } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, Provide, Consume } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import uiObserver from '@ohos.arkui.observer';
 

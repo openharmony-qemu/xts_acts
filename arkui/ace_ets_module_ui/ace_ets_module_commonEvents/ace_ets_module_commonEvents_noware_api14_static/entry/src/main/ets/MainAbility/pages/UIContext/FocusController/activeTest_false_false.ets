@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Button, Column, Component, Entry, Padding, SourceTool, Text, } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 

@@ -19,11 +19,11 @@ import {
   Link,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -78,22 +78,22 @@ struct SubLink72 {
 
 @Component
 struct SubProp7 {
-  @Prop num1: number = 4;
+  @PropRef num1: number = 4;
 
   build() {
     Column() {
-      Text('@Prop:' + this.num1).id("SubProp_text1").height('5%')
+      Text('@PropRef:' + this.num1).id("SubProp_text1").height('5%')
     }
   }
 }
 
 @Component
 struct SubProp72 {
-  @Prop num1: number = 4;
+  @PropRef num1: number = 4;
 
   build() {
     Column() {
-      Text('@Prop:' + this.num1).id("SubProp_text2").height('5%')
+      Text('@PropRef:' + this.num1).id("SubProp_text2").height('5%')
     }
   }
 }
@@ -124,7 +124,7 @@ struct SubProvide72 {
 @Component
 struct CombinationState7_2 {
   @StorageLink('PropA7') num: number = 1
-  @StorageProp('PropB7') numB: number = 2
+  @StoragePropRef('PropB7') numB: number = 2
 
   aboutToAppear() {
     let uiContext = this.getUIContext();

@@ -35,7 +35,7 @@ import {
   Row,
   Text
 } from '@ohos.arkui.component'
-import { Prop, State } from '@ohos.arkui.stateManagement'
+import { PropRef, State } from '@ohos.arkui.stateManagement'
 import { Colors } from '../../themes/checkSystemTokens/colorValues/ColorsTokens';
 import { DataClass } from '../../../../src/test/Utils';
 
@@ -43,7 +43,7 @@ export const colorsForCheck = 'checkColor';
 
 @Component
 export struct SystemColorsFromResources {
-  @Prop postfix: string;
+  @PropRef postfix: string;
   @State data: Array<DataClass> = new Array<DataClass>();
 
   aboutToAppear() {

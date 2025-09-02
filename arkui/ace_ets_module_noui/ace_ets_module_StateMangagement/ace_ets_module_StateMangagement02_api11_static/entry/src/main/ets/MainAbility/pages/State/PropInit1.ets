@@ -41,14 +41,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -65,11 +65,11 @@ class ClassA30 {
 
 @Component
 struct ChildPropObject {
-  @Prop subValue: number = 0
+  @PropRef subValue: number = 0
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
       Text('子组件Prop:' + this.subValue).fontSize(9).height('5%')
         .key("sub_prop1_S")
         .onClick((e: ClickEvent) => {

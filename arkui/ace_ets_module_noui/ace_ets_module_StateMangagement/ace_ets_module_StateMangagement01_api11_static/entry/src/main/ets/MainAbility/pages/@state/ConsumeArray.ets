@@ -38,7 +38,7 @@ import {
   TextAlign,
   TextOverflow
 } from '@ohos.arkui.component'
-import { AppStorage, Consume, Link, Prop, Provide, State } from '@ohos.arkui.stateManagement'
+import { AppStorage, Consume, Link, PropRef, Provide, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
