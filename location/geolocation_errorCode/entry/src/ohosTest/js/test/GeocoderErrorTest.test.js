@@ -341,6 +341,8 @@ export default function geolocationTest_GeoErr() {
         done();
         })
 
+        
+
         /**
          * @tc.number SUB_HSS_isBeaconFenceSupported_0100
          * @tc.name SUB_HSS_isBeaconFenceSupported_0100
