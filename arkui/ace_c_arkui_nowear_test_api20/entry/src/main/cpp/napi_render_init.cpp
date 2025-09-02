@@ -22,6 +22,7 @@
 #include "drag/GetTouchPointGlobalDisplayTest.h"
 #include "dropBadge/EnableDropDisallowedBadgeTest.h"
 #include "dialog/DialogGetStateTest.h"
+#include "image/ImageDraggableEventTest.h"
 
 namespace ArkUICapiTest
 {
@@ -55,6 +56,8 @@ namespace ArkUICapiTest
             {"dialogGetStateTest", nullptr, DialogGetStateTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"dialogGetStateTestGetResult", nullptr, DialogGetStateTest::GetResult, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"imageDraggableEventTest", nullptr, ImageDraggableEventTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)

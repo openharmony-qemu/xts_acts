@@ -18,9 +18,9 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
-const searchIconLeftSpace = 12;
-const searchIconRightSpace = 8;
-const defaultSearchIconWidth = 16;
+const searchIconLeftSpace = 13;
+const searchIconRightSpace = 9;
+const defaultSearchIconWidth = 18;
 const relativeContentRectLeftWidth = parseInt(vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth).toFixed(2));
 
 export default function search_gesture() {
@@ -66,7 +66,6 @@ export default function search_gesture() {
         console.info('search_gesture_001 click success');
         //first step: input hello
         await searchComponent.inputText('hello');
-		await driver.triggerKey(2047)
         await CommonFunc.sleep(1000);
 
         //second step: get caret position and click caret
@@ -79,7 +78,7 @@ export default function search_gesture() {
         console.info(`[search_gesture_001] caretOffsetX is:${obj1.$attrs.content}`);
         let caretRelativeX = parseInt(obj1.$attrs.content);
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
-        let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth);
+        let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth+vp2px(10));
         let clickY =  Math.round((searchRect.bottom + searchRect.top)/2);
         await driver.click(clickX, clickY);
         await CommonFunc.sleep(1000);
@@ -192,11 +191,12 @@ export default function search_gesture() {
       console.info('[search_gesture_003] click success');
       //first step: input long text
       await searchComponent.inputText('helloWORLD!helloWORLD!helloWORLD!helloWORLD!helloWORLD!helloWORLD!');
-	  await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
 
       //second step: trigger enter and check focus state
-      await driver.triggerKey(2119);
+      let searchBtn: Component = await driver.findComponent(ON.text('SEARCH1'));
+      await CommonFunc.sleep(1000);
+      await searchBtn.click(); 
       await CommonFunc.sleep(1000);
       let focusState = await searchComponent.isFocused();
       expect(focusState).assertEqual(false);
@@ -259,10 +259,9 @@ export default function search_gesture() {
       console.info('[search_gesture_005] click success');
       //first step: input hello and click the head of line,check caret position
       await searchComponent.inputText('hello');
-	  await driver.triggerKey(2047)
       await CommonFunc.sleep(500);
       let searchRect = await searchComponent.getBounds();
-      let clickX = Math.round(searchRect.left + relativeContentRectLeftWidth);
+      let clickX = Math.round(searchRect.left);
       let clickY = Math.round((searchRect.top + searchRect.bottom)/2);
       await driver.click(clickX, clickY)
       let button = await driver.findComponent(ON.id('GetCaret'));

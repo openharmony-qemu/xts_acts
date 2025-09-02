@@ -360,18 +360,18 @@ napi_value InputEventTest::SetFuncName(napi_env env, napi_callback_info info)
 std::shared_ptr<ColumnComponent> CreateMouseButton()
 {
     auto columnMouse = std::make_shared<ColumnComponent>();
-    columnMouse->SetWidth(SIZE_400);
-    columnMouse->SetHeight(SIZE_300);
-    columnMouse->SetBorderWidth(SIZE_5);
+    columnMouse->SetWidth(SIZE_100);
+    columnMouse->SetHeight(SIZE_70);
+    columnMouse->SetBorderWidth(SIZE_10);
     auto buttonMouse = new ButtonComponent();
-    buttonMouse->SetWidth(SIZE_200);
-    buttonMouse->SetHeight(SIZE_100);
+    buttonMouse->SetWidth(SIZE_50);
+    buttonMouse->SetHeight(SIZE_20);
     buttonMouse->SetLable("click");
-    buttonMouse->SetMargin(SIZE_10);
+    buttonMouse->SetMargin(SIZE_5);
     buttonMouse->SetId("buttonMouse");
     auto textShow = new TextComponent();
-    textShow->SetWidth(SIZE_300);
-    textShow->SetHeight(SIZE_150);
+    textShow->SetWidth(SIZE_70);
+    textShow->SetHeight(SIZE_20);
     textShow->SetBackgroundColor(COLOR_PINK);
     buttonMouse->RegisterOnMouse([textShow, buttonMouse](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -391,15 +391,15 @@ std::shared_ptr<ColumnComponent> CreateMouseButton()
 std::shared_ptr<ColumnComponent> CreateTouchButton()
 {
     auto columnTouch = std::make_shared<ColumnComponent>();
-    columnTouch->SetWidth(SIZE_400);
-    columnTouch->SetHeight(SIZE_300);
+    columnTouch->SetWidth(SIZE_100);
+    columnTouch->SetHeight(SIZE_70);
     columnTouch->SetBorderWidth(SIZE_5);
-    columnTouch->SetMargin(SIZE_10);
+    columnTouch->SetMargin(SIZE_5);
     auto textTouch = new TextComponent();
-    textTouch->SetWidth(SIZE_300);
-    textTouch->SetHeight(SIZE_200);
+    textTouch->SetWidth(SIZE_70);
+    textTouch->SetHeight(SIZE_50);
     textTouch->SetBackgroundColor(COLOR_PINK);
-    textTouch->SetMargin(SIZE_10);
+    textTouch->SetMargin(SIZE_5);
     textTouch->SetId("textTouch");
     textTouch->RegisterOnTouch([textTouch](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -469,11 +469,11 @@ napi_value InputEventTest::CreateNativeNode(napi_env env, napi_callback_info inf
 std::shared_ptr<ButtonComponent> CreateButtonExample()
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_200);
-    button->SetHeight(SIZE_100);
-    button->SetMargin(SIZE_10);
+    button->SetWidth(SIZE_50);
+    button->SetHeight(SIZE_20);
+    button->SetMargin(SIZE_5);
     button->SetBackgroundColor(COLOR_BLUE);
-    button->SetFontSize(SIZE_20);
+    button->SetFontSize(SIZE_5);
     button->SetId("onMouseRightTest");
     button->RegisterOnMouse([button](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -498,11 +498,11 @@ std::shared_ptr<ButtonComponent> CreateButtonExample()
 std::shared_ptr<ButtonComponent> CreateButtonExample1()
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_200);
-    button->SetHeight(SIZE_100);
-    button->SetMargin(SIZE_10);
+    button->SetWidth(SIZE_50);
+    button->SetHeight(SIZE_20);
+    button->SetMargin(SIZE_5);
     button->SetBackgroundColor(COLOR_BLUE);
-    button->SetFontSize(SIZE_20);
+    button->SetFontSize(SIZE_5);
     button->SetId("onMouseLeftTest");
     button->RegisterOnMouse([button](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -521,11 +521,11 @@ std::shared_ptr<ButtonComponent> CreateButtonExample1()
 std::shared_ptr<ButtonComponent> CreateButtonExample2()
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_200);
-    button->SetHeight(SIZE_100);
-    button->SetMargin(SIZE_10);
+    button->SetWidth(SIZE_50);
+    button->SetHeight(SIZE_20);
+    button->SetMargin(SIZE_5);
     button->SetBackgroundColor(COLOR_BLUE);
-    button->SetFontSize(SIZE_20);
+    button->SetFontSize(SIZE_5);
     button->SetId("onMouseMiddleTest");
     button->RegisterOnMouse([button](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -543,11 +543,11 @@ std::shared_ptr<ButtonComponent> CreateButtonExample2()
 std::shared_ptr<ButtonComponent> CreateButtonExample3()
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_200);
-    button->SetHeight(SIZE_100);
-    button->SetMargin(SIZE_10);
+    button->SetWidth(SIZE_50);
+    button->SetHeight(SIZE_20);
+    button->SetMargin(SIZE_5);
     button->SetBackgroundColor(COLOR_BLUE);
-    button->SetFontSize(SIZE_20);
+    button->SetFontSize(SIZE_5);
     button->SetId("onMouseMoveTest");
     button->RegisterOnMouse([button](ArkUI_NodeEvent* event) {
         auto* uiInputEvent = OH_ArkUI_NodeEvent_GetInputEvent(event);
@@ -645,8 +645,8 @@ napi_value InputEventTest::CreateNativeNodeForAxis(napi_env env, napi_callback_i
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     auto parentColumn = new ColumnComponent();
     axisColumn = new ColumnComponent();
-    axisColumn->SetWidth(SIZE_500);
-    axisColumn->SetHeight(SIZE_500);
+    axisColumn->SetWidth(SIZE_120);
+    axisColumn->SetHeight(SIZE_120);
     axisColumn->SetBackgroundColor(COLOR_RED);
     axisColumn->SetId("AxisID");
 

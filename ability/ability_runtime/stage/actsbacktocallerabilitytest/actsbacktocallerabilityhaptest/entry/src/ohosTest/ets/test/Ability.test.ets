@@ -12,46 +12,85 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { contextConstant, Want } from '@kit.AbilityKit';
 import commonEventManager from '@ohos.commonEventManager';
+import { abilityDelegatorRegistry, Driver, MatchPattern, ON } from '@kit.TestKit';
 
-function log(info:string) {
-  console.info('[BackToCallerAbilityWithResultTest]::' + info);
+let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+let textsToMatch: Array<string> = ['打开', '允许', '本次允许', "始终允许打开"];
+
+function log(TAG: string, info: string) {
+  console.info(`${TAG}::` + info);
+}
+
+function log_error(TAG: string, info: string) {
+  console.error(`${TAG}::` + info);
 }
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
 
+async function clickDialog(TAG: string) {
+  await sleep(2000);
+  let driver = Driver.create();
+  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
+  log(TAG, `no need to click button=allowed== ${allowed}`);
+  if (allowed) {
+    for (const text of textsToMatch) {
+      let buttons = await driver.findComponents(ON.text(text));
+      if (buttons && buttons.length > 0) {
+        buttons[buttons.length - 1].click();
+        log(TAG, `click last button success`);
+        return
+      }
+    }
+  }
+}
+
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    let abilityContext: common.UIAbilityContext;
-    beforeAll(() => {})
-    beforeEach(() => {})
-    afterEach(async (done: Function) => {
-      await sleep(2000);
-      done()
+
+    beforeAll(() => {
     })
-    afterAll(() => {})
+    beforeEach(async () => {
+      log('beforeEach::', 'execute force-stop backdemo')
+      await delegator.executeShellCommand('aa start -b com.example.startdemo -a TestAbility');
+      await delegator.executeShellCommand('aa force-stop com.example.backdemo');
+      await delegator.executeShellCommand('aa force-stop com.example.backdemo1');
+      await sleep(1000)
+      log('beforeEach::', '---------------testcase start---------------')
+    })
+    afterEach(async () => {
+      log('afterEach::', 'execute force-stop backdemo')
+      await delegator.executeShellCommand('aa force-stop com.example.backdemo');
+      await delegator.executeShellCommand('aa force-stop com.example.backdemo1');
+      await sleep(1000)
+      log('afterEach::', '---------------testcase end---------------')
+    })
+    afterAll(() => {
+    })
 
     /*
     * @tc.number  BackToCallerAbilityWithResultTest_0100
-    * @tc.name
-    * @tc.desc    BackToCallerAbilityWithResultTest_0100
+    * @tc.name    BackToCallerAbilityWithResultTest_0100
+    * @tc.desc    A start B, B back to A with invalid request code.
     * @tc.size    MediumTest
     * @tc.type    Function
     * @tc.level   Level 1
     */
     it('BackToCallerAbilityWithResultTest_0100', Level.LEVEL0, async (done: Function) => {
-      log('---------------BackToCallerAbilityWithResultTest_0100 is start---------------')
-      abilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext')!;
+      let TAG: string = 'BackToCallerAbilityWithResultTest_0100';
+      log(TAG, '---------------testcase start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
       if (!abilityContext) {
-        log('abilityContext is undefined');
+        log(TAG, 'abilityContext is undefined');
         expect().assertFail();
+        done();
       }
 
       let subscriber: commonEventManager.CommonEventSubscriber | null = null;
@@ -60,27 +99,28 @@ export default function abilityTest() {
           'BackToCallerAbilityWithResultTest_0100_Failed']
       }
       let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-        log('subscribeCallBack, data: ' + JSON.stringify(data));
+        log(TAG, 'subscribeCallBack, data: ' + JSON.stringify(data));
         let event = data.event;
         if (event === 'BackToCallerAbilityWithResultTest_0100_Success') {
           commonEventManager.unsubscribe(subscriber, UnSubscribeInfoCallBack)
           done();
         } else {
           expect().assertFail();
+          done();
         }
       }
       let UnSubscribeInfoCallBack = () => {
-        log('UnSubscribeInfoCallBack')
+        log(TAG, 'UnSubscribeInfoCallBack')
       }
       await commonEventManager.createSubscriber(subscribeInfo)
         .then((data) => {
-          log('createSubscriber success');
+          log(TAG, 'createSubscriber success');
           subscriber = data;
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          log('subscribe success');
+          log(TAG, 'subscribe success');
         })
 
-      let want:Want = {
+      let want: Want = {
         bundleName: 'com.example.backdemo',
         abilityName: 'EntryAbility',
         parameters: {
@@ -90,47 +130,180 @@ export default function abilityTest() {
 
       await abilityContext?.startAbility(want)
         .then(() => {
-          log('Succeeded in starting EntryAbility.');
+          log(TAG, 'Succeeded in starting EntryAbility.');
         })
         .catch((err: BusinessError) => {
-          log(`Failed to start EntryAbility. Code is ${err.code}, message is ${err.message}`);
+          log_error(TAG, `Failed to start EntryAbility. Code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
+          done();
         });
+      await clickDialog(TAG);
+    });
 
-      log('---------------BackToCallerAbilityWithResultTest_0100 is end---------------')
+    /*
+    * @tc.number  BackToCallerAbilityWithResultTest_0200
+    * @tc.name    BackToCallerAbilityWithResultTest_0200
+    * @tc.desc    A start B, B back to A.
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   Level 1
+    */
+    it('BackToCallerAbilityWithResultTest_0200', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'BackToCallerAbilityWithResultTest_0200';
+      log(TAG, '---------------testcase is start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+      if (!abilityContext) {
+        log(TAG, 'abilityContext is undefined');
+        expect().assertFail();
+        done();
+      }
+
+      let subscriber: commonEventManager.CommonEventSubscriber | null = null;
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['BackToCallerAbilityWithResultTest_0200_Success',
+          'BackToCallerAbilityWithResultTest_0200_Failed']
+      }
+      let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        log(TAG, 'subscribeCallBack, data: ' + JSON.stringify(data));
+        let event = data.event;
+        if (event === 'BackToCallerAbilityWithResultTest_0200_Success') {
+          commonEventManager.unsubscribe(subscriber, UnSubscribeInfoCallBack)
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+      let UnSubscribeInfoCallBack = () => {
+        log(TAG, 'UnSubscribeInfoCallBack')
+      }
+      await commonEventManager.createSubscriber(subscribeInfo)
+        .then((data) => {
+          log(TAG, 'createSubscriber success');
+          subscriber = data;
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          log(TAG, 'subscribe success');
+        })
+
+      let want: Want = {
+        bundleName: 'com.example.backdemo',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'testcase': 'BackToCallerAbilityWithResultTest_0200'
+        }
+      }
+
+      abilityContext?.startAbilityForResult(want)
+        .then(() => {
+          log(TAG, 'Succeeded in starting EntryAbility.');
+        })
+        .catch((err: BusinessError) => {
+          log_error(TAG, `Failed to start EntryAbility. Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      await clickDialog(TAG);
+
+    });
+
+    /*
+    * @tc.number  BackToCallerAbilityWithResultTest_0300
+    * @tc.name    BackToCallerAbilityWithResultTest_0300
+    * @tc.desc    A start B, B start C, C back to B.
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   Level 1
+    */
+    it('BackToCallerAbilityWithResultTest_0300', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'BackToCallerAbilityWithResultTest_0300';
+      log(TAG, '---------------testcase is start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+      if (!abilityContext) {
+        log_error(TAG, 'abilityContext is undefined');
+        expect().assertFail();
+        done();
+      }
+
+      let subscriber: commonEventManager.CommonEventSubscriber | null = null;
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['BackToCallerAbilityWithResultTest_0300_Success',
+          'BackToCallerAbilityWithResultTest_0300_Failed',
+        "BackToCallerAbilityWithResultTest_CLICK_DIALOG"]
+      }
+      let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        log(TAG, 'subscribeCallBack, data: ' + JSON.stringify(data));
+        let event = data.event;
+        if (event === "BackToCallerAbilityWithResultTest_CLICK_DIALOG") {
+          clickDialog(TAG);
+        } else if (event === 'BackToCallerAbilityWithResultTest_0300_Success') {
+          commonEventManager.unsubscribe(subscriber, UnSubscribeInfoCallBack)
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+      let UnSubscribeInfoCallBack = () => {
+        log(TAG, 'UnSubscribeInfoCallBack')
+      }
+      await commonEventManager.createSubscriber(subscribeInfo)
+        .then((data) => {
+          log(TAG, 'createSubscriber success');
+          subscriber = data;
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          log(TAG, 'subscribe success');
+        })
+
+      let want: Want = {
+        bundleName: 'com.example.backdemo',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'testcase': 'BackToCallerAbilityWithResultTest_0300'
+        }
+      }
+
+      abilityContext?.startAbility(want)
+        .then(() => {
+          log(TAG, 'Succeeded in starting EntryAbility.');
+        })
+        .catch((err: BusinessError) => {
+          log_error(TAG, `Failed to start EntryAbility. Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      await clickDialog(TAG);
     });
 
     /*
     * @tc.number  SetOnNewWantSkipScenarios_0100
-    * @tc.name
+    * @tc.name    SetOnNewWantSkipScenarios_0100
     * @tc.desc    SetOnNewWantSkipScenarios_0100
     * @tc.size    MediumTest
     * @tc.type    Function
     * @tc.level   Level 1
     */
     it('SetOnNewWantSkipScenarios_0100', Level.LEVEL0, async (done: Function) => {
-      log('---------------SetOnNewWantSkipScenarios_0100 is start---------------')
-      abilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext')!;
+      let TAG: string = 'SetOnNewWantSkipScenarios_0100';
+      log(TAG, '---------------testcase is start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
       if (!abilityContext) {
-        log('abilityContext is undefined');
+        log_error(TAG, 'abilityContext is undefined');
         expect().assertFail();
         done();
       }
-
       let scenarios : number = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
-        contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
-        contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+      contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
+      contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
       abilityContext?.setOnNewWantSkipScenarios(scenarios).then((data) => {
-        console.info('SetOnNewWantSkipScenarios_0100 succeed');
+        log(TAG, 'SetOnNewWantSkipScenarios_0100 succeed');
         expect(data).assertEqual(undefined);
         done();
       }).catch((err: BusinessError) => {
-        console.error(`SetOnNewWantSkipScenarios_0100 failed, code is ${err.code}, message is ${err.message}`);
+        log_error(TAG, `SetOnNewWantSkipScenarios_0100 failed, code is ${err.code}, message is ${err.message}`);
         expect().assertFail();
         done();
       });
-      log('---------------SetOnNewWantSkipScenarios_0100 is end---------------')
+      log(TAG, '---------------testcase is end---------------')
     });
-
   })
 }

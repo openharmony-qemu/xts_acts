@@ -19,6 +19,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
@@ -42,7 +44,6 @@ export default function webOnBeforeUnload() {
       } catch (err) {
         console.error("push WebOnBeforeUnload page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebOnBeforeUnloadButton"),10000);
       console.log("waitForComponent WebOnBeforeUnloadButton click==>")
       done()
     });
@@ -57,12 +58,6 @@ export default function webOnBeforeUnload() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebOnBeforeUnload afterEach start");
-      console.info("WebOnBeforeUnload afterEach end");
-      done();
-    })
-
     /*
     * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0100
     * @tc.name       : testOnBeforeUnloadIsReloadTrue
@@ -72,12 +67,15 @@ export default function webOnBeforeUnload() {
     * @tc.level      : Level 0
     */
     it('testOnBeforeUnloadIsReloadTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnBeforeUnloadIsReloadTrue', 124);
-      Utils.registerBaseEvent('testOnBeforeUnloadIsReloadTrue', 1, 2025052810, done,
+      Utils.emitEvent('emitOnBeforeUnloadIsReloadTrue', 141411);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnBeforeUnloadIsReloadTrue', 1, 141460, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebOnBeforeUnloadButton', 10, '');
+      Utils.waitAndClickComponent("WebOnBeforeUnloadButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadTrue", true,1000);
+      done();
     })
     /*
     * @tc.number     : SUB_ACE_WEB_ONBEFOREUNLOAD_ISRELOAD_API_0200
@@ -88,12 +86,15 @@ export default function webOnBeforeUnload() {
     * @tc.level      : Level 0
     */
     it('testOnBeforeUnloadIsReloadFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('emitOnBeforeUnloadIsReloadFalse', 124);
-      Utils.registerBaseEvent('testOnBeforeUnloadIsReloadFalse', 2, 2025052811, done,
+      Utils.emitEvent('emitOnBeforeUnloadIsReloadFalse', 141411);
+      let isReturn = false;
+      Utils.registerBaseEvent('testOnBeforeUnloadIsReloadFalse', 2, 141470, ()=>{isReturn = true},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('WebOnBeforeUnloadButton', 10, '');
+      Utils.waitAndClickComponent("WebOnBeforeUnloadButton",driver)
+      await waitForExist(()=>isReturn, "testOnBeforeUnloadIsReloadFalse", true,1000);
+      done();
     })
 
   })

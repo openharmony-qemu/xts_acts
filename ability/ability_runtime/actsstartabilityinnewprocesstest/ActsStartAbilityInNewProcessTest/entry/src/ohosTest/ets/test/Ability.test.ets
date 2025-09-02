@@ -135,7 +135,7 @@ export default function abilityTest() {
         try {
           let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
           if (allowed) {
-            let buttons = await driver.findComponents(ON.type('Button'));
+            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
             if (buttons && buttons.length > 0) {
               buttons[buttons.length - 1].click();
             }

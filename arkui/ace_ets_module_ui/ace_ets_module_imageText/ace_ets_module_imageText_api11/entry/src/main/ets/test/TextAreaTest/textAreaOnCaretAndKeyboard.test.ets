@@ -72,7 +72,6 @@ export default function textAreaOnCaretAndKeyboardTest() {
       expect(obj.$attrs.caretPosition).assertEqual('5');
 
       await textAreaComponent.inputText('hello world');
-	  await driver.triggerKey(2047)
       await CommonFunc.sleep(500);
 	  await driver.triggerKey(2070);
 	  await CommonFunc.sleep(1000);

@@ -18,11 +18,14 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = ""
-
+const  driver = Driver.create();
 export default function ActsAceWebViewWebResourceTypeProps() {
   describe('ActsAceWebViewWebResourceTypeProps', () => {
       
@@ -32,14 +35,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewGetFrameUrlResourceType state success " + JSON.stringify(pages));
             if (!("webViewGetFrameUrlResourceType" == pages.name)) {
                 console.info("get webViewGetFrameUrlResourceType state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewGetFrameUrlResourceType state success " + JSON.stringify(result));
             }
         } catch (err) {
@@ -54,28 +55,7 @@ export default function ActsAceWebViewWebResourceTypeProps() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-        await Utils.sleep(2000);
         done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
     })
 
     /*
@@ -87,10 +67,13 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      *@tc.level Level 0
      */
     it('testWebView_webResourceType_MAIN_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        emitKey = "emitWebView_webResourceType_MAIN_FRAME"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_webResourceType_MAIN_FRAME", true, 1343, done);
-        sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      emitKey = "emitWebView_webResourceType_MAIN_FRAME"
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_MAIN_FRAME", true, 124500, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -103,9 +86,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_SUB_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_SUB_FRAME"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_SUB_FRAME", true, 1344, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_SUB_FRAME", true, 124510, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -118,9 +104,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_STYLE_SHEET', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_STYLE_SHEET"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_STYLE_SHEET", true, 1345, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_STYLE_SHEET", true, 124520, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -133,9 +122,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_SCRIPT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_SCRIPT"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_SCRIPT", true, 1346, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_SCRIPT", true, 124530, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -148,9 +140,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_IMAGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_IMAGE"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_IMAGE", true, 1347, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_IMAGE", true, 124540, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -163,9 +158,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_FONT_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_FONT_RESOURCE"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_FONT_RESOURCE", true, 1348, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_FONT_RESOURCE", true, 124550, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -178,9 +176,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_OBJECT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_OBJECT"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_OBJECT", true, 1349, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_OBJECT", true, 124560, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -193,9 +194,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_MEDIA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_MEDIA"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_MEDIA", true, 1350, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_MEDIA", true, 124570, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -208,9 +212,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_WORKER"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_WORKER", true, 1351, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_WORKER", true, 124580, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -223,9 +230,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_SHARED_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_SHARED_WORKER"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_SHARED_WORKER", true, 1352, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_SHARED_WORKER", true, 124590, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -238,9 +248,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_PREFETCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_PREFETCH"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_PREFETCH", true, 1353, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_PREFETCH", true, 124600, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -253,9 +266,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_FAVICON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_FAVICON"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_FAVICON", true, 1354, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_FAVICON", true, 124610, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_webResourceType_XHR_0001
@@ -267,9 +283,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_XHR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_XHR"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_XHR", true, 1355, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_XHR", true, 124620, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_webResourceType_PING_0001
@@ -281,9 +300,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_PING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_PING"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_PING", true, 1356, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_PING", true, 124630, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -296,9 +318,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_CSP_REPORT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_CSP_REPORT"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_CSP_REPORT", true, 1357, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_CSP_REPORT", true, 124640, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -311,9 +336,12 @@ export default function ActsAceWebViewWebResourceTypeProps() {
      */
     it('testWebView_webResourceType_Other_Props', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_Other_Props"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebView_webResourceType_Other_Props", true, 1358, done);
-      sendEventByKey('webViewWebResourceTypeProps', 10, '');
+      Utils.emitEvent(emitKey, 124511);
+      let isReturn = false;
+      Utils.registerEvent("testWebView_webResourceType_Other_Props", true, 124650, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webViewWebResourceTypeProps",driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
   })
 }

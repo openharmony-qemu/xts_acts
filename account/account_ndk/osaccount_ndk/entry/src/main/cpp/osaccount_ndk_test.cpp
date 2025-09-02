@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "BasicServicesKit/os_account.h"
+#include "BasicServicesKit/os_account_common.h"
 #include <js_native_api_types.h>
 
 namespace {
@@ -52,15 +53,15 @@ static napi_value OsAccountGetAccountNameB(napi_env env, napi_callback_info info
 
 static napi_value OsAccountGetAccountNameC(napi_env env, napi_callback_info info)
 {
-    char str[MAX_NAME_LENGTH] = {0};
+    char accountName[MAX_NAME_LENGTH] = {0};
     OsAccount_ErrCode returnValue = OH_OsAccount_GetName(nullptr, MAX_NAME_LENGTH);
     if (returnValue == OsAccount_ErrCode::OS_ACCOUNT_ERR_OK) {
         napi_value result = nullptr;
-        NAPI_CALL(env, napi_create_string_utf8(env, str, NAPI_AUTO_LENGTH, &result));
+        NAPI_CALL(env, napi_create_string_utf8(env, accountName, NAPI_AUTO_LENGTH, &result));
         return result;
     }
     napi_value result = nullptr;
-    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    NAPI_CALL(env, napi_create_int32(env, returnValue == OS_ACCOUNT_ERR_INVALID_PARAMETER ? 0 : -1, &result));
     return result;
 }
 
