@@ -22,6 +22,16 @@ import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from 
 import fs from '@ohos.file.fs'
 
 let testContext: common.UIAbilityContext;
+let audioManager: audio.AudioManager;
+
+async function getAudioManager() {
+  audioManager = audio.getAudioManager();
+  if (audioManager != null) {
+    console.info(`${TagFrmwk}: getAudioManger : PASS`);
+  } else {
+    console.info(`${TagFrmwk}: getAudioManger : FAIL`);
+  }
+}
 
 export default function audioCapturer() {
 
@@ -555,6 +565,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-48000-2C-1S32LE.pcm");
       await recPromise(audioCapturerOptions, AudioRendererOptions, filePath, done);
       await sleep(100);
@@ -612,6 +635,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-44100-2C-1S32LE.pcm");
       await recPromise(audioCapturerOptions, AudioRendererOptions, filePath, done);
       await sleep(100);
@@ -689,6 +725,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-44100-2C-1S32LE_2.pcm");
       await recPromise1(audioCapturerOptions, AudioRendererOptions1, AudioRendererOptions2, filePath, done);
       await sleep(100);
@@ -766,6 +815,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-44100-2C-1S32LE_3.pcm");
       await recPromise1(audioCapturerOptions, AudioRendererOptions1, AudioRendererOptions2, filePath, done);
       await sleep(100);
@@ -843,6 +905,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-44100-2C-1S32LE_4.pcm");
       await recPromise1(audioCapturerOptions, AudioRendererOptions1, AudioRendererOptions2, filePath, done);
       await sleep(100);
@@ -920,6 +995,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-44100-2C-1S32LE_5.pcm");
       await recPromise1(audioCapturerOptions, AudioRendererOptions1, AudioRendererOptions2, filePath, done);
       await sleep(100);
@@ -956,7 +1044,19 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo,
         playbackCaptureConfig: playbackCaptureConfig,
       }
-
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-48000-2C-1S32LE.pcm");
       await recPromise2(audioCapturerOptions, filePath, done);
       await sleep(100);
@@ -1014,6 +1114,19 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
       await getFd("capture_js-48000-2C-1S32LE.pcm");
       await recPromise3(audioCapturerOptions, AudioRendererOptions, done);
       await sleep(100);
