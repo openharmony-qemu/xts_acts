@@ -174,9 +174,6 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             HuksOptions.properties.splice(3, 1, HuksDeriveHKDF.HuksKeyDERIVEKEYSIZE);
             await publicDeriveFinishAbortFunc(HuksOptionsFinish, 'abort', 0);
             done();
-            // setTimeout(() => {
-            //     done();
-            // }, 30000)
         });
 
         it('Security_HUKS_Derive_API8_abnormal_1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {

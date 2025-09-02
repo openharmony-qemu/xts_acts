@@ -95,7 +95,6 @@ async function publicHmacGenFunc(srcKeyAlias, HuksOptions, thirdInterfaceName) {
             logger.log(`test init err: " + ${JSON.stringify(err)}`);
             expect(null).assertFail();
         });
-
     HuksOptions.properties.splice(1, 1);
     await huksCallback.init(srcKeyAlias, HuksOptions)
         .then((data) => {

@@ -76,7 +76,6 @@ async function publicUpdateFunc(HuksOptions, thirdInterfaceName, isEncrypt) {
     let inDataSegPosition = 0;
     let isFinished = false;
     let outData = [];
-
     while (inDataSegPosition <= lastInDataPosition) {
         if (inDataSegPosition + maxUpdateSize > lastInDataPosition) {
             isFinished = true;

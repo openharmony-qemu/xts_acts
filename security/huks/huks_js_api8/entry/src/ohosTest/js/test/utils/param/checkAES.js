@@ -164,7 +164,6 @@ async function publicCipherFunc(srcKeyAlias, HuksOptions, thirdInterfaceName, is
     try {
         updateResult = new Array();
         if (isEncrypt) {
-            // await publicGenerateKeyFunc(srcKeyAlias);
             dataBeforeEncrypt = HuksOptions.inData; //原始数据
         }
         await publicInitFunc(srcKeyAlias, HuksOptions);
@@ -188,13 +187,10 @@ async function checkAESCipher(srcKeyAliasFirst, srcKeyAliasSecond, HuksOptions) 
     HuksOptions.properties.splice(2, 1, HuksCipherAES.HuksKeyPurposeENCRYPT);
     HuksOptions.inData = new Uint8Array(updateResult);
     await publicCipherFunc(srcKeyAliasSecond, HuksOptions, 'finish', false);
-    // let arrayEqualRes = false;
     let arrayEqualRes = arrayEqual(Array.from(updateResult), Array.from(srcData64Kb))
-    // logger.info('arrayEqualRes is ' + arrayEqualRes);
     if (!arrayEqualRes) { // if not success then res comes to false
         res = false;
     }
-    // logger.info('res before return is ' + res);
     return res;
 }
 

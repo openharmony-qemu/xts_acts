@@ -47,8 +47,6 @@ import SecurityHuksSignVerifyRSAPromiseJsunit from './SecurityHuksSignVerifyRSAP
 import SecurityHuksSignVerifySM2CallbackJsunit from './SecurityHuksSignVerifySM2CallbackJsunit.test.js'
 import SecurityHuksSignVerifySM2PromiseJsunit from './SecurityHuksSignVerifySM2PromiseJsunit.test.js'
 
-// import SecurityHuksFaceFingerNormalJsunit from './SecurityHuksFaceFingerNormalJsunit.test.js'
-
 export default function testsuite() {
     SecurityHuksAccessControlJsunit()
     SecurityHuksAgreeDHPromiseJsunit()
