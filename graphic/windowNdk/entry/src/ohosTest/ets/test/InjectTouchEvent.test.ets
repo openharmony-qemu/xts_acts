@@ -947,6 +947,8 @@ export default function InjectTouchEvent() {
       let caseName = 'testInjectTouchEventwithHideSubWindowDown';
       let subWindowClass = await windowStage.createSubWindow('testInjectTouchEventwithHideSubWindowDown1');
       await sleep(200);
+      let subWindowClass2 = await windowStage.createSubWindow('testInjectTouchEventwithHideSubWindowDown2');
+      await sleep(200);
       await subWindowClass.setUIContent('testability/pages/subWindow');
       await sleep(200);
       await subWindowClass.showWindow();
@@ -959,8 +961,6 @@ export default function InjectTouchEvent() {
       await subWindowClass.moveWindowTo(minWidth, minHeight);
       await sleep(200);
       await subWindowClass.resize(minWidth + 100, minHeight + 100);
-      let subWindowClass2 = await windowStage.createSubWindow('testInjectTouchEventwithHideSubWindowDown2');
-      await sleep(200);
       await subWindowClass2.setUIContent('testability/pages/subWindow');
       await sleep(200);
       await subWindowClass2.showWindow();
