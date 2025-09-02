@@ -17,6 +17,7 @@ import web_webview from '@ohos.web.webview';
 import business_error from '@ohos.base'
 import Utils from '../../test/Utils';
 import promptAction from '@ohos.promptAction';
+import {waitForExist} from '../../test/WaitTest';
 
 //
 class DataTrans {
@@ -74,13 +75,20 @@ struct webViewCookieTrack {
     'createDiv("div",document.cookie)}\n' +
     '</script>\n'
 
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 160100,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(160100)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -88,6 +96,7 @@ struct webViewCookieTrack {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+            this.isReceive = 0;
           }
       }
   }
@@ -98,12 +107,12 @@ struct webViewCookieTrack {
       console.log('当前状态：' + this.controller.isIntelligentTrackingPreventionEnabled())
       web_webview.WebCookieManager.clearAllCookiesSync()
       this.controller.removeCache(true);
+      this.isPageEnd = -1;
       this.controller.loadUrl(this.webUrl)
-      await Utils.sleep(1000)
+      await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
       let retryTime = 0
       while(this.traceHosts.length == 0 && retryTime < 15) {
           retryTime += 1
-          await Utils.sleep(2000)
           this.controller.refresh()
           console.log('reset traceHosts')
       }
@@ -114,26 +123,28 @@ struct webViewCookieTrack {
           Row() {
               Button('webViewCookieTrackTriggerFeiButton').key('webViewCookieTrackTriggerFeiButton')
               .onClick(async () => {
-                  console.info('key==>' + this.emitKey)
-                await Utils.sleep(1000)
+                await waitForExist(()=>this.isReceive, this.emitKey, 0);
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                console.info('key==>' + this.emitKey);
+                this.isReceive = -1;
                 this.traceHosts = []
                 this.cookie = ''
                 switch (this.emitKey) {
                   case 'emitWebViewCookieTrackEnableTrue': {
                     try {
                         this.controller.enableIntelligentTrackingPrevention(true)
+                        this.isPageEnd = -1;
                         this.controller.refresh()
-                        await Utils.sleep(2000)
-                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 3001)
+                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 160110)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         if(e.code == 801) {
                           console.log(`emitWebViewCookieTrackEnableTrue The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                          Utils.emitEvent(true, 3001)
+                          Utils.emitEvent(true, 160110)
                         } else {
-                          Utils.emitEvent(false, 3001)
+                          Utils.emitEvent(false, 160110)
                         }
                     }
                     break;
@@ -142,16 +153,15 @@ struct webViewCookieTrack {
                     try {
                         this.controller.enableIntelligentTrackingPrevention(false)
                         this.controller.refresh()
-                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 3002)
+                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 160120)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         if(e.code == 801) {
                           console.log(`emitWebViewCookieTrackEnableFalse The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                          Utils.emitEvent(true, 3002)
+                          Utils.emitEvent(true, 160120)
                         } else {
-                          Utils.emitEvent(false, 3002)
+                          Utils.emitEvent(false, 160120)
                         }
                     }
                     break;
@@ -159,18 +169,18 @@ struct webViewCookieTrack {
                   case 'emitWebViewCookieTrackEnabled': {
                     try {
                         this.controller.enableIntelligentTrackingPrevention(true)
+                        this.isPageEnd = -1;
                         this.controller.refresh()
-                        await Utils.sleep(2000)
-                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 3003)
+                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                        Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 160130)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         if(e.code == 801) {
                           console.log(`emitWebViewCookieTrackEnabled The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                          Utils.emitEvent(true, 3003)
+                          Utils.emitEvent(true, 160130)
                         } else {
-                          Utils.emitEvent(false, 3003)
+                          Utils.emitEvent(false, 160130)
                         }
                     }
                     break;
@@ -185,16 +195,15 @@ struct webViewCookieTrack {
                         this.controller.loadUrl(this.webUrl)
                         let beforeTraceLength = this.traceHosts.length
                         console.log('this.traceHosts before: ' + this.traceHosts)
-                        Utils.emitEvent(beforeTraceLength == 0, 3008)
+                        Utils.emitEvent(beforeTraceLength == 0, 160140)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         if(e.code == 801) {
                           console.log(`emitNoCookieTrackingPrevention The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
-                          Utils.emitEvent(true, 3008)
+                          Utils.emitEvent(true, 160140)
                         } else {
-                          Utils.emitEvent(false, 3008)
+                          Utils.emitEvent(false, 160140)
                         }
                     }
                     break;
@@ -206,7 +215,7 @@ struct webViewCookieTrack {
                   controller: new TextAreaController()
               })
           }
-          Web({ src: '', controller: this.controller })
+          Web({ src: $rawfile('cookieTrack.html'), controller: this.controller })
                 .key('webViewCookieTrackButton')
                 .javaScriptAccess(true)
                 .width('100%')
@@ -241,6 +250,10 @@ struct webViewCookieTrack {
                     return this.responseResource;
 
                 })
+            .onPageEnd((event)=>{
+              console.info('[TAO]' + this.emitKey);
+              this.isPageEnd = 0;
+            })
       }
   }
 }

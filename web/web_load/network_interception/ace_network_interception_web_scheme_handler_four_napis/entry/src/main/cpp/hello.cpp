@@ -33,6 +33,7 @@ bool g_testWebResourceRequestGetRequestHeaders = false;
 const int BUFF_LEN = 5;
 const int REDIRECT_CODE = 302;
 const int OK = 200;
+int32_t testRequestStart = -1;
 
 class URLRequest {
 public:
@@ -164,6 +165,8 @@ void URLRequest::StartRead()
             thrd_detach(th);
         }
     };
+    
+    testRequestStart = 1;
 }
 
 void URLRequest::Start()
@@ -359,6 +362,17 @@ static napi_value HttpBodyStreamGetUserData(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value GetRequestValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    if (testRequestStart == 1) {
+        napi_create_int32(env, 1, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
@@ -377,7 +391,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"resourceRequestGetRequestHeaders", nullptr, ResourceRequestGetRequestHeader, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"httpBodyStreamGetUserData", nullptr, HttpBodyStreamGetUserData, nullptr, nullptr, nullptr, napi_default,
-         nullptr}
+         nullptr},
+        {"getRequestValue", nullptr, GetRequestValue, nullptr, nullptr, nullptr, napi_default, nullptr}
 
     };
 
@@ -397,4 +412,3 @@ static napi_module demoModule = {
     };
 
 extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
-

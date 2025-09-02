@@ -449,8 +449,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText == '40') {
           expect(true).assertTrue();
@@ -678,8 +680,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText != '40') {
           expect(true).assertTrue();
@@ -776,8 +780,10 @@ export default function InjectTouchEvent() {
         console.info(`${Tag}: ${caseName} result: ${result}`);
         expect(result).assertEqual(0);
         let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+        console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
         await sleep(500);
         let newText = await sliderText.getText();
+        console.info(`${Tag}: ${caseName} newText: ${newText}`);
         await sleep(200);
         if (newText != '40') {
           expect(true).assertTrue();

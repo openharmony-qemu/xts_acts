@@ -17,6 +17,7 @@ export const OH_Location_IsLocatingEnabled1: () => number;
 export const OH_Location_IsLocatingEnabled2: () => number;
 export const OH_Location_StartLocating1: () => number;
 export const OH_Location_StartLocating2: () => number;
+export const OH_Location_StopLocating1: () => number;
 export const OH_Location_StopLocating2: () => number;
 export const OHLocationInfoGetAdditionalInfo0100: () => number;
 export const OH_LocationRequestConfig_SetUseScene0100: () => number;

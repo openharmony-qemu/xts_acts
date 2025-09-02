@@ -71,8 +71,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0003 start')
       console.info('SUB_ACE_WEB_onOverrideUrlLoading_0003 start')
-      await driver.delayMs(500)
-
       LocalContext.context.eventHub.on("onOverrideUrlLoading0003", () => {
         flg = !flg
       })
@@ -80,7 +78,6 @@ export default function webRequestHeaderList() {
       router.pushUrl({
         url: "testability/pages/OnOverrideUrlLoading3"
       })
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       router.clear()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0003 end')
@@ -99,7 +96,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0004 start')
       console.info('SUB_ACE_WEB_onOverrideUrlLoading_0004 start')
-      await driver.delayMs(500)
 
       LocalContext.context.eventHub.on("onOverrideUrlLoading0004", () => {
         flg = true
@@ -108,7 +104,6 @@ export default function webRequestHeaderList() {
       router.pushUrl({
         url: "testability/pages/OnOverrideUrlLoading4"
       })
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       router.clear()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0004 end')
@@ -127,7 +122,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0006 start')
       console.info('SUB_ACE_WEB_onOverrideUrlLoading_0006 start')
-      await driver.delayMs(500)
 
       LocalContext.context.eventHub.on("onOverrideUrlLoading0006", () => {
         flg = !flg
@@ -136,7 +130,6 @@ export default function webRequestHeaderList() {
       router.pushUrl({
         url: "testability/pages/OnOverrideUrlLoading6"
       })
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       router.clear()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0006 end')
@@ -155,7 +148,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0007 start')
       console.info('SUB_ACE_WEB_onOverrideUrlLoading_0007 start')
-      await driver.delayMs(500)
 
       LocalContext.context.eventHub.on("onOverrideUrlLoading0007", () => {
         flg = !flg
@@ -164,7 +156,6 @@ export default function webRequestHeaderList() {
       router.pushUrl({
         url: "testability/pages/OnOverrideUrlLoading7"
       })
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       router.clear()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0007 end')
@@ -183,7 +174,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0008 start')
       console.info('SUB_ACE_WEB_onOverrideUrlLoading_0008 start')
-      await driver.delayMs(500)
 
       LocalContext.context.eventHub.on("onOverrideUrlLoading0008", () => {
         flg = !flg
@@ -192,7 +182,6 @@ export default function webRequestHeaderList() {
       router.pushUrl({
         url: "testability/pages/OnOverrideUrlLoading8"
       })
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       router.clear()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_onOverrideUrlLoading_0008 end')

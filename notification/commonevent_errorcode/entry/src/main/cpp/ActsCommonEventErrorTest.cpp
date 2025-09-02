@@ -446,7 +446,24 @@ static napi_value PublishWithInfoInvalidParameter(napi_env env, napi_callback_in
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
 }
-napi_value SubscriberNumExceeded(napi_env env, napi_callback_info info)
+
+static void IsOrderedCallback002(const CommonEvent_RcvData *data)
+{
+}
+
+static napi_value SubscribeSuccess(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
+    int32_t eventsNum = sizeof(events) / sizeof(char *);
+    g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
+    g_subscriber = OH_CommonEvent_CreateSubscriber(g_subscribeInfo, IsOrderedCallback002);
+    int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
+    napi_create_int32(env,  retResult == COMMONEVENT_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value SubscriberNumExceeded(napi_env env, napi_callback_info info)
 {
     napi_value result;
     const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
@@ -457,6 +474,56 @@ napi_value SubscriberNumExceeded(napi_env env, napi_callback_info info)
         int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
         napi_create_int32(env, retResult == COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED ? 0 : -1, &result);
     }
+    return result;
+}
+
+static napi_value SubscribeInvalidParameter(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
+    int32_t eventsNum = sizeof(events) / sizeof(char *);
+    g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
+    g_subscriber = OH_CommonEvent_CreateSubscriber(nullptr, IsOrderedCallback001);
+    int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
+    napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value SubscriberNumExceeded1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
+    int32_t eventsNum = sizeof(events) / sizeof(char *);
+    g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
+    for (int i = 0; i <= MAX_SUBSCRIBER_LIMIT; i++) {
+        g_subscriber = OH_CommonEvent_CreateSubscriber(g_subscribeInfo, IsOrderedCallback001);
+        int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
+        napi_create_int32(env, retResult == COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED ? 0 : -1, &result);
+    }
+    return result;
+}
+
+static napi_value UnSubscribeSuccess(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
+    int32_t eventsNum = sizeof(events) / sizeof(char *);
+    g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
+    g_subscriber = OH_CommonEvent_CreateSubscriber(g_subscribeInfo, IsOrderedCallback001);
+    int32_t retResult = OH_CommonEvent_UnSubscribe(g_subscriber);
+    napi_create_int32(env,  retResult == COMMONEVENT_ERR_OK ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value UnSubscribeInvalidParameter(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
+    int32_t eventsNum = sizeof(events) / sizeof(char *);
+    g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
+    g_subscriber = OH_CommonEvent_CreateSubscriber(nullptr, IsOrderedCallback001);
+    int32_t retResult = OH_CommonEvent_UnSubscribe(g_subscriber);
+    napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
 }
 
@@ -536,7 +603,17 @@ napi_property_descriptor desc[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"PublishWithInfoInvalidParameter", nullptr, PublishWithInfoInvalidParameter,
         nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SubscribeSuccess", nullptr, SubscribeSuccess,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SubscriberNumExceeded", nullptr, SubscriberNumExceeded,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SubscribeInvalidParameter", nullptr, SubscribeInvalidParameter,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SubscriberNumExceeded1", nullptr, SubscriberNumExceeded1,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"UnSubscribeSuccess", nullptr, UnSubscribeSuccess,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"UnSubscribeInvalidParameter", nullptr, UnSubscribeInvalidParameter,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 

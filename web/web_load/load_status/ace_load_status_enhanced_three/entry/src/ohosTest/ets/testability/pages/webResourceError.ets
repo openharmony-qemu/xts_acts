@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -41,17 +42,18 @@ struct webResourceError {
     "(KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State errorInfo: string = ''
   @State errorCode: number = 0
+  @State isEnd:boolean = false;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 141501,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(141501)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,9 +75,10 @@ struct webResourceError {
             case "testGetErrorInfo001": {
               try {
                 this.errorInfo = ' '
+                this.isEnd = false;
                 this.controller.loadUrl('https://wrong.host.badssl.com');
-                await Utils.sleep(4000);
-                Utils.emitEvent(this.errorInfo, 36020)
+                await waitForExist(()=>this.isEnd, this.str, true);
+                Utils.emitEvent(this.errorInfo, 141510)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -97,6 +100,9 @@ struct webResourceError {
             this.errorCode = event.error.getErrorCode();
             console.log(`errorCode is: ${this.errorCode}`);
           }
+        })
+        .onPageEnd(()=>{
+          this.isEnd = true;
         })
 
     }

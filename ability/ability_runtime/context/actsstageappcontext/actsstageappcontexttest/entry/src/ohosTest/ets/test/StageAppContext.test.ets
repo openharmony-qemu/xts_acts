@@ -322,7 +322,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -392,7 +392,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -462,7 +462,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpFeature failed:' + JSON.stringify(error));
@@ -532,7 +532,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpFeature failed:' + JSON.stringify(error));
@@ -602,7 +602,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -672,7 +672,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -738,7 +738,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -794,7 +794,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
@@ -865,7 +865,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelp failed:' + JSON.stringify(error));
@@ -921,7 +921,7 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
                     }
                 }).then(async () => {
                     await sleep(3000);
-                    let openBtn = await driver.findComponent(ON.text('打开'));
+                    let openBtn = await driver.findComponent(ON.id('advanced_dialog_button_1'));
                     openBtn?.click();
                 }).catch((error:BusinessError) => {
                     console.log(TAG + 'start clearUpApplicationDataHelpSystem failed:' + JSON.stringify(error));
