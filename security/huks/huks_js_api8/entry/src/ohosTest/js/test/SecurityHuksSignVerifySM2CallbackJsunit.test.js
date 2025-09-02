@@ -12,22 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, TestType, Size, Level } from '@ohos/hypium';
-import Data from './utils/data.json';
-import { HuksSignVerifySM2 } from './utils/param/signverify/publicSignverifyParam.js';
+import { describe, it, Level, Size, TestType } from '@ohos/hypium';
+import Data from './utils/common/data';
+import { HuksSignVerifySM2 } from './utils/param/signVerify/publicSignVerifyParam';
 import { stringToUint8Array } from './utils/param/publicFunc.js';
-import { publicSignVerifyFunc } from './utils/param/signverify/publicSignverifyCallback.js';
+import { publicSignVerifyFunc } from './utils/param/signVerify/publicSignVerifyCallback';
 
-let srcData63 = Data.Data63b;
+let srcData63 = Data.data63B;
 let srcData63Kb = stringToUint8Array(srcData63);
-let srcData65 = Data.Data65b;
+let srcData65 = Data.data65B;
 let srcData65Kb = stringToUint8Array(srcData65);
 let finishOutData;
 
 export default function SecurityHuksSignVerifySM2CallbackJsunit() {
     describe('SecurityHuksSignVerifySM2CallbackJsunit', function () {
         it('Security_HUKS_SignVerify_API8_SM2_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'testSignVerifySM2Size256SIGNSM3KeyAlias001';
+            const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias001';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -37,7 +37,7 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: srcData63Kb,
             };
-            finishOutData = await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', true, srcData63Kb);
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, false, srcData63Kb);
             HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -47,12 +47,12 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: finishOutData,
             };
-            await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData63Kb);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, false, srcData63Kb);
             done();
         });
 
         it('Security_HUKS_SignVerify_API8_SM2_00211111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'testSignVerifySm2Size256SIGNSM3KeyAlias002';
+            const srcKeyAlias = 'testSignVerifySm2Size256SIGNSM3KeyAlias002';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -62,12 +62,12 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: srcData63Kb,
             };
-            await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData63Kb);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, false, srcData63Kb);
             done();
         });
 
         it('Security_HUKS_SignVerify_API8_SM2_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'testSignVerifySM2Size256SIGNSM3KeyAlias003';
+            const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias003';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -77,7 +77,7 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: srcData65Kb,
             };
-            finishOutData = await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', true, srcData65Kb);
+            finishOutData = await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', true, false, srcData65Kb);
             HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -87,12 +87,12 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: finishOutData,
             };
-            await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData65Kb);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'finish', false, false, srcData65Kb);
             done();
         });
 
         it('Security_HUKS_SignVerify_API8_SM2_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            const srcKeyAlies = 'testSignVerifySM2Size256SIGNSM3KeyAlias004';
+            const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias004';
             let HuksOptions = {
                 properties: new Array(
                     HuksSignVerifySM2.HuksKeyAlgSM2,
@@ -102,7 +102,7 @@ export default function SecurityHuksSignVerifySM2CallbackJsunit() {
                 ),
                 inData: srcData65Kb,
             };
-            await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData65Kb);
+            await publicSignVerifyFunc(srcKeyAlias, HuksOptions, 'abort', true, false, srcData65Kb);
             done();
         });
     });

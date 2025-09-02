@@ -14,71 +14,83 @@
  */
 
 import huks from '@ohos.security.huks';
-import { HuksSignVerifyDSA } from "./signverify/publicSignverifyParam";
-import Data from "../data.json";
-let srcData65 = Data.Data65b;
+import { HuksSignVerifyDSA } from './signVerify/publicSignVerifyParam';
+import { logger } from '../common/logger.js';
 
 function stringToArray(str) {
-  var arr = [];
-  for (var i = 0, j = str.length; i < j; ++i) {
-    arr.push(str.charCodeAt(i));
-  }
-  return arr;
+    var arr = [];
+    for (var i = 0, j = str.length; i < j; ++i) {
+        arr.push(str.charCodeAt(i));
+    }
+    return arr;
 }
 
 function uint8ArrayToString(fileData) {
-  var dataString = '';
-  for (var i = 0; i < fileData.length; i++) {
-    dataString += String.fromCharCode(fileData[i]);
-  }
-  return dataString;
+    var dataString = '';
+    for (var i = 0; i < fileData.length; i++) {
+        dataString += String.fromCharCode(fileData[i]);
+    }
+    return dataString;
 }
+
 function stringToUint8Array(str) {
-  var arr = [];
-  for (var i = 0, j = str.length; i < j; ++i) {
-    arr.push(str.charCodeAt(i));
-  }
-  var tmpUint8Array = new Uint8Array(arr);
-  return tmpUint8Array;
+    var arr = [];
+    for (var i = 0, j = str.length; i < j; ++i) {
+        arr.push(str.charCodeAt(i));
+    }
+    var tmpUint8Array = new Uint8Array(arr);
+    return tmpUint8Array;
 }
+
+export function makeOptions(baseOptions, addStart, addArray, inData) {
+    if (addArray.length > 0) {
+        for (let i = 0; i < addArray.length; i++) {
+            baseOptions.properties.splice(addStart, 0, addArray[i]);
+            addStart++;
+        }
+    }
+    baseOptions.inData = inData;
+    return baseOptions;
+}
+
 function arrayEqual(a, b) {
-  if ((!a instanceof Array) || (!b instanceof Array)) {
-    return false;
-  }
-  if (a.length !== b.length) {
-    return false;
-  }
-  for (let i = 0; i < a.length; ++i) {
-    if ((!a instanceof Number) || (!b instanceof Number)) {
-      return false;
+    if ((!a instanceof Array) || (!b instanceof Array)) {
+        return false;
     }
-    if (a[i] !== b[i]) {
-      return false;
+    if (a.length !== b.length) {
+        return false;
     }
-  }
-  return true;
+    for (let i = 0; i < a.length; ++i) {
+        if ((!a instanceof Number) || (!b instanceof Number)) {
+            return false;
+        }
+        if (a[i] !== b[i]) {
+            return false;
+        }
+    }
+    return true;
 }
 
 async function checkSoftware() {
-  let dsaAlies = "useDsaToCheckSoftware";
-  let dsaOption = {
-    properties: new Array(
-      HuksSignVerifyDSA.HuksKeyAlgDSA,
-      HuksSignVerifyDSA.HuksKeyRSAPurposeSINGVERIFY,
-      HuksSignVerifyDSA.HuksKeySIZE1024,
-      HuksSignVerifyDSA.HuksTagDSADigestSHA256
-    )
-  };
-  let res = await huks.generateKey(dsaAlies, dsaOption);
-  console.log(`test generate:${JSON.stringify(res)}`);
-  if (res.errorCode == 0) {
-    await huks.deleteKey(dsaAlies, dsaOption);
-    console.error("This device uses software");
-    return true;
-  } else {
-    console.error("This device does not use software");
-    return false;
-  }
+    let dsaAlias = "useDsaToCheckSoftware";
+    let dsaOption = {
+        properties: new Array(
+            HuksSignVerifyDSA.HuksKeyAlgDSA,
+            HuksSignVerifyDSA.HuksKeyRSAPurposeSINGVERIFY,
+            HuksSignVerifyDSA.HuksKeySIZE1024,
+            HuksSignVerifyDSA.HuksTagDSADigestSHA256
+        )
+    };
+    let res = await huks.generateKey(dsaAlias, dsaOption);
+    logger.log(`test generate:${JSON.stringify(res)}`);
+    if (res.errorCode == 0) {
+        await huks.deleteKey(dsaAlias, dsaOption);
+        logger.error("This device uses software");
+        return true;
+    } else {
+        logger.error("This device does not use software");
+        return false;
+    }
 }
 
 export { stringToArray, uint8ArrayToString, stringToUint8Array, arrayEqual, checkSoftware };

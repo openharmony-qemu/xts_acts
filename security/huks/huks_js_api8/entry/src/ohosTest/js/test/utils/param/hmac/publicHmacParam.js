@@ -14,42 +14,59 @@
  */
 import * as param from '../publicParam';
 
-let  HuksHmac = {
-  HuksKeyAlg: {
-    tag: param.HksTag.HKS_TAG_ALGORITHM,
-    value: param.HksKeyAlg.HKS_ALG_HMAC,
-  },
-  HuksKeyPurpose: {
-    tag: param.HksTag.HKS_TAG_PURPOSE,
-    value: param.HksKeyPurpose.HKS_KEY_PURPOSE_MAC,
-  },
-  HuksKeySIZE: {
-    tag: param.HksTag.HKS_TAG_KEY_SIZE,
-    value: param.HksKeySize.HKS_RSA_KEY_SIZE_512,
-  },
-  HuksTagDigestSHA1: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SHA1,
-  },
-  HuksTagDigestSHA224: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SHA224,
-  },
-  HuksTagDigestSHA256: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SHA256,
-  },
-  HuksTagDigestSHA384: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SHA384,
-  },
-  HuksTagDigestSHA512: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SHA512,
-  },
-  HuksTagDigestSM3: {
-    tag: param.HksTag.HKS_TAG_DIGEST,
-    value: param.HksKeyDigest.HKS_DIGEST_SM3,
-  },
+let HuksHmac = {
+    HuksKeyAlg: {
+        tag: param.HksTag.HKS_TAG_ALGORITHM,
+        value: param.HksKeyAlg.HKS_ALG_HMAC,
+    },
+    HuksKeyPurpose: {
+        tag: param.HksTag.HKS_TAG_PURPOSE,
+        value: param.HksKeyPurpose.HKS_KEY_PURPOSE_MAC,
+    },
+    HuksKeySIZE: {
+        tag: param.HksTag.HKS_TAG_KEY_SIZE,
+        value: param.HksKeySize.HKS_RSA_KEY_SIZE_512,
+    },
+    HuksTagDigestSHA1: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA1,
+    },
+    HuksTagDigestSHA224: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA224,
+    },
+    HuksTagDigestSHA256: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA256,
+    },
+    HuksTagDigestSHA384: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA384,
+    },
+    HuksTagDigestSHA512: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA512,
+    },
+    HuksTagDigestSM3: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SM3,
+    },
+    HuksKeyAlgHMAC: {
+        tag: param.HksTag.HKS_TAG_ALGORITHM,
+        value: param.HksKeyAlg.HKS_ALG_HMAC,
+    },
+    HuksKeyPurposeHMAC: {
+        tag: param.HksTag.HKS_TAG_PURPOSE,
+        value: param.HksKeyPurpose.HKS_KEY_PURPOSE_MAC,
+    },
+    HuksKeyDIGESTSHA1: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_SHA1,
+    },
+    HuksKeyDIGESTNONE: {
+        tag: param.HksTag.HKS_TAG_DIGEST,
+        value: param.HksKeyDigest.HKS_DIGEST_NONE,
+    },
 };
+
 export { HuksHmac };
