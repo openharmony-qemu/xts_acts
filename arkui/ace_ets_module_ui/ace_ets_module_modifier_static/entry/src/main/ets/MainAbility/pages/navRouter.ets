@@ -25,7 +25,6 @@ import {
   BlurStyle,
   BorderImageOption,
   BorderOptions,
-  BorderRadiuses,
   BorderStyle,
   BreakpointsReference,
   Builder,
