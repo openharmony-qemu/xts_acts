@@ -23,6 +23,7 @@ import fs from '@ohos.file.fs'
 
 let testContext: common.UIAbilityContext;
 let audioManager: audio.AudioManager;
+let TagFrmwk: string = "AudioPlaybackCapturerTest";
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();
