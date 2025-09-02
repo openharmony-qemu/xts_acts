@@ -28,7 +28,7 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
@@ -39,11 +39,11 @@ struct prop {
   @State countDownStartValue: number = 10
 
   onPageShow() {
-    console.info('Prop page show called');
+    console.info('PropRef page show called');
   }
 
   onBuildDone() {
-    console.info('Prop page build done called');
+    console.info('PropRef page build done called');
   }
 
   build() {
@@ -81,7 +81,7 @@ struct prop {
 
 @Component
 struct CountDownComponent {
-  @Prop count: number
+  @PropRef count: number
   private costOfOneAttempt: number = 0
 
   build() {

@@ -40,14 +40,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -107,11 +107,11 @@ struct propArray {
 
 @Component
 struct ChildArrProp {
-  @Prop subTitle: ModelArr[] = [new ModelArr(1)]
+  @PropRef subTitle: ModelArr[] = [new ModelArr(1)]
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
       Button('子组件Prop:' + JSON.stringify(this.subTitle)).fontSize(9)
         .height('5%')

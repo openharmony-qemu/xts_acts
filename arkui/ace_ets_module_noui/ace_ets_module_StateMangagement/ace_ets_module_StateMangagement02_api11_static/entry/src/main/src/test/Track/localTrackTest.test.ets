@@ -101,7 +101,7 @@ export default function localTrackTest() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[localTrackTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[localTrackTest_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStorageProp:11');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStoragePropRef:11');
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('LocalStorageLink:10');
       console.info('[localTrackTest_0100] END');
       done();
@@ -126,7 +126,7 @@ export default function localTrackTest() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[localTrackTest_0200] component obj is: " + JSON.stringify(obj));
       console.info("[localTrackTest_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStorageProp:12');
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('LocalStoragePropRef:12');
       expect(obj1.getElement('$attrs').getString('label')).assertEqual('LocalStorageLink:12');
       console.info('[localTrackTest_0200] END');
       done();

@@ -64,7 +64,7 @@ import {
   TransitionType,
   Week
 } from '@ohos.arkui.component';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
 import { ButtonModifier } from '@ohos.arkui.modifier';

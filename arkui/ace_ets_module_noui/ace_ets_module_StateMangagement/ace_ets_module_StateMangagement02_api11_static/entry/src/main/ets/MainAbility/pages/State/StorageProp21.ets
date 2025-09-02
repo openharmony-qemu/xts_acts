@@ -41,14 +41,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -63,10 +63,10 @@ enum KFC21 {D = 1, H, Y}
 @Entry
 @Component
 struct StorageProp21 {
-  @StorageProp('stringCode') stringCode: string = 'ab';
-  @StorageProp('numberCode') numberCode: number = 1;
-  @StorageProp('booleanCode') booleanCode: boolean = false;
-  @StorageProp('enumCode') enumCode: KFC21 = KFC21.H;
+  @StoragePropRef('stringCode') stringCode: string = 'ab';
+  @StoragePropRef('numberCode') numberCode: number = 1;
+  @StoragePropRef('booleanCode') booleanCode: boolean = false;
+  @StoragePropRef('enumCode') enumCode: KFC21 = KFC21.H;
 
   aboutToAppear() {
     let uiContext = this.getUIContext();

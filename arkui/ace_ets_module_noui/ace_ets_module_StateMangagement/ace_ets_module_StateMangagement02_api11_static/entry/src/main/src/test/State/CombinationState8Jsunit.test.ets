@@ -104,7 +104,7 @@ export default function CombinationState8Jsunit() {
       console.info("[CombinationState8Jsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[CombinationState8Jsunit_static_0200] text: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("@Prop:1");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("@PropRef:1");
       console.info('[CombinationState8Jsunit_static_0200] END');
       done();
     });

@@ -123,7 +123,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { attrsManager, EN } from '../../common/AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'

@@ -113,7 +113,7 @@ export default function PropStringJsunit() {
       console.info("[PropStringJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[PropStringJsunit_static_0400] title: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Child Prop: World');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Child PropRef: World');
 
       let strJson1 = inspector.getInspectorByKey('PropString_A');
       let obj1 = JSON.parseJsonElement(strJson1);
