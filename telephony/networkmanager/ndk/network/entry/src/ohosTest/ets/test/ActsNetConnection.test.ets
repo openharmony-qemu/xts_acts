@@ -15,6 +15,8 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import NetConnectionTest from 'libnetconnectiontest.so'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import fs from '@ohos.file.fs';
 
 const OH_HTTP_OK = 0;
 const WEBSOCKET_OK = 0;
@@ -37,9 +39,6 @@ const CASE_INDEX_8 = 8;
 const CASE_INDEX_9 = 9;
 const CASE_INDEX_10 = 10;
 const CASE_INDEX_11 = 11;
-const CASE_INDEX_12 = 12;
-const CASE_INDEX_13 = 13;
-const CASE_INDEX_14 = 14;
 
 export default function ActsNetConnectionTest() {
   describe('ActsNetConnectionTest', () => {
@@ -1864,6 +1863,72 @@ export default function ActsNetConnectionTest() {
         let result : number = NetConnectionTest.NetConn_QueryTrRout(CASE_INDEX_2, 'www.baidu.com');
         console.info(`${caseName} result is: ` + JSON.stringify(result));
         expect(result).assertEqual(NETCONN_PERMISSION_DENIED);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_NetworkManager_OH_NetConn_FreeDnsResult_0100
+     * @tc.name    : testNetworkManagerOHNetConnFreeDnsResult0100
+     * @tc.desc    : test FreeDnsResult error code
+     * @tc.level   : Level2
+     * @tc.size    : SmallTest
+     * @tc.type    : Function
+     */
+    it('testNetworkManagerOHNetConnFreeDnsResult0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerOHNetConnFreeDnsResult0100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionTest.NetConn_QueryTrRout(CASE_INDEX_1, 'www.baidu.com');
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(OH_HTTP_PARAMETER_ERROR);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+    
+    /**
+     * @tc.number  : SUB_NetworkManager_OH_NetConn_BindSocket_0100
+     * @tc.name    : testNetworkManagerOHNetConnBindSocket0100
+     * @tc.desc    : test BindSocket error code
+     * @tc.level   : Level2
+     * @tc.size    : SmallTest
+     * @tc.type    : Function
+     */
+    it('testNetworkManagerOHNetConnBindSocket0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerOHNetConnBindSocket0100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionTest.NetConn_BindSocket(1);
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(OH_HTTP_PARAMETER_ERROR);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_NetworkManager_GetCertificatesHost_Auth_0100
+     * @tc.name    : testNetworkManagerGetCertificatesHostAuth0100
+     * @tc.desc    : test NetStack_GetCertificatesHost error code
+     * @tc.level   : Level2
+     * @tc.size    : SmallTest
+     * @tc.type    : Function
+     */
+    it('testNetworkManagerGetCertificatesHostAuth0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerGetCertificatesHostAuth0100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionTest.GetCertificatesHost('www.baidu.com');
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(OH_HTTP_OK);
         done();
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));
