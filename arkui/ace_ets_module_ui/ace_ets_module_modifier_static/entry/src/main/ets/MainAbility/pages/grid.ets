@@ -16,7 +16,7 @@ import { Entry,Component,$r, Padding,Column,Alignment,TextOverflow,ColumnOptions
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 

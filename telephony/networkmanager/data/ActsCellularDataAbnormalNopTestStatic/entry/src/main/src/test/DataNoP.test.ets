@@ -20,6 +20,18 @@ const ExpectTrue = (n: boolean) => {
         console.info("expectInfo", `test sucess`);
     }
 }
+
+const apnInfoParameter: data.ApnInfo = {
+    apnName: 'apnName',
+    apn: 'apn',
+    mcc: 'mcc',
+    mnc: 'mnc',
+    user: 'user',
+    type: 'type',
+    proxy: 'proxy',
+    mmsproxy: 'mmsproxy'
+}
+
 export default function dataNoPTest() {
 
     describe("DataNoPTest", (): void => {
@@ -88,5 +100,97 @@ export default function dataNoPTest() {
             }
         })
 
+        /*
+          * @tc.number:SUB_Telephony_Data_QueryAllApns_NoP_static_0300
+          * @tc.name: testTelephonyDataQueryAllApnsNoP_static_0300
+          * @tc.desc:Using the queryAllApns (callback) method without permission
+          * @tc.level:Level 0
+          * @tc.type:Function
+          * @tc.size:MediumTest
+          */
+        it("testTelephonyDataQueryAllApnsNoP_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataQueryAllApnsNoP_static_0300';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.queryAllApns().then(() => {
+                    ExpectTrue(false);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 201);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
+
+        /*
+          * @tc.number:SUB_Telephony_Data_QueryApnIds_NoP_static_0400
+          * @tc.name: testTelephonyDataQueryApnIdsNoP_static_0400
+          * @tc.desc:Using the queryApnIds (callback) method without permission
+          * @tc.level:Level 0
+          * @tc.type:Function
+          * @tc.size:MediumTest
+          */
+        it("testTelephonyDataQueryApnIdsNoP_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataQueryApnIdsNoP_static_0400';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                data.queryApnIds(apnInfoParameter).then(() => {
+                    ExpectTrue(false);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 201);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
+
+        /*
+          * @tc.number:SUB_Telephony_Data_SetPreferredApn_NoP_static_0500
+          * @tc.name: testTelephonyDataSetPreferredApnNoP_static_0500
+          * @tc.desc:Using the setPreferredApn (callback) method without permission
+          * @tc.level:Level 0
+          * @tc.type:Function
+          * @tc.size:MediumTest
+          */
+        it("testTelephonyDataSetPreferredApnNoP_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testTelephonyDataSetPreferredApnNoP_static_0500';
+            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+            try{
+                await data.setPreferredApn(1).then(() => {
+                    ExpectTrue(false);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                }).catch((error: Error) => {
+                    let err = error as BusinessError;
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    ExpectTrue(err.code == 201);
+                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+                    done();
+                });
+            }catch (err:BusinessError) {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                ExpectTrue(err.code == 201);
+                hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+                done();
+            }
+        })
     })
 }

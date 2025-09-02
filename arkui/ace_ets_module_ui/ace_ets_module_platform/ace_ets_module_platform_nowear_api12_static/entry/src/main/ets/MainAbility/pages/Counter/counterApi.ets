@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,ColumnOptions,Text,Color,Flex,FlexDirection,I
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 

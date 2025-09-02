@@ -16,7 +16,7 @@ import { Entry,Builder,Component,Scroller,Scroll,List,Video,Image,BarPosition,Bu
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 
 

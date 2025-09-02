@@ -14,7 +14,7 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,ColumnOptions,
   Row, ClickEvent, Margin, WithTheme, ForEach, Padding, Blank, HorizontalAlign, Color} from '@ohos.arkui.component'
-import { State, Prop } from '@ohos.arkui.stateManagement'
+import { State, PropRef } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 import {
   DataClass,

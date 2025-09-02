@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,Stack,ColumnOptions,Position,EffectType,Effec
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 // import { CalendarPickerModifier } from "@ohos.arkui.modifier";

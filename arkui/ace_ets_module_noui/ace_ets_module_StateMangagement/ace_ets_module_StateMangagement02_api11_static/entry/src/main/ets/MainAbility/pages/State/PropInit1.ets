@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -65,11 +65,11 @@ class ClassA30 {
 
 @Component
 struct ChildPropObject {
-  @Prop subValue: number = 0
+  @PropRef subValue: number = 0
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
       Text('子组件Prop:' + this.subValue).fontSize(9).height('5%')
         .key("sub_prop1_S")
         .onClick((e: ClickEvent) => {
@@ -96,7 +96,7 @@ struct PropInit1 {
   build() {
     Row() {
       Column() {
-        Text('@Prop本地初始化不和父组件同步').fontSize(9).height('5%')
+        Text('@PropRef本地初始化不和父组件同步').fontSize(9).height('5%')
         Text('Change father: ' + this.title.value).height('5%')
           .id("prop_Object1_A")
           .onClick((e: ClickEvent) => {

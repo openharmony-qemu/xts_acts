@@ -16,7 +16,7 @@ import { Entry,Builder,Component,Scroller,ListItem,Scroll,List,Video,BarPosition
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';

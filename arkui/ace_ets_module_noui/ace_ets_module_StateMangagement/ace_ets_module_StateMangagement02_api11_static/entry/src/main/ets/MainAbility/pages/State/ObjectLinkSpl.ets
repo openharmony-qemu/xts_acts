@@ -39,14 +39,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -127,10 +127,10 @@ struct ViewBs {
 
 @Component
 struct son_Props{
-  @Prop numA: number = 1
+  @PropRef numA: number = 1
   build(){
     Column(){
-      Button('Prop + 1').key(("btn_prop"))
+      Button('PropRef + 1').key(("btn_prop"))
         .height('5%')
         .backgroundColor('#E8A027')
         .onClick((e: ClickEvent) => {

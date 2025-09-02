@@ -16,7 +16,7 @@ import { Entry,Component,$r, Padding,Column,ColumnOptions,Gauge,animateTo,FormCo
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 

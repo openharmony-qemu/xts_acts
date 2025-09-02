@@ -19,7 +19,6 @@ import {
   Text,
   BorderStyle,
   EdgeStyles,
-  BorderRadiuses,
   BorderOptions,
   EdgeWidths,
   Length,

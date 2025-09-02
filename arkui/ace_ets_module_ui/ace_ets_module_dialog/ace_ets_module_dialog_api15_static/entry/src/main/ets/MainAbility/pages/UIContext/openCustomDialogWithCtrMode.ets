@@ -28,7 +28,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -37,7 +37,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode } from '@ohos.promptAction';
-import { LengthMetrics,BorderRadiuses,ComponentContent } from '@ohos.arkui.node';
+import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
 import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';

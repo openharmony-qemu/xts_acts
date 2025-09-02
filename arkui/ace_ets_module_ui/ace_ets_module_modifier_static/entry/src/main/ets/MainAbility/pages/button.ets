@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,ColumnOptions,Blank,Text,Toggle,ToggleType,Fl
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { ButtonModifier } from "@ohos.arkui.modifier";
 

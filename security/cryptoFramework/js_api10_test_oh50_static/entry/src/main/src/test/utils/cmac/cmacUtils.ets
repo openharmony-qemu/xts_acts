@@ -92,11 +92,11 @@ function doCmacSyncSpilt(spec: cryptoFramework.MacSpec, message: cryptoFramework
       iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
-      let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));
+      let tmp = message.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
       let updateText: cryptoFramework.DataBlob = { data:tmp };
       mac.updateSync(updateText);
       if (rem != 0 && index + 1 == iterate) {
-        let tmp = message.data.subarray(blockSize * (index + 1), msgLen);
+        let tmp = message.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
         let updateText: cryptoFramework.DataBlob = { data:tmp };
         mac.updateSync(updateText);
       }
@@ -122,11 +122,11 @@ async function doCmacPromiseSpilt(spec: cryptoFramework.MacSpec, message: crypto
       iterate = (msgLen - rem) / blockSize;
     }
     for(let index = 0; index < iterate; index++) {
-      let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));
+      let tmp = message.data.subarray((blockSize * index).toInt(), (blockSize * (index + 1)).toInt());
       let updateText: cryptoFramework.DataBlob = { data:tmp };
       await mac.update(updateText);
       if (rem != 0 && index + 1 == iterate) {
-        let tmp = message.data.subarray(blockSize * (index + 1), msgLen);
+        let tmp = message.data.subarray((blockSize * (index + 1)).toInt(), msgLen.toInt());
         let updateText: cryptoFramework.DataBlob = { data:tmp };
         await mac.update(updateText);
       }

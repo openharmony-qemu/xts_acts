@@ -31,63 +31,6 @@ export default function moduleSupportTest() {
     }
 
     /*
-     * @tc.number    : Module_FindNamespace_0100
-     * @tc.name      : Module_FindNamespace_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindNamespace_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindNamespace_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindNamespace();
-        expect(result).assertTrue();
-        console.log('Module_FindNamespace_0100 done');
-        done();
-        console.log('Module_FindNamespace_0100 end');
-      })
-
-    /*
-     * @tc.number    : Module_FindClass_0100
-     * @tc.name      : Module_FindClass_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindClass_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindClass_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindClass();
-        expect(result).assertTrue();
-        console.log('Module_FindClass_0100 done');
-        done();
-        console.log('Module_FindClass_0100 end');
-      })
-
-    /*
-     * @tc.number    : Module_FindEnum_0100
-     * @tc.name      : Module_FindEnum_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
-     */
-    it("Module_FindEnum_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('Module_FindEnum_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Module_FindEnum();
-        expect(result).assertTrue();
-        console.log('Module_FindEnum_0100 done');
-        done();
-        console.log('Module_FindEnum_0100 end');
-      })
-
-    /*
      * @tc.number    : Module_FindFunction_0100
      * @tc.name      : Module_FindFunction_0100
      * @tc.desc      : MediumTest

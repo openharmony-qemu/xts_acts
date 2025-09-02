@@ -16,7 +16,7 @@ import { Entry,Component,Video,Resource,$r,PlaybackSpeed,$rawfile,Column,Margin,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 

@@ -72,7 +72,7 @@ export default function propJsunit() {
 
     afterEach(async () => {
       await sleep(1)
-      console.info("Prop after each called");
+      console.info("PropRef after each called");
     });
 
     

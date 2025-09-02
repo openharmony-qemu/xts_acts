@@ -16,7 +16,7 @@ import { Entry,NavPathStack,Component,$r,ResourceStr,Builder,Resource,Navigation
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import observer from '@ohos.arkui.observer'

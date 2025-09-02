@@ -39,14 +39,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -69,7 +69,7 @@ struct PropBoolean {
   }
   build() {
     Column() {
-      Text('@Prop 支持数据类型：Boolean').fontSize(9).height('5%')
+      Text('@PropRef 支持数据类型：Boolean').fontSize(9).height('5%')
       Text('父组件State:' +this.BooleanA).width("100%").key('Boolean_Prop').height('5%')
       Button('父组件State:').width("100%")
         .height('5%')
@@ -85,11 +85,11 @@ struct PropBoolean {
 
 @Component
 struct ChildPropBoolean {
-  @Prop BooleanB: boolean = false;
+  @PropRef BooleanB: boolean = false;
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
 
       Button('子组件Prop: '+this.BooleanB).width("100%").height('5%')
         .key("ChildPropBoolean")

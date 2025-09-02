@@ -41,7 +41,7 @@ import {
   SearchController,ComponentV2,ForEach,
   ColumnOptions,WaterFlowSections,Scroller,SectionOptions
 } from '@ohos.arkui.component'
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';

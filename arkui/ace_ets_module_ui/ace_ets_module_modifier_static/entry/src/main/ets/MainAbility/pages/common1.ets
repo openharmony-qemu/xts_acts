@@ -16,7 +16,7 @@ import { Entry,Builder,Component,Scroller,GridRow,Scroll,ButtonType,BreakpointsR
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import { CommonModifier } from "@ohos.arkui.modifier";
 import matrix4 from '@ohos.matrix4'

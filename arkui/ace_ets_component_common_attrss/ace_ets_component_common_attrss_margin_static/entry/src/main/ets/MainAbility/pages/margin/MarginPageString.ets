@@ -133,7 +133,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'

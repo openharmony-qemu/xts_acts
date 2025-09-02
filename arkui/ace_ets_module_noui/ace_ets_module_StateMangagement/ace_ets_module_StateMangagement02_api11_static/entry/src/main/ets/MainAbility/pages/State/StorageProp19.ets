@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 
@@ -63,10 +63,10 @@ enum KFC19{K = 1,F,L}
 @Entry
 @Component
 struct StorageProp19 {
-  @StorageProp('stringCode') stringCode: string = 'en';
-  @StorageProp('numberCode') numberCode: number = 2;
-  @StorageProp('booleanCode') booleanCode: boolean = true;
-  @StorageProp('enumCode') enumCode: KFC19 = KFC19.K;
+  @StoragePropRef('stringCode') stringCode: string = 'en';
+  @StoragePropRef('numberCode') numberCode: number = 2;
+  @StoragePropRef('booleanCode') booleanCode: boolean = true;
+  @StoragePropRef('enumCode') enumCode: KFC19 = KFC19.K;
   aboutToAppear() {
     let uiContext = this.getUIContext();
     try {

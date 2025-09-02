@@ -16,7 +16,7 @@ import { Entry,NavPathStack,Component,$r,ResourceStr,Builder,List,ListItem,Resou
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message} from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';

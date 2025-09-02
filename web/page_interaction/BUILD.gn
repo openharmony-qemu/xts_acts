@@ -19,12 +19,14 @@ group("pageInteraction") {
       "focus_processing:ActsWebFocusProcessingTest",
       "gesture_operation:ActsWebGestureOperationTest",
       "keyboard_mouse_operations:ActsWebKeyboardMouseOperationsTest",
+      "keyboard_mouse_operations_static:ActsWebKeyboardMouseOperationsStaticTest",
       "page_scrolling:ActsWebPageScrollingTest",
       "page_scrollingOne:ActsWebPageScrollingOneTest",
       "page_scrollingTwo:ActsWebPageScrollingTwoTest",
       "picture_text_selection:ActsWebPictureTextSelectionTest",
       "picture_text_selectionTwo:ActsWebPictureTextSelectionTwoTest",
       "soft_keyboard_avoidance:ActsWebSoftKeyboardAvoidanceTest",
+      "page_interaction_static:ActsWebInteractionStaticTest",
     ]
   }
 }

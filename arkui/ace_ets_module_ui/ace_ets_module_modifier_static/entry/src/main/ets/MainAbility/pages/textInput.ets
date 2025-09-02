@@ -16,7 +16,7 @@ import { Entry,Component,Video,Resource,$r,TextPicker,TextInput,PlaybackSpeed,$r
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 

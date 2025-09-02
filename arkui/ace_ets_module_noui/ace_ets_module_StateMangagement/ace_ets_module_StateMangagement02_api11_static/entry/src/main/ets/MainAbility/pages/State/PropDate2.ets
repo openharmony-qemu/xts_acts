@@ -40,14 +40,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -56,7 +56,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Component
 struct ChildDate2 {
-  @Prop selectedDate2: Date = new Date('2022-06-06')
+  @PropRef selectedDate2: Date = new Date('2022-06-06')
 
   build() {
     Column() {

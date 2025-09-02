@@ -312,7 +312,7 @@ async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFram
   let cipherText = new Uint8Array();
   await cipher.init(isEncrypt, symKey, spec);
   for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
-    let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+    let tmp = data.data.subarray((blockSize * dataSize).toInt(), (blockSize * (dataSize + 1)).toInt());
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
     let encryptCipher: cryptoFramework.DataBlob|null = await cipher.update(doFinalText);
     if (encryptCipher) {
@@ -340,7 +340,7 @@ function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.Sym
   let cipherText = new Uint8Array();
   cipher.initSync(isEncrypt, symKey, spec);
   for(let dataSize = 0; dataSize < dataLen / blockSize; dataSize++) {
-    let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+    let tmp = data.data.subarray((blockSize * dataSize).toInt(), (blockSize * (dataSize + 1)).toInt());
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
     let encryptCipher: cryptoFramework.DataBlob|null = cipher.updateSync(doFinalText);
     if (encryptCipher) {

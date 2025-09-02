@@ -1401,7 +1401,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertFalse();
-          let tmp1 = plainText.data.subarray(0, plainText.data.byteLength - 1);
+          let tmp1 = plainText.data.subarray(0, plainText.data.byteLength.toInt() - 1);
           let text1: cryptoFramework.DataBlob = { data:tmp1 };
           let tmp2 = msg.data.subarray(0, msgLen - 1);
           let text2: cryptoFramework.DataBlob = { data:tmp2 };

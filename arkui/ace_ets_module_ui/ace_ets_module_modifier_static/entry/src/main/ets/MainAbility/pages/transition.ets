@@ -16,7 +16,7 @@ import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAt
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'

@@ -26,7 +26,11 @@ group("telephone") {
     "simtest:ActsTelephonySimHasCardTest",
     "smstest:ActsTelephonySmsWithCardTest",
     "telephonyNDKTest:ActsTelephonyNdkTest",
-"ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
-"ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
+    "ActsObserverEtsNopTestStatic:ActsObserverEtsNopStaticTest",
+    "ActsTelephonyObserverWithCardTestStatic:ActsTelephonyObserverWithCardStaticTest",
+    "simTestStatic:ActsTelephonySimHasCardStaticTest",
+    "noCardStatic:ActsTelephonySimNoCardStaticTest",
+    "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest",
+    "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
   ]
 }

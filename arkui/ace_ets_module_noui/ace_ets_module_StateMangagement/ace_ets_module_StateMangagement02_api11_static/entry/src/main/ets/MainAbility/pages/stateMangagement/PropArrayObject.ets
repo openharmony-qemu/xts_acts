@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -69,7 +69,7 @@ class MyPropObject {
 
 @Component
 struct PropArrayObjectChild {
-  @Prop message: Array<MyPropObject> = new Array<MyPropObject>(new MyPropObject(4, 'MyPropObject4'),
+  @PropRef message: Array<MyPropObject> = new Array<MyPropObject>(new MyPropObject(4, 'MyPropObject4'),
   new MyPropObject(5, 'MyPropObject'),
   new MyPropObject(6, 'MyPropObject'))
 

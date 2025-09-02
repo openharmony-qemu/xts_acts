@@ -16,7 +16,7 @@ import { Entry,Component,Video,Resource,$r,TextArea,TextClockController,ToggleTy
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
