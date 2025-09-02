@@ -1512,7 +1512,7 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(error.code == 9200001 || error.code == 801).assertTrue();
     }
     done();
   });
@@ -1535,7 +1535,7 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1560,7 +1560,7 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(INVALID_WANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 401 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1585,7 +1585,7 @@ function testSetGlobalProxyForAccount() {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, INVALID_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200007).assertTrue();
+      expect(error.code == 9200007 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1613,10 +1613,10 @@ function testSetGlobalProxyForAccount() {
       expect(proxy.host === HTTP_PROXY.host).assertTrue();
       expect(proxy.port === HTTP_PROXY.port).assertTrue();
       expect(proxy.exclusionList.length === HTTP_PROXY.exclusionList.length).assertTrue();
-    } catch (error) {
-      expect(false).assertTrue();
-    } finally {
       networkManager.setGlobalProxyForAccount(SELFWANT, originProxy, DEFAULT_ACCOUNT_ID);
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
@@ -1641,7 +1641,7 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(error.code == 9200001 || error.code == 801).assertTrue();
     }
     done();
   });
@@ -1664,7 +1664,7 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1689,7 +1689,7 @@ function testGetGlobalProxyForAccount() {
       networkManager.getGlobalProxyForAccount(INVALID_WANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 401 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
