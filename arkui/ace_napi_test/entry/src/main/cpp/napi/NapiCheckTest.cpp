@@ -24,6 +24,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <thread>
+#include <memory>
 #include <uv.h>
 
 #include "hilog/log.h"
@@ -1065,19 +1066,17 @@ napi_value NapiBigIntTest03(napi_env env, napi_callback_info info)
     NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for positive BigInt");
     NAPI_ASSERT(env, actualWordCount1 > 0, "Word count should be greater than 0");
 
-    uint64_t* retrievedWords1 = new uint64_t[actualWordCount1];
-    memset(retrievedWords1, 0, sizeof(uint64_t) * actualWordCount1);
+    std::unique_ptr<uint64_t[]> retrievedWords1(new uint64_t[actualWordCount1]());
 
     size_t retrievedWordCount1 = actualWordCount1;
-    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1);
+    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1.get());
     NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for positive BigInt");
 
     NAPI_ASSERT(env, retrievedSignBit1 == 0, "Positive BigInt sign bit should be 0");
     NAPI_ASSERT(env, retrievedWordCount1 == NUM_2, "Positive BigInt word count should be 2");
     NAPI_ASSERT(env, retrievedWords1[0] == 0xFFFFFFFFFFFFFFFFULL, "Positive BigInt first word mismatch");
     NAPI_ASSERT(env, retrievedWords1[1] == 0x1ULL, "Positive BigInt second word mismatch");
-    delete[] retrievedWords1;
-    
+
     napi_value bigint2;
     int signBit2 = 1; // 负数
     size_t wordCount2 = NUM_2; // 2个words
@@ -1092,20 +1091,18 @@ napi_value NapiBigIntTest03(napi_env env, napi_callback_info info)
     status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &actualWordCount2, nullptr);
     NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for negative BigInt");
     NAPI_ASSERT(env, actualWordCount2 > 0, "Word count should be greater than 0");
-    
-    uint64_t* retrievedWords2 = new uint64_t[actualWordCount2];
-    memset(retrievedWords2, 0, sizeof(uint64_t) * actualWordCount2);
+
+    std::unique_ptr<uint64_t[]> retrievedWords2(new uint64_t[actualWordCount2]());
     
     size_t retrievedWordCount2 = actualWordCount2;
-    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &retrievedWordCount2, retrievedWords2);
+    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &retrievedWordCount2, retrievedWords2.get());
     NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for negative BigInt");
     
     NAPI_ASSERT(env, retrievedSignBit2 == 1, "Negative BigInt sign bit should be 1");
     NAPI_ASSERT(env, retrievedWordCount2 == NUM_2, "Negative BigInt word count should be 2");
     NAPI_ASSERT(env, retrievedWords2[0] == 0xFFFFFFFFFFFFFFFFULL, "Negative BigInt first word mismatch");
     NAPI_ASSERT(env, retrievedWords2[1] == 0x1ULL, "Negative BigInt second word mismatch");
-    delete[] retrievedWords2;
-    
+
     napi_value result;
     napi_get_boolean(env, true, &result);
     return result;
