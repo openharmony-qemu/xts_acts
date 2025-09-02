@@ -23,16 +23,12 @@
 #include <multimedia/image_framework/image/image_source_native.h>
 #include "multimedia/image_framework/image_pixel_map_mdk.h"
 #include "napi/native_api.h"
+#include <hilog/log.h>
 
 #include <string>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-#undef LOG_DOMAIN
-#undef LOG_TAG
-#define LOG_DOMAIN 0x3200
-#define LOG_TAG "MY_TAG"
 
 namespace {
     const uint32_t NUM_0 = 0;
@@ -46,33 +42,11 @@ namespace {
     const uint32_t MAX_COLOR_SIZE = 96;
     const uint32_t MAX_QUALITY_SIZE = 98;
     constexpr int8_t ARGB_8888_BYTES = 4;
+    /**
+     * Log print domain.
+     */
+    const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 }
-
-const char *LOG_APP = "ImageNDK";
-const char* VPE_SO_NAME = "/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so";
-
-static void OHLog(const char *module, const char *format, ...)
-{
-
-    char buffer[MAX_BUFFER_SIZE];
-    va_list args;
-    va_start(args, format);
-    vsnprintf(buffer, sizeof(buffer), format, args);
-    va_end(args);
-
-    printf("[%s] %s\n", module, buffer);
-}
-
-#define OH_LOG_ERROR(module, format, ...)                                                                              \
-    do {                                                                                                               \
-        OHLog(module, format, ##__VA_ARGS__);                                                                          \
-    } while (false)
-
-
-#define OH_LOG_INFO(module, format, ...)                                                                               \
-    do {                                                                                                               \
-        OHLog(module, format, ##__VA_ARGS__);                                                                          \
-    } while (false)
 
 static napi_value getJsResult(napi_env env, int result)
 {
@@ -88,8 +62,12 @@ static napi_value TestInitializationOptionsSetRowStrideNormal(napi_env env, napi
     if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1 ||
         argValue[NUM_0] == nullptr) {
         OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed, argCount: %{public}zu.", argCount);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestInitializationOptionsSetRowStrideNormal",
+            "napi_get_cb_info failed, argCount: %{public}lu", argCount);
         return getJsResult(env, IMAGE_BAD_PARAMETER);
     }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestInitializationOptionsSetRowStrideNormal",
+        "argCount: %{public}lu", argCount);
     int32_t rowStride = 0;
     napi_get_value_int32(env, argValue[0], &rowStride);
     OH_Pixelmap_InitializationOptions *opts = nullptr;
@@ -323,18 +301,6 @@ static void setInt32NamedProperty(napi_env env, napi_value object, const char *u
     napi_value tmp;
     napi_create_int32(env, value, &tmp);
     napi_set_named_property(env, object, utf8name, tmp);
-}
-
-static bool CheckVpe()
-{
-    void* handle = dlopen(VPE_SO_NAME, RTLD_LAZY);
-    if (handle == nullptr) {
-        OH_LOG_INFO(LOG_APP, "CheckVpe failed");
-        return false;
-    }
-    dlclose(handle);
-    handle = nullptr;
-    return true;
 }
 
 EXTERN_C_START
