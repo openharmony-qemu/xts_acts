@@ -1048,47 +1048,64 @@ napi_value NapiBigIntTest02(napi_env env, napi_callback_info info)
 
 napi_value NapiBigIntTest03(napi_env env, napi_callback_info info)
 {
+    napi_status status;
     napi_value bigint1;
-    int signBit1 = 0; // Positive
-    size_t wordCount1 = NUM_2;
+    int signBit1 = 0; // 正数
+    size_t wordCount1 = NUM_2; // 2个words
     uint64_t words1[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
     
-    napi_status status = napi_create_bigint_words(env, signBit1, wordCount1, words1, &bigint1);
-    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for positive");
+    status = napi_create_bigint_words(env, signBit1, wordCount1, words1, &bigint1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for positive BigInt");
+    NAPI_ASSERT(env, bigint1 != nullptr, "Created positive BigInt should not be null");
     
-    // 获取正数words值
     int retrievedSignBit1 = -1;
-    size_t retrievedWordCount1 = 0;
-    uint64_t retrievedWords1[NUM_2] = {0};
-    
-    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1);
-    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for positive");
-    NAPI_ASSERT(env, retrievedSignBit1 == signBit1, "Positive sign bit mismatch");
-    NAPI_ASSERT(env, retrievedWordCount1 == wordCount1, "Positive word count mismatch");
-    NAPI_ASSERT(env, retrievedWords1[0] == words1[0], "Positive first word mismatch");
-    NAPI_ASSERT(env, retrievedWords1[1] == words1[1], "Positive second word mismatch");
+    size_t actualWordCount1 = 0;
 
-    // 创建负数BigInt
+    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &actualWordCount1, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for positive BigInt");
+    NAPI_ASSERT(env, actualWordCount1 > 0, "Word count should be greater than 0");
+
+    uint64_t* retrievedWords1 = new uint64_t[actualWordCount1];
+    memset(retrievedWords1, 0, sizeof(uint64_t) * actualWordCount1);
+
+    size_t retrievedWordCount1 = actualWordCount1;
+    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for positive BigInt");
+
+    NAPI_ASSERT(env, retrievedSignBit1 == 0, "Positive BigInt sign bit should be 0");
+    NAPI_ASSERT(env, retrievedWordCount1 == NUM_2, "Positive BigInt word count should be 2");
+    NAPI_ASSERT(env, retrievedWords1[0] == 0xFFFFFFFFFFFFFFFFULL, "Positive BigInt first word mismatch");
+    NAPI_ASSERT(env, retrievedWords1[1] == 0x1ULL, "Positive BigInt second word mismatch");
+    delete[] retrievedWords1;
+    
     napi_value bigint2;
-    int signBit2 = 1; // Negative
-    size_t wordCount2 = NUM_2;
+    int signBit2 = 1; // 负数
+    size_t wordCount2 = NUM_2; // 2个words
     uint64_t words2[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
     
     status = napi_create_bigint_words(env, signBit2, wordCount2, words2, &bigint2);
-    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for negative");
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for negative BigInt");
+    NAPI_ASSERT(env, bigint2 != nullptr, "Created negative BigInt should not be null");
     
-    // 获取负数words值
     int retrievedSignBit2 = -1;
-    size_t retrievedWordCount2 = 0;
-    uint64_t retrievedWords2[NUM_2] = {0};
+    size_t actualWordCount2 = 0;
+    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &actualWordCount2, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for negative BigInt");
+    NAPI_ASSERT(env, actualWordCount2 > 0, "Word count should be greater than 0");
     
+    uint64_t* retrievedWords2 = new uint64_t[actualWordCount2];
+    memset(retrievedWords2, 0, sizeof(uint64_t) * actualWordCount2);
+    
+    size_t retrievedWordCount2 = actualWordCount2;
     status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &retrievedWordCount2, retrievedWords2);
-    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for negative");
-    NAPI_ASSERT(env, retrievedSignBit2 == signBit2, "Negative sign bit mismatch");
-    NAPI_ASSERT(env, retrievedWordCount2 == wordCount2, "Negative word count mismatch");
-    NAPI_ASSERT(env, retrievedWords2[0] == words2[0], "Negative first word mismatch");
-    NAPI_ASSERT(env, retrievedWords2[1] == words2[1], "Negative second word mismatch");
-
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for negative BigInt");
+    
+    NAPI_ASSERT(env, retrievedSignBit2 == 1, "Negative BigInt sign bit should be 1");
+    NAPI_ASSERT(env, retrievedWordCount2 == NUM_2, "Negative BigInt word count should be 2");
+    NAPI_ASSERT(env, retrievedWords2[0] == 0xFFFFFFFFFFFFFFFFULL, "Negative BigInt first word mismatch");
+    NAPI_ASSERT(env, retrievedWords2[1] == 0x1ULL, "Negative BigInt second word mismatch");
+    delete[] retrievedWords2;
+    
     napi_value result;
     napi_get_boolean(env, true, &result);
     return result;
