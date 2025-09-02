@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
 import {
   Entry,
   Text,
@@ -34,6 +33,7 @@ import Utils from '../../src/test/Util.test.ets';
 import web_webview from '@ohos.web.webview'
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -65,7 +65,7 @@ struct webviewTerminateRenderProcess {
   build() {
     Column(undefined) {
       Row() {
-        Button('web click').key('TerminateRenderProcess').onClick((e: ClickEvent) => {
+        Button('web click2').key('TerminateRenderProcess').onClick((e: ClickEvent) => {
           console.log('key==>' + this.str)
           switch (this.str) {
             case 'emitTerminateRenderProcess0100': {
@@ -130,6 +130,14 @@ struct webviewTerminateRenderProcess {
                 }
               break;
             }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webOnFirstContFour' })
+              console.log('push URL success')
+            }
+
           }
         })
       }

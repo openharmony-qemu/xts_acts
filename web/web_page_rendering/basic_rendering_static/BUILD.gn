@@ -22,3 +22,4 @@ ohos_js_app_static_suite("ActsWebBasicRenderingStaticTest") {
   part_name = "webview"
   subsystem_name = "web"
 }
+

@@ -15,7 +15,9 @@
 
 import webViewControllerJsunit from "./WebViewControllerJsunit.test";
 import webviewTerminateRenderProcess from "./TerminateRenderProcess.test"
+import webOnFirstContFour from './WebOnFirstContFour.test'
 export default function testsuite() {
     webViewControllerJsunit();
     webviewTerminateRenderProcess();
+    webOnFirstContFour();
 }
