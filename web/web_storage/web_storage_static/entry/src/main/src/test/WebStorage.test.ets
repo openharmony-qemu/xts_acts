@@ -34,7 +34,7 @@ export default function webStorageTest() {
             });
             await Utils.msSleep(2000)
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswebstoragetest.static")
-            await Utils.msSleep(2000)
+            await Utils.msSleep(4000)
             console.info('beforeAll end,%s', 'Succeed!')
         })
 
