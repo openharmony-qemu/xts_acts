@@ -19,6 +19,14 @@ import connection from '@ohos.net.connection';
 const PERMISSION_DENIED_CODE = 201
 const PARAMETER_ERROR_CODE = 401
 
+const ExpectFail: () => void = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(` exportFail failed err: ${JSON.stringify(err)}`);
+  }
+};
+
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -405,5 +413,32 @@ export default function ConnectionPublicNopTest() {
         done();
       }
     })
-  })
+
+    /**
+     * @tc.number : SUB_Network_Connection_setPacFileUrlNoP_0100
+     * @tc.name   : testConnectionSetPacFileUrlNoP0100
+     * @tc.desc   : Calling setPacFileURL without SET-PAC_URL permission returns error code 201.
+     * @tc.level  : Level 3
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     */
+    it('testConnectionSetPacFileUrlNoP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testConnectionSetPacFileUrlNoP0100';
+      console.info(`${caseName}---Start`);
+      try{
+        connection.setPacFileUrl('a/b.pac');
+        console.info(`${caseName} setPacFileUrl success`);
+        ExpectFail();
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
+        ExpectTrue(err.code == 201);
+        done();
+      }
+    });
+
+    })
 }
+
+
+
