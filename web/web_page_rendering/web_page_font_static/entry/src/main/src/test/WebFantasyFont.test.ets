@@ -12,9 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
-import router from '@ohos.router';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import inspector from '@ohos.arkui.inspector';
@@ -27,48 +25,35 @@ let testAbilityContext:common.UIAbilityContext;
 export default function webFantasyFont() {
   describe('webFantasyFont', (): void => {
     beforeAll(async (): Promise<void> => {
-      console.log("App start")
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log("-----" + err.code)
-        }
-        console.log("BusinessError  end")
-      })
+      console.log('App start')
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.webpagefonttest.static")
-      await Utils.msSleep(2000)
+      console.log('beforeAll end,%s', 'Succeed!')
     });
 
     beforeEach(async () => {
       await Utils.msSleep(2000);
-      console.info("web beforeEach start");
+      console.info('web beforeEach start');
     })
 
     /*
     * @tc.number     : emitWebFantasyFont001
-    * @tc.name       : emitWebFantasyFont001
+    * @tc.name       : emitWebFantasyFontStatic001
     * @tc.desc       : test minLogicalFontSize
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('emitWebFantasyFont001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(5000);
-      Utils.emitEvent("emitWebFantasyFont001", 10)
-      await Utils.msSleep(5000);
-      Utils.registerEvent("emitWebFantasyFont001", 0, 20253322, done);
-      await Utils.msSleep(5000);
+    it('emitWebFantasyFontStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+      Utils.emitEvent('emitWebFantasyFont001', 10)
+      await Utils.msSleep(2000)
+      console.info('Utils.emitEvent start');
+      Utils.registerEvent('emitWebFantasyFont001',0, 20253322, done);
+      await Utils.msSleep(2000)
+      console.info('Utils.registerEvent start');
       inspector.sendEventByKey('WebFantasyFontButton', 10, '');
-      await Utils.msSleep(5000);
-      done();
+      await Utils.msSleep(2000)
+      done()
     })
   })
 }

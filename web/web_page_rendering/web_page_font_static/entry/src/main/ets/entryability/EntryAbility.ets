@@ -30,31 +30,34 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/webFantasyFont', (err: BusinessError<void> | null): void => {
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
-      if (err?.code) {
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
-        return;
-      }
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
-      hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
-    });
+    try {
+      windowStage.loadContent('pages/enableFollowSystemFontWeight', (err: BusinessError<void> | null): void => {
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
+        MyCallback.runCasesOfCallback();
+        if (err?.code) {
+          hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
+          return;
+        }
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
+      });
+    } catch (e: Error) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error:-----------' + e.message);
+    }
   }
 
   onDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
-
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onDestroy');
   }
 
   onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
   }
 
   onForeground() {
-    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
   }
 
   onBackground() {
-    hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
+    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onBackground');
   }
 }
