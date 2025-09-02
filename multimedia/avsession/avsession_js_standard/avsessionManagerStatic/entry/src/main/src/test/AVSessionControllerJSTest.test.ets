@@ -809,8 +809,8 @@ export default function abilityTest() {
         })
 
         /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100
+         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
+         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200
          * @tc.desc      : bind two callback on queueTitleChange event
          * @tc.size      : MediumTest
          * @tc.type      : Function

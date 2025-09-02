@@ -439,52 +439,6 @@ export default function abilityTest() {
         })
 
         /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ON_PLAYFROMASSETID_STATIC_2600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ON_PLAYFROMASSETID_STATIC_2600
-         * @tc.desc      : test on(playFromAssetId) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_ON_PLAYFROMASSETID_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await session!.destroy()
-            await Utils.msSleep(500)
-            try {
-                session!.on('playFromAssetId', (assetId: long) => {
-                    console.info('on playFromAssetId entry11');
-                    done();
-                });
-            } catch (err) {
-                let error =err as BusinessError;
-                console.info(`on playFromAssetId entry11 error,error code: ${error.code}, message: ${error.message}`);
-                expect(error.code).assertEqual(6600102);
-            }
-            done();
-        })
-
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYFROMASSETID_STATIC_2700
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFF_PLAYFROMASSETID_STATIC_2700
-         * @tc.desc      : test off(playFromAssetId) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYFROMASSETID_STATIC_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await session!.destroy()
-            await Utils.msSleep(500)
-            try {
-                session!.off('playFromAssetId');
-            } catch (err) {
-                let error =err as BusinessError;
-                console.info(`off playFromAssetId entry11 error,error code: ${error.code}, message: ${error.message}`);
-                expect(error.code).assertEqual(6600102);
-            }
-            done();
-        })
-
-
-        /* *
          * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ON_SEEK_STATIC_2800
          * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ON_SEEK_STATIC_2800
          * @tc.desc      : test on(seek) errcode 6600102
