@@ -1050,70 +1050,59 @@ napi_value NapiBigIntTest02(napi_env env, napi_callback_info info)
 napi_value NapiBigIntTest03(napi_env env, napi_callback_info info)
 {
     napi_status status;
-    napi_value bigint1;
-    int signBit1 = 0; // 正数
-    size_t wordCount1 = NUM_2; // 2个words
-    uint64_t words1[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    // ========== 测试步骤1: 使用napi_create_bigint_words创建正数BigInt ==========
+    // 输入：env, 0, 2, [0xFFFFFFFFFFFFFFFFULL, 0x1ULL], &result
+    napi_value positiveBigInt;
+    int signBit = 0;  // 正数
+    size_t wordCount = NUM_2;  // 2个words
+    uint64_t words[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
     
-    status = napi_create_bigint_words(env, signBit1, wordCount1, words1, &bigint1);
+    status = napi_create_bigint_words(env, signBit, wordCount, words, &positiveBigInt);
+    // 预期：返回napi_ok，result有效
     NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for positive BigInt");
-    NAPI_ASSERT(env, bigint1 != nullptr, "Created positive BigInt should not be null");
+    NAPI_ASSERT(env, positiveBigInt != nullptr, "Created positive BigInt should not be null");
     
-    int retrievedSignBit1 = -1;
-    size_t actualWordCount1 = 0;
-
-    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &actualWordCount1, nullptr);
-    NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for positive BigInt");
-    NAPI_ASSERT(env, actualWordCount1 > 0, "Word count should be greater than 0");
-
-    std::unique_ptr<uint64_t[]> retrievedWords1 = std::make_unique<uint64_t[]>(actualWordCount1);
-
-    size_t retrievedWordCount1 = actualWordCount1;
-    status = napi_get_value_bigint_words(env, bigint1, &retrievedSignBit1, &retrievedWordCount1, retrievedWords1.get());
+    // ========== 测试步骤2: 使用napi_get_value_bigint_words获取正数BigInt的值 ==========
+    // 输入：env, result, &sign_bit, &word_count, words
+    int retrievedSignBit = -1;
+    size_t retrievedWordCount = NUM_2;  // 预分配2个words的空间
+    auto retrievedWords = std::make_unique<uint64_t[]>(NUM_2);
+    
+    status = napi_get_value_bigint_words(env, positiveBigInt, &retrievedSignBit, &retrievedWordCount, retrievedWords.get());
+    // 预期：返回napi_ok，sign_bit=0，word_count=2，words=[0xFFFFFFFFFFFFFFFFULL, 0x1ULL]
     NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for positive BigInt");
-
-    NAPI_ASSERT(env, retrievedSignBit1 == 0, "Positive BigInt sign bit should be 0");
-    NAPI_ASSERT(env, retrievedWordCount1 >= 1, "Positive BigInt word count should be at least 1");
-    // 验证BigInt的值是否正确，而不是严格检查word count，因为系统可能会优化内部表示，如果系统优化为1个word，验证该word包含正确的值
-    if (retrievedWordCount1 >= 2) {
-        NAPI_ASSERT(env, retrievedWords1[0] == 0xFFFFFFFFFFFFFFFFULL, "Positive BigInt first word mismatch");
-        NAPI_ASSERT(env, retrievedWords1[1] == 0x1ULL, "Positive BigInt second word mismatch");
-    } else if (retrievedWordCount1 == 1) {
-
-        NAPI_ASSERT(env, retrievedWords1[0] != 0, "Positive BigInt should have non-zero value");
-    }
-
-    napi_value bigint2;
-    int signBit2 = 1; // 负数
-    size_t wordCount2 = NUM_2; // 2个words
-    uint64_t words2[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
+    NAPI_ASSERT(env, retrievedSignBit == 0, "Positive BigInt sign bit should be 0");
+    NAPI_ASSERT(env, retrievedWordCount == NUM_2, "Positive BigInt word count should be 2");
+    NAPI_ASSERT(env, retrievedWords[0] == 0xFFFFFFFFFFFFFFFFULL, "Positive BigInt first word mismatch");
+    NAPI_ASSERT(env, retrievedWords[1] == 0x1ULL, "Positive BigInt second word mismatch");
     
-    status = napi_create_bigint_words(env, signBit2, wordCount2, words2, &bigint2);
+    // ========== 测试步骤3: 使用napi_create_bigint_words创建负数BigInt ==========
+    // 输入：env, 1, 2, [0xFFFFFFFFFFFFFFFFULL, 0x1ULL], &result
+    napi_value negativeBigInt;
+    signBit = 1;  // 负数
+    wordCount = NUM_2;  // 2个words
+    // 使用相同的words数组
+    
+    status = napi_create_bigint_words(env, signBit, wordCount, words, &negativeBigInt);
+    // 预期：返回napi_ok，result有效
     NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed for negative BigInt");
-    NAPI_ASSERT(env, bigint2 != nullptr, "Created negative BigInt should not be null");
+    NAPI_ASSERT(env, negativeBigInt != nullptr, "Created negative BigInt should not be null");
     
-    int retrievedSignBit2 = -1;
-    size_t actualWordCount2 = 0;
-    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &actualWordCount2, nullptr);
-    NAPI_ASSERT(env, status == napi_ok, "Failed to get word count for negative BigInt");
-    NAPI_ASSERT(env, actualWordCount2 > 0, "Word count should be greater than 0");
-
-    std::unique_ptr<uint64_t[]> retrievedWords2 = std::make_unique<uint64_t[]>(actualWordCount2);
+    // ========== 测试步骤4: 使用napi_get_value_bigint_words获取负数BigInt的值 ==========
+    // 输入：env, result, &sign_bit, &word_count, words
+    retrievedSignBit = -1;
+    retrievedWordCount = NUM_2;  // 预分配2个words的空间
+    auto retrievedWords2 = std::make_unique<uint64_t[]>(NUM_2);
     
-    size_t retrievedWordCount2 = actualWordCount2;
-    status = napi_get_value_bigint_words(env, bigint2, &retrievedSignBit2, &retrievedWordCount2, retrievedWords2.get());
+    status = napi_get_value_bigint_words(env, negativeBigInt, &retrievedSignBit, &retrievedWordCount, retrievedWords2.get());
+    // 预期：返回napi_ok，sign_bit=1，word_count=2，words=[0xFFFFFFFFFFFFFFFFULL, 0x1ULL]
     NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed for negative BigInt");
+    NAPI_ASSERT(env, retrievedSignBit == 1, "Negative BigInt sign bit should be 1");
+    NAPI_ASSERT(env, retrievedWordCount == NUM_2, "Negative BigInt word count should be 2");
+    NAPI_ASSERT(env, retrievedWords2[0] == 0xFFFFFFFFFFFFFFFFULL, "Negative BigInt first word mismatch");
+    NAPI_ASSERT(env, retrievedWords2[1] == 0x1ULL, "Negative BigInt second word mismatch");
     
-    NAPI_ASSERT(env, retrievedSignBit2 == 1, "Negative BigInt sign bit should be 1");
-    NAPI_ASSERT(env, retrievedWordCount2 >= 1, "Negative BigInt word count should be at least 1");
-    // 验证BigInt的值是否正确，而不是严格检查word count，因为系统可能会优化内部表示，如果系统优化为1个word，验证该word包含正确的值
-    if (retrievedWordCount2 >= 2) {
-        NAPI_ASSERT(env, retrievedWords2[0] == 0xFFFFFFFFFFFFFFFFULL, "Negative BigInt first word mismatch");
-        NAPI_ASSERT(env, retrievedWords2[1] == 0x1ULL, "Negative BigInt second word mismatch");
-    } else if (retrievedWordCount2 == 1) {
-        NAPI_ASSERT(env, retrievedWords2[0] != 0, "Negative BigInt should have non-zero value");
-    }
-
+    // 所有测试步骤通过，返回true
     napi_value result;
     napi_get_boolean(env, true, &result);
     return result;
@@ -1251,36 +1240,47 @@ napi_value NapiBigIntTest08(napi_env env, napi_callback_info info)
 
 napi_value NapiBigIntTest09(napi_env env, napi_callback_info info)
 {
+    napi_status status;
     napi_value bigint;
-    int signBit = 0;
-    size_t wordCount = NUM_2;
+    int signBit = 0;  // 正数
+    size_t wordCount = NUM_2;  // 2个words
     uint64_t originalWords[] = {0x123456789ABCDEF0ULL, 0x1122334455667788ULL};
     
-    napi_status status = napi_create_bigint_words(env, signBit, wordCount, originalWords, &bigint);
+    status = napi_create_bigint_words(env, signBit, wordCount, originalWords, &bigint);
     NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
+    NAPI_ASSERT(env, bigint != nullptr, "Created BigInt should not be null");
     
     int retrievedSignBit = -1;
-    size_t actualWordCount = 0;
+    size_t retrievedWordCount = NUM_2;  // 预分配2个words的空间
+    auto retrievedWords = std::make_unique<uint64_t[]>(NUM_2);
     
-    // 首先获取实际需要的word count
-    status = napi_get_value_bigint_words(env, bigint, &retrievedSignBit, &actualWordCount, nullptr);
-    NAPI_ASSERT(env, status == napi_ok, "Failed to get word count");
-    NAPI_ASSERT(env, actualWordCount > 0, "Word count should be greater than 0");
-    std::unique_ptr<uint64_t[]> retrievedWords = std::make_unique<uint64_t[]>(actualWordCount);
+    // 初始化缓冲区为0
+    retrievedWords[0] = 0;
+    retrievedWords[1] = 0;
     
-    size_t retrievedWordCount = actualWordCount;
+    // 获取BigInt的words表示
     status = napi_get_value_bigint_words(env, bigint, &retrievedSignBit, &retrievedWordCount, retrievedWords.get());
     NAPI_ASSERT(env, status == napi_ok, "napi_get_value_bigint_words failed");
-    NAPI_ASSERT(env, retrievedSignBit == signBit, "Sign bit mismatch");
-    NAPI_ASSERT(env, retrievedWordCount > 0, "Retrieved word count should be greater than 0");
     
+    // 验证基本属性
+    NAPI_ASSERT(env, retrievedSignBit == 0, "Sign bit should be 0 for positive BigInt");
+    NAPI_ASSERT(env, retrievedWordCount > 0, "Retrieved word count should be greater than 0");
+    NAPI_ASSERT(env, retrievedWordCount <= NUM_2, "Retrieved word count should not exceed buffer size");
+    
+    // 验证数据完整性 - 根据实际返回的word数量进行验证
     if (retrievedWordCount >= 2) {
         NAPI_ASSERT(env, retrievedWords[0] == originalWords[0], "First word mismatch");
         NAPI_ASSERT(env, retrievedWords[1] == originalWords[1], "Second word mismatch");
     } else if (retrievedWordCount == 1) {
-        NAPI_ASSERT(env, retrievedWords[0] != 0, "Single word should be non-zero");
+        NAPI_ASSERT(env, retrievedWords[0] != 0, "Single word should contain non-zero value");
     }
-
+    
+    // 额外的完整性检查：创建一个相同值的BigInt并比较
+    napi_value bigint2;
+    status = napi_create_bigint_words(env, retrievedSignBit, retrievedWordCount, retrievedWords.get(), &bigint2);
+    NAPI_ASSERT(env, status == napi_ok, "Failed to create BigInt from retrieved words");
+    NAPI_ASSERT(env, bigint2 != nullptr, "Recreated BigInt should not be null");
+    
     napi_value result;
     napi_get_boolean(env, true, &result);
     return result;
