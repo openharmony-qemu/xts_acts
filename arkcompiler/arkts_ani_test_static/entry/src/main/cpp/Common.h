@@ -87,4 +87,27 @@ ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor,
     return ANI_TRUE;
 }
 
+ani_ref g_doubleCls {};
+ani_method unboxed {};
+
+ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
+{
+    if (g_doubleCls == nullptr) {
+        ani_class cls {};
+        ani_method method {};
+        auto status = env->FindClass("std.core.Double", &cls);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+        status = env->GlobalReference_Create(cls, &g_doubleCls);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+        status = env->Class_FindMethod(cls, "unboxed", ":d", &unboxed);
+        if (status != ANI_OK) {
+            return ANI_ERROR;
+        }
+    }
+    return env->Object_CallMethod_Double(obj, unboxed, result);
+}
 #endif //ARKTS_ANI_TEST_COMMON_H
