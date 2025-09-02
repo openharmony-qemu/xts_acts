@@ -26,6 +26,7 @@ export const OH_Print_StartPrinterDiscovery1: () => number;
 export const OH_Print_StopPrinterDiscovery1: () => number;
 export const OH_Print_ConnectPrinter1: () => number;
 export const OH_Print_StartPrintJob1: () => number;
+export const OH_Print_StartPrintJob2: () => number;
 export const OH_Print_RegisterPrinterChangeListener1: () => number;
 export const OH_Print_QueryPrinterList1: () => number;
 export const OH_Print_QueryPrinterList2: () => number;

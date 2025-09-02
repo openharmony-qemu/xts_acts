@@ -17,12 +17,14 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import testNapi from 'libentry.so';
 import events_emitter from '@ohos.events.emitter';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
 struct testWebResponseSetStatusNotNum {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
   @State str: string = ''
+  @State isReceive: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes()
@@ -32,14 +34,14 @@ struct testWebResponseSetStatusNotNum {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 124620,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(124620)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,6 +50,7 @@ struct testWebResponseSetStatusNotNum {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,15 +60,18 @@ struct testWebResponseSetStatusNotNum {
       Button('SetStatus')
         .key('SetStatus')
         .onClick(async () => {
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
+          await waitForExist(() => testNapi.getRequestValue(), this.str, 1, 1000);
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'testWebResponse_SetStatus_NotNum': {
               let result: number = testNapi.setStatus();
               if (result == 0) {
                 console.log('Succeed testWebResponse_SetStatus_NotNum');
-                Utils.emitEvent(result, 5111);
+                Utils.emitEvent(result, 124770);
               } else {
                 console.log('Faild OH_ArkWebResponse_SetStatus');
-                Utils.emitEvent(result, 5111);
+                Utils.emitEvent(result, 124770);
               }
               break;
             }

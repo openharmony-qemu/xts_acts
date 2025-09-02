@@ -21,6 +21,7 @@ import dialogGetStateTest from './dialog/DialogGetStateTest.test'
 import RenderNodeTest from "./renderNode/RenderNodeTest.test"
 import RenderNodeUtilsTest from "./renderNodeUtils/renderNodeUtils.test"
 import RenderNodeAttributeTest from "./renderNode/TestRenderNodeAttribute.test"
+import imageDraggableEventTest from './image/ImageDraggableEventTest.test'
 
 export default function testsuite() {
   enableDropDisallowedBadgeTest();
@@ -32,4 +33,5 @@ export default function testsuite() {
   RenderNodeTest();
   RenderNodeUtilsTest();
   RenderNodeAttributeTest();
+  imageDraggableEventTest();
 }

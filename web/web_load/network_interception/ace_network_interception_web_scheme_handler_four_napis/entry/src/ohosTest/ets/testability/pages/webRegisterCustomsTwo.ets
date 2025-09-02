@@ -21,6 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 
 import testNapi from 'libentry.so';
+const EVENT_ID_SET_EIMIT_KEY = 142600;
 
 @Entry
 @Component
@@ -30,6 +31,8 @@ struct webRegisterCustomsTwoComponent {
     @State str: string = ""
     heads: Header[] = new Array()
     @State consoleCorsError: boolean = false
+    @State isReceive: number = -1;
+    @State isPageEnd: number = -1;
     responseWeb: WebResourceResponse = new WebResourceResponse()
     
     aboutToAppear() {
@@ -49,13 +52,13 @@ struct webRegisterCustomsTwoComponent {
     
     onPageShow(){
         let valueChangeEvent: events_emitter.InnerEvent = {
-            eventId: 10,
+            eventId: EVENT_ID_SET_EIMIT_KEY,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
     }
     onPageHide() {
-        events_emitter.off(10)
+        events_emitter.off(EVENT_ID_SET_EIMIT_KEY)
     }
     private valueChangeCallBack = (eventData: events_emitter.EventData) => {
         console.info("web page valueChangeCallBack");
@@ -63,6 +66,7 @@ struct webRegisterCustomsTwoComponent {
             console.info("valueChangeCallBack:" + JSON.stringify(eventData));
             if (eventData.data != null && eventData.data.ACTION != null) {
                 this.str = eventData.data.ACTION;
+                this.isReceive = 1;
             }
         }
     }
@@ -72,102 +76,103 @@ struct webRegisterCustomsTwoComponent {
         Column() {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
+                    await Utils.waitForExist(()=>this.isReceive, this.str, 1);
+                    await Utils.waitForExist(()=>this.isPageEnd, this.str, 1);
                     console.info("key==>" + this.str)
+                    this.isReceive = -1;
                     switch (this.str) {
                         
                         case "emitWebSchemeHandler_SetOnRequestStart": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.schemeHandlerSetOnRequestStart();
-                            await Utils.sleep(1000);
+
                             
                             console.log("emitWebSchemeHandler_SetOnRequestStart ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7757);
+                                Utils.emitEvent(true, 142610);
                             } else {
-                                Utils.emitEvent(false, 7757);
+                                Utils.emitEvent(false, 142610);
                             }
                             break;
                         }
                         
                         case "emitWebSchemeHandler_SetOnRequestStop": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.schemeHandlerSetOnRequestStop();
-                            await Utils.sleep(1000);
-                            
+
                             console.log("emitWebSchemeHandler_SetOnRequestStop ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7758);
+                                Utils.emitEvent(true, 142620);
                             } else {
-                                Utils.emitEvent(false, 7758);
+                                Utils.emitEvent(false, 142620);
                             }
                             break;
                         }
                         
                         case "emitWeb_ReleaseByteArray": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.releaseByteArray();
-                            await Utils.sleep(1000);
+
                             
                             console.log("emitWeb_ReleaseByteArray ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7759);
+                                Utils.emitEvent(true, 142630);
                             } else {
-                                Utils.emitEvent(false, 7759);
+                                Utils.emitEvent(false, 142630);
                             }
                             break;
                         }
                         
                         case "emitWeb_ReleaseString": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.releaseString();
-                            await Utils.sleep(1000);
+
                             
                             console.log("emitWeb_ReleaseString ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7760);
+                                Utils.emitEvent(true, 142640);
                             } else {
-                                Utils.emitEvent(false, 7760);
+                                Utils.emitEvent(false, 142640);
                             }
                             break;
                         }
                         
                         case "emitWeb_DestroyResponse": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.destroyResponse();
-                            await Utils.sleep(1000);
+
                             
                             console.log("emitWeb_DestroyResponse ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7761);
+                                Utils.emitEvent(true, 142650);
                             } else {
-                                Utils.emitEvent(false, 7761);
+                                Utils.emitEvent(false, 142650);
                             }
                             break;
                         }
                         
                         case "emitWeb_CreateSchemeHandler": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.createSchemeHandler();
-                            await Utils.sleep(1000);
+
                             
                             console.log("emitWeb_CreateSchemeHandler ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7762);
+                                Utils.emitEvent(true, 142660);
                             } else {
-                                Utils.emitEvent(false, 7762);
+                                Utils.emitEvent(false, 142660);
                             }
                             break;
                         }
                         
                         case "emitWebResourceRequest_GetRequestHeaders": {
-                            await Utils.sleep(1000);
-                            
+
                             this.controller.runJavaScript("testxhr('custom://www.example.com/xhr/normal/')", (error, result)=> {
                                 if (error) {
                                     console.info(" run JavaScript testError error:" + JSON.stringify(error));
@@ -177,25 +182,24 @@ struct webRegisterCustomsTwoComponent {
                                     console.info(" run JavaScript testError return value is:" + result);
                                 }
                             })
-                            await Utils.sleep(1000);
-                            
+
+                            await Utils.waitForExist(()=>testNapi.getRequestValue(), this.str, 1);
                             let result:number = testNapi.resourceRequestGetRequestHeaders();
-                            
+
                             console.log("emitWebResourceRequest_GetRequestHeaders ==>" + result);
                             
                             if (result == 0) {
-                                Utils.emitEvent(true, 7763);
+                                Utils.emitEvent(true, 142670);
                             } else {
-                                Utils.emitEvent(false, 7763);
+                                Utils.emitEvent(false, 142670);
                             }
                             break;
                         }
                         
                         case "emitWebHttpBodyStream_GetUserData": {
-                            await Utils.sleep(1000);
+
                             let result:number = testNapi.httpBodyStreamGetUserData();
-                            await Utils.sleep(1000);
-                            
+
                             console.log("emitWebHttpBodyStream_GetUserData ==>" + result);
                             
                             if (result == 0) {
@@ -214,7 +218,10 @@ struct webRegisterCustomsTwoComponent {
                 .height('50%')
                 .width('100%')
                 .javaScriptAccess(true)
-                .fileAccess(true)                
+                .fileAccess(true)
+                .onPageEnd(() => {
+                    this.isPageEnd = 1;
+                })
         }
         .height('100%')
         

@@ -16,6 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -30,13 +31,19 @@ struct webViewGetSecurityLevel {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State isFrameResourceType: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 160030,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide(): void {
+    events_emitter.off(160030)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -44,6 +51,7 @@ struct webViewGetSecurityLevel {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -54,19 +62,21 @@ struct webViewGetSecurityLevel {
         Button('web click')
           .key('webViewGetSecurityLevelButton')
           .onClick(async () => {
-            console.info('key==>' + this.emitKey)
-            await Utils.sleep(2000);
+            await waitForExist(()=>this.isReceive, this.emitKey, 0);
+            console.info('key==>' + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitWebViewGetSecurityLevel01': {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://weixin://dl/moments');
-                  await Utils.sleep(2000);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                   let securityLevel = this.controller.getSecurityLevel();
                   console.log('securityLevel===>'+securityLevel)
                   if (securityLevel === 0) {
-                    Utils.emitEvent('success', 8008);
+                    Utils.emitEvent('success', 160040);
                   } else {
-                    Utils.emitEvent('fail', 8008);
+                    Utils.emitEvent('fail', 160040);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -84,6 +94,9 @@ struct webViewGetSecurityLevel {
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }

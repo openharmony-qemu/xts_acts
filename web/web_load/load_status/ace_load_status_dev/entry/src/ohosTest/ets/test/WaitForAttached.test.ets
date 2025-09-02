@@ -16,8 +16,11 @@
 import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
-let emitKey = "emitWaitForAttached";
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
 
+let emitKey = "emitWaitForAttached";
+const driver = Driver.create();
 export default function webWaitForAttachedTest() {
 
 
@@ -34,7 +37,6 @@ export default function webWaitForAttachedTest() {
         if (!("waitForAttached" == pages.name)) {
           console.info("get waitForAttached state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push waitForAttached page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,13 +50,6 @@ export default function webWaitForAttachedTest() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("waitForAttached afterEach start");
-      await Utils.sleep(2000);
-      console.info("waitForAttached afterEach end");
-      done();
-    })
-
     /*
     * @tc.number      : SUB_WEB_EMITWAITFORATTACHED_0100
     * @tc.name        : emitWaitForAttached
@@ -65,10 +60,12 @@ export default function webWaitForAttachedTest() {
     */
 
     it('emitWaitForAttached', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWaitForAttached", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("emitWaitForAttached", true, 20250522, done);
-      sendEventByKey('webWaitForAttachedButton', 10, '');
+      Utils.emitEvent("emitWaitForAttached", 141311)
+      let isReturn = false;
+      Utils.registerEvent("emitWaitForAttached", true, 141320, ()=>{isReturn = true});
+      Utils.waitAndClickComponent("webWaitForAttachedButton",driver)
+      await waitForExist(()=>isReturn, "emitWaitForAttached", true,1000);
+      done();
     })
   })
 }

@@ -17,6 +17,9 @@
 #include "TransactionTest.h"
 #include "RdbErrorCodeTest.h"
 #include "RelationalStoreTest.h"
+#include "CryptoParamTest.h"
+#include "PredicatesTest.h"
+#include "CursorTest.h"
 #include <js_native_api.h>
 #include <vector>
 
@@ -29,6 +32,9 @@ static napi_value Init(napi_env env, napi_value exports)
     AddTransactionTest(descData);
     AddRdbErrorCodeTest(descData);
     AddRelationStoreTest(descData);
+    AddCryptoParamTest(descData);
+    AddPredicatesTest(descData);
+    AddCursorTest(descData);
     
     napi_define_properties(env, exports, descData.size(), descData.data());
     return exports;

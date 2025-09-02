@@ -18,11 +18,14 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
 let emitKey = ''
-
+const  driver = Driver.create();
 export default function ActsAceWebViewSdkSchemeHandler2() {
   describe('ActsAceWebViewSdkSchemeHandler2', () => {
       
@@ -32,14 +35,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewSdkSchemeHandler state success " + JSON.stringify(pages));
             if (!("webViewSdkSchemeHandler2" == pages.name)) {
                 console.info("get webViewSdkSchemeHandler state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push webViewSdkSchemeHandler state success " + JSON.stringify(result));
             }
         } catch (err) {
@@ -54,28 +55,7 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
           }).catch((err: object) => {
           console.error(`failed to enable, ${err}`);
         })
-        await Utils.sleep(2000);
         done();
-    })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
     })
 
     /*
@@ -88,9 +68,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_getHttpBodyStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getHttpBodyStream"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getHttpBodyStream", true, 1507, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      Utils.emitEvent(emitKey, 142311);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getHttpBodyStream", true, 142370, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SchemeHandler_getSize_API_0001
@@ -102,9 +85,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_getSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getSize"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getSize", true, 1508, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      Utils.emitEvent(emitKey, 142311);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getSize", true, 142380, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getPosition_API_0001
@@ -117,8 +103,11 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
     it('testWebViewSdkSchemeHandler_getPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getPosition"
       Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", true, 1509, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", true, 142390, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
     /*
@@ -131,9 +120,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_isChunked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isChunked"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked", true, 1510, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      Utils.emitEvent(emitKey, 142311);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked", true, 142400, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
 
 
@@ -147,9 +139,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_isEof', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isEof"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof", true, 1511, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      Utils.emitEvent(emitKey, 142311);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof", true, 142410, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
     /*
      *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_API_0001
@@ -161,9 +156,12 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_isInMemory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isInMemory"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory", true, 1512, done);
-      sendEventByKey('webViewSdkSchemeHandler2', 10, '');
+      Utils.emitEvent(emitKey, 142311);
+      let isReturn = false;
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory", true, 142420, done);
+      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      await waitForExist(()=>isReturn, emitKey, true,1000);
+      done();
     })
   })
 }
