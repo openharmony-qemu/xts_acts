@@ -229,6 +229,15 @@ static bool parseImageDecodingOps(napi_env env, napi_value arg, struct OhosImage
         return false;
     }
 
+    ops.editable = INT8_FALSE;
+    ops.pixelFormat = 0;
+    ops.fitDensity = 0;
+    ops.index = 0;
+    ops.sampleSize = 1;
+    ops.rotate = 0;
+    ops.size = {0, 0};
+    ops.region = {0, 0, 0, 0};
+
     // Optional parameters, no need check error.
     GetBoolProperty(env, arg, "editable", &(ops.editable));
     GetInt32Property(env, arg, "pixelFormat", &(ops.pixelFormat));
