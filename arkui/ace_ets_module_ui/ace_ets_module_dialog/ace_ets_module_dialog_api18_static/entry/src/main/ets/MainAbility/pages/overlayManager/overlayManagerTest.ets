@@ -117,11 +117,11 @@ struct overlayManagerTest {
       // )
       // this.contentArray.push(componentContent)
       // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(-100001))
-      let topOrder: LevelOrder = this.promptAction.getTopOrder();
+      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
       if (topOrder !== undefined) {
         console.error('[addComponent] topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
       if (bottomOrder !== undefined) {
         console.error('[addComponent] bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -135,11 +135,11 @@ struct overlayManagerTest {
       // )
       // this.contentArray.push(componentContent)
       // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100001))
-      let topOrder: LevelOrder = this.promptAction.getTopOrder();
+      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -153,11 +153,11 @@ struct overlayManagerTest {
       // )
       // this.contentArray.push(componentContent)
       // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0))
-      let topOrder: LevelOrder = this.promptAction.getTopOrder();
+      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -171,11 +171,11 @@ struct overlayManagerTest {
       // )
       // this.contentArray.push(componentContent)
       // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0.111))
-      let topOrder: LevelOrder = this.promptAction.getTopOrder();
+      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -194,7 +194,7 @@ struct overlayManagerTest {
         .id('myTop')
         //.componentTextStyle()
         .onClick(() : void => {
-          let topOrder: LevelOrder = this.promptAction.getTopOrder();
+          let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
           if (topOrder !== undefined) {
             AppStorage.setOrCreate<number>('myTop', topOrder.getOrder());
             this.top = AppStorage.get<number>('myTop') as number
@@ -205,7 +205,7 @@ struct overlayManagerTest {
         .id('myBottom')
         //.componentTextStyle()
         .onClick(() : void => {
-          let bottomOrder: LevelOrder = this.promptAction.getBottomOrder();
+          let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
           if (bottomOrder !== undefined) {
             AppStorage.setOrCreate<number>('myBottom', bottomOrder.getOrder());
             this.bottom = AppStorage.get<number>('myBottom') as number
