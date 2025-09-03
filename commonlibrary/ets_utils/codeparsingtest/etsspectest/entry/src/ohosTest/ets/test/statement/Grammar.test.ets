@@ -1255,11 +1255,12 @@ export default function ActsGrammarTest() {
     it('testType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType016';
       try {
-        const a = 9007199254740992n;
-        const b = 9007199254740992n;
-        const c = 9007199254740993n;
+        let a = 9007199254740992n;
+        let b = 9007199254740992n;
+        let c = 9007199254740993n;
         expect(a === b).assertEqual(true);
-        //expect(a === c).assertEqual(false);
+        console.log((b === c).toString());
+        expect(a === c).assertEqual(false);
         expect(a < c).assertEqual(true);
         expect(a > c).assertEqual(false);
         expect(a === BigInt(9007199254740992)).assertEqual(true);
