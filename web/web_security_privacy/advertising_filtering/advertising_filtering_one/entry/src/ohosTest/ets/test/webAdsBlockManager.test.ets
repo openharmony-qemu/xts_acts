@@ -17,6 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = ""
 
@@ -29,44 +32,23 @@ export default function ActsAceWebAdsBlockManager() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webAdsBlockManager state success " + JSON.stringify(pages));
         if (!("webAdsBlockManager" == pages.name)) {
           console.info("get webAdsBlockManager state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webAdsBlockManager state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webAdsBlockManager page error:" + err);
       }
+      await driver.waitForComponent(ON.id("webViewSdkSchemeHandler"), 10000);
+      console.log("waitForComponent webViewSdkSchemeHandler");
       done()
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(2000);
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent : events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.error("emit emitKey error:" + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
       done();
     })
 
@@ -78,10 +60,10 @@ export default function ActsAceWebAdsBlockManager() {
      *@tc.type Function
      *@tc.level Level 0
      */
-    it('testEnableAdsBlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testEnableAdsBlock', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       emitKey = "emitEnableAdsBlock"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testEnableAdsBlock", true, 1001, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testEnableAdsBlock", true, 161060, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -95,8 +77,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testIsAdsBlockEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsAdsBlockEnabled"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testIsAdsBlockEnabled", true, 1002, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testIsAdsBlockEnabled", true, 161070, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -110,8 +92,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testIsAdsBlockEnabledForCurPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsAdsBlockEnabledForCurPage"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testIsAdsBlockEnabledForCurPage", true, 1003, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testIsAdsBlockEnabledForCurPage", true, 161080, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -125,8 +107,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testSetAdsBlockRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetAdsBlockRules"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testSetAdsBlockRules", true, 1004, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testSetAdsBlockRules", true, 161090, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -140,8 +122,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testSetAdsBlockRulesFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetAdsBlockRulesFalse"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testSetAdsBlockRulesFalse", true, 1005, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testSetAdsBlockRulesFalse", true, 161100, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -155,8 +137,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testAddAdsBlockDisallowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAddAdsBlockDisallowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testAddAdsBlockDisallowedList", true, 1006, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testAddAdsBlockDisallowedList", true, 161110, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -170,8 +152,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testRemoveAdsBlockDisallowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRemoveAdsBlockDisallowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testRemoveAdsBlockDisallowedList", true, 1007, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testRemoveAdsBlockDisallowedList", true, 161120, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -185,8 +167,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testClearAdsBlockDisallowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearAdsBlockDisallowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testClearAdsBlockDisallowedList", true, 1008, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testClearAdsBlockDisallowedList", true, 161130, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -200,8 +182,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testAddAdsBlockAllowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAddAdsBlockAllowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testAddAdsBlockAllowedList", true, 1009, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testAddAdsBlockAllowedList", true, 161140, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -215,8 +197,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testRemoveAdsBlockAllowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRemoveAdsBlockAllowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testRemoveAdsBlockAllowedList", true, 1010, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testRemoveAdsBlockAllowedList", true, 161150, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -230,8 +212,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testClearAdsBlockAllowedList', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearAdsBlockAllowedList"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testClearAdsBlockAllowedList", true, 1011, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testClearAdsBlockAllowedList", true, 161160, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -245,8 +227,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testOnAdsBlocked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnAdsBlocked"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testOnAdsBlocked", true, 1012, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testOnAdsBlocked", true, 161170, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -258,10 +240,10 @@ export default function ActsAceWebAdsBlockManager() {
      *@tc.type Function
      *@tc.level Level 0
      */
-    it('testEnableAdsBlockFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testEnableAdsBlockFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       emitKey = "emitEnableAdsBlockFalse"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testEnableAdsBlockFalse", true, 1013, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testEnableAdsBlockFalse", true, 161180, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -275,8 +257,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testIsAdsBlockEnabledCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsAdsBlockEnabledCheck"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testIsAdsBlockEnabledCheck", true, 1014, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testIsAdsBlockEnabledCheck", true, 161190, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
@@ -290,8 +272,8 @@ export default function ActsAceWebAdsBlockManager() {
      */
     it('testOnAdsBlockedTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnAdsBlockedTest"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testOnAdsBlockedTest", true, 1015, done);
+      Utils.emitEvent(emitKey, 161050);
+      Utils.registerEvent("testOnAdsBlockedTest", true, 161200, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 

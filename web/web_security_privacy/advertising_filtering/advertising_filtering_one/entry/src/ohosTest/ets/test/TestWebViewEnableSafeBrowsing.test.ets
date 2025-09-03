@@ -18,6 +18,9 @@ import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import router from '@ohos.router';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 let emitKey = '';
 export default function ActsWebViewTest3() {
   const delegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -28,53 +31,27 @@ export default function ActsWebViewTest3() {
         url: 'testability/pages/TestWebViewEnableSafeBrowsing',
       }
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!('testWebView_enableSafeBrowsing' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push index page error:' + err);
       }
+      await driver.waitForComponent(ON.id("enableSafeBrowsing"), 10000);
+      console.log("waitForComponent enableSafeBrowsing");
       done()
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(500);
       done();
     });
 
-    afterEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      console.info('web afterEach start:' + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            'ACTION': ''
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('start send emitKey');
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info('emit emitKey  err: ' + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      done();
-    })
 
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    });
 
     /**
      * @tc.number SUB_ACE_WEB_THREAT_0800
@@ -85,7 +62,8 @@ export default function ActsWebViewTest3() {
      * @tc.level Level 1
      */
     it('SUB_ACE_WEB_THREAT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_enableSafeBrowsing_default', 'policy=0', 5009, done,
+      Utils.emitEvent("enableSafeBrowsing", 161210);
+      Utils.registerBaseEvent('testWebView_enableSafeBrowsing_default', 'policy=0', 161220, done,
         (backData: events_emitter.EventData, expected: Object) => {
           console.info('Received event data: ' + JSON.stringify(backData));
           expect(backData?.data?.ACTION).assertEqual(expected);

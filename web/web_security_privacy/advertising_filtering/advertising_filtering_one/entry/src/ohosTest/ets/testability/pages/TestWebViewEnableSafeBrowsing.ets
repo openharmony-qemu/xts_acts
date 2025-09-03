@@ -13,10 +13,12 @@
 * limitations under the License.
 */
 
+import events_emitter from '@ohos.events.emitter'
 import { webview } from '@kit.ArkWeb';
 import Utils from '../../test/Utils';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WebNetErrorList } from '@ohos.web.netErrorList';
+import {waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -26,29 +28,62 @@ struct WebComponent {
   @State uri1: string = 'https:'
   @State uri2: string = '//www.zubo662.com:30473'
   @State uri: string = this.uri1 + this.uri2
+  @State emitKey: string = '';
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 161210,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(161210)
+  }
+
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data != null && eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
   build(){
     Column() {
       Button('enableSafeBrowsing')
         .key('enableSafeBrowsing')
-        .onClick(() => {
+        .onClick(async () => {
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
+          console.info('key==>' + this.emitKey)
            try {
              this.controller.enableSafeBrowsing(true);
              console.log('enableSafeBrowsing: true');
              let result = this.controller.isSafeBrowsingEnabled();
              console.log('result: ' + result);
              if(result){
-              Utils.emitEvent('policy=0', 5009);
+              Utils.emitEvent('policy=0', 161220);
              } else {
-                 Utils.emitEvent(false, 5009);
+                 Utils.emitEvent(false, 161220);
              }
 
            } catch (error) {
              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              Utils.emitEvent('', 5009);
+              Utils.emitEvent('', 161220);
            }
         })
-      Web({ src: this.uri, controller: this.controller });
+      Web({ src: this.uri, controller: this.controller })
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
     }
   }
 }
