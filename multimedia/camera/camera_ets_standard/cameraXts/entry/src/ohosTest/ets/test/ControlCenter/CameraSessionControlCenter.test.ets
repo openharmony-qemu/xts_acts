@@ -112,10 +112,6 @@ function getSupportedModes() {
 }
 
 function getCameraInput() {
-  if (!checkBackCamera()) {
-    console.info(TAG, 'The current device does not have a rear camera.');
-    return;
-  }
   console.info(TAG, 'getCameraInput.  ' + JSON.stringify(mCameraDeviceArray));
   mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[1]);
   if (isEmpty(mCameraInput)) {
@@ -330,14 +326,18 @@ async function enableControlCenter(done: Function, testName: string) {
 export default function CameraSessionControlCenterTest() {
   beforeAll(async () => {
     console.info('beforeAll case');
-    getCameraManager();
-    getSupportedCameraDeviceArray();
-    getSupportedModes();
-    await getPermission();
-    await driveFn();
-    getCameraInput();
-    getOutputCapability();
-    getPreviewProfile();
+    if (!checkBackCamera()) {
+      console.info(TAG, 'The current device does not have a rear camera.');
+    } else {
+      getCameraManager();
+      getSupportedCameraDeviceArray();
+      getSupportedModes();
+      await getPermission();
+      await driveFn();
+      getCameraInput();
+      getOutputCapability();
+      getPreviewProfile();
+    }
   });
 
   beforeEach(() => {
@@ -351,7 +351,11 @@ export default function CameraSessionControlCenterTest() {
 
   afterAll(async () => {
     console.info('afterAll case');
-    await closeFd(fdNumber);
+    if (!checkBackCamera()) {
+      console.info(TAG, 'The current device does not have a rear camera.');
+    } else {
+      await closeFd(fdNumber);
+    }
   });
 
   describe('CameraSessionControlCenterTest', () => {
