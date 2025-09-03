@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {
+  checkBackCamera,
   cameraErrorCode,
   cameraFocusMode,
   cameraPreconfigRatio,
@@ -111,6 +112,10 @@ function getSupportedModes() {
 }
 
 function getCameraInput() {
+  if (!checkBackCamera()) {
+    console.info(TAG, 'The current device does not have a rear camera.');
+    return;
+  }
   console.info(TAG, 'getCameraInput.  ' + JSON.stringify(mCameraDeviceArray));
   mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[1]);
   if (isEmpty(mCameraInput)) {
@@ -361,6 +366,12 @@ export default function CameraSessionControlCenterTest() {
      */
     it('isControlCenterSupported_video_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_001';
+      if (!checkBackCamera()) {
+        console.info(TAG, testName + ' the current device does not have a rear camera.');
+        expect(checkBackCamera()).assertFalse();
+        done();
+        return;
+      }
       checkControlCenterSupportedVideo(done, testName);
     })
 
@@ -374,6 +385,12 @@ export default function CameraSessionControlCenterTest() {
      */
     it('isControlCenterSupported_video_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_002';
+      if (!checkBackCamera()) {
+        console.info(TAG, testName + ' the current device does not have a rear camera.');
+        expect(checkBackCamera()).assertFalse();
+        done();
+        return;
+      }
       checkControlCenterSupportedError(done, testName);
     })
 
@@ -387,6 +404,12 @@ export default function CameraSessionControlCenterTest() {
      */
     it('isControlCenterSupported_video_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_abnormal_003';
+      if (!checkBackCamera()) {
+        console.info(TAG, testName + ' the current device does not have a rear camera.');
+        expect(checkBackCamera()).assertFalse();
+        done();
+        return;
+      }
       enableControlCenter(done, testName);
     })
   })
