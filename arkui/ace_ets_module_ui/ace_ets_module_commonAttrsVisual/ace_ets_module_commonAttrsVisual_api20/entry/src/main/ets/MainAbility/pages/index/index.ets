@@ -24,16 +24,16 @@ struct Index {
 
   aboutToAppear(){
     console.info("start run testcase!!!!")
+    try {
         let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         console.info('start run testcase!!!')
-        try {
-          Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-        } catch (err: Error) {
-          console.log('error: ' + err)
-        }
+        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+      } catch (err) {
+        console.log('error: ' + err)
+    }
         
   }
 
