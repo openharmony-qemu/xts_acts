@@ -218,11 +218,11 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy') {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);
-            await sleep(1000);
             expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
             expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
             expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
@@ -296,12 +296,12 @@ export default function lifecycleTest() {
                 console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
               })
           } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 1) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
             count++;
             let listTemp = JSON.stringify(globalThis.list1);
             console.log(TAG + " listTemp is :" + listTemp);
-            await sleep(1000);
             globalThis.applicationContext1
               .unregisterAbilityLifecycleCallback(globalThis.callbackid1)
               .then((data: ESObject) => {
@@ -401,12 +401,12 @@ export default function lifecycleTest() {
               });
             },500)
           } else if (data.event === 'MainAbility3_onAbilityDestroy' && count === 2) {
+            await sleep(1000);
             console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list3));
             console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid3));
             count++;
             let listTemp = JSON.stringify(globalThis.list3);
             console.log(TAG + " listTemp is :" + listTemp);
-            await sleep(1000);
             expect(listTemp.indexOf("MainAbility3 onWindowStageCreate") !== -1).assertTrue();
             expect(listTemp.split("MainAbility3 onAbilityForeground").length - 1).assertEqual(2);
             expect(listTemp.indexOf("MainAbility3 onAbilityBackground") !== -1).assertTrue();

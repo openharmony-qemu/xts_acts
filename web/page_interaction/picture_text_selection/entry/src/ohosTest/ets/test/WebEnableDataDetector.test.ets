@@ -17,8 +17,15 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let emitKey = "";
+let tcName = ''
+const EVENT_ID_SET_SUITE_KEY = 176101;
+const driver = Driver.create();
 
 export default function webOnDataResubmitted() {
   describe('WebWebEnableDataDetectorTest', () => {
@@ -33,7 +40,7 @@ export default function webOnDataResubmitted() {
         if (!("WebEnableDataDetector" == pages.name)) {
           console.info("get WebEnableDataDetector state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebEnableDataDetectorButton"), 10000);
           console.info("push WebEnableDataDetector page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -47,15 +54,7 @@ export default function webOnDataResubmitted() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebEnableDataDetector afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebEnableDataDetector afterEach end");
       done();
     })
 
@@ -68,10 +67,14 @@ export default function webOnDataResubmitted() {
     * @tc.level       : Level 0
     */
     it('testWebEnableDataDetector001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebEnableDataDetector", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebEnableDataDetector001", true, 20250607, done);
-      sendEventByKey('WebEnableDataDetectorButton', 10, '');
+      emitKey = 'emitWebEnableDataDetector';
+      tcName = 'testWebEnableDataDetector001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 176110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebEnableDataDetectorButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
 
