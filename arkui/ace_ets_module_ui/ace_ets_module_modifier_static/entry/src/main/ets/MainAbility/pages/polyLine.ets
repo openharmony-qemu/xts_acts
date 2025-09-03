@@ -25,7 +25,6 @@ import {
   BlurStyle,
   BorderImageOption,
   BorderOptions,
-  BorderRadiuses,
   BorderStyle,
   BreakpointsReference,
   Builder,
@@ -106,7 +105,7 @@ import {
   Visibility,
   Week
 } from '@ohos.arkui.component';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 
 
 @Entry

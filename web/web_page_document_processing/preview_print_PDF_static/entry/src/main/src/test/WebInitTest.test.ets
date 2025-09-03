@@ -81,5 +81,14 @@ export default function webInitTest() {
 		await Utils.msSleep(3000);
         done();
       })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(8000);
+        done();
+      })
   })
 }

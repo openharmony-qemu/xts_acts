@@ -28,7 +28,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -37,7 +37,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode } from '@ohos.promptAction';
-import { LengthMetrics,BorderRadiuses } from '@ohos.arkui.node';
+import { LengthMetrics,NodeBorderRadiuses } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
 let promptAction = new PromptAction()
@@ -45,7 +45,7 @@ let promptAction = new PromptAction()
 @Component
 struct bindSheetRadius {
   @State isShow: boolean = false
-  @State radius: LengthMetrics | BorderRadiuses | LocalizedBorderRadiuses | undefined | null = LengthMetrics.px(20)
+  @State radius: LengthMetrics | NodeBorderRadiuses | LocalizedBorderRadiuses | undefined | null = LengthMetrics.px(20)
 
   @Builder
   myBuilder() {

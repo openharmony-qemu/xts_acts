@@ -52,7 +52,7 @@ export default function propJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("propTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/Prop',
+        url: 'MainAbility/pages/text/PropRef',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -72,7 +72,7 @@ export default function propJsunit() {
 
     afterEach(async () => {
       await sleep(1)
-      console.info("Prop after each called");
+      console.info("PropRef after each called");
     });
 
     

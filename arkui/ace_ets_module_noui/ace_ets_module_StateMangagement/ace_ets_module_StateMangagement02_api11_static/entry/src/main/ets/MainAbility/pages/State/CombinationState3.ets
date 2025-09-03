@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Button, ClickEvent, Column, Component, Entry, ForEach, Text } from '@ohos.arkui.component'
-import { AppStorage, Link, ObjectLink, Observed, Prop, Provide, State, Watch } from '@ohos.arkui.stateManagement'
+import { AppStorage, Link, ObjectLink, Observed, PropRef, Provide, State, Watch } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 
@@ -84,7 +84,7 @@ struct ChildLink3 {
 
 @Component
 struct ChildProp {
-  @Prop counterVal: ClassA3 = new ClassA3(3, new SubClass4(8));
+  @PropRef counterVal: ClassA3 = new ClassA3(3, new SubClass4(8));
 
   build() {
     Column() {

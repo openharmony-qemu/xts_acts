@@ -73,7 +73,7 @@ import {
   Video,
   Week
 } from '@ohos.arkui.component';
-import { Link, Prop, State } from '@ohos.arkui.stateManagement';
+import { Link, PropRef, State } from '@ohos.arkui.stateManagement';
 import { CommonModifier } from '@ohos.arkui.modifier';
 import matrix4 from '@ohos.matrix4'
 import UTD from '@ohos.data.uniformTypeDescriptor';

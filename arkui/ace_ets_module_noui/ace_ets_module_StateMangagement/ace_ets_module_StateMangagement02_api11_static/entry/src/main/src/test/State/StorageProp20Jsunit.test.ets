@@ -116,7 +116,7 @@ export default function StorageProp20Jsunit() {
       let strJson1 = inspector.getInspectorByKey('text_Prop');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp20Jsunit_static_0300] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('Prop:10');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('PropRef:10');
       console.info('[StorageProp20Jsunit_static_0300] END');
       done();
     });

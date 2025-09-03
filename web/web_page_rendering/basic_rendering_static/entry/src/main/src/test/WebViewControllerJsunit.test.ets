@@ -21,6 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext:common.UIAbilityContext;
 let emitKey = 'emitGetWebId';
@@ -76,9 +77,27 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(2000);
       emitKey="emitFetchCookieSync";
       Utils.registerEvent("testGetWebId",6,100,done); //3个Web页面的id之和(6)会根据此用例之前的测试套及用例的运行发生变化
-      inspector.sendEventByKey('webcomponent',10,'');
+      let driver: Driver = Driver.create();
+      await Utils.msSleep(2000);
+      let button = await driver.findComponent(ON.id('webcomponent'));
+      await Utils.msSleep(2000);
+      button?.click();
       await Utils.msSleep(5000);
       done();
     })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webcomponent'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(5000)
+        done()
+      })
+
   })
 }

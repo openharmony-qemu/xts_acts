@@ -25,7 +25,6 @@ import {
   BlurStyle,
   BorderImageOption,
   BorderOptions,
-  BorderRadiuses,
   BorderStyle,
   BreakpointsReference,
   Builder,
@@ -99,14 +98,15 @@ import {
   Visibility,
   Week
 } from '@ohos.arkui.component';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { NodeBorderRadiuses } from '@ohos.arkui.node';
+import { Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 
 @Entry
 @Component
 struct TestMenuPage {
-  mRadius: Dimension | BorderRadiuses = '12vp'
+  mRadius: Dimension | NodeBorderRadiuses = '12vp'
   mFontColor: ResourceColor = '#FF123654'
   mFont: Font = {
     size: 20,

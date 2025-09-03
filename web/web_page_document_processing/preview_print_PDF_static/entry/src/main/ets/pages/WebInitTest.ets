@@ -18,6 +18,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -34,10 +35,6 @@ struct WebInitTest {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  }
-
-  onPageHide() {
-    events_emitter.off(10)
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
@@ -72,6 +69,14 @@ struct WebInitTest {
                 }
                 break;
               }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({url: 'pages/createPdf'})
+                console.log('push URL success')
+              }
+
             }
           })
 

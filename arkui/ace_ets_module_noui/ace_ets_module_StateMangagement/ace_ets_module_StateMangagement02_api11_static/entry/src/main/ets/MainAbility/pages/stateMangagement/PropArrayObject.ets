@@ -42,14 +42,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -69,7 +69,7 @@ class MyPropObject {
 
 @Component
 struct PropArrayObjectChild {
-  @Prop message: Array<MyPropObject> = new Array<MyPropObject>(new MyPropObject(4, 'MyPropObject4'),
+  @PropRef message: Array<MyPropObject> = new Array<MyPropObject>(new MyPropObject(4, 'MyPropObject4'),
     new MyPropObject(5, 'MyPropObject'),
     new MyPropObject(6, 'MyPropObject'))
 

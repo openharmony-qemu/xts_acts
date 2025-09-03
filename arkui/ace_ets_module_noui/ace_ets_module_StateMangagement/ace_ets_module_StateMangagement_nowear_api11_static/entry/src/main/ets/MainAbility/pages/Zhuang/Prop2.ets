@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 import { Button, ButtonType, ClickEvent, Column, Component, Entry, Row, Scroll, Text } from '@ohos.arkui.component'
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement'
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 
 @Component
 struct CountDownComponent1 {
-  @Prop type1: ButtonType | undefined
-  @Prop type2: ButtonType | undefined
-  @Prop number1: number | undefined
-  @Prop number2: number | undefined
+  @PropRef type1: ButtonType | undefined
+  @PropRef type2: ButtonType | undefined
+  @PropRef number1: number | undefined
+  @PropRef number2: number | undefined
 
   build() {
     Row() {
@@ -100,7 +100,7 @@ struct ParentComponent1 {
           Column() {
             Row() {
               Column() {
-                Text("Prop-->undefined").height('5%')
+                Text("PropRef-->undefined").height('5%')
                 Button('button').height('5%')
                   .type(this.type1)
                   .onClick((e: ClickEvent) => {
@@ -110,7 +110,7 @@ struct ParentComponent1 {
               }
 
               Column() {
-                Text("Prop-->null").height('5%')
+                Text("PropRef-->null").height('5%')
                 Button('button').height('5%')
                   .type(this.type2)
                   .onClick((e: ClickEvent) => {

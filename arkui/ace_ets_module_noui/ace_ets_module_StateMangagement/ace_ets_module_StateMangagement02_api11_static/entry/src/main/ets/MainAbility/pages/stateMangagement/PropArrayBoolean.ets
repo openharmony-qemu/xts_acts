@@ -42,14 +42,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -58,7 +58,7 @@ import common from '@ohos.app.ability.common';
 
 @Component
 struct PropArrayBooleanChild {
-  @Prop message: Array<boolean> = new Array<boolean>(true, false, true)
+  @PropRef message: Array<boolean> = new Array<boolean>(true, false, true)
 
   build() {
     Column() {

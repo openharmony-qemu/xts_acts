@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -81,9 +82,7 @@ struct WebHitTestTypeEnumTest {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  onPageHide() {
-    events_emitter.off(10)
-  }
+
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('web page valueChangeCallBack');
@@ -112,6 +111,14 @@ struct WebHitTestTypeEnumTest {
                 }
                 break;
               }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webHitTestTypeEnumTest' })
+                console.log('push URL success')
+              }
+
             }
           })
 

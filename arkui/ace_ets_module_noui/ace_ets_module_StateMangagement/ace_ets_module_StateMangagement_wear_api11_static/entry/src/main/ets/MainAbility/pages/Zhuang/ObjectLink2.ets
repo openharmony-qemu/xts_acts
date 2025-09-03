@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Button, ButtonType, ClickEvent, Column, Component, Entry, Row, Scroll, Text } from '@ohos.arkui.component'
-import { AppStorage, Link, ObjectLink, Observed, Prop, State, } from '@ohos.arkui.stateManagement'
+import { AppStorage, Link, ObjectLink, Observed, PropRef, State, } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 

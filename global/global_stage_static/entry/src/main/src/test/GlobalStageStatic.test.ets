@@ -3228,6 +3228,29 @@ export default function globalStageTest() {
       }
     })
 
+    /**
+     * @tc.number   : resourceProperty_test_static_0100
+     * @tc.name     : resourceProperty_test_static_0100
+     * @tc.desc     : bundleName,moduleName,moduleName,id,params,type
+     * @tc.size     : MEDIUM
+     * @tc.type     : Function
+     * @tc.level    : Level 0
+     */
+    it('resourceProperty_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
+      let resource: resourceManager.Resource = {
+        bundleName: 'com.example.myapplication',
+        moduleName: 'entry',
+        id: 0x01234567,
+        params: ["sdfd", 123],
+        type: 10001,
+      }
+      expect(resource.bundleName).assertEqual('com.example.myapplication');
+      expect(resource.moduleName).assertEqual('entry');
+      expect(resource.id).assertEqual(0x01234567);
+      expect(resource.params != null).assertTrue();
+      expect(resource.type).assertEqual(10001);
+    })
+
     console.log('*************end globalStageTest*************');
   })
 }

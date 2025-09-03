@@ -106,9 +106,9 @@ struct renderSetGetInterface {
         Button('changeRadius').height('2%')
           .id("changeRadiusClick")
           .onClick((e: ClickEvent) => {
-            borderRadius.topLeft = 20
+            borderRadius!.topLeft = 20
             renderNode.invalidate()
-            this.bRadiusValue = renderNode.borderRadius.topLeft
+            this.bRadiusValue = renderNode!.borderRadius!.topLeft
           })
 
 
