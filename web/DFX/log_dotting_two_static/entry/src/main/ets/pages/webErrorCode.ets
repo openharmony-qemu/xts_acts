@@ -29,6 +29,7 @@ import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -89,7 +90,6 @@ struct Index {
               break;
             }
 
-
             case 'emitZoomOut': {
               try {
                 this.controllerNull.zoomOut();
@@ -142,6 +142,13 @@ struct Index {
                 Utils.emitEvent(error.code, 1050)
               }
               break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webViewControllerErrorCode' })
+              console.log('push URL success')
             }
 
           }

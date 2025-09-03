@@ -1,6 +1,6 @@
 {
   "src": [
-    "pages/webErrorCode"
-
+    "pages/webErrorCode",
+    "pages/webViewControllerErrorCode"
   ]
 }

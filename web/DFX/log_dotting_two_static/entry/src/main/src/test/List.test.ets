@@ -14,6 +14,8 @@
  */
 
 import WebCameraApiNoCrash from './WebErrorCode.test';
+import webViewControllerErrorCode from './ScreenCapture.test'
 export default function testsuite() {
     WebCameraApiNoCrash();
+    webViewControllerErrorCode();
 }

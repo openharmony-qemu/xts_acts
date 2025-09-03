@@ -69,12 +69,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomInError001', 17100001, 1012, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -93,12 +88,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomInError002', 17100004, 1013, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -117,12 +107,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomOutError001', 17100001, 1028, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -141,12 +126,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomOutError002', 17100004, 1065, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -165,12 +145,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testSlideScrollError001', 17100001, 1033, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -189,12 +164,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testScrollByError001', 17100001, 1034, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -213,12 +183,7 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomError001', 17100001, 1049, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
-        await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(6000);
         done()
       })
@@ -237,13 +202,17 @@ export default function webErrorCode() {
         await Utils.msSleep(2000);
         Utils.registerEvent('testZoomError002', 17100004, 1050, done);
         await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
         await Utils.msSleep(2000);
-        let button = await driver.findComponent(ON.id('ErrorCodeTestSuiteButton'));
+        done()
+      })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
-        button?.click();
-        console.info('click test');
-        await Utils.msSleep(6000);
+        inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
+        await Utils.msSleep(2000);
         done()
       })
   })
