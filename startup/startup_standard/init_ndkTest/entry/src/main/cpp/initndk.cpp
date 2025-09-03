@@ -243,7 +243,7 @@ static napi_value OHGetDistributionOSReleaseType(napi_env env, napi_callback_inf
 static napi_value CanIUse(napi_env env, napi_callback_info info)
 {
     const char *cap;
-    cap = "SystemCapability.Location.Location.Core";
+    cap = "SystemCapability.Ability.AbilityBase";
     bool ret = canIUse(cap);
     int value = FAIL;
     if (ret) {
