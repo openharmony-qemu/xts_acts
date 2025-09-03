@@ -149,7 +149,7 @@ export default function windowImmersiveTest() {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
           console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-          await windowClass.setSpecificSystemBarEnabled('status', false);
+          await windowClass.setWindowSystemBarEnable(['navigation']);
           await sleep(3000);
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
@@ -163,7 +163,7 @@ export default function windowImmersiveTest() {
               await sleep(1000);
             }
           });
-          await windowClass.setSpecificSystemBarEnabled('status', true);
+          await windowClass.setWindowSystemBarEnable(['status', 'navigation'])
           console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
           await sleep(2000);
 
@@ -195,13 +195,13 @@ export default function windowImmersiveTest() {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
           console.info(`${caseName} Succeeded in setPreferredOrientation LANDSCAPE.`);
-          await windowClass.setSpecificSystemBarEnabled('status', true);
+          await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
           await sleep(3000);
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
             if(data.type == 0){
               windowClass.off('avoidAreaChange');
-              await windowClass.setSpecificSystemBarEnabled('status', true);
+              await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
               await sleep(1000);
               done();
@@ -209,7 +209,7 @@ export default function windowImmersiveTest() {
               await sleep(1000);
             }
           });
-          await windowClass.setSpecificSystemBarEnabled('status', false);
+          await windowClass.setWindowSystemBarEnable(['navigation']);
           console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await sleep(2000);
 

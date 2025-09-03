@@ -29,6 +29,7 @@ import stringTest from './numberstring/StringTest.test';
 import dateTimeTest from './datetime/DateTimeTest.test';
 import ActsStatementTest from './statement/Statement.test';
 import ActsGrammarTest from './statement/Grammar.test';
+import functionTest1 from "./function/FunctionTest1.test";
 
 export default function testsuite() {
   builtinsStatementBlockTest();
@@ -47,4 +48,5 @@ export default function testsuite() {
   numberTest();
   stringTest();
   dateTimeTest();
+  functionTest1();
 }

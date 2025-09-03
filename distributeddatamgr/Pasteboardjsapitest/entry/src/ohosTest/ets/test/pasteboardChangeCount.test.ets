@@ -16,19 +16,65 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import { pasteboard } from '@kit.BasicServicesKit';
 import { unifiedDataChannel, uniformTypeDescriptor } from '@kit.ArkData';
-import { Want } from '@kit.AbilityKit';
 import image from '@ohos.multimedia.image';
-
+import { BusinessError } from '@ohos.base';
+import { Want, abilityAccessCtrl, common, PermissionRequestResult} from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
+const context = delegator.getAppContext().getApplicationContext();
 
 let TAG = 'ttt';
 let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-
 let html = "<!DOCTYPE html>\n" + "<html>\n" + "<head>\n" + "<meta charset=\"utf-8\">\n" + "<title>HTML-PASTEBOARD_HTML</title>\n" + "</head>\n" + "<body>\n" + "    <h1>HEAD</h1>\n" + "    <p></p>\n" + "</body>\n" + "</html>";
 let uri = 'dataability:///com.example.myapplication1/user.txt';
+let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+let getPermission = async () => {
+  console.info('getPermission is start');
+  let context:common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext;
+  atManager.requestPermissionsFromUser(context, ['ohos.permission.READ_PASTEBOARD'], (err:BusinessError, data:PermissionRequestResult) => {
+    console.info('requestPermissionsFromUser success data is' + JSON.stringify(data));
+    console.info('requestPermissionsFromUser failed err is' + JSON.stringify(err));
+  })
+}
+
+let sleep = (ms:number) => {
+  return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
+}
+
+let drivenFn = async () => {
+  try {
+    let driver: Driver = Driver.create();
+    console.info('come in driveFn');
+    console.info('driver is ${JSON.stringify(driver)}');
+    await sleep(1000);
+    let button = await driver.findComponent(ON.text('始终允许'));
+    if (button) {
+      console.info('button is $ {JSON.stringify(button)}');
+      await sleep(1000);
+      await button.click();
+      await  sleep(1000);
+    } else {
+      let button1 = await driver.findComponent(ON.text('仅本次允许'));
+      console.info('button is $ {JSON.stringify(button)}');
+      await sleep(1000);
+      await button1.click();
+      await  sleep(1000);
+    }
+  } catch (err) {
+    console.info('err is' + err);
+    return
+  }
+}
 
 export default function PasteboardChangeCountTest() {
   describe('PasteboardChangeCountTest', () => {
-    beforeAll(() => {
+    beforeAll(async (done:Function) => {
+      await getPermission();
+      await sleep(1000);
+      await drivenFn();
+      await sleep(1000);
+      done();
     })
     beforeEach(() => {
       systemPasteboard.clearDataSync();

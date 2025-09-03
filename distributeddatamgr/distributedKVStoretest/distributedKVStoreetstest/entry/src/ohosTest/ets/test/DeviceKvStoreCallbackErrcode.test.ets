@@ -1450,6 +1450,8 @@ export default function deviceKvStoreCallbackErrcodeTest(){
       done();
     })
 
+
+
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Did_Query_ErrCode_0300
      * @tc.desc getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): void;
@@ -1479,6 +1481,33 @@ export default function deviceKvStoreCallbackErrcodeTest(){
         done();
         expect().assertFail();
       }
+    })
+
+    /**
+     * @tc.name SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0400
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKVCallbackEtsApiTest_getResultSize_Did_Query_ErrCode_0400
+     * @tc.desc getResultSize(deviceId: string, query: Query, callback: AsyncCallback<number>): void;
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>  {
+      console.info(TAG + 'SUB_DDM_DKV_getResultSize_Did_Query_ErrCode_0400');
+      try {
+        let  query: factory.Query | null = new factory.Query();
+        query.prefixKey("keyno");
+        kvStore?.getResultSize(localDeviceId, query, (err: BusinessError) => {
+            console.error(TAG + `Failed to get.code is ${err.code},message is ${err.message}`);
+            expect(err.code).assertEqual(15100004);
+            done();
+        });
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error(TAG + `An unexpected error occurred.code is ${error.code},message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      
     })
 
 
