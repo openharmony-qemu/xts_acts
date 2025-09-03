@@ -81,6 +81,7 @@ struct NavDestinationUIObserver {
         })
         .height('5%')
         .id('onBtn')
+        .margin({top: '2%'})
 
       Button('contextObserver.off')
         .onClick(() => {
