@@ -105,7 +105,6 @@ struct webViewContGetUrlAndOthersError {
       Row() {
         Button("getUrlAndOthersErrorTest").key('webViewOthersErrorCode').onClick(async () => {
           await waitForExist(()=>this.isReceive, this.str, 0);
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
