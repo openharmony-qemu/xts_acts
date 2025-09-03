@@ -21,6 +21,7 @@ import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../src/test/Interfaces';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   str: string = '';
@@ -218,6 +219,13 @@ struct geolocationPermissions {
                 Utils.emitEvent(e.code, 100009);
               }
               break;
+            }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/bindSelectionMenu' })
+              console.log('push URL success')
             }
 
           }
