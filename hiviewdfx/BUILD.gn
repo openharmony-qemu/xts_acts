@@ -17,6 +17,7 @@ group("hiviewdfxtestacts") {
     deps = [
       "abilityconstanttest:ActsAbilityConstantTest",
       "apprecoverytest:ActsAppRecoveryTest",
+      "apprecoveryteststatic:ActsAppRecoveryStaticTest",
       "bytracetest:ActsBytraceJsTest",
       "errormangertest/errormangertest:ActsErrormangerTest",
       "hiappeventtest/hiappeventapmtest:ActsHiAppEventJsTest",
