@@ -30,7 +30,7 @@ struct NavigationCustomTitlePage {
     Column() {
       Text('title').fontColor(Color.Red).fontSize(30).id('customTitleId')
     }
-    .margin({left: '10%', top: '10'})
+    .margin({left: '10%', top: '2%'})
     .onClick(() => {
        AppStorage.setOrCreate('customTitle', 14);
     })
@@ -60,7 +60,7 @@ struct PageNavDestination {
     Column() {
       Text('title').fontColor(Color.Red).fontSize(30).id('customNavTitleId')
     }
-    .margin({left: '10%', top: '10'})
+    .margin({left: '10%', top: '2%'})
     .onClick(() => {
        this.num = 15;
        AppStorage.setOrCreate('customNavTitle', 15);
