@@ -46,7 +46,7 @@ struct richEditorApi1 {
             {
               style:
               {
-              fontSize: 50.0
+              fontSize: 50
               }
             }
           )

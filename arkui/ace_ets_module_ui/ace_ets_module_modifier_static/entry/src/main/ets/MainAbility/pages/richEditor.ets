@@ -58,28 +58,28 @@ struct RichEditorPage {
           {
             style:
             {
-              fontSize: 30.0
+              fontSize: 30
             }
           })
         this.controller.addTextSpan('链接：' + this.url + '\n',
           {
             style:
             {
-              fontSize: 30.0
+              fontSize: 30
             }
           })
         this.controller.addTextSpan('邮箱：' + this.email + '\n',
           {
             style:
             {
-              fontSize: 30.0
+              fontSize: 30
             }
           })
         this.controller.addTextSpan('地址：' + this.address,
           {
             style:
             {
-              fontSize: 30.0
+              fontSize: 30
             }
           })
       })

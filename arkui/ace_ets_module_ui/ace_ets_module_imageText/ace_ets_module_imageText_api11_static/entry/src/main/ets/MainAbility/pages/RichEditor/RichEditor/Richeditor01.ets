@@ -79,7 +79,7 @@ struct Richeditor01 {
                 offset: 0,
                 style: {
                   fontColor: Color.Red,
-                  fontSize: 8.0,
+                  fontSize: 8,
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Lighter,
                   fontFamily: "sans-serif",
@@ -114,7 +114,7 @@ struct Richeditor01 {
               this.controller.updateSpanStyle({
                 textStyle: {
                   fontColor: Color.Blue,
-                  fontSize: 12.0,
+                  fontSize: 12,
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Bolder,
                   fontFamily: "sans-serif",
@@ -174,7 +174,7 @@ struct Richeditor01 {
               value: "aaaaa",
               textStyle: {
                 fontColor: Color.Black,
-                fontSize: 12.0,
+                fontSize: 12,
                 fontStyle: FontStyle.Italic,
                 fontWeight: FontWeight.Bold,
                 fontFamily: "sans-serif",
@@ -263,7 +263,7 @@ struct Richeditor01 {
                 offset: 6,
                 style: {
                   fontColor: Color.Black,
-                  fontSize: 30.0,
+                  fontSize: "30",
                   fontStyle: FontStyle.Italic,
                   fontWeight: FontWeight.Bolder,
                   fontFamily: "sans-serif",

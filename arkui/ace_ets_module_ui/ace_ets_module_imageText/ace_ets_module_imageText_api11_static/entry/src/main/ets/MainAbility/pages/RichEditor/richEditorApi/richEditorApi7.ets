@@ -48,7 +48,7 @@ struct richEditorApi7 {
               style:
               {
                 fontColor: Color.Orange,
-                fontSize: 200.0
+                fontSize: 200
               },
               gesture:
               {
