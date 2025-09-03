@@ -37,7 +37,7 @@ export class MessageManager {
         try {
           this.callback(message)
         } catch (error) {
-          console.info("[callback] error:" + error);
+          console.info('[callback] error:' + error);
         }
       }
       return
