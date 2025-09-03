@@ -46,16 +46,14 @@ struct richEditorApi1 {
             {
               style:
               {
-              fontSize: 50
+              fontSize: 50.0
               }
             }
           )
         })
         .onPaste((event?:PasteEvent):void => {
           if(event != undefined && event != null){
-            event.preventDefault = ():void => {
               this.text1 = '222'
-            }
           }
           event?.preventDefault?.();
         })

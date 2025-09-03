@@ -27,7 +27,6 @@ import {
   Marquee,
   RichEditor,
   RichEditorOptions,
-  RichEditorController,
   RichText,
   SymbolSpanAttribute,
   AttributeModifier,

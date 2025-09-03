@@ -44,7 +44,7 @@ struct RichEditorSymbolSpanStyleTest {
             offset: 10,
             style: {
               fontColor: [Color.Red],
-              fontSize: 30,
+              fontSize: 30.0,
               fontWeight: 200,
               renderingStrategy: SymbolRenderingStrategy.SINGLE,
               effectStrategy: SymbolEffectStrategy.NONE
