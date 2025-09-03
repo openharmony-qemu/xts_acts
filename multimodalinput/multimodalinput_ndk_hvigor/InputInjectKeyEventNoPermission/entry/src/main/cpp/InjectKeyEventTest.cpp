@@ -67,30 +67,6 @@ void AxisEventCallback(const struct Input_AxisEvent* axisEvent)
     OH_Input_GetAxisEventSourceType(axisEvent, &axisEventType);
 }
 
-napi_value RequestInjectionFrequent(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    auto fnCallBack = [](Input_InjectionStatus authorizedStatus) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkData", "=======zh  OH_RdbTrans_Insert errCode = %{public}d", 0);
-    };
-    Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
-    napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED ||
-                      retResult == INPUT_INJECTION_OPERATION_FREQUENT) ? 0 : -1, &result);
-    return result;
-}
-
-napi_value RequestInjectionAuthorized(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    auto fnCallBack = [](Input_InjectionStatus authorizedStatus) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "ArkData", "=======zh  OH_RdbTrans_Insert errCode = %{public}d", 0);
-    };
-    Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
-    napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED ||
-                      retResult == INPUT_INJECTION_AUTHORIZED) ? 0 : -1, &result);
-    return result;
-}
-
 napi_value OHInputInjectKeyEventDenied(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -385,10 +361,6 @@ napi_value InjectMouseEventGlobalSuccess(napi_env env, napi_callback_info info)
 
 void addSetKeyEventKeyCodeTest1(std::vector<napi_property_descriptor>& descData)
 {
-    descData.push_back({"RequestInjectionFrequent",
-                       nullptr, RequestInjectionFrequent, nullptr, nullptr, nullptr, napi_default, nullptr});
-    descData.push_back({"RequestInjectionAuthorized",
-                       nullptr, RequestInjectionAuthorized, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OHInputInjectKeyEventDenied",
                        nullptr, OHInputInjectKeyEventDenied, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"RequestInjectionError",
