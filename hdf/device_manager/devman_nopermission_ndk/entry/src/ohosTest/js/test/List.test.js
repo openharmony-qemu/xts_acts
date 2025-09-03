@@ -14,8 +14,15 @@
  */
 
 import NoPermissionJsTest from './DeviceManagerNoPermissionJsTest.test.js'
+import NoPermissionCanIUseTest from './DeviceManagerNoPermissionCanIUseTest.test.js'
 
 /* host test case */
 export default function testsuite() {
-    NoPermissionJsTest()
+
+    if (canIUse("SystemCapability.Driver.ExternalDevice")) {
+        NoPermissionJsTest()
+    } else {
+        NoPermissionCanIUseTest()
+    }
 }
+
