@@ -29,7 +29,12 @@ struct Index {
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         console.info('start run testcase!!!')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+        try {
+          Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+        } catch (err: Error) {
+          console.log('error: ' + err)
+        }
+        
   }
 
   build() {
