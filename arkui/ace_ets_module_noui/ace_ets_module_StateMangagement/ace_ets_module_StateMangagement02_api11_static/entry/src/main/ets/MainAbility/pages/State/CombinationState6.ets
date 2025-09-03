@@ -19,7 +19,7 @@ import {
   Link,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   Watch

@@ -32,14 +32,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';

@@ -41,14 +41,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -60,9 +60,9 @@ AppStorage.clear()
 @Entry
 @Component
 struct StorageProp20 {
-  @StorageProp('Prop20') storProp1: number = 1
-  @StorageProp('PropB') storProp2: number = 4
-  @StorageProp('PropC') storProp3: string = 'gg'
+  @StoragePropRef('Prop20') storProp1: number = 1
+  @StoragePropRef('PropB') storProp2: number = 4
+  @StoragePropRef('PropC') storProp3: string = 'gg'
   @State num: number = 0
   @State vae: string = ''
 
@@ -93,7 +93,7 @@ struct StorageProp20 {
 struct CompStorageProp20 {
   @State storProp1: number = 0
   @Link storProp2: number
-  @Prop storProp3: number
+  @PropRef storProp3: number
   @Provide num: number = 0
 
   build() {
@@ -102,7 +102,7 @@ struct CompStorageProp20 {
         .key('text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
-      Text(`Prop:${this.storProp3}`).height('5%')
+      Text(`PropRef:${this.storProp3}`).height('5%')
         .key('text_Prop')
       Text(`Provide:${this.num}`).height('5%')
         .key('text_Provide')

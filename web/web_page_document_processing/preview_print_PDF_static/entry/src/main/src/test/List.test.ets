@@ -14,7 +14,9 @@
  */
 
 import WebInitTest from './WebInitTest.test'
+import webJsunit from './CreatePdfJsunit.test'
 
 export default function testsuite() {
     WebInitTest();
+    webJsunit();
 }

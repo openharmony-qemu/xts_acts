@@ -569,5 +569,112 @@ export default function HidebugJsTest() {
             fileIo.closeSync(file.fd);
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1000 Test end*************');
         });
+
+        /*
+         * @tc.number    : DFX_DFR_Hiprofiler_Interface_Static_1100
+         * @tc.name      : DFX_DFR_Hiprofiler_Interface_Static_1100
+         * @tc.desc      : Get the memory limit of the application process
+         * @tc.level: Level 2
+         * @tc.size: MediumTest
+         * @tc.type: Function
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1100 Test start*************');
+            try {
+                let appMemoryLimit:hidebug.MemoryLimit = hidebug.getAppMemoryLimit();
+                hilog.info(0x0000, 'HIDEBUGTEST', 'rssLimit=%{public}d', appMemoryLimit.rssLimit);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'vssLimit=%{public}d', appMemoryLimit.vssLimit);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'vmHeapLimit=%{public}d', appMemoryLimit.vmHeapLimit);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'vmTotalHeapSize=%{public}d', appMemoryLimit.vmTotalHeapSize);
+                expect(appMemoryLimit.rssLimit >= BigInt(0) &&
+                    appMemoryLimit.vssLimit >= BigInt(0) &&
+                    appMemoryLimit.vmHeapLimit >= BigInt(0) &&
+                    appMemoryLimit.vmTotalHeapSize >= BigInt(0)).assertTrue();
+            } catch (err: BusinessError) {
+                expect().assertFail();
+            }
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1100 Test end*************');
+        });
+
+        /*
+         * @tc.number    : DFX_DFR_Hiprofiler_Interface_Static_1200
+         * @tc.name      : DFX_DFR_Hiprofiler_Interface_Static_1200
+         * @tc.desc      : Get information about VM memory
+         * @tc.level: Level 2
+         * @tc.size: MediumTest
+         * @tc.type: Function
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1200 Test start*************');
+            try {
+                let vmMemory: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+                hilog.info(0x0000, 'HIDEBUGTEST', 'totalHeap=%{public}d', vmMemory.totalHeap);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'heapUsed=%{public}d', vmMemory.heapUsed);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'allArraySize=%{public}d', vmMemory.allArraySize);
+                expect(vmMemory.totalHeap >= BigInt(0) &&
+                    vmMemory.heapUsed >= BigInt(0) &&
+                    vmMemory.allArraySize >= BigInt(0)).assertTrue();
+            } catch (err: BusinessError) {
+                expect().assertFail();
+            }
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1200 Test end*************');
+        });
+
+        /*
+         * @tc.number    : DFX_DFR_Hiprofiler_Interface_Static_1300
+         * @tc.name      : DFX_DFR_Hiprofiler_Interface_Static_1300
+         * @tc.desc      : Get the debug status of the application process
+         * @tc.level: Level 2
+         * @tc.size: MediumTest
+         * @tc.type: Function
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1300 Test start*************');
+            try {
+                let isDebugState = hidebug.isDebugState();
+                hilog.info(0x0000, 'HIDEBUGTEST', 'isDebugState=%{public}d', isDebugState);
+                expect(isDebugState).assertFalse();
+            } catch (err: BusinessError) {
+                expect().assertFail();
+            }
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1300 Test end*************');
+        });
+
+        /*
+         * @tc.number    : DFX_DFR_Hiprofiler_Interface_Static_1400
+         * @tc.name      : DFX_DFR_Hiprofiler_Interface_Static_1400
+         * @tc.desc      : Get system GC statistics
+         * @tc.level: Level 2
+         * @tc.size: MediumTest
+         * @tc.type: Function
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test start*************');
+            try {
+                let vMRuntimeStats: hidebug.GcStats = hidebug.getVMRuntimeStats();
+                hilog.info(0x0000, 'HIDEBUGTEST', 'gc-count=%{public}d', vMRuntimeStats['ark.gc.gc-count']);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'gc-time=%{public}d', vMRuntimeStats['ark.gc.gc-time']);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'gc-bytes-allocated=%{public}d', vMRuntimeStats['ark.gc.gc-bytes-allocated']);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'gc-bytes-freed=%{public}d', vMRuntimeStats['ark.gc.gc-bytes-freed']);
+                hilog.info(0x0000, 'HIDEBUGTEST', 'fullgc-longtime-count=%{public}d', vMRuntimeStats['ark.gc.fullgc-longtime-count']);
+
+                // 确保所有值都是数字类型
+                const gcCount = vMRuntimeStats['ark.gc.gc-count'] as Long;
+                const gcTime = vMRuntimeStats['ark.gc.gc-time'] as Long;
+                const bytesAllocated = vMRuntimeStats['ark.gc.gc-bytes-allocated'] as Long;
+                const bytesFreed = vMRuntimeStats['ark.gc.gc-bytes-freed'] as Long;
+                const fullGcCount = vMRuntimeStats['ark.gc.fullgc-longtime-count'] as Long;
+
+                expect(gcCount >= 0).assertTrue();
+                expect(gcTime >= 0).assertTrue();
+                expect(bytesAllocated >= 0).assertTrue();
+                expect(bytesFreed >= 0).assertTrue();
+                expect(fullGcCount >= 0).assertTrue();
+            } catch (err) {
+                console.error('Test failed:', err);
+                expect(false).assertTrue();
+            }
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test end*************');
+        });
     })
 }

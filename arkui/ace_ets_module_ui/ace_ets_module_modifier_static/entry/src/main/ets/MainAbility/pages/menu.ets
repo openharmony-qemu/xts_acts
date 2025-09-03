@@ -99,7 +99,7 @@ import {
   Week
 } from '@ohos.arkui.component';
 import { NodeBorderRadiuses } from '@ohos.arkui.node';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 

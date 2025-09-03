@@ -42,14 +42,14 @@ import {
   Link,
   LocalStorage,
   LocalStorageLink,
-  LocalStorageProp,
+  LocalStoragePropRef,
   ObjectLink,
   Observed,
-  Prop,
+  PropRef,
   Provide,
   State,
   StorageLink,
-  StorageProp,
+  StoragePropRef,
   Watch,
 } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -58,7 +58,7 @@ import common from '@ohos.app.ability.common';
 
 @Component
 struct PropMapChild {
-  @Prop value: Map<number, string> = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
+  @PropRef value: Map<number, string> = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
 
   build() {
     Column() {

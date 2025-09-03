@@ -67,7 +67,7 @@ import {
   TextInputController,
   ThemeColorMode
 } from '@ohos.arkui.component'
-import { Link, ObjectLink, Observed, Prop, State, } from '@ohos.arkui.stateManagement'
+import { Link, ObjectLink, Observed, PropRef, State, } from '@ohos.arkui.stateManagement'
 
 
 @Entry

@@ -36,7 +36,7 @@ import {
   Length,
   Margin,
 } from '@ohos.arkui.component';
-import { State, Link, Prop, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 

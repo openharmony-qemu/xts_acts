@@ -88,7 +88,7 @@ import {
   TextInput,
   TextPicker,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
@@ -104,8 +104,8 @@ struct comSizeAbilityTest_26 {
   @State message: string = "[-1, -1]"
   @State content: string = ""
   @State span: string = "文本组件"
-  private start: number = -1;
-  private end: number = -1;
+  private start: int = -1;
+  private end: int = -1;
 
   build() {
     Scroll() {
@@ -151,7 +151,7 @@ struct comSizeAbilityTest_26 {
                   style:
                   {
                     fontColor: Color.Orange,
-                    fontSize: 12
+                    fontSize: 12.0
                   }
                 })
             })
