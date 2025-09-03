@@ -627,7 +627,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
       /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100
      * @tc.desc      : bluetooth handsfree ag connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -641,7 +641,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200
      * @tc.desc      : bluetooth a2dp source connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -655,7 +655,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300
      * @tc.desc      : bluetooth avrcp connection state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -669,7 +669,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400
      * @tc.desc      : bluetooth codec change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -683,7 +683,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500
      * @tc.desc      : bluetooth remote device acl state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -697,7 +697,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600
      * @tc.desc      : bluetooth pair state change common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -711,7 +711,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000
      * @tc.desc      : start/stop screen capture
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -725,7 +725,7 @@ export default function ActsCommonEventManagerSupportTest() {
 
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
-     * @tc.name      : commonEventManager.Support
+     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800
      * @tc.desc      : enter/exit force sleep common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
