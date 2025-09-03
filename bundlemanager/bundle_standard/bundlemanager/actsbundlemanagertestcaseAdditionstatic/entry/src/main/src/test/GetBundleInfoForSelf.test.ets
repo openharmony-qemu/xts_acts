@@ -134,13 +134,17 @@ export default function getBundleInfoForSelf() {
      * @tc.name: getBundleInfoForSelfWithROUTERMAP
      * @tc.desc: Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_ROUTER_MAP flag
      */
-    it('getBundleInfoForSelfWithROUTERMAP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        it('getBundleInfoForSelfWithROUTERMAP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ROUTER_MAP).then((data: BundleInfo) => {
           hilog.info(domain, tag, 'getBundleInfoForSelfWithROUTERMAP  ====> start');
           expect(data.appInfo).assertEqual(null);
           expect(data.hapModulesInfo[0].type).assertEqual(bundle.ModuleType.ENTRY);
+          expect(bundle.BundleType.ATOMIC_SERVICE).assertEqual(1);
+          expect(bundle.ModuleType.FEATURE).assertEqual(2);
+          expect(bundle.ModuleType.SHARED).assertEqual(3);
+          expect(bundle.CompatiblePolicy.BACKWARD_COMPATIBILITY).assertEqual(1);
           expect(data.hapModulesInfo[0].routerMap.length).assertLarger(0.0);
           expect(data.hapModulesInfo[0].routerMap[0].name).assertEqual("DynamicPage1");
           expect(data.hapModulesInfo[0].routerMap[0].pageSourceFile).assertEqual("src/main/ets");
