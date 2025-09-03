@@ -29,6 +29,7 @@
 #include "swiper/SwiperCrossLanguageTest.h"
 #include "waterFlow/WaterFlowCrossLanguageTest.h"
 #include "BindController/BindControllerTest.h"
+#include "scroll/ScrollBarMarginTest.h"
 
 namespace ArkUICapiTest
 {
@@ -71,6 +72,8 @@ namespace ArkUICapiTest
              nullptr, nullptr, nullptr, napi_default, nullptr},
             {"testBindController001", nullptr, NodeBindControllerTest::testBindController001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"scrollScrollBarMarginTest", nullptr, ScrollScrollBarMarginTest::CreateNativeNodeScrollBarMargin, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
