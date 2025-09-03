@@ -58,7 +58,7 @@ export default function webInitTest() {
     });
 
     beforeEach(async () => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(1000);
       console.info('web beforeEach start');
     })
 
@@ -70,25 +70,19 @@ export default function webInitTest() {
     * @tc.type       : Function
     * @tc.level      : Level 3
     */
-    it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-	    await Utils.msSleep(2000);
-        Utils.emitEvent('emitSetPrintBackgroundOne', 10)
-		await Utils.msSleep(2000);
-        Utils.registerEvent('testSetPrintBackgroundOne', false, 214, done);
-		await Utils.msSleep(2000);
-		inspector.sendEventByKey('WebInitTestButton', 10, '');
-		await Utils.msSleep(3000);
-        done();
-      })
-
-    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent("emitonSwitchNextPage", 10)
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitTestButton', 10, '');
-        await Utils.msSleep(8000);
-        done();
+    it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+	  await Utils.msSleep(4000);
+      Utils.emitEvent('emitSetPrintBackgroundOne', 10)
+	  await Utils.msSleep(4000);
+      Utils.registerEvent('testSetPrintBackgroundOne', false, 214, done);
+	  await Utils.msSleep(4000);
+	  inspector.sendEventByKey('WebInitTestButton', 10, '');
+	  await Utils.msSleep(12000);
+      Utils.emitEvent("emitonSwitchNextPage", 10)
+      await Utils.msSleep(5000);
+      inspector.sendEventByKey('WebInitTestButton', 10, '');
+      await Utils.msSleep(10000);
+      done();
       })
   })
 }

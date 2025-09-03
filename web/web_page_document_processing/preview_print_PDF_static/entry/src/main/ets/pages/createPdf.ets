@@ -107,6 +107,37 @@ struct WebComponent {
                 });
               break;
             }
+
+            case "emitSavePDF1": {
+              this.controller.createPdf(this.pdfConfig)
+                .then((result: webview.PdfData) => {
+                  try {
+                    // 获取组件上下文
+                    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+                    // 获取沙箱路径，设置pdf文件名
+                    let filePath = context.filesDir + "/test.pdf";
+                    let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+                    const buffer = result.pdfArrayBuffer()
+                    fs.write(file.fd, result.pdfArrayBuffer().buffer)
+                        .then((writeLen: Long) => {
+                      console.info("pdfResult" + writeLen );
+                      if(writeLen > 0) {
+                        Utils.emitEvent(true, 20241128);
+                      }
+                        }).catch((err: BusinessError): void => {
+                      console.error("createPDF write data to file failed with error message: " + err.message +
+                        ", error code: " + err.code);
+                    }).finally(() => {
+                      fs.closeSync(file);
+                    });
+                  } catch (resError) {
+                    console.error(`ErrorCode: ${(resError as BusinessError).code},  Message: ${(resError as BusinessError).message}`);
+                  }
+                })
+
+              break;
+            }
+
           }
         })
       }

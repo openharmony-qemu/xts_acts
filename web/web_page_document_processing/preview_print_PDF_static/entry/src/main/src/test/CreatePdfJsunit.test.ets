@@ -53,9 +53,29 @@ export default function webJsunit() {
       Utils.registerEvent('emitSavePDF', true, 20241127, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webSavePDF', 10, '');
+      await Utils.msSleep(8000);
+      done();
+    })
+
+    /*
+ * @tc.number : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_002
+ * @tc.name : SavePDF1Static
+ * @tc.desc : get createPdf
+ * @tc.size : MediumTest
+ * @tc.type : Function
+ * @tc.level : Level 3
+    */
+    it('SavePDF1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      emitKey = 'emitSavePDF1';
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('emitSavePDF', true, 20241128, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webSavePDF', 10, '');
       await Utils.msSleep(6000);
       done();
     })
+
 
   })
 }
