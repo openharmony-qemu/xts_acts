@@ -17,10 +17,12 @@ import proxyTest from './Proxy/Porxy.test';
 import proxy2Test from './Proxy/Porxy2.test';
 import proxy3Test from './Proxy/Porxy3.test';
 import proxy4Test from './Proxy/Porxy4.test';
+import promise1Test from './Promise/Promise1.test';
 
 export default function testsuite() {
   proxyTest();
   proxy2Test();
   proxy3Test();
   proxy4Test();
+  promise1Test();
 }
