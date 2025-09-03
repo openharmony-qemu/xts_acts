@@ -1,6 +1,8 @@
 {
   "src": [
     "pages/geolocationPermissions",
-    "pages/bindSelectionMenu"
+    "pages/bindSelectionMenu",
+    "pages/WebAttributeTest",
+    "pages/WebViewEnumAndFontLibrary"
   ]
 }

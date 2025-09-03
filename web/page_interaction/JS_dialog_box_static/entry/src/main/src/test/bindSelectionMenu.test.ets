@@ -81,5 +81,19 @@ export default function webViewSrollableJsunit() {
       await Utils.msSleep(1000)
       done();
     })
+
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('webcomponentSelectionMenu'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(4000)
+        done()
+      })
   })
 }
