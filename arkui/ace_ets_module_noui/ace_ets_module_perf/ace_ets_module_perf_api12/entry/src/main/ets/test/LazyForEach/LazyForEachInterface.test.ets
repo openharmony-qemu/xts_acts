@@ -80,7 +80,7 @@ export default function LazyForEachInterface() {
      * @tc.number LazyForEachInterface_002
      * @tc.name LazyForEachInterface_002
      * @tc.desc Test LazyForEachInterface
-     * @tc.level: Level 2
+     * @tc.level: Level 1
      */
     it('LazyForEachInterface_002', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_002] START');      
@@ -98,7 +98,7 @@ export default function LazyForEachInterface() {
      * @tc.number LazyForEachInterface_003
      * @tc.name LazyForEachInterface_003
      * @tc.desc Test LazyForEachInterface
-     * @tc.level: Level 2
+     * @tc.level: Level 1
      */
     it('LazyForEachInterface_003', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_003] START');      
