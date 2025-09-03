@@ -128,6 +128,108 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0050
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0050
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0050", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0050 start----------------");
+      let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, true);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0050 currentTime: " + JSON.stringify(realActiveTime));
+      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0050 end-----------------");
+    });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0060
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0060
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0060", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0060 start----------------");
+      let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, false);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0060 currentTime: " + JSON.stringify(realActiveTime));
+      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0060 end-----------------");
+    });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0070
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0070
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0070", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0070 start----------------");
+      let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0070 currentTime: " + JSON.stringify(realActiveTime));
+      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0070 end-----------------");
+    });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0090
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0090
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0090", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0090 start----------------");
+      let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP, true);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0090 currentTime: " + JSON.stringify(realTime));
+      expect(typeof(realTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0090 end-----------------");
+    });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0100
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0100
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0100", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0100 start----------------");
+      let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP, false);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0100 currentTime: " + JSON.stringify(realTime));
+      expect(typeof(realTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0100 end-----------------");
+    });
+
+    /**
+     * @tc.number    SUB_systemDateTime_getUptime_sync_Static_0110
+     * @tc.name      SUB_systemDateTime_getUptime_sync_Static_0110
+     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it("SUB_systemDateTime_getUptime_sync_Static_0110", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0110 start----------------");
+      let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP);
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0110 currentTime: " + JSON.stringify(realTime));
+      expect(typeof(realTime) === 'number').assertEqual(true);
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0110 end-----------------");
+    });
+
+    /**
      * @tc.number    SUB_systemDateTime_getTimezoneSync_sync_Static_0130
      * @tc.name      SUB_systemDateTime_getTimezoneSync_sync_Static_0130
      * @tc.desc      Test systemTimeDate_setTimezone API functionality.
