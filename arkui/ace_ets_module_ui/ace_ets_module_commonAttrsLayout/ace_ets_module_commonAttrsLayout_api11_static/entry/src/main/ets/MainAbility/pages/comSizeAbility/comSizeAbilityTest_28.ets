@@ -69,7 +69,6 @@ import {
   RenderingContextSettings,
   ResourceStr,
   RichEditor,
-  RichEditorController,
   RichEditorOptions,
   RichText,
   Row,

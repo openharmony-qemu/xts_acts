@@ -27,7 +27,6 @@ import {
   Marquee,
   RichEditor,
   RichEditorOptions,
-  RichEditorController,
   RichText,
   TextInput,
   TextInputAttribute,
