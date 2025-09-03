@@ -27,6 +27,7 @@ import builtinsStatementSwitchTest from "./statement/StatementSwitchTest.test";
 import numberTest from "./numberstring/NumberTest.test";
 import stringTest from "./numberstring/StringTest.test";
 import dateTimeTest from "./datetime/DateTimeTest.test";
+import functionTest1 from "./function/FunctionTest1.test";
 
 export default function testsuite() {
   builtinsStatementBlockTest();
@@ -43,4 +44,5 @@ export default function testsuite() {
   numberTest();
   stringTest();
   dateTimeTest();
+  functionTest1();
 }
