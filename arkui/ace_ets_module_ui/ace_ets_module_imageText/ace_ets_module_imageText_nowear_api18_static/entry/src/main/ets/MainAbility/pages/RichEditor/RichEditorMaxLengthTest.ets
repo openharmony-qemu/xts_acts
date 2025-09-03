@@ -26,7 +26,7 @@ struct RichEditorMaxLengthTest {
   controller1: RichEditorController = new RichEditorController()
   @State maxLengthIndex:number =0
   
-  @State maxLengthList:Array<int|undefined> = new Array<int|undefined>(-1,5,undefined,7)
+  @State maxLengthList:Array<number|undefined> = new Array<number|undefined>(-1,5,undefined,7.2)
   build() {
     Column() {
       Row(){

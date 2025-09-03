@@ -47,7 +47,7 @@ struct SXrenderingStrategy {
             {
               style:
               {
-                fontSize: 30.0,
+                fontSize: 30,
                 renderingStrategy: SymbolRenderingStrategy.SINGLE
               }
             })
