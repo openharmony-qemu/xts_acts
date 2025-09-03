@@ -114,6 +114,7 @@ export default struct StepperModifierPage {
       }
       .backgroundColor('#F1F3F5')
       .attributeModifier(this.stepperModifier)
+      .height('90%')
     }
   }
 }
