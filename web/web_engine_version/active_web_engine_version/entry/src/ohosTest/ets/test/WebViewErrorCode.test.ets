@@ -85,8 +85,8 @@ export default function webViewWebViewErrorCode() {
     it('emitAvoidVisibleViewportBottomErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAvoidVisibleViewportBottomErrorCode";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "801", 20250909, null);
-      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "Capability not supported", 20250910, done);
+      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "801", 20250910, null);
+      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "Capability not supported", 20250911, done);
       await Utils.waitAndClickComponent(driver, "webViewOthersErrorCode");
     })
 
