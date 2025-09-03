@@ -22,7 +22,10 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { Driver, ON, MouseButton} from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_SUITE_KEY = 183101;
+let driver = Driver.create();
 
 @Entry
 @Component
@@ -48,16 +51,20 @@ struct webViewController {
     ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
   no_error: string = "no error happened"
 
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOnShowFileSelectorCallBackEnd: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -66,6 +73,7 @@ struct webViewController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -93,6 +101,8 @@ struct webViewController {
       Row() {
         Button("WebViewController click").key('WebViewControllerButton').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
@@ -244,18 +254,20 @@ struct webViewController {
             case "testOnShowFileSelector001": {
               try {
                 this.onShowFileSelectorCallBack = false
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.onShowFileSelectorCallBack, 31029)
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                Utils.emitEvent(this.onShowFileSelectorCallBack, 183110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31029)
+                Utils.emitEvent(error.code, 183110)
               }
               break;
             }
@@ -265,19 +277,20 @@ struct webViewController {
               try {
                 this.onShowFileSelectorCallBack = false
                 this.FileSelectorParamGetTitle = ''
-
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.FileSelectorParamGetTitle, 31030)
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                Utils.emitEvent(this.FileSelectorParamGetTitle, 183120)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31030)
+                Utils.emitEvent(error.code, 183120)
               }
               break;
             }
@@ -286,18 +299,20 @@ struct webViewController {
               try {
                 this.onShowFileSelectorCallBack = false
                 this.FileSelectorParamGetGetMode = 100
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.FileSelectorParamGetGetMode, 31031)
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                Utils.emitEvent(this.FileSelectorParamGetGetMode, 183130)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31031)
+                Utils.emitEvent(error.code, 183130)
               }
               break;
             }
@@ -306,18 +321,20 @@ struct webViewController {
               try {
                 this.onShowFileSelectorCallBack = false
                 this.FileSelectorParamGetGetAcceptType = []
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(2000);
-                Utils.emitEvent(this.FileSelectorParamGetGetAcceptType[0], 31032)
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                Utils.emitEvent(this.FileSelectorParamGetGetAcceptType[0], 183140)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31032)
+                Utils.emitEvent(error.code, 183140)
               }
               break;
             }
@@ -326,18 +343,20 @@ struct webViewController {
               try {
                 this.onShowFileSelectorCallBack = false
                 this.FileSelectorParamGetIsCapture = true
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(10000);
-                Utils.emitEvent(this.FileSelectorParamGetIsCapture, 31033)
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                Utils.emitEvent(this.FileSelectorParamGetIsCapture, 183150)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31033)
+                Utils.emitEvent(error.code, 183150)
               }
               break;
             }
@@ -346,39 +365,42 @@ struct webViewController {
               try {
                 this.onShowFileSelectorCallBack = false
                 this.FileSelectorParamGetTitle = ''
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html");
-                await Utils.sleep(2000);
-                let driver = Driver.create();
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
+                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.sleep(2000);
+                await Utils.waitForReleaseDriver(this.str,driver)
+                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
                 this.controller.runJavaScript(
                   'getFilePath()',
                   (error, result) => {
                     if (error) {
                       console.info(`run runJavaScriptExt error: ` + JSON.stringify(error))
-                      Utils.emitEvent(String(error.code), 31034)
+                      Utils.emitEvent(String(error.code), 183160)
                       return;
                     }
                     if (result) {
-                      Utils.emitEvent(result, 31034)
+                      Utils.emitEvent(result, 183160)
                     }
                   });
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 31034)
+                Utils.emitEvent(error.code, 183160)
               }
               break;
             }
 
             case "testSecureDnsModeOFF001": {
               try {
+                this.isPageEnd = -1;
                 webView.WebviewController.setHttpDns(webView.SecureDnsMode.OFF,
                   "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(4000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent(this.controller.getTitle(), 31035)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -389,10 +411,11 @@ struct webViewController {
 
             case "testSecureDnsModeAUTO001": {
               try {
+                this.isPageEnd = -1;
                 webView.WebviewController.setHttpDns(webView.SecureDnsMode.AUTO,
                   "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
                 this.controller.loadUrl("https://www.example.com/");
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent(this.controller.getTitle(), 31036)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -609,6 +632,7 @@ struct webViewController {
           if (event) {
             this.enterPageEnd = true
           }
+          this.isPageEnd = 1
         })
         .onShowFileSelector((event) => {
           if (event) {
@@ -623,6 +647,9 @@ struct webViewController {
             this.FileSelectorParamGetGetMode = event.fileSelector.getMode()
             this.FileSelectorParamGetGetAcceptType = event.fileSelector.getAcceptType()
             this.FileSelectorParamGetIsCapture = event.fileSelector.isCapture()
+            if(event.fileSelector){
+              this.isOnShowFileSelectorCallBackEnd = 1
+            }
           }
           return true
         })

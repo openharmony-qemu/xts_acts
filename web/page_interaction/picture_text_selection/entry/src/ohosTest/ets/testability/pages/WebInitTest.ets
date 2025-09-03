@@ -22,6 +22,8 @@ import testsuite from '../../test/List.test';
 import image from "@ohos.multimedia.image"
 import business_error from '@ohos.base';
 
+const EVENT_ID_SET_SUITE_KEY = 176201;
+
 @Entry
 @Component
 struct WebInitTest {
@@ -35,16 +37,21 @@ struct WebInitTest {
   @State searchResultCount: number = -1
   @State consoleCorsError: boolean = false
   @State flag: boolean = false
+
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isOnSearchReceive: number = -1;
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -53,6 +60,7 @@ struct WebInitTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -71,14 +79,13 @@ struct WebInitTest {
           .key('WebInitTestButton')
           .onClick(async () => {
             console.info("key==>" + this.str)
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitSearchAllAsync": {
                 try {
                   this.flag = true
-                  this.controller.loadUrl("resource://rawfile/index.html");
-                  await Utils.sleep(3000)
                   this.controller.searchAllAsync("首页");
-                  
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
@@ -87,8 +94,7 @@ struct WebInitTest {
               case "emitContextMenuMediaType": {
                 try {
                   let con = ContextMenuMediaType.Image;
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(con, 33);
+                  Utils.emitEvent(con, 176220);
                   console.log("result: " + con);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -97,9 +103,9 @@ struct WebInitTest {
               }
               case "emitContextMenuInputFieldType": {
                 try {
-                  await Utils.emitEvent(ContextMenuInputFieldType.PlainText, 34);
-                  await Utils.emitEvent(ContextMenuInputFieldType.Telephone, 35);
-                  await Utils.emitEvent(ContextMenuInputFieldType.Other, 36);
+                  await Utils.emitEvent(ContextMenuInputFieldType.PlainText, 176230);
+                  await Utils.emitEvent(ContextMenuInputFieldType.Telephone, 176231);
+                  await Utils.emitEvent(ContextMenuInputFieldType.Other, 176232);
                   console.log("result: " + ContextMenuInputFieldType.PlainText);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -108,11 +114,11 @@ struct WebInitTest {
               }
               case "emitContextMenuEditStateFlags": {
                 try {
-                  await Utils.emitEvent(ContextMenuEditStateFlags.NONE, 37);
-                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_CUT, 38);
-                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_COPY, 39);
-                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_PASTE, 40);
-                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_SELECT_ALL, 41);
+                  await Utils.emitEvent(ContextMenuEditStateFlags.NONE, 176240);
+                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_CUT, 176241);
+                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_COPY, 176242);
+                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_PASTE, 176243);
+                  await Utils.emitEvent(ContextMenuEditStateFlags.CAN_SELECT_ALL, 176244);
                   console.log("result: " + ContextMenuEditStateFlags.CAN_SELECT_ALL);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -121,26 +127,28 @@ struct WebInitTest {
               }
               case "emitGetFavicon": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopy.html'))
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   this.pixelmap = this.controller.getFavicon();
                   this.pixelmap.getImageInfo().then(imageInfo => {
                     if (imageInfo == undefined) {
                       console.error("Failed to obtain the image pixel map information.");
                     }
                     console.log("the result of pixelmap: " + JSON.stringify(imageInfo));
-                    Utils.emitEvent(Object.getOwnPropertyNames(imageInfo).length, 114)
+                    Utils.emitEvent(Object.getOwnPropertyNames(imageInfo).length, 176250)
                   })
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(this.pixelmap, 114)
+                  Utils.emitEvent(this.pixelmap, 176250)
                 }
                 break;
               }
               case "emitGetFaviconAgain": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('secondCopy.html'))
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   this.pixelmap = this.controller.getFavicon();
                   this.pixelmap.getImageInfo().then(imageInfo => {
                     if (imageInfo == undefined) {
@@ -148,7 +156,7 @@ struct WebInitTest {
                     }
                     console.log("the result of pixelmap: " + JSON.stringify(imageInfo));
                     if (Object.getOwnPropertyNames(imageInfo).length > 1) {
-                      Utils.emitEvent(true, 116)
+                      Utils.emitEvent(true, 176260)
                     }
                   })
                 } catch (error) {
@@ -158,12 +166,15 @@ struct WebInitTest {
               }
               case "emitOnSearchResultReceive001": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/search.html');
-                  await Utils.sleep(2000)
-                  this.controller.searchAllAsync('search');
-                  await Utils.sleep(1000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   console.error(`searchResultCount is: ${this.searchResultCount}`);
-                  Utils.emitEvent(this.searchResultCount, 60414)
+                  this.isOnSearchReceive = -1;
+                  this.controller.searchAllAsync('search');
+                  await Utils.waitForExist(()=>this.isOnSearchReceive, this.str+' isOnSearchReceive', 1, 1000);
+                  console.error(`searchResultCount is: ${this.searchResultCount}`);
+                  Utils.emitEvent(this.searchResultCount, 176270)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -171,11 +182,13 @@ struct WebInitTest {
               }
               case "emitOnSearchResultReceive002": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/search.html');
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  this.isOnSearchReceive = -1;
                   this.controller.searchAllAsync('searchNone');
-                  await Utils.sleep(1000)
-                  Utils.emitEvent(this.searchResultCount, 60416)
+                  await Utils.waitForExist(()=>this.isOnSearchReceive, this.str+' isOnSearchReceive', 1, 1000);
+                  Utils.emitEvent(this.searchResultCount, 176280)
                   console.error(`searchResultCount is: ${this.searchResultCount}`);
 
                 } catch (error) {
@@ -196,14 +209,19 @@ struct WebInitTest {
             console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
               "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
             this.searchResultCount = ret.numberOfMatches
+            this.isOnSearchReceive = 1;
             let searchResult = ret.activeMatchOrdinal.toString() +
             ret.numberOfMatches.toString();
             console.log("searchResult" + searchResult);
             if(this.flag){
-              Utils.emitEvent(searchResult, 16);
+              Utils.emitEvent(searchResult, 176210);
               this.controller.clearMatches();
               this.flag=false
             }
+          })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
           })
       }
     }

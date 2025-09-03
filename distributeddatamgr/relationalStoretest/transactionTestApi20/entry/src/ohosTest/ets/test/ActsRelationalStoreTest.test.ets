@@ -1084,5 +1084,99 @@ export default function ActsRelationalStoreTest() {
           done();
         }
       })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600
+     * @tc.desc    : Test OH_Rdb_SetTokenizer test RDB does not have this ability.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 start====");
+          let result: number = testNapi.testSetTokenizerNotSupported();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 result====", result);
+          expect([0, 801]).assertContain(result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700
+     * @tc.desc    : test OH_Rdb_RollBackByTrxId Test Normal Scene
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 start====");
+          let result: number = testNapi.testRollBackByTrxIdSuccess();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 result====", result);
+          expect([0, 801]).assertContain(result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800
+     * @tc.desc    : test OH_Rdb_CommitByTrxId Test Normal Scene
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 start====");
+          let result: number = testNapi.testCommitByTrxIdSuccess();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 result====", result);
+          expect([0, 801]).assertContain(result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900
+     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900
+     * @tc.desc    : Scenario for testing enumeration value RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS.
+     * @tc.level   : Level1
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900 start====");
+          let result: number = testNapi.testSubscribeSuccess();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900 result====",
+            result);
+          expect(result).assertEqual(RDB_OK);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900 catch err: " +
+            err);
+          expect(err).assertFail();
+          done();
+        }
+      })
   })
 }

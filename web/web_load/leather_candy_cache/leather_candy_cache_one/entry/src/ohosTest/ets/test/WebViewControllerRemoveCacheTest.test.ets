@@ -17,9 +17,14 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import json from '@ohos.util.json';
+import { waitForExist } from './WaitTest.test';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
+const driver = Driver.create();
 export default function webViewControllerRemoveCacheTest() {
 
   describe('WebViewControllerRemoveCacheTest', () => {
@@ -35,7 +40,6 @@ export default function webViewControllerRemoveCacheTest() {
         if (!("WebViewControllerRemoveCacheTest" == pages.name)) {
           console.info("get WebViewControllerRemoveCacheTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewControllerRemoveCacheTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,7 +54,6 @@ export default function webViewControllerRemoveCacheTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerRemoveCacheTest beforeEach start");
       done();
     })
@@ -64,10 +67,12 @@ export default function webViewControllerRemoveCacheTest() {
     * @tc.level      : Level 0
     */
     it('testRemoveCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testRemoveCache001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRemoveCache001", true, 77200, done);
-      sendEventByKey('WebViewControllerRemoveCacheTestButton', 10, '');
+      Utils.emitEvent("testRemoveCache001", 148411)
+      let isReturn = false;
+      Utils.registerEvent("testRemoveCache001", true, 148450, ()=>{isReturn = true});
+      Utils.waitAndClickComponent('WebViewControllerRemoveCacheTestButton',driver)
+      await waitForExist(() => isReturn, "testRemoveCache001", true, 1000);
+      done();
     })
 
     /*
@@ -79,10 +84,12 @@ export default function webViewControllerRemoveCacheTest() {
     * @tc.level      : Level 1
     */
     it('testRemoveCache002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testRemoveCache002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testRemoveCache002", true, 77202, done);
-      sendEventByKey('WebViewControllerRemoveCacheTestButton', 10, '');
+      Utils.emitEvent("testRemoveCache002", 148411)
+      Utils.registerEvent("testRemoveCache002", true, 148460, ()=>{isReturn = true});
+      let isReturn = false;
+      Utils.waitAndClickComponent('WebViewControllerRemoveCacheTestButton',driver)
+      await waitForExist(() => isReturn, "testRemoveCache002", true, 1000);
+      done();
     })
   })
 }

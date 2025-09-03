@@ -129,6 +129,10 @@ void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
                         napi_default, nullptr});
     descData.push_back(
         {"testSetVersionSuccess", nullptr, TestSetVersionSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
+}
+
+void AddRelationStoreTest3(std::vector<napi_property_descriptor> &descData)
+{
     descData.push_back({"testLockRowInvalidParam", nullptr, TestLockRowInvalidParam, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"testUnlockRowInvalidParam", nullptr, TestUnlockRowInvalidParam, nullptr, nullptr, nullptr,
@@ -145,12 +149,21 @@ void AddRelationStoreTest2(std::vector<napi_property_descriptor> &descData)
         {"testOHRdbDetachError", nullptr, TestOHRdbDetachError, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"testOHRdbSubscribeDetails", nullptr, TestOHRdbSubscribeDetails, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
+    descData.push_back({"testSetTokenizerNotSupported", nullptr, TestSetTokenizerNotSupported, nullptr, nullptr,
+                        nullptr, napi_default, nullptr});
+    descData.push_back({"testRollBackByTrxIdSuccess", nullptr, TestRollBackByTrxIdSuccess, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back({"testCommitByTrxIdSuccess", nullptr, TestCommitByTrxIdSuccess, nullptr, nullptr, nullptr,
+                        napi_default, nullptr});
+    descData.push_back(
+        {"testSubscribeSuccess", nullptr, TestSubscribeSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void AddRelationStoreTest(std::vector<napi_property_descriptor> &descData)
 {
     AddRelationStoreTest1(descData);
     AddRelationStoreTest2(descData);
+    AddRelationStoreTest3(descData);
 }
 
 napi_value TestSetDbType(napi_env env, napi_callback_info info)
@@ -1561,5 +1574,146 @@ napi_value TestOHRdbSubscribeDetails(napi_env env, napi_callback_info info)
     Rdb_DataObserver detailObs = {.context = nullptr, .callback.detailsObserver = detailObserver};
     int ret = OH_Rdb_Subscribe(store, RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS, &detailObs);
     napi_create_double(env, ret == RDB_OK ? 0 : -1, &returnCode);
+    OH_Rdb_CloseStore(store);
+    OH_Rdb_DeleteStore(&RelationalStoreTest::RDB_CONFIG);
     return returnCode;
+}
+
+napi_value TestSetTokenizerNotSupported(napi_env env, napi_callback_info info)
+{
+    int numType = 0;
+    OH_Rdb_GetSupportedDbType(&numType);
+    napi_value result;
+    OH_Rdb_ConfigV2 *configV2_ = nullptr;
+    configV2_ = OH_Rdb_CreateConfig();
+    OH_Rdb_SetDatabaseDir(configV2_, RelationalStoreTest::RDB_TEST);
+    OH_Rdb_SetStoreName(configV2_, RelationalStoreTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2_, RelationalStoreTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2_, RelationalStoreTest::g_moduleName);
+    OH_Rdb_SetDbType(configV2_, RDB_CAYLEY);
+    OH_Rdb_SetEncrypted(configV2_, false);
+    OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    Rdb_Tokenizer token = Rdb_Tokenizer::RDB_ICU_TOKENIZER;
+    int ret = OH_Rdb_SetTokenizer(configV2_, token);
+    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret, &result);
+    } else {
+        napi_create_int32(env, -1, &result);
+    }
+    OH_Rdb_DestroyConfig(configV2_);
+    return result;
+}
+
+napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int errCode = 0;
+    OH_Rdb_Store *testStore = nullptr;
+    OH_Rdb_ConfigV2 *configV2_ = nullptr;
+    configV2_ = OH_Rdb_CreateConfig();
+    OH_Rdb_SetDatabaseDir(configV2_, RelationalStoreTest::RDB_TEST);
+    OH_Rdb_SetStoreName(configV2_, RelationalStoreTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2_, RelationalStoreTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2_, RelationalStoreTest::g_moduleName);
+    OH_Rdb_SetDbType(configV2_, RDB_CAYLEY);
+    OH_Rdb_SetEncrypted(configV2_, false);
+    OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    int numType = 0;
+    OH_Rdb_GetSupportedDbType(&numType);
+    testStore = OH_Rdb_CreateOrOpen(configV2_, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test1 ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+    OH_Rdb_Execute(testStore, createTableSql);
+    OH_VBucket *insertBucket = OH_Rdb_CreateValuesBucket();
+    insertBucket->clear(insertBucket);
+    insertBucket->putInt64(insertBucket, "id", 1);
+    insertBucket->putText(insertBucket, "name", "ZhangSan");
+    int64_t int64Value = 60;
+    insertBucket->putInt64(insertBucket, "score", int64Value);
+    OH_Rdb_Insert(testStore, "test1", insertBucket);
+    int64_t trxId = 0;
+    OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
+    int ret = OH_Rdb_RollBackByTrxId(testStore, trxId);
+    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret, &result);
+    } else {
+        napi_create_int32(env, -1, &result);
+    }
+    insertBucket->destroy(insertBucket);
+    OH_Rdb_CloseStore(testStore);
+    OH_Rdb_DeleteStoreV2(configV2_);
+    OH_Rdb_DestroyConfig(configV2_);
+    return result;
+}
+
+napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int errCode = 0;
+    OH_Rdb_Store *testStore = nullptr;
+    OH_Rdb_ConfigV2 *configV2_ = nullptr;
+    configV2_ = OH_Rdb_CreateConfig();
+    OH_Rdb_SetDatabaseDir(configV2_, RelationalStoreTest::RDB_TEST);
+    OH_Rdb_SetStoreName(configV2_, RelationalStoreTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2_, RelationalStoreTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2_, RelationalStoreTest::g_moduleName);
+    OH_Rdb_SetDbType(configV2_, RDB_CAYLEY);
+    OH_Rdb_SetEncrypted(configV2_, false);
+    OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    int numType = 0;
+    OH_Rdb_GetSupportedDbType(&numType);
+    testStore = OH_Rdb_CreateOrOpen(configV2_, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+    OH_Rdb_Execute(testStore, createTableSql);
+    OH_VBucket *insertBucket = OH_Rdb_CreateValuesBucket();
+    insertBucket->putInt64(insertBucket, "id", 1);
+    insertBucket->putText(insertBucket, "name", "ZhangSan");
+    int64_t int64Value = 60;
+    insertBucket->putInt64(insertBucket, "score", int64Value);
+    OH_Rdb_Insert(testStore, "test", insertBucket);
+    int64_t trxId = 0;
+    OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
+    int ret = OH_Rdb_CommitByTrxId(testStore, trxId);
+    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret, &result);
+    } else {
+        napi_create_int32(env, -1, &result);
+    }
+    insertBucket->destroy(insertBucket);
+    OH_Rdb_CloseStore(testStore);
+    OH_Rdb_DeleteStoreV2(configV2_);
+    OH_Rdb_DestroyConfig(configV2_);
+    return result;
+}
+
+napi_value TestSubscribeSuccess(napi_env env, napi_callback_info info)
+{
+    static Rdb_DetailsObserver detailObserver = RdbSubscribeDetailCallback;
+    static const Rdb_DataObserver detailObs = {.context = nullptr, .callback.detailsObserver = detailObserver};
+    napi_value result;
+    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
+    const char *rdbTestPatH1 = "/data/storage/el2/database/com.acts.acttransactiontest/entry7";
+    OH_Rdb_SetDatabaseDir(configV2, rdbTestPatH1);
+    OH_Rdb_SetStoreName(configV2, RelationalStoreTest::g_storeName);
+    OH_Rdb_SetBundleName(configV2, RelationalStoreTest::g_bundleName);
+    OH_Rdb_SetModuleName(configV2, RelationalStoreTest::g_moduleName);
+    OH_Rdb_SetEncrypted(configV2, false);
+    OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
+    OH_Rdb_SetDbType(configV2, RDB_SQLITE);
+    int errCode = 0;
+    OH_Rdb_Store *testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
+    int ret = OH_Rdb_Subscribe(testRdbStore, RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS, &detailObs);
+    napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
+    OH_Rdb_CloseStore(testRdbStore);
+    OH_Rdb_DestroyConfig(configV2);
+    return result;
 }
