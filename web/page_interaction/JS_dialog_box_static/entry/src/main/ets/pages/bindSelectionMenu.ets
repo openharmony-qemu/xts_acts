@@ -20,6 +20,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import {Entry, Component, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback } from '@ohos.base'
 
 interface PreviewBuilderParam {
@@ -117,6 +118,13 @@ struct WebComponent {
             case "bindSelectionMenuType02": {
                 Utils.emitEvent(MenuType.PREVIEW_MENU, 8302)
                 break;
+            }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebAttributeTest' })
+              console.log('push URL success')
             }
           }
         })
