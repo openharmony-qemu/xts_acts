@@ -32,16 +32,6 @@
       }
     ],
     "requestPermissions": [
-      {
-        "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED",
-        "reason": "$string:module_desc",
-        "usedScene": {
-          "abilities": [
-            "MainAbility"
-          ],
-          "when": "always"
-        }
-      }
     ],
     "abilities": [
       {
