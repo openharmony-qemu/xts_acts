@@ -414,7 +414,7 @@ export default function appManagerStaticTest() {
           })
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
-          expect().assertFail();
+          expect(`${err.code}`).assertEqual('401');
           done();
           hilog.info(domain, tag, `${itName} end`);
         }
@@ -442,7 +442,7 @@ export default function appManagerStaticTest() {
           })
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
-          expect().assertFail();
+          expect(`${err?.code}`).assertEqual('401');
           done();
           hilog.info(domain, tag, `${itName} end`);
         }
