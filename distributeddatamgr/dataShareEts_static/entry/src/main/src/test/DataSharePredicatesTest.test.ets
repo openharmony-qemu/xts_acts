@@ -115,7 +115,7 @@ export default function dataSharePredicatesTest() {
       try {
         let numbersArr = new Array<ValueType>(255, 11.6, 13.0);
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.in("age", numbersArr);
+        predicates.inValues("age", numbersArr);
         expect(predicates != null && predicates != undefined).assertTrue()
       } catch (e: BusinessError) {
         expect().assertFail()
