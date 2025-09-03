@@ -91,6 +91,7 @@ struct WebOnAudioStateChanged {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               await waitForExist(() => this.statusResult, this.str, 'true_true_');
+              Utils.emitEvent(this.statusResult, 132660)
               this.controller.runJavaScript("pause()", (error, result) => {
                 if (error) {
                   console.log(`The controller.pause1() return error is: ${error}`);
@@ -99,7 +100,6 @@ struct WebOnAudioStateChanged {
                   console.log(`The controller.pause1() emitAudioStatePause2 return value is: ${result}`);
                 }
               })
-              Utils.emitEvent(this.statusResult, 132660)
               break;
             }
             case "emitAudioStatePause": {
