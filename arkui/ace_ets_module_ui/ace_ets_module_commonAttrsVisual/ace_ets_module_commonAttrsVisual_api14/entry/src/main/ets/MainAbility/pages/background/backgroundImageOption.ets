@@ -52,11 +52,11 @@ struct backgroundImageOption {
       moduleName: resource.moduleName,
       id: resource.id
     })
-    let imageSource = image.createImageSource(unit8Array.buffer.slice(0, unit8Array.buffer.byteLength))
-    let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+    let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength))
+    let createPixelMap: image.PixelMap = await imageSource?.createPixelMap({
       desiredPixelFormat: image.PixelMapFormat.RGBA_8888
     })
-    await imageSource.release()
+    await imageSource?.release()
     return createPixelMap
   }
 }
