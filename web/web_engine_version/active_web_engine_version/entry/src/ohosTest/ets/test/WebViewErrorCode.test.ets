@@ -59,27 +59,34 @@ export default function webViewWebViewErrorCode() {
     })
 
     /*
-     *tc.number SUB_ACE_BASIC_ETS_GETPAGEOFFSETERRORCODE_5700
-     *tc.name emitGetPageOffsetErrorCode
-     *tc.desc test interface of getUrl with not been associated with specific Web Components
+     *@tc.number SUB_ACE_BASIC_ETS_GETPAGEOFFSETERRORCODE_0100
+     *@tc.name emitGetPageOffsetErrorCode
+     *@tc.desc emitGetPageOffsetErrorCode
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
      */
     it('emitGetPageOffsetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetPageOffsetErrorCode";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("emitGetPageOffsetErrorCode", "801", 20250907, null);
-      Utils.registerEvent("emitGetPageOffsetErrorCode", "Init error. The WebviewController must be associated with a Web component", 20250908, done);
+      Utils.registerEvent("emitGetPageOffsetErrorCode", "Capability not supported", 20250908, done);
       await Utils.waitAndClickComponent(driver, "webViewOthersErrorCode");
     })
+
     /*
-     *tc.number SUB_ACE_BASIC_ETS_AVOIDVISIBLEVIEWPORTBOTTOMERRORCODE_5800
-     *tc.name emitAvoidVisibleViewportBottomErrorCode
-     *tc.desc test interface of stop with not been associated with specific Web Components
+     *@tc.number SUB_ACE_BASIC_ETS_AVOIDVISIBLEVIEWPORTBOTTOMERRORCODE_0200
+     *@tc.name emitAvoidVisibleViewportBottomErrorCode
+     *@tc.desc emitAvoidVisibleViewportBottomErrorCode
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 1
      */
     it('emitAvoidVisibleViewportBottomErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAvoidVisibleViewportBottomErrorCode";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "801", 20250909, null);
-      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "Init error. The WebviewController must be associated with a Web component", 20250910, done);
+      Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "Capability not supported", 20250910, done);
       await Utils.waitAndClickComponent(driver, "webViewOthersErrorCode");
     })
 

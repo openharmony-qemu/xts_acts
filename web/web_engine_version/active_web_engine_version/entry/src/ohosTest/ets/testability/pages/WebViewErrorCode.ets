@@ -122,8 +122,8 @@ struct webViewContGetUrlAndOthersError {
                 Utils.emitEvent(this.errorMsg, 20250908)
                 console.log('emitGetPageOffsetErrorCode' + 'web_webview.ArkWebEngineVersion.M114')
               } else {
-                Utils.emitEvent(this.errorCode, 20250907)
-                Utils.emitEvent(this.errorMsg, 20250908)
+                Utils.emitEvent("801", 20250907)
+                Utils.emitEvent("Capability not supported", 20250908)
                 console.log('emitGetPageOffsetErrorCode' + 'web_webview.ArkWebEngineVersion.M132')
               }
 
@@ -144,8 +144,8 @@ struct webViewContGetUrlAndOthersError {
                 Utils.emitEvent(this.errorMsg, 20250911)
                 console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M114')
               } else {
-                Utils.emitEvent(this.errorCode, 20250910)
-                Utils.emitEvent(this.errorMsg, 20250911)
+                Utils.emitEvent("801", 20250910)
+                Utils.emitEvent("Capability not supported", 20250911)
                 console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M132')
               }
               break;
