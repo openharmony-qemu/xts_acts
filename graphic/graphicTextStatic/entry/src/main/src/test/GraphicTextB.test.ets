@@ -315,7 +315,7 @@ export default function GraphicTextBTest() {
         console.log(msg + ' Succeed in paragraph.paintOnPath')
         expect(true).assertTrue()
         done()
-      }catch(err){
+      }catch(err: BusinessError){
         console.info(msg + 'test paragraph.paintOnPath error ' + JSON.stringify(err));
         console.info(msg + 'test paragraph.paintOnPath error ' + err);
         expect().assertFail();
