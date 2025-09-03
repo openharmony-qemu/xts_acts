@@ -18,7 +18,7 @@ import { Entry, Column, Component, RichEditor, Margin, Button, Text, RichEditorC
 @Component
 struct RichEditor11 {
   controller: RichEditorController = new RichEditorController();
-  @State len:number = 0
+  @State len:int = 0
   build() {
     Column() {
       Text(''+this.len).id('RichEditor11_Text')
