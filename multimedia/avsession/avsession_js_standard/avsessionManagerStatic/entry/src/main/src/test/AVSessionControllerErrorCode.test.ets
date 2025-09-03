@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -142,7 +142,7 @@ export default function abilityTest() {
                 console.info('TestLog: session deactivate success');
             }catch(err: BusinessError) {
                 console.info(`TestLog: session deactivate error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
             try {
                 controller.sendAVKeyEvent(event, (err: BusinessError|null) => {
@@ -151,13 +151,13 @@ export default function abilityTest() {
                         expect(err?.code).assertEqual(6600106);
                     } else {
                         console.info('sendAVKeyEvent Successfully');
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                     }
                     done();
                 })
             } catch (err: BusinessError) {
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
         })
@@ -199,12 +199,12 @@ export default function abilityTest() {
                 console.info('TestLog: session deactivate success');
             } catch (err: BusinessError) {
                 console.info(`TestLog: session deactivate error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
             try{
                 await controller.sendAVKeyEvent(event)
                 console.info('sendAVKeyEvent Successfully');
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             } catch (err: BusinessError) {
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600106);
@@ -225,7 +225,7 @@ export default function abilityTest() {
             await controller.destroy()
             try {
                 controller.getRealPlaybackPositionSync();
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             } catch (err: BusinessError) {
                 console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
@@ -248,7 +248,7 @@ export default function abilityTest() {
             try{
                 await controller.getValidCommands()
                 console.info(`TestLog: getValidCommands Successfully.`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             } catch (err: BusinessError) {
                 console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
@@ -275,13 +275,13 @@ export default function abilityTest() {
                         expect(err?.code).assertEqual(6600103);
                     } else {
                         console.info(`TestLog: getValidCommands Successfully.`);
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                     }
                     done();
                 });
             }catch(err: BusinessError){
                 console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
             Utils.msSleep(800);
@@ -349,13 +349,13 @@ export default function abilityTest() {
                             expect(err?.code).assertEqual(6600106);
                         } else {
                             console.info('sendCommonCommand Successfully');
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         }
                         done();
                     });
                 }catch(err: BusinessError){
                     console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
         })
@@ -378,13 +378,13 @@ export default function abilityTest() {
                         expect(err?.code).assertEqual(6600103);
                     } else {
                         console.info('sendCommonCommand Successfully');
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                     }
                     done();
                 });
             }catch(err: BusinessError){
                 console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
             Utils.msSleep(800);

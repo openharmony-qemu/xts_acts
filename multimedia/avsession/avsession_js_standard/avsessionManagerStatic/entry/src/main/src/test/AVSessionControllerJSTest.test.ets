@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -156,7 +156,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback1 received args: " + JSON.stringify(args));
             if (sessionEvent != UPDATE_LYRICS_EVENT) {
                 console.error(TAG + "Callback1 lyrics event unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
             receivedString = sessionEvent;
@@ -168,7 +168,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback2 received args: " + JSON.stringify(args));
             if (sessionEvent != UPDATE_LYRICS_EVENT) {
                 console.error(TAG + "Callback2 lyrics event unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
             receivedString2 = sessionEvent;
@@ -179,7 +179,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback1 received args: " + String(extras));
             if (extras['extrasKey'] != CUSTOM_EXTRAS['extrasKey']) {
                 console.error(TAG + "Callback1 extras unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
             receivedExtras = extras;
@@ -189,7 +189,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback2 received args: " + String(extras));
             if (extras['extrasKey'] != CUSTOM_EXTRAS['extrasKey']) {
                 console.error(TAG + "Callback2 extras unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
             receivedExtras2 = extras;
@@ -199,7 +199,7 @@ export default function abilityTest() {
             console.log(TAG + "queueTitleCallback1 received Title " + JSON.stringify(title as string));
             if (title != QUEUE_TITLE) {
                 console.error(TAG + "queueTitleCallback1 received Title unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
         }
@@ -208,7 +208,7 @@ export default function abilityTest() {
             console.log(TAG + "queueTitleCallback2 received Title " + JSON.stringify(title as string));
             if (title != QUEUE_TITLE) {
                 console.error(TAG + "queueTitleCallback2 received Title unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
         }
@@ -219,17 +219,17 @@ export default function abilityTest() {
             console.log(TAG + "queueItemsCallback1 received items title: " + items[0].description?.title);
             if (items.length != QUEUE_ITEM_LENGTH) {
                 console.error(TAG + "queueItemsCallback1 received items length unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].itemId != QUEUE_ITEM_ID) {
                 console.error(TAG + "queueItemsCallback1 received items id unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].description?.title != QUEUE_ITEM_KEY_WORD) {
                 console.error(TAG + "queueItemsCallback1 received items key word unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             receivedCallback = true;
@@ -241,17 +241,17 @@ export default function abilityTest() {
             console.log(TAG + "queueItemsCallback2 received items title: " + items[0].description?.title);
             if (items.length != QUEUE_ITEM_LENGTH) {
                 console.error(TAG + "queueItemsCallback2 received items length unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].itemId != QUEUE_ITEM_ID) {
                 console.error(TAG + "queueItemsCallback2 received items id unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             if (items[0].description?.title != QUEUE_ITEM_KEY_WORD) {
                 console.error(TAG + "queueItemsCallback2 received items key word unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 return;
             }
             receivedCallback2 = true;
@@ -261,7 +261,7 @@ export default function abilityTest() {
             console.log(TAG + "skipToQueueItemCallback1 received itemid " + itemId);
             if (itemId != SKIP_ITEM_ID) {
                 console.error(TAG + "skipToQueueItemCallback1 received uid unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
         }
@@ -270,7 +270,7 @@ export default function abilityTest() {
             console.log(TAG + "skipToQueueItemCallback2 received itemid " + itemId);
             if (itemId != SKIP_ITEM_ID) {
                 console.error(TAG + "skipToQueueItemCallback2 received uid unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
         }
@@ -393,7 +393,7 @@ export default function abilityTest() {
             controller.on('sessionEvent', dynamicLyricsCallback2);
             controller.off('sessionEvent', dynamicLyricsCallback1);
             controller.off('sessionEvent', dynamicLyricsCallback2);
-        
+
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -425,7 +425,7 @@ export default function abilityTest() {
             controller.on('sessionEvent', dynamicLyricsCallback1);
             controller.on('sessionEvent', dynamicLyricsCallback2);
             controller.off('sessionEvent');
-        
+
             try{
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             } catch (err: BusinessError) {
@@ -458,7 +458,7 @@ export default function abilityTest() {
             controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 finished");
@@ -481,7 +481,7 @@ export default function abilityTest() {
                 await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200 finished");
@@ -502,13 +502,13 @@ export default function abilityTest() {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
             let extras: Record<string, Object>|undefined;
             controller.getExtras((err, extras) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 expect(extras!['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
@@ -531,7 +531,7 @@ export default function abilityTest() {
                 await session!.setExtras(CUSTOM_EXTRAS)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             };
 
             let extras: Record<string, Object>;
@@ -539,7 +539,7 @@ export default function abilityTest() {
                 extras = await controller.getExtras()
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
             expect(extras['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
@@ -729,7 +729,7 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             Utils.msSleep(200).then(() => {
@@ -738,7 +738,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }
                 receivedCallback = false;
                 done();
@@ -792,7 +792,7 @@ export default function abilityTest() {
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             Utils.msSleep(200).then(() => {
@@ -801,7 +801,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }
                 receivedCallback = false;
                 done();
@@ -857,7 +857,7 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -866,7 +866,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -890,7 +890,7 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -899,7 +899,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -922,7 +922,7 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 setAVQueueItems error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -931,7 +931,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Session queue items change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -954,7 +954,7 @@ export default function abilityTest() {
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -963,7 +963,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -1021,7 +1021,7 @@ export default function abilityTest() {
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 setAVQueueTitle error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -1030,7 +1030,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Session queue Title change  not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -1049,7 +1049,7 @@ export default function abilityTest() {
             session!.setAVQueueItems(ITEMS_ARRAY, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 finished");
@@ -1072,7 +1072,7 @@ export default function abilityTest() {
                 await session!.setAVQueueItems(ITEMS_ARRAY)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 finished");
@@ -1092,7 +1092,7 @@ export default function abilityTest() {
             session!.setAVQueueTitle(QUEUE_TITLE, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 finished");
@@ -1115,7 +1115,7 @@ export default function abilityTest() {
                 await session!.setAVQueueTitle(QUEUE_TITLE)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200 finished");
@@ -1135,7 +1135,7 @@ export default function abilityTest() {
             controller.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 finished");
@@ -1158,7 +1158,7 @@ export default function abilityTest() {
                 await controller.skipToQueueItem(QUEUE_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200 finished");
@@ -1180,7 +1180,7 @@ export default function abilityTest() {
                 await controller.skipToQueueItem(SKIP_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200)
@@ -1189,7 +1189,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 skipToQueueItem not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             done();
@@ -1211,7 +1211,7 @@ export default function abilityTest() {
                 await controller.skipToQueueItem(SKIP_ITEM_ID)
             } catch (err: BusinessError) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             await Utils.msSleep(200);
@@ -1220,7 +1220,7 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200skipToQueueItem not received");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = false;
             receivedCallback2 = false;
@@ -1240,13 +1240,13 @@ export default function abilityTest() {
             session!.setAVQueueItems(ITEMS_ARRAY, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 } else {
                     controller.getAVQueueItems((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 finished");
                             expect(true).assertTrue();
@@ -1273,12 +1273,12 @@ export default function abilityTest() {
                     await controller.getAVQueueItems()
                 } catch (err: BusinessError) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 };
                 done();
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })
@@ -1296,13 +1296,13 @@ export default function abilityTest() {
             session!.setAVQueueTitle(QUEUE_TITLE, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 } else {
                     controller.getAVQueueTitle((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 finished");
                             expect(true).assertTrue();
@@ -1329,12 +1329,12 @@ export default function abilityTest() {
                     await controller.getAVQueueTitle()
                 } catch (err: BusinessError) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 };
                 done();
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })
@@ -1359,7 +1359,7 @@ export default function abilityTest() {
                 console.log(`Get playback state: ${playbackState}`);
                 expect(currentPlaybackState.state).assertEqual(0);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_STATIC_0100 finished");
             done();
@@ -1385,7 +1385,7 @@ export default function abilityTest() {
                 console.log(`Get metadata: ${currentMetaData}`);
                 expect(currentMetaData.assetId).assertEqual("0");
             }catch(err: BusinessError){
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100 finished");
             done();
@@ -1408,7 +1408,7 @@ export default function abilityTest() {
                 console.log(`Get queue title: ${currentQueueTitle}`);
                 expect(currentQueueTitle).assertEqual(QUEUE_TITLE);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_STATIC_0100 finished");
             done();
@@ -1431,7 +1431,7 @@ export default function abilityTest() {
                 console.log(`Get queue item: ${currentQueueItem}`);
                 expect(currentQueueItem[0].itemId).assertEqual(ITEMS_ARRAY[0].itemId);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_STATIC_0100 finished");
             done();
@@ -1452,7 +1452,7 @@ export default function abilityTest() {
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100 finished");
             done();
@@ -1475,7 +1475,7 @@ export default function abilityTest() {
                 console.log(`Get session active state: ${isActive}`);
                 expect(isActive).assertEqual(true);
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_STATIC_0100 finished");
             done();
@@ -1498,7 +1498,7 @@ export default function abilityTest() {
                 console.log(`Get valid commands: ${validCommands}`);
                 expect(validCommands[0]).assertEqual('play');
             } catch (err) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_STATIC_0100 finished");
             done();
@@ -1521,14 +1521,14 @@ export default function abilityTest() {
                     if (items[0].description?.drmScheme === ITEMS_ARRAY[0].description?.drmScheme){
                         expect(true).assertTrue();
                     }else{
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                         done();
                     }
                     done();
                 });
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
         })

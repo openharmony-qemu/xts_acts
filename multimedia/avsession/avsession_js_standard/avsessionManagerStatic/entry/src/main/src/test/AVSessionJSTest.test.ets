@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,7 +97,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback1 received args: " + JSON.stringify(args));
             if (command != COMMON_COMMAND_STRING) {
                 console.error(TAG + "Callback1 common command unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback = true;
             receivedString = command;
@@ -109,7 +109,7 @@ export default function abilityTest() {
             console.log(TAG + "Callback2 received args: " + JSON.stringify(args));
             if (command != COMMON_COMMAND_STRING) {
                 console.error(TAG + "Callback2 common command unmatch");
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             receivedCallback2 = true;
             receivedString2 = command;
@@ -129,7 +129,7 @@ export default function abilityTest() {
             session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0100 finished");
@@ -152,7 +152,7 @@ export default function abilityTest() {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0200 finished");
@@ -172,7 +172,7 @@ export default function abilityTest() {
             session!.setExtras(CUSTOM_EXTRAS, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0100 finished");
@@ -195,7 +195,7 @@ export default function abilityTest() {
                 await session!.setExtras(CUSTOM_EXTRAS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             };
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0200 finished");
@@ -391,7 +391,7 @@ export default function abilityTest() {
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo.devices[0].deviceId}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
             } catch (err: BusinessError) {
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
             done();
         })
