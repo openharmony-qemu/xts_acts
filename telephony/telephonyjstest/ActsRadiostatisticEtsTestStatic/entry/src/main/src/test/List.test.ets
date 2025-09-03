@@ -15,8 +15,12 @@
  
 import callJsunit from "./CallJsunit.test";
 import telSyncTest from "./TelSyncTest.test";
+import radioJsunit from './RadioJsunit.test';
+import radioSecondJsunit from './RadioSecondJsunit.test';
 
 export default function testsuite() {
   callJsunit();
   telSyncTest();
+  radioJsunit();
+  radioSecondJsunit();
 }
