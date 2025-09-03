@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 import WebDataBaseTest from './WebDataBase.test'
-
+import onCreateNativeMediaPlayer from './onSslErrorEvent.test'
 export default function testsuite() {
   WebDataBaseTest();
+  onCreateNativeMediaPlayer();
 }

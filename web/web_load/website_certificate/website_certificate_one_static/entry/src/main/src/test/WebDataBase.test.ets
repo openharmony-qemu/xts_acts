@@ -75,8 +75,9 @@ export default function WebDataBaseTest() {
         Utils.emitEvent('testSaveHttpAuthCredentials001', 10)
         await Utils.msSleep(5000);
         Utils.registerEvent('testSaveHttpAuthCredentials001', true, 30040, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebDataBaseButton', 10, '');
-        await Utils.msSleep(3000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -93,8 +94,9 @@ export default function WebDataBaseTest() {
         Utils.emitEvent('testGetHttpAuthCredentials001', 10)
         await Utils.msSleep(2000);
         Utils.registerEvent('testGetHttpAuthCredentials001', 'StrOmgGol', 30045, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebDataBaseButton', 10, '');
-        await Utils.msSleep(3000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -111,8 +113,9 @@ export default function WebDataBaseTest() {
         Utils.emitEvent('testExistHttpAuthCredentials001', 10)
         await Utils.msSleep(2000);
         Utils.registerEvent('testExistHttpAuthCredentials001', true, 30046, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebDataBaseButton', 10, '');
-        await Utils.msSleep(3000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -129,8 +132,13 @@ export default function WebDataBaseTest() {
         Utils.emitEvent('testDeleteHttpAuthCredentials001', 10)
         await Utils.msSleep(2000);
         Utils.registerEvent('testDeleteHttpAuthCredentials001', false, 30050, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebDataBaseButton', 10, '');
-        await Utils.msSleep(6000);
+        await Utils.msSleep(8000);
+        Utils.emitEvent('emitonSwitchNextPage1', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('WebDataBaseButton', 10, '');
+        await Utils.msSleep(1000);
         done();
       })
   })
