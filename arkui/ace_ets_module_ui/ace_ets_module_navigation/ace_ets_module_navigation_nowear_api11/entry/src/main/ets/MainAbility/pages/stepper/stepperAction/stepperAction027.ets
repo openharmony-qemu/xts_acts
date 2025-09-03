@@ -39,5 +39,6 @@ struct stepperAction027 {
           .prevLabel('Previous2222222222222222222222222222222222222222222222222222')
       }
     }
+    .height('90%')
   }
 }
