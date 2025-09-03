@@ -21,6 +21,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -30,7 +31,7 @@ export default function webviewTerminateRenderProcess() {
   describe('TerminateRenderProcess', (): void => {
 
     beforeAll(async (): Promise<void> => {
-      console.log('beforeAll end,%s', 'Succeed!')
+      console.log('APP start')
     });
 
     beforeEach(async () => {
@@ -83,5 +84,16 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('TerminateRenderProcess', 10, '');
+        await Utils.msSleep(10000);
+        done();
+      })
+
   })
 }
