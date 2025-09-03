@@ -16,9 +16,11 @@
 import geolocationPermissions from './geolocationPermissions.test'
 import webViewSrollableJsunit from './bindSelectionMenu.test'
 import webAttributeTest from './WebAttributeTest.test'
+import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
 
 export default function testsuite() {
     geolocationPermissions();
     webViewSrollableJsunit();
     webAttributeTest();
+    WebViewEnumAndFontLibrary();
 }

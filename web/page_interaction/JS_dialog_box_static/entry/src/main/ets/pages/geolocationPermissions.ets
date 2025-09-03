@@ -227,7 +227,6 @@ struct geolocationPermissions {
               router.pushUrl({ url: 'pages/bindSelectionMenu' })
               console.log('push URL success')
             }
-
           }
         })
       }

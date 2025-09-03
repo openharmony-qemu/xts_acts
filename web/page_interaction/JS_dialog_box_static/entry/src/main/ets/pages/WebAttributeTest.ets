@@ -38,6 +38,7 @@ import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Driver, PointerMatrix } from '@ohos.UiTest';
 import cert from '@ohos.security.cert';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -154,6 +155,12 @@ struct WebAttributeTest {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
+              }
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebViewEnumAndFontLibrary' })
+                console.log('push URL success')
               }
             }
           })

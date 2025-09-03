@@ -2,6 +2,7 @@
   "src": [
     "pages/geolocationPermissions",
     "pages/bindSelectionMenu",
-    "pages/WebAttributeTest"
+    "pages/WebAttributeTest",
+    "pages/WebViewEnumAndFontLibrary"
   ]
 }
