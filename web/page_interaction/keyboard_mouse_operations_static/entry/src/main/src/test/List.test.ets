@@ -15,7 +15,10 @@
 
 import webHitTestTypeEnumTest from './WebKeyboardController.test'
 import webHitTestTypeEnumTest01 from './WebHitTestTypeEnumTest.test'
+import webOnInterceptKeyEvent from './WebOnInterceptKeyEvent.test'
+
 export default function testsuite() {
   webHitTestTypeEnumTest();
   webHitTestTypeEnumTest01();
+  webOnInterceptKeyEvent();
 }

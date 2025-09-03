@@ -141,8 +141,5 @@ export default function webHitTestTypeEnumTest() {
         await Utils.msSleep(6000);
         done()
       })
-
-
-
   })
 }
