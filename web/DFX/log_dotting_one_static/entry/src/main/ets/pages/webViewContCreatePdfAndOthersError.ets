@@ -12,41 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnContextMenuShowEvent,
-  OnPageEndEvent,
-  OnHttpErrorReceiveEvent,
-  OnDataResubmittedEvent,
-  WebDarkMode,
-  CustomDialogController,
-  WebResourceResponse,
-  OnRenderExitedEvent,
-  OnPageBeginEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web,
-  EditMenuOptions,
-  TextRange,
-  TextMenuItem,
-  TextMenuItemId
-} from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
-import Utils from '../../src/test/Util.test';
-import emitter from '@ohos.events.emitter';
+
+import {OnScreenCaptureRequestEvent, Entry, Component, Column, Row, Button, ClickEvent, Web, WebCaptureMode } from "@ohos.arkui.component"
+import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
-
-
-class StringFields {
-  str: string = '';
-}
+import Utils from '../../src/test/Util.test';
+import webview from '@ohos.web.webview';
+import events_emitter from '@ohos.events.emitter';
+import { Driver, ON, On } from '@ohos.UiTest';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Hypium } from "../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 
 
 @Entry
@@ -55,109 +31,80 @@ struct webViewContCreatePdfAndOthersError {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = '';
-  stringObj: StringFields = new StringFields();
-  @State editMenuOptions: EditMenuOptions =
-    { onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick } as EditMenuOptions;
-  @State errorCode: int = 0;
-  @State errorMsg: string = 'failed';
+  @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
-
-  onCreateMenu(menuItems: Array<TextMenuItem>): Array<TextMenuItem> {
-    let items = menuItems.filter((menuItem) => {
-      return (
-        menuItem.id.equals(TextMenuItemId.CUT) ||
-        menuItem.id.equals(TextMenuItemId.COPY) ||
-        menuItem.id.equals((TextMenuItemId.PASTE))
-      )
-    });
-    return items;
-  }
-
-  onMenuItemClick(menuItem: TextMenuItem, textRange: TextRange): boolean {
-    if (menuItem.id.equals(TextMenuItemId.CUT)) {
-      return true;
-    } else if (menuItem.id.equals(TextMenuItemId.COPY)) {
-      return false;
-    }
-    return false;
-  }
+  @State zoomAccess: boolean = false;
+  @State errorCode: Int = 0;
+  @State errorMsg: string = 'failed';
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    console.info('Finish aboutToAppear');
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+    console.info("web page valueChangeCallBack");
     if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION vaclue: ' + data['ACTION']);
-        let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
-        this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
+      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      if (eventData.data != null && (eventData.data as Record<string , object>)?.["ACTION"] != null) {
+        this.str = "" + (eventData.data as Record<string , object>)?.["ACTION"];
       }
     }
   }
-  pdfConfig: webview.PdfConfiguration = {
-    width: 8.27,
-    height: 11.69,
-    marginTop: 0,
-    marginBottom: 0,
-    marginRight: 0,
-    marginLeft: 0,
-    shouldPrintBackground: true
-  } as webview.PdfConfiguration;
+
 
   build() {
     Column() {
       Row() {
-        Button('createPdfAndOthersError')
-          .key('webViewContCreatePdfAndOthersError')
-          .onClick((e: ClickEvent) => {
-            console.info('key==>' + this.stringObj.str)
-            switch (this.stringObj.str) {
+        Button('createPdfAndOthersError').key('webViewContCreatePdfAndOthersError').onClick((e: ClickEvent) => {
+          console.info(' key==>' + this.str)
+          switch (this.str) {
 
-              case 'emitSetPrintBackgroundInitErr': {
-                try {
-                  this.controllerNull.setPrintBackground(false)
-                } catch (error: BusinessError) {
-                  console.error(`XXXXXXXX emitGetScrollableInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
-                  this.errorCode = error.code;
-                  this.errorMsg = error.message;
-                  Utils.emitEvent(this.errorCode, 17113)
-                  Utils.emitEvent(this.errorMsg, 17114)
-                }
-                break;
+            case 'emitSetPrintBackgroundInitErr': {
+              try {
+                this.controllerNull.setPrintBackground(false)
+              } catch (error: BusinessError) {
+                console.error(`XXXXXXXX emitGetScrollableInitErr ErrorCode: ${error.code}`);
+                this.errorCode = error.code;
+                Utils.emitEvent(this.errorCode, 17113)
               }
+              break;
             }
-          })
 
+            case 'emitCreateWebPrintDocumentAdapterInitErr': {
+              try {
+                this.controllerNull.createWebPrintDocumentAdapter('example.pdf')
+              } catch (error:BusinessError) {
+                console.error(`XXXXXXXX emitCreateWebPrintDocumentAdapterInitErr ErrorCode: ${error.code}`);
+                this.errorCode = error.code;
+              }
+              Utils.emitEvent(this.errorCode, 17107)
+              break;
+            }
+
+          }
+        })
       }
 
-      Web({
-        src: 'resource://rawfile/index.html',
-        controller: this.controller
-      })
+      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+        .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .zoomAccess(this.zoomAccess)
         .enableHapticFeedback(true)
-        .editMenuOptions(this.editMenuOptions)
-        .forceDisplayScrollBar(true)
+        .enableNativeEmbedMode(true)
     }
   }
 }
