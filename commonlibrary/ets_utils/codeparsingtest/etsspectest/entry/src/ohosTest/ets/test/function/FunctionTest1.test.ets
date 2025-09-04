@@ -76,7 +76,7 @@ export default function functionTest1() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0101
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0001
      * @tc.name FunctionTest0001
      * @tc.desc Function declaration - number square calculation (parameters passed by value)
      * @tc.size MediumTest
@@ -93,7 +93,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0102
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0002
      * @tc.name FunctionTest0002
      * @tc.desc Anonymous function expression - addition of two numbers (explicit parameter types)
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0103
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0003
      * @tc.name FunctionTest0003
      * @tc.desc Named function expression - multiplication of two numbers (internal name not accessible externally)
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function functionTest1() {
 
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0106
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0006
      * @tc.name FunctionTest0006
      * @tc.desc Array parameter - adding elements (reference passing verification)
      * @tc.size MediumTest
@@ -153,7 +153,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0107
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0007
      * @tc.name FunctionTest0007
      * @tc.desc Function declaration - return fixed number without parameters (type verification)
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0108
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0008
      * @tc.name FunctionTest0008
      * @tc.desc Anonymous function expression - string concatenation (result verification)
      * @tc.size MediumTest
@@ -185,7 +185,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0109
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0009
      * @tc.name FunctionTest0009
      * @tc.desc Named function expression - factorial calculation (non-negative parameter verification)
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0111
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0011
      * @tc.name FunctionTest0011
      * @tc.desc Function declaration hoisting - call before declaration (factorial result)
      * @tc.size MediumTest
@@ -218,7 +218,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0112
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0012
      * @tc.name FunctionTest0012
      * @tc.desc Function expression - no hoisting feature (error when called first)
      * @tc.size MediumTest
@@ -232,7 +232,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0114
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0014
      * @tc.name FunctionTest0014
      * @tc.desc apply method - sum with array parameters (result verification)
      * @tc.size MediumTest
@@ -248,7 +248,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0115
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0015
      * @tc.name FunctionTest0015
      * @tc.desc Recursive call - factorial calculation (parameter validity)
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0116
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0016
      * @tc.name FunctionTest0016
      * @tc.desc Function hoisting + default parameters - call before declaration (default value takes effect)
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0117
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0017
      * @tc.name FunctionTest0017
      * @tc.desc call method - multiplication with multiple parameters (result verification)
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0119
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0019
      * @tc.name FunctionTest0019
      * @tc.desc Function scope - internal variables not accessible externally (error verification)
      * @tc.size MediumTest
@@ -311,7 +311,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0120
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0020
      * @tc.name FunctionTest0020
      * @tc.desc Nested function - access outer variables (result verification)
      * @tc.size MediumTest
@@ -327,7 +327,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0121
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0021
      * @tc.name FunctionTest0021
      * @tc.desc Multi-level nesting - sum of three-level variables (result verification)
      * @tc.size MediumTest
@@ -343,7 +343,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0122
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0022
      * @tc.name FunctionTest0022
      * @tc.desc Scope conflict - internal variable overrides outer variable (result verification)
      * @tc.size MediumTest
@@ -359,7 +359,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0123
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0023
      * @tc.name FunctionTest0023
      * @tc.desc Scope conflict - internal variable overrides global variable (result verification)
      * @tc.size MediumTest
@@ -375,7 +375,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0124
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0024
      * @tc.name FunctionTest0024
      * @tc.desc Scope conflict - parameter overrides outer variable (result verification)
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0126
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0026
      * @tc.name FunctionTest0026
      * @tc.desc Basic closure - counter (increment on multiple calls)
      * @tc.size MediumTest
@@ -409,7 +409,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0127
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0027
      * @tc.name FunctionTest0027
      * @tc.desc Multi-level closure - sum of three-level variables (closure preservation)
      * @tc.size MediumTest
@@ -425,7 +425,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0128
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0028
      * @tc.name FunctionTest0028
      * @tc.desc Closure encapsulation - counter object (increment/decrement/check)
      * @tc.size MediumTest
@@ -444,7 +444,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0129
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0029
      * @tc.name FunctionTest0029
      * @tc.desc Closure preserving array - adding elements (reference passing)
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function functionTest1() {
 
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0131
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0031
      * @tc.name FunctionTest0031
      * @tc.desc Multiple closure instances - independent variables (no interference)
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0132
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0032
      * @tc.name FunctionTest0032
      * @tc.desc Closure handling numbers - cumulative multiplication (multiple calls)
      * @tc.size MediumTest
@@ -508,7 +508,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0133
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0033
      * @tc.name FunctionTest0033
      * @tc.desc Closure handling strings - cumulative concatenation (multiple calls)
      * @tc.size MediumTest
@@ -532,7 +532,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0134
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0034
      * @tc.name FunctionTest0034
      * @tc.desc arguments object - access parameters by index (value verification)
      * @tc.size MediumTest
@@ -548,7 +548,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0135
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0035
      * @tc.name FunctionTest0035
      * @tc.desc arguments object - get parameter length (quantity verification)
      * @tc.size MediumTest
@@ -564,7 +564,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0136
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0036
      * @tc.name FunctionTest0036
      * @tc.desc arguments object - convert to array (element verification)
      * @tc.size MediumTest
@@ -580,7 +580,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0137
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0037
      * @tc.name FunctionTest0037
      * @tc.desc arguments object - handle indefinite parameters (sum)
      * @tc.size MediumTest
@@ -596,7 +596,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0138
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0038
      * @tc.name FunctionTest0038
      * @tc.desc arguments object - non-array characteristics (no push method)
      * @tc.size MediumTest
@@ -610,7 +610,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0139
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0039
      * @tc.name FunctionTest0039
      * @tc.desc Default parameters - basic features (use default value when no parameter is passed)
      * @tc.size MediumTest
@@ -626,7 +626,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0140
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0040
      * @tc.name FunctionTest0040
      * @tc.desc Default parameters - pass undefined to trigger default (value verification)
      * @tc.size MediumTest
@@ -641,7 +641,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0141
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0041
      * @tc.name FunctionTest0041
      * @tc.desc Rest parameters - collect parameters (array characteristics)
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0142
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0042
      * @tc.name FunctionTest0042
      * @tc.desc Default + rest parameters - mixed summation (result verification)
      * @tc.size MediumTest
@@ -671,7 +671,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0143
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0043
      * @tc.name FunctionTest0043
      * @tc.desc Parameter destructuring - object destructuring (property extraction)
      * @tc.size MediumTest
@@ -687,7 +687,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0144
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0044
      * @tc.name FunctionTest0044
      * @tc.desc Parameter destructuring - array destructuring (element extraction)
      * @tc.size MediumTest
@@ -703,7 +703,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0145
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0045
      * @tc.name FunctionTest0045
      * @tc.desc Arrow function - concise syntax with single parameter (result verification)
      * @tc.size MediumTest
@@ -719,7 +719,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0147
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0047
      * @tc.name FunctionTest0047
      * @tc.desc Arrow function - use rest parameters instead of arguments (sum)
      * @tc.size MediumTest
@@ -734,7 +734,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0148
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0048
      * @tc.name FunctionTest0048
      * @tc.desc Arrow function - cannot be used as constructor (error with new)
      * @tc.size MediumTest
@@ -749,7 +749,7 @@ export default function functionTest1() {
 
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0150
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0050
      * @tc.name FunctionTest0050
      * @tc.desc Predefined function - isFinite verification (boundary value judgment)
      * @tc.size MediumTest
@@ -765,7 +765,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0151
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0051
      * @tc.name FunctionTest0051
      * @tc.desc Function declaration - number cube calculation (parameters passed by value)
      * @tc.size MediumTest
@@ -782,7 +782,7 @@ export default function functionTest1() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_FUNCTION_TEST0152
+     * @tc.number SUB_BUILTINS_FUNCTION_TEST0052
      * @tc.name FunctionTest0052
      * @tc.desc Anonymous function expression - subtraction of two numbers (explicit parameter types)
      * @tc.size MediumTest
