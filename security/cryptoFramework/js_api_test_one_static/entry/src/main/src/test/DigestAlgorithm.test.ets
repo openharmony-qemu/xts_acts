@@ -284,7 +284,7 @@ export default function DigestAlgorithmJsunit() {
       let globalText: string = "";
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789";
       for (let i = 0; i < 10000; i++) {
-        globalText += t.charAt(Math.floor(Math.random() * t.length));
+        globalText += t.charAt(Math.floor(Math.random() * t.length).toInt());
       }
       console.log("Datablob = " + globalText);
       let inBlob: cryptoFramework.DataBlob = {
