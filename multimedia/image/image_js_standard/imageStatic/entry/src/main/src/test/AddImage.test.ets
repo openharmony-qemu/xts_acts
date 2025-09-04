@@ -24,7 +24,7 @@ import hilog from '@ohos.hilog';
 export default function addImage() {
   describe("addImage", () => {
     const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
-    let incSouce: image.ImageSource;
+    let incSouce: image.ImageSource | undefined;
     let filesDir: string | undefined | null;
 
     beforeAll(async () => {
@@ -39,7 +39,7 @@ export default function addImage() {
       console.info("afterEach case");
       if (incSouce != undefined) {
         try {
-          await incSouce.release();
+          await incSouce!.release();
         } catch (error) {
           console.info("incSouce release faile :" + error);
         }
@@ -71,10 +71,10 @@ export default function addImage() {
       let offset: int = 0;
       if (type == "sourceOpts" && opts != undefined) {
         console.info(`${testNum} have sourceopts`);
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1), opts);
       } else {
         console.info(`${testNum} no sourceopts`);
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1));
       }
       let ret: boolean;
       let isFinished: boolean = false;
@@ -85,22 +85,29 @@ export default function addImage() {
           isFinished = true;
         }
         try {
-          await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
-          offset = offset + oneStep.byteLength as int;
-          console.info(`${testNum} 0003 ` + offset);
-          ret = true;
+          if (incSouce == undefined) {
+            console.info(`${testNum} createIncrementalSource failed`);
+            ret = false;
+            expect(false).assertTrue();
+            done();
+          } else {
+            await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+            offset = offset + oneStep.byteLength as int;
+            console.info(`${testNum} 0003 ` + offset);
+            ret = true;
+          }
         } catch (error) {
           console.info(`${testNum} updateData failed`);
           expect(false).assertTrue();
           ret = false;
         }
       }
-      if (ret) {
+      if (ret && incSouce != undefined) {
         console.info(`${testNum} updateData success `);
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
         };
-        incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
+        incSouce!.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
           if (err && err.code) {
             console.info(`${testNum} createPixelMap err: ` + err);
             expect(false).assertTrue();
@@ -127,9 +134,9 @@ export default function addImage() {
       let bufferSize = testimagebuffer.byteLength;
       let offset = 0;
       if (type == "sourceOpts" && opts != undefined) {
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1), opts);
       } else {
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1));
       }
       let ret: boolean;
       let isFinished: boolean = false;
@@ -139,15 +146,22 @@ export default function addImage() {
         if (oneStep.byteLength < bufferSize) {
           isFinished = true;
         }
-        ret = await new Promise<boolean>((res) => {
-          incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
-            if (err && err.code) {
-              res(false);
-            } else {
-              res(true);
-            }
+        if (incSouce == undefined) {
+          console.info(`${testNum} createIncrementalSource failed`);
+          ret = false;
+          expect(false).assertTrue();
+          done();
+        } else {
+          ret = await new Promise<boolean>((res) => {
+            incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
+              if (err && err.code) {
+                res(false);
+              } else {
+                res(true);
+              }
+            });
           });
-        });
+        }
         if (!ret) {
           console.info(`${testNum} updateData failed`);
           expect(ret).assertTrue();
@@ -156,12 +170,12 @@ export default function addImage() {
         offset = offset + oneStep.byteLength as int;
         console.info(`${testNum} 0003 ` + offset);
       }
-      if (ret) {
+      if (ret && incSouce != undefined) {
         console.info(`${testNum} updateData success `);
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
         };
-        incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
+        incSouce!.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap) => {
           if (err && err.code) {
             console.info(`${testNum} createPixelMap err: ` + err);
             expect(false).assertTrue();

@@ -228,7 +228,7 @@ export default function imagePackToData() {
     let packToDataimgSourcePromiseFail = async (done: () => void, testNum: string, packOpts: image.PackingOption) => {
       try {
         await getFd("test.png");
-        const imageSourceApi: image.ImageSource = image.createImageSource(fdNumber);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
         if (imageSourceApi == undefined) {
           console.info(`${testNum} create image source failed`);
           expect(false).assertTrue();

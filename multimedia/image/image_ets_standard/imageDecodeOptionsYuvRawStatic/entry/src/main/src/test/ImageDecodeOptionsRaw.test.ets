@@ -53,15 +53,24 @@ export default function imageDecodeOptionsRawTest() {
       decodingOptions: image.DecodingOptions, desiredPixelFormat: image.PixelMapFormat) => {
       result = false;
       try{ 
-          let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
-          globalPixelMap = pixelMap;
-          let imageInfo = await pixelMap.getImageInfo();
-          expect(imageInfo != undefined).assertTrue();
-          let pixelFormat = imageInfo.pixelFormat;
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-          pixelFormat === desiredPixelFormat && (result = true);
-          pixelMap.release();
+          let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap(decodingOptions);
+          if (pixelMap == undefined) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelMap == undefined');
+          } else {
+            globalPixelMap = pixelMap;
+            let imageInfo: image.ImageInfo = await pixelMap.getImageInfo();
+            if (imageInfo == undefined) {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo == undefined');
+            }
+            expect(imageInfo != undefined).assertTrue();
+            let pixelFormat = imageInfo.pixelFormat;
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+            pixelFormat === desiredPixelFormat && (result = true);
+            if (pixelMap != undefined) {
+              pixelMap.release();
+            }
+          }
         } catch(err: Error) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
         }
@@ -122,15 +131,24 @@ export default function imageDecodeOptionsRawTest() {
       decodingOptions: image.DecodingOptions, desiredPixelFormat: image.PixelMapFormat) => {
       result = false;
       try {
-        let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
-        globalPixelMap = pixelMap;
-        let imageInfo = await pixelMap.getImageInfo();
-        expect(imageInfo != undefined).assertTrue();
-        let pixelFormat = imageInfo.pixelFormat;
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-        pixelFormat === image.PixelMapFormat.RGBA_8888 && (result = true);
-        pixelMap.release();
+        let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap(decodingOptions);
+        if (pixelMap == undefined) {
+          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelMap == undefined');
+        } else {
+          globalPixelMap = pixelMap;
+          let imageInfo: image.ImageInfo = await pixelMap.getImageInfo();
+          expect(imageInfo != undefined).assertTrue();
+          if (imageInfo == undefined) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo == undefined');
+          }
+          let pixelFormat = imageInfo.pixelFormat;
+          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
+          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+          pixelFormat === image.PixelMapFormat.RGBA_8888 && (result = true);
+          if (pixelMap != undefined) {
+            pixelMap.release();
+          }
+        }
       } catch(err: Error) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
       }
@@ -146,10 +164,12 @@ export default function imageDecodeOptionsRawTest() {
           globalPixelMap = pixelMap!;
           let imageInfo = await pixelMap!.getImageInfo();
           expect(imageInfo != undefined).assertTrue();
-          let pixelFormat = imageInfo.pixelFormat;
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' callBackCreate pixelFormat:' + pixelFormat);
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-          pixelFormat === image.PixelMapFormat.RGBA_8888 && (result = true);
+          if (imageInfo != undefined) {
+            let pixelFormat = imageInfo.pixelFormat;
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' callBackCreate pixelFormat:' + pixelFormat);
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+            pixelFormat === image.PixelMapFormat.RGBA_8888 && (result = true);
+          }
           pixelMap!.release();
         }
       })
@@ -187,7 +207,7 @@ export default function imageDecodeOptionsRawTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
@@ -200,7 +220,7 @@ export default function imageDecodeOptionsRawTest() {
 
     afterEach(async () => {
       fs.closeSync(fdNumber);
-      if (globalPixelMap) {
+      if (globalPixelMap != undefined) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'globalPixelMap release start');
         try {
           await globalPixelMap!.release();

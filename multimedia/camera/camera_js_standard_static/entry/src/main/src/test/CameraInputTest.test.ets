@@ -32,7 +32,7 @@ let mCameraSession: cameraObj.VideoSession;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
 let isEmpty01 = (data: cameraObj.CameraManager) => {
@@ -234,7 +234,7 @@ let isEmpty08 = (data: BusinessError) => {
      console.log(TAG + 'before receiver check')
      if (receiver !== undefined) {
        console.log(TAG + 'Photo receiver is created successfully')
-       mPhotoSurface = await receiver.getReceivingSurfaceId()
+       mPhotoSurface = await receiver!.getReceivingSurfaceId()
        console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
      } else {
        console.log(TAG + 'Photo receiver is created failed')

@@ -34,7 +34,7 @@ let mPhotoSurface: string;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let secureSeqId: bigint;
 let surfaceId: string = '';
 
@@ -110,7 +110,7 @@ export default function cameraSecureSessionTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Secure receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Secure received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Secure receiver is created failed')
