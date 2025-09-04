@@ -805,6 +805,7 @@ async function setMediaMutedNormal(params: MediaMutedParams, done: Function) {
         break;
       case PREPARED:
         setPlayerMediaMuted(params)
+        await mediaTestBase.msleepAsync(50)
         avPlayer?.play()
         break;
       case PLAYING:
@@ -812,14 +813,17 @@ async function setMediaMutedNormal(params: MediaMutedParams, done: Function) {
           break;
         }
         setPlayerMediaMuted(params)
+        await mediaTestBase.msleepAsync(50)
         avPlayer?.pause()
         break;
       case PAUSED:
         setPlayerMediaMuted(params)
+        await mediaTestBase.msleepAsync(50)
         avPlayer?.play()
         break;
       case COMPLETED:
         setPlayerMediaMuted(params)
+        await mediaTestBase.msleepAsync(100)
         avPlayer?.release()
         break;
       case RELEASED:

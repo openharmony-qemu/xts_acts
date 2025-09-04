@@ -535,4 +535,13 @@ export default class AVRecorderNdkTestBase {
     }
     return isExecute;
   }
+  checkAndSetVideoFrameSize(width: number, height: number): boolean {
+    const WMIN = 176, MAX = 4096, HMIN = 144;
+    if (width < WMIN || width > MAX || height < HMIN || height > MAX) {
+        console.error(`Dimensions must be between ${WMIN} and ${MAX}`);
+        return false;
+    }
+    return true;
+  }
+  
 }

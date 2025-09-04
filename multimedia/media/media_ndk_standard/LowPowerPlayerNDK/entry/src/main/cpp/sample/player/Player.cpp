@@ -456,38 +456,6 @@ int32_t Player::CreatePrepare()
     return 0;
 }
 
-int32_t Player::Start()
-{
-    std::unique_lock<std::mutex> lock(mutex_);
-    CHECK_AND_RETURN_RET_LOG(!Intercept(), AVCODEC_SAMPLE_ERR_ERROR, "Intercept nullptr.");
-    int32_t ret;
-    CHECK_AND_RETURN_RET_LOG(!isStarted_, AVCODEC_SAMPLE_ERR_ERROR, "Already started.");
-    AVCODEC_SAMPLE_LOGW("aStart IN");
-    isStarted_ = true;
-    if (lppContext_) {
-        AVCODEC_SAMPLE_LOGE("Create thread Start");
-        ret = lppAudioStreamer_->Start();
-        LppDataNeededThread_ = std::make_unique<std::thread>(&Player::LppDataNeededThread1, this);
-        AVCODEC_SAMPLE_LOGE("Create thread END");
-    }
-
-    if (lppVideoContext_) {
-        AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start");
-        ret = lppVideoStreamer_->StartDecode(true);
-        AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start1");
-        ret = lppVideoStreamer_->StartRender();
-        AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start2");
-        isStarted_ = true;
-        AVCODEC_SAMPLE_LOGE("Create lppVideo thread Start3");
-        lppVideoDataNeededThread_ = std::make_unique<std::thread>(&Player::LppVideoDataNeededThread, this);
-        AVCODEC_SAMPLE_LOGE("Create lppVideo thread END");
-    }
-
-    AVCODEC_SAMPLE_LOGI("Succeed");
-    doneCond_.notify_all();
-    return AVCODEC_SAMPLE_ERR_OK;
-}
-
 int32_t Player::StartDecoder()
 {
     isStarted_ = true;
