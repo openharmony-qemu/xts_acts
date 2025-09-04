@@ -106,7 +106,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      }).catch((err: BusinessError) => {
+      }).catch(err) {
         if (err&&err.code === 8300001){
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
@@ -117,7 +117,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      });
+      }
     });
 
     /**
@@ -149,12 +149,12 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      }).catch((err: BusinessError) => {
+      }).catch(err) {
           console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
-      });
+      }
     });
 
     /**
@@ -191,12 +191,12 @@ export default function Sim4Public() {
           console.info(`${caseName} 03 test end`);
           done();
         }
-      }).catch((err: BusinessError) => {
+      }).catch(err) {
         console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end`);
         done();
-      });
+      }
     });
 
     /**
@@ -230,7 +230,7 @@ export default function Sim4Public() {
             done();
           }
         });
-      } catch(error)  {
+      } catch(err) {
         if ((error as BusinessError).code === 8300001) {
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
