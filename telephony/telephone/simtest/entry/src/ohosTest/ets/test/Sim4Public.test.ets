@@ -231,7 +231,7 @@ export default function Sim4Public() {
           }
         });
       } catch(err) {
-        if ((error as BusinessError).code === 8300001) {
+        if ((err as BusinessError).code === 8300001) {
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
