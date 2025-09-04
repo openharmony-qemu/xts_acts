@@ -858,7 +858,7 @@ export default function ArrayTest() {
       try {
         let array = Array.create<number>(Infinity, 0);
       } catch (err: Error) {
-        expect(err.message).assertEqual('OOM when allocating array');
+        expect(err.message).assertEqual('AllocateObject failed');
         console.error(`Expected error caught: ${err.message}`);
       }
     });
@@ -896,7 +896,7 @@ export default function ArrayTest() {
         let array = Array.create<number>(Number.MAX_SAFE_INTEGER, 0);
       } catch (err: Error) {
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('OOM when allocating array');
+        expect(err.message).assertEqual('AllocateObject failed');
       }
     });
 
@@ -933,7 +933,7 @@ export default function ArrayTest() {
         expect(array.length).assertEqual(8);
       } catch (err: Error) {
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('OOM when allocating array');
+        expect(err.message).assertEqual('AllocateObject failed');
       }
     });
 
@@ -1007,7 +1007,7 @@ export default function ArrayTest() {
         let array = Array.create<number>(Number.POSITIVE_INFINITY, 0);
       } catch (err: Error) {
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('OOM when allocating array');
+        expect(err.message).assertEqual('AllocateObject failed');
       }
     });
 

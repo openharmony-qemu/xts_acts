@@ -1788,7 +1788,7 @@ export default function builtinsDoubleThirdPrototypebTest() {
         const caseName = 'builtinsDoubleThirdPrototypebTest9600';
         console.info(`${caseName}, test start`);
         expect(Double.isInteger(Number.MAX_VALUE)).assertEqual(true);
-        expect(Double.isInteger(Number.MIN_VALUE)).assertEqual(true);
+        expect(Double.isInteger(Number.MIN_VALUE)).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })

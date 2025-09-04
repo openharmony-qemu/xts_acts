@@ -1248,7 +1248,7 @@ export default function EscapeStringTest() {
         const escape = "\0";
         const result = escape.toUpperCase();
         const res = encodeURI(result);
-        expect(res.toString()).assertEqual("");
+        expect(res.toString()).assertEqual("%00");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

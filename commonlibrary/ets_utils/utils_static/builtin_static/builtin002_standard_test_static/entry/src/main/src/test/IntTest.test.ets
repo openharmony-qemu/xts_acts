@@ -1208,7 +1208,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_5600
      * @tc.name IntTest5600
-     * @tc.desc test $_hashCode() return value
+     * @tc.desc test getHashCodeByValue() return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1218,8 +1218,7 @@ export default function IntTest() {
         const caseName = 'IntTest5600'
         console.info(`${caseName}, test start`);
         const a = new Int(2);
-        const result = a.$_hashCode();
-        expect(result).assertEqual(2);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1228,7 +1227,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_5700
      * @tc.name IntTest5700
-     * @tc.desc test $_hashCode() return value
+     * @tc.desc test getHashCodeByValue() return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1238,8 +1237,7 @@ export default function IntTest() {
         const caseName = 'IntTest5700'
         console.info(`${caseName}, test start`);
         const a = new Int(-2);
-        const result = a.$_hashCode();
-        expect(result).assertEqual(-2);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(-2);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1248,7 +1246,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_5800
      * @tc.name IntTest5800
-     * @tc.desc test $_hashCode() return value
+     * @tc.desc test getHashCodeByValue() return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1258,8 +1256,7 @@ export default function IntTest() {
         const caseName = 'IntTest5800'
         console.info(`${caseName}, test start`);
         const a = new Int(Int.MAX_VALUE);
-        const result = a.$_hashCode();
-        expect(result).assertEqual(Int.MAX_VALUE);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(Int.MAX_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1268,7 +1265,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_5900
      * @tc.name IntTest5900
-     * @tc.desc test $_hashCode() return value
+     * @tc.desc test getHashCodeByValue() return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1278,8 +1275,7 @@ export default function IntTest() {
         const caseName = 'IntTest5900'
         console.info(`${caseName}, test start`);
         const a = new Int(Int.MIN_VALUE);
-        const result = a.$_hashCode();
-        expect(result).assertEqual(Int.MIN_VALUE);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(Int.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1288,7 +1284,7 @@ export default function IntTest() {
     /**
      * @tc.number INT_TEST_6000
      * @tc.name IntTest6000
-     * @tc.desc test $_hashCode() return value
+     * @tc.desc test getHashCodeByValue() return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1298,8 +1294,7 @@ export default function IntTest() {
         const caseName = 'IntTest6000'
         console.info(`${caseName}, test start`);
         const a = new Int(0);
-        const result = a.$_hashCode();
-        expect(result).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1318,8 +1313,7 @@ export default function IntTest() {
         const caseName = 'IntTest6100'
         console.info(`${caseName}, test start`);
         const a = new Int(100);
-        const result = a.toByte();
-        expect(result).assertEqual(100);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(100);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1338,8 +1332,7 @@ export default function IntTest() {
         const caseName = 'IntTest6200'
         console.info(`${caseName}, test start`);
         const a = new Int(-128);
-        const result = a.toByte();
-        expect(result).assertEqual(-128);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(-128);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1358,8 +1351,7 @@ export default function IntTest() {
         const caseName = 'IntTest6300'
         console.info(`${caseName}, test start`);
         const a = new Int(127);
-        const result = a.toByte();
-        expect(result).assertEqual(127);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(127);
         console.info(`${caseName}, test end`);
         Done();
       })

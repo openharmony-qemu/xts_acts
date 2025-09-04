@@ -918,7 +918,7 @@ export default function arrayTest() {
         let arr = new Array<Number>(3);
         let obj = arr.fill(4);
         console.log(`${TAG} result:` + JSON.stringify(obj));
-        expect(JSON.stringify(obj)).assertEqual('[4]');
+        expect(JSON.stringify(obj)).assertEqual('[4,4,4]');
       } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -1118,7 +1118,7 @@ export default function arrayTest() {
         const array2: (number | undefined | (string | undefined | (string | null)[])[])[] = [1,2 , 3, ["a","b" , ["d",null , "e"]]];
         let obj = array2.flat();
         console.log(`${TAG} result:` + JSON.stringify(obj));
-        expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a",["d",null,"e"]]');
+        expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a","b",["d",null,"e"]]');
       } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -1216,7 +1216,7 @@ export default function arrayTest() {
       try {
         const arr1 = new Array<Number | undefined>(1,2 , 1);
         const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
-        expect(JSON.stringify(result)).assertEqual('[1,2,1]');
+        expect(JSON.stringify(result)).assertEqual('[1,2,2,1]');
       } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -2195,7 +2195,7 @@ export default function arrayTest() {
         const numbers = new Array<Number>(2, 5, 9, 2);
         const result = numbers.lastIndexOf(NaN);
         console.log(`${TAG} result:` + result);
-        expect(String(result)).assertEqual('1');
+        expect(result).assertEqual(-1);
       } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

@@ -19,7 +19,7 @@ import builtinsByteSecondPrototypebTest from "./ByteSecondTest.test";
 import builtinsIntPrototypebTest from "./IntTest.test";
 import builtinsIntSecondPrototypebTest from "./IntSecondTest.test";
 export default function testsuite() {
-  builtinsStringPrototypebTest();
+  builtinsLongPrototypebTest();
   builtinsLongSecondPrototypebTest();
   builtinsBytePrototypebTest();
   builtinsByteSecondPrototypebTest();

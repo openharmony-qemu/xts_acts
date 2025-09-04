@@ -293,7 +293,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testStingPrototypeObject020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       stringTest = "ä";
-      let value = stringTest.localeCompare('c', 'de', { sensitivity: 'letiant',usage:'sort' });
+      let value = stringTest.localeCompare('c', 'de', { sensitivity: 'variant',usage:'sort' });
       console.log('StringTest020 :' + value);
       expect(value).assertEqual(-1);
     })
@@ -307,7 +307,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testStingPrototypeObject021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       stringTest = "Test";
-      let value = stringTest.localeCompare('c', 'de', { sensitivity: 'letiant',usage:'search' });
+      let value = stringTest.localeCompare('c', 'de', { sensitivity: 'variant',usage:'search' });
       console.log('StringTest021 :' + value);
       expect(value).assertEqual(1);
     })
@@ -736,9 +736,14 @@ export default function etsIntlPtsFunTest() {
         let number1:double = 123456.789;
         let value = number1.toLocaleString(undefined, { minimumFractionDigits: 112, maximumFractionDigits: 112 });
         console.log('NumberTest014 :' + value);
-      } catch(e) {
-        console.log('NumberTest014 Err:' + e);
-        expect(e == "RangeError").assertTrue();
+        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     })
 
@@ -951,10 +956,15 @@ export default function etsIntlPtsFunTest() {
         let bigint1 = 123456789123456789n;
         let value = bigint1.toLocaleString('en-IN', {minimumFractionDigits: 113, maximumSignificantDigits: 113 });
         console.log('BigintTest011 :' + value);
-      } catch(e) {
-        console.log('BigintTest011 Err:' + e);
-        expect(e == "RangeError").assertTrue();
-      }
+        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }      
     })
 
     /**
@@ -970,10 +980,15 @@ export default function etsIntlPtsFunTest() {
         let bigint1 = 123456789123456789n;
         let value = bigint1.toLocaleString('en-IN', {minimumFractionDigits: 113, maximumSignificantDigits: 113 });
         console.log('BigintTest012 :' + value);
-      } catch(e) {
-        console.log('BigintTest012 Err:' + e);
-        expect(e == "RangeError").assertTrue();
-      }
+        expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
+      }        
     })
 
     /**
@@ -1409,7 +1424,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testArrayPrototypeObject004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array = [1, 'a', '测试'];
-      let value = array.toLocaleString('zh');
+      let value = array.toLocaleString();
       console.log('ArrayTest004 :' + value);
       expect(value).assertEqual('1,a,测试');
     })
@@ -1424,7 +1439,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testArrayPrototypeObject005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array = [1, 'a', '测试', undefined];
-      let value = array.toLocaleString('zh');
+      let value = array.toLocaleString();
       console.log('ArrayTest005 :' + value);
       expect(value).assertEqual('1,a,测试,');
     })
@@ -1457,7 +1472,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testArrayPrototypeObject007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array = ['￥7', 500, 8123, 12];
-      let value = array.toLocaleString('ja-JP');
+      let value = array.toLocaleString();
       console.log('ArrayTest007 :' + value);
       expect(value).assertEqual('￥7,500,8,123,12');
     })
@@ -1517,7 +1532,7 @@ export default function etsIntlPtsFunTest() {
      */
     it('testArrayPrototypeObject011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array:Array<Int|string> = [1 , 3, "ABC"];
-      let value = array.toLocaleString('en');
+      let value = array.toLocaleString();
       console.log('ArrayTest011 :' + value);
       expect(value).assertEqual('1,3,ABC');
     })
@@ -1532,9 +1547,9 @@ export default function etsIntlPtsFunTest() {
      */
     it('testArrayPrototypeObject012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array = [new arr()];
-      let value = array.toLocaleString('en');
+      let value = array.toLocaleString();
       console.log('ArrayTest012 :' + value);
-      expect(value.length == 31).assertTrue();
+      expect(value.length).assertEqual(31);
       expect(value == '[object Object],[object Object]').assertTrue();
     })
     console.log('*************end IntlPPtsFunTest*************');

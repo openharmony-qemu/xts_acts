@@ -49,7 +49,7 @@ export default function promiseTest() {
         let array: Array<string> = await dealPromise(flag);
         expect(array[0]).assertEqual('reject result : success');
         expect(array[1]).assertEqual('reject');
-        expect(array[2]).assertEqual(undefined);
+        expect(array[2]).assertEqual('reject');
         done();
       })
 

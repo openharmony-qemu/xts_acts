@@ -91,10 +91,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(0);
         array[0] = 3;
-        expect(array[0]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -131,10 +135,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(10);
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -207,10 +215,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0010";
       try {
         let array = new Int16Array([21, 31]);
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -227,10 +240,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array([21, 31]);
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -284,10 +301,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0014";
       try {
         let array = new Int16Array(new Int8Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -304,10 +326,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Int8Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -361,10 +387,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0018";
       try {
         let array = new Int16Array(new Array<number>(21,31));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -381,10 +412,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Array<number>(21,31));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -438,10 +473,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0022";
       try {
         let array = new Int16Array(new Int8Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -458,10 +498,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Int8Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -515,10 +559,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0026";
       try {
         let array = new Int16Array(new Uint8Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -535,10 +584,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Uint8Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -592,10 +645,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0030";
       try {
         let array = new Int16Array(new Uint8ClampedArray([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -613,10 +671,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Uint8ClampedArray([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -670,10 +732,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0034";
       try {
         let array = new Int16Array(new Int16Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -691,10 +758,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Int16Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -748,10 +819,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0038";
       try {
         let array = new Int16Array(new Uint16Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -769,10 +845,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Uint16Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -826,10 +906,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0042";
       try {
         let array = new Int16Array(new Int32Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -847,10 +932,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Int32Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -904,10 +993,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0046";
       try {
         let array = new Int16Array(new Uint32Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -925,10 +1019,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Uint32Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1085,10 +1183,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16Constructor0054";
       try {
         let array = new Int16Array(new Float32Array([21,31]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1106,10 +1209,14 @@ export default function Int16ArrayTest() {
       try {
         let array = new Int16Array(new Float32Array([21,31]));
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1194,9 +1301,7 @@ export default function Int16ArrayTest() {
         let array = new Int16Array(buffer);
         array[0] = 21;
         array[1] = 31;
-        array[10] = 5;
         expect(String(array[3])).assertEqual('0');
-        expect(array[10]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1214,7 +1319,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0060";
       try {
-        let buffer = new ArrayBuffer(5);
+        let buffer = new ArrayBuffer(4);
         let array = new Int16Array(buffer, 0, 2);
         array[0] = 21;
         array[1] = 31;
@@ -1258,14 +1363,19 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0062";
       try {
-        let buffer = new ArrayBuffer(5);
+        let buffer = new ArrayBuffer(4);
         let array = new Int16Array(buffer, 0, 2);
         array[0] = 21;
         array[1] = 31;
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1281,16 +1391,20 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0063";
       try {
-        let buffer = new ArrayBuffer(5);
+        let buffer = new ArrayBuffer(4);
         let array = new Int16Array(buffer, 0, 2);
         array[0] = 21;
         array[1] = 31;
         array[10] = 5;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
-      }
+        } catch (err) {
+          if (err instanceof RangeError) {
+            expect(true).assertTrue();
+          } else {
+            console.error(`Unexpected error: ${err}`);
+            expect(false).assertFail();
+          }
+        }
     });
 
     /**
@@ -1424,10 +1538,14 @@ export default function Int16ArrayTest() {
       try {
         let array = Int16Array.of(10);
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1443,10 +1561,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16ArrayOf0078";
       try {
         let array = Int16Array.of(10);
-        expect(array[1]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[1] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1500,10 +1623,15 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16ArrayOf0081";
       try {
         let array = Int16Array.of(21, 31);
-        expect(array[3]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = 3;
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -1520,10 +1648,14 @@ export default function Int16ArrayTest() {
       try {
         let array = Int16Array.of(21, 31);
         array[10] = 3;
-        expect(array[10]).assertEqual(undefined);
-      } catch (err:BusinessError){
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2126,7 +2258,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0116";
       try {
-        let array = new Int16Array(new Int32Array(new Array<number>(-2147483649)));
+        let array = new Int16Array(new Int32Array([-2147483649]));
         expect(String(array[0])).assertEqual('-1');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2166,7 +2298,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0118";
       try {
-        let array = new Int16Array(new Int32Array(new Array<number>(2147483648)));
+        let array = new Int16Array(new Int32Array([2147483648]));
         expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2246,7 +2378,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0122";
       try {
-        let array = new Int16Array(new Uint32Array(new Array<number>(4294967295)));
+        let array = new Int16Array(new Uint32Array([4294967295]));
         expect(String(array[0])).assertEqual('-1');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2266,7 +2398,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0123";
       try {
-        let array = new Int16Array(new Uint32Array(new Array<number>(4294967296)));
+        let array = new Int16Array(new Uint32Array([4294967296]));
         expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2286,7 +2418,7 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0124";
       try {
-        let array = new Int16Array(new Uint32Array(new Array<number>(4294967294)));
+        let array = new Int16Array(new Uint32Array([4294967294]));
         expect(String(array[0])).assertEqual('-2');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2306,8 +2438,8 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0125";
       try {
-        let MIN_VALUE = -3.4028235 * 10^38;
-        let array = new Int16Array(new Float32Array(new Array<number>(MIN_VALUE)));
+        let MIN_VALUE = -3.4028235e38;
+        let array = new Int16Array(new Float32Array([MIN_VALUE]));
         expect(String(array[0])).assertEqual('-8');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2327,8 +2459,8 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0126";
       try {
-        let MIN_VALUE = -3.4028235 * 10^38 -1;
-        let array = new Int16Array(new Float32Array(new Array<number>(MIN_VALUE)));
+        let MIN_VALUE = -3.4028235e38 -1;
+        let array = new Int16Array(new Float32Array([MIN_VALUE]));
         expect(String(array[0])).assertEqual('-5');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2348,8 +2480,8 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0127";
       try {
-        let MAX_VALUE = 3.4028235 * 10^38;
-        let array = new Int16Array(new Float32Array(new Array<number>(MAX_VALUE)));
+        let MAX_VALUE = 3.4028235e38;
+        let array = new Int16Array(new Float32Array([MAX_VALUE]));
         expect(String(array[0])).assertEqual('4');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2369,8 +2501,8 @@ export default function Int16ArrayTest() {
     it('testInt16Constructor0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = "testInt16Constructor0128";
       try {
-        let MAX_VALUE = 3.4028235 * 10^38 + 1;
-        let array = new Int16Array(new Float32Array(new Array<number>(MAX_VALUE)));
+        let MAX_VALUE = 3.4028235e38 + 1;
+        let array = new Int16Array(new Float32Array([MAX_VALUE]));
         expect(String(array[0])).assertEqual('5');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
@@ -2750,7 +2882,6 @@ export default function Int16ArrayTest() {
         let infinity = 1 / 0.0;
         let array = Int16Array.of(infinity);
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2771,7 +2902,6 @@ export default function Int16ArrayTest() {
         let infinity = -1 / 0.0;
         let array = Int16Array.of(infinity);
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2792,7 +2922,6 @@ export default function Int16ArrayTest() {
         let nan = 0 / 0.0;
         let array = Int16Array.of(nan);
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2815,7 +2944,6 @@ export default function Int16ArrayTest() {
         let int16Array = Int16Array.of(numberValue);
         console.info(`${TAG} int16Array is: ${int16Array}`);
         expect(String(int16Array[0])).assertEqual('2048');
-        expect(int16Array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2929,9 +3057,8 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16ArrayFrom0151";
       try {
         let infinity = 1/0.0;
-        let array = Int16Array.from(new Array<number>(infinity));
+        let array = Int16Array.from([infinity]);
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2950,9 +3077,8 @@ export default function Int16ArrayTest() {
       const TAG = "testInt16ArrayFrom0152";
       try {
         let infinity = -1/0.0;
-        let array = Int16Array.from(new Array<number>(infinity));
+        let array = Int16Array.from([infinity]);
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2973,7 +3099,6 @@ export default function Int16ArrayTest() {
         let nan = 0/0.0;
         let array = Int16Array.from(new Array<number>(nan));
         expect(String(array[0])).assertEqual('0');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3015,7 +3140,6 @@ export default function Int16ArrayTest() {
         let array = Int16Array.from(new Array<number>(1.1,2.83));
         expect(String(array[0])).assertEqual('1');
         expect(String(array[1])).assertEqual('2');
-        expect(array[2]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -3035,9 +3159,8 @@ export default function Int16ArrayTest() {
       try {
         let bigintValue = BigInt(12345678901234567890n);
         let numberValue = Number(bigintValue);
-        let array = Int16Array.from(new Array<number>(numberValue));
+        let array = Int16Array.from([numberValue]);
         expect(String(array[0])).assertEqual('2048');
-        expect(array[1]).assertEqual(undefined);
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();

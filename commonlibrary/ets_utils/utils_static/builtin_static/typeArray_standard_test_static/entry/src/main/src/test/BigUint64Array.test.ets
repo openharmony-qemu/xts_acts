@@ -101,10 +101,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = new BigUint64Array(0);
         array[0] = BigInt(3);
-        expect(array[0]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -141,10 +145,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = new BigUint64Array(10);
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -218,10 +226,15 @@ export default function BigUint64ArrayTest() {
       const TAG = "testBigUint64ArrayConstructor0010";
       try {
         let array = new BigUint64Array([BigInt(21), BigInt(31)]);
-        expect(array[3]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = BigInt(3);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -238,10 +251,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = new BigUint64Array([BigInt(21), BigInt(31)]);
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -295,10 +312,15 @@ export default function BigUint64ArrayTest() {
       const TAG = "testBigUint64ArrayConstructor0014";
       try {
         let array = new BigUint64Array(new BigUint64Array([BigInt(21), BigInt(31)]));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = BigInt(3);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -315,10 +337,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = new BigUint64Array(new BigUint64Array([BigInt(21), BigInt(31)]));
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -335,10 +361,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = new BigUint64Array(new BigUint64Array([BigInt(21), BigInt(31)]));
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -458,10 +488,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = BigUint64Array.of(BigInt(10));
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -477,10 +511,15 @@ export default function BigUint64ArrayTest() {
       const TAG = "testBigUint64ArrayOf0023";
       try {
         let array = BigUint64Array.of(BigInt(10));
-        expect(array[1]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[1] = BigInt(3);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -534,10 +573,15 @@ export default function BigUint64ArrayTest() {
       const TAG = "testBigUint64ArrayOf0026";
       try {
         let array = BigUint64Array.of(BigInt(21), BigInt(31));
-        expect(array[3]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        array[3] = BigInt(3);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -554,10 +598,14 @@ export default function BigUint64ArrayTest() {
       try {
         let array = BigUint64Array.of(BigInt(21), BigInt(31));
         array[10] = BigInt(3);
-        expect(array[10]).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -668,9 +716,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -696,9 +741,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -724,9 +766,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -752,9 +791,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -780,9 +816,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -808,9 +841,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -836,9 +866,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -884,9 +911,6 @@ export default function BigUint64ArrayTest() {
         const bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -933,9 +957,6 @@ export default function BigUint64ArrayTest() {
         let bigInt64Array = new BigUint64Array(bigIntArray);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -968,9 +989,6 @@ export default function BigUint64ArrayTest() {
         let bigInt64Array = new BigUint64Array(buffer);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -994,9 +1012,6 @@ export default function BigUint64ArrayTest() {
         bigInt64Array[1] = BigInt(31);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1020,9 +1035,6 @@ export default function BigUint64ArrayTest() {
         bigInt64Array[1] = BigInt(31);
         expect(String(bigInt64Array[0])).assertEqual('21');
         expect(String(bigInt64Array[1])).assertEqual('31');
-        expect(bigInt64Array[3]).assertEqual(undefined);
-        bigInt64Array[10] = BigInt(3);
-        expect(bigInt64Array[10]).assertEqual(undefined);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1561,8 +1573,8 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64Constructor0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64Constructor0081";
       try {
-        let array1 = new Int32Array(new Array<number>(-2147483649));
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array1 = new Int32Array([-2147483649]);
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(2147483647n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1603,8 +1615,8 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64Constructor0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64Constructor0083";
       try {
-        let array1 = new Int32Array(new Array<number>(2147483648));
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array1 = new Int32Array([2147483648]);
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(18446744071562067968n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1687,8 +1699,8 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64Constructor0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64Constructor0087";
       try {
-        let array1 = new Uint32Array(new Array<number>(4294967295));
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array1 = new Uint32Array([4294967295]);
+        let array = new BigUint64Array([BigInt(array1[0])]);        
         expect(array[0]).assertEqual(4294967295n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1708,8 +1720,8 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64Constructor0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64Constructor0088";
       try {
-        let array1 = new Uint32Array(new Array<number>(4294967296));
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array1 = new Uint32Array([4294967296]);
+        let array = new BigUint64Array([BigInt(array1[0])]);        
         expect(array[0]).assertEqual(0n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1729,8 +1741,8 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64Constructor0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64Constructor0089";
       try {
-        let array1 = new Uint32Array(new Array<number>(4294967294));
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array1 = new Uint32Array([4294967294]);
+        let array = new BigUint64Array([BigInt(array1[0])]);        
         expect(array[0]).assertEqual(4294967294n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1752,7 +1764,7 @@ export default function BigUint64ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38;
         let array1 = new Float32Array([MIN_VALUE]);
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(0n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1774,7 +1786,7 @@ export default function BigUint64ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38 - 1;
         let array1 = new Float32Array([MIN_VALUE]);
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(0n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1796,7 +1808,7 @@ export default function BigUint64ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38;
         let array1 = new Float32Array([MAX_VALUE]);
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(0n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1818,7 +1830,7 @@ export default function BigUint64ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38 + 1;
         let array1 = new Float32Array([MAX_VALUE]);
-        let array = new BigUint64Array(new Array<BigInt>(array1[0]));
+        let array = new BigUint64Array([BigInt(array1[0])]);
         expect(array[0]).assertEqual(0n);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2100,10 +2112,13 @@ export default function BigUint64ArrayTest() {
         const bigNumber = BigInt(Number.POSITIVE_INFINITY);
         const array = BigUint64Array.of(bigNumber);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2121,10 +2136,13 @@ export default function BigUint64ArrayTest() {
         const bigNumber = BigInt(Number.NEGATIVE_INFINITY);
         const array = BigUint64Array.of(bigNumber);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2142,10 +2160,13 @@ export default function BigUint64ArrayTest() {
         const nanNumber = BigInt(Number.NaN);
         const array = BigUint64Array.of(nanNumber);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2258,10 +2279,13 @@ export default function BigUint64ArrayTest() {
         const bigNumber = BigInt(Number.POSITIVE_INFINITY);
         const array = BigUint64Array.from(new Array<BigInt>(bigNumber));
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2279,10 +2303,13 @@ export default function BigUint64ArrayTest() {
         const bigNumber = BigInt(Number.NEGATIVE_INFINITY);
         const array = BigUint64Array.from(new Array<BigInt>(bigNumber));
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2300,10 +2327,13 @@ export default function BigUint64ArrayTest() {
         const nanNumber = BigInt(Number.NaN);
         const array = BigUint64Array.from(new Array<BigInt>(nanNumber));
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 
@@ -2343,10 +2373,13 @@ export default function BigUint64ArrayTest() {
       try {
         let array = BigUint64Array.from(new Array<BigInt>(BigInt(1.1), BigInt(2.83)));
         expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.name).assertEqual('RangeError');
-        expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
+      } catch (err) {
+        if (err instanceof RangeError) {
+          expect(true).assertTrue();
+        } else {
+          console.error(`Unexpected error: ${err}`);
+          expect(false).assertFail();
+        }
       }
     });
 

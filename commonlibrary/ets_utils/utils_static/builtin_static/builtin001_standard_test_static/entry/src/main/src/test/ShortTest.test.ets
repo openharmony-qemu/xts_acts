@@ -334,8 +334,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest1500'
         console.info(`${caseName}, test start`);
         const a = new Short();
-        const result = a.$_hashCode();
-        expect(result).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(a)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1843,7 +1842,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_8900
      * @tc.name builtinsShortPrototypebTest8900
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1853,7 +1852,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'BuiltinsShortPrototypebTest8900'
         console.info(`${caseName}, test start`);
         const num = new Short(0);
-        expect(num.$_hashCode()).assertEqual(0);
+        expect(Runtime.getHashCodeByValue(num)).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1861,7 +1860,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9000
      * @tc.name builtinsShortPrototypebTest9000
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1871,7 +1870,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'BuiltinsShortPrototypebTest9000'
         console.info(`${caseName}, test start`);
         const num = new Short(42);
-        expect(num.$_hashCode()).assertEqual(42);
+        expect(Runtime.getHashCodeByValue(num)).assertEqual(42);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1879,7 +1878,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9100
      * @tc.name builtinsShortPrototypebTest9100
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1889,7 +1888,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'BuiltinsShortPrototypebTest9100'
         console.info(`${caseName}, test start`);
         const num = new Short(-42);
-        expect(num.$_hashCode()).assertEqual(-42);
+        expect(Runtime.getHashCodeByValue(num)).assertEqual(-42);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1897,7 +1896,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9200
      * @tc.name builtinsShortPrototypebTest9200
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1907,7 +1906,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'BuiltinsShortPrototypebTest9200'
         console.info(`${caseName}, test start`);
         const num = new Short(Short.MAX_VALUE);
-        expect(num.$_hashCode()).assertEqual(Short.MAX_VALUE);
+        expect(Runtime.getHashCodeByValue(num)).assertEqual(Short.MAX_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1915,7 +1914,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9300
      * @tc.name builtinsShortPrototypebTest9300
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1925,7 +1924,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'BuiltinsShortPrototypebTest9300'
         console.info(`${caseName}, test start`);
         const num = new Short(Short.MIN_VALUE);
-        expect(num.$_hashCode()).assertEqual(Short.MIN_VALUE);
+        expect(Runtime.getHashCodeByValue(num)).assertEqual(Short.MIN_VALUE);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1933,7 +1932,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9400
      * @tc.name builtinsShortPrototypebTest9400
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1944,7 +1943,7 @@ export default function builtinsShortPrototypebTest() {
         console.info(`${caseName}, test start`);
         const num1 = new Short(12345);
         const num2 = new Short(12345);
-        expect(num1.$_hashCode()).assertEqual(num2.$_hashCode());
+        expect(Runtime.getHashCodeByValue(num1)).assertEqual(Runtime.getHashCodeByValue(num2));
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1952,7 +1951,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9500
      * @tc.name builtinsShortPrototypebTest9500
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1963,7 +1962,7 @@ export default function builtinsShortPrototypebTest() {
         console.info(`${caseName}, test start`);
         const num1 = new Short(0);
         const num2 = new Short(0);
-        expect(num1.$_hashCode()).assertEqual(num2.$_hashCode());
+        expect(Runtime.getHashCodeByValue(num1)).assertEqual(Runtime.getHashCodeByValue(num2));
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1971,7 +1970,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_9600
      * @tc.name builtinsShortPrototypebTest9600
-     * @tc.desc test $_hashCode(): int return value
+     * @tc.desc test getHashCodeByValue(): int return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1982,7 +1981,7 @@ export default function builtinsShortPrototypebTest() {
         console.info(`${caseName}, test start`);
         const num1 = new Short(-12345);
         const num2 = new Short(-12345);
-        expect(num1.$_hashCode()).assertEqual(num2.$_hashCode());
+        expect(Runtime.getHashCodeByValue(num1)).assertEqual(Runtime.getHashCodeByValue(num2));
         console.info(`${caseName}, test end`);
         Done();
       })
