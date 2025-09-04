@@ -18,9 +18,10 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitGetCertificate";
+let emitKey = "";
 
 export default function webTwoJsunit() {
   describe('overviewTest', () => {
@@ -35,12 +36,12 @@ export default function webTwoJsunit() {
         if (!("webTwo" == pages.name)) {
           console.info("get webTwo state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push webTwo page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
+      await waitForComponent("webcomponent");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -49,38 +50,18 @@ export default function webTwoJsunit() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      done();
-    })
+
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_001                                                                                                                                                                     
      *tc.name GetCertificate                                                                                                                                                                                                                 
      *tc.desic Sets allow the Web access overview mode
      */
     it('GetCertificate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      emitKey = "emitonDownloadFailed";
-      Utils.registerEvent("GetCertificate", "getCertificate success: len = 0", 4, done);
+      Utils.emitEvent("emitGetCertificate", 160830);
+      Utils.registerEvent("GetCertificate", "getCertificate success: len = 0", 160840, done);
       sendEventByKey('webcomponenttwo', 10, '');
     })
 
