@@ -551,7 +551,7 @@ export default function abilityTest2() {
                 expect(commonEventData.parameters?.data.onForegroundFirst).assertTrue();
                 expect(commonEventData.parameters?.data.onForegroundSecond).assertTrue();
                 expect(commonEventData.parameters?.data.onWindowStageCreate).assertTrue();
-                expect(JSON.parse(commonEventData.parameters?.data.result?.resultCode)).assertDeepEquals(resultDate?.resultCode);
+                expect(JSON.parse(commonEventData.parameters?.data.result?.resultCode)).assertEqual(resultDate?.resultCode);
               }
               if (commonEventData.event == event2) {
                 expect(commonEventData.parameters?.data.onCreate).assertTrue();
