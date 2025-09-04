@@ -149,7 +149,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         }
-      }).catch(err) => {
+      }).catch(err) {
           console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
@@ -230,7 +230,7 @@ export default function Sim4Public() {
             done();
           }
         });
-      } catch(err)  {
+      } catch(err) {
         if ((error as BusinessError).code === 8300001) {
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
