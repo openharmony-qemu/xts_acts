@@ -101,14 +101,13 @@ ani_int test_Reference_Equals([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     return ANI_TRUE;
 }
 
-ani_int test_Array_New_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_int test_Array_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    ani_class cls = nullptr;
-    ASSERT_EQ(env->FindClass("Lstd/core/String;", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
 
-    ani_array_ref array = nullptr;
-    ASSERT_EQ(env->Array_New_Ref(cls, LENGTH_5, nullptr, nullptr), ANI_INVALID_ARGS);
+    ani_array array = nullptr;
+    ASSERT_EQ(env->Array_New(LENGTH_5, undefinedRef, nullptr), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
 
