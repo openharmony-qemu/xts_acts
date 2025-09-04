@@ -57,13 +57,18 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src
                     ${OPENHARMONY_ROOT_PATH}/arkcompiler/jsvm/interface/kits)
 add_library(entry2 SHARED ${src_sec}
-    napi/NapiJsvmErrorCodeTest.cpp)
-target_link_libraries(entry2 PUBLIC libace_napi.z.so libjsvm.so)
+    napi/NapiJsvmEnum1Test.cpp
+    napi/NapiJsvmEnum2Test.cpp
+    napi/NapiJsvmErrorCodeTest.cpp
+    napi/NapiJsvmErrorCode1Test.cpp
+    napi/NapiJsvmErrorCode2Test.cpp
+    napi/NapiJsvmErrorCode3Test.cpp)
+target_link_libraries(entry2 PUBLIC libace_napi.z.so libhilog_ndk.z.so libjsvm.so)
 target_link_directories(entry2 PUBLIC ${OPENHARMONY_ROOT_PATH}/out/generic_generic_arm_64only/general_all_phone_standard/gen/foundation/arkui/napi/jsvm/)
 
 file(GLOB TEST_FILES jsvmtest/unittests/*.cpp)
 add_library(entry SHARED napi/NapiTest.cpp
     ${TEST_FILES})
-target_link_libraries(entry PUBLIC libace_napi.z.so libjsvm.so entry2)
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libjsvm.so entry2)
 target_link_directories(entry PUBLIC ${OPENHARMONY_ROOT_PATH}/out/generic_generic_arm_64only/general_all_phone_standard/gen/foundation/arkui/napi/jsvm/)
 
