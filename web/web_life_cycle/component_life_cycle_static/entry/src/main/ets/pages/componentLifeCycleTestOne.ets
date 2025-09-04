@@ -42,10 +42,6 @@ struct httpAuthHandler {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  onPageHide() {
-    events_emitter.off(10)
-  }
-
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
