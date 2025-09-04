@@ -1912,20 +1912,20 @@ export default function DeviceInfoTest() {
 
         /**
          * @tc.number    SUB_STARTUP_JS_DEVCEINFO_081
-         * @tc.name      testGetBootCount222
+         * @tc.name      testGetBootCount
          * @tc.desc      Get BootCount.
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it('testGetBootCount222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+        it('testGetBootCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
             console.info('device_info_test_081 start');
             let ret = false;
             let bootCount = deviceinfo.bootCount;
             console.info('the value of the deviceinfo bootCount is :' + bootCount);
             expect(bootCount).assertInstanceOf('Number');
             if (bootCount > -1) {
-                console.info('device_info_test_080 get null');
+                console.info('device_info_test_081 get null');
                 ret = true;
             }
             expect(ret).assertTrue();
