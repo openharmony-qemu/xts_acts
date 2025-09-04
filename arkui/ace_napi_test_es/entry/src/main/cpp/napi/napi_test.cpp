@@ -54,6 +54,7 @@ static int g_cleanupHookCount = 0;
 static napi_env g_sharedEnv = nullptr;
 static napi_deferred g_deferred = nullptr;
 static bool g_isTaskFinished = false;
+napi_ref g_functionRef = nullptr;
 
 struct CallbackData {
     napi_threadsafe_function tsfn;
@@ -2176,12 +2177,18 @@ static napi_value napiCreateThreadsafeFunction(napi_env env, napi_callback_info 
 static void AddExecuteCB(napi_env env, void *data)
 {
     AddonData *addonData = (AddonData *)data;
+    if (addonData == nullptr) {
+        return;
+    }
     addonData->result = addonData->args;
 }
 
 static void AddCallbackCompleteCB(napi_env env, napi_status status, void *data)
 {
     AddonData *addonData = (AddonData *)data;
+    if (addonData == nullptr) {
+        return;
+    }
     napi_value callback = nullptr;
     NAPI_CALL_RETURN_VOID(env, napi_get_reference_value(env, addonData->callback, &callback));
     napi_value result = nullptr;
@@ -2198,7 +2205,33 @@ static void AddCallbackCompleteCB(napi_env env, napi_status status, void *data)
     }
 
     NAPI_CALL_RETURN_VOID(env, napi_delete_async_work(env, addonData->asyncWork));
-    free(addonData);
+    delete addonData;
+}
+
+void FreeAddonData(napi_env env, AddonData* addonData)
+{
+    if (addonData == nullptr) {
+        return;
+    }
+    
+    if (addonData->asyncWork != nullptr) {
+        napi_status status = napi_delete_async_work(env, addonData->asyncWork);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to delete async work");
+        }
+        addonData->asyncWork = nullptr;
+    }
+    
+    if (addonData->asyncWork != nullptr) {
+        napi_status status = napi_delete_reference(env, addonData->callback);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to delete async callback reference");
+        }
+        addonData->callback = nullptr;
+    }
+    
+    delete addonData;
+    addonData = nullptr;
 }
 
 static napi_value testAsyncWork(napi_env env, napi_callback_info info)
@@ -2206,21 +2239,47 @@ static napi_value testAsyncWork(napi_env env, napi_callback_info info)
     size_t argc = 2;
     napi_value args[2];
     NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
-
-    AddonData* addonData = reinterpret_cast<AddonData*>(malloc(sizeof(AddonData)));
+    
+    AddonData* addonData = new AddonData();
     if (addonData == nullptr) {
         return nullptr;
     }
-
-    NAPI_CALL(env, napi_get_value_double(env, args[0], &addonData->args));
-    NAPI_CALL(env, napi_create_reference(env, args[1], 1, &addonData->callback));
-
+    
+    auto status = napi_get_value_double(env, args[0], &addonData->args);
+    if (status != napi_ok) {
+        delete addonData;
+        addonData = nullptr;
+        napi_throw_error(env, nullptr, "Failed to create addonData ars");
+        return nullptr;
+    }
+    
+    status = napi_create_reference(env, args[1], 1, &addonData->callback);
+    if (status != napi_ok) {
+        delete addonData;
+        addonData = nullptr;
+        napi_throw_error(env, nullptr, "Failed to create addonData callback");
+        return nullptr;
+    }
+    
     napi_value resourceName = nullptr;
-    NAPI_CALL(env, napi_create_string_utf8(env, "AsyncWorkTest", NAPI_AUTO_LENGTH, &resourceName));
-    NAPI_CALL(env, napi_create_async_work(env, nullptr, resourceName, AddExecuteCB, AddCallbackCompleteCB,
-        (void *)addonData, &addonData->asyncWork));
-
-    NAPI_CALL(env, napi_queue_async_work(env, addonData->asyncWork));
+    status = napi_create_string_utf8(env, "AsyncWorkTest", NAPI_AUTO_LENGTH, &resourceName);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
+    
+    status = napi_create_async_work(env, nullptr, resourceName, AddExecuteCB, AddCallbackCompleteCB,
+        (void *)addonData, &addonData->asyncWork);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
+    
+    status = napi_queue_async_work(env, addonData->asyncWork);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
 
     napi_value _value = 0;
     NAPI_CALL(env, napi_create_int32(env, 0, &_value));
@@ -2446,28 +2505,29 @@ static napi_value getGlobal(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_threadsafe_function tsfn;
-napi_ref functionRef;
 static void CallJs(napi_env env, napi_value jsCb, void *context, void *data)
 {
     napi_value undefined;
     NAPI_CALL_RETURN_VOID(env, napi_get_undefined(env, &undefined));
     napi_value cb;
-    NAPI_CALL_RETURN_VOID(env, napi_get_reference_value(env, functionRef, &cb));
+    NAPI_CALL_RETURN_VOID(env, napi_get_reference_value(env, g_functionRef, &cb));
     
     napi_value ret;
     int32_t num = 0;
     NAPI_CALL_RETURN_VOID(env, napi_call_function(env, undefined, cb, 0, nullptr, &ret));
     NAPI_CALL_RETURN_VOID(env, napi_get_value_int32(env, ret, &num));
     NAPI_ASSERT_RETURN_VOID(env, num == TAG_NUMBER, "CallJs fail");
+    
+    napi_delete_reference(env, g_functionRef);
 }
 
 static napi_value ThreadSafeTest(napi_env env, napi_callback_info info)
 {
+    napi_threadsafe_function tsfn = nullptr;
     size_t argc = 1;
     napi_value jsCb, work_name;
     NAPI_CALL(env, napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr));
-    napi_create_reference(env, jsCb, 1, &functionRef);
+    napi_create_reference(env, jsCb, 1, &g_functionRef);
 
     NAPI_CALL(env, napi_create_string_utf8(env, "work_name", NAPI_AUTO_LENGTH, &work_name));
 
@@ -3345,20 +3405,46 @@ static napi_value AsyncWorkWithQos(napi_env env, napi_callback_info info)
     napi_value args[2];
     NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
 
-    AddonData* addonData = reinterpret_cast<AddonData*>(malloc(sizeof(AddonData)));
+    AddonData* addonData = new AddonData();
     if (addonData == nullptr) {
         return nullptr;
     }
 
-    NAPI_CALL(env, napi_get_value_double(env, args[0], &addonData->args));
-    NAPI_CALL(env, napi_create_reference(env, args[1], 1, &addonData->callback));
+    auto status = napi_get_value_double(env, args[0], &addonData->args);
+    if (status != napi_ok) {
+        delete addonData;
+        addonData = nullptr;
+        napi_throw_error(env, nullptr, "Failed to create addonData ars");
+        return nullptr;
+    }
+    
+    status = napi_create_reference(env, args[1], 1, &addonData->callback);
+    if (status != napi_ok) {
+        delete addonData;
+        addonData = nullptr;
+        napi_throw_error(env, nullptr, "Failed to create addonData callback");
+        return nullptr;
+    }
 
     napi_value resourceName = nullptr;
-    NAPI_CALL(env, napi_create_string_utf8(env, "AsyncWorkWithQosTest", NAPI_AUTO_LENGTH, &resourceName));
-    NAPI_CALL(env, napi_create_async_work(env, nullptr, resourceName, AddExecuteCB, AddCallbackCompleteCB,
-        (void *)addonData, &addonData->asyncWork));
-
-    NAPI_CALL(env, napi_queue_async_work_with_qos(env, addonData->asyncWork, napi_qos_default));
+    status = napi_create_string_utf8(env, "AsyncWorkWithQosTest", NAPI_AUTO_LENGTH, &resourceName);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
+    
+    status = napi_create_async_work(env, nullptr, resourceName, AddExecuteCB, AddCallbackCompleteCB,
+        (void *)addonData, &addonData->asyncWork);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
+    
+    status = napi_queue_async_work_with_qos(env, addonData->asyncWork, napi_qos_default);
+    if (status != napi_ok) {
+        FreeAddonData(env, addonData);
+        return nullptr;
+    }
 
     napi_value _value = 0;
     NAPI_CALL(env, napi_create_int32(env, 0, &_value));
