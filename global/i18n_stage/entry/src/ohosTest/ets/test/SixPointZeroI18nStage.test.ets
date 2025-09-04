@@ -3383,8 +3383,9 @@ export default function SixPointZeroI18nStageTest() {
       let range: string = JSON.stringify([{ 'type': "integer", 'value': '10', 'unit': 'day' },
         { 'type': 'group', 'value': ',', 'unit': 'day' }, { 'type': 'integer', 'value': '000', 'unit': 'day' },
         { 'type': 'literal', 'value': '天后' }])
+
       let rtf = new Intl.RelativeTimeFormat('zh-hans-AF', { numeric: "always" });
-      let expected = rtf.formatToParts(1000, 'day');
+      let expected = rtf.formatToParts(10000, 'day');
       expect(JSON.stringify(expected)).assertEqual(range);
     })
 
@@ -3597,7 +3598,7 @@ export default function SixPointZeroI18nStageTest() {
       const locales1 =
         ['ar', 'my', 'tr', 'zh', 'sk', 'ja', 'zh-Hans-TW-u-um-arab', 'en-Latn-CN', 'id-u-co-pinyin', 'de-ID'];
       const support = Intl.Collator.supportedLocalesOf(locales1, { localeMatcher: 'lookup' });
-      expect(support.toString()).assertEqual('ar,my,tr,zh,sk,ja,zh-Hans-TW-u-mu-arad,en-Latn-CN,id-u-co-pinyin,de-ID')
+      expect(support.toString()).assertEqual('ar,my,tr,zh,sk,ja,zh-Hans-TW-u-um-arab,en-Latn-CN,id-u-co-pinyin,de-ID')
     })
 
     /* *
@@ -3736,6 +3737,470 @@ export default function SixPointZeroI18nStageTest() {
       const usedOptions = de.resolvedOptions().locale;
       expect(usedOptions).assertEqual('en-US')
     })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0100
+    * @tc.name      : test_IntlDateTimeFormat_0100
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 1
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('test_IntlDateTimeFormat_0100', Level.LEVEL0, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('2025年六月23 7')
+
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0200
+    * @tc.name      : test_IntlDateTimeFormat_0200
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 2
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ar', { calendar: 'islamic-umalqura', fractionalSecondDigits: 2 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('٢٢‏/١‏/١٤٤٧ هـ، ٠٠')
+
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0300
+    * @tc.name      : test_IntlDateTimeFormat_0300
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('7/17/2025, 769')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0400
+    * @tc.name      : test_IntlDateTimeFormat_0400
+    * @tc.desc      : DateTimeFormat  with fractionalSecondDigits: 3
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0400', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 30, 769);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ja', { calendar: 'japanese', fractionalSecondDigits: 3 });
+      let daformat: string = dafmt.format(date);
+      expect(daformat).assertEqual('R7/7/17 769')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0500
+    * @tc.name      : test_IntlDateTimeFormat_0500
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0500', Level.LEVEL2, () => {
+      let date = new Date(2021, 11, 17, 3, 24, 0);
+      let dafmt: Intl.DateTimeFormat = new Intl.DateTimeFormat();
+      let formattedDate = dafmt.format(date);
+      expect(formattedDate).assertEqual('12/17/2021')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0600
+    * @tc.name      : test_IntlDateTimeFormat_0600
+    * @tc.desc      : DateTimeFormat  with 'aaaa'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormat_0600', Level.LEVEL2, () => {
+      let date = new Date(2021, 11, 17, 3, 24, 0);
+      try {
+        Intl.DateTimeFormat('aaaa').format(date);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale')
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0700
+    * @tc.name      : test_IntlDateTimeFormatToParts_0100
+    * @tc.desc      : DateTimeFormat  with 'zh-CN', calendar: 'chinese', fractionalSecondDigits: 1
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
+          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0800
+    * @tc.name      : test_IntlDateTimeFormatToParts_0200
+    * @tc.desc      : DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "000" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_0900
+    * @tc.name      : test_IntlDateTimeFormatToParts_0300
+    * @tc.desc      : DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatToParts_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" }])
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1000
+    * @tc.name      : test_IntlDateTimeFormatRange_0100
+    * @tc.desc      : DateTimeFormat  with "zh_CN",{calendar:"chinese", fractionalSecondDigits: 3}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10, 123);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10, 123);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("zh_CN", { calendar: "chinese", fractionalSecondDigits: 3 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"2025年六月23 123-2025年腊月16 123"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1100
+    * @tc.name      : test_IntlDateTimeFormatRange_0200
+    * @tc.desc      : DateTimeFormat  with "ug-CN",{calendar:"buddhist", fractionalSecondDigits: 2}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ug-CN", { calendar: "buddhist", fractionalSecondDigits: 2 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2568 BE، 00 - 2/3/2569 BE، 00"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1200
+    * @tc.name      : test_IntlDateTimeFormatRange_0300
+    * @tc.desc      : DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ru", { calendar: "gregory", fractionalSecondDigits: 1 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"17.07.2025, 0 - 03.02.2026 0"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1300
+    * @tc.name      : test_IntlDateTimeFormatRange_0400
+    * @tc.desc      : DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0400', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("ja", { calendar: "japanese", fractionalSecondDigits: 3 });
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"R7/7/17 000～R8/2/3 000"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1400
+    * @tc.name      : test_IntlDateTimeFormatRange_0500
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0500', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let dafmt: Intl.DateTimeFormat = new Intl.DateTimeFormat();
+      let daformat = dafmt.formatRange(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2025 - 2/3/2026"')
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1500
+    * @tc.name      : test_IntlDateTimeFormatRange_0600
+    * @tc.desc      : DateTimeFormat  with aaaa
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRange_0600', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      try {
+        Intl.DateTimeFormat('aaaa').formatRange(date, date2);
+      } catch (e) {
+        expect(e.message).assertEqual('invalid locale')
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1600
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0100
+    * @tc.desc      : DateTimeFormat  with 'zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0100', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
+          { "type": "month", "value": "六月" },
+          { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" },
+          { "type": "literal", "value": "-" }, { "type": "relatedYear", "value": "2025" },
+          { "type": "literal", "value": "年" },
+          { "type": "month", "value": "腊月" }, { "type": "day", "value": "16" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1700
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0200
+    * @tc.desc      : DateTimeFormat  with 'ru', { calendar: 'gregory', fractionalSecondDigits: 1 }
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0200', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "day", "value": "17" }, { "type": "literal", "value": "." },
+          { "type": "month", "value": "07" },
+          { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" },
+          { "type": "literal", "value": "-" }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
+          { "type": "month", "value": "02" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2026" },
+          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat('ru', { calendar: 'gregory', fractionalSecondDigits: 1 });
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1800
+    * @tc.name      : test_IntlDateTimeFormatRangeToParts_0300
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatRangeToParts_0300', Level.LEVEL2, () => {
+      let date = new Date(2025, 6, 17, 3, 24, 10);
+      let date2 = new Date(2026, 1, 1, 60, 24, 10);
+      let expected: string =
+        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
+          { "type": "literal", "value": " - " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
+          { "type": "day", "value": "3" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2026" }]);
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      expect(JSON.stringify(daformat)).assertEqual(expected)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_1900
+    * @tc.name      : test_IntlDateTimeFormatResolvedOptions_0100
+    * @tc.desc      : DateTimeFormat  with "zh-CN", {calendar: "chinese", fractionalSecondDigits: 1}
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatResolvedOptions_0100', Level.LEVEL2, () => {
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat("zh-CN", { calendar: "chinese", fractionalSecondDigits: 1 });
+      let Options = dafmt.resolvedOptions();
+      let calendar = Options.calendar;
+      let fractionalSecondDingits = Options.fractionalSecondDigits;
+      expect(calendar).assertEqual("chinese")
+      expect(fractionalSecondDingits).assertEqual(1)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2000
+    * @tc.name      : test_IntlDateTimeFormatResolvedOptions_0200
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatResolvedOptions_0200', Level.LEVEL2, () => {
+      let dafmt: Intl.DateTimeFormat =
+        new Intl.DateTimeFormat();
+      let Options = dafmt.resolvedOptions();
+      let calendar = Options.calendar;
+      let fractionalSecondDingits = Options.fractionalSecondDigits;
+      expect(calendar).assertEqual("gregory")
+      expect(fractionalSecondDingits).assertEqual(undefined)
+    })
+
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2100
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0100
+    * @tc.desc      : DateTimeFormat  with "zh-CN"
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0100', Level.LEVEL2, () => {
+      let locales = "zh-CN"
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("zh-CN")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2200
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0200
+    * @tc.desc      : DateTimeFormat  with ["th-TH","zh-CN", "ja", "en-GB", "zh-TW", "zh-u-hc-h24", "ar"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0200', Level.LEVEL2, () => {
+      let locales = ["th-TH", "zh-CN", "ja", "en-GB", "zh-TW", "zh-u-hc-h24", "ar"]
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("th-TH,zh-CN,ja,en-GB,zh-TW,zh-u-hc-h24,ar")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2300
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0300
+    * @tc.desc      : DateTimeFormat  with null
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0300', Level.LEVEL2, () => {
+      let locales = ""
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2400
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0400
+    * @tc.desc      : DateTimeFormat  with 123
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0400', Level.LEVEL2, () => {
+      let locales = "123"
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2500
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0500
+    * @tc.desc      : DateTimeFormat  with ["zh-CN", "ar", "zh-CN", "ar", "zh-CN", "ar","zh-CN"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0500', Level.LEVEL2, () => {
+      let locales = ["zh-CN", "ar", "zh-CN", "ar", "zh-CN", "ar", "zh-CN"]
+      let daf = Intl.DateTimeFormat.supportedLocalesOf(locales);
+      expect(daf.toString()).assertEqual("zh-CN,ar")
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_Intl_SupplementDateTimeFormat_2600
+    * @tc.name      : test_IntlDateTimeFormatSupportedLocalesOf_0600
+    * @tc.desc      : DateTimeFormat  with ["\\", "...", "----"]
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_IntlDateTimeFormatSupportedLocalesOf_0600', Level.LEVEL2, () => {
+      let locales = ["\\", "...", "----"]
+      try {
+        Intl.DateTimeFormat.supportedLocalesOf(locales);
+      } catch (e) {
+        expect(e.message).assertEqual("invalid locale")
+      }
+    })
+
 
   })
 }
