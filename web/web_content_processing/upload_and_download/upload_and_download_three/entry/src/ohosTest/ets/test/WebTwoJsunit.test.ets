@@ -19,6 +19,10 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -65,8 +69,11 @@ export default function webTwoJsunit() {
      */
     it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitonDownloadFailed", 130540);
-      Utils.registerEvent("emitonDownloadFailed", true, 130550, done);
-      await waitAndClickComponent("webcomponenttwo");
+      Utils.registerBaseEvent("emitonDownloadFailed", true, 130550,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent(driver, "webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_003                                                                                                                                                                   
@@ -75,8 +82,11 @@ export default function webTwoJsunit() {
      */
     it('setDownloadDelegate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitsetDownloadDelegate", 130540);
-      Utils.registerEvent("emitsetDownloadDelegate", true, 130560, done);
-      await waitAndClickComponent("webcomponenttwo");
+      Utils.registerBaseEvent("emitsetDownloadDelegate", true, 130560,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent(driver, "webcomponenttwo");
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_004                                                                                                                                                                 
@@ -85,8 +95,11 @@ export default function webTwoJsunit() {
      */
     it('resumeDownload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitresumeDownload", 130540);
-      Utils.registerEvent("emitresumeDownload", true, 130570, done);
-      await waitAndClickComponent("webcomponenttwo");
+      Utils.registerBaseEvent("emitresumeDownload", true, 130570,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent(driver, "webcomponenttwo");
     })
 
   })

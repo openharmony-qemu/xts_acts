@@ -76,7 +76,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("001");
+      await waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -98,7 +98,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("001");
+      await waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -120,7 +120,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("001");
+      await waitAndClickComponent(driver, "001");
       router.clear()
     })
 
@@ -141,7 +141,7 @@ export default function SetDownloadDelegateSecond() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("001");
+      await waitAndClickComponent(driver, "001");
       router.clear()
     })
   })

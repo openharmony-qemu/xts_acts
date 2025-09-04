@@ -20,9 +20,13 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitBlockNetWorkTrue";
+
 export default function webViewOnWindowNewJsunit() {
   describe('ActsAceWebViewOnWindowNewJsunitTest',  () =>{
     beforeAll(async  (done: Function) => {
@@ -66,8 +70,11 @@ export default function webViewOnWindowNewJsunit() {
     it('testBlockNetWorkTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkTrue", 130590);
       let url = "http://www.example.com/";
-      Utils.registerEvent("testBlockNetWorkTrue", url, 130600, done);
-      await waitAndClickComponent("onWindowNew");
+      Utils.registerBaseEvent("testBlockNetWorkTrue", url, 130600,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent(driver, "onWindowNew");
     })
     /*
     *tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0200
@@ -77,8 +84,11 @@ export default function webViewOnWindowNewJsunit() {
    it('testBlockNetWorkFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkFalse", 130590);
       let title = "Example Domain";
-      Utils.registerEvent("testBlockNetWorkFalse", title, 130610, done);
-      await waitAndClickComponent("onWindowNew");
+      Utils.registerBaseEvent("testBlockNetWorkFalse", title, 130610,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await waitAndClickComponent(driver, "onWindowNew");
     })
 
   })

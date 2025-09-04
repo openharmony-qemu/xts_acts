@@ -106,9 +106,11 @@ struct Index {
           switch (this.str) {
             case "emitOnDownloadStart": {
               this.isDownloadStart = true;
+              this.isPageEnd = -1;
               this.controller.loadUrl({
                 url: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
               });
+              await waitForExist(()=>this.isPageEnd, this.str, 0);
               break;
             }
             default:
