@@ -618,7 +618,7 @@ export default function PowerTest() {
 
     /**
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0200
-     * @tc.name test
+     * @tc.name PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
      * @tc.desc Power Key Filtering Strategy
      * @tc.level: Level 3
      * @tc.type: Function
