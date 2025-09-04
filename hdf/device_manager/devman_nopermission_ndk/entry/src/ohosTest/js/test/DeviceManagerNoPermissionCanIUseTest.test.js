@@ -17,9 +17,9 @@ import usbManager from '@ohos.usbManager'
 import deviceManager from '@ohos.driver.deviceManager'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
-export default function DeviceManagerNoPermissionJsTest() {
-    describe("NoPermissionJsTest", function () {
-        const TAG = "[NoPermissionJsTest]";
+export default function NoPermissionCanIUseTest() {
+    describe("NoPermissionCanIUseTest", function () {
+        const TAG = "[NoPermissionCanIUseTest]";
         const PERMISSION_DENIED_CODE = 201;
         const PERMISSION_DENIED_NOSYSTEM_CODE = 202;
         const TEST_DEVICE_ID = 0;
@@ -70,7 +70,7 @@ export default function DeviceManagerNoPermissionJsTest() {
 
     /*
      * @tc.number     : SUB_Driver_Ext_DeviceManagerNoPerCanIUse_0100
-     * @tc.name       : testDeviceManagerCanIUsek001
+     * @tc.name       : testDeviceManagerNoPerCanIUsek001
      * @tc.desc       : verify DeviceManagerCanIUse any device
      */
     it('testDeviceManagerNoPerCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {

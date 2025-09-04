@@ -18,10 +18,10 @@ import usbManager from "@ohos.usbManager"
 import deviceManager from '@ohos.driver.deviceManager'
 
 
-export default function DeviceManagerSysApiNormalJsNdkTest() {
-  describe('DeviceManagerSysApiNormalJsNdkTest', () => {
+export default function DeviceManagerNormalCanIUseTest() {
+  describe('DeviceManagerNormalCanIUseTest', () => {
 
-    const TAG: string = "[DeviceManagerSysApiNormalJsNdkTest]";
+    const TAG: string = "[DeviceManagerNormalCanIUseTest]";
     const SYSTEMAPI_DENIED_CODE = 202;
     const TEST_DEVICE_ID = 0;
     const TEST_DRIVER_UID = 'testDriverUid';
@@ -58,7 +58,7 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
 
     /*
      * @tc.number     : SUB_Driver_Ext_DeviceManagerNormalCanIUse_0100
-     * @tc.name       : testDeviceManagerCanIUsek001
+     * @tc.name       : testDeviceManagerNormalCanIUsek001
      * @tc.desc       : verify DeviceManagerCanIUse any device
      */
     it('testDeviceManagerNormalCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
