@@ -18,6 +18,7 @@ group("concurrent_builtin_test") {
   if (is_standard_system) {
     deps = [
       "concurrent_global_test:ActsConcurrentGlobalTest",
+      "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
     ]
   }
 }
