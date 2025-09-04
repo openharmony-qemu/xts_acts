@@ -26,7 +26,7 @@ export default function getAssetChangeRequestTest() {
     let imageNameList: Array<string> = [];
     let videoNameList: Array<string> = [];
 
-    const createAllTypeAssets = async (testNum: string) => {
+    const createAllTypeAssets = async (done: Function, testNum: string) => {
       try {
         let imageType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let videoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -57,17 +57,19 @@ export default function getAssetChangeRequestTest() {
           let assetName: string = 'testMediaSuffixAsset.' + videoTypeList[j];
           videoNameList.push(assetName);
         }
+        done();
       } catch (error) {
         console.error(`${testNum} :: createAsset failed ! error = ${error}`);
+        done();
       }
     }
 
-    beforeAll(async () => {
+    beforeAll(async (done) => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(1000);
-      await createAllTypeAssets("getAsset_by_mediaSuffix_test_001");
+      await createAllTypeAssets(done, "getAsset_by_mediaSuffix_test_001");
     });
 
     /**
