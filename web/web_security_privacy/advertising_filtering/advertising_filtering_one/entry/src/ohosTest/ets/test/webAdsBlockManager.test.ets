@@ -34,17 +34,17 @@ export default function ActsAceWebAdsBlockManager() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get webAdsBlockManager state success " + JSON.stringify(pages));
+        console.info('get webAdsBlockManager state success ' + JSON.stringify(pages));
         if (!("webAdsBlockManager" == pages.name)) {
-          console.info("get webAdsBlockManager state success " + JSON.stringify(pages.name));
+          console.info('get webAdsBlockManager state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info("push webAdsBlockManager state success " + JSON.stringify(result));
+          console.info('push webAdsBlockManager state success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push webAdsBlockManager page error:" + err);
+        console.error('push webAdsBlockManager page error:' + err);
       }
       await driver.waitForComponent(ON.id("webViewSdkSchemeHandler"), 10000);
-      console.log("waitForComponent webViewSdkSchemeHandler");
+      console.log('waitForComponent webViewSdkSchemeHandler');
       done()
     });
 

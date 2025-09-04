@@ -43,7 +43,7 @@ export default function ActsWebViewTest3() {
         console.error('push index page error:' + err);
       }
       await driver.waitForComponent(ON.id("enableSafeBrowsing"), 10000);
-      console.log("waitForComponent enableSafeBrowsing");
+      console.log('waitForComponent enableSafeBrowsing');
       done()
     });
 

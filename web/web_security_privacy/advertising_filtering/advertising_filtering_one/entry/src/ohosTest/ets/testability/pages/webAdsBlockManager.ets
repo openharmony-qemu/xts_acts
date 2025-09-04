@@ -143,15 +143,15 @@ struct webAdsBlockManager {
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("lines no:", lines.length);
+                          console.log('lines no:', lines.length);
                         } catch (e) {
-                          console.error("read txt faild:", e);
+                          console.error('read txt faild:', e);
                         }
        
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("set block success");
+                        console.log('set block success');
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
                         this.controller.refresh();
@@ -397,23 +397,23 @@ struct webAdsBlockManager {
 
 
                         let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
-                        console.log("start set block rules");
+                        console.log('start set block rules');
                         let rulePath: string = Utils.copyRawFileToSandbox('custom_easylist.txt');
-                        console.log("rules path:", rulePath);
+                        console.log('rules path:', rulePath);
 
                         try {
                           let context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("lines no:", lines.length);
+                          console.log('lines no:', lines.length);
                         } catch (e) {
-                          console.error("read txt faild:", e);
+                          console.error('read txt faild:', e);
                         }
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("set block rules success");
+                        console.log('set block rules success');
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
                         this.controller.refresh()
@@ -424,30 +424,30 @@ struct webAdsBlockManager {
                         console.log('isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
                       }
 
-                      console.log("emitOnAdsBlocked case started - start callback");
+                      console.log('emitOnAdsBlocked case started - start callback');
 
-                      console.log("start text URLs...");
+                      console.log('start text URLs...');
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL1);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
-                      console.log("URL1 success");
+                      console.log('URL1 success');
 
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL2);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
-                      console.log("URL2 success");
+                      console.log('URL2 success');
 
                       this.isPageEnd = -1;
                       this.controller.loadUrl(CommonConstants.ADS_URL3);
                       await waitForExist(() => this.isPageEnd, this.emitKey, 0);
-                      console.log("URL3 success");
+                      console.log('URL3 success');
                       this.controller.loadUrl(CommonConstants.ADS_URL4);
 
                       if (this.testIsOnAdsBlocked || this.errorCode == 801) {
-                        console.log("emitOnAdsBlocked: success");
+                        console.log('emitOnAdsBlocked: success');
                         Utils.emitEvent(true, 161170)
                       } else {
-                        console.log("emitOnAdsBlocked: faild no callback");
+                        console.log('emitOnAdsBlocked: faild no callback');
                         Utils.emitEvent(false, 161170)
                       }
 
@@ -509,14 +509,14 @@ struct webAdsBlockManager {
                           let content = context.resourceManager.getRawFileContentSync('custom_easylist.txt');
                           let text = buffer.from(content).toString('utf8');
                           let lines = text.split('\n');
-                          console.log("lines no:", lines.length);
+                          console.log('lines no:', lines.length);
                         } catch (e) {
-                          console.error("read block rules faild:", e);
+                          console.error('read block rules faild:', e);
                         }
                         this.isSetAdsBlockRules = -1;
                         webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
                         await waitForExist(() => this.isSetAdsBlockRules, this.emitKey, 0);
-                        console.log("set block rules success");
+                        console.log('set block rules success');
 
                         Utils.deleteFile(rulePath);
                         this.isPageEnd = -1;
@@ -524,11 +524,11 @@ struct webAdsBlockManager {
                         await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                         let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
 
-                        console.log("start test URLs...");
+                        console.log('start test URLs...');
                         this.isPageEnd = -1;
                         this.controller.loadUrl(CommonConstants.ADS_URL1);
                         await waitForExist(() => this.isPageEnd, this.emitKey, 0);
-                        console.log("URL1 success");
+                        console.log('URL1 success');
                       }
                       if (this.testOnAdsBlockedDetails || this.errorCode == 801) {
                         Utils.emitEvent(true, 161200)
@@ -544,8 +544,8 @@ struct webAdsBlockManager {
           }
           Web({ src: this.src_url, controller: this.controller })
             .onAdsBlocked(( details: AdsBlockedDetails) => {
-              console.log("onAdsBlocked callback!");
-              console.log("callback :", JSON.stringify(details));
+              console.log('onAdsBlocked callback!');
+              console.log('callback :', JSON.stringify(details));
               this.isSetAdsBlockRules = 0;
 
               this.testIsOnAdsBlocked = true;
@@ -553,10 +553,10 @@ struct webAdsBlockManager {
                 this.testOnAdsBlockedDetails = true;
                 console.log('blocked ' + details.adsBlocked.length + ' URL: ' + details.url);
                 if (details.adsBlocked.length > 0) {
-                  console.log("blocked info:", details.adsBlocked);
+                  console.log('blocked info:', details.adsBlocked);
                 }
               } else {
-                console.log("details is null or undefined");
+                console.log('details is null or undefined');
               }
               return false;
             })
