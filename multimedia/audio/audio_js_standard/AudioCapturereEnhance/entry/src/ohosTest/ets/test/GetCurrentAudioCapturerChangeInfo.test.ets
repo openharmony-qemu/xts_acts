@@ -24,17 +24,6 @@ import { Permissions } from '@ohos.abilityAccessCtrl';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import App from '@system.app';
-let audioManager: audio.AudioManager;
-let TagFrmwk: string = "AudioCapturerChangeInfoTest";
-
-async function getAudioManager() {
-  audioManager = audio.getAudioManager();
-  if (audioManager != null) {
-    console.info(`${TagFrmwk}: getAudioManger : PASS`);
-  } else {
-    console.info(`${TagFrmwk}: getAudioManger : FAIL`);
-  }
-}
 
 let sleep = (ms: number): Promise<string> => {
   return new Promise((resolve) => {
@@ -335,15 +324,11 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-        let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-        console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-        console.info(`${TagFrmwk}: Determine if this is a default device`)
-        const detecteDevice = outputDeviceDescription.some(device => 
-            device.deviceType === audio.DeviceType.DISPLAY_PORT
-          );
-        if (detecteDevice) {
-          console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+        let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
+        console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
+        if {
+          expect(CapturerChangeInfo.deviceDescriptors[0].deviceType).assertLargerOrEqual(audio.DeviceType.MIC);
+          expect(false).assertTrue();
           done();
           return;
         }
@@ -384,8 +369,6 @@ export default function audioCapturerEnhanceTest() {
         done();
       }
       try {
-        let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
-        console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
         expect(CapturerChangeInfo.muted).assertEqual(false);
         expect(CapturerChangeInfo.deviceDescriptors[0].id).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
