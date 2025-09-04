@@ -19,6 +19,7 @@ group("web") {
     "network_management:NetWorkManagement",
     "page_interaction:pageInteraction",
     "web_content_processing:WebContentProcessing",
+    "web_engine_version:WebEngineVersion",
     "web_jump:WebJump",
     "web_life_cycle:webLifeCycle",
     "web_load:WebLoad",
