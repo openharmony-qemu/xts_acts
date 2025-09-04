@@ -170,7 +170,7 @@ export default function AVSessionManager() {
                     console.info(`getAVCastController : SUCCESS : sessionid : ${aVCastController.sessionId}`);
                 }).catch(async(err) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
-                    expect(err.code == 6600101).assertTrue();
+                    expect(err.code == 6600109).assertTrue();
                 });
             } catch (error) {
                 console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
@@ -199,7 +199,7 @@ export default function AVSessionManager() {
                 aVCastController = await currentAVSession.getAVCastController(async(err, data) => {
                     if (err) {
                         console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
-                        expect(err.code == 6600101).assertTrue();
+                        expect(err.code == 6600109).assertTrue();
                     }
                 });
             } catch (error) {
@@ -311,7 +311,7 @@ export default function AVSessionManager() {
                     });
                 }).catch(async(err) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
-                    expect(err.code == 6600101).assertTrue();
+                    expect(err.code == 6600109).assertTrue();
                 });
             } catch (error) {
                 console.error(`getCurrentItem BusinessError2: code: ${error.code}, message: ${error.message}`)
@@ -350,7 +350,7 @@ export default function AVSessionManager() {
                     });
                 }).catch(async(err) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
-                    expect(err.code == 6600101).assertTrue();
+                    expect(err.code == 6600109).assertTrue();
                 });
             } catch (error) {
                 console.error(`getAVCastController BusinessError2: code: ${error.code}, message: ${error.message}`);
