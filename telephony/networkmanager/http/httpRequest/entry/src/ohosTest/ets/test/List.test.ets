@@ -24,13 +24,13 @@ import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
 
 export default function testsuite() {
 if (sim.getMaxSimCount()>1){
+  HttpRequestGmssl();
   HttpRequestDataCATest();
   HttpRequestMethodTest();
   HttpRequestAndDestroyTest();
   HttpRequestInStreamTest();
   HttpRequestOptionsTest();
   httpErrorCodeTest();
-  HttpRequestGmssl();
   }else{
     EmptyTest()
   }
