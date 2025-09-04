@@ -847,7 +847,10 @@ export default function graphicImagePixelMapTest() {
           pixelMap = imageSource.createPixelMapSync(decodingOptions)
 
           console.info( msg + ' 2 ');
-          let moreThan32Name = '1111111111111111111111111111111111111111'
+          let moreThan32Name = '';
+          for (let i = 0; i < 257; i++){
+            moreThan32Name += '1';
+          }
           try{
             pixelMap.setMemoryNameSync(moreThan32Name)
             console.info( msg + ' 7 ');
@@ -919,7 +922,10 @@ export default function graphicImagePixelMapTest() {
           pixelMap = imageSource.createPixelMapSync(decodingOptions)
 
           console.info( msg + ' 2 ');
-          let average32Name = '11111111111111111111111111111111'
+          let average32Name = '';
+          for (let i = 0; i < 257; i++){
+            average32Name += '1';
+          }
           try{
             pixelMap.setMemoryNameSync(average32Name)
             console.info( msg + ' 7 ');
