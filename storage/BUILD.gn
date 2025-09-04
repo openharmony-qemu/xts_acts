@@ -31,6 +31,7 @@ group("storage") {
       "storagefileiov9jsteststatic:storagefileiov9_js_test_static",
       "storagefilejstest:storagefile_js_test",
       "storagefilesharejstest:storagefileshare_js_test",
+      "storagefilesharejsteststatic:storage_file_share_js_test_static",
       "storagefilesharendktest:ActsStorageFileshareNdkTest",
       "storagefileurijstest:storagefileuri_js_test",
       "storagefileurijsteststatic:storagefileuri_js_test_static",
@@ -42,6 +43,7 @@ group("storage") {
       "storagestatfsjstest:storagestatfs_js_test",
       "storagestatfsjsteststatic:storagestatfs_js_test_static",
       "storagestatisticsjstest:storagestatistics_js_test",
+      "storagestoragestatisticsteststatic:storage_statistics_test_static",
     ]
   }
 }

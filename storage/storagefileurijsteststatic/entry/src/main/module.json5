@@ -43,6 +43,15 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.FILE_ACCESS_PERSIST",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "when": "always"
+        }
+      }
     ]
   }
 }
