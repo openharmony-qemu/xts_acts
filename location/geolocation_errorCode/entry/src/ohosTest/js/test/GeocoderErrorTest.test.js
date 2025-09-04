@@ -337,7 +337,6 @@ export default function geolocationTest_GeoErr() {
             };
             await sleep(1000);
             await geolocationm.disableLocation();
-        
         done();
         })
 
