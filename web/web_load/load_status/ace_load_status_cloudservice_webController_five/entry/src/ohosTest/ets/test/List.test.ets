@@ -15,7 +15,9 @@
 
 import webViewSetConnectionTimeout from './webViewSetConnectionTimeout.test';
 import webViewOnNavigationEntryCommitted from './webViewOnNavigationEntryCommitted.test';
+import webViewSetConnectionAboutToAppearTimeout from './WebViewSetConnectionAboutToAppearTimeout.test';
 export default function testsuite() {
   webViewSetConnectionTimeout()
   webViewOnNavigationEntryCommitted()
+  webViewSetConnectionAboutToAppearTimeout()
 }
