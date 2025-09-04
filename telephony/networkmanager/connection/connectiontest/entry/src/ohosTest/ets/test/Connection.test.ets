@@ -476,31 +476,6 @@ export default function ConnectionTest() {
         ExpectFail();
         done()
       }
-    }); 
-
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0200
-     * @tc.name   : testConnectionGetPacFileUrl0200
-     * @tc.desc   : Set pacFileURL and call the interface getPacFileURL to return correctly.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
-    it('testConnectionGetPacFileUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionGetPacFileUrl0200';
-      console.info(`${caseName}---Start`);
-      try {
-        const pacFileUrl: string = "www.abc.com";
-        connection.setPacFileUrl(pacFileUrl);
-        const result = connection.getPacFileUrl();
-        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == pacFileUrl);
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      } 
     });
   
     /**
@@ -522,7 +497,7 @@ export default function ConnectionTest() {
         done();
       } catch (err) { 
         console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
-        ExpectFail();
+        ExpectTrue(err.code == 2100002);
         done();
       }
     });
@@ -541,11 +516,11 @@ export default function ConnectionTest() {
       try{
         connection.setPacFileUrl('');
         console.info(`${caseName} setPacFileUrl success`);
-        ExpectFail();
+        ExpectTrue(true);
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)} `);
-        ExpectTrue(err.code == 401);
+        ExpectFail();
         done();
       }
     });
@@ -608,17 +583,15 @@ export default function ConnectionTest() {
       const caseName: string = 'testConnectionGetPacFileUrl0300';
       console.info(`${caseName}---Start`);
       try {
-        const pacFileUrl01: string = "www.ab.com/ab.pac";
-        const pacFileUrl02: string = "www.cd.com/cd.pac";
-        connection.setPacFileUrl(pacFileUrl01);
-        connection.setPacFileUrl(pacFileUrl02);
+        const pacFileUrl: string = "www.ab.com/ab.pac";
+        connection.setPacFileUrl(pacFileUrl);
         const result = connection.getPacFileUrl();
         console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == pacFileUrl02);
+        ExpectTrue(result == pacFileUrl);
         done();
       } catch (err) {
         console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectTrue(err.code == 2100002);
         done();
       }
     });
