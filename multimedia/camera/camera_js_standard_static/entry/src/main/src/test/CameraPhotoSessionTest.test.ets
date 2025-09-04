@@ -33,6 +33,7 @@ let mCameraNum: number;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
+let isSessionCreated: boolean = false;
 
 let receiver: image.ImageReceiver;
 
@@ -104,6 +105,8 @@ export default function cameraPhotoSessionTest() {
     if (mCameraSession == undefined) {
       console.info(TAG + "createCaptureSession FAILED");
       return false;
+    } else {
+      isSessionCreated = true;
     }
     console.info('Exit createCameraSessionInstance');
     return true;
@@ -111,21 +114,19 @@ export default function cameraPhotoSessionTest() {
 
   let releaseCameraSessionInstance = async () => {
     console.info('Enter releaseCameraSessionInstance');
-    if (mCameraSession != undefined) {
+    if (isSessionCreated && mCameraSession != undefined) {
       await mCameraSession.release();
+      isSessionCreated = false;
     }
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
     console.info('Enter createInput');
-    console.info('zhaoxu createInput 001');
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    console.info('zhaoxu createInput 002');
     mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
-    console.info('zhaoxu createInput 003');
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
@@ -211,9 +212,7 @@ export default function cameraPhotoSessionTest() {
     console.info(TAG + "Enter startCameraSession");
 
     await createInput(idx);
-    console.info('zhaoxu startCameraSession 001');
     createOutput(idx);
-    console.info('zhaoxu startCameraSession 002');
 
     await Utils.msSleep(1000);
 
@@ -324,29 +323,20 @@ export default function cameraPhotoSessionTest() {
         try{
           createCameraSessionInstance();
           await startCameraSession(0);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 001')
           let flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 002')
           let range = mCameraSession.getWhiteBalanceRange();
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 003')
           mCameraSession.setWhiteBalanceMode(camera.WhiteBalanceMode.DAYLIGHT);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 004')
           let mode = mCameraSession.getWhiteBalanceMode();
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 005')
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.AUTO);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 061')
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.INCANDESCENT);
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.FLUORESCENT);
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.DAYLIGHT);
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.MANUAL);
           flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.LOCKED);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 007')
           let value: int = 5000;
           mCameraSession.setWhiteBalance(value);
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 001')
           let whiteBalance: int = mCameraSession.getWhiteBalance();
-          console.info('zhaoxu SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 001')
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 start PASSED");
           expect(true).assertTrue();
           await stopCameraSession();
