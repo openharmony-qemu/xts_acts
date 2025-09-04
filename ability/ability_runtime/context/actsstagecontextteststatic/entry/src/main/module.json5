@@ -39,7 +39,7 @@
               "entity.system.home"
             ],
             "actions": [
-              "action.want.action.home"
+              "ohos.want.action.home"
             ]
           }
         ]
