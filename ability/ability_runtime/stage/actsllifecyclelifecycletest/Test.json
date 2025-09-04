@@ -15,6 +15,16 @@
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602",
+                "uinput -T -m 300 1279 280 200",
+                "uinput -T -d 1070 1070 -u 1070 1070",
+                "power-shell timeout -o 864000000"
+            ]
         }
     ]
 }
