@@ -14,7 +14,7 @@
  */
 
 import DeviceManagerSysApiNormalJsNdkTest from './DeviceManagerSysApiNormalJsNdkTest.test';
-import DeviceManagerNormalCanIUseTest from './DeviceManagerNormalCanIUseTest.test'
+import DeviceManagerNormalCanIUseTest from './DeviceManagerNormalCanIUseTest.test';
 
 export default function testsuite() {
     if (canIUse("SystemCapability.Driver.ExternalDevice")) {
