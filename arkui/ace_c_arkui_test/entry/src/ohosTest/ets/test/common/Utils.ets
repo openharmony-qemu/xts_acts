@@ -71,13 +71,15 @@ export default class Utils {
 
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
-    let rect = Utils.getComponentRect(key);
-    let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect))
-    let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
-    let X1 =  Math.round(centerX - vp2px(66.67));
-    let X2 =  Math.round(centerX + vp2px(66.67));
-    let Y1 = Math.round(centerY - vp2px(66.67));
-    let Y2 = Math.round(centerY + vp2px(66.67));
+    let Picker = await driver.findComponent(ON.id(key));
+    let rect = await Picker.getBounds();
+    let centerX = Math.round(Utils.getRectHorizontalCenterX(rect))
+    let centerY = Math.round(Utils.getRectVerticalCenterY(rect))
+    let X1 =  Math.round(centerX - Math.round((centerX-rect.left)/2));
+    let X2 =  Math.round(centerX + Math.round((centerX-rect.left)/2));
+    let Y1 = Math.round(centerY - Math.round((centerY-rect.top)/2));
+    let Y2 = Math.round(centerY + Math.round((centerY-rect.top)/2));
+
     let stepLen = 20;
     let speed = 10000;
     if (isHorizontal) {
