@@ -374,8 +374,8 @@ export default function PowerManagerServiceTest() {
      * @tc.type: Function
      * @tc.size: MediumTest
      */
-    it('PowerManagerServiceTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
-      let TAG = 'PowerManagerServiceTest_1700';
+    it('testPowerManagerServiceTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'testPowerManagerServiceTest_1700';
       try {
         power.setPowerKeyFilteringStrategy(power.PowerKeyFilteringStrategy.DISABLE_LONG_PRESS_FILTERING);
       } catch (error) {
