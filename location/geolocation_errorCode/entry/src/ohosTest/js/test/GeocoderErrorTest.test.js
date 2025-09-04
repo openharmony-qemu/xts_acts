@@ -277,7 +277,7 @@ export default function geolocationTest_GeoErr() {
                     },
                     fenceExtensionAbilityName: "MyFenceExtensionAbility",
                 };
-                await geolocationm.enablelocation();
+                await geolocationm.enableLocation();
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
                     console.info("addBeaconFence0200 success, fence id:" + id);
                 }).catch((error) => {
@@ -294,7 +294,7 @@ export default function geolocationTest_GeoErr() {
                 console.error("addBeaconFence0200: errCode" + error.code + ", errMessage" + error.message);
             };
         await sleep(1000);
-        await geolocationm.disablelocation();
+        await geolocationm.disableLocation();
         done();
         })
 
@@ -325,7 +325,7 @@ export default function geolocationTest_GeoErr() {
                     beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                     manufactureData: manufactureData
                 };
-                await geolocationm.enablelocation();
+                await geolocationm.enableLocation();
                 geolocationm.removeBeaconFence(beacon).then(()=>{
                     console.info("promise,removeBeaconFence success");
                 }).catch((error)=>{
@@ -336,8 +336,7 @@ export default function geolocationTest_GeoErr() {
                 console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
             };
             await sleep(1000);
-            await geolocationm.disablelocation();
-        
+            await geolocationm.disableLocation();
         done();
         })
 
