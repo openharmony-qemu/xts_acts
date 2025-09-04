@@ -13,97 +13,55 @@
  * limitations under the License.
  */
 
+import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import usbManager from "@ohos.usbManager"
 import deviceManager from '@ohos.driver.deviceManager'
-import usbManager from '@ohos.usbManager'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 
-export default function DeviceManagerNormalCanIUseTest(){
-describe("DeviceManagerNormalCanIUseTest", function () {
-    var deviceId = null;
 
-    let deviceList;
-    let isDeviceConnected;
-    let qDeviceList;
-    const PARAM_NULL = null;
-    const TAG = '[DeviceManagerNormalCanIUseTest]';
+export default function DeviceManagerSysApiNormalJsNdkTest() {
+  describe('DeviceManagerSysApiNormalJsNdkTest', () => {
 
-    function deviceConnected() {
-        if (deviceList.length > 0) {
-            console.info(TAG, "Test USB device is connected");
-            return true;
-        }
-        console.info(TAG, "Test USB device is not connected");
-        return false;
+    const TAG: string = "[DeviceManagerSysApiNormalJsNdkTest]";
+    const SYSTEMAPI_DENIED_CODE = 202;
+    const TEST_DEVICE_ID = 0;
+    const TEST_DRIVER_UID = 'testDriverUid';
+
+    let deviceNum = 0;
+    const isDeviceConnected = (done:Function) => {
+      if (deviceNum > 0) {
+        console.info("Test USB device is connected");
+          return true;
+      }
+      console.info("Test USB device is not connected");
+      expect(true).assertTrue();
+      if (typeof(done) === 'function') {
+        done();
+      }
+      return false;
     }
-
-    function callback(data) {
-        console.info("callback" + JSON.stringify(data));
-        expect(typeof(data.x)).assertEqual("number");
-    }
-
-    function callback2() {
-        console.info("callback2" + JSON.stringify(data));
-        expect(typeof(data.x)).assertEqual("number");
-    }
-
-    beforeAll(function() {
-        console.info('beforeAll called');
+    
+    beforeAll(async () => {
+      console.log('*************DeviceManager Unit DeviceManagerSysApiNormalJsNdkTest Begin*************');
         try {
-            deviceList = usbManager.getDevices();
-            console.info(TAG, 'beforeAll getDevices ', JSON.stringify(deviceList));
+          let devicesList = usbManager.getDevices();
+          if (Array.isArray(devicesList)) {
+            deviceNum = devicesList.length;
+          }
         } catch (err) {
-            console.info(TAG, 'beforeAll getDevices failed, catch error is : ' + err);
+          console.error(TAG, `getDevices failed, message is ${err.message}`);
         }
-        isDeviceConnected = deviceConnected();
-        if (isDeviceConnected) {
-            try {
-                qDeviceList = deviceManager.queryDevices(deviceManager.BusType.USB);
-                console.info(TAG, 'beforeAll queryDevices ', JSON.stringify(qDeviceList));
-            } catch(err) {
-                console.info(TAG, 'beforeAll queryDevices failed, catch error is : ' + err);
-            }
-        }
-        try {
-            var devices = deviceManager.queryDevices(deviceManager.BusType.USB);
-            if (devices != null && devices.length > 0 && devices[0] != null) {
-                deviceId = BigInt(devices[0].deviceId);
-                console.log('Device ID:', deviceId.toString());
-            } else {
-                console.log('No devices found.');
-            }
-        } catch (err) {
-            console.error('Error occurred:', err);
-        }
-
-        if (deviceId == null) {
-            console.log('Device ID has not been set.');
-        }
-        console.info('beforeAll called end');
-
     })
 
-    afterAll(function() {
-        console.info('afterAll called')
+    afterAll( ()=> {
+      console.log('*************DeviceManager Unit DeviceManagerSysApiNormalJsNdkTest End*************');
     })
-
-    beforeEach(function() {
-        console.info('beforeEach called')
-    })
-
-    afterEach(function() {
-        console.info('afterEach called')
-    })
-    const PARAMETER_ERROR_CODE = 401
-    const SERVICE_EXCEPTION_CODE = 22900001
-    const SERVICE_EXCEPTION_CODE_NEW = 26300001
-    const SERVICE_NOT_BOUND = 26300003
 
     /*
      * @tc.number     : SUB_Driver_Ext_DeviceManagerNormalCanIUse_0100
      * @tc.name       : testDeviceManagerCanIUsek001
      * @tc.desc       : verify DeviceManagerCanIUse any device
      */
-    it('testDeviceManagerNormalCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+    it('testDeviceManagerNormalCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
         console.info(TAG, '----------------------testDeviceManagerCanIUsek001---------------------------');
         let flag = canIUse("SystemCapability.Driver.ExternalDevice");
         expect(flag).assertEqual(false);

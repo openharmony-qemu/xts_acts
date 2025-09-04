@@ -13,90 +13,60 @@
  * limitations under the License.
  */
 
-import deviceManager from '@ohos.driver.deviceManager'
 import usbManager from '@ohos.usbManager'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import deviceManager from '@ohos.driver.deviceManager'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
-export default function NoPermissionCanIUseTest(){
-describe("NoPermissionCanIUseTest", function () {
-    var deviceId = null;
+export default function DeviceManagerNoPermissionJsTest() {
+    describe("NoPermissionJsTest", function () {
+        const TAG = "[NoPermissionJsTest]";
+        const PERMISSION_DENIED_CODE = 201;
+        const PERMISSION_DENIED_NOSYSTEM_CODE = 202;
+        const TEST_DEVICE_ID = 0;
+        const TEST_DRIVER_UID = 'testDriverUid'
+        const TEST_FUNCTION = (data) => {
+            expect(data === null).assertTrue();
+            console.info("Test function is called");
+        };
 
-    let deviceList;
-    let isDeviceConnected;
-    let qDeviceList;
-    const PARAM_NULL = null;
-    const TAG = '[NoPermissionCanIUseTest]';
-
-    function deviceConnected() {
-        if (deviceList.length > 0) {
-            console.info(TAG, "Test USB device is connected");
-            return true;
+        let deviceNum = 0;
+        const isDeviceConnected = done => {
+            if (deviceNum > 0) {
+                console.info("Test USB device is connected");
+                return true;
+            }
+            console.info("Test USB device is not connected");
+            expect(true).assertTrue();
+            if (typeof (done) === 'function') {
+                done();
+            }
+            return false;
         }
-        console.info(TAG, "Test USB device is not connected");
-        return false;
-    }
 
-    function callback(data) {
-        console.info("callback" + JSON.stringify(data));
-        expect(typeof(data.x)).assertEqual("number");
-    }
-
-    function callback2() {
-        console.info("callback2" + JSON.stringify(data));
-        expect(typeof(data.x)).assertEqual("number");
-    }
-
-    beforeAll(function() {
-        console.info('beforeAll called');
-        try {
-            deviceList = usbManager.getDevices();
-            console.info(TAG, 'beforeAll getDevices ', JSON.stringify(deviceList));
-        } catch (err) {
-            console.info(TAG, 'beforeAll getDevices failed, catch error is : ' + err);
-        }
-        isDeviceConnected = deviceConnected();
-        if (isDeviceConnected) {
+        beforeAll(function () {
+            console.info('beforeAll called');
             try {
-                qDeviceList = deviceManager.queryDevices(deviceManager.BusType.USB);
-                console.info(TAG, 'beforeAll queryDevices ', JSON.stringify(qDeviceList));
-            } catch(err) {
-                console.info(TAG, 'beforeAll queryDevices failed, catch error is : ' + err);
+                const devicesList = usbManager.getDevices();
+                if (Array.isArray(devicesList)) {
+                    deviceNum = devicesList.length;
+                }
+            } catch (err) {
+                console.error(TAG, `getDevices failed, message is ${err.message}`);
             }
-        }
-        try {
-            var devices = deviceManager.queryDevices(deviceManager.BusType.USB);
-            if (devices != null && devices.length > 0 && devices[0] != null) {
-                deviceId = BigInt(devices[0].deviceId);
-                console.log('Device ID:', deviceId.toString());
-            } else {
-                console.log('No devices found.');
-            }
-        } catch (err) {
-            console.error('Error occurred:', err);
-        }
+        })
 
-        if (deviceId == null) {
-            console.log('Device ID has not been set.');
-        }
-        console.info('beforeAll called end');
+        afterAll(function () {
+            console.info('afterAll called');
+        })
 
-    })
+        beforeEach(function () {
+            console.info('beforeEach called');
+        })
 
-    afterAll(function() {
-        console.info('afterAll called')
-    })
+        afterEach(function () {
+            console.info('afterEach called');
+        })
 
-    beforeEach(function() {
-        console.info('beforeEach called')
-    })
-
-    afterEach(function() {
-        console.info('afterEach called')
-    })
-    const PARAMETER_ERROR_CODE = 401
-    const SERVICE_EXCEPTION_CODE = 22900001
-    const SERVICE_EXCEPTION_CODE_NEW = 26300001
-    const SERVICE_NOT_BOUND = 26300003
 
     /*
      * @tc.number     : SUB_Driver_Ext_DeviceManagerNoPerCanIUse_0100
