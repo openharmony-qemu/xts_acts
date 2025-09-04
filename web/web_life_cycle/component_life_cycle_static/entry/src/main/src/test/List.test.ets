@@ -13,9 +13,12 @@
  * limitations under the License.
  */
 
+import webInitTest from './WebInitTest.test'
 import componentLifeCycleTestOne from './ComponentLifeCycleTestOne.test'
 import webViewSharedRenderProcessToken from './WebViewSharedRenderProcessToken.test'
+
 export default function testsuite() {
+    webInitTest();
     componentLifeCycleTestOne();
     webViewSharedRenderProcessToken();
 }

@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class TestClass {
   constructor() {
@@ -115,6 +116,8 @@ struct WebComponent {
                 }
                 break;
               }
+
+
             }
           })
       }
