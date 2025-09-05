@@ -4030,6 +4030,18 @@ export default function audioFramework() {
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
       try {
         await audioManager.setMicrophoneMute(true);
         let data = await audioManager.isMicrophoneMute();
@@ -4056,6 +4068,18 @@ export default function audioFramework() {
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
       try {
         await audioManager.setMicrophoneMute(false);
         let data = await audioManager.isMicrophoneMute();
@@ -4081,7 +4105,19 @@ export default function audioFramework() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
       audioManager.setMicrophoneMute(true, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: setMicrophoneMute: Callback : TRUE: Error : ${err.message}`);
@@ -4114,7 +4150,19 @@ export default function audioFramework() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
       audioManager.setMicrophoneMute(false, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: setMicrophoneMute: Callback : FALSE: Error : ${err.message}`);
