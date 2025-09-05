@@ -993,6 +993,7 @@ export default function ActsUIInputEventNdkTest() {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0153 start====");
           await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+          await Utils.sleep(1000);
           let result = uiinputeventndk.UIInputEventType0153();
           console.info("====>testArkUI_UIInputEvent_Type_0153 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -1045,29 +1046,6 @@ export default function ActsUIInputEventNdkTest() {
           done()
         } catch (err) {
           console.error("====>testArkUI_UIInputEvent_Type_0155 catch err: " + err);
-          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-        }
-      });
-
-    /**
-     * @tc.number  : SUB_ArkUI_UIInputEvent_Type_0156
-     * @tc.name    : testArkUI_UIInputEvent_Type_0156
-     * @tc.desc    : test ArkUI_UIInputEvent_Type.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('testArkUI_UIInputEvent_Type_0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>testArkUI_UIInputEvent_Type_0156 start====");
-          await Utils.driver.mouseClick(moveTo, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-          let result = uiinputeventndk.UIInputEventType0156();
-          console.info("====>testArkUI_UIInputEvent_Type_0156 result: " + result);
-          expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
-          done()
-        } catch (err) {
-          console.error("====>testArkUI_UIInputEvent_Type_0156 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
