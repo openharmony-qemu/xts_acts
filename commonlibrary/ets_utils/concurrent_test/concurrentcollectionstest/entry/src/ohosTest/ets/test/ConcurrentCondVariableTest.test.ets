@@ -81,9 +81,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -115,9 +113,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -149,9 +145,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -183,9 +177,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -217,9 +209,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -251,9 +241,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -285,9 +273,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });
@@ -319,9 +305,7 @@ export default function globalTest2() {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail();
         }
-        while (count < concurrentNum) {
-          await sleep(100);
-        }
+
         console.info(`${caseName} test end`);
         done();
       });

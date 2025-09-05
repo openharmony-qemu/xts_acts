@@ -1,19 +1,6 @@
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { expect } from '@ohos/hypium';
 
-@Concurrent
-export async function test_array_001(arr: collections.Array<number>, name: string, index: number) {
-  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
-    arr.shift();
-    arr.push(index)
-    arr.pop()
-    arr.reverse()
-    arr.unshift(index + 1)
-    arr.reverse()
-    arr.push(index)
-  })
-}
-
 
 @Concurrent
 export async function Float32array_test_0001(arr: collections.Float32Array, name: string, index: number) {
@@ -24,6 +11,34 @@ export async function Float32array_test_0001(arr: collections.Float32Array, name
       arr.fill(index, start, end);
     }
   })
+}
+
+@Concurrent
+export async function Float32array_test_001(arr: collections.Float32Array, name: string, index: number) {
+  let array: string = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
+    const start = index * 2;
+    const end = start + 2;
+    if (end <= arr.length) {
+      arr.fill(index, start, end);
+    }
+    array = arr.toString()
+  })
+  return array;
+}
+
+@Concurrent
+export async function Float32array_test_01(arr: collections.Float32Array, name: string, index: number) {
+  let array: string = '';
+  await ArkTSUtils.locks.AsyncLock.request(name).lockAsync(() => { // 如果不添加异步锁，任务会因为数据竞争冲突，导致抛异常失败
+    const start = index * 2;
+    const end = start + 2;
+    if (end <= arr.length) {
+      arr.fill(index, start, end);
+    }
+    array = arr.toLocaleString()
+  })
+  return array;
 }
 
 @Concurrent

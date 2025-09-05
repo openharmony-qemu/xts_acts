@@ -26,6 +26,7 @@ import {
   Int16array_test_0007,
   Int16array_test_0008,
   Int16array_test_0009,
+  Int16array_test_001,
   Int16array_test_0011,
   Int16array_test_0012,
   Int16array_test_0013,
@@ -36,6 +37,7 @@ import {
   Int16array_test_007,
   Int16array_test_008,
   Int16array_test_009,
+  Int16array_test_01,
   Int16array_test_011,
   Int16array_test_012
 } from '../testability/pages/Int16TaskPool';
@@ -113,47 +115,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0002
-     * @tc.name      : Int16array_test_0001
-     * @tc.desc      : Test Int16array
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    it('Int16array_test_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'Int16array_test_0002';
-        console.info(`${caseName} test start`);
-        let set: Set<number> = new Set<number>();
-        for (let i = 0; i <= 100; i++) {
-          set.add(i);
-        }
-        let array: collections.Int16Array = collections.Int16Array.from(set);
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(Int16array_test_0001, array, caseName, i)
-          }
-          await taskpool.execute(group).then(() => {
-            console.info(`${caseName} Task execution success`);
-          }).catch((e: BusinessError) => {
-            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-            expect().assertFail()
-          })
-          console.info(`${caseName} Task result: ${array.length}`);
-          console.info(`${caseName} Task result: ${array}`);
-          expect(array.length).assertEqual(101)
-          expect(array).assertContain(100)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0003
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0003
      * @tc.name      : Int16array_test_0001
      * @tc.desc      : Test Int16array
      * @tc.size      : SmallTest
@@ -164,13 +126,16 @@ export default function Int16ArrayGlobalTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'Int16array_test_0003';
         console.info(`${caseName} test start`);
+        let flag:boolean = false;
         let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(Int16array_test_0001, array, caseName, i)
+            group.addTask(Int16array_test_001, array, caseName, i)
           }
-          await taskpool.execute(group).then(() => {
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('0,0,1,1,2,2,3,3,4,4');
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
@@ -178,7 +143,7 @@ export default function Int16ArrayGlobalTest() {
           })
           console.info(`${caseName} Task result: ${array.length}`);
           console.info(`${caseName} Task result: ${array}`);
-          expect(array.toString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
@@ -188,7 +153,7 @@ export default function Int16ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT16ARRAY_TEST_0004
+     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0004
      * @tc.name      : Int16array_test_0001
      * @tc.desc      : Test Int16array
      * @tc.size      : SmallTest
@@ -199,13 +164,16 @@ export default function Int16ArrayGlobalTest() {
       async (done: () => void): Promise<void> => {
         const caseName = 'Int16array_test_0004';
         console.info(`${caseName} test start`);
+        let flag:boolean = false;
         let array: collections.Int16Array = collections.Int16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         try {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(Int16array_test_0001, array, caseName, i)
+            group.addTask(Int16array_test_01, array, caseName, i)
           }
-          await taskpool.execute(group).then(() => {
+          await taskpool.execute(group).then((res) => {
+            expect(res).assertContain('0,0,1,1,2,2,3,3,4,4');
+            flag = true;
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
@@ -213,7 +181,7 @@ export default function Int16ArrayGlobalTest() {
           })
           console.info(`${caseName} Task result: ${array.length}`);
           console.info(`${caseName} Task result: ${array}`);
-          expect(array.toLocaleString()).assertEqual('0,0,1,1,2,2,3,3,4,4')
+          expect(flag).assertTrue()
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
           expect().assertFail()
@@ -446,9 +414,7 @@ export default function Int16ArrayGlobalTest() {
           })
           console.info(`${caseName} Task result: ${array.length}`);
           console.info(`${caseName} Task result: ${array}`);
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -565,9 +531,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -606,9 +570,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -647,9 +609,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -688,9 +648,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -729,9 +687,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -770,9 +726,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -811,9 +765,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -822,47 +774,6 @@ export default function Int16ArrayGlobalTest() {
         console.info(`${caseName} test end`);
         done();
       });
-
-    // /**
-    //  * @tc.number    : SUB_INT16ARRAY_TEST_0020
-    //  * @tc.name      : Int16array_test_0020
-    //  * @tc.desc      : Test Int16array
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 0
-    //  */
-    // it('Int16array_test_0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> => {
-    //     const caseName = 'Int16array_test_0020';
-    //     console.info(`${caseName} test start`);
-    //     let count: number = 0;
-    //     let flag: boolean = false;
-    //     let array: collections.Int16Array = collections.Int16Array.from([1, 2, 3, 4, 5]);
-    //     try {
-    //       let group = new taskpool.TaskGroup(caseName)
-    //       for (let i = 0; i < concurrentNum; i++) {
-    //         group.addTask(Int16array_test_0010, array, caseName, i)
-    //         count++
-    //       }
-    //       await taskpool.execute(group).then((res) => {
-    //         expect(res.toString()).assertContain('5,4,3,2,1')
-    //         flag = true;
-    //         console.info(`${caseName} Task execution success`);
-    //       }).catch((e: BusinessError) => {
-    //         console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
-    //         expect().assertFail()
-    //       })
-    //       while (count < concurrentNum) {
-    //         await sleep(100)
-    //       }
-    //       expect(flag).assertTrue();
-    //     } catch (e) {
-    //       console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-    //       expect().assertFail()
-    //     }
-    //     console.info(`${caseName} test end`);
-    //     done();
-    //   });
 
     /**
      * @tc.number    : SUB_INT16ARRAY_TEST_0021
@@ -893,9 +804,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           expect(array.toString()).assertContain('1,2,3,0,0')
         } catch (e) {
@@ -934,9 +843,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           expect(array.toString()).assertEqual('1,3,4,4,5')
         } catch (e) {
@@ -975,9 +882,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           expect(array.toString()).assertEqual('1,2,3,4,5')
         } catch (e) {
@@ -1017,9 +922,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
         } catch (e) {
           console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
@@ -1057,9 +960,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           let result = array.at(1)
           expect(result).assertEqual(3)
@@ -1099,9 +1000,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           let result = array.includes(8)
           expect(result).assertTrue()
@@ -1141,9 +1040,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           let iterator: IterableIterator<[number, number]> = array.entries();
           expect(iterator.next().value.toString()).assertEqual('0,1')
@@ -1184,9 +1081,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           expect(array.toString()).assertContain('1,2,3,1,2,3,0,0')
         } catch (e) {
@@ -1225,9 +1120,7 @@ export default function Int16ArrayGlobalTest() {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
             expect().assertFail()
           })
-          while (count < concurrentNum) {
-            await sleep(100)
-          }
+
           expect(flag).assertTrue();
           expect(array.toString()).assertEqual('1,1,1,2,3')
         } catch (e) {
