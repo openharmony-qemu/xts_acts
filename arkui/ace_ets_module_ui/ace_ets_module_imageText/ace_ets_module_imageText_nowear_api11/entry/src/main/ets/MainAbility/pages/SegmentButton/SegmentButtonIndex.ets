@@ -113,7 +113,8 @@ struct Index {
       .width('90%')
       .height('100%')
     }
-    .height('100%')
+    .height('80%')
+    .margin({top: '10%', bottom: '10%'})
     .position({ x: 10 })
 
   }
