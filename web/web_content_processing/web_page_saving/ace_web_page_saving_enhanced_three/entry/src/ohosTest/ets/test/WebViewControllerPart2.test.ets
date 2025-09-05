@@ -19,6 +19,9 @@ import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitAndClickComponent } from './WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -71,7 +74,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -88,7 +91,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -105,7 +108,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -122,7 +125,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -139,7 +142,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -156,7 +159,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
 
     /*
@@ -173,7 +176,7 @@ export default function webViewControllerPart2() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent("WebViewControllerPart2Button");
+      await waitAndClickComponent(driver, "WebViewControllerPart2Button");
     })
   })
 }

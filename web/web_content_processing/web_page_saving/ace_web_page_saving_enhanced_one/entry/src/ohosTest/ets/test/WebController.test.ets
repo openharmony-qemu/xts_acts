@@ -17,8 +17,11 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } f
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent } from './WaitTest.test';
+import { waitAndClickComponent, waitForComponents } from './WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -38,6 +41,7 @@ export default function webController() {
         if (!("webController" == pages.name)) {
           console.info("get webController state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await Utils.sleep(2000);
           console.info("push webController page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -72,7 +76,7 @@ export default function webController() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebControllerButton');
+      await waitAndClickComponent(driver, 'WebControllerButton');
     })
 
     /*
@@ -89,7 +93,7 @@ export default function webController() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await waitAndClickComponent('WebControllerButton');
+      await waitAndClickComponent(driver, 'WebControllerButton');
     })
   })
 }

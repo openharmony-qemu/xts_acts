@@ -131,8 +131,7 @@ export async function waitForComponents(componentName:string, interval=10000) {
   return component;
 }
 
-export async function waitAndClickComponent(componentId: string, interval=10000) {
-  let driver: Driver = Driver.create();
+export async function waitAndClickComponent(driver: Driver, componentId: string, interval=10000) {
   let retryTimes: number = 0;
   let retry: boolean = true;
   while (retry && retryTimes <= 3) {
