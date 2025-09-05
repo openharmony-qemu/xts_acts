@@ -2,6 +2,7 @@
   "src": [
     "pages/webViewController",
     "pages/terminateRenderProcess",
-    "pages/webOnFirstContFour"
+    "pages/webOnFirstContFour",
+    "pages/wholeWebPageDrawing"
   ]
 }

@@ -59,6 +59,16 @@ export default function webOnFirstContFour() {
       await Utils.msSleep(12000);
       done();
     })
+
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('webOnFirstContFour', 10, '');
+        await Utils.msSleep(10000);
+        done();
+      })
   })
 }
 
