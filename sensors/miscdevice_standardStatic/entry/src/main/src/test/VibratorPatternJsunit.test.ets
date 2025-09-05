@@ -414,17 +414,39 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic025';
         try {
+           let points: Array<vibrator.VibratorCurvePoint> = [
+              {
+                time: 0,
+                intensity: 0.95,
+                frequency: 50,
+              }
+            ];
             let vibratorEvent1: vibrator.VibratorEvent = {
               eventType: vibrator.VibratorEventType.CONTINUOUS,
               time: 20,
+              duration: 50,
+              intensity: 60,
+              frequency: 75,
+              index: 1,
+              points: points,
             }
             let vibratorEvent2: vibrator.VibratorEvent = {
               eventType: vibrator.VibratorEventType.CONTINUOUS,
               time: 30,
+              duration: 60,
+              intensity: 75,
+              frequency: 95,
+              index: 2,
+              points: points,
             }
             let vibratorEvent3: vibrator.VibratorEvent = {
               eventType: vibrator.VibratorEventType.CONTINUOUS,
               time: 10,
+              duration: 70,
+              intensity: 65,
+              frequency: 55,
+              index: 3,
+              points: points,
             }
             let myevents:  Array<vibrator.VibratorEvent> = [vibratorEvent1,vibratorEvent2,vibratorEvent3];
             let vibratorPattern: vibrator.VibratorPattern = {
