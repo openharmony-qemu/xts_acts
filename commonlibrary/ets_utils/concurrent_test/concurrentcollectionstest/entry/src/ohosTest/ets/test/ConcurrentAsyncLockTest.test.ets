@@ -73,7 +73,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_001, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_001, caseName, i).then((res) => {
               expect(res as number).assertEqual(1);
               count++;
             }).catch((e: BusinessError) => {
@@ -105,7 +105,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_002, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_002, caseName, i).then((res) => {
               expect(res as string).assertEqual('request_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -137,7 +137,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_003, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_003, caseName, i).then((res) => {
               expect(res as boolean).assertTrue();
               count++;
             }).catch((e: BusinessError) => {
@@ -169,7 +169,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_004, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_004, caseName, i).then((res) => {
               expect(res as boolean).assertTrue();
               count++;
             }).catch((e: BusinessError) => {
@@ -201,7 +201,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_005, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_005, caseName, i).then((res) => {
               expect(res as number).assertEqual(100);
               count++;
             }).catch((e: BusinessError) => {
@@ -233,7 +233,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_006, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_006, caseName, i).then((res) => {
               expect(res as string).assertEqual('exclusive_mode_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -265,7 +265,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_007, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_007, caseName, i).then((res) => {
               expect(res as string).assertEqual('timeout_success');
               count++;
             }).catch((e: BusinessError) => {
@@ -297,7 +297,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_008, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_008, caseName, i).then((res) => {
               expect(res as number).assertEqual(concurrentNum);
               count++;
             }).catch((e: BusinessError) => {
@@ -329,7 +329,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_asynclock_009, caseName, i).then((res) => {
+            await taskpool.execute(test_asynclock_009, caseName, i).then((res) => {
               expect(res as string).assertEqual('error_handled');
               count++;
             }).catch((e: BusinessError) => {

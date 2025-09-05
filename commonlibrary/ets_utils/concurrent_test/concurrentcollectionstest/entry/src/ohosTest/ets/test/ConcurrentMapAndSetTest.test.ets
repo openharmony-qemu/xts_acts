@@ -125,7 +125,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_001, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_001, map, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('1,one')
               count++
@@ -159,7 +159,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_002, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_002, map, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(1)
               count++
@@ -193,7 +193,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_003, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_003, map, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('one')
               count++
@@ -227,7 +227,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_004, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_004, map, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('two')
               count++
@@ -397,7 +397,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_009, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_009, map, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('forEach_completed')
               count++
@@ -431,7 +431,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_map_010, map, caseName, i).then((res) => {
+            await taskpool.execute(test_map_010, map, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(4)
               count++
@@ -465,7 +465,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_001, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_001, set, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('1,1')
               count++
@@ -499,7 +499,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_002, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_002, set, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(1)
               count++
@@ -533,7 +533,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_003, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_003, set, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(1)
               count++
@@ -567,7 +567,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_004, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_004, set, caseName, i).then((res) => {
               expect(res as boolean)
                 .assertTrue()
               count++
@@ -703,7 +703,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_008, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_008, set, caseName, i).then((res) => {
               expect(res as string)
                 .assertEqual('forEach_completed')
               count++
@@ -737,7 +737,7 @@ export default function globalTest2() {
         let count = 0;
         try {
           for (let i = 0; i < concurrentNum; i++) {
-            taskpool.execute(test_set_009, set, caseName, i).then((res) => {
+            await taskpool.execute(test_set_009, set, caseName, i).then((res) => {
               expect(res as number)
                 .assertEqual(4)
               count++
