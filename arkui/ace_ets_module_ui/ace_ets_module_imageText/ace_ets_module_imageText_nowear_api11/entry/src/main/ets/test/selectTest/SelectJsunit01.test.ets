@@ -44,16 +44,16 @@ export default function SelectJsunit01() {
     });
 
     /**
-    * @tc.number    SelectJsunit_0100
-    * @tc.name      SelectJsunit_0100
-    * @tc.desc      set SelectJsunit_0100
+    * @tc.number    SelectJsunit_0010
+    * @tc.name      SelectJsunit_0010
+    * @tc.desc      set SelectJsunit_0010
     * @tc.level:    Level 0
     * @tc.type :
     * @tc.size :
     */
-   it('SelectJsunit_0100', Level.LEVEL0, async (done: Function) => {
+   it('SelectJsunit_0010', Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component select
-      console.info('[SelectJsunit_0400] START');
+      console.info('[SelectJsunit_0010] START');
       globalThis.value.message.notify({name:'optionValue',value:'-20'})
       await CommonFunc.sleep(2000);
       globalThis.value.message.notify({name:'icon',value:'10'})
@@ -84,7 +84,7 @@ export default function SelectJsunit01() {
       // Get the propoties value of the select component
       let strJson = getInspectorByKey('select');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[SelectJsunit_0400] component obj is: " + JSON.stringify(obj));
+      console.info("[SelectJsunit_0010] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.selected).assertEqual('0');
       expect(obj.$attrs.value).assertEqual('10');
       expect(obj.$attrs.font).assertEqual('{"size":"16.00fp","weight":"FontWeight.Medium","family":"","style":"FontStyle.Normal"}');
@@ -98,9 +98,9 @@ export default function SelectJsunit01() {
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('indexValue');
       let obj1: ESObject = JSON.parse(strJson1);
-      console.info("[SelectJsunit_0400] component obj1 is: " + JSON.stringify(obj1));
+      console.info("[SelectJsunit_0010] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:0');
-      console.info('[SelectJsunit_0400] END');
+      console.info('[SelectJsunit_0010] END');
       done();
     });
   })
