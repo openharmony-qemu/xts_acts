@@ -187,6 +187,182 @@ export default function geolocationTest_GeoErr(){
               await sleep(1000);
               done();
         })
+		 /**
+         * @tc.number SUB_HSS_Addbeaconfence_0100
+         * @tc.name SUB_HSS_Addbeaconfence_0100
+         * @tc.desc Invoke the geocoding service with incorrect input parameters.
+         * @tc.size MEDIUM
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('SUB_HSS_Addbeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X00, 0X18, 0X12, 0X00, 0X00,
+                    0X10, 0X00, 0X80, 0X00, 0X00, 0X80, 0X5F, 0X9B, 0X34, 0XFB]);
+
+                let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+                    0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+
+                let manufactureData = {
+                    manufactureId: 0X004C,
+                    manufactureData: manufactureDataBuffer.buffer,
+                    manufactureDataMask: manufactureDataMaskBuffer.buffer
+                };
+
+                let beacon = {
+                    identifier: "11",
+                    beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                    manufactureData: manufactureData
+                };
+
+                let fenceRequest = {
+                    beacon: beacon,
+                    transitionCallback: (transition) => {
+                        if (transition) {
+                            console.info("SUB_HSS_Addbeaconfence_0100" + JSON.stringify(transition));
+                        }
+                    },
+                    fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                };
+				
+                geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                    console.info("addBeaconFence0100 success, fence id:" + id);
+					except().assertFail();
+                }).catch((error) => {
+                    console.error('promise, addBeaconFence0100: error=' + JSON.stringify(error));
+                    expect(error.code).assertEqual(3501100);
+                });
+            } catch (error) {
+                console.error("addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
+            };
+        await sleep(1000);
+        
+        done();
+        })
+
+        /**
+         * @tc.number SUB_HSS_Addbeaconfence_0200
+         * @tc.name SUB_HSS_Addbeaconfence_0200
+         * @tc.desc Invoke the geocoding service with incorrect input parameters.
+         * @tc.size MEDIUM
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('SUB_HSS_Addbeaconfence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X00, 0X18, 0X12, 0X00, 0X00,
+                    0X10, 0X00, 0X80, 0X00, 0X00, 0X80, 0X5F, 0X9B, 0X34, 0XFB]);
+
+                let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+                    0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+
+                let manufactureData = {
+                    manufactureId: 0X004C,
+                    manufactureData: manufactureDataBuffer.buffer,
+                    manufactureDataMask: manufactureDataMaskBuffer.buffer
+                };
+
+                let beacon = {
+                    identifier: "11",
+                    beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                    manufactureData: manufactureData
+                };
+
+                let fenceRequest = {
+                    beacon: beacon,
+                    transitionCallback: (transition) => {
+                        if (transition) {
+                            console.info("SUB_HSS_Addbeaconfence_0200: err" + JSON.stringify(transition));
+                        }
+                    },
+                    fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                };
+                await geolocationm.enableLocation();
+                geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                    console.info("addBeaconFence0200 success, fence id:" + id);
+                }).catch((error) => {
+                    console.error('promise, addBeaconFence0200: error=' + JSON.stringify(error));
+                });
+
+                geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                    console.info("addBeaconFence0200 success, fence id:" + id);
+                }).catch((error) => {
+                    console.error('promise, addBeaconFence0200: error=' + JSON.stringify(error));
+                    expect(error.code).assertEqual(3501603);
+                });
+            } catch (error) {
+                console.error("addBeaconFence0200: errCode" + error.code + ", errMessage" + error.message);
+            };
+        await sleep(1000);
+        await geolocationm.disableLocation();
+        done();
+        })
+
+        /**
+         * @tc.number SUB_HSS_Removebeaconfence_0100
+         * @tc.name SUB_HSS_Removebeaconfence_0100
+         * @tc.desc Invoke the geocoding service with incorrect input parameters.
+         * @tc.size MEDIUM
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('SUB_HSS_Removebeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X01, 0X00, 0X18, 0X12, 0X00, 0X00,
+                    0X10, 0X00, 0X80, 0X00, 0X00, 0X80, 0X5F, 0X9B, 0X34, 0XFB]);
+
+                let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+                    0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+
+                let manufactureData = {
+                    manufactureId: 0X004C,
+                    manufactureData: manufactureDataBuffer.buffer,
+                    manufactureDataMask: manufactureDataMaskBuffer.buffer
+                };
+
+                let beacon = {
+                    identifier: "11",
+                    beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                    manufactureData: manufactureData
+                };
+                await geolocationm.enableLocation();
+                geolocationm.removeBeaconFence(beacon).then(()=>{
+                    console.info("promise,removeBeaconFence success");
+                }).catch((error)=>{
+                    console.error("promise,removeBeaconFence:error="+JSON.stringify(error));
+                    expect(error.code).assertEqual(3501602);
+                });
+            } catch (error) {
+                console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+            };
+            await sleep(1000);
+            await geolocationm.disableLocation();
+        done();
+        })
+
+        
+
+        /**
+         * @tc.number SUB_HSS_isBeaconFenceSupported_0100
+         * @tc.name SUB_HSS_isBeaconFenceSupported_0100
+         * @tc.desc Invoke the geocoding service with incorrect input parameters.
+         * @tc.size MEDIUM
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('SUB_HSS_isBeaconFenceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let isBeaconFenceSupported = geolocationm.isBeaconFenceSupported();
+                expect(true).assertEqual(isBeaconFenceSupported != null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+                expect().assertFail();
+            }
+            await sleep(1000);
+            done();
+        });
+		
+		
     
     
     })
