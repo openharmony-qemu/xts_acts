@@ -338,7 +338,7 @@ export default function audioCapturerEnhanceTest() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      try {
+      try { 
         const isPlaybackCaptureAvailable = canIUse('SystemCapability.Multimedia.Audio.PlaybackCapture');
         console.info(`isPlaybackCaptureAvailable: ${isPlaybackCaptureAvailable}`)
         if (isPlaybackCaptureAvailable) {
@@ -361,6 +361,8 @@ export default function audioCapturerEnhanceTest() {
         done();
       }
       try {
+        let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
+        console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
         expect(CapturerChangeInfo.muted).assertEqual(false);
         expect(CapturerChangeInfo.deviceDescriptors[0].id).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
