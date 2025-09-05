@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsdeviceManagerMainTest") {
+ohos_app_assist_suite("ActsdeviceManagerMain20Test") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsdeviceManagerMainTest"
+  hap_name = "ActsdeviceManagerMain20Test"
   part_name = "device_manager"
   subsystem_name = "distributedhardware"
 }
 
-ohos_js_app_suite("ActsdeviceManagerTest") {
+ohos_js_app_suite("ActsdeviceManager20Test") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsdeviceManagerTest"
+  hap_name = "ActsdeviceManager20Test"
   part_name = "device_manager"
   subsystem_name = "distributedhardware"
-  deps = [ ":ActsdeviceManagerMainTest" ]
+  deps = [ ":ActsdeviceManagerMain20Test" ]
 }
