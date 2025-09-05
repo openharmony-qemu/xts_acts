@@ -17881,11 +17881,9 @@ static napi_value NapiNumberTest001(napi_env env, napi_callback_info info)
     return result;
 }
 
-// Helper function to test cross-type conversion
-static bool TestCrossTypeConversion(napi_env env) {
+// Helper function to test int32 to uint32 conversion
+static bool TestInt32ToUint32Conversion(napi_env env) {
     napi_status status;
-    
-    // Test 1: int32 to uint32 (negative number)
     int32_t negativeInt32 = -12345;
     napi_value int32Val = nullptr;
     status = napi_create_int32(env, negativeInt32, &int32Val);
@@ -17898,8 +17896,12 @@ static bool TestCrossTypeConversion(napi_env env) {
     if (status != napi_ok) {
         return false;
     }
-    
-    // Test 2: uint32 to int32 (large number)
+    return true;
+}
+
+// Helper function to test uint32 to int32 conversion
+static bool TestUint32ToInt32Conversion(napi_env env) {
+    napi_status status;
     uint32_t largeUint32 = 4294967295; // UINT32_MAX
     napi_value uint32Val = nullptr;
     status = napi_create_uint32(env, largeUint32, &uint32Val);
@@ -17912,22 +17914,30 @@ static bool TestCrossTypeConversion(napi_env env) {
     if (status != napi_ok) {
         return false;
     }
-    
-    // Test 3: int32 to int64
+    return true;
+}
+
+// Helper function to test int32 to int64 conversion
+static bool TestInt32ToInt64Conversion(napi_env env) {
+    napi_status status;
     int32_t int32Value = 2147483647; // INT32_MAX
-    napi_value int32Val2 = nullptr;
-    status = napi_create_int32(env, int32Value, &int32Val2);
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, int32Value, &int32Val);
     if (status != napi_ok) {
         return false;
     }
     
     int64_t int64Result = 0;
-    status = napi_get_value_int64(env, int32Val2, &int64Result);
+    status = napi_get_value_int64(env, int32Val, &int64Result);
     if (status != napi_ok || int64Result != int32Value) {
         return false;
     }
-    
-    // Test 4: int64 to int32 (overflow case)
+    return true;
+}
+
+// Helper function to test int64 to int32 conversion (overflow case)
+static bool TestInt64ToInt32Conversion(napi_env env) {
+    napi_status status;
     int64_t largeInt64 = 2147483648; // INT32_MAX + 1
     napi_value int64Val = nullptr;
     status = napi_create_int64(env, largeInt64, &int64Val);
@@ -17940,22 +17950,30 @@ static bool TestCrossTypeConversion(napi_env env) {
     if (status != napi_ok) {
         return false;
     }
-    
-    // Test 5: int32 to double
+    return true;
+}
+
+// Helper function to test int32 to double conversion
+static bool TestInt32ToDoubleConversion(napi_env env) {
+    napi_status status;
     int32_t int32ToDouble = 123456789;
-    napi_value int32Val3 = nullptr;
-    status = napi_create_int32(env, int32ToDouble, &int32Val3);
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, int32ToDouble, &int32Val);
     if (status != napi_ok) {
         return false;
     }
     
     double doubleFromInt32 = 0.0;
-    status = napi_get_value_double(env, int32Val3, &doubleFromInt32);
+    status = napi_get_value_double(env, int32Val, &doubleFromInt32);
     if (status != napi_ok || doubleFromInt32 != int32ToDouble) {
         return false;
     }
-    
-    // Test 6: double to int32 (truncation)
+    return true;
+}
+
+// Helper function to test double to int32 conversion (truncation)
+static bool TestDoubleToInt32Conversion(napi_env env) {
+    napi_status status;
     double doubleToInt32 = 123.999;
     napi_value doubleVal = nullptr;
     status = napi_create_double(env, doubleToInt32, &doubleVal);
@@ -17966,6 +17984,40 @@ static bool TestCrossTypeConversion(napi_env env) {
     int32_t int32FromDouble = 0;
     status = napi_get_value_int32(env, doubleVal, &int32FromDouble);
     if (status != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
+// Helper function to test cross-type conversion
+static bool TestCrossTypeConversion(napi_env env) {
+    // Test 1: int32 to uint32 (negative number)
+    if (!TestInt32ToUint32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 2: uint32 to int32 (large number)
+    if (!TestUint32ToInt32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 3: int32 to int64
+    if (!TestInt32ToInt64Conversion(env)) {
+        return false;
+    }
+    
+    // Test 4: int64 to int32 (overflow case)
+    if (!TestInt64ToInt32Conversion(env)) {
+        return false;
+    }
+    
+    // Test 5: int32 to double
+    if (!TestInt32ToDoubleConversion(env)) {
+        return false;
+    }
+    
+    // Test 6: double to int32 (truncation)
+    if (!TestDoubleToInt32Conversion(env)) {
         return false;
     }
     
