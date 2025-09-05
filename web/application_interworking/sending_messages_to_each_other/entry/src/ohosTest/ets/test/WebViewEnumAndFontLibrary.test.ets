@@ -17,8 +17,11 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+
 
 export default function WebViewEnumAndFontLibrary() {
 
@@ -35,12 +38,13 @@ export default function WebViewEnumAndFontLibrary() {
         if (!("WebViewEnumAndFontLibrary" == pages.name)) {
           console.info("get WebViewEnumAndFontLibrary state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewEnumAndFontLibrary page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewEnumAndFontLibrary page error: " + err);
       }
+      await waitForComponent("buttonEnumAndFontLibrary");
+      console.log("waitForComponent buttonEnumAndFontLibrary");
       done()
     });
 
@@ -50,17 +54,16 @@ export default function WebViewEnumAndFontLibrary() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebViewControllerDownloadTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebViewControllerDownloadTest afterEach end");
-      done();
-    })
+    // afterEach(async (done: Function) => {
+    //   console.info("WebViewControllerDownloadTest afterEach start");
+    //   //await Utils.sleep(2000);
+    //   console.info("WebViewControllerDownloadTest afterEach end");
+    //   done();
+    // })
 
     /*
     * @tc.number     : SUB_WEB_MESSAGELEVEL_0100
@@ -71,9 +74,8 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('testMessageLevel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitMessageLevelDebug", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMessageLevel001", '1', 601, done);
+      Utils.emitEvent("emitMessageLevelDebug", 170400)
+      Utils.registerEvent("testMessageLevel001", '1', 170410, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
@@ -86,9 +88,8 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('testMessageLevel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitMessageLevelInfo", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMessageLevel002", '2', 602, done);
+      Utils.emitEvent("emitMessageLevelInfo", 170400)
+      Utils.registerEvent("testMessageLevel002", '2', 170420, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
@@ -101,9 +102,8 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('testMessageLevel003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitMessageLevelWarn", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMessageLevel003", '3', 603, done);
+      Utils.emitEvent("emitMessageLevelWarn", 170400)
+      Utils.registerEvent("testMessageLevel003", '3', 170430, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
@@ -116,9 +116,8 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('testMessageLevel004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitMessageLevelError", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMessageLevel004", '4', 604, done);
+      Utils.emitEvent("emitMessageLevelError", 170400)
+      Utils.registerEvent("testMessageLevel004", '4', 170440, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
@@ -131,9 +130,8 @@ export default function WebViewEnumAndFontLibrary() {
     * @tc.level      : Level 1
     */
     it('testMessageLevel005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitMessageLevelLog", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMessageLevel005", '2', 605, done);
+      Utils.emitEvent("emitMessageLevelLog", 170400)
+      Utils.registerEvent("testMessageLevel005", '2', 170450, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
   })

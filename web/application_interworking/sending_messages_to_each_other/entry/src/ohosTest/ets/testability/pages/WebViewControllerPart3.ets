@@ -16,6 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
+import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 @Entry
 @Component
@@ -33,17 +34,19 @@ struct WebViewControllerPart3 {
   @State console: string = ""
   @State onMessageEventCallBack: boolean = false
   @State ports: webView.WebMessagePort[] = [];
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 170380,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(170380)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -56,6 +59,7 @@ struct WebViewControllerPart3 {
           this.controller.loadUrl("resource://rawfile/index.html");
           this.controller.clearHistory()
         }
+        this.isReceive = 0;
       }
     }
   }
@@ -64,13 +68,19 @@ struct WebViewControllerPart3 {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info("isPageEnd :" + this.isPageEnd);
+          console.info("isReceive3 :" + this.isReceive);
+          await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
+          await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "testOnMessageEvent001": {
               try {
                 this.onMessageEventCallBack = true
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/onMessageEventExt.html")
-                await Utils.sleep(2000)
+                await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
                 this.controller.runJavaScript(
                   'postNumberToApp()',
                   (error, result) => {
@@ -99,6 +109,8 @@ struct WebViewControllerPart3 {
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
         .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 0;
           if (event) {
             if (this.onMessageEventCallBack) {
               this.ports = this.controller.createWebMessagePorts(true);
@@ -107,7 +119,7 @@ struct WebViewControllerPart3 {
               this.nativePort.onMessageEvent((result) => {
                 if (result) {
                   console.log(`log error result: ${result}`);
-                  Utils.emitEvent(result, 100084)
+                  Utils.emitEvent(result, 170390)
                 }
               });
             }

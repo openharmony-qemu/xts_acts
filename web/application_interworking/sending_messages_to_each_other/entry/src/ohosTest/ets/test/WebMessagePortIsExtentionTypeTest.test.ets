@@ -17,6 +17,7 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -41,6 +42,7 @@ export default function webMessagePortIsExtentionTypeTest() {
       } catch (err) {
         console.error(`push ${pageName} page error: ` + err);
       }
+      await waitForComponent("IsExtentionTypeButton");
       done()
     });
 
@@ -56,7 +58,6 @@ export default function webMessagePortIsExtentionTypeTest() {
 
     afterEach(async (done: Function) => {
       console.info(`${pageName} afterEach start`);
-      await Utils.sleep(2000);
       console.info(`${pageName} afterEach end`);
       done();
     })
@@ -70,9 +71,8 @@ export default function webMessagePortIsExtentionTypeTest() {
     * @tc.level       : Level 2
     */
     it('testIsExtentionType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testIsExtentionType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testIsExtentionType001", "401", 100100, done);
+      Utils.emitEvent("testIsExtentionType001", 170360)
+      Utils.registerEvent("testIsExtentionType001", "401", 170370, done);
       sendEventByKey('IsExtentionTypeButton', 10, '');
     })
 
