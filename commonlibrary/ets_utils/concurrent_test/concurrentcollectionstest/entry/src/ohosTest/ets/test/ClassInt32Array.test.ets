@@ -1092,7 +1092,7 @@ export default function Int32ArrayGlobalTest() {
 
     /**
      * @tc.number    : SUB_INT32ARRAY_TEST_0027
-     * @tc.name      : Int32array_test_0029
+     * @tc.name      : Int32array_test_0030
      * @tc.desc      : Test Int32array
      * @tc.size      : MediumTest
      * @tc.type      : Function

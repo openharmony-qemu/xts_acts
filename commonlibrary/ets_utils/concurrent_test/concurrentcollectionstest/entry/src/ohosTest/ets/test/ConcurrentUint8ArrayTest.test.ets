@@ -794,6 +794,14 @@ export default function globalTest6() {
         done()
       })
 
+    /**
+     * @tc.number    : SUB_CONCURRENT_UINT8ARRAY_TEST_TEST_2000
+     * @tc.name      : test_concurrent_collections_uint8Array_020
+     * @tc.desc      : test_concurrent_collections_uint8Array_020 - test Uint8Array reduceRight methods
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
     it('test_concurrent_collections_uint8Array_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'test_concurrent_collections_uint8Array_020';
