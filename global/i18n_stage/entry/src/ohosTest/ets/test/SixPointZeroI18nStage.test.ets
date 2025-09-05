@@ -3910,7 +3910,7 @@ export default function SixPointZeroI18nStageTest() {
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat("zh_CN", { calendar: "chinese", fractionalSecondDigits: 3 });
       let daformat = dafmt.formatRange(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual('"2025年六月23 123-2025年腊月16 123"')
+      expect(JSON.stringify(daformat)).assertEqual('"2025年六月23 123–2025年腊月16 123"')
     })
 
     /* *
@@ -3927,7 +3927,7 @@ export default function SixPointZeroI18nStageTest() {
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat("ug-CN", { calendar: "buddhist", fractionalSecondDigits: 2 });
       let daformat = dafmt.formatRange(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual('"7/17/2568 BE، 00 - 2/3/2569 BE، 00"')
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2568 BE، 00 – 2/3/2569 BE، 00"')
     })
 
     /* *
@@ -3944,7 +3944,7 @@ export default function SixPointZeroI18nStageTest() {
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat("ru", { calendar: "gregory", fractionalSecondDigits: 1 });
       let daformat = dafmt.formatRange(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual('"17.07.2025, 0 - 03.02.2026 0"')
+      expect(JSON.stringify(daformat)).assertEqual('"17.07.2025, 0 – 03.02.2026, 0"')
     })
 
     /* *
@@ -3977,7 +3977,7 @@ export default function SixPointZeroI18nStageTest() {
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
       let dafmt: Intl.DateTimeFormat = new Intl.DateTimeFormat();
       let daformat = dafmt.formatRange(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual('"7/17/2025 - 2/3/2026"')
+      expect(JSON.stringify(daformat)).assertEqual('"7/17/2025 – 2/3/2026"')
     })
 
     /* *
@@ -4011,11 +4011,9 @@ export default function SixPointZeroI18nStageTest() {
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
       let expected: string =
         JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "六月" },
-          { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" },
-          { "type": "literal", "value": "-" }, { "type": "relatedYear", "value": "2025" },
-          { "type": "literal", "value": "年" },
+          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
+          { "type": "fractionalSecond", "value": "0" }, { "type": "literal", "value": "–" },
+          { "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
           { "type": "month", "value": "腊月" }, { "type": "day", "value": "16" }, { "type": "literal", "value": " " },
           { "type": "fractionalSecond", "value": "0" }]);
       let dafmt: Intl.DateTimeFormat =
@@ -4037,10 +4035,9 @@ export default function SixPointZeroI18nStageTest() {
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
       let expected: string =
         JSON.stringify([{ "type": "day", "value": "17" }, { "type": "literal", "value": "." },
-          { "type": "month", "value": "07" },
-          { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
+          { "type": "month", "value": "07" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
           { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" },
-          { "type": "literal", "value": "-" }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
+          { "type": "literal", "value": " – " }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
           { "type": "month", "value": "02" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2026" },
           { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" }]);
       let dafmt: Intl.DateTimeFormat =
@@ -4063,7 +4060,7 @@ export default function SixPointZeroI18nStageTest() {
       let expected: string =
         JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
           { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": " - " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
+          { "type": "literal", "value": " – " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
           { "type": "day", "value": "3" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2026" }]);
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat();
