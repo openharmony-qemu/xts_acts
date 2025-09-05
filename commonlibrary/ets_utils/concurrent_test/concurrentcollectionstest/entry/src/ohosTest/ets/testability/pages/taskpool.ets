@@ -1,4 +1,4 @@
-import { ArkTSUtils, collections } from "@kit.ArkTS";
+import { ArkTSUtils, collections } from '@kit.ArkTS';
 
 @Concurrent
 export async function test_array_001(arr: collections.Array<number>, name: string, index: number) {

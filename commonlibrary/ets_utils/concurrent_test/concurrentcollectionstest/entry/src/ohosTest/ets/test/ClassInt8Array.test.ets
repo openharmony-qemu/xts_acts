@@ -116,7 +116,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0003
+     * @tc.number    : SUB_INT8ARRAY_TEST_0003
      * @tc.name      : Int8array_test_0001
      * @tc.desc      : Test Int8array
      * @tc.size      : SmallTest
@@ -154,7 +154,7 @@ export default function Int8ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT32ARRAY_TEST_0004
+     * @tc.number    : SUB_INT8ARRAY_TEST_0004
      * @tc.name      : Int8array_test_0001
      * @tc.desc      : Test Int8array
      * @tc.size      : SmallTest
