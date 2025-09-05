@@ -65,6 +65,7 @@ export default function DeviceManagerNormalCanIUseTest() {
         console.info(TAG, '----------------------testDeviceManagerCanIUsek001---------------------------');
         let flag = canIUse("SystemCapability.Driver.ExternalDevice");
         expect(flag).assertEqual(false);
+        done();
     })
 })
 }
