@@ -81,6 +81,8 @@ public:
     int32_t SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
     int32_t SendDataMpeg2(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
     int32_t SendDataMpeg4(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data);
+    void ProcessAdditionalRead(uint32_t &buffersize, void *&pBuffer);
+    void ProcessInitialSearch(uint32_t &bufferSize, void *&pBuffer);
     int32_t StartDemuxer();
     void GetBufferSize();
     void GetMpeg4BufferSize();
