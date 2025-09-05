@@ -55,9 +55,16 @@ export default function TimePickerAddApi() {
       console.info('[TimePickerAddApi_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
+      let timePicker = await driver.findComponent(ON.id('TimePickerAddApi'));
+      let rect = await timePicker.getBounds();
+      let left = rect.left
+      let top = rect.top
+      let bottom = rect.bottom
+      let right = rect.right
+      let middle = (top + bottom) / 2
+
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(pos.right - vp2px(100)),Math.round(pos.bottom - vp2px(10)),Math.round(pos.right - vp2px(100)),Math.round(pos.top));
+      await driver.swipe(Math.round(left + (right - left) / 6), Math.round(top + (bottom - top) / 2),Math.round(left + (right - left) / 6), Math.round(top));
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);
@@ -65,7 +72,6 @@ export default function TimePickerAddApi() {
       console.info("[TimePicker_001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
       expect(obj.$attrs.content).assertEqual('second');
-
       console.info('[TimePicker_001] END');
       done();
     });
