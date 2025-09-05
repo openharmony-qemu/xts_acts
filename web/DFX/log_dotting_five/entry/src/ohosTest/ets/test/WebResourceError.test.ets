@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver,ON } from '@ohos.UiTest'
+let driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -67,7 +69,8 @@ export default function webResourceError() {
     it('testGetErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetErrorCode001", 120010)
       Utils.registerEvent("testGetErrorCode001", -200, 120020, done);
-      sendEventByKey('WebResourceErrorButton', 10, '');
+      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      await component.click();
     })
   })
 }

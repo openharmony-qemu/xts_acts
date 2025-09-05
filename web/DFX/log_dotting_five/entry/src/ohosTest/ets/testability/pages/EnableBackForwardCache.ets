@@ -40,9 +40,6 @@ struct Index {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
   }
 
-  onPageHide() {
-    events_emitter.off(119010)
-  }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info('web page valueChangeCallBack');
