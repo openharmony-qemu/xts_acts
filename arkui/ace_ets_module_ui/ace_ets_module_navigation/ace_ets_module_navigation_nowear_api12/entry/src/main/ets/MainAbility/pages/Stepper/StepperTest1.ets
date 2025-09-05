@@ -64,5 +64,6 @@ struct StepperTest1 {
         this.currentIndex = index
       }
     })
+    .height('90%')
   }
 }
