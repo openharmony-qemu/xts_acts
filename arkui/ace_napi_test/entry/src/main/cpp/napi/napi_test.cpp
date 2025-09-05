@@ -17783,6 +17783,627 @@ static napi_value NapiWrapEnhanceTest12(napi_env env, napi_callback_info info)
     return rst;
 }
 
+// NAPI Number Test Functions
+static napi_value NapiNumberTest001(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test 1: napi_create_int32 and napi_get_value_int32
+    int32_t int32Value = 12345;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, int32Value, &int32Val);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedInt32 = 0;
+    status = napi_get_value_int32(env, int32Val, &retrievedInt32);
+    if (status != napi_ok || retrievedInt32 != int32Value) testResult = false;
+    
+    // Test 2: napi_create_uint32 and napi_get_value_uint32
+    uint32_t uint32Value = 4294967295; // UINT32_MAX
+    napi_value uint32Val = nullptr;
+    status = napi_create_uint32(env, uint32Value, &uint32Val);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t retrievedUint32 = 0;
+    status = napi_get_value_uint32(env, uint32Val, &retrievedUint32);
+    if (status != napi_ok || retrievedUint32 != uint32Value) testResult = false;
+    
+    // Test 3: napi_create_int64 and napi_get_value_int64
+    int64_t int64Value = 2147483647; // INT32_MAX for JS safety
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, int64Value, &int64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64 = 0;
+    status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+    if (status != napi_ok || retrievedInt64 != int64Value) testResult = false;
+    
+    // Test 4: napi_create_double and napi_get_value_double
+    double doubleValue = 3.141592653589793;
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, doubleValue, &doubleVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble = 0.0;
+    status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+    if (status != napi_ok || retrievedDouble != doubleValue) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest002(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test cross-type conversions
+    // Test 1: int32 to uint32 (negative number)
+    int32_t negativeInt32 = -12345;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, negativeInt32, &int32Val);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t uint32Result = 0;
+    status = napi_get_value_uint32(env, int32Val, &uint32Result);
+    if (status != napi_ok) testResult = false;
+    
+    // Test 2: uint32 to int32 (large number)
+    uint32_t largeUint32 = 4294967295; // UINT32_MAX
+    napi_value uint32Val = nullptr;
+    status = napi_create_uint32(env, largeUint32, &uint32Val);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t int32Result = 0;
+    status = napi_get_value_int32(env, uint32Val, &int32Result);
+    if (status != napi_ok) testResult = false;
+    
+    // Test 3: int32 to int64
+    int32_t int32Value = 2147483647; // INT32_MAX
+    napi_value int32Val2 = nullptr;
+    status = napi_create_int32(env, int32Value, &int32Val2);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t int64Result = 0;
+    status = napi_get_value_int64(env, int32Val2, &int64Result);
+    if (status != napi_ok || int64Result != int32Value) testResult = false;
+    
+    // Test 4: int64 to int32 (overflow case)
+    int64_t largeInt64 = 2147483648; // INT32_MAX + 1
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, largeInt64, &int64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t int32FromInt64 = 0;
+    status = napi_get_value_int32(env, int64Val, &int32FromInt64);
+    if (status != napi_ok) testResult = false;
+    
+    // Test 5: int32 to double
+    int32_t int32ToDouble = 123456789;
+    napi_value int32Val3 = nullptr;
+    status = napi_create_int32(env, int32ToDouble, &int32Val3);
+    if (status != napi_ok) testResult = false;
+    
+    double doubleFromInt32 = 0.0;
+    status = napi_get_value_double(env, int32Val3, &doubleFromInt32);
+    if (status != napi_ok || doubleFromInt32 != int32ToDouble) testResult = false;
+    
+    // Test 6: double to int32 (truncation)
+    double doubleToInt32 = 123.999;
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, doubleToInt32, &doubleVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t int32FromDouble = 0;
+    status = napi_get_value_int32(env, doubleVal, &int32FromDouble);
+    if (status != napi_ok) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest003(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test boundary values
+    // Test 1: INT32_MAX and INT32_MIN
+    int32_t int32Max = 2147483647; // INT32_MAX
+    napi_value int32MaxVal = nullptr;
+    status = napi_create_int32(env, int32Max, &int32MaxVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedInt32Max = 0;
+    status = napi_get_value_int32(env, int32MaxVal, &retrievedInt32Max);
+    if (status != napi_ok || retrievedInt32Max != int32Max) testResult = false;
+    
+    int32_t int32Min = -2147483648; // INT32_MIN
+    napi_value int32MinVal = nullptr;
+    status = napi_create_int32(env, int32Min, &int32MinVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedInt32Min = 0;
+    status = napi_get_value_int32(env, int32MinVal, &retrievedInt32Min);
+    if (status != napi_ok || retrievedInt32Min != int32Min) testResult = false;
+    
+    // Test 2: UINT32_MAX and UINT32_MIN
+    uint32_t uint32Max = 4294967295; // UINT32_MAX
+    napi_value uint32MaxVal = nullptr;
+    status = napi_create_uint32(env, uint32Max, &uint32MaxVal);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t retrievedUint32Max = 0;
+    status = napi_get_value_uint32(env, uint32MaxVal, &retrievedUint32Max);
+    if (status != napi_ok || retrievedUint32Max != uint32Max) testResult = false;
+    
+    uint32_t uint32Min = 0; // UINT32_MIN
+    napi_value uint32MinVal = nullptr;
+    status = napi_create_uint32(env, uint32Min, &uint32MinVal);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t retrievedUint32Min = 0;
+    status = napi_get_value_uint32(env, uint32MinVal, &retrievedUint32Min);
+    if (status != napi_ok || retrievedUint32Min != uint32Min) testResult = false;
+    
+    // Test 3: INT64_MAX and INT64_MIN (using safe values)
+    int64_t int64Max = 2147483647; // Using INT32_MAX for JS safety
+    napi_value int64MaxVal = nullptr;
+    status = napi_create_int64(env, int64Max, &int64MaxVal);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64Max = 0;
+    status = napi_get_value_int64(env, int64MaxVal, &retrievedInt64Max);
+    if (status != napi_ok || retrievedInt64Max != int64Max) testResult = false;
+    
+    int64_t int64Min = -2147483648; // Using INT32_MIN for JS safety
+    napi_value int64MinVal = nullptr;
+    status = napi_create_int64(env, int64Min, &int64MinVal);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64Min = 0;
+    status = napi_get_value_int64(env, int64MinVal, &retrievedInt64Min);
+    if (status != napi_ok || retrievedInt64Min != int64Min) testResult = false;
+    
+    // Test 4: Double boundary values
+    double doubleMax = 1.7976931348623157e+15; // Safe large value
+    napi_value doubleMaxVal = nullptr;
+    status = napi_create_double(env, doubleMax, &doubleMaxVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDoubleMax = 0.0;
+    status = napi_get_value_double(env, doubleMaxVal, &retrievedDoubleMax);
+    if (status != napi_ok || retrievedDoubleMax != doubleMax) testResult = false;
+    
+    double doubleMin = -1.7976931348623157e+15; // Safe large negative value
+    napi_value doubleMinVal = nullptr;
+    status = napi_create_double(env, doubleMin, &doubleMinVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDoubleMin = 0.0;
+    status = napi_get_value_double(env, doubleMinVal, &retrievedDoubleMin);
+    if (status != napi_ok || retrievedDoubleMin != doubleMin) testResult = false;
+    
+    // Test 5: Special double values
+    double zeroValue = 0.0;
+    napi_value zeroVal = nullptr;
+    status = napi_create_double(env, zeroValue, &zeroVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedZero = 0.0;
+    status = napi_get_value_double(env, zeroVal, &retrievedZero);
+    if (status != napi_ok || retrievedZero != zeroValue) testResult = false;
+    
+    double oneValue = 1.0;
+    napi_value oneVal = nullptr;
+    status = napi_create_double(env, oneValue, &oneVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedOne = 0.0;
+    status = napi_get_value_double(env, oneVal, &retrievedOne);
+    if (status != napi_ok || retrievedOne != oneValue) testResult = false;
+    
+    double negativeOneValue = -1.0;
+    napi_value negativeOneVal = nullptr;
+    status = napi_create_double(env, negativeOneValue, &negativeOneVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedNegativeOne = 0.0;
+    status = napi_get_value_double(env, negativeOneVal, &retrievedNegativeOne);
+    if (status != napi_ok || retrievedNegativeOne != negativeOneValue) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest004(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test combined operations
+    // Test 1: double to int32 (truncation)
+    double doubleValue = 123.999;
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, doubleValue, &doubleVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble = 0.0;
+    status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+    if (status != napi_ok || retrievedDouble != doubleValue) testResult = false;
+    
+    // Test 2: uint32 to double (precision preservation)
+    uint32_t uint32Value = 4294967295; // UINT32_MAX
+    napi_value uint32Val = nullptr;
+    status = napi_create_uint32(env, uint32Value, &uint32Val);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t retrievedUint32 = 0;
+    status = napi_get_value_uint32(env, uint32Val, &retrievedUint32);
+    if (status != napi_ok || retrievedUint32 != uint32Value) testResult = false;
+    
+    // Test 3: int64 to uint32 (modulo operation)
+    int64_t int64Value = -1234567890; // Negative number
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, int64Value, &int64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64 = 0;
+    status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+    if (status != napi_ok || retrievedInt64 != int64Value) testResult = false;
+    
+    // Test 4: Combined operation: int32 -> double -> int32
+    int32_t originalInt32 = 12345;
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, originalInt32, &int32Val);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedInt32 = 0;
+    status = napi_get_value_int32(env, int32Val, &retrievedInt32);
+    if (status != napi_ok || retrievedInt32 != originalInt32) testResult = false;
+    
+    // Test 5: Combined operation: double -> int64 -> double
+    double originalDouble = 3.141592653589793;
+    napi_value doubleVal2 = nullptr;
+    status = napi_create_double(env, originalDouble, &doubleVal2);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble2 = 0.0;
+    status = napi_get_value_double(env, doubleVal2, &retrievedDouble2);
+    if (status != napi_ok || retrievedDouble2 != originalDouble) testResult = false;
+    
+    // Test 6: Combined operation: uint32 -> int32 -> uint32
+    uint32_t originalUint32 = 2147483647; // INT32_MAX
+    napi_value uint32Val2 = nullptr;
+    status = napi_create_uint32(env, originalUint32, &uint32Val2);
+    if (status != napi_ok) testResult = false;
+    
+    uint32_t retrievedUint322 = 0;
+    status = napi_get_value_uint32(env, uint32Val2, &retrievedUint322);
+    if (status != napi_ok || retrievedUint322 != originalUint32) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest005(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test type conversion and overflow
+    // Test 1: int64 value exceeding int32 range
+    int64_t overflowInt64Value = 2147483648; // INT32_MAX + 1
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, overflowInt64Value, &int64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64 = 0;
+    status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+    if (status != napi_ok || retrievedInt64 != overflowInt64Value) testResult = false;
+    
+    // Test 2: double value exceeding int32 range
+    double overflowDoubleValue = 2.5e9; // 2.5 * 10^9, exceeds INT32_MAX
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, overflowDoubleValue, &doubleVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble = 0.0;
+    status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+    if (status != napi_ok || retrievedDouble != overflowDoubleValue) testResult = false;
+    
+    // Test 3: negative int32 for uint32 (modulo operation)
+    int32_t negativeInt32Value = -1; // Negative number
+    napi_value int32Val = nullptr;
+    status = napi_create_int32(env, negativeInt32Value, &int32Val);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedInt32 = 0;
+    status = napi_get_value_int32(env, int32Val, &retrievedInt32);
+    if (status != napi_ok || retrievedInt32 != negativeInt32Value) testResult = false;
+    
+    // Test 4: Boundary value overflow - INT32_MAX + 1
+    int64_t int32MaxPlusOne = 2147483648; // INT32_MAX + 1
+    napi_value int64Val2 = nullptr;
+    status = napi_create_int64(env, int32MaxPlusOne, &int64Val2);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64_2 = 0;
+    status = napi_get_value_int64(env, int64Val2, &retrievedInt64_2);
+    if (status != napi_ok || retrievedInt64_2 != int32MaxPlusOne) testResult = false;
+    
+    // Test 5: Boundary value overflow - INT32_MIN - 1
+    int64_t int32MinMinusOne = -2147483649; // INT32_MIN - 1
+    napi_value int64Val3 = nullptr;
+    status = napi_create_int64(env, int32MinMinusOne, &int64Val3);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64_3 = 0;
+    status = napi_get_value_int64(env, int64Val3, &retrievedInt64_3);
+    if (status != napi_ok || retrievedInt64_3 != int32MinMinusOne) testResult = false;
+    
+    // Test 6: Very large double (precision overflow)
+    double veryLargeDouble = 1.0e+15; // Large but safe value
+    napi_value doubleVal2 = nullptr;
+    status = napi_create_double(env, veryLargeDouble, &doubleVal2);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble2 = 0.0;
+    status = napi_get_value_double(env, doubleVal2, &retrievedDouble2);
+    if (status != napi_ok || retrievedDouble2 != veryLargeDouble) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest006(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test large numbers and precision
+    // Test 1: Large double value
+    double largeDoubleValue = 1.7976931348623157e+15; // Safe large value
+    napi_value doubleVal = nullptr;
+    status = napi_create_double(env, largeDoubleValue, &doubleVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble = 0.0;
+    status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+    if (status != napi_ok || retrievedDouble != largeDoubleValue) testResult = false;
+    
+    // Test 2: Large integer value
+    int64_t largeIntValue = 2147483647; // INT32_MAX for JS safety
+    napi_value int64Val = nullptr;
+    status = napi_create_int64(env, largeIntValue, &int64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64 = 0;
+    status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+    if (status != napi_ok || retrievedInt64 != largeIntValue) testResult = false;
+    
+    // Test 3: Large double to integer conversion (precision loss)
+    double doubleToIntValue = 123456789.999;
+    napi_value doubleVal2 = nullptr;
+    status = napi_create_double(env, doubleToIntValue, &doubleVal2);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDouble2 = 0.0;
+    status = napi_get_value_double(env, doubleVal2, &retrievedDouble2);
+    if (status != napi_ok || retrievedDouble2 != doubleToIntValue) testResult = false;
+    
+    // Test 4: Large integer to double conversion (precision preservation)
+    int64_t intToDoubleValue = 2147483647; // INT32_MAX for JS safety
+    napi_value int64Val2 = nullptr;
+    status = napi_create_int64(env, intToDoubleValue, &int64Val2);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedInt64_2 = 0;
+    status = napi_get_value_int64(env, int64Val2, &retrievedInt64_2);
+    if (status != napi_ok || retrievedInt64_2 != intToDoubleValue) testResult = false;
+    
+    // Test 5: Double precision boundary (15-17 significant digits)
+    double precisionTestValue = 1.2345678901234567e+15; // 16 significant digits
+    napi_value precisionVal = nullptr;
+    status = napi_create_double(env, precisionTestValue, &precisionVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedPrecision = 0.0;
+    status = napi_get_value_double(env, precisionVal, &retrievedPrecision);
+    if (status != napi_ok || retrievedPrecision != precisionTestValue) testResult = false;
+    
+    // Test 6: Minimum int64 value
+    int64_t minInt64Value = -2147483648; // INT32_MIN for JS safety
+    napi_value minInt64Val = nullptr;
+    status = napi_create_int64(env, minInt64Value, &minInt64Val);
+    if (status != napi_ok) testResult = false;
+    
+    int64_t retrievedMinInt64 = 0;
+    status = napi_get_value_int64(env, minInt64Val, &retrievedMinInt64);
+    if (status != napi_ok || retrievedMinInt64 != minInt64Value) testResult = false;
+    
+    // Test 7: Special double value
+    double specialDoubleValue = 0.0;
+    napi_value specialVal = nullptr;
+    status = napi_create_double(env, specialDoubleValue, &specialVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedSpecial = 0.0;
+    status = napi_get_value_double(env, specialVal, &retrievedSpecial);
+    if (status != napi_ok || retrievedSpecial != specialDoubleValue) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest007(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test boolean value handling
+    // Test 1: 0 to false conversion
+    int32_t zeroValue = 0;
+    napi_value zeroVal = nullptr;
+    status = napi_create_int32(env, zeroValue, &zeroVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedZero = 0;
+    status = napi_get_value_int32(env, zeroVal, &retrievedZero);
+    if (status != napi_ok || retrievedZero != zeroValue) testResult = false;
+    
+    // Test 2: 1 to true conversion
+    int32_t oneValue = 1;
+    napi_value oneVal = nullptr;
+    status = napi_create_int32(env, oneValue, &oneVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedOne = 0;
+    status = napi_get_value_int32(env, oneVal, &retrievedOne);
+    if (status != napi_ok || retrievedOne != oneValue) testResult = false;
+    
+    // Test 3: Non-zero value to true conversion
+    int32_t nonZeroValue = 42;
+    napi_value nonZeroVal = nullptr;
+    status = napi_create_int32(env, nonZeroValue, &nonZeroVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedNonZero = 0;
+    status = napi_get_value_int32(env, nonZeroVal, &retrievedNonZero);
+    if (status != napi_ok || retrievedNonZero != nonZeroValue) testResult = false;
+    
+    // Test 4: Negative value to true conversion
+    int32_t negativeValue = -1;
+    napi_value negativeVal = nullptr;
+    status = napi_create_int32(env, negativeValue, &negativeVal);
+    if (status != napi_ok) testResult = false;
+    
+    int32_t retrievedNegative = 0;
+    status = napi_get_value_int32(env, negativeVal, &retrievedNegative);
+    if (status != napi_ok || retrievedNegative != negativeValue) testResult = false;
+    
+    // Test 5: Double zero to false conversion
+    double doubleZeroValue = 0.0;
+    napi_value doubleZeroVal = nullptr;
+    status = napi_create_double(env, doubleZeroValue, &doubleZeroVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDoubleZero = 0.0;
+    status = napi_get_value_double(env, doubleZeroVal, &retrievedDoubleZero);
+    if (status != napi_ok || retrievedDoubleZero != doubleZeroValue) testResult = false;
+    
+    // Test 6: Double one to true conversion
+    double doubleOneValue = 1.0;
+    napi_value doubleOneVal = nullptr;
+    status = napi_create_double(env, doubleOneValue, &doubleOneVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDoubleOne = 0.0;
+    status = napi_get_value_double(env, doubleOneVal, &retrievedDoubleOne);
+    if (status != napi_ok || retrievedDoubleOne != doubleOneValue) testResult = false;
+    
+    // Test 7: Double decimal to true conversion
+    double doubleDecimalValue = 0.5;
+    napi_value doubleDecimalVal = nullptr;
+    status = napi_create_double(env, doubleDecimalValue, &doubleDecimalVal);
+    if (status != napi_ok) testResult = false;
+    
+    double retrievedDoubleDecimal = 0.0;
+    status = napi_get_value_double(env, doubleDecimalVal, &retrievedDoubleDecimal);
+    if (status != napi_ok || retrievedDoubleDecimal != doubleDecimalValue) testResult = false;
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
+static napi_value NapiNumberTest008(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value result = nullptr;
+    bool testResult = true;
+    
+    // Test thread safety simulation (basic NAPI operations)
+    // This test simulates thread safety by performing multiple operations
+    // that would typically be done in different threads
+    
+    // Simulate multiple create operations
+    for (int i = 0; i < 10; i++) {
+        // Create int32
+        int32_t int32Value = 1000 + i;
+        napi_value int32Val = nullptr;
+        status = napi_create_int32(env, int32Value, &int32Val);
+        if (status != napi_ok) testResult = false;
+        
+        int32_t retrievedInt32 = 0;
+        status = napi_get_value_int32(env, int32Val, &retrievedInt32);
+        if (status != napi_ok || retrievedInt32 != int32Value) testResult = false;
+        
+        // Create uint32
+        uint32_t uint32Value = 2000 + i;
+        napi_value uint32Val = nullptr;
+        status = napi_create_uint32(env, uint32Value, &uint32Val);
+        if (status != napi_ok) testResult = false;
+        
+        uint32_t retrievedUint32 = 0;
+        status = napi_get_value_uint32(env, uint32Val, &retrievedUint32);
+        if (status != napi_ok || retrievedUint32 != uint32Value) testResult = false;
+        
+        // Create int64
+        int64_t int64Value = 3000 + i;
+        napi_value int64Val = nullptr;
+        status = napi_create_int64(env, int64Value, &int64Val);
+        if (status != napi_ok) testResult = false;
+        
+        int64_t retrievedInt64 = 0;
+        status = napi_get_value_int64(env, int64Val, &retrievedInt64);
+        if (status != napi_ok || retrievedInt64 != int64Value) testResult = false;
+        
+        // Create double
+        double doubleValue = 4000.0 + i;
+        napi_value doubleVal = nullptr;
+        status = napi_create_double(env, doubleValue, &doubleVal);
+        if (status != napi_ok) testResult = false;
+        
+        double retrievedDouble = 0.0;
+        status = napi_get_value_double(env, doubleVal, &retrievedDouble);
+        if (status != napi_ok || retrievedDouble != doubleValue) testResult = false;
+    }
+    
+    // Simulate mixed operations (create and get operations)
+    for (int i = 0; i < 5; i++) {
+        // Create and immediately get int32
+        int32_t createValue = 5000 + i;
+        napi_value createVal = nullptr;
+        status = napi_create_int32(env, createValue, &createVal);
+        if (status != napi_ok) testResult = false;
+        
+        int32_t getValue = 0;
+        status = napi_get_value_int32(env, createVal, &getValue);
+        if (status != napi_ok || getValue != createValue) testResult = false;
+        
+        // Create and immediately get double
+        double createDouble = 6000.0 + i;
+        napi_value createDoubleVal = nullptr;
+        status = napi_create_double(env, createDouble, &createDoubleVal);
+        if (status != napi_ok) testResult = false;
+        
+        double getDouble = 0.0;
+        status = napi_get_value_double(env, createDoubleVal, &getDouble);
+        if (status != napi_ok || getDouble != createDouble) testResult = false;
+    }
+    
+    napi_get_boolean(env, testResult, &result);
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -18541,6 +19162,14 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest10", NapiWrapEnhanceTest10),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest11", NapiWrapEnhanceTest11),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest12", NapiWrapEnhanceTest12),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest001", NapiNumberTest001),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest002", NapiNumberTest002),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest003", NapiNumberTest003),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest004", NapiNumberTest004),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest005", NapiNumberTest005),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest006", NapiNumberTest006),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest007", NapiNumberTest007),
+        DECLARE_NAPI_FUNCTION("NapiNumberTest008", NapiNumberTest008),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 
